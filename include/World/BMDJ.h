@@ -52,6 +52,37 @@ struct Zone3D_BMDJStruct
         Animation3D* skeletalAnimation;
     };
 
+    // Runtime placement layout used by the per-frame update at 02015554.
+    struct InstanceEntry
+    {
+        short id;
+        unsigned short flags;
+        signed char countdown : 7;
+        signed char unknown_4_high : 1;
+        char unknown_5;
+        short unknown_6;
+        Vector3i position;
+        Vector3i scale;
+        int unknown_20;
+        ObjectEntry* resource;
+        int unknown_28;
+        int unknown_2c;
+        int unknown_30;
+        union { short targetAngle; unsigned short doorState; };
+        union { short rotationSpeed; unsigned short doorTimer; };
+        short currentAngle;
+        short movementStep;
+        Vector3i targetPosition;
+        Vector3i movementDirection;
+        Object3D* object;
+        int unknown_58;
+        int unknown_5c;
+        int unknown_60;
+        int unknown_64;
+        int unknown_68;
+        int unknown_6c;
+    };
+
     int unknown_0_;
     struct ScriptData
     {
@@ -82,7 +113,7 @@ struct Zone3D_BMDJStruct
 
     } scriptData_;
     ObjectEntry* ptr_40; // array of length scriptData_.counter_4, stride = 0x18 (func_02012ff0)
-    void* ptr_44; // array of length scriptData_.counter_10, stride = 0x70 (func_020181fc)
+    InstanceEntry* ptr_44; // array of length scriptData_.counter_10, stride = 0x70 (func_020181fc)
     Vector3i vec_48_;
     Zone3D_BMDJStruct* pNext_;
 };

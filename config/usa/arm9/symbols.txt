@@ -450,7 +450,7 @@ _ZN6Zone3D17LoadBMDJCollisionEPN17Zone3D_BMDJStruct11ObjectEntryEPNS0_11StructSi
 _ZN6Zone3D22LoadBMDJAnimatedObjectEPN17Zone3D_BMDJStruct11ObjectEntryEPNS0_11StructSizeCE kind:function(arm,size=0x26c) addr:0x020151cc
 _ZN6Zone3D6UpdateEv kind:function(arm,size=0xe0) addr:0x02015438
 _ZN6Zone3D19UpdateBMDJInstancesEP17Zone3D_BMDJStruct kind:function(arm,size=0x3c) addr:0x02015518
-func_02015554 kind:function(arm,size=0x378) addr:0x02015554
+_ZN6Zone3D18UpdateBMDJInstanceEPN17Zone3D_BMDJStruct13InstanceEntryE kind:function(arm,size=0x378) addr:0x02015554
 func_020158cc kind:function(arm,size=0xf4) addr:0x020158cc
 func_020159c0 kind:function(arm,size=0x6c) addr:0x020159c0
 func_02015a2c kind:function(arm,size=0x6c) addr:0x02015a2c

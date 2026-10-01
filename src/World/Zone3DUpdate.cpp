@@ -11,7 +11,6 @@ extern "C"
     void func_0201ba68(Zone3D*);
     void func_0201bdac(Zone3D*);
     void func_0201bfd4(Zone3D*);
-    void func_02015554(Zone3D*, void*);
 }
 
 void Zone3D::Update()
@@ -51,5 +50,5 @@ void Zone3D::UpdateBMDJInstances(Zone3D_BMDJStruct* group)
 {
     int count = group->scriptData_.counter_10;
     for (int i = 0; i < count; ++i)
-        func_02015554(this, (char*)group->ptr_44 + i * 0x70);
+        UpdateBMDJInstance(&group->ptr_44[i]);
 }

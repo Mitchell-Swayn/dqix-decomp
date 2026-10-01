@@ -568,3 +568,7 @@ src/World/BMDJAnimationRules.cpp:
 src/World/Zone3DUpdate.cpp:
     complete
     .text start:0x02015438 end:0x02015554
+
+src/World/Zone3DInstanceUpdate.cpp:
+    complete
+    .text start:0x02015554 end:0x020158cc

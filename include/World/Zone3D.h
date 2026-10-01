@@ -128,6 +128,7 @@ public:
 
     void Update();
     void UpdateBMDJInstances(Zone3D_BMDJStruct* group);
+    void UpdateBMDJInstance(Zone3D_BMDJStruct::InstanceEntry* instance);
 
     // Poll queued map loads, then finish zone activation once all are ready.
     bool ProcessPendingLoads();
