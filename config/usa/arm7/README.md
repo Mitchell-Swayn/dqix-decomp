@@ -1,11 +1,11 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **77 C
-functions: 7,368 instruction bytes plus 512 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **78 C
+functions: 7,572 instruction bytes plus 520 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
 864 bytes of standalone diagnostic data and 316 bytes of BSS now have source
-definitions. The other 159,012 payload bytes
+definitions. The other 158,800 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -19,10 +19,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 7,368 / 512 bytes |
+| Reconstructed C instructions / compiler literal pools | 7,572 / 520 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 864 / 120 bytes |
 | Reconstructed BSS / total autoload BSS | 316 / 22,744 bytes |
-| Binary fallback | 159,012 bytes |
+| Binary fallback | 158,800 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -269,9 +269,16 @@ remains explicit unowned BSS; no opaque struct prefix adds data credit.
 `src/ThreadWait.c` reconstructs blocking, waking all waiters, marking a thread
 ready and selecting the first ready thread at `[0x037fc69c, 0x037fc7cc)`
 (payload `[0x48b8, 0x49e8)`), with 296 C instruction bytes and 8 literal bytes.
-It clears blocked-list links on wakeup and preserves IRQ state. The scheduler
-switch routine remains fallback; all list insertion and IRQ dependencies are
-source-owned. No opaque thread prefix or external scheduler BSS is counted.
+It clears blocked-list links on wakeup and preserves IRQ state. The scheduler switch routine now belongs to `ThreadSwitch.c`; list insertion
+and IRQ dependencies are source-owned. No opaque thread prefix or external scheduler BSS is counted.
+
+`src/ThreadSwitch.c` reconstructs high-level scheduler switching at
+`[0x037fc29c, 0x037fc370)` (payload `[0x44b8, 0x458c)`), with 204 C
+instruction bytes and 8 literal bytes. It respects scheduler locks and IRQ mode,
+selects a ready thread, runs switch callbacks and updates the active pointer.
+The actual register-save/restore routines at `0x037fca58` / `0x037fca8c` remain
+original binary fallback. This unit introduces no assembly and claims no source
+coverage for those separate low-level routines or external scheduler BSS.
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C

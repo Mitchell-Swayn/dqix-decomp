@@ -239,6 +239,28 @@
       }
     },
     {
+      "name": "ThreadSwitch",
+      "source": "config/usa/arm7/src/ThreadSwitch.c",
+      "autoload": "wram",
+      "runtime_address": 58704540,
+      "payload_offset": 17592,
+      "size": 212,
+      "code_bytes": 204,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SwitchThread",
+      "symbols": {
+        "ARM7_SwitchThread": 58704540
+      },
+      "externals": {
+        "ARM7_ThreadGlobals": 58757036,
+        "ARM7_ThreadSystem": 58757072,
+        "ARM7_GetProcessorMode": 58713020,
+        "ARM7_GetFirstReadyThread": 58705828,
+        "ARM7_SaveThreadContext": 58706520,
+        "ARM7_RestoreThreadContext": 58706572
+      }
+    },
+    {
       "name": "Alarms",
       "source": "config/usa/arm7/src/Alarms.c",
       "autoload": "wram",
