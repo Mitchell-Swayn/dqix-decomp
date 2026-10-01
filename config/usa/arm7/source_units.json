@@ -21,6 +21,39 @@
   ],
   "units": [
     {
+      "name": "ArenaHeapCheck",
+      "source": "config/usa/arm7/src/ArenaHeapCheck.c",
+      "autoload": "wram",
+      "runtime_address": 58708892,
+      "payload_offset": 21944,
+      "size": 844,
+      "code_bytes": 716,
+      "literal_pool_bytes": 128,
+      "entry": "ARM7_CheckArenaHeap",
+      "symbols": {
+        "ARM7_CheckArenaHeap": 58708892
+      },
+      "externals": {
+        "ARM7_HeapCheckMessage0": 58755264,
+        "ARM7_HeapCheckMessage1": 58755312,
+        "ARM7_HeapCheckMessage2": 58755380,
+        "ARM7_HeapCheckMessage3": 58755424,
+        "ARM7_HeapCheckMessage4": 58755508,
+        "ARM7_HeapCheckMessage5": 58755592,
+        "ARM7_HeapCheckMessage6": 58755652,
+        "ARM7_HeapCheckMessage7": 58755728,
+        "ARM7_HeapCheckMessage8": 58755784,
+        "ARM7_HeapCheckMessage9": 58755848,
+        "ARM7_HeapCheckMessage10": 58755908,
+        "ARM7_HeapCheckMessage16": 58755980,
+        "ARM7_HeapCheckMessage18": 58756080,
+        "ARM7_g_arenaHeapInfo": 58757420,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_HeapWarning": 58703288
+      }
+    },
+    {
       "name": "Alarms",
       "source": "config/usa/arm7/src/Alarms.c",
       "autoload": "wram",

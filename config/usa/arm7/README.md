@@ -1,10 +1,10 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **47 C
-functions: 4,180 instruction bytes plus 292 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **48 C
+functions: 4,896 instruction bytes plus 420 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
-184 bytes of BSS now have source definitions. The other 163,284 payload bytes
+184 bytes of BSS now have source definitions. The other 162,440 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -18,10 +18,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 4,180 / 292 bytes |
+| Reconstructed C instructions / compiler literal pools | 4,896 / 420 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 0 / 120 bytes |
 | Reconstructed BSS / total autoload BSS | 184 / 22,744 bytes |
-| Binary fallback | 163,284 bytes |
+| Binary fallback | 162,440 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -123,6 +123,16 @@ descriptor-array pointer. The corresponding ARM9 source supplied a useful
 starting hypothesis; ARM7's while-loop layout and inlined list prepend were
 separately matched. Locals preserve snapshot pointers across potentially aliasing
 writes, matching the original loads rather than asserting unsupported aliasing.
+
+`src/ArenaHeapCheck.c` reconstructs the heap validation routine at
+`[0x037fd39c, 0x037fd6e8)` (payload `[0x55b8, 0x5904)`), with 716 C
+instruction bytes and 128 literal bytes. It checks arena bounds, 32-byte block
+alignment, linked-list consistency, minimum block size, free-block ordering,
+and total heap accounting before returning available payload bytes or -1.
+Nineteen diagnostic paths preserve the original message addresses and line
+numbers. Shared message addresses use shared external symbols so the compiler
+also reproduces native literal-pool sharing. Diagnostic text and the warning
+routine at `0x037fbdb8` remain binary-owned; no initialized data or BSS is added.
 
 `src/Timing.c` reconstructs `[0x037fd6e8, 0x037fd89c)` (payload
 `[0x5904, 0x5ab8)`): timer initialization flags, 64-bit timer initialization and
