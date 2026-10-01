@@ -20,7 +20,7 @@ from check_arm7 import read_arm7, sha1_file
 
 CC_FLAGS = ["-O2", "-proc", "arm7tdmi", "-fp", "soft", "-interworking",
             "-enum", "int", "-char", "signed", "-inline", "noauto",
-            "-lang=c", "-sym", "on", "-gccinc", "-nolink"]
+            "-lang=c", "-Cpp_exceptions", "off", "-sym", "on", "-gccinc", "-nolink"]
 
 
 def read_elf(path):
@@ -153,6 +153,7 @@ def build(args):
                f"SECTIONS {{\n{externals}\n    .arm7 : {{ {name}.o(.text) }} > ARM7\n}}\n")
         (output / f"{name}.lcf").write_text(lcf, encoding="ascii")
         subprocess.run([*runner, str(linker), "-proc", "arm7tdmi", "-nostdlib", "-interworking",
+                        "-force_active", ",".join(unit["symbols"]),
                         "-m", unit["entry"], "-map", "closure,unused", "-msgstyle", "gcc",
                         f"{name}.o", f"{name}.lcf", "-o", f"{name}.elf"], cwd=output, check=True)
         sections, symbols = read_elf(output / f"{name}.elf")
@@ -162,7 +163,7 @@ def build(args):
         start, size = unit["payload_offset"], unit["size"]
         if len(linked) != size or linked != original[start:start + size]:
             raise ValueError(f"{name}: compiled source does not match original bytes")
-        for symbol, address in unit["symbols"].items():
+        for symbol, address in {**unit["externals"], **unit["symbols"]}.items():
             if symbols.get(symbol) != address:
                 raise ValueError(f"{name}: linked symbol {symbol} address differs")
         rebuilt[start:start + size] = linked

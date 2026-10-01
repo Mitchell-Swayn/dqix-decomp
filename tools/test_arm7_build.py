@@ -1,4 +1,4 @@
-"""Run with python -m unittest discover -s tools -p arm7_test.py."""
+"""Run with python -m unittest discover -s tools -p test_arm7_build.py."""
 
 import copy
 import json

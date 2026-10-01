@@ -9,6 +9,26 @@
   ],
   "units": [
     {
+      "name": "ArenaBounds",
+      "source": "config/usa/arm7/src/ArenaBounds.c",
+      "autoload": "wram",
+      "runtime_address": 58707592,
+      "payload_offset": 20644,
+      "size": 100,
+      "code_bytes": 100,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_InitializeArena",
+      "symbols": {
+        "ARM7_InitializeArena": 58707592,
+        "ARM7_GetArenaLow": 58707652,
+        "ARM7_GetArenaHigh": 58707672
+      },
+      "externals": {
+        "ARM7_GetInitialArenaLow": 58707692,
+        "ARM7_GetInitialArenaHigh": 58707816
+      }
+    },
+    {
       "name": "BootFlags",
       "source": "config/usa/arm7/src/BootFlags.c",
       "autoload": "wram",
@@ -19,6 +39,19 @@
       "literal_pool_bytes": 4,
       "entry": "ARM7_GetBootByteFlags",
       "symbols": {"ARM7_GetBootByteFlags": 58688696},
+      "externals": {}
+    },
+    {
+      "name": "BitCount",
+      "source": "config/usa/arm7/src/BitCount.c",
+      "autoload": "wram",
+      "runtime_address": 58736424,
+      "payload_offset": 49476,
+      "size": 68,
+      "code_bytes": 56,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_CountSetBits",
+      "symbols": {"ARM7_CountSetBits": 58736424},
       "externals": {}
     }
   ]

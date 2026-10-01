@@ -1,8 +1,8 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **one
-function: 52 instruction bytes plus its 4-byte literal pool**. The other 167,820
+console ARM7 BIOS. The independent source build currently reconstructs **five
+functions: 208 instruction bytes plus 16 bytes of literal pools**. The other 167,652
 bytes remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -16,9 +16,9 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pool | 52 / 4 bytes |
+| Reconstructed C instructions / compiler literal pools | 208 / 16 bytes |
 | Reconstructed standalone data / reviewed assembly | 0 / 0 bytes |
-| Binary fallback | 167,820 bytes |
+| Binary fallback | 167,652 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -34,7 +34,7 @@ repository root (Windows matching tools):
 dsd.exe rom build --config build/usa/build/rom_config_arm7.yaml --rom build/usa/arm7/dqix_usa.nds
 .venv\Scripts\python.exe tools\check_arm7.py --rom build/usa/arm7/dqix_usa.nds
 .venv\Scripts\python.exe -m unittest discover -s tools -p test_check_arm7.py
-.venv\Scripts\python.exe -m unittest discover -s tools -p arm7_test.py
+.venv\Scripts\python.exe -m unittest discover -s tools -p test_arm7_build.py
 ```
 
 The verifier validates the base ROM hash, extraction bytes, rebuilt payload
@@ -70,7 +70,7 @@ recovered linker section names. Initialized ranges contain both code and data.
 The first range crosses the WRAM boundary; the addresses above are the literal
 copy-loop destinations, without assuming a particular physical memory mapping.
 
-## First source unit and pipeline
+## Source units and pipeline
 
 `src/BootFlags.c` reconstructs runtime range `[0x037f84b8, 0x037f84f0)` from
 payload range `[0x6d4, 0x70c)`. It reads byte `0x027ffe1d` and returns `0x40` for
@@ -80,12 +80,25 @@ meaning of that shared boot byte remains uncertain, so the name describes the
 observed operation. The conditional 16-bit narrowing in the original code is
 reproduced with an unsigned-short accumulator and return type.
 
+`src/BitCount.c` reconstructs runtime range `[0x03803f28, 0x03803f6c)` from
+payload range `[0xc144, 0xc188)`: a population count using parallel bit summation.
+Its 56 instruction bytes and three 32-bit literal masks match exactly.
+
+`src/ArenaBounds.c` reconstructs runtime range `[0x037fce88, 0x037fceec)` from
+payload range `[0x50a4, 0x5108)`: arena initialization and low/high boundary
+getters. These three functions access shared boundary arrays at `0x027ffdc4`
+and `0x027ffda0`. The two initial-boundary selection functions at `0x037fceec`
+and `0x037fcf68` remain explicitly declared, address-linked fallback dependencies.
+The 100-byte source unit includes no literal pool or standalone data ownership.
+
 `arm7_build.py` compiles each declared unit with `mwccarm` targeting `arm7tdmi`,
 links it at its actual runtime address with `mwldarm`, reads its linked ELF,
 checks section size, addresses, symbols and bytes, then places it at its original
 payload offset. It rejects overlapping units and invalid autoload mappings. All
 other payload bytes are retained explicitly as fallback. The linked replacement
 is used in the packaged ROM through a generated sibling ROM configuration.
+Declared source functions are forced active when linking, so every function in a
+multi-function unit remains present; C++ exception tables are disabled.
 
 This is a source-slice pipeline, not full ARM7 delinking. Add coherent source
 units and their verified extents to `source_units.json`. Unit `externals` can
