@@ -4,10 +4,64 @@
   "autoload_parameters_offset": 516,
   "autoload_table_offset": 167852,
   "autoloads": [
-    {"name": "wram", "payload_offset": 540, "runtime_address": 58687488, "size": 69172, "bss_size": 16240},
-    {"name": "mainram", "payload_offset": 69712, "runtime_address": 41811968, "size": 98140, "bss_size": 6504}
+    {
+      "name": "wram",
+      "payload_offset": 540,
+      "runtime_address": 58687488,
+      "size": 69172,
+      "bss_size": 16240
+    },
+    {
+      "name": "mainram",
+      "payload_offset": 69712,
+      "runtime_address": 41811968,
+      "size": 98140,
+      "bss_size": 6504
+    }
   ],
   "units": [
+    {
+      "name": "Alarms",
+      "source": "config/usa/arm7/src/Alarms.c",
+      "autoload": "wram",
+      "runtime_address": 58710172,
+      "payload_offset": 23224,
+      "size": 948,
+      "code_bytes": 896,
+      "literal_pool_bytes": 52,
+      "entry": "ARM7_MarkNextAlarmToSound",
+      "symbols": {
+        "ARM7_MarkNextAlarmToSound": 58710172,
+        "ARM7_InitializeActiveAlarmList": 58710312,
+        "ARM7_IsAlarmListInitialized": 58710380,
+        "ARM7_ZeroInitializeAlarm": 58710396,
+        "ARM7_RegisterAlarm": 58710412,
+        "ARM7_SetTimeout": 58710712,
+        "ARM7_SetInterval": 58710844,
+        "ARM7_CancelAlarm": 58710984
+      },
+      "externals": {
+        "ARM7_GetCurrentTimestamp": 58710008,
+        "ARM7_SetTimerOverflowCallback": 58701964,
+        "ARM7_Timer1OverflowInterruptRoutine": 58711120,
+        "ARM7_EnableSpecificInterrupts": 58702116,
+        "ARM7_DisableSpecificInterrupts": 58702172,
+        "ARM7_MarkAlarmInitializationFlagBit": 58709736,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_Panic": 58703664,
+        "ARM7_AlarmSourceFile": 58756128,
+        "ARM7_AlarmAllocationError": 58756140,
+        "_ll_udiv": 58752624
+      },
+      "bss": {
+        "runtime_address": 58757476,
+        "size": 12,
+        "symbols": {
+          "ARM7_ActiveAlarmList": 58757476
+        }
+      }
+    },
     {
       "name": "Interrupts",
       "source": "config/usa/arm7/src/Interrupts.c",
@@ -30,7 +84,9 @@
       "bss": {
         "runtime_address": 58756668,
         "size": 96,
-        "symbols": {"ARM7_InterruptResponses": 58756668}
+        "symbols": {
+          "ARM7_InterruptResponses": 58756668
+        }
       }
     },
     {
@@ -114,7 +170,9 @@
       "bss": {
         "runtime_address": 58757420,
         "size": 36,
-        "symbols": {"ARM7_g_arenaHeapInfo": 58757420}
+        "symbols": {
+          "ARM7_g_arenaHeapInfo": 58757420
+        }
       }
     },
     {
@@ -152,7 +210,9 @@
       "code_bytes": 52,
       "literal_pool_bytes": 4,
       "entry": "ARM7_GetBootByteFlags",
-      "symbols": {"ARM7_GetBootByteFlags": 58688696},
+      "symbols": {
+        "ARM7_GetBootByteFlags": 58688696
+      },
       "externals": {}
     },
     {
@@ -165,7 +225,9 @@
       "code_bytes": 56,
       "literal_pool_bytes": 12,
       "entry": "ARM7_CountSetBits",
-      "symbols": {"ARM7_CountSetBits": 58736424},
+      "symbols": {
+        "ARM7_CountSetBits": 58736424
+      },
       "externals": {}
     }
   ]

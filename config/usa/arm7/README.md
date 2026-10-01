@@ -1,10 +1,10 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **26 C
-functions: 2,036 instruction bytes plus 144 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **34 C
+functions: 2,932 instruction bytes plus 196 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
-152 bytes of BSS now have source definitions. The other 165,576 payload bytes
+164 bytes of BSS now have source definitions. The other 164,628 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -18,10 +18,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 2,036 / 144 bytes |
+| Reconstructed C instructions / compiler literal pools | 2,932 / 196 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 0 / 120 bytes |
-| Reconstructed BSS / total autoload BSS | 152 / 22,744 bytes |
-| Binary fallback | 165,576 bytes |
+| Reconstructed BSS / total autoload BSS | 164 / 22,744 bytes |
+| Binary fallback | 164,628 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -84,7 +84,7 @@ observed operation. The conditional 16-bit narrowing in the original code is
 reproduced with an unsigned-short accumulator and return type.
 
 `src/BitCount.c` reconstructs runtime range `[0x03803f28, 0x03803f6c)` from
-payload range `[0xc144, 0xc188)`: a population count using parallel bit summation.
+payload range `[0xc196, 0xc188)`: a population count using parallel bit summation.
 Its 56 instruction bytes and three 32-bit literal masks match exactly.
 
 `src/ArenaBounds.c` reconstructs runtime range `[0x037fce88, 0x037fcfd4)` from
@@ -147,6 +147,17 @@ the original compiler's separate literal addresses for callback-table fields.
 The original handler-registration routine at `0x037fb7f0` still consumes this
 table; its separate VBlank response and initialized dispatch table remain outside
 this unit's source data ownership.
+
+`src/Alarms.c` reconstructs eight alarm scheduling functions at
+`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 896 C
+instruction bytes, 52 literal bytes and the 12-byte list state at
+`[0x03809164, 0x03809170)`. It initializes and orders the doubly-linked queue,
+programs timer 1, registers timeouts and periodic intervals, and cancels alarms.
+All code uses ordinary C. The unsigned 64-bit division helper at `0x03807e70`,
+panic routine at `0x037fbf30`, diagnostic strings at `0x03808c20` / `0x03808c2c`,
+and timer-1 interrupt wrapper at `0x037fdc50` remain explicit binary dependencies.
+The diagnostic line values (0x174 and 0x1a2) come from the original instructions;
+no original source authorship or file contents are claimed.
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C
