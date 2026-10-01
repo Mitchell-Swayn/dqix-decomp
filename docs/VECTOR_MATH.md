@@ -85,3 +85,13 @@ reports 100% matching code/functions, including the scale-to-scale call after
 linking. The total denominators remain 2,959,478 code bytes, 1,602,476 data bytes,
 and 14,790 functions. These seven math source units now cover 19 functions and
 1,456 matched code bytes. Normalization remains outside the source mappings.
+
+`Matrix4Translation.cpp` adds the adjacent 172-byte function at
+`[0x020c189c, 0x020c1948)`. For distinct source/destination matrices it invokes
+the existing 36-byte rotation-copy helper; that helper remains binary fallback
+and receives no source credit here. Translation applies the supplied offset
+through the rotation basis, truncates each full-width sum, and adds the existing
+translation. The source preserves the in-place case and store order. Whole-module
+checks and the linked report pass at 100% for this function. Across these eight
+math units the total is now 20 functions and 1,628 matched code bytes, still with
+no added standalone data definitions or denominator changes.

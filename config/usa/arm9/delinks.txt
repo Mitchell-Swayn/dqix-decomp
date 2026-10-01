@@ -470,3 +470,7 @@ src/System/Matrix3Transform.cpp:
 src/System/Matrix4Transform.cpp:
     complete
     .text start:0x020c2034 end:0x020c20d4
+
+src/System/Matrix4Translation.cpp:
+    complete
+    .text start:0x020c189c end:0x020c1948
