@@ -19,6 +19,9 @@ struct Zone3D_StructPtr_8
     char mapShortName_[7];
     unsigned char unknown_c_low_ : 4;
     unsigned char unknown_c_high_ : 1;
+    unsigned char unknown_d_;
+    unsigned char unknown_e_low_ : 7;
+    unsigned char unknown_e_high_ : 1;
 };
 
 // sizeof == 0x2824, as seen in the dynamic allocation of one
@@ -117,6 +120,9 @@ public:
 public:
     // usa: func_0201383c
     void SwitchZone(unsigned short newID);
+
+    // Poll queued map loads, then finish zone activation once all are ready.
+    bool ProcessPendingLoads();
 
     // usa: func_02013fb4
     bool ProcessMaplist9();

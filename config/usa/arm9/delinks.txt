@@ -520,3 +520,7 @@ src/System/MatrixOrthographic.cpp:
 src/Graphics/VRAMDefaults.cpp:
     complete
     .text start:0x020bb424 end:0x020bb444
+
+src/World/Zone3DActivation.cpp:
+    complete
+    .text start:0x02013e18 end:0x02013fb4
