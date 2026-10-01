@@ -16,7 +16,7 @@ No ROM, BIOS, or extracted proprietary data is included in these records.
 
 - USA ROM: `extract/baserom_dqix_usa.nds`, SHA-1
   `c7c3014c237900c8281289b8bc76a781969b6278`.
-- For final whole-ROM acceptance, a user-supplied DS ARM7 BIOS:
+- Optional for the current USA build, a user-supplied DS ARM7 BIOS:
   `arm7_bios.bin`, SHA-1 `24f67bdea115a2c847c8813a262502ee1607b7df`.
 - Python 3.11 or newer and Ninja. This workspace uses `.venv/Scripts/python.exe`
   and `.venv/Scripts/ninja.exe`.
@@ -46,17 +46,42 @@ objects, generated reports and working-tree edits are not used. The temporary
 directory and logs are retained for investigation; the script deletes nothing.
 Commit intended source changes before selecting a revision to verify.
 
-After providing the BIOS, require final SHA-1 acceptance with:
+Require final SHA-1 acceptance with:
 
 ```powershell
 .\.venv\Scripts\python.exe tools/verify_clean_build.py --revision HEAD --tool-lock docs/verification/baseline-clean-build.json --require-sha1
 ```
 
-That option fails early if BIOS is absent. With BIOS present the script always
-runs `ninja sha1` after the module checks. A missing BIOS produces the explicit
-status `module_baseline_passed_final_sha1_blocked`, never whole-ROM acceptance.
-The recorded baseline output SHA-1 without BIOS is
+The current USA build can pass without a BIOS using verified checksum metadata
+preservation, described below. The script runs `ninja sha1` for this build and
+archives a separate ARM7 source report. For old revisions without that mechanism,
+missing BIOS still produces `module_baseline_passed_final_sha1_blocked` unless
+`--require-sha1` forces the failing hash check. The historical baseline SHA-1 is
 `c86d3ee5c7434e9be811ed512f1ef0549acaedc7`, which differs from the target.
+
+## Exact USA cartridge header without BIOS
+
+Investigation showed the historical rebuild differed from the supplied USA ROM
+in just four bytes: the secure-area CRC16 at offsets `0x6c..0x6d`, and the header
+CRC16 at `0x15e..0x15f`. Pinned ds-rom 0.6.1 explicitly writes zero secure-area CRC
+without a BIOS encryption key ([header source](https://github.com/AetiasHax/ds-rom/blob/b7bcb2735e4a774499dc589ed50d8fc0bd99c55b/lib/src/rom/header.rs#L167)).
+Its secure checksum covers the encrypted form of the first `0x4000` ARM9 bytes
+and depends on game code ([ARM9 source](https://github.com/AetiasHax/ds-rom/blob/b7bcb2735e4a774499dc589ed50d8fc0bd99c55b/lib/src/rom/arm9.rs#L311)).
+
+`tools/finalize_rom_header.py` now receives the raw packaged image at
+`build/usa/unfinalized.nds`. It verifies the reference ROM SHA-1, USA game code,
+fixed ARM9 offset, both input header CRCs, and exact equality of all secure-area
+bytes `[0x4000,0x8000)`. Only then does it preserve the original two-byte secure
+CRC field and independently recompute the two-byte header CRC using CRC16/MODBUS.
+It refuses to emit the final `dqix_usa.nds` unless the complete result has target
+SHA-1 `c7c3014c237900c8281289b8bc76a781969b6278`.
+
+This reuses verified header metadata; it does not independently calculate the
+encrypted secure checksum without the BIOS. No executable bytes are copied or
+repaired by finalization, and this step earns no source-coverage credit. Any
+changed secure-area byte is rejected before checksum reuse, and changes elsewhere
+fail the final SHA-1. The optional BIOS path remains available. This guarded
+USA-only procedure does not change the Japanese build.
 
 For day-to-day incremental checks, `build-usa.cmd` is a local convenience helper,
 or activate the environment and run:

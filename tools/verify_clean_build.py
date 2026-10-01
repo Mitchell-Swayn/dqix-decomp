@@ -42,7 +42,7 @@ def main():
     parser.add_argument("--revision", default="HEAD", help="Committed source revision")
     parser.add_argument("--rom", type=Path, default=ROOT / "extract/baserom_dqix_usa.nds")
     parser.add_argument("--bios", type=Path, default=ROOT / "arm7_bios.bin")
-    parser.add_argument("--require-sha1", action="store_true", help="Fail if BIOS or final ROM match is absent")
+    parser.add_argument("--require-sha1", action="store_true", help="Require final ROM match, including on older revisions")
     parser.add_argument("--tool-lock", type=Path, help="Require exact SHA-256s from a previous manifest's tools field")
     args = parser.parse_args()
     revision = subprocess.check_output(
@@ -53,8 +53,6 @@ def main():
     has_bios = args.bios.is_file()
     if has_bios and digest(args.bios, "sha1") != BIOS_SHA1:
         parser.error("ARM7 BIOS does not match ci/baseroms_usa.sha1")
-    if args.require_sha1 and not has_bios:
-        parser.error("--require-sha1 requires the user-supplied ARM7 BIOS")
     suffix = ".exe" if os.name == "nt" else ""
     ninja = shutil.which("ninja") or str(Path(sys.executable).parent / ("ninja" + suffix))
     required = [ROOT / ("dsd" + suffix), ROOT / ("objdiff-cli" + suffix), Path(ninja)]
@@ -131,12 +129,16 @@ def main():
                 "source_code_bytes", "source_literal_pool_bytes", "source_data_bytes",
                 "source_functions", "binary_fallback_bytes", "source_symbol_checks_passed")}
         manifest["built_rom_sha1"] = digest(source / "dqix_usa.nds", "sha1")
-        if has_bios:
+        preserved_header = (source / "tools/finalize_rom_header.py").is_file()
+        if has_bios or preserved_header or args.require_sha1:
             run([ninja, "sha1"])
             manifest["whole_rom_sha1"] = "passed"
+            manifest["secure_area_checksum_method"] = (
+                "verified_original_header_metadata" if preserved_header else "arm7_bios")
         else:
             manifest["whole_rom_sha1"] = "blocked_missing_arm7_bios"
-        manifest["result"] = "passed" if has_bios else "module_baseline_passed_final_sha1_blocked"
+        manifest["result"] = ("passed" if manifest["whole_rom_sha1"] == "passed"
+                              else "module_baseline_passed_final_sha1_blocked")
     except Exception as error:
         manifest["result"] = "failed"
         manifest["error"] = str(error)
