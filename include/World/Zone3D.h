@@ -9,6 +9,7 @@
 #include "Grotto/Main/TileFeatures.h"
 #include "ZoneFeatures.h"
 #include "MapListLoader.h"
+#include "Zone3DContainers.h"
 
 struct Zone3D_StructPtr_8
 {
@@ -75,13 +76,13 @@ public:
     char unk_444[0x474 - 0x444];
 
     short unknown_474_;
-    char unknown_476_;
+    unsigned char unknown_476_;
     // this seems to include blue and red chests
     unsigned char numChests_;
-    int unknown_478_;
+    ZoneContainerRenderEntry* unknown_478_;
     int unknown_47c_;
 
-    char unk_480[0x498 - 0x480];
+    void* containerModels_[6];
     Model3D models_498_[2];
     char unk_5f0[0x82c - 0x5f0];
 
@@ -120,6 +121,10 @@ public:
 public:
     // usa: func_0201383c
     void SwitchZone(unsigned short newID);
+
+    void CreateContainerRenderEntries(SafeAllocator* allocator);
+    void BindContainerModels();
+    void SetContainerBrokenMask(unsigned int mask);
 
     // Poll queued map loads, then finish zone activation once all are ready.
     bool ProcessPendingLoads();
