@@ -606,3 +606,11 @@ src/System/StringCopy.cpp:
 src/System/StringSearch.cpp:
     complete
     .text start:0x02004184 end:0x020042a8
+
+src/System/StringCopyAligned.cpp:
+    complete
+    .text start:0x02003f28 end:0x02003ff0
+
+src/System/StringCompareAligned.cpp:
+    complete
+    .text start:0x02004070 end:0x02004184

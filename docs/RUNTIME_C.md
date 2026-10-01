@@ -1,12 +1,14 @@
 # Matched C runtime primitives
 
-Four source units reconstruct nine USA ARM9 runtime functions:
+Six source units reconstruct eleven USA ARM9 runtime functions:
 
 | Source | Range | Functions | Report code bytes |
 | --- | --- | --- | ---: |
 | `RuntimeRandom.cpp` | `0x02003d14..0x02003d58` | `rand`, `srand` | 68 |
 | `StringLength.cpp` | `0x02003f0c..0x02003f28` | `strlen` | 28 |
+| `StringCopyAligned.cpp` | `0x02003f28..0x02003ff0` | `strcpy` | 200 |
 | `StringCopy.cpp` | `0x02003ff0..0x02004070` | `strncpy`, `strcat` | 128 |
+| `StringCompareAligned.cpp` | `0x02004070..0x02004184` | `strcmp` | 276 |
 | `StringSearch.cpp` | `0x02004184..0x020042a8` | `strncmp`, `strchr`, `strrchr`, `strstr` | 292 |
 
 The random generator preserves the 32-bit wrapping recurrence
@@ -19,12 +21,20 @@ The string implementations preserve the original signed-char searches,
 unsigned-byte comparison, count-zero behavior, zero padding, and null-character
 search results. The original `strstr` treats a null needle like an empty needle;
 that nonstandard behavior is intentionally retained. Assignment expressions in
-the copy loops preserve the original post-store reloads. `strcpy`, `strcmp`, and
-other runtime bodies remain fallback and receive no new source credit.
+the bounded-copy and concatenation loops preserve the original post-store
+reloads. Other runtime bodies remain fallback and receive no new source credit.
+
+`strcpy` and `strcmp` use word operations only after their pointers have matching
+four-byte alignment and the leading bytes have been handled. Copy uses the
+standard zero-byte mask `(word + 0xfefefeff) & ~word & 0x80808080`. Comparison
+retains the original conservative high-bit shortcut inside its word loop, then
+falls back to unsigned-byte comparison. The explicit intermediate terms in copy
+preserve compiler register allocation. Both routines include their original
+eight-byte compiler literal pools; neither adds standalone data.
 
 Validation used the pinned compiler, direct instruction comparison, `ninja rom
-check`, and `ninja report`. All four units report 100% matching: nine functions,
-516 code bytes and four data bytes. Total denominators remain 2,959,478 code
+check`, and `ninja report`. All six units report 100% matching: eleven functions,
+992 code bytes and four data bytes. Total denominators remain 2,959,478 code
 bytes, 1,602,476 data bytes and 14,790 functions. This is byte-equivalence evidence,
 not a replacement for runtime gameplay validation.
 
