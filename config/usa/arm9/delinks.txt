@@ -552,4 +552,11 @@ src/World/Zone3DCollisionLoading.cpp:
 src/World/Zone3DAnimatedObjects.cpp:
     complete
     .text start:0x020151cc end:0x02015438
-    .rodata start:0x020e6f48 end:0x020e6fa8
+
+src/World/Zone3DModelLoading.cpp:
+    complete
+    .text start:0x02014d80 end:0x02015134
+
+src/World/BMDJAnimationRules.cpp:
+    complete
+    .rodata start:0x020e6f48 end:0x020e700c

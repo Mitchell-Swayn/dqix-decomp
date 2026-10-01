@@ -2,7 +2,6 @@
 
 extern "C"
 {
-    void func_02014d80(Zone3D*, Zone3D_BMDJStruct*, Zone3D_BMDJStruct::ObjectEntry*, Zone3D_BMDJStruct::StructSizeC*);
     void func_020177d4(Zone3D*, Zone3D_BMDJStruct*, SafeAllocator*);
 }
 
@@ -23,7 +22,7 @@ bool Zone3D::BuildBMDJObjects(Zone3D_BMDJStruct* group)
         else if (definition->unk_2 & 0x10)
             LoadBMDJAnimatedObject(entry, definition);
         else
-            func_02014d80(this, group, entry, definition);
+            LoadBMDJModel(group, entry, definition);
     }
     func_020177d4(this, group, allocator);
     return true;

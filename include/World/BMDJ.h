@@ -5,6 +5,7 @@
 
 class Model3D;
 class Object3D;
+class Animation3D;
 
 // sizeof == 0x58
 struct Zone3D_BMDJStruct
@@ -36,7 +37,8 @@ struct Zone3D_BMDJStruct
 
     struct ObjectEntry
     {
-        short id;
+        // -1: invalid, 0: model, 1: collision, 2: animated object.
+        short kind;
         unsigned short flags;
         union
         {
@@ -44,10 +46,10 @@ struct Zone3D_BMDJStruct
             Model3D* model;
             Object3D* object;
         };
-        void* unknown_8;
-        void* unknown_c;
-        void* unknown_10;
-        void* unknown_14;
+        Animation3D* patternAnimation;
+        Animation3D* textureAnimation;
+        Animation3D* materialAnimation;
+        Animation3D* skeletalAnimation;
     };
 
     int unknown_0_;

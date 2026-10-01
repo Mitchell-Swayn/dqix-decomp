@@ -157,6 +157,7 @@ public:
 
     bool ProcessAtmosphericEffects();
     bool BuildBMDJObjects(Zone3D_BMDJStruct* group);
+    bool LoadBMDJModel(Zone3D_BMDJStruct* group, Zone3D_BMDJStruct::ObjectEntry* entry, Zone3D_BMDJStruct::StructSizeC* definition);
     bool LoadBMDJAnimatedObject(Zone3D_BMDJStruct::ObjectEntry* entry, Zone3D_BMDJStruct::StructSizeC* definition);
     bool LoadBMDJCollision(Zone3D_BMDJStruct::ObjectEntry* entry, Zone3D_BMDJStruct::StructSizeC* definition);
 

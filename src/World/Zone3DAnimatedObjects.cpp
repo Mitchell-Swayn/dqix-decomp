@@ -1,4 +1,5 @@
 #include "World/Zone3D.h"
+#include "World/BMDJAnimationRules.h"
 #include "World/Zone3DPaths.h"
 #include "World/MapArchive.h"
 #include "Filesystem/NarcHandle.h"
@@ -14,25 +15,7 @@ extern "C" ZoneTintState* func_0200fd0c(GameState*);
 extern "C" void func_0207df90(void*);
 extern "C" void func_0207dfac(void*);
 
-struct ObjectAnimationRule
-{
-    unsigned int mask;
-    int slot;
-    char extension[8];
-};
-struct ObjectAnimationRules
-{
-    ObjectAnimationRule rules[6];
-};
-extern const ObjectAnimationRules data_020e6f48 =
-{{
-    { 1, 0, "nsbca" },
-    { 2, 1, "nsbma" },
-    { 4, 3, "nsbta" },
-    { 8, 2, "nsbtp" },
-    { 16, -1, "bcfg" },
-    { 0, 0, "" }
-}};
+
 
 bool Zone3D::LoadBMDJAnimatedObject(Zone3D_BMDJStruct::ObjectEntry* entry, Zone3D_BMDJStruct::StructSizeC* definition)
 {
@@ -78,13 +61,13 @@ bool Zone3D::LoadBMDJAnimatedObject(Zone3D_BMDJStruct::ObjectEntry* entry, Zone3
         object = entry->object;
         if (!object || !object->pModel_)
         {
-            entry->id = -1;
+            entry->kind = -1;
             return false;
         }
     }
     else
     {
-        entry->id = -1;
+        entry->kind = -1;
         return false;
     }
     if (object)
@@ -104,6 +87,6 @@ bool Zone3D::LoadBMDJAnimatedObject(Zone3D_BMDJStruct::ObjectEntry* entry, Zone3
                 object->LoadType0AnimationFromPersistentMemory(rule->slot, allocator, animationData, length);
         }
     }
-    entry->id = 2;
+    entry->kind = 2;
     return true;
 }

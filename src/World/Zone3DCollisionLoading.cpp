@@ -23,6 +23,6 @@ bool Zone3D::LoadBMDJCollision(Zone3D_BMDJStruct::ObjectEntry* entry, Zone3D_BMD
         func_0204bf30(entry->unknown_4);
         func_0204bf44(entry->unknown_4, allocator, decompressed, length);
     }
-    entry->id = 1;
+    entry->kind = 1;
     return true;
 }
