@@ -15,3 +15,6 @@ struct ArenaInitializationState
 };
 extern ArenaInitializationState g_arenaInitializationState;
 void InitializeArenas();
+
+void* GetInitialArenaLow(int arenaId);
+void InitializeExtendedArena();
