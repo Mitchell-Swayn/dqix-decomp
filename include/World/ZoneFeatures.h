@@ -243,8 +243,18 @@ public:
 
     void AllocateOpcode6aEntries(int count, SafeAllocator* alloc);
     Opcode6aEntry* CreateOpcode6aEntry(const Opcode6aEntry& data);
-    // not real, just here for testing purposes
-    Opcode6aEntry* CreateOpcode6aEntry(const Opcode6aEntry& data, int fakeArg);
+
+    Opcode68Entry* GetOpcode68Entry(int index);
+    Opcode6aEntry* GetOpcode6aEntry(int index);
+    Opcode6aEntry* FindOpcode6aEntry(int id);
+    Opcode6aEntry* FindType9Entry(int id);
+    Vector3fix GetVector();
+    fix16_t GetAngle();
+    void SetColor(uint16_t color);
+    uint16_t GetColor();
+    Opcode6aEntry* GetTypeEntries(int type);
+    Opcode6aEntry* FindTypeEntry(int type, int id);
+    Opcode7bEntry* FindContainingEntry(const Vector3fix* point);
 
     void SetOpcode7bAllocation(Opcode7bEntry* array, unsigned short capacity);
     void CreateOpcode7bEntry(const Opcode7bEntry& data);

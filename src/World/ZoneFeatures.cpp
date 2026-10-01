@@ -245,6 +245,14 @@ void ZoneFeatures::Opcode68Entry::Reset()
     unk_6c = -1;
 }
 
+// USA: 0x0201ce78
+extern "C" void InitializeFeatureVector(Vector3fix* vector, fix32_t x, fix32_t y, fix32_t z)
+{
+    vector->x = x;
+    vector->y = y;
+    vector->z = z;
+}
+
 int WarpScript_Opcode_72(Script::Parameter* params, int numParams)
 {
     Script::Parameter* paramsStart = params;
@@ -887,6 +895,13 @@ void ZoneFeatures::AllocateOpcode68Entries(int count, SafeAllocator* alloc)
     arrayCapacity68_ = count;
 }
 
+ZoneFeatures::Opcode68Entry* ZoneFeatures::GetOpcode68Entry(int index)
+{
+    if (index < 0 || arraySize68_ <= index)
+        return NULL;
+    return &entries68_[index];
+}
+
 void ZoneFeatures::CreateOpcode68Entry(const Opcode68Entry& source) 
 {
     if (arraySize68_ >= arrayCapacity68_)
@@ -912,6 +927,38 @@ void ZoneFeatures::AllocateOpcode6aEntries(int count, SafeAllocator *alloc)
     entries6a_ = (Opcode6aEntry*)alloc->Allocate(count * sizeof(Opcode6aEntry));
     arraySize6a_ = 0;
     arrayCapacity6a_ = count;
+}
+
+ZoneFeatures::Opcode6aEntry* ZoneFeatures::GetOpcode6aEntry(int index)
+{
+    if (index < 0 || arraySize6a_ <= index)
+        return NULL;
+    return &entries6a_[index];
+}
+
+ZoneFeatures::Opcode6aEntry* ZoneFeatures::FindOpcode6aEntry(int id)
+{
+    if (id < 0)
+        return NULL;
+    Opcode6aEntry* entry = entries6a_;
+    for (int i = 0; i < arraySize6a_; i++, entry++)
+        if (entry->unk_0 == id)
+            return entry;
+    return NULL;
+}
+
+ZoneFeatures::Opcode6aEntry* ZoneFeatures::FindType9Entry(int id)
+{
+    if (id < 0)
+        return NULL;
+    Opcode6aEntry* entry = entries6aByType_[9];
+    while (entry != NULL)
+    {
+        if (entry->maybeType == 9 && entry->unk_2c.type9.unk_0 == id)
+            return entry;
+        entry = entry->pNext;
+    }
+    return NULL;
 }
 
 ZoneFeatures::Opcode6aEntry* ZoneFeatures::CreateOpcode6aEntry(const Opcode6aEntry& source) 
@@ -946,6 +993,30 @@ ZoneFeatures::Opcode6aEntry* ZoneFeatures::CreateOpcode6aEntry(const Opcode6aEnt
     return NULL;
 }
 
+Vector3fix ZoneFeatures::GetVector() { return vector_70_; }
+fix16_t ZoneFeatures::GetAngle() { return angle_7c_; }
+void ZoneFeatures::SetColor(uint16_t color) { color_7e_ = color; }
+uint16_t ZoneFeatures::GetColor() { return color_7e_; }
+
+ZoneFeatures::Opcode6aEntry* ZoneFeatures::GetTypeEntries(int type)
+{
+    return entries6aByType_[type];
+}
+
+ZoneFeatures::Opcode6aEntry* ZoneFeatures::FindTypeEntry(int type, int id)
+{
+    if (id < 0)
+        return NULL;
+    Opcode6aEntry* entry = entries6aByType_[type];
+    while (entry != NULL)
+    {
+        if (entry->unk_0 == id)
+            return entry;
+        entry = entry->pNext;
+    }
+    return entry;
+}
+
 void ZoneFeatures::SetOpcode7bAllocation(Opcode7bEntry* array, unsigned short capacity)
 {
     entries7b_ = array;
@@ -966,4 +1037,40 @@ void ZoneFeatures::CreateOpcode7bEntry(const Opcode7bEntry& source)
     dest.minZ = source.minZ;
     dest.maxX = source.maxX;
     dest.maxZ = source.maxZ;
+}
+struct FeatureBounds
+{
+    Vector3fix maximum;
+    Vector3fix minimum;
+};
+extern "C" bool func_02031118(const Vector3fix* point, const FeatureBounds* bounds);
+
+// Test the coarse X/Z bounds, then undo the feature rotation for its 3D box.
+ZoneFeatures::Opcode7bEntry* ZoneFeatures::FindContainingEntry(const Vector3fix* point)
+{
+    for (int i = 0; i < arraySize7b_; i++)
+    {
+        Opcode7bEntry* entry = &entries7b_[i];
+        if (point->x < entry->minX || point->z < entry->minZ ||
+            point->x > entry->maxX || point->z > entry->maxZ)
+            continue;
+        Vector3fix local;
+        Vector3fix_Subtract(point, &entry->vector_0.vec, &local);
+        Matrix4x3 rotation;
+        rotation = RotationMatrixY(fix32ReduceAngle0To2Pi(-entry->unk_18));
+        Mat4x3_ApplyToVector(&local, &rotation, &local);
+        Vector3fix_Add(&local, &entry->vector_0.vec, &local);
+        FeatureBounds bounds;
+        InitializeFeatureVector(&bounds.minimum,
+            entry->vector_0.vec.x - entry->vector_c.vec.x / 2,
+            entry->vector_0.vec.y - entry->vector_c.vec.y / 2,
+            entry->vector_0.vec.z - entry->vector_c.vec.z / 2);
+        InitializeFeatureVector(&bounds.maximum,
+            entry->vector_0.vec.x + entry->vector_c.vec.x / 2,
+            entry->vector_0.vec.y + entry->vector_c.vec.y / 2,
+            entry->vector_0.vec.z + entry->vector_c.vec.z / 2);
+        if (func_02031118(&local, &bounds))
+            return entry;
+    }
+    return NULL;
 }
