@@ -194,6 +194,27 @@
       }
     },
     {
+      "name": "ThreadLists",
+      "source": "config/usa/arm7/src/ThreadLists.c",
+      "autoload": "wram",
+      "runtime_address": 58704120,
+      "payload_offset": 17172,
+      "size": 420,
+      "code_bytes": 412,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_InsertBlockedThread",
+      "symbols": {
+        "ARM7_InsertBlockedThread": 58704120,
+        "ARM7_RemoveBlockedThread": 58704240,
+        "ARM7_PopFrontMutexFromList": 58704328,
+        "ARM7_InsertThreadGlobal": 58704376,
+        "ARM7_RemoveThreadGlobal": 58704472
+      },
+      "externals": {
+        "ARM7_ThreadGlobals": 58757036
+      }
+    },
+    {
       "name": "Alarms",
       "source": "config/usa/arm7/src/Alarms.c",
       "autoload": "wram",
