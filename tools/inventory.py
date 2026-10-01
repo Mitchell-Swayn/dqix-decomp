@@ -168,9 +168,10 @@ def arm7_components(root, payload, load_address):
         if any(first < b and a < last for a, b in ranges):
             raise ValueError('ARM7 source unit overlap')
         ranges.append((first, last))
-        owned_bytes = unit['code_bytes'] + unit['literal_pool_bytes'] + unit.get('reviewed_assembly_bytes', 0)
+        owned_bytes = (unit['code_bytes'] + unit['literal_pool_bytes'] +
+                       unit.get('data_bytes', 0) + unit.get('reviewed_assembly_bytes', 0))
         if owned_bytes != unit['size'] or min(unit['code_bytes'], unit['literal_pool_bytes'],
-                                             unit.get('reviewed_assembly_bytes', 0)) < 0:
+                                             unit.get('data_bytes', 0), unit.get('reviewed_assembly_bytes', 0)) < 0:
             raise ValueError('ARM7 source unit ownership does not cover its payload range')
         if 'bss' in unit:
             bss = unit['bss']
@@ -219,10 +220,13 @@ def arm7_components(root, payload, load_address):
     expected = {
         'source_code_bytes': sum(u['code_bytes'] for u in config['units']),
         'source_literal_pool_bytes': sum(u['literal_pool_bytes'] for u in config['units']),
+        'source_data_bytes': sum(u.get('data_bytes', 0) for u in config['units']),
+        'source_functions': sum(len(u['symbols']) for u in config['units'] if u['code_bytes'] > 0),
+        'reviewed_assembly_functions': sum(len(u['symbols']) for u in config['units'] if u.get('reviewed_assembly_bytes', 0)),
         'binary_fallback_bytes': len(payload) - sum(u['size'] for u in config['units']),
         'reviewed_assembly_bytes': sum(u.get('reviewed_assembly_bytes', 0) for u in config['units']),
     }
-    if any(report[k] != v for k, v in expected.items()):
+    if any(report.get(k, 0) != v for k, v in expected.items()):
         raise ValueError('ARM7 source report counters do not reconcile')
     if sum(report[k] for k in ('source_code_bytes', 'source_literal_pool_bytes', 'source_data_bytes',
                               'reviewed_assembly_bytes', 'binary_fallback_bytes')) != len(payload):
@@ -245,6 +249,8 @@ def arm7_components(root, payload, load_address):
     for part in parts:
         part['measured_reconstructed_bytes'] = sum(u['size'] for u in part['source_units'])
         part['reviewed_assembly_bytes'] = sum(u.get('reviewed_assembly_bytes', 0) for u in part['source_units'])
+        part['source_data_bytes'] = sum(u.get('data_bytes', 0) for u in part['source_units'])
+        part['source_code_bytes'] = sum(u['code_bytes'] for u in part['source_units'])
         part['measured_c_cpp_bytes'] = part['measured_reconstructed_bytes'] - part['reviewed_assembly_bytes']
         part['source_bss_bytes'] = sum(u.get('bss', {}).get('size', 0) for u in part['source_units'])
         part['binary_fallback_bytes'] = part['initialized_size'] - part['measured_reconstructed_bytes']

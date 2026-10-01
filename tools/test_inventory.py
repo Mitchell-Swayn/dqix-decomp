@@ -58,7 +58,8 @@ class InventoryTests(unittest.TestCase):
         config = dict(startup_size=24, autoload_parameters_offset=0, autoload_table_offset=32,
             autoloads=[dict(name='wram', payload_offset=24, runtime_address=0x3000, size=8, bss_size=4)],
             units=[dict(name='f', source='f.c', autoload='wram', runtime_address=0x3000,
-                        payload_offset=24, size=4, code_bytes=4, literal_pool_bytes=0)])
+                        payload_offset=24, size=4, code_bytes=4, literal_pool_bytes=0,
+                        symbols={'f': 0x3000})])
         payload = struct.pack('<6I', 0x1020, 0x102c, 0x1018, 0x1018, 0x1018, 0)
         payload += b'codeDATA' + struct.pack('<3I', 0x3000, 8, 4)
         path = root / 'config/usa/arm7/source_units.json'
@@ -147,6 +148,26 @@ class InventoryTests(unittest.TestCase):
             config['units'][0]['bss'] = dict(runtime_address=0x300a, size=4, symbols={})
             path.write_text(json.dumps(config))
             with self.assertRaisesRegex(ValueError, 'BSS outside'):
+                arm7_components(root, payload, 0x1000)
+
+    def test_arm7_initialized_data_is_not_function_coverage(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            payload = self.arm7_fixture(root, True)
+            config_path = root / 'config/usa/arm7/source_units.json'
+            report_path = root / 'build/usa/arm7/report.json'
+            config, report = json.loads(config_path.read_text()), json.loads(report_path.read_text())
+            for unit in (config['units'][0], report['units'][0]):
+                unit.update(code_bytes=0, data_bytes=4)
+            report.update(source_code_bytes=0, source_data_bytes=4, source_functions=0)
+            config_path.write_text(json.dumps(config))
+            report_path.write_text(json.dumps(report))
+            result = arm7_components(root, payload, 0x1000)
+            self.assertEqual(result['subcomponents'][1]['source_data_bytes'], 4)
+            self.assertEqual(result['source_build_report']['measures']['source_functions'], 0)
+            report['source_functions'] = 1
+            report_path.write_text(json.dumps(report))
+            with self.assertRaisesRegex(ValueError, 'counters do not reconcile'):
                 arm7_components(root, payload, 0x1000)
 
 

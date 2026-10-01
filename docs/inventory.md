@@ -85,9 +85,17 @@ to the parent payload's 167,876 bytes. The complete ARM7 code/data/function
 boundaries and objdiff coverage remain unknown. Do not interpret null ARM7 objdiff
 coverage as zero total code, or quote the ARM9 percentage as whole-game coverage.
 
-Header enumeration cannot detect native code disguised as assets. Asset archives,
-script/bytecode formats, interpreter dispatch and payload ownership still need an
-audit. Program data, padding and embedded constants inside code sections require
+ARM7 source units partition initialized ownership into C instruction bytes,
+literal pools, initialized data and reviewed assembly. A data-only unit's symbols
+are never counted as functions. Source-owned BSS remains a separate runtime
+allocation measure and does not reduce initialized payload fallback. The inventory
+reconciles these categories, function counts and per-autoload totals against the
+source manifest and verified report.
+
+Header enumeration cannot detect native code disguised as assets. The expanding
+[asset audit](ASSETS.md) decodes NARC, GPC2 and source-backed compressed map members,
+but opaque formats and additional interpreters still need investigation.
+Program data, padding and embedded constants inside code sections require
 further analysis. The known-module inventory therefore does not satisfy the final
 goal of inventorying every executable range on the cartridge.
 
