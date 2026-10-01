@@ -1,10 +1,10 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **40 C
-functions: 3,480 instruction bytes plus 224 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **44 C
+functions: 3,932 instruction bytes plus 268 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
-184 bytes of BSS now have source definitions. The other 164,052 payload bytes
+184 bytes of BSS now have source definitions. The other 163,556 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -18,10 +18,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 3,480 / 224 bytes |
+| Reconstructed C instructions / compiler literal pools | 3,932 / 268 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 0 / 120 bytes |
 | Reconstructed BSS / total autoload BSS | 184 / 22,744 bytes |
-| Binary fallback | 164,052 bytes |
+| Binary fallback | 163,556 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -84,7 +84,7 @@ observed operation. The conditional 16-bit narrowing in the original code is
 reproduced with an unsigned-short accumulator and return type.
 
 `src/BitCount.c` reconstructs runtime range `[0x03803f28, 0x03803f6c)` from
-payload range `[0xc224, 0xc188)`: a population count using parallel bit summation.
+payload range `[0xc268, 0xc188)`: a population count using parallel bit summation.
 Its 56 instruction bytes and three 32-bit literal masks match exactly.
 
 `src/ArenaBounds.c` reconstructs runtime range `[0x037fce88, 0x037fcfd4)` from
@@ -173,9 +173,20 @@ instruction bytes and 16 literal bytes. Its 20-byte state at
 `[0x03809170, 0x03809184)` holds initialization, last scanline, frame count,
 and list endpoints. Sorting compares unsigned frame numbers and signed scanlines;
 removal repairs both endpoints. The hardware arming routine at `0x037fdff0`
-remains fallback. Field `unknown32` stays descriptive rather than speculative.
+is reconstructed by the setup unit. Field `unknown32` stays descriptive rather than speculative.
 The frame/last-scanline interpretation is corroborated by the wrap detector at
 `0x037fe30c` (increments frame when the current scanline is below the prior one).
+
+`src/VerticalAlarmSetup.c` reconstructs one-shot and periodic scanline-alarm
+registration and DISPSTAT programming at `[0x037fdea0, 0x037fe04c)` (payload
+`[0x60bc, 0x6268)`), with 388 C instruction bytes and 40 literal bytes.
+It preserves native diagnostic line constants 0x189/0x1c5 and references the
+binary-owned file/error strings at `0x03808c4c` / `0x03808c58`. IRQ handler
+registration (`0x037fb7f0`), panic (`0x037fbf30`) and the vertical-alarm interrupt
+entry (`0x037fe15c`) remain binary dependencies. DISPSTAT accesses are volatile C.
+`src/VerticalFrame.c` reconstructs `[0x037fe30c, 0x037fe350)` (payload
+`[0x6528, 0x656c)`): 64 instruction bytes and 4 literal bytes for IRQ-protected
+VCOUNT wrap tracking. Both units reuse existing source-owned vertical-alarm state.
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C

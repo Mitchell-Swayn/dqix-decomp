@@ -113,6 +113,53 @@
       }
     },
     {
+      "name": "VerticalFrame",
+      "source": "config/usa/arm7/src/VerticalFrame.c",
+      "autoload": "wram",
+      "runtime_address": 58712844,
+      "payload_offset": 25896,
+      "size": 68,
+      "code_bytes": 64,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_UpdateVerticalFrame",
+      "symbols": {
+        "ARM7_UpdateVerticalFrame": 58712844
+      },
+      "externals": {
+        "ARM7_VerticalAlarmState": 58757488,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952
+      }
+    },
+    {
+      "name": "VerticalAlarmSetup",
+      "source": "config/usa/arm7/src/VerticalAlarmSetup.c",
+      "autoload": "wram",
+      "runtime_address": 58711712,
+      "payload_offset": 24764,
+      "size": 428,
+      "code_bytes": 388,
+      "literal_pool_bytes": 40,
+      "entry": "ARM7_SetVerticalTimeout",
+      "symbols": {
+        "ARM7_SetVerticalTimeout": 58711712,
+        "ARM7_SetVerticalInterval": 58711880,
+        "ARM7_ArmVerticalAlarm": 58712048
+      },
+      "externals": {
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_UpdateVerticalFrame": 58712844,
+        "ARM7_Panic": 58703664,
+        "ARM7_VerticalAlarmFile": 58756172,
+        "ARM7_VerticalAlarmError": 58756184,
+        "ARM7_InsertVerticalAlarm": 58711472,
+        "ARM7_SetInterruptHandler": 58701808,
+        "ARM7_VerticalAlarmInterrupt": 58712412,
+        "ARM7_EnableSpecificInterrupts": 58702116
+      }
+    },
+    {
       "name": "Interrupts",
       "source": "config/usa/arm7/src/Interrupts.c",
       "autoload": "wram",
