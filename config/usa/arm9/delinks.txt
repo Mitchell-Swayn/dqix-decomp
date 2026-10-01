@@ -441,3 +441,7 @@ src/System/VectorMath.cpp:
 src/System/VectorDistance.cpp:
     complete
     .text start:0x020c3030 end:0x020c30ac
+
+src/System/FixedPointMath.cpp:
+    complete
+    .text start:0x020c2bf4 end:0x020c2d90

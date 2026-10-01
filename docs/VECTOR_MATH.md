@@ -34,6 +34,28 @@ allocation without adding instructions or assembly. Total reconstructed coverage
 across these source units is six functions and 516 objdiff code bytes. The intervening
 normalization range remains explicitly outside the source mapping.
 
+`FixedPointMath.cpp` reconstructs the adjacent nine hardware arithmetic helpers
+at `[0x020c2bf4, 0x020c2d90)`, adding 412 matching objdiff code bytes (including
+52 bytes of compiler literal pools). These implement fixed-point quotient and
+square-root setup/result conversion, reciprocal setup, full divider-result read,
+and integer quotient/remainder. The asynchronous helpers preserve the original
+register modes, operand widths and polling. Fixed-point results add their original
+rounding constants before shifting; negative/zero square-root input returns zero.
+Division error handling and interrupt synchronization are not added.
+
+The full divider-result accessor uses a non-volatile result read after polling the
+volatile busy flag, reproducing the original single register-pair load. Other
+result accessors retain the observed separate loads. The MMIO addresses are
+compiler-generated literal pools, not copied binary fallbacks or global data.
+`Object3D`, `AtmosphericEffect`, and `ExtendedVectorMath` callers use fixed-point
+division for animation timing, effect scaling and vector/angle operations.
+
+The hardware-helper milestone passed `ninja rom check` and `ninja report` in the
+same isolated worktree. All nine functions match after linking, including calls
+between newly reconstructed helpers; the entire ARM9 module/symbol verification
+also passed. Across the three source units this work now covers 15 functions and
+928 matching report bytes, without reducing any denominator.
+
 Validation in the isolated `work/vectors` worktree used the pinned compiler and
 ran `ninja rom check`, then `ninja report`. ARM9 main, both autoloads, all 35
 overlays, symbol checks and the independent ARM7 checks passed. Each compiled

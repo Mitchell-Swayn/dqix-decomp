@@ -228,7 +228,7 @@ extern "C"
     // usa: func_020c2c38
     int64_t GetHardwareDividerResult();
     // usa: func_020c2c5c
-    // gets the hardware divider result right shifted 20 places.
+    // Waits for completion, adds 0x80000, then shifts the result right 20 places.
     // use this in conjunction with fix32_QueueComputeReciprocal
     // or fix32_QueueComputeQuotient for async division of fix32 values.
     fix32_t fix32_GetDivisionResult();
@@ -242,7 +242,7 @@ extern "C"
 
     // usa: func_020c2cc4
     // not used outside of this library
-    // gets the hardware sqrt result right shifted 10 places.
+    // Waits for completion, adds 0x200, then shifts the result right 10 places.
     fix32_t fix32_GetSqrtResult();
     // usa: func_020c2cf0
     // primes the hardware divider to compute the integer (2^32*a) / b, where
