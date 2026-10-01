@@ -70,6 +70,25 @@
       "externals": {}
     },
     {
+      "name": "DmaControl",
+      "source": "config/usa/arm7/src/DmaControl.c",
+      "autoload": "wram",
+      "runtime_address": 58713344,
+      "payload_offset": 26396,
+      "size": 236,
+      "code_bytes": 228,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_AwaitDmaCompletion",
+      "symbols": {
+        "ARM7_AwaitDmaCompletion": 58713344,
+        "ARM7_ResetDmaChannel": 58713452
+      },
+      "externals": {
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952
+      }
+    },
+    {
       "name": "Alarms",
       "source": "config/usa/arm7/src/Alarms.c",
       "autoload": "wram",
