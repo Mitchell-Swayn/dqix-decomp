@@ -63,6 +63,27 @@
       }
     },
     {
+      "name": "AlarmHandler",
+      "source": "config/usa/arm7/src/AlarmHandler.c",
+      "autoload": "wram",
+      "runtime_address": 58711136,
+      "payload_offset": 24188,
+      "size": 244,
+      "code_bytes": 232,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_HandleTimer1Overflow",
+      "symbols": {
+        "ARM7_HandleTimer1Overflow": 58711136
+      },
+      "externals": {
+        "ARM7_ActiveAlarmList": 58757476,
+        "ARM7_GetCurrentTimestamp": 58710008,
+        "ARM7_DisableSpecificInterrupts": 58702172,
+        "ARM7_MarkNextAlarmToSound": 58710172,
+        "ARM7_RegisterAlarm": 58710412
+      }
+    },
+    {
       "name": "Interrupts",
       "source": "config/usa/arm7/src/Interrupts.c",
       "autoload": "wram",
