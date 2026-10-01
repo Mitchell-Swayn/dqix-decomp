@@ -31,6 +31,15 @@ The complete ARM7 instruction/data/function denominator remains unknown even whe
 some source units match. This positive source accounting does not estimate a
 whole-cartridge percentage.
 
+ARM7 reviewed assembly has its own byte/function counts; it is not included in
+the C/C++ byte count. The inventory requires an unchanged, hashed exception record
+for any unit claiming reviewed assembly coverage. Child `measured_reconstructed_bytes`
+contains both categories, while `measured_c_cpp_bytes` and `reviewed_assembly_bytes`
+separate them. `source_bss_bytes` describes owned zero-initialized runtime storage
+outside the cartridge payload. BSS ownership must fit the containing autoload's
+zero-fill range and must not overlap other source BSS; source, total, and
+unreconstructed BSS reconcile separately from payload counters.
+
 `inventory-usa-baseline.json` records the initial metadata and module counters.
 `inventory-usa-report.json.gz` is the complete initial objdiff JSON, archived with
 deterministic gzip metadata; its decompressed SHA-256 is recorded in the inventory.

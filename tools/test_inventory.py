@@ -110,6 +110,45 @@ class InventoryTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'descriptor differs'):
                 arm7_components(root, payload, 0x1000)
 
+    def test_reviewed_assembly_and_bss_are_separate_from_c_code(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            payload = self.arm7_fixture(root, True)
+            config_path = root / 'config/usa/arm7/source_units.json'
+            report_path = root / 'build/usa/arm7/report.json'
+            config, report = json.loads(config_path.read_text()), json.loads(report_path.read_text())
+            (root / 'exception.json').write_bytes(b'reviewed')
+            for unit in (config['units'][0], report['units'][0]):
+                unit.update(code_bytes=0, reviewed_assembly_bytes=4, assembly_exception='exception.json',
+                            bss=dict(runtime_address=0x3008, size=4, symbols={'test_bss': 0x3008}))
+            report['units'][0]['assembly_exception_sha1'] = hashlib.sha1(b'reviewed').hexdigest()
+            report.update(source_code_bytes=0, reviewed_assembly_bytes=4, source_functions=0,
+                          reviewed_assembly_functions=1, source_bss_bytes=4, total_bss_bytes=4,
+                          unreconstructed_bss_bytes=0)
+            config_path.write_text(json.dumps(config))
+            report_path.write_text(json.dumps(report))
+            result = arm7_components(root, payload, 0x1000)
+            autoload = result['subcomponents'][1]
+            self.assertEqual(autoload['measured_c_cpp_bytes'], 0)
+            self.assertEqual(autoload['reviewed_assembly_bytes'], 4)
+            self.assertEqual(autoload['source_bss_bytes'], 4)
+            self.assertEqual(sum(p['initialized_size'] for p in result['subcomponents']), 44)
+            self.assertEqual(result['source_build_report']['bss_measures']['total_bss_bytes'], 4)
+            (root / 'exception.json').write_bytes(b'changed')
+            with self.assertRaisesRegex(ValueError, 'exception changed'):
+                arm7_components(root, payload, 0x1000)
+
+    def test_arm7_bss_outside_autoload_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            payload = self.arm7_fixture(root)
+            path = root / 'config/usa/arm7/source_units.json'
+            config = json.loads(path.read_text())
+            config['units'][0]['bss'] = dict(runtime_address=0x300a, size=4, symbols={})
+            path.write_text(json.dumps(config))
+            with self.assertRaisesRegex(ValueError, 'BSS outside'):
+                arm7_components(root, payload, 0x1000)
+
 
 if __name__ == "__main__":
     unittest.main()

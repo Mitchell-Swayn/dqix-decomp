@@ -155,7 +155,7 @@ def arm7_components(root, payload, load_address):
         part['sha256'] = digest(bounded(payload, part['payload_offset'], part['initialized_size']))
         part['source_units'] = []
     owners = {p['name']: p for p in parts if p['kind'] == 'autoload'}
-    ranges = []
+    ranges, bss_ranges = [], []
     for unit in config['units']:
         owner = owners.get(unit['autoload'])
         if owner is None:
@@ -168,6 +168,19 @@ def arm7_components(root, payload, load_address):
         if any(first < b and a < last for a, b in ranges):
             raise ValueError('ARM7 source unit overlap')
         ranges.append((first, last))
+        owned_bytes = unit['code_bytes'] + unit['literal_pool_bytes'] + unit.get('reviewed_assembly_bytes', 0)
+        if owned_bytes != unit['size'] or min(unit['code_bytes'], unit['literal_pool_bytes'],
+                                             unit.get('reviewed_assembly_bytes', 0)) < 0:
+            raise ValueError('ARM7 source unit ownership does not cover its payload range')
+        if 'bss' in unit:
+            bss = unit['bss']
+            first_bss, last_bss = bss['runtime_address'], bss['runtime_address'] + bss['size']
+            owner_bss = owner['runtime_address'] + owner['initialized_size']
+            if not owner_bss <= first_bss < last_bss <= owner_bss + owner['bss_size']:
+                raise ValueError('ARM7 source BSS outside autoload BSS range')
+            if any(first_bss < b and a < last_bss for a, b in bss_ranges):
+                raise ValueError('ARM7 source BSS overlap')
+            bss_ranges.append((first_bss, last_bss))
         owner['source_units'].append(unit)
     result = dict(subcomponents=parts,
         source_coverage='independent source pipeline; see source_build_report',
@@ -192,6 +205,13 @@ def arm7_components(root, payload, load_address):
         original = bounded(payload, declared['payload_offset'], declared['size'])
         if measured['source_sha1'] != hashlib.sha1(source).hexdigest():
             raise ValueError('ARM7 source changed since report; rebuild')
+        if declared.get('reviewed_assembly_bytes', 0):
+            exception_path = declared.get('assembly_exception')
+            if not exception_path:
+                raise ValueError('ARM7 assembly unit lacks reviewed exception record')
+            exception = (root / exception_path).read_bytes()
+            if measured.get('assembly_exception_sha1') != hashlib.sha1(exception).hexdigest():
+                raise ValueError('ARM7 assembly exception changed since report; rebuild')
         if measured['linked_sha1'] != hashlib.sha1(original).hexdigest():
             raise ValueError('ARM7 linked source bytes differ from original')
         if not measured['module_check_passed'] or not measured['symbol_check_passed']:
@@ -200,20 +220,34 @@ def arm7_components(root, payload, load_address):
         'source_code_bytes': sum(u['code_bytes'] for u in config['units']),
         'source_literal_pool_bytes': sum(u['literal_pool_bytes'] for u in config['units']),
         'binary_fallback_bytes': len(payload) - sum(u['size'] for u in config['units']),
+        'reviewed_assembly_bytes': sum(u.get('reviewed_assembly_bytes', 0) for u in config['units']),
     }
     if any(report[k] != v for k, v in expected.items()):
         raise ValueError('ARM7 source report counters do not reconcile')
     if sum(report[k] for k in ('source_code_bytes', 'source_literal_pool_bytes', 'source_data_bytes',
                               'reviewed_assembly_bytes', 'binary_fallback_bytes')) != len(payload):
         raise ValueError('ARM7 payload ownership counters do not cover parent bytes')
+    source_bss = sum(u.get('bss', {}).get('size', 0) for u in config['units'])
+    total_bss = sum(a['bss_size'] for a in autoloads)
+    if report.get('source_bss_bytes', 0) != source_bss:
+        raise ValueError('ARM7 source BSS counter differs from ownership ranges')
+    if 'total_bss_bytes' in report and (report['total_bss_bytes'] != total_bss or
+            report['unreconstructed_bss_bytes'] != total_bss - source_bss):
+        raise ValueError('ARM7 BSS counters do not reconcile')
     result['source_build_report'] = dict(path='build/usa/arm7/report.json', sha256=digest(report_bytes),
         measures={k: report[k] for k in ('source_code_bytes', 'source_literal_pool_bytes',
             'source_data_bytes', 'source_functions', 'binary_fallback_bytes', 'reviewed_assembly_bytes',
             'function_count', 'code_data_partition')},
-        compiler_sha1=report['compiler_sha1'], linker_sha1=report['linker_sha1'])
+        compiler_sha1=report['compiler_sha1'], linker_sha1=report['linker_sha1'],
+        bss_measures=dict(source_bss_bytes=source_bss, total_bss_bytes=total_bss,
+                          unreconstructed_bss_bytes=total_bss-source_bss),
+        reviewed_assembly_functions=report.get('reviewed_assembly_functions', 0))
     for part in parts:
-        part['measured_source_bytes'] = sum(u['size'] for u in part['source_units'])
-        part['binary_fallback_bytes'] = part['initialized_size'] - part['measured_source_bytes']
+        part['measured_reconstructed_bytes'] = sum(u['size'] for u in part['source_units'])
+        part['reviewed_assembly_bytes'] = sum(u.get('reviewed_assembly_bytes', 0) for u in part['source_units'])
+        part['measured_c_cpp_bytes'] = part['measured_reconstructed_bytes'] - part['reviewed_assembly_bytes']
+        part['source_bss_bytes'] = sum(u.get('bss', {}).get('size', 0) for u in part['source_units'])
+        part['binary_fallback_bytes'] = part['initialized_size'] - part['measured_reconstructed_bytes']
     return result
 
 
