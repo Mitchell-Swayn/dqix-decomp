@@ -1,8 +1,8 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **five
-functions: 208 instruction bytes plus 16 bytes of literal pools**. The other 167,652
+console ARM7 BIOS. The independent source build currently reconstructs **eight
+functions: 412 instruction bytes plus 44 bytes of literal pools**. The other 167,420
 bytes remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -16,9 +16,9 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 208 / 16 bytes |
+| Reconstructed C instructions / compiler literal pools | 412 / 44 bytes |
 | Reconstructed standalone data / reviewed assembly | 0 / 0 bytes |
-| Binary fallback | 167,652 bytes |
+| Binary fallback | 167,420 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -84,12 +84,22 @@ reproduced with an unsigned-short accumulator and return type.
 payload range `[0xc144, 0xc188)`: a population count using parallel bit summation.
 Its 56 instruction bytes and three 32-bit literal masks match exactly.
 
-`src/ArenaBounds.c` reconstructs runtime range `[0x037fce88, 0x037fceec)` from
-payload range `[0x50a4, 0x5108)`: arena initialization and low/high boundary
-getters. These three functions access shared boundary arrays at `0x027ffdc4`
-and `0x027ffda0`. The two initial-boundary selection functions at `0x037fceec`
-and `0x037fcf68` remain explicitly declared, address-linked fallback dependencies.
-The 100-byte source unit includes no literal pool or standalone data ownership.
+`src/ArenaBounds.c` reconstructs runtime range `[0x037fce88, 0x037fcfd4)` from
+payload range `[0x50a4, 0x51f0)`: arena initialization, high/low getters, initial
+high/low selection and the low-bound setter. These six functions access shared
+HIGH boundaries at `0x027ffdc4` and LOW boundaries at `0x027ffda0`. Initial bounds
+establish that direction: the main-RAM interval begins at BSS end `0x027f98c4`
+and ends at `0x027ff000`. The initial accessors' earlier low/high names were
+reversed; source and symbol names have been corrected without changing bytes.
+
+Initial-boundary selection is now source, so there are no remaining binary
+function dependencies in this unit. Four absolute linker symbols describe the
+two BSS ends and the IRQ/system stack sizes (both `0x400` for USA). They are
+link-time values, not reconstructed globals. Shared boundary storage remains
+outside this source unit's data ownership. The unit owns 304 instruction bytes
+and 28 literal-pool bytes. IRQ stack end `0x0380ff80` is a fixed address; retaining
+stack sizes as linker symbols reproduces the original calculations and literal
+order without folding the entire expression into a constant.
 
 `arm7_build.py` compiles each declared unit with `mwccarm` targeting `arm7tdmi`,
 links it at its actual runtime address with `mwldarm`, reads its linked ELF,
@@ -99,6 +109,10 @@ other payload bytes are retained explicitly as fallback. The linked replacement
 is used in the packaged ROM through a generated sibling ROM configuration.
 Declared source functions are forced active when linking, so every function in a
 multi-function unit remains present; C++ exception tables are disabled.
+The compiler object is also checked before linking: every nonempty allocated
+input section must be `.text`, and their sizes must sum to the declared unit.
+Unexpected data/BSS or discarded code therefore fails instead of disappearing
+silently from the source-ownership accounting.
 
 This is a source-slice pipeline, not full ARM7 delinking. Add coherent source
 units and their verified extents to `source_units.json`. Unit `externals` can

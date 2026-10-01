@@ -67,7 +67,9 @@ def read_elf(path):
             for offset in range(0, len(entries), 16):
                 name_offset, value, size, info, other, index = struct.unpack_from("<IIIBBH", entries, offset)
                 name = string(strings, name_offset)
-                if name and index:
+                # MWLD may retain SHN_UNDEF for an LCF-assigned absolute symbol
+                # while correctly resolving its nonzero st_value and references.
+                if name and (index or value):
                     symbols[name] = value
     return allocated, symbols
 
@@ -148,6 +150,10 @@ def build(args):
         output.mkdir(parents=True, exist_ok=True)
         source = root / unit["source"]
         subprocess.run([*runner, str(compiler), *CC_FLAGS, "-c", str(source), "-o", str(output / f"{name}.o")], check=True)
+        compiled_sections, _ = read_elf(output / f"{name}.o")
+        if (any(section_name != ".text" for section_name, _, _ in compiled_sections)
+                or sum(len(data) for _, _, data in compiled_sections) != unit["size"]):
+            raise ValueError(f"{name}: unsupported input section or unaccounted compiled bytes")
         externals = "\n".join(f"    {symbol} = 0x{address:08x};" for symbol, address in unit["externals"].items())
         lcf = (f"MEMORY {{ ARM7 : ORIGIN = 0x{unit['runtime_address']:08x} }}\n"
                f"SECTIONS {{\n{externals}\n    .arm7 : {{ {name}.o(.text) }} > ARM7\n}}\n")

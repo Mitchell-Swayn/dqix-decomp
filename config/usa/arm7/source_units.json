@@ -14,18 +14,23 @@
       "autoload": "wram",
       "runtime_address": 58707592,
       "payload_offset": 20644,
-      "size": 100,
-      "code_bytes": 100,
-      "literal_pool_bytes": 0,
+      "size": 332,
+      "code_bytes": 304,
+      "literal_pool_bytes": 28,
       "entry": "ARM7_InitializeArena",
       "symbols": {
         "ARM7_InitializeArena": 58707592,
-        "ARM7_GetArenaLow": 58707652,
-        "ARM7_GetArenaHigh": 58707672
+        "ARM7_GetArenaHigh": 58707652,
+        "ARM7_GetArenaLow": 58707672,
+        "ARM7_GetInitialArenaHigh": 58707692,
+        "ARM7_GetInitialArenaLow": 58707816,
+        "ARM7_SetArenaLow": 58707904
       },
       "externals": {
-        "ARM7_GetInitialArenaLow": 58707692,
-        "ARM7_GetInitialArenaHigh": 58707816
+        "ARM7_IrqStackSize": 1024,
+        "ARM7_SystemStackSize": 1024,
+        "ARM7_WramBssEnd": 58772900,
+        "ARM7_MainRamBssEnd": 41916612
       }
     },
     {
