@@ -1,4 +1,5 @@
 #include "World/Zone3D.h"
+#include "World/Zone3DPaths.h"
 #include "GameState/GameState.h"
 #include "Filesystem/BackgroundLoader.h"
 #include "Filesystem/NarcHandle.h"
@@ -22,7 +23,7 @@
 #define func_02099950 func_0209b684
 #define func_020de848 func_020e01c4
 
-#define data_020ef0f0 data_020ef02c
+
 #endif
 
 extern "C"
@@ -51,39 +52,6 @@ extern "C"
     void func_02014a24(Zone3D*, void*);
 }
 
-extern char data_020ef0f0[]; // "data/map/maplist9.bin"
-extern char data_020ef106[]; // "%s/Z0%dM01.ambl"
-extern char data_020ef116[]; // "data/map"
-extern char data_020ef11f[]; // "%s/Z0%dM99.ambl"
-extern char data_020ef12f[]; // "%s/%s.ambl"
-extern char data_020ef13a[]; // "ARC"
-extern char data_020ef13e[]; // ".nsbtx"
-extern char data_020ef145[]; // ".bmbl"
-extern char data_020ef14b[]; // ".dat"
-extern char data_020ef150[]; // ".bpos"
-extern char data_020ef156[]; // "%s/Z0%dM01.amdj"
-extern char data_020ef166[]; // "%s/Z0%dM99.amdj"
-extern char data_020ef176[]; // "%s/%sb.amdj"
-extern char data_020ef182[]; // "%s/%sa.amdj"
-extern char data_020ef18e[]; // "%s/%s.amdj"
-extern char data_020ef199[]; // ".bmdj"
-extern char data_020ef19f[]; // "Z0%dM0100"
-extern char data_020ef1a9[]; // "Z0%dM0101"
-extern char data_020ef1b3[]; // "Z0%dM0102"
-extern char data_020ef1bd[]; // "Z0%dM0103"
-extern char data_020ef1c7[]; // "%s/ats_%c.ambl"
-extern char data_020ef1d6[]; // "%s.bats"
-extern char data_020ef1de[]; // "ARC:/%s"
-extern char data_020ef1e6[]; // "."
-extern char data_020ef1e8[]; // "nsbmd"
-extern char data_020ef1ee[]; // "col2"
-extern char data_020ef1f3[]; // "open"
-extern char data_020ef1f8[]; // "open2"
-extern char data_020ef1fe[]; // "close"
-extern char data_020ef204[]; // "close2"
-extern char data_020ef20b[]; // "/data/ani/d_%c%03d.spr"
-extern char data_020ef222[]; // "tsuboware"
-extern char data_020ef22c[]; // "ARC:%s"
 
 bool Zone3D::ProcessMaplist9()
 {
@@ -116,16 +84,16 @@ void Zone3D::LoadMapAMBL()
             environ = 1;
         if (environ > 5)
             environ = 5;
-        sprintf(filenameBuffer, data_020ef106, data_020ef116, environ);
+        sprintf(filenameBuffer, gZone3DPaths.grottoFloorAMBL, gZone3DPaths.mapRoot, environ);
     }
     else if (IsGrottoBossFloorZone(currentZoneID_))
     {
         int environ = grotto_.GetActiveGrottoEnviron();
-        sprintf(filenameBuffer, data_020ef11f, data_020ef116, environ);
+        sprintf(filenameBuffer, gZone3DPaths.grottoEntranceAMBL, gZone3DPaths.mapRoot, environ);
     }
     else
     {
-        sprintf(filenameBuffer, data_020ef12f, data_020ef116, pUnknownStruct_8_->mapShortName_);
+        sprintf(filenameBuffer, gZone3DPaths.zoneAMBL, gZone3DPaths.mapRoot, pUnknownStruct_8_->mapShortName_);
     }
     mapAMBLLoadHandle_ = loader->QueueLoadFile(filenameBuffer, NULL);
 }
@@ -155,7 +123,7 @@ bool Zone3D::UnpackMapAMBL()
     for (int pass = 0; pass < 2; pass++)
     {
         NarcHandle narc;
-        if (narc.Initialize(data_020ef13a, (const unsigned char*)amblData))
+        if (narc.Initialize(gZone3DPaths.archiveMount, (const unsigned char*)amblData))
         {
             NitroVM vm;
             unsigned int fileID = 0;
@@ -178,16 +146,16 @@ bool Zone3D::UnpackMapAMBL()
                 if (pass == 0)
                 {
                     // nsbtx file (we can have multiple of these)
-                    if (strcmp(data_020ef13e, extension) == 0)
+                    if (strcmp(gZone3DPaths.textureExtension, extension) == 0)
                         ProcessNSBTXFile(innerFilePtr, innerFilesize, innerFilePath);
                 }
                 else if (pass == 1)
                 {
                     // bmbl file
-                    if (strcmp(data_020ef145, extension) == 0)
+                    if (strcmp(gZone3DPaths.mapBinaryExtension, extension) == 0)
                         ProcessBMBLFile(innerFilePtr, innerFilesize);
                     // dat file
-                    else if (strcmp(data_020ef14b, extension) == 0)
+                    else if (strcmp(gZone3DPaths.dataExtension, extension) == 0)
                     {
                         SafeAllocator* alloc = pAllocator_68_;
                         unsigned int decompressedSize;
@@ -196,7 +164,7 @@ bool Zone3D::UnpackMapAMBL()
                         func_0205e104(mapListInfo_.maybeModelName, alloc, decompressed, decompressedSize);
                     }
                     // bpos file. From testing these seem to be a grotto thing
-                    else if (strcmp(data_020ef150, extension) == 0)
+                    else if (strcmp(gZone3DPaths.positionExtension, extension) == 0)
                         ProcessBPOSFile(innerFilePtr, innerFilesize);
                 }
                 fileID++;
@@ -322,12 +290,12 @@ void Zone3D::LoadMapAMDJ()
             environ = 1;
         if (environ > 5)
             environ = 5;
-        sprintf(filenameBuffer, data_020ef156, data_020ef116, environ);
+        sprintf(filenameBuffer, gZone3DPaths.grottoFloorAMDJ, gZone3DPaths.mapRoot, environ);
     }
     else if (IsGrottoBossFloorZone(currentZoneID_))
     {
         int environ = grotto_.GetActiveGrottoEnviron();
-        sprintf(filenameBuffer, data_020ef166, data_020ef116, environ);
+        sprintf(filenameBuffer, gZone3DPaths.grottoEntranceAMDJ, gZone3DPaths.mapRoot, environ);
     }
     else
     {
@@ -335,18 +303,18 @@ void Zone3D::LoadMapAMDJ()
         {
             if (unknown_42c_ == 0)
             {
-                sprintf(filenameBuffer, data_020ef176, data_020ef116, pUnknownStruct_8_->mapShortName_);
+                sprintf(filenameBuffer, gZone3DPaths.zoneObjectsVariantB, gZone3DPaths.mapRoot, pUnknownStruct_8_->mapShortName_);
                 unknown_42c_++;
             }
             else if (unknown_42c_ == 1)
             {
-                sprintf(filenameBuffer, data_020ef182, data_020ef116, pUnknownStruct_8_->mapShortName_);
+                sprintf(filenameBuffer, gZone3DPaths.zoneObjectsVariantA, gZone3DPaths.mapRoot, pUnknownStruct_8_->mapShortName_);
                 unknown_42c_++;
             }
         }
         else
         {
-            sprintf(filenameBuffer, data_020ef18e, data_020ef116, pUnknownStruct_8_->mapShortName_);
+            sprintf(filenameBuffer, gZone3DPaths.zoneObjects, gZone3DPaths.mapRoot, pUnknownStruct_8_->mapShortName_);
         }
     }
     mapAMDJLoadHandle_ = loader->QueueLoadFile(filenameBuffer, NULL);
@@ -373,7 +341,7 @@ bool Zone3D::UnpackMapAMDJ()
     unsigned int amdjFilesize;
     loader->GetLoadedFileByID(mapAMDJLoadHandle_, &amdjData, &amdjFilesize);
     NarcHandle narc;
-    if (narc.Initialize(data_020ef13a, (unsigned char*)amdjData))
+    if (narc.Initialize(gZone3DPaths.archiveMount, (unsigned char*)amdjData))
     {
         NitroVM vm;
         unsigned int fileID = 0;
@@ -393,7 +361,7 @@ bool Zone3D::UnpackMapAMDJ()
             unsigned int innerFilesize = vm.fileInfo.endOffset - vm.fileInfo.startOffset;
             NitroVM_FinishRead(&vm);
             const void* innerFilePtr = narc.GetFileByIndex(fileID);
-            if (strcmp(data_020ef199, extension) == 0)
+            if (strcmp(gZone3DPaths.objectsExtension, extension) == 0)
             {
                 int numIterations = bFeatures_.arraySize64_;
                 for (int i = 0; i < numIterations; i++)

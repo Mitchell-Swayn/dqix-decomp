@@ -482,3 +482,8 @@ src/World/Zone3DMapLoading.cpp:
 src/World/Zone3DAtmosphereLoading.cpp:
     complete
     .text start:0x02014b04 end:0x02014d80
+
+
+src/World/Zone3DPaths.cpp:
+    complete
+    .data start:0x020ef0f0 end:0x020ef260
