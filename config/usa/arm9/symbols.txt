@@ -7607,8 +7607,7 @@ data_020fb3d0 kind:bss addr:0x020fb3d0
 data_020fb3e4 kind:bss addr:0x020fb3e4
 data_020fb3f0 kind:bss addr:0x020fb3f0
 data_020fdc14 kind:bss addr:0x020fdc14
-data_020fdc20 kind:bss(size=0xc) addr:0x020fdc20
-data_020fdc2c kind:bss addr:0x020fdc2c
+data_020fdc20 kind:bss(size=0x20) addr:0x020fdc20
 data_020fdc40 kind:bss addr:0x020fdc40
 data_020fdc4c kind:bss addr:0x020fdc4c
 data_020fdc60 kind:bss addr:0x020fdc60

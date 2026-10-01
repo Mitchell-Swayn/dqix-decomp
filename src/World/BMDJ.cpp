@@ -21,6 +21,7 @@ int BMDJ_Opcode_6a(Script::Parameter* params, int numParams)
     return 1;
 }
 
+// Original opcode is a successful no-op (0x0201ebf8).
 int BMDJ_Opcode_6b(Script::Parameter* params, int numParams) { return 1; }
 
 int BMDJ_Opcode_6c(Script::Parameter* params, int numParams)
@@ -47,7 +48,11 @@ int BMDJ_Opcode_6c(Script::Parameter* params, int numParams)
 
     entry.pNext = NULL;
 
-    data_020fdc40.instance->InsertStructC(entry);
+    // MWCC scheduling quirk: the one-past pointer expression preserves the
+    // original context load before the zero-link store, without extra code.
+    Struct_020fdc40* context = &data_020fdc40;
+    context++;
+    (context - 1)->instance->InsertStructC(entry);
     data_020fdc40.structC = data_020fdc40.instance->GetStructCByID(entry.maybeID);
     return 1;
 }
@@ -89,6 +94,7 @@ int BMDJ_Opcode_6d(Script::Parameter* params, int numParams)
     return 1;
 }
 
+// Original opcode is a successful no-op (0x0201ede8).
 int BMDJ_Opcode_6e(Script::Parameter* params, int numParams) { return 1; }
 
 int BMDJ_Opcode_6f(Script::Parameter* params, int numParams)
@@ -302,3 +308,15 @@ const char* Zone3D_BMDJStruct::ScriptData::GetString(int idx) const
         return NULL;
     return strings_18[idx];
 }
+Struct_020fdc40 data_020fdc40;
+Script::OpcodeLookupEntry data_020ef418[] = {
+    { 0x6a, BMDJ_Opcode_6a },
+    { 0x6b, BMDJ_Opcode_6b },
+    { 0x6c, BMDJ_Opcode_6c },
+    { 0x6d, BMDJ_Opcode_6d },
+    { 0x6e, BMDJ_Opcode_6e },
+    { 0x6f, BMDJ_Opcode_6f },
+    { 0x70, BMDJ_Opcode_70 },
+    { 0x72, BMDJ_Opcode_72 },
+    { 0, NULL }
+};

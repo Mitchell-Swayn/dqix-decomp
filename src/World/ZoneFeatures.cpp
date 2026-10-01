@@ -19,6 +19,9 @@ struct Struct_020fdc20
     ZoneFeatures::Opcode6aEntry* currentEntry;
     SafeAllocator* allocator;
     ZoneFeatures* warp;
+    // Zero-initialized bytes following the three pointers. No accesses have
+    // been identified; their purpose (reserved storage or padding) is unknown.
+    unsigned char reserved_c[0x14];
 } data_020fdc20;
 
 extern "C"
