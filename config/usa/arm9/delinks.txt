@@ -454,3 +454,19 @@ src/Graphics/VRAMPaletteAllocation.cpp:
     complete
     .text start:0x020bb780 end:0x020bb964
     .bss start:0x0210cf88 end:0x0210cf94
+
+src/System/Matrix3Scale.cpp:
+    complete
+    .text start:0x020c11a4 end:0x020c1264
+
+src/System/Matrix4Scale.cpp:
+    complete
+    .text start:0x020c1948 end:0x020c197c
+
+src/System/Matrix3Transform.cpp:
+    complete
+    .text start:0x020c17c4 end:0x020c1840
+
+src/System/Matrix4Transform.cpp:
+    complete
+    .text start:0x020c2034 end:0x020c20d4

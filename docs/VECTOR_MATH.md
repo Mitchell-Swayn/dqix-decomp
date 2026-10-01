@@ -64,3 +64,24 @@ The report's total code/data/function denominators remained unchanged. This is
 matching evidence, not a new runtime gameplay test. The worktree's base predates
 the separate ROM header finalization change; final whole-ROM verification belongs
 to integration with that change.
+
+The matrix follow-up reconstructs four existing interfaces in separate source
+units: 3x3 scale `[0x020c11a4, 0x020c1264)`, 4x3 scale
+`[0x020c1948, 0x020c197c)`, 3x3 vector transform
+`[0x020c17c4, 0x020c1840)`, and 4x3 vector transform
+`[0x020c2034, 0x020c20d4)`. Together these add four functions and 528 matched
+code bytes, with no data or assembly definitions. Scale multiplies each basis
+row by its corresponding factor; the 4x3 variant preserves translation.
+Transforms accumulate full-width products and shift by 12 without rounding.
+The 4x3 variant then adds translation. Input components are captured before
+output stores, preserving in-place vector transforms; declaration order retains
+the compiler's original register allocation. Intermediate output stores in the
+4x3 transform also follow the original ordering.
+
+`RenderConfig.cpp` uses in-place matrix scaling, while `GeometryFifo.cpp` uses
+the 4x3 transform to obtain a view-space vector. Existing names and types needed
+no changes. `ninja rom check` and the separate report both passed; each new unit
+reports 100% matching code/functions, including the scale-to-scale call after
+linking. The total denominators remain 2,959,478 code bytes, 1,602,476 data bytes,
+and 14,790 functions. These seven math source units now cover 19 functions and
+1,456 matched code bytes. Normalization remains outside the source mappings.
