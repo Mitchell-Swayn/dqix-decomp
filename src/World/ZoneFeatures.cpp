@@ -19,7 +19,7 @@ struct Struct_020fdc20
     ZoneFeatures::Opcode6aEntry* currentEntry;
     SafeAllocator* allocator;
     ZoneFeatures* warp;
-} extern data_020fdc20;
+} data_020fdc20;
 
 extern "C"
 {
@@ -1074,3 +1074,25 @@ ZoneFeatures::Opcode7bEntry* ZoneFeatures::FindContainingEntry(const Vector3fix*
     }
     return NULL;
 }
+
+// The script interpreter uses a zero opcode/null procedure sentinel.
+Script::OpcodeLookupEntry data_020ef388[] = {
+    { 0x64, WarpScript_Opcode_64 },
+    { 0x65, WarpScript_Opcode_65 },
+    { 0x66, WarpScript_Opcode_66 },
+    { 0x67, WarpScript_Opcode_67 },
+    { 0x68, WarpScript_Opcode_68 },
+    { 0x69, WarpScript_Opcode_69 },
+    { 0x6a, WarpScript_Opcode_6a },
+    { 0x6b, WarpScript_Opcode_6b },
+    { 0x6e, WarpScript_Opcode_6e },
+    { 0x70, WarpScript_Opcode_70 },
+    { 0x72, WarpScript_Opcode_72 },
+    { 0x73, WarpScript_Opcode_73 },
+    { 0x74, WarpScript_Opcode_74 },
+    { 0x7b, WarpScript_Opcode_7b },
+    { 0x7c, WarpScript_Opcode_7c },
+    { 0x7d, WarpScript_Opcode_7d },
+    { 0x7e, WarpScript_Opcode_7e },
+    { 0, NULL }
+};
