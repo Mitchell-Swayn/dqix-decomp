@@ -33,7 +33,7 @@ extern "C"
     void func_0205e57c(void*);
 
     // zero memory and flush cache
-    void func_020d84f8(void*, unsigned int);
+    unsigned int func_020d84f8(void*, unsigned int);
 
     // gets a byte at 0x0214e4a0
     int func_020d8704();

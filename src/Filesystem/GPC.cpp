@@ -26,9 +26,9 @@ extern "C"
     int func_02075090(const char*);
 
     // zero memory and flush
-    void func_020d84f8(void*, unsigned int);
+    unsigned int func_020d84f8(void*, unsigned int);
     // memcpy and flush
-    void func_020d8524(void*, const void*, unsigned int);
+    unsigned int func_020d8524(void*, const void*, unsigned int);
 }
 
 #if defined(usa)

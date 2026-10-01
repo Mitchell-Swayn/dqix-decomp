@@ -131,6 +131,12 @@ The adjacent string wrapper remains binary fallback: extracting it leaves an
 instruction-free `.text` fallback containing pointer tables, on which pinned
 objdiff 2.7.1 crashes in ARM mapping-symbol handling. It receives no source credit.
 
+[CachedMemory.cpp](../src/Filesystem/CachedMemory.cpp) reconstructs the zero-fill
+and copy wrappers at `[0x020d84f8, 0x020d8550)` (88 bytes). Both perform the memory
+operation, clean/invalidate the destination cache range, and return the processed
+length. Caller declarations now preserve that return type. Their vectorized
+memory-operation dependencies remain original binary code.
+
 [Script.h](../include/Resource/Script.h) and
 [Script.cpp](../src/Resource/Script.cpp) reconstruct a native interpreter whose
 opcode table is supplied by each caller. Its 16-byte file header holds instruction

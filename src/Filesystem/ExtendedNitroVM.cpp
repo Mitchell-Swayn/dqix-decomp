@@ -34,7 +34,7 @@ extern "C"
     unsigned int func_01ff860c(const char*);
 
     // Zero memory and flush cache
-    void func_020d84f8(void*, unsigned);
+    unsigned int func_020d84f8(void*, unsigned);
     // another memcpy-style function, cleans/invalidates the cache in destination after
     unsigned int func_020d8524(void*, const void*, unsigned);
 
