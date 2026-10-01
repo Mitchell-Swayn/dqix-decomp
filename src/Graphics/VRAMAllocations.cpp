@@ -3,7 +3,7 @@
 
 #include "Graphics/VRAMImagePool.h"
 
-extern Struct_020f1f14* data_020f1ef8[2];
+extern Struct_020f1f14* data_020f1ef8[7];
 // points to elements in the above array.
 // Initially in the order ([4], [3], [0], [2], [1]).
 // No idea why

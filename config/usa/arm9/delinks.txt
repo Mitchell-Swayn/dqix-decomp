@@ -499,3 +499,7 @@ src/Graphics/VRAMImageState.cpp:
 src/Graphics/VRAMImageReset.cpp:
     complete
     .text start:0x020bb514 end:0x020bb588
+
+src/Graphics/VRAMImageInit.cpp:
+    complete
+    .text start:0x020bb444 end:0x020bb514

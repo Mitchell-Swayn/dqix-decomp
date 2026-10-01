@@ -19,3 +19,5 @@ extern "C" int FreeTextureImageVRAM(unsigned int key);
 void SaveTextureImageVRAMState(unsigned int* state);
 void RestoreTextureImageVRAMState(const unsigned int* state);
 void ResetTextureImageVRAM();
+void SetTextureImageVRAMPoolOrder(int first, int second, int third, int fourth, int fifth);
+void InitializeTextureImageVRAM(unsigned int banks, bool setDefault);
