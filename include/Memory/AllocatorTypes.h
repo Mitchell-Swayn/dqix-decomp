@@ -69,7 +69,7 @@ struct AllocatorTypeB : public AllocatorBase // nonvirtual inheritance
 
 // Adapter to the SDK arena/heap allocator. The heap selector is signed:
 // a negative value selects the current heap in the specified arena.
-// USA vtable: 0x020e9178. Underlying SDK routines remain undecompiled.
+// USA vtable: 0x020e9178. See ArenaHeap.h for the backing allocator.
 struct AllocatorTypeHeap : public AllocatorBase
 {
     int heapId;
