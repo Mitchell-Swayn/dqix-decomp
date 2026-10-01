@@ -9,6 +9,31 @@
   ],
   "units": [
     {
+      "name": "ArenaHeap",
+      "source": "config/usa/arm7/src/ArenaHeap.c",
+      "autoload": "wram",
+      "runtime_address": 58707924,
+      "payload_offset": 20976,
+      "size": 968,
+      "code_bytes": 948,
+      "literal_pool_bytes": 20,
+      "entry": "ARM7_RemoveArenaHeapBlock",
+      "symbols": {
+        "ARM7_RemoveArenaHeapBlock": 58707924,
+        "ARM7_InsertFreeArenaHeapBlock": 58707964,
+        "ARM7_AllocateArenaHeap": 58708132,
+        "ARM7_FreeArenaHeap": 58708404,
+        "ARM7_SetCurrentHeap": 58708512,
+        "ARM7_InitializeHeapArena": 58708564,
+        "ARM7_CreateHeap": 58708732
+      },
+      "externals": {
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_g_arenaHeapInfo": 58757420
+      }
+    },
+    {
       "name": "ArenaBounds",
       "source": "config/usa/arm7/src/ArenaBounds.c",
       "autoload": "wram",

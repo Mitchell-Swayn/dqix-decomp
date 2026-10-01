@@ -1,8 +1,8 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **eight
-functions: 412 instruction bytes plus 44 bytes of literal pools**. The other 167,420
+console ARM7 BIOS. The independent source build currently reconstructs **fifteen
+functions: 1,360 instruction bytes plus 64 bytes of literal pools**. The other 166,452
 bytes remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -16,9 +16,9 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 412 / 44 bytes |
+| Reconstructed C instructions / compiler literal pools | 1,360 / 64 bytes |
 | Reconstructed standalone data / reviewed assembly | 0 / 0 bytes |
-| Binary fallback | 167,420 bytes |
+| Binary fallback | 166,452 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -100,6 +100,23 @@ outside this source unit's data ownership. The unit owns 304 instruction bytes
 and 28 literal-pool bytes. IRQ stack end `0x0380ff80` is a fixed address; retaining
 stack sizes as linker symbols reproduces the original calculations and literal
 order without folding the entire expression into a constant.
+
+`src/ArenaHeap.c` reconstructs runtime range `[0x037fcfd4, 0x037fd39c)` from
+payload range `[0x51f0, 0x55b8)`: list removal, sorted insertion/coalescing,
+allocation, freeing, current-heap selection, arena metadata initialization and
+heap creation. These seven functions own 948 instruction bytes and 20 literal
+bytes. Blocks have a 0x20-byte header and 0x20-byte alignment; split remainders
+smaller than 0x40 stay with the allocation. Free lists are sorted by address and
+merge physically adjacent neighbors.
+
+The nine-entry descriptor-pointer table at `0x0380912c` remains externally owned
+BSS, and interrupt disable/restore routines at `0x037fe364` / `0x037fe378` remain
+binary dependencies. The source types record a 12-byte heap descriptor and a
+20-byte arena descriptor with current heap, heap count, arena start/end and
+descriptor-array pointer. The corresponding ARM9 source supplied a useful
+starting hypothesis; ARM7's while-loop layout and inlined list prepend were
+separately matched. Locals preserve snapshot pointers across potentially aliasing
+writes, matching the original loads rather than asserting unsupported aliasing.
 
 `arm7_build.py` compiles each declared unit with `mwccarm` targeting `arm7tdmi`,
 links it at its actual runtime address with `mwldarm`, reads its linked ELF,
