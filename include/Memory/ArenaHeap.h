@@ -20,12 +20,14 @@ struct ArenaHeap
     ArenaHeapBlock* usedBlocks;
 };
 
+// Descriptor layout corroborated by the matched ARM7 heap initializer
+// (0x037fd254): descriptor count, aligned arena bounds, then descriptor array.
 struct ArenaHeapInfo
 {
     int currentHeap;
-    int unknown_4;
-    void* unknown_8;
-    void* unknown_c;
+    int heapCount;
+    void* arenaStart;
+    void* arenaEnd;
     ArenaHeap* heaps;
 };
 
