@@ -80,11 +80,13 @@ public:
     // this seems to include blue and red chests
     unsigned char numChests_;
     ZoneContainerRenderEntry* unknown_478_;
-    int unknown_47c_;
+    ZoneChestEntry* unknown_47c_;
 
     void* containerModels_[6];
     Model3D models_498_[2];
-    char unk_5f0[0x82c - 0x5f0];
+    char unk_5f0[0x820 - 0x5f0];
+    int unknown_820_;
+    char unk_824[8];
 
     int unknown_82c_;
 
@@ -128,6 +130,8 @@ public:
 
     void Update();
     void DrawChestModels();
+    void ReleaseChestsForOwner(int ownerIndex);
+    bool HasActiveChest();
     void UpdateBMDJInstances(Zone3D_BMDJStruct* group);
     void UpdateBMDJInstance(Zone3D_BMDJStruct::InstanceEntry* instance);
 

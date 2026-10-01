@@ -22,3 +22,18 @@ struct ZoneContainerRenderEntry
     ZoneContainerRenderPart fragments[4];
     char unknown_338[0x30];
 };
+
+struct ZoneChestEntry
+{
+    char unknown_0[0x10];
+    unsigned short timer;
+    char unknown_12[2];
+    signed char ownerIndex;
+    char unknown_15;
+    unsigned char state;
+    char unknown_17;
+    unsigned char unknown_18;
+    char unknown_19[7];
+    int unknown_20;
+};
+void ActivateZoneChest(ZoneChestEntry* chest, int ownerIndex, bool reset, bool force);

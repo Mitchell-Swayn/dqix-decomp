@@ -581,3 +581,7 @@ src/World/Zone3DChestDrawing.cpp:
     complete
     .text start:0x020158cc end:0x020159c0
     .rodata start:0x020e6e08 end:0x020e6e20
+
+src/World/Zone3DChestState.cpp:
+    complete
+    .text start:0x020159c0 end:0x02015ae4
