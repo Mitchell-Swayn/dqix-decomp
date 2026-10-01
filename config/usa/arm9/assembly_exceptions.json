@@ -19,7 +19,7 @@
       "reviewed_assembly_routine_bytes": 132,
       "inline_assembly_instruction_bytes": 48,
       "c_instruction_credit": 0,
-      "note": "The132 bytes classify whole mixed C/assembly routines, not132 handwritten instructions. This review changes no source-coverage counters.",
+      "note": "The 132 bytes classify whole mixed C/assembly routines, not 132 handwritten instruction bytes. This review changes no source-coverage counters.",
       "routines": [
         {
           "symbol": "_Z19EnableIRQInterruptsv",

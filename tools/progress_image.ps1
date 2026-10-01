@@ -47,7 +47,7 @@ try {
     Block 48 529 1104 139 '#1f2937'
     Label 'ARM7 | separate source accounting' 24 68 544
     Label ('{0:N0} C functions   /   {1:N0} instruction bytes   /   {2:N0} literal bytes' -f $arm7.source_functions, $arm7.source_code_bytes, $arm7.source_literal_pool_bytes) 22 68 582
-    Label ('Reviewed assembly: {0:N0} bytes   |   Source BSS: {1:N0} bytes' -f $arm7.reviewed_assembly_bytes, $arm7.source_bss_bytes) 20 68 619 '#cbd5e1'
+    Label ('Data: {0:N0} bytes   |   BSS: {1:N0} bytes   |   Reviewed assembly: {2:N0} bytes' -f $arm7.source_data_bytes, $arm7.source_bss_bytes, $arm7.reviewed_assembly_bytes) 20 68 619 '#cbd5e1'
     Label 'Whole-cartridge source completion is not yet established.' 22 48 695 '#fcd34d'
     Label 'ARM7 total code/function counts remain unknown. Bar lengths measure bytes/functions, not effort.' 18 48 731 '#9ca3af'
     $target = [IO.Path]::GetFullPath($Output)

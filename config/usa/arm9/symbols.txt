@@ -7432,8 +7432,7 @@ data_020f233d kind:data(any) addr:0x020f233d
 data_020f2348 kind:data(any) addr:0x020f2348
 data_020f235c kind:data(any) addr:0x020f235c
 data_020f2371 kind:data(any) addr:0x020f2371
-data_020f2384 kind:data(any) addr:0x020f2384
-data_020f27b8 kind:data(any) addr:0x020f27b8
+gFileCacheConfiguration kind:data(any) addr:0x020f2384
 gpcData kind:data(any) addr:0x020f27c0
 data_020f2800 kind:data(any) addr:0x020f2800
 data_020f280c kind:data(any) addr:0x020f280c

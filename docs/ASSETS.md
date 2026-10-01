@@ -114,8 +114,12 @@ This program-owned metadata counts as native data, separately from asset content
 The file-access cache's ready flag, 61 CRC values and 61 handle/file-ID pairs
 also have explicit zero-initialized definitions in
 [`FileCacheData.cpp`](../src/Filesystem/itcm/FileCacheData.cpp), covering ITCM BSS
-`[0x01ffd998, 0x01ffdc78)` (736 bytes including alignment). The configured path
-pointer list and its string storage still remain original-binary dependencies.
+`[0x01ffd998, 0x01ffdc78)` (736 bytes including alignment). The 61 configured
+path strings, compression-prefix sizes, padding, and root path now have readable
+definitions in [FileCacheConfiguration.cpp](../src/Filesystem/FileCacheConfiguration.cpp),
+matching all 1,084 bytes at `[0x020f2384, 0x020f27c0)`. Its layout carrier preserves
+storage order without asserting the original declaration grouping. The configured
+path pointer list remains an original-binary dependency.
 
 [Script.h](../include/Resource/Script.h) and
 [Script.cpp](../src/Resource/Script.cpp) reconstruct a native interpreter whose

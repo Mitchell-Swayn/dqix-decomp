@@ -1,5 +1,6 @@
 #include "Filesystem/ExtendedNitroVM.h"
 #include "Filesystem/FileCacheState.h"
+#include "Filesystem/FileCacheConfiguration.h"
 #include "Filesystem/FSInnerDefs.h"
 #include "Resource/ResourceMutex.h"
 #include "System/Cache.h"
@@ -58,10 +59,14 @@ extern NitroFileAccessor data_01ffda90[NUM_CACHED_FILES];
 // holds the intended length of compression metadata (4 bytes)
 // there are two copies of it, the first is used in USA version and the
 // second in JPN version
+#if defined(usa)
+#define data_020f2384 gFileCacheConfiguration.compressionPrefixBytes
+#define data_020f27b8 gFileCacheConfiguration.root
+#else
 extern unsigned int data_020f2384[];
-
 // "data/"
 extern char data_020f27b8[];
+#endif
 
 unsigned int CompressionPrefix::GetDecompressedLength() const
 {

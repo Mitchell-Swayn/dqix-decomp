@@ -24842,7 +24842,7 @@ from:0x020d8958 kind:arm_call to:0x02004040 module:main
 from:0x020d8968 kind:arm_call to:0x020cc940 module:main
 from:0x020d8978 kind:arm_call to:0x01ff860c module:itcm
 from:0x020d8a34 kind:load to:0x01ffd998 module:itcm
-from:0x020d8a3c kind:load to:0x020f27b8 module:main
+from:0x020d8a3c kind:load to:0x020f2384 add:0x434 module:main
 from:0x020d8a40 kind:load to:0x01ffda90 module:itcm
 from:0x020d8a44 kind:load to:0x01ffd99c module:itcm
 from:0x020d8a54 kind:arm_call to:0x020d84f8 module:main
