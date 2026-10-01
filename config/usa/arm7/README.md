@@ -1,10 +1,10 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **fifteen
-functions: 1,360 instruction bytes plus 64 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **twenty
+functions: 1,748 instruction bytes plus 112 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
-36 bytes of BSS now have source definitions. The other 166,332 payload bytes
+56 bytes of BSS now have source definitions. The other 165,896 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -18,10 +18,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 1,360 / 64 bytes |
+| Reconstructed C instructions / compiler literal pools | 1,748 / 112 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 0 / 120 bytes |
-| Reconstructed BSS / total autoload BSS | 36 / 22,744 bytes |
-| Binary fallback | 166,332 bytes |
+| Reconstructed BSS / total autoload BSS | 56 / 22,744 bytes |
+| Binary fallback | 165,896 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -123,6 +123,18 @@ descriptor-array pointer. The corresponding ARM9 source supplied a useful
 starting hypothesis; ARM7's while-loop layout and inlined list prepend were
 separately matched. Locals preserve snapshot pointers across potentially aliasing
 writes, matching the original loads rather than asserting unsupported aliasing.
+
+`src/Timing.c` reconstructs `[0x037fd6e8, 0x037fd89c)` (payload
+`[0x5904, 0x5ab8)`): timer initialization flags, 64-bit timer initialization and
+status, the timer-0 overflow handler, and timestamp reading. It owns 388
+instruction bytes, 48 literal bytes, and BSS `[0x03809150, 0x03809164)`.
+The latter holds a 4-byte initialization-flag/alignment block and the 16-byte
+timer state. The counter runs at a /64 prescale and combines a software overflow
+count with the 16-bit hardware timer. The reader disables IRQs and accounts for
+a pending overflow before returning the combined timestamp. Interrupt-handler
+registration, interrupt enabling, and timer callback registration remain explicit
+binary dependencies. `dont_inline` preserves the original call to the flag
+marker; no matching-only assembly is used.
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C

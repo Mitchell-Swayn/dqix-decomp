@@ -9,6 +9,39 @@
   ],
   "units": [
     {
+      "name": "Timing",
+      "source": "config/usa/arm7/src/Timing.c",
+      "autoload": "wram",
+      "runtime_address": 58709736,
+      "payload_offset": 22788,
+      "size": 436,
+      "code_bytes": 388,
+      "literal_pool_bytes": 48,
+      "entry": "ARM7_Initialize64BitTimer",
+      "symbols": {
+        "ARM7_MarkAlarmInitializationFlagBit": 58709736,
+        "ARM7_Initialize64BitTimer": 58709764,
+        "ARM7_Is64BitTimerInitialized": 58709888,
+        "ARM7_On16BitTimerOverflow": 58709904,
+        "ARM7_GetCurrentTimestamp": 58710008
+      },
+      "externals": {
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_SetInterruptHandler": 58701808,
+        "ARM7_EnableSpecificInterrupts": 58702116,
+        "ARM7_SetTimerOverflowCallback": 58701964
+      },
+      "bss": {
+        "runtime_address": 58757456,
+        "size": 20,
+        "symbols": {
+          "ARM7_TimerInitFlags": 58757456,
+          "ARM7_TimerState": 58757460
+        }
+      }
+    },
+    {
       "name": "CpuStatus",
       "source": "config/usa/arm7/src/CpuStatus.c",
       "autoload": "wram",
