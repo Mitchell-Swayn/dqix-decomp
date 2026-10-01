@@ -9,6 +9,31 @@
   ],
   "units": [
     {
+      "name": "Interrupts",
+      "source": "config/usa/arm7/src/Interrupts.c",
+      "autoload": "wram",
+      "runtime_address": 58701964,
+      "payload_offset": 15016,
+      "size": 320,
+      "code_bytes": 288,
+      "literal_pool_bytes": 32,
+      "entry": "ARM7_SetTimerOverflowCallback",
+      "symbols": {
+        "ARM7_SetTimerOverflowCallback": 58701964,
+        "ARM7_SetSpecificInterruptsEnabled": 58702040,
+        "ARM7_DisableInterruptMaster": 58702092,
+        "ARM7_EnableSpecificInterrupts": 58702116,
+        "ARM7_DisableSpecificInterrupts": 58702172,
+        "ARM7_AcknowledgeSpecificInterrupts": 58702232
+      },
+      "externals": {},
+      "bss": {
+        "runtime_address": 58756668,
+        "size": 96,
+        "symbols": {"ARM7_InterruptResponses": 58756668}
+      }
+    },
+    {
       "name": "Timing",
       "source": "config/usa/arm7/src/Timing.c",
       "autoload": "wram",

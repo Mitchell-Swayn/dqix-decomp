@@ -1,10 +1,10 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **twenty
-functions: 1,748 instruction bytes plus 112 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **26 C
+functions: 2,036 instruction bytes plus 144 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
-56 bytes of BSS now have source definitions. The other 165,896 payload bytes
+152 bytes of BSS now have source definitions. The other 165,576 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -18,10 +18,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 1,748 / 112 bytes |
+| Reconstructed C instructions / compiler literal pools | 2,036 / 144 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 0 / 120 bytes |
-| Reconstructed BSS / total autoload BSS | 56 / 22,744 bytes |
-| Binary fallback | 165,896 bytes |
+| Reconstructed BSS / total autoload BSS | 152 / 22,744 bytes |
+| Binary fallback | 165,576 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -132,9 +132,21 @@ The latter holds a 4-byte initialization-flag/alignment block and the 16-byte
 timer state. The counter runs at a /64 prescale and combines a software overflow
 count with the 16-bit hardware timer. The reader disables IRQs and accounts for
 a pending overflow before returning the combined timestamp. Interrupt-handler
-registration, interrupt enabling, and timer callback registration remain explicit
-binary dependencies. `dont_inline` preserves the original call to the flag
+registration remains an explicit binary dependency; interrupt enabling and timer
+callback registration now belong to the `Interrupts` source unit. `dont_inline` preserves the original call to the flag
 marker; no matching-only assembly is used.
+
+`src/Interrupts.c` reconstructs `[0x037fb88c, 0x037fb9cc)` (payload
+`[0x3aa8, 0x3be8)`): timer callback registration, interrupt-mask replacement,
+master-enable disabling, specific interrupt enabling/disabling, and pending-IRQ
+acknowledgement. These six functions own 288 instruction bytes and 32 literal
+bytes. All register accesses use volatile C loads/stores. The 96-byte BSS range
+`[0x03808e3c, 0x03808e9c)` defines eight DMA/timer response entries containing
+callback, stay-enabled flag and user data. Field-base address expressions preserve
+the original compiler's separate literal addresses for callback-table fields.
+The original handler-registration routine at `0x037fb7f0` still consumes this
+table; its separate VBlank response and initialized dispatch table remain outside
+this unit's source data ownership.
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C
