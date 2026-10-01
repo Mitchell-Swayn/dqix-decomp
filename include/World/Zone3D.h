@@ -127,6 +127,7 @@ public:
     void SetContainerBrokenMask(unsigned int mask);
 
     void Update();
+    void DrawChestModels();
     void UpdateBMDJInstances(Zone3D_BMDJStruct* group);
     void UpdateBMDJInstance(Zone3D_BMDJStruct::InstanceEntry* instance);
 

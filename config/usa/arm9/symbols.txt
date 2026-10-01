@@ -409,7 +409,7 @@ func_02012f68 kind:function(arm,size=0x3c) addr:0x02012f68
 func_02012fa4 kind:function(arm,size=0x40) addr:0x02012fa4
 func_02012fe4 kind:function(arm,size=0xc) addr:0x02012fe4
 _Z20ResetBMDJObjectEntryPN17Zone3D_BMDJStruct11ObjectEntryE kind:function(arm,size=0x28) addr:0x02012ff0
-func_02013018 kind:function(arm,size=0x90) addr:0x02013018
+_Z17ResetBMDJInstancePN17Zone3D_BMDJStruct13InstanceEntryE kind:function(arm,size=0x90) addr:0x02013018
 func_020130a8 kind:function(arm,size=0x8) addr:0x020130a8
 func_020130b0 kind:function(arm,size=0x30) addr:0x020130b0
 func_020130e0 kind:function(arm,size=0x2c) addr:0x020130e0
@@ -451,7 +451,7 @@ _ZN6Zone3D22LoadBMDJAnimatedObjectEPN17Zone3D_BMDJStruct11ObjectEntryEPNS0_11Str
 _ZN6Zone3D6UpdateEv kind:function(arm,size=0xe0) addr:0x02015438
 _ZN6Zone3D19UpdateBMDJInstancesEP17Zone3D_BMDJStruct kind:function(arm,size=0x3c) addr:0x02015518
 _ZN6Zone3D18UpdateBMDJInstanceEPN17Zone3D_BMDJStruct13InstanceEntryE kind:function(arm,size=0x378) addr:0x02015554
-func_020158cc kind:function(arm,size=0xf4) addr:0x020158cc
+_ZN6Zone3D15DrawChestModelsEv kind:function(arm,size=0xf4) addr:0x020158cc
 func_020159c0 kind:function(arm,size=0x6c) addr:0x020159c0
 func_02015a2c kind:function(arm,size=0x6c) addr:0x02015a2c
 func_02015a98 kind:function(arm,size=0x4c) addr:0x02015a98

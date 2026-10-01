@@ -55,7 +55,7 @@ struct Zone3D_BMDJStruct
     // Runtime placement layout used by the per-frame update at 02015554.
     struct InstanceEntry
     {
-        short id;
+        unsigned short id;
         unsigned short flags;
         signed char countdown : 7;
         signed char unknown_4_high : 1;
@@ -118,3 +118,4 @@ struct Zone3D_BMDJStruct
     Zone3D_BMDJStruct* pNext_;
 };
 void ResetBMDJObjectEntry(Zone3D_BMDJStruct::ObjectEntry* entry);
+void ResetBMDJInstance(Zone3D_BMDJStruct::InstanceEntry* instance);

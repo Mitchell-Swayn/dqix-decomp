@@ -572,3 +572,12 @@ src/World/Zone3DUpdate.cpp:
 src/World/Zone3DInstanceUpdate.cpp:
     complete
     .text start:0x02015554 end:0x020158cc
+
+src/World/BMDJInstance.cpp:
+    complete
+    .text start:0x02013018 end:0x020130a8
+
+src/World/Zone3DChestDrawing.cpp:
+    complete
+    .text start:0x020158cc end:0x020159c0
+    .rodata start:0x020e6e08 end:0x020e6e20
