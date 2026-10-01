@@ -516,3 +516,7 @@ src/System/MatrixPerspective.cpp:
 src/System/MatrixOrthographic.cpp:
     complete
     .text start:0x020c29ec end:0x020c2bf4
+
+src/Graphics/VRAMDefaults.cpp:
+    complete
+    .text start:0x020bb424 end:0x020bb444
