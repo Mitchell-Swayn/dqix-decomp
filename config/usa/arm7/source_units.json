@@ -215,6 +215,30 @@
       }
     },
     {
+      "name": "ThreadWait",
+      "source": "config/usa/arm7/src/ThreadWait.c",
+      "autoload": "wram",
+      "runtime_address": 58705564,
+      "payload_offset": 18616,
+      "size": 304,
+      "code_bytes": 296,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_BlockCurrentThread",
+      "symbols": {
+        "ARM7_BlockCurrentThread": 58705564,
+        "ARM7_UnblockThreads": 58705648,
+        "ARM7_MarkThreadReady": 58705784,
+        "ARM7_GetFirstReadyThread": 58705828
+      },
+      "externals": {
+        "ARM7_ThreadGlobals": 58757036,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_InsertBlockedThread": 58704120,
+        "ARM7_SwitchThread": 58704540
+      }
+    },
+    {
       "name": "Alarms",
       "source": "config/usa/arm7/src/Alarms.c",
       "autoload": "wram",
