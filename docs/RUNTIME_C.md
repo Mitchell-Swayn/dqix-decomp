@@ -1,10 +1,11 @@
 # Matched C runtime primitives
 
-Six source units reconstruct eleven USA ARM9 runtime functions:
+Seven source units reconstruct twelve USA ARM9 runtime functions:
 
 | Source | Range | Functions | Report code bytes |
 | --- | --- | --- | ---: |
 | `RuntimeRandom.cpp` | `0x02003d14..0x02003d58` | `rand`, `srand` | 68 |
+| `RuntimeSignal.cpp` | `0x02003ddc..0x02003f0c` | signal dispatch (`func_02003ddc`) | 304 |
 | `StringLength.cpp` | `0x02003f0c..0x02003f28` | `strlen` | 28 |
 | `StringCopyAligned.cpp` | `0x02003f28..0x02003ff0` | `strcpy` | 200 |
 | `StringCopy.cpp` | `0x02003ff0..0x02004070` | `strncpy`, `strcat` | 128 |
@@ -32,9 +33,17 @@ falls back to unsigned-byte comparison. The explicit intermediate terms in copy
 preserve compiler register allocation. Both routines include their original
 eight-byte compiler literal pools; neither adds standalone data.
 
+The signal dispatcher validates signals 1..7, reads and resets handlers under
+the original recursive-lock bookkeeping, and preserves the special handler
+value 1 and signal-1 default behavior. Its generic symbol name is retained;
+the runtime ABI has not been fully named. In particular, the observed branch
+after `TryLockMutex` is preserved verbatim despite its counterintuitive return
+handling. The five referenced BSS globals remain binary fallback. Twenty of
+the 304 reported code bytes are compiler-generated address literals.
+
 Validation used the pinned compiler, direct instruction comparison, `ninja rom
-check`, and `ninja report`. All six units report 100% matching: eleven functions,
-992 code bytes and four data bytes. Total denominators remain 2,959,478 code
+check`, and `ninja report`. All seven units report 100% matching: twelve functions,
+1,296 code bytes and four data bytes. Total denominators remain 2,959,478 code
 bytes, 1,602,476 data bytes and 14,790 functions. This is byte-equivalence evidence,
 not a replacement for runtime gameplay validation.
 
