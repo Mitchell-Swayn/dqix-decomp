@@ -143,6 +143,30 @@
       }
     },
     {
+      "name": "MessageQueue",
+      "source": "config/usa/arm7/src/MessageQueue.c",
+      "autoload": "wram",
+      "runtime_address": 58706652,
+      "payload_offset": 19704,
+      "size": 452,
+      "code_bytes": 452,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_InitializeMessageQueue",
+      "symbols": {
+        "ARM7_InitializeMessageQueue": 58706652,
+        "ARM7_SendMessage": 58706692,
+        "ARM7_ReceiveMessage": 58706832,
+        "ARM7_PeekMessage": 58706988
+      },
+      "externals": {
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_BlockCurrentThread": 58705564,
+        "ARM7_UnblockThreads": 58705648,
+        "_s32_div_f": 58752696
+      }
+    },
+    {
       "name": "Alarms",
       "source": "config/usa/arm7/src/Alarms.c",
       "autoload": "wram",

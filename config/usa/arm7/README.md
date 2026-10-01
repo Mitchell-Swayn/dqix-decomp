@@ -1,11 +1,11 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **58 C
-functions: 5,836 instruction bytes plus 488 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **62 C
+functions: 6,288 instruction bytes plus 488 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
 864 bytes of standalone diagnostic data and 316 bytes of BSS now have source
-definitions. The other 160,568 payload bytes
+definitions. The other 160,116 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -19,10 +19,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 5,836 / 488 bytes |
+| Reconstructed C instructions / compiler literal pools | 6,288 / 488 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 864 / 120 bytes |
 | Reconstructed BSS / total autoload BSS | 316 / 22,744 bytes |
-| Binary fallback | 160,568 bytes |
+| Binary fallback | 160,116 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -241,6 +241,14 @@ not a claim that its wider semantics are fully recovered.
 instruction bytes and 4 literal bytes. Signed division by four and a normal C
 call reproduce the native tail call to Thumb address `0x03803ea5`. The called
 BIOS-facing routine remains binary fallback; this is not a BIOS reconstruction.
+
+`src/MessageQueue.c` reconstructs initialization, send, receive and peek at
+`[0x037fcadc, 0x037fcca0)` (payload `[0x4cf8, 0x4ebc)`), all 452 bytes
+ordinary C instructions. The circular buffer has independent sender/receiver
+wait lists, and flag bit zero selects blocking behavior. IRQ helpers are already
+source-owned; thread block/unblock and the signed-division runtime helper remain
+explicit binary dependencies. Queue instances are caller-owned, so no BSS is
+credited by this unit.
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C
