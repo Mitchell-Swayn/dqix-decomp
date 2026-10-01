@@ -6,7 +6,7 @@ void ResetBMDJInstance(Zone3D_BMDJStruct::InstanceEntry* instance)
     instance->flags = 0;
     instance->countdown = 31;
     instance->unknown_4_high = 0;
-    instance->unknown_20 = 0;
+    instance->definition = 0;
     instance->resource = NULL;
     instance->position.x = 0;
     instance->position.y = 0;
@@ -15,9 +15,9 @@ void ResetBMDJInstance(Zone3D_BMDJStruct::InstanceEntry* instance)
     instance->scale.x = 0x1000;
     instance->scale.y = 0x1000;
     instance->scale.z = 0x1000;
-    instance->unknown_28 = 0;
-    instance->unknown_2c = 0;
-    instance->unknown_30 = 0;
+    instance->parent = 0;
+    instance->firstChild = 0;
+    instance->nextSibling = 0;
     instance->object = NULL;
     instance->targetAngle = 0;
     instance->rotationSpeed = 0;

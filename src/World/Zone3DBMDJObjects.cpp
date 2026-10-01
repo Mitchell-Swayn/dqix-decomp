@@ -2,7 +2,6 @@
 
 extern "C"
 {
-    void func_020177d4(Zone3D*, Zone3D_BMDJStruct*, SafeAllocator*);
 }
 
 bool Zone3D::BuildBMDJObjects(Zone3D_BMDJStruct* group)
@@ -24,6 +23,6 @@ bool Zone3D::BuildBMDJObjects(Zone3D_BMDJStruct* group)
         else
             LoadBMDJModel(group, entry, definition);
     }
-    func_020177d4(this, group, allocator);
+    BuildBMDJInstances(group, allocator);
     return true;
 }

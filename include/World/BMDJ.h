@@ -63,11 +63,11 @@ struct Zone3D_BMDJStruct
         short unknown_6;
         Vector3i position;
         Vector3i scale;
-        int unknown_20;
+        StructSize20* definition;
         ObjectEntry* resource;
-        int unknown_28;
-        int unknown_2c;
-        int unknown_30;
+        InstanceEntry* parent;
+        InstanceEntry* firstChild;
+        InstanceEntry* nextSibling;
         union { short targetAngle; unsigned short doorState; };
         union { short rotationSpeed; unsigned short doorTimer; };
         short currentAngle;
@@ -119,3 +119,5 @@ struct Zone3D_BMDJStruct
 };
 void ResetBMDJObjectEntry(Zone3D_BMDJStruct::ObjectEntry* entry);
 void ResetBMDJInstance(Zone3D_BMDJStruct::InstanceEntry* instance);
+void AppendBMDJChild(Zone3D_BMDJStruct::InstanceEntry* parent, Zone3D_BMDJStruct::InstanceEntry* child);
+void AppendBMDJSibling(Zone3D_BMDJStruct::InstanceEntry* first, Zone3D_BMDJStruct::InstanceEntry* next);

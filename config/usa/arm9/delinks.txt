@@ -618,3 +618,11 @@ src/System/StringCopyAligned.cpp:
 src/System/StringCompareAligned.cpp:
     complete
     .text start:0x02004070 end:0x02004184
+
+src/World/BMDJInstanceLinks.cpp:
+    complete
+    .text start:0x020130b0 end:0x0201310c
+
+src/World/Zone3DInstanceLoading.cpp:
+    complete
+    .text start:0x020177d4 end:0x02017a94

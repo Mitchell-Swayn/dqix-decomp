@@ -165,6 +165,7 @@ public:
     bool ProcessBMDJFile(const void* filedata, unsigned int filesize, ZoneFeatures::Opcode64Entry* misc);
 
     bool ProcessAtmosphericEffects();
+    void BuildBMDJInstances(Zone3D_BMDJStruct* group, SafeAllocator* allocator);
     bool BuildBMDJObjects(Zone3D_BMDJStruct* group);
     bool LoadBMDJModel(Zone3D_BMDJStruct* group, Zone3D_BMDJStruct::ObjectEntry* entry, Zone3D_BMDJStruct::StructSizeC* definition);
     bool LoadBMDJAnimatedObject(Zone3D_BMDJStruct::ObjectEntry* entry, Zone3D_BMDJStruct::StructSizeC* definition);
