@@ -49,7 +49,6 @@ extern "C"
     void func_02013490(void*);
     void func_02013750(Zone3D*, bool);
 
-    void func_02014a24(Zone3D*, void*);
 }
 
 
@@ -375,7 +374,7 @@ bool Zone3D::UnpackMapAMDJ()
         }
         for (Zone3D_BMDJStruct* item = firstBMDJStruct_41c_; item != NULL; item = item->pNext_)
         {
-            func_02014a24(this, item);
+            BuildBMDJObjects(item);
             if (unknown_42c_ == 2) 
                 break;
         }

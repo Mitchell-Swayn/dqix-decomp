@@ -49,7 +49,6 @@ extern "C"
     void func_02013490(void*);
     void func_02013750(Zone3D*, bool);
 
-    void func_02014a24(Zone3D*, void*);
 }
 
 

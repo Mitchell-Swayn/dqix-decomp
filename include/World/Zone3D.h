@@ -156,6 +156,7 @@ public:
     bool ProcessBMDJFile(const void* filedata, unsigned int filesize, ZoneFeatures::Opcode64Entry* misc);
 
     bool ProcessAtmosphericEffects();
+    bool BuildBMDJObjects(Zone3D_BMDJStruct* group);
 
     // usa: func_02014b04
     void QueueLoadATS_AMBL();

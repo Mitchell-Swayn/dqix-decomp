@@ -31,6 +31,17 @@ struct Zone3D_BMDJStruct
         unsigned short unk_1e;
     };
 
+    struct ObjectEntry
+    {
+        short id;
+        unsigned short flags;
+        void* unknown_4;
+        void* unknown_8;
+        void* unknown_c;
+        void* unknown_10;
+        void* unknown_14;
+    };
+
     int unknown_0_;
     struct ScriptData
     {
@@ -60,8 +71,9 @@ struct Zone3D_BMDJStruct
         const char* GetString(int idx) const;
 
     } scriptData_;
-    void* ptr_40; // array of length scriptData_.counter_4, stride = 0x18 (func_02012ff0)
+    ObjectEntry* ptr_40; // array of length scriptData_.counter_4, stride = 0x18 (func_02012ff0)
     void* ptr_44; // array of length scriptData_.counter_10, stride = 0x70 (func_020181fc)
     Vector3i vec_48_;
     Zone3D_BMDJStruct* pNext_;
 };
+void ResetBMDJObjectEntry(Zone3D_BMDJStruct::ObjectEntry* entry);
