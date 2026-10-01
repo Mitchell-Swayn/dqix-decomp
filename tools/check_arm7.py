@@ -71,8 +71,8 @@ def verify(args):
         "status": "header-derived label; function extent and original name unknown",
     }]:
         raise ValueError("Entry symbol baseline has changed; review verifier")
-    # No ARM7 source is compiled by the current build. Never infer decompilation
-    # coverage from an exact match obtained by preserving the original payload.
+    # Byte preservation cannot establish source ownership. The independent
+    # source compiler/linker writes that evidence in arm7/report.json.
     report = {
         "schema_version": 1,
         "module": "cartridge_arm7",
@@ -81,20 +81,18 @@ def verify(args):
         "source_rom_sha1": source_sha1,
         "module_checks_passed": True,
         "header_entry_symbol_check_passed": True,
-        "linker_symbol_check": "unavailable: ARM7 is not linked from source",
+        "linker_symbol_check": "not performed here; see ARM7 source build report",
         "payload": source,
-        "source_code_bytes": 0,
-        "source_data_bytes": 0,
-        "reviewed_assembly_bytes": 0,
-        "binary_fallback_bytes": source["size"],
+        "source_coverage": "not measured by this preservation check; see arm7/report.json",
+        "preserved_payload_bytes": source["size"],
         "code_data_partition": "unknown",
         "function_count": None,
         "symbols": baseline["symbols"],
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
-    print(f"ARM7 baseline PASS: {source['size']:,} bytes preserved, "
-          f"0 reconstructed source bytes; report: {args.output}")
+    print(f"ARM7 baseline PASS: {source['size']:,} bytes preserved; "
+          f"source coverage measured separately; report: {args.output}")
 
 
 def main():

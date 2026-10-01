@@ -3,6 +3,7 @@
 import os
 from pathlib import Path
 import argparse
+import json
 import sys
 
 import ninja_syntax
@@ -389,9 +390,37 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, project: Project):
     n.newline()
 
     rom_file = project.build_rom()
+    rom_implicit = [DSD]
+    if project.game_version == "usa":
+        arm7_units_path = project.game_config / "arm7" / "source_units.json"
+        arm7_units = json.loads(arm7_units_path.read_text())
+        arm7_output = project.game_build / "arm7"
+        arm7_rom_config = str(project.game_build / "build" / "rom_config_arm7.yaml")
+        runner_flag = f' --runner "{WINE}"' if WINE else ""
+        n.rule(
+            name="arm7_source",
+            command=(f'{PYTHON} tools/arm7_build.py --compiler "{mwcc_path}"'
+                     f' --output "{arm7_output}" --rom-config $rom_config'
+                     f' --output-rom-config "{arm7_rom_config}"{runner_flag}'),
+        )
+        n.build(
+            inputs=rom_config_file,
+            implicit=[str(project.baserom()), str(arm7_units_path),
+                      "config/usa/arm7/baseline.json", "tools/arm7_build.py",
+                      "tools/check_arm7.py", CC, LD] +
+                     [unit["source"] for unit in arm7_units["units"]],
+            rule="arm7_source",
+            outputs=[arm7_rom_config, str(arm7_output / "arm7.bin"),
+                     str(arm7_output / "report.json")],
+            variables={"rom_config": rom_config_file},
+        )
+        n.newline()
+        rom_config_file = arm7_rom_config
+        rom_implicit.append(str(arm7_output / "arm7.bin"))
+
     n.build(
         inputs=rom_config_file,
-        implicit=DSD,
+        implicit=rom_implicit,
         rule="rom_build",
         outputs=rom_file,
     )

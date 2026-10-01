@@ -123,6 +123,13 @@ def main():
         report = source / "build/usa/report.json"
         shutil.copy2(report, run_dir / "report.json")
         manifest["arm9_report_measures"] = json.loads(report.read_text())["measures"]
+        arm7_report = source / "build/usa/arm7/report.json"
+        if arm7_report.is_file():
+            shutil.copy2(arm7_report, run_dir / "arm7-source-report.json")
+            arm7 = json.loads(arm7_report.read_text())
+            manifest["arm7_source_measures"] = {key: arm7[key] for key in (
+                "source_code_bytes", "source_literal_pool_bytes", "source_data_bytes",
+                "source_functions", "binary_fallback_bytes", "source_symbol_checks_passed")}
         manifest["built_rom_sha1"] = digest(source / "dqix_usa.nds", "sha1")
         if has_bios:
             run([ninja, "sha1"])

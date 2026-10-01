@@ -33,12 +33,12 @@ class Arm7BaselineTests(unittest.TestCase):
         baseline["source_rom_sha1"] = hashlib.sha1(rom).hexdigest()
         self.args.baseline.write_text(json.dumps(baseline))
 
-    def test_exact_binary_preservation_reports_zero_source(self):
+    def test_exact_binary_preservation_does_not_claim_source_coverage(self):
         with contextlib.redirect_stdout(io.StringIO()):
             verify(self.args)
         report = json.loads(self.args.output.read_text())
-        self.assertEqual(report["source_code_bytes"], 0)
-        self.assertEqual(report["binary_fallback_bytes"], len(self.payload))
+        self.assertNotIn("source_code_bytes", report)
+        self.assertEqual(report["preserved_payload_bytes"], len(self.payload))
         self.assertIsNone(report["function_count"])
 
     def test_rebuilt_byte_corruption_is_rejected(self):
