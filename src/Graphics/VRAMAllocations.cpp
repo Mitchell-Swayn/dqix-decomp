@@ -1,16 +1,7 @@
 #include "Graphics/VRAMAllocations.h"
 #include <globaldefs.h>
 
-struct Struct_020f1f14
-{
-    unsigned int freeStart_;
-    unsigned int freeEnd_;
-    unsigned int maybeIsUsable_;
-    char unk_c[4];
-    unsigned short relatedToPairing_;
-    char unk_12[2];
-    unsigned int poolBase_;
-} extern data_020f1f14[5];
+#include "Graphics/VRAMImagePool.h"
 
 extern Struct_020f1f14* data_020f1ef8[2];
 // points to elements in the above array.

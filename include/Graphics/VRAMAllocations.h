@@ -18,3 +18,4 @@ void ResetTexturePaletteVRAM();
 extern "C" int FreeTextureImageVRAM(unsigned int key);
 void SaveTextureImageVRAMState(unsigned int* state);
 void RestoreTextureImageVRAMState(const unsigned int* state);
+void ResetTextureImageVRAM();
