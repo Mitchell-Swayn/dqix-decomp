@@ -3,6 +3,9 @@
 #include "../Memory/SafeAllocator.h"
 #include "../Graphics/Vector.h"
 
+class Model3D;
+class Object3D;
+
 // sizeof == 0x58
 struct Zone3D_BMDJStruct
 {
@@ -35,7 +38,12 @@ struct Zone3D_BMDJStruct
     {
         short id;
         unsigned short flags;
-        void* unknown_4;
+        union
+        {
+            void* unknown_4;
+            Model3D* model;
+            Object3D* object;
+        };
         void* unknown_8;
         void* unknown_c;
         void* unknown_10;
