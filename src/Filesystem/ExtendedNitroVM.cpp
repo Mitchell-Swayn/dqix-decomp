@@ -1,4 +1,5 @@
 #include "Filesystem/ExtendedNitroVM.h"
+#include "Filesystem/FileCacheState.h"
 #include "Filesystem/FSInnerDefs.h"
 #include "Resource/ResourceMutex.h"
 #include "System/Cache.h"
@@ -43,7 +44,13 @@ extern "C"
 // files to prepare accessors in cache for
 extern const char* cachedFilePaths[];
 // Seems to hold whether cached file accessors have been saved or not
+#if defined(usa)
+extern FileCacheReadyFlag data_01ffd998;
+#define FILE_CACHE_READY data_01ffd998.ready
+#else
 extern bool data_01ffd998;
+#define FILE_CACHE_READY data_01ffd998
+#endif
 // CRC hashes for cached file accessors
 extern unsigned int data_01ffd99c[NUM_CACHED_FILES];
 // cached file accessors
@@ -140,7 +147,7 @@ bool Decompressor::ProcessBytes(const void* input, unsigned int inputLength)
 
 void CacheMainFileAccessors()
 {
-    if (!data_01ffd998)
+    if (!FILE_CACHE_READY)
     {
         char fullFilePath[64];
 
@@ -195,7 +202,7 @@ void CacheMainFileAccessors()
             passEnd--;
         }
 
-        data_01ffd998 = true;
+        FILE_CACHE_READY = true;
     }
 }
 
@@ -269,7 +276,7 @@ bool ExtendedNitroVM::Open(const char *filePath, bool skip)
     {
         unsigned int cacheIndex;
         const char* abridgedPath = filePath;
-        if (data_01ffd998)
+        if (FILE_CACHE_READY)
         {   
             if (abridgedPath[0] == '/')
                 abridgedPath++;
