@@ -24915,11 +24915,11 @@ from:0x020d9608 kind:load to:0x020d8a48 module:main
 from:0x020d9618 kind:load to:0x020d8a48 module:main
 from:0x020d9628 kind:load to:0x020d91a8 module:main
 from:0x020d9644 kind:arm_call to:0x020d9654 module:main
-from:0x020d9650 kind:load to:0x020f27e8 module:main
+from:0x020d9650 kind:load to:0x020f27c0 add:0x28 module:main
 from:0x020d9684 kind:arm_call to:0x020d9654 module:main
-from:0x020d9690 kind:load to:0x020f27f0 module:main
+from:0x020d9690 kind:load to:0x020f27c0 add:0x30 module:main
 from:0x020d96a0 kind:arm_call to:0x020d9654 module:main
-from:0x020d96ac kind:load to:0x020f27f8 module:main
+from:0x020d96ac kind:load to:0x020f27c0 add:0x38 module:main
 from:0x020d96b4 kind:arm_call to:0x020c75a4 module:main
 from:0x020d96c0 kind:arm_call to:0x020c745c module:main
 from:0x020d96c8 kind:arm_call to:0x020c805c module:main
@@ -26839,9 +26839,9 @@ from:0x020e674c kind:arm_call to:0x020d962c module:main
 from:0x020e6754 kind:arm_call to:0x020d9694 module:main
 from:0x020e6760 kind:arm_call to:0x020d962c module:main
 from:0x020e676c kind:load to:0x020f27c0 module:main
-from:0x020e6770 kind:load to:0x020f27c8 module:main
-from:0x020e6774 kind:load to:0x020f27cc module:main
-from:0x020e6778 kind:load to:0x020f27d0 module:main
+from:0x020e6770 kind:load to:0x020f27c0 add:0x8 module:main
+from:0x020e6774 kind:load to:0x020f27c0 add:0xc module:main
+from:0x020e6778 kind:load to:0x020f27c0 add:0x10 module:main
 from:0x020e6788 kind:load to:0x020dbc48 module:main
 from:0x020e678c kind:load to:0x0214e4c8 module:main
 from:0x020e67ac kind:arm_call to:0x0200ee94 module:main
@@ -27893,7 +27893,7 @@ from:0x020f230c kind:load to:0x020d773c module:main
 from:0x020f2314 kind:load to:0x020d7744 module:main
 from:0x020f231c kind:load to:0x020d774c module:main
 from:0x020f2324 kind:load to:0x020d7754 module:main
-from:0x020f27c4 kind:load to:0x020f27d4 module:main
+from:0x020f27c4 kind:load to:0x020f27c0 add:0x14 module:main
 from:0x020f2858 kind:load to:0x020f2870 module:main
 from:0x020f285c kind:load to:0x020f2860 module:main
 from:0x020f28dc kind:load to:0x020c58cc module:main

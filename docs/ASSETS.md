@@ -83,6 +83,15 @@ reproduction and limits. These are analysis tools, not newly decompiled game cod
 
 ## Script format and known native users
 
+The GPC loader's runtime metadata, revision text and three signature strings
+at USA `[0x020f27c0, 0x020f2800)` now have source definitions in
+[`GPCData.cpp`](../src/Filesystem/GPCData.cpp). All 64 bytes, including initial
+zero fields and padding, match. `GPCStaticData` preserves adjacent storage order;
+it does not assert that the original source grouped these declarations. Interior
+references use explicit relocation addends. The separate startup routine at
+`0x020e6710` still comes from the original binary and is not credited as source.
+This program-owned metadata counts as native data, separately from asset content.
+
 [Script.h](../include/Resource/Script.h) and
 [Script.cpp](../src/Resource/Script.cpp) reconstruct a native interpreter whose
 opcode table is supplied by each caller. Its 16-byte file header holds instruction

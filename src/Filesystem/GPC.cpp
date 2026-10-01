@@ -1,4 +1,5 @@
 #include "Filesystem/GPC.h"
+#include "Filesystem/GPCImplementation.h"
 #include <globaldefs.h>
 
 #pragma dont_inline on
@@ -30,14 +31,13 @@ extern "C"
     void func_020d8524(void*, const void*, unsigned int);
 }
 
-struct GPCImplementationData
-{
-    const char* pRevisionNumberString; // "17659 $"
-    const char* pRevisionString; // "$Revision: 17659 $"
-    unsigned int gpc0Signature;
-    unsigned int gpc1Signature;
-    unsigned int gpc2Signature;
-} extern data_020f27c0;
+#if defined(usa)
+#define data_020f27c0 gpcData.runtime
+#define data_020f27e8 gpcData.signature0
+#define data_020f27f0 gpcData.signature1
+#define data_020f27f8 gpcData.signature2
+#else
+extern GPCImplementationData data_020f27c0;
 
 // GPC0 signature
 extern char data_020f27e8[8];
@@ -45,6 +45,7 @@ extern char data_020f27e8[8];
 extern char data_020f27f0[8];
 // GPC2 signature
 extern char data_020f27f8[8];
+#endif
 
 extern "C" bool GetUnknownGP2Data_020d8fcc(void** pOutPtr, unsigned int* pOutNumber, GPCFile* gpc, const GPCFile::FileEntry* file)
 {
