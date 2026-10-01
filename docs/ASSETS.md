@@ -111,6 +111,11 @@ it does not assert that the original source grouped these declarations. Interior
 references use explicit relocation addends. The separate startup routine at
 `0x020e6710` still comes from the original binary and is not credited as source.
 This program-owned metadata counts as native data, separately from asset content.
+The file-access cache's ready flag, 61 CRC values and 61 handle/file-ID pairs
+also have explicit zero-initialized definitions in
+[`FileCacheData.cpp`](../src/Filesystem/itcm/FileCacheData.cpp), covering ITCM BSS
+`[0x01ffd998, 0x01ffdc78)` (736 bytes including alignment). The configured path
+pointer list and its string storage still remain original-binary dependencies.
 
 [Script.h](../include/Resource/Script.h) and
 [Script.cpp](../src/Resource/Script.cpp) reconstruct a native interpreter whose
