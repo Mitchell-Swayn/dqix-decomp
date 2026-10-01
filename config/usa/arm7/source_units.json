@@ -84,6 +84,35 @@
       }
     },
     {
+      "name": "VerticalAlarms",
+      "source": "config/usa/arm7/src/VerticalAlarms.c",
+      "autoload": "wram",
+      "runtime_address": 58711380,
+      "payload_offset": 24432,
+      "size": 332,
+      "code_bytes": 316,
+      "literal_pool_bytes": 16,
+      "entry": "ARM7_InitializeVerticalAlarms",
+      "symbols": {
+        "ARM7_InitializeVerticalAlarms": 58711380,
+        "ARM7_IsVerticalAlarmInitialized": 58711456,
+        "ARM7_InsertVerticalAlarm": 58711472,
+        "ARM7_RemoveVerticalAlarm": 58711636,
+        "ARM7_ZeroInitializeVerticalAlarm": 58711692
+      },
+      "externals": {
+        "ARM7_DisableSpecificInterrupts": 58702172,
+        "ARM7_ArmVerticalAlarm": 58712048
+      },
+      "bss": {
+        "runtime_address": 58757488,
+        "size": 20,
+        "symbols": {
+          "ARM7_VerticalAlarmState": 58757488
+        }
+      }
+    },
+    {
       "name": "Interrupts",
       "source": "config/usa/arm7/src/Interrupts.c",
       "autoload": "wram",
