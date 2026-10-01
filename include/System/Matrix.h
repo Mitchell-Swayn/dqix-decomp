@@ -85,9 +85,9 @@ typedef union Matrix4x4
     Vector4fix rows[4];
 } Matrix4x4;
 
-// These are probably nitro SDK functions, and some are handwritten in assembly.
-// The others are a massive pain because of 64-bit, so I'm not matching them now
-// but it should be useful for clarity to have them named.
+// These appear to be Nitro SDK functions; some matrix routines use assembly.
+// Matched vector arithmetic is in System/VectorMath.cpp. Other declarations
+// still refer to original binary code until their implementations are recovered.
 #ifdef __cplusplus
 extern "C"
 {
@@ -267,10 +267,13 @@ extern "C"
     // usa: func_020c2dc4
     void Vector3fix_Subtract(const Vector3fix* a, const Vector3fix* b, Vector3fix* out);
     // usa: func_020c2df8
+    // Rounds the accumulated 64-bit dot product back to 12 fractional bits.
     fix32_t Vector3fix_InnerProduct(const Vector3fix* a, const Vector3fix* b);
     // usa: func_020c2e34
+    // Safe when out aliases either input: components are captured before stores.
     void Vector3fix_CrossProduct(const Vector3fix* a, const Vector3fix* b, Vector3fix* out);
     // usa: func_020c2eb8
+    // Uses the hardware square-root unit and waits for completion.
     fix32_t Vector3fix_Length(const Vector3fix* vec);
     // usa: func_020c2f18
     void Vector3fix_Normalize(const Vector3fix* in, Vector3fix* out);

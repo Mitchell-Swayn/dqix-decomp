@@ -1,0 +1,35 @@
+# Matched vector arithmetic
+
+`src/System/VectorMath.cpp` reconstructs five existing C-linkage interfaces in
+USA ARM9 range `[0x020c2d90, 0x020c2f18)`: addition, subtraction, inner product,
+cross product and length. The 392-byte range matches exactly, including the
+compiler-generated eight-byte hardware-register literal pool in the length
+function. Objdiff counts the whole range as code and reports five matched
+functions. There are no standalone program-data definitions or assembly wrappers.
+Existing symbol names and prototypes already described these operations, so no
+symbol renaming was needed.
+
+Inputs use the existing signed 20.12 fixed-point vector representation. The dot
+product accumulates full-width products before rounding; the cross product rounds
+each component after subtraction. All cross-product inputs are captured before
+stores, preserving aliasing when output equals either input. Its local declaration
+order is deliberately retained because changing it changes Metrowerks register
+allocation. Length uses the 64-bit hardware square-root operand mode, retaining an
+extra precision bit before rounding back to the existing fixed-point scale. It
+does not add locking or overflow handling absent from the original instructions.
+
+Existing callers support these meanings: `Object3D.cpp` adds position vectors,
+`ExtendedVectorMath.cpp` subtracts source/target positions, `AnimationProcessing.cpp`
+reconstructs rotation basis vectors with cross products, and `Model3D.cpp` and
+`RenderCommands.cpp` use lengths for radius/scaling calculations. These operations
+appear in the SDK region; their exact original source spelling is not asserted.
+`Vector3fix_Normalize` and `Vector3fix_Distance` remain binary fallback.
+
+Validation in the isolated `work/vectors` worktree used the pinned compiler and
+ran `ninja rom check`, then `ninja report`. ARM9 main, both autoloads, all 35
+overlays, symbol checks and the independent ARM7 checks passed. Each compiled
+function was also compared directly with its original instruction/literal bytes.
+The report's total code/data/function denominators remained unchanged. This is
+matching evidence, not a new runtime gameplay test. The worktree's base predates
+the separate ROM header finalization change; final whole-ROM verification belongs
+to integration with that change.
