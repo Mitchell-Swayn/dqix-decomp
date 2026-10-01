@@ -5165,7 +5165,7 @@ _Z26InvalidateInstructionCachev kind:function(arm,size=0xc) addr:0x020c8320
 _Z31InvalidateInstructionCacheRangePKvj kind:function(arm,size=0x1c) addr:0x020c832c
 func_020c8348 kind:function(arm,size=0x20) addr:0x020c8348
 func_020c8368 kind:function(arm,size=0x48) addr:0x020c8368
-func_020c83b0 kind:function(arm,size=0x104) addr:0x020c83b0
+_Z16InitializeArenasv kind:function(arm,size=0x104) addr:0x020c83b0
 func_020c84b4 kind:function(arm,size=0x6c) addr:0x020c84b4
 _Z12GetArenaHighi kind:function(arm,size=0x14) addr:0x020c8520
 _Z11GetArenaLowi kind:function(arm,size=0x14) addr:0x020c8534
@@ -7857,7 +7857,7 @@ data_02111304 kind:bss addr:0x02111304
 data_02111308 kind:bss addr:0x02111308
 data_02111314 kind:bss addr:0x02111314
 data_021113d4 kind:bss addr:0x021113d4
-data_0211155c kind:bss addr:0x0211155c
+g_arenaInitializationState kind:bss addr:0x0211155c
 g_arenaHeapInfo kind:bss addr:0x02111564
 data_02111588 kind:bss addr:0x02111588
 data_0211158c kind:bss addr:0x0211158c
