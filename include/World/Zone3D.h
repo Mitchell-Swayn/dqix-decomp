@@ -157,6 +157,7 @@ public:
 
     bool ProcessAtmosphericEffects();
     bool BuildBMDJObjects(Zone3D_BMDJStruct* group);
+    bool LoadBMDJCollision(Zone3D_BMDJStruct::ObjectEntry* entry, Zone3D_BMDJStruct::StructSizeC* definition);
 
     // usa: func_02014b04
     void QueueLoadATS_AMBL();

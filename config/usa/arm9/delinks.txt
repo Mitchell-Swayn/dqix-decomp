@@ -544,3 +544,7 @@ src/World/BMDJObjectEntry.cpp:
 src/World/Zone3DBMDJObjects.cpp:
     complete
     .text start:0x02014a24 end:0x02014b04
+
+src/World/Zone3DCollisionLoading.cpp:
+    complete
+    .text start:0x02015134 end:0x020151cc

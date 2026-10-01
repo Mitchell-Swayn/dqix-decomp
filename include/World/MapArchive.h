@@ -127,12 +127,7 @@
 // drawn without its placement lands at the map's centre rather than where it
 // belongs.
 
-extern "C"
-{
-
 // usa: func_02014d18
 // Names a member inside an already-open archive: "ARC:/" plus the stem, with
 // the extension replaced.
 void BuildArcMemberPath(const char* stem, const char* extension, char* path);
-
-}

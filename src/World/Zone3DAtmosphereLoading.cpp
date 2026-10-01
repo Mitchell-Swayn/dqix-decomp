@@ -1,5 +1,6 @@
 #include "World/Zone3D.h"
 #include "World/Zone3DPaths.h"
+#include "World/MapArchive.h"
 #include "GameState/GameState.h"
 #include "Filesystem/BackgroundLoader.h"
 #include "Filesystem/NarcHandle.h"

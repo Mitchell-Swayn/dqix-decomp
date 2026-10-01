@@ -2,7 +2,6 @@
 
 extern "C"
 {
-    void func_02015134(Zone3D*, Zone3D_BMDJStruct::ObjectEntry*, Zone3D_BMDJStruct::StructSizeC*);
     void func_020151cc(Zone3D*, Zone3D_BMDJStruct::ObjectEntry*, Zone3D_BMDJStruct::StructSizeC*);
     void func_02014d80(Zone3D*, Zone3D_BMDJStruct*, Zone3D_BMDJStruct::ObjectEntry*, Zone3D_BMDJStruct::StructSizeC*);
     void func_020177d4(Zone3D*, Zone3D_BMDJStruct*, SafeAllocator*);
@@ -21,7 +20,7 @@ bool Zone3D::BuildBMDJObjects(Zone3D_BMDJStruct* group)
         ResetBMDJObjectEntry(entry);
         if (!definition) continue;
         if (definition->name[3] == 'A')
-            func_02015134(this, entry, definition);
+            LoadBMDJCollision(entry, definition);
         else if (definition->unk_2 & 0x10)
             func_020151cc(this, entry, definition);
         else
