@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "exceptions": [
+    {
+      "unit": "src/System/CPSRInterruptState",
+      "source": "src/System/CPSRInterruptState.cpp",
+      "review_status": "reviewed by coordinating Codex agent on 2026-10-02",
+      "approval_scope": "Only MRS/MSR processor-status access in these seven routines; all masks and returns remain C. No approval for matching coercion elsewhere.",
+      "reason": "Portable C cannot read or write CPSR. Source assembly contains only the twelve MRS/MSR instructions required to implement interrupt masks and processor-mode queries.",
+      "original_assembly_authorship": "unknown",
+      "source_sha256": "9cfccf04c9fcc8703bc4f95c41d051e5a1497762079ad314b48591e48d59a9d6",
+      "module_path": "build/usa/build/arm9.bin",
+      "module_base": "0x02000000",
+      "start": "0x020c96e8",
+      "end": "0x020c976c",
+      "original_bytes_sha256": "d7b412aed672ae3a810d666dbc44bcf5b1a4b5974efdac6cd47e475a606efa4b",
+      "source_evidence": "Original USA ROM c7c3014c237900c8281289b8bc76a781969b6278, module bytes and direct ARMv5 instruction inspection; pre-existing source matches all seven original routines.",
+      "verification": "Run ninja rom check report sha1 before audit_assembly.py; audit checks source hash, exact routine-byte hash and every function match in the unit.",
+      "reviewed_assembly_routine_bytes": 132,
+      "inline_assembly_instruction_bytes": 48,
+      "c_instruction_credit": 0,
+      "note": "The132 bytes classify whole mixed C/assembly routines, not132 handwritten instructions. This review changes no source-coverage counters.",
+      "routines": [
+        {
+          "symbol": "_Z19EnableIRQInterruptsv",
+          "start": "0x020c96e8",
+          "end": "0x20c96fc"
+        },
+        {
+          "symbol": "_Z20DisableIRQInterruptsv",
+          "start": "0x020c96fc",
+          "end": "0x20c9710"
+        },
+        {
+          "symbol": "_Z20SetIRQInterruptStatei",
+          "start": "0x020c9710",
+          "end": "0x20c9728"
+        },
+        {
+          "symbol": "_Z26DisableIRQAndFIQInterruptsv",
+          "start": "0x020c9728",
+          "end": "0x20c973c"
+        },
+        {
+          "symbol": "_Z26SetIRQAndFIQInterruptStatei",
+          "start": "0x020c973c",
+          "end": "0x20c9754"
+        },
+        {
+          "symbol": "_Z20GetIRQInterruptStatev",
+          "start": "0x020c9754",
+          "end": "0x20c9760"
+        },
+        {
+          "symbol": "_Z16GetProcessorModev",
+          "start": "0x020c9760",
+          "end": "0x20c976c"
+        }
+      ]
+    }
+  ]
+}
