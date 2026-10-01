@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compare NitroFS by paths and hashes; inventory NARC members without extraction."""
+"""Compare NitroFS and inventory decoded NARC/GPC2/map members without extraction."""
 import argparse
 from collections import Counter
 import hashlib
@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 import struct
 
-from gpc import members as gpc_members
+from gpc import decompress_nitro_lz, members as gpc_members
 
 
 def region(data, offset, size):
@@ -260,6 +260,22 @@ def audit(original, rebuilt):
             except (ValueError, KeyError, struct.error) as error:
                 item['container_error'] = str(error)
                 errors.append(path)
+        elif (path.startswith('data/map/') and '::' in path and
+              Path(path).suffix.lower() in ('.bmbl', '.bpos', '.bmdj', '.bats', '.dat', '.nsbtx') and
+              payload.startswith(b'\x10')):
+            # These member extensions are routed through FileIO's BIOS LZ77
+            # wrapper by the source-backed Zone3D loaders. Do not infer generic
+            # compression from a lone 0x10 byte in unrelated files/scripts.
+            item['compression'] = 'Nitro_LZ77_0x10'
+            try:
+                if depth >= 12:
+                    raise ValueError('Nested compression depth limit')
+                decoded = decompress_nitro_lz(payload)
+                item['decoded_size'] = len(decoded)
+                visit(path + '::@lz77', decoded, depth + 1)
+            except (ValueError, struct.error) as error:
+                item['compression_error'] = str(error)
+                errors.append(path)
         else:
             # PAC and proprietary formats remain opaque; extension is not proof of format.
             item['native_header_candidates'] = native_candidates(payload)
@@ -274,11 +290,12 @@ def audit(original, rebuilt):
         top_level_extensions=dict(sorted(Counter(Path(p).suffix for p in before).items())),
         narc_containers=sum(r.get('container') == 'NARC' for r in records),
         gpc2_containers=sum(r.get('container') == 'GPC2' for r in records),
+        nitro_lz_members=sum(r.get('compression') == 'Nitro_LZ77_0x10' for r in records),
         container_errors=errors,
         native_candidate_files=sum(bool(r.get('native_header_candidates')) for r in records),
         script_structure_candidates=sum('script_structure_candidate' in r for r in records),
         limitations=["Only FNT-named NitroFS files compared; executables, overlays, banner and padding are outside this check.",
-                     "NARC and GPC2 recursively parsed; opaque PAC and other proprietary formats remain unknown.",
+                     "NARC/GPC2 and source-backed Nitro LZ map members decoded; opaque PAC and other formats remain unknown.",
                      "Header signatures are triage candidates, not established executable code; absence proves nothing about raw code.",
                      "Script structural candidates do not prove interpreter association or semantic coverage."], records=records)
 

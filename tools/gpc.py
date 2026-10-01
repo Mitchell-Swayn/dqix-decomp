@@ -121,3 +121,16 @@ def members(data):
                        "stored_size": stored_size, "compression": None if flags & 0x10000000 else stored[0] & 7,
                        "payload": payload})
     return output
+
+
+def decompress_nitro_lz(data, maximum=64 * 1024 * 1024):
+    """LZ77 type0x10 used by FileIO's BIOS-backed map-member loaders.
+
+    Token coding equals GPC type1's normal mode; only the four-byte prefix
+    differs. Other Nitro encodings are deliberately not guessed here.
+    """
+    prefix = struct.unpack("<I", take(data, 0, 4))[0]
+    if prefix & 255 != 0x10:
+        raise ValueError("Expected Nitro LZ77 type0x10")
+    size = prefix >> 8
+    return decompress(struct.pack("<I", size << 3 | 1) + data[4:], maximum)

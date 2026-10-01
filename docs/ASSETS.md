@@ -35,8 +35,9 @@ see the separate executable inventory for overlays and processor binaries.
 ## Archive inventory
 
 There are 4,129 top-level files with NARC magic. The expanded audit parses 5,132
-NARC containers and 1,671 GPC2 containers, producing 88,313 records including
-outer files, with zero container parsing errors. The initial NARC-only audit
+NARC containers and 1,671 GPC2 containers, producing 91,638 records including
+outer files and 3,325 decoded Nitro LZ member views, with zero parsing errors.
+The GPC2 stage alone produced 88,313 records. The initial NARC-only audit
 exposed 4,181 containers and 32,160 records; decoding GPC2 exposes further nested
 archives and their members without changing the cartridge's top-level file count.
 The parser follows the BTAF allocation table, BTNF names and GMIF payload block,
@@ -81,6 +82,25 @@ All 1,671 containers decode without errors. The decoder additionally passed
 see [native differential validation](GPC_NATIVE_VALIDATION.md) for samples,
 reproduction and limits. These are analysis tools, not newly decompiled game code.
 
+### Nitro LZ map members
+
+`Zone3DMapLoading.cpp` routes map archive members through
+`FileIO.cpp`'s BIOS-backed LZ77 wrapper. That wrapper reads the output size from
+the upper24 bits of a four-byte prefix. For those source-backed paths, the audit
+decodes type `0x10` using the same normal LZ token coding as GPC type1.
+Recognition requires `data/map/`, an archive member, an observed loader extension
+and the correct prefix; a stray `0x10` in unrelated data is not treated as proof
+of compression. Other Nitro encodings remain outside this reader.
+
+All 3,325 selected members decode successfully: 755 `.bmdj`, 737 `.nsbtx`,
+667 `.bmbl`, 657 `.dat`, 504 `.bats` and five `.bpos`. Decoded views appear as
+`::@lz77` children, retaining the original compressed payload's hash and size in
+the parent. Their 2,588 new structural script candidates bring the total to
+54,421; all decoded types except `.nsbtx` fit the generic Script structure.
+This remains structural evidence, especially for `.dat`, whose native consumer
+is only partially understood. The GPC native differential test validates shared
+normal-LZ token behavior; it does not execute the missing BIOS implementation.
+
 ## Script format and known native users
 
 The GPC loader's runtime metadata, revision text and three signature strings
@@ -105,8 +125,10 @@ special handling. The fourth header word's precise meaning remains uncertain.
 The audit checks this structural shape without executing scripts or claiming that
 all matching bytes belong to this interpreter. It allows zero or `0xff` padding
 between instruction stream and data section, as found in `.bmed` files. It finds
-51,833 candidates: 47,839 `.bin`, 2,728 `.bcfg`, 930 `.bact`, 283 `.bmmp`,
-41 `.svn-base` members and 12 `.bmed`. The initial NARC-only audit found 3,511.
+54,421 candidates. Before decoding Nitro LZ map members, these comprised 51,833:
+47,839 `.bin`, 2,728 `.bcfg`, 930 `.bact`, 283 `.bmmp`, 41 `.svn-base` members
+and 12 `.bmed`. The further 2,588 decoded candidates are listed above.
+The initial NARC-only audit found 3,511.
 Structural resemblance is not semantic script coverage; formats
 with similar headers can be false positives, and unsupported structures can be
 missed. Opcode histograms and header fields are included per candidate.
@@ -125,6 +147,14 @@ Source-backed interpreter relationships include:
   `.bin` members from the treasure archive with container callbacks, and executes
   `randTBox.bin` and `randTTT.bin` with loot-distribution callbacks. These names
   provide stronger evidence than applying a generic `.bin` classification.
+- [Zone3DMapLoading.cpp](../src/World/Zone3DMapLoading.cpp) decompresses `.bmbl`
+  and `.bpos` members and executes them through `ZoneFeatures::LoadFromScript`.
+  The reconstructed dispatch table in [ZoneFeatures.cpp](../src/World/ZoneFeatures.cpp)
+  contains 17 callbacks between `0x64` and `0x7e`, with gaps. The same map loader
+  routes decompressed `.bats` files to the lighting interpreter.
+- [BMDJ.cpp](../src/World/BMDJ.cpp) executes object-map scripts with its own
+  opcode table to construct ID/name records and related entries. Its matched
+  constant-return handlers are original successful no-ops, not replacement stubs.
 
 The interpreter and its callbacks are native executable code and remain part of
 native decompilation coverage. Preserved script payloads are content coverage.
@@ -135,17 +165,19 @@ original script-authoring language.
 ## Native-code triage limitations
 
 The audit scans decoded non-container payloads for ELF, PE and two Mach-O
-header signatures. Fifteen payloads contain sixteen loose `PE\0\0` matches;
+header signatures. Forty-nine payloads contain 55 loose `PE\0\0` matches;
 one contains a Mach-O32 signature. A structural follow-up checks for a
 DOS `MZ` header whose `e_lfanew` points to each PE signature, including embedded
 images. If found, it checks the COFF machine and section count, PE32/PE32+ optional
 header, `SizeOfHeaders`, section table and section payload bounds. It does not
 emulate an executable loader or infer code semantics from the machine value.
 
-**All sixteen matches were rejected as PE image signatures:** none has an associated
+**All 55 matches were rejected as PE image signatures:** none has an associated
 DOS header pointing to it. These are false positives for the loose PE signature
 scan, not evidence that the entire containing file lacks executable code. The
-individual offsets (decimal, relative to each decoded payload) are reproducible:
+individual offsets are recorded in the generated audit. The table below preserves
+the sixteen signatures exposed before the additional Nitro LZ decoding
+(decimal offsets relative to each decoded payload):
 
 | Payload path | Signature offsets |
 | --- | --- |

@@ -2,7 +2,7 @@
 import struct
 import unittest
 
-from gpc import decompress, members
+from gpc import decompress, decompress_nitro_lz, members
 
 
 def packed(kind, length, content):
@@ -47,6 +47,11 @@ class GPCCompressionTests(unittest.TestCase):
         record = members(header + table + names + data)[0]
         self.assertEqual(record["name"], "a")
         self.assertEqual(record["payload"], b"xyz")
+
+    def test_nitro_lz_header(self):
+        self.assertEqual(decompress_nitro_lz(struct.pack('<I', 7 << 8 | 0x10) + b'\x40a\x30\x00'), b'aaaaaaa')
+        with self.assertRaises(ValueError):
+            decompress_nitro_lz(struct.pack('<I', 7 << 8 | 0x11) + b'\x40a\x30\x00')
 
 
 if __name__ == "__main__":

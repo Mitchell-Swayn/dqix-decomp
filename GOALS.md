@@ -218,7 +218,8 @@ waived, and a byte-identical ROM does not imply that its code is fully reconstru
   exceptions pending individual review; they are not silently credited as C++.
 - Verified all 7,481 NitroFS files (253,967,681 bytes) preserved exactly; inventoried
   5,132 NARC and 1,671 GPC2 containers after decoding compressed members, producing
-  88,313 records with zero container errors. The decoder passed 84 comparisons
+  91,638 records after also decoding 3,325 Nitro LZ map members, with zero parsing
+  errors. The GPC decoder passed 84 comparisons
   against original ARM9 instructions. Known Script layouts/users and audit limits
   are documented in `docs/ASSETS.md` and `docs/GPC_NATIVE_VALIDATION.md`.
   Opaque/compressed content still needs analysis before an exhaustive native-code
