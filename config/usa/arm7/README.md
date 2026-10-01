@@ -1,11 +1,11 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **62 C
-functions: 6,288 instruction bytes plus 488 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **68 C
+functions: 6,660 instruction bytes plus 496 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
 864 bytes of standalone diagnostic data and 316 bytes of BSS now have source
-definitions. The other 160,116 payload bytes
+definitions. The other 159,736 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -19,10 +19,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 6,288 / 488 bytes |
+| Reconstructed C instructions / compiler literal pools | 6,660 / 496 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 864 / 120 bytes |
 | Reconstructed BSS / total autoload BSS | 316 / 22,744 bytes |
-| Binary fallback | 160,116 bytes |
+| Binary fallback | 159,736 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -249,6 +249,14 @@ wait lists, and flag bit zero selects blocking behavior. IRQ helpers are already
 source-owned; thread block/unblock and the signed-division runtime helper remain
 explicit binary dependencies. Queue instances are caller-owned, so no BSS is
 credited by this unit.
+
+`src/Mutex.c` reconstructs six recursive-mutex and owner-list routines at
+`[0x037fcca0, 0x037fce1c)` (payload `[0x4ebc, 0x5038)`), with 372 C
+instruction bytes and 8 literal bytes. Ownership, recursive reference counts,
+blocking and wakeups follow the native thread fields at offsets 0x68/0x6c/0x70.
+The thread structure is deliberately partial, and the external scheduler block
+at `0x03808fd0` remains unowned BSS. Blocking, wakeup and mutex-list pop helpers
+remain binary dependencies; no data bytes are credited by this unit.
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C

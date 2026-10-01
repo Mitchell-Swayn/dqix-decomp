@@ -167,6 +167,33 @@
       }
     },
     {
+      "name": "Mutex",
+      "source": "config/usa/arm7/src/Mutex.c",
+      "autoload": "wram",
+      "runtime_address": 58707104,
+      "payload_offset": 20156,
+      "size": 380,
+      "code_bytes": 372,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_ZeroInitializeMutex",
+      "symbols": {
+        "ARM7_ZeroInitializeMutex": 58707104,
+        "ARM7_LockMutex": 58707128,
+        "ARM7_UnlockMutex": 58707260,
+        "ARM7_UnlockAllMutexesLockedByContext": 58707356,
+        "ARM7_AddMutexToContextLockedList": 58707412,
+        "ARM7_RemoveMutexFromContextLockedList": 58707448
+      },
+      "externals": {
+        "ARM7_ThreadSystem": 58757072,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_BlockCurrentThread": 58705564,
+        "ARM7_UnblockThreads": 58705648,
+        "ARM7_PopFrontMutexFromList": 58704328
+      }
+    },
+    {
       "name": "Alarms",
       "source": "config/usa/arm7/src/Alarms.c",
       "autoload": "wram",
