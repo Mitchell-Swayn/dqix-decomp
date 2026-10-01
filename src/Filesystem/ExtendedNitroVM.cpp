@@ -77,23 +77,23 @@ bool Decompressor::InitAndDecompress(void *out, unsigned int outCapacity, const 
 
     this->writeOutputPtr = (unsigned char*)out;
     this->remainingOutputBytes = decompLength;
-    this->probablyDecompressedSize = decompLength;
+    this->declaredOutputSize = decompLength;
     this->compressionType = compressionType;
     unsigned int bytesLeftRoundedUp = (remainingOutputBytes + 3) & ~3;
-    this->abstractOutputLocation = writeOutputPtr;
-    this->abstractOutputLocation = (unsigned char*)this->abstractOutputLocation + bytesLeftRoundedUp;
+    this->alignedOutputEnd = writeOutputPtr;
+    this->alignedOutputEnd = (unsigned char*)this->alignedOutputEnd + bytesLeftRoundedUp;
     switch (compressionType)
     {
     case 0:
         break;
     case 1:
-        unknown_11 = 3;
+        state.lz.tokenReadState = 3;
         break;
     case 2:
     case 3:
-        decompressB_typeFlag_18 = 1 << compressionType;
-        unknown_14 = -1;
-        unknown_08 = &unknown_1C[0];
+        state.huffman.symbolWidth = 1 << compressionType;
+        state.huffman.remainingTreeBytes = -1;
+        state.huffman.treeCursor = &huffmanTree[0];
         break;
     case 4:
         break;
@@ -128,7 +128,7 @@ bool Decompressor::ProcessBytes(const void* input, unsigned int inputLength)
         default:
             if (inputLength >= remainingOutputBytes)
                 inputLength = remainingOutputBytes;
-            remainingOutputBytes -= func_020d8524(writeStart + probablyDecompressedSize - remainingOutputBytes, input, inputLength);
+            remainingOutputBytes -= func_020d8524(writeStart + declaredOutputSize - remainingOutputBytes, input, inputLength);
             break;
         }
         CleanInvalidateCacheRange(writeStart, writeOutputPtr - writeStart);
@@ -396,13 +396,13 @@ unsigned int ExtendedNitroVM::DecompressWithScratchSpace(Decompressor& decompres
             readPosTracker += successfulLoadSize;
         }
     }
-    unsigned int scratchSpaceUsedAmount = (decompressor.probablyDecompressedSize + 4) & ~3;
+    unsigned int scratchSpaceUsedAmount = (decompressor.declaredOutputSize + 4) & ~3;
     if (scratchSpaceUsedAmount >= scratchSpaceCapacity)
         scratchSpaceUsedAmount = scratchSpaceCapacity;
-    func_020d84f8((unsigned char*)scratchSpace + decompressor.probablyDecompressedSize, 
-        scratchSpaceUsedAmount - decompressor.probablyDecompressedSize);
+    func_020d84f8((unsigned char*)scratchSpace + decompressor.declaredOutputSize, 
+        scratchSpaceUsedAmount - decompressor.declaredOutputSize);
     CleanInvalidateCacheRange(scratchSpace, scratchSpaceUsedAmount);
-    outDecompressedLength = decompressor.probablyDecompressedSize;
+    outDecompressedLength = decompressor.declaredOutputSize;
     return readPosTracker; 
 }
 

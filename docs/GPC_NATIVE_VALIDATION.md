@@ -80,6 +80,16 @@ output pointer and remaining size, LZ state byte `+0x11 = 3`, Huffman tree point
 `+0x18 = 1 << type`. It calls the native algorithms directly. Inputs have readable
 padding for the native Huffman word loads.
 
+The reconstructed `Decompressor` now names these overlapping fields through
+algorithm-specific views of bytes `+0x08..+0x1b`. Huffman uses a tree cursor,
+input/output bit accumulators and counts; its 512-byte tree buffer begins at
+`+0x1c`. LZ uses packet flags, token-read state and an extended-length mode byte;
+RLE uses a packet control byte and remaining-run count. The wrapper leaves the
+extended LZ mode at zero, so the decoder and differential samples cover that
+normal mode. Native extended-mode behavior is outside the current validation.
+These inferred types preserve the complete 0x228-byte object layout and compile
+to identical original wrapper bytes; they add no new native source coverage.
+
 This validates compression output and streaming state against native code. It
 does not validate filesystem/cache/mutex wrappers, in-place scratch-buffer
 overlap behavior, malformed-data handling equivalence, or gameplay. Type 0 is
