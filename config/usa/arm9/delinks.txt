@@ -585,3 +585,20 @@ src/World/Zone3DChestDrawing.cpp:
 src/World/Zone3DChestState.cpp:
     complete
     .text start:0x020159c0 end:0x02015ae4
+
+src/System/RuntimeRandom.cpp:
+    complete
+    .text start:0x02003d14 end:0x02003d58
+    .data start:0x020eef30 end:0x020eef34
+
+src/System/StringLength.cpp:
+    complete
+    .text start:0x02003f0c end:0x02003f28
+
+src/System/StringCopy.cpp:
+    complete
+    .text start:0x02003ff0 end:0x02004070
+
+src/System/StringSearch.cpp:
+    complete
+    .text start:0x02004184 end:0x020042a8

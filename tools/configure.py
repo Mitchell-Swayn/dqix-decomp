@@ -228,7 +228,11 @@ def main():
 
         n.rule(
             name="mwld",
-            command=f'{WINE} "{LD}" {LD_FLAGS} @$objects_file $lcf_file -o $out'
+            command=(f'{PYTHON} tools/prepare_link_objects.py --objects "$objects_file" '
+                     f'--fallback-dir "$fallback_dir" --output-dir "$link_objects_dir" '
+                     f'--output-list "$link_objects_file" --report "$link_objects_report" '
+                     f'--symbol-config "$symbol_config" --link-command '
+                     f'{WINE} "{LD}" {LD_FLAGS} @"$link_objects_file" $lcf_file -o $out')
         )
         n.newline()
 
@@ -359,11 +363,16 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, project: Project):
     elf_file = str(project.arm9_o())
     n.build(
         inputs=project.source_object_files() + [lcf_file, objects_file, delink_file],
-        implicit=LD,
+        implicit=[LD, "tools/prepare_link_objects.py"],
         rule="mwld",
         outputs=elf_file,
         variables={
             "target_dir": project.game_build,
+            "fallback_dir": project.arm9_delinks(),
+            "symbol_config": project.game_config / "arm9" / "symbols.txt",
+            "link_objects_dir": project.game_build / "link_objects",
+            "link_objects_file": project.game_build / "link_objects.txt",
+            "link_objects_report": project.game_build / "link_objects_report.json",
             "objects_file": objects_file,
             "lcf_file": lcf_file,
         }
