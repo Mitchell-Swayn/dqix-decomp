@@ -474,3 +474,11 @@ src/System/Matrix4Transform.cpp:
 src/System/Matrix4Translation.cpp:
     complete
     .text start:0x020c189c end:0x020c1948
+
+src/World/Zone3DMapLoading.cpp:
+    complete
+    .text start:0x02013fb4 end:0x02014a24
+
+src/World/Zone3DAtmosphereLoading.cpp:
+    complete
+    .text start:0x02014b04 end:0x02014d80

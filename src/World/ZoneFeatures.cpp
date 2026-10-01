@@ -20,7 +20,8 @@ struct Struct_020fdc20
     SafeAllocator* allocator;
     ZoneFeatures* warp;
     // Zero-initialized bytes following the three pointers. No accesses have
-    // been identified; their purpose (reserved storage or padding) is unknown.
+    // been identified; their purpose (reserved storage or padding) is unknown. This layout
+    // carrier does not establish that they belonged to the original struct.
     unsigned char reserved_c[0x14];
 } data_020fdc20;
 
