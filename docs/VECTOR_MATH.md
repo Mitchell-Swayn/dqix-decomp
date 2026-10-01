@@ -126,3 +126,15 @@ checks and the linked report pass at 100% for the perspective routine. These
 ten math source units now cover 22 functions and 2,224 matched report bytes,
 without denominator changes. Unmatched matrix multiplication and Thumb rotation
 experiments remain outside the source mappings and are not counted.
+
+`MatrixOrthographic.cpp` reconstructs the adjacent projection function at
+`[0x020c29ec, 0x020c2bf4)`: 520 matched bytes, including one four-byte MMIO
+literal. Its formula confirms orthographic projection from top/bottom,
+left/right, near/far and a homogeneous scale, consistent with the existing
+`AtmosphericEffect.cpp` caller. It pipelines three hardware reciprocal results,
+retains full 64-bit precision through optional scaling, and rounds the diagonal
+and translation terms at their original boundaries. Header comments now describe
+both projection formulas while retaining their existing public symbol names.
+Whole-module checks and the linked report pass, including compiler runtime calls.
+The eleven reconstructed math units cover 23 functions and 2,744 report bytes;
+code, data and function denominators remain unchanged.

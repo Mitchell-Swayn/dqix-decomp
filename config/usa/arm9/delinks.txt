@@ -512,3 +512,7 @@ src/Graphics/VRAMImagePools.cpp:
 src/System/MatrixPerspective.cpp:
     complete
     .text start:0x020c28a0 end:0x020c29ec
+
+src/System/MatrixOrthographic.cpp:
+    complete
+    .text start:0x020c29ec end:0x020c2bf4

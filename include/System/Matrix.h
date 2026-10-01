@@ -206,16 +206,16 @@ extern "C"
     // computes inA * inB and stores to out.
     void Mat4x4_Multiply(const Matrix4x4* inA, const Matrix4x4* inB, Matrix4x4* out);
     // usa: func_020c28a0
-    // I'm not entirely sure what this does, but the format looks similar to
-    // e.g. glFrustum but doesn't match exactly
-    void Mat4x4_MaybeWriteFrustum(fix32_t a, fix32_t b, fix32_t c, fix32_t d, fix32_t e, fix32_t f, Matrix4x4* out);
+    // Perspective projection from half-angle sine/cosine, aspect ratio, depth
+    // bounds and a homogeneous scale. The legacy symbol name is retained.
+    void Mat4x4_MaybeWriteFrustum(fix32_t sine, fix32_t cosine, fix32_t aspect,
+                                fix32_t near, fix32_t far, fix32_t scale, Matrix4x4* out);
     // usa: func_020c29ec
-    // Similar function to the previous, is used in places to populate the
-    // RenderConfig's projection matrix, but I don't know what exactly it is
-    // Might be something like glOrtho???
-    // From call site in AtmosphericEffect it looks to be (top, bottom, left, right, near, far)
-    // not sure about 7th parameter
-    void Mat4x4_WriteProjectionUnknown(fix32_t a, fix32_t b, fix32_t c, fix32_t d, fix32_t e, fix32_t f, fix32_t g, Matrix4x4* out);
+    // Orthographic projection from the view bounds and a homogeneous scale.
+    // The legacy symbol name is retained.
+    void Mat4x4_WriteProjectionUnknown(fix32_t top, fix32_t bottom, fix32_t left,
+                                      fix32_t right, fix32_t near, fix32_t far,
+                                      fix32_t scale, Matrix4x4* out);
 
 
     // usa: func_020c2bf4
