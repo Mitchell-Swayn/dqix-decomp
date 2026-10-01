@@ -138,3 +138,28 @@ both projection formulas while retaining their existing public symbol names.
 Whole-module checks and the linked report pass, including compiler runtime calls.
 The eleven reconstructed math units cover 23 functions and 2,744 report bytes;
 code, data and function denominators remain unchanged.
+
+`FixedPointAtan2.cpp` reconstructs the adjacent radian and turn-scaled atan2
+routines at `[0x020c338c, 0x020c36ec)`, adding two functions and 864 matched code
+bytes (36 bytes are compiler literal pools). Their quadrant/octant reduction,
+axis and equal-component shortcuts, denominator guard, and fixed-point quotient
+indexing reproduce the original behavior. The radian result sign-extends a
+16-bit 20.12 value; the rescaled variant zero-extends a wrapping 16-bit angle.
+The existing header's rescaled declaration now maps to the actual function at
+`0x020c3544`; the previous address comment had a typo. The formerly anonymous
+USA symbol receives that already-declared name.
+
+The two read-only tables at `[0x020ed450, 0x020ed658)` are reconstructed from
+`round(atan(i / 128) * scale)` for `i = 0..128`, with scales 4096 and
+65536/(2*pi). `tools/generate_atan_tables.py` emits the checked-in source using
+only those mathematical definitions, without reading ROM data. Each table has
+129 samples and a final two-byte zero storage pad, explicitly represented and
+documented in the generated source. All 520 bytes match the original tables.
+Run the generator with `--check` to verify the source remains reproducible.
+
+`ninja rom check`, `ninja report`, and the generator check pass. Both new units
+report 100% matching, while the original code/data/function denominators remain
+2,959,478 / 1,602,476 / 14,790. The math reconstruction now spans 25 functions,
+3,608 matching code bytes, and 520 matching standalone data bytes. No lookup
+payload is being counted as executable code, and no additional runtime claims
+are inferred from these byte comparisons.
