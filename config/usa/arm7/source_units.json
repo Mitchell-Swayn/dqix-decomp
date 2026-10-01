@@ -113,6 +113,31 @@
       }
     },
     {
+      "name": "VerticalAlarmCancel",
+      "source": "config/usa/arm7/src/VerticalAlarmCancel.c",
+      "autoload": "wram",
+      "runtime_address": 58712140,
+      "payload_offset": 25192,
+      "size": 272,
+      "code_bytes": 248,
+      "literal_pool_bytes": 24,
+      "entry": "ARM7_SetVerticalAlarmTag",
+      "symbols": {
+        "ARM7_SetVerticalAlarmTag": 58712140,
+        "ARM7_CancelVerticalAlarm": 58712200,
+        "ARM7_CancelVerticalAlarmsByTag": 58712276
+      },
+      "externals": {
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_Panic": 58703664,
+        "ARM7_VerticalAlarmFile": 58756172,
+        "ARM7_VerticalTagError": 58756216,
+        "ARM7_VerticalAlarmState": 58757488,
+        "ARM7_RemoveVerticalAlarm": 58711636
+      }
+    },
+    {
       "name": "VerticalFrame",
       "source": "config/usa/arm7/src/VerticalFrame.c",
       "autoload": "wram",
