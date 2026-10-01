@@ -217,7 +217,10 @@ waived, and a byte-identical ROM does not imply that its code is fully reconstru
   other source and original binary units. Existing matching hacks are unapproved
   exceptions pending individual review; they are not silently credited as C++.
 - Verified all 7,481 NitroFS files (253,967,681 bytes) preserved exactly; inventoried
-  4,181 NARC containers. Known Script layouts/users are documented in `docs/ASSETS.md`.
+  5,132 NARC and 1,671 GPC2 containers after decoding compressed members, producing
+  88,313 records with zero container errors. The decoder passed 84 comparisons
+  against original ARM9 instructions. Known Script layouts/users and audit limits
+  are documented in `docs/ASSETS.md` and `docs/GPC_NATIVE_VALIDATION.md`.
   Opaque/compressed content still needs analysis before an exhaustive native-code
   inventory can be claimed.
 - Fixed the Ninja dependency race between objdiff and original-object generation.

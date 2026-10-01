@@ -16,6 +16,14 @@ instruction coverage**. It does not approve exceptions or count assembly as C++.
 
 ## Review register
 
+ARM7 has a separate reviewed manifest at
+[`config/usa/arm7/assembly_exceptions.json`](../config/usa/arm7/assembly_exceptions.json).
+It records six CPSR access routines (120 initialized bytes), whose register access
+requires MRS/MSR instructions. Their original authorship remains unknown. The
+ARM7 source builder checks these exact ranges and reports them separately from
+C functions, literal pools and BSS. This approval does not extend to the ARM9
+candidates or compiler-matching aids below.
+
 | Source | Observation | Acceptance status |
 |---|---|---|
 | `src/System/Cache.cpp` | CP15 cache maintenance instructions (`mcr`) plus assembly loop/register setup | CPU-specific instructions are candidates for necessary assembly; ordinary loop/setup code still needs individual review |

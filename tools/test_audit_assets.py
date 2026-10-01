@@ -18,6 +18,18 @@ class AssetAuditTests(unittest.TestCase):
         self.assertEqual(nitrofs(self.rom()), {'a.bin': b'abc'})
         self.assertTrue(audit(self.rom(), self.rom())['nitrofs_equal'])
 
+    def test_gpc_members_are_included_in_recursive_audit(self):
+        table = struct.pack('<I3I', 12 << 3, 123, 0, 7)
+        names_data = struct.pack('<I', 4 << 3) + b'a\0\0\0'
+        payload = struct.pack('<I', 3 << 3) + b'xyz\0'
+        header = struct.pack('<4s6HI', b'GPC2', 1, 5, 9, 11, 3, 1, 2)
+        rom = self.rom(header + table + names_data + payload)
+        result = audit(rom, rom)
+        self.assertEqual(result['gpc2_containers'], 1)
+        self.assertEqual(result['records_including_members'], 2)
+        self.assertEqual(result['records'][1]['path'], 'a.bin::a')
+        self.assertEqual(result['records'][1]['size'], 3)
+
     def test_byte_change_fails(self):
         with self.assertRaisesRegex(ValueError, 'bytes differ'):
             audit(self.rom(), self.rom(b'abd'))
@@ -44,6 +56,12 @@ class AssetAuditTests(unittest.TestCase):
 
     def test_signature_is_only_candidate(self):
         self.assertEqual(native_candidates(b'abc\x7fELF')[0]['offset'], 3)
+
+    def test_macho_signature_needs_valid_header_and_commands(self):
+        invalid = b'\xce\xfa\xed\xfe' + b'\xff' * 24
+        self.assertEqual(native_candidates(invalid)[0]['structure']['status'], 'rejected_MachO_signature')
+        plausible = struct.pack('<7I', 0xfeedface, 12, 0, 1, 1, 8, 0) + struct.pack('<2I', 2, 8)
+        self.assertEqual(native_candidates(plausible)[0]['structure']['status'], 'structural_MachO_candidate')
 
     def pe_image(self):
         data = bytearray(0x210)

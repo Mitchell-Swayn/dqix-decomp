@@ -408,7 +408,9 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, project: Project):
             implicit=[str(project.baserom()), str(arm7_units_path),
                       "config/usa/arm7/baseline.json", "tools/arm7_build.py",
                       "tools/check_arm7.py", CC, LD] +
-                     [unit["source"] for unit in arm7_units["units"]],
+                     [unit["source"] for unit in arm7_units["units"]] +
+                     [unit["assembly_exception"] for unit in arm7_units["units"]
+                      if "assembly_exception" in unit],
             rule="arm7_source",
             outputs=[arm7_rom_config, str(arm7_output / "arm7.bin"),
                      str(arm7_output / "report.json")],

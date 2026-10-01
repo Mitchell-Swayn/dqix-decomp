@@ -7,6 +7,8 @@ import json
 from pathlib import Path
 import struct
 
+from gpc import members as gpc_members
+
 
 def region(data, offset, size):
     if offset < 0 or size < 0 or offset + size > len(data):
@@ -181,6 +183,30 @@ def inspect_pe(data, signature_offset):
     return dict(status='rejected_PE_signature', reason='; '.join(failures))
 
 
+def inspect_macho32(data, offset):
+    try:
+        magic, cpu, subtype, file_type, count, command_size, flags = struct.unpack(
+            '<7I', region(data, offset, 28))
+        if magic != 0xfeedface or cpu not in (7, 12, 18) or not 1 <= file_type <= 12:
+            raise ValueError('Implausible 32-bit Mach-O architecture/file type')
+        commands = region(data, offset + 28, command_size)
+        if count > command_size // 8:
+            raise ValueError('Mach-O command count exceeds command region')
+        cursor = 0
+        for _ in range(count):
+            command, size = struct.unpack('<II', region(commands, cursor, 8))
+            if size < 8 or size % 4:
+                raise ValueError('Invalid Mach-O load command size')
+            region(commands, cursor, size)
+            cursor += size
+        if cursor != command_size:
+            raise ValueError('Mach-O command size mismatch')
+        return dict(status='structural_MachO_candidate', cpu=cpu, file_type=file_type,
+                    load_commands=count, note='Header/command structure only, not execution proof')
+    except (ValueError, struct.error) as error:
+        return dict(status='rejected_MachO_signature', reason=str(error))
+
+
 def native_candidates(data):
     """Weak triage signatures. Raw ARM/Thumb code has no required magic."""
     findings = []
@@ -194,6 +220,8 @@ def native_candidates(data):
             candidate = dict(offset=offset, signature=label)
             if label == 'PE':
                 candidate['structure'] = inspect_pe(data, offset)
+            elif label == 'Mach-O32':
+                candidate['structure'] = inspect_macho32(data, offset)
             findings.append(candidate)
             start = offset + len(magic)
     return findings
@@ -212,15 +240,23 @@ def audit(original, rebuilt):
         item = dict(path=path, size=len(payload), sha256=hashlib.sha256(payload).hexdigest(),
                     magic_hex=payload[:4].hex(), depth=depth)
         records.append(item)
-        if payload.startswith(b'NARC'):
-            item['container'] = 'NARC'
+        if payload.startswith((b'NARC', b'GPC2')):
+            item['container'] = 'NARC' if payload.startswith(b'NARC') else 'GPC2'
             try:
                 if depth >= 12:
                     raise ValueError("Nested archive depth limit")
-                members = narc(payload)
-                item['members'] = len(members)
-                for name, content in sorted(members.items()):
-                    visit(path + '::' + name, content, depth + 1)
+                if item['container'] == 'NARC':
+                    members = narc(payload)
+                    item['members'] = len(members)
+                    for name, content in sorted(members.items()):
+                        visit(path + '::' + name, content, depth + 1)
+                else:
+                    members = gpc_members(payload)
+                    item['members'] = len(members)
+                    item['member_compression'] = dict(Counter(str(m['compression']) for m in members))
+                    for member in members:
+                        name = member['name'] or '@' + str(member['id'])
+                        visit(path + '::' + name, member['payload'], depth + 1)
             except (ValueError, KeyError, struct.error) as error:
                 item['container_error'] = str(error)
                 errors.append(path)
@@ -237,11 +273,12 @@ def audit(original, rebuilt):
         top_level_files=len(before), records_including_members=len(records),
         top_level_extensions=dict(sorted(Counter(Path(p).suffix for p in before).items())),
         narc_containers=sum(r.get('container') == 'NARC' for r in records),
+        gpc2_containers=sum(r.get('container') == 'GPC2' for r in records),
         container_errors=errors,
         native_candidate_files=sum(bool(r.get('native_header_candidates')) for r in records),
         script_structure_candidates=sum('script_structure_candidate' in r for r in records),
         limitations=["Only FNT-named NitroFS files compared; executables, overlays, banner and padding are outside this check.",
-                     "Only uncompressed NARC recursively parsed. PAC, compression and other opaque formats remain unknown.",
+                     "NARC and GPC2 recursively parsed; opaque PAC and other proprietary formats remain unknown.",
                      "Header signatures are triage candidates, not established executable code; absence proves nothing about raw code.",
                      "Script structural candidates do not prove interpreter association or semantic coverage."], records=records)
 

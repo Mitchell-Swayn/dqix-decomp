@@ -125,9 +125,10 @@ def main():
         if arm7_report.is_file():
             shutil.copy2(arm7_report, run_dir / "arm7-source-report.json")
             arm7 = json.loads(arm7_report.read_text())
-            manifest["arm7_source_measures"] = {key: arm7[key] for key in (
+            manifest["arm7_source_measures"] = {key: arm7.get(key, 0) for key in (
                 "source_code_bytes", "source_literal_pool_bytes", "source_data_bytes",
-                "source_functions", "binary_fallback_bytes", "source_symbol_checks_passed")}
+                "source_functions", "source_bss_bytes", "reviewed_assembly_bytes",
+                "reviewed_assembly_functions", "binary_fallback_bytes", "source_symbol_checks_passed")}
         manifest["built_rom_sha1"] = digest(source / "dqix_usa.nds", "sha1")
         preserved_header = (source / "tools/finalize_rom_header.py").is_file()
         if has_bios or preserved_header or args.require_sha1:

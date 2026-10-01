@@ -12,13 +12,13 @@ Use `--original`, `--rebuilt` and `--output` to override them. The generated
 `build/usa/assets-audit.json` contains only paths, hashes, sizes, format signatures
 and structural metadata. No payloads are extracted or committed by this tool.
 Malformed NitroFS structures or any changed/missing/added file fail the command.
-Unparsed NARC containers are recorded as errors, not silently classified as assets.
+Unparsed NARC/GPC2 containers are recorded as errors, not silently classified as assets.
 
 ## Preservation evidence
 
 The supplied USA ROM SHA-1 is `c7c3014c237900c8281289b8bc76a781969b6278`.
-The audited rebuilt ROM SHA-1 is `c86d3ee5c7434e9be811ed512f1ef0549acaedc7`.
-Despite the differing whole-ROM hashes, **all 7,481 FNT-named NitroFS files,
+The audited rebuilt ROM SHA-1 is also `c7c3014c237900c8281289b8bc76a781969b6278`.
+**All 7,481 FNT-named NitroFS files,
 totalling 253,967,681 bytes, are identical by path and complete payload bytes**.
 Each receives a SHA-256 in the report. This checks assets independently of ROM
 layout, padding, executable matching and secure-area handling; it does not replace
@@ -34,9 +34,11 @@ see the separate executable inventory for overlays and processor binaries.
 
 ## Archive inventory
 
-There are 4,129 top-level files with NARC magic and 4,181 NARC containers including
-nested containers: 40 at nesting depth one and 12 at depth two. Recursive parsing
-produced 32,160 records including the outer files, with zero NARC parsing errors.
+There are 4,129 top-level files with NARC magic. The expanded audit parses 5,132
+NARC containers and 1,671 GPC2 containers, producing 88,313 records including
+outer files, with zero container parsing errors. The initial NARC-only audit
+exposed 4,181 containers and 32,160 records; decoding GPC2 exposes further nested
+archives and their members without changing the cartridge's top-level file count.
 The parser follows the BTAF allocation table, BTNF names and GMIF payload block,
 recording names where supplied and stable numeric member IDs otherwise. It validates
 container and member boundaries; nested content remains inside the report only.
@@ -46,7 +48,7 @@ Extensions alone do not establish formats. Examples from this cartridge:
 | Outer file category | Count | Observed handling |
 | --- | ---: | --- |
 | `.chr` | 2,683 | Classified by actual magic; often NARC |
-| `.gp2` | 1,671 | `GPC2` is common; opaque to this tool |
+| `.gp2` | 1,671 | All GPC2 decoded; 53,639 immediate members |
 | `.spr` | 1,300 | Opaque unless recognized by actual NARC magic |
 | `.ambl` / `.amdj` | 681 / 669 | Classified by actual magic; archive members inventoried when NARC |
 | `.pac` | 126 | Three are NARC; other 123 remain opaque |
@@ -56,9 +58,28 @@ Extensions alone do not establish formats. Examples from this cartridge:
 The three NARC `.pac` files are `data/event_lv5/inevent.pac`,
 `data/scenario/flditem.pac`, and `data/tmap/param.pac`. Other PAC files often start
 with filename-like bytes, but this is not sufficient to assert their layout.
-Compression, GPC2, opaque PAC and other proprietary formats are not decoded here.
+Opaque PAC and other proprietary formats still require analysis.
 The nested archive inventory also includes `.svn` metadata present in cartridge
 archives; these are retained and must not be mistaken for newly authored files.
+
+### GPC2 and compression
+
+[gpc.py](../tools/gpc.py) follows the reconstructed GPC loader and native
+decompression routines. The 20-byte GPC2 header supplies word-based boundaries,
+file count, decoded table sizes and flags. Each 12-byte file-table entry supplies
+a CRC, member location/size and filename offset. Tables and members use a
+32-bit compression prefix: low three bits select the algorithm; the remaining
+29 bits declare output size. Types 0 through 4 are raw, LZ, four-bit Huffman,
+eight-bit Huffman and RLE. This prefix differs from ordinary Nitro compression.
+
+The reader validates table/member bounds and declared sizes, limits each decoded
+stream to 64 MiB and caps archive recursion. Immediate GPC2 members comprise
+42,402 LZ, 7,763 RLE, 2,437 eight-bit Huffman, 392 four-bit Huffman, 32 raw-prefix
+and 613 uncompressed members. These counts exclude compressed index/name tables.
+All 1,671 containers decode without errors. The decoder additionally passed
+84 whole/fragmented-input comparisons against the original ARM9 instructions;
+see [native differential validation](GPC_NATIVE_VALIDATION.md) for samples,
+reproduction and limits. These are analysis tools, not newly decompiled game code.
 
 ## Script format and known native users
 
@@ -75,8 +96,9 @@ special handling. The fourth header word's precise meaning remains uncertain.
 The audit checks this structural shape without executing scripts or claiming that
 all matching bytes belong to this interpreter. It allows zero or `0xff` padding
 between instruction stream and data section, as found in `.bmed` files. It finds
-3,511 candidates: 2,530 `.bcfg`, 613 `.bin`, 315 `.bact`, 41 `.svn-base` members,
-and 12 `.bmed`. Structural resemblance is not semantic script coverage; formats
+51,833 candidates: 47,839 `.bin`, 2,728 `.bcfg`, 930 `.bact`, 283 `.bmmp`,
+41 `.svn-base` members and 12 `.bmed`. The initial NARC-only audit found 3,511.
+Structural resemblance is not semantic script coverage; formats
 with similar headers can be false positives, and unsupported structures can be
 missed. Opcode histograms and header fields are included per candidate.
 
@@ -103,23 +125,27 @@ original script-authoring language.
 
 ## Native-code triage limitations
 
-The audit scans non-NARC payloads and parsed members for ELF, PE and two Mach-O
-header signatures. Eleven payloads contain twelve loose `PE\0\0` matches; none
-contains the scanned ELF/Mach-O signatures. A structural follow-up checks for a
+The audit scans decoded non-container payloads for ELF, PE and two Mach-O
+header signatures. Fifteen payloads contain sixteen loose `PE\0\0` matches;
+one contains a Mach-O32 signature. A structural follow-up checks for a
 DOS `MZ` header whose `e_lfanew` points to each PE signature, including embedded
 images. If found, it checks the COFF machine and section count, PE32/PE32+ optional
 header, `SizeOfHeaders`, section table and section payload bounds. It does not
 emulate an executable loader or infer code semantics from the machine value.
 
-**All twelve matches were rejected as PE image signatures:** none has an associated
+**All sixteen matches were rejected as PE image signatures:** none has an associated
 DOS header pointing to it. These are false positives for the loose PE signature
 scan, not evidence that the entire containing file lacks executable code. The
 individual offsets (decimal, relative to each decoded payload) are reproducible:
 
 | Payload path | Signature offsets |
 | --- | --- |
+| `data/ani/oq2.gp2::oq2_en.pac` | 5162 |
+| `data/ani/oqmsg.gp2::oqmsg_fr.pac` | 8022 |
+| `data/ani/oqmsg.gp2::oqmsg_de.pac` | 5938 |
 | `data/bin/charaview4.bin` | 58112 |
 | `data/effect/ev144100000.chr::ev144100000.nsbca` | 8 |
+| `data/event/ev13320.gp2::ev13320.stb` | 16388 |
 | `data/map/B02M28.ambl::B02M28T1.nsbtx` | 14664 |
 | `data/map/B06M04.ambl::B06M04T1.nsbtx` | 3889 |
 | `data/map/B06M08.ambl::B06M08T1.nsbtx` | 6664 |
@@ -128,10 +154,17 @@ individual offsets (decimal, relative to each decoded payload) are reproducible:
 | `data/map/D17M03.ambl::D17M03T1.nsbtx` | 1358 |
 | `data/map/E01M11.ambl::E01M11T1.nsbtx` | 24438 |
 | `data/map/S07M01.amdj::S07M0100.nsbmd` | 1344 |
-| `data/pack_lv5/enemy.gp2` | 3008552 |
+| `data/pack_lv5/minimap.gp2::M09M0001.obg` | 18906 |
 
-ARM/Thumb code can have no magic whatsoever, and compressed or opaque archive
-members are not exposed by this scan. Consequently neither negative signature
+The Mach-O32 signature in `data/pack_lv5/minimapt.gp2::mapt_129.pac` at offset
+12813 is rejected because its following architecture/file-type fields are
+implausible. The checker validates the header and bounded load-command structure
+when those fields are plausible. No scanned ELF or Mach-O64 signatures occurred.
+The earlier loose match in the compressed outer `enemy.gp2` stream is no longer
+reported as a decoded payload candidate.
+
+ARM/Thumb code can have no magic whatsoever, and unresolved opaque formats
+are not fully exposed by this scan. Consequently neither negative signature
 results nor successful asset preservation prove that all files are non-executable.
 Finishing the executable census requires decoding unresolved containers, tracing
 loaders/decompressors and investigating potential code-loading or dispatch paths.
