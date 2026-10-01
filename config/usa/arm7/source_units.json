@@ -252,12 +252,18 @@
         "ARM7_SwitchThread": 58704540
       },
       "externals": {
-        "ARM7_ThreadGlobals": 58757036,
         "ARM7_ThreadSystem": 58757072,
         "ARM7_GetProcessorMode": 58713020,
         "ARM7_GetFirstReadyThread": 58705828,
         "ARM7_SaveThreadContext": 58706520,
         "ARM7_RestoreThreadContext": 58706572
+      },
+      "bss": {
+        "runtime_address": 58757036,
+        "size": 380,
+        "symbols": {
+          "ARM7_ThreadGlobals": 58757036
+        }
       }
     },
     {

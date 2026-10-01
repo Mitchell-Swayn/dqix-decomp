@@ -4,7 +4,7 @@ The cartridge ARM7 program is a required executable component, distinct from the
 console ARM7 BIOS. The independent source build currently reconstructs **78 C
 functions: 7,572 instruction bytes plus 520 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
-864 bytes of standalone diagnostic data and 316 bytes of BSS now have source
+864 bytes of standalone diagnostic data and 696 bytes of BSS now have source
 definitions. The other 158,800 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
@@ -21,7 +21,7 @@ starting point; `source_units.json` describes the active source replacements.
 | ARM7 overlay table size | 0 |
 | Reconstructed C instructions / compiler literal pools | 7,572 / 520 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 864 / 120 bytes |
-| Reconstructed BSS / total autoload BSS | 316 / 22,744 bytes |
+| Reconstructed BSS / total autoload BSS | 696 / 22,744 bytes |
 | Binary fallback | 158,800 bytes |
 | Total function count / complete code-data partition | Unknown |
 
@@ -254,8 +254,8 @@ credited by this unit.
 `[0x037fcca0, 0x037fce1c)` (payload `[0x4ebc, 0x5038)`), with 372 C
 instruction bytes and 8 literal bytes. Ownership, recursive reference counts,
 blocking and wakeups follow the native thread fields at offsets 0x68/0x6c/0x70.
-The thread structure is deliberately partial, and the external scheduler block
-at `0x03808fd0` remains unowned BSS. Blocking and wakeup helpers now belong to `ThreadWait.c`;
+The thread structure is deliberately partial, and the scheduler view
+at `0x03808fd0` is a subobject of the source-owned `ThreadSwitch.c` header. Blocking and wakeup helpers now belong to `ThreadWait.c`;
 the mutex-list pop helper now belongs to `ThreadLists.c`; no data bytes are credited by this unit.
 
 `src/ThreadLists.c` reconstructs five list routines at
@@ -263,14 +263,14 @@ the mutex-list pop helper now belongs to `ThreadLists.c`; no data bytes are cred
 instruction bytes and 8 literal bytes: priority-ordered blocked-list insertion,
 blocked-list removal, mutex-list pop, and global thread-list insertion/removal.
 Priority fields use unsigned comparisons. Existing-node insertion and null-list
-cases preserve their original behavior. The scheduler root at `0x03808fac`
-remains explicit unowned BSS; no opaque struct prefix adds data credit.
+cases preserve their original behavior. The scheduler header at `0x03808fac` is owned by `ThreadSwitch.c`; this unit
+does not add duplicate data credit.
 
 `src/ThreadWait.c` reconstructs blocking, waking all waiters, marking a thread
 ready and selecting the first ready thread at `[0x037fc69c, 0x037fc7cc)`
 (payload `[0x48b8, 0x49e8)`), with 296 C instruction bytes and 8 literal bytes.
 It clears blocked-list links on wakeup and preserves IRQ state. The scheduler switch routine now belongs to `ThreadSwitch.c`; list insertion
-and IRQ dependencies are source-owned. No opaque thread prefix or external scheduler BSS is counted.
+and IRQ dependencies are source-owned. No thread-context storage is counted by this unit.
 
 `src/ThreadSwitch.c` reconstructs high-level scheduler switching at
 `[0x037fc29c, 0x037fc370)` (payload `[0x44b8, 0x458c)`), with 204 C
@@ -278,7 +278,34 @@ instruction bytes and 8 literal bytes. It respects scheduler locks and IRQ mode,
 selects a ready thread, runs switch callbacks and updates the active pointer.
 The actual register-save/restore routines at `0x037fca58` / `0x037fca8c` remain
 original binary fallback. This unit introduces no assembly and claims no source
-coverage for those separate low-level routines or external scheduler BSS.
+coverage for those separate low-level routines. Its source-defined 380-byte BSS object
+`[0x03808fac, 0x03809128)` contains the 52-byte scheduler header and two
+0xa4-byte contexts at `0x03808fe0` / `0x03809084`. Compile-time size and member
+offset assertions bind the header, context stride and aggregate extent. Unknown
+header/context words remain explicitly named unknown arrays, with no invented
+semantics. BSS contributes no payload bytes and no extra function/code credit.
+
+The native scheduler initializer at `0x037fc370` binds the active-pointer cell
+at root+0x1c, initialization flag at +0x20, system view at +0x24, and primary
+context fields at root+0x120/124/128/12c/14c/150/154/158/15c. The thread creator at
+`0x037fc460` corroborates the per-context offsets below. The protected idle
+pointer in priority-changing code is `0x03808fe0`; the next independent arena
+initialization flag is `0x03809128` (literal used at `0x037fce50`). Interior
+scheduler/context addresses remain link-checked external dependencies where
+used by other source slices, without duplicate ownership.
+
+| Context offset | Recovered layout / evidence |
+| --- | --- |
+| 0x00?0x47 | Status, 15 general register slots, resume address, supervisor stack; save/restore and register-init accesses |
+| 0x48?0x54 | State, global-list next, unique ID, priority; creator and list operations |
+| 0x58 | Unknown word (creator clears it) |
+| 0x5c?0x64 | Waiting queue and previous/next blocked links |
+| 0x68?0x70 | Blocking mutex and owned-mutex list endpoints |
+| 0x74?0x7c | Stack bounds and reserved-stack size |
+| 0x80?0x84 | Completion wait-list endpoints |
+| 0x88?0x90 | Three unknown words cleared by creator |
+| 0x94?0x98 | Sleep alarm and exit callback |
+| 0x9c?0xa0 | Unknown trailing words; stride fixed by adjacent embedded contexts |
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C
