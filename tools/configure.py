@@ -559,6 +559,14 @@ def add_check_builds(n: ninja_syntax.Writer, project: Project):
             outputs="check_arm7",
         )
         check_inputs.append("check_arm7")
+        n.rule(name="check_progress", command=f"{PYTHON} tools/check_progress.py")
+        n.build(
+            inputs=[str(project.objdiff_report()), "docs/inventory-usa-report.json.gz",
+                    "tools/check_progress.py"],
+            rule="check_progress",
+            outputs="check_progress",
+        )
+        check_inputs.append("check_progress")
         n.newline()
 
     n.build(

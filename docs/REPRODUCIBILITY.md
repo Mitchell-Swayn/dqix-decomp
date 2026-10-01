@@ -12,6 +12,14 @@ the source revision, input SHA-1, SHA-256 of each matching compiler executable
 and DLL, dsd, objdiff, Ninja, Python version, commands, and coverage counters.
 No ROM, BIOS, or extracted proprietary data is included in these records.
 
+The first fresh build with exact whole-ROM acceptance is source revision
+`0bd66955f2fa`: [manifest](verification/first-exact-clean-build.json),
+[build log](verification/first-exact-clean-build.log), and
+[ARM7 source report](verification/first-exact-arm7-report.json). It used the
+same locked tools, fresh extraction and fresh objects, and passed the target
+USA SHA-1 without a BIOS. This is a verified intermediate revision, not the
+finished decompilation.
+
 ## Inputs and tools
 
 - USA ROM: `extract/baserom_dqix_usa.nds`, SHA-1

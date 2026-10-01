@@ -1,0 +1,304 @@
+
+$ git archive --format=zip --output C:\Users\swayn\Projects\DQIX-Decomp\build\verification\0bd66955f2fa-veg65xkl\source.zip 0bd66955f2fa8081d9df0afd27e06dc81a6e9caf
+
+$ C:\Users\swayn\Projects\DQIX-Decomp\.venv\Scripts\python.exe tools/configure.py usa
+
+$ C:\Users\swayn\Projects\DQIX-Decomp\.venv\Scripts\ninja.exe rom check report
+[1/114] C:\Users\swayn\Projects\DQIX-Decomp\.venv\Scripts\python.exe tools/download_tool.py dsd v0.10.2 --path .\dsd.exe
+
+Downloading dsd v0.10.2...
+[2/114] C:\Users\swayn\Projects\DQIX-Decomp\.venv\Scripts\python.exe tools/download_tool.py objdiff v2.7.1 --path .\objdiff-cli.exe
+
+Downloading objdiff v2.7.1...
+[3/114] .\dsd.exe objdiff --config-path config\usa\arm9\config.yaml --scratch --compiler mwcc_30_137 --c-flags "-O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -lang=c++" --custom-make ninja
+[4/114] .\dsd.exe rom extract --rom extract\baserom_dqix_usa.nds --output-path extract\usa 
+[INFO ] Saving ROM to directory extract\usa
+[INFO ] Decompressing ARM9 program
+[INFO ] Decompressing arm9 overlay 0/34
+[INFO ] Decompressing arm9 overlay 1/34
+[INFO ] Decompressing arm9 overlay 2/34
+[INFO ] Decompressing arm9 overlay 3/34
+[INFO ] Decompressing arm9 overlay 4/34
+[INFO ] Decompressing arm9 overlay 5/34
+[INFO ] Decompressing arm9 overlay 6/34
+[INFO ] Decompressing arm9 overlay 7/34
+[INFO ] Decompressing arm9 overlay 8/34
+[INFO ] Decompressing arm9 overlay 9/34
+[INFO ] Decompressing arm9 overlay 10/34
+[INFO ] Decompressing arm9 overlay 11/34
+[INFO ] Decompressing arm9 overlay 12/34
+[INFO ] Decompressing arm9 overlay 13/34
+[INFO ] Decompressing arm9 overlay 14/34
+[INFO ] Decompressing arm9 overlay 15/34
+[INFO ] Decompressing arm9 overlay 16/34
+[INFO ] Decompressing arm9 overlay 17/34
+[INFO ] Decompressing arm9 overlay 18/34
+[INFO ] Decompressing arm9 overlay 19/34
+[INFO ] Decompressing arm9 overlay 20/34
+[INFO ] Decompressing arm9 overlay 21/34
+[INFO ] Decompressing arm9 overlay 22/34
+[INFO ] Decompressing arm9 overlay 23/34
+[INFO ] Decompressing arm9 overlay 24/34
+[INFO ] Decompressing arm9 overlay 25/34
+[INFO ] Decompressing arm9 overlay 26/34
+[INFO ] Decompressing arm9 overlay 27/34
+[INFO ] Decompressing arm9 overlay 28/34
+[INFO ] Decompressing arm9 overlay 29/34
+[INFO ] Decompressing arm9 overlay 30/34
+[INFO ] Decompressing arm9 overlay 31/34
+[INFO ] Decompressing arm9 overlay 32/34
+[INFO ] Decompressing arm9 overlay 33/34
+[INFO ] Decompressing arm9 overlay 34/34
+[INFO ] Saving ROM assets
+[5/114] .\dsd.exe lcf --config-path config\usa\arm9\config.yaml
+[INFO ] Loading ROM from config\usa\arm9\../../../extract/usa/config.yaml
+[6/114] .\dsd.exe delink --config-path config\usa\arm9\config.yaml
+[INFO ] Loading ROM from config\usa\arm9\../../../extract/usa/config.yaml
+[INFO ] Function at 0x020c0e9c was adjusted to include pre-code constant pool at 0x020c0e88
+[7/114] C:\Users\swayn\Projects\DQIX-Decomp\.venv\Scripts\python.exe tools/download_tool.py mwccarm latest --path tools
+
+Downloading mwccarm latest...
+[8/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Combat\Main\BasicAttackCalculation.cpp -o build\usa\src\Combat\Main
+[9/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Combat\Main\CritRateCalculation.cpp -o build\usa\src\Combat\Main
+[10/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Combat\Main\TensionBonusCalculation.cpp -o build\usa\src\Combat\Main
+[11/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Filesystem\CardReadManager.cpp -o build\usa\src\Filesystem
+[12/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Filesystem\CardReadManagerAcquireBus.cpp -o build\usa\src\Filesystem
+[13/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Filesystem\CardReadManagerInit.cpp -o build\usa\src\Filesystem
+[14/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Filesystem\ExtendedNitroVM.cpp -o build\usa\src\Filesystem
+[15/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Filesystem\FileAccessor.cpp -o build\usa\src\Filesystem
+[16/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Filesystem\GPC.cpp -o build\usa\src\Filesystem
+[17/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Filesystem\LowNitroHandle.cpp -o build\usa\src\Filesystem
+[18/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Filesystem\NarcHandle.cpp -o build\usa\src\Filesystem
+[19/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Filesystem\NitroVM.cpp -o build\usa\src\Filesystem
+[20/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Filesystem\OverlayFSManagement.cpp -o build\usa\src\Filesystem
+[21/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\AlphaTween.cpp -o build\usa\src\Graphics
+[22/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\Animation3D.cpp -o build\usa\src\Graphics
+[23/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\ExtendedVectorMath.cpp -o build\usa\src\Graphics
+[24/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Combat\Overlay_24\GetAttackBaseDamage.cpp -o build\usa\src\Combat\Overlay_24
+[25/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Combat\Overlay_0\GetCombatantByID.cpp -o build\usa\src\Combat\Overlay_0
+[26/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Filesystem\Overlay_33\Ov33BackgroundLoader.cpp -o build\usa\src\Filesystem\Overlay_33
+[27/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\GameState\GameStateInstance.cpp -o build\usa\src\GameState
+[28/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Combat\Overlay_0\UpdateCombatantBuffs.cpp -o build\usa\src\Combat\Overlay_0
+[29/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\GameState\GameTime.cpp -o build\usa\src\GameState
+[30/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\GameState\GameStateObjects.cpp -o build\usa\src\GameState
+[31/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Filesystem\FileIO.cpp -o build\usa\src\Filesystem
+[32/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Filesystem\BackgroundLoader.cpp -o build\usa\src\Filesystem
+[33/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\LightingInfo.cpp -o build\usa\src\Graphics
+[34/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\NSBXX\Animation.cpp -o build\usa\src\Graphics\NSBXX
+[35/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\VRAMStaging.cpp -o build\usa\src\Graphics
+[36/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\NSBXX\AnimationProcessing.cpp -o build\usa\src\Graphics\NSBXX
+[37/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\AtmosphericEffect.cpp -o build\usa\src\Graphics
+[38/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\Model3D.cpp -o build\usa\src\Graphics
+[39/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\NSBXX\GeometryFifo.cpp -o build\usa\src\Graphics\NSBXX
+[40/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\NSBXX\MAM.cpp -o build\usa\src\Graphics\NSBXX
+[41/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\NSBXX\MAT.cpp -o build\usa\src\Graphics\NSBXX
+[42/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\NSBXX\MPT.cpp -o build\usa\src\Graphics\NSBXX
+[43/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\itcm\VRAMStagingITCM.cpp -o build\usa\src\Graphics\itcm
+[44/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Grotto\Main\GenerateObjectPosition.cpp -o build\usa\src\Grotto\Main
+[45/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\NSBXX\NameList.cpp -o build\usa\src\Graphics\NSBXX
+[46/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\NSBXX\PatternAnimation.cpp -o build\usa\src\Graphics\NSBXX
+[47/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\NSBXX\NSBXX.cpp -o build\usa\src\Graphics\NSBXX
+[48/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Grotto\Main\TileFeatures.cpp -o build\usa\src\Grotto\Main
+[49/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\NSBXX\JAC.cpp -o build\usa\src\Graphics\NSBXX
+[50/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\NSBXX\RenderConfig.cpp -o build\usa\src\Graphics\NSBXX
+[51/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Memory\AllocatorTypes.cpp -o build\usa\src\Memory
+[52/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\NSBXX\RenderCommandProcs.cpp -o build\usa\src\Graphics\NSBXX
+[53/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\NSBXX\VAV.cpp -o build\usa\src\Graphics\NSBXX
+[54/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\NSBXX\RenderCommands_10_13.cpp -o build\usa\src\Graphics\NSBXX
+[55/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\NSBXX\TEX.cpp -o build\usa\src\Graphics\NSBXX
+[56/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\NSBXX\RenderCommand_9.cpp -o build\usa\src\Graphics\NSBXX
+[57/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Grotto\Main\ActiveGrottoClass_2.cpp -o build\usa\src\Grotto\Main
+[58/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Memory\Arena.cpp -o build\usa\src\Memory
+[59/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\LightingManager.cpp -o build\usa\src\Graphics
+[60/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Memory\ArenaAllocate.cpp -o build\usa\src\Memory
+[61/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Graphics\NSBXX\RenderCommands.cpp -o build\usa\src\Graphics\NSBXX
+[62/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Grotto\Main\FloorMap.cpp -o build\usa\src\Grotto\Main
+[63/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Grotto\Main\ActiveGrottoClass.cpp -o build\usa\src\Grotto\Main
+[64/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Memory\ArenaBoundsGet.cpp -o build\usa\src\Memory
+[65/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Memory\ArenaExtendedInit.cpp -o build\usa\src\Memory
+[66/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Memory\ArenaHeap.cpp -o build\usa\src\Memory
+[67/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Memory\ArenaInit.cpp -o build\usa\src\Memory
+[68/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Grotto\Main\GrottoNameDataFile.cpp -o build\usa\src\Grotto\Main
+[69/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Grotto\Main\GrottoStruct.cpp -o build\usa\src\Grotto\Main
+[70/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Memory\ArenaInitialLow.cpp -o build\usa\src\Memory
+[71/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Memory\HMRFAllocator.cpp -o build\usa\src\Memory
+[72/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Memory\HPXEAllocator.cpp -o build\usa\src\Memory
+[73/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Grotto\Main\TreasureMapDataStructs.cpp -o build\usa\src\Grotto\Main
+[74/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Grotto\Main\TreasureMapMetadata.cpp -o build\usa\src\Grotto\Main
+[75/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Memory\SafeAllocator.cpp -o build\usa\src\Memory
+[76/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Memory\SignedAllocator.cpp -o build\usa\src\Memory
+[77/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Memory\AllocatorUnion.cpp -o build\usa\src\Memory
+[78/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Memory\UnusedSignedAllocator.cpp -o build\usa\src\Memory
+[79/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Resource\BCFG.cpp -o build\usa\src\Resource
+[80/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Resource\Brightness.cpp -o build\usa\src\Resource
+[81/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Resource\ResourceMutex.cpp -o build\usa\src\Resource
+[82/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Grotto\Main\FloorMapGenerator.cpp -o build\usa\src\Grotto\Main
+[83/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Resource\Script.cpp -o build\usa\src\Resource
+[84/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Grotto\Main\DetailedTreasureMapData.cpp -o build\usa\src\Grotto\Main
+[85/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\System\BGBases.cpp -o build\usa\src\System
+[86/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\System\Cache.cpp -o build\usa\src\System
+[87/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\System\ColorEffects.cpp -o build\usa\src\System
+[88/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\System\ConsoleType.cpp -o build\usa\src\System
+[89/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\System\ContextList.cpp -o build\usa\src\System
+[90/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\System\CPSRInterruptState.cpp -o build\usa\src\System
+[91/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\System\DMA.cpp -o build\usa\src\System
+[92/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\System\GamecardBusOwnership.cpp -o build\usa\src\System
+[93/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\System\InterruptEnableDisable.cpp -o build\usa\src\System
+[94/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\System\IPC.cpp -o build\usa\src\System
+[95/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\System\InterruptHandler.cpp -o build\usa\src\System
+[96/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\System\Mutex.cpp -o build\usa\src\System
+[97/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\System\LoadToVRAM.cpp -o build\usa\src\System
+[98/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\System\Timing.cpp -o build\usa\src\System
+[99/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\System\itcm\DMA_ITCM.cpp -o build\usa\src\System\itcm
+[100/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\System\ProcessorContext.cpp -o build\usa\src\System
+[101/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\System\VRAM.cpp -o build\usa\src\System
+[102/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\Util\Random.cpp -o build\usa\src\Util
+[103/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\World\LootableContainer.cpp -o build\usa\src\World
+[104/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\World\Zone3D.cpp -o build\usa\src\World
+[105/114] ".\tools\mwccarm\2.0\sp2p2\mwccarm.exe" -O2 -enum int -char signed -str noreuse -proc arm946e -gccext,on -fp soft -inline noauto -lang=c++ -Cpp_exceptions off -RTTI off -interworking -w off -sym on -gccinc -nolink -msgstyle gcc -str pool,reuse -i include -lang=c++ -d usa -MD -c src\World\Object3D.cpp -o build\usa\src\World
+[106/114] .\objdiff-cli.exe report generate -o build\usa\report.json
+ INFO Loading project .
+ INFO Generating report for 186 units (using 24 threads)
+ INFO Report generated in 1.234s
+ INFO Writing to build\usa\report.json
+[107/114] ".\tools\mwccarm\2.0\sp2p2\mwldarm.exe" -proc arm946e -nostdlib -interworking -m Entry -map closure,unused -msgstyle gcc -dead -force_active func_ov030_021d8a40 @build\usa\objects.txt build\usa\arm9.lcf -o build\usa\arm9.o
+[108/114] .\dsd.exe check modules --config-path config\usa\arm9\config.yaml --fail
+[INFO ] Check ARM9 main: OK
+[INFO ] Check ITCM: OK
+[INFO ] Check DTCM: OK
+[INFO ] Check overlay 0: OK
+[INFO ] Check overlay 1: OK
+[INFO ] Check overlay 2: OK
+[INFO ] Check overlay 3: OK
+[INFO ] Check overlay 4: OK
+[INFO ] Check overlay 5: OK
+[INFO ] Check overlay 6: OK
+[INFO ] Check overlay 7: OK
+[INFO ] Check overlay 8: OK
+[INFO ] Check overlay 9: OK
+[INFO ] Check overlay 10: OK
+[INFO ] Check overlay 11: OK
+[INFO ] Check overlay 12: OK
+[INFO ] Check overlay 13: OK
+[INFO ] Check overlay 14: OK
+[INFO ] Check overlay 15: OK
+[INFO ] Check overlay 16: OK
+[INFO ] Check overlay 17: OK
+[INFO ] Check overlay 18: OK
+[INFO ] Check overlay 19: OK
+[INFO ] Check overlay 20: OK
+[INFO ] Check overlay 21: OK
+[INFO ] Check overlay 22: OK
+[INFO ] Check overlay 23: OK
+[INFO ] Check overlay 24: OK
+[INFO ] Check overlay 25: OK
+[INFO ] Check overlay 26: OK
+[INFO ] Check overlay 27: OK
+[INFO ] Check overlay 28: OK
+[INFO ] Check overlay 29: OK
+[INFO ] Check overlay 30: OK
+[INFO ] Check overlay 31: OK
+[INFO ] Check overlay 32: OK
+[INFO ] Check overlay 33: OK
+[INFO ] Check overlay 34: OK
+[109/114] .\dsd.exe check symbols --config-path config\usa\arm9\config.yaml --elf-path build\usa\arm9.o --fail
+[110/114] .\dsd.exe rom config --elf build\usa\arm9.o --config config\usa\arm9\config.yaml
+[INFO ] Loading ROM from config\usa\arm9\../../../extract/usa/config.yaml
+[111/114] C:\Users\swayn\Projects\DQIX-Decomp\.venv\Scripts\python.exe tools/arm7_build.py --compiler "tools\mwccarm\2.0\sp2p2" --output "build\usa\arm7" --rom-config build\usa\build\rom_config.yaml --output-rom-config "build\usa\build\rom_config_arm7.yaml"
+ARM7 source build PASS: 224 source-owned bytes, 167652 binary fallback bytes
+[112/114] .\dsd.exe rom build --config build\usa\build\rom_config_arm7.yaml --rom build\usa\unfinalized.nds 
+[INFO ] Loading ROM from build\usa\build\rom_config_arm7.yaml
+[INFO ] Compressing arm9 overlay 0/34
+[INFO ] Compressing arm9 overlay 1/34
+[INFO ] Compressing arm9 overlay 2/34
+[INFO ] Compressing arm9 overlay 3/34
+[INFO ] Compressing arm9 overlay 4/34
+[INFO ] Compressing arm9 overlay 5/34
+[INFO ] Compressing arm9 overlay 6/34
+[INFO ] Compressing arm9 overlay 7/34
+[INFO ] Compressing arm9 overlay 8/34
+[INFO ] Compressing arm9 overlay 9/34
+[INFO ] Compressing arm9 overlay 10/34
+[INFO ] Compressing arm9 overlay 11/34
+[INFO ] Compressing arm9 overlay 12/34
+[INFO ] Compressing arm9 overlay 13/34
+[INFO ] Compressing arm9 overlay 14/34
+[INFO ] Compressing arm9 overlay 15/34
+[INFO ] Compressing arm9 overlay 16/34
+[INFO ] Compressing arm9 overlay 17/34
+[INFO ] Compressing arm9 overlay 18/34
+[INFO ] Compressing arm9 overlay 19/34
+[INFO ] Compressing arm9 overlay 20/34
+[INFO ] Compressing arm9 overlay 21/34
+[INFO ] Compressing arm9 overlay 22/34
+[INFO ] Compressing arm9 overlay 23/34
+[INFO ] Compressing arm9 overlay 24/34
+[INFO ] Compressing arm9 overlay 25/34
+[INFO ] Compressing arm9 overlay 26/34
+[INFO ] Compressing arm9 overlay 27/34
+[INFO ] Compressing arm9 overlay 28/34
+[INFO ] Compressing arm9 overlay 29/34
+[INFO ] Compressing arm9 overlay 30/34
+[INFO ] Compressing arm9 overlay 31/34
+[INFO ] Compressing arm9 overlay 32/34
+[INFO ] Compressing arm9 overlay 33/34
+[INFO ] Compressing arm9 overlay 34/34
+[INFO ] Compressing ARM9 program
+[INFO ] Loading ROM assets
+[113/114] C:\Users\swayn\Projects\DQIX-Decomp\.venv\Scripts\python.exe tools/finalize_rom_header.py build\usa\unfinalized.nds dqix_usa.nds --baserom extract\baserom_dqix_usa.nds
+USA ROM PASS: c7c3014c237900c8281289b8bc76a781969b6278; original secure-area CRC metadata preserved after exact secure-area comparison; header CRC recomputed
+[114/114] C:\Users\swayn\Projects\DQIX-Decomp\.venv\Scripts\python.exe tools/check_arm7.py
+ARM7 baseline PASS: 167,876 bytes preserved; source coverage measured separately; report: build\usa\arm7-report.json
+
+$ C:\Users\swayn\Projects\DQIX-Decomp\.venv\Scripts\ninja.exe sha1
+[1/7] .\dsd.exe delink --config-path config\usa\arm9\config.yaml
+[INFO ] Loading ROM from config\usa\arm9\../../../extract/usa/config.yaml
+[INFO ] Function at 0x020c0e9c was adjusted to include pre-code constant pool at 0x020c0e88
+[2/7] ".\tools\mwccarm\2.0\sp2p2\mwldarm.exe" -proc arm946e -nostdlib -interworking -m Entry -map closure,unused -msgstyle gcc -dead -force_active func_ov030_021d8a40 @build\usa\objects.txt build\usa\arm9.lcf -o build\usa\arm9.o
+[3/7] .\dsd.exe rom config --elf build\usa\arm9.o --config config\usa\arm9\config.yaml
+[INFO ] Loading ROM from config\usa\arm9\../../../extract/usa/config.yaml
+[4/7] C:\Users\swayn\Projects\DQIX-Decomp\.venv\Scripts\python.exe tools/arm7_build.py --compiler "tools\mwccarm\2.0\sp2p2" --output "build\usa\arm7" --rom-config build\usa\build\rom_config.yaml --output-rom-config "build\usa\build\rom_config_arm7.yaml"
+ARM7 source build PASS: 224 source-owned bytes, 167652 binary fallback bytes
+[5/7] .\dsd.exe rom build --config build\usa\build\rom_config_arm7.yaml --rom build\usa\unfinalized.nds 
+[INFO ] Loading ROM from build\usa\build\rom_config_arm7.yaml
+[INFO ] Compressing arm9 overlay 0/34
+[INFO ] Compressing arm9 overlay 1/34
+[INFO ] Compressing arm9 overlay 2/34
+[INFO ] Compressing arm9 overlay 3/34
+[INFO ] Compressing arm9 overlay 4/34
+[INFO ] Compressing arm9 overlay 5/34
+[INFO ] Compressing arm9 overlay 6/34
+[INFO ] Compressing arm9 overlay 7/34
+[INFO ] Compressing arm9 overlay 8/34
+[INFO ] Compressing arm9 overlay 9/34
+[INFO ] Compressing arm9 overlay 10/34
+[INFO ] Compressing arm9 overlay 11/34
+[INFO ] Compressing arm9 overlay 12/34
+[INFO ] Compressing arm9 overlay 13/34
+[INFO ] Compressing arm9 overlay 14/34
+[INFO ] Compressing arm9 overlay 15/34
+[INFO ] Compressing arm9 overlay 16/34
+[INFO ] Compressing arm9 overlay 17/34
+[INFO ] Compressing arm9 overlay 18/34
+[INFO ] Compressing arm9 overlay 19/34
+[INFO ] Compressing arm9 overlay 20/34
+[INFO ] Compressing arm9 overlay 21/34
+[INFO ] Compressing arm9 overlay 22/34
+[INFO ] Compressing arm9 overlay 23/34
+[INFO ] Compressing arm9 overlay 24/34
+[INFO ] Compressing arm9 overlay 25/34
+[INFO ] Compressing arm9 overlay 26/34
+[INFO ] Compressing arm9 overlay 27/34
+[INFO ] Compressing arm9 overlay 28/34
+[INFO ] Compressing arm9 overlay 29/34
+[INFO ] Compressing arm9 overlay 30/34
+[INFO ] Compressing arm9 overlay 31/34
+[INFO ] Compressing arm9 overlay 32/34
+[INFO ] Compressing arm9 overlay 33/34
+[INFO ] Compressing arm9 overlay 34/34
+[INFO ] Compressing ARM9 program
+[INFO ] Loading ROM assets
+[6/7] C:\Users\swayn\Projects\DQIX-Decomp\.venv\Scripts\python.exe tools/finalize_rom_header.py build\usa\unfinalized.nds dqix_usa.nds --baserom extract\baserom_dqix_usa.nds
+USA ROM PASS: c7c3014c237900c8281289b8bc76a781969b6278; original secure-area CRC metadata preserved after exact secure-area comparison; header CRC recomputed
+[7/7] C:\Users\swayn\Projects\DQIX-Decomp\.venv\Scripts\python.exe tools/sha1.py dqix_usa.nds -c dqix_usa.sha1
+dqix_usa.nds: OK
