@@ -501,6 +501,23 @@ def add_delink_and_lcf_builds(n: ninja_syntax.Writer, project: Project):
 
 
 def add_check_builds(n: ninja_syntax.Writer, project: Project):
+    check_inputs = ["check_modules", "check_symbols"]
+    if project.game_version == "usa":
+        # dsd verifies only ARM9. Keep the cartridge ARM7 preservation check
+        # separate and explicit: binary equality does not earn source coverage.
+        n.rule(
+            name="check_arm7",
+            command=f"{PYTHON} tools/check_arm7.py",
+        )
+        n.build(
+            inputs=[project.build_rom(), str(project.baserom()),
+                    "config/usa/arm7/baseline.json", "tools/check_arm7.py"],
+            rule="check_arm7",
+            outputs="check_arm7",
+        )
+        check_inputs.append("check_arm7")
+        n.newline()
+
     n.build(
         inputs=str(project.arm9_o()),
         rule="check_modules",
@@ -523,7 +540,7 @@ def add_check_builds(n: ninja_syntax.Writer, project: Project):
     n.newline()
 
     n.build(
-        inputs=["check_modules", "check_symbols"],
+        inputs=check_inputs,
         rule="phony",
         outputs="check",
     )
@@ -551,7 +568,9 @@ def add_objdiff_builds(n: ninja_syntax.Writer, project: Project):
 
     n.build(
         inputs=["objdiff.json"],
-        implicit=[OBJDIFF] + project.source_object_files(),
+        # objdiff reads original objects written by delink. Without this edge,
+        # parallel builds can compare stale objects or race their replacement.
+        implicit=[OBJDIFF, str(project.arm9_delink_yaml())] + project.source_object_files(),
         rule="objdiff_report",
         outputs=str(project.objdiff_report()),
     )
