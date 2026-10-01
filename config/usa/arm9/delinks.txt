@@ -630,3 +630,8 @@ src/World/BMDJInstanceLinks.cpp:
 src/World/Zone3DInstanceLoading.cpp:
     complete
     .text start:0x020177d4 end:0x02017a94
+
+src/World/BMDJTransforms.cpp:
+    complete
+    .text start:0x0201310c end:0x02013380
+    .rodata start:0x020e6dfc end:0x020e6e08

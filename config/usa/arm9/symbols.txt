@@ -413,8 +413,8 @@ _Z17ResetBMDJInstancePN17Zone3D_BMDJStruct13InstanceEntryE kind:function(arm,siz
 func_020130a8 kind:function(arm,size=0x8) addr:0x020130a8
 _Z15AppendBMDJChildPN17Zone3D_BMDJStruct13InstanceEntryES1_ kind:function(arm,size=0x30) addr:0x020130b0
 _Z17AppendBMDJSiblingPN17Zone3D_BMDJStruct13InstanceEntryES1_ kind:function(arm,size=0x2c) addr:0x020130e0
-func_0201310c kind:function(arm,size=0x4c) addr:0x0201310c
-func_02013158 kind:function(arm,size=0x228) addr:0x02013158
+_Z24InitializeBMDJTransformsPN17Zone3D_BMDJStruct13InstanceEntryE kind:function(arm,size=0x4c) addr:0x0201310c
+_Z19ApplyBMDJTransformsPN17Zone3D_BMDJStruct13InstanceEntryEPK8Vector3iPKiS4_ kind:function(arm,size=0x228) addr:0x02013158
 func_02013380 kind:function(arm,size=0x34) addr:0x02013380
 func_020133b4 kind:function(arm,size=0x18) addr:0x020133b4
 func_020133cc kind:function(arm,size=0x30) addr:0x020133cc

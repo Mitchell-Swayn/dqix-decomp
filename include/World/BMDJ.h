@@ -60,7 +60,7 @@ struct Zone3D_BMDJStruct
         signed char countdown : 7;
         signed char unknown_4_high : 1;
         char unknown_5;
-        short unknown_6;
+        short worldAngle;
         Vector3i position;
         Vector3i scale;
         StructSize20* definition;
@@ -121,3 +121,5 @@ void ResetBMDJObjectEntry(Zone3D_BMDJStruct::ObjectEntry* entry);
 void ResetBMDJInstance(Zone3D_BMDJStruct::InstanceEntry* instance);
 void AppendBMDJChild(Zone3D_BMDJStruct::InstanceEntry* parent, Zone3D_BMDJStruct::InstanceEntry* child);
 void AppendBMDJSibling(Zone3D_BMDJStruct::InstanceEntry* first, Zone3D_BMDJStruct::InstanceEntry* next);
+void InitializeBMDJTransforms(Zone3D_BMDJStruct::InstanceEntry* instance);
+void ApplyBMDJTransforms(Zone3D_BMDJStruct::InstanceEntry* instance, const Vector3i* parentPosition, const int* parentAngle, const Vector3i* parentScale);

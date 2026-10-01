@@ -11,7 +11,7 @@ void ResetBMDJInstance(Zone3D_BMDJStruct::InstanceEntry* instance)
     instance->position.x = 0;
     instance->position.y = 0;
     instance->position.z = 0;
-    instance->unknown_6 = 0;
+    instance->worldAngle = 0;
     instance->scale.x = 0x1000;
     instance->scale.y = 0x1000;
     instance->scale.z = 0x1000;

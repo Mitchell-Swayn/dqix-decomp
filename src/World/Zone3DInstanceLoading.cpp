@@ -8,7 +8,6 @@ struct ZoneLightingOverride
 };
 extern "C" bool func_ov017_021b8b54(void*);
 extern "C" ZoneLightingOverride* func_ov017_021b8478(void*);
-extern "C" void func_0201310c(Zone3D_BMDJStruct::InstanceEntry*);
 
 void Zone3D::BuildBMDJInstances(Zone3D_BMDJStruct* group, SafeAllocator* allocator)
 {
@@ -90,5 +89,5 @@ void Zone3D::BuildBMDJInstances(Zone3D_BMDJStruct* group, SafeAllocator* allocat
             resource->object->ShallowCloneTo(instance->object);
         }
     }
-    func_0201310c(group->ptr_44);
+    InitializeBMDJTransforms(group->ptr_44);
 }
