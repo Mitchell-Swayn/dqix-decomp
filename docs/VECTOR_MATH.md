@@ -95,3 +95,14 @@ translation. The source preserves the in-place case and store order. Whole-modul
 checks and the linked report pass at 100% for this function. Across these eight
 math units the total is now 20 functions and 1,628 matched code bytes, still with
 no added standalone data definitions or denominator changes.
+
+`MatrixView.cpp` reconstructs `Mat4x3_WriteViewMatrix` at
+`[0x020c20d4, 0x020c21dc)`, adding 264 matched bytes and one function. It
+normalizes the eye-minus-target direction, derives the right and vertical axes
+with cross products, transposes those axes into the output basis, and computes
+translation from negative eye/axis inner products. `AtmosphericEffect.cpp` uses
+this interface to populate the shared view matrix. Existing normalization calls
+remain linked to binary fallback; this unit adds no credit for their bodies.
+The original handling of degenerate directions is unchanged. Whole-module
+verification and the linked report pass, bringing these nine math units to
+21 functions and 1,892 matching bytes, with unchanged denominators.
