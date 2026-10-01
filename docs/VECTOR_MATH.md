@@ -106,3 +106,23 @@ remain linked to binary fallback; this unit adds no credit for their bodies.
 The original handling of degenerate directions is unchanged. Whole-module
 verification and the linked report pass, bringing these nine math units to
 21 functions and 1,892 matching bytes, with unchanged denominators.
+
+`MatrixPerspective.cpp` reconstructs the existing `Mat4x4_MaybeWriteFrustum`
+interface at `[0x020c28a0, 0x020c29ec)`: 332 matched report bytes, including a
+four-byte MMIO literal. The arithmetic is a perspective matrix: cosine/sine
+produces the vertical factor, aspect division produces the horizontal factor,
+and near/far combinations produce the depth terms. These descriptive parameter
+names follow the observed formula; the public legacy symbol remains unchanged.
+The implementation preserves the original scale-one shortcut, signed division
+truncation, rounded depth products, and ordered hardware divider operations.
+Its second divider setup uses the original grouped stores before a result helper
+polls completion. It does not introduce new synchronization or error handling.
+
+The signed 64-bit division emitted by the compiler identifies the existing
+binary helper at `0x0200cd2c` as `_ll_sdiv`; the USA symbol was updated accordingly.
+Its sign handling and division body agree with that ABI, but the helper itself
+remains binary fallback and receives no reconstruction credit. Whole-module
+checks and the linked report pass at 100% for the perspective routine. These
+ten math source units now cover 22 functions and 2,224 matched report bytes,
+without denominator changes. Unmatched matrix multiplication and Thumb rotation
+experiments remain outside the source mappings and are not counted.
