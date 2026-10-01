@@ -398,3 +398,8 @@ src/Memory/ArenaInitialLow.cpp:
 src/Memory/ArenaExtendedInit.cpp:
     complete
     .text start:0x020c84b4 end:0x020c8520
+
+src/System/ConsoleType.cpp:
+    complete
+    .text start:0x020c7dcc end:0x020c7de4
+    .data start:0x020f2284 end:0x020f2288

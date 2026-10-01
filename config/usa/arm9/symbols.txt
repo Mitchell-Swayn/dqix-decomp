@@ -5141,7 +5141,7 @@ _Z26InitializeContextRegistersP16ProcessorContextjj kind:function(arm,size=0x84)
 SaveContext kind:function(arm,size=0x4c) addr:0x020c7d34
 RestoreContext kind:function(arm,size=0x44) addr:0x020c7d80
 func_020c7dc4 kind:function(arm,size=0x8) addr:0x020c7dc4
-func_020c7dcc kind:function(arm,size=0x18) addr:0x020c7dcc
+_Z14GetConsoleTypev kind:function(arm,size=0x18) addr:0x020c7dcc
 func_020c7de4 kind:function(arm,size=0x28) addr:0x020c7de4
 func_020c7e0c kind:function(arm,size=0x94) addr:0x020c7e0c
 func_020c7ea0 kind:function(arm,size=0xa4) addr:0x020c7ea0
@@ -7454,7 +7454,7 @@ data_020f2228 kind:data(any) addr:0x020f2228
 data_020f226c kind:data(any) addr:0x020f226c
 data_020f2270 kind:data(any) addr:0x020f2270
 data_020f2274 kind:data(any) addr:0x020f2274
-data_020f2284 kind:data(any) addr:0x020f2284
+g_consoleType kind:data(any) addr:0x020f2284
 data_020f2288 kind:data(any) addr:0x020f2288
 data_020f228c kind:data(any) addr:0x020f228c
 data_020f2290 kind:data(any) addr:0x020f2290
