@@ -23,7 +23,16 @@ Existing callers support these meanings: `Object3D.cpp` adds position vectors,
 reconstructs rotation basis vectors with cross products, and `Model3D.cpp` and
 `RenderCommands.cpp` use lengths for radius/scaling calculations. These operations
 appear in the SDK region; their exact original source spelling is not asserted.
-`Vector3fix_Normalize` and `Vector3fix_Distance` remain binary fallback.
+`Vector3fix_Normalize` remains binary fallback.
+
+The follow-up `Vector3fix_Distance` implementation in `VectorDistance.cpp` owns
+`[0x020c3030, 0x020c30ac)`, another 124 matching bytes including an eight-byte
+compiler literal pool. It computes signed component differences, sums their
+full-width squares and uses the same hardware square-root rounding as length.
+The small inline square helper and captured x difference preserve register
+allocation without adding instructions or assembly. Total reconstructed coverage
+across these source units is six functions and 516 objdiff code bytes. The intervening
+normalization range remains explicitly outside the source mapping.
 
 Validation in the isolated `work/vectors` worktree used the pinned compiler and
 ran `ninja rom check`, then `ninja report`. ARM9 main, both autoloads, all 35
