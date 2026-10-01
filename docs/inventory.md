@@ -16,6 +16,21 @@ report unit to a module, and reconciles every integer coverage counter with the
 report totals. Malformed or unassigned entries fail the command. It does not run
 the build or establish freshness of the existing report: build first.
 
+When `config/usa/arm7/source_units.json` is present, the tool also validates ARM7
+autoload parameters/descriptors against the original payload and partitions it
+into startup, initialized autoloads and copy-table subcomponents. These are
+children of the existing ARM7 module, **not additional payload bytes in the module
+total**. Runtime BSS remains separate from initialized bytes.
+
+If `build/usa/arm7/report.json` is present, its independent source measurements
+are attached to ARM7 without adding them to the ARM9 objdiff counters. Payload
+hash, source hashes, linked-unit hashes, source unit metadata, check flags and
+coverage counters must agree with current inputs. Stale ARM7 source reports fail
+with a rebuild instruction. A missing report receives no measured source credit.
+The complete ARM7 instruction/data/function denominator remains unknown even when
+some source units match. This positive source accounting does not estimate a
+whole-cartridge percentage.
+
 `inventory-usa-baseline.json` records the initial metadata and module counters.
 `inventory-usa-report.json.gz` is the complete initial objdiff JSON, archived with
 deterministic gzip metadata; its decompressed SHA-256 is recorded in the inventory.
@@ -52,8 +67,13 @@ cartridge payloads are duplicate coverage.
 
 ## Open inventory work
 
-ARM7 has no analyzed code/data/function boundaries or objdiff coverage here.
-Its internal autoloads still need investigation. Do not interpret null ARM7
+The frozen initial baseline predates ARM7 autoload analysis and source tracking.
+Current inventories include the subsequently established two autoloads and bounded
+source reconstruction through the independent pipeline; see
+[the ARM7 notes](../config/usa/arm7/README.md). Startup is 540 bytes, WRAM autoload
+69,172 bytes, main-RAM autoload 98,140 bytes, and the copy table 24 bytes, summing
+to the parent payload's 167,876 bytes. The complete ARM7 code/data/function
+boundaries and objdiff coverage remain unknown. Do not interpret null ARM7 objdiff
 coverage as zero total code, or quote the ARM9 percentage as whole-game coverage.
 
 Header enumeration cannot detect native code disguised as assets. Asset archives,

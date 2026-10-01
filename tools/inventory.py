@@ -103,6 +103,120 @@ def delinks(path):
     return sections, sources
 
 
+def arm7_components(root, payload, load_address):
+    """Partition the parent ARM7 payload; never add autoload sizes twice.
+
+    Initialized payload extents are known, but their complete code/data split is
+    not. The independent source report supplies bounded positive coverage only.
+    """
+    config_path = root / 'config/usa/arm7/source_units.json'
+    if not config_path.exists():
+        return dict(source_coverage='untracked; original binary passthrough',
+                    code_data_split='unknown', subcomponents=None)
+    config = json.loads(config_path.read_text())
+    startup_size = config['startup_size']
+    table_offset = config['autoload_table_offset']
+    autoloads = config['autoloads']
+    table_size = 12 * len(autoloads)
+    if startup_size <= 0 or table_offset + table_size != len(payload):
+        raise ValueError('ARM7 startup/table extent is invalid')
+    table = bounded(payload, table_offset, table_size)
+    parameters = struct.unpack('<6I', bounded(payload, config['autoload_parameters_offset'], 24))
+    if parameters != (load_address + table_offset, load_address + len(payload),
+                      load_address + startup_size, load_address + startup_size,
+                      load_address + startup_size, 0):
+        raise ValueError('ARM7 autoload parameters differ from configured layout')
+    if config['autoload_parameters_offset'] + 24 > startup_size:
+        raise ValueError('ARM7 autoload parameters outside startup')
+    parts = [dict(name='startup', kind='startup_and_parameters', payload_offset=0,
+                  initialized_size=startup_size, runtime_address=load_address, bss_size=0)]
+    end = startup_size
+    seen = set()
+    for index, autoload in enumerate(autoloads):
+        if autoload['name'] in seen:
+            raise ValueError('Duplicate ARM7 autoload name')
+        seen.add(autoload['name'])
+        if autoload['payload_offset'] != end or autoload['size'] <= 0:
+            raise ValueError('ARM7 autoloads overlap or leave unaccounted payload bytes')
+        descriptor = struct.unpack_from('<3I', table, index * 12)
+        if descriptor != (autoload['runtime_address'], autoload['size'], autoload['bss_size']):
+            raise ValueError('ARM7 descriptor differs from configured autoload')
+        parts.append(dict(name=autoload['name'], kind='autoload',
+            payload_offset=autoload['payload_offset'], initialized_size=autoload['size'],
+            runtime_address=autoload['runtime_address'], bss_size=autoload['bss_size']))
+        end += autoload['size']
+    if end != table_offset:
+        raise ValueError('ARM7 autoloads do not end at descriptor table')
+    parts.append(dict(name='autoload_table', kind='copy_descriptors', payload_offset=table_offset,
+                      initialized_size=table_size, runtime_address=load_address+table_offset, bss_size=0))
+    for part in parts:
+        part['parent_module'] = 'arm7'
+        part['accounting'] = 'partition of parent initialized bytes; do not add to module total'
+        part['sha256'] = digest(bounded(payload, part['payload_offset'], part['initialized_size']))
+        part['source_units'] = []
+    owners = {p['name']: p for p in parts if p['kind'] == 'autoload'}
+    ranges = []
+    for unit in config['units']:
+        owner = owners.get(unit['autoload'])
+        if owner is None:
+            raise ValueError('ARM7 source unit has unknown autoload')
+        first, last = unit['payload_offset'], unit['payload_offset'] + unit['size']
+        if not owner['payload_offset'] <= first < last <= owner['payload_offset'] + owner['initialized_size']:
+            raise ValueError('ARM7 source unit outside autoload')
+        if unit['runtime_address'] != owner['runtime_address'] + first - owner['payload_offset']:
+            raise ValueError('ARM7 source unit runtime mapping differs')
+        if any(first < b and a < last for a, b in ranges):
+            raise ValueError('ARM7 source unit overlap')
+        ranges.append((first, last))
+        owner['source_units'].append(unit)
+    result = dict(subcomponents=parts,
+        source_coverage='independent source pipeline; see source_build_report',
+        code_data_split='only reconstructed units classified; full denominator unknown',
+        source_build_report=None)
+    report_path = root / 'build/usa/arm7/report.json'
+    if not report_path.exists():
+        result['source_coverage'] = 'source configuration present; build report missing, no measured source credit'
+        return result
+    report_bytes = report_path.read_bytes()
+    report = json.loads(report_bytes)
+    if report['payload_bytes'] != len(payload) or report['payload_sha1'] != hashlib.sha1(payload).hexdigest():
+        raise ValueError('ARM7 source report payload differs')
+    if not report['module_check_passed'] or not report['source_symbol_checks_passed']:
+        raise ValueError('ARM7 source report checks did not pass')
+    if report['autoloads'] != autoloads or len(report['units']) != len(config['units']):
+        raise ValueError('ARM7 source report/config differ; rebuild')
+    for declared, measured in zip(config['units'], report['units']):
+        if any(measured.get(k) != v for k, v in declared.items()):
+            raise ValueError('ARM7 source report unit metadata differs; rebuild')
+        source = (root / declared['source']).read_bytes()
+        original = bounded(payload, declared['payload_offset'], declared['size'])
+        if measured['source_sha1'] != hashlib.sha1(source).hexdigest():
+            raise ValueError('ARM7 source changed since report; rebuild')
+        if measured['linked_sha1'] != hashlib.sha1(original).hexdigest():
+            raise ValueError('ARM7 linked source bytes differ from original')
+        if not measured['module_check_passed'] or not measured['symbol_check_passed']:
+            raise ValueError('ARM7 source unit did not pass checks')
+    expected = {
+        'source_code_bytes': sum(u['code_bytes'] for u in config['units']),
+        'source_literal_pool_bytes': sum(u['literal_pool_bytes'] for u in config['units']),
+        'binary_fallback_bytes': len(payload) - sum(u['size'] for u in config['units']),
+    }
+    if any(report[k] != v for k, v in expected.items()):
+        raise ValueError('ARM7 source report counters do not reconcile')
+    if sum(report[k] for k in ('source_code_bytes', 'source_literal_pool_bytes', 'source_data_bytes',
+                              'reviewed_assembly_bytes', 'binary_fallback_bytes')) != len(payload):
+        raise ValueError('ARM7 payload ownership counters do not cover parent bytes')
+    result['source_build_report'] = dict(path='build/usa/arm7/report.json', sha256=digest(report_bytes),
+        measures={k: report[k] for k in ('source_code_bytes', 'source_literal_pool_bytes',
+            'source_data_bytes', 'source_functions', 'binary_fallback_bytes', 'reviewed_assembly_bytes',
+            'function_count', 'code_data_partition')},
+        compiler_sha1=report['compiler_sha1'], linker_sha1=report['linker_sha1'])
+    for part in parts:
+        part['measured_source_bytes'] = sum(u['size'] for u in part['source_units'])
+        part['binary_fallback_bytes'] = part['initialized_size'] - part['measured_source_bytes']
+    return result
+
+
 def inventory(root):
     rom_path = root / "extract/baserom_dqix_usa.nds"
     rom = rom_path.read_bytes()
@@ -162,10 +276,11 @@ def inventory(root):
     arm7_header = cart["processors"]["arm7"]
     if digest(arm7) != arm7_header["stored_sha256"]:
         raise ValueError("Extracted ARM7 differs from cartridge program")
-    modules.append(dict(name="arm7", processor="arm7", initialized_size=len(arm7),
+    arm7_module = dict(name="arm7", processor="arm7", initialized_size=len(arm7),
         extracted_sha256=digest(arm7), extraction_metadata=flat_numbers(extract / "arm7/arm7.yaml"),
-        report_coverage=None, source_coverage="untracked; original binary passthrough",
-        code_data_split="unknown", verification="exact extracted bytes compared to ROM header range"))
+        report_coverage=None, verification="exact extracted bytes compared to ROM header range")
+    arm7_module.update(arm7_components(root, arm7, arm7_header['load_address']))
+    modules.append(arm7_module)
     for ov in cart["overlays"]["arm7"]:
         modules.append(dict(name=f"arm7_ov{ov['id']:03}", processor="arm7", overlay=ov,
                             report_coverage=None, source_coverage="untracked"))
@@ -175,9 +290,9 @@ def inventory(root):
     return dict(schema_version=1, source_revision=revision, rom_sha1=sha1,
         report_sha256=digest(report_bytes), report_measures=report["measures"],
         configured_tool_versions=versions, cartridge=cart, modules=modules,
-        scope="Header-declared modules plus extracted ARM9 ITCM/DTCM. Not a complete native-code audit.",
-        unknowns=["ARM7 code/data/function boundaries and autoloads have not been analyzed.",
-                  "Asset files and script payloads have not been audited for embedded executable code.",
+        scope="Header-declared modules, extracted ARM9 ITCM/DTCM, and configured ARM7 autoload partitions. Not a complete native-code audit.",
+        unknowns=["ARM7 complete code/data/function boundaries remain unknown; autoload/source subcomponents are reported when configured.",
+                  "Asset files and script payloads have not been fully audited for embedded executable code; see the separate asset triage report.",
                   "ARM9 section ranges include padding and possible embedded data; report counters are symbol-based.",
                   "Declared complete ranges are configuration claims; use matched report counters for byte coverage.",
                   "Data report includes BSS; initialized bytes are not a code-coverage denominator.",
