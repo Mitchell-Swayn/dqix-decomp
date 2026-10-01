@@ -491,3 +491,7 @@ src/World/Zone3DPaths.cpp:
 src/System/MatrixView.cpp:
     complete
     .text start:0x020c20d4 end:0x020c21dc
+
+src/Graphics/VRAMImageState.cpp:
+    complete
+    .text start:0x020bb6f8 end:0x020bb780

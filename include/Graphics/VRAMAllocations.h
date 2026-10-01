@@ -13,3 +13,8 @@ struct TexturePaletteVRAMState
 void SaveTexturePaletteVRAMState(TexturePaletteVRAMState* state);
 void RestoreTexturePaletteVRAMState(const TexturePaletteVRAMState* state);
 void ResetTexturePaletteVRAM();
+
+// The image state stores start/end bounds for each of the five VRAM pools.
+extern "C" int FreeTextureImageVRAM(unsigned int key);
+void SaveTextureImageVRAMState(unsigned int* state);
+void RestoreTextureImageVRAMState(const unsigned int* state);
