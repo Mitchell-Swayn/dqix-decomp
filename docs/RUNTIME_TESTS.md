@@ -76,3 +76,12 @@ Ordinary saves, additional battles/abilities/status effects, inventories and
 equipment, grotto generation, representative later scripted events, multiplayer,
 communication and late-game paths remain untested. No physical DS hardware test
 was performed. No claim is made that early-game success covers those paths.
+
+## Progress images
+
+On Windows, after a successful `ninja rom check report sha1`, run
+`powershell -NoProfile -File tools/progress_image.ps1`. The generated
+`build/progress/latest.png` reads the ARM9 and ARM7 reports and hashes the rebuilt
+ROM. Its bars describe matching coverage, including pre-existing ARM9 assembly;
+they are separate from gameplay evidence and are not an estimate of effort.
+The command uses Windows System.Drawing without additional Python packages.
