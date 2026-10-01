@@ -21,6 +21,13 @@ extern void ARM7_HandleIPCReceive(int);
 extern int ARM7_GetIpcBootMode(void);
 extern void ARM7_WaitCycles(int);
 int ARM7_SendIpcWord(unsigned int);
+void ARM7_InitializeIPC(void);
+
+void ARM7_StartIPC(void)
+{
+    ARM7_InitializeIPC();
+}
+
 void ARM7_InitializeIPC(void)
 {
  int state=ARM7_DisableIRQInterrupts();
@@ -78,4 +85,29 @@ int ARM7_SendIpcWord(unsigned int word)
  IPC_SEND=word;
  ARM7_SetIRQInterruptState(state);
  return 0;
+}
+
+#define IPC_RECEIVE (*(volatile unsigned int*)0x04100000)
+void ARM7_HandleIPCReceive(int unused)
+{
+ IPCCommand command;
+ while(1){
+  int result;
+  if(IPC_CONTROL&0x4000){
+   IPC_CONTROL|=0xc000;
+   result=-3;
+  }else{
+   int state=ARM7_DisableIRQInterrupts();
+   if(IPC_CONTROL&0x100){ARM7_SetIRQInterruptState(state);result=-4;}
+   else{command.word=IPC_RECEIVE;ARM7_SetIRQInterruptState(state);result=0;}
+  }
+  if(result==-4)break;
+  if(result==-3 || command.parts.channel==0)continue;
+  if(ARM7_IPCState.handlers[command.parts.channel]){
+   ARM7_IPCState.handlers[command.parts.channel](command.parts.channel,command.parts.argument,command.parts.flag);
+  }else if(!command.parts.flag){
+   command.parts.flag=1;
+   ARM7_SendIpcWord(command.word);
+  }
+ }
 }

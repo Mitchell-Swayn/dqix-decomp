@@ -1,11 +1,11 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **55 C
-functions: 5,592 instruction bytes plus 472 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **58 C
+functions: 5,836 instruction bytes plus 488 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
 864 bytes of standalone diagnostic data and 316 bytes of BSS now have source
-definitions. The other 160,828 payload bytes
+definitions. The other 160,568 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -19,10 +19,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 5,592 / 472 bytes |
+| Reconstructed C instructions / compiler literal pools | 5,836 / 488 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 864 / 120 bytes |
 | Reconstructed BSS / total autoload BSS | 316 / 22,744 bytes |
-| Binary fallback | 160,828 bytes |
+| Binary fallback | 160,568 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -223,16 +223,24 @@ control-register polling, start/repeat clearing, two post-clear reads, and
 channel-zero reinitialization using `0x81400001`. IRQ helpers are source-owned;
 these routines add no standalone data or BSS.
 
-`src/IPC.c` reconstructs five FIFO routines at `[0x037fe938, 0x037feb38)`
-(payload `[0x6b54, 0x6d54)`): ARM7 initialization/handshake, handler registration
-and query, command packing and raw-word sending. It owns 468 instruction bytes,
-44 literal bytes and 132 BSS bytes at `[0x03809188, 0x0380920c)` for the init
+`src/IPC.c` reconstructs seven FIFO routines at `[0x037fe92c, 0x037fec18)`
+(payload `[0x6b48, 0x6e34)`): ARM7 initialization/handshake, handler registration
+and query, command packing, raw-word sending and interrupt-driven receiving.
+The public initialization wrapper is included. It owns 692 instruction bytes,
+56 literal bytes and 132 BSS bytes at `[0x03809188, 0x0380920c)` for the init
 flag, alignment and 32 callback pointers. Shared CPU registration masks at
 `0x027fff88` / `0x027fff8c` are not newly owned data. The command's 5/1/26-bit
 fields use ordinary C bitfields; every bit is assigned before the word is sent.
-The boot-mode query, cycle delay, interrupt registration and receive handler
-remain explicit binary dependencies. The boot-mode name describes its use here,
+The receive handler drains the FIFO, dispatches channel callbacks and marks
+unhandled commands for return to the other CPU. The boot-mode query
+and interrupt registration remain explicit binary dependencies. The boot-mode name describes its use here,
 not a claim that its wider semantics are fully recovered.
+
+`src/CycleDelay.c` reconstructs the 24-byte wrapper at
+`[0x037fe3c8, 0x037fe3e0)` (payload `[0x65e4, 0x65fc)`), with 20 C
+instruction bytes and 4 literal bytes. Signed division by four and a normal C
+call reproduce the native tail call to Thumb address `0x03803ea5`. The called
+BIOS-facing routine remains binary fallback; this is not a BIOS reconstruction.
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C

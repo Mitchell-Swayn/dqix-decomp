@@ -92,18 +92,20 @@
       "name": "IPC",
       "source": "config/usa/arm7/src/IPC.c",
       "autoload": "wram",
-      "runtime_address": 58714424,
-      "payload_offset": 27476,
-      "size": 512,
-      "code_bytes": 468,
-      "literal_pool_bytes": 44,
-      "entry": "ARM7_InitializeIPC",
+      "runtime_address": 58714412,
+      "payload_offset": 27464,
+      "size": 748,
+      "code_bytes": 692,
+      "literal_pool_bytes": 56,
+      "entry": "ARM7_StartIPC",
       "symbols": {
+        "ARM7_StartIPC": 58714412,
         "ARM7_InitializeIPC": 58714424,
         "ARM7_SetIpcHandler": 58714668,
         "ARM7_IsIpcHandlerRegistered": 58714748,
         "ARM7_SendIpcCommand": 58714784,
-        "ARM7_SendIpcWord": 58714840
+        "ARM7_SendIpcWord": 58714840,
+        "ARM7_HandleIPCReceive": 58714936
       },
       "externals": {
         "ARM7_SharedSystem": 41942016,
@@ -112,7 +114,6 @@
         "ARM7_AcknowledgeSpecificInterrupts": 58702232,
         "ARM7_EnableSpecificInterrupts": 58702116,
         "ARM7_SetInterruptHandler": 58701808,
-        "ARM7_HandleIPCReceive": 58714936,
         "ARM7_GetIpcBootMode": 58706616,
         "ARM7_WaitCycles": 58713032
       },
@@ -122,6 +123,23 @@
         "symbols": {
           "ARM7_IPCState": 58757512
         }
+      }
+    },
+    {
+      "name": "CycleDelay",
+      "source": "config/usa/arm7/src/CycleDelay.c",
+      "autoload": "wram",
+      "runtime_address": 58713032,
+      "payload_offset": 26084,
+      "size": 24,
+      "code_bytes": 20,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WaitCycles",
+      "symbols": {
+        "ARM7_WaitCycles": 58713032
+      },
+      "externals": {
+        "ARM7_BiosDelay": 58736293
       }
     },
     {
