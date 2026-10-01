@@ -121,6 +121,16 @@ matching all 1,084 bytes at `[0x020f2384, 0x020f27c0)`. Its layout carrier prese
 storage order without asserting the original declaration grouping. The configured
 path pointer list remains an original-binary dependency.
 
+The file-cache CRC buffer routine and byte update at `[0x01ff85b8, 0x01ff860c)`
+are reconstructed in [FileCacheCRC.cpp](../src/Filesystem/itcm/FileCacheCRC.cpp).
+They implement reflected CRC-32 with all-one initial state and final complement.
+The 1,024-byte lookup table at `[0x020ee278, 0x020ee678)` is independently generated
+from polynomial `0xedb88320` by `tools/generate_crc32_table.py`; `--check` verifies
+the checked-in source without reading a ROM. Both routines and the table match.
+The adjacent string wrapper remains binary fallback: extracting it leaves an
+instruction-free `.text` fallback containing pointer tables, on which pinned
+objdiff 2.7.1 crashes in ARM mapping-symbol handling. It receives no source credit.
+
 [Script.h](../include/Resource/Script.h) and
 [Script.cpp](../src/Resource/Script.cpp) reconstruct a native interpreter whose
 opcode table is supplied by each caller. Its 16-byte file header holds instruction

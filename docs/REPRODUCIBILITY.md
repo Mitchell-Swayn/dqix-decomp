@@ -20,6 +20,15 @@ same locked tools, fresh extraction and fresh objects, and passed the target
 USA SHA-1 without a BIOS. This is a verified intermediate revision, not the
 finished decompilation.
 
+Revision `2a0b42ae9ebb` also passed a fresh archive/extraction/object build with
+the locked tools, including the guarded link-only ELF metadata preparation:
+[manifest](verification/runtime-milestone-clean-build.json),
+[build log](verification/runtime-milestone-clean-build.log), and
+[ARM7 report](verification/runtime-milestone-arm7-report.json).
+It reconstructs 1,263 ARM9 functions (172,916 matching code bytes) and 58 ARM7 C
+functions. Original binary fallbacks remain; the metadata preparation supplies
+no source coverage. Subsequent working changes are checked separately.
+
 ## Inputs and tools
 
 - USA ROM: `extract/baserom_dqix_usa.nds`, SHA-1

@@ -12,3 +12,7 @@ src/Graphics/itcm/VRAMStagingITCM.cpp:
 src/Filesystem/itcm/FileCacheData.cpp:
     complete
     .bss start:0x01ffd998 end:0x01ffdc78
+
+src/Filesystem/itcm/FileCacheCRC.cpp:
+    complete
+    .text start:0x01ff85b8 end:0x01ff860c
