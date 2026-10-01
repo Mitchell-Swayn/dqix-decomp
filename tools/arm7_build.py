@@ -50,15 +50,19 @@ def read_elf(path):
 
     names = contents(sections[names_index])
     allocated = []
+    bss = []
     symbols = {}
     for section in sections:
         name = string(names, section[0])
         # MWLD marks its linked memory image with SHF_MASKPROC (0x10000000)
         # rather than ELF's usual SHF_ALLOC. Require an actual load address.
         if (section[2] & 2 or section[3]) and section[5]:
-            if section[1] != 1:
+            if section[1] == 8:
+                bss.append((name, section[3], section[5]))
+            elif section[1] != 1:
                 raise ValueError(f"{path}: unexpected allocated section {name}")
-            allocated.append((name, section[3], contents(section)))
+            else:
+                allocated.append((name, section[3], contents(section)))
         if section[1] == 2:
             strings = contents(sections[section[6]])
             entries = contents(section)
@@ -71,7 +75,23 @@ def read_elf(path):
                 # while correctly resolving its nonzero st_value and references.
                 if name and (index or value):
                     symbols[name] = value
-    return allocated, symbols
+    # MWLD describes linked uninitialized memory in PT_LOAD.p_memsz, leaving
+    # its corresponding named section at size zero. Never treat it as ROM data.
+    if header[1] == 2:
+        if bss:
+            raise ValueError(f"{path}: unexpected linked NOBITS representation")
+        phoff, phsize, phcount = header[5], header[9], header[10]
+        if phsize != 32 or phoff + phsize * phcount > len(data):
+            raise ValueError(f"{path}: invalid ELF program headers")
+        for i in range(phcount):
+            kind, offset, address, physical, file_size, memory_size, flags, align = struct.unpack_from("<8I", data, phoff + i * phsize)
+            if kind != 1:
+                continue
+            if file_size > memory_size or offset + file_size > len(data):
+                raise ValueError(f"{path}: invalid ELF load segment")
+            if memory_size > file_size:
+                bss.append(("PT_LOAD", address + file_size, memory_size - file_size))
+    return allocated, symbols, bss
 
 
 def validate_layout(payload, baseline, config):
@@ -103,9 +123,23 @@ def validate_layout(payload, baseline, config):
             raise ValueError("ARM7 source unit overlaps or lies outside its autoload")
         if unit["runtime_address"] != module["runtime_address"] + start - module["payload_offset"]:
             raise ValueError("ARM7 source unit runtime mapping differs")
-        if unit["code_bytes"] + unit["literal_pool_bytes"] != size:
+        if unit["code_bytes"] + unit["literal_pool_bytes"] + unit.get("reviewed_assembly_bytes", 0) != size:
             raise ValueError("ARM7 source unit byte classification does not sum to size")
+        if unit.get("reviewed_assembly_bytes", 0) not in (0, size):
+            raise ValueError("ARM7 reviewed assembly must classify an entire unit")
         end = start + size
+    bss_end = 0
+    for unit in sorted((u for u in config["units"] if "bss" in u), key=lambda u: u["bss"]["runtime_address"]):
+        bss = unit["bss"]
+        module = next(m for m in config["autoloads"] if m["name"] == unit["autoload"])
+        start = bss["runtime_address"]
+        end = start + bss["size"]
+        lower = module["runtime_address"] + module["size"]
+        if bss["size"] <= 0 or start < max(lower, bss_end) or end > lower + module["bss_size"]:
+            raise ValueError("ARM7 BSS ownership overlaps or lies outside autoload BSS")
+        if any(not start <= address < end for address in bss["symbols"].values()):
+            raise ValueError("ARM7 BSS symbol lies outside owned BSS")
+        bss_end = end
 
 
 def write_rom_config(source_path, output_path, arm7_bin):
@@ -120,6 +154,28 @@ def write_rom_config(source_path, output_path, arm7_bin):
     if count != 1:
         raise ValueError("Expected exactly one arm7_bin in dsd ROM config")
     output_path.write_text(result, encoding="utf-8")
+
+
+def validate_assembly_exception(unit, root):
+    if not unit.get("reviewed_assembly_bytes", 0):
+        return None
+    path = root / unit["assembly_exception"]
+    record = json.loads(path.read_text(encoding="utf-8"))
+    if (record["unit"] != unit["name"] or record["source"] != unit["source"]
+            or not record["review_status"].startswith("reviewed")
+            or record["coverage"]["reviewed_assembly_routine_bytes"] != unit["size"]
+            or record["coverage"]["c_instruction_credit"] != 0):
+        raise ValueError("ARM7 assembly exception does not match reviewed unit")
+    cursor = unit["runtime_address"]
+    for routine in record["routines"]:
+        start, end = int(routine["start"], 16), int(routine["end"], 16)
+        if (start != cursor or end <= start or unit["symbols"].get(routine["symbol"]) != start
+                or int(routine["payload_start"], 16) != unit["payload_offset"] + start - unit["runtime_address"]):
+            raise ValueError("ARM7 reviewed assembly range does not match source mapping")
+        cursor = end
+    if cursor != unit["runtime_address"] + unit["size"] or len(record["routines"]) != len(unit["symbols"]):
+        raise ValueError("ARM7 reviewed assembly ranges do not cover source unit")
+    return sha1_file(path)
 
 
 def build(args):
@@ -143,37 +199,50 @@ def build(args):
     rebuilt = bytearray(original)
     report_units = []
     for unit in config["units"]:
+        exception_hash = validate_assembly_exception(unit, root)
         name = unit["name"]
         if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", name):
             raise ValueError("Source unit names must be simple identifiers")
         output = (args.output / name).resolve()
         output.mkdir(parents=True, exist_ok=True)
         source = root / unit["source"]
+        if re.search(r"\b(?:__asm|asm)\s*[({]", source.read_text(encoding="utf-8")) and not exception_hash:
+            raise ValueError(f"{name}: inline assembly requires a reviewed exception")
         subprocess.run([*runner, str(compiler), *CC_FLAGS, "-c", str(source), "-o", str(output / f"{name}.o")], check=True)
-        compiled_sections, _ = read_elf(output / f"{name}.o")
+        compiled_sections, _, compiled_bss = read_elf(output / f"{name}.o")
         if (any(section_name != ".text" for section_name, _, _ in compiled_sections)
                 or sum(len(data) for _, _, data in compiled_sections) != unit["size"]):
             raise ValueError(f"{name}: unsupported input section or unaccounted compiled bytes")
+        bss = unit.get("bss")
+        if (any(section_name != ".bss" for section_name, _, _ in compiled_bss)
+                or sum(size for _, _, size in compiled_bss) != (bss["size"] if bss else 0)):
+            raise ValueError(f"{name}: unaccounted compiled BSS")
         externals = "\n".join(f"    {symbol} = 0x{address:08x};" for symbol, address in unit["externals"].items())
-        lcf = (f"MEMORY {{ ARM7 : ORIGIN = 0x{unit['runtime_address']:08x} }}\n"
-               f"SECTIONS {{\n{externals}\n    .arm7 : {{ {name}.o(.text) }} > ARM7\n}}\n")
+        bss_memory = f"\n    ARM7_BSS : ORIGIN = 0x{bss['runtime_address']:08x}" if bss else ""
+        bss_section = f"\n    .bss : {{ {name}.o(.bss) }} > ARM7_BSS" if bss else ""
+        lcf = (f"MEMORY {{ ARM7 : ORIGIN = 0x{unit['runtime_address']:08x}{bss_memory} }}\n"
+               f"SECTIONS {{\n{externals}\n    .arm7 : {{ {name}.o(.text) }} > ARM7{bss_section}\n}}\n")
         (output / f"{name}.lcf").write_text(lcf, encoding="ascii")
         subprocess.run([*runner, str(linker), "-proc", "arm7tdmi", "-nostdlib", "-interworking",
-                        "-force_active", ",".join(unit["symbols"]),
+                        "-force_active", ",".join([*unit["symbols"], *(bss["symbols"] if bss else [])]),
                         "-m", unit["entry"], "-map", "closure,unused", "-msgstyle", "gcc",
                         f"{name}.o", f"{name}.lcf", "-o", f"{name}.elf"], cwd=output, check=True)
-        sections, symbols = read_elf(output / f"{name}.elf")
+        sections, symbols, linked_bss = read_elf(output / f"{name}.elf")
         if len(sections) != 1 or sections[0][1] != unit["runtime_address"]:
             raise ValueError(f"{name}: linked section placement differs")
+        expected_bss = [(bss["runtime_address"], bss["size"])] if bss else []
+        if [(address, size) for _, address, size in linked_bss] != expected_bss:
+            raise ValueError(f"{name}: linked BSS placement differs")
         linked = sections[0][2]
         start, size = unit["payload_offset"], unit["size"]
         if len(linked) != size or linked != original[start:start + size]:
             raise ValueError(f"{name}: compiled source does not match original bytes")
-        for symbol, address in {**unit["externals"], **unit["symbols"]}.items():
+        for symbol, address in {**unit["externals"], **unit["symbols"], **(bss["symbols"] if bss else {})}.items():
             if symbols.get(symbol) != address:
                 raise ValueError(f"{name}: linked symbol {symbol} address differs")
         rebuilt[start:start + size] = linked
         report_units.append({**unit, "source_sha1": sha1_file(source),
+                             "assembly_exception_sha1": exception_hash,
                              "linked_sha1": hashlib.sha1(linked).hexdigest(),
                              "module_check_passed": True, "symbol_check_passed": True})
     if rebuilt != original:
@@ -190,9 +259,13 @@ def build(args):
         "source_code_bytes": sum(u["code_bytes"] for u in config["units"]),
         "source_literal_pool_bytes": sum(u["literal_pool_bytes"] for u in config["units"]),
         "source_data_bytes": 0,
-        "source_functions": sum(len(u["symbols"]) for u in config["units"]),
+        "source_functions": sum(len(u["symbols"]) for u in config["units"] if not u.get("reviewed_assembly_bytes", 0)),
         "binary_fallback_bytes": len(rebuilt) - source_bytes,
-        "reviewed_assembly_bytes": 0,
+        "reviewed_assembly_bytes": sum(u.get("reviewed_assembly_bytes", 0) for u in config["units"]),
+        "reviewed_assembly_functions": sum(len(u["symbols"]) for u in config["units"] if u.get("reviewed_assembly_bytes", 0)),
+        "source_bss_bytes": sum(u.get("bss", {}).get("size", 0) for u in config["units"]),
+        "total_bss_bytes": sum(m["bss_size"] for m in config["autoloads"]),
+        "unreconstructed_bss_bytes": sum(m["bss_size"] for m in config["autoloads"]) - sum(u.get("bss", {}).get("size", 0) for u in config["units"]),
         "code_data_partition": "only reconstructed units classified; remainder unknown",
         "function_count": None,
         "module_check_passed": True,

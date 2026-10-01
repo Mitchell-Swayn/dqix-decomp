@@ -2,8 +2,10 @@
 
 The cartridge ARM7 program is a required executable component, distinct from the
 console ARM7 BIOS. The independent source build currently reconstructs **fifteen
-functions: 1,360 instruction bytes plus 64 bytes of literal pools**. The other 166,452
-bytes remain explicit original-binary fallback. Byte equality does not imply
+functions: 1,360 instruction bytes plus 64 bytes of literal pools**. Six necessary
+CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
+36 bytes of BSS now have source definitions. The other 166,332 payload bytes
+remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
 
@@ -17,8 +19,9 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
 | Reconstructed C instructions / compiler literal pools | 1,360 / 64 bytes |
-| Reconstructed standalone data / reviewed assembly | 0 / 0 bytes |
-| Binary fallback | 166,452 bytes |
+| Reconstructed initialized standalone data / reviewed assembly ranges | 0 / 120 bytes |
+| Reconstructed BSS / total autoload BSS | 36 / 22,744 bytes |
+| Binary fallback | 166,332 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -109,14 +112,29 @@ bytes. Blocks have a 0x20-byte header and 0x20-byte alignment; split remainders
 smaller than 0x40 stay with the allocation. Free lists are sorted by address and
 merge physically adjacent neighbors.
 
-The nine-entry descriptor-pointer table at `0x0380912c` remains externally owned
-BSS, and interrupt disable/restore routines at `0x037fe364` / `0x037fe378` remain
-binary dependencies. The source types record a 12-byte heap descriptor and a
+The nine-entry descriptor-pointer table at `[0x0380912c, 0x03809150)` now has a
+36-byte source BSS definition. Its placement lies in the original WRAM autoload
+zero-fill interval. Interrupt disable/restore routines at `0x037fe364` /
+`0x037fe378` are now the separately reviewed CPU-status unit. Cross-unit linker
+addresses remain explicit, but these three dependencies are source-owned.
+The source types record a 12-byte heap descriptor and a
 20-byte arena descriptor with current heap, heap count, arena start/end and
 descriptor-array pointer. The corresponding ARM9 source supplied a useful
 starting hypothesis; ARM7's while-loop layout and inlined list prepend were
 separately matched. Locals preserve snapshot pointers across potentially aliasing
 writes, matching the original loads rather than asserting unsupported aliasing.
+
+`src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
+`[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C
+masks/returns. Ordinary C cannot express CPU-status-register access. The
+coordinating agent reviewed these six bounded exceptions before implementation.
+`assembly_exceptions.json` records each range, reason, instructions, evidence,
+review scope and byte-verification method. Original assembly authorship remains
+unknown. The **entire 120-byte routines** count as reviewed assembly, not C code;
+the actual eleven inline-assembly instructions account for 44 of those bytes.
+The compiler's uninitialized-variable warnings for MRS outputs are expected:
+the assembly initializes those C variables, and the linked instructions are
+checked exactly. No extra initialization is inserted to silence the warnings.
 
 `arm7_build.py` compiles each declared unit with `mwccarm` targeting `arm7tdmi`,
 links it at its actual runtime address with `mwldarm`, reads its linked ELF,
@@ -126,18 +144,23 @@ other payload bytes are retained explicitly as fallback. The linked replacement
 is used in the packaged ROM through a generated sibling ROM configuration.
 Declared source functions are forced active when linking, so every function in a
 multi-function unit remains present; C++ exception tables are disabled.
-The compiler object is also checked before linking: every nonempty allocated
-input section must be `.text`, and their sizes must sum to the declared unit.
-Unexpected data/BSS or discarded code therefore fails instead of disappearing
-silently from the source-ownership accounting.
+The compiler object is also checked before linking: initialized allocated input
+sections must be `.text`, and their sizes must sum to the declared unit. Declared
+`.bss` must match its owned extent exactly. Unexpected data/BSS or discarded code
+fails instead of disappearing silently from source-ownership accounting.
+For BSS, MWLD emits zero file bytes and a nonzero PT_LOAD memory extent; both the
+linked extent and symbol addresses are checked. BSS is never inserted into the
+cartridge payload or subtracted from its fallback count. It is reported as
+`source_bss_bytes`, separate from initialized data and payload ownership.
 
 This is a source-slice pipeline, not full ARM7 delinking. Add coherent source
 units and their verified extents to `source_units.json`. Unit `externals` can
 define linker addresses for dependencies; any dependency in unreconstructed
-ranges remains fallback. Currently each source unit must emit one `.text` image
-(including its compiler literal pools) and no separate data/BSS. Extend the
-section model before reconstructing globals; do not discard extra sections or
-credit untouched bytes. ARM7 sources live here so the current recursive ARM9
+ranges remains fallback. Currently each source unit emits one `.text` image
+(including its compiler literal pools) and optionally one declared `.bss` range.
+Separate initialized data sections still require extending the section model;
+do not discard extra sections or credit untouched bytes. ARM7 sources live here
+so the current recursive ARM9
 source discovery does not compile them with ARM9 flags.
 
 On non-Windows hosts pass `--runner ./wibo` (or an absolute Wine executable path)

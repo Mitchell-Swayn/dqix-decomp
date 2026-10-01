@@ -20,7 +20,7 @@ typedef struct ArenaHeapInfo {
     ArenaHeap *heaps;
 } ArenaHeapInfo;
 extern int ARM7_DisableIRQInterrupts(void);
-extern void ARM7_SetIRQInterruptState(int state);
+extern int ARM7_SetIRQInterruptState(int state);
 // USA: 0x037fcfd4
 ArenaHeapBlock* ARM7_RemoveArenaHeapBlock(ArenaHeapBlock* head, ArenaHeapBlock* block)
 {
@@ -75,8 +75,8 @@ ArenaHeapBlock* ARM7_InsertFreeArenaHeapBlock(ArenaHeapBlock* head, ArenaHeapBlo
     return head;
 }
 
-// Existing ARM7 descriptor table remains a binary dependency.
-extern ArenaHeapInfo* ARM7_g_arenaHeapInfo[9];
+// Nine per-arena descriptor pointers, zeroed by the WRAM autoload BSS clear.
+ArenaHeapInfo* ARM7_g_arenaHeapInfo[9];
 
 // USA: 0x037fd0a4
 void* ARM7_AllocateArenaHeap(int arenaId, int heapId, unsigned int len)

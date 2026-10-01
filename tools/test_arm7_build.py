@@ -7,7 +7,7 @@ import struct
 import tempfile
 import unittest
 
-from arm7_build import validate_layout, write_rom_config
+from arm7_build import validate_assembly_exception, validate_layout, write_rom_config
 
 
 class Arm7PipelineTests(unittest.TestCase):
@@ -42,6 +42,38 @@ class Arm7PipelineTests(unittest.TestCase):
         self.config["units"].append(copy.deepcopy(self.config["units"][0]))
         with self.assertRaisesRegex(ValueError, "overlaps"):
             validate_layout(self.payload, self.baseline, self.config)
+
+    def test_bss_outside_autoload_clear_range_is_rejected(self):
+        owner = next(u for u in self.config["units"] if "bss" in u)
+        owner["bss"]["runtime_address"] = owner["runtime_address"]
+        with self.assertRaisesRegex(ValueError, "outside autoload BSS"):
+            validate_layout(self.payload, self.baseline, self.config)
+
+    def test_duplicate_bss_ownership_is_rejected(self):
+        owner = next(u for u in self.config["units"] if "bss" in u)
+        other = next(u for u in self.config["units"] if "bss" not in u)
+        other["bss"] = copy.deepcopy(owner["bss"])
+        with self.assertRaisesRegex(ValueError, "BSS ownership overlaps"):
+            validate_layout(self.payload, self.baseline, self.config)
+
+    def test_reviewed_assembly_cannot_also_count_as_c_code(self):
+        unit = next(u for u in self.config["units"] if u.get("reviewed_assembly_bytes"))
+        unit["code_bytes"] = unit["reviewed_assembly_bytes"]
+        with self.assertRaisesRegex(ValueError, "classification does not sum"):
+            validate_layout(self.payload, self.baseline, self.config)
+
+    def test_reviewed_assembly_ranges_are_bound_to_manifest(self):
+        unit = next(u for u in self.config["units"] if u.get("reviewed_assembly_bytes"))
+        root = Path(__file__).resolve().parent.parent
+        self.assertEqual(len(validate_assembly_exception(unit, root)), 40)
+        record = json.loads((root / unit["assembly_exception"]).read_text())
+        record["routines"][0]["end"] = "0x037fe360"
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "exception.json"
+            path.write_text(json.dumps(record))
+            unit["assembly_exception"] = str(path)
+            with self.assertRaisesRegex(ValueError, "reviewed assembly range"):
+                validate_assembly_exception(unit, root)
 
     def test_rom_config_preserves_other_paths_and_selects_linked_arm7(self):
         with tempfile.TemporaryDirectory() as directory:
