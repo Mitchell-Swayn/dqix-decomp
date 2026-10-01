@@ -54,6 +54,22 @@
       }
     },
     {
+      "name": "ArenaHeapDiagnostics",
+      "source": "config/usa/arm7/src/ArenaHeapDiagnostics.c",
+      "autoload": "wram",
+      "runtime_address": 58755264,
+      "payload_offset": 68316,
+      "size": 864,
+      "code_bytes": 0,
+      "literal_pool_bytes": 0,
+      "data_bytes": 864,
+      "entry": "ARM7_HeapDiagnostics",
+      "symbols": {
+        "ARM7_HeapDiagnostics": 58755264
+      },
+      "externals": {}
+    },
+    {
       "name": "Alarms",
       "source": "config/usa/arm7/src/Alarms.c",
       "autoload": "wram",

@@ -7,7 +7,7 @@ import struct
 import tempfile
 import unittest
 
-from arm7_build import validate_assembly_exception, validate_layout, write_rom_config
+from arm7_build import validate_assembly_exception, validate_initialized_sections, validate_layout, write_rom_config
 
 
 class Arm7PipelineTests(unittest.TestCase):
@@ -61,6 +61,21 @@ class Arm7PipelineTests(unittest.TestCase):
         unit["code_bytes"] = unit["reviewed_assembly_bytes"]
         with self.assertRaisesRegex(ValueError, "classification does not sum"):
             validate_layout(self.payload, self.baseline, self.config)
+
+    def test_initialized_data_cannot_mix_with_code_credit(self):
+        unit = self.config["units"][0]
+        unit["data_bytes"] = 4
+        unit["code_bytes"] -= 4
+        with self.assertRaisesRegex(ValueError, "data-only unit"):
+            validate_layout(self.payload, self.baseline, self.config)
+
+    def test_initialized_data_rejects_discarded_or_wrong_sections(self):
+        unit = {"name": "Constants", "size": 4, "data_bytes": 4}
+        self.assertEqual(validate_initialized_sections(unit, [(".rodata", 0, b"abcd")]), ".rodata")
+        for sections in [[(".text", 0, b"abcd")], [(".rodata", 0, b"abc")],
+                         [(".rodata", 0, b"abcd"), (".text", 0, b"extra")]]:
+            with self.assertRaisesRegex(ValueError, "unaccounted compiled bytes"):
+                validate_initialized_sections(unit, sections)
 
     def test_reviewed_assembly_ranges_are_bound_to_manifest(self):
         unit = next(u for u in self.config["units"] if u.get("reviewed_assembly_bytes"))

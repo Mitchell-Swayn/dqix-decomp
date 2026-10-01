@@ -123,8 +123,11 @@ def validate_layout(payload, baseline, config):
             raise ValueError("ARM7 source unit overlaps or lies outside its autoload")
         if unit["runtime_address"] != module["runtime_address"] + start - module["payload_offset"]:
             raise ValueError("ARM7 source unit runtime mapping differs")
-        if unit["code_bytes"] + unit["literal_pool_bytes"] + unit.get("reviewed_assembly_bytes", 0) != size:
+        classes = [unit["code_bytes"], unit["literal_pool_bytes"], unit.get("reviewed_assembly_bytes", 0), unit.get("data_bytes", 0)]
+        if any(value < 0 for value in classes) or sum(classes) != size:
             raise ValueError("ARM7 source unit byte classification does not sum to size")
+        if unit.get("data_bytes", 0) not in (0, size):
+            raise ValueError("ARM7 initialized data must classify an entire data-only unit")
         if unit.get("reviewed_assembly_bytes", 0) not in (0, size):
             raise ValueError("ARM7 reviewed assembly must classify an entire unit")
         end = start + size
@@ -140,6 +143,15 @@ def validate_layout(payload, baseline, config):
         if any(not start <= address < end for address in bss["symbols"].values()):
             raise ValueError("ARM7 BSS symbol lies outside owned BSS")
         bss_end = end
+
+
+def validate_initialized_sections(unit, sections):
+    """A unit owns either compiled code/literals or standalone constant data."""
+    expected = ".rodata" if unit.get("data_bytes", 0) else ".text"
+    if (any(name != expected for name, _, _ in sections)
+            or sum(len(data) for _, _, data in sections) != unit["size"]):
+        raise ValueError(f"{unit['name']}: unsupported input section or unaccounted compiled bytes")
+    return expected
 
 
 def write_rom_config(source_path, output_path, arm7_bin):
@@ -210,9 +222,7 @@ def build(args):
             raise ValueError(f"{name}: inline assembly requires a reviewed exception")
         subprocess.run([*runner, str(compiler), *CC_FLAGS, "-c", str(source), "-o", str(output / f"{name}.o")], check=True)
         compiled_sections, _, compiled_bss = read_elf(output / f"{name}.o")
-        if (any(section_name != ".text" for section_name, _, _ in compiled_sections)
-                or sum(len(data) for _, _, data in compiled_sections) != unit["size"]):
-            raise ValueError(f"{name}: unsupported input section or unaccounted compiled bytes")
+        input_section = validate_initialized_sections(unit, compiled_sections)
         bss = unit.get("bss")
         if (any(section_name != ".bss" for section_name, _, _ in compiled_bss)
                 or sum(size for _, _, size in compiled_bss) != (bss["size"] if bss else 0)):
@@ -221,7 +231,7 @@ def build(args):
         bss_memory = f"\n    ARM7_BSS : ORIGIN = 0x{bss['runtime_address']:08x}" if bss else ""
         bss_section = f"\n    .bss : {{ {name}.o(.bss) }} > ARM7_BSS" if bss else ""
         lcf = (f"MEMORY {{ ARM7 : ORIGIN = 0x{unit['runtime_address']:08x}{bss_memory} }}\n"
-               f"SECTIONS {{\n{externals}\n    .arm7 : {{ {name}.o(.text) }} > ARM7{bss_section}\n}}\n")
+               f"SECTIONS {{\n{externals}\n    .arm7 : {{ {name}.o({input_section}) }} > ARM7{bss_section}\n}}\n")
         (output / f"{name}.lcf").write_text(lcf, encoding="ascii")
         subprocess.run([*runner, str(linker), "-proc", "arm7tdmi", "-nostdlib", "-interworking",
                         "-force_active", ",".join([*unit["symbols"], *(bss["symbols"] if bss else [])]),
@@ -258,8 +268,8 @@ def build(args):
         "payload_bytes": len(rebuilt),
         "source_code_bytes": sum(u["code_bytes"] for u in config["units"]),
         "source_literal_pool_bytes": sum(u["literal_pool_bytes"] for u in config["units"]),
-        "source_data_bytes": 0,
-        "source_functions": sum(len(u["symbols"]) for u in config["units"] if not u.get("reviewed_assembly_bytes", 0)),
+        "source_data_bytes": sum(u.get("data_bytes", 0) for u in config["units"]),
+        "source_functions": sum(len(u["symbols"]) for u in config["units"] if not u.get("reviewed_assembly_bytes", 0) and not u.get("data_bytes", 0)),
         "binary_fallback_bytes": len(rebuilt) - source_bytes,
         "reviewed_assembly_bytes": sum(u.get("reviewed_assembly_bytes", 0) for u in config["units"]),
         "reviewed_assembly_functions": sum(len(u["symbols"]) for u in config["units"] if u.get("reviewed_assembly_bytes", 0)),

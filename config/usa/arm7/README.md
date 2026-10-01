@@ -4,7 +4,8 @@ The cartridge ARM7 program is a required executable component, distinct from the
 console ARM7 BIOS. The independent source build currently reconstructs **48 C
 functions: 4,896 instruction bytes plus 420 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
-184 bytes of BSS now have source definitions. The other 162,440 payload bytes
+864 bytes of standalone diagnostic data and 184 bytes of BSS now have source
+definitions. The other 161,576 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -19,9 +20,9 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
 | Reconstructed C instructions / compiler literal pools | 4,896 / 420 bytes |
-| Reconstructed initialized standalone data / reviewed assembly ranges | 0 / 120 bytes |
+| Reconstructed initialized standalone data / reviewed assembly ranges | 864 / 120 bytes |
 | Reconstructed BSS / total autoload BSS | 184 / 22,744 bytes |
-| Binary fallback | 162,440 bytes |
+| Binary fallback | 161,576 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -131,8 +132,18 @@ alignment, linked-list consistency, minimum block size, free-block ordering,
 and total heap accounting before returning available payload bytes or -1.
 Nineteen diagnostic paths preserve the original message addresses and line
 numbers. Shared message addresses use shared external symbols so the compiler
-also reproduces native literal-pool sharing. Diagnostic text and the warning
-routine at `0x037fbdb8` remain binary-owned; no initialized data or BSS is added.
+also reproduces native literal-pool sharing. The warning routine at `0x037fbdb8` remains binary-owned; diagnostic text is
+now reconstructed by the separate data unit below.
+
+`src/ArenaHeapDiagnostics.c` owns 864 initialized data bytes at
+`[0x038088c0, 0x03808c20)` (payload `[0x10adc, 0x10e3c)`): thirteen unique
+heap assertion format strings used by the checker's nineteen failure paths.
+A typed aggregate gives each diagnostic a named char-array field; explicit
+field lengths include each NUL and observed zero alignment padding. The compiler
+emits one `.rodata` aggregate, preserving the native order. The source contains
+readable strings, not an opaque binary array. Its single aggregate symbol is
+verified and does not count as a function. Checker's external message addresses
+are the corresponding member offsets inside this source-owned data range.
 
 `src/Timing.c` reconstructs `[0x037fd6e8, 0x037fd89c)` (payload
 `[0x5904, 0x5ab8)`): timer initialization flags, 64-bit timer initialization and
@@ -226,7 +237,8 @@ is used in the packaged ROM through a generated sibling ROM configuration.
 Declared source functions are forced active when linking, so every function in a
 multi-function unit remains present; C++ exception tables are disabled.
 The compiler object is also checked before linking: initialized allocated input
-sections must be `.text`, and their sizes must sum to the declared unit. Declared
+sections must be `.text` for code units or `.rodata` for data-only units, and
+their sizes must sum to the declared unit. Declared
 `.bss` must match its owned extent exactly. Unexpected data/BSS or discarded code
 fails instead of disappearing silently from source-ownership accounting.
 For BSS, MWLD emits zero file bytes and a nonzero PT_LOAD memory extent; both the
@@ -237,10 +249,11 @@ cartridge payload or subtracted from its fallback count. It is reported as
 This is a source-slice pipeline, not full ARM7 delinking. Add coherent source
 units and their verified extents to `source_units.json`. Unit `externals` can
 define linker addresses for dependencies; any dependency in unreconstructed
-ranges remains fallback. Currently each source unit emits one `.text` image
-(including its compiler literal pools) and optionally one declared `.bss` range.
-Separate initialized data sections still require extending the section model;
-do not discard extra sections or credit untouched bytes. ARM7 sources live here
+ranges remains fallback. Each source unit emits one `.text` image
+(including compiler literal pools) or one standalone `.rodata` image, optionally
+with one declared `.bss` range. Data-only units declare `data_bytes` equal to
+the whole unit size, zero code/literal credit, and never add function counts.
+Mixed initialized sections remain unsupported; no extra sections may be discarded. ARM7 sources live here
 so the current recursive ARM9
 source discovery does not compile them with ARM9 flags.
 
