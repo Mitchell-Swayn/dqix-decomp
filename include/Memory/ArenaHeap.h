@@ -31,3 +31,5 @@ struct ArenaHeapInfo
 
 void* AllocateArenaHeap(int arenaId, int heapId, unsigned int len);
 void FreeArenaHeap(int arenaId, int heapId, void* data);
+
+extern ArenaHeapInfo* g_arenaHeapInfo[9];

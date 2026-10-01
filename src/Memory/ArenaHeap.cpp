@@ -69,8 +69,9 @@ ArenaHeapBlock* InsertFreeArenaHeapBlock(ArenaHeapBlock* head, ArenaHeapBlock* b
     return head;
 }
 
-// Arena initialization and the storage backing this table remain undecompiled.
-extern ArenaHeapInfo* data_02111564[];
+// One heap descriptor per arena. The original BSS reserves nine null pointers.
+// No initializer for these descriptors has been identified in the linked ROM.
+ArenaHeapInfo* g_arenaHeapInfo[9];
 
 // USA: 0x020c8854
 void* AllocateArenaHeap(int arenaId, int heapId, unsigned int len)
@@ -82,7 +83,7 @@ void* AllocateArenaHeap(int arenaId, int heapId, unsigned int len)
     int interruptState;
 
     interruptState = DisableIRQInterrupts();
-    info = data_02111564[arenaId];
+    info = g_arenaHeapInfo[arenaId];
     if (info == 0)
     {
         SetIRQInterruptState(interruptState);
@@ -139,7 +140,7 @@ void FreeArenaHeap(int arenaId, int heapId, void* data)
     ArenaHeapBlock* block;
 
     interruptState = DisableIRQInterrupts();
-    info = data_02111564[arenaId];
+    info = g_arenaHeapInfo[arenaId];
     if (heapId < 0)
         heapId = info->currentHeap;
     heap = &info->heaps[heapId];
