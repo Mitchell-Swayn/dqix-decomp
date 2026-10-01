@@ -445,3 +445,8 @@ src/System/VectorDistance.cpp:
 src/System/FixedPointMath.cpp:
     complete
     .text start:0x020c2bf4 end:0x020c2d90
+
+src/Graphics/VRAMPaletteAllocation.cpp:
+    complete
+    .text start:0x020bb780 end:0x020bb964
+    .bss start:0x0210cf88 end:0x0210cf94

@@ -1,4 +1,15 @@
 #pragma once
 
-//extern "C" unsigned int MaybeAllocateTextureImageVRAM(unsigned int amount, bool param_2, unsigned int param_3);
-extern "C" unsigned int MaybeAllocateTexturePaletteVRAM(unsigned int amount, bool eightByteAlign, bool unknown);
+// Allocation keys encode the allocation size and offset in units of eight
+// bytes. direction == 1 allocates from the low end; other values use the high end.
+extern "C" unsigned int AllocateTexturePaletteVRAM(unsigned int amount, bool eightByteAlign, unsigned int direction);
+extern "C" int FreeTexturePaletteVRAM(unsigned int key);
+void InitializeTexturePaletteVRAM(unsigned int size, bool setDefault);
+struct TexturePaletteVRAMState
+{
+    unsigned int freeStart;
+    unsigned int freeEnd;
+};
+void SaveTexturePaletteVRAMState(TexturePaletteVRAMState* state);
+void RestoreTexturePaletteVRAMState(const TexturePaletteVRAMState* state);
+void ResetTexturePaletteVRAM();
