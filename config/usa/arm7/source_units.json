@@ -89,6 +89,42 @@
       }
     },
     {
+      "name": "IPC",
+      "source": "config/usa/arm7/src/IPC.c",
+      "autoload": "wram",
+      "runtime_address": 58714424,
+      "payload_offset": 27476,
+      "size": 512,
+      "code_bytes": 468,
+      "literal_pool_bytes": 44,
+      "entry": "ARM7_InitializeIPC",
+      "symbols": {
+        "ARM7_InitializeIPC": 58714424,
+        "ARM7_SetIpcHandler": 58714668,
+        "ARM7_IsIpcHandlerRegistered": 58714748,
+        "ARM7_SendIpcCommand": 58714784,
+        "ARM7_SendIpcWord": 58714840
+      },
+      "externals": {
+        "ARM7_SharedSystem": 41942016,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_AcknowledgeSpecificInterrupts": 58702232,
+        "ARM7_EnableSpecificInterrupts": 58702116,
+        "ARM7_SetInterruptHandler": 58701808,
+        "ARM7_HandleIPCReceive": 58714936,
+        "ARM7_GetIpcBootMode": 58706616,
+        "ARM7_WaitCycles": 58713032
+      },
+      "bss": {
+        "runtime_address": 58757512,
+        "size": 132,
+        "symbols": {
+          "ARM7_IPCState": 58757512
+        }
+      }
+    },
+    {
       "name": "Alarms",
       "source": "config/usa/arm7/src/Alarms.c",
       "autoload": "wram",
