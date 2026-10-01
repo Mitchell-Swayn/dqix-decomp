@@ -18,3 +18,4 @@ void InitializeArenas();
 
 void* GetInitialArenaLow(int arenaId);
 void InitializeExtendedArena();
+void* GetInitialArenaHigh(int arenaId);
