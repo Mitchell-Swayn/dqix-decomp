@@ -560,3 +560,7 @@ src/World/Zone3DModelLoading.cpp:
 src/World/BMDJAnimationRules.cpp:
     complete
     .rodata start:0x020e6f48 end:0x020e700c
+
+src/World/Zone3DUpdate.cpp:
+    complete
+    .text start:0x02015438 end:0x02015554

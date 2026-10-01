@@ -64,7 +64,7 @@ public:
     Zone3D_BMDJStruct* firstBMDJStruct_41c_;
     GrottoTileData* grottoTileMapData_420_;
     int unknown_424_;
-    char unk_428[4];
+    int unknown_428_;
     unsigned char unknown_42c_;
     char unk_42d[3];
     int mapListLoadHandle_; // for loading data/map/maplist9.bin
@@ -88,7 +88,7 @@ public:
 
     int unknown_82c_;
 
-    char unk_830[4];
+    unsigned char unk_830[4];
     char unknown_834_;
     char unk_835[3];
 
@@ -125,6 +125,9 @@ public:
     void CreateContainerRenderEntries(SafeAllocator* allocator);
     void BindContainerModels();
     void SetContainerBrokenMask(unsigned int mask);
+
+    void Update();
+    void UpdateBMDJInstances(Zone3D_BMDJStruct* group);
 
     // Poll queued map loads, then finish zone activation once all are ready.
     bool ProcessPendingLoads();
