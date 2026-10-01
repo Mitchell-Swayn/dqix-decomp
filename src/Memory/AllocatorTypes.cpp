@@ -72,3 +72,29 @@ void AllocatorTypeUnused::Free(AllocatorBase* base, void* data)
     AllocatorTypeUnused* self = static_cast<AllocatorTypeUnused*>(base);
     self->pSignedAllocator->Free(data);
 }
+#ifndef jpn
+extern "C"
+{
+    void* func_020c8854(int arenaId, int heapId, unsigned int len);
+    void func_020c895c(int arenaId, int heapId, void* data);
+}
+
+const AllocatorBase::VTable AllocatorTypeHeap::s_vtable = {
+    &AllocatorTypeHeap::Allocate,
+    &AllocatorTypeHeap::Free
+};
+
+// USA: 0x020afe34
+void* AllocatorTypeHeap::Allocate(AllocatorBase* base, unsigned int len)
+{
+    AllocatorTypeHeap* self = static_cast<AllocatorTypeHeap*>(base);
+    return func_020c8854(self->arenaId, self->heapId, len);
+}
+
+// USA: 0x020afe50
+void AllocatorTypeHeap::Free(AllocatorBase* base, void* data)
+{
+    AllocatorTypeHeap* self = static_cast<AllocatorTypeHeap*>(base);
+    func_020c895c(self->arenaId, self->heapId, data);
+}
+#endif

@@ -4400,8 +4400,8 @@ _ZN14AllocatorTypeA8AllocateEP13AllocatorBasej kind:function(arm,size=0x14) addr
 _ZN14AllocatorTypeA4FreeEP13AllocatorBasePv kind:function(arm,size=0x4) addr:0x020afe00
 _ZN19AllocatorTypeUnused8AllocateEP13AllocatorBasej kind:function(arm,size=0x20) addr:0x020afe04
 _ZN19AllocatorTypeUnused4FreeEP13AllocatorBasePv kind:function(arm,size=0x10) addr:0x020afe24
-func_020afe34 kind:function(arm,size=0x1c) addr:0x020afe34
-func_020afe50 kind:function(arm,size=0x1c) addr:0x020afe50
+_ZN17AllocatorTypeHeap8AllocateEP13AllocatorBasej kind:function(arm,size=0x1c) addr:0x020afe34
+_ZN17AllocatorTypeHeap4FreeEP13AllocatorBasePv kind:function(arm,size=0x1c) addr:0x020afe50
 _ZN14AllocatorUnion8AllocateEj kind:function(arm,size=0x14) addr:0x020afe6c
 _ZN14AllocatorUnion4FreeEPv kind:function(arm,size=0x14) addr:0x020afe80
 _ZN14AllocatorUnion15InitializeTypeBEP13HPXEAllocatori kind:function(arm,size=0x18) addr:0x020afe94
@@ -6463,7 +6463,7 @@ data_020e914a kind:data(any) addr:0x020e914a
 _ZN19AllocatorTypeUnused8s_vtableE kind:data(any) addr:0x020e9160
 _ZN14AllocatorTypeA8s_vtableE kind:data(any) addr:0x020e9168
 _ZN14AllocatorTypeB8s_vtableE kind:data(any) addr:0x020e9170
-data_020e9178 kind:data(any) addr:0x020e9178
+_ZN17AllocatorTypeHeap8s_vtableE kind:data(any) addr:0x020e9178
 data_020e9180 kind:data(any) addr:0x020e9180
 data_020e9198 kind:data(any) addr:0x020e9198
 data_020e91c8 kind:data(any) addr:0x020e91c8
