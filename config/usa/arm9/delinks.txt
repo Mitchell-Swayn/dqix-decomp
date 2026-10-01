@@ -368,3 +368,7 @@ src/Graphics/VRAMStaging.cpp:
     complete
     .bss start:0x0214e5e4 end:0x02153628
     .text start:0x020dc07c end:0x020dc214
+
+src/Memory/ArenaHeap.cpp:
+    complete
+    .text start:0x020c8768 end:0x020c8854
