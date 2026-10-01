@@ -3,13 +3,12 @@
 
 #include "Graphics/VRAMImagePool.h"
 
-extern unsigned short data_0210cf84;
 
 void ResetTextureImageVRAM()
 {
     int index;
     Struct_020f1f14* pool;
-    int activePools = data_0210cf84;
+    int activePools = data_0210cf84.bankCount;
     if ((unsigned int)activePools > 1)
         ++activePools;
     index = 0;

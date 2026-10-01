@@ -12,3 +12,10 @@ struct Struct_020f1f14
     unsigned int poolBase_;
 } extern data_020f1f14[5];
 
+// Storage includes two untouched zero bytes after the 16-bit bank count.
+struct TextureImageVRAMConfig
+{
+    unsigned short bankCount;
+    unsigned short reserved;
+};
+extern TextureImageVRAMConfig data_0210cf84;

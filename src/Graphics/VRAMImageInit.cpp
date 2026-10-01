@@ -2,7 +2,6 @@
 #include "Graphics/VRAMImagePool.h"
 
 extern Struct_020f1f14* data_020f1ef8[7];
-extern unsigned short data_0210cf84;
 extern unsigned int (*data_020f1ee8)(unsigned int, bool, unsigned int);
 extern int (*data_020f1eec)(unsigned int);
 extern "C" unsigned int func_020bb588(unsigned int, bool, unsigned int);
@@ -23,7 +22,7 @@ void InitializeTextureImageVRAM(unsigned int banks, bool setDefault)
         SetTextureImageVRAMPoolOrder(4, 3, 2, 0, 1);
     else
         SetTextureImageVRAMPoolOrder(4, 3, 0, 2, 1);
-    data_0210cf84 = banks;
+    data_0210cf84.bankCount = banks;
     ResetTextureImageVRAM();
     if (setDefault)
     {

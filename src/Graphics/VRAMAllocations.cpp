@@ -7,7 +7,7 @@ extern Struct_020f1f14* data_020f1ef8[7];
 // points to elements in the above array.
 // Initially in the order ([4], [3], [0], [2], [1]).
 // No idea why
-extern Struct_020f1f14* data_020f1f00[5];
+
 
 struct Struct_0210cf88
 {
@@ -80,7 +80,7 @@ extern "C" unsigned int MaybeAllocateTextureImageVRAM(unsigned int amount, bool 
         do
         {
             Struct_020f1f14* pool;
-            pool = data_020f1f00[pass];
+            pool = data_020f1ef8[pass + 2];
             if (pool->maybeIsUsable_ == 0)
                 continue;
             if (pool->freeEnd_ - pool->freeStart_ >= alignedSize)
