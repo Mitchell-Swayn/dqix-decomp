@@ -226,9 +226,11 @@ waived, and a byte-identical ROM does not imply that its code is fully reconstru
 - Reconstructed additional ARM9 allocator/arena functions and ARM7 helpers in
   verified commits. Current counters belong in generated reports, not this static
   baseline. Keep denominator changes visible and compare against archived evidence.
-- Emulator title menu and character creation were visually observed. Broader
-  gameplay, save/load, multiplayer and late-game acceptance remain incomplete;
-  emulator screenshots/state are local evidence under `build/runtime/`.
+- Emulator title menu, character creation, the opening battle/scripted events,
+  Observatory movement/menus, and Quick Save followed by a fresh cartridge reload
+  were visually observed. Ordinary church saves, grotto generation, multiplayer
+  and later gameplay remain untested. See `docs/RUNTIME_TESTS.md`; screenshots
+  and generated saves are local evidence under `build/runtime/`.
 
 Remaining work includes most original compiler-generated code, program-owned data,
 unresolved interfaces and symbols, exact assembly exceptions, opaque asset audit,

@@ -103,8 +103,8 @@ This revision has no `ninja min` target. Source map changes require reconfigurat
 
 ## Runtime verification
 
-No emulator or hardware gameplay tests have been performed in this verification
-record. Boot, new game, field navigation, battles, menus, save/load, grotto
-generation, scripted events, multiplayer, and late-game paths remain untested.
-Module equality and a future whole-ROM hash result must be reported separately
-from observations of gameplay.
+The clean-build manifests themselves do not run gameplay. Subsequent emulator
+observations cover boot, character creation, the first battle, opening events,
+Observatory movement/menus and Quick Save followed by fresh cartridge reload.
+See [the runtime record](RUNTIME_TESTS.md) for evidence and untested paths.
+Module equality and whole-ROM hash results remain separate from gameplay tests.
