@@ -57,7 +57,12 @@ public:
 #endif
 
     unsigned char unknownObjectIndex_397c_; // jpn: offset 0x731c instead
-    char unk_397d[0x63e0 - 0x397d];
+    char unk_397d[0x5cb0 - 0x397d];
+    unsigned int unknown_5cb0_;
+    unsigned int unknown_5cb4_;
+    unsigned int unknown_5cb8_;
+    unsigned int unknown_5cbc_;
+    char unk_5cc0[0x63e0 - 0x5cc0];
 
     unsigned char* treasureMapLanguageData_;
     GrottoStruct grottoInfo_;
