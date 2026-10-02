@@ -644,6 +644,18 @@ src/System/RuntimeConsoleBuffers.cpp:
     complete
     .bss start:0x020f3090 end:0x020f3390
 
+src/System/RuntimeFloatInfinity.cpp:
+    complete
+    .data start:0x020eecc4 end:0x020eecc8
+
+src/System/RuntimeFloatNaN.cpp:
+    complete
+    .data start:0x020eecc8 end:0x020eeccc
+
+src/System/RuntimeDoubleInfinity.cpp:
+    complete
+    .data start:0x020eeccc end:0x020eecd4
+
 src/System/InterruptResponseState.cpp:
     complete
     .data start:0x020f2274 end:0x020f2284

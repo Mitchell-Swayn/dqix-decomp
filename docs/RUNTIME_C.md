@@ -25,6 +25,14 @@ surrounding storage still needs recovery. Extracting only those two objects
 caused the linker to discard the newly isolated, unreferenced intervening BSS.
 That experiment was reverted; no mutex storage receives new source credit.
 
+The stored floating-point constants at `0x020eecc4..0x020eecd4` now have source
+definitions: binary32 positive infinity (`0x7f800000`), the runtime's NaN
+(`0x7fffffff`), and binary64 positive infinity (`0x7ff0000000000000`).
+`RuntimeFloatConstants.h` exposes both the IEEE bit representations and values,
+with checked storage sizes. All three data symbols match, and the NaN getter
+still matches its original code after switching to the union's value member.
+The full module/symbol/ROM checks pass; this recovers 16 initialized-data bytes.
+
 | Source | Range | Functions | Report code bytes |
 | --- | --- | --- | ---: |
 | `RuntimeRandom.cpp` | `0x02003d14..0x02003d58` | `rand`, `srand` | 68 |
