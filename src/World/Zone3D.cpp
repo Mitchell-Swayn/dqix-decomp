@@ -161,4 +161,10 @@ void Zone3D::SwitchZone(unsigned short newID)
     mapListLoadHandle_ = loader->QueueLoadFile(gZone3DPaths.mapList, NULL);
 }
 
-// Vector3i::operator= is implicitly emitted here.
+Vector3i& Vector3i::operator=(const Vector3i& other)
+{
+    x = other.x;
+    y = other.y;
+    z = other.z;
+    return *this;
+}

@@ -86,7 +86,8 @@ public:
     Model3D models_498_[2];
     char unk_5f0[0x820 - 0x5f0];
     int unknown_820_;
-    char unk_824[8];
+    Zone3D_BMDJStruct::InstanceEntry** collisionInstances_;
+    char unk_828[4];
 
     int unknown_82c_;
 
@@ -175,6 +176,9 @@ public:
     void RecordBMDJFlag4State();
     void RestoreBMDJFlag4State();
     void ApplyType2InstanceFlags();
+    void ReverseType2FeatureMotion(ZoneFeatures::Opcode6aEntry* feature);
+    void ResetType2FeaturePosition(ZoneFeatures::Opcode6aEntry* feature);
+    void ApplyType2FeatureMask(unsigned int mask);
     Zone3D_BMDJStruct::InstanceEntry* FindType2BMDJInstance(ZoneFeatures::Opcode6aEntry* feature);
     int GetType2FeatureIndex(ZoneFeatures::Opcode6aEntry* feature);
     ZoneFeatures::Opcode6aEntry* GetType2Feature(int index);
