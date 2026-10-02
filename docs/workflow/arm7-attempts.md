@@ -685,3 +685,15 @@
   range is instruction coverage with zero literal/standalone-data credit.
 - Three functions add 660 instruction bytes, no literals/data/BSS.
 - Validation: full payload and linked symbols match; all 11 pipeline and six verifier tests pass.
+
+## 2026-10-02 - shared SPI service and task dispatch
+
+- All five helpers matched first compile. Availability intentionally ignores its
+  argument; acquire writes busy/owner without adding synchronization; release wakes
+  waiters only on an owner match and restores owner5 exactly as observed.
+- Worker dispatch preserves all four calls, including external0x027f5494 for type1.
+  Handler0/1/2 names remain numeric until their subsystem roles are established.
+  The24-byte task shape is proven by the enqueue loop stride and four-argument cap;
+  queue/state/waiter storage remains external, with no BSS credit.
+- Five functions add228 instruction and24 literal bytes, no data/BSS.
+- Validation: full payload and linked symbols match; all 11 pipeline and six verifier tests pass.

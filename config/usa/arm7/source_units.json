@@ -2440,6 +2440,67 @@
         "ARM7_ReadPowerRegister": 58744488,
         "ARM7_WritePowerRegister": 58744364
       }
+    },
+    {
+      "name": "SpiService",
+      "source": "config/usa/arm7/src/SpiService.c",
+      "autoload": "wram",
+      "runtime_address": 58740000,
+      "payload_offset": 53052,
+      "size": 112,
+      "code_bytes": 96,
+      "literal_pool_bytes": 16,
+      "entry": "ARM7_IsSpiServiceAvailable",
+      "symbols": {
+        "ARM7_IsSpiServiceAvailable": 58740000,
+        "ARM7_AcquireSpiService": 58740028,
+        "ARM7_ReleaseSpiService": 58740052
+      },
+      "externals": {
+        "ARM7_SpiServiceState": 58765808,
+        "ARM7_SpiServiceWaiters": 58766980,
+        "ARM7_UnblockThreads": 58705648
+      }
+    },
+    {
+      "name": "SpiQueuePeek",
+      "source": "config/usa/arm7/src/SpiQueuePeek.c",
+      "autoload": "wram",
+      "runtime_address": 58740336,
+      "payload_offset": 53388,
+      "size": 32,
+      "code_bytes": 28,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_HasQueuedSpiTask",
+      "symbols": {
+        "ARM7_HasQueuedSpiTask": 58740336
+      },
+      "externals": {
+        "ARM7_SpiTaskQueue": 58766496,
+        "ARM7_PeekMessage": 58706988
+      }
+    },
+    {
+      "name": "SpiWorker",
+      "source": "config/usa/arm7/src/SpiWorker.c",
+      "autoload": "wram",
+      "runtime_address": 58740368,
+      "payload_offset": 53420,
+      "size": 108,
+      "code_bytes": 104,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_SpiWorkerMain",
+      "symbols": {
+        "ARM7_SpiWorkerMain": 58740368
+      },
+      "externals": {
+        "ARM7_SpiTaskQueue": 58766496,
+        "ARM7_ReceiveMessage": 58706832,
+        "ARM7_SpiTaskHandler0": 58741340,
+        "ARM7_SpiTaskHandler1": 41899156,
+        "ARM7_SpiTaskHandler2": 58747332,
+        "ARM7_ExecutePowerTask": 58743884
+      }
     }
   ]
 }
