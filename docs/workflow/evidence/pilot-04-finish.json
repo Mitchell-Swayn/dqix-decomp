@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "pilot-04",
+  "snapshot": {
+    "utc": "2026-10-02T05:41:33.546590+00:00",
+    "revision": "81b15cc8ee9c6f4e25e998947b0880afdd3ba686",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 178224,
+      "matched_data": 33012,
+      "matched_functions": 1314
+    },
+    "arm7": {
+      "source_functions": 108,
+      "source_code_bytes": 9220,
+      "source_literal_pool_bytes": 700,
+      "source_data_bytes": 880,
+      "source_bss_bytes": 716,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 156956,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "d3e8b9c0604cf1e27a9f0dc2494de707c8939e60e82ace4b148c17a08e2d8fb1",
+    "arm7_report_sha256": "88657404ffcfb365c44c8cf2d8c52377b89125507b899d9c2cfbb2ad16536c9f",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Main acceptance passed: runtime stream6functions568B; World state4functions364B; ARM7 VBlank3functions100instruction20literal20BSS plus bus locks9functions516instruction52literal; rootfilesystem2360BSS. ROM/module/symbol checks all pass.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 932,
+      "matched_data": 2360,
+      "matched_functions": 10
+    },
+    "arm7": {
+      "source_functions": 12,
+      "source_code_bytes": 616,
+      "source_literal_pool_bytes": 72,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 20,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": -688,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 448.360767
+}

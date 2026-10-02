@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "name": "pilot-03",
+  "snapshot": {
+    "utc": "2026-10-02T05:28:33.445291+00:00",
+    "revision": "8f41181d34d46d6295803ad8a677cecca28611c8",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 176204,
+      "matched_data": 30436,
+      "matched_functions": 1292
+    },
+    "arm7": {
+      "source_functions": 87,
+      "source_code_bytes": 8388,
+      "source_literal_pool_bytes": 576,
+      "source_data_bytes": 864,
+      "source_bss_bytes": 696,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 157928,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "c8d22a012c58bf7b98adcb0507f5bc0e9ac3613cfd71d21adf5f7894c5c26f75",
+    "arm7_report_sha256": "43a436d439ee4c2186a507edfe29895ab5d6bde5efb5e2e81f4426d706fabe3b",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Integration baseline; workers are already active, so worker-time notes remain separate.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks."
+}

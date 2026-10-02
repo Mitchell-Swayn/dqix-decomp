@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "pilot-05",
+  "snapshot": {
+    "utc": "2026-10-02T05:54:32.165142+00:00",
+    "revision": "e1e89f74e30fc613ee2f10938b74d2a0b16fdef6",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 181900,
+      "matched_data": 33408,
+      "matched_functions": 1329
+    },
+    "arm7": {
+      "source_functions": 121,
+      "source_code_bytes": 9816,
+      "source_literal_pool_bytes": 780,
+      "source_data_bytes": 880,
+      "source_bss_bytes": 764,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 156280,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "72fe7e3e8ec7afcb72ce78721305caac418af8d7ea4363cb85c0942b58eb0cb8",
+    "arm7_report_sha256": "6a1f471e4f514c916864dfc0b5285c5e17464171ddfe4fd7b0260fe7837cd3a3",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Integration window only; worker attempts and elapsed times recorded in source handoffs, not inferred. Full ROM/module/report/SHA1 passed at e1e89f7. Runtime typed BSS plus world activation/motion and ARM7 input/sound integrated.",
+  "attempts": 0,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 3676,
+      "matched_data": 396,
+      "matched_functions": 15
+    },
+    "arm7": {
+      "source_functions": 13,
+      "source_code_bytes": 596,
+      "source_literal_pool_bytes": 80,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 48,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": -676,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 778.211387
+}

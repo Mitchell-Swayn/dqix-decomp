@@ -29,6 +29,14 @@ It reconstructs 1,263 ARM9 functions (172,916 matching code bytes) and 58 ARM7 C
 functions. Original binary fallbacks remain; the metadata preparation supplies
 no source coverage. Subsequent working changes are checked separately.
 
+The post-workflow milestone `81b15cc8ee9c` passed another fresh source archive,
+ROM extraction and object build with the same locked tools:
+[manifest](verification/workflow-milestone-clean-build.json),
+[build log](verification/workflow-milestone-clean-build.log), and
+[ARM7 report](verification/workflow-milestone-arm7-report.json).
+It records 1,314 ARM9 functions, 178,224 ARM9 code bytes and 108 ARM7 C functions.
+This remains an intermediate source-plus-fallback build, not complete reconstruction.
+
 ## Inputs and tools
 
 - USA ROM: `extract/baserom_dqix_usa.nds`, SHA-1

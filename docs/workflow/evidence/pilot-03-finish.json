@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "pilot-03",
+  "snapshot": {
+    "utc": "2026-10-02T05:34:03.327865+00:00",
+    "revision": "08549610dcbe6b2ac885a90e31741fe398ccf3de",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 177292,
+      "matched_data": 30652,
+      "matched_functions": 1304
+    },
+    "arm7": {
+      "source_functions": 96,
+      "source_code_bytes": 8604,
+      "source_literal_pool_bytes": 628,
+      "source_data_bytes": 880,
+      "source_bss_bytes": 696,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 157644,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "91cdaf4be4534385c494684781abbdf676005a015344cd721764b87fd58e7c07",
+    "arm7_report_sha256": "01496cbc3cc6c2657bebd182e7c7b093530bad5f165c52f95b50ca11bcbd991f",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Accepted FileIO1function24code216data; runtime7functions448code;World4functions616code;ARM7ninefunctions216instruction52literal16data. Main renamed worker func_020017b0 to existing labs symbol, then all acceptance passed.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 1088,
+      "matched_data": 216,
+      "matched_functions": 12
+    },
+    "arm7": {
+      "source_functions": 9,
+      "source_code_bytes": 216,
+      "source_literal_pool_bytes": 52,
+      "source_data_bytes": 16,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": -284,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 329.882574
+}
