@@ -304,3 +304,35 @@ configure finalization caveat remains. Logs: `build/runtime-batch9-acceptance.lo
 Denominators unchanged. No gameplay validation. The work_batch start command
 resolved its imported script's MAIN root, so that ignored timing snapshot does
 not measure this isolated batch's coverage; no elapsed result is claimed here.
+
+## Arctangent and exponent scaling dependencies (2026-10-02)
+
+Based on `46b1749`. Two functions plus their two read-only tables add 1,416 code
+bytes (1,368 instructions and 48 literals) and 152 initialized data bytes, no BSS.
+The arctangent body `func_02008848` matched in eight distinct variants; exponent
+wrapper `func_0200aae4` matched its first. All three units and both data symbols
+report 100% objdiff. Inspection-to-final-validation artifact timestamps measured
+492.7 seconds; this is wall time, not CPU time or a future estimate.
+
+The arctangent preserves all four reduction intervals, tiny/huge/nonfinite
+behavior, coefficient order, and the compensated low/high-angle result. A separate
+result local fixes allocation versus reusing z. External tables alone lost one
+original duplicate literal, while merging all tables changed coefficient loads.
+Defining the contiguous 64-byte low/high angle struct with the function and
+keeping the 88-byte coefficient array separate reproduces the original code and
+read-only data. Values are decimal spellings of the original binary64 constants.
+
+The guessed interior symbol at 0x020e6ce4 is now the high member of
+`gRuntimeArctangentAngles` at 0x020e6cc4. Its sole relocation from 0x02008da0 is
+represented as the same base plus 0x20, preserving the resolved pointer exactly.
+Explicit 64/88-byte data sizes document the recovered layouts; no code ranges,
+function counts, or coverage denominators change. No other source references
+needed updating. This is source-level data ownership and relocation grouping,
+not a modification of candidate/original object bytes.
+
+Full modules, symbols and ARM7 preservation passed; the guarded separate-output
+finalizer produced exact USA SHA-1 `c7c3014c237900c8281289b8bc76a781969b6278`.
+Older configure caveat unchanged. Logs: `build/runtime-batch10-acceptance.log`,
+`build/runtime-batch10-finalize.log`, and `build/matching/`. Local matched code
+155,784 -> 157,200; functions 1,175 -> 1,177; data 26,488 -> 26,640.
+No gameplay validation was performed.

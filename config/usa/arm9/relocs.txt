@@ -686,7 +686,7 @@ from:0x02008d54 kind:arm_call to:0x0200b608 module:main
 from:0x02008d78 kind:load to:0x020e6cc4 module:main
 from:0x02008d98 kind:load to:0x020e6d04 module:main
 from:0x02008d9c kind:load to:0x020e6cc4 module:main
-from:0x02008da0 kind:load to:0x020e6ce4 module:main
+from:0x02008da0 kind:load to:0x020e6cc4 add:0x20 module:main
 from:0x02008dfc kind:arm_call to:0x020076f0 module:main
 from:0x02008e2c kind:arm_call to:0x0200b608 module:main
 from:0x02008e4c kind:arm_call to:0x02007028 module:main

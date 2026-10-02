@@ -777,6 +777,19 @@ src/System/RuntimeCosineKernel.cpp:
     complete
     .text start:0x020076f0 end:0x02007a10
 
+src/System/RuntimeArctangent.cpp:
+    complete
+    .text start:0x02008848 end:0x02008da4
+    .rodata start:0x020e6cc4 end:0x020e6d04
+
+src/System/RuntimeArctangentCoefficients.cpp:
+    complete
+    .rodata start:0x020e6d04 end:0x020e6d5c
+
+src/System/RuntimeLdexp.cpp:
+    complete
+    .text start:0x0200aae4 end:0x0200ab10
+
 src/System/RuntimeRandom.cpp:
     complete
     .text start:0x02003d14 end:0x02003d58

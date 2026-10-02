@@ -6220,9 +6220,8 @@ data_020e6aec kind:data(any) addr:0x020e6aec
 data_020e6b6c kind:data(any) addr:0x020e6b6c
 data_020e6c74 kind:data(any) addr:0x020e6c74
 data_020e6c84 kind:data(any) addr:0x020e6c84
-data_020e6cc4 kind:data(any) addr:0x020e6cc4
-data_020e6ce4 kind:data(any) addr:0x020e6ce4
-data_020e6d04 kind:data(any) addr:0x020e6d04
+gRuntimeArctangentAngles kind:data(byte[64]) addr:0x020e6cc4
+gRuntimeArctangentCoefficients kind:data(byte[88]) addr:0x020e6d04
 data_020e6d5c kind:data(any) addr:0x020e6d5c
 data_020e6d64 kind:data(any) addr:0x020e6d64
 data_020e6d6c kind:data(any) addr:0x020e6d6c
