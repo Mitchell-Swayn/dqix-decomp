@@ -114,6 +114,13 @@ candidate compilations. Start subsequent batch clocks before dispatching work.
   explicitly before trusting candidate objects.
 - Never modify original objdiff inputs to make the report pass. The existing
   allowlisted linker-only metadata copies carry no source credit.
+- Full arrays and records retain their original interior labels through structured
+  aliases in `linker_symbols.json` (`base`, hexadecimal `offset`, owning `object`,
+  and input `section`). MWLD evaluates these expressions in order and attaches
+  them to the current output section. Emit aliases immediately after the owning
+  input object section; placing them at the start or end of `SECTIONS` can produce
+  an incorrect address or module. A pinned-linker test checks the address, ELF
+  section, and a pointer relocation. Aliases add no storage or coverage credit.
 
 ## ROM input/output isolation
 

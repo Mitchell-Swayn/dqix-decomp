@@ -126,11 +126,7 @@ src/Graphics/ExtendedVectorMath.cpp:
 
 src/Graphics/FixedPointSinCosTable.cpp:
     complete
-    .rodata start:0x020e9450 end:0x020e9a50
-
-src/Graphics/FixedPointSinCosTableContinuation.cpp:
-    complete
-    .rodata start:0x020e9a50 end:0x020ed450
+    .rodata start:0x020e9450 end:0x020ed450
 
 src/Memory/SafeAllocator.cpp:
     complete

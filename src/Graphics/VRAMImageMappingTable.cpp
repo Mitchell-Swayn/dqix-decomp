@@ -1,7 +1,9 @@
 // Texture image mapping triples: first block start, second block start,
 // and first block size; each quantity is an address or size shifted by 12.
-// The first three words are separately referenced by fallback code.
-extern const unsigned short data_020ed66e[45] = {
+// The second and third fields also have linker aliases because fallback callers
+// reference their original interior addresses.
+extern const unsigned short data_020ed668[48] = {
+    0x0000, 0x0000, 0x0000,
     0x6800, 0x0000, 0x0000,
     0x6820, 0x0000, 0x0000, 0x6800, 0x0000, 0x0000,
     0x6840, 0x0000, 0x0000, 0x6800, 0x6840, 0x0020,
@@ -11,6 +13,3 @@ extern const unsigned short data_020ed66e[45] = {
     0x6840, 0x0000, 0x0000, 0x6800, 0x6840, 0x0020,
     0x6820, 0x0000, 0x0000, 0x6800, 0x0000, 0x0000,
 };
-extern const unsigned short data_020ed66a = 0x0000;
-extern const unsigned short data_020ed66c = 0x0000;
-extern const unsigned short data_020ed668 = 0x0000;

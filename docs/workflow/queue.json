@@ -215,6 +215,16 @@
         "859c802",
         "3f1b547"
       ]
+    },
+    {
+      "id": "graphics-source-array-aliases",
+      "status": "awaiting_integrator_acceptance",
+      "owner": "sol61_data",
+      "worktree": "../DQIX-Decomp-luna-data-audit",
+      "scope": "Coherent full 8192-halfword sine/cosine and 48-halfword VRAM arrays; source-owned interior linker aliases replace disjoint array fragments and scalar definitions",
+      "acceptance": "Original candidate section bytes exact; all 8192 mathematical sine/cosine values exact; full ROM/module/symbol/SHA1 checks; 148 tool tests with two existing skips",
+      "coverage_limit": "Repair retains inherited coverage; integrator must verify cumulative 16496-byte gain from the two preceding unaccepted commits against accepted main",
+      "token_usage": null
     }
   ]
 }
