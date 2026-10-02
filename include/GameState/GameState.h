@@ -52,6 +52,30 @@ struct GameStateAttributeTable {
 
 struct NativeIdentity {
     unsigned char bytes_[6];
+    inline bool IsZero() const {
+        for (int i = 0; i < 6; ++i)
+            if (bytes_[i] != 0) return false;
+        return true;
+    }
+};
+
+// Sixteen stored identities track a sub-minute byte and a saturating counter.
+struct GameStateStoredIdentity {
+    NativeIdentity identity_;
+    char unknown_06_[0x11 - 6];
+    unsigned char partialTicks_;
+    unsigned short counter_ : 14;
+    unsigned short active_ : 1;
+    unsigned short unknownFlag_ : 1;
+    char unknown_14_[0x2c - 0x14];
+};
+
+struct GameStatePeerIdentity {
+    NativeIdentity identity_;
+    signed char objectIndex_;
+    unsigned char unknown_07_;
+    unsigned char unknown_08_;
+    signed char unknown_09_;
 };
 
 struct GameStateIdentityRecord {
@@ -144,7 +168,9 @@ public:
     GrottoStruct grottoInfo_;
 
 #if defined(usa)
-    char unk_6fcc[0x74de - 0x6fcc];
+    char unk_6fcc[0x7200 - 0x6fcc];
+    GameStateStoredIdentity storedIdentities_[16];
+    GameStatePeerIdentity peerIdentities_[3];
     GameStateSavedPosition savedPositions_[4];
     NativeIdentity nativeIdentity_;
     char unk_7504[0x7f6c - 0x7504];
