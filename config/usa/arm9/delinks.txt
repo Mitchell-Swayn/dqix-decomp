@@ -9,6 +9,22 @@ src/GameState/GameStateInstance.cpp:
 	complete
 	.text start:0x0200f398 end:0x0200f3a4
 
+src/GameState/GameStateIdentityRecordReset.cpp:
+	complete
+	.text start:0x0200fad4 end:0x0200fb08
+
+src/GameState/GameStateLanguage.cpp:
+	complete
+	.text start:0x0200fb08 end:0x0200fb40
+
+src/GameState/GameStateNativeIdentity.cpp:
+	complete
+	.text start:0x020120f0 end:0x02012200
+
+src/GameState/NativeIdentityComparison.cpp:
+	complete
+	.text start:0x02011fb4 end:0x02011ff0
+
 src/GameState/GameStateChunkTailCalls.cpp:
 	complete
 	.text start:0x0200fba4 end:0x0200fbb4
