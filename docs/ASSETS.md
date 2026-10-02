@@ -156,6 +156,14 @@ separate 16-byte registry at `0x02111728` remains fallback: replacing its direct
 alias with a direct member expression changes a previously matching function's
 address materialization. No source credit is claimed for that deferred registry.
 
+The cartridge read subsystem also owns 2,240 BSS bytes at
+`[0x02111880, 0x02112140)`: 96 bytes of ARM7-shared data, the 1,568-byte read
+manager (including its context and stack), and 576 bytes of low-level read state
+and scratch storage. Existing access/initialization code supplies the structures;
+unknown field meanings remain marked in their declarations. Separate source
+files preserve the link order because MWCC reordered the three objects when
+defined together. Size assertions, object matches and full ROM checks pass.
+
 [Script.h](../include/Resource/Script.h) and
 [Script.cpp](../src/Resource/Script.cpp) reconstruct a native interpreter whose
 opcode table is supplied by each caller. Its 16-byte file header holds instruction
