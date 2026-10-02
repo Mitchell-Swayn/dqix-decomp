@@ -45,3 +45,16 @@ Root subsequently integrated the reviewed patch, reran all five tests and full
 acceptance, and completed a fresh locked-toolchain build of `c4da8d4`. All passed.
 The repeat acceptance invocation ran verification checks without rebuilding the
 ROM. Clean-build evidence is archived in `docs/verification/delink-outputs-clean-build.*`.
+
+## First reconstruction result
+
+The VRAM pilot was integrated and passed combined module, symbol, ARM7 and exact
+ROM SHA-1 checks on main. Gain: 16 initialized data bytes, zero functions/code.
+All 47 affected symbols matched in the worker comparisons. The measured batch
+window was 479.478333 seconds, excluding initial setup and root integration.
+One root review correction required consistent allocator flag types and shared
+declarations. Compiler/setup failures are recorded in `luna-vram-pilot.md`.
+
+This establishes useful bounded work, not a controlled speed/cost advantage over
+Astra. Token usage remains unknown. The next trial should reconstruct a small
+function family, with setup prepared before dispatch and whole-task timing.

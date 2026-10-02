@@ -3,7 +3,8 @@
 The measured batch window started at `2026-10-02T09:41:25.825120Z`; worktree
 setup and initial inspection happened before that snapshot and are excluded from
 the recorded elapsed time. The final full USA acceptance build completed by
-`2026-10-02T09:48:54Z`; `tools/work_batch.py` records the batch-window end. The
+`2026-10-02T09:48:54Z`; the batch window closed at
+`2026-10-02T09:49:25.303453Z` per `tools/work_batch.py`. The
 isolated worktree was created from
 `3e8b0a61a0353295d031712af0ddc4b9258cefa4` on `work/luna-vram`.
 

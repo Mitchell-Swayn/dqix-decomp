@@ -143,15 +143,22 @@
     },
     {
       "id": "luna-vram-pilot",
-      "status": "active",
-      "owner": "luna_vram_pilot",
+      "status": "integrated",
+      "owner": null,
       "model": "gpt-6-luna",
       "reasoning_effort": "high",
       "worktree": "../DQIX-Decomp-luna-vram",
       "scope": "Four default VRAM callback globals, 16 initialized data bytes; preserve ABI and existing code matching",
       "acceptance": "Independent source review, exact objects, combined module/symbol/ROM/SHA1 checks",
       "attempt_limit_per_function": 10,
-      "token_usage": null
+      "token_usage": null,
+      "worker_commit": "c9f65edad9586ec7999c984061f95acb54f40a93",
+      "matched_data_delta": 16,
+      "matched_code_delta": 0,
+      "matched_functions_delta": 0,
+      "affected_symbols_matched": 47,
+      "batch_window_seconds": 479.478333,
+      "timing_limit": "Excludes initial worktree setup and root integration; not whole-pilot throughput"
     },
     {
       "id": "luna-build-review-pilot",

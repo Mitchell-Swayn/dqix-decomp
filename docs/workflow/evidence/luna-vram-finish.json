@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "luna-vram",
+  "snapshot": {
+    "utc": "2026-10-02T09:49:25.303453+00:00",
+    "revision": "9f951c57d2ea58509173aaac7e728c675a1a3d1a",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 206804,
+      "matched_data": 47564,
+      "matched_functions": 1511
+    },
+    "arm7": {
+      "source_functions": 222,
+      "source_code_bytes": 18680,
+      "source_literal_pool_bytes": 1332,
+      "source_data_bytes": 1188,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 146556,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "7ef86894d52c1b5d193b67a5f5f5be7f14056a01c951edab59ea403a3b82fc15",
+    "arm7_report_sha256": "ef74c2e9596aa0af838d2ded869c1b6e210742ad078e45ce93f495288365a4f3",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Six of seven match_unit comparisons passed; one candidate compile initially missed the shared typedef include. Full ROM/module/symbol/ARM7 acceptance passed.",
+  "attempts": 7,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 0,
+      "matched_data": 16,
+      "matched_functions": 0
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 479.478333
+}
