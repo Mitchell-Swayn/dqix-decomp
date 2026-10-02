@@ -457,3 +457,36 @@ Inspection-to-validation timestamps measured 159.9 seconds. Logs:
 `build/runtime-batch14-acceptance.log`, `build/runtime-batch14-finalize.log`,
 and `build/matching/`. Local code 158,940 -> 159,380; functions 1,184 -> 1,188;
 data remains 26,852. Denominators unchanged. No gameplay validation.
+
+## Runtime initialization and cleanup hooks (2026-10-02)
+
+Based on `d00ea9e`. Three functions add 88 code bytes (80 instructions and
+8 pointer literals), no data/BSS: null-guarded free `func_0200edb4`, initializer
+array traversal `func_0200edc8`, and exception-handler callback `func_0200efb8`.
+Each matched its first instruction candidate. The initializer array's first
+fallback symbol `.p__sinit_020e5920` is renamed `gRuntimeInitializers` for a
+native C declaration; address, type, extent and relocation targets are unchanged.
+No old-name references remain in source/include. No table ownership is claimed.
+
+Deferred exact object candidates for exception-record construction (ec44,
+three variants) and destructor callback (ed8c, one variant): splitting both
+boundaries lets MWLD discard the unreachable exception cluster
+`0x0200da70..0x0200ed8c` plus `0x0200f2bc..0x0200f2ec`. Missing symbols were
+da70, dad4, dbdc, dbf8, df80, e828, e830, e984, ea08, ea68, ec44, eca0 and f2bc
+(all with the func_0200 prefix). This caused the first retained ed8c symbol to
+land at da70. Full checks failed; the boundaries and draft sources were removed.
+No dummy references, force-active changes or assembly replacements were added.
+Explicit original EH retention needs separate evidence and fresh-build review.
+The first failed Ninja invocation left a stale previously accepted ROM, which
+an unguarded following finalizer accepted; that is not batch evidence. Subsequent
+invocations explicitly stop on nonzero Ninja status before finalization.
+
+Final three units and all symbols are 100% objdiff. Actual completed
+`ninja rom check report` and guarded separate-output finalization pass exact
+USA SHA-1 `c7c3014c237900c8281289b8bc76a781969b6278`. The older configure
+finalization caveat remains. Logs: `build/runtime-batch15d-acceptance.log`,
+`build/runtime-batch15d-finalize.log`, and `build/matching/`. Local code
+159,380 -> 159,468; functions 1,188 -> 1,191; data remains 26,852, denominators
+unchanged. Seven instruction candidates including the two deferred functions;
+maximum three per function. Draft creation to these notes: 622.4 seconds.
+No gameplay validation.

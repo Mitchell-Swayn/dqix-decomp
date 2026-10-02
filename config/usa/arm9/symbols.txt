@@ -6536,7 +6536,7 @@ data_020ee9f0 kind:data(any) addr:0x020ee9f0
 data_020eea08 kind:data(any) addr:0x020eea08
 data_020eea50 kind:data(any) addr:0x020eea50
 data_020eeab0 kind:data(any) addr:0x020eeab0
-.p__sinit_020e5920 kind:data(word) addr:0x020eeb18
+gRuntimeInitializers kind:data(word) addr:0x020eeb18
 .p__sinit_020e59c8 kind:data(word) addr:0x020eeb1c
 .p__sinit_020e5a74 kind:data(word) addr:0x020eeb20
 .p__sinit_020e5afc kind:data(word) addr:0x020eeb24

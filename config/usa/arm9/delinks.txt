@@ -895,6 +895,18 @@ src/System/RuntimeUnwindHeader.cpp:
     complete
     .text start:0x0200f2bc end:0x0200f2ec
 
+src/System/RuntimeExceptionCleanup.cpp:
+    complete
+    .text start:0x0200edb4 end:0x0200edc8
+
+src/System/RuntimeInitialization.cpp:
+    complete
+    .text start:0x0200edc8 end:0x0200edf4
+
+src/System/RuntimeExceptionHandler.cpp:
+    complete
+    .text start:0x0200efb8 end:0x0200efd0
+
 src/System/RuntimeRandom.cpp:
     complete
     .text start:0x02003d14 end:0x02003d58
