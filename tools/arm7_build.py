@@ -16,11 +16,12 @@ import subprocess
 import sys
 
 from check_arm7 import read_arm7, sha1_file
+from arm7_dependencies import dependency_records, has_assembly, write_depfile
 
 
 CC_FLAGS = ["-O2", "-proc", "arm7tdmi", "-fp", "soft", "-interworking",
             "-enum", "int", "-char", "signed", "-inline", "noauto",
-            "-lang=c", "-Cpp_exceptions", "off", "-sym", "on", "-gccinc", "-nolink"]
+            "-lang=c", "-Cpp_exceptions", "off", "-sym", "on", "-gccinc", "-nolink", "-MD"]
 
 
 def read_elf(path):
@@ -210,6 +211,7 @@ def build(args):
     runner = [str(args.runner.resolve())] if args.runner else []
     rebuilt = bytearray(original)
     report_units = []
+    all_dependencies = set()
     for unit in config["units"]:
         exception_hash = validate_assembly_exception(unit, root)
         name = unit["name"]
@@ -217,10 +219,16 @@ def build(args):
             raise ValueError("Source unit names must be simple identifiers")
         output = (args.output / name).resolve()
         output.mkdir(parents=True, exist_ok=True)
-        source = root / unit["source"]
-        if re.search(r"\b(?:__asm|asm)\s*[({]", source.read_text(encoding="utf-8")) and not exception_hash:
+        source = (root / unit["source"]).resolve()
+        if has_assembly(source.read_text(encoding="utf-8-sig")) and not exception_hash:
             raise ValueError(f"{name}: inline assembly requires a reviewed exception")
-        subprocess.run([*runner, str(compiler), *CC_FLAGS, "-c", str(source), "-o", str(output / f"{name}.o")], check=True)
+        # MWCC writes <source stem>.d in its working directory, even with -o.
+        compiler_depfile = output / (source.stem + ".d")
+        compiler_depfile.unlink(missing_ok=True)
+        subprocess.run([*runner, str(compiler), *CC_FLAGS, "-i", str(root / "include"),
+                        "-c", str(source), "-o", f"{name}.o"], cwd=output, check=True)
+        dependencies = dependency_records(compiler_depfile, output, root, source, bool(exception_hash))
+        all_dependencies.update(record["path"] for record in dependencies)
         compiled_sections, _, compiled_bss = read_elf(output / f"{name}.o")
         input_section = validate_initialized_sections(unit, compiled_sections)
         bss = unit.get("bss")
@@ -252,6 +260,7 @@ def build(args):
                 raise ValueError(f"{name}: linked symbol {symbol} address differs")
         rebuilt[start:start + size] = linked
         report_units.append({**unit, "source_sha1": sha1_file(source),
+                             "dependencies": dependencies,
                              "assembly_exception_sha1": exception_hash,
                              "linked_sha1": hashlib.sha1(linked).hexdigest(),
                              "module_check_passed": True, "symbol_check_passed": True})
@@ -281,6 +290,8 @@ def build(args):
         "module_check_passed": True,
         "source_symbol_checks_passed": True,
         "cc_flags": CC_FLAGS,
+        "include_paths": ["include"],
+        "dependency_provenance": "MWCC -MD transitive inputs; SHA-1 of each source/header",
         "compiler_sha1": sha1_file(compiler),
         "linker_sha1": sha1_file(linker),
         "autoloads": config["autoloads"],
@@ -289,6 +300,9 @@ def build(args):
     if args.rom_config:
         target = args.output_rom_config or args.rom_config.with_name("rom_config_arm7.yaml")
         write_rom_config(args.rom_config, target, binary)
+    else:
+        target = binary
+    write_depfile(args.depfile or args.output / "arm7.d", args.dep_target or str(target), all_dependencies)
     report_path.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(f"ARM7 source build PASS: {source_bytes} source-owned bytes, "
           f"{len(rebuilt) - source_bytes} binary fallback bytes")
@@ -304,6 +318,8 @@ def main():
     parser.add_argument("--output", type=Path, default=Path("build/usa/arm7"))
     parser.add_argument("--rom-config", type=Path)
     parser.add_argument("--output-rom-config", type=Path)
+    parser.add_argument("--depfile", type=Path, help="Aggregate Ninja dependency file (default: output/arm7.d)")
+    parser.add_argument("--dep-target", help="Primary Ninja output represented by the dependency rule")
     args = parser.parse_args()
     try:
         build(args)

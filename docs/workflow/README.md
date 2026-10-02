@@ -38,6 +38,14 @@ Other conflicts stop and preserve Git state for review. Logs stay under ignored
 `build/integration/`. Twenty synthetic Git/parser tests cover accepted merges and
 rejected conflicts; full ROM acceptance is still a separate mandatory step.
 
+ARM7 builds now use MWCC's `-MD` output to record every transitive source/header
+hash per unit and feed an aggregate dependency file to Ninja. Shared declarations
+can therefore move into headers without bypassing rebuilds or provenance.
+Missing/outside inputs and assembly in headers are rejected; reviewed assembly
+exceptions remain bound to their source files. Eleven dependency tests cover
+native Windows and Wine/WSL paths, nested-header hashes and a real pinned
+compiler/Ninja rebuild after changing a nested header in a path containing spaces.
+
 ## Measurement
 
 `tools/work_batch.py start NAME` records current reports and revision under

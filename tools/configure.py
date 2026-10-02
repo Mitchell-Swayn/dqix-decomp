@@ -405,18 +405,21 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, project: Project):
         arm7_units = json.loads(arm7_units_path.read_text())
         arm7_output = project.game_build / "arm7"
         arm7_rom_config = str(project.game_build / "build" / "rom_config_arm7.yaml")
+        arm7_depfile = str(arm7_output / "arm7.d")
         runner_flag = f' --runner "{WINE}"' if WINE else ""
         n.rule(
             name="arm7_source",
             command=(f'{PYTHON} tools/arm7_build.py --compiler "{mwcc_path}"'
                      f' --output "{arm7_output}" --rom-config $rom_config'
-                     f' --output-rom-config "{arm7_rom_config}"{runner_flag}'),
+                     f' --output-rom-config "{arm7_rom_config}"'
+                     f' --depfile "{arm7_depfile}" --dep-target "{arm7_rom_config}"{runner_flag}'),
+            depfile=arm7_depfile,
         )
         n.build(
             inputs=rom_config_file,
             implicit=[str(project.baserom()), str(arm7_units_path),
                       "config/usa/arm7/baseline.json", "tools/arm7_build.py",
-                      "tools/check_arm7.py", CC, LD] +
+                      "tools/check_arm7.py", "tools/arm7_dependencies.py", CC, LD] +
                      [unit["source"] for unit in arm7_units["units"]] +
                      [unit["assembly_exception"] for unit in arm7_units["units"]
                       if "assembly_exception" in unit],
