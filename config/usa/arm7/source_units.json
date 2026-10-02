@@ -1954,6 +1954,26 @@
           "ARM7_ResetState": 58757508
         }
       }
+    },
+    {
+      "name": "BackupTransfer",
+      "source": "config/usa/arm7/src/BackupTransfer.c",
+      "autoload": "wram",
+      "runtime_address": 58732344,
+      "payload_offset": 45396,
+      "size": 376,
+      "code_bytes": 352,
+      "literal_pool_bytes": 24,
+      "entry": "ARM7_TransferBackupBytes",
+      "symbols": {
+        "ARM7_TransferBackupBytes": 58732344,
+        "ARM7_ReadBackupByte": 58732476,
+        "ARM7_WriteBackupByte": 58732540,
+        "ARM7_CompareBackupByte": 58732620
+      },
+      "externals": {
+        "ARM7_BackupTransfer": 58765188
+      }
     }
   ]
 }

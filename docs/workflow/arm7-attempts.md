@@ -528,3 +528,15 @@
 - Adds 236 instruction and 28 literal bytes; separately owns exactly four BSS bytes
   for the two halfword flags at 0x03809184. Strings remain binary data dependencies.
 - Validation: after correcting an integration-script parenthesis before any source mutation, the integrated full payload and code/BSS symbols match; all 11 pipeline and six verifier tests pass.
+
+## 2026-10-02 - cartridge backup SPI transfer callbacks
+
+- All three byte callbacks at 0x03802fbc and the shared loop at 0x03802f38
+  matched on their first compile. The write callback's volatile local preserves
+  the observed stack halfword store after reading AUXSPIDATA. The compare callback
+  clears its result and clamps remaining bytes to one on a mismatch.
+- Hardware halfword accesses at 0x040001a0/1a2 and the transfer call sites establish
+  cartridge-backup SPI transport. The 16-byte shared record at 0x0380af84 remains
+  external; no initialization or ownership evidence is inferred from this batch.
+- Four functions add 352 instruction and 24 literal bytes, no data or BSS.
+- Validation: full payload and linked symbols match; all 11 pipeline and six verifier tests pass. Payload SHA-1 remains a662d5c6a78e990244299926cf6862ce910a475d.
