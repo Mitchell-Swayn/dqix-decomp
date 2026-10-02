@@ -50,7 +50,7 @@
       "status": "active",
       "owner": "luna_world_review",
       "worktree": "../DQIX-Decomp-zone3d",
-      "scope": "Five linked-record helpers integrated; four array-list helper batch pendingcombinedacceptance, workerisolating staleexperimentalrange.",
+      "scope": "Four array-list helpers integrated and full checks passed (+4 functions, +292 code bytes); next bounded World family active.",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1"
     },
@@ -183,13 +183,13 @@
       "id": "arm9-data-triage",
       "status": "active",
       "owner": "luna_data_audit",
-      "scope": "DMA scalar+80-byte VRAMstagingtables accepted; next25-minute graphicsdatafamilyactive."
+      "scope": "VRAM maps and mathematical sine/cosine table proposed; review requires resolving split array definitions and interior symbol aliases before acceptance."
     },
     {
       "id": "per-agent-token-measurement",
       "status": "active",
       "owner": "luna_arm7_inventory_next",
-      "scope": "Read-only aggregate telemetry helper; deduplicate per-response records, separatecachedinput/reasoning subset, no assumedbilling."
+      "scope": "Analyzer reviewed; historical model attribution, selection validation and failure exit status corrections requested before integration."
     }
   ]
 }
