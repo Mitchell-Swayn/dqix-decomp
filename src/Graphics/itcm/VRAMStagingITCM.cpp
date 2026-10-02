@@ -41,8 +41,6 @@ extern "C"
 
 // seems to be one per VRAMRegion
 extern VRAMStagingManager::CommonVRAMRegionTaskSet g_vramStagingRegionalTaskSets[10];
-extern VRAMStagingManager::StagingSpaceAllocation g_vramStagingAllocations[0x80];
-extern VRAMStagingManager::Task g_vramStagingTaskQueue[0x100];
 extern unsigned char g_vramStagingBuffer[0x5000];
 
 #define TASK_FLAG_VALID_TASK 0
