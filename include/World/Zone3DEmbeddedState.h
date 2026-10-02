@@ -55,7 +55,15 @@ struct ZoneSerializedRecord
 {
     union { unsigned int index; ZoneSerializedRecord* pointer; } secondary;
     union { unsigned int offset; void* pointer; } payload;
-    char unknown_8[14];
+    unsigned int unknown_8;
+    struct FilterBits
+    {
+        unsigned int low : 12;
+        unsigned int category : 11;
+        unsigned int high : 9;
+    } filter;
+    unsigned int unknown_10;
+    unsigned short unknown_14;
     unsigned short unknown_16;
     short key;
     char unknown_1a[6];
@@ -72,11 +80,16 @@ struct ZoneState2754
             unsigned short count : 15;
             unsigned short hasExtraBlock : 1;
         } secondary;
-        unsigned int unknown_4;
+        unsigned short unknownCount4;
+        unsigned short unknown6;
         unsigned int payloadSize : 31;
         unsigned int relocated : 1;
         char* records;
         void* payload;
+        short GetRecordCountBound();
+        ZoneSerializedRecord* GetRecordAtIndex(int index);
+        short CountMatchingRecords(int alternate, unsigned int kind, int first, signed char second);
+        ZoneSerializedRecord* FindMatchingRecord(int index, int alternate, unsigned int kind, signed char first, signed char second);
         bool RelocateSecondaryRecordLinks();
         bool ApplySpecialRecordFlags();
         bool LoadSerializedData(void* file, unsigned int size);
