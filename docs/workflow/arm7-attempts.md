@@ -459,3 +459,16 @@
   143. No candidate is integrated, and experimental layout expansions were restored
   before this batch. Future work needs original inline-helper/compiler evidence.
 - Validation: full payload and symbols match; all 11 pipeline and six verifier tests pass. Deferred updaters contribute no source credit.
+
+## 2026-10-02 - tagged sound alarm control (201 C-function milestone)
+
+- Stop and IPC callback matched first compile. Configuration initially loaded its
+  final stack argument as a byte; retaining the caller's unsigned-int tag parameter
+  and narrowing only at the field store matched on variant two. Start's initial
+  source had the slot pointer and 64-bit tick locals in different registers;
+  declaring ticks before the slot pointer matched on variant two.
+- Four functions add 376 instruction and 16 literal bytes. The 64-byte slot and
+  44-byte embedded alarm layout are checked, but their storage remains external.
+  The preceding slot initializer uses a broader runtime-state base plus 0xf80;
+  reconstruct that aggregate only with appropriate field/ownership evidence.
+- Validation: full 167,876-byte payload and linked symbols match; all 11 pipeline and six verifier tests pass. Payload SHA-1 remains a662d5c6a78e990244299926cf6862ce910a475d.

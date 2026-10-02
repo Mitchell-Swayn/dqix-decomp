@@ -1752,6 +1752,32 @@
         "ARM7_IsSoundChannelActive": 58716640,
         "ARM7_IsSoundCaptureActive": 58718212
       }
+    },
+    {
+      "name": "SoundAlarms",
+      "source": "config/usa/arm7/src/SoundAlarms.c",
+      "autoload": "wram",
+      "runtime_address": 58729512,
+      "payload_offset": 42564,
+      "size": 392,
+      "code_bytes": 376,
+      "literal_pool_bytes": 16,
+      "entry": "ARM7_ConfigureSoundAlarm",
+      "symbols": {
+        "ARM7_ConfigureSoundAlarm": 58729512,
+        "ARM7_StartSoundAlarm": 58729604,
+        "ARM7_StopSoundAlarm": 58729792,
+        "ARM7_SoundAlarmCallback": 58729856
+      },
+      "externals": {
+        "ARM7_SoundAlarmSlots": 58763036,
+        "ARM7_CancelAlarm": 58710984,
+        "ARM7_ZeroInitializeAlarm": 58710396,
+        "ARM7_SetTimeout": 58710712,
+        "ARM7_SetInterval": 58710844,
+        "ARM7_GetCurrentTimestamp": 58710008,
+        "ARM7_SendIpcCommand": 58714784
+      }
     }
   ]
 }
