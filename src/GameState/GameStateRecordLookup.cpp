@@ -7,22 +7,16 @@ typedef char GameStateIndexedRecordsOffsetCheck[
 typedef char GameStateIndexedRecordIndexOffsetCheck[
     offsetof(GameStateIndexedRecord, objectIndex_) == 0x568 ? 1 : -1];
 typedef char GameStateIndexListOffsetCheck[
-    offsetof(GameState, unk_2a04) == 0x2a04 ? 1 : -1];
+    offsetof(GameState, indexList_) == 0x2a04 ? 1 : -1];
 typedef char GameStateIndexListCountOffsetCheck[
-    offsetof(GameState, unknownObjectIndexCount_3980_) == 0x3980 ? 1 : -1];
-
-// The list is embedded in the state block returned by func_02010828.
-struct GameStateIndexList {
-    char unknown_000[0xf78];
-    unsigned char indices[4];
-    unsigned char count;
-};
+    offsetof(GameState, indexList_) + offsetof(GameStateIndexList, count_) ==
+    0x3980 ? 1 : -1];
 
 extern "C" GameObject* func_0200ff94(GameState* state, int index);
 
 extern "C" void* func_02010828(GameState* state)
 {
-    return state->unk_2a04;
+    return &state->indexList_;
 }
 
 extern "C" void func_02010834(GameState* state, int index,
@@ -32,10 +26,10 @@ extern "C" void func_02010834(GameState* state, int index,
     if (!valid)
         return;
     unsigned char i;
-    GameStateIndexList* list = (GameStateIndexList*)state->unk_2a04;
-    for (i = 0; i < list->count; ++i)
-        indices[i] = list->indices[i];
-    *count = list->count;
+    GameStateIndexList* list = &state->indexList_;
+    for (i = 0; i < list->count_; ++i)
+        indices[i] = list->objectIndices_[i];
+    *count = list->count_;
 }
 
 extern "C" void func_02010890(GameState* state, int* indices, int* count)

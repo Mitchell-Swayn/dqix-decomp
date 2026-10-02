@@ -12,7 +12,11 @@ extern "C" int func_020100a8(GameState* state)
 
 extern "C" unsigned char func_020100b0(GameState* state)
 {
+#if defined(usa)
+    return state->indexList_.objectIndices_[0];
+#else
     return state->unknownObjectIndex_397c_;
+#endif
 }
 
 extern "C" void* func_020100bc(GameState* state)

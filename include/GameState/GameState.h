@@ -26,6 +26,12 @@ struct GameStateIndexedRecord {
     char unknown_56a[0x964 - 0x56a];
 };
 
+struct GameStateIndexList {
+    char unknown_000[0xf78];
+    unsigned char objectIndices_[4];
+    unsigned char count_;
+};
+
 // sizeof is probably 0x7ff4 but could be 0x7ff8. (Definitely no lower/higher)
 // For lower bound, look at initialize/reset function func_0200f3a4
 // which writes a byte at offset 0x7ff2.
@@ -61,14 +67,13 @@ public:
 #if defined(usa)
     char unk_3f8[0x474 - 0x3f8];
     GameStateIndexedRecord indexedRecords_[4];
-    char unk_2a04[0x397c - 0x2a04];
+    GameStateIndexList indexList_;
 #elif defined(jpn)
     char unk_3f8[0x371c - 0x3f8];
-#endif
-
     unsigned char unknownObjectIndex_397c_; // jpn: offset 0x731c instead
     unsigned char unknownObjectIndices_397d_[3];
     unsigned char unknownObjectIndexCount_3980_;
+#endif
     char unk_3981[0x5cb0 - 0x3981];
     unsigned int unknown_5cb0_;
     unsigned int unknown_5cb4_;
