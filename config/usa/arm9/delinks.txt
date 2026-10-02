@@ -1039,6 +1039,10 @@ src/World/ZoneEntryConfigurationData.cpp:
     complete
     .rodata start:0x020e8bd8 end:0x020e8bec
 
+src/World/ZoneState0840InsertionSlot.cpp:
+    complete
+    .text start:0x02098a84 end:0x02098e3c
+
 src/World/ZoneState0840AddEntry.cpp:
     complete
     .text start:0x02098630 end:0x0209890c

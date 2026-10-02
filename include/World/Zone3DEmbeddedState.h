@@ -98,6 +98,7 @@ struct ZoneState0840
     Entry* FindEntryByValue(int value);
     bool IsEntryIdentifierAvailable(const Entry* entry);
     bool RemoveEntry(Entry* entry);
+    int PrepareEntryInsertionSlot();
     bool AddEntry(const Entry* entry, bool incrementValue, bool updateTier);
     void UpdateEntryCountTier();
     bool ContainsStoredValue(int value);

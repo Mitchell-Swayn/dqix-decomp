@@ -61,3 +61,13 @@ allocator/source checks, but MWCC left that helper out of line even with inline
 size/total-size pragmas and inline enabled. No copy range is credited. Draft:
 build/matching/ZoneState2754Copy.cpp. Next investigate compiler inline decision
 evidence before trying additional source variants; attachment/loading do match.
+
+## Zone entry insertion-slot preparation at 02098a84
+
+Recovered after two variants. The complete 952-byte linked function matches.
+Object diff reports 98.739494% because three calls target the same implicit
+Entry assignment symbol: the original split object has an undefined reference,
+while MWCC emits a duplicate weak definition in the new translation unit.
+Instruction forms, symbol names and relocation addends agree. The linker keeps
+the original source owner at 02098834, and full module/symbol/ROM checks plus the
+expected SHA-1 pass. This is an object-comparison artifact, not a code mismatch.

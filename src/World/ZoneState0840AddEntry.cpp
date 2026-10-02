@@ -2,7 +2,6 @@
 
 extern "C" {
     int func_02001aec(const void*, const void*, unsigned int);
-    int func_02098a84(ZoneState0840*);
     int func_020cf0fc(void*);
 }
 
@@ -12,7 +11,7 @@ bool ZoneState0840::AddEntry(const Entry* entry, bool incrementValue, bool updat
     if (!entry->parameters6c.unknown26) return false;
     for (i = 0; i < 30; ++i)
         if (!func_02001aec(entries[i].identifier, entry->identifier, 6)) return false;
-    int index = func_02098a84(this);
+    int index = PrepareEntryInsertionSlot();
     if (incrementValue) ++unknown_1b34;
     unknown_1b38 = 0;
     Entry* current = entries;
