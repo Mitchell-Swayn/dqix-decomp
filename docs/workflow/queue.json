@@ -24,7 +24,7 @@
       "status": "active",
       "owner": "luna_runtime_batch",
       "worktree": "../DQIX-Decomp-luna-runtime",
-      "scope": "Three Luna GameState batches integrated (+12 functions / 496 code bytes); next moderate helper batch active.",
+      "scope": "GameStatecontext+timestamp batches integrated; next bounded25-minute family active.",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1"
     },
@@ -41,7 +41,7 @@
       "status": "active",
       "owner": "luna_arm7_functions",
       "worktree": "../DQIX-Decomp-arm7-batch",
-      "scope": "Touch-status unit integrated (+220 instruction /24 literal bytes); next coherent helper under review.",
+      "scope": "Powerinitializer+sharedtypedstate accepted; next25-minute sourcefamily active.",
       "attempt_limit_per_function": 10,
       "acceptance": "exact full ARM7 payload and pipeline tests; root full ROM integration"
     },
@@ -50,7 +50,7 @@
       "status": "active",
       "owner": "luna_world_review",
       "worktree": "../DQIX-Decomp-zone3d",
-      "scope": "Two World script callbacks integrated; e894 deferred after11.76% comparison; worker selecting next record/lookup helper.",
+      "scope": "Five linked-record helpers integrated; four array-list helper batch pendingcombinedacceptance, workerisolating staleexperimentalrange.",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1"
     },
@@ -71,9 +71,9 @@
     },
     {
       "id": "arm7-inventory",
-      "status": "active",
-      "owner": "luna_arm7_inventory_next",
-      "scope": "Startup partition integrated; autoload entry sidecar pending validation review; no complete denominator claim.",
+      "status": "verified",
+      "owner": null,
+      "scope": "Startup, initialautoloadentry and two Thumb BIOS stubs partitioned; structural+ROM-backed checks pass. WholeARM7denominator remains unknown.",
       "next_action": "Extend evidence-backed inventory; never treat whole payload as executable code"
     },
     {
@@ -177,13 +177,19 @@
       "id": "runtime-library-next",
       "status": "active",
       "owner": "luna_runtime_library",
-      "scope": "Destructor registration and startup hook integrated (+36 code bytes); next runtime data/helper batch active."
+      "scope": "Locale+decimaltext+exceptioncallbackdata accepted; failedexceptionwrapperdocumented; newCRTfamilyactive."
     },
     {
       "id": "arm9-data-triage",
       "status": "active",
       "owner": "luna_data_audit",
-      "scope": "Three typed mode tables integrated (+96 data bytes); next graphics data recovery active."
+      "scope": "DMA scalar+80-byte VRAMstagingtables accepted; next25-minute graphicsdatafamilyactive."
+    },
+    {
+      "id": "per-agent-token-measurement",
+      "status": "active",
+      "owner": "luna_arm7_inventory_next",
+      "scope": "Read-only aggregate telemetry helper; deduplicate per-response records, separatecachedinput/reasoning subset, no assumedbilling."
     }
   ]
 }

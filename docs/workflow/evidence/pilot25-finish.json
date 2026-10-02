@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "pilot-25",
+  "snapshot": {
+    "utc": "2026-10-02T12:52:52.826257+00:00",
+    "revision": "6c28cf462a4a85a6f42fdded5d673f5b284ce061",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 213564,
+      "matched_data": 48536,
+      "matched_functions": 1582
+    },
+    "arm7": {
+      "source_functions": 267,
+      "source_code_bytes": 23184,
+      "source_literal_pool_bytes": 1620,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 141620,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "3431ac2f88314d6b5f728858ddd0ad7959765a75142d73c79c05dd25d83a2873",
+    "arm7_report_sha256": "8fda666701461f2cb85ef34ec7b3c7416432c42104022083580fc8b3108adadf",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Includes accepted World/GameState/runtime/graphics/ARM7 batches, inventory validation and requested measured cost analysis. Mixed work and idle periods; not a speed benchmark.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 864,
+      "matched_data": 340,
+      "matched_functions": 10
+    },
+    "arm7": {
+      "source_functions": 1,
+      "source_code_bytes": 52,
+      "source_literal_pool_bytes": 8,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": -60,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 1539.436969
+}
