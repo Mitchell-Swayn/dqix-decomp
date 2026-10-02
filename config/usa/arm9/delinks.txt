@@ -1465,3 +1465,19 @@ src/World/WorldScriptRecordListReset.cpp:
 src/World/WorldScriptRecordListAppend.cpp:
     complete
     .text start:0x0208df94 end:0x0208e000
+
+src/World/WorldScriptArrayListReset.cpp:
+    complete
+    .text start:0x0208d82c end:0x0208d854
+
+src/World/WorldScriptArrayListAllocate.cpp:
+    complete
+    .text start:0x0208d8ec end:0x0208d928
+
+src/World/WorldScriptArrayListAppend.cpp:
+    complete
+    .text start:0x0208d928 end:0x0208d994
+
+src/World/WorldScriptArrayListFind.cpp:
+    complete
+    .text start:0x0208d994 end:0x0208d9e8
