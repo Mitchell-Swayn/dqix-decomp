@@ -69,3 +69,13 @@ and four texture-matrix modes. All ten pointers name the existing typed C++
 functions. Separate units preserve placement after a combined candidate swapped
 the first two arrays during linking. All three tables and the complete
 ROM/module/symbol checks pass.
+
+RenderConfigState.cpp defines the existing 612-byte RenderConfig object at
+0x0210a010..0x0210a274. Its established fields include matrix/lighting command
+packets, cached transforms and camera vectors; the existing unidentified
+176-byte field remains explicitly unknown. Thirteen interior field aliases
+become offsets, including eight relocation references from overlay 17. The
+object compares at 100%, all 15 RenderCommands code symbols compare at 100%,
+and full module/symbol/ROM checks pass. The existing RenderConfig::SubmitToFifo
+object still has a separate relocation representation mismatch (93.33%); no
+new code credit is claimed for this data definition.

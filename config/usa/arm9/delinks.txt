@@ -267,6 +267,10 @@ src/Graphics/NSBXX/InverseBindScratch.cpp:
     complete
     .bss start:0x0210b678 end:0x0210cf78
 
+src/Graphics/NSBXX/RenderConfigState.cpp:
+    complete
+    .bss start:0x0210a010 end:0x0210a274
+
 src/Graphics/NSBXX/RenderScratchState.cpp:
     complete
     .bss start:0x0210a274 end:0x0210a278

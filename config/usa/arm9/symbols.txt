@@ -7669,19 +7669,6 @@ _ZN13AllocatorTree19initializedTopLevelE kind:bss addr:0x02109ffc local
 _ZN13AllocatorTree8topLevelE kind:bss addr:0x0210a000 local
 data_0210a00c kind:bss addr:0x0210a00c
 data_0210a010 kind:bss addr:0x0210a010
-data_0210a018 kind:bss addr:0x0210a018
-data_0210a05c kind:bss addr:0x0210a05c
-data_0210a090 kind:bss addr:0x0210a090
-data_0210a0b8 kind:bss addr:0x0210a0b8
-data_0210a0cc kind:bss addr:0x0210a0cc
-data_0210a0f0 kind:bss addr:0x0210a0f0
-data_0210a0fc kind:bss addr:0x0210a0fc
-data_0210a110 kind:bss addr:0x0210a110
-data_0210a140 kind:bss addr:0x0210a140
-data_0210a170 kind:bss addr:0x0210a170
-data_0210a250 kind:bss addr:0x0210a250
-data_0210a25c kind:bss addr:0x0210a25c
-data_0210a268 kind:bss addr:0x0210a268
 data_0210a274 kind:bss addr:0x0210a274
 data_0210a278 kind:bss addr:0x0210a278
 data_0210b078 kind:bss addr:0x0210b078
