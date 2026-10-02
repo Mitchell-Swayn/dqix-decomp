@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "pilot-17",
+  "snapshot": {
+    "utc": "2026-10-02T07:13:15.848448+00:00",
+    "revision": "ac5700e91ffbae5718f2910acf11a922b659fccb",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 203196,
+      "matched_data": 40372,
+      "matched_functions": 1473
+    },
+    "arm7": {
+      "source_functions": 206,
+      "source_code_bytes": 17000,
+      "source_literal_pool_bytes": 1208,
+      "source_data_bytes": 913,
+      "source_bss_bytes": 3508,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 148635,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "968034c460df03b44bb0fbe339e186c5db6c49e5a0f246c1e60b6c5f1165d487",
+    "arm7_report_sha256": "277bbda165bc1f4af8c011cb6dcad63b178fe3cc8279f87a0bb420c33950a461",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Accepted 384 initialized graphics data bytes, 5124 typed BSS bytes, world filters, ARM7 alarms/transport/wave lookup, and runtime console callbacks. Combined BSS candidate rejected for link order; separate allocations passed. Full ROM/module/symbol/SHA1 pass.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 1028,
+      "matched_data": 5508,
+      "matched_functions": 13
+    },
+    "arm7": {
+      "source_functions": 9,
+      "source_code_bytes": 572,
+      "source_literal_pool_bytes": 36,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 64,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": -608,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 604.591476
+}

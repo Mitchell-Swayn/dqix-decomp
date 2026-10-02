@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "name": "pilot-17",
+  "snapshot": {
+    "utc": "2026-10-02T07:03:11.256972+00:00",
+    "revision": "a8aef4f5403f0385c35e7c733cac504ba846b90a",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 202168,
+      "matched_data": 34864,
+      "matched_functions": 1460
+    },
+    "arm7": {
+      "source_functions": 197,
+      "source_code_bytes": 16428,
+      "source_literal_pool_bytes": 1172,
+      "source_data_bytes": 913,
+      "source_bss_bytes": 3444,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 149243,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "c2476a3315ade0b88e28ff200c12816f1421f987a43bffb4d88c8bd45b683c3d",
+    "arm7_report_sha256": "ed3bfb7c7f151a1befd7149b61469f2cc106b265b4e32394416e953efb127e26",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Typed graphics command buffers and continuing worker batches.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks."
+}

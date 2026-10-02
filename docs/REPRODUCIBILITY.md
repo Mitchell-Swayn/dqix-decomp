@@ -55,6 +55,16 @@ Actual compiler-discovered transitive ARM7 headers are now hashed and tracked
 by Ninja. Later source batches have separate integration checks; binary fallbacks
 remain required at this milestone.
 
+The animation milestone `4f417453ca7a` passed another fresh source archive,
+extraction and object build using the locked tools:
+[manifest](verification/animation-milestone-clean-build.json),
+[build log](verification/animation-milestone-clean-build.log), and
+[ARM7 report](verification/animation-milestone-arm7-report.json).
+It records 1,460 ARM9 functions, 202,168 code bytes, 35,008 data bytes and
+197 ARM7 C functions. All module/symbol checks and whole-ROM SHA-1 passed.
+Later rendering scratch/data and worker batches have separate incremental
+acceptance; original binary fallbacks remain and gameplay was not rerun here.
+
 ## Inputs and tools
 
 - USA ROM: `extract/baserom_dqix_usa.nds`, SHA-1
