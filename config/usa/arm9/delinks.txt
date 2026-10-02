@@ -738,6 +738,14 @@ src/System/FixedPointAtanTables.cpp:
     complete
     .rodata start:0x020ed450 end:0x020ed658
 
+src/Graphics/VRAMPaletteMappingTable.cpp:
+    complete
+    .rodata start:0x020ed658 end:0x020ed668
+
+src/Graphics/VRAMImageMappingTable.cpp:
+    complete
+    .rodata start:0x020ed668 end:0x020ed6c8
+
 src/World/BMDJObjectEntry.cpp:
     complete
     .text start:0x02012ff0 end:0x02013018
