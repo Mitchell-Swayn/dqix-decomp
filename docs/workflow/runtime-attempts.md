@@ -400,3 +400,36 @@ First-draft creation to final-validation artifact timestamps measured 358.6 seco
 Logs: `build/runtime-batch12-acceptance.log`, `build/runtime-batch12-finalize.log`,
 and `build/matching/`. Local code 157,516 -> 158,800; functions 1,179 -> 1,181;
 data 26,640 -> 26,852. No gameplay test. Deferred multiply/increment remain fallback.
+
+
+## Console stream callbacks and bounded follow-up probes (2026-10-02)
+
+Based on `6f9c22f`. Three callbacks add 140 instruction bytes, no literals/data/BSS:
+read `func_0200d8cc` (three variants), write `func_0200d91c` (two), and close
+`func_0200d950` (one). Read preserves requested count except when CR/LF terminates
+input; comparisons mask the raw semihosting return to one byte while the store
+keeps the original raw-value register. Write passes each character's address to
+the existing semihosting entry. Handle/context remain intentionally unused,
+and close returns the observed success value. The BIOS/semihosting routines
+remain explicit assembly fallback; these are ordinary C callbacks, not wrappers
+claiming their instructions.
+
+Decimal subtraction `func_02009edc` remains fallback after four variants. Whole
+object copying and guarded borrow/normalization loops produce the exact 676-byte
+shape, but long-lived pointer allocation differs (best direct 576/676 bytes).
+Predeclared remainder and recomputed-base forms did not resolve it. Packed signed
+and unsigned decoders `func_0200d958`/`func_0200d9e4` remain fallback after four
+variants each: the compiler hoists their shared prefix shift and emits 136 rather
+than 140 bytes; explicit intermediates and byte signedness changes did not help.
+Removing optimize-for-size-off worsened both to 128 bytes. No code-range changes
+or assembly substitutions were made. Further work needs compiler-family/source
+expression evidence; the existing candidates remain ignored drafts.
+
+The installed unit is 100% for all three symbols. Full module/symbol/ARM7 checks
+and guarded separate-output finalization pass with USA SHA-1
+`c7c3014c237900c8281289b8bc76a781969b6278`; older configure caveat unchanged.
+Eighteen distinct candidates including deferred probes; maximum four per function.
+First-inspection artifact timestamp to these notes: 530.1 seconds wall time.
+Logs: `build/runtime-batch13-acceptance.log`, `build/runtime-batch13-finalize.log`,
+and `build/matching/`. Local code 158,800 -> 158,940; functions 1,181 -> 1,184;
+data remains 26,852. Denominators unchanged; no gameplay validation.

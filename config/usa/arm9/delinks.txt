@@ -863,6 +863,10 @@ src/System/RuntimeDecimalPowers.cpp:
     complete
     .data start:0x020eef74 end:0x020ef048
 
+src/System/RuntimeConsoleCallbacks.cpp:
+    complete
+    .text start:0x0200d8cc end:0x0200d958
+
 src/System/RuntimeRandom.cpp:
     complete
     .text start:0x02003d14 end:0x02003d58
