@@ -15,7 +15,7 @@ This USA batch reconstructs nine ARM9 functions:
 Disassembly and the record reader establish actual pointer types: four entry
 fields point to allocated C strings; the middle field points to a 32-byte
 object containing eight string pointers. The list owns a `const short*` key
-filter, signed override count, and 12-bit-use string mask. Compile-time checks
+filter, signed override count, and a string mask using its low twelve bits. Compile-time checks
 retain the observed entry/list/payload/context sizes: 24, 16, 32, and 8 bytes.
 The two-pointer loading context is source-owned BSS at `02108fc0..02108fc8`.
 The five-entry opcode table is source-owned initialized data at
@@ -35,7 +35,7 @@ data bytes. Function ranges contain 1,156 instruction bytes and 20 compiler
 literal bytes. Data consists of 44 initialized bytes and 8 BSS bytes. All ARM9
 and ARM7 denominators remain unchanged; no ARM7 source coverage changed.
 
-The large reader matched after six successfully compiled semantic variants.
+The large reader matched after six successfully compiled implementation variants.
 One intervening redeclaration caused a compile error; a final formatting and
 `sizeof` rebuild also matched. Its first attempt was 76.65%, rising to 97.59%
 after recovering the correct independent string-length helper at `020d2ff0`,
@@ -54,3 +54,7 @@ source; it is not a count of every transitive-header change or compiler invocati
 The batch clock started after full acceptance on baseline `1c18ab0`; elapsed time
 excludes setup and integrator work. Token usage is unknown. Queue state remains
 integrator-owned. The inherited population draft is preserved and uncredited.
+
+`tools/work_batch.py` measured 1,108.403463 seconds (18.47 minutes) after
+baseline acceptance. Start and finish snapshots are archived under
+`evidence/sol61-world-array-access-*.json`.

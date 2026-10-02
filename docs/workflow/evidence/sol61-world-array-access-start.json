@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "name": "sol61-world-array-access",
+  "snapshot": {
+    "utc": "2026-10-02T14:12:54.713519+00:00",
+    "revision": "1c18ab0936ba262a1fa87fe10af579bbaca52162",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 217216,
+      "matched_data": 66084,
+      "matched_functions": 1638
+    },
+    "arm7": {
+      "source_functions": 274,
+      "source_code_bytes": 24492,
+      "source_literal_pool_bytes": 1712,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 4696,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 140220,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "6c72ba32dfd9b812abd4962d7e7746f58433538efb1939a38b40ca49f446e69c",
+    "arm7_report_sha256": "83be6c61e6999f9b8b0d5967b7d7afe8d862b6005a70336ebfb21b26ba944079",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks."
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "sol61-world-array-access",
+  "snapshot": {
+    "utc": "2026-10-02T14:31:23.116982+00:00",
+    "revision": "c72e65107a573b05038085bffde1224ba5dbaea0",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 218392,
+      "matched_data": 66136,
+      "matched_functions": 1647
+    },
+    "arm7": {
+      "source_functions": 274,
+      "source_code_bytes": 24492,
+      "source_literal_pool_bytes": 1712,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 4696,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 140220,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "0d7e74410855f1ea1593397f564d49a3aca52ae426f53fb904a3d67adc26e946",
+    "arm7_report_sha256": "83be6c61e6999f9b8b0d5967b7d7afe8d862b6005a70336ebfb21b26ba944079",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Ninefunctions1176code:1156instruction+20literal;44initializeddata+8BSS. Allnewobjects and4existingarrayhelpers100pct; fullROMmodule/symbol/SHA1pass. Attempts=17distinctsourceSHAversionsinccompileerror/mechanicalrebuild; excludesrepeatcomparisons/headeronlychanges. GameStatenotmodified. Queueuntouched; inheritdraftpreserved. Tokenusageunknown.",
+  "attempts": 17,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 1176,
+      "matched_data": 52,
+      "matched_functions": 9
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 1108.403463
+}
