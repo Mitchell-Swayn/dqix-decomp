@@ -158,7 +158,7 @@ class IntegrationTests(unittest.TestCase):
         self.assertNotIn("stage", result)
 
     def test_exact_review_and_commit_chain_required(self):
-        for change in ({"source_tip": self.base}, {"verdict": "changes_requested"}, {"findings": ["unresolved"]}, {"extra": "metadata"}):
+        for change in ({"source_tip": self.base}, {"verdict": "changes_requested"}, {"findings": ["unresolved"]}):
             old = copy.deepcopy(self.review)
             self.review.update(change)
             result = self.integrate()
@@ -223,6 +223,37 @@ class IntegrationTests(unittest.TestCase):
                     pass
         with gate.IntegrationLock(self.root):
             pass
+
+    def test_approved_review_accepts_evidence_and_additional_metadata(self):
+        self.review.update(evidence={"source_tip": self.tip, "scope": "fixture independent review"},
+                           reviewer="fixture-reviewer", reviewed_at="2026-10-03T00:00:00Z")
+        result = self.integrate()
+        self.assertTrue(result["accepted"], result.get("error"))
+        self.assertEqual(result["review"]["evidence"], self.review["evidence"])
+
+    def test_followup_source_base_need_not_be_main_ancestor_after_cherry_pick(self):
+        # Main accepted a prior patch with different commit identity; the lane keeps its original source hash.
+        subprocess.run(["git", "-c", "user.name=Integrator", "-c", "user.email=integrator@example.invalid",
+                        "-c", "core.hooksPath=", "cherry-pick", self.tip], cwd=self.root,
+                       capture_output=True, check=True)
+        self.initial = git(self.root, "rev-parse", "HEAD")
+        self.assertNotEqual(self.initial, self.tip)
+        relation = subprocess.run(["git", "merge-base", "--is-ancestor", self.tip, self.initial],
+                                  cwd=self.root, capture_output=True, check=False)
+        self.assertEqual(relation.returncode, 1)
+        git(self.root, "checkout", "worker")
+        self.write("src/Overlay/Family.cpp", "int Family() { return 4; }\n")
+        git(self.root, "add", "src/Overlay/Family.cpp")
+        git(self.root, "commit", "-m", "followup from original lane tip")
+        followup = git(self.root, "rev-parse", "HEAD")
+        git(self.root, "checkout", "main")
+        self.submission.update(base_revision=self.tip, source_tip=followup, commits=[followup])
+        self.review.update(base_revision=self.tip, source_tip=followup, evidence={"previous_tip": self.tip})
+        result = self.integrate()
+        self.assertTrue(result["accepted"], result.get("error"))
+        self.assertEqual(result["before"]["revision"], self.initial)
+        self.assertEqual(git(self.root, "rev-parse", "HEAD"), result["accepted_revision"])
+        self.assertEqual((self.root / "src/Overlay/Family.cpp").read_text(), "int Family() { return 4; }\n")
 
     def test_prepare_stage_copies_verified_input_and_tools_without_aliases(self):
         stage = self.root.parent / "copy-stage"

@@ -118,8 +118,7 @@ def validate_submission(runner, root, submission, review):
             raise ValueError(f"submission {key} needs a full lowercase commit hash")
         if runner.output(root, "rev-parse", "--verify", value + "^{commit}") != value:
             raise ValueError(f"submission {key} is not an immutable local commit")
-    if (set(review) != {"verdict", "source_tip", "base_revision", "findings"} or
-            review.get("verdict") != "approved" or review.get("findings") != [] or
+    if (review.get("verdict") != "approved" or review.get("findings") != [] or
             review.get("source_tip") != submission["source_tip"] or review.get("base_revision") != submission["base_revision"]):
         raise ValueError("review must approve this exact base/tip with no findings")
     commits = submission.get("commits")
@@ -227,8 +226,6 @@ def integrate(root, submission, review, workspace):
             require_clean(runner, root)
             result["main_before"] = runner.output(root, "rev-parse", "HEAD")
             result["changed_paths"] = validate_submission(runner, root, submission, review)
-            if runner.git(root, "merge-base", "--is-ancestor", submission["base_revision"], result["main_before"], check=False)[0]:
-                raise ValueError("reviewed base is not an ancestor of current main")
             workspace.mkdir(parents=True, exist_ok=True)
             stage = workspace / ("integration-" + uuid.uuid4().hex)
             result["stage"] = str(stage)
