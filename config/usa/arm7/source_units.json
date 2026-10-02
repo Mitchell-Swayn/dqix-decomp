@@ -773,6 +773,67 @@
         "ARM7_InterruptResponseIDs": 58755100
       },
       "externals": {}
+    },
+    {
+      "name": "VBlankDispatch",
+      "source": "config/usa/arm7/src/VBlankDispatch.c",
+      "autoload": "wram",
+      "runtime_address": 58701692,
+      "payload_offset": 14744,
+      "size": 80,
+      "code_bytes": 68,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_VBlankInterruptHandler",
+      "symbols": {
+        "ARM7_VBlankInterruptHandler": 58701692
+      },
+      "externals": {
+        "ARM7_InterruptResponses": 58756668
+      },
+      "bss": {
+        "runtime_address": 58756764,
+        "size": 12,
+        "symbols": {
+          "ARM7_VBlankResponse": 58756764
+        }
+      }
+    },
+    {
+      "name": "InterruptWaiters",
+      "source": "config/usa/arm7/src/InterruptWaiters.c",
+      "autoload": "wram",
+      "runtime_address": 58701772,
+      "payload_offset": 14824,
+      "size": 36,
+      "code_bytes": 28,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_InitializeInterruptWaiters",
+      "symbols": {
+        "ARM7_InitializeInterruptWaiters": 58701772
+      },
+      "externals": {},
+      "bss": {
+        "runtime_address": 58756660,
+        "size": 8,
+        "symbols": {
+          "ARM7_InterruptWaiters": 58756660
+        }
+      }
+    },
+    {
+      "name": "EmptyInterruptHandler",
+      "source": "config/usa/arm7/src/EmptyInterruptHandler.c",
+      "autoload": "wram",
+      "runtime_address": 58701420,
+      "payload_offset": 14472,
+      "size": 4,
+      "code_bytes": 4,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_EmptyInterruptHandler",
+      "symbols": {
+        "ARM7_EmptyInterruptHandler": 58701420
+      },
+      "externals": {}
     }
   ]
 }

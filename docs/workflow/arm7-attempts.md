@@ -69,3 +69,31 @@
   880 initialized data bytes, 157,644 fallback bytes. BSS and assembly unchanged.
 - Next coherent candidate batch: VBlank dispatch, interrupt wait-list
   initialization, and interrupt-handler registration at `0x037fb77c` onward.
+
+## 2026-10-02 - VBlank dispatch and interrupt initialization
+
+- Wait-list initializer `0x037fb7cc` matched on the first combined compilation.
+- VBlank handler `0x037fb77c`: initial callback-with-count hypothesis caused an
+  extra volatile count read. Second invocation used a no-argument handler and
+  recovered the size; third explicitly snapshotted the callback before advancing
+  the count, matching native scheduling and all 80 bytes. The no-argument call
+  preserves the observed interface; the value left in r0 is incidental.
+- Handler registration `0x037fb7f0`: stopped after ten compiler invocations.
+  Initial branch structure recovered the body shape; a named VBlank pointer
+  corrected literal order but left register differences. Explicit response-index
+  scopes, a separate VBlank symbol, inverted final selection, size-optimization
+  pragma, response variable scope, removal of index shadowing, and moving null
+  initialization before the mask test did not match. Best: exact 156-byte size
+  and literal order, 13 differing bytes across eleven register selections.
+  Kept out of inventory; no further variants without new evidence.
+- Default no-op handler `0x037fb66c` was translated as an empty C function.
+- Added separate BSS ownership for the eight-byte IRQ-waiter queue and 12-byte
+  VBlank response. The response-prefix access is an external layout view; it
+  does not duplicate ownership of the existing 96-byte DMA/timer response array.
+- Validation: all three units, both BSS placements and the full standalone
+  payload match on the first integrated build. SHA-1 remains
+  `a662d5c6a78e990244299926cf6862ce910a475d`; 11 pipeline and six verifier
+  tests pass. Totals: 99 C functions, 8,704 instruction bytes, 648 literals,
+  880 initialized data bytes, 716 BSS bytes; 157,524 payload bytes remain fallback.
+- Next candidate batch: shared cartridge-bus lock release/acquire functions
+  beginning at `0x037fba50`, with ARM9 GamecardBusOwnership as semantic reference.
