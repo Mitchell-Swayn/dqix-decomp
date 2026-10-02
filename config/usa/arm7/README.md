@@ -1,11 +1,11 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **261 C
-functions: 22,548 instruction bytes plus 1,580 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **264 C
+functions: 22,880 instruction bytes plus 1,584 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
 1,332 bytes of standalone initialized data and 3,512 bytes of BSS now have source
-definitions. The other 142,296 payload bytes
+definitions. The other 141,960 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -19,10 +19,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 22,548 / 1,580 bytes |
+| Reconstructed C instructions / compiler literal pools | 22,880 / 1,584 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 1,332 / 120 bytes |
 | Reconstructed BSS / total autoload BSS | 3,512 / 22,744 bytes |
-| Binary fallback | 142,296 bytes |
+| Binary fallback | 141,960 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -170,7 +170,7 @@ table; its separate VBlank response and initialized dispatch table remain outsid
 this unit's source data ownership.
 
 `src/Alarms.c` reconstructs eight alarm scheduling functions at
-`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8261 C
+`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8264 C
 instruction bytes, 52 literal bytes and the 12-byte list state at
 `[0x03809164, 0x03809170)`. It initializes and orders the doubly-linked queue,
 programs timer 1, registers timeouts and periodic intervals, and cancels alarms.
@@ -268,7 +268,7 @@ does not add duplicate data credit.
 
 `src/ThreadWait.c` reconstructs blocking, waking all waiters, marking a thread
 ready and selecting the first ready thread at `[0x037fc69c, 0x037fc7cc)`
-(payload `[0x48b8, 0x49e8)`), with 2261 C instruction bytes and 8 literal bytes.
+(payload `[0x48b8, 0x49e8)`), with 2264 C instruction bytes and 8 literal bytes.
 It clears blocked-list links on wakeup and preserves IRQ state. The scheduler switch routine now belongs to `ThreadSwitch.c`; list insertion
 and IRQ dependencies are source-owned. No thread-context storage is counted by this unit.
 
@@ -850,3 +850,10 @@ uses a 64-bit pattern and its step-count/frame-duration fields, enqueuing mode
 changes only when needed. PowerLed.h shares the checked 12-byte record; the twelve
 patterns at `[0x03808d70, 0x03808e00)` own 144 separately counted initialized data
 bytes. Variadic enqueue, unsigned division and sleep remain binary dependencies.
+
+`src/SpiReply.c`, `src/SpiIpcCallback.c` and `src/TouchSpiClock.c`
+reconstruct three SPI transport helpers (332 instruction/four literal bytes).
+Replies choose channels by the masked command group; callback dispatch ignores
+errors and routes channels 4/6/8/9. Channel 4 retains its external receive target
+`0x027f52ec`. The touch helper transmits a zero byte and polls SPI busy, preserving
+halfword I/O. Subsystem receiver bodies and all storage remain dependencies.

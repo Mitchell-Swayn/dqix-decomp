@@ -2566,6 +2566,58 @@
         "ARM7_PowerLedPatterns": 58756464
       },
       "externals": {}
+    },
+    {
+      "name": "SpiReply",
+      "source": "config/usa/arm7/src/SpiReply.c",
+      "autoload": "wram",
+      "runtime_address": 58739804,
+      "payload_offset": 52856,
+      "size": 196,
+      "code_bytes": 196,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_SendSpiReply",
+      "symbols": {
+        "ARM7_SendSpiReply": 58739804
+      },
+      "externals": {
+        "ARM7_SendIpcCommand": 58714784
+      }
+    },
+    {
+      "name": "SpiIpcCallback",
+      "source": "config/usa/arm7/src/SpiIpcCallback.c",
+      "autoload": "wram",
+      "runtime_address": 58740476,
+      "payload_offset": 53528,
+      "size": 104,
+      "code_bytes": 104,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_SpiIpcCallback",
+      "symbols": {
+        "ARM7_SpiIpcCallback": 58740476
+      },
+      "externals": {
+        "ARM7_TouchIpcReceive": 58740852,
+        "ARM7_MicrophoneIpcReceive": 58746456,
+        "ARM7_PowerIpcReceive": 58743564,
+        "ARM7_SpiIpcReceiveExternal": 41898732
+      }
+    },
+    {
+      "name": "TouchSpiClock",
+      "source": "config/usa/arm7/src/TouchSpiClock.c",
+      "autoload": "wram",
+      "runtime_address": 58740816,
+      "payload_offset": 53868,
+      "size": 36,
+      "code_bytes": 32,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_ClockTouchSpiByte",
+      "symbols": {
+        "ARM7_ClockTouchSpiByte": 58740816
+      },
+      "externals": {}
     }
   ]
 }

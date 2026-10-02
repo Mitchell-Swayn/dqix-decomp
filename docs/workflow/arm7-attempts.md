@@ -712,3 +712,14 @@
 - Variadic enqueue was inspected but not attempted: this checkout lacks the original
   stdarg ABI header, and a guessed stack-walk replacement would be premature.
 - Validation: full payload and linked code/data symbols match, including every shared-header consumer; all 11 pipeline and six verifier tests pass.
+
+## 2026-10-02 - SPI reply routing and receive dispatch
+
+- All three functions matched first compile. Reply routing covers all eight values
+  possible from command&0x70 and preserves the negative-only retry comparison.
+  Callback dispatcher preserves its error check and the original switch ordering.
+- Channel4 receive target0x027f52ec remains external just like its task counterpart;
+  it receives no cartridge ARM7 coverage credit. Touch byte clocking keeps volatile
+  halfword writes/reads and does not invent a returned sample value.
+- Three functions add332 instruction and four literal bytes, no data/BSS.
+- Validation: full payload and linked symbols match; all 11 pipeline and six verifier tests pass.
