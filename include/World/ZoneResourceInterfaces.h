@@ -13,5 +13,6 @@ struct Zone3D_StructPtr_8;
 extern "C" {
     void* func_02011584(GameState*);
     Zone3D_StructPtr_8* func_02099950(void*, unsigned short);
-    void* func_0207df50(void*);
+    // Copies the initial texture/palette bounds into the working checkpoint.
+    void func_0207df50(void*);
 }
