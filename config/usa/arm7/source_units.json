@@ -1561,6 +1561,34 @@
         "ARM7_SoundSequences": 58760412,
         "ARM7_GetSequenceTrack": 58724660
       }
+    },
+    {
+      "name": "SoundTrackVoices",
+      "source": "config/usa/arm7/src/SoundTrackVoices.c",
+      "autoload": "wram",
+      "runtime_address": 58724488,
+      "payload_offset": 37540,
+      "size": 456,
+      "code_bytes": 448,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SetSoundTrackData",
+      "symbols": {
+        "ARM7_SetSoundTrackData": 58724488,
+        "ARM7_ReleaseSoundTrackVoices": 58724504,
+        "ARM7_ClearSoundTrackVoices": 58724608,
+        "ARM7_GetSequenceTrack": 58724660,
+        "ARM7_StopSequenceTrack": 58724704,
+        "ARM7_StopSequence": 58724792,
+        "ARM7_SoundTrackVoiceCallback": 58724848
+      },
+      "externals": {
+        "ARM7_SoundTracks": 58760988,
+        "ARM7_UpdateSoundTrack": 58724944,
+        "ARM7_IsSoundVoiceActive": 58720248,
+        "ARM7_SetSoundVoiceRelease": 58720208,
+        "ARM7_BeginSoundVoiceRelease": 58720236,
+        "ARM7_ClearSoundVoiceCallback": 58720724
+      }
     }
   ]
 }

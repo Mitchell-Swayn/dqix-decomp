@@ -387,3 +387,17 @@
   Shared sequence flags now identify running/paused bits from start and update
   consumers; all remaining flag bits stay unknown.
 - Validation: full payload and symbols match; all 11 pipeline and six verifier tests pass, with shared-header hashes included in affected unit records.
+
+## 2026-10-02 - sequence track lookup and voice lifecycle
+
+- Track data setter, clear-voices, lookup, stop-track, stop-sequence and callback
+  unlink matched their first compile. Release-voices initially had the voice and
+  truncated-release registers swapped; an explicit unsigned-byte release local
+  after the voice declaration matched on variant two.
+- Combined the seven contiguous functions at 0x03801088..0x03801250 into one unit:
+  448 instruction bytes and eight literal bytes, with no data/BSS additions.
+- Shared sequence layout now identifies trackIds[16] at offset eight and track
+  voice-list head at 0x3c. The lookup retains its signed >15 rejection and 255
+  sentinel; callback unlink retains the observed list preconditions. No defensive
+  checks or inferred event meanings were introduced into matching source.
+- Validation: complete payload and all symbols match; all 11 pipeline and six verifier tests pass, with the transitive sequence/voice header graph tracked.
