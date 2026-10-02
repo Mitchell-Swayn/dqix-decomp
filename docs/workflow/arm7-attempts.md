@@ -412,3 +412,15 @@
   fourth preparation argument and range comparisons. Its policy remains unknown.
 - Adds 424 instruction bytes and 20 literal bytes; no storage coverage is added.
 - Validation: full payload and linked symbols match; all 11 pipeline and six verifier tests pass, including all prior shared-header consumers in the payload build.
+
+## 2026-10-02 - track allocation, mute modes and mask setters
+
+- Mute mode and mask dispatch matched first compile. Allocation's array base and
+  scaled-offset registers initially differed; a local track pointer matched on
+  variant two. Parameter1E's flag originally used a compound operation on an
+  unknown multi-bit field, which emitted extraction/reinsertion; splitting the
+  proven bit-seven flag into its own bitfield matched on variant two.
+- Four functions add 404 instruction bytes and 12 literals. Offset 0x1e remains
+  an unidentified parameter; its changed flag is named only by that association.
+  Allocation preserves the first-free scan and -1 failure return.
+- Validation: full payload and declared symbols match; all 11 pipeline and six verifier tests pass, with all header consumers recompiled.

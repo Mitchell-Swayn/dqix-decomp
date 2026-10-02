@@ -1632,6 +1632,46 @@
         "ARM7_StopSequence": 58724792,
         "ARM7_GetSequenceTrack": 58724660
       }
+    },
+    {
+      "name": "SoundTrackAllocation",
+      "source": "config/usa/arm7/src/SoundTrackAllocation.c",
+      "autoload": "wram",
+      "runtime_address": 58728284,
+      "payload_offset": 41336,
+      "size": 196,
+      "code_bytes": 192,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_AllocateSoundTrack",
+      "symbols": {
+        "ARM7_AllocateSoundTrack": 58728284,
+        "ARM7_SetSoundTrackMute": 58728352
+      },
+      "externals": {
+        "ARM7_SoundTracks": 58760988,
+        "ARM7_ReleaseSoundTrackVoices": 58724504,
+        "ARM7_ClearSoundTrackVoices": 58724608
+      }
+    },
+    {
+      "name": "SoundTrackMask",
+      "source": "config/usa/arm7/src/SoundTrackMask.c",
+      "autoload": "wram",
+      "runtime_address": 58723224,
+      "payload_offset": 36276,
+      "size": 220,
+      "code_bytes": 212,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SetSequenceTrackMute",
+      "symbols": {
+        "ARM7_SetSequenceTrackMute": 58723224,
+        "ARM7_SetSequenceTrackParameter1E": 58723332
+      },
+      "externals": {
+        "ARM7_SoundSequences": 58760412,
+        "ARM7_GetSequenceTrack": 58724660,
+        "ARM7_SetSoundTrackMute": 58728352
+      }
     }
   ]
 }

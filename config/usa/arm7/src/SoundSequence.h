@@ -14,8 +14,10 @@ typedef struct {
 } SoundSequence;
 
 typedef struct {
-    unsigned char active:1, unknownFlags:7;
-    unsigned char unknown1[35];
+    unsigned char active:1, unknownFlag1:1, muted:1, unknownFlags:4, parameter1EChanged:1;
+    unsigned char unknown1[29];
+    unsigned short parameter1E;
+    unsigned char unknown20[4];
     const unsigned char *start, *cursor; /* 0x24, 0x28 */
     unsigned char unknown2C[16];
     SoundVoice *voices;                         /* 0x3c */
