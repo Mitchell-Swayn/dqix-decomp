@@ -1,28 +1,12 @@
 #include "System/Interrupts.h"
 #include "System/DMA.h"
+#include "System/InterruptResponse.h"
 #include "System/BiosData.h"
 #include "System/DTCM.h"
 #include <globaldefs.h>
 #include <asmhacks.h>
 
 #pragma optimize_for_size off
-
-#if defined(jpn)
-#define data_0211127c data_02110f1c
-#define data_020f2274 data_020f23e0
-#endif
-
-struct DMAOrTimerResponse
-{
-    DMACompletionCallback callback;
-    unsigned int stayEnabledAfter;
-    int userdata;
-};
-
-// 0-3 are DMA, 4-7 are timers
-extern DMAOrTimerResponse data_0211127c[8];
-// maps index in the previous array to interrupt ID
-extern unsigned short data_020f2274[8];
 
 inline DMACompletionCallback& CallbackByIndex(int n, int base = 0)
 {
