@@ -18,3 +18,12 @@ struct WorldScriptRecordNode
 
 typedef char WorldScriptRecordNodeSizeCheck[
     sizeof(WorldScriptRecordNode) == 12 ? 1 : -1];
+
+struct WorldScriptRecordList
+{
+    WorldScriptRecordNode* head;
+    short count;
+};
+
+typedef char WorldScriptRecordListSizeCheck[
+    sizeof(WorldScriptRecordList) == 8 ? 1 : -1];
