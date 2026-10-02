@@ -91,7 +91,7 @@ src/Grotto/Main/GrottoStruct.cpp:
 
 src/Grotto/Main/GrottoMetadataTransfer.cpp:
 	complete
-	.text start:0x02011818 end:0x02011a74
+	.text start:0x02011818 end:0x02011af0
 
 src/Grotto/Main/GrottoCollectionStorage.cpp:
 	complete

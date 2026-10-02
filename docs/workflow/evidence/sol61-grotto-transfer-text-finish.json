@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "sol61-grotto-transfer-text",
+  "snapshot": {
+    "utc": "2026-10-02T13:49:32.302069+00:00",
+    "revision": "a846d4350148877825ddddd9c9ea1de2b99e20ed",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 215672,
+      "matched_data": 48064,
+      "matched_functions": 1622
+    },
+    "arm7": {
+      "source_functions": 265,
+      "source_code_bytes": 22912,
+      "source_literal_pool_bytes": 1588,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 141924,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "61e839f79c388cf738105d9d2c12e7314611bdc3a62ddef839ed57517d914eca",
+    "arm7_report_sha256": "6f3aaf4f9b7392fa38ff6c7504a2202e44c4c00ffb6122d9dae61b1d89e761f4",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Fourtextbufferhelpers11a74..11af0 matchfirstcandidate; expandedtransferunit13/13exact before documentationcomment. Actual64-byte owningbuffer sharedheaderfielduseddirectly; observedNULL/indexchecksandtwo distinctreleaseclearentrypointsretained. Documented11a40releasebehavior: onlytypebitssetbeforestackrecordcopy, otherbits/bytesuninitialized, strongercontractnotestablished. FullROM/module/symbol/SHA1 passedaftercomment, data/denominators/ARM7unchanged. No gameplaytests.",
+  "attempts": 1,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 124,
+      "matched_data": 0,
+      "matched_functions": 4
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 74.492504
+}

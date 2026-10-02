@@ -128,9 +128,42 @@ extern "C" void func_02011a24(GameState* state, const TreasureMapMetadata* metad
 
 extern "C" void func_02011a40(GameState* state)
 {
+    // The release sets only the type bits, then copies this stack record.
+    // Its other bits and bytes are uninitialized; no stronger caller contract
+    // has been established.
     TreasureMapMetadata metadata;
     metadata.SetMapType(TreasureMapType_Invalid);
     VectorizedInvertedMemcpy(&metadata, &state->grottoInfo_.metadataTransfer_.metadata_, 0x1c);
+}
+
+extern "C" void func_02011a74(GameState* state, unsigned int index, const char* text)
+{
+    if (text == NULL)
+        return;
+    char* destination = state->grottoInfo_.metadataTransfer_.text_32_;
+    if (destination == NULL)
+        return;
+    if (index > 3)
+        return;
+    strcpy(destination, text);
+}
+
+extern "C" char* func_02011aa0(GameState* state, unsigned int index)
+{
+    char* result = NULL;
+    if (index <= 3)
+        result = state->grottoInfo_.metadataTransfer_.text_32_;
+    return result;
+}
+
+extern "C" void func_02011ab8(GameState* state)
+{
+    VectorizedMemset(state->grottoInfo_.metadataTransfer_.text_32_, 0, 64);
+}
+
+extern "C" void func_02011ad4(GameState* state)
+{
+    VectorizedMemset(state->grottoInfo_.metadataTransfer_.text_32_, 0, 64);
 }
 
 #endif
