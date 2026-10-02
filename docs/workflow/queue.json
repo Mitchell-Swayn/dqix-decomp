@@ -24,7 +24,7 @@
       "status": "active",
       "owner": "luna_runtime_batch",
       "worktree": "../DQIX-Decomp-luna-runtime",
-      "scope": "Next bounded GameState helpers after0200fd70",
+      "scope": "Three Luna GameState batches integrated (+12 functions / 496 code bytes); next moderate helper batch active.",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1"
     },
@@ -41,7 +41,7 @@
       "status": "active",
       "owner": "luna_arm7_functions",
       "worktree": "../DQIX-Decomp-arm7-batch",
-      "scope": "Touch/SPI helpers around038056ac",
+      "scope": "Touch-status unit integrated (+220 instruction /24 literal bytes); next coherent helper under review.",
       "attempt_limit_per_function": 10,
       "acceptance": "exact full ARM7 payload and pipeline tests; root full ROM integration"
     },
@@ -50,7 +50,7 @@
       "status": "active",
       "owner": "luna_world_review",
       "worktree": "../DQIX-Decomp-zone3d",
-      "scope": "Next bounded World script callbacks",
+      "scope": "Two World script callbacks integrated; e894 deferred after11.76% comparison; worker selecting next record/lookup helper.",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1"
     },
@@ -73,7 +73,7 @@
       "id": "arm7-inventory",
       "status": "active",
       "owner": "luna_arm7_inventory_next",
-      "scope": "Evidence-backed ARM7 startup code/literal/data partition",
+      "scope": "Startup partition integrated; autoload entry sidecar pending validation review; no complete denominator claim.",
       "next_action": "Extend evidence-backed inventory; never treat whole payload as executable code"
     },
     {
@@ -177,13 +177,13 @@
       "id": "runtime-library-next",
       "status": "active",
       "owner": "luna_runtime_library",
-      "scope": "3?6 new small runtime library functions, exclude deferred integer parser and BSS"
+      "scope": "Destructor registration and startup hook integrated (+36 code bytes); next runtime data/helper batch active."
     },
     {
       "id": "arm9-data-triage",
       "status": "active",
       "owner": "luna_data_audit",
-      "scope": "Identify unowned typed data ranges with caller evidence"
+      "scope": "Three typed mode tables integrated (+96 data bytes); next graphics data recovery active."
     }
   ]
 }

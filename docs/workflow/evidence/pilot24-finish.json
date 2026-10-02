@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "pilot-24",
+  "snapshot": {
+    "utc": "2026-10-02T12:26:57.104974+00:00",
+    "revision": "319c2d810647d8566bd3088cd19a21c09a6a0749",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 212700,
+      "matched_data": 48196,
+      "matched_functions": 1572
+    },
+    "arm7": {
+      "source_functions": 266,
+      "source_code_bytes": 23132,
+      "source_literal_pool_bytes": 1612,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 141680,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "9786f32f4d74db8deed3b607232ba7bc212362f2d6f655d79f0e6a50ee2ca0fb",
+    "arm7_report_sha256": "500a4c240d29db0f3b79032d8a0ab057494af29cb5e56b40e799e36f25582f9c",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Accepted source/data batches plus startup inventory review and root return-value repair. Additional workers continue; this interval includes setup/review and is not comparative model throughput.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 548,
+      "matched_data": 132,
+      "matched_functions": 16
+    },
+    "arm7": {
+      "source_functions": 1,
+      "source_code_bytes": 220,
+      "source_literal_pool_bytes": 24,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": -244,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 1073.584744
+}
