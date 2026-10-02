@@ -1,7 +1,36 @@
 #include "AnimatedRectangle.h"
+#include "std_library_functions.h"
 
-extern "C" void func_02047554(void*, int, int);
-extern "C" void func_02075db0(void*, int, int);
+// Partial records observed by this renderer. Mode selects the layout of
+// renderParts; unknown bytes and the callees' remaining semantics are unresolved.
+// Sizes describe array strides, not a recovered class hierarchy.
+struct RectangleGeometryPart {
+    unsigned char unknown_00[0x80];
+    unsigned short attribute;
+    unsigned char unknown_82[6];
+};
+
+struct RectangleScreenPart {
+    unsigned char unknown_00[0x70];
+};
+
+struct RectanglePositionPart {
+    unsigned char unknown_00[0x14];
+    fix32_t x;
+    fix32_t y;
+    unsigned char unknown_1c[0x0c];
+};
+
+typedef char GeometryPartSizeCheck[sizeof(RectangleGeometryPart) == 0x88 ? 1 : -1];
+typedef char GeometryAttributeOffsetCheck[
+    offsetof(RectangleGeometryPart, attribute) == 0x80 ? 1 : -1];
+typedef char ScreenPartSizeCheck[sizeof(RectangleScreenPart) == 0x70 ? 1 : -1];
+typedef char PositionPartSizeCheck[sizeof(RectanglePositionPart) == 0x28 ? 1 : -1];
+typedef char PositionXOffsetCheck[offsetof(RectanglePositionPart, x) == 0x14 ? 1 : -1];
+typedef char PositionYOffsetCheck[offsetof(RectanglePositionPart, y) == 0x18 ? 1 : -1];
+
+extern "C" void func_02047554(RectangleGeometryPart*, int, int);
+extern "C" void func_02075db0(RectangleScreenPart*, int, int);
 
 extern "C" void func_ov005_021537bc(AnimatedRectangle* rectangle, int mode, unsigned short attribute)
 {
@@ -34,19 +63,19 @@ extern "C" void func_ov005_021537bc(AnimatedRectangle* rectangle, int mode, unsi
             geometry[11] = x;
             geometry[11] = y;
             geometry[11] = depth;
-            unsigned char* part = (unsigned char*)rectangle->renderParts + i * 0x88;
-            *(unsigned short*)(part + 0x80) = attribute;
-            func_02047554((unsigned char*)rectangle->renderParts + i * 0x88, 0, 1);
+            RectangleGeometryPart* part = (RectangleGeometryPart*)rectangle->renderParts + i;
+            part->attribute = attribute;
+            func_02047554((RectangleGeometryPart*)rectangle->renderParts + i, 0, 1);
             geometry[1] = 1;
             break;
         }
         case 1:
-            func_02075db0((unsigned char*)rectangle->renderParts + i * 0x70, x >> 12, y >> 12);
+            func_02075db0((RectangleScreenPart*)rectangle->renderParts + i, x >> 12, y >> 12);
             break;
         case 2: {
-            unsigned char* part = (unsigned char*)rectangle->renderParts + i * 0x28;
-            *(fix32_t*)(part + 0x14) = x;
-            *(fix32_t*)(part + 0x18) = y;
+            RectanglePositionPart* part = (RectanglePositionPart*)rectangle->renderParts + i;
+            part->x = x;
+            part->y = y;
             break;
         }
         }
