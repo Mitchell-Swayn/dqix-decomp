@@ -1,11 +1,11 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **145 C
-functions: 11,900 instruction bytes plus 1,008 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **150 C
+functions: 12,668 instruction bytes plus 1,028 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
-913 bytes of standalone initialized data and 2,100 bytes of BSS now have source
-definitions. The other 153,935 payload bytes
+913 bytes of standalone initialized data and 3,444 bytes of BSS now have source
+definitions. The other 153,147 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -19,10 +19,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 11,900 / 1,008 bytes |
+| Reconstructed C instructions / compiler literal pools | 12,668 / 1,028 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 913 / 120 bytes |
-| Reconstructed BSS / total autoload BSS | 2,100 / 22,744 bytes |
-| Binary fallback | 153,935 bytes |
+| Reconstructed BSS / total autoload BSS | 3,444 / 22,744 bytes |
+| Binary fallback | 153,147 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -170,7 +170,7 @@ table; its separate VBlank response and initialized dispatch table remain outsid
 this unit's source data ownership.
 
 `src/Alarms.c` reconstructs eight alarm scheduling functions at
-`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8145 C
+`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8150 C
 instruction bytes, 52 literal bytes and the 12-byte list state at
 `[0x03809164, 0x03809170)`. It initializes and orders the doubly-linked queue,
 programs timer 1, registers timeouts and periodic intervals, and cancels alarms.
@@ -268,7 +268,7 @@ does not add duplicate data credit.
 
 `src/ThreadWait.c` reconstructs blocking, waking all waiters, marking a thread
 ready and selecting the first ready thread at `[0x037fc69c, 0x037fc7cc)`
-(payload `[0x48b8, 0x49e8)`), with 2145 C instruction bytes and 8 literal bytes.
+(payload `[0x48b8, 0x49e8)`), with 2150 C instruction bytes and 8 literal bytes.
 It clears blocked-list links on wakeup and preserves IRQ state. The scheduler switch routine now belongs to `ThreadSwitch.c`; list insertion
 and IRQ dependencies are source-owned. No thread-context storage is counted by this unit.
 
@@ -509,6 +509,28 @@ dependencies with deliberately limited call-site names.
 `[0x7a20, 0x7a38)`): 24 instruction bytes and no literals for testing capture
 control bit 7. Capture configuration immediately before it remains binary-owned
 pending a conditional-instruction ordering match. This batch adds no data/BSS.
+
+`src/SoundVoiceInit.c` reconstructs `[0x037ff81c, 0x037ff878)` (payload
+`[0x7a38, 0x7a94)`): 84 instruction bytes and eight literals. It sets each of
+16 voice IDs, clears the active bit and five-bit pending-update field, and clears
+two external list endpoints. The 16 records at `[0x0380979c, 0x03809cdc)` now
+have a typed 1,344-byte source BSS definition with a checked `0x54` record stride.
+Unidentified regions remain named by offset; no meaning is assigned to them.
+
+`src/SoundVoiceApply.c` reconstructs `[0x037ff878, 0x037ffa64)` (payload
+`[0x7a94, 0x7c80)`): 488 instruction bytes and four literals. The first pass
+handles stop, setup, period, volume and pan update flags; the second pass enables
+newly configured channels together and clears pending updates. This preserves
+the original separation of configuration and hardware enable.
+
+`src/SoundVoiceSetup.c` reconstructs three functions at
+`[0x037ffe18, 0x037ffee4)` (payload `[0x8034, 0x8100)`): 196 instruction
+bytes and eight literals. PCM setup copies the 12-byte waveform description and
+source address. PSG accepts IDs 8-13 and noise accepts IDs 14-15, both using base
+period 8006 before invoking the external start helper. Each returns success or
+zero for an ineligible channel. The runtime waveform occupies offsets `0x38`
+through `0x43`, followed by source/duty at `0x44`; callback and list fields follow.
+The list-header storage at `0x03809774` and voice-start helper remain external.
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C

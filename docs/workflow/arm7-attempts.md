@@ -258,3 +258,28 @@
 - Next candidates: queued sound-channel state initialization and update dispatch
   at `0x037ff81c`/`0x037ff878`, with subsequent channel-state setters considered
   as one coherent bounded batch.
+
+## 2026-10-02 - queued sound-voice state and hardware update dispatch
+
+- Voice initialization `0x037ff81c`: first compile matched 92 bytes. Byte-sized
+  bitfields reproduce the low-three/high-five split and merged active/pending
+  clearing. The 16-record array has an independently checked 0x54-byte stride.
+- Update dispatcher `0x037ff878`: first compile matched size/control flow, with
+  index and voice-pointer registers swapped. Moving the first-pass voice pointer
+  to outer scope before the index declaration reproduced all 492 bytes on the
+  second compile. Two-pass configure-then-enable ordering is preserved.
+- PCM/PSG/noise staging `0x037ffe18` through `0x037ffee4`: PCM matched initially;
+  the grouped invalid-channel conditions merged return paths in PSG/noise.
+  Separate lower/upper rejection checks matched the original 204-byte batch on
+  the second compile. Waveform-copy structure is 12 bytes and keeps the original
+  load/store multiple sequence.
+- The 1344-byte voice array becomes BSS source; the adjacent list header and
+  unexplained gap are deliberately left outside this storage definition.
+- Integration initially missed the extern list symbol because its anonymous
+  struct declaration contains an internal semicolon; the inventory was corrected
+  to retain the observed `0x03809774` address. No code variant was needed.
+- Validation: full payload, symbols and 1344-byte BSS placement match; 11 pipeline
+  tests and six verifier tests pass. Totals: 150 C functions, 12,668 instruction
+  bytes, 1,028 literals, 913 initialized data bytes, 3,444 BSS; 153,147 fallback.
+- Next batch underway: voice-envelope update and attack/decay/sustain/release
+  setters at `0x037ffee4` through `0x03800008`.

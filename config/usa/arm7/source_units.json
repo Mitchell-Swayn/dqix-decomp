@@ -1281,6 +1281,73 @@
         "ARM7_IsSoundCaptureActive": 58718212
       },
       "externals": {}
+    },
+    {
+      "name": "SoundVoiceInit",
+      "source": "config/usa/arm7/src/SoundVoiceInit.c",
+      "autoload": "wram",
+      "runtime_address": 58718236,
+      "payload_offset": 31288,
+      "size": 92,
+      "code_bytes": 84,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_InitializeSoundChannels",
+      "symbols": {
+        "ARM7_InitializeSoundChannels": 58718236
+      },
+      "externals": {
+        "ARM7_SoundVoiceList": 58759028
+      },
+      "bss": {
+        "runtime_address": 58759068,
+        "size": 1344,
+        "symbols": {
+          "ARM7_SoundVoices": 58759068
+        }
+      }
+    },
+    {
+      "name": "SoundVoiceApply",
+      "source": "config/usa/arm7/src/SoundVoiceApply.c",
+      "autoload": "wram",
+      "runtime_address": 58718328,
+      "payload_offset": 31380,
+      "size": 492,
+      "code_bytes": 488,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_ApplySoundChannelUpdates",
+      "symbols": {
+        "ARM7_ApplySoundChannelUpdates": 58718328
+      },
+      "externals": {
+        "ARM7_SoundVoices": 58759068,
+        "ARM7_StopSoundChannel": 58716336,
+        "ARM7_ConfigurePCMChannel": 58715796,
+        "ARM7_ConfigurePSGChannel": 58716000,
+        "ARM7_ConfigureNoiseChannel": 58716172,
+        "ARM7_SetSoundChannelPeriod": 58716496,
+        "ARM7_SetSoundChannelVolume": 58716376,
+        "ARM7_SetSoundChannelPan": 58716520
+      }
+    },
+    {
+      "name": "SoundVoiceSetup",
+      "source": "config/usa/arm7/src/SoundVoiceSetup.c",
+      "autoload": "wram",
+      "runtime_address": 58719768,
+      "payload_offset": 32820,
+      "size": 204,
+      "code_bytes": 196,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SetSoundVoicePCM",
+      "symbols": {
+        "ARM7_SetSoundVoicePCM": 58719768,
+        "ARM7_SetSoundVoicePSG": 58719828,
+        "ARM7_SetSoundVoiceNoise": 58719904
+      },
+      "externals": {
+        "ARM7_StartSoundVoice": 58721648
+      }
     }
   ]
 }
