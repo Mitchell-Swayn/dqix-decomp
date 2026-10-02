@@ -61,3 +61,73 @@ behavior, first-key selection, and global non-reentrant parser state are preserv
 Semantic source names are inferred; original exported symbol names are retained.
 Caller subsystems and the rest of ov001 remain original fallback and required
 future work. No shared headers, other modules, or integrator queue were edited.
+
+## Continuation: script object bindings
+
+Batch `fleet_ov001_20261003_scriptrecords`, baseline
+`464a607536cf0a7ee245fe740bb236b49290c16f`. Verified locally; no integration.
+The original clean worktree, previous handoff, queue, factory evidence and attempt
+ledger were inspected. No inherited failed variants or ownership conflicts were
+found for this family. The prior lookup source and evidence are preserved.
+
+| Range (end exclusive) | Reconstruction | Bytes |
+| --- | --- | ---: |
+| `0215acb4..0215acd4` | Reset one object binding | 32 |
+| `02164194..021641e0` | Bind an Object3D for kinds 0, 1, 4, 5 | 76 |
+| `021641e0..02164214` | Bind a field-object handle for kinds 2, 6 | 52 |
+| `02164214..02164248` | Bounds-checked Object3D binding | 52 |
+| `02164248..0216427c` | Bounds-checked field-object binding | 52 |
+| `0216427c..02164320` | Apply position to either bound object kind | 164 |
+
+Delta: **6 functions, 428 code/instruction bytes**; zero literal, initialized
+data, BSS, alignment or new assembly bytes. Branch-table entries are ARM branch
+instructions. All denominators and ARM7 counters are unchanged.
+
+`ScriptObjectBindings.h` is shared only by the two new ov001 source units.
+It describes an actual 32-element array of 16-byte records, each with kind,
+object ID, offset-8 flag, and a typed target union. Original allocation at
+`0215a850` reserves `0x200` bytes, and consumers index records with shift 4.
+`0215ab54` supplies GameState Object3D pointers for kinds 0/1/4/5 and manager
+handles returned by `0203dce4` for kinds 2/6. `0215a134` applies positions through
+`0216427c`; `02164418` reads the same Object3D position at offset `0x44`.
+The existing complete Object3D declaration supplies the position subobject.
+Null and invalid-kind behavior is preserved, including storing the kind before
+rejecting an unsupported nonnull target. The binding routines leave the flag
+unchanged. Its source name `enabled` is inferred; its broader meaning is not
+established by this batch.
+
+The main-module field handle remains a forward-declared dependency rather than
+an invented partial layout. Original `02040774` dispatches through its offsets
+`0x14/0x18/0x1c` to placement or Object3D position setters; this batch neither
+accesses those fields nor claims that main-module routine as source coverage.
+Recovering its complete shared type and the remaining binding operations is
+required future work. No static program data is concealed by the declaration.
+
+Three candidate-object comparisons: binding family variants 1 and 2, reset
+variant 1. Four binding functions and reset matched initially. Only `021641e0`
+failed variant 1 (38.46%): an `if` generated conditional stores and different
+store scheduling. The equivalent two-case `switch` matched variant 2. Thus
+one failed hypothesis; no function is at its ten-variant cap. Snapshots and
+per-symbol results remain in `build/matching/attempts.jsonl` and:
+
+- `build/matching/20261002T155223-086bd1973a91458fa00bc54f01491db6/`
+- `build/matching/20261002T155223-1b30deb1da494f759edc173c1a8641f4/`
+- `build/matching/20261002T155248-247121b6d74c45c4ae5baf7c371558df/`
+
+The first delink attempt exposed the tool's rejection of two `.text` ranges in
+one unit; reset was separated into its own unit before candidate compilation.
+This was a mapping error, not an additional compiler variant. Evidence packages
+are `build/factory/ov001-bindings-exact-evidence.json` and
+`ov001-binding-reset-evidence.json`; diagnoses include both failed and exact
+variants. Original disassembly remains `build/factory/ov001-dis/ov001_5.s` and
+`main_57.s`. No pseudocode, binary code, assembly bypass, or target edits used.
+
+`ninja -j2 rom check report sha1` passed (exit 0), including module/symbol checks,
+ARM7 preservation, and exact ROM SHA-1
+`c7c3014c237900c8281289b8bc76a781969b6278`. Log:
+`build/factory/ov001-bindings-acceptance.log`. All reconfigurations used the
+explicit assigned-worktree compiler path. `git diff --check` passed.
+`tools/work_batch.py` snapshots under
+`build/workflow/fleet_ov001_20261003_scriptrecords/` record **317.911014 seconds**,
+capturing verified source before its commit. Token usage is unknown; no gameplay
+test was performed. Remaining ov001 fallback functions are still required.
