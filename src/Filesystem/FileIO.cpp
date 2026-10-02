@@ -1,4 +1,5 @@
 #include "Filesystem/FileIO.h"
+#include "Filesystem/FileIOConfiguration.h"
 #include "Filesystem/ExtendedNitroVM.h"
 #include "Filesystem/NitroVM.h"
 #include "Filesystem/LowNitroHandle.h"
@@ -44,7 +45,13 @@ int MakeCharUpperCase(char ch);
 // character to upper case lookup table
 extern const char data_020e692c[];
 
-// (USA only) array holding "ja", "en", "de", "it", "fr", "es"
+// USA language order: Japanese, English, French, German, Italian, Spanish.
+#if defined(usa)
+#define data_020f0da0 gFileIOConfiguration.languages
+#define data_020f0db8 gFileIOConfiguration.archiveSignature
+#define data_020f0dbc gFileIOConfiguration.archiveRoot
+#define data_020f0dc2 gFileIOConfiguration.languageTag
+#else
 extern char* data_020f0da0[];
 
 // "ARC"
@@ -53,6 +60,7 @@ extern char data_020f0db8[];
 extern char data_020f0dbc[];
 
 extern char data_020f0dc2[]; // "<LG>" (USA only)
+#endif
 
 // JPN: func_02076224
 void* LoadFileIntoMemory(const char* path, void* buffer, unsigned int* outLength)

@@ -405,6 +405,15 @@ src/Filesystem/GPCStartup.cpp:
     complete
     .init start:0x020e6710 end:0x020e677c
 
+src/Filesystem/FileIOConfiguration.cpp:
+    complete
+    .init start:0x020e60e0 end:0x020e60f8
+    .data start:0x020f0d70 end:0x020f0dc8
+
+src/Filesystem/ASCIIUppercaseTable.cpp:
+    complete
+    .rodata start:0x020e692c end:0x020e69ac
+
 src/Resource/ResourceMutex.cpp:
     complete
     .bss start:0x0214e4a8 end:0x0214e4c8

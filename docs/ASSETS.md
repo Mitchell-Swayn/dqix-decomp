@@ -140,6 +140,15 @@ operation, clean/invalidate the destination cache range, and return the processe
 length. Caller declarations now preserve that return type. Their vectorized
 memory-operation dependencies remain original binary code.
 
+File path handling now owns the 128-byte ASCII uppercase map at `0x020e692c`
+and the 88-byte language/archive configuration at `[0x020f0d70, 0x020f0dc8)`.
+The table maps `a` through `z` to uppercase and leaves other ASCII values intact.
+The language order is Japanese, English, French, German, Italian, Spanish;
+the source layout carries six strings, revision metadata, pointers, `ARC`,
+`arc:/`, and `<LG>`. The 24-byte startup routine at `0x020e60e0` initializes
+the revision suffix. Source files are `ASCIIUppercaseTable.cpp` and
+`FileIOConfiguration.cpp`; interior references retain explicit relocation addends.
+
 [Script.h](../include/Resource/Script.h) and
 [Script.cpp](../src/Resource/Script.cpp) reconstruct a native interpreter whose
 opcode table is supplied by each caller. Its 16-byte file header holds instruction
