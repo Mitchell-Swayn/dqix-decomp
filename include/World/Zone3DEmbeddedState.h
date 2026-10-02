@@ -49,7 +49,7 @@ struct ZoneState0840
         void Reset();
     } entries[30];
     char unknown_1b30[4];
-    int unknown_1b34, unknown_1b38, unknown_1b3c;
+    unsigned int unknown_1b34, unknown_1b38, unknown_1b3c;
     unsigned char unknown_1b40, unknown_1b41, unknown_1b42;
     char unknown_1b43;
     int unknown_1b44, unknown_1b48, unknown_1b4c, unknown_1b50, unknown_1b54;
@@ -72,6 +72,12 @@ struct ZoneState0840
     Entry* FindEntryByValue(int value);
     bool IsEntryIdentifierAvailable(const Entry* entry);
     bool RemoveEntry(Entry* entry);
+    void UpdateEntryCountTier();
+    bool ContainsStoredValue(int value);
+    int CountEntriesOfKind9();
+    int CountEntriesOfKind10();
+    unsigned char TakeFlag1b61();
+    void CopyBytesAtOffset(int offset, const void* source, unsigned int size);
 };
 struct ZoneState2664
 {
