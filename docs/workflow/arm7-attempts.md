@@ -21,3 +21,30 @@
   `a662d5c6a78e990244299926cf6862ce910a475d`. All 11 pipeline regression
   tests and six baseline-verifier tests passed. Totals: 83 C functions,
   8,108 instruction bytes, 556 literal bytes, 158,228 fallback bytes.
+
+## 2026-10-02 - thread priority, callbacks and scheduler unlocking
+
+- Priority setter `0x037fc7cc`: first ordinary-C compile matched 168 bytes.
+  Splitting into its own unit retained equality. Idle context address is
+  `0x03808fe0`, inside the already source-owned scheduler BSS.
+- Wake callback `0x037fc918` and switch-callback setter `0x037fc938`:
+  initial bodies matched apart from placement displaced by the sleep draft;
+  separate-unit validation matched all 76 bytes on its first compile.
+- Unlock `0x037fc99c`: first compile matched all 56 bytes. Lock increment was
+  inspected but not attempted: saturation leaves the return register unchanged,
+  requiring care before representing its behavior in ordinary C.
+- Sleep `0x037fc874` deferred after eight compiler invocations including two
+  editing errors and one initial linker-liveness mistake. Baseline conversion
+  `((u64)milliseconds * 33514) >> 6` emitted a 152-byte function versus native
+  164 bytes: native retains zero high-word multiply-accumulates. A named 64-bit
+  temporary and reversed multiply operands each produced identical short code.
+  An inline conversion helper with inlining disabled at the caller emitted an
+  extra out-of-line helper; enabling inlining with a generic 64-bit multiply
+  helper restored the same short code. None justified introducing opaque
+  arithmetic or changing compiler flags, so the exact three neighboring bodies
+  were split into separate units and sleep remained original binary.
+- Validation: complete standalone payload and all declared symbols match;
+  SHA-1 remains `a662d5c6a78e990244299926cf6862ce910a475d`. All 11 pipeline
+  tests and six verifier tests pass. Four functions add 280 instruction bytes
+  and 20 literal bytes, with no new storage or assembly exceptions. Totals:
+  87 C functions, 8,388 instruction bytes, 576 literals, 157,928 fallback bytes.

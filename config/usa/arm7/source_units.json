@@ -652,6 +652,68 @@
         "ARM7_Terminate": 58713320,
         "ARM7_UnlockAllMutexesLockedByContext": 58707356
       }
+    },
+    {
+      "name": "ThreadPriority",
+      "source": "config/usa/arm7/src/ThreadPriority.c",
+      "autoload": "wram",
+      "runtime_address": 58705868,
+      "payload_offset": 18920,
+      "size": 168,
+      "code_bytes": 160,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SetThreadPriority",
+      "symbols": {
+        "ARM7_SetThreadPriority": 58705868
+      },
+      "externals": {
+        "ARM7_ThreadGlobals": 58757036,
+        "ARM7_IdleThread": 58757088,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_InsertThreadGlobal": 58704376,
+        "ARM7_SwitchThread": 58704540
+      }
+    },
+    {
+      "name": "ThreadCallbacks",
+      "source": "config/usa/arm7/src/ThreadCallbacks.c",
+      "autoload": "wram",
+      "runtime_address": 58706200,
+      "payload_offset": 19252,
+      "size": 76,
+      "code_bytes": 68,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_WakeSleepingThread",
+      "symbols": {
+        "ARM7_WakeSleepingThread": 58706200,
+        "ARM7_SetThreadSwitchCallback": 58706232
+      },
+      "externals": {
+        "ARM7_ThreadGlobals": 58757036,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_MarkThreadReady": 58705784
+      }
+    },
+    {
+      "name": "ThreadSwitchUnlock",
+      "source": "config/usa/arm7/src/ThreadSwitchUnlock.c",
+      "autoload": "wram",
+      "runtime_address": 58706332,
+      "payload_offset": 19384,
+      "size": 56,
+      "code_bytes": 52,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_UnlockThreadSwitch",
+      "symbols": {
+        "ARM7_UnlockThreadSwitch": 58706332
+      },
+      "externals": {
+        "ARM7_ThreadGlobals": 58757036,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952
+      }
     }
   ]
 }

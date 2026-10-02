@@ -1,11 +1,11 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **83 C
-functions: 8,108 instruction bytes plus 556 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **87 C
+functions: 8,388 instruction bytes plus 576 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
 864 bytes of standalone diagnostic data and 696 bytes of BSS now have source
-definitions. The other 158,228 payload bytes
+definitions. The other 157,928 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -19,10 +19,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 8,108 / 556 bytes |
+| Reconstructed C instructions / compiler literal pools | 8,388 / 576 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 864 / 120 bytes |
 | Reconstructed BSS / total autoload BSS | 696 / 22,744 bytes |
-| Binary fallback | 158,228 bytes |
+| Binary fallback | 157,928 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -319,9 +319,26 @@ bytes and 20 literal bytes. Normal return enters exit with argument zero; an
 optional exit stack rebuilds the frame before dispatch. The exit callback is
 cleared before calling it. Teardown releases owned mutexes, removes blocked and
 global-list membership, marks the thread terminated, wakes completion waiters,
-and switches away. Register-frame operations, switch-lock helpers and the final
+and switches away. Register-frame operations, the switch-lock increment helper and the final
 termination routine remain explicit binary dependencies; list, wakeup, mutex
 and scheduler calls already have source-owned implementations.
+
+`src/ThreadPriority.c` reconstructs `[0x037fc7cc, 0x037fc874)` (payload
+`[0x49e8, 0x4a90)`): 160 instruction bytes and eight literal bytes. It rejects
+missing threads and the idle context, reinserts a changed priority into the
+ordered global list, and invokes scheduling under IRQ protection. Its idle-thread
+symbol is an address alias into existing thread-global BSS, not new storage.
+
+`src/ThreadCallbacks.c` reconstructs `[0x037fc918, 0x037fc964)` (payload
+`[0x4b34, 0x4b80)`): 68 instruction bytes and eight literal bytes for the alarm
+wakeup callback and IRQ-protected switch-callback replacement. Wakeup clears both
+the caller's wait slot and the thread's sleep-alarm pointer before marking ready.
+The sleep wrapper itself remains binary-owned pending multiplication matching.
+
+`src/ThreadSwitchUnlock.c` reconstructs `[0x037fc99c, 0x037fc9d4)` (payload
+`[0x4bb8, 0x4bf0)`): 52 instruction bytes and four literal bytes. It decrements a
+nonzero scheduler lock count under IRQ protection and returns the previous count,
+or zero when already unlocked. The lock-increment routine remains binary-owned.
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C
