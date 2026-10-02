@@ -1,22 +1,11 @@
 #include "System/Mutex.h"
 #include "System/RuntimeStream.h"
+#include "System/RuntimeState.h"
 #pragma optimize_for_size off
 #pragma dont_inline on
 
-typedef void (*RuntimeExitHandler)();
-struct RuntimeExitState {
-    RuntimeExitHandler lateHandler;
-    RuntimeExitHandler earlyHandler;
-    // Reload the shared callback stack count at each original access.
-    volatile int handlerCount;
-    int aborting;
-};
-extern RuntimeExitState data_020f2e60;
 // Keep the handler fetch before publishing the decremented callback count.
-extern RuntimeExitHandler volatile data_020f2e70[];
 extern Mutex data_020f2fb8;
-extern unsigned int data_020f2f70[];
-extern unsigned int data_020f2f94[];
 extern "C" int func_02003ddc(int);
 extern "C" void func_0200edf4();
 extern "C" void func_0200f368();

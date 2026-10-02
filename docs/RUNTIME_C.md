@@ -1,6 +1,17 @@
 # Matched C runtime primitives
 
-Seven source units reconstruct twelve USA ARM9 runtime functions:
+The first runtime milestone reconstructed twelve USA ARM9 functions in seven
+units (table below). Subsequent memory, text, stream, termination and conversion
+batches are recorded in [runtime attempts](workflow/runtime-attempts.md).
+
+The exit state and 64-slot callback allocation, nine owner/count bookkeeping
+slots, seven signal callbacks, and destructor-list head now have typed BSS
+definitions in `RuntimeExitState.cpp`, `RuntimeLockBookkeeping.cpp`,
+`RuntimeSignalState.cpp`, and `RuntimeDestructorState.cpp`. They cover 376 bytes
+at `[0x020f2e60, 0x020f2fb8)` and `[0x020f3394, 0x020f33b4)` and match their
+complete linked symbol ranges. The shared declarations in `RuntimeState.h`
+preserve caller code exactly. Callback allocation size does not by itself
+establish registration policy; mutex objects and other globals remain fallback.
 
 | Source | Range | Functions | Report code bytes |
 | --- | --- | --- | ---: |

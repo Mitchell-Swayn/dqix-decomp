@@ -627,6 +627,22 @@ src/System/RuntimeExit.cpp:
     complete
     .text start:0x02001578 end:0x02001710
 
+src/System/RuntimeExitState.cpp:
+    complete
+    .bss start:0x020f2e60 end:0x020f2f70
+
+src/System/RuntimeLockBookkeeping.cpp:
+    complete
+    .bss start:0x020f2f70 end:0x020f2fb8
+
+src/System/RuntimeSignalState.cpp:
+    complete
+    .bss start:0x020f3394 end:0x020f33b0
+
+src/System/RuntimeDestructorState.cpp:
+    complete
+    .bss start:0x020f33b0 end:0x020f33b4
+
 src/System/RuntimeWideConversion.cpp:
     complete
     .text start:0x020019ac end:0x02001a40

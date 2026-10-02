@@ -1,11 +1,8 @@
 #include "System/Mutex.h"
+#include "System/RuntimeState.h"
 #pragma optimize_for_size off
 
-typedef void (*RuntimeSignalHandler)(int);
 extern Mutex data_020f3060;
-extern unsigned int data_020f2f70[];
-extern unsigned int data_020f2f94[];
-extern RuntimeSignalHandler data_020f3394[];
 extern "C" void func_0200159c(int);
 
 extern "C" int func_02003ddc(int signal)
