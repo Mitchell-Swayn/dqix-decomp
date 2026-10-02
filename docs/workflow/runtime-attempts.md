@@ -696,3 +696,23 @@ The existing disabled initializer at020c6d7c..020c6e48 was isolated. It emits
 allocation/scheduling. A volatile declaration probe did not change the result
 and was removed (two comparisons). The original disabled draft remains; no
 source mapping or coverage was accepted. Draft in build/GamecardBusInitialize-deferred.cpp.
+
+## C-locale auxiliary descriptor and table (Luna, 2026-10-02)
+
+Based on `6d91bad`. The locale initializer at `0x020eed28` already points to
+the 16-byte auxiliary record at `0x020eecec`; the record's final word has a
+configured load relocation to the 192-byte table at `0x020eee30`. The descriptor
+contains observed words `32`, `110`, and `0`, followed by that pointer. Its
+first three meanings remain unknown. The table is now declared as 96
+16-bit entries; its values reorder the ASCII-range weights, consistent with the
+earlier collation-table hypothesis, though no runtime use was identified, so
+the symbol names remain neutral.
+
+The descriptor and table both match at 100% objdiff. The locale text unit now
+owns the adjacent table at its end, and the descriptor has its own source unit.
+Symbol extents are explicit at 16 and 192 bytes; original section, addresses,
+initialized values and relocation targets are unchanged. Matched data increased
+by 208 bytes; function/code totals and denominators did not change. Full module,
+symbol, ARM7, ROM, and USA SHA-1 checks passed (`c7c3014c237900c8281289b8bc76a781969b6278`).
+The measured batch window was 93.0 seconds. Logs remain under ignored
+`build/luna-runtime-data-acceptance.log` and `build/matching/`.

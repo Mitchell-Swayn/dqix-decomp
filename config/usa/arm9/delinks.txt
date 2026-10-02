@@ -971,7 +971,11 @@ src/System/RuntimeLocaleTime.cpp:
 
 src/System/RuntimeLocaleTimeText.cpp:
     complete
-    .data start:0x020eed34 end:0x020eee30
+    .data start:0x020eed34 end:0x020eeef0
+
+src/System/RuntimeLocaleAuxiliary.cpp:
+    complete
+    .data start:0x020eecec end:0x020eecfc
 
 src/System/RuntimeRandom.cpp:
     complete

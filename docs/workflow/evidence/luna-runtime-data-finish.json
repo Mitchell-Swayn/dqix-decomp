@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "luna-runtime-data",
+  "snapshot": {
+    "utc": "2026-10-02T12:28:49.891927+00:00",
+    "revision": "6d91baddac6a7324bae2fb604ccdfa21cba8ba88",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 212188,
+      "matched_data": 48272,
+      "matched_functions": 1558
+    },
+    "arm7": {
+      "source_functions": 265,
+      "source_code_bytes": 22912,
+      "source_literal_pool_bytes": 1588,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 141924,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "b7f53924c406c8a65947895170990c39610069b30c6d4640430abd61e3bae112",
+    "arm7_report_sha256": "6f3aaf4f9b7392fa38ff6c7504a2202e44c4c00ffb6122d9dae61b1d89e761f4",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Typed the locale auxiliary descriptor and its 96-entry 16-bit initialized table from the observed relocation chain; both data units match exactly. See runtime-attempts.md.",
+  "attempts": 0,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 0,
+      "matched_data": 208,
+      "matched_functions": 0
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 93.048668
+}
