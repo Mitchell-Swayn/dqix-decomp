@@ -570,3 +570,16 @@
   units and new I/O code. No duplicate differently typed global-pointer alias added.
 - Three functions add 440 instruction and 36 literal bytes, no data or BSS.
 - Validation: integrated full payload and symbols match, including every changed-header consumer; all 11 pipeline and six verifier tests pass.
+
+## 2026-10-02 - backup comparison and erase operations
+
+- Comparison and chip erase matched first compile. Sector/subsector erase variant
+  one had 22 combined register-byte differences. An inline alignment-remainder
+  helper fixed the saved-register choices, leaving four operand-allocation bytes.
+  Reversing the helper AND operands reproduced those choices on variant three.
+- The request prefix now includes the observed sector/subsector sizes and chip,
+  sector and subsector delay/timeout pairs. Unknown intervening fields remain
+  uninterpreted. Commands 0xd8 and 0x20 and their alignment/step behavior support
+  the sector/subsector names; chip command data remains an explicit dependency.
+- Four functions add 504 instruction and 44 literal bytes, no data or BSS.
+- Validation: full payload, linked symbols and all changed-header consumers match; all 11 pipeline and six verifier tests pass.

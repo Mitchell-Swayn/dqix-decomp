@@ -2064,6 +2064,35 @@
         "ARM7_ReadBackupByte": 58732476,
         "ARM7_WriteBackupByte": 58732540
       }
+    },
+    {
+      "name": "BackupErase",
+      "source": "config/usa/arm7/src/BackupErase.c",
+      "autoload": "wram",
+      "runtime_address": 58733496,
+      "payload_offset": 46548,
+      "size": 548,
+      "code_bytes": 504,
+      "literal_pool_bytes": 44,
+      "entry": "ARM7_CompareBackup",
+      "symbols": {
+        "ARM7_CompareBackup": 58733496,
+        "ARM7_EraseBackupSectors": 58733640,
+        "ARM7_EraseBackupSubsectors": 58733796,
+        "ARM7_EraseBackupChip": 58733952
+      },
+      "externals": {
+        "ARM7_BackupWorker": 58763648,
+        "ARM7_CheckBackupReady": 58732284,
+        "ARM7_EnableBackupWrites": 58732720,
+        "ARM7_SendBackupAddress": 58732772,
+        "ARM7_WaitBackupReady": 58732036,
+        "ARM7_BackupCommandState": 58765184,
+        "ARM7_TransferBackupBytes": 58732344,
+        "ARM7_CompareBackupByte": 58732620,
+        "ARM7_WriteBackupByte": 58732540,
+        "ARM7_BackupChipEraseCommand": 58754296
+      }
     }
   ]
 }
