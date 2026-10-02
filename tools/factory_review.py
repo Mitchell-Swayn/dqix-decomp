@@ -73,8 +73,10 @@ def _kill_tree(process):
 def _process(command, cwd, deadline, stdout, stderr, prompt=None):
     # Native executables only, no shell or batch interpolation of submission text.
     timeout = _remaining(deadline)
+    env = os.environ.copy()
+    env["PYTHONDONTWRITEBYTECODE"] = "1"
     process = subprocess.Popen(command, cwd=cwd, stdin=subprocess.PIPE if prompt else subprocess.DEVNULL,
-                               stdout=stdout, stderr=stderr, text=True, encoding="utf-8", **_hidden())
+                               stdout=stdout, stderr=stderr, text=True, encoding="utf-8", env=env, **_hidden())
     try:
         process.communicate(input=prompt, timeout=timeout)
     except subprocess.TimeoutExpired as error:
@@ -139,7 +141,24 @@ def _log_command(context, label, command, cwd, prompt=None):
         record["returncode"] = _process(record["command"], cwd, context["deadline"], out, err, prompt)
     if record["returncode"]:
         raise ValueError(f"{label} exited {record['returncode']}; see {stdout}")
+    if label.endswith("configure"):
+        tool = "objdiff-cli.exe" if os.name == "nt" else "objdiff-cli"
+        pin_preinstalled_objdiff(Path(cwd), context["tool_hashes"][tool])
     return stdout
+
+
+def pin_preinstalled_objdiff(source, expected_hash):
+    """Use the independently copied, hash-pinned tool; never download over it."""
+    tool = "objdiff-cli.exe" if os.name == "nt" else "objdiff-cli"
+    if _digest(source / tool) != expected_hash:
+        raise ValueError("Preinstalled objdiff tool hash mismatch")
+    path = source / "build.ninja"
+    text = path.read_text(encoding="utf-8")
+    pattern = r"(?m)^(build (?:\.\\|\./)?objdiff-cli(?:\.exe)?: )download_tool[ \t]*$"
+    text, replacements = re.subn(pattern, r"\1phony", text)
+    if replacements != 1:
+        raise ValueError("Expected exactly one pinned objdiff download edge")
+    path.write_text(text, encoding="utf-8")
 
 
 def _new_worktree(context, name):
@@ -226,8 +245,10 @@ def _check_integrity(context, source, inventory):
         raise ValueError("Reviewer changed HEAD")
     if _git(source, "status", "--porcelain", "--untracked-files=no"):
         raise ValueError("Reviewer changed tracked source or index")
-    if _inventory(source) != inventory:
-        raise ValueError("Reviewer changed source/tools or wrote outside permitted generated paths")
+    current = _inventory(source)
+    if current != inventory:
+        changes = [key for key in sorted(current.keys() | inventory.keys()) if current.get(key) != inventory.get(key)]
+        raise ValueError("Reviewer changed protected files: " + ", ".join(changes[:20]))
     rom = source / "extract/baserom_dqix_usa.nds"
     if _linked(rom) or rom.stat().st_nlink != 1 or _digest(rom, "sha1") != USA_SHA1:
         raise ValueError("Reviewer modified or linked original ROM input")
@@ -449,7 +470,7 @@ def run_review(root, submission, backend, output_dir, model=MODEL):
             result["evidence"].append("Trusted fresh configure + ninja rom check report sha1 passed; "
                                       "USA ROM SHA-1 " + USA_SHA1)
     except (OSError, ValueError, TypeError, KeyError, TimeoutError, subprocess.SubprocessError) as error:
-        result = {"verdict": "changes_requested", "source_tip": submission["source_tip"],
+        result = {"verdict": "infrastructure_blocked", "source_tip": submission["source_tip"],
                   "base_revision": submission["base_revision"], "findings": [str(error)], "evidence": []}
     finally:
         manifest = {"submission": submission, "model": model, "result": result,

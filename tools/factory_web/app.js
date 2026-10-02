@@ -4,13 +4,13 @@
  const el = (tag, cls, text) => {const e=document.createElement(tag); e.className=cls||""; if(text!==undefined)e.textContent=text; return e;};
  let state, filter="all", error="", busy=false; const opened=new Set();
  const age = value => {const t=Date.parse(value); if(!Number.isFinite(t))return "Not reported"; const s=Math.max(0,(Date.now()-t)/1000); return s<60?"Just now":s<3600?Math.floor(s/60)+"m ago":s<86400?Math.floor(s/3600)+"h ago":Math.floor(s/86400)+"d ago";};
- const labels={pending:"Queued for review",review:"Awaiting review",reviewing:"In review",approved:"Ready to integrate",integrating:"Integrating",accepted:"Accepted",changes_requested:"Needs fixes",blocked:"Blocked",running:"Working",idle:"Idle",stale:"Signal stale",unknown:"Unknown",deferred:"Deferred"};
+ const labels={pending:"Queued for review",review:"Awaiting review",reviewing:"In review",approved:"Ready to integrate",integrating:"Integrating",accepted:"Accepted",changes_requested:"Needs fixes",blocked:"Blocked",infrastructure_blocked:"Infrastructure blocked",running:"Working",idle:"Idle",stale:"Signal stale",unknown:"Unknown",deferred:"Deferred"};
  function rowData(w){
   const sub=arr(state.pipeline?.submissions).filter(s=>s.lane===w.id).at(-1);
   const role=w.id.includes("reviewer")?"Reviewer":w.id.includes("integrator")?"Integrator":w.id.includes("coordinator")?"Coordinator":"Reconstruction";
   const raw=w.status||"unknown", status=sub&&!["running","working"].includes(raw)?sub.status:raw;
   const signal=Date.parse(w.updated_at), stale=(role!=="Reconstruction"||raw==="running")&&(!Number.isFinite(signal)||Date.now()-signal>180000);
-  const category=stale||["blocked","changes_requested","failed","error","unknown","deferred"].includes(status)?"attention":["running","working"].includes(raw)?"active":"waiting";
+  const category=stale||["infrastructure_blocked","blocked","changes_requested","failed","error","unknown","deferred"].includes(status)?"attention":["running","working"].includes(raw)?"active":"waiting";
   const task=sub&&role==="Reconstruction"?`${sub.module} / ${sub.commits?.length||0} commits / ${sub.source_tip?.slice(0,8)||""}`:w.task||"No task reported";
   return {w,sub,role,status,category,task,stale};
  }
@@ -37,7 +37,7 @@
  }
  function render(){
   const pc=state.pipeline?.counts||{}, fc=state.fleet?.counts||{};
-  const metrics=[[fc.running,"Reconstructing"],[pc.pending,"Queued for review"],[pc.reviewing,"In review"],[pc.integrating,"Integrating"],[(pc.changes_requested||0)+(pc.blocked||0),"Needs attention"],[pc.accepted,"Accepted batches"]];
+  const metrics=[[fc.running,"Reconstructing"],[pc.pending,"Queued for review"],[pc.reviewing,"In review"],[pc.integrating,"Integrating"],[(pc.changes_requested||0)+(pc.blocked||0)+(pc.infrastructure_blocked||0),"Needs attention"],[pc.accepted,"Accepted batches"]];
   $("overview").replaceChildren(...metrics.map(([v,k])=>{const e=el("div","metric");e.append(el("strong","",n(v)),el("span","",k));return e;}));
   $("mode").textContent=state.pipeline?.stopping?"Review pipeline draining":state.fleet?.stopping?"Reconstruction paused / Review pipeline active":"Agent and pipeline overview";
   renderAgents();

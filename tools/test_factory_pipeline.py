@@ -55,6 +55,20 @@ class PipelineTests(unittest.TestCase):
         finally:
             pipe.pool.shutdown()
 
+    def test_infrastructure_failure_never_routes_source_feedback_or_ack(self):
+        pipe = Pipeline(self.root, {})
+        try:
+            with patch("factory_pipeline.feedback") as feedback, patch("factory_pipeline.acknowledge") as ack:
+                sub = dict(self.sub)
+                pipe.resolve(sub, dict(verdict="infrastructure_blocked", findings=["tool failed"]), "review")
+                self.assertEqual(sub["status"], "infrastructure_blocked")
+                pipe.resolve(sub, dict(status="infrastructure_blocked", error="baseline failed"), "integration")
+                self.assertEqual(sub["status"], "infrastructure_blocked")
+                feedback.assert_not_called()
+                ack.assert_not_called()
+        finally:
+            pipe.pool.shutdown()
+
     def test_discovery_ignores_running_and_duplicates(self):
         state = dict(submissions=[], lane_bases={'fleet_ov000': self.base})
         worker = dict(id='fleet_ov000', worktree=str(self.root), status='running', pid=None,

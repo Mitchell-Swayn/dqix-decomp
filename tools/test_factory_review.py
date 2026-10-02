@@ -181,16 +181,16 @@ class ReviewTests(unittest.TestCase):
         record = json.loads((self.root / "build/run/review-result.json").read_text())
         self.assertEqual(record["verification"]["rom_sha1"], review.USA_SHA1)
         result, calls = self.mocked_run(verifier=lambda ctx: (_ for _ in ()).throw(ValueError("ROM checks failed")))
-        self.assertEqual(result["verdict"], "changes_requested")
+        self.assertEqual(result["verdict"], "infrastructure_blocked")
         self.assertEqual(calls, 1)
         self.assertIn("ROM checks failed", result["findings"])
 
     def test_dirty_source_and_native_nonzero_block_even_model_approval(self):
         result, calls = self.mocked_run(integrity=ValueError("Reviewer changed tracked source"))
-        self.assertEqual(result["verdict"], "changes_requested")
+        self.assertEqual(result["verdict"], "infrastructure_blocked")
         self.assertEqual(calls, 0)
         result, calls = self.mocked_run(native_error=ValueError("codex exited 1"))
-        self.assertEqual(result["verdict"], "changes_requested")
+        self.assertEqual(result["verdict"], "infrastructure_blocked")
         self.assertEqual(calls, 0)
 
     def test_model_rejection_does_not_run_acceptance(self):
@@ -209,6 +209,26 @@ class ReviewTests(unittest.TestCase):
             with self.assertRaises(TimeoutError):
                 review._process(["native-mock"], self.root, time.monotonic() - 1, None, None)
             spawn.assert_not_called()
+
+    def test_native_children_disable_python_cache_writes(self):
+        process = MagicMock()
+        process.returncode = 0
+        with patch.object(review.subprocess, "Popen", return_value=process) as spawn:
+            review._process(["native-mock"], self.root, time.monotonic()+10, None, None)
+        self.assertEqual(spawn.call_args.kwargs["env"]["PYTHONDONTWRITEBYTECODE"], "1")
+
+    def test_pinned_objdiff_replaces_only_its_download_edge(self):
+        tool = "objdiff-cli.exe" if review.os.name == "nt" else "objdiff-cli"
+        (self.root / tool).write_bytes(b"pinned executable")
+        expected = review._digest(self.root / tool)
+        path = self.root / "build.ninja"
+        path.write_text("build ./"+tool+": download_tool\n  tool = objdiff\nbuild other: download_tool\n")
+        review.pin_preinstalled_objdiff(self.root, expected)
+        self.assertIn("build ./"+tool+": phony", path.read_text())
+        self.assertIn("build other: download_tool", path.read_text())
+        (self.root / tool).write_bytes(b"tampered")
+        with self.assertRaisesRegex(ValueError, "hash mismatch"):
+            review.pin_preinstalled_objdiff(self.root, expected)
 
     def test_inventory_detects_source_tools_and_nonbuild_writes(self):
         source = self.root / "checkout"

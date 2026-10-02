@@ -181,6 +181,8 @@ class Pipeline:
             if (result.get('verdict') == 'approved' and result.get('source_tip') == submission['source_tip']
                     and result.get('base_revision') == submission['base_revision'] and not result.get('findings')):
                 submission['status'] = 'approved'
+            elif result.get('verdict') == 'infrastructure_blocked':
+                submission['status'] = 'infrastructure_blocked'
             elif result.get('verdict') == 'changes_requested':
                 submission['status'] = 'changes_requested'
                 feedback(submission, result)
@@ -190,7 +192,9 @@ class Pipeline:
         else:
             submission['integration'] = result
             status = result.get('status')
-            if status in ('accepted', 'integrated'):
+            if status == 'infrastructure_blocked':
+                submission['status'] = 'infrastructure_blocked'
+            elif status in ('accepted', 'integrated'):
                 submission['status'] = 'accepted'
                 self.state['lane_bases'][submission['lane']] = submission['source_tip']
                 self.state['accepted'].append(dict(submission=submission['id'], result=result, utc=utc()))
@@ -210,14 +214,14 @@ class Pipeline:
                 try:
                     self.resolve(submission, future.result(), 'review')
                 except Exception as error:
-                    submission.update(status='blocked', error=str(error))
+                    submission.update(status='infrastructure_blocked', error=str(error))
                 del self.reviews[lane]
         if self.integration and self.integration[0].done():
             future, submission = self.integration
             try:
                 self.resolve(submission, future.result(), 'integration')
             except Exception as error:
-                submission.update(status='blocked', error=str(error))
+                submission.update(status='infrastructure_blocked', error=str(error))
             self.integration = None
         if not self.stop.exists():
             discover(self.root, self.fleet, self.state)
@@ -252,7 +256,7 @@ class Pipeline:
         self.state.update(heartbeat_utc=utc(), supervisor_pid=os.getpid(), started_utc=self.started,
                           stopping=self.stop.exists(), role_capacity=dict(reconstruction=18, review=4, integration=1, coordinator=1))
         self.state['counts'] = {status: sum(s['status'] == status for s in self.state['submissions'])
-                                for status in ('pending', 'reviewing', 'approved', 'integrating', 'accepted', 'changes_requested', 'blocked')}
+                                for status in ('pending', 'reviewing', 'approved', 'integrating', 'accepted', 'changes_requested', 'blocked', 'infrastructure_blocked')}
         atomic_json(self.path, self.state)
         if time.monotonic() - self.last_publish < 10:
             return
