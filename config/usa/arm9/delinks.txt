@@ -1001,6 +1001,14 @@ src/World/ZoneState0840Lookup.cpp:
     complete
     .text start:0x0209854c end:0x02098630
 
+src/World/ZoneState0840EntryManagement.cpp:
+    complete
+    .text start:0x0209890c end:0x020989cc
+
+src/World/ZoneState0840EntryReset.cpp:
+    complete
+    .text start:0x02098364 end:0x020984ac
+
 src/World/ZoneState0840Reset.cpp:
     complete
     .text start:0x020982b4 end:0x02098364

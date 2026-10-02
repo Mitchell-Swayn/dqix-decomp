@@ -9,7 +9,8 @@ struct ZoneState0840
 {
     struct Entry
     {
-        char unknown_0[12];
+        char unknown_0[11];
+        struct ByteFlags { unsigned char low : 7, high : 1; } byteFlags;
         struct Flags
         {
             unsigned int low : 4;
@@ -27,7 +28,25 @@ struct ZoneState0840
             unsigned int value : 30;
         } value;
         unsigned char identifier[6];
-        char unknown_1a[0xe8 - 0x1a];
+        unsigned short unknown_1a[14];
+        char unknown_36[2];
+        int unknown_38[6];
+        unsigned short unknown_50[14];
+        struct Parameters6c
+        {
+            unsigned int unknown0 : 12, unknown12 : 4, unknown16 : 5;
+            unsigned int unknown21 : 4, unknown25 : 1, unknown26 : 1;
+            unsigned int unknown27 : 1, unknown28 : 1, unknown29 : 1;
+            unsigned int unknown30 : 1, unknown31 : 1;
+        } parameters6c;
+        struct Parameters70
+        {
+            unsigned int unknown0 : 9, unknown9 : 10, unknown19 : 11;
+            unsigned int unknown30 : 1, unknown31 : 1;
+        } parameters70;
+        unsigned char unknown_74;
+        char unknown_75[0xe8 - 0x75];
+        void Reset();
     } entries[30];
     char unknown_1b30[4];
     int unknown_1b34, unknown_1b38, unknown_1b3c;
@@ -51,6 +70,8 @@ struct ZoneState0840
     Entry* FindEntryByState(int state);
     Entry* FindEntryByIdentifier(const void* identifier);
     Entry* FindEntryByValue(int value);
+    bool IsEntryIdentifierAvailable(const Entry* entry);
+    bool RemoveEntry(Entry* entry);
 };
 struct ZoneState2664
 {

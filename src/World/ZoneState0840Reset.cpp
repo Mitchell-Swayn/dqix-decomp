@@ -1,7 +1,5 @@
 #include "World/Zone3DEmbeddedState.h"
 
-extern "C" void func_02098364(void*);
-
 void ZoneState0840::Reset()
 {
     unknown_1b34 = 0;
@@ -22,7 +20,7 @@ void ZoneState0840::Reset()
     unknown_1b58 = 0;
     unknown_1b5c = 0;
     Entry* entry = entries;
-    for (int i = 0; i < 30; ++i, ++entry) func_02098364(entry);
+    for (int i = 0; i < 30; ++i, ++entry) entry->Reset();
     for (int i = 0; i < 3; ++i) unknown_1b68[i] = -1;
     unknown_1b74 = 0;
 }
