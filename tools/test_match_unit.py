@@ -20,10 +20,10 @@ MATCHED = {"left": {"sections": [{"name": ".text", "symbols": [
     {"symbol": {"name": "rand", "size": "52", "flags": 1},
      "instructions": [{"instruction": {"size": 4, "formatted": "ldr r2, [pc, #0x20]"},
                        "arg_diff": [{}, {}, {}]}],
-     "match_percent": 100.0, "target": {"section_index": 1}}]}]},
+     "match_percent": 100.0, "target": {"section_index": 0, "symbol_index": 0}}]}]},
     "right": {"sections": [{"name": ".text", "symbols": [
         {"symbol": {"name": "rand", "size": "52", "flags": 1},
-         "match_percent": 100.0, "target": {"section_index": 1}}]}]}}
+         "match_percent": 100.0, "target": {"section_index": 0, "symbol_index": 1}}]}]}}
 
 
 class SelectionTests(unittest.TestCase):

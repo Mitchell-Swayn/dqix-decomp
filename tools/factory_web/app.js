@@ -3,7 +3,7 @@
 (() => {
   const POLL_MS = 5000;
   const SNAPSHOT_STALE_MS = 30000;
-  const HEARTBEAT_STALE_MS = 120000;
+  const HEARTBEAT_STALE_MS = 180000;
   const ACTIVITY_QUIET_MS = 300000;
   const numberFormat = new Intl.NumberFormat("en-US");
   let state = null;
