@@ -527,7 +527,7 @@ src/World/Zone3DAtmosphereLoading.cpp:
 
 src/World/Zone3DPaths.cpp:
     complete
-    .data start:0x020ef0f0 end:0x020ef260
+    .data start:0x020ef0f0 end:0x020ef274
 
 src/System/MatrixView.cpp:
     complete
@@ -757,6 +757,11 @@ src/World/ZoneTileDefaults.cpp:
 src/World/BMDJState.cpp:
     complete
     .text start:0x02013380 end:0x020133cc
+
+src/World/Zone3DInstanceRules.cpp:
+    complete
+    .text start:0x0201b868 end:0x0201ba68
+    .rodata start:0x020e6ea8 end:0x020e6ed0
 
 src/World/Zone3DInstanceOverrides.cpp:
     complete

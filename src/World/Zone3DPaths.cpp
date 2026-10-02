@@ -38,4 +38,6 @@ Zone3DPathStrings gZone3DPaths =
     "T00GDS03.nsbmd",
     "T00GDS04.nsbmd",
     "T00GDS01.nsbmd",
+    "T00GDS02.nsbmd",
+    "F01A",
 };

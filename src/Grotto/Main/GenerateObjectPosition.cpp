@@ -1,3 +1,4 @@
+#include "World/Zone3DPaths.h"
 #include <globaldefs.h>
 #include "Grotto/Main/TileFeatures.h"
 #include "World/Zone3D.h"
@@ -7,7 +8,6 @@
 #ifdef jpn
 #define data_020e6f00 data_020e77a4
 
-#define data_020ef26f data_020ef1ab
 #define data_020ef274 data_020ef1b0
 #define data_020ef279 data_020ef1b5
 #define data_020ef27e data_020ef1ba
@@ -39,7 +39,7 @@ struct RelativePosition
     fix32_t y;
 };
 
-extern const char data_020ef26f[], data_020ef274[], data_020ef279[], data_020ef27e[], 
+extern const char data_020ef274[], data_020ef279[], data_020ef27e[],
     data_020ef283[], data_020ef288[], data_020ef28d[], data_020ef292[],
     data_020ef297[], data_020ef29c[], data_020ef2a1[], data_020ef2a6[],
     data_020ef2ab[], data_020ef2b0[], data_020ef2b5[];
@@ -72,7 +72,7 @@ int Zone3D::ComputeGrottoTileTypes(int floor, ZoneFeatures *featuresArg, TileFea
             {
             case 0xff:
                 tileType = 12;
-                sprintf(tileName, data_020ef26f);
+                sprintf(tileName, gZone3DPaths.zoneF01A);
                 break;
             case 0xbb: case 0xee:
                 tileType = 3;

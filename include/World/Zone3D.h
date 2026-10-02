@@ -184,6 +184,9 @@ public:
     void ApplyBMDJFlag4Overrides(bool alternate);
     void RestoreBMDJFlag4Overrides();
     Zone3D_BMDJStruct* GetBMDJGroupAtIndex(int index);
+    bool IsZoneInRuleList(int zoneID);
+    void UpdateZone170cInstances(bool first, bool second, bool alternate);
+    void RequestBMDJObjectStateReset(int groupID, int instanceID);
     void RecordBMDJFlag4State();
     void RestoreBMDJFlag4State();
     void ApplyType2InstanceFlags();

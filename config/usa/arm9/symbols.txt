@@ -510,9 +510,9 @@ _ZN6Zone3D16FindBMDJInstanceEit kind:function(arm,size=0x78) addr:0x0201b600
 _ZN6Zone3D24FindNearestType10FeatureEPK8Vector3i kind:function(arm,size=0xdc) addr:0x0201b678
 _ZN6Zone3D17FindType10FeatureEt kind:function(arm,size=0x38) addr:0x0201b754
 _ZN6Zone3D24FindNearestType11FeatureEPK8Vector3i kind:function(arm,size=0xdc) addr:0x0201b78c
-func_0201b868 kind:function(arm,size=0x60) addr:0x0201b868
-func_0201b8c8 kind:function(arm,size=0x154) addr:0x0201b8c8
-func_0201ba1c kind:function(arm,size=0x4c) addr:0x0201ba1c
+_ZN6Zone3D16IsZoneInRuleListEi kind:function(arm,size=0x60) addr:0x0201b868
+_ZN6Zone3D23UpdateZone170cInstancesEbbb kind:function(arm,size=0x154) addr:0x0201b8c8
+_ZN6Zone3D27RequestBMDJObjectStateResetEii kind:function(arm,size=0x4c) addr:0x0201ba1c
 func_0201ba68 kind:function(arm,size=0x110) addr:0x0201ba68
 func_0201bb78 kind:function(arm,size=0x104) addr:0x0201bb78
 func_0201bc7c kind:function(arm,size=0xc) addr:0x0201bc7c
@@ -6246,7 +6246,8 @@ data_020e6e56 kind:data(any) addr:0x020e6e56
 data_020e6e64 kind:data(any) addr:0x020e6e64
 gType2FeatureSounds kind:data(any) addr:0x020e6e74
 data_020e6e88 kind:data(any) addr:0x020e6e88
-data_020e6ea8 kind:data(any) addr:0x020e6ea8
+gZoneRuleList kind:data(any) addr:0x020e6ea8
+data_020e6ed0 kind:data(any) addr:0x020e6ed0
 data_020e6f00 kind:data(any) addr:0x020e6f00
 data_020e6f04 kind:data(any) addr:0x020e6f04
 data_020e6f48 kind:data(any) addr:0x020e6f48
@@ -6648,8 +6649,6 @@ data_020ef0ca kind:data(any) addr:0x020ef0ca
 data_020ef0dc kind:data(any) addr:0x020ef0dc
 data_020ef0e8 kind:data(any) addr:0x020ef0e8
 gZone3DPaths kind:data(any) addr:0x020ef0f0
-data_020ef260 kind:data(any) addr:0x020ef260
-data_020ef26f kind:data(any) addr:0x020ef26f
 data_020ef274 kind:data(any) addr:0x020ef274
 data_020ef279 kind:data(any) addr:0x020ef279
 data_020ef27e kind:data(any) addr:0x020ef27e

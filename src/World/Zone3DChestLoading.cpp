@@ -4,8 +4,6 @@
 #include "Filesystem/FileIO.h"
 #include "std_library_functions.h"
 
-extern char data_020ef260[]; // T00GDS02.nsbmd, adjacent to the recovered path pool.
-
 void Zone3D::LoadChestModels(SafeAllocator* temporaryAllocator)
 {
     unsigned int vramState[10];
@@ -34,7 +32,7 @@ void Zone3D::LoadChestModels(SafeAllocator* temporaryAllocator)
     sprintf(path, gZone3DPaths.archivePath, gZone3DPaths.dungeonModel01);
     raw = LoadFileIntoNewAllocation(path, *temporaryAllocator, &length);
     if (raw) models_498_[0].SetAndProcessRawFile(raw, length, Model3D::TextureStagingMode_Normal);
-    sprintf(path, gZone3DPaths.archivePath, data_020ef260);
+    sprintf(path, gZone3DPaths.archivePath, gZone3DPaths.dungeonModel02);
     raw = LoadFileIntoNewAllocation(path, *temporaryAllocator, &length);
     if (raw) models_498_[1].SetAndProcessRawFile(raw, length, Model3D::TextureStagingMode_Normal);
     Model3D* mainModels[] = { &models_498_[0], &models_498_[1], NULL };

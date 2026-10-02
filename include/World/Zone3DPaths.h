@@ -40,6 +40,8 @@ struct Zone3DPathStrings
     char dungeonModel03[15];
     char dungeonModel04[15];
     char dungeonModel01[15];
+    char dungeonModel02[15];
+    char zoneF01A[5];
 };
 
 extern Zone3DPathStrings gZone3DPaths;
