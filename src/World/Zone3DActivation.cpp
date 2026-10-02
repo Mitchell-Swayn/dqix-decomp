@@ -11,8 +11,6 @@ extern "C"
     void func_02018f30(Zone3D*);
     void func_020181fc(Zone3D*);
     void func_020100f8(GameState*);
-    void func_02018ab8(Zone3D*);
-    void func_02017a94(Zone3D*);
 }
 
 bool Zone3D::ProcessPendingLoads()
@@ -56,7 +54,7 @@ bool Zone3D::ProcessPendingLoads()
     unk_830[2] = 0;
     unknown_424_ = 0;
     unk_23bc[0] = 1;
-    func_02018ab8(this);
-    func_02017a94(this);
+    ApplyType2InstanceFlags();
+    RestoreBMDJFlag4State();
     return true;
 }

@@ -733,6 +733,14 @@ src/System/RuntimeSprintf.cpp:
     complete
     .text start:0x02003ce8 end:0x02003d14
 
+src/World/Zone3DInstanceRestore.cpp:
+    complete
+    .text start:0x02017a94 end:0x02017c58
+
+src/World/Zone3DType2Features.cpp:
+    complete
+    .text start:0x02018ab8 end:0x02018c74
+
 src/World/Zone3DInstanceState.cpp:
     complete
     .text start:0x02017c58 end:0x02017d90

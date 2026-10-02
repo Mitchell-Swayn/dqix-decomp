@@ -173,6 +173,11 @@ public:
     ZoneFeatures::Opcode6aEntry* FindType10Feature(unsigned short id);
     ZoneFeatures::Opcode6aEntry* FindNearestType11Feature(const Vector3fix* point);
     void RecordBMDJFlag4State();
+    void RestoreBMDJFlag4State();
+    void ApplyType2InstanceFlags();
+    Zone3D_BMDJStruct::InstanceEntry* FindType2BMDJInstance(ZoneFeatures::Opcode6aEntry* feature);
+    int GetType2FeatureIndex(ZoneFeatures::Opcode6aEntry* feature);
+    ZoneFeatures::Opcode6aEntry* GetType2Feature(int index);
     void SetBMDJStateRequests();
     void ClearBMDJStateRequests();
     void BuildBMDJInstances(Zone3D_BMDJStruct* group, SafeAllocator* allocator);
