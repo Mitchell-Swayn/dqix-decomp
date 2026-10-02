@@ -59,3 +59,5 @@ and full ROM/module/symbol checks pass. Separate units preserve link order:
 a combined candidate matched individually but placed the smaller array first
 and failed symbol/module checks, so it was not accepted. The following matrix
 scratch array remains separate fallback storage.
+
+InverseBindScratch.cpp subsequently recovers that following allocation: 64 pairs of 4x4 and 3x3 matrices (100 bytes per pair, 6,400 BSS bytes total) at 0x0210b678..0x0210cf78. Command 9 indexes the records and uses two 32-bit validity words, agreeing with the full allocation extent. The 3x3 interior label becomes offset 0x40, and the shared declaration now records the 64-element bound. The BSS object and complete ROM/module/symbol checks pass. This data ownership does not claim command 9 itself is reconstructed.

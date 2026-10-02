@@ -7686,7 +7686,6 @@ data_0210a274 kind:bss addr:0x0210a274
 data_0210a278 kind:bss addr:0x0210a278
 data_0210b078 kind:bss addr:0x0210b078
 data_0210b678 kind:bss addr:0x0210b678
-data_0210b6b8 kind:bss addr:0x0210b6b8
 data_0210cf78 kind:bss addr:0x0210cf78
 data_0210cf7c kind:bss addr:0x0210cf7c
 data_0210cf84 kind:bss addr:0x0210cf84

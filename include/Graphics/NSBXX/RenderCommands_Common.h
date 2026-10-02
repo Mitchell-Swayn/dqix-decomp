@@ -128,7 +128,7 @@ struct Struct_0210b678
 {
     Matrix4x4 mat4x4;
     Matrix3x3 mat3x3;
-} extern data_0210b678[];
+} extern data_0210b678[64];
 
 extern "C"
 {  
