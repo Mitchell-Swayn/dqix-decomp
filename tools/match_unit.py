@@ -124,10 +124,14 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("unit", help="exact unit name in objdiff.json")
     parser.add_argument("--no-build", action="store_true", help="compare existing objects")
+    parser.add_argument("--hypothesis", help="specific source/compiler hypothesis being tested")
+    parser.add_argument("--worker", help="factory worker identifier")
+    parser.add_argument("--job", help="factory job identifier")
     args = parser.parse_args(argv)
     started = time.monotonic()
     attempt = None
     record = {"unit": args.unit, "no_build": args.no_build,
+              "hypothesis": args.hypothesis, "worker": args.worker, "job": args.job,
               "started_utc": datetime.now(timezone.utc).isoformat(), "rom_acceptance": False}
     try:
         config_path = ROOT / "objdiff.json"
@@ -141,6 +145,11 @@ def main(argv=None):
         if source:
             source_path = within(ROOT, ROOT / source)
             record.update(source_path=source, source_sha256=sha256(source_path))
+            if source_path.is_file():
+                # Preserve the candidate, not just its hash, for subsequent workers.
+                snapshot_path = attempt / ('candidate' + source_path.suffix)
+                snapshot_path.write_bytes(source_path.read_bytes())
+                record['source_snapshot'] = str(snapshot_path.relative_to(ROOT))
         if not target.is_file():
             raise ValueError(f"target object missing: {target}; configure/extract it first")
         commands = []
@@ -162,6 +171,10 @@ def main(argv=None):
         rows = summarize(json.loads((attempt / "diff.json").read_text(encoding="utf-8")))
         mismatches = [r for r in rows if r["match_percent"] < 100 or not r["paired"]]
         record.update(status="compared", symbols=len(rows), mismatches=len(mismatches), summary=rows)
+        from factory_diff import classify
+        analysis = classify(json.loads((attempt / "diff.json").read_text(encoding="utf-8")))
+        (attempt / 'diagnosis.json').write_text(json.dumps(analysis, indent=2) + '\n', encoding='utf-8')
+        record['diagnosis_path'] = str((attempt / 'diagnosis.json').relative_to(ROOT))
         print(f"{args.unit}: {len(rows) - len(mismatches)}/{len(rows)} symbols at 100%")
         for row in mismatches:
             print(f"  {row['side']} {row['section']} {row['symbol']}: {row['match_percent']:.2f}%"
