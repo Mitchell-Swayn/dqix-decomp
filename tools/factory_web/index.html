@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>DQIX Reconstruction Factory</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to dashboard</a>
+  <div class="shell">
+    <header class="masthead">
+      <div class="identity"><span class="sigil" aria-hidden="true">IX</span><div><span class="eyebrow">DRAGON QUEST · USA RECONSTRUCTION</span><h1>DQIX Reconstruction Factory</h1></div></div>
+      <div class="connection"><span id="connection" class="badge neutral"><span class="status-dot" aria-hidden="true"></span><span id="connection-text">Connecting</span></span><span id="last-refresh" class="small muted">Waiting for state</span></div>
+    </header>
+    <nav aria-label="Dashboard sections"><a href="#coverage">Coverage</a><a href="#workers">Workers</a><a href="#jobs">Queue</a><a href="#activity">Evidence</a><span class="read-only">READ ONLY · REFRESHES EVERY 5s</span></nav>
+    <main id="main">
+      <div id="notice" class="notice" role="status" hidden></div>
+      <section id="coverage" aria-labelledby="coverage-heading">
+        <div class="section-heading"><div><span class="eyebrow">INTEGRATED & ACCEPTED</span><h2 id="coverage-heading">Source coverage</h2></div><div class="revision"><span id="accepted-revision">Accepted revision unknown</span><span id="accepted-at" class="muted small">Acceptance time unknown</span></div></div>
+        <div class="coverage-grid">
+          <article class="panel metric"><div class="metric-label"><h3>ARM9 instructions</h3><span class="unit">CODE BYTES</span></div><div class="metric-main"><strong id="arm9-code-percent">Unknown</strong><span class="muted">matched</span></div><div id="arm9-code-progress" class="progress" role="progressbar" aria-label="ARM9 matched code"><span></span></div><p id="arm9-code-count" class="metric-count">Accepted code count unknown</p></article>
+          <article class="panel metric"><div class="metric-label"><h3>ARM9 functions</h3><span class="unit">FUNCTIONS</span></div><div class="metric-main"><strong id="arm9-functions-percent">Unknown</strong><span class="muted">matched</span></div><div id="arm9-functions-progress" class="progress violet" role="progressbar" aria-label="ARM9 matched functions"><span></span></div><p id="arm9-functions-count" class="metric-count">Accepted function count unknown</p></article>
+          <article class="panel metric"><div class="metric-label"><h3>ARM9 initialized data</h3><span class="unit">DATA BYTES</span></div><div class="metric-main"><strong id="arm9-data-percent">Unknown</strong><span class="muted">matched</span></div><div id="arm9-data-progress" class="progress amber" role="progressbar" aria-label="ARM9 matched data"><span></span></div><p id="arm9-data-count" class="metric-count">Accepted data count unknown</p></article>
+        </div>
+        <div class="panel arm7-panel"><div class="arm7-intro"><div class="metric-label"><h3>ARM7 source inventory</h3><span class="badge neutral">DENOMINATOR UNKNOWN</span></div><p>Distinct source counts. ARM7 completion cannot be calculated until its full code and function inventory is established.</p></div><dl id="arm7-counts" class="arm7-counts"></dl></div>
+        <p class="coverage-note"><span class="note-mark" aria-hidden="true">i</span>Coverage measures accepted binary matching, not effort completed. Original binary fallback is not reconstructed source; reviewed assembly is reported separately. A matching ROM alone does not establish full decompilation.</p>
+      </section>
+      <section id="workers" aria-labelledby="workers-heading"><div class="section-heading"><div><span class="eyebrow">RECONSTRUCTION FLOOR</span><h2 id="workers-heading">Workers <span id="worker-count" class="heading-count">—</span></h2></div><p class="muted small">Heartbeat and task activity are tracked separately</p></div><div id="worker-grid" class="worker-grid"><p class="empty panel">Waiting for worker state.</p></div></section>
+      <section id="jobs" aria-labelledby="jobs-heading"><div class="section-heading"><div><span class="eyebrow">BOUNDED SUBSYSTEM TASKS</span><h2 id="jobs-heading">Job queue <span id="job-count" class="heading-count">—</span></h2></div><div class="filters"><label class="search"><span class="sr-only">Search jobs</span><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="job-search" type="search" placeholder="Search scope, owner, ID…" autocomplete="off"></label><label><span class="sr-only">Filter jobs by status</span><select id="job-filter"><option value="">All statuses</option></select></label></div></div><div class="panel table-wrap"><table><thead><tr><th scope="col">Job / scope</th><th scope="col">Status</th><th scope="col">Owner</th></tr></thead><tbody id="job-rows"><tr><td colspan="3" class="empty">Waiting for queue state.</td></tr></tbody></table></div><p id="job-result-count" class="small muted table-foot"></p></section>
+      <section id="activity" aria-labelledby="activity-heading"><div class="section-heading"><div><span class="eyebrow">ITERATION & INTEGRATION</span><h2 id="activity-heading">Evidence stream</h2></div><p class="muted small">Candidate attempts do not add to accepted coverage</p></div><div class="evidence-grid"><article class="panel"><div class="panel-heading"><h3>Recent attempts</h3><span id="attempt-count" class="heading-count">—</span></div><div id="attempt-list" class="record-list"><p class="empty">Waiting for attempt state.</p></div></article><article class="panel"><div class="panel-heading"><h3>Accepted batches</h3><span id="batch-count" class="heading-count">—</span></div><div id="batch-list" class="record-list"><p class="empty">Waiting for batch state.</p></div></article></div></section>
+    </main>
+    <footer><span>DQIX · Sentinels of the Starry Skies</span><span id="state-revision">State revision unknown</span><span>Local evidence · No inferred cost or throughput</span></footer>
+  </div>
+</body>
+</html>
