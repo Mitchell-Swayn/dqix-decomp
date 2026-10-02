@@ -639,3 +639,11 @@ src/World/BMDJTransforms.cpp:
 src/System/RuntimeSignal.cpp:
     complete
     .text start:0x02003ddc end:0x02003f0c
+
+src/World/ZoneVectorSet.cpp:
+    complete
+    .text start:0x020130a8 end:0x020130b0
+
+src/World/ZoneResourceDefaults.cpp:
+    complete
+    .text start:0x020133cc end:0x02013490

@@ -29,7 +29,6 @@
 extern "C"
 {
     void* func_02011584(GameState*);
-    void func_02013454(void*);
 
     void* func_02053c6c(void*);
     void func_0205e104(const char*, SafeAllocator*, const void*, unsigned int);
@@ -400,7 +399,7 @@ bool Zone3D::ProcessBMDJFile(const void* filedata, unsigned int filesize, ZoneFe
     if (newStruct == NULL)
         return false;
 
-    func_02013454(newStruct);
+    ResetBMDJGroup(newStruct);
     newStruct->unknown_0_ = misc->unk_0;
     newStruct->vec_48_ = misc->vector_4.vec;
     unsigned int decompressedLength;

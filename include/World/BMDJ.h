@@ -123,3 +123,4 @@ void AppendBMDJChild(Zone3D_BMDJStruct::InstanceEntry* parent, Zone3D_BMDJStruct
 void AppendBMDJSibling(Zone3D_BMDJStruct::InstanceEntry* first, Zone3D_BMDJStruct::InstanceEntry* next);
 void InitializeBMDJTransforms(Zone3D_BMDJStruct::InstanceEntry* instance);
 void ApplyBMDJTransforms(Zone3D_BMDJStruct::InstanceEntry* instance, const Vector3i* parentPosition, const int* parentAngle, const Vector3i* parentScale);
+void ResetBMDJGroup(Zone3D_BMDJStruct* group);

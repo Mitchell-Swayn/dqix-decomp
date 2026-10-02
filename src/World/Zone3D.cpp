@@ -29,7 +29,6 @@
 extern "C"
 {
     void* func_02011584(GameState*);
-    void func_02013454(void*);
 
     void* func_02053c6c(void*);
     void func_0205e104(const char*, SafeAllocator*, const void*, unsigned int);

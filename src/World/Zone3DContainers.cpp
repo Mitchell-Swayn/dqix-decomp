@@ -3,7 +3,6 @@
 
 extern "C"
 {
-    void func_020133cc(ZoneContainerRenderEntry*);
     void func_0204719c(ZoneContainerRenderPart*);
     void func_02048004(void*, ZoneContainerRenderPart*);
 }
@@ -27,7 +26,7 @@ void Zone3D::CreateContainerRenderEntries(SafeAllocator* allocator)
         if (container->containerType == 1 || container->containerType == 2)
         {
             entry = &unknown_478_[unknown_476_];
-            func_020133cc(entry);
+            ResetZoneContainer(entry);
             func_0204719c(&entry->mainPart);
             entry->mainPart.diffuseColor = color;
             func_0204719c(&entry->brokenPart);

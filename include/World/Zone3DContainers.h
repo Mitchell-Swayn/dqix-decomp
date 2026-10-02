@@ -16,7 +16,8 @@ struct ZoneContainerRenderEntry
 {
     unsigned short containerID;
     short state;
-    char unknown_4[4];
+    short unknown_4;
+    char unknown_6[2];
     ZoneContainerRenderPart mainPart;
     ZoneContainerRenderPart brokenPart;
     ZoneContainerRenderPart fragments[4];
@@ -25,15 +26,23 @@ struct ZoneContainerRenderEntry
 
 struct ZoneChestEntry
 {
-    char unknown_0[0x10];
+    Vector3i position;
+    unsigned short unknown_c;
+    unsigned short lidAngle;
     unsigned short timer;
-    char unknown_12[2];
+    short loadHandle;
     signed char ownerIndex;
     char unknown_15;
     unsigned char state;
     char unknown_17;
     unsigned char unknown_18;
-    char unknown_19[7];
+    unsigned char unknown_19;
+    short unknown_1a;
+    unsigned short unknown_1c;
+    char unknown_1e[2];
     int unknown_20;
 };
 void ActivateZoneChest(ZoneChestEntry* chest, int ownerIndex, bool reset, bool force);
+void SetVector3iComponents(Vector3i* vector, int x, int y, int z);
+void ResetZoneContainer(ZoneContainerRenderEntry* entry);
+void ResetZoneChest(ZoneChestEntry* chest);
