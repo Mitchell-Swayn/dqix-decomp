@@ -85,3 +85,14 @@ cast was tested once. It merges the duplicated address loads/literal pool and
 scores 60%, so the existing implementation was restored. This is a recorded
 source-cleanup limitation, with no new code credit; a compiler/source form that
 preserves the original separate address expressions remains to be found.
+
+GeometryFifo.cpp now defines its existing 12-byte queue/control object at
+0x0210cf78..0x0210cf84. The processing-flag alias becomes offset 4, and a
+compile-time size check protects the allocation. All nine existing code
+symbols and the BSS object compare at 100%; full ROM checks pass.
+
+The unmapped RenderCommand_9 candidate was also checked with the pinned
+compiler after its data dependencies were recovered. Its first comparison is
+11.25%, with broad register/stack/arithmetic differences. The mapping was
+restored to fallback without further blind variants; its source needs a
+separate arithmetic and control-flow reconstruction, not a small register edit.

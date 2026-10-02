@@ -21541,7 +21541,7 @@ from:0x020b6a90 kind:arm_call to:0x020ca2ac module:main
 from:0x020b6ab4 kind:arm_call to:0x020ca0a8 module:main
 from:0x020b6abc kind:load to:0x020f2270 module:main
 from:0x020b6ac0 kind:load to:0x0210cf78 module:main
-from:0x020b6ac4 kind:load to:0x0210cf7c module:main
+from:0x020b6ac4 kind:load to:0x0210cf78 add:0x4 module:main
 from:0x020b6ac8 kind:load to:0x020b6a0c module:main
 from:0x020b6b38 kind:arm_call to:0x020ca4b4 module:main
 from:0x020b6b60 kind:arm_call to:0x020b6998 module:main
