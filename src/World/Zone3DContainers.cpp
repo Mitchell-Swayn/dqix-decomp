@@ -3,7 +3,6 @@
 
 extern "C"
 {
-    void func_0204719c(ZoneContainerRenderPart*);
     void func_02048004(void*, ZoneContainerRenderPart*);
 }
 
@@ -27,13 +26,13 @@ void Zone3D::CreateContainerRenderEntries(SafeAllocator* allocator)
         {
             entry = &unknown_478_[unknown_476_];
             ResetZoneContainer(entry);
-            func_0204719c(&entry->mainPart);
+            entry->mainPart.Reset();
             entry->mainPart.diffuseColor = color;
-            func_0204719c(&entry->brokenPart);
+            entry->brokenPart.Reset();
             entry->brokenPart.diffuseColor = color;
             for (i = 0; i < 4; ++i)
             {
-                func_0204719c(&entry->fragments[i]);
+                entry->fragments[i].Reset();
                 entry->fragments[i].diffuseColor = color;
             }
             entry->mainPart.position = container->position;

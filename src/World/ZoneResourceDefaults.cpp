@@ -1,15 +1,14 @@
 #include "World/Zone3DContainers.h"
 #include "World/BMDJ.h"
 
-extern "C" void func_0204719c(ZoneContainerRenderPart*);
 
 void ResetZoneContainer(ZoneContainerRenderEntry* entry)
 {
     entry->containerID = 0;
     entry->state = -1;
     entry->unknown_4 = 0;
-    func_0204719c(&entry->mainPart);
-    func_0204719c(&entry->brokenPart);
+    entry->mainPart.Reset();
+    entry->brokenPart.Reset();
 }
 
 void ResetZoneChest(ZoneChestEntry* chest)

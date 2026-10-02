@@ -1,16 +1,46 @@
 #pragma once
 #include "Graphics/Vector.h"
 
-// Partial layouts established by container creation and model binding.
+// The eight-byte member owns a count and pointer; its payload is unresolved.
+struct ZoneRenderPartEntries
+{
+    int count;
+    void* entries;
+    ZoneRenderPartEntries() { Reset(); }
+    ~ZoneRenderPartEntries() { Reset(); }
+    void Reset();
+};
+
+// Partial layout established by container creation, binding and reset routines.
 struct ZoneContainerRenderPart
 {
-    char unknown_0[0x1c];
+    void* unknown_0;
+    unsigned short unknown_4;
+    unsigned short unknown_6;
+    void* unknown_8;
+    void* unknown_c;
+    void* unknown_10;
+    ZoneRenderPartEntries entries;
     Vector3i position;
-    char unknown_28[0xc];
+    Vector3i unknown_28;
     Vector3i scale;
-    char unknown_40[0x40];
+    char unknown_40[0x30];
+    int unknown_70;
+    int unknown_74;
+    int unknown_78;
+    int unknown_7c;
     unsigned short diffuseColor;
-    char unknown_82[6];
+    unsigned short unknown_82;
+    unsigned char flag0 : 1;
+    unsigned char flag1 : 1;
+    unsigned char flag2 : 1;
+    unsigned char unknownFlags : 5;
+    char unknown_85[3];
+
+    ZoneContainerRenderPart();
+    ~ZoneContainerRenderPart();
+    void Reset();
+    void ResetIfFlag0();
 };
 struct ZoneContainerRenderEntry
 {
