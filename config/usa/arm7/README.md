@@ -1,11 +1,11 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **162 C
-functions: 13,296 instruction bytes plus 1,044 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **166 C
+functions: 13,512 instruction bytes plus 1,056 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
 913 bytes of standalone initialized data and 3,444 bytes of BSS now have source
-definitions. The other 152,503 payload bytes
+definitions. The other 152,275 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -19,10 +19,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 13,296 / 1,044 bytes |
+| Reconstructed C instructions / compiler literal pools | 13,512 / 1,056 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 913 / 120 bytes |
 | Reconstructed BSS / total autoload BSS | 3,444 / 22,744 bytes |
-| Binary fallback | 152,503 bytes |
+| Binary fallback | 152,275 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -170,7 +170,7 @@ table; its separate VBlank response and initialized dispatch table remain outsid
 this unit's source data ownership.
 
 `src/Alarms.c` reconstructs eight alarm scheduling functions at
-`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8162 C
+`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8166 C
 instruction bytes, 52 literal bytes and the 12-byte list state at
 `[0x03809164, 0x03809170)`. It initializes and orders the doubly-linked queue,
 programs timer 1, registers timeouts and periodic intervals, and cancels alarms.
@@ -268,7 +268,7 @@ does not add duplicate data credit.
 
 `src/ThreadWait.c` reconstructs blocking, waking all waiters, marking a thread
 ready and selecting the first ready thread at `[0x037fc69c, 0x037fc7cc)`
-(payload `[0x48b8, 0x49e8)`), with 2162 C instruction bytes and 8 literal bytes.
+(payload `[0x48b8, 0x49e8)`), with 2166 C instruction bytes and 8 literal bytes.
 It clears blocked-list links on wakeup and preserves IRQ state. The scheduler switch routine now belongs to `ThreadSwitch.c`; list insertion
 and IRQ dependencies are source-owned. No thread-context storage is counted by this unit.
 
@@ -513,7 +513,7 @@ pending a conditional-instruction ordering match. This batch adds no data/BSS.
 `src/SoundVoiceInit.c` reconstructs `[0x037ff81c, 0x037ff878)` (payload
 `[0x7a38, 0x7a94)`): 84 instruction bytes and eight literals. It sets each of
 16 voice IDs, clears the active bit and five-bit pending-update field, and clears
-two external list endpoints. The 16 records at `[0x0380979c, 0x03809cdc)` now
+two external channel reservation masks. The 16 records at `[0x0380979c, 0x03809cdc)` now
 have a typed 1,344-byte source BSS definition with a checked `0x54` record stride.
 Unidentified regions remain named by offset; no meaning is assigned to them.
 
@@ -530,7 +530,8 @@ source address. PSG accepts IDs 8-13 and noise accepts IDs 14-15, both using bas
 period 8006 before invoking the external start helper. Each returns success or
 zero for an ineligible channel. The runtime waveform occupies offsets `0x38`
 through `0x43`, followed by source/duty at `0x44`; callback and list fields follow.
-The list-header storage at `0x03809774` and voice-start helper remain external.
+The channel reservation masks at `0x03809774` remain external; the voice-start
+helper is reconstructed below.
 
 `src/SoundEnvelope.c` reconstructs seven functions at
 `[0x037ffee4, 0x03800008)`: 284 instruction bytes and eight literal bytes.
@@ -552,6 +553,15 @@ advances phase with eight fractional bits and wraps the integer phase at 128.
 Evaluation multiplies the signed sine result by depth and range after the delay.
 The first parameter byte remains unidentified. Embedded in a voice at `0x28`,
 this record identifies offsets `0x2e` and `0x30` as delay counter and phase.
+
+`src/SoundVoiceCallback.c` clears a non-null voice's callback and user data at
+`[0x038001d4, 0x038001e8)` (20 instruction bytes). `src/SoundReservations.c`
+reconstructs three functions at `[0x03800378, 0x03800448)` (196 instruction
+bytes and 12 literal bytes): clear/get either reservation mask selected by flag
+bit zero, and stop active PCM voices whose source lies in an inclusive range.
+These consumers establish that the two words at `0x03809774` are channel masks,
+correcting the earlier tentative list-endpoint interpretation. Their policy
+names remain unknown, so fields are named `mask0` and `mask1`.
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C

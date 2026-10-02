@@ -313,3 +313,15 @@
   The parameter byte at offset zero remains unknown; delay counter/phase are
   established at relative offsets six/eight, or voice offsets 0x2e/0x30.
 - Validation: full payload equality and all declared symbols pass; all 11 pipeline and six verifier tests pass. Payload SHA-1 remains a662d5c6a78e990244299926cf6862ce910a475d.
+
+## 2026-10-02 - sound callback cleanup and reservation controls
+
+- Callback cleanup and reservation-mask getter matched on their first compile.
+- Release-mask helper required an ordinary if/else instead of early return to
+  preserve conditional block order. Range stop required start <= source operand
+  order to combine the two bounds checks. Both matched on their second variant.
+- Four functions add 216 instruction bytes and 12 literals. No BSS is claimed.
+- New mask consumers disprove the previous tentative list-header interpretation
+  at 0x03809774. Corrected SoundVoiceInit's type, alias and documentation to two
+  unsigned masks, without inventing policy labels for flag-zero/flag-one cases.
+- Validation: complete payload, linked symbols, 11 pipeline tests and six verifier tests pass; payload SHA-1 remains a662d5c6a78e990244299926cf6862ce910a475d.

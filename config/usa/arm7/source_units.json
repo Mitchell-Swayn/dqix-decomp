@@ -1296,7 +1296,7 @@
         "ARM7_InitializeSoundChannels": 58718236
       },
       "externals": {
-        "ARM7_SoundVoiceList": 58759028
+        "ARM7_SoundChannelReservations": 58759028
       },
       "bss": {
         "runtime_address": 58759068,
@@ -1409,6 +1409,42 @@
       },
       "externals": {
         "ARM7_SoundSine": 58717416
+      }
+    },
+    {
+      "name": "SoundVoiceCallback",
+      "source": "config/usa/arm7/src/SoundVoiceCallback.c",
+      "autoload": "wram",
+      "runtime_address": 58720724,
+      "payload_offset": 33776,
+      "size": 20,
+      "code_bytes": 20,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_ClearSoundVoiceCallback",
+      "symbols": {
+        "ARM7_ClearSoundVoiceCallback": 58720724
+      },
+      "externals": {}
+    },
+    {
+      "name": "SoundReservations",
+      "source": "config/usa/arm7/src/SoundReservations.c",
+      "autoload": "wram",
+      "runtime_address": 58721144,
+      "payload_offset": 34196,
+      "size": 208,
+      "code_bytes": 196,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_ReleaseSoundChannelReservations",
+      "symbols": {
+        "ARM7_ReleaseSoundChannelReservations": 58721144,
+        "ARM7_GetSoundChannelReservations": 58721200,
+        "ARM7_StopSoundVoicesInRange": 58721228
+      },
+      "externals": {
+        "ARM7_SoundChannelReservations": 58759028,
+        "ARM7_SoundVoices": 58759068,
+        "ARM7_StopSoundChannel": 58716336
       }
     }
   ]

@@ -1,5 +1,5 @@
 /* Initialize channel IDs, clear pending-update and active bits, and reset
- * list endpoints. Unidentified state bytes retain explicit offset names. */
+ * channel reservation masks. Unidentified state bytes retain explicit offset names. */
 #pragma dont_inline on
 typedef struct { unsigned char format,repeat; unsigned short unknown2,basePeriod,loopStart; unsigned int length; } Waveform;
 typedef struct SoundVoice SoundVoice;
@@ -18,7 +18,7 @@ struct SoundVoice {
 };
 typedef char VoiceSizeCheck[sizeof(SoundVoice)==0x54?1:-1];
 SoundVoice ARM7_SoundVoices[16];
-extern struct { SoundVoice *first,*last; } ARM7_SoundVoiceList;
+extern struct { unsigned int mask0,mask1; } ARM7_SoundChannelReservations;
 void ARM7_InitializeSoundChannels(void)
 {
  int channel=0;
@@ -28,5 +28,5 @@ void ARM7_InitializeSoundChannels(void)
   ARM7_SoundVoices[channel].active=0;
   channel++;
  }while(channel<16);
- ARM7_SoundVoiceList.first=ARM7_SoundVoiceList.last=0;
+ ARM7_SoundChannelReservations.mask0=ARM7_SoundChannelReservations.mask1=0;
 }
