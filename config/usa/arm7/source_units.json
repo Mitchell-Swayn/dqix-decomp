@@ -2194,6 +2194,43 @@
         "ARM7_BeginCardOperation": 58734572,
         "ARM7_CompleteCardOperation": 58734292
       }
+    },
+    {
+      "name": "CardOperationBegin",
+      "source": "config/usa/arm7/src/CardOperationBegin.c",
+      "autoload": "wram",
+      "runtime_address": 58734572,
+      "payload_offset": 47624,
+      "size": 84,
+      "code_bytes": 84,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_BeginCardOperation",
+      "symbols": {
+        "ARM7_BeginCardOperation": 58734572
+      },
+      "externals": {
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_BlockCurrentThread": 58705564
+      }
+    },
+    {
+      "name": "CardIpcCallback",
+      "source": "config/usa/arm7/src/CardIpcCallback.c",
+      "autoload": "wram",
+      "runtime_address": 58734764,
+      "payload_offset": 47816,
+      "size": 228,
+      "code_bytes": 224,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_CardIpcCallback",
+      "symbols": {
+        "ARM7_CardIpcCallback": 58734764
+      },
+      "externals": {
+        "ARM7_BackupWorker": 58763648,
+        "ARM7_MarkThreadReady": 58705784
+      }
     }
   ]
 }

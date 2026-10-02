@@ -2,27 +2,7 @@
 
 /* Priority changes preserve global-list order and exclude the idle thread.
  * The external scheduler and context views own no additional storage. */
-typedef struct ProcessorContext ProcessorContext;
-typedef struct Mutex Mutex;
-typedef struct Alarm Alarm;
-typedef struct { ProcessorContext *first,*last; } BlockedContextList;
-typedef struct { Mutex *first,*last; } MutexList;
-struct ProcessorContext {
- unsigned int status,registers[15],resumeAddress,supervisorStack;
- int state;
- ProcessorContext *next;
- unsigned int uniqueID,priority,unknown58;
- BlockedContextList *container;
- ProcessorContext *previousBlocked,*nextBlocked;
- Mutex *blockingMutex;
- MutexList ownedMutexes;
- unsigned int stackLow,stackHigh,stackReserved;
- BlockedContextList joinWaiters;
- unsigned int unknown88[3];
- Alarm *sleepAlarm;
- void (*exitCallback)(int);
- unsigned int unknown9c[2];
-};
+#include "ThreadContext.h"
 typedef void (*SwitchCallback)(ProcessorContext*,ProcessorContext*);
 typedef struct { unsigned int unknown0[2],switchLock,unknownC[4]; ProcessorContext **active; unsigned int initialized; unsigned short pending,irqDepth; ProcessorContext *current,*first; SwitchCallback callback; } ThreadGlobals;
 typedef char ContextSizeCheck[sizeof(ProcessorContext) == 0xa4 ? 1 : -1];

@@ -3,27 +3,7 @@
 /* Create a blocked thread, initialize its stack sentinels and register frame,
  * and clear its queue/mutex/callback state while IRQs are disabled. The two
  * trailing context words remain unknown and are not initialized here. */
-typedef struct ProcessorContext ProcessorContext;
-typedef struct Mutex Mutex;
-typedef struct Alarm Alarm;
-typedef struct { ProcessorContext *first,*last; } BlockedContextList;
-typedef struct { Mutex *first,*last; } MutexList;
-struct ProcessorContext {
- unsigned int status,registers[15],resumeAddress,supervisorStack;
- int state;
- ProcessorContext *next;
- unsigned int uniqueID,priority,unknown58;
- BlockedContextList *container;
- ProcessorContext *previousBlocked,*nextBlocked;
- Mutex *blockingMutex;
- MutexList ownedMutexes;
- unsigned int stackLow,stackHigh,stackReserved;
- BlockedContextList joinWaiters;
- unsigned int unknown88[3];
- Alarm *sleepAlarm;
- void (*exitCallback)(int);
- unsigned int unknown9c[2];
-};
+#include "ThreadContext.h"
 typedef struct { unsigned int unknown0[5],uniqueIDCounter; } ThreadGlobals;
 typedef char ContextSizeCheck[sizeof(ProcessorContext) == 0xa4 ? 1 : -1];
 extern ThreadGlobals ARM7_ThreadGlobals;

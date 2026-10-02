@@ -609,3 +609,22 @@
   the external header pointer are not claimed as reconstructed data.
 - Five functions add 236 instruction and 24 literal bytes, no data or BSS.
 - Validation: full payload and linked symbols match; all 11 pipeline and six verifier tests pass.
+
+## 2026-10-02 - cartridge worker synchronization and IPC
+
+- Operation begin variant one reused the busy-flag load and was four bytes short.
+  Making the shared flags volatile preserved the observed reread and matched on
+  variant two. The IPC callback matched first compile, including all switch cases
+  and the original third-argument condition without inferring an error policy.
+- This is a two-function batch plus shared-layout consolidation, not a claimed
+  three-function batch. ThreadContext.h reuses the established 0xa4-byte layout in
+  thread creation/priority and the worker prefix; full worker BSS remains external.
+- Priority is deferred after six invocations (one duplicate-volatile edit error).
+  Completion is deferred after five (one matching edit error), initializer after
+  three. All preserve semantics but fold embedded-field addresses into additional
+  literals rather than retaining the native base register: priority 68 vs64 bytes,
+  completion128 vs116, initialization192 vs188. Inline accessors, register hints,
+  and whole-structure volatile access did not resolve this. No address-forcing
+  overlay or artificial global alias was introduced; unsuccessful drafts excluded.
+- Two functions add 308 instruction and four literal bytes, no data or BSS.
+- Validation: full payload and linked symbols match, including thread creation/priority and all transitive header consumers; all 11 pipeline and six verifier tests pass.
