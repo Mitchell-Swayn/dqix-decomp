@@ -236,13 +236,28 @@ def snapshot(root, db):
     jobs = {t['id']: t for t in queue}
     for row in db.execute('SELECT id,scope,status,owner,result,updated_at FROM jobs'):
         jobs[row['id']] = dict(row)
+    fleet = None
+    fleet_path = root / 'build/factory/fleet.json'
+    if fleet_path.exists():
+        try:
+            fleet = read_json(fleet_path)
+            fleet_age = (datetime.now(timezone.utc) - datetime.fromisoformat(fleet['heartbeat_utc'])).total_seconds()
+            fleet['stale'] = fleet_age > 30
+            if fleet['stale']:
+                warnings.append('Fleet supervisor heartbeat is stale; last process counts are unconfirmed.')
+            for lane in fleet.get('workers', []):
+                jobs['fleet:' + lane['id']] = dict(id='fleet:' + lane['id'],
+                    status='stale' if fleet['stale'] else lane['status'], owner=lane['id'],
+                    scope='Independent overlay reconstruction; batch ' + str(lane.get('batches_started', 0)))
+        except (OSError, ValueError, KeyError):
+            warnings.append('Fleet process state unavailable')
     revision = subprocess.run(['git', 'rev-parse', '--short', 'HEAD'], cwd=root, capture_output=True,
                               text=True, timeout=10).stdout.strip()
     warnings.append('Unknown/stale worker status is not proof of a running agent. Attempt timestamps show observed activity only.')
     return dict(service='dqix-factory', project_root=str(root.resolve()), generated_at=utc(), revision=revision,
                 coverage=dict(arm9=accepted.get('arm9', {}), arm7=accepted.get('arm7', {}),
                               accepted_at=accepted.get('utc'), accepted_revision=accepted.get('revision')),
-                workers=list(workers.values()), jobs=list(jobs.values()), attempts=attempts,
+                fleet=fleet, workers=list(workers.values()), jobs=list(jobs.values()), attempts=attempts,
                 batches=batches, warnings=warnings)
 
 

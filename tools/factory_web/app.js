@@ -272,6 +272,13 @@
     byId("last-refresh").title = receivedAt === null ? "" : absoluteTime(new Date(receivedAt).toISOString());
   }
   function renderState() {
+    const fleet = state.fleet;
+    const fleetStatus = byId("fleet-status");
+    fleetStatus.hidden = !fleet;
+    if (fleet) {
+      const counts = item(fleet.counts);
+      fleetStatus.textContent = `${fleet.stale ? "STALE SUPERVISOR — last observed" : "Independent fleet"}: ${count(counts.running)} / ${count(fleet.max_concurrent)} worker processes running · ${count(counts.pending)} pending · ${count(counts.review)} awaiting review · ${count(counts.blocked)} blocked${fleet.stopping ? " · draining (no new batches)" : ""}. Source acceptance still requires integration.`;
+    }
     renderCoverage();
     renderWorkers();
     refreshFilters();

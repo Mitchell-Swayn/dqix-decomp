@@ -368,6 +368,198 @@
       "owner": null,
       "scope": "888 matched-data bytes across allocations/regional sets; queue4096 source BSS separately uncredited,16 linker alignment bytes; fresh archive passed.",
       "acceptance": "Full ROM/module/symbol/SHA1 passed; pilot-28 evidence."
+    },
+    {
+      "id": "fleet:fleet_ov000",
+      "status": "preparing",
+      "owner": "fleet_ov000",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov000",
+      "scope": "Exclusive overlay ov000; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov001",
+      "status": "preparing",
+      "owner": "fleet_ov001",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov001",
+      "scope": "Exclusive overlay ov001; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov002",
+      "status": "preparing",
+      "owner": "fleet_ov002",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov002",
+      "scope": "Exclusive overlay ov002; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov003",
+      "status": "preparing",
+      "owner": "fleet_ov003",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov003",
+      "scope": "Exclusive overlay ov003; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov004",
+      "status": "preparing",
+      "owner": "fleet_ov004",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov004",
+      "scope": "Exclusive overlay ov004; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov005",
+      "status": "preparing",
+      "owner": "fleet_ov005",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov005",
+      "scope": "Exclusive overlay ov005; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov006",
+      "status": "preparing",
+      "owner": "fleet_ov006",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov006",
+      "scope": "Exclusive overlay ov006; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov007",
+      "status": "preparing",
+      "owner": "fleet_ov007",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov007",
+      "scope": "Exclusive overlay ov007; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov009",
+      "status": "preparing",
+      "owner": "fleet_ov009",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov009",
+      "scope": "Exclusive overlay ov009; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov010",
+      "status": "preparing",
+      "owner": "fleet_ov010",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov010",
+      "scope": "Exclusive overlay ov010; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov011",
+      "status": "preparing",
+      "owner": "fleet_ov011",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov011",
+      "scope": "Exclusive overlay ov011; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov012",
+      "status": "preparing",
+      "owner": "fleet_ov012",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov012",
+      "scope": "Exclusive overlay ov012; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov013",
+      "status": "preparing",
+      "owner": "fleet_ov013",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov013",
+      "scope": "Exclusive overlay ov013; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov014",
+      "status": "preparing",
+      "owner": "fleet_ov014",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov014",
+      "scope": "Exclusive overlay ov014; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov015",
+      "status": "preparing",
+      "owner": "fleet_ov015",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov015",
+      "scope": "Exclusive overlay ov015; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov016",
+      "status": "preparing",
+      "owner": "fleet_ov016",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov016",
+      "scope": "Exclusive overlay ov016; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov018",
+      "status": "preparing",
+      "owner": "fleet_ov018",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov018",
+      "scope": "Exclusive overlay ov018; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov019",
+      "status": "preparing",
+      "owner": "fleet_ov019",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov019",
+      "scope": "Exclusive overlay ov019; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov020",
+      "status": "preparing",
+      "owner": "fleet_ov020",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov020",
+      "scope": "Exclusive overlay ov020; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov021",
+      "status": "preparing",
+      "owner": "fleet_ov021",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov021",
+      "scope": "Exclusive overlay ov021; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov022",
+      "status": "preparing",
+      "owner": "fleet_ov022",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov022",
+      "scope": "Exclusive overlay ov022; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov023",
+      "status": "preparing",
+      "owner": "fleet_ov023",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov023",
+      "scope": "Exclusive overlay ov023; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov024",
+      "status": "preparing",
+      "owner": "fleet_ov024",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov024",
+      "scope": "Exclusive overlay ov024; bounded source families; no nested agents; full root acceptance required"
+    },
+    {
+      "id": "fleet:fleet_ov025",
+      "status": "preparing",
+      "owner": "fleet_ov025",
+      "model": "gpt-6.1-sol",
+      "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov025",
+      "scope": "Exclusive overlay ov025; bounded source families; no nested agents; full root acceptance required"
     }
   ]
 }
