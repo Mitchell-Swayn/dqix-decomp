@@ -92,7 +92,7 @@ fallback now references this source-owned table.
 
 **Capped function:** `func_ov021_0218b5fc`, range `0218b5fc–0218baf8`,
 1276 bytes (1196 instructions, 80 literals), remains incomplete and original
-fallback. `SceneEntry.cpp` retains the fourth, clearest candidate at 97.492165%
+fallback. `SceneEntry.cpp` retains the fourth, clearest candidate at 97.49%
 object similarity, with the edge-color type factored into its local header.
 This percentage is diagnostic, with zero function/code/literal coverage credit.
 Do not reset its cumulative **ten unproductive variants** in another batch.
@@ -149,3 +149,6 @@ All ten snapshots, diffs and conservative diagnoses remain under ignored
 `build/matching/`; disassembly, factory evidence and full acceptance logs are
 under `build/factory/fleet_ov021/`. Start/finish measurements are under
 `build/workflow/fleet_ov021_20261003_entry_0416/`. Token usage is unmeasured.
+The finish record measures **852.42 seconds** (14 minutes 12 seconds), through
+the source/evidence commit and final coverage snapshot; this timing excludes
+the subsequent documentation-only measurement commit.
