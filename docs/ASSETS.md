@@ -108,8 +108,11 @@ at USA `[0x020f27c0, 0x020f2800)` now have source definitions in
 [`GPCData.cpp`](../src/Filesystem/GPCData.cpp). All 64 bytes, including initial
 zero fields and padding, match. `GPCStaticData` preserves adjacent storage order;
 it does not assert that the original source grouped these declarations. Interior
-references use explicit relocation addends. The separate startup routine at
-`0x020e6710` still comes from the original binary and is not credited as source.
+references use explicit relocation addends. The 108-byte startup routine at
+`0x020e6710` is now matched C++ in [GPCStartup.cpp](../src/Filesystem/GPCStartup.cpp),
+placed in `.init` with the compiler's named-section declaration. The existing
+startup table still provides its invocation. It constructs the revision suffix
+and signatures through the original source-owned helper calls.
 This program-owned metadata counts as native data, separately from asset content.
 The file-access cache's ready flag, 61 CRC values and 61 handle/file-ID pairs
 also have explicit zero-initialized definitions in

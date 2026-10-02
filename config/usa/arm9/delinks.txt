@@ -401,6 +401,10 @@ src/Filesystem/CachedMemory.cpp:
     complete
     .text start:0x020d84f8 end:0x020d8550
 
+src/Filesystem/GPCStartup.cpp:
+    complete
+    .init start:0x020e6710 end:0x020e677c
+
 src/Resource/ResourceMutex.cpp:
     complete
     .bss start:0x0214e4a8 end:0x0214e4c8

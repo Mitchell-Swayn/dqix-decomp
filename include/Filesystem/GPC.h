@@ -87,7 +87,7 @@ public:
     bool Reset();
 };
 
-void CopyGPCSignature(unsigned int* dst, const unsigned int* src);
+void CopyGPCSignature(unsigned int* dst, unsigned int* src);
 unsigned int* SetGPCSignatureGPC0(unsigned int* dst);
 void CopyGPCSignatureFromString(unsigned int* dst, const char* src);
 unsigned int* SetGPCSignatureGPC1(unsigned int* dst);
