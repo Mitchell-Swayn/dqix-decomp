@@ -404,8 +404,8 @@ func_02012dd0 kind:function(arm,size=0x14) addr:0x02012dd0
 func_02012de4 kind:function(arm,size=0x4) addr:0x02012de4
 func_02012de8 kind:function(arm,size=0x114) addr:0x02012de8
 func_02012efc kind:function(arm,size=0x28) addr:0x02012efc
-func_02012f24 kind:function(arm,size=0x44) addr:0x02012f24
-func_02012f68 kind:function(arm,size=0x3c) addr:0x02012f68
+_Z29GetExceptionalZoneRecordIndexi kind:function(arm,size=0x44) addr:0x02012f24
+_Z25GetOutdoorZoneRecordIndexi kind:function(arm,size=0x3c) addr:0x02012f68
 _Z22ResetZoneFragmentPartsP23ZoneContainerRenderPart kind:function(arm,size=0x40) addr:0x02012fa4
 func_02012fe4 kind:function(arm,size=0xc) addr:0x02012fe4
 _Z20ResetBMDJObjectEntryPN17Zone3D_BMDJStruct11ObjectEntryE kind:function(arm,size=0x28) addr:0x02012ff0
@@ -513,8 +513,8 @@ _ZN6Zone3D24FindNearestType11FeatureEPK8Vector3i kind:function(arm,size=0xdc) ad
 _ZN6Zone3D16IsZoneInRuleListEi kind:function(arm,size=0x60) addr:0x0201b868
 _ZN6Zone3D23UpdateZone170cInstancesEbbb kind:function(arm,size=0x154) addr:0x0201b8c8
 _ZN6Zone3D27RequestBMDJObjectStateResetEii kind:function(arm,size=0x4c) addr:0x0201ba1c
-func_0201ba68 kind:function(arm,size=0x110) addr:0x0201ba68
-func_0201bb78 kind:function(arm,size=0x104) addr:0x0201bb78
+_ZN6Zone3D21RecordCurrentZoneFlagEv kind:function(arm,size=0x110) addr:0x0201ba68
+_ZN6Zone3D17GetZoneRecordFlagEi kind:function(arm,size=0x104) addr:0x0201bb78
 func_0201bc7c kind:function(arm,size=0xc) addr:0x0201bc7c
 func_0201bc88 kind:function(arm,size=0xc) addr:0x0201bc88
 func_0201bc94 kind:function(arm,size=0x70) addr:0x0201bc94
@@ -6228,9 +6228,9 @@ data_020e6d64 kind:data(any) addr:0x020e6d64
 data_020e6d6c kind:data(any) addr:0x020e6d6c
 data_020e6d74 kind:data(any) addr:0x020e6d74
 data_020e6d98 kind:data(any) addr:0x020e6d98
-data_020e6dc0 kind:data(any) addr:0x020e6dc0
-data_020e6dc2 kind:data(any) addr:0x020e6dc2
-data_020e6ddc kind:data(any) addr:0x020e6ddc
+gExceptionalZoneRecordIndices kind:data(any) addr:0x020e6dc0
+gExceptionalZoneRecordIDs kind:data(any) addr:0x020e6dc2
+gOutdoorZoneRecordRemap kind:data(any) addr:0x020e6ddc
 data_020e6df0 kind:data(any) addr:0x020e6df0
 data_020e6dfc kind:data(any) addr:0x020e6dfc
 data_020e6e08 kind:data(any) addr:0x020e6e08

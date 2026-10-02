@@ -7,7 +7,6 @@ extern "C"
     void func_020397c0(GameObject*);
     void func_02017208(Zone3D*);
     void func_020a84e0();
-    void func_0201ba68(Zone3D*);
     void func_0201bdac(Zone3D*);
     void func_0201bfd4(Zone3D*);
 }
@@ -40,7 +39,7 @@ void Zone3D::Update()
     DrawChestModels();
     LightingManager::GetInstance()->RecomputeAdvancedLighting();
     func_020a84e0();
-    func_0201ba68(this);
+    RecordCurrentZoneFlag();
     func_0201bdac(this);
     func_0201bfd4(this);
 }

@@ -124,7 +124,7 @@ public:
     unsigned char unknown_281d_;
     unsigned char unknown_281e_;
     char unk_281f;
-    char unknown_2820_;
+    unsigned char unknown_2820_;
     char unk_2821[3];
 public:
     // usa: func_0201383c
@@ -187,6 +187,8 @@ public:
     bool IsZoneInRuleList(int zoneID);
     void UpdateZone170cInstances(bool first, bool second, bool alternate);
     void RequestBMDJObjectStateReset(int groupID, int instanceID);
+    void RecordCurrentZoneFlag();
+    int GetZoneRecordFlag(int zoneID);
     void RecordBMDJFlag4State();
     void RestoreBMDJFlag4State();
     void ApplyType2InstanceFlags();
