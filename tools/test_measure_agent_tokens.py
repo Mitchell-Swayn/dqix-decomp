@@ -1,6 +1,8 @@
 """Synthetic tests for the read-only per-response token analyzer."""
 
 import hashlib
+from contextlib import redirect_stderr, redirect_stdout
+from io import StringIO
 import json
 from collections import Counter
 from pathlib import Path
@@ -8,7 +10,7 @@ import sqlite3
 import tempfile
 import unittest
 
-from measure_agent_tokens import (aggregate, analyze, parse_utc, select_threads,
+from measure_agent_tokens import (aggregate, analyze, main, parse_utc, select_threads,
                                   scan_rollout)
 
 
@@ -32,6 +34,11 @@ def token_event(response_id="resp_a", timestamp="2026-10-02T12:00:10Z",
 
 def session_meta(thread_id="thread-a"):
     return {"type": "session_meta", "payload": {"id": thread_id}}
+
+
+def turn_context(model, timestamp):
+    return {"type": "turn_context", "timestamp": timestamp,
+            "payload": {"model": model}}
 
 
 def write_jsonl(path, records):
@@ -144,6 +151,48 @@ class RolloutAggregationTests(unittest.TestCase):
             self.assertEqual(result["response_count"], 1)
             self.assertEqual(result["diagnostics"]["errors_by_kind"]["thread_id_mismatch"], 1)
 
+    def test_turn_context_model_switches_are_applied_chronologically(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / "models.jsonl"
+            write_jsonl(path, [
+                session_meta(),
+                turn_context("model-before", "2026-10-02T12:00:00Z"),
+                token_event("resp_before", "2026-10-02T12:00:10Z"),
+                turn_context("model-after", "2026-10-02T12:00:20Z"),
+                token_event("resp_after", "2026-10-02T12:00:30Z"),
+            ])
+            result = analyze(None, START, END, rollouts=[path], model="fallback-model")
+            self.assertEqual(result["models"]["model-before"]["response_count"], 1)
+            self.assertEqual(result["models"]["model-after"]["response_count"], 1)
+            self.assertNotIn("fallback-model", result["models"])
+
+    def test_direct_model_is_fallback_only_when_no_context_precedes_usage(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / "fallback.jsonl"
+            write_jsonl(path, [session_meta(),
+                               token_event("resp_unknown", "2026-10-02T12:00:10Z"),
+                               turn_context("model-later", "2026-10-02T12:00:20Z")])
+            result = analyze(None, START, END, rollouts=[path], model="explicit-fallback")
+            self.assertEqual(result["models"]["explicit-fallback"]["response_count"], 1)
+
+    def test_cli_rejects_mixed_selection_and_exits_nonzero_for_diagnostics(self):
+        with redirect_stderr(StringIO()), self.assertRaises(SystemExit) as raised:
+            main(["--rollout", "a.jsonl", "--project-root", "C:\\project",
+                  "--start", "2026-10-02T12:00:00Z", "--end", "2026-10-02T12:01:00Z"])
+        self.assertEqual(raised.exception.code, 2)
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / "bad.jsonl"
+            write_jsonl(path, [session_meta(), token_event("resp_a"),
+                               token_event("resp_a", token_usage=usage(11))])
+            output = StringIO()
+            with redirect_stdout(output), redirect_stderr(StringIO()):
+                status = main(["--rollout", str(path), "--model", "model-a",
+                               "--start", "2026-10-02T12:00:00Z",
+                               "--end", "2026-10-02T12:01:00Z"])
+            self.assertEqual(status, 2)
+            result = json.loads(output.getvalue())
+            self.assertEqual(result["diagnostics"]["conflicting_response_ids"], 1)
+
     def test_missing_file_and_file_without_usage_records_are_reported(self):
         with tempfile.TemporaryDirectory() as temporary:
             empty = Path(temporary) / "empty.jsonl"
@@ -186,6 +235,7 @@ class TelemetrySelectionTests(unittest.TestCase):
             result = analyze(database, START, END, agent_path="/root/luna")
             self.assertEqual(result["selection"]["selected_threads"], 2)
             self.assertEqual(result["response_count"], 2)
+            self.assertEqual(result["models"]["unknown"]["response_count"], 2)
             self.assertEqual(sha256(database), before)
             serialized = json.dumps(result)
             self.assertNotIn("SECRET MESSAGE", serialized)

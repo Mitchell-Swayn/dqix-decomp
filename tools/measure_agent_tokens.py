@@ -20,6 +20,8 @@ TOKEN_USAGE_PREFIX = re.compile(
     r'^\s*\{(?=[^{}]*"type"\s*:\s*"token_usage_record")')
 SESSION_META_PREFIX = re.compile(
     r'^\s*\{(?=[^{}]*"type"\s*:\s*"session_meta")')
+TURN_CONTEXT_PREFIX = re.compile(
+    r'^\s*\{(?=[^{}]*"type"\s*:\s*"turn_context")')
 
 
 def parse_utc(value, field="timestamp"):
@@ -70,20 +72,20 @@ def select_threads(database, agent_path=None, project_root=None):
     try:
         connection.execute("PRAGMA query_only = ON")
         columns = {row[1] for row in connection.execute("PRAGMA table_info(threads)")}
-        needed = {"id", "rollout_path", "model", "agent_path", "cwd"}
+        needed = {"id", "rollout_path", "agent_path", "cwd"}
         missing = needed - columns
         if missing:
             raise ValueError("threads table is missing required telemetry columns")
-        # Deliberately do not select title, first_user_message, preview, or account fields.
+        # Deliberately do not select the mutable model field or any chat/account fields.
         rows = connection.execute(
-            "SELECT id, rollout_path, model, agent_path, cwd FROM threads").fetchall()
+            "SELECT id, rollout_path, agent_path, cwd FROM threads").fetchall()
     except sqlite3.Error as error:
         raise ValueError(f"could not query telemetry metadata: {error}") from error
     finally:
         connection.close()
 
     selected = []
-    for thread_id, rollout_path, model, row_agent, cwd in rows:
+    for thread_id, rollout_path, row_agent, cwd in rows:
         if agent_path is not None:
             matches = row_agent == agent_path
         else:
@@ -94,7 +96,7 @@ def select_threads(database, agent_path=None, project_root=None):
         if not path.is_absolute():
             path = db_path.parent / path
         selected.append({"thread_id": thread_id, "rollout_path": path,
-                         "model": model or "unknown"})
+                         "model": "unknown"})
     return selected
 
 
@@ -115,13 +117,14 @@ def _read_usage(usage):
 
 
 def scan_rollout(path, model, start, end, expected_thread_id=None):
-    """Read token_usage_record lines only; return in-window candidates and diagnostics."""
+    """Read token and safe model context records, never chat content."""
     path = Path(path)
     candidates = []
     diagnostics = {"token_usage_records": 0, "records_in_window": 0,
                    "records_outside_window": 0, "errors": []}
     parsed_records = []
     session_ids = set()
+    model_contexts = []
     try:
         stream = path.open("r", encoding="utf-8")
     except OSError:
@@ -132,7 +135,9 @@ def scan_rollout(path, model, start, end, expected_thread_id=None):
         for line_number, line in enumerate(stream, 1):
             is_token_record = bool(TOKEN_USAGE_PREFIX.search(line))
             is_session_meta = bool(SESSION_META_PREFIX.search(line))
-            if not is_token_record and not (expected_thread_id is None and is_session_meta):
+            is_turn_context = bool(TURN_CONTEXT_PREFIX.search(line))
+            if not (is_token_record or is_turn_context or
+                    (expected_thread_id is None and is_session_meta)):
                 continue
             try:
                 event = json.loads(line)
@@ -141,12 +146,32 @@ def scan_rollout(path, model, start, end, expected_thread_id=None):
                     diagnostics["token_usage_records"] += 1
                     diagnostics["errors"].append({"kind": "invalid_token_record_json",
                                                   "source": path.name, "line": line_number})
+                elif is_turn_context:
+                    diagnostics["errors"].append({"kind": "invalid_turn_context_json",
+                                                  "source": path.name, "line": line_number})
                 continue
             if is_session_meta and event.get("type") == "session_meta":
                 meta_payload = event.get("payload")
                 meta_id = meta_payload.get("id") if isinstance(meta_payload, dict) else None
                 if isinstance(meta_id, str) and meta_id.strip():
                     session_ids.add(meta_id)
+                continue
+            if is_turn_context and event.get("type") == "turn_context":
+                context_payload = event.get("payload")
+                context_model = (context_payload.get("model")
+                                 if isinstance(context_payload, dict) else None)
+                if not isinstance(context_model, str) or not context_model.strip():
+                    diagnostics["errors"].append({"kind": "missing_turn_context_model",
+                                                  "source": path.name, "line": line_number})
+                    continue
+                try:
+                    context_timestamp = parse_utc(event.get("timestamp"),
+                                                  "turn_context timestamp")
+                except ValueError:
+                    diagnostics["errors"].append({"kind": "invalid_turn_context_timestamp",
+                                                  "source": path.name, "line": line_number})
+                    continue
+                model_contexts.append((context_timestamp, line_number, context_model))
                 continue
             if not is_token_record:
                 continue
@@ -197,8 +222,15 @@ def scan_rollout(path, model, start, end, expected_thread_id=None):
                                               "source": path.name, "line": line_number})
                 continue
             diagnostics["records_in_window"] += 1
+            # Context order is timestamp then line order; when metadata and a usage
+            # event share a timestamp, only preceding context applies.
+            active_contexts = (context for context in model_contexts
+                               if (context[0], context[1]) <= (timestamp, line_number))
+            active_context = max(active_contexts, default=None,
+                                 key=lambda context: (context[0], context[1]))
+            attributed_model = active_context[2] if active_context else model
             candidates.append({"response_id": response_id, "timestamp": timestamp,
-                               "model": model or "unknown", "usage": usage})
+                               "model": attributed_model or "unknown", "usage": usage})
     if diagnostics["token_usage_records"] == 0:
         diagnostics["errors"].append({"kind": "no_token_usage_records",
                                       "source": path.name})
@@ -287,6 +319,8 @@ def aggregate(sources, start, end):
 
 def analyze(database, start, end, agent_path=None, project_root=None, rollouts=None,
             model="unknown"):
+    if rollouts and (agent_path is not None or project_root is not None):
+        raise ValueError("--rollout cannot be combined with --agent-path or --project-root")
     if rollouts:
         sources = [{"rollout_path": Path(path), "model": model} for path in rollouts]
         selection = {"kind": "direct_rollout", "selected_threads": 0}
@@ -315,10 +349,10 @@ def build_parser():
     selection = parser.add_mutually_exclusive_group()
     selection.add_argument("--agent-path", help="exact threads.agent_path filter")
     selection.add_argument("--project-root", help="include threads whose cwd is inside this project")
-    parser.add_argument("--rollout", action="append", type=Path,
-                        help="read this JSONL directly; repeat to supply multiple logs")
+    selection.add_argument("--rollout", action="append", type=Path,
+                           help="read this JSONL directly; repeat to supply multiple logs")
     parser.add_argument("--model", default="unknown",
-                        help="model label for direct rollout logs")
+                        help="fallback model for direct rollouts without prior turn_context metadata")
     parser.add_argument("--start", required=True, help="inclusive ISO-8601 UTC start time")
     parser.add_argument("--end", required=True, help="exclusive ISO-8601 UTC end time")
     return parser
@@ -340,6 +374,9 @@ def main(argv=None):
     except (OSError, sqlite3.Error, ValueError) as error:
         parser.error(str(error))
     print(json.dumps(result, indent=2))
+    diagnostics = result["diagnostics"]
+    if diagnostics["errors_by_kind"] or diagnostics["conflicting_response_ids"]:
+        return 2
     return 0
 
 
