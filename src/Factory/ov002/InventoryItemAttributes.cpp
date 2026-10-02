@@ -1,4 +1,5 @@
 #include "InventoryMenuState.h"
+#include "World/ZoneRecordLookup.h"
 
 extern "C" int GetInventoryItemByID(InventoryMenuState*, int, int);
 
@@ -20,14 +21,13 @@ typedef char InventoryItemRecordSizeCheck[
 typedef char InventoryItemRecordKeyOffsetCheck[
     offsetof(InventoryItemRecord, key_) == 0x18 ? 1 : -1];
 
-extern "C" InventoryItemRecord* func_020dedd0(ZoneState2754*, int);
 
 extern "C" int func_ov002_02157500(InventoryMenuState* menu, int slot, int owner)
 {
     int item = GetInventoryItemByID(menu, slot, owner);
     if (item < 0)
         return 0;
-    InventoryItemRecord* record = func_020dedd0(&menu->itemTable_, item);
+    InventoryItemRecord* record = (InventoryItemRecord*)func_020dedd0(&menu->itemTable_, item);
     if (record != NULL)
         return record->menuAttribute_;
     return 0;

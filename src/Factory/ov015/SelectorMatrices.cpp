@@ -2,20 +2,16 @@
 #include "Graphics/NSBXX/GeometryFifo.h"
 #include "Graphics/NSBXX/RenderConfig.h"
 
-struct SelectorMatrixState {
-    unsigned char unknown00[8];
-    unsigned int flags;
-};
+#include "SelectorState.h"
 
 extern "C" {
-int func_ov015_0218bc9c(SelectorMatrixState*);
 extern unsigned char data_ov015_02193fe0[];
 extern Matrix4x3* data_ov015_02194564[3];
 extern Matrix4x3 data_ov015_02194570;
 extern Matrix4x3 data_ov015_021945a0;
 extern Matrix4x3 data_ov015_021945d0;
 
-void func_ov015_0218bb3c(SelectorMatrixState* state)
+void func_ov015_0218bb3c(SelectorState* state)
 {
     if (!(state->flags & 0x10)) return;
     if (data_ov015_02193fe0[1] == func_ov015_0218bc9c(state)) {
