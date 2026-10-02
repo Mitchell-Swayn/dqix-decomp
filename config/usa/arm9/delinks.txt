@@ -957,6 +957,18 @@ src/System/RuntimeArctangent.cpp:
     .text start:0x02008848 end:0x02008da4
     .rodata start:0x020e6cc4 end:0x020e6d04
 
+src/System/RuntimeArctangent2.cpp:
+    complete
+    .text start:0x02005ac4 end:0x02005ea0
+
+src/System/RuntimeMathEntries.cpp:
+    complete
+    .text start:0x02009598 end:0x020095b0
+
+src/System/RuntimeMathTables.cpp:
+    complete
+    .rodata start:0x020e6abc end:0x020e6cc4
+
 src/System/RuntimeArctangentCoefficients.cpp:
     complete
     .rodata start:0x020e6d04 end:0x020e6d5c

@@ -96,5 +96,41 @@
     "offset": "0x4e",
     "object": "WorldPlacementPersistentData.o",
     "section": ".data"
+  },
+  "data_020e6acc": {
+    "base": "data_020e6abc",
+    "offset": "0x10",
+    "object": "RuntimeMathTables.o",
+    "section": ".rodata"
+  },
+  "data_020e6adc": {
+    "base": "data_020e6abc",
+    "offset": "0x20",
+    "object": "RuntimeMathTables.o",
+    "section": ".rodata"
+  },
+  "data_020e6aec": {
+    "base": "data_020e6abc",
+    "offset": "0x30",
+    "object": "RuntimeMathTables.o",
+    "section": ".rodata"
+  },
+  "data_020e6b6c": {
+    "base": "data_020e6abc",
+    "offset": "0xb0",
+    "object": "RuntimeMathTables.o",
+    "section": ".rodata"
+  },
+  "data_020e6c74": {
+    "base": "data_020e6abc",
+    "offset": "0x1b8",
+    "object": "RuntimeMathTables.o",
+    "section": ".rodata"
+  },
+  "data_020e6c84": {
+    "base": "data_020e6abc",
+    "offset": "0x1c8",
+    "object": "RuntimeMathTables.o",
+    "section": ".rodata"
   }
 }

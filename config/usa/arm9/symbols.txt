@@ -6213,7 +6213,7 @@ data_020e692c kind:data(any) addr:0x020e692c
 data_020e69ac kind:data(any) addr:0x020e69ac
 data_020e6aac kind:data(any) addr:0x020e6aac
 data_020e6ab1 kind:data(any) addr:0x020e6ab1
-data_020e6abc kind:data(any) addr:0x020e6abc
+data_020e6abc kind:data(byte[520]) addr:0x020e6abc
 data_020e6acc kind:data(any) addr:0x020e6acc
 data_020e6adc kind:data(any) addr:0x020e6adc
 data_020e6aec kind:data(any) addr:0x020e6aec
