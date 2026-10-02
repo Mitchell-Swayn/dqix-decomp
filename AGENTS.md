@@ -14,3 +14,7 @@ Keep queue state in docs/workflow/queue.json. Preserve existing user changes.
   usage only when measured; do not invent cost/plan conversion.
 - Keep ARM7 instructions, literals, initialized data, BSS and necessary assembly
   separate. A byte-perfect ROM with original fallback is not full decompilation.
+
+- ROM inputs and generated outputs must be independent files. Never hard-link a
+  generated output, or use another worktree's output as an input link. Copy the
+  verified original input from extract/baserom_dqix_usa.nds, then verify its SHA-1.

@@ -58,3 +58,15 @@ declarations. Compiler/setup failures are recorded in `luna-vram-pilot.md`.
 This establishes useful bounded work, not a controlled speed/cost advantage over
 Astra. Token usage remains unknown. The next trial should reconstruct a small
 function family, with setup prepared before dispatch and whole-task timing.
+
+## Runtime setup incident
+
+The second reconstruction pilot linked its writable ROM output and input to the
+main generated ROM. Its build temporarily overwrote that shared output. The
+worker reported the error and restored matching bytes before root inspection.
+Root confirmed the original extract/baserom_dqix_usa.nds was intact, then replaced
+all four linked paths with independent copies of the verified original input.
+The old VRAM pilot input was also linked to that generated output and was fixed.
+All repaired files have one link, distinct identities, and the target SHA-1.
+The runtime worker was stopped during repair and resumed afterward. This is a
+material setup failure and root intervention, not successful autonomous recovery.

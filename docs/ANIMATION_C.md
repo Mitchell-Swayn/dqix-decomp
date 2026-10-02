@@ -96,3 +96,9 @@ compiler after its data dependencies were recovered. Its first comparison is
 11.25%, with broad register/stack/arithmetic differences. The mapping was
 restored to fallback without further blind variants; its source needs a
 separate arithmetic and control-flow reconstruction, not a small register edit.
+
+A later isolated ApplyBindPoseRotation check, after table relocation cleanup,
+produces the original 384-byte shape and 85.42% object match. The remaining
+instruction differences exchange the bone pointer and pivot index registers
+(r4/r5). Moving the pivot index declaration to function scope did not change
+allocation (two checks). Mapping remains fallback; no new coverage claimed.
