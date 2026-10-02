@@ -44,3 +44,10 @@ build/matching. Full acceptance log: build/action_acceptance_final.log.
 Batch measurement: build/workflow/ov002_action_callback. No runtime tests or
 measured token usage. No queue, tools, build-harness source, input, or other
 worktree edits.
+
+Acceptance passed: ninja -j2 rom check report sha1, including all configured
+modules, symbol checks, ARM7 preservation, and exact ROM SHA-1
+c7c3014c237900c8281289b8bc76a781969b6278. work_batch.py measured 406.291506
+seconds, +1 matched function, +380 matched code bytes, +0 data bytes, unchanged
+denominators, and zero ARM7/literal/data/BSS/assembly gains. Source commit:
+d50f939. This is local worker validation; host integration remains separate.
