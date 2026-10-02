@@ -28,7 +28,7 @@
     "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
     "token_usage": null
   },
-  "notes": "Four newfunctions1165c..117f0 plus existingGetGrottoStruct exact. Five valid candidate compilations (initialloops, settertwo variants, guardrecheck, preserving originalunknown_0array for existingWorldcallers); two setup comparisons before correctunitownership produced no usablecandidate. Corrected actualTreasureMapCollection offset110 from binarycopy helpers, retained7ff4GameState size; fixedby-valueVector3i ABI ratherthanvariadic hypothesis. ExistingTreasureMapMetadata11/11 andWorldeffects/visibility/reset units exact. FullROM/module/symbol/SHA1 passed; ARM7/denominators unchanged. Unknownactivation flags neutral. No gameplaytest.",
+  "notes": "Four new functions at 0x0201165c..0x020117f0 and the existing GetGrottoStruct match exactly. Five valid candidate compilations: initial loops, two setter variants, a region-guard recheck, and preservation of the original unknown_0 array for existing World callers. Two earlier setup comparisons did not contain usable new candidates. The original collection copy helpers establish the TreasureMapCollection offset as 0x110; correcting it preserves the 0x7ff4 GameState size. The setter takes a Vector3i by value. Existing TreasureMapMetadata (11/11) and World effects, visibility, and reset units match. Full ROM/module/symbol/SHA1 checks passed. ARM7 and coverage denominators are unchanged. Activation flags remain neutrally named; no gameplay test was performed.",
   "attempts": 5,
   "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
   "delta": {

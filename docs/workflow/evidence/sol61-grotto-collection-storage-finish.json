@@ -28,7 +28,7 @@
     "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
     "token_usage": null
   },
-  "notes": "Threecollectiondependencies020ac734..020ac7b4 exactfirstcandidate; copiedsavedcollection usesactualsharedGameState/GrottoStruct owningfield (absolute64f4), sizeofad6andcountbytechecked. PublictypedCinterfaces replacefilelocaldeclarations; USA-only guards. FullROM/module/symbol/SHA1 passed; noARM7,data,denominatorchanges. No gameplaytests.",
+  "notes": "Three collection-copy dependencies at 0x020ac734..0x020ac7b4 match in the first candidate. They access the actual shared GameState/GrottoStruct collection member at 0x64f4; compiler assertions check its 0xad6 size and offset. Public typed C interfaces replace local declarations, with USA guards. Full ROM/module/symbol/SHA1 checks passed. ARM7, data, and coverage denominators are unchanged. No gameplay test was performed.",
   "attempts": 1,
   "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
   "delta": {

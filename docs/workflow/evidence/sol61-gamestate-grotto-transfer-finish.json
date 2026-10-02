@@ -28,7 +28,7 @@
     "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
     "token_usage": null
   },
-  "notes": "Ninefunctions11818..11a74 matchfirstcandidate including228-byte inputand156-byte output routines; actualsharedGrottoMetadataTransferState subobject0x88..0x110 ownsdescriptor, metadata andtextbuffers. No cross-subobjectviews. Knownlayout offsets andGameState7ff4size compilerasserted. ExistingGrottoStruct5/5, TreasureMapMetadata11/11 exact. FullROM/module/symbol/SHA1 passed; unchangeddenominators/data/ARM7. Descriptorvalueandflagnamesneutral; function11a40 preservesoriginalpartiallyinitializedmetadata reset behavior. No gameplaytests.",
+  "notes": "Nine functions at 0x02011818..0x02011a74 match in the first candidate, including the 228-byte input and 156-byte output routines. The shared GrottoMetadataTransferState member at offsets 0x88..0x110 owns the descriptor, metadata, and text buffers. There are no views crossing subobject boundaries. Compiler assertions check offsets and the 0x7ff4 GameState size. Existing GrottoStruct (5/5) and TreasureMapMetadata (11/11) match. Full ROM/module/symbol/SHA1 checks passed. Data, ARM7, and coverage denominators are unchanged. Descriptor values and flags remain neutrally named. Function 0x02011a40 preserves the release behavior of setting only type bits before copying a stack record whose remaining bits and bytes are uninitialized. No gameplay test was performed.",
   "attempts": 1,
   "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
   "delta": {

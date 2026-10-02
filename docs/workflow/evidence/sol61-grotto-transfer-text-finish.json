@@ -28,7 +28,7 @@
     "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
     "token_usage": null
   },
-  "notes": "Fourtextbufferhelpers11a74..11af0 matchfirstcandidate; expandedtransferunit13/13exact before documentationcomment. Actual64-byte owningbuffer sharedheaderfielduseddirectly; observedNULL/indexchecksandtwo distinctreleaseclearentrypointsretained. Documented11a40releasebehavior: onlytypebitssetbeforestackrecordcopy, otherbits/bytesuninitialized, strongercontractnotestablished. FullROM/module/symbol/SHA1 passedaftercomment, data/denominators/ARM7unchanged. No gameplaytests.",
+  "notes": "Four text-buffer helpers at 0x02011a74..0x02011af0 match in the first candidate; the expanded transfer unit is 13/13 exact. The source accesses the actual shared 64-byte buffer. The observed null/index checks and both release clear entry points are preserved. A source comment documents function 0x02011a40: only type bits are set before copying the stack record; its other bits and bytes are uninitialized, and no stronger caller contract has been established. Full ROM/module/symbol/SHA1 checks passed after that documentation edit. Data, ARM7, and coverage denominators are unchanged. No gameplay test was performed.",
   "attempts": 1,
   "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
   "delta": {
