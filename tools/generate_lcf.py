@@ -12,7 +12,7 @@ import subprocess
 from pathlib import Path
 
 
-def apply_absolute_symbols(lcf_path: Path, symbols_path: Path) -> None:
+def apply_absolute_symbols(lcf_path: Path, symbols_path: Path, output_section=None) -> None:
     if not symbols_path.exists():
         return
     symbols = json.loads(symbols_path.read_text(encoding="utf-8"))
@@ -58,11 +58,34 @@ def apply_absolute_symbols(lcf_path: Path, symbols_path: Path) -> None:
                            + r"\(" + re.escape(alias["section"]) + r"\)[ \t]*$")
         if len(list(owner.finditer(text))) != 1:
             raise ValueError(f"Expected one owning input section for linker alias: {name}")
+        if output_section is not None:
+            match = next(owner.finditer(text))
+            blocks = list(re.finditer(r"(?m)^\s*(\.[A-Za-z_][A-Za-z0-9_]*)\s*:\s*\{", text[:match.start()]))
+            if not blocks:
+                raise ValueError(f"Owning input section is outside module: {name}")
+            block = blocks[-1]
+            prefix = text[block.start():match.start()]
+            if block.group(1) != output_section or prefix.count("{") - prefix.count("}") != 1:
+                raise ValueError(f"Owning input section is outside module {output_section}: {name}")
         text = owner.sub(lambda match: match.group(0) + "\n" + match.group(1)
                          + f"{name} = {alias['base']} + {alias['offset']};", text)
     if definitions:
         text = text.replace(marker, marker + "\n" + "\n".join(definitions), 1)
     lcf_path.write_text(text, encoding="utf-8")
+
+
+def apply_module_symbols(lcf_path: Path, config_directory: Path) -> None:
+    """Apply module-local aliases, restoring the LCF if any module is invalid."""
+    original = lcf_path.read_bytes()
+    try:
+        for path in sorted(config_directory.rglob("linker_symbols.json")):
+            module = path.parent.name
+            if not re.fullmatch(r"arm9|itcm|dtcm|ov[0-9]{3}", module):
+                raise ValueError(f"Unknown linker alias module: {module}")
+            apply_absolute_symbols(lcf_path, path, "." + module)
+    except (OSError, ValueError):
+        lcf_path.write_bytes(original)
+        raise
 
 
 def main() -> None:
@@ -72,7 +95,7 @@ def main() -> None:
     parser.add_argument("--lcf-path", type=Path, required=True)
     args = parser.parse_args()
     subprocess.run([str(args.dsd.resolve()), "lcf", "--config-path", str(args.config_path)], check=True)
-    apply_absolute_symbols(args.lcf_path, args.config_path.parent / "linker_symbols.json")
+    apply_module_symbols(args.lcf_path, args.config_path.parent)
 
 
 if __name__ == "__main__":

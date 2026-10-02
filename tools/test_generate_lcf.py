@@ -6,7 +6,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from generate_lcf import apply_absolute_symbols
+from generate_lcf import apply_absolute_symbols, apply_module_symbols
 from arm7_build import read_elf
 
 
@@ -99,8 +99,96 @@ class AbsoluteSymbolsTest(unittest.TestCase):
             apply_absolute_symbols(self.lcf, self.config)
         self.assertEqual(self.lcf.read_text(), "unexpected LCF layout")
 
+    def write_module_fixture(self):
+        directory = self.root / "arm9"
+        itcm = directory / "itcm"
+        itcm.mkdir(parents=True)
+        (directory / "linker_symbols.json").write_text('{"SDK_IRQ_STACKSIZE": "0x400"}')
+        (itcm / "symbols.txt").write_text(
+            'table kind:bss(size=0x1000) addr:0x01ff8000\n'
+            'table_end kind:bss(size=0x0) addr:0x01ff9000\n')
+        (itcm / "linker_symbols.json").write_text(json.dumps({"table_end": dict(
+            base="table", offset="0x1000", object="ItcmTable.o", section=".bss")}))
+        self.original = ('MEMORY {}\nSECTIONS {\n    .arm9 : {\n        Main.o(.text)\n    } > ARM9\n'
+                         '    .itcm : {\n        ItcmTable.o(.bss)\n    } > ITCM\n}\n')
+        self.lcf.write_text(self.original)
+        return directory, itcm
+
+    def test_module_local_alias_uses_own_symbols_and_section(self):
+        directory, _ = self.write_module_fixture()
+        apply_module_symbols(self.lcf, directory)
+        self.assertIn('SDK_IRQ_STACKSIZE = 0x400;', self.lcf.read_text())
+        self.assertIn('ItcmTable.o(.bss)\n        table_end = table + 0x1000;', self.lcf.read_text())
+
+    def test_cross_module_owner_rejected_and_all_changes_rolled_back(self):
+        directory, _ = self.write_module_fixture()
+        wrong = self.original.replace('Main.o(.text)', 'ItcmTable.o(.bss)').replace(
+            '    .itcm : {\n        ItcmTable.o(.bss)\n    } > ITCM\n', '')
+        self.lcf.write_text(wrong)
+        with self.assertRaisesRegex(ValueError, 'outside module'):
+            apply_module_symbols(self.lcf, directory)
+        self.assertEqual(self.lcf.read_text(), wrong)
+
+    def test_symbol_in_different_module_does_not_satisfy_alias(self):
+        directory, itcm = self.write_module_fixture()
+        (directory / 'symbols.txt').write_bytes((itcm / 'symbols.txt').read_bytes())
+        (itcm / 'symbols.txt').write_text('table_end kind:bss(size=0x0) addr:0x01ff9000\n')
+        with self.assertRaisesRegex(ValueError, 'base missing'):
+            apply_module_symbols(self.lcf, directory)
+        self.assertEqual(self.lcf.read_text(), self.original)
+
+    def test_unknown_module_is_rejected_without_modifying_lcf(self):
+        directory, _ = self.write_module_fixture()
+        bad = directory / 'unrecognized'
+        bad.mkdir()
+        (bad / 'linker_symbols.json').write_text('{}')
+        with self.assertRaisesRegex(ValueError, 'Unknown linker alias module'):
+            apply_module_symbols(self.lcf, directory)
+        self.assertEqual(self.lcf.read_text(), self.original)
+
 
 class PinnedLinkerAliasTest(unittest.TestCase):
+    @unittest.skipUnless(os.name == "nt", "pinned MWCC executables require Windows")
+    def test_one_past_bss_alias_and_module_end_alignment(self):
+        compiler = Path(__file__).resolve().parents[1] / "tools/mwccarm/2.0/sp2p2"
+        if not (compiler / "mwccarm.exe").is_file():
+            self.skipTest("pinned MWCC toolchain unavailable")
+        with tempfile.TemporaryDirectory(prefix="lcf queue ") as directory:
+            root = Path(directory)
+            config_directory = root / 'arm9'
+            itcm = config_directory / 'itcm'
+            itcm.mkdir(parents=True)
+            (root / 'Queue.cpp').write_text(
+                'unsigned int queue[1024];\nextern unsigned char queue_end[];\n'
+                'extern const unsigned char* const pointer = queue_end;\n'
+                'extern "C" int entry() { return queue[0]; }\n')
+            lcf = root / 'test.lcf'
+            lcf.write_text('MEMORY { ARM9 : ORIGIN = 0x02000000\n'
+                           'ITCM : ORIGIN = 0x01ffe270 }\nSECTIONS {\n'
+                           '    .arm9 : {\n        Queue.o(.text)\n        Queue.o(.rodata)\n    } > ARM9\n'
+                           '    .itcm : {\n        Queue.o(.bss)\n'
+                           '        . = ALIGN(32);\n        bss_end = .;\n    } > ITCM\n}\n')
+            (itcm / 'symbols.txt').write_text(
+                'queue kind:bss(size=0x1000) addr:0x01ffe270\n'
+                'queue_end kind:bss(size=0x0) addr:0x01fff270\n')
+            (itcm / 'linker_symbols.json').write_text(json.dumps({'queue_end': dict(
+                base='queue', offset='0x1000', object='Queue.o', section='.bss')}))
+            apply_module_symbols(lcf, config_directory)
+            commands = [[str(compiler / 'mwccarm.exe'), '-O2', '-proc', 'arm946e', '-nolink',
+                         '-sym', 'on', '-lang=c++', '-gccinc', '-c', 'Queue.cpp', '-o', 'Queue.o'],
+                        [str(compiler / 'mwldarm.exe'), '-proc', 'arm946e', '-nostdlib',
+                         '-m', 'entry', '-force_active', 'queue,pointer', 'Queue.o', 'test.lcf',
+                         '-o', 'linked.o']]
+            for command in commands:
+                result = subprocess.run(command, cwd=root, capture_output=True, text=True)
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            allocated, symbols, _ = read_elf(root / 'linked.o')
+            self.assertEqual(symbols['queue_end'], symbols['queue'] + 4096)
+            self.assertEqual(symbols['bss_end'] - symbols['queue_end'], 16)
+            _, address, image = allocated[0]
+            self.assertEqual(struct.unpack_from('<I', image, symbols['pointer'] - address)[0],
+                             symbols['queue_end'])
+
     @unittest.skipUnless(os.name == "nt", "pinned MWCC executables require Windows")
     def test_alias_address_section_and_relocation(self):
         compiler = Path(__file__).resolve().parents[1] / "tools/mwccarm/2.0/sp2p2"

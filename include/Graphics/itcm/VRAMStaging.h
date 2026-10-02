@@ -167,3 +167,4 @@ void SendStagedVRAMDataToVRAM(void* vramStagingManagerUserdata);
 
 extern VRAMStagingManager::StagingSpaceAllocation g_vramStagingAllocations[0x80];
 extern VRAMStagingManager::Task g_vramStagingTaskQueue[0x100];
+extern VRAMStagingManager::CommonVRAMRegionTaskSet g_vramStagingRegionalTaskSets[10];
