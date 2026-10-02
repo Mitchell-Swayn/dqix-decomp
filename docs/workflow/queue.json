@@ -246,6 +246,45 @@
       "evidence": "docs/workflow/arm7-power-events.md",
       "remaining_dependency": "SPI enqueue remains unmatched and required; 220B candidate against224B target after three variants.",
       "token_usage": null
+    },
+    {
+      "id": "sol61-gamestate-record-fields",
+      "status": "awaiting_integrator_acceptance",
+      "owner": "sol61_runtime",
+      "worktree": "../DQIX-Decomp-luna-runtime",
+      "scope": "Six indexed-record/list functions02010828..0201099c, +372 code bytes; shared-header list embedded and existing readers retained.",
+      "commits": [
+        "a3dfe7e",
+        "2eb8f75"
+      ],
+      "attempt_limit_per_function": 10,
+      "candidate_comparisons": 6,
+      "acceptance": "Exact candidate objects and full ROM/module/symbol/SHA1 passed; pending root integration",
+      "token_usage": null
+    },
+    {
+      "id": "sol61-gamestate-byte-buffers",
+      "status": "awaiting_integrator_acceptance",
+      "owner": "sol61_runtime",
+      "worktree": "../DQIX-Decomp-luna-runtime",
+      "scope": "Ten byte-buffer/bitset helpers020113a8..02011544, +412 code bytes",
+      "commit": "c56559c",
+      "attempt_limit_per_function": 10,
+      "candidate_comparisons": 3,
+      "acceptance": "Exact candidate objects and full ROM/module/symbol/SHA1 passed; pending root integration",
+      "token_usage": null
+    },
+    {
+      "id": "sol61-gamestate-attribute-table",
+      "status": "awaiting_integrator_acceptance",
+      "owner": "sol61_runtime",
+      "worktree": "../DQIX-Decomp-luna-runtime",
+      "scope": "Two table setup/attribute lookup helpers0201133c..020113a8, +108 code bytes",
+      "commit": "1886df3",
+      "attempt_limit_per_function": 10,
+      "candidate_comparisons": 2,
+      "acceptance": "Exact candidate objects and full ROM/module/symbol/SHA1 passed; pending root integration",
+      "token_usage": null
     }
   ]
 }
