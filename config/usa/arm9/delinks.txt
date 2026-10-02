@@ -263,9 +263,26 @@ src/Graphics/NSBXX/PatternAnimation.cpp:
     complete
     .text start:0x020b7694 end:0x020b7840
 
-//src/Graphics/NSBXX/JAC.cpp:
-//    complete
-//    .text start:0x020b7840 end:0x020b8e60
+src/Graphics/NSBXX/JACPivotPositions.cpp:
+    complete
+    .rodata start:0x020e9284 end:0x020e92a8
+
+src/Graphics/NSBXX/JACSetup.cpp:
+    complete
+    .text start:0x020b7840 end:0x020b7a20
+
+src/Graphics/NSBXX/JACBoneEvaluation.cpp:
+    complete
+    .text start:0x020b7ba0 end:0x020b7f54
+
+src/Graphics/NSBXX/JACTranslationSmooth.cpp:
+    complete
+    .text start:0x020b80b4 end:0x020b8210
+
+src/Graphics/NSBXX/JACInterpolation.cpp:
+    complete
+    .text start:0x020b8404 end:0x020b8e60
+
 
 src/Graphics/NSBXX/MAM.cpp:
     complete
