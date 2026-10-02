@@ -110,3 +110,8 @@ outputs. `guard_rom_files.py` runs before the ROM builder and the finalizer
 checks the same rule: output aliases and multiply-linked files are rejected
 before writing. Seven tests include rejection before a writer can change the
 original input. Read-only tool junctions do not require copying compiler files.
+
+Before a worker coverage snapshot, configure and build the checked-out baseline
+so reports correspond to that revision, especially after switching branches.
+Record dispatch time separately when measuring setup-inclusive task duration.
+Only integrated main snapshots establish accepted batch coverage deltas.

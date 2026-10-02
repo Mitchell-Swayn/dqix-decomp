@@ -119,3 +119,19 @@ The ARM7 disassembly helper also required root correction: aggregate instruction
 and literal byte counts cannot locate bytes inside multi-function units. The
 corrected tool reports raw decoding for mixed units and passed15 tests on main,
 including an interleaved-literal regression. No source coverage comes from it.
+
+## Completed bounded Luna trials
+
+The world three-function pilot and GameState chunk copy are integrated and pass
+combined main module, symbol, ARM7 and exact ROM SHA-1 checks. World adds three
+functions / 28 report code bytes. Its worker baseline report was stale after a
+branch switch, so broader worker snapshot deltas are not credited. The copy adds
+one function / 328 instruction bytes after five candidates; whole-task time was
+559.75 seconds, excluding root review/integration.
+
+Across these Luna ARM9 trials, 14 functions / 484 report code bytes are accepted.
+Root independently added one byte-cursor function / 36 bytes. Pilot23 therefore
+adds 15 ARM9 functions / 520 bytes and one ARM7 C function / 32 instruction bytes
+plus four literal bytes. Its 1679-second interval includes other work and idle
+time. Token cost remains unmeasured; these trials do not establish comparative
+cost or throughput against Astra.

@@ -21,10 +21,10 @@
     },
     {
       "id": "runtime-next",
-      "status": "active",
-      "owner": "luna_runtime_batch",
+      "status": "integrated",
+      "owner": null,
       "worktree": "../DQIX-Decomp-luna-runtime",
-      "scope": "Luna9c2d576 four accessors integrated; next six preselected GameState helpers in progress",
+      "scope": "Luna four accessors, six prepared helpers and 328-byte chunk copy integrated; 11 functions / 456 code bytes. Full main acceptance passed.",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1"
     },
@@ -38,10 +38,10 @@
     },
     {
       "id": "arm7-sound-next",
-      "status": "active",
-      "owner": "luna_arm7_functions",
+      "status": "integrated",
+      "owner": null,
       "worktree": "../DQIX-Decomp-arm7-batch",
-      "scope": "Luna e00046d helper integrated; worker now adding manifest-based read-only disassembly tooling to prevent offset errors",
+      "scope": "Luna ARM7 helper integrated: 32 instruction bytes / 4 literals; manifest disassembler integrated after review correction, 15 tests pass.",
       "attempt_limit_per_function": 10,
       "acceptance": "exact full ARM7 payload and pipeline tests; root full ROM integration"
     },
@@ -50,7 +50,7 @@
       "status": "queued",
       "owner": null,
       "worktree": "../DQIX-Decomp-zone3d",
-      "scope": "Historical batches throughb62d6d6 integrated and reverified on main; dirty old worktree preserved; review grotto vector alias and GameState persistent-table layout",
+      "scope": "Historical batches and Luna three-function pilot integrated; grotto vector alias fixed. Persistent GameState table layout remains required investigation.",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1"
     },
