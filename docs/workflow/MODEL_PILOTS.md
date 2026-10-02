@@ -97,3 +97,10 @@ These small samples do not establish a cost/speed advantage over Astra.
 Next trials deliberately reduce discovery/setup work: six preselected GameState
 helpers with established boundaries, plus a manifest-driven ARM7 disassembly
 utility. The latter provides tooling rather than source coverage.
+
+The prepared second GameState batch809e1f3 added six functions/96 report code
+bytes (84 instructions,12 literals). All six matched on their first candidates.
+Whole-task time330seconds includes setup/checks; root integration is additional.
+Root reviewed it, used existing field names instead of raw-offset arithmetic,
+and passed combined acceptance. This is encouraging for preselected small
+functions, but the tasks differ from the earlier trials.

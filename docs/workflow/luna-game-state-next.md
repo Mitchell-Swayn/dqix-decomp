@@ -35,3 +35,7 @@ symbol checks, ARM7 source build and preservation baseline, guarded USA ROM
 finalization, and exact ROM SHA-1
 `c7c3014c237900c8281289b8bc76a781969b6278`. No gameplay validation was run.
 Build and per-object logs remain under ignored `build/`.
+
+Root integrated the batch and replaced raw `state + 0x3f8` arithmetic with the
+existing `state->unk_3f8` field. All three affected symbols still match100%;
+combined main module/symbol/ARM7/ROM checks passed after this readability change.
