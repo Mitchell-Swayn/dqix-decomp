@@ -2037,6 +2037,33 @@
         "ARM7_TransferBackupBytes": 58732344,
         "ARM7_WriteBackupByte": 58732540
       }
+    },
+    {
+      "name": "BackupIO",
+      "source": "config/usa/arm7/src/BackupIO.c",
+      "autoload": "wram",
+      "runtime_address": 58733020,
+      "payload_offset": 46072,
+      "size": 476,
+      "code_bytes": 440,
+      "literal_pool_bytes": 36,
+      "entry": "ARM7_ReadBackup",
+      "symbols": {
+        "ARM7_ReadBackup": 58733020,
+        "ARM7_WriteBackup": 58733128,
+        "ARM7_ProgramBackup": 58733312
+      },
+      "externals": {
+        "ARM7_BackupWorker": 58763648,
+        "ARM7_CheckBackupReady": 58732284,
+        "ARM7_EnableBackupWrites": 58732720,
+        "ARM7_SendBackupAddress": 58732772,
+        "ARM7_WaitBackupReady": 58732036,
+        "ARM7_BackupCommandState": 58765184,
+        "ARM7_TransferBackupBytes": 58732344,
+        "ARM7_ReadBackupByte": 58732476,
+        "ARM7_WriteBackupByte": 58732540
+      }
     }
   ]
 }

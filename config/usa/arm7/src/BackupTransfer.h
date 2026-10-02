@@ -11,8 +11,15 @@ typedef struct {
  unsigned int unknown0;
  BackupTransfer transfer;
 } BackupCommandState;
-/* Only the result pointer at the start of the worker state is recovered here. */
-typedef struct { int *result; } BackupWorker;
+/* Request prefix through the per-operation delay values. */
+typedef struct {
+ int result;
+ unsigned int unknown4[8];
+ unsigned int pageSize,addressBytes;
+ int writeDelay,programDelay,programTimeout;
+} BackupRequest;
+/* Only the request pointer at the start of the worker state is recovered here. */
+typedef struct { BackupRequest *request; } BackupWorker;
 typedef char BackupTransferSizeCheck[sizeof(BackupTransfer)==16?1:-1];
 extern BackupTransfer ARM7_BackupTransfer;
 extern BackupCommandState ARM7_BackupCommandState;

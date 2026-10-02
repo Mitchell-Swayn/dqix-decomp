@@ -17,5 +17,5 @@ void ARM7_WaitBackupReady(int initialDelay,int timeout)
    remaining-=interval;
   }
  }
- if(!IsReady())*ARM7_BackupWorker.result=4;
+ if(!IsReady())ARM7_BackupWorker.request->result=4;
 }

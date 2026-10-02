@@ -555,3 +555,18 @@
   deliberately incomplete. Command bytes and all state remain external dependencies.
 - Four functions add 324 instruction and 36 literal bytes, no data/BSS.
 - Validation: integrated full payload and all linked symbols match, including the prior transfer unit rebuilt through the shared header; all 11 pipeline and six verifier tests pass.
+
+## 2026-10-02 - backup read and page writes
+
+- Read matched first compile. Write/program variants one and two had the correct
+  184-byte size each but 37 combined register-byte differences; moving declarations
+  outside the conditional did not change allocation. Variant three used an inline
+  minimum helper, reducing differences to 23 but choosing an inclusive condition.
+  Variant four expressed the strict greater-than minimum, leaving 21 register bytes.
+  Variant five kept pageSize-1 inside the loop expression; compiler loop-invariant
+  hoisting then reproduced the native mask register and both functions matched.
+- Shared BackupRequest now describes the result plus known page/address/delay
+  fields. The worker prefix consistently points to this request across older status
+  units and new I/O code. No duplicate differently typed global-pointer alias added.
+- Three functions add 440 instruction and 36 literal bytes, no data or BSS.
+- Validation: integrated full payload and symbols match, including every changed-header consumer; all 11 pipeline and six verifier tests pass.

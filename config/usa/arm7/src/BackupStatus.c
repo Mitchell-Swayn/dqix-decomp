@@ -14,8 +14,8 @@ extern void ARM7_WaitBackupReady(int,int);
 int ARM7_CheckBackupReady(void)
 {
  ARM7_WaitBackupReady(0,50);
- if(*ARM7_BackupWorker.result==4) {
-  *ARM7_BackupWorker.result=6;
+ if(ARM7_BackupWorker.request->result==4) {
+  ARM7_BackupWorker.request->result=6;
   return 0;
  }
  return 1;
