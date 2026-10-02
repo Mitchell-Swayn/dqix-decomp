@@ -139,6 +139,28 @@
       "scope": "tools/configure.py delink rule expects delink.yaml that dsd 0.10.2 never produces",
       "next_action": "Track actual generated outputs with a completion marker only after success; test deleted outputs, config changes, fresh builds and incremental no-op behavior before replacing current always-rebuild behavior",
       "worktree": "../DQIX-Decomp-delink"
+    },
+    {
+      "id": "luna-vram-pilot",
+      "status": "active",
+      "owner": "luna_vram_pilot",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "high",
+      "worktree": "../DQIX-Decomp-luna-vram",
+      "scope": "Four default VRAM callback globals, 16 initialized data bytes; preserve ABI and existing code matching",
+      "acceptance": "Independent source review, exact objects, combined module/symbol/ROM/SHA1 checks",
+      "attempt_limit_per_function": 10,
+      "token_usage": null
+    },
+    {
+      "id": "luna-build-review-pilot",
+      "status": "active",
+      "owner": "luna_build_review",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "high",
+      "worktree": "../DQIX-Decomp-delink",
+      "scope": "Read-only review and focused validation of043fe8e incremental delink output tracking",
+      "token_usage": null
     }
   ]
 }
