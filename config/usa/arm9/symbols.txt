@@ -6608,7 +6608,7 @@ data_020eef24 kind:data(any) addr:0x020eef24
 data_020eef28 kind:data(any) addr:0x020eef28
 data_020eef2c kind:data(any) addr:0x020eef2c
 data_020eef30 kind:data(any) addr:0x020eef30
-data_020eef34 kind:data(any) addr:0x020eef34
+data_020eef34 kind:data(byte[64]) addr:0x020eef34
 gRuntimeDecimalPowers kind:data(byte[212]) addr:0x020eef74
 data_020ef048 kind:data(byte[40]) addr:0x020ef048
 data_020ef070 kind:data(byte[8]) addr:0x020ef070
