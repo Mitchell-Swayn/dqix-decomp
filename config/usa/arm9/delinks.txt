@@ -391,6 +391,7 @@ src/Graphics/NSBXX/VAV.cpp:
 src/Graphics/NSBXX/RenderCommandProcs.cpp:
     complete
     .text start:0x020b99b0 end:0x020bb424
+    .data start:0x020f1e88 end:0x020f1ee8
 
 src/System/VRAM.cpp:
     complete
