@@ -1589,3 +1589,32 @@ src/World/WorldPlacementPersistentInitialize.cpp:
 src/World/WorldPlacementPersistentData.cpp:
     complete
     .data start:0x020f1308 end:0x020f1368
+
+src/World/WorldScriptArrayListAccessors.cpp:
+    complete
+    .text start:0x0208d9e8 end:0x0208daf4
+
+src/World/WorldScriptArrayEntryReset.cpp:
+    complete
+    .text start:0x0208d51c end:0x0208d540
+
+src/World/WorldScriptArrayAllocationCallback.cpp:
+    complete
+    .text start:0x0208d550 end:0x0208d594
+
+src/World/WorldScriptArrayLoading.cpp:
+    complete
+    .text start:0x0208d860 end:0x0208d8ec
+
+src/World/WorldScriptArrayLoadingData.cpp:
+    complete
+    .data start:0x020f121c end:0x020f1244
+    .bss start:0x02108fc0 end:0x02108fc8
+
+src/World/WorldScriptArrayReadRecord.cpp:
+    complete
+    .text start:0x0208d594 end:0x0208d82c
+
+src/World/WorldScriptArrayStringData.cpp:
+    complete
+    .data start:0x020f1244 end:0x020f1248

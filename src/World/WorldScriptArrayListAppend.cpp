@@ -10,7 +10,7 @@ extern "C" void func_0208d928(WorldScriptArrayList* list,
     destination->key = entry->key;
     destination->unknown4 = entry->unknown4;
     destination->unknown8 = entry->unknown8;
-    destination->unknownC = entry->unknownC;
+    destination->values = entry->values;
     destination->unknown10 = entry->unknown10;
     destination->unknown14 = entry->unknown14;
     list->count = (short)(list->count + 1);
