@@ -44,3 +44,5 @@ new table representation. Its C++ instructions remain unchanged, and this
 data batch earns no additional function or code-byte coverage.
 
 RenderMatrixCommands.cpp owns the two mutable 72-byte graphics command packets at 0x020f1d78..0x020f1e08. Each contains the packed pop/mode/load/scale command sequence, identity rotation, and initially zero translation and scale fields; existing rendering callers populate the mutable fields. Eight interior field labels become base-plus-offset references. Both complete structs match at 100%, and full ROM/module/symbol checks pass. This contributes 144 initialized data bytes.
+
+RenderCommandDispatch.cpp recovers the 128-byte dispatch table at 0x020f1e08..0x020f1e88. The five-bit opcode mask proves 32 slots: 14 named command functions and 18 null entries. Existing command 9 remains fallback; its unmapped candidate declaration now uses the C++ linkage established by the symbol and table, without claiming its implementation matches. The table compares at 100% and full ROM/module/symbol checks pass.

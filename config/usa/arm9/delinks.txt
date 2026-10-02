@@ -263,6 +263,10 @@ src/Graphics/NSBXX/PatternAnimation.cpp:
     complete
     .text start:0x020b7694 end:0x020b7840
 
+src/Graphics/NSBXX/RenderCommandDispatch.cpp:
+    complete
+    .data start:0x020f1e08 end:0x020f1e88
+
 src/Graphics/NSBXX/RenderMatrixCommands.cpp:
     complete
     .data start:0x020f1d78 end:0x020f1e08
