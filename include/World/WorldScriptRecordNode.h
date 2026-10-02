@@ -1,10 +1,20 @@
 #pragma once
 
-// Observed 12-byte linked record: signed key, packed selector, opaque word, next.
+// Observed linked-record layout shared by the World script helpers.
 struct WorldScriptRecordNode
 {
     short key;
-    unsigned short selector;
+    union
+    {
+        unsigned short rawSelector;
+        struct
+        {
+            unsigned short selectorLow : 9, selectorValue : 6, unknown15 : 1;
+        } selectorBits;
+    } selector;
     unsigned int opaque4;
     WorldScriptRecordNode* next;
 };
+
+typedef char WorldScriptRecordNodeSizeCheck[
+    sizeof(WorldScriptRecordNode) == 12 ? 1 : -1];
