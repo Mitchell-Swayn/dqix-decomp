@@ -13,3 +13,7 @@ src/Factory/ov025/SecondaryQueueInsert.cpp:
     complete
     .text start:0x021ed5f0 end:0x021ed634
 
+src/Factory/ov025/PrimaryQueueInsert.cpp:
+    complete
+    .text start:0x021ed380 end:0x021ed5f0
+

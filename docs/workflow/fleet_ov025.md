@@ -68,3 +68,60 @@ types and gameplay meanings before extending this family. The local queue
 layout's unknown fields remain explicitly named as unknown. Global initialized
 data and BSS dependencies of the enclosing owner are not reconstructed here.
 This batch does not complete ov025.
+
+## Continuation: primary insertion and lookup
+
+Batch `fleet_ov025_20261003t0145`, based on
+`ec1dc9e366a96edeaf18c306172ded7de6a36423`. The batch name is an identifier;
+actual UTC timing is recorded in its work_batch snapshots. Inspected prior
+handoff, matching ledger, module maps and original disassembly before editing.
+No inherited variants were recorded for these three functions. No queue,
+shared tooling, other module or existing source changes.
+
+`src/Factory/ov025/PrimaryQueueInsert.cpp` reconstructs the contiguous range
+`[0x021ed380, 0x021ed5f0)`: append (`021ed380`), insert at the owner's current
+insertion index (`021ed444`), and five-field lookup (`021ed564`). Both insertion
+paths reject zero IDs, kinds >= 6 and full queues, assign a signed 16-bit serial
+with the observed 32767 rollover, and retain all seven parallel arrays.
+Lookup compares ID, parameter, payload identity, auxiliary value and kind;
+flags and serial are not search keys. The existing actual array layout in
+ActionQueues.h suffices; no new shared types or header edits were needed.
+Payloads are pointer identities here; their contents are not read by this family.
+Address-based names remain because gameplay meanings are still uncertain.
+
+Original dsd output `build/factory/fleet_ov025/dis/ov025_5.s` establishes the
+instructions and literal boundary. Callers include `021d8c30` (both insertion
+paths) and `021de124` (lookup followed by insertion when lookup returns negative).
+The factory evidence caller list is empty because these direct local calls are
+not explicit call relocations in the maps; the disassembly supplies this evidence.
+
+- Exact final object comparison: 3/3 functions, zero factory_diff mismatches.
+- Three match invocations, each after `ninja -j2` candidate compilation. Append
+  and indexed insertion matched their first substantive variants. Lookup variant
+  1 used indexed IDs and an unsigned-short ID argument (8.57% match); variant 2
+  uses a pointer walk over the ID array and an int argument (100%). The third
+  invocation validates final comments. Failed candidate and diagnosis preserved.
+  Lifetime unproductive counts: append 0, indexed insertion 0, lookup 1. No cap
+  reached; processing has not been tried in either recorded batch.
+- Final `.venv/Scripts/ninja.exe -j2 rom check report sha1` exited 0: module and
+  symbol checks, ARM7 baseline, packaging and target SHA-1
+  `c7c3014c237900c8281289b8bc76a781969b6278`. Independently rechecked original
+  input SHA-1. All reconfigures used the explicitly supplied compiler path.
+- ARM9 report: 1662 to 1665 matched functions; 219488 to 220112 matched code
+  bytes. Gain: 620 instructions plus the 4-byte 32767 literal at `0x021ed560`.
+  Initialized data, BSS, alignment and assembly gains: zero. Denominators and
+  ARM7 counters unchanged. Original fallback remains for all other functions.
+- Timing/deltas: `build/workflow/fleet_ov025_20261003t0145/{start,finish}.json`;
+  finish records measured elapsed time against the committed source revision.
+  Token usage unmeasured. No runtime/gameplay tests performed.
+
+Verbose evidence: `build/factory/fleet_ov025/primary_evidence_v1.json`,
+`primary_evidence_exact.json`, `primary_diagnosis_v1.json`,
+`primary_diagnosis_exact.json`, `primary_build*.log`, `primary_acceptance.log`;
+candidate/diff snapshots in `build/matching/20261002T155327-*`,
+`20261002T155401-*`, `20261002T155424-*`.
+
+Next required dependency: primary processing at `021ed634`, including enclosing
+owner, payload/context types and its constant tables. Its original fallback and
+global initialized-data/BSS dependencies remain unresolved. The earlier insertion
+and search deferrals above are resolved by this batch; ov025 remains incomplete.
