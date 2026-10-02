@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "luna-gamestate-queue-followup",
+  "snapshot": {
+    "utc": "2026-10-02T12:40:11.512110+00:00",
+    "revision": "619b831bf5a4aa0223e46170d6ae6e1c46021a6d",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 213220,
+      "matched_data": 48064,
+      "matched_functions": 1573
+    },
+    "arm7": {
+      "source_functions": 265,
+      "source_code_bytes": 22912,
+      "source_literal_pool_bytes": 1588,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 141924,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "f204af8919cfed617531aa289cbe4789f47080f2b2be553121d715c974174022",
+    "arm7_report_sha256": "6f3aaf4f9b7392fa38ff6c7504a2202e44c4c00ffb6122d9dae61b1d89e761f4",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Reconstructed 020103f0 and 020104cc as parallel elapsed-time output routines using established GameState::mainTimestamp_/altTimestamp_ and GetCurrentTimestamp; observed outputs are u16 plus two u8 fields. One candidate per function matched exact. Callers exist in main and overlays ov008/ov023. Full ninja rom check report sha1 passed; target SHA c7c3014c237900c8281289b8bc76a781969b6278. Existing GameTime range ends at 020103c8; only 020103f0..020105a8 was delinked. Whole-task start 2026-10-02 12:37:10 UTC before inspection.",
+  "attempts": 2,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 440,
+      "matched_data": 0,
+      "matched_functions": 2
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 167.150807
+}
