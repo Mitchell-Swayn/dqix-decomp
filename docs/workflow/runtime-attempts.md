@@ -246,3 +246,36 @@ caveat unchanged. Logs: `build/runtime-batch7-acceptance.log`,
 `build/runtime-batch7-finalize.log`, and `build/matching/`.
 Local matched code 152,268 -> 152,384; functions 1,163 -> 1,168; data remains
 26,488. Denominators unchanged. No gameplay validation was performed.
+
+## Binary64 floor, exponent, and sine helpers (2026-10-02)
+
+Based on `c6569b9`. Four functions add 1,596 code bytes (1,508 instructions
+and 88 compiler literal bytes), with no data/BSS or denominator changes.
+
+| Function | Distinct variants | Result / useful finding |
+| --- | ---: | --- |
+| `func_02008f5c` (floor) | 3 | Signed word reads preserve stack reloads; declaring exponent before the low word gives the observed allocation. |
+| `func_0200911c` (fraction/exponent decomposition) | 1 | Normalize subnormals with 2^54 and retain zero/nonfinite behavior. |
+| `func_020091d8` (power-of-two scaling) | 2 | Signed low-word read and constant-first final multiplication retain the observed order. |
+| `func_02009424` (sine dispatch) | 2 | Initialize zero before reading the high word; preserve reduction quadrant and kernel arguments. |
+
+Eight distinct variants, maximum three per function. Word access follows the
+pinned little-endian binary64 ABI. Large/small arithmetic and the original
+nonfinite/signed-zero paths remain explicit; no floating-point simplification
+or replacement library is used. Existing reduction and sine/cosine kernels
+remain fallback dependencies.
+
+Native C arithmetic identifies four compiler runtime symbols from call-site
+relocations and original branch destinations: `_dadd` at 0x0200ab28, `_dmul`
+at 0x0200b0f0, `_dsub` at 0x0200b608, and `_dgr` at 0x0200bc78. Only those
+symbol names change; addresses, sizes, binding and function counts do not.
+Searches of both worktrees' src/include found no old-name references to update.
+No object or relocation is rewritten for comparison.
+
+All four units report 100% objdiff. The full ROM build passed module/symbol
+checks and ARM7 preservation. Main's existing guarded finalizer produced exact
+USA SHA-1 `c7c3014c237900c8281289b8bc76a781969b6278`; the older local configure
+still lacks that final build step, so it wrote a separate ignored output ROM.
+Logs: `build/runtime-batch8-acceptance.log`, `build/runtime-batch8-finalize.log`,
+and `build/matching/`. Local matched code 152,384 -> 153,980; functions
+1,168 -> 1,172; data remains 26,488. No gameplay validation was performed.

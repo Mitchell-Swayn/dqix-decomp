@@ -729,6 +729,22 @@ src/System/RuntimeTerminationHook.cpp:
     complete
     .text start:0x0200f368 end:0x0200f398
 
+src/System/RuntimeFloor.cpp:
+    complete
+    .text start:0x02008f5c end:0x0200911c
+
+src/System/RuntimeFrexp.cpp:
+    complete
+    .text start:0x0200911c end:0x020091d8
+
+src/System/RuntimeScaleExponent.cpp:
+    complete
+    .text start:0x020091d8 end:0x02009424
+
+src/System/RuntimeSine.cpp:
+    complete
+    .text start:0x02009424 end:0x02009598
+
 src/System/RuntimeRandom.cpp:
     complete
     .text start:0x02003d14 end:0x02003d58
