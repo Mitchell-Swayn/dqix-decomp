@@ -2633,6 +2633,25 @@
         "ARM7_ClockTouchCommandByte": 58742444
       },
       "externals": {}
+    },
+    {
+      "name": "TouchControllerStatus",
+      "source": "config/usa/arm7/src/TouchControllerStatus.c",
+      "autoload": "wram",
+      "runtime_address": 58742200,
+      "payload_offset": 55252,
+      "size": 244,
+      "code_bytes": 220,
+      "literal_pool_bytes": 24,
+      "entry": "ARM7_ReadTouchControllerStatus",
+      "symbols": {
+        "ARM7_ReadTouchControllerStatus": 58742200
+      },
+      "externals": {
+        "ARM7_SetGPIOControlMode": 58715192,
+        "ARM7_ClockTouchCommandByte": 58742444,
+        "ARM7_TouchControllerStatus": 58767208
+      }
     }
   ]
 }
