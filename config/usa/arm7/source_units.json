@@ -1672,6 +1672,65 @@
         "ARM7_GetSequenceTrack": 58724660,
         "ARM7_SetSoundTrackMute": 58728352
       }
+    },
+    {
+      "name": "SoundTrackInit",
+      "source": "config/usa/arm7/src/SoundTrackInit.c",
+      "autoload": "wram",
+      "runtime_address": 58724264,
+      "payload_offset": 37316,
+      "size": 224,
+      "code_bytes": 224,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_InitializeSoundTrack",
+      "symbols": {
+        "ARM7_InitializeSoundTrack": 58724264
+      },
+      "externals": {
+        "ARM7_InitializeSoundModulation": 58721352
+      }
+    },
+    {
+      "name": "SoundSequenceAdvance",
+      "source": "config/usa/arm7/src/SoundSequenceAdvance.c",
+      "autoload": "wram",
+      "runtime_address": 58723020,
+      "payload_offset": 36072,
+      "size": 204,
+      "code_bytes": 196,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_AdvanceSoundSequence",
+      "symbols": {
+        "ARM7_AdvanceSoundSequence": 58723020
+      },
+      "externals": {
+        "ARM7_SoundSharedWork": 58759064,
+        "ARM7_SoundSequences": 58760412,
+        "ARM7_GetSequenceTrack": 58724660,
+        "ARM7_ReleaseSoundTrackVoices": 58724504,
+        "ARM7_ClearSoundTrackVoices": 58724608,
+        "ARM7_StopSoundWorkerAlarm": 58717764,
+        "ARM7_StartSoundWorkerAlarm": 58717684,
+        "ARM7_ProcessSequenceTick": 58725288,
+        "ARM7_StopSequence": 58724792
+      }
+    },
+    {
+      "name": "SoundSequenceVariable",
+      "source": "config/usa/arm7/src/SoundSequenceVariable.c",
+      "autoload": "wram",
+      "runtime_address": 58728216,
+      "payload_offset": 41268,
+      "size": 68,
+      "code_bytes": 64,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_GetSoundSequenceVariable",
+      "symbols": {
+        "ARM7_GetSoundSequenceVariable": 58728216
+      },
+      "externals": {
+        "ARM7_SoundSharedWork": 58759064
+      }
     }
   ]
 }

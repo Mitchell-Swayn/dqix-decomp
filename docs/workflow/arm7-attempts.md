@@ -424,3 +424,18 @@
   an unidentified parameter; its changed flag is named only by that association.
   Allocation preserves the first-free scan and -1 failure return.
 - Validation: full payload and declared symbols match; all 11 pipeline and six verifier tests pass, with all header consumers recompiled.
+
+## 2026-10-02 - track defaults, sequence advancement and variables
+
+- Track initialization and sequence advancement matched first compile. Variable
+  lookup initially if-converted its local case, producing four fewer bytes. Writing
+  the local (<16) case first with explicit else matched on variant two.
+- Track initialization proves the shared six-byte modulation parameter prefix;
+  split SoundModulationParameters from the voice-only counter/phase tail and use
+  it directly for track initialization. This removes an opaque byte-array cast
+  without assigning meanings to unrelated track fields. Candidate stayed exact.
+- Shared work now has a typed 0x260-byte prefix: 0x20 header plus 16 records of
+  16 signed variables and a tick counter. Global-variable count remains unknown;
+  lookup addresses the trailing storage without inventing a fixed array bound.
+- Three functions add 484 instruction and 12 literal bytes. No BSS claim changes.
+- Validation: complete payload and symbols match after the shared-layout refinement; all 11 pipeline and six verifier tests pass.

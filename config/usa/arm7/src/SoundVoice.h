@@ -10,7 +10,12 @@ typedef struct {
 
 typedef struct {
     unsigned char unknown0, speed, depth, range;
-    unsigned short delay, counter, phase;
+    unsigned short delay;
+} SoundModulationParameters;
+
+typedef struct {
+    SoundModulationParameters parameters;
+    unsigned short counter, phase;
 } SoundModulation;
 
 typedef struct SoundVoice SoundVoice;
@@ -34,6 +39,7 @@ struct SoundVoice {
 };
 
 typedef char WaveformSizeCheck[sizeof(Waveform) == 0x0c ? 1 : -1];
+typedef char SoundModulationParametersSizeCheck[sizeof(SoundModulationParameters) == 6 ? 1 : -1];
 typedef char SoundModulationSizeCheck[sizeof(SoundModulation) == 0x0a ? 1 : -1];
 typedef char SoundVoiceSizeCheck[sizeof(SoundVoice) == 0x54 ? 1 : -1];
 

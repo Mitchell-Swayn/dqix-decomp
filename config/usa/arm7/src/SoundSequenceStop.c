@@ -2,7 +2,7 @@
 #pragma dont_inline on
 #include "SoundSequence.h"
 extern SoundSequence ARM7_SoundSequences[16];
-extern struct { unsigned int unknown0,activeSequences; } *ARM7_SoundSharedWork;
+extern SoundSharedWork *ARM7_SoundSharedWork;
 extern void ARM7_StopSequence(SoundSequence*);
 extern SoundTrack *ARM7_GetSequenceTrack(SoundSequence*,int);
 extern void ARM7_ReleaseSoundTrackVoices(SoundTrack*,SoundSequence*,int);
