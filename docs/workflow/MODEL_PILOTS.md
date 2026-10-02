@@ -1,0 +1,42 @@
+# Model pilot record
+
+The user authorized a Luna trial on 2026-10-02. Earlier recommendations were
+hypotheses: no previous batch was a Luna benchmark. Historical batch intervals
+include integration and already-running workers, so they cannot establish a
+controlled Astra throughput baseline.
+
+## Initial pilots
+
+- `luna_vram_pilot`: GPT-6 Luna, high reasoning, compact task packet and isolated
+  worktree. Reconstruct four default VRAM callback globals (16 initialized data
+  bytes), preserving caller ABI and matching code. Shared-header investigation
+  and setup time count toward the pilot. Root reviews and integrates separately.
+- `luna_build_review`: GPT-6 Luna, high reasoning, independent read-only review
+  and focused tests of the existing incremental delink patch `043fe8e`.
+  This measures review usefulness, not new decompiled code.
+
+Record elapsed time, attempts, accepted bytes/functions, issues found, and root
+corrections. Leave token usage and financial cost unknown unless measured. Do not
+equate API list pricing with subscription consumption. One successful small
+batch does not establish suitability for difficult compiler matching.
+
+## Local runtime preparation
+
+The user configuration was backed up before setting
+`agents.max_concurrent_threads_per_session = 6`, default subagent model
+`gpt-6-luna`, and high subagent reasoning. This is a requested configuration,
+not proof that this already-running session acquired additional slots.
+
+The separately installed npm Codex CLI was updated from 0.155.1 to 0.160.0;
+version and configuration parsing were checked. The desktop app's bundled
+executable still reports 0.155.0-alpha.9.2. Updating the npm CLI does not update
+that bundled executable or the active session's exposed model list. GPT-6.1 Sol
+is documented but is not an available model override in this session.
+
+## First review result
+
+The Luna build reviewer ran from 09:41:28 to 09:42:49 UTC (81 seconds),
+reported no findings, and passed all five focused tests. An initial unittest
+module invocation failed due to import path; direct script invocation passed.
+It independently checked the existing clean-build and recovery evidence and
+left the worktree unchanged. Root acceptance remains a separate step.

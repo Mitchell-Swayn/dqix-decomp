@@ -154,13 +154,16 @@
     },
     {
       "id": "luna-build-review-pilot",
-      "status": "active",
-      "owner": "luna_build_review",
+      "status": "verified",
+      "owner": null,
       "model": "gpt-6-luna",
       "reasoning_effort": "high",
       "worktree": "../DQIX-Decomp-delink",
-      "scope": "Read-only review and focused validation of043fe8e incremental delink output tracking",
-      "token_usage": null
+      "scope": "Read-only review of043fe8e; no findings, focused tests passed, root integration still required",
+      "token_usage": null,
+      "elapsed_seconds": 81,
+      "tests_passed": 5,
+      "findings": 0
     }
   ]
 }
