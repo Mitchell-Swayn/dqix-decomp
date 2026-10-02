@@ -14,6 +14,7 @@ struct GrottoTilePoint
 class FloorMap
 {
 public:
+    ~FloorMap() { Clear2(); }
     // This is held externally, though seems to be held right after the 
     // end of the generator.
     unsigned char* pMapData; 

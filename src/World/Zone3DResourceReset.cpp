@@ -1,6 +1,5 @@
 #include "World/Zone3D.h"
 
-extern "C" void func_020de848(void*);
 
 void Zone3D::ResetZoneResources(bool destroyAllocators)
 {
@@ -26,7 +25,7 @@ void Zone3D::ResetZoneResources(bool destroyAllocators)
     unk_23bc[1] = 0;
     unknown_834_ = 0;
     bFeatures_.Reset();
-    func_020de848(unknown_struct_2754_);
+    state_2754_.Reset();
     atmosphericEffects_.Reset();
     ResetZoneFragmentParts(fragmentParts_);
     if (destroyAllocators)

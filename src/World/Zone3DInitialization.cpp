@@ -4,7 +4,6 @@
 
 extern "C"
 {
-    void func_02094d00(void*);
     int func_0200fb9c(GameState*);
     bool func_020115a8(GameState*);
     int func_0201201c(GameState*);
@@ -57,7 +56,7 @@ void Zone3D::InitializeState()
     transitionAllocator_.ResetAllocatorPointer();
     models_498_[0].Clear();
     models_498_[1].Clear();
-    func_02094d00(unknown_struct_2724_);
+    state_2724_.Reset();
     unknown_27c4_ = 0;
     unknown_27b8_.x = 0;
     unknown_27b8_.y = 0xa000;
@@ -82,7 +81,7 @@ void Zone3D::InitializeState()
     if (func_020115a8(game)) return;
     if (func_0201201c(game) == 5 || func_0200fb9c(game) == 4 || func_0200fb9c(game) == 2)
     {
-        func_020982b4(unk_840);
+        func_020982b4(&state_840_);
         unknown_27b4_ = 2;
         unknown_27b6_ = 0;
         unknown_2784_ = 0;

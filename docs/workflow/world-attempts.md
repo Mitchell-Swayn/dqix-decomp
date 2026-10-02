@@ -35,3 +35,18 @@ those constants and shifted the remaining image. Their source extraction was
 therefore deferred, with no data credit. Next step: establish ownership and
 layout for the complete 020e6dc0..020e6df0 constant group before splitting it.
 The four record/index functions themselves match and do not require this split.
+
+## Zone3D constructor at 0201c014
+
+Deferred after nine source variants, including one unsupported always_inline
+attribute compile failure. The best constructor matched 73.58491% with exact
+array lifetime helpers but ActiveGrottoClass's nested FloorMap constructor
+remaining out of line. Raising inline depth/size thresholds, bottom-up modes,
+an explicit member initializer, and moving the definition outside the class did
+not change that call. A manual floor-map reset in the inline grotto constructor
+expanded, but folded the base address instead of preserving target r5 and was
+70.90909%. No constructor range is credited. Draft: build/matching/Zone3DConstructor.cpp.
+Next: inspect a proven MWCC nested-constructor inline pattern or compiler ABI
+settings before another variant. Its matching destructor and embedded resets
+are independently reconstructable. Shared constructor hooks used only by the
+deferred experiment were removed; observed destructor hooks remain.

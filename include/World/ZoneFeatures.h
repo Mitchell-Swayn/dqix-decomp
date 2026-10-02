@@ -31,6 +31,7 @@ struct MaybeVector4fix
 class ZoneFeatures
 {
 public:
+    ~ZoneFeatures() { Reset(); }
     struct Opcode64Entry
     {
         int unk_0;

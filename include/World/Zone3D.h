@@ -10,6 +10,7 @@
 #include "ZoneFeatures.h"
 #include "MapListLoader.h"
 #include "Zone3DContainers.h"
+#include "Zone3DEmbeddedState.h"
 
 struct Zone3D_StructPtr_8
 {
@@ -33,6 +34,7 @@ struct Zone3D_StructPtr_8
 class Zone3D
 {
 public:
+    ~Zone3D();
     struct Model3DListNode
     {
         Model3D model_;
@@ -100,7 +102,7 @@ public:
     int textureImageMemory_;
     int texturePaletteMemory_;
 
-    char unk_840[0x23b8 - 0x840];
+    ZoneState0840 state_840_;
 
 
     // 0x20 extra bytes unaccounted for in JPN version
@@ -116,8 +118,8 @@ public:
     unsigned short unknown_23cc_;
     char unk_23ce[0x23ec - 0x23ce];
     ActiveGrottoClass grotto_; // offset 23ec in USA. this is 0x20 bytes larger in JPN
-    char unk_2664[0x2724 - 0x2664];
-    char unknown_struct_2724_[0xc];
+    ZoneState2664 state_2664_;
+    ZoneState2724 state_2724_;
     SafeAllocator transitionAllocator_;
     unsigned char transitionRequests_;
     unsigned char transitionParameter1_;
@@ -127,7 +129,7 @@ public:
     char unk_274a[2];
     int unknown_274c_;
     int unknown_2750_;
-    char unknown_struct_2754_[0x18];
+    ZoneState2754 state_2754_;
     int unknown_276c_;
     int unknown_2770_;
     Vector3i unknown_2774_;

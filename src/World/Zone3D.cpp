@@ -37,11 +37,9 @@ extern "C"
     void func_0207dfac(void*);
 
     void* func_0208a9b4();
-    void func_02094d00(void*);
     Zone3D_StructPtr_8* func_02099950(void*, unsigned short id);
 
     void func_020c9be0(); // abort() or similar
-    void func_020de848(void*);
 
 
 }
@@ -102,7 +100,7 @@ void Zone3D::SwitchZone(unsigned short newID)
 
     atmosphericEffects_.Reset();
     lighting_.Reset();
-    func_020de848(&unknown_struct_2754_[0]);
+    state_2754_.Reset();
 
     pUnknownStruct_8_ = func_02099950(uVar3, newID);
     unknown_4_ = pUnknownStruct_8_->unknown_2_;
@@ -118,7 +116,7 @@ void Zone3D::SwitchZone(unsigned short newID)
     }
 
     *(bool*)((int)func_0208a9b4() + 0x9c) = pUnknownStruct_8_->unknown_c_high_ != 0;
-    func_02094d00(&unknown_struct_2724_[0]);
+    state_2724_.Reset();
 
     grottoTileMapData_420_ = NULL;
 
