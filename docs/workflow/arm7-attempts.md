@@ -674,3 +674,14 @@
 - Eight functions add 436 instruction and 52 literal bytes, no data or BSS. This
   passes the 250-C-function milestone with 251 functions and 21,048 instructions.
 - Validation: full payload and linked symbols match, including the updated shutdown unit; all 11 pipeline and six verifier tests pass.
+
+## 2026-10-02 - power command dispatch and IPC messages
+
+- Both message helpers and the complete532-byte command dispatcher matched first
+  compile. Replies retry only negative IPC results; notifications retry every nonzero
+  result. These distinct original conditions and command/value narrowing are retained.
+- The 20-command switch and seven-query nested switch need no padding or fabricated
+  cases. Their table entries are ARM branch instructions, so the entire matched
+  range is instruction coverage with zero literal/standalone-data credit.
+- Three functions add 660 instruction bytes, no literals/data/BSS.
+- Validation: full payload and linked symbols match; all 11 pipeline and six verifier tests pass.

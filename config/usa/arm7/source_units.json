@@ -2398,6 +2398,48 @@
       "externals": {
         "ARM7_PowerLedPatternState": 58767260
       }
+    },
+    {
+      "name": "PowerMessages",
+      "source": "config/usa/arm7/src/PowerMessages.c",
+      "autoload": "wram",
+      "runtime_address": 58744236,
+      "payload_offset": 57288,
+      "size": 128,
+      "code_bytes": 128,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_SendPowerReply",
+      "symbols": {
+        "ARM7_SendPowerReply": 58744236,
+        "ARM7_SendPowerNotification": 58744304
+      },
+      "externals": {
+        "ARM7_SendIpcCommand": 58714784
+      }
+    },
+    {
+      "name": "PowerCommands",
+      "source": "config/usa/arm7/src/PowerCommands.c",
+      "autoload": "wram",
+      "runtime_address": 58744684,
+      "payload_offset": 57736,
+      "size": 532,
+      "code_bytes": 532,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_ExecutePowerCommand",
+      "symbols": {
+        "ARM7_ExecutePowerCommand": 58744684
+      },
+      "externals": {
+        "ARM7_SetPowerLedPattern": 58746060,
+        "ARM7_SetPowerLedMode": 58745216,
+        "ARM7_GetPowerLedPattern": 58746088,
+        "ARM7_SetPowerControlBits": 58744604,
+        "ARM7_ClearPowerControlBits": 58744640,
+        "ARM7_PowerOffSound": 58715544,
+        "ARM7_ReadPowerRegister": 58744488,
+        "ARM7_WritePowerRegister": 58744364
+      }
     }
   ]
 }
