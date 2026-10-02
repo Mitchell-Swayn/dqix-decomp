@@ -18,6 +18,14 @@ public:
     ModifiableCombatStats* currentStats_;
 };
 
+// Four GameState records are indexed by a signed object index. A negative
+// index marks a free record; the other fields have not yet been recovered.
+struct GameStateIndexedRecord {
+    char unknown_000[0x568];
+    short objectIndex_;
+    char unknown_56a[0x964 - 0x56a];
+};
+
 // sizeof is probably 0x7ff4 but could be 0x7ff8. (Definitely no lower/higher)
 // For lower bound, look at initialize/reset function func_0200f3a4
 // which writes a byte at offset 0x7ff2.
@@ -51,13 +59,17 @@ public:
     uint64_t altTimestamp_; // not sure about usage
 
 #if defined(usa)
-    char unk_3f8[0x397c - 0x3f8];
+    char unk_3f8[0x474 - 0x3f8];
+    GameStateIndexedRecord indexedRecords_[4];
+    char unk_2a04[0x397c - 0x2a04];
 #elif defined(jpn)
     char unk_3f8[0x371c - 0x3f8];
 #endif
 
     unsigned char unknownObjectIndex_397c_; // jpn: offset 0x731c instead
-    char unk_397d[0x5cb0 - 0x397d];
+    unsigned char unknownObjectIndices_397d_[3];
+    unsigned char unknownObjectIndexCount_3980_;
+    char unk_3981[0x5cb0 - 0x3981];
     unsigned int unknown_5cb0_;
     unsigned int unknown_5cb4_;
     unsigned int unknown_5cb8_;

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "sol61-gamestate-record-fields",
+  "snapshot": {
+    "utc": "2026-10-02T13:20:10.866752+00:00",
+    "revision": "4e965f2a1c47b9662fb9b29673e208958e0d72e3",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 213904,
+      "matched_data": 48064,
+      "matched_functions": 1590
+    },
+    "arm7": {
+      "source_functions": 265,
+      "source_code_bytes": 22912,
+      "source_literal_pool_bytes": 1588,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 141924,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "4abb14e9a74ad4c1d7fac36a098c79c829c40a7f5293ce4560f3223416e032d9",
+    "arm7_report_sha256": "6f3aaf4f9b7392fa38ff6c7504a2202e44c4c00ffb6122d9dae61b1d89e761f4",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Six functions 02010828..0201099c exact after six unit candidate compilations, including final typed GameState layout. Existing eight accessors rechecked after named-field correction. Full ninja rom check report sha1 passed; no denominator change, no data gain, ARM7 unchanged. Indexed records and count layout checked by compiler assertions; record contents and broader semantic purpose remain uncertain. Actual batch timing starts after inherited-draft acceptance.",
+  "attempts": 6,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 372,
+      "matched_data": 0,
+      "matched_functions": 6
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 405.160468
+}
