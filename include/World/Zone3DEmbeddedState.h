@@ -67,6 +67,11 @@ struct ZoneState0840
     void ClearEntryStates();
     int CollectEntriesOfKind(int kind, Entry** output);
     bool IsEntryStateValid(int state);
+    bool IsValueInRangeC3b5(int value);
+    bool IsValueAtHundredBoundary(int value);
+    bool IsValueInRangeC545(int value);
+    int GetMappedValueRemainder(int value);
+    int GetKindThreshold(int kind);
     Entry* FindEntryByState(int state);
     Entry* FindEntryByIdentifier(const void* identifier);
     Entry* FindEntryByValue(int value);

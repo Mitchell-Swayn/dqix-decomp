@@ -1002,6 +1002,18 @@ src/World/ZoneState0840Lookup.cpp:
     complete
     .text start:0x0209854c end:0x02098630
 
+src/World/ZoneState0840ValuePredicates.cpp:
+    complete
+    .text start:0x020981e4 end:0x02098268
+
+src/World/ZoneState0840ValueTables.cpp:
+    complete
+    .text start:0x02098284 end:0x020982b4
+
+src/World/ZoneState0840ValueData.cpp:
+    complete
+    .rodata start:0x020e8db8 end:0x020e8e14
+
 src/World/ZoneState0840Tier.cpp:
     complete
     .text start:0x020989cc end:0x02098a84
