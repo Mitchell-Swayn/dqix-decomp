@@ -140,91 +140,6 @@ void ShutdownContext(ProcessorContext* context)
     SwitchContextUninterrupted();
 }
 
-void CancelContextSleepAlarm(ProcessorContext *context)
-{
-    if (context->sleepAlarm == NULL)
-        return;
-
-    CancelAlarm(context->sleepAlarm);
-}
-
-void AwaitContextCompletion(ProcessorContext *context) 
-{
-    int priorState = DisableIRQInterrupts();
-    if (context->blockState != CONTEXT_STATE_INVALID)
-        BlockCurrentContext(&context->contextsAwaitingThisCompletion);
-    SetIRQInterruptState(priorState);
-}
-
-bool IsContextInactive(ProcessorContext* context)
-{
-    return context->blockState == CONTEXT_STATE_INVALID;
-}
-
-void BlockCurrentContext(BlockedContextList* blockQueue)
-{
-    int priorState = DisableIRQInterrupts();
-
-    ProcessorContext* current = *data_021112e0.ppActiveContext;
-    if (blockQueue != NULL)
-    {
-        current->containerBlockedQueue = blockQueue;
-        blockQueue->Insert(current);
-    }
-    current->blockState = CONTEXT_STATE_BLOCKED;
-    SwitchContext();
-    SetIRQInterruptState(priorState);
-}
-
-void UnblockContexts(BlockedContextList* blockQueue)
-{
-    int priorState = DisableIRQInterrupts();
-    if (blockQueue->first != NULL)
-    {
-        // wtf?
-        if (blockQueue->first != NULL)
-        {
-            do
-            {
-                ProcessorContext* context = blockQueue->PopFront();
-                context->blockState = CONTEXT_STATE_READY;
-                context->containerBlockedQueue = NULL;
-                context->pNextBlocked = NULL;
-                context->pPrevBlocked = NULL;
-            } while (blockQueue->first != NULL);
-        }
-        blockQueue->last = NULL;
-        blockQueue->first = NULL;
-        SwitchContext();
-    }
-    SetIRQInterruptState(priorState);
-}
-
-void MarkContextReadyAndSwitch(ProcessorContext* context)
-{
-    int priorState = DisableIRQInterrupts();
-    context->blockState = CONTEXT_STATE_READY;
-    SwitchContext();
-    SetIRQInterruptState(priorState);
-}
-
-ProcessorContext* GetFirstReadyContext()
-{
-    ProcessorContext* context = data_021112e0.substruct_24.firstContext;
-    while (context != NULL && context->blockState != CONTEXT_STATE_READY)
-    {
-        context = context->pNext;
-    }
-    return context;
-}
-
-void SwitchContextUninterrupted()
-{
-    int priorState = DisableIRQInterrupts();
-    SwitchContext();
-    SetIRQInterruptState(priorState);
-}
-
 void CycleCurrentPriorityContexts()
 {
     ProcessorContext* contextBeforeActive = NULL;
@@ -325,11 +240,6 @@ bool ChangeContextPriority(ProcessorContext* context, unsigned int newPriority)
     return true;
 }
 
-unsigned int GetContextPriority(ProcessorContext* context)
-{
-    return context->priority;
-}
-
 void SleepCurrentContext(unsigned int milliseconds)
 {
     Alarm timing;
@@ -350,30 +260,6 @@ void SleepCurrentContext(unsigned int milliseconds)
     }
 
     SetIRQInterruptState(priorState);
-}
-
-void SleepCompletionProc(ProcessorContext **ppContext)
-{
-    ProcessorContext* context = *ppContext;
-    *ppContext = NULL;
-    context->sleepAlarm = NULL;
-    MarkContextReadyAndSwitch(context);
-}
-
-PFNSwitchContextProc SetSwitchContextProcB(PFNSwitchContextProc proc)
-{
-    int priorState = DisableIRQInterrupts();
-    PFNSwitchContextProc oldProc = data_021112e0.substruct_24.switchContextProcB;
-    data_021112e0.substruct_24.switchContextProcB = proc;
-    SetIRQInterruptState(priorState);
-    return oldProc;
-}
-
-void InterruptWaitLoopFunction(void* unusedUserdata)
-{
-    EnableIRQInterrupts();
-    while (true)
-        func_020c9bf0();
 }
 
 unsigned int AddContextSwitchLock()

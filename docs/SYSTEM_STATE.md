@@ -40,3 +40,16 @@ accesses in `Timing.cpp`; compile-time checks enforce both sizes. The former
 interior overflow-count symbol becomes the timer object's offset 8. Both data
 symbols compare at 100%, and full ROM/module/symbol checks pass. The separate
 alarm-initialization bitmask remains fallback.
+
+Twelve context routines are recovered in `ContextBlocking.cpp`,
+`ContextPriority.cpp`, and `ContextSleep.cpp` (480 report code bytes): sleep-alarm
+cancellation, completion waiting, blocked/ready queue operations, scheduler
+access, the sleep completion callback, switch callback registration, the idle
+interrupt loop, and priority lookup. Their existing C++ forms match on the
+first isolated compile, without the assembly matching hacks in the surrounding
+unrecovered file. Full module/symbol/ROM acceptance passes.
+
+The 168-byte sleep-registration routine itself remains fallback: its first
+isolated candidate scores 61.90%, with register allocation differences. The
+surrounding initialization, shutdown and priority-change routines also remain
+separate work; these source slices do not establish a complete scheduler.
