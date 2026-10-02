@@ -73,7 +73,7 @@ public:
     int mapAMDJLoadHandle_;
     int atsAMBLLoadHandle_; // data/map/ats_%c.ambl
 
-    char unk_444[0x474 - 0x444];
+    Matrix4x3 zoneRotationMatrix_;
 
     short unknown_474_;
     unsigned char unknown_476_;
@@ -128,6 +128,10 @@ public:
     // usa: func_0201383c
     void SwitchZone(unsigned short newID);
 
+    ZoneContainerRenderEntry* GetContainerRenderEntry(int index);
+    ZoneChestEntry* GetChestEntry(int index);
+    void UpdateChestDiffuseColor();
+    void SetZoneRotation(int angle);
     void CreateContainerRenderEntries(SafeAllocator* allocator);
     void BindContainerModels();
     void SetContainerBrokenMask(unsigned int mask);

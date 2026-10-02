@@ -8,7 +8,6 @@ extern "C"
     void func_020c5588(unsigned int, int, unsigned int, int, int);
     void func_0203b4d8(void*, int);
     void func_0203b4e8(void*, int);
-    void func_02018f30(Zone3D*);
     void func_020181fc(Zone3D*);
     void func_020100f8(GameState*);
 }
@@ -47,7 +46,7 @@ bool Zone3D::ProcessPendingLoads()
         func_0203b4d8(scene, 0x800);
     else
         func_0203b4e8(scene, 0x800);
-    func_02018f30(this);
+    UpdateChestDiffuseColor();
     func_020181fc(this);
     func_020100f8(GameState::GetInstance());
     unk_830[1] = lightingManager->timeOfDayIndex_;
