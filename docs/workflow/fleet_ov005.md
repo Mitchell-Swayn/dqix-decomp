@@ -55,3 +55,59 @@ render-parts pointer is explicitly opaque in this bounded state interface.
 The matched interpolation calls the existing shared `fix32abs` declaration and
 source. Parent overlay state, renderer setup, data tables and the rest of ov005
 remain required work. No gameplay testing or module-completion claim is made.
+
+## Continuation: allocator pools and texture reservations
+
+Batch `fleet_ov005_20261002t162500`, baseline
+`e6335afa68ddb7b1888895eb65fa1f8fd3c00c96`. The tracked worktree was clean;
+prior matching ledgers and the archived handoff were inspected and preserved.
+These two functions had no prior variants or ownership claims in local evidence.
+The renderer was inspected but received no candidate variants in this batch.
+
+| Function | Half-open range | Instruction bytes | Literal bytes | Variants |
+| --- | --- | ---: | ---: | ---: |
+| Allocator pool setup | 0x02153954-0x02153b20 | 460 | 0 | 1 |
+| Texture reservation setup | 0x02153b20-0x02153ba4 | 132 | 0 | 1 |
+
+`OverlayResources.cpp` reconstructs the connected resource setup family with
+the existing shared `SafeAllocator` type, actual arrays of eight and sixteen
+allocators, and twenty-four 0x70-byte texture reservation records. Each record
+contains two ten-word image pool snapshots, two shared palette snapshots,
+allocation keys and sizes. The additional large and single texture reservations
+are separate subobjects. The unused allocator at +0x230 is retained in the layout.
+Unknown intervening overlay state and the four allocated buffer payloads remain
+explicitly unresolved; the header does not claim the complete parent layout.
+
+Original instructions and calls establish the layout: `0207de48` saves image
+and palette state and reserves their VRAM; `0207df50` resets the current snapshots
+from the saved initial snapshots; `0207df90` restores those current snapshots.
+The original ov023 caller invokes parent initialization at 0x021e3564 before
+allocation setup at 0x021e3574, passes the allocators stored at +0x10 and +0x0c, and later calls
+texture reservation setup at 0x021e37dc. These observations came from original
+`dsd dis` output and relocation maps, not generated pseudocode.
+
+One candidate compilation/comparison matched both functions at 100%; there were
+no failed variants, assembly additions or compiler-setting changes. The attempt,
+source snapshot and unchanged target hashes are archived under
+`build/matching/20261002T155330-969b6f3f9973400088603f6ec560888e/`.
+`factory_diff.py` reported zero mismatched symbols. Read-only evidence package:
+`build/factory/ov005_resources_evidence.json`. No earlier variant counts reset.
+
+Acceptance log: `build/factory/ov005_resources_accept.log` for
+`.venv/Scripts/ninja.exe -j2 rom check report sha1`. Full ARM9 module and symbol,
+ARM7 baseline, and final ROM checks passed with USA SHA-1
+`c7c3014c237900c8281289b8bc76a781969b6278`; the independent original input
+retains that hash. `git diff --check` passed. Both reconfigurations explicitly
+used this worktree's assigned read-only compiler path.
+
+Delta: +2 functions and +592 instruction/code bytes; literals, initialized data,
+BSS, alignment and necessary assembly gains are zero. ARM9 matched counts are
+1660 functions and 219860 code bytes; initialized data remains 66724 bytes.
+Denominators remain 14790 functions, 2959478 code bytes and 1602476 data bytes;
+ARM7 coverage is unchanged. Elapsed time is measured by `tools/work_batch.py`
+in `build/workflow/fleet_ov005_20261002t162500/finish.json`; tokens are unmeasured.
+
+Remaining required work includes resource destruction at 0x02154198, parent
+initialization at 0x02153ba4, backing buffer payloads and overlay state, the
+rectangle renderer and its other modes. All nonexact functions remain fallback.
+No gameplay testing, main integration or module-completion claim is made.
