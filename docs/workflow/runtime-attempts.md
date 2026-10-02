@@ -187,3 +187,33 @@ the existing main guarded finalizer produced exact USA SHA-1
 Logs: `build/runtime-batch5-acceptance.log`, `build/runtime-batch5-finalize.log`,
 and `build/matching/`. Local matched code 151,084 -> 151,460; functions
 1,153 -> 1,159; data stays 26,488. Denominators unchanged. No gameplay test.
+
+## Decimal construction and magnitude comparison (2026-10-02)
+
+Based on `cd3b5ac`. Four functions in three units add 808 instruction/code bytes,
+no compiler literals, standalone data or BSS. These retain the existing decimal
+layout and leave division/modulo and decimal-increment dependencies unchanged.
+
+| Function | Distinct variants | Result / useful finding |
+| --- | ---: | --- |
+| `func_020096ac` (unsigned integer to decimal) | 2 | Match division/remainder calls and use a first-digit temporary to preserve the original swap/store order. |
+| `func_020098fc` (text to decimal) | 2 | Explicit next-byte temporary reproduces the initial load-before-increment; preserve the original comparison of the raw next byte to numeric 5. |
+| `func_02009d1c` (magnitude equality) | 3 | Declare the running index first and retain the observed tail-length reload. |
+| `func_02009dfc` (magnitude ordering) | 5 | Explicit right-then-left digit temporaries avoid pointer hoisting and reproduce register order; retain the tail-length reload. |
+
+Twelve distinct candidates; maximum five on one function. A repeated compile
+whose text replacement made no change is not counted as a new variant. Testing
+optimize-for-size on did not change the two comparison results. Volatile reads
+are limited to the observed tail-loop length loads; they preserve generated
+accesses rather than assert recovered original qualifiers. The helpers compare
+magnitudes without consulting sign and retain their zero/length edge behavior.
+In particular, the text constructor's numeric-5 test is not silently changed to
+ASCII '5', and integer zero retains zero digits and exponent -1.
+
+All three units report 100% objdiff after formatting. One full ROM build passed
+ARM9 main, ITCM, DTCM, all overlays, symbol checks, and ARM7 preservation. Main's
+existing guarded header finalizer produced exact USA SHA-1
+`c7c3014c237900c8281289b8bc76a781969b6278`; older configure caveat unchanged.
+Logs: `build/runtime-batch6-acceptance.log`, `build/runtime-batch6-finalize.log`,
+and `build/matching/`. Local matched code 151,460 -> 152,268; functions
+1,159 -> 1,163; data unchanged at 26,488. Denominators unchanged. No gameplay test.

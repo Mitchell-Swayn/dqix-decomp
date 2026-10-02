@@ -681,6 +681,18 @@ src/System/RuntimeDecimalRound.cpp:
     complete
     .text start:0x0200966c end:0x020096ac
 
+src/System/RuntimeDecimalFromInteger.cpp:
+    complete
+    .text start:0x020096ac end:0x02009778
+
+src/System/RuntimeDecimalFromText.cpp:
+    complete
+    .text start:0x020098fc end:0x02009998
+
+src/System/RuntimeDecimalMagnitude.cpp:
+    complete
+    .text start:0x02009d1c end:0x02009edc
+
 src/System/RuntimeRandom.cpp:
     complete
     .text start:0x02003d14 end:0x02003d58
