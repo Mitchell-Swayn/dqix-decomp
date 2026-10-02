@@ -58,3 +58,73 @@ Elapsed wall time and report deltas are recorded by `tools/work_batch.py` in
 `build/workflow/fleet_ov004_20261003_0150/{start,finish}.json`. Token use unmeasured.
 All remaining functions, cache lifecycle, category semantics and other module
 data/BSS remain required work; no deferred function was waived.
+
+## Continuation: count-menu selection and display
+
+Batch: `fleet_ov004_20261003_cont02`; baseline
+`3971e0c2050681a4ba7c188ae4c192c005faa740`. Previous source and attempt evidence
+were preserved; no capped function was retried. Integrator queue untouched.
+
+| Range (end exclusive) | Reconstruction | New functions |
+| --- | --- | ---: |
+| `02153944–02153b6c` | Type-6 entry lookup and selection-ID decoder | 2 |
+| `02154618–021546c0` | Secondary-key count display population | 1 |
+| `02154718–0215482c` | Primary-key display population and both refresh callbacks | 3 |
+
+The decoder initializes all three signed outputs to -1, then reads selected
+entries through ov023. Top-level selection IDs 26–29 select the observed paths.
+The secondary selection maps IDs 26–31 to even keys and 32–37 to odd keys;
+the primary selection maps IDs 26–31 to keys 1–6. Missing entries and unknown
+IDs preserve the sentinels, except for fields already written by the chosen
+top-level path. Category/gameplay names remain unresolved.
+
+The two population handlers display cached total counts and set label IDs.
+Secondary label arithmetic explicitly promotes the key as unsigned before adding
+25, while the cache lookup uses signed keys. Primary labels preserve both
+16-bit truncations around subtracting 1 and adding 37. The refresh callbacks
+populate the display and refresh entry 55 only when its type is 6. The original
+callback table at `0216fa8c` contains pointers to all four handlers and remains
+fallback data; no initialized-data gain is claimed.
+
+`CountMenu.h` is module-local. Its external UI objects remain opaque because these
+functions access them only through observed ov011/ov023 interfaces. The existing
+actual twenty-record `CountCache` array is reused. No shared header was changed.
+The allocated cache, missing-pair behavior, and original external interfaces are
+preserved; no substitute arrays, binary code or assembly were introduced.
+
+Matching used six candidate-unit variants: secondary population 2, primary
+population/callbacks 1, selection/entry lookup 3. No function reached ten
+unproductive variants. The first secondary variant differed only in a signed
+load. Selection variants using nested `return` cases emitted branches to the
+outer return block (82.40%); explicit default returns did not change that result.
+Using case `break` statements matched the original immediate return epilogues
+and branch tables. These tables contain 22 executable ARM branch instructions,
+not embedded initialized-data substitutes. Final read-only rechecks are separate
+from variant counts.
+
+Candidate snapshots, diffs and diagnoses are under `build/matching/` with
+`20261002T155434`, `155451`, `155603`, `155627` and `155643` prefixes; final
+rechecks have prefix `20261002T155804`. `factory_evidence.py` bundles are
+`build/factory/ov004-cont02-*-final-evidence.json`; the first failed selection
+and secondary diagnoses are saved beside them. Original disassembly and caller
+analysis use the preserved dsd output in `build/factory/ov004-dis/`, including
+ov004, ov011 and ov023. Comparison inputs were unchanged.
+
+All six new functions matched in final object comparisons (2/2, 1/1, 3/3).
+`ninja -j2 rom check report sha1` passed, including all ARM9 modules, symbols,
+ARM7 preservation, and ROM SHA-1 `c7c3014c237900c8281289b8bc76a781969b6278`.
+Log: `build/factory/ov004-cont02-acceptance.log`. The independent original input
+SHA-1 was rechecked separately. No runtime/gameplay tests were performed.
+
+Delta: **+6 functions, +996 reported code bytes, +0 reported data bytes**.
+Physical split: **988 instruction bytes (including the executable branch tables),
+8 literal-pool bytes, 0 initialized-data bytes, 0 BSS bytes, 0 assembly bytes**.
+No alignment gain. Coverage denominators unchanged; ARM7 unchanged.
+Elapsed wall time and accepted worker-local report deltas are recorded by
+`tools/work_batch.py` in `build/workflow/fleet_ov004_20261003_cont02/`.
+Token usage unmeasured. No main integration or module-completion claim.
+
+Remaining required dependencies include cache allocation/lifecycle (`02154350`),
+live count computation (`02153b6c`), external UI implementation/types, gameplay
+category semantics, and the original callback table and other ov004 data/BSS.
+These were not attempted in this continuation and retain their original fallback.

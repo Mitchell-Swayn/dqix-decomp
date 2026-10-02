@@ -18,3 +18,15 @@ src/Factory/ov004/RecordCountLookup.cpp:
     complete
     .text start:0x021546c0 end:0x02154718
 
+src/Factory/ov004/SecondaryCountMenu.cpp:
+    complete
+    .text start:0x02154618 end:0x021546c0
+
+src/Factory/ov004/PrimaryCountMenu.cpp:
+    complete
+    .text start:0x02154718 end:0x0215482c
+
+src/Factory/ov004/CountMenuSelection.cpp:
+    complete
+    .text start:0x02153944 end:0x02153b6c
+
