@@ -1,11 +1,11 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **121 C
-functions: 9,816 instruction bytes plus 780 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **130 C
+functions: 10,664 instruction bytes plus 880 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
 880 bytes of standalone initialized data and 764 bytes of BSS now have source
-definitions. The other 156,280 payload bytes
+definitions. The other 155,332 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -19,10 +19,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 9,816 / 780 bytes |
+| Reconstructed C instructions / compiler literal pools | 10,664 / 880 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 880 / 120 bytes |
 | Reconstructed BSS / total autoload BSS | 764 / 22,744 bytes |
-| Binary fallback | 156,280 bytes |
+| Binary fallback | 155,332 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -170,7 +170,7 @@ table; its separate VBlank response and initialized dispatch table remain outsid
 this unit's source data ownership.
 
 `src/Alarms.c` reconstructs eight alarm scheduling functions at
-`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8121 C
+`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8130 C
 instruction bytes, 52 literal bytes and the 12-byte list state at
 `[0x03809164, 0x03809170)`. It initializes and orders the doubly-linked queue,
 programs timer 1, registers timeouts and periodic intervals, and cancels alarms.
@@ -268,7 +268,7 @@ does not add duplicate data credit.
 
 `src/ThreadWait.c` reconstructs blocking, waking all waiters, marking a thread
 ready and selecting the first ready thread at `[0x037fc69c, 0x037fc7cc)`
-(payload `[0x48b8, 0x49e8)`), with 2121 C instruction bytes and 8 literal bytes.
+(payload `[0x48b8, 0x49e8)`), with 2130 C instruction bytes and 8 literal bytes.
 It clears blocked-list links on wakeup and preserves IRQ state. The scheduler switch routine now belongs to `ThreadSwitch.c`; list insertion
 and IRQ dependencies are source-owned. No thread-context storage is counted by this unit.
 
@@ -420,6 +420,24 @@ r0 zero or one; those helpers remain binary-owned.
 control bit 31 and optionally sets bit 15 according to caller flag bit zero,
 preserving all other bits. Register stride is 16 bytes from `0x04000400`.
 This batch owns no initialized data or BSS and introduces no assembly exception.
+
+`src/SoundChannelConfig.c` reconstructs three setup functions at
+`[0x037fee94, 0x037ff0b0)` (payload `[0x70b0, 0x72cc)`): 480 instruction
+bytes and 60 literal bytes. PCM setup packs format/repeat/pan/divisor/volume,
+writes period reload, loop start, length and source. PSG and noise setup retain
+their distinct duty/format packing. The software requested pan and volume are
+stored before any override; only channels in mask `0xfff5` use the adjustment
+helper when its software control is positive. Explicit channel-byte offsets
+remain live across helper calls, matching native address computation.
+
+`src/SoundChannelParameters.c` reconstructs six functions at
+`[0x037ff0d8, 0x037ff270)` (payload `[0x72f4, 0x748c)`): 368 instruction
+bytes and 40 literal bytes. They set volume/divisor, period and pan, read active
+and raw-control state, and apply or release the global pan override. A negative
+override restores the per-channel requested values; a nonnegative override writes
+one byte to all 16 channels. Requested values, override and adjustment globals
+remain external storage. The adjustment helper remains binary-owned in this
+batch; its broader policy is not inferred from callers. No new BSS/data is claimed.
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C

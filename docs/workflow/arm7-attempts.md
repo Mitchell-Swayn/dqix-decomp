@@ -167,3 +167,24 @@
 - Next candidate: three sound channel configuration functions beginning at
   `0x037fee94`, then parameter setters after `0x037ff0d8`. Preserve unnamed
   software override fields until their broader semantics are demonstrated.
+
+## 2026-10-02 - sound channel setup and parameter controls
+
+- Three channel setups `0x037fee94`, `0x037fef60`, `0x037ff00c`: first draft
+  recomputed byte offsets after the optional call and used the wrong operand
+  evaluation order for PCM control packing. Explicit channel-byte-offset locals
+  plus format-before-repeat evaluation matched all 540 bytes on the second
+  invocation. The offset is meaningful address state, not a forced register.
+- Six parameter functions `0x037ff0d8` through `0x037ff270`: first combined
+  compile was eight bytes short. Snapshotting the hardware pan before calling
+  volume adjustment restored the native extra move; using independent loop
+  locals in the two pan-override branches restored their separate initialization.
+  Second compilation matched all 408 bytes. Other bodies matched from outset.
+- Register fields distinguish requested volume/pan from effective hardware
+  values. The software adjustment factor and requested arrays remain external;
+  no new initialized-data or BSS ownership is included in this batch.
+- Validation: full payload and every declared symbol match; 11 pipeline and
+  six verifier tests pass. Totals: 130 C functions, 10,664 instruction bytes,
+  880 literals, 880 initialized data bytes, 764 BSS; 155,332 fallback bytes.
+- Next batch underway: sound adjustment factor setter/helper beginning at
+  `0x037ff270`, followed by the fixed-point sound period/pitch helpers.

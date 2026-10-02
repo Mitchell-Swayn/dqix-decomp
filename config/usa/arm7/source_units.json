@@ -1041,6 +1041,55 @@
         "ARM7_StopSoundChannel": 58716336
       },
       "externals": {}
+    },
+    {
+      "name": "SoundChannelConfig",
+      "source": "config/usa/arm7/src/SoundChannelConfig.c",
+      "autoload": "wram",
+      "runtime_address": 58715796,
+      "payload_offset": 28848,
+      "size": 540,
+      "code_bytes": 480,
+      "literal_pool_bytes": 60,
+      "entry": "ARM7_ConfigurePCMChannel",
+      "symbols": {
+        "ARM7_ConfigurePCMChannel": 58715796,
+        "ARM7_ConfigurePSGChannel": 58716000,
+        "ARM7_ConfigureNoiseChannel": 58716172
+      },
+      "externals": {
+        "ARM7_SoundPanOverride": 58756248,
+        "ARM7_SoundVolumeAdjustment": 58757692,
+        "ARM7_RequestedSoundPan": 58757696,
+        "ARM7_RequestedSoundVolume": 58757712,
+        "ARM7_AdjustSoundVolume": 58716880
+      }
+    },
+    {
+      "name": "SoundChannelParameters",
+      "source": "config/usa/arm7/src/SoundChannelParameters.c",
+      "autoload": "wram",
+      "runtime_address": 58716376,
+      "payload_offset": 29428,
+      "size": 408,
+      "code_bytes": 368,
+      "literal_pool_bytes": 40,
+      "entry": "ARM7_SetSoundChannelVolume",
+      "symbols": {
+        "ARM7_SetSoundChannelVolume": 58716376,
+        "ARM7_SetSoundChannelPeriod": 58716496,
+        "ARM7_SetSoundChannelPan": 58716520,
+        "ARM7_IsSoundChannelActive": 58716640,
+        "ARM7_SetSoundPanOverride": 58716668,
+        "ARM7_GetSoundChannelControl": 58716768
+      },
+      "externals": {
+        "ARM7_SoundPanOverride": 58756248,
+        "ARM7_SoundVolumeAdjustment": 58757692,
+        "ARM7_RequestedSoundPan": 58757696,
+        "ARM7_RequestedSoundVolume": 58757712,
+        "ARM7_AdjustSoundVolume": 58716880
+      }
     }
   ]
 }
