@@ -1,8 +1,7 @@
 /* Execute queued power requests while owning the shared SPI service. */
 #pragma dont_inline on
 #include "SpiService.h"
-typedef struct {unsigned int unknown0[9],operation;} PowerState;
-extern PowerState ARM7_PowerState;
+#include "PowerState.h"
 extern int ARM7_DisableIRQInterrupts(void);
 extern int ARM7_SetIRQInterruptState(int);
 extern int ARM7_IsSpiServiceAvailable(int);
