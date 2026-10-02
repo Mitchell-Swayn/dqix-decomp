@@ -43,7 +43,8 @@ struct Overlay21Context
     SafeAllocator sceneAllocator;
     Overlay21Scene* scene;
     Overlay21TextureScope textures;
-    void* gameObject;
+    // A free GameState indexed record, returned by 02010954 (not GameObject).
+    struct GameStateIndexedRecord* gameObject;
     int exitRequested;
 };
 

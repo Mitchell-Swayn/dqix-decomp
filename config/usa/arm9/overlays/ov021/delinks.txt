@@ -11,3 +11,10 @@ src/Factory/ov021/SceneFrame.cpp:
     complete
     .text start:0x0218baf8 end:0x0218bbc4
 
+src/Factory/ov021/SceneEntry.cpp:
+    .text start:0x0218b5fc end:0x0218baf8
+
+src/Factory/ov021/SceneEdgeColors.cpp:
+    complete
+    .rodata start:0x0218bbc4 end:0x0218bbd4
+
