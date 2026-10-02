@@ -472,3 +472,16 @@
   The preceding slot initializer uses a broader runtime-state base plus 0xf80;
   reconstruct that aggregate only with appropriate field/ownership evidence.
 - Validation: full 167,876-byte payload and linked symbols match; all 11 pipeline and six verifier tests pass. Payload SHA-1 remains a662d5c6a78e990244299926cf6862ce910a475d.
+
+## 2026-10-02 - sound command transport and queue storage
+
+- Queue initialization and IPC callback matched first compile. Kept this natural
+  transport boundary as a two-function batch rather than attaching unrelated
+  functions or the large command interpreter. Adds 124 instruction/20 literal bytes.
+- Queue initialization proves eight pointer slots immediately following the
+  32-byte queue. A checked 64-byte SoundCommandState owns precisely
+  0x0380a91c..0x0380a95c as BSS; numeric queue/message aliases remain explicit.
+  No adjacent padding or unrelated storage is included.
+- Callback preserves IRQ state around nonblocking enqueue/worker notification,
+  including the original pointer threshold and ignored error parameter.
+- Validation: full payload, linked code/BSS symbols and 11 pipeline plus six verifier tests pass; payload SHA-1 remains a662d5c6a78e990244299926cf6862ce910a475d.

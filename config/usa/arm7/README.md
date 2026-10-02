@@ -1,11 +1,11 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **201 C
-functions: 16,804 instruction bytes plus 1,188 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **203 C
+functions: 16,928 instruction bytes plus 1,208 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
-913 bytes of standalone initialized data and 3,444 bytes of BSS now have source
-definitions. The other 148,851 payload bytes
+913 bytes of standalone initialized data and 3,508 bytes of BSS now have source
+definitions. The other 148,707 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -19,10 +19,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 16,804 / 1,188 bytes |
+| Reconstructed C instructions / compiler literal pools | 16,928 / 1,208 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 913 / 120 bytes |
-| Reconstructed BSS / total autoload BSS | 3,444 / 22,744 bytes |
-| Binary fallback | 148,851 bytes |
+| Reconstructed BSS / total autoload BSS | 3,508 / 22,744 bytes |
+| Binary fallback | 148,707 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -170,7 +170,7 @@ table; its separate VBlank response and initialized dispatch table remain outsid
 this unit's source data ownership.
 
 `src/Alarms.c` reconstructs eight alarm scheduling functions at
-`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8201 C
+`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8203 C
 instruction bytes, 52 literal bytes and the 12-byte list state at
 `[0x03809164, 0x03809170)`. It initializes and orders the doubly-linked queue,
 programs timer 1, registers timeouts and periodic intervals, and cancels alarms.
@@ -268,7 +268,7 @@ does not add duplicate data credit.
 
 `src/ThreadWait.c` reconstructs blocking, waking all waiters, marking a thread
 ready and selecting the first ready thread at `[0x037fc69c, 0x037fc7cc)`
-(payload `[0x48b8, 0x49e8)`), with 2201 C instruction bytes and 8 literal bytes.
+(payload `[0x48b8, 0x49e8)`), with 2203 C instruction bytes and 8 literal bytes.
 It clears blocked-list links on wakeup and preserves IRQ state. The scheduler switch routine now belongs to `ThreadSwitch.c`; list insertion
 and IRQ dependencies are source-owned. No thread-context storage is counted by this unit.
 
@@ -653,6 +653,16 @@ alarm. Start uses a timeout for zero interval or an absolute first ring plus
 interval otherwise. Stop increments the tag; callbacks send slot index and tag
 on IPC command 7, retrying while the send reports failure. Slot storage and its
 separate initializer remain fallback; this batch adds no BSS coverage.
+
+`src/SoundCommandInit.c` reconstructs `[0x038025b0, 0x038025f4)`
+(52 instruction/16 literal bytes), initializing an eight-entry command queue,
+registering IPC handler 7, and clearing the shared-work pointer. Its 64-byte
+source BSS at `[0x0380a91c, 0x0380a95c)` contains the 32-byte queue and eight
+message pointers; named external aliases retain their observed addresses.
+`src/SoundCommandCallback.c` reconstructs `[0x03802ca4, 0x03802cf0)`
+(72 instruction/four literal bytes). Under saved/restored IRQ state it queues
+messages at or above `0x02000000`, notifies the sound worker for zero, and ignores
+other values. The original ignored error argument and nonblocking send are retained.
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C
