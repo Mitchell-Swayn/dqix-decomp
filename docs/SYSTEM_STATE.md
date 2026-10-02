@@ -53,3 +53,11 @@ The 168-byte sleep-registration routine itself remains fallback: its first
 isolated candidate scores 61.90%, with register allocation differences. The
 surrounding initialization, shutdown and priority-change routines also remain
 separate work; these source slices do not establish a complete scheduler.
+
+`ContextLifecycle.cpp` subsequently recovers six creation and termination
+routines at `0x020c75b4..0x020c783c` (648 report code bytes). They initialize
+context state and stack sentinels, invoke exit callbacks, release mutexes,
+remove terminated contexts from queues, and wake completion waiters. All six
+existing source forms match on their first isolated compile, and full
+ROM/module/symbol acceptance passes. Register initialization and the remaining
+scheduler primitives are still external dependencies.
