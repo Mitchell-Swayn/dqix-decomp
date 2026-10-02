@@ -111,3 +111,11 @@ original 352: MWCC folds the zero high half of the 64-bit multiplier, removing
 a move and multiply-accumulate. An explicit 3LL constant did not change it.
 Original source/mapping restored; no coverage credit. Next work must explain
 the original full-width multiplication source form before register tuning.
+
+AnimationCallbacks.cpp defines the five format callbacks, three model processing
+callbacks and the animation-type count at020f1c6c..020f1c90 (36 initialized data
+bytes). All nine symbols compare100%; the first full check rejected reversed
+global placement despite symbol-local matching. Reordering declarations to the
+observed compiler emission order restores every address; combined module/symbol/
+ARM7/ROM SHA-1 checks pass. The descriptor table and following zeros remain
+fallback until their full allocation extent is established.

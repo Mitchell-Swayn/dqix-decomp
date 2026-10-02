@@ -1384,3 +1384,7 @@ src/World/WorldPlacementOpcode101.cpp:
 src/World/WorldObjectInstanceListInstance.cpp:
     complete
     .text start:0x0208e9e8 end:0x0208e9f4
+
+src/Graphics/NSBXX/AnimationCallbacks.cpp:
+    complete
+    .data start:0x020f1c6c end:0x020f1c90
