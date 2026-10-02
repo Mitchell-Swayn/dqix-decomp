@@ -5,3 +5,16 @@
     .data       start:0x02170360 end:0x021707c0 kind:data align:32
     .bss        start:0x021707c0 end:0x02171060 kind:bss align:32
 
+src/Factory/ov004/RecordCounts.cpp:
+    complete
+    .text start:0x021537e0 end:0x02153944
+    .bss start:0x021707c0 end:0x021707c4
+
+src/Factory/ov004/RecordCountSet.cpp:
+    complete
+    .text start:0x021545f0 end:0x02154618
+
+src/Factory/ov004/RecordCountLookup.cpp:
+    complete
+    .text start:0x021546c0 end:0x02154718
+
