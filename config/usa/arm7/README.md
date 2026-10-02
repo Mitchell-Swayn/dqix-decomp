@@ -1,11 +1,11 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **130 C
-functions: 10,664 instruction bytes plus 880 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **136 C
+functions: 11,112 instruction bytes plus 924 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
-880 bytes of standalone initialized data and 764 bytes of BSS now have source
-definitions. The other 155,332 payload bytes
+913 bytes of standalone initialized data and 800 bytes of BSS now have source
+definitions. The other 154,807 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -19,10 +19,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 10,664 / 880 bytes |
-| Reconstructed initialized standalone data / reviewed assembly ranges | 880 / 120 bytes |
-| Reconstructed BSS / total autoload BSS | 764 / 22,744 bytes |
-| Binary fallback | 155,332 bytes |
+| Reconstructed C instructions / compiler literal pools | 11,112 / 924 bytes |
+| Reconstructed initialized standalone data / reviewed assembly ranges | 913 / 120 bytes |
+| Reconstructed BSS / total autoload BSS | 800 / 22,744 bytes |
+| Binary fallback | 154,807 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -170,7 +170,7 @@ table; its separate VBlank response and initialized dispatch table remain outsid
 this unit's source data ownership.
 
 `src/Alarms.c` reconstructs eight alarm scheduling functions at
-`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8130 C
+`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8136 C
 instruction bytes, 52 literal bytes and the 12-byte list state at
 `[0x03809164, 0x03809170)`. It initializes and orders the doubly-linked queue,
 programs timer 1, registers timeouts and periodic intervals, and cancels alarms.
@@ -268,7 +268,7 @@ does not add duplicate data credit.
 
 `src/ThreadWait.c` reconstructs blocking, waking all waiters, marking a thread
 ready and selecting the first ready thread at `[0x037fc69c, 0x037fc7cc)`
-(payload `[0x48b8, 0x49e8)`), with 2130 C instruction bytes and 8 literal bytes.
+(payload `[0x48b8, 0x49e8)`), with 2136 C instruction bytes and 8 literal bytes.
 It clears blocked-list links on wakeup and preserves IRQ state. The scheduler switch routine now belongs to `ThreadSwitch.c`; list insertion
 and IRQ dependencies are source-owned. No thread-context storage is counted by this unit.
 
@@ -436,8 +436,29 @@ bytes and 40 literal bytes. They set volume/divisor, period and pan, read active
 and raw-control state, and apply or release the global pan override. A negative
 override restores the per-channel requested values; a nonnegative override writes
 one byte to all 16 channels. Requested values, override and adjustment globals
-remain external storage. The adjustment helper remains binary-owned in this
-batch; its broader policy is not inferred from callers. No new BSS/data is claimed.
+remain external storage. The adjustment helper and requested arrays are now owned by the following
+sound-math batch; the broader software policy remains unasserted.
+
+`src/SoundVolumeAdjustment.c` reconstructs `[0x037ff270, 0x037ff33c)`
+(payload `[0x748c, 0x7558)`): 184 instruction bytes and 20 literal bytes. Its
+setter refreshes hardware volume on channel mask `0xfff5`; its helper applies
+piecewise linear correction below pan 24 and above pan 104, leaving the central
+interval unchanged. The factor and two requested-value arrays now form a typed
+36-byte BSS block at `[0x0380923c, 0x03809260)`. Existing external names remain
+address aliases into this block; the mutable pan override remains binary data.
+
+`src/SoundMath.c` reconstructs four functions at `[0x037ff468, 0x037ff588)`
+(payload `[0x7684, 0x77a4)`): 264 instruction bytes and 24 literal bytes.
+Attenuation is clamped to [-723, 0] and combined with a hardware divisor; the
+volume-table wrapper calls the original Thumb BIOS-facing helper. Sine lookup
+mirrors a signed-byte quarter-wave table, and the random helper advances a 32-bit
+LCG with multiplier 1664525 and increment 1013904223, returning the high half.
+The random seed remains mutable binary-owned data.
+
+`src/SoundSineTable.c` owns exactly 33 constant sample bytes at
+`[0x038082a8, 0x038082c9)` (payload `[0x104c4, 0x104e5)`), including both
+quarter-wave endpoints. The compiler emits 33 bytes, so the following three
+zero bytes remain fallback rather than being assumed alignment ownership.
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C

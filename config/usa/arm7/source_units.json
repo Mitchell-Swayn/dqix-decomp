@@ -1090,6 +1090,67 @@
         "ARM7_RequestedSoundVolume": 58757712,
         "ARM7_AdjustSoundVolume": 58716880
       }
+    },
+    {
+      "name": "SoundVolumeAdjustment",
+      "source": "config/usa/arm7/src/SoundVolumeAdjustment.c",
+      "autoload": "wram",
+      "runtime_address": 58716784,
+      "payload_offset": 29836,
+      "size": 204,
+      "code_bytes": 184,
+      "literal_pool_bytes": 20,
+      "entry": "ARM7_SetSoundVolumeAdjustment",
+      "symbols": {
+        "ARM7_SetSoundVolumeAdjustment": 58716784,
+        "ARM7_AdjustSoundVolume": 58716880
+      },
+      "externals": {},
+      "bss": {
+        "runtime_address": 58757692,
+        "size": 36,
+        "symbols": {
+          "ARM7_SoundChannelState": 58757692
+        }
+      }
+    },
+    {
+      "name": "SoundMath",
+      "source": "config/usa/arm7/src/SoundMath.c",
+      "autoload": "wram",
+      "runtime_address": 58717288,
+      "payload_offset": 30340,
+      "size": 288,
+      "code_bytes": 264,
+      "literal_pool_bytes": 24,
+      "entry": "ARM7_ConvertSoundAttenuation",
+      "symbols": {
+        "ARM7_ConvertSoundAttenuation": 58717288,
+        "ARM7_GetSoundVolumeTable": 58717404,
+        "ARM7_GetSoundSine": 58717416,
+        "ARM7_NextSoundRandom": 58717524
+      },
+      "externals": {
+        "ARM7_BiosVolumeTable": 58736409,
+        "ARM7_SoundSineTable": 58753704,
+        "ARM7_SoundRandomState": 58756252
+      }
+    },
+    {
+      "name": "SoundSineTable",
+      "source": "config/usa/arm7/src/SoundSineTable.c",
+      "autoload": "wram",
+      "runtime_address": 58753704,
+      "payload_offset": 66756,
+      "size": 33,
+      "code_bytes": 0,
+      "literal_pool_bytes": 0,
+      "data_bytes": 33,
+      "entry": "ARM7_SoundSineTable",
+      "symbols": {
+        "ARM7_SoundSineTable": 58753704
+      },
+      "externals": {}
     }
   ]
 }

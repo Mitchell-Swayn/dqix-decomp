@@ -188,3 +188,27 @@
   880 literals, 880 initialized data bytes, 764 BSS; 155,332 fallback bytes.
 - Next batch underway: sound adjustment factor setter/helper beginning at
   `0x037ff270`, followed by the fixed-point sound period/pitch helpers.
+
+## 2026-10-02 - sound volume adjustment and math utilities
+
+- Adjustment-factor setter/helper `0x037ff270`/`0x037ff2d0`: first compilation
+  matched all 204 bytes. Piecewise formulas, thresholds and 21-bit shifts are
+  direct transcriptions of integer operations, without assigning an unproven
+  user-facing policy to the factor.
+- Attenuation conversion, BIOS-volume wrapper, signed sine lookup and LCG at
+  `0x037ff468` through `0x037ff588`: first compilation matched all 288 bytes.
+  Unsigned seed arithmetic preserves modulo-2^32 wraparound.
+- Factor/requested arrays placed in a typed 36-byte BSS aggregate matched on
+  the first storage-owning build. The old per-field externals are numeric aliases
+  into the aggregate and claim no duplicate storage.
+- Sine table: first integrated inventory assumed 36-byte alignment but compiler
+  section inspection proved a 33-byte .rodata output. Corrected ownership to
+  exactly 33 bytes; subsequent full payload matched. Three trailing zero bytes
+  remain original fallback. This was a size-accounting correction, not a code
+  variant or invented padding declaration.
+- Validation: full payload, all declared symbols and BSS match; 11 pipeline
+  tests and six verifier tests pass. Totals: 136 C functions, 11,112 instruction
+  bytes, 924 literals, 913 initialized data bytes, 800 BSS; 154,807 fallback bytes.
+- Next batch underway: sound-worker thread initialization, recurring alarm
+  control and queue notifications at `0x037ff588` onward. Fixed-point period
+  conversion remains a separate unattempted candidate.
