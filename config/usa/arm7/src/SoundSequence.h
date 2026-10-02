@@ -9,7 +9,8 @@ typedef struct {
     unsigned char index;
     unsigned char unknown2[6];
     unsigned char trackIds[16];
-    unsigned char unknown18[12];
+    unsigned char unknown18[8];
+    unsigned int argument;                       /* 0x20 */
 } SoundSequence;
 
 typedef struct {

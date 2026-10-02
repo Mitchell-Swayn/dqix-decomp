@@ -401,3 +401,14 @@
   sentinel; callback unlink retains the observed list preconditions. No defensive
   checks or inferred event meanings were introduced into matching source.
 - Validation: complete payload and all symbols match; all 11 pipeline and six verifier tests pass, with the transitive sequence/voice header graph tracked.
+
+## 2026-10-02 - sequence stop, pause and range invalidation
+
+- All four functions matched their first compile: public stop/pause at 0x038009f8
+  and cursor/argument range invalidation at 0x03800c74. Pausing releases existing
+  track voices with rate 127, then detaches their callbacks; stopping clears the
+  optional shared-work active mask after teardown.
+- The shared sequence layout now exposes offset 0x20 as argument, matching the
+  fourth preparation argument and range comparisons. Its policy remains unknown.
+- Adds 424 instruction bytes and 20 literal bytes; no storage coverage is added.
+- Validation: full payload and linked symbols match; all 11 pipeline and six verifier tests pass, including all prior shared-header consumers in the payload build.

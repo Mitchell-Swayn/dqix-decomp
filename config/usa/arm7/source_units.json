@@ -1589,6 +1589,49 @@
         "ARM7_BeginSoundVoiceRelease": 58720236,
         "ARM7_ClearSoundVoiceCallback": 58720724
       }
+    },
+    {
+      "name": "SoundSequenceStop",
+      "source": "config/usa/arm7/src/SoundSequenceStop.c",
+      "autoload": "wram",
+      "runtime_address": 58722808,
+      "payload_offset": 35860,
+      "size": 212,
+      "code_bytes": 200,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_StopSoundSequence",
+      "symbols": {
+        "ARM7_StopSoundSequence": 58722808,
+        "ARM7_PauseSoundSequence": 58722900
+      },
+      "externals": {
+        "ARM7_SoundSequences": 58760412,
+        "ARM7_SoundSharedWork": 58759064,
+        "ARM7_StopSequence": 58724792,
+        "ARM7_GetSequenceTrack": 58724660,
+        "ARM7_ReleaseSoundTrackVoices": 58724504,
+        "ARM7_ClearSoundTrackVoices": 58724608
+      }
+    },
+    {
+      "name": "SoundSequenceRanges",
+      "source": "config/usa/arm7/src/SoundSequenceRanges.c",
+      "autoload": "wram",
+      "runtime_address": 58723444,
+      "payload_offset": 36496,
+      "size": 232,
+      "code_bytes": 224,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_StopSoundSequencesByCursor",
+      "symbols": {
+        "ARM7_StopSoundSequencesByCursor": 58723444,
+        "ARM7_StopSoundSequencesByArgument": 58723584
+      },
+      "externals": {
+        "ARM7_SoundSequences": 58760412,
+        "ARM7_StopSequence": 58724792,
+        "ARM7_GetSequenceTrack": 58724660
+      }
     }
   ]
 }
