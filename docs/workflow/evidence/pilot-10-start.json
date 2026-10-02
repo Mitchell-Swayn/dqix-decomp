@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "name": "pilot-10",
+  "snapshot": {
+    "utc": "2026-10-02T06:09:16.552964+00:00",
+    "revision": "5c05df14bf512dd553eb590a2405c15fac868595",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 185300,
+      "matched_data": 34348,
+      "matched_functions": 1362
+    },
+    "arm7": {
+      "source_functions": 145,
+      "source_code_bytes": 11900,
+      "source_literal_pool_bytes": 1008,
+      "source_data_bytes": 913,
+      "source_bss_bytes": 2100,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 153935,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "64046ed6b32a1083db3029e5ebeade9fe61888a7e032de6564c607b345d79319",
+    "arm7_report_sha256": "0febba7c4aada68ba8dd4613fa12468ecbafd7020c09e02bc2ccb4c227ebedb5",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks."
+}

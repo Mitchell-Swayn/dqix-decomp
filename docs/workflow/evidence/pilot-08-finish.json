@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "pilot-08",
+  "snapshot": {
+    "utc": "2026-10-02T06:03:40.031225+00:00",
+    "revision": "7f298b9b0a6b30b55312ff7033dff112fb83f0de",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 183568,
+      "matched_data": 34288,
+      "matched_functions": 1344
+    },
+    "arm7": {
+      "source_functions": 141,
+      "source_code_bytes": 11360,
+      "source_literal_pool_bytes": 980,
+      "source_data_bytes": 913,
+      "source_bss_bytes": 2100,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 154503,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "7e971533c05b6ba48af9ddf73063c863ee745a1ef95639cd341f62df3840a861",
+    "arm7_report_sha256": "a112457a36bc5d4fce151a5b02b586a3e0a35b47cc7814e4a8fe45ae507c56cb",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Combined ROM/module/symbol/report/SHA1 passes; six binary64/decimal functions, ARM7 sound worker controls/storage, and ARM9 IRQ callback state/table. InterruptResponseState2/2 symbols100%; existing InterruptHandler source is not a configured comparison unit, receives no code credit.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 376,
+      "matched_data": 112,
+      "matched_functions": 6
+    },
+    "arm7": {
+      "source_functions": 5,
+      "source_code_bytes": 248,
+      "source_literal_pool_bytes": 56,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 1300,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": -304,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 154.543858
+}

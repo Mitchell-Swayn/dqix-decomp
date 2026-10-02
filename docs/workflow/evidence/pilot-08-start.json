@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "name": "pilot-08",
+  "snapshot": {
+    "utc": "2026-10-02T06:01:05.487367+00:00",
+    "revision": "e702e6642db1275f94a805c7ba2d5bd2fe9115e0",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 183192,
+      "matched_data": 34176,
+      "matched_functions": 1338
+    },
+    "arm7": {
+      "source_functions": 136,
+      "source_code_bytes": 11112,
+      "source_literal_pool_bytes": 924,
+      "source_data_bytes": 913,
+      "source_bss_bytes": 800,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 154807,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "8a6b2cb58386da05c4075c708a9267a01cb197a268ec4d719e12a0a1887c3c52",
+    "arm7_report_sha256": "637e7f5c815247bdbdeba2171bbdc4130fae5a26108a0e9e9555d58464f3d425",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Baseline reports still describe accepted pilot07; worker commits already cherry-picked, not yet rebuilt. Measures integration/acceptance only.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks."
+}
