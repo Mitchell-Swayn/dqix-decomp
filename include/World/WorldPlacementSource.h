@@ -20,7 +20,7 @@ struct WorldPlacementSource
         Vector3i positions[8];
         Record* next;
     };
-    unsigned char unknown0[4];
+    char mapPrefix[4];
     Record* head;
     unsigned short count;
     unsigned char unknownA;
@@ -32,6 +32,9 @@ struct WorldPlacementSource
         unsigned char slotCount;
     } variants[8];
 
+    static int AcceptOpcode100(Script::Parameter*, int);
+    static int AcceptOpcode101(Script::Parameter*, int);
+    void LoadForMap(const char* name);
     static int ReadVariantTable(Script::Parameter* parameters, int numParameters);
     static int ReadSpecialRecord(Script::Parameter* parameters, int numParameters);
     static int ReadRecord(Script::Parameter* parameters, int numParameters);

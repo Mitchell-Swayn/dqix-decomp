@@ -16569,12 +16569,12 @@ from:0x0208e738 kind:arm_call to:0x02030774 module:main
 from:0x0208e744 kind:arm_call to:0x02003f28 module:main
 from:0x0208e748 kind:arm_call to:0x0202f7e8 module:main
 from:0x0208e758 kind:load to:0x020f12b8 module:main
-from:0x0208e75c kind:load to:0x020f12bf module:main
+from:0x0208e75c kind:load to:0x020f12b8 add:0x7 module:main
 from:0x0208e760 kind:load to:0x0211e33c module:main
 from:0x0208e764 kind:load to:0x020f1278 module:main
-from:0x0208e768 kind:load to:0x020f12d3 module:main
-from:0x0208e76c kind:load to:0x020f12e1 module:main
-from:0x0208e770 kind:load to:0x020f12fb module:main
+from:0x0208e768 kind:load to:0x020f12b8 add:0x1b module:main
+from:0x0208e76c kind:load to:0x020f12b8 add:0x29 module:main
+from:0x0208e770 kind:load to:0x020f12b8 add:0x43 module:main
 from:0x0208e774 kind:load to:0x020f1290 module:main
 from:0x0208e7ec kind:arm_call to:0x0200f398 module:main
 from:0x0208e7f4 kind:arm_call to:0x0205ec34 module:main
