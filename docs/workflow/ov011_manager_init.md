@@ -43,3 +43,21 @@ bytes (300 instruction bytes and four literal bytes); initialized data and
 BSS gains are zero. All denominators and ARM7 counters remain unchanged.
 Matched ARM9 functions increased from 1,757 to 1,759 and code bytes from
 228,232 to 228,536. The full module remains incomplete.
+
+## Shared interface repair
+
+Repair starting revision: `f72657f78860c33e707b91b77ac362a320364e30`.
+Both assigned functions were already source-covered and matched exactly before
+this repair. The initializer now includes `Resource/GameResources.h` and uses
+its existing `GameResources*` return declaration for `func_ov017_0218b5b0`,
+removing the conflicting local `void*` declaration.
+
+One additional compiled source variant matched both functions exactly, bringing
+each cumulative count to 4, including the supplied prior count of 3. Baseline
+rebuilds and comparisons of unchanged source are verification, not new variants.
+The repair changes no reconstructed ranges or coverage denominators.
+Before/after object evidence is under ignored `build/matching/`:
+`20261002T191111-ae3be4657ac340ac8f0c9d04677918a8` and
+`20261002T191118-de0e267eef294e3aa129041c8ce9d487`.
+Full acceptance log: `build/ov011-repair-accept.log`.
+Batch measurement: `build/workflow/ov011-interface-repair/`.

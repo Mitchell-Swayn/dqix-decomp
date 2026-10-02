@@ -1,4 +1,5 @@
 #include "AllocatorNodes.h"
+#include "Resource/GameResources.h"
 #include <std_library_functions.h>
 
 // Unknown payloads stay opaque; only fields accessed by these initializers
@@ -44,7 +45,6 @@ typedef char Ov011ManagerSizeCheck[sizeof(Ov011AllocatorManager) == 0x1e0 ? 1 : 
 
 extern "C" {
     void func_ov023_021f672c(void*);
-    void* func_ov017_0218b5b0();
     void func_0203b4d8(void*, int);
     void func_02074af4(void*);
     void func_02074b64(void*);
