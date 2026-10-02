@@ -375,3 +375,15 @@
   The cache's first word remains unknown; no external storage is claimed as BSS.
 - Three functions add 192 instruction bytes and 12 literal bytes.
 - Validation: full payload and all symbols match; all 11 pipeline and six verifier tests pass. Header dependencies are recorded by the compiler-backed provenance path.
+
+## 2026-10-02 - sequence start flags and sized parameter writes
+
+- Start-prepared and prepare/start wrappers matched their first compile (80 bytes).
+  The final preparation argument remains generic; no new policy meaning is claimed.
+- Sized sequence writes matched first compile. Track writes initially matched size
+  and behavior with five setup instructions scheduled differently; a named sequence
+  pointer initialized before traversal matched on variant two (224-byte pair).
+- Four functions add 288 instructions and 16 literal bytes, no data or BSS.
+  Shared sequence flags now identify running/paused bits from start and update
+  consumers; all remaining flag bits stay unknown.
+- Validation: full payload and symbols match; all 11 pipeline and six verifier tests pass, with shared-header hashes included in affected unit records.

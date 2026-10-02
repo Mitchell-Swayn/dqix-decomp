@@ -3,7 +3,7 @@
 
 /* Only consumer-proven fields are named; remaining bytes retain offsets. */
 typedef struct {
-    unsigned char active:1, unknownFlags:7;
+    unsigned char active:1, running:1, paused:1, unknownFlags:5;
     unsigned char index;
     unsigned char unknown2[34];
 } SoundSequence;

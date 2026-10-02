@@ -1523,6 +1523,44 @@
         "ARM7_SoundReadCache": 58759036,
         "ARM7_ReadSoundTrackByte": 58722632
       }
+    },
+    {
+      "name": "SoundSequenceStart",
+      "source": "config/usa/arm7/src/SoundSequenceStart.c",
+      "autoload": "wram",
+      "runtime_address": 58722728,
+      "payload_offset": 35780,
+      "size": 80,
+      "code_bytes": 72,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_StartPreparedSoundSequence",
+      "symbols": {
+        "ARM7_StartPreparedSoundSequence": 58722728,
+        "ARM7_StartSoundSequence": 58722760
+      },
+      "externals": {
+        "ARM7_SoundSequences": 58760412,
+        "ARM7_PrepareSoundSequence": 58722156
+      }
+    },
+    {
+      "name": "SoundSequenceParameters",
+      "source": "config/usa/arm7/src/SoundSequenceParameters.c",
+      "autoload": "wram",
+      "runtime_address": 58723676,
+      "payload_offset": 36728,
+      "size": 224,
+      "code_bytes": 216,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_WriteSoundSequenceParameter",
+      "symbols": {
+        "ARM7_WriteSoundSequenceParameter": 58723676,
+        "ARM7_WriteSoundTrackParameter": 58723744
+      },
+      "externals": {
+        "ARM7_SoundSequences": 58760412,
+        "ARM7_GetSequenceTrack": 58724660
+      }
     }
   ]
 }
