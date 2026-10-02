@@ -935,6 +935,68 @@
         "ARM7_TestSharedBootFlag4": 58706624
       },
       "externals": {}
+    },
+    {
+      "name": "GPIOControl",
+      "source": "config/usa/arm7/src/GPIOControl.c",
+      "autoload": "wram",
+      "runtime_address": 58715160,
+      "payload_offset": 28212,
+      "size": 32,
+      "code_bytes": 28,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_UpdateGPIOControl",
+      "symbols": {
+        "ARM7_UpdateGPIOControl": 58715160
+      },
+      "externals": {}
+    },
+    {
+      "name": "GPIOControlMode",
+      "source": "config/usa/arm7/src/GPIOControlMode.c",
+      "autoload": "wram",
+      "runtime_address": 58715192,
+      "payload_offset": 28244,
+      "size": 24,
+      "code_bytes": 20,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_SetGPIOControlMode",
+      "symbols": {
+        "ARM7_SetGPIOControlMode": 58715192
+      },
+      "externals": {
+        "ARM7_UpdateGPIOControl": 58715160
+      }
+    },
+    {
+      "name": "InputPolling",
+      "source": "config/usa/arm7/src/InputPolling.c",
+      "autoload": "wram",
+      "runtime_address": 58715216,
+      "payload_offset": 28268,
+      "size": 220,
+      "code_bytes": 196,
+      "literal_pool_bytes": 24,
+      "entry": "ARM7_InitializeInputPolling",
+      "symbols": {
+        "ARM7_InitializeInputPolling": 58715216,
+        "ARM7_PollSharedInput": 58715372
+      },
+      "externals": {
+        "ARM7_Is64BitTimerInitialized": 58709888,
+        "ARM7_IsAlarmListInitialized": 58710380,
+        "ARM7_ZeroInitializeAlarm": 58710396,
+        "ARM7_GetCurrentTimestamp": 58710008,
+        "ARM7_SetInterval": 58710844,
+        "ARM7_SetGPIOControlMode": 58715192
+      },
+      "bss": {
+        "runtime_address": 58757644,
+        "size": 48,
+        "symbols": {
+          "ARM7_InputPollingState": 58757644
+        }
+      }
     }
   ]
 }

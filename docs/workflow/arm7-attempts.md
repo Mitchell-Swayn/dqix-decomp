@@ -120,3 +120,29 @@
   156,956 payload bytes remain fallback. No new storage or assembly exceptions.
 - Next candidate: input/GPIO polling and periodic-alarm initialization beginning
   at `0x037fec18`, which connects already source-owned timing and alarm APIs.
+
+## 2026-10-02 - GPIO control and periodic input polling
+
+- GPIO mask update `0x037fec18`: first compile had the exact 32-byte size but
+  six differing register bytes. Reordering the commutative AND operands to
+  `~clearMask & *control` reproduced native evaluation/register allocation on
+  the second compile; volatile access count and behavior were unchanged.
+- Mode wrapper `0x037fec38`: first compile matched all 24 bytes, including
+  unsigned-short narrowing of the input before passing it to the mask update.
+- Polling initialization/callback `0x037fec50` and `0x037fecec`: first compile
+  matched all 220 bytes. Existing alarm types establish the 44-byte layout;
+  literal and call analysis establishes interval 2094 and start time now+2094.
+  The polling callback maps observed input bits without inventing names for
+  unproven controls. Readiness checks precede initialization-state checks.
+- BSS source ownership adds the four-byte initialization flag and 44-byte alarm;
+  code/literal counts remain separate from the 48-byte zero-fill range.
+- First source-owned BSS build revealed that separate globals were emitted alarm
+  first, flag second. A typed aggregate explicitly places the flag before the
+  alarm and reproduced the native literals and BSS layout on the next build.
+  No linker padding or artificial storage was introduced.
+- Validation: complete payload, all symbols and 48-byte BSS placement match;
+  11 pipeline tests and six verifier tests pass. Totals: 112 C functions,
+  9,464 instruction bytes, 732 literals, 880 initialized data bytes, 764 BSS;
+  156,680 payload bytes remain fallback. No added assembly exceptions.
+- Next candidate: sound-master control and sound power transitions beginning
+  at `0x037fed2c`, including the 16-channel stop loop.
