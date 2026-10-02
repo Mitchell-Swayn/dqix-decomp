@@ -714,6 +714,65 @@
         "ARM7_DisableIRQInterrupts": 58712932,
         "ARM7_SetIRQInterruptState": 58712952
       }
+    },
+    {
+      "name": "InterruptDispatch",
+      "source": "config/usa/arm7/src/InterruptDispatch.c",
+      "autoload": "wram",
+      "runtime_address": 58701424,
+      "payload_offset": 14476,
+      "size": 140,
+      "code_bytes": 120,
+      "literal_pool_bytes": 20,
+      "entry": "ARM7_DispatchInterruptResponse",
+      "symbols": {
+        "ARM7_DispatchInterruptResponse": 58701424
+      },
+      "externals": {
+        "ARM7_InterruptResponses": 58756668,
+        "ARM7_InterruptResponseIDs": 58755100,
+        "ARM7_DisableSpecificInterrupts": 58702172
+      }
+    },
+    {
+      "name": "InterruptVectors",
+      "source": "config/usa/arm7/src/InterruptVectors.c",
+      "autoload": "wram",
+      "runtime_address": 58701564,
+      "payload_offset": 14616,
+      "size": 128,
+      "code_bytes": 96,
+      "literal_pool_bytes": 32,
+      "entry": "ARM7_DMA0InterruptHandler",
+      "symbols": {
+        "ARM7_DMA0InterruptHandler": 58701564,
+        "ARM7_DMA1InterruptHandler": 58701580,
+        "ARM7_DMA2InterruptHandler": 58701596,
+        "ARM7_DMA3InterruptHandler": 58701612,
+        "ARM7_Timer0OverflowInterruptHandler": 58701628,
+        "ARM7_Timer1OverflowInterruptHandler": 58701644,
+        "ARM7_Timer2OverflowInterruptHandler": 58701660,
+        "ARM7_Timer3OverflowInterruptHandler": 58701676
+      },
+      "externals": {
+        "ARM7_DispatchInterruptResponse": 58701424
+      }
+    },
+    {
+      "name": "InterruptResponseIDs",
+      "source": "config/usa/arm7/src/InterruptResponseIDs.c",
+      "autoload": "wram",
+      "runtime_address": 58755100,
+      "payload_offset": 68152,
+      "size": 16,
+      "code_bytes": 0,
+      "literal_pool_bytes": 0,
+      "data_bytes": 16,
+      "entry": "ARM7_InterruptResponseIDs",
+      "symbols": {
+        "ARM7_InterruptResponseIDs": 58755100
+      },
+      "externals": {}
     }
   ]
 }

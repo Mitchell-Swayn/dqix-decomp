@@ -1,11 +1,11 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **87 C
-functions: 8,388 instruction bytes plus 576 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **96 C
+functions: 8,604 instruction bytes plus 628 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
-864 bytes of standalone diagnostic data and 696 bytes of BSS now have source
-definitions. The other 157,928 payload bytes
+880 bytes of standalone initialized data and 696 bytes of BSS now have source
+definitions. The other 157,644 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -19,10 +19,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 8,388 / 576 bytes |
-| Reconstructed initialized standalone data / reviewed assembly ranges | 864 / 120 bytes |
+| Reconstructed C instructions / compiler literal pools | 8,604 / 628 bytes |
+| Reconstructed initialized standalone data / reviewed assembly ranges | 880 / 120 bytes |
 | Reconstructed BSS / total autoload BSS | 696 / 22,744 bytes |
-| Binary fallback | 157,928 bytes |
+| Binary fallback | 157,644 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -339,6 +339,20 @@ The sleep wrapper itself remains binary-owned pending multiplication matching.
 `[0x4bb8, 0x4bf0)`): 52 instruction bytes and four literal bytes. It decrements a
 nonzero scheduler lock count under IRQ protection and returns the previous count,
 or zero when already unlocked. The lock-increment routine remains binary-owned.
+
+`src/InterruptDispatch.c` reconstructs `[0x037fb670, 0x037fb6fc)` (payload
+`[0x388c, 0x3918)`): 120 instruction bytes and 20 literal bytes. It snapshots and
+clears a DMA/timer response callback, invokes it with its stored user data, sets
+the corresponding fired-IRQ bit at `0x0380fff8`, and conditionally disables the
+hardware interrupt. Reading the continued-delivery flag after the callback
+preserves changes made by callback code. The response array already has source BSS.
+
+`src/InterruptVectors.c` reconstructs eight channel wrappers at
+`[0x037fb6fc, 0x037fb77c)` (payload `[0x3918, 0x3998)`): 96 instruction bytes
+and 32 literal bytes. Each routes one DMA or timer interrupt to the dispatcher.
+`src/InterruptResponseIDs.c` owns the associated 16-byte constant mapping at
+`[0x0380881c, 0x0380882c)` (payload `[0x10a38, 0x10a48)`): DMA IDs 8-11 and
+timer-overflow IDs 3-6. These bytes count as initialized data, not instructions.
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C

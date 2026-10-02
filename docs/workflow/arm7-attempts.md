@@ -48,3 +48,24 @@
   tests and six verifier tests pass. Four functions add 280 instruction bytes
   and 20 literal bytes, with no new storage or assembly exceptions. Totals:
   87 C functions, 8,388 instruction bytes, 576 literals, 157,928 fallback bytes.
+
+## 2026-10-02 - DMA and timer interrupt response dispatch
+
+- Dispatcher `0x037fb670`: first compilation matched all 140 bytes. The
+  existing ARM9 handler suggested callback semantics; ARM7 disassembly established
+  clear-before-call, fired-bit recording, and reloading the continue-enabled flag
+  after the callback. Field-base pointer arithmetic matches the existing response
+  setters and preserves separate native literal addresses.
+- Eight wrappers `0x037fb6fc` through `0x037fb76c`: first compilation matched
+  all 128 bytes. They remain a separate translation unit because native vectors
+  perform interworking tail calls to the dispatcher.
+- Mapping table `0x0380881c`: original eight little-endian halfwords are
+  `(8,9,10,11,3,4,5,6)`, corresponding to the four DMA and four timer IRQ IDs.
+  Reconstructed as a typed constant array with 16 data bytes, no code credit.
+- Validation: standalone payload and declared symbols all match, including the
+  first compiled mapping table. Payload SHA-1 remains
+  `a662d5c6a78e990244299926cf6862ce910a475d`; 11 pipeline and six verifier
+  tests pass. Totals: 96 C functions, 8,604 instruction bytes, 628 literals,
+  880 initialized data bytes, 157,644 fallback bytes. BSS and assembly unchanged.
+- Next coherent candidate batch: VBlank dispatch, interrupt wait-list
+  initialization, and interrupt-handler registration at `0x037fb77c` onward.
