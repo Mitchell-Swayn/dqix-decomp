@@ -1,5 +1,7 @@
 #pragma once
 
+class SafeAllocator;
+
 // Partial embedded types. Names retain offsets until their gameplay purposes
 // are established. Only fields touched by recovered routines are identified.
 extern "C" void func_020982b4(void*);
@@ -68,8 +70,13 @@ struct ZoneState2754
     unsigned char unknown_14;
     char padding[3];
     ZoneState2754();
+    bool LoadSerializedData(void* file, unsigned int size);
+    bool AttachSerializedData(void* file, bool* alreadyRelocated, void (*callback)(ZoneState2754*, void*));
+    void* FindPrimaryRecord(int key, int (*getKey)(const void*));
     unsigned int GetRecordStorageSize();
     bool VisitPrimaryRecords(void (*callback)(ZoneState2754*, void*));
     void Clear();
     void Reset();
 };
+
+int GetSerializedRecordKey(const void* record);

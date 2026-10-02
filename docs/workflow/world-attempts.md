@@ -50,3 +50,14 @@ Next: inspect a proven MWCC nested-constructor inline pattern or compiler ABI
 settings before another variant. Its matching destructor and embedded resets
 are independently reconstructable. Shared constructor hooks used only by the
 deferred experiment were removed; observed destructor hooks remain.
+
+## Serialized record copy at 020de888
+
+Deferred after six variants. Direct C++ matched the instruction pattern apart
+from register allocation and an optimized-away callback-address null check
+(46.77%). Hoisting a callback local retained the check but extended its register
+lifetime. A separate inline copy helper naturally represents the repeated
+allocator/source checks, but MWCC left that helper out of line even with inline
+size/total-size pragmas and inline enabled. No copy range is credited. Draft:
+build/matching/ZoneState2754Copy.cpp. Next investigate compiler inline decision
+evidence before trying additional source variants; attachment/loading do match.
