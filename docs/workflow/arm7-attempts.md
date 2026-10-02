@@ -540,3 +540,18 @@
   external; no initialization or ownership evidence is inferred from this batch.
 - Four functions add 352 instruction and 24 literal bytes, no data or BSS.
 - Validation: full payload and linked symbols match; all 11 pipeline and six verifier tests pass. Payload SHA-1 remains a662d5c6a78e990244299926cf6862ce910a475d.
+
+## 2026-10-02 - backup status polling and command wrappers
+
+- Read-status, readiness wrapper, and write-enable matched first compile. Polling
+  variant one had 132 bytes instead of 164: direct Boolean expressions removed
+  the original materialized readiness result. Variant two used a static inline
+  helper with dont_inline off and matched all instructions; variant three fixed
+  the initially mistranscribed worker literal from 0x0380aa00 to 0x0380a980.
+- This is new inlining evidence: the older allocator experiment declared a static
+  inline helper while dont_inline was on. That result did not test enabled inlining.
+- BackupTransfer.h now shares the 16-byte transfer record, enclosing command state,
+  worker result prefix and compatible callback declarations. The worker prefix is
+  deliberately incomplete. Command bytes and all state remain external dependencies.
+- Four functions add 324 instruction and 36 literal bytes, no data/BSS.
+- Validation: integrated full payload and all linked symbols match, including the prior transfer unit rebuilt through the shared header; all 11 pipeline and six verifier tests pass.

@@ -1974,6 +1974,69 @@
       "externals": {
         "ARM7_BackupTransfer": 58765188
       }
+    },
+    {
+      "name": "BackupWait",
+      "source": "config/usa/arm7/src/BackupWait.c",
+      "autoload": "wram",
+      "runtime_address": 58732036,
+      "payload_offset": 45088,
+      "size": 164,
+      "code_bytes": 160,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WaitBackupReady",
+      "symbols": {
+        "ARM7_WaitBackupReady": 58732036
+      },
+      "externals": {
+        "ARM7_BackupWorker": 58763648,
+        "ARM7_SleepThread": 58706036,
+        "ARM7_ReadBackupStatus": 58732200
+      }
+    },
+    {
+      "name": "BackupStatus",
+      "source": "config/usa/arm7/src/BackupStatus.c",
+      "autoload": "wram",
+      "runtime_address": 58732200,
+      "payload_offset": 45252,
+      "size": 144,
+      "code_bytes": 124,
+      "literal_pool_bytes": 20,
+      "entry": "ARM7_ReadBackupStatus",
+      "symbols": {
+        "ARM7_ReadBackupStatus": 58732200,
+        "ARM7_CheckBackupReady": 58732284
+      },
+      "externals": {
+        "ARM7_BackupCommandState": 58765184,
+        "ARM7_BackupReadStatusCommand": 58754300,
+        "ARM7_TransferBackupBytes": 58732344,
+        "ARM7_WriteBackupByte": 58732540,
+        "ARM7_ReadBackupByte": 58732476,
+        "ARM7_BackupWorker": 58763648,
+        "ARM7_WaitBackupReady": 58732036
+      }
+    },
+    {
+      "name": "BackupWriteEnable",
+      "source": "config/usa/arm7/src/BackupWriteEnable.c",
+      "autoload": "wram",
+      "runtime_address": 58732720,
+      "payload_offset": 45772,
+      "size": 52,
+      "code_bytes": 40,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_EnableBackupWrites",
+      "symbols": {
+        "ARM7_EnableBackupWrites": 58732720
+      },
+      "externals": {
+        "ARM7_BackupCommandState": 58765184,
+        "ARM7_BackupWriteEnableCommand": 58754292,
+        "ARM7_TransferBackupBytes": 58732344,
+        "ARM7_WriteBackupByte": 58732540
+      }
     }
   ]
 }

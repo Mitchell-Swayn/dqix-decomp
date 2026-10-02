@@ -1,10 +1,9 @@
 /* Cartridge backup SPI transfers through AUXSPICNT/AUXSPIDATA.
  * The comparison callback shortens a failed comparison to its final byte. */
 #pragma dont_inline on
-typedef struct {unsigned int remaining; const unsigned char *source; unsigned char *destination; int matched;} BackupTransfer;
+#include "BackupTransfer.h"
 #define CONTROL (*(volatile unsigned short*)0x040001a0)
 #define DATA (*(volatile unsigned short*)0x040001a2)
-extern BackupTransfer ARM7_BackupTransfer;
 void ARM7_TransferBackupBytes(const unsigned char *source, unsigned char *destination, unsigned int count, void (*transferByte)(BackupTransfer*))
 {
  BackupTransfer *transfer=&ARM7_BackupTransfer;
