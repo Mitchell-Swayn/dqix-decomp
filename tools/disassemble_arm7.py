@@ -3,8 +3,8 @@
 
 This tool maps addresses through the ROM header and ARM7 autoload inventory.
 It does not discover function boundaries or classify arbitrary bytes as code.
-Unless the selected range exactly matches a source-unit manifest entry, the
-code/data partition is reported as unknown.
+Source-unit byte counts are aggregate totals, not positions. Mixed units stay
+raw unless a whole range is homogeneous by manifest classification.
 """
 
 from dataclasses import dataclass
@@ -181,28 +181,24 @@ def label_raw_bytes(data, start, label):
 
 
 def manifest_range_lines(data, start, mode, unit):
-    """Decode only manifest-classified instruction bytes for an exact unit."""
+    """Render an exact unit without treating aggregate counts as byte offsets."""
     if unit is None:
         return disassemble_bytes(data, start, mode)
     parts = (unit.get("code_bytes", 0), unit.get("reviewed_assembly_bytes", 0),
              unit.get("literal_pool_bytes", 0), unit.get("data_bytes", 0))
     if any(not isinstance(size, int) or size < 0 for size in parts) or sum(parts) != len(data):
         raise ValueError("exact source unit has invalid byte classifications")
-    lines = []
-    cursor = 0
     code_size, assembly_size, literal_size, data_size = parts
-    if code_size:
-        lines.extend(disassemble_bytes(data[cursor:cursor + code_size], start + cursor, mode))
-        cursor += code_size
-    if assembly_size:
-        lines.extend(disassemble_bytes(data[cursor:cursor + assembly_size], start + cursor, mode))
-        cursor += assembly_size
-    if literal_size:
-        lines.extend(label_raw_bytes(data[cursor:cursor + literal_size], start + cursor, "literal"))
-        cursor += literal_size
-    if data_size:
-        lines.extend(label_raw_bytes(data[cursor:cursor + data_size], start + cursor, "data"))
-    return lines
+    if data_size == len(data) and not (code_size or assembly_size or literal_size):
+        return label_raw_bytes(data, start, "data")
+    if literal_size == len(data) and not (code_size or assembly_size or data_size):
+        return label_raw_bytes(data, start, "literal")
+    if code_size == len(data) and not (assembly_size or literal_size or data_size):
+        return disassemble_bytes(data, start, mode)
+    if assembly_size == len(data) and not (code_size or literal_size or data_size):
+        return disassemble_bytes(data, start, mode)
+    # Manifest counts do not identify where literals or other classes occur.
+    return disassemble_bytes(data, start, mode)
 
 
 def main(argv=None):
@@ -223,15 +219,36 @@ def main(argv=None):
         if len(data) != args.end - args.start:
             raise ValueError("mapped ARM7 range is truncated")
         print("RAW ARM7 DISASSEMBLY (not function discovery or code coverage)")
-        print("Ranges without an exact manifest partition are raw; literal pools and data may decode as instructions.")
+        print("Mixed units use raw decoding: manifest byte counts do not locate literal pools or data.")
         print(f"Range: [{args.start:#010x}, {args.end:#010x}) mode={args.mode} mapping={mapped.module}")
         print(f"ROM payload bytes: [{mapped.payload_start}, {mapped.payload_end})")
         unit = exact_source_unit(args.start, args.end, config)
         if unit:
             print(f"Source-unit annotation: {unit['name']} ({unit['source']})")
-            print("Manifest partition: " + ", ".join(
+            print("Manifest aggregate counts (no byte positions inferred): " + ", ".join(
                 f"{key}={unit.get(key, 0)}" for key in
                 ("code_bytes", "literal_pool_bytes", "data_bytes", "reviewed_assembly_bytes")))
+            classified = (unit.get("code_bytes", 0), unit.get("literal_pool_bytes", 0),
+                          unit.get("data_bytes", 0), unit.get("reviewed_assembly_bytes", 0))
+            if unit.get("data_bytes", 0) == unit.get("size") and not any(
+                    unit.get(key, 0) for key in
+                    ("code_bytes", "literal_pool_bytes", "reviewed_assembly_bytes")):
+                print("Byte rendering: homogeneous manifest data unit.")
+            elif unit.get("literal_pool_bytes", 0) == unit.get("size") and not any(
+                    unit.get(key, 0) for key in
+                    ("code_bytes", "data_bytes", "reviewed_assembly_bytes")):
+                print("Byte rendering: homogeneous manifest literal unit.")
+            elif ((unit.get("code_bytes", 0) == unit.get("size")
+                   and not any(unit.get(key, 0) for key in
+                               ("literal_pool_bytes", "data_bytes", "reviewed_assembly_bytes")))
+                  or (unit.get("reviewed_assembly_bytes", 0) == unit.get("size")
+                      and not any(unit.get(key, 0) for key in
+                                  ("code_bytes", "literal_pool_bytes", "data_bytes")))):
+                print("Byte rendering: homogeneous manifest instruction class.")
+            elif any(classified) and sum(value > 0 for value in classified) > 1:
+                print("Byte rendering: raw; aggregate counts do not identify class positions.")
+            else:
+                print("Byte rendering: raw; manifest counts do not identify class positions.")
         else:
             print("Source-unit annotation: none; code/data partition unknown.")
         for line in manifest_range_lines(data, args.start, args.mode, unit):

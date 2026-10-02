@@ -74,14 +74,40 @@ class Arm7AddressMappingTests(unittest.TestCase):
         self.assertEqual(exact_source_unit(0x038056ac, 0x038056d0, config)["literal_pool_bytes"], 4)
         self.assertIsNone(exact_source_unit(0x038056ac, 0x038056cc, config))
 
-    def test_manifest_literal_pool_is_not_decoded_as_an_instruction(self):
+    def test_manifest_counts_do_not_locate_a_literal_pool(self):
         unit = {"code_bytes": 4, "literal_pool_bytes": 4, "data_bytes": 0,
                 "reviewed_assembly_bytes": 0}
         data = bytes.fromhex("00 00 a0 e1 c2 01 00 04")
         lines = manifest_range_lines(data, 0x038056ac, "arm", unit)
         self.assertIn("mov", lines[0])
-        self.assertIn(".literal", lines[1])
-        self.assertNotIn("streq", lines[1])
+        self.assertIn("streq", lines[1])
+        self.assertNotIn(".literal", "\n".join(lines))
+
+    def test_interleaved_code_and_literal_counts_never_slice_bytes(self):
+        unit = {"code_bytes": 8, "literal_pool_bytes": 4, "data_bytes": 0,
+                "reviewed_assembly_bytes": 0}
+        data = bytes.fromhex("00 00 a0 e1 c2 01 00 04 00 00 a0 e1")
+        lines = manifest_range_lines(data, 0x038056ac, "arm", unit)
+        self.assertEqual(len(lines), 3)
+        self.assertTrue(lines[0].startswith("038056ac:"))
+        self.assertIn("streq", lines[1])
+        self.assertTrue(lines[2].startswith("038056b4:"))
+        self.assertNotIn(".literal", "\n".join(lines))
+
+    def test_homogeneous_manifest_data_can_be_rendered_as_data(self):
+        unit = {"code_bytes": 0, "literal_pool_bytes": 0, "data_bytes": 8,
+                "reviewed_assembly_bytes": 0}
+        lines = manifest_range_lines(bytes.fromhex("01 00 00 00 02 00 00 00"),
+                                     0x038056ac, "arm", unit)
+        self.assertEqual(len(lines), 2)
+        self.assertIn(".data", lines[0])
+
+    def test_homogeneous_manifest_literal_can_be_rendered_as_literal(self):
+        unit = {"code_bytes": 0, "literal_pool_bytes": 4, "data_bytes": 0,
+                "reviewed_assembly_bytes": 0}
+        lines = manifest_range_lines(bytes.fromhex("c2 01 00 04"), 0x038056ac, "arm", unit)
+        self.assertEqual(len(lines), 1)
+        self.assertIn(".literal", lines[0])
 
     def test_unannotated_range_remains_raw_disassembly(self):
         lines = manifest_range_lines(bytes.fromhex("c2 01 00 04"), 0x038056ac, "arm", None)
