@@ -16,7 +16,7 @@ void func_ov025_021ed124(Ov25ActionQueues* q)
     memset(q->kinds, 0, sizeof(q->kinds));
     memset(q->payloads, 0, sizeof(q->payloads));
     memset(q->auxiliary, 0, sizeof(q->auxiliary));
-    memset(q->secondaryPayloads, 0, sizeof(q->secondaryPayloads));
+    memset(q->secondaryValues, 0, sizeof(q->secondaryValues));
     memset(q->secondaryKinds, 0, sizeof(q->secondaryKinds));
     q->nextSerial = 0;
     q->secondarySerial = 0;
@@ -49,7 +49,7 @@ void func_ov025_021ed2a0(Ov25ActionQueues* q)
     --q->secondaryCount;
     // The original routine shifts these two arrays only; flags stay in place.
     for (int i = 0; i < q->secondaryCount; ++i) {
-        q->secondaryPayloads[i] = q->secondaryPayloads[i + 1];
+        q->secondaryValues[i] = q->secondaryValues[i + 1];
         q->secondaryKinds[i] = q->secondaryKinds[i + 1];
     }
 }

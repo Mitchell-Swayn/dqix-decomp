@@ -11,7 +11,10 @@ struct Ov25ActionQueues {
     unsigned short flags[16];               // 080
     unsigned char kinds[16];                // 0a0
     void* payloads[16];                      // 0b0
-    void* secondaryPayloads[16];             // 0f0
+    // Unlike primary payload pointers, these are signed numeric values:
+    // the caller at 0x021eafe4 sign-extends a halfword; processing loads a
+    // word at 0x021ed7d0 and uses it in signed division.
+    int secondaryValues[16];                // 0f0
     unsigned char secondaryKinds[16];       // 130
     unsigned char secondaryFlags[16];       // 140
     unsigned char count;                    // 150
