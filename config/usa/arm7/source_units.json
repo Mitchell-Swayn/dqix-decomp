@@ -597,6 +597,61 @@
         "ARM7_CountSetBits": 58736424
       },
       "externals": {}
+    },
+    {
+      "name": "ThreadCreate",
+      "source": "config/usa/arm7/src/ThreadCreate.c",
+      "autoload": "wram",
+      "runtime_address": 58704992,
+      "payload_offset": 18044,
+      "size": 264,
+      "code_bytes": 248,
+      "literal_pool_bytes": 16,
+      "entry": "ARM7_CreateThread",
+      "symbols": {
+        "ARM7_CreateThread": 58704992
+      },
+      "externals": {
+        "ARM7_ThreadGlobals": 58757036,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_InsertThreadGlobal": 58704376,
+        "ARM7_InitializeThreadRegisters": 58706388,
+        "ARM7_ThreadReturn": 58705256,
+        "ARM7_FillWords": 58713672
+      }
+    },
+    {
+      "name": "ThreadExit",
+      "source": "config/usa/arm7/src/ThreadExit.c",
+      "autoload": "wram",
+      "runtime_address": 58705256,
+      "payload_offset": 18308,
+      "size": 308,
+      "code_bytes": 288,
+      "literal_pool_bytes": 20,
+      "entry": "ARM7_ThreadReturn",
+      "symbols": {
+        "ARM7_ThreadReturn": 58705256,
+        "ARM7_ExitThread": 58705292,
+        "ARM7_RunThreadExitCallback": 58705388,
+        "ARM7_DestroyCurrentThread": 58705452
+      },
+      "externals": {
+        "ARM7_ThreadGlobals": 58757036,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_InitializeThreadRegisters": 58706388,
+        "ARM7_RestoreThreadContext": 58706572,
+        "ARM7_LockThreadSwitch": 58706276,
+        "ARM7_UnlockThreadSwitch": 58706332,
+        "ARM7_RemoveBlockedThread": 58704240,
+        "ARM7_RemoveThreadGlobal": 58704472,
+        "ARM7_UnblockThreads": 58705648,
+        "ARM7_SwitchThread": 58704540,
+        "ARM7_Terminate": 58713320,
+        "ARM7_UnlockAllMutexesLockedByContext": 58707356
+      }
     }
   ]
 }
