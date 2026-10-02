@@ -19,8 +19,11 @@ if "WAIT" in prompt: time.sleep(0.35)
 if "RATEFAIL" in prompt:
     print(json.dumps({"type":"turn.failed","error":{"message":"rate limit exceeded 429"}}),flush=True)
     sys.exit(0)
-final.write_text("Fixture handoff. Preserve accumulated experiments.",encoding="utf-8")
-print(json.dumps({"type":"turn.completed","usage":{"input_tokens":11,"cached_input_tokens":2,"output_tokens":3}}),flush=True)
+if "EMPTYFAIL" in prompt: sys.exit(7)
+if "MISSINGFINAL" not in prompt:
+    final.write_text("Fixture handoff. Preserve accumulated experiments.",encoding="utf-8")
+if "NOCOMPLETION" not in prompt:
+    print(json.dumps({"type":"turn.completed","usage":{"input_tokens":11,"cached_input_tokens":2,"output_tokens":3}}),flush=True)
 '''
 
 
@@ -87,6 +90,13 @@ class FleetTests(unittest.TestCase):
         while supervisor.step():
             if time.monotonic() > deadline:
                 self.fail("fake backend failed to finish")
+            time.sleep(0.01)
+
+    def until(self, supervisor, condition):
+        deadline = time.monotonic() + 5
+        while not condition():
+            supervisor.step()
+            self.assertLess(time.monotonic(), deadline)
             time.sleep(0.01)
 
     def test_bounded_jobs_hidden_command_and_review(self):
@@ -197,7 +207,9 @@ class FleetTests(unittest.TestCase):
         self.assertEqual(path.read_bytes(), before)
 
     def test_configuration_validates_independence_bounds_and_empty_prompt(self):
-        for overrides in ({"max_concurrent": 25}, {"max_concurrent": True}, {"repeat": "true"}, {"backend": "missing-native-executable"}):
+        for overrides in ({"max_concurrent": 25}, {"max_concurrent": True}, {"repeat": "true"},
+                          {"max_unreviewed_batches": 0}, {"max_unreviewed_batches": True},
+                          {"backend": "missing-native-executable"}):
             with self.subTest(overrides=overrides), self.assertRaises(ValueError):
                 fleet.validate_config(self.root, self.config(**overrides))
         config = self.config()
@@ -237,6 +249,63 @@ class FleetTests(unittest.TestCase):
         path.write_text("def connect(root): return root\ndef heartbeat(*args): pass\n", encoding="utf-8")
         module = fleet.load_factory(self.root)
         self.assertEqual(module.connect("fixture"), "fixture")
+
+    def test_backpressure_waits_at_two_and_acknowledgment_resumes(self):
+        supervisor = self.supervisor(self.config(count=1, repeat=True))
+        worker = supervisor.workers[0]
+        self.until(supervisor, lambda: worker["completed_batches"] == 2)
+        self.assertEqual(worker["batches_started"], 2)
+        self.assertEqual(worker["status"], "review")
+        self.assertTrue(worker["backpressured"])
+        self.assertEqual(worker["unreviewed_batches"], 2)
+        for _ in range(3):
+            self.assertTrue(supervisor.step())  # Stays alive, waiting for review.
+        self.assertEqual(len(self.launched), 2)
+        fleet.atomic_json(supervisor.ack_path, {worker["id"]: 1})
+        self.assertTrue(supervisor.step())
+        self.assertEqual(worker["reviewed_batches"], 1)
+        self.assertEqual(worker["batches_started"], 3)
+        self.until(supervisor, lambda: worker["completed_batches"] == 3)
+        self.assertTrue(worker["backpressured"])
+        self.assertEqual(worker["unreviewed_batches"], 2)
+        self.assertEqual(worker["history"][0]["status"], "review")
+        self.assertFalse(worker["history"][0]["accepted"])
+        self.assertEqual(supervisor.snapshot()["backpressured_workers"], 1)
+        supervisor.stop_path.write_text("stop", encoding="utf-8")
+        self.assertFalse(supervisor.step())
+
+    def test_invalid_acknowledgments_do_not_release_or_decrease_counts(self):
+        supervisor = self.supervisor(self.config(count=1, repeat=True, max_unreviewed_batches=1))
+        worker = supervisor.workers[0]
+        self.until(supervisor, lambda: worker["completed_batches"] == 1)
+        for acknowledgements in ({worker["id"]: -1}, {worker["id"]: True}, {worker["id"]: 2},
+                                  {"unknown": 0}, [], {worker["id"]: 1, "unknown": 0}):
+            with self.subTest(acknowledgements=acknowledgements):
+                fleet.atomic_json(supervisor.ack_path, acknowledgements)
+                supervisor.step()
+                self.assertEqual(worker["reviewed_batches"], 0)
+                self.assertEqual(worker["batches_started"], 1)
+                self.assertIsNotNone(supervisor.acknowledgement_error)
+        fleet.atomic_json(supervisor.ack_path, {worker["id"]: 1})
+        supervisor.step()
+        self.assertIsNone(supervisor.acknowledgement_error)
+        self.assertEqual(worker["reviewed_batches"], 1)
+        fleet.atomic_json(supervisor.ack_path, {worker["id"]: 0})
+        supervisor.step()
+        self.assertEqual(worker["reviewed_batches"], 1)
+        self.assertIn("cannot decrease", supervisor.acknowledgement_error)
+        supervisor.request_stop()
+        self.drain(supervisor)
+
+    def test_nonzero_empty_stderr_and_incomplete_success_are_blocked(self):
+        for prompt, category in (("EMPTYFAIL", "backend-error"), ("MISSINGFINAL", "protocol-incomplete"),
+                                  ("NOCOMPLETION", "protocol-incomplete")):
+            with self.subTest(prompt=prompt):
+                supervisor = self.supervisor(self.config(count=1, repeat=True, prompt=prompt))
+                self.drain(supervisor)
+                self.assertEqual(supervisor.workers[0]["status"], "blocked")
+                self.assertEqual(supervisor.workers[0]["blocking_error"]["category"], category)
+                self.assertEqual(supervisor.workers[0]["batches_started"], 1)
 
 
 if __name__ == "__main__":

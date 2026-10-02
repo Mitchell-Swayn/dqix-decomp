@@ -123,7 +123,21 @@ def blocking_error(stdout, stderr, exit_code):
     if errors and any(error for error in errors):
         return {"category": "backend-error", "evidence": text[-300:],
                 "policy": "blocked; backend error event requires review; no automatic retry"}
+    if exit_code:
+        return {"category": "backend-error", "evidence": f"backend exit code {exit_code}; no diagnostic text",
+                "policy": "blocked; unsuccessful backend exit requires review; no automatic retry"}
     return None
+
+
+def completed_event(stdout):
+    for line in stdout.splitlines():
+        try:
+            event = json.loads(line)
+        except ValueError:
+            continue
+        if isinstance(event, dict) and event.get("type") == "turn.completed":
+            return True
+    return False
 
 
 def validate_config(root, config):
@@ -134,6 +148,9 @@ def validate_config(root, config):
         raise ValueError("max_concurrent must be an integer from 1 to 24")
     if not isinstance(config.get("repeat", False), bool):
         raise ValueError("repeat must be boolean")
+    backlog = config.get("max_unreviewed_batches", 2)
+    if isinstance(backlog, bool) or not isinstance(backlog, int) or backlog < 1:
+        raise ValueError("max_unreviewed_batches must be a positive integer")
     model = config.get("model", "gpt-6.1-sol")
     if not isinstance(model, str) or not model.strip():
         raise ValueError("model must be a nonempty string")
@@ -174,7 +191,7 @@ def validate_config(root, config):
         workers.append({"id": worker["id"], "worktree": str(tree), "prompt_file": str(prompt), "prompt": text,
                         "repeat": worker.get("repeat", config.get("repeat", False))})
     return {"backend": executable, "model": model, "max_concurrent": concurrent,
-            "repeat": config.get("repeat", False), "workers": workers}
+            "repeat": config.get("repeat", False), "max_unreviewed_batches": backlog, "workers": workers}
 
 
 def load_factory(root):
@@ -198,12 +215,15 @@ class Supervisor:
         self.directory = self.root / "build/factory"
         self.state_path = self.directory / "fleet.json"
         self.stop_path = self.directory / "STOP"
+        self.ack_path = self.directory / "fleet-acks.json"
+        self.acknowledgement_error = None
         self.stopping = False
         self.fleet_id = uuid.uuid4().hex
         self.started = utc()
         self.running = {}
         self.workers = [{**worker, "status": "pending", "pid": None, "batches_started": 0,
-                         "completed_batches": 0, "history": []} for worker in self.config["workers"]]
+                         "completed_batches": 0, "reviewed_batches": 0, "unreviewed_batches": 0,
+                         "backpressured": False, "history": []} for worker in self.config["workers"]]
         self.last_heartbeat = -float("inf")
         self.diagnostics = []
         if self.state_path.exists():
@@ -225,9 +245,60 @@ class Supervisor:
                 "started_utc": self.started, "heartbeat_utc": utc(), "stopping": self.stopping,
                 "stop_file": str(self.stop_path), "model": self.config["model"],
                 "max_concurrent": self.config["max_concurrent"], "repeat": self.config["repeat"],
+                "max_unreviewed_batches": self.config["max_unreviewed_batches"],
+                "acknowledgements_path": str(self.ack_path), "acknowledgement_error": self.acknowledgement_error,
+                "backpressured_workers": sum(worker["backpressured"] for worker in self.workers),
                 "counts": {key: counts[key] for key in ("pending", "running", "review", "blocked")},
                 "workers": [{key: value for key, value in worker.items() if key != "prompt"} for worker in self.workers],
                 "diagnostics": self.diagnostics[-20:], "notice": "Worker exit requires review; no automatic source acceptance or integration."}
+
+    def reload_acknowledgements(self):
+        if not self.ack_path.exists():
+            return False
+        try:
+            if self.ack_path.stat().st_size > 1024 * 1024:
+                raise ValueError("acknowledgment file exceeds 1 MiB")
+            acknowledgements = json.loads(self.ack_path.read_text(encoding="utf-8-sig"))
+            if not isinstance(acknowledgements, dict):
+                raise ValueError("acknowledgments must be an object mapping lane id to reviewed batch count")
+            workers = {worker["id"]: worker for worker in self.workers}
+            # Validate the entire document before releasing any lane.
+            for lane, count in acknowledgements.items():
+                if lane not in workers:
+                    raise ValueError(f"unknown acknowledgment lane {lane!r}")
+                worker = workers[lane]
+                if isinstance(count, bool) or not isinstance(count, int) or count < 0 or count > worker["completed_batches"]:
+                    raise ValueError(f"acknowledgment count for {lane} must be between 0 and completed_batches")
+                if count < worker["reviewed_batches"]:
+                    raise ValueError(f"acknowledgment count for {lane} cannot decrease")
+            changed = self.acknowledgement_error is not None
+            self.acknowledgement_error = None
+            for lane, count in acknowledgements.items():
+                worker = workers[lane]
+                changed = changed or worker["reviewed_batches"] != count
+                worker["reviewed_batches"] = count
+            return changed
+        except (OSError, ValueError) as error:
+            message = str(error)
+            changed = message != self.acknowledgement_error
+            if changed:
+                self.diagnostics.append({"utc": utc(), "error": f"acknowledgments: {message}"})
+            self.acknowledgement_error = message
+            return changed
+
+    def release_reviewed_lanes(self):
+        changed = False
+        for worker in self.workers:
+            worker["unreviewed_batches"] = worker["completed_batches"] - worker["reviewed_batches"]
+            backpressured = (worker["repeat"] and worker["status"] == "review" and worker.get("exit_code") == 0
+                             and worker["unreviewed_batches"] >= self.config["max_unreviewed_batches"])
+            changed = changed or worker["backpressured"] != backpressured
+            worker["backpressured"] = backpressured
+            if (worker["repeat"] and worker["status"] == "review" and worker.get("exit_code") == 0
+                    and not backpressured and not self.stopping):
+                worker["status"] = "pending"
+                changed = True
+        return changed
 
     def publish(self, now, force=False):
         if not force and now - self.last_heartbeat < HEARTBEAT_SECONDS:
@@ -309,7 +380,12 @@ class Supervisor:
             process, handles, folder = active
             for handle in handles:
                 handle.close()
-            block = blocking_error(read_tail(folder / "events.jsonl"), read_tail(folder / "stderr.log"), process.returncode)
+            events = read_tail(folder / "events.jsonl")
+            block = blocking_error(events, read_tail(folder / "stderr.log"), process.returncode)
+            if block is None and (not completed_event(events) or not Path(worker["final_path"]).is_file()):
+                block = {"category": "protocol-incomplete", "evidence":
+                         "zero backend exit without both turn.completed event and final handoff file",
+                         "policy": "blocked; incomplete backend protocol requires review; no automatic retry"}
             result = {"job_id": worker["job_id"], "status": "blocked" if block else "review",
                       "pid": process.pid, "exit_code": process.returncode, "started_utc": worker["started_utc"],
                       "finished_utc": utc(), "final_path": worker["final_path"], "artifacts": str(folder),
@@ -321,8 +397,6 @@ class Supervisor:
             worker["completed_batches"] += 1
             del self.running[worker["id"]]
             changed = True
-            if worker["repeat"] and not self.stopping and not block and process.returncode == 0:
-                worker["status"] = "pending"
         return changed
 
     def step(self, now=None):
@@ -330,6 +404,8 @@ class Supervisor:
         if self.stop_path.exists():
             self.stopping = True
         changed = self.reap()
+        changed = self.reload_acknowledgements() or changed
+        changed = self.release_reviewed_lanes() or changed
         if not self.stopping:
             for worker in sorted(self.workers, key=lambda item: item["batches_started"]):
                 # Recheck the stop file before every individual launch.
@@ -343,8 +419,10 @@ class Supervisor:
                     changed = True
         # Native backends can finish while other lanes are being launched.
         changed = self.reap() or changed
+        changed = self.release_reviewed_lanes() or changed
         self.publish(now, force=changed)
-        return bool(self.running) or (not self.stopping and any(worker["status"] == "pending" for worker in self.workers))
+        return bool(self.running) or (not self.stopping and any(
+            worker["status"] == "pending" or worker["backpressured"] for worker in self.workers))
 
     def run(self):
         while self.step():
