@@ -545,6 +545,10 @@ src/Filesystem/FileCacheCRCTable.cpp:
     complete
     .rodata start:0x020ee278 end:0x020ee678
 
+src/Graphics/VRAMStagingLookupTables.cpp:
+    complete
+    .rodata start:0x020ee6b0 end:0x020ee700
+
 src/Filesystem/CachedMemory.cpp:
     complete
     .text start:0x020d84f8 end:0x020d8550
