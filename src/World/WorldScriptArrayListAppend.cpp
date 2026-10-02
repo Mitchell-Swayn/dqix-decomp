@@ -15,4 +15,3 @@ extern "C" void func_0208d928(WorldScriptArrayList* list,
     destination->unknown14 = entry->unknown14;
     list->count = (short)(list->count + 1);
 }
-\n

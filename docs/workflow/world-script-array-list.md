@@ -28,4 +28,11 @@ sha1` passed all checks; generated USA ROM SHA-1 is
 `c7c3014c237900c8281289b8bc76a781969b6278`. The exact-object artifacts,
 baseline log, candidate-only log, and failed experimental log are retained
 under ignored `build/`.
-\n
+
+The `Find` routine retains explicit 24-byte byte-offset arithmetic because a
+single comparison of typed `&entries[index]` generated a different ARM sequence
+(80.95%; target mismatch at `0x1c` onward: compiler emitted `mul lr, r4, r3`,
+then pointer reload and `ldrsh`). The explicit form remains an exact 1/1 object
+match. The earlier file-ending repair missed because the checker itself tested
+for the byte pair `0x5c 0x6e` and then appended those bytes instead of LF;
+all five files now end in an actual newline.

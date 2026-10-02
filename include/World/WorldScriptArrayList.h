@@ -25,4 +25,3 @@ typedef char WorldScriptArrayEntrySizeCheck[
     sizeof(WorldScriptArrayEntry) == 24 ? 1 : -1];
 typedef char WorldScriptArrayListSizeCheck[
     sizeof(WorldScriptArrayList) == 16 ? 1 : -1];
-\n

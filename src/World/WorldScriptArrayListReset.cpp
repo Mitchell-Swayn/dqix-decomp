@@ -9,4 +9,3 @@ extern "C" void func_0208d82c(WorldScriptArrayList* list)
     list->unknownC = 0;
     list->unknownE = 0xfff;
 }
-\n

@@ -11,4 +11,3 @@ extern "C" void func_0208d8ec(WorldScriptArrayList* list,
     list->entries = (WorldScriptArrayEntry*)
         allocator->Allocate(capacity * (int)sizeof(WorldScriptArrayEntry));
 }
-\n

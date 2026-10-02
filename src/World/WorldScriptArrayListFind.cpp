@@ -15,4 +15,3 @@ extern "C" WorldScriptArrayEntry* func_0208d994(
     }
     return 0;
 }
-\n
