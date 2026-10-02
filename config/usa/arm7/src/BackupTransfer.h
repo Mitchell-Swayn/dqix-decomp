@@ -8,7 +8,7 @@ typedef struct {
  int matched;
 } BackupTransfer;
 typedef struct {
- unsigned int unknown0;
+ unsigned int statusInitialized;
  BackupTransfer transfer;
 } BackupCommandState;
 /* Request prefix through the per-operation delay values. */
@@ -21,6 +21,8 @@ typedef struct {
  int chipEraseDelay,chipEraseTimeout;
  int sectorEraseDelay,sectorEraseTimeout;
  int subsectorEraseDelay,subsectorEraseTimeout;
+ unsigned int unknown50;
+ unsigned char initialStatus;
 } BackupRequest;
 /* Only the request pointer at the start of the worker state is recovered here. */
 typedef struct { BackupRequest *request; } BackupWorker;

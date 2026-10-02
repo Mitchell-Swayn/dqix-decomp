@@ -583,3 +583,17 @@
   the sector/subsector names; chip command data remains an explicit dependency.
 - Four functions add 504 instruction and 44 literal bytes, no data or BSS.
 - Validation: full payload, linked symbols and all changed-header consumers match; all 11 pipeline and six verifier tests pass.
+
+## 2026-10-02 - backup address encoding and status configuration
+
+- Status initialization and the bounded status-write retry loop matched first
+  compile. Address encoding initially matched size/control flow but used AND then
+  left shift for low-byte packing. Explicit unsigned left/right shifts preserve
+  the native instruction selection; variant two matched all 160 bytes.
+- Address width has the original valid-input precondition 1..3. Unsupported widths
+  leave the local command undefined as in the binary; no invented error handling or
+  default initialization is added. The compiler emits no warning for this source.
+- Offset 0x54 supplies requested initial status; 255 skips initialization. The
+  command-state first word is now named statusInitialized from its observed use.
+- Three functions add 372 instruction and 28 literal bytes, no data or BSS.
+- Validation: full payload and every linked symbol/header consumer match; all 11 pipeline and six verifier tests pass, with only the pre-existing reviewed CPU-status warnings.
