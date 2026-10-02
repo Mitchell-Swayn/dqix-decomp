@@ -997,6 +997,50 @@
           "ARM7_InputPollingState": 58757644
         }
       }
+    },
+    {
+      "name": "SoundMaster",
+      "source": "config/usa/arm7/src/SoundMaster.c",
+      "autoload": "wram",
+      "runtime_address": 58715436,
+      "payload_offset": 28488,
+      "size": 360,
+      "code_bytes": 312,
+      "literal_pool_bytes": 48,
+      "entry": "ARM7_EnableSoundMaster",
+      "symbols": {
+        "ARM7_EnableSoundMaster": 58715436,
+        "ARM7_ResetSoundChannels": 58715460,
+        "ARM7_PowerOffSound": 58715544,
+        "ARM7_RampSoundBiasDown": 58715620,
+        "ARM7_PowerOnSound": 58715632,
+        "ARM7_RampSoundBiasUp": 58715712,
+        "ARM7_SetSoundMasterVolume": 58715724,
+        "ARM7_SetSoundOutputRouting": 58715740
+      },
+      "externals": {
+        "ARM7_StopSoundChannel": 58716336,
+        "ARM7_WaitCycles": 58713032,
+        "ARM7_SoundPowerOffHook": 58744640,
+        "ARM7_SoundPowerOnHook": 58744604,
+        "ARM7_BiosSoundBiasDown": 58736339,
+        "ARM7_BiosSoundBiasUp": 58736331
+      }
+    },
+    {
+      "name": "SoundChannelStop",
+      "source": "config/usa/arm7/src/SoundChannelStop.c",
+      "autoload": "wram",
+      "runtime_address": 58716336,
+      "payload_offset": 29388,
+      "size": 40,
+      "code_bytes": 40,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_StopSoundChannel",
+      "symbols": {
+        "ARM7_StopSoundChannel": 58716336
+      },
+      "externals": {}
     }
   ]
 }

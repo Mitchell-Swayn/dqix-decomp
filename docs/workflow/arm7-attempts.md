@@ -146,3 +146,24 @@
   156,680 payload bytes remain fallback. No added assembly exceptions.
 - Next candidate: sound-master control and sound power transitions beginning
   at `0x037fed2c`, including the 16-channel stop loop.
+
+## 2026-10-02 - sound master and power sequencing
+
+- Sound-master batch `0x037fed2c` through `0x037fee94`: initial eight-function
+  compilation was four bytes long solely because the channel-reset for-loop
+  emitted an entry test. Rewriting the naturally fixed 16-channel loop as
+  do/while matched all 360 bytes on the second invocation. Other function
+  bodies were already structurally exact apart from shifted placement.
+- Channel stop `0x037ff0b0`: first ordinary-C compile matched all 40 bytes.
+- Names distinguish register-backed master/power behavior from opaque external
+  hooks. Thumb helpers at `0x03803eca`/`0x03803ed2` forward the delay into r1,
+  set r0 to one/zero and invoke SVC 8; only their C wrappers are reconstructed.
+  Channel stop description records bit operations rather than inferring policy
+  from the optional bit-15 flag. No source data or BSS ownership is added.
+- Validation: full standalone payload and every declared symbol match;
+  11 pipeline tests and six verifier tests pass. Totals: 121 C functions,
+  9,816 instruction bytes, 780 literals, 880 initialized data bytes, 764 BSS;
+  156,280 payload bytes remain fallback. No new assembly exceptions.
+- Next candidate: three sound channel configuration functions beginning at
+  `0x037fee94`, then parameter setters after `0x037ff0d8`. Preserve unnamed
+  software override fields until their broader semantics are demonstrated.
