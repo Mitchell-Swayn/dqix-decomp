@@ -135,3 +135,20 @@ adds 15 ARM9 functions / 520 bytes and one ARM7 C function / 32 instruction byte
 plus four literal bytes. Its 1679-second interval includes other work and idle
 time. Token cost remains unmeasured; these trials do not establish comparative
 cost or throughput against Astra.
+
+## Expanded Luna workflow
+
+The continuation from1fd54b4 has added24 ARM9
+functions /972 report code bytes and356 initialized data bytes from Luna, plus
+two ARM7 C functions /272 instruction bytes /32 literal bytes. Root separately
+added36 initialized callback bytes and fixed a missing C++ return without
+changing instructions. Main reports1580 ARM9 matched functions,213124 code
+bytes,48456 data bytes and267 ARM7 C functions. All combined checks pass.
+
+Review corrected incompatible World record views, replaced raw GameState offset
+stores with established fields, and removed an inventory rule that would reject
+valid classification when a range becomes reconstructed source. This is stronger
+evidence for bounded Luna work with an integrator, not a measured comparative
+speed/cost result. Worker token usage remains unknown. A fresh pinned-tool archive
+build of231ce8e passed; docs/verification/parallel-luna-clean-build.json records
+the exact revision and tool/input hashes.
