@@ -1,19 +1,36 @@
 #pragma once
+#include "Graphics/Vector.h"
 
 // Partial placement-source state. Only fields established by recovered methods
 // are named; the two byte blocks retain their observed reset extents.
 struct WorldPlacementSource
 {
-    struct Record;
+    struct PersistentState
+    {
+        unsigned int unknown0 : 9, count : 4, unknown13 : 4, flags : 8;
+        unsigned int unknown25 : 6, available : 1;
+    };
+    struct Record
+    {
+        unsigned int value : 16, index : 7, type : 2, unknown25 : 7;
+        unsigned int kind : 4, parameter : 9, unknown13 : 4, slotCount : 4;
+        unsigned int flags : 8, unknown29 : 3;
+        PersistentState* state;
+        Vector3i positions[8];
+        Record* next;
+    };
     unsigned char unknown0[4];
     Record* head;
     unsigned short count;
     unsigned char unknownA;
-    void* unknownC;
+    short* randomValues;
     unsigned char unknown10[32];
 
     WorldPlacementSource();
     static WorldPlacementSource* GetInstance();
+    void AppendRecord(Record* record);
+    Record* FindRecord(int index);
+    int GetRandomValue();
     void Reset();
     void ClearPlacements();
     bool IsMapEligible(const char* name);

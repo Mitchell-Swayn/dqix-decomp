@@ -1087,6 +1087,14 @@ src/World/ZoneState0840.cpp:
     complete
     .text start:0x020984ac end:0x020984b0
 
+src/World/WorldPlacementSourceRecords.cpp:
+    complete
+    .text start:0x0208e778 end:0x0208e824
+
+src/World/WorldObjectInstanceListFlags.cpp:
+    complete
+    .text start:0x0208f048 end:0x0208f168
+
 src/World/WorldPlacementSourceInstance.cpp:
     complete
     .text start:0x0208e0a8 end:0x0208e0b4

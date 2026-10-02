@@ -20,6 +20,7 @@ public:
 
     WorldObjectInstanceList();
     ~WorldObjectInstanceList();
+    void UpdatePersistentPlacementFlags();
     void Reset();
     void SetObject(Object3D* object);
     void ClearInstances();

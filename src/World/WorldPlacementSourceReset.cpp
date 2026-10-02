@@ -9,7 +9,7 @@ void WorldPlacementSource::Reset()
     head = 0;
     count = 0;
     unknownA = 0;
-    unknownC = 0;
+    randomValues = 0;
 }
 
 void WorldPlacementSource::ClearPlacements()
@@ -17,5 +17,5 @@ void WorldPlacementSource::ClearPlacements()
     func_ov017_0218b5b0()->allocator_array_1a0[0].Reset();
     head = 0;
     count = 0;
-    unknownC = 0;
+    randomValues = 0;
 }
