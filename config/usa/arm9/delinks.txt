@@ -134,7 +134,7 @@ src/Combat/Main/BasicAttackCalculation.cpp:
 src/Combat/Main/TensionBonusCalculation.cpp:
 	complete
 	.text start:0x02074764 end:0x020747a4
-	
+
 src/Combat/Main/CritRateCalculation.cpp:
 	complete
 	.text start:0x020747a4 end:0x02074838
@@ -352,7 +352,6 @@ src/Graphics/NSBXX/JACInterpolation.cpp:
     complete
     .text start:0x020b8404 end:0x020b8e60
 
-
 src/Graphics/NSBXX/MAM.cpp:
     complete
     .text start:0x020b8e60 end:0x020b9278
@@ -390,6 +389,7 @@ src/System/LoadToVRAM.cpp:
     .text start:0x020c5820 end:0x020c6914
 
 // Remaining routines in InterruptHandler.cpp are still binary fallback.
+
 src/System/InterruptDispatchWrappers.cpp:
     complete
     .text start:0x020c6a54 end:0x020c6ad4
@@ -638,7 +638,6 @@ src/World/Zone3DMapLoading.cpp:
 src/World/Zone3DAtmosphereLoading.cpp:
     complete
     .text start:0x02014b04 end:0x02014d80
-
 
 src/World/Zone3DPaths.cpp:
     complete
@@ -1365,3 +1364,15 @@ src/World/Zone3DInstanceState.cpp:
 src/System/ByteCursorRead.cpp:
     complete
     .text start:0x0200fd14 end:0x0200fd38
+
+src/World/WorldPlacementOpcode100.cpp:
+    complete
+    .text start:0x0208e884 end:0x0208e88c
+
+src/World/WorldPlacementOpcode101.cpp:
+    complete
+    .text start:0x0208e88c end:0x0208e894
+
+src/World/WorldObjectInstanceListInstance.cpp:
+    complete
+    .text start:0x0208e9e8 end:0x0208e9f4
