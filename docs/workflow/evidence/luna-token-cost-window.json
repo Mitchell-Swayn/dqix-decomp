@@ -1,0 +1,147 @@
+{
+  "start_utc": "2026-10-02T12:07:00Z",
+  "end_utc": "2026-10-02T12:37:00Z",
+  "method": "Unique token_usage_record response IDs in each project thread; usage not token_count duplicates. Output includes reasoning; no extra reasoning charge. Rates standard short-context; all max request inputs below272K. Estimates are rate-card equivalents, not actual plan charges.",
+  "agents": [
+    {
+      "agent": "/root",
+      "models": [
+        "gpt-6-astra"
+      ],
+      "records": 116,
+      "input_tokens": 11575645,
+      "cached_input_tokens": 11424512,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 22354,
+      "reasoning_output_tokens": 3398,
+      "total_tokens": 11597999,
+      "fresh_input_tokens": 151133,
+      "max_request_input_tokens": 151404,
+      "standard_api_equivalent_usd": 14.053542,
+      "standard_credit_equivalent": 351.33855
+    },
+    {
+      "agent": "/root/luna_arm7_functions",
+      "models": [
+        "gpt-6-luna"
+      ],
+      "records": 102,
+      "input_tokens": 8326452,
+      "cached_input_tokens": 8004096,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 60123,
+      "reasoning_output_tokens": 40596,
+      "total_tokens": 8386575,
+      "fresh_input_tokens": 322356,
+      "max_request_input_tokens": 202366,
+      "standard_api_equivalent_usd": 0.14233806,
+      "standard_credit_equivalent": 3.5584515
+    },
+    {
+      "agent": "/root/luna_world_review",
+      "models": [
+        "gpt-6-luna"
+      ],
+      "records": 112,
+      "input_tokens": 11312657,
+      "cached_input_tokens": 10928128,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 59694,
+      "reasoning_output_tokens": 33647,
+      "total_tokens": 11372351,
+      "fresh_input_tokens": 384529,
+      "max_request_input_tokens": 206158,
+      "standard_api_equivalent_usd": 0.17758118,
+      "standard_credit_equivalent": 4.4395295
+    },
+    {
+      "agent": "/root/luna_runtime_batch",
+      "models": [
+        "gpt-6-luna"
+      ],
+      "records": 106,
+      "input_tokens": 9739065,
+      "cached_input_tokens": 9346560,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 42471,
+      "reasoning_output_tokens": 20464,
+      "total_tokens": 9781536,
+      "fresh_input_tokens": 392505,
+      "max_request_input_tokens": 205822,
+      "standard_api_equivalent_usd": 0.1539516,
+      "standard_credit_equivalent": 3.8487899999999997
+    },
+    {
+      "agent": "/root/luna_arm7_inventory_next",
+      "models": [
+        "gpt-6-luna"
+      ],
+      "records": 60,
+      "input_tokens": 4955037,
+      "cached_input_tokens": 4796416,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 43988,
+      "reasoning_output_tokens": 24159,
+      "total_tokens": 4999025,
+      "fresh_input_tokens": 158621,
+      "max_request_input_tokens": 134348,
+      "standard_api_equivalent_usd": 0.08582026000000001,
+      "standard_credit_equivalent": 2.1455065
+    },
+    {
+      "agent": "/root/luna_data_audit",
+      "models": [
+        "gpt-6-luna"
+      ],
+      "records": 112,
+      "input_tokens": 14347676,
+      "cached_input_tokens": 14049280,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 58639,
+      "reasoning_output_tokens": 30855,
+      "total_tokens": 14406315,
+      "fresh_input_tokens": 298396,
+      "max_request_input_tokens": 226412,
+      "standard_api_equivalent_usd": 0.19965190000000002,
+      "standard_credit_equivalent": 4.991297500000001
+    },
+    {
+      "agent": "/root/luna_runtime_library",
+      "models": [
+        "gpt-6-luna"
+      ],
+      "records": 128,
+      "input_tokens": 15747738,
+      "cached_input_tokens": 15480832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 59647,
+      "reasoning_output_tokens": 34591,
+      "total_tokens": 15807385,
+      "fresh_input_tokens": 266906,
+      "max_request_input_tokens": 202111,
+      "standard_api_equivalent_usd": 0.21132242,
+      "standard_credit_equivalent": 5.2830605
+    }
+  ],
+  "accepted_progress": {
+    "baseline_revision": "1fd54b4",
+    "arm9_functions": 24,
+    "arm9_report_code_bytes": 972,
+    "luna_initialized_data_bytes": 356,
+    "arm7_c_functions": 2,
+    "arm7_instruction_bytes": 272,
+    "arm7_literal_bytes": 32,
+    "root_initialized_data_bytes": 36,
+    "notes": "Accepted gains during the continuation; all combined checks passed. Inventory, reviews, unsuccessful trials and in-progress work are included in token costs, not counted as source bytes."
+  },
+  "pricing_sources": [
+    "https://developers.openai.com/api/docs/pricing",
+    "https://learn.chatgpt.com/docs/pricing"
+  ],
+  "limitations": [
+    "Standard short-context API/credit rate equivalents, not actual subscription consumption or invoices.",
+    "Per-response tier billing is not established by the usage record. Fast API/credit rates would double these estimates where applicable; included plan rules differ.",
+    "Not a controlled Astra-versus-Luna task comparison. Root costs include orchestration, review, own trials, integration, progress updates and clean-build work.",
+    "Cache-hit input counted separately; reasoning output is already inside output_tokens."
+  ]
+}
