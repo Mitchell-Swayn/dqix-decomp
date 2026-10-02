@@ -12,3 +12,11 @@ The two owned symbols compare at 100%; combined module, symbol and final ROM
 checks pass. This contributes 96 BSS and 16 initialized-data bytes. The existing
 `InterruptHandler.cpp` was not a configured source unit at this milestone and
 receives no function credit from this data reconstruction.
+
+The eight DMA/timer entry wrappers are subsequently split into
+`InterruptDispatchWrappers.cpp`, matching 128 code bytes (96 instructions and
+32 compiler address literals) at `0x020c6a54..0x020c6ad4`. They pass indices 0..7
+to the still-external dispatcher. All eight first forms match. Four variants
+of the adjacent wait-list initializer were tried: an absolute pointer matches
+instructions but not the target relocation; the relocatable field access swaps
+the address/zero registers. That 24-byte initializer remains fallback.
