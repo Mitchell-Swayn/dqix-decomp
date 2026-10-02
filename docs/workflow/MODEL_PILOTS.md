@@ -104,3 +104,18 @@ Whole-task time330seconds includes setup/checks; root integration is additional.
 Root reviewed it, used existing field names instead of raw-offset arithmetic,
 and passed combined acceptance. This is encouraging for preselected small
 functions, but the tasks differ from the earlier trials.
+
+## Prepared world task isolation correction
+
+The world worker used relative apply_patch paths after an absolute-path patch
+failed to match context. The relative writes landed in main (three new candidate
+files and three delink blocks). The clean-worktree integration guard stopped
+subsequent integration. Root halted the worker, verified the exact delta, moved
+only those candidates into the intended worker checkout, and restored main.
+No unrelated source was changed. The worker resumed with absolute write paths.
+This is a second material orchestration failure in the Luna trials.
+
+The ARM7 disassembly helper also required root correction: aggregate instruction
+and literal byte counts cannot locate bytes inside multi-function units. The
+corrected tool reports raw decoding for mixed units and passed15 tests on main,
+including an interleaved-literal regression. No source coverage comes from it.

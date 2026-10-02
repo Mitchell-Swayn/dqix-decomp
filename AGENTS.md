@@ -18,3 +18,5 @@ Keep queue state in docs/workflow/queue.json. Preserve existing user changes.
 - ROM inputs and generated outputs must be independent files. Never hard-link a
   generated output, or use another worktree's output as an input link. Copy the
   verified original input from extract/baserom_dqix_usa.nds, then verify its SHA-1.
+- Worker edits must use absolute paths inside the assigned worktree. Setting
+  exec_command workdir does not change apply_patch's working directory.
