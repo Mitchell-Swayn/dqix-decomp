@@ -21,10 +21,10 @@
     },
     {
       "id": "runtime-next",
-      "status": "active",
-      "owner": "match_harness",
+      "status": "queued",
+      "owner": null,
       "worktree": "../DQIX-Decomp-vectors",
-      "scope": "decimal and console dependencies; integrated through 6f9c22f, preserving upstream deletion of false trig-table relocations",
+      "scope": "Exception record helpers integrated through ebc7695; continue remaining runtime dependencies after build-graph efficiency task",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1"
     },
@@ -134,10 +134,11 @@
     },
     {
       "id": "delink-incremental-outputs",
-      "status": "queued",
-      "owner": null,
+      "status": "active",
+      "owner": "match_harness",
       "scope": "tools/configure.py delink rule expects delink.yaml that dsd 0.10.2 never produces",
-      "next_action": "Track actual generated outputs with a completion marker only after success; test deleted outputs, config changes, fresh builds and incremental no-op behavior before replacing current always-rebuild behavior"
+      "next_action": "Track actual generated outputs with a completion marker only after success; test deleted outputs, config changes, fresh builds and incremental no-op behavior before replacing current always-rebuild behavior",
+      "worktree": "../DQIX-Decomp-delink"
     }
   ]
 }

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "pilot-19",
+  "snapshot": {
+    "utc": "2026-10-02T07:30:05.622255+00:00",
+    "revision": "88d5e3c8394d700fe4bb86910ebe75d59895afb6",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 205248,
+      "matched_data": 47424,
+      "matched_functions": 1495
+    },
+    "arm7": {
+      "source_functions": 211,
+      "source_code_bytes": 17564,
+      "source_literal_pool_bytes": 1236,
+      "source_data_bytes": 1188,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 147768,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "627309d4087103607eba0fa5e914ef18899aed03a3d4fdc5878b10dad3f95c65",
+    "arm7_report_sha256": "0fffb8ea6bd271a1c71176f10c689c8d6342cbcf62ece2d80ca6afa9ec937ce8",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Accepted 612-byte render config including overlay-17 references, world entry routines, ARM7 instrument setup/tables and reset IPC helpers, runtime cleanup/init hooks. Direct render submission pointer rewrite rejected and restored. Full ROM/module/symbol/SHA1 pass.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 1196,
+      "matched_data": 612,
+      "matched_functions": 13
+    },
+    "arm7": {
+      "source_functions": 5,
+      "source_code_bytes": 564,
+      "source_literal_pool_bytes": 28,
+      "source_data_bytes": 275,
+      "source_bss_bytes": 4,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": -867,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 606.666126
+}

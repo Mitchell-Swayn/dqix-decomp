@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "pilot-20",
+  "snapshot": {
+    "utc": "2026-10-02T07:42:17.872184+00:00",
+    "revision": "16cbcbebc0703980c0fb847b5087f99a7c17f719",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 206804,
+      "matched_data": 47548,
+      "matched_functions": 1511
+    },
+    "arm7": {
+      "source_functions": 222,
+      "source_code_bytes": 18680,
+      "source_literal_pool_bytes": 1332,
+      "source_data_bytes": 1188,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 146556,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "d7986e3aaf94b16f595bf6dd557e2d6627b0b4e06f0ec8645b833f071150ea0f",
+    "arm7_report_sha256": "6d0c72659011a89ed60c327a0c0d392fed37d632bb70e9cddf4c8a276458cf49",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Combined integrated acceptance passed. Includes workers already in flight; elapsed interval is not end-to-end worker throughput. ARM7 instructions and literals remain separate; no token cost measured.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 1556,
+      "matched_data": 124,
+      "matched_functions": 16
+    },
+    "arm7": {
+      "source_functions": 11,
+      "source_code_bytes": 1116,
+      "source_literal_pool_bytes": 96,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": -1212,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 731.836915
+}
