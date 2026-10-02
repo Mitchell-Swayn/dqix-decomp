@@ -31,6 +31,13 @@ triage limit, not permission to abandon the function or relax acceptance.
    Run fresh archive/extraction builds for pipeline changes and meaningful
    milestones. Repeat gameplay tests when runtime scope warrants them.
 
+`tools/integrate_batch.py COMMIT...` applies explicit commit hashes in order from
+a clean tracked worktree. Its only automatic conflict resolution merges disjoint
+ARM9 delink blocks with unchanged section boundaries and nonoverlapping ranges.
+Other conflicts stop and preserve Git state for review. Logs stay under ignored
+`build/integration/`. Twenty synthetic Git/parser tests cover accepted merges and
+rejected conflicts; full ROM acceptance is still a separate mandatory step.
+
 ## Measurement
 
 `tools/work_batch.py start NAME` records current reports and revision under
