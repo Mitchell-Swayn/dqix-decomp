@@ -484,7 +484,7 @@ _ZN6Zone3D21FindType2BMDJInstanceEPN12ZoneFeatures13Opcode6aEntryE kind:function
 _ZN6Zone3D20GetType2FeatureIndexEPN12ZoneFeatures13Opcode6aEntryE kind:function(arm,size=0x5c) addr:0x02018bc4
 _ZN6Zone3D15GetType2FeatureEi kind:function(arm,size=0x54) addr:0x02018c20
 _ZN6Zone3D21ApplyType2FeatureMaskEj kind:function(arm,size=0xb4) addr:0x02018c74
-func_02018d28 kind:function(arm,size=0x208) addr:0x02018d28
+_ZN6Zone3D15LoadChestModelsEP13SafeAllocator kind:function(arm,size=0x208) addr:0x02018d28
 _ZN6Zone3D23UpdateChestDiffuseColorEv kind:function(arm,size=0x3c) addr:0x02018f30
 _ZN6Zone3D15SetZoneRotationEi kind:function(arm,size=0x50) addr:0x02018f6c
 func_02018fbc kind:function(arm,size=0x254) addr:0x02018fbc

@@ -84,7 +84,9 @@ public:
 
     void* containerModels_[6];
     Model3D models_498_[2];
-    char unk_5f0[0x820 - 0x5f0];
+    unsigned int chestPaletteOffsets_[2];
+    unsigned int alternateChestPaletteOffsets_[2];
+    char unk_600[0x820 - 0x600];
     int unknown_820_;
     Zone3D_BMDJStruct::InstanceEntry** collisionInstances_;
     char unk_828[4];
@@ -131,6 +133,7 @@ public:
     ZoneContainerRenderEntry* GetContainerRenderEntry(int index);
     ZoneChestEntry* GetChestEntry(int index);
     void UpdateChestDiffuseColor();
+    void LoadChestModels(SafeAllocator* temporaryAllocator);
     void SetZoneRotation(int angle);
     void CreateContainerRenderEntries(SafeAllocator* allocator);
     void BindContainerModels();

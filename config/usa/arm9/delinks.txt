@@ -765,6 +765,10 @@ src/World/Zone3DInstanceRestore.cpp:
     complete
     .text start:0x02017a94 end:0x02017c58
 
+src/World/Zone3DChestLoading.cpp:
+    complete
+    .text start:0x02018d28 end:0x02018f30
+
 src/World/Zone3DContainerLookup.cpp:
     complete
     .text start:0x0201777c end:0x020177d4
