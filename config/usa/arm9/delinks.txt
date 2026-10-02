@@ -324,6 +324,10 @@ src/System/ContextList.cpp:
     complete
     .text start:0x020c71a4 end:0x020c745c
 
+src/System/ContextSwitchLocks.cpp:
+    complete
+    .text start:0x020c7c40 end:0x020c7cb0
+
 src/System/ContextStackBoundary.cpp:
     complete
     .text start:0x020c7a74 end:0x020c7a90

@@ -68,3 +68,5 @@ variants (plain stores, volatile head store, and inlined store helper). Their
 best comparisons are 86.96% and 83.33%: the compiler predicates the else block
 and removes a branch present in the original. No assembly barrier was added
 to accepted source; deferred candidates remain in ignored build outputs.
+
+ContextSwitchLocks.cpp recovers the two switch-lock counter operations and exit-callback setter (112 code bytes). All three existing C++ forms match on the first isolated compile, and full module/symbol/ROM checks pass. The add operation preserves the original unspecified return value at counter saturation: the original does not initialize its return register on that path. Register initialization remains separate fallback work.

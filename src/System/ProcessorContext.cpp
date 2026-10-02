@@ -139,41 +139,6 @@ void SleepCurrentContext(unsigned int milliseconds)
     SetIRQInterruptState(priorState);
 }
 
-unsigned int AddContextSwitchLock()
-{
-    int priorState = DisableIRQInterrupts();
-
-    unsigned int oldCount;
-    if (data_021112e0.contextSwitchLock < (unsigned int)-1)
-    {
-        oldCount = data_021112e0.contextSwitchLock;
-        data_021112e0.contextSwitchLock++;
-    }
-
-    SetIRQInterruptState(priorState);
-    return oldCount;
-}
-
-unsigned int RemoveContextSwitchLock()
-{
-    int priorState = DisableIRQInterrupts();
-
-    unsigned int oldCount = 0;
-    if (data_021112e0.contextSwitchLock > 0)
-    {
-        oldCount = data_021112e0.contextSwitchLock;
-        data_021112e0.contextSwitchLock--;
-    }
-
-    SetIRQInterruptState(priorState);
-    return oldCount;
-}
-
-void SetContextEndProc(ProcessorContext* context, ProcessorContext::ExitRoutine proc)
-{
-    context->exitProc = proc;
-}
-
 void InitializeContextRegisters(ProcessorContext* context, unsigned int startAddress, unsigned int stackBottom)
 {
     unsigned int resumeAddress = startAddress + 4;
