@@ -647,3 +647,19 @@ src/World/ZoneVectorSet.cpp:
 src/World/ZoneResourceDefaults.cpp:
     complete
     .text start:0x020133cc end:0x02013490
+
+src/System/RuntimeMemory.cpp:
+    complete
+    .text start:0x02001a40 end:0x02001b2c
+
+src/System/RuntimeStringInput.cpp:
+    complete
+    .text start:0x02003d58 end:0x02003ddc
+
+src/System/RuntimeDecimalDouble.cpp:
+    complete
+    .text start:0x020055d4 end:0x020055e4
+
+src/System/RuntimeTextConversion.cpp:
+    complete
+    .text start:0x02005a94 end:0x02005ac4
