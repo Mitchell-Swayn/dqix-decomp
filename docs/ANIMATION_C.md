@@ -79,3 +79,9 @@ object compares at 100%, all 15 RenderCommands code symbols compare at 100%,
 and full module/symbol/ROM checks pass. The existing RenderConfig::SubmitToFifo
 object still has a separate relocation representation mismatch (93.33%); no
 new code credit is claimed for this data definition.
+
+A direct typed-pointer replacement for SubmitToFifo's pre-existing fixed-address
+cast was tested once. It merges the duplicated address loads/literal pool and
+scores 60%, so the existing implementation was restored. This is a recorded
+source-cleanup limitation, with no new code credit; a compiler/source form that
+preserves the original separate address expressions remains to be found.
