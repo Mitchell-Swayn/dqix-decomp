@@ -3533,18 +3533,18 @@ func_0208e884 kind:function(arm,size=0x8) addr:0x0208e884
 func_0208e88c kind:function(arm,size=0x8) addr:0x0208e88c
 func_0208e894 kind:function(arm,size=0x154) addr:0x0208e894
 func_0208e9e8 kind:function(arm,size=0xc) addr:0x0208e9e8
-func_0208e9f4 kind:function(arm,size=0x1c) addr:0x0208e9f4
+_ZN23WorldObjectInstanceList5ResetEv kind:function(arm,size=0x1c) addr:0x0208e9f4
 func_0208ea10 kind:function(arm,size=0x1f4) addr:0x0208ea10
 func_0208ec04 kind:function(arm,size=0x74) addr:0x0208ec04
 func_0208ec78 kind:function(arm,size=0x3d0) addr:0x0208ec78
 func_0208f048 kind:function(arm,size=0x120) addr:0x0208f048
 func_0208f168 kind:function(arm,size=0x204) addr:0x0208f168
-func_0208f36c kind:function(arm,size=0x3c) addr:0x0208f36c
-func_0208f3a8 kind:function(arm,size=0xc) addr:0x0208f3a8
-func_0208f3b4 kind:function(arm,size=0x5c) addr:0x0208f3b4
-func_0208f410 kind:function(arm,size=0xac) addr:0x0208f410
-func_0208f4bc kind:function(arm,size=0x14) addr:0x0208f4bc
-func_0208f4d0 kind:function(arm,size=0x14) addr:0x0208f4d0
+_ZN23WorldObjectInstanceList9SetObjectEP8Object3D kind:function(arm,size=0x3c) addr:0x0208f36c
+_ZN23WorldObjectInstanceList14ClearInstancesEv kind:function(arm,size=0xc) addr:0x0208f3a8
+_ZN23WorldObjectInstanceList14RemoveInstanceEi kind:function(arm,size=0x5c) addr:0x0208f3b4
+_ZN23WorldObjectInstanceList4DrawEv kind:function(arm,size=0xac) addr:0x0208f410
+_ZN23WorldObjectInstanceListC1Ev kind:function(arm,size=0x14) addr:0x0208f4bc
+_ZN23WorldObjectInstanceListD1Ev kind:function(arm,size=0x14) addr:0x0208f4d0
 _ZN13ZoneState266421UpdateEntranceEffectsEv kind:function(arm,size=0xa4) addr:0x0208f4e4
 _ZN13ZoneState266418LoadEntranceObjectER13SafeAllocatorPv kind:function(arm,size=0x104) addr:0x0208f588
 _ZN13ZoneState266420UpdateEntranceObjectEv kind:function(arm,size=0xbc) addr:0x0208f68c
@@ -7824,3 +7824,4 @@ data_02153680 kind:bss addr:0x02153680
 data_02153694 kind:bss addr:0x02153694
 data_021536ac kind:bss addr:0x021536ac
 data_021536c4 kind:bss addr:0x021536c4
+
