@@ -688,3 +688,11 @@ Both retained units pass 100% objdiff. Full module, symbol, ARM7, ROM and target
 SHA-1 checks pass. Matched coverage increased by 36 code bytes and two functions;
 all denominators are unchanged. The measured batch window was 717.6 seconds.
 Logs and attempt records stay under ignored `build/matching/`.
+
+## Gamecard initialization isolation (root)
+
+The existing disabled initializer at020c6d7c..020c6e48 was isolated. It emits
+204 bytes and matches80.39%; the early global-flag store has different register
+allocation/scheduling. A volatile declaration probe did not change the result
+and was removed (two comparisons). The original disabled draft remains; no
+source mapping or coverage was accepted. Draft in build/GamecardBusInitialize-deferred.cpp.
