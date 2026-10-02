@@ -21,8 +21,8 @@ void ARM7_TouchIpcReceive(unsigned int message)
     unsigned short threshold=first&0xff;
     if(!threshold)ARM7_SendSpiReply(3,2);
     else {
-     ARM7_TouchState.filterThreshold=threshold;
-     ARM7_TouchState.retryThreshold=threshold;
+     ARM7_TouchState.request.filterThreshold=threshold;
+     ARM7_TouchState.request.retryThreshold=threshold;
      ARM7_SendSpiReply(3,0);
     }
    }
@@ -31,21 +31,21 @@ void ARM7_TouchIpcReceive(unsigned int message)
    if(!ARM7_EnqueueSpiTask(0,command,0))ARM7_SendSpiReply(command,4);
    break;
   case 1:
-   if(ARM7_TouchState.operation)ARM7_SendSpiReply(command,3);
+   if(ARM7_TouchState.request.operation)ARM7_SendSpiReply(command,3);
    else {
     unsigned short count=first&0xff;
     if(count==0 || count>4)ARM7_SendSpiReply(command,2);
     else {
      unsigned short scanline=ARM7_TouchState.request.slots[1];
      if(scanline>=0x107)ARM7_SendSpiReply(command,2);
-     else if(ARM7_EnqueueSpiTask(0,command,2,count,scanline))ARM7_TouchState.operation=1;
+     else if(ARM7_EnqueueSpiTask(0,command,2,count,scanline))ARM7_TouchState.request.operation=1;
      else ARM7_SendSpiReply(command,4);
     }
    }
    break;
   case 2:
-   if(ARM7_TouchState.operation!=2)ARM7_SendSpiReply(command,3);
-   else if(ARM7_EnqueueSpiTask(0,command,0))ARM7_TouchState.operation=3;
+   if(ARM7_TouchState.request.operation!=2)ARM7_SendSpiReply(command,3);
+   else if(ARM7_EnqueueSpiTask(0,command,0))ARM7_TouchState.request.operation=3;
    else ARM7_SendSpiReply(command,4);
    break;
   default:ARM7_SendSpiReply(command,1);break;

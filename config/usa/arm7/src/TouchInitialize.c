@@ -2,8 +2,7 @@
 #pragma dont_inline on
 #include "TouchState.h"
 #include "VerticalAlarm.h"
-/* Both real allocations are cleared by the WRAM startup BSS loop. */
-VerticalAlarm ARM7_TouchAlarms[4];
+/* The state, request, alarms and scanlines are cleared by the startup BSS loop. */
 TouchState ARM7_TouchState;
 extern int ARM7_IsVerticalAlarmInitialized(void);
 extern void ARM7_InitializeVerticalAlarms(void);
@@ -18,9 +17,9 @@ void ARM7_InitializeTouchState(void)
  unsigned int offset;
  VerticalAlarm *alarms;
  int alarm;
- ARM7_TouchState.operation=0;
- ARM7_TouchState.filterThreshold=20;
- ARM7_TouchState.retryThreshold=20;
+ ARM7_TouchState.request.operation=0;
+ ARM7_TouchState.request.filterThreshold=20;
+ ARM7_TouchState.request.retryThreshold=20;
  slot=0;
  do {ARM7_TouchRequest.slots[slot]=0;slot++;} while(slot<16);
  if(!ARM7_IsVerticalAlarmInitialized())ARM7_InitializeVerticalAlarms();

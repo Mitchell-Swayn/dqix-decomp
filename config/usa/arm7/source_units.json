@@ -2841,14 +2841,14 @@
         "ARM7_InitializeVerticalAlarms": 58711380,
         "ARM7_ZeroInitializeVerticalAlarm": 58711692,
         "ARM7_SetVerticalAlarmTag": 58712140,
-        "ARM7_ClockTouchSpiByte": 58740816
+        "ARM7_ClockTouchSpiByte": 58740816,
+        "ARM7_TouchAlarms": 58767040
       },
       "bss": {
         "runtime_address": 58766992,
-        "size": 208,
+        "size": 216,
         "symbols": {
-          "ARM7_TouchState": 58766992,
-          "ARM7_TouchAlarms": 58767040
+          "ARM7_TouchState": 58766992
         }
       }
     },
@@ -2868,6 +2868,24 @@
       "externals": {
         "ARM7_TouchState": 58766992,
         "ARM7_TouchRequest": 58766996,
+        "ARM7_EnqueueSpiTask": 58740112,
+        "ARM7_SendSpiReply": 58739804
+      }
+    },
+    {
+      "name": "TouchAlarmCallback",
+      "source": "config/usa/arm7/src/TouchAlarmCallback.c",
+      "autoload": "wram",
+      "runtime_address": 58742096,
+      "payload_offset": 55148,
+      "size": 104,
+      "code_bytes": 100,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_TouchAlarmCallback",
+      "symbols": {
+        "ARM7_TouchAlarmCallback": 58742096
+      },
+      "externals": {
         "ARM7_EnqueueSpiTask": 58740112,
         "ARM7_SendSpiReply": 58739804
       }

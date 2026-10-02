@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "baseline_revision": "d936bbc",
+  "candidate_start_utc": "2026-10-02T14:10:52.0176745+00:00",
+  "verification_finish_utc": "2026-10-02T14:35:32.2378686+00:00",
+  "elapsed_seconds": 1480.220194,
+  "timing_limit": "Main full-ROM work_batch snapshots are root-owned; worker records local interval without a baseline full ARM9/ROM report.",
+  "attempts": {
+    "TouchTask_initial_compiler_invocations": 10,
+    "TouchTask_initial_objects": 9,
+    "TouchAlarmCallback": 4,
+    "TouchTask_evidence_driven_followups": 2
+  },
+  "TouchTask_remaining_different_words": 2,
+  "TouchTask_status": "deferred; no source credit",
+  "enqueue_total_variants": 5,
+  "delta": {
+    "source_functions": 1,
+    "source_code_bytes": 100,
+    "source_literal_pool_bytes": 4,
+    "binary_fallback_bytes": -104,
+    "source_data_bytes": 0,
+    "source_bss_bytes": 8,
+    "reviewed_assembly_bytes": 0
+  },
+  "arm7_payload_sha1": "a662d5c6a78e990244299926cf6862ce910a475d",
+  "tests_passed": 28,
+  "full_rom_acceptance": "pending integrator",
+  "token_usage": null
+}
