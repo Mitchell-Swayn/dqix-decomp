@@ -441,6 +441,14 @@ src/System/LoadToVRAM.cpp:
     complete
     .text start:0x020c5820 end:0x020c6914
 
+src/System/VRAMPaletteMappingState.cpp:
+    complete
+    .bss start:0x02111240 end:0x0211125c
+
+src/System/VRAMTextureMappingState.cpp:
+    complete
+    .bss start:0x0211125c end:0x0211127c
+
 // Remaining routines in InterruptHandler.cpp are still binary fallback.
 
 src/System/InterruptDispatchWrappers.cpp:

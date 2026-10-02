@@ -308,6 +308,16 @@
       "attempts": 6,
       "blocker": "Closest92.52%; width/alternate initial loads and spill slot order differ, candidate4Bshort. No source credit.",
       "next_action": "Investigate source/compiler lifetime evidence before more initialization variants; draft and format descriptor in ignored build, evidence in sol61-runtime-library.md"
+    },
+    {
+      "id": "vram-mapping-state",
+      "status": "awaiting_integrator_acceptance",
+      "owner": "sol61_data",
+      "worktree": "../DQIX-Decomp-luna-data-audit",
+      "scope": "Established28-byte palette and32-byte texture VRAM mapping records gain source definitions and a shared internal header;60 bytes BSS",
+      "acceptance": "Both objects100%; consumer compiled instructions/relocations unchanged; full ROM/module/symbol/SHA1 passed; unchanged denominators",
+      "deferred": "Scanline cutoff allocation at020ee694 has24 adjacent unresolved bytes; extracting its known4-byte prefix drops that tail and fails layout checks. Original ownership restored; docs/VRAM_MAPPING_STATE.md records evidence.",
+      "token_usage": null
     }
   ]
 }
