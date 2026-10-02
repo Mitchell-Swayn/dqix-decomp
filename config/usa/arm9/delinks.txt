@@ -255,9 +255,9 @@ src/Graphics/NSBXX/NSBXX.cpp:
     complete
     .text start:0x020b6e98 end:0x020b736c
 
-//src/Graphics/NSBXX/NameList.cpp:
-//    complete
-//    .text start:0x020b736c end:0x020b7694
+src/Graphics/NSBXX/NameListLookup.cpp:
+    complete
+    .text start:0x020b736c end:0x020b752c
 
 src/Graphics/NSBXX/PatternAnimation.cpp:
     complete

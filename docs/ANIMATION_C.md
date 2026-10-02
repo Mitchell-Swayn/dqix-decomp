@@ -30,3 +30,5 @@ These figures describe the initial whole-file comparison before extraction;
 no coverage is claimed for them. Their compiler register/instruction differences
 still need investigation. Other animation and rendering dependencies remain
 external to these units, so this is not a complete animation subsystem.
+
+NameListLookup.cpp additionally recovers the existing 448-byte resource lookup routine at 0x020b736c..0x020b752c. It selects linear search for fewer than 16 entries, otherwise traverses the bit-index tree, compares the 16-byte name and returns the associated record. Its original C++ form matches on the first compile and after extraction. Full ROM checks pass. The adjacent index-returning lookup remains fallback after its initial 66.67% register-allocation comparison.

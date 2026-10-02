@@ -2,13 +2,12 @@
 
 #pragma optimize_for_size off
 
-// this doesn't quite match, register issues
-extern "C" int NSBXXNameList_SearchIndex(NSBXXNameList* nameList, const char* name)
+extern "C" void* NSBXXNameList_Search(NSBXXNameList* nameList, const char* name)
 {
     volatile NSBXXNameList* volList = nameList;
     const uint32_t* targetIntArray = (const uint32_t*)name;
     if (name == NULL)
-        return -1;
+        return NULL;
 
     unsigned int numEntries = nameList->numEntries_;
     if (numEntries < 16) // list is short, do linear search
@@ -18,6 +17,7 @@ extern "C" int NSBXXNameList_SearchIndex(NSBXXNameList* nameList, const char* na
         uint32_t target1 = targetIntArray[1];
         uint32_t target2 = targetIntArray[2];
         uint32_t target3 = targetIntArray[3];
+        
         unsigned int zero = 0;
         if (numEntries > zero)
         {
@@ -40,7 +40,15 @@ extern "C" int NSBXXNameList_SearchIndex(NSBXXNameList* nameList, const char* na
                 const uint32_t* source = (const uint32_t*)sourcePtr;
                 if (source[0] == target0 && source[1] == target1 &&
                     source[2] == target2 && source[3] == target3)
-                    return searchIndex;
+                {
+                    if (nameList != NULL && searchIndex < nameList->numEntries_)
+                    {
+                        intptr_t dataStart = (intptr_t)nameList + nameList->offsetToDataStart_;
+                        int stride = *(uint16_t*)dataStart;
+                        return (void*)(dataStart + 4 + stride * searchIndex);
+                    }
+                    return NULL;
+                }
 
                 searchIndex++;
                 offsetWithinNameData += 16;
@@ -51,15 +59,17 @@ extern "C" int NSBXXNameList_SearchIndex(NSBXXNameList* nameList, const char* na
     {   
         NSBXXNameList::SearchTreeEntry* entryArray = (NSBXXNameList::SearchTreeEntry*)&nameList->treeRoot_8_;
         int firstChild = entryArray[0].children_[0];
+        
         if (firstChild != 0)
         {
             NSBXXNameList::SearchTreeEntry* searchCursor = &entryArray[firstChild];
-            int bitIndex = entryArray[firstChild].bitIndex_;   
+            int bitIndex = entryArray[firstChild].bitIndex_;
             unsigned int prevBitIndex = entryArray[0].bitIndex_;
             if (prevBitIndex > bitIndex)
             {
                 do
                 {
+                    
                     int integerToQuery = bitIndex >> 5;
                     int bitToQuery = bitIndex & 0x1f;
                     int bitValue = (targetIntArray[integerToQuery] >> bitToQuery) & 1;
@@ -70,10 +80,11 @@ extern "C" int NSBXXNameList_SearchIndex(NSBXXNameList* nameList, const char* na
                     
                 } while (prevBitIndex > bitIndex);
             }
+
             
             unsigned int candidateIndex = searchCursor->resourceIndex_;
             intptr_t sourcePtr;
-            if (nameList != NULL && candidateIndex < nameList->numEntries_)
+            if (nameList != NULL && candidateIndex < numEntries)
             {
                 intptr_t dataStart = (intptr_t)nameList + nameList->offsetToDataStart_;
                 // dataStart + 2 holds the distance between dataStart and the start
@@ -86,10 +97,18 @@ extern "C" int NSBXXNameList_SearchIndex(NSBXXNameList* nameList, const char* na
             const uint32_t* sourceIntArray = (const uint32_t*)sourcePtr;
             if (sourceIntArray[0] == targetIntArray[0] && sourceIntArray[1] == targetIntArray[1] &&
                 sourceIntArray[2] == targetIntArray[2] && sourceIntArray[3] == targetIntArray[3])
-                return candidateIndex;
-            
+            {
+                if (nameList != NULL && candidateIndex < numEntries)
+                {
+                    intptr_t dataStart = (intptr_t)nameList + nameList->offsetToDataStart_;
+                    int stride = *(uint16_t*)dataStart;
+                    return (void*)(dataStart + 4 + stride * candidateIndex);
+                }
+                return NULL;
+            }
         }
     }
 
-    return -1;
+    return NULL;
 }
+
