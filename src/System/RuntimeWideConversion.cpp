@@ -1,14 +1,7 @@
+#include "System/RuntimeLocale.h"
+
 #pragma optimize_for_size off
 #pragma dont_inline on
-struct RuntimeCharacterMethods {
-    int (*decode)(unsigned short*, const char*, unsigned int);
-    int (*encode)(char*, unsigned short);
-};
-struct RuntimeLocale {
-    unsigned int unknown[2];
-    RuntimeCharacterMethods* characters;
-};
-extern RuntimeLocale data_020eed28;
 extern "C" char* strncpy(char*, const char*, unsigned int);
 extern "C" int func_020019ac(char* dest, unsigned short value)
 {

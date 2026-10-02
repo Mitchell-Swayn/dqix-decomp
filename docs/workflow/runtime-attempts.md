@@ -561,3 +561,27 @@ and `build/matching/`. Older configure finalization caveat unchanged. Local
 code159,600 ->160,024; functions1,193 ->1,195; data26,852 unchanged.
 Denominators unchanged. First inspection script to these notes:
 206.5 seconds. No gameplay validation.
+
+## Typed C-locale text and character methods (2026-10-02)
+
+Based on `32e0468`. Six data symbols add48 initialized data bytes, no code,
+functions or BSS. Original fixed-width strings are empty text[4], "%T"[4],
+"AM|PM"[8], and "%m/%d/%y"[12]. The character-method pair points to already
+reconstructed byte decode/encode callbacks. The12-byte default locale descriptor
+references time/numeric descriptors (still explicit fallback) and the typed
+character-method pair. The empty string uses explicit initialized-data placement
+to preserve original storage; no invented bytes or pointers are introduced.
+Symbol addresses remain unchanged; six previously unspecified extents are now
+explicitly4,4,8,8,12,12 bytes. No relocation edits are needed.
+
+A shared RuntimeLocale.h replaces the private method/locale declarations in
+RuntimeWideConversion; its two functions remain100% unchanged. All six data
+symbols match100% on their first candidates, with both callback relocations
+and all three descriptor references preserved. Both new source units and the
+existing caller pass objdiff; full module/symbol/ARM7 checks and separate-output
+guarded finalization pass exact USA SHA-1
+`c7c3014c237900c8281289b8bc76a781969b6278`. Older configure caveat unchanged.
+Logs: `build/runtime-batch18-acceptance.log`, `build/runtime-batch18-finalize.log`.
+Code160,024/functions1,195 unchanged; data26,852 ->26,900. Denominators
+unchanged. First locale inspection to these notes:
+175.7 seconds. No gameplay validation.
