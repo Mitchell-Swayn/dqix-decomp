@@ -12,3 +12,15 @@ src/Factory/ov013/MenuText.cpp:
     complete
     .text start:0x02186bd4 end:0x02186cac
 
+src/Factory/ov013/DisplayEntry.cpp:
+    complete
+    .text start:0x02184338 end:0x02184360
+
+src/Factory/ov013/MenuCursor.cpp:
+    complete
+    .text start:0x02186cac end:0x02186db4
+
+src/Factory/ov013/MenuHitTest.cpp:
+    complete
+    .text start:0x021842a0 end:0x02184338
+

@@ -57,3 +57,69 @@ Required unresolved dependencies remain original fallback: primary composer
 formatters `02041c08`, `02041ea4`, `02041d9c`, `02042058`, `02041b70` (plus their
 callees). The catalog contents and most ov013 code/data remain unreconstructed.
 No module-completion claim is made.
+
+Followup batch `fleet_ov013_20261003_followup_013` triage: cursor display routine
+`02186db4` exhausted ten source variants. Closest variants 4, 8 and 9 reached
+95.83%, with a vertical-coordinate sign-extension instruction scheduled before
+the horizontal addition instead of after it. The function remains required and
+uses original fallback. Candidates, comparisons and diagnoses are preserved in
+`build/matching/20261002T155551-*` through `20261002T160012-*`; the final draft is
+`build/factory/ov013/cursor-variant10-deferred.cpp`. This cumulative variant cap
+survives future batches; inspect new dependency evidence before retrying. Work
+switched to the connected widget hit-test routine.
+
+The followup accepted the menu cursor placement, widget touch hit-test and typed
+display-entry lookup family, based on original disassembly and mapped callees.
+Baseline was `b86a60daac0a48061fb79b707e3dda78e42131df`; no existing changes were
+present. Only ov013 source/configuration and this worker note changed.
+
+| Function | Half-open range | Instructions | Literals | Behavior |
+| --- | --- | ---: | ---: | --- |
+| `func_ov013_021842a0` | `0x021842a0–0x02184338` | 148 | 4 | Test the active touch position against widget 0's indexed rectangle, adjusted by tile origin. |
+| `func_ov013_02184338` | `0x02184338–0x02184360` | 40 | 0 | Bounds-check the display's actual 0x28-byte entry array. |
+| `func_ov013_02186cac` | `0x02186cac–0x02186db4` | 264 | 0 | Position the enabled menu cursor from the selected widget, update translation state and refresh display entries. |
+
+Sources are `MenuHitTest.cpp`, `DisplayEntry.cpp`, and `MenuCursor.cpp` under
+`src/Factory/ov013/`. The existing local `MenuText.h` now describes the widget's
+four real 18-element rectangle arrays at 0xc/0x30/0x54/0x78, signed tile origin
+at 0xac/0xae and offsets at 0xbc/0xbe. Main routine `0204c610` establishes the
+rectangle outputs and bounds; `02012734` establishes inclusive touch rectangle
+testing and unsigned input coordinates at 0x20/0x22. The input active byte at
+0x5c is observed directly in ov013. Input data remains external fallback.
+
+Display lookup and `0205aed0` establish the 0x28-byte array; `0205a3d0` and
+`0205a984` establish the 0x18-byte translation-entry array and ID at 0x8.
+`0205a370` establishes translation flags at 0x15. `0205a330`/`0205a254` add a
+scalar step to translation counters, correcting the prior pointer hypothesis
+at menu offset 0x14. Display and menu definitions remain explicitly partial;
+there are no new allocation-size claims. The cursor enable byte is at 0x6bc.
+The draw/update caller is `02184a58`; hit-test callers include `02186160` and
+`0218683c`. No shared headers or other modules were edited.
+
+Exact variants: cursor placement 4 (three failed), entry lookup 1 (zero failed),
+hit-test 2 (one failed). Deferred `02186db4`: ten failed variants, closest
+95.83%. Sixteen object comparisons total include unchanged-function comparisons
+and final layout/type rechecks. Final selected objects each compare 1/1 symbols
+at 100%. Final evidence is `build/factory/ov013/{cursor,display-entry,hit-test}-final-evidence.json`;
+the explicit deferred diagnosis is `cursor-deferred-best-diagnosis.json` there.
+All snapshots include source hypotheses; no comparison input was patched.
+
+Full `ninja -j2 rom check report sha1` passed twice. The final source tree is
+covered by `build/factory/ov013/followup-final-validation.log`, including module,
+symbol and ARM7 byte checks. Original input and generated output independently
+hash to `c7c3014c237900c8281289b8bc76a781969b6278`. No gameplay tests were run.
+
+`work_batch.py start/finish` recorded 689.133062 seconds and +3 functions,
++456 matched code bytes: +452 instructions and +4 literals. Initialized data,
+BSS, assembly and ARM7 gains are zero. Denominators are unchanged. Records are
+under `build/workflow/fleet_ov013_20261003_followup_013/`; finish records the
+verified dirty source tree before commit. Tokens remain unmeasured.
+
+Required dependencies still in original fallback include deferred `02186db4`,
+display/translation APIs `0205a330`, `0205a370`, `0205a3d0`, `0205ae8c`, widget
+selection/state APIs `0205d81c`, `0205d8c4`, `0204c7e0`, rectangle APIs
+`0204c610`/`02012734`, their program data, the previously deferred primary text
+composer, and most ov013 code/data. Next evidence for `02186db4` should examine
+coordinate types and fixed-point expression patterns in display callers rather
+than restart equivalent compiler variants. No integration or module-completion
+claim is made; the integrator-owned queue was untouched.
