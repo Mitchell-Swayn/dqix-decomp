@@ -1,5 +1,5 @@
 #pragma always_inline on
-#include "GameState/GameState.h"
+#include "GameState/PeerIdentityTransfer.h"
 
 #if defined(usa)
 
@@ -7,7 +7,7 @@
 // The enclosing context's other fields and full extent are still unknown.
 struct PeerPacketContextPrefix {
     char unknown_0000_[0x3b84];
-    void* manager_;
+    PeerIdentityManagerPrefix* manager_;
 };
 
 struct PeerIdentityPacket {
@@ -33,15 +33,15 @@ typedef char PeerTransferIndexOffsetCheck[
     offsetof(GameStatePeerIdentity, storedIdentityIndex_) == 9 ? 1 : -1];
 
 extern "C" int func_0202c1a4(void* connection);
-extern "C" void func_ov017_021a99dc(void* manager, const unsigned char* payload,
+extern "C" void func_ov017_021a99dc(PeerIdentityManagerPrefix* manager, const unsigned char* payload,
                                      unsigned int type, unsigned int length,
-                                     unsigned int complete);
+                                     unsigned char complete);
 
 extern "C" void func_ov017_021d15b0(int objectIndex, const PeerIdentityPacket* packet,
                                      GameState* state, PeerPacketContextPrefix* context,
                                      void* connection)
 {
-    void* manager = context->manager_;
+    PeerIdentityManagerPrefix* manager = context->manager_;
     int target = func_0202c1a4(connection);
     if (!packet->identityTransfer_) {
         if (target == packet->target_)

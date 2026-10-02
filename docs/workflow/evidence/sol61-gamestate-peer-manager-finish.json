@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "sol61-gamestate-peer-manager",
+  "snapshot": {
+    "utc": "2026-10-02T15:32:52.890953+00:00",
+    "revision": "617657ec24e513460aed0cbcbfaa03fe46ef8e94",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 219048,
+      "matched_data": 48064,
+      "matched_functions": 1644
+    },
+    "arm7": {
+      "source_functions": 265,
+      "source_code_bytes": 22912,
+      "source_literal_pool_bytes": 1588,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 141924,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "824250a4a586c8ba37ce36b51dc4031184261763d60463ee5c8ba3a1db4dc337",
+    "arm7_report_sha256": "6f3aaf4f9b7392fa38ff6c7504a2202e44c4c00ffb6122d9dae61b1d89e761f4",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Eight new functions exact: lifecycle 2, payload/wrappers 4, presentation storage 2. Four valid new-unit candidate variants: lifecycle 1, payload 2, storage 1. Two additional affected packet caller comparisons; bool completion argument initially regressed caller, unsigned-char declaration restored exact ABI for both. Initial DSD noncontiguous-section setup and two conflicting-declaration compiler failures excluded from valid variant count. Presentation allocation 0xecc established at 021a9768; stored identity at df0 and 0x7c data at e1c established by overlay8 reset/copy. Manager is only a recovered prefix. Full ROM/module/symbol/SHA1 checks pass. Transfer bounds remain trusted; upper unknown identity flag preserved; allocator failure behavior unchanged. Labels and unrecovered callbacks remain explicit source-external dependencies. No runtime or token measurements.",
+  "attempts": 4,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 820,
+      "matched_data": 0,
+      "matched_functions": 8
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 434.190078
+}
