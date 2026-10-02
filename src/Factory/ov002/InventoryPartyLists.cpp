@@ -1,27 +1,9 @@
-#include "globaldefs.h"
-#include "std_library_functions.h"
+#include "InventoryMenuState.h"
 
 // Partial inventory-menu state. The initializer at 0x0215505c clears five
 // owner slots, copies party indices, and appends owner 4 (the shared bag).
 // It also builds the signed-byte list from party members whose +0x1c4
 // field is zero. The meaning of that eligibility field remains unresolved.
-struct InventoryMenuState {
-    unsigned char unknown_0000_[0x1c50];
-    int ownerCount_;
-    int owners_[5];
-    unsigned char unknown_1c68_[5];
-    unsigned char unknown_1c6d_;
-    signed char availableMembers_[5];
-    signed char availableMemberCount_;
-};
-
-typedef char OwnerOffsetCheck[
-    offsetof(InventoryMenuState, owners_) == 0x1c54 ? 1 : -1];
-typedef char AvailableMemberOffsetCheck[
-    offsetof(InventoryMenuState, availableMembers_) == 0x1c6e ? 1 : -1];
-typedef char AvailableMemberCountOffsetCheck[
-    offsetof(InventoryMenuState, availableMemberCount_) == 0x1c73 ? 1 : -1];
-
 extern "C" void func_ov002_02157424(InventoryMenuState*, int*);
 extern "C" void func_ov002_02157480(InventoryMenuState*, int*);
 
