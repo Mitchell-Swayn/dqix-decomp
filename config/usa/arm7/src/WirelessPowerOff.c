@@ -1,10 +1,10 @@
-/* Clear the ARM7 wireless power bit and invoke the two opaque shutdown hooks. */
+/* Clear the ARM7 wireless power bit and reset the LED pattern/mode. */
 #pragma dont_inline on
-extern void ARM7_WirelessPowerOffHook1(int);
-extern void ARM7_WirelessPowerOffHook2(int);
+extern void ARM7_SetPowerLedPattern(int);
+extern void ARM7_SetPowerLedMode(int);
 void ARM7_DisableWirelessPower(void)
 {
  *(volatile unsigned short*)0x04000304 &= ~2;
- ARM7_WirelessPowerOffHook1(1);
- ARM7_WirelessPowerOffHook2(1);
+ ARM7_SetPowerLedPattern(1);
+ ARM7_SetPowerLedMode(1);
 }

@@ -2336,8 +2336,67 @@
         "ARM7_DisableWirelessPower": 58746172
       },
       "externals": {
-        "ARM7_WirelessPowerOffHook1": 58746060,
-        "ARM7_WirelessPowerOffHook2": 58745216
+        "ARM7_SetPowerLedPattern": 58746060,
+        "ARM7_SetPowerLedMode": 58745216
+      }
+    },
+    {
+      "name": "PowerRegisters",
+      "source": "config/usa/arm7/src/PowerRegisters.c",
+      "autoload": "wram",
+      "runtime_address": 58744364,
+      "payload_offset": 57416,
+      "size": 320,
+      "code_bytes": 288,
+      "literal_pool_bytes": 32,
+      "entry": "ARM7_WritePowerRegister",
+      "symbols": {
+        "ARM7_WritePowerRegister": 58744364,
+        "ARM7_WritePowerSpiByte": 58744452,
+        "ARM7_ReadPowerRegister": 58744488,
+        "ARM7_SetPowerControlBits": 58744604,
+        "ARM7_ClearPowerControlBits": 58744640
+      },
+      "externals": {}
+    },
+    {
+      "name": "PowerLedMode",
+      "source": "config/usa/arm7/src/PowerLedMode.c",
+      "autoload": "wram",
+      "runtime_address": 58745216,
+      "payload_offset": 58268,
+      "size": 124,
+      "code_bytes": 112,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_SetPowerLedMode",
+      "symbols": {
+        "ARM7_SetPowerLedMode": 58745216
+      },
+      "externals": {
+        "ARM7_SetPowerControlBits": 58744604,
+        "ARM7_ClearPowerControlBits": 58744640,
+        "ARM7_Panic": 58703664,
+        "ARM7_PowerUtilityFile": 58756432,
+        "ARM7_BadPowerLedMode": 58756448,
+        "ARM7_PowerLedMode": 58756428
+      }
+    },
+    {
+      "name": "PowerLedPattern",
+      "source": "config/usa/arm7/src/PowerLedPattern.c",
+      "autoload": "wram",
+      "runtime_address": 58746060,
+      "payload_offset": 59112,
+      "size": 44,
+      "code_bytes": 36,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SetPowerLedPattern",
+      "symbols": {
+        "ARM7_SetPowerLedPattern": 58746060,
+        "ARM7_GetPowerLedPattern": 58746088
+      },
+      "externals": {
+        "ARM7_PowerLedPatternState": 58767260
       }
     }
   ]

@@ -659,3 +659,18 @@
   are not propagated into committed headers, and no polling source is integrated.
 - Three functions add 180 instruction and 12 literal bytes, no data or BSS.
 - Validation: full payload and linked symbols match; all 11 pipeline and six verifier tests pass.
+
+## 2026-10-02 - power-management registers and LED controls
+
+- SPI write/read/byte functions, LED mode and both pattern accessors matched first
+  compile. Control-bit set/clear differed only in operand order; introducing an
+  explicit read-result local matched both on variant two.
+- pm_utility.c and Bad LED status identify the hardware LED mode function. The
+  pattern updater's references identify the phase/pattern pair. Resolved the prior
+  WirelessPowerOffHook1/2 names to SetPowerLedPattern/SetPowerLedMode in the earlier
+  shutdown source and manifest; the hardware clears remain unchanged.
+- Pattern setter preserves the signed <=15 check, including its original treatment
+  of negative values. No stronger validation or inferred policy is introduced.
+- Eight functions add 436 instruction and 52 literal bytes, no data or BSS. This
+  passes the 250-C-function milestone with 251 functions and 21,048 instructions.
+- Validation: full payload and linked symbols match, including the updated shutdown unit; all 11 pipeline and six verifier tests pass.
