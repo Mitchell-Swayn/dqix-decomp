@@ -153,3 +153,26 @@ processes from an earlier run are still alive.
 The first launch verified 24 live child PIDs, 24 started model turns and zero
 backend error events. This establishes a working fleet, not 24-worker throughput
 or completed reconstruction. See `evidence/factory-24-launch.json`.
+
+## Independent review and integration
+
+`tools/factory_pipeline.py` coordinates four independent reviewers and one
+serialized integration gate. It binds reviews to immutable source commits;
+accepted coverage advances only after a fresh combined ROM/module/symbol/SHA-1
+build and strict coverage comparisons. Reconstruction remains in separate trees.
+
+A source-quality finding is `changes_requested`: the coordinator delivers the
+finding to its originating worker. A harness exception is
+`infrastructure_blocked`: no source-repair feedback and no producer acknowledgment
+are issued. Investigate preserved logs before retrying the same immutable batch.
+Infrastructure failures are not evidence that the reconstructed source is wrong.
+
+Review children inherit `PYTHONDONTWRITEBYTECODE=1`, keeping Python caches out of
+protected source/tool directories. Fresh build graphs use the independently copied,
+hash-verified objdiff executable, without attempting to download over it. Tool and
+source integrity checks remain enforced; unexpected changes report exact paths.
+
+For maintenance, create both `build/factory/STOP` and
+`build/factory/PIPELINE_STOP`, then wait for running stages and supervisors to exit
+before editing durable state. Preserve previous results before a controlled retry.
+Remove stop markers only when deliberately restarting the relevant supervisor.

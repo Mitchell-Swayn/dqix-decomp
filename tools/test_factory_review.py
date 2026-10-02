@@ -3,6 +3,7 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+import sys
 import tempfile
 import time
 import unittest
@@ -216,6 +217,16 @@ class ReviewTests(unittest.TestCase):
         with patch.object(review.subprocess, "Popen", return_value=process) as spawn:
             review._process(["native-mock"], self.root, time.monotonic()+10, None, None)
         self.assertEqual(spawn.call_args.kwargs["env"]["PYTHONDONTWRITEBYTECODE"], "1")
+
+    def test_real_python_import_leaves_protected_inventory_unchanged(self):
+        source = self.root / "python-import-fixture"
+        source.mkdir()
+        (source / "helper.py").write_text("answer = 42\n")
+        before = review._inventory(source)
+        self.assertEqual(review._process([sys.executable, "-c", "import helper; assert helper.answer == 42"],
+                         source, time.monotonic()+10, subprocess.DEVNULL, subprocess.DEVNULL), 0)
+        self.assertEqual(review._inventory(source), before)
+        self.assertFalse((source / "__pycache__").exists())
 
     def test_pinned_objdiff_replaces_only_its_download_edge(self):
         tool = "objdiff-cli.exe" if review.os.name == "nt" else "objdiff-cli"
