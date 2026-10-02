@@ -6,9 +6,11 @@ import os
 from pathlib import Path
 import shutil
 import subprocess
+import sys
 import tempfile
+from types import SimpleNamespace
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 import factory_integrate as gate
 
@@ -132,6 +134,7 @@ class IntegrationTests(unittest.TestCase):
             with self.subTest(field=field):
                 result = self.integrate(invalid)
                 self.assertFalse(result["accepted"])
+                self.assertEqual(result["status"], "needs_changes")
                 self.assertEqual(git(self.root, "rev-parse", "HEAD"), self.base)
 
     def test_stale_main_head_is_preserved_without_ff(self):
@@ -146,6 +149,7 @@ class IntegrationTests(unittest.TestCase):
             return record
         result = self.integrate(changed)
         self.assertFalse(result["accepted"])
+        self.assertEqual(result["status"], "infrastructure_blocked")
         self.assertIn("main HEAD changed", result["error"])
         self.assertEqual(git(self.root, "rev-parse", "HEAD"), advanced[0])
         self.assertEqual((self.root / "src/Overlay/Family.cpp").read_text(), "int Family() { return 1; }\n")
@@ -154,6 +158,7 @@ class IntegrationTests(unittest.TestCase):
         self.write("src/Overlay/Family.cpp", "User change must survive.\n")
         result = self.integrate()
         self.assertFalse(result["accepted"])
+        self.assertEqual(result["status"], "infrastructure_blocked")
         self.assertEqual((self.root / "src/Overlay/Family.cpp").read_text(), "User change must survive.\n")
         self.assertNotIn("stage", result)
 
@@ -163,6 +168,7 @@ class IntegrationTests(unittest.TestCase):
             self.review.update(change)
             result = self.integrate()
             self.assertFalse(result["accepted"])
+            self.assertEqual(result["status"], "rejected")
             self.assertNotIn("stage", result)
             self.review = old
         self.submission["commits"] = [self.base, self.tip]
@@ -193,6 +199,7 @@ class IntegrationTests(unittest.TestCase):
         self.initial = git(self.root, "rev-parse", "HEAD")
         result = self.integrate()
         self.assertFalse(result["accepted"])
+        self.assertEqual(result["status"], "needs_changes")
         self.assertEqual(git(self.root, "rev-parse", "HEAD"), self.initial)
         self.assertIn("<<<<<<<", (Path(result["stage"]) / "src/Overlay/Family.cpp").read_text())
         self.assertEqual([item[0] for item in self.builds], ["baseline"])
@@ -205,6 +212,7 @@ class IntegrationTests(unittest.TestCase):
             return record
         result = self.integrate(wrong)
         self.assertFalse(result["accepted"])
+        self.assertEqual(result["status"], "infrastructure_blocked")
         self.assertIn("snapshot does not describe", result["error"])
         self.assertEqual(git(self.root, "rev-parse", "HEAD"), self.base)
 
@@ -282,17 +290,61 @@ class IntegrationTests(unittest.TestCase):
             def run(self, argv, cwd, **kwargs):
                 calls.append((argv, cwd, kwargs))
         stage = self.root.parent / "command-stage"
+        def pinned(stage_path, expected_hash):
+            self.assertEqual(len(calls), 1, "pinning must happen after configure and before Ninja")
+            self.assertEqual(stage_path, stage)
+            self.assertEqual(expected_hash, TOOL_HASH)
+        helper = Mock(side_effect=pinned)
         with patch.object(gate, "USA_SHA1", ROM_SHA1), \
+                patch.dict(sys.modules, {"factory_review": SimpleNamespace(pin_preinstalled_objdiff=helper)}), \
                 patch.object(gate.work_batch, "capture", return_value=snapshot(self.base)):
             gate.build_stage(Recorder(), stage, self.tools, "baseline")
+        helper.assert_called_once_with(stage, TOOL_HASH)
         self.assertEqual(calls[0][0][:4], ["fixture-python", "tools/configure.py", "usa", "--compiler"])
         self.assertEqual(calls[1][0], ["fixture-ninja", "-j", "2", "rom", "check", "report", "sha1"])
         self.assertEqual(calls[0][2]["env"]["PYTHONDONTWRITEBYTECODE"], "1")
         wrong = snapshot(self.base)
         wrong["dirty"] = True
-        with patch.object(gate.work_batch, "capture", return_value=wrong):
+        with patch.object(gate.work_batch, "capture", return_value=wrong), \
+                patch.dict(sys.modules, {"factory_review": SimpleNamespace(pin_preinstalled_objdiff=Mock())}):
             with self.assertRaises(ValueError):
                 gate.build_stage(Recorder(), stage, self.tools, "candidate")
+
+    def test_setup_and_baseline_failures_block_infrastructure_not_source_repair(self):
+        (self.root / "extract/baserom_dqix_usa.nds").unlink()
+        result = self.integrate()
+        self.assertEqual(result["status"], "infrastructure_blocked")
+        self.assertEqual(result["phase"], "stage_setup")
+        self.write("extract/baserom_dqix_usa.nds", ROM)
+        def fail_baseline(runner, stage, tools, label):
+            raise ValueError("fixture baseline build failure")
+        result = self.integrate(fail_baseline)
+        self.assertEqual(result["status"], "infrastructure_blocked")
+        self.assertEqual(result["phase"], "baseline")
+        self.assertEqual(git(self.root, "rev-parse", "HEAD"), self.base)
+
+    def test_candidate_tool_error_blocks_infrastructure(self):
+        for error in (gate.InfrastructureError("fixture pinned objdiff hash changed"), OSError("fixture disk unavailable")):
+            def fail_tool(runner, stage, tools, label):
+                if label == "candidate":
+                    raise error
+                return self.build(runner, stage, tools, label)
+            with self.subTest(error=error):
+                result = self.integrate(fail_tool)
+                self.assertEqual(result["status"], "infrastructure_blocked")
+                self.assertEqual(result["phase"], "candidate")
+                self.assertEqual(git(self.root, "rev-parse", "HEAD"), self.base)
+
+    def test_objdiff_helper_failure_never_launches_ninja(self):
+        calls = []
+        class Recorder:
+            def run(self, argv, cwd, **kwargs):
+                calls.append(argv)
+        helper = Mock(side_effect=ValueError("fixture pinned tool mismatch"))
+        with patch.dict(sys.modules, {"factory_review": SimpleNamespace(pin_preinstalled_objdiff=helper)}):
+            with self.assertRaisesRegex(gate.InfrastructureError, "pinned objdiff setup"):
+                gate.build_stage(Recorder(), self.root, self.tools, "candidate")
+        self.assertEqual(len(calls), 1)
 
 
 if __name__ == "__main__":

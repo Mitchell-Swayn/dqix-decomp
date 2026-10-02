@@ -21,6 +21,14 @@ HASH = re.compile(r"[0-9a-f]{40}")
 IDENTITY = ["-c", "user.name=Codex", "-c", "user.email=codex@openai.com", "-c", "core.hooksPath=", "-c", "core.editor=true"]
 
 
+class InfrastructureError(ValueError):
+    """Operator/pipeline state failure; candidate source repair is not warranted."""
+
+
+class CandidateConflict(ValueError):
+    """Explicit cherry-pick left unmerged source paths for repair."""
+
+
 def utc():
     return datetime.now(timezone.utc).isoformat()
 
@@ -63,8 +71,11 @@ class Runner:
         prefix = self.directory / f"{self.number:04d}"
         started = time.monotonic()
         with prefix.with_suffix(".stdout.log").open("wb") as out, prefix.with_suffix(".stderr.log").open("wb") as err:
-            result = subprocess.run(command, cwd=cwd, stdout=out, stderr=err, stdin=subprocess.DEVNULL,
-                                    shell=False, env=env, check=False)
+            try:
+                result = subprocess.run(command, cwd=cwd, stdout=out, stderr=err, stdin=subprocess.DEVNULL,
+                                        shell=False, env=env, check=False)
+            except OSError as error:
+                raise InfrastructureError(f"cannot launch local build/Git tool: {error}") from error
         self.commands.append({"argv": command, "cwd": str(cwd), "exit_code": result.returncode,
                               "elapsed_seconds": round(time.monotonic() - started, 6), "log_prefix": str(prefix)})
         if check and result.returncode:
@@ -205,27 +216,40 @@ def build_stage(runner, stage, tools, label):
     # Relative CLI path avoids unquoted paths with spaces in existing extraction rules.
     runner.run([tools["python"], "tools/configure.py", "usa", "--compiler", tools["compiler"],
                 "--dsd", "tools/../dsd" + suffix], stage, env=env)
+    try:
+        from factory_review import pin_preinstalled_objdiff
+        pin_preinstalled_objdiff(stage, tools["hashes"]["objdiff-cli" + suffix])
+    except Exception as error:
+        raise InfrastructureError(f"pinned objdiff setup failed: {error}") from error
     runner.run([tools["ninja"], "-j", "2", "rom", "check", "report", "sha1"], stage, env=env)
-    snapshot = work_batch.capture(stage)
-    if snapshot["dirty"] or snapshot["rom_sha1"] != USA_SHA1:
-        raise ValueError(f"{label} snapshot must be clean with exact USA ROM SHA1")
+    try:
+        snapshot = work_batch.capture(stage)
+    except Exception as error:
+        raise InfrastructureError(f"{label} acceptance snapshot unavailable: {error}") from error
+    if snapshot["dirty"]:
+        raise InfrastructureError(f"{label} stage changed during acceptance; snapshot must be clean")
+    if snapshot["rom_sha1"] != USA_SHA1:
+        raise ValueError(f"{label} ROM SHA1 does not match exact USA acceptance")
     return snapshot
 
 
 def integrate(root, submission, review, workspace):
     root, workspace = Path(root).resolve(), Path(workspace).resolve()
     started = time.monotonic()
-    result = {"schema_version": 1, "status": "needs_changes", "accepted": False, "started_utc": utc(),
+    result = {"schema_version": 1, "status": "infrastructure_blocked", "accepted": False, "started_utc": utc(),
               "submission": submission, "review": review, "runtime_tests": "not_run"}
     directory = root / "build/factory/integrations" / uuid.uuid4().hex
     directory.mkdir(parents=True, exist_ok=False)
     runner = Runner(directory)
     result["manifest_path"] = str(directory / "manifest.json")
+    phase = "preflight"
     try:
         with IntegrationLock(root):
             require_clean(runner, root)
             result["main_before"] = runner.output(root, "rev-parse", "HEAD")
+            phase = "submission"
             result["changed_paths"] = validate_submission(runner, root, submission, review)
+            phase = "stage_setup"
             workspace.mkdir(parents=True, exist_ok=True)
             stage = workspace / ("integration-" + uuid.uuid4().hex)
             result["stage"] = str(stage)
@@ -233,16 +257,26 @@ def integrate(root, submission, review, workspace):
             tools = prepare_stage(root, stage)
             result["tools"] = tools["hashes"]
             result["input_rom_sha1"] = USA_SHA1
+            phase = "baseline"
             result["baseline"] = build_stage(runner, stage, tools, "baseline")
             if result["baseline"]["revision"] != result["main_before"]:
                 raise ValueError("baseline snapshot revision changed")
+            phase = "apply_commits"
             for commit in submission["commits"]:
-                runner.git(stage, "cherry-pick", "--", commit)
+                try:
+                    runner.git(stage, "cherry-pick", "--", commit)
+                except Exception as error:
+                    if runner.git(stage, "ls-files", "--unmerged", "-z")[1]:
+                        raise CandidateConflict(f"cherry-pick source conflict: {error}") from error
+                    raise InfrastructureError(f"cherry-pick failed without source conflicts: {error}") from error
             result["stage_revision"] = runner.output(stage, "rev-parse", "HEAD")
+            phase = "candidate"
             result["candidate"] = build_stage(runner, stage, tools, "candidate")
             if result["candidate"]["revision"] != result["stage_revision"]:
-                raise ValueError("candidate snapshot does not describe verified stage HEAD")
+                raise InfrastructureError("candidate snapshot does not describe verified stage HEAD")
+            phase = "coverage"
             result["delta"] = work_batch.delta(result["baseline"], result["candidate"])
+            phase = "final_integrity"
             if tools_state(root)["hashes"] != tools["hashes"]:
                 raise ValueError("shared tool hashes changed during acceptance")
             if digest(root / "extract/baserom_dqix_usa.nds", "sha1") != USA_SHA1:
@@ -261,6 +295,7 @@ def integrate(root, submission, review, workspace):
                 raise ValueError("main HEAD changed during staging; do not advance stale acceptance")
             if runner.output(stage, "rev-parse", "HEAD") != result["stage_revision"]:
                 raise ValueError("stage HEAD changed after acceptance")
+            phase = "advance"
             runner.git(root, "merge", "--ff-only", "--no-edit", result["stage_revision"])
             result["main_after"] = runner.output(root, "rev-parse", "HEAD")
             if result["main_after"] != result["stage_revision"]:
@@ -272,7 +307,16 @@ def integrate(root, submission, review, workspace):
                           acceptance="independent full ROM/module/symbol/report/SHA1 checks; strict coverage delta; reviewed source tip")
     except Exception as error:
         result["error"] = str(error)
+        if isinstance(error, InfrastructureError):
+            result["status"] = "infrastructure_blocked"
+        elif isinstance(error, CandidateConflict) or (phase in ("candidate", "coverage") and isinstance(error, ValueError)):
+            result["status"] = "needs_changes"
+        elif phase == "submission":
+            result["status"] = "rejected"
+        else:
+            result["status"] = "infrastructure_blocked"
     finally:
+        result["phase"] = phase
         result["finished_utc"] = utc()
         result["elapsed_seconds"] = round(time.monotonic() - started, 6)
         result["commands"] = runner.commands
