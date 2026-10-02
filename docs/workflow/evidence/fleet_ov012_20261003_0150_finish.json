@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "fleet_ov012_20261003_0150",
+  "snapshot": {
+    "utc": "2026-10-02T15:51:22.460880+00:00",
+    "revision": "0ade2646fe7e27eb53d084a9e857334d18b3b47f",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 219104,
+      "matched_data": 66800,
+      "matched_functions": 1655
+    },
+    "arm7": {
+      "source_functions": 276,
+      "source_code_bytes": 25172,
+      "source_literal_pool_bytes": 1756,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 4904,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 139496,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "bbb03777980762f70574ddc17b732568bd2c1e75e18e2b8aa90640425175e697",
+    "arm7_report_sha256": "acd4a1789d477d2c063422a9ad0b36db4b75f23e0423656eb72956965a08370c",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Four pattern helpers and delimiter table exact after two variants each; full ninja -j2 rom check report sha1 passed; 284 instruction bytes plus 4 literal bytes; 75 rodata bytes plus 1 alignment byte; no runtime tests or token measurement; accepted tree uncommitted at snapshot",
+  "attempts": 6,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 288,
+      "matched_data": 76,
+      "matched_functions": 4
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 478.216782
+}
