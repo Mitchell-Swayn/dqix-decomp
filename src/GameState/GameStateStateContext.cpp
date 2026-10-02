@@ -20,10 +20,9 @@ extern "C" void* func_020100f8(GameState* state)
 
 extern "C" void func_02010124(GameState* state)
 {
-    char* bytes = (char*)state;
-    *(unsigned int*)(bytes + 0x3b4) = 0x21;
-    *(unsigned int*)(bytes + 0x3b8) = 0x21;
-    *(unsigned short*)(bytes + 0x3bc) = 0x1000;
-    *(unsigned int*)(bytes + 0x3c4) = 2;
-    *(unsigned int*)(bytes + 0x3c0) = 0x2000;
+    state->effectiveDeltaTimeMilliseconds_ = 0x21;
+    state->trueDeltaTimeMilliseconds_ = 0x21;
+    state->gameSpeed_ = 0x1000;
+    state->numTicks_ = 2;
+    state->animationDeltaTime_ = 0x2000;
 }
