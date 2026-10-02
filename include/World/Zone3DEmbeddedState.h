@@ -63,6 +63,7 @@ struct ZoneSerializedRecord
 
 struct ZoneState2754
 {
+    // Also used independently as a 20-byte stack temporary by the builders.
     struct Data
     {
         unsigned short primaryCount;
@@ -76,21 +77,25 @@ struct ZoneState2754
         unsigned int relocated : 1;
         char* records;
         void* payload;
+        bool RelocateSecondaryRecordLinks();
+        bool ApplySpecialRecordFlags();
+        bool LoadSerializedData(void* file, unsigned int size);
+        bool AttachSerializedData(void* file, bool* alreadyRelocated, bool (*callback)(Data*, void*));
+        void* FindPrimaryRecord(int key, int (*getKey)(const void*));
+        unsigned int GetRecordStorageSize();
+        bool VisitPrimaryRecords(bool (*callback)(Data*, void*));
     } data;
     unsigned char unknown_14;
     char padding[3];
     ZoneState2754();
-    bool RelocateSecondaryRecordLinks();
-    bool ApplySpecialRecordFlags();
-    bool LoadSerializedData(void* file, unsigned int size);
-    bool AttachSerializedData(void* file, bool* alreadyRelocated, bool (*callback)(ZoneState2754*, void*));
-    void* FindPrimaryRecord(int key, int (*getKey)(const void*));
-    unsigned int GetRecordStorageSize();
-    bool VisitPrimaryRecords(bool (*callback)(ZoneState2754*, void*));
+    bool BuildForKey(SafeAllocator* allocator, void* file, unsigned int size, short key);
+    bool BuildForKeys(SafeAllocator* allocator, void* file, unsigned int size, const short* keys, unsigned short count);
+    bool BuildAlternateForKey(SafeAllocator* allocator, void* file, unsigned int size, short key);
+    bool BuildAlternateForKeys(SafeAllocator* allocator, void* file, unsigned int size, const short* keys, short count);
     void Clear();
     void Reset();
 };
 
 int GetSerializedRecordKey(const void* record);
 
-bool RelocateSerializedRecordPayload(ZoneState2754* state, void* record);
+bool RelocateSerializedRecordPayload(ZoneState2754::Data* state, void* record);

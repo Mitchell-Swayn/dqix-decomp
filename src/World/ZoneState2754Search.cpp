@@ -1,10 +1,10 @@
 #include "World/Zone3DEmbeddedState.h"
 
-void* ZoneState2754::FindPrimaryRecord(int key, int (*getKey)(const void*))
+void* ZoneState2754::Data::FindPrimaryRecord(int key, int (*getKey)(const void*))
 {
-    char* records = data.records;
+    char* records = this->records;
     if (!records || !getKey) return 0;
-    int count = data.primaryCount;
+    int count = primaryCount;
     if (count == 0) return 0;
     int low;
     int high = count - 1;

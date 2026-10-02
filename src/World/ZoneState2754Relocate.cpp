@@ -2,7 +2,7 @@
 
 extern const short gSpecialSerializedRecordKeys[2] = { 22125, 22126 };
 
-bool RelocateSerializedRecordPayload(ZoneState2754* state, void* rawRecord)
+bool RelocateSerializedRecordPayload(ZoneState2754::Data* state, void* rawRecord)
 {
     ZoneSerializedRecord* record = (ZoneSerializedRecord*)rawRecord;
     bool missing;
@@ -10,17 +10,17 @@ bool RelocateSerializedRecordPayload(ZoneState2754* state, void* rawRecord)
     // Preserve the target compiler's pointer-offset conversion idiom here.
     unsigned int offset = (char*)record->payload.pointer - (char*)0;
     missing = true;
-    if (offset != (unsigned int)-1 && state->data.payload) missing = false;
-    record->payload.pointer = missing ? 0 : (char*)state->data.payload + offset;
+    if (offset != (unsigned int)-1 && state->payload) missing = false;
+    record->payload.pointer = missing ? 0 : (char*)state->payload + offset;
     return true;
 }
 
-bool ZoneState2754::RelocateSecondaryRecordLinks()
+bool ZoneState2754::Data::RelocateSecondaryRecordLinks()
 {
     ZoneSerializedRecord* secondary;
     ZoneSerializedRecord* record;
-    int count = data.primaryCount;
-    record = (ZoneSerializedRecord*)data.records;
+    int count = primaryCount;
+    record = (ZoneSerializedRecord*)records;
     secondary = record + count;
     for (int i = 0; i < count; ++i, ++record)
     {
@@ -33,7 +33,7 @@ bool ZoneState2754::RelocateSecondaryRecordLinks()
     return true;
 }
 
-bool ZoneState2754::ApplySpecialRecordFlags()
+bool ZoneState2754::Data::ApplySpecialRecordFlags()
 {
     const short* key = gSpecialSerializedRecordKeys;
     for (int i = 0; i < 2; ++i, ++key)
