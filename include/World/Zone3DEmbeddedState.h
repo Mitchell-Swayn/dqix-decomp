@@ -1,5 +1,7 @@
 #pragma once
 
+#include "World/Object3D.h"
+
 class SafeAllocator;
 
 // Partial embedded types. Names retain offsets until their gameplay purposes
@@ -111,7 +113,7 @@ struct ZoneState2664
 {
     int unknown_0;
     int unknown_4;
-    char unknown_8[0xb4 - 8];
+    Object3D object;
     unsigned char unknown_b4;
     unsigned char unknown_b5;
     unsigned char unknown_b6;
@@ -121,6 +123,9 @@ struct ZoneState2664
     unsigned short unknown_ba;
     signed char unknown_bc;
     char unknown_bd[3];
+    void DrawAtGrottoEntrance();
+    void UpdateEntranceObject();
+    bool ShowEntranceObject();
     ZoneState2664() { Reset(); }
     ~ZoneState2664() { Reset(); }
     void Reset();

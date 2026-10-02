@@ -18,7 +18,7 @@ struct GrottoStruct
     unsigned char unknown_8, unknown_9;
     char unk_a[2];
 
-    unsigned short entranceZoneId;
+    unsigned int entranceZoneId;
     int entranceX, entranceY, entranceZ; // centre of the grotto entrance model
     char activeMapImageName[16]; // e.g. tmap_005
 #if defined(usa)
