@@ -2503,6 +2503,23 @@
       }
     },
     {
+      "name": "PowerStateInit",
+      "source": "config/usa/arm7/src/PowerStateInit.c",
+      "autoload": "wram",
+      "runtime_address": 58743504,
+      "payload_offset": 56556,
+      "size": 60,
+      "code_bytes": 52,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_InitializePowerState",
+      "symbols": {
+        "ARM7_InitializePowerState": 58743504
+      },
+      "externals": {
+        "ARM7_PowerState": 58767212
+      }
+    },
+    {
       "name": "PowerTask",
       "source": "config/usa/arm7/src/PowerTask.c",
       "autoload": "wram",
