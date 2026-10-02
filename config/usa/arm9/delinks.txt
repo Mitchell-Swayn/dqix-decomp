@@ -1392,3 +1392,11 @@ src/World/WorldObjectInstanceListInstance.cpp:
 src/Graphics/NSBXX/AnimationCallbacks.cpp:
     complete
     .data start:0x020f1c6c end:0x020f1c90
+
+src/World/WorldScriptOpcode100.cpp:
+    complete
+    .text start:0x0208d540 end:0x0208d548
+
+src/World/WorldScriptOpcode101.cpp:
+    complete
+    .text start:0x0208d548 end:0x0208d550
