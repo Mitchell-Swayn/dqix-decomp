@@ -85,6 +85,10 @@ The entry loop reachable from startup and its two call veneers are bounded in
 partitions independently of source ownership; their totals are not added to
 source-coverage counters.
 
+The two Thumb BIOS-call stubs reached through those veneers are bounded in
+[this stub inventory](../../../docs/workflow/arm7-bios-stubs-inventory.md);
+`tools/audit_arm7_bios_stubs.py` reproduces their byte-reference audit.
+
 ## Source units and pipeline
 
 `src/BootFlags.c` reconstructs runtime range `[0x037f84b8, 0x037f84f0)` from

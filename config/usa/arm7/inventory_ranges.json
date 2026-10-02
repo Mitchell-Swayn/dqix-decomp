@@ -2,7 +2,7 @@
   "schema_version": 1,
   "source_rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
   "payload_sha1": "a662d5c6a78e990244299926cf6862ce910a475d",
-  "coverage_note": "Only the listed confirmed scopes are partitioned. Byte-class totals are inventory evidence only: never add them to source-coverage counters. Reconstructed source units may overlap these ranges without duplicating payload bytes; all other ARM7 bytes remain unclassified by this file.",
+  "coverage_note": "Only the listed confirmed scopes are partitioned. Byte-class totals are inventory evidence only: never add them to source-coverage counters. Reconstructed source units may overlap these ranges without duplicating payload bytes; all other ARM7 bytes remain unclassified by this file. Exact BIOS-call stubs remain independent range facts, not source reconstruction.",
   "scopes": [
     {
       "name": "startup",
@@ -113,6 +113,46 @@
           "size": "0x4",
           "classification": "literal_pool",
           "evidence": "Word at 0x037f84b4 is loaded by veneer at 0x037f84ac."
+        }
+      ]
+    },
+    {
+      "name": "wram_bios_swi_6_stub",
+      "autoload": "wram",
+      "payload_offset": "0xc0da",
+      "runtime_address": "0x03803ebe",
+      "size": "0x4",
+      "totals": {
+        "instruction": 4,
+        "literal_pool": 0,
+        "initialized_data": 0
+      },
+      "ranges": [
+        {
+          "payload_offset": "0xc0da",
+          "size": "0x4",
+          "classification": "instruction",
+          "evidence": "Veneer at 0x037f84ac loads 0x03803ebf (Thumb target 0x03803ebe); exact Thumb body is svc #6; bx lr."
+        }
+      ]
+    },
+    {
+      "name": "wram_bios_swi_14_stub",
+      "autoload": "wram",
+      "payload_offset": "0xc10c",
+      "runtime_address": "0x03803ef0",
+      "size": "0x4",
+      "totals": {
+        "instruction": 4,
+        "literal_pool": 0,
+        "initialized_data": 0
+      },
+      "ranges": [
+        {
+          "payload_offset": "0xc10c",
+          "size": "0x4",
+          "classification": "instruction",
+          "evidence": "Veneer at 0x037f84a0 loads 0x03803ef1 (Thumb target 0x03803ef0); exact Thumb body is svc #14; bx lr."
         }
       ]
     }
