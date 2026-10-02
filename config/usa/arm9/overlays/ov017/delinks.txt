@@ -9,3 +9,7 @@ src/GameState/GameStatePeerPackets.cpp:
 	complete
 	.text start:0x021d15b0 end:0x021d1810
 
+src/GameState/GameStatePeerSignals.cpp:
+	complete
+	.text start:0x021d1014 end:0x021d1118
+
