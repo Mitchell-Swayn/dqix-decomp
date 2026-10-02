@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "baseline_revision": "4e10708",
+  "candidate_start_utc": "2026-10-02T13:30:45.396134+00:00",
+  "verification_finish_utc": "2026-10-02T13:41:58.525660+00:00",
+  "elapsed_seconds": 673.129526,
+  "timing_limit": "Continuation after baseline inspection; main full-ROM work_batch snapshots are root-owned.",
+  "attempts": {
+    "SpiInitialize": 2,
+    "SpiServiceToken": 1,
+    "SpiEnqueue": 2
+  },
+  "enqueue_total_variants": 5,
+  "delta": {
+    "source_functions": 3,
+    "source_code_bytes": 424,
+    "source_literal_pool_bytes": 44,
+    "binary_fallback_bytes": -468,
+    "source_data_bytes": 0,
+    "source_bss_bytes": 1184,
+    "reviewed_assembly_bytes": 0
+  },
+  "arm7_payload_sha1": "a662d5c6a78e990244299926cf6862ce910a475d",
+  "tests_passed": 28,
+  "full_rom_acceptance": "pending integrator",
+  "token_usage": null
+}

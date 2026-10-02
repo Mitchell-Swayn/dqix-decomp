@@ -2762,6 +2762,65 @@
         "ARM7_EnqueueSpiTask": 58740112,
         "ARM7_SendPowerReply": 58744236
       }
+    },
+    {
+      "name": "SpiInitialize",
+      "source": "config/usa/arm7/src/SpiInitialize.c",
+      "autoload": "wram",
+      "runtime_address": 58739336,
+      "payload_offset": 52388,
+      "size": 280,
+      "code_bytes": 252,
+      "literal_pool_bytes": 28,
+      "entry": "ARM7_InitializeSpiServices",
+      "symbols": {
+        "ARM7_InitializeSpiServices": 58739336
+      },
+      "externals": {
+        "ARM7_SpiTaskQueue": 58766496,
+        "ARM7_InitializeTouchState": 58740580,
+        "ARM7_InitializeSpiExternalState": 41898692,
+        "ARM7_InitializeMicrophoneState": 58746384,
+        "ARM7_InitializePowerState": 58743504,
+        "ARM7_StartIPC": 58714412,
+        "ARM7_SetIpcHandler": 58714668,
+        "ARM7_SpiIpcCallback": 58740476,
+        "ARM7_InitializeMessageQueue": 58706652,
+        "ARM7_FillBytes": 58713832,
+        "ARM7_CreateThread": 58704992,
+        "ARM7_MarkThreadReady": 58705784,
+        "ARM7_SpiWorkerMain": 58740368
+      },
+      "bss": {
+        "runtime_address": 58765808,
+        "size": 1184,
+        "symbols": {
+          "ARM7_SpiServiceState": 58765808
+        }
+      }
+    },
+    {
+      "name": "SpiServiceToken",
+      "source": "config/usa/arm7/src/SpiServiceToken.c",
+      "autoload": "wram",
+      "runtime_address": 58739616,
+      "payload_offset": 52668,
+      "size": 188,
+      "code_bytes": 172,
+      "literal_pool_bytes": 16,
+      "entry": "ARM7_AcquireSpiServiceToken",
+      "symbols": {
+        "ARM7_AcquireSpiServiceToken": 58739616,
+        "ARM7_ReleaseSpiServiceToken": 58739708
+      },
+      "externals": {
+        "ARM7_SpiServiceState": 58765808,
+        "ARM7_SpiServiceWaiters": 58766980,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_BlockCurrentThread": 58705564,
+        "ARM7_UnblockThreads": 58705648
+      }
     }
   ]
 }

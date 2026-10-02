@@ -4,18 +4,18 @@
 extern void ARM7_UnblockThreads(BlockedContextList*);
 int ARM7_IsSpiServiceAvailable(int unused)
 {
- return ARM7_SpiServiceState.busy==0;
+ return ARM7_SpiServiceState.body.busy==0;
 }
 void ARM7_AcquireSpiService(int owner)
 {
- ARM7_SpiServiceState.busy=1;
- ARM7_SpiServiceState.owner=owner;
+ ARM7_SpiServiceState.body.busy=1;
+ ARM7_SpiServiceState.body.owner=owner;
 }
 void ARM7_ReleaseSpiService(int owner)
 {
- if(ARM7_SpiServiceState.owner==owner) {
-  ARM7_SpiServiceState.owner=5;
-  ARM7_SpiServiceState.busy=0;
+ if(ARM7_SpiServiceState.body.owner==owner) {
+  ARM7_SpiServiceState.body.owner=5;
+  ARM7_SpiServiceState.body.busy=0;
   ARM7_UnblockThreads(&ARM7_SpiServiceWaiters);
  }
 }

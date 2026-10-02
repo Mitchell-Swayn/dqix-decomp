@@ -4,7 +4,7 @@ The cartridge ARM7 program is a required executable component, distinct from the
 console ARM7 BIOS. The independent source build currently reconstructs **270 C
 functions: 23,924 instruction bytes plus 1,656 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
-1,332 bytes of standalone initialized data and 3,512 bytes of BSS now have source
+1,332 bytes of standalone initialized data and 4,696 bytes of BSS now have source
 definitions. The other 140,844 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
@@ -21,7 +21,7 @@ starting point; `source_units.json` describes the active source replacements.
 | ARM7 overlay table size | 0 |
 | Reconstructed C instructions / compiler literal pools | 23,924 / 1,656 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 1,332 / 120 bytes |
-| Reconstructed BSS / total autoload BSS | 3,512 / 22,744 bytes |
+| Reconstructed BSS / total autoload BSS | 4,696 / 22,744 bytes |
 | Binary fallback | 140,844 bytes |
 | Total function count / complete code-data partition | Unknown |
 

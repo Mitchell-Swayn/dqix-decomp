@@ -3,8 +3,7 @@
 /* Bounded circular message queue with independent send/receive wait lists.
  * Flag bit zero selects blocking behavior. All mutations occur under IRQ
  * protection; blocked callers are resumed by the opposite operation. */
-typedef struct { void *first,*last; } ThreadQueue;
-typedef struct { ThreadQueue sendWaiters,receiveWaiters; void **messages; int capacity,head,count; } MessageQueue;
+#include "MessageQueue.h"
 extern int ARM7_DisableIRQInterrupts(void);
 extern int ARM7_SetIRQInterruptState(int);
 extern void ARM7_BlockCurrentThread(ThreadQueue*);
