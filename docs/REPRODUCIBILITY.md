@@ -153,6 +153,12 @@ The verbose log remains under ignored `build/verification/8ffd3d644ad2-ozjtzfp7/
 Later combined source batches passed full incremental acceptance; this clean-build
 claim applies specifically to the recorded revision.
 
+The module-local alias extension at `137a03140c21` also passed a fresh source
+archive, independent extraction, all objects/module/symbol checks and exact ROM
+SHA-1 using the pinned tool hashes. See [its manifest](verification/sol61-module-alias-clean-build.json).
+The main tool suite ran 188 tests: 187 passed, one skipped. Later source batches
+received full incremental acceptance; the fresh-build claim is revision-specific.
+
 ## Runtime verification
 
 The clean-build manifests themselves do not run gameplay. Subsequent emulator

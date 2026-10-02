@@ -24,7 +24,7 @@
       "status": "active",
       "owner": "sol61_runtime",
       "worktree": "../DQIX-Decomp-luna-runtime",
-      "scope": "Three further elapsed-time helpers integrated (+132 code bytes); next bounded GameState family active.",
+      "scope": "Accepted native identity/status family (+10 functions,588 code bytes), Grotto transfers and real layouts; next identity tracking/update family active.",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1",
       "model": "gpt-6.1-sol",
@@ -44,7 +44,7 @@
       "status": "active",
       "owner": "sol61_arm7",
       "worktree": "../DQIX-Decomp-arm7-power-events",
-      "scope": "Powerinitializer+sharedtypedstate accepted; next25-minute sourcefamily active.",
+      "scope": "SPI initialization and token helpers plus touch initialization/IPC accepted; TouchTask dependency active. SPI enqueue at5 variants.",
       "attempt_limit_per_function": 10,
       "acceptance": "exact full ARM7 payload and pipeline tests; root full ROM integration",
       "model": "gpt-6.1-sol",
@@ -56,7 +56,7 @@
       "status": "active",
       "owner": "sol61_world",
       "worktree": "../DQIX-Decomp-luna-vram",
-      "scope": "Four array-list helpers integrated and full checks passed (+4 functions, +292 code bytes); next bounded World family active.",
+      "scope": "Persistent placement initializer/reset accepted (+2 functions,616 code bytes,96 initialized data); actual GameState placement records. ScriptArrayList family active.",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1",
       "model": "gpt-6.1-sol",
@@ -82,7 +82,7 @@
       "id": "arm7-inventory",
       "status": "active",
       "owner": "sol61_inventory",
-      "scope": "Startup, initial autoload entry, two Thumb BIOS stubs and startup-installed VBlank callback partitioned; whole ARM7 denominator remains unknown.",
+      "scope": "IRQ registration accepted; shared callback/aggregate correction and startup hook under review. BusLockInit capped at10 variants; full denominator unknown.",
       "next_action": "Reconstruct the proven VBlank callback if contracts support C; otherwise batch adjacent evidence-backed inventory.",
       "worktree": "../DQIX-Decomp-luna-arm7-inventory-boundary",
       "model": "gpt-6.1-sol",
@@ -190,7 +190,7 @@
       "id": "runtime-library-next",
       "status": "active",
       "owner": "sol61_library",
-      "scope": "Locale+decimaltext+exceptioncallbackdata accepted; failedexceptionwrapperdocumented; newCRTfamilyactive.",
+      "scope": "atan2 and public math entries accepted (+3 functions,1012 report code bytes,520 initialized data). Outer pi/2 reducer capped10, kernel dependency active.",
       "worktree": "../DQIX-Decomp-luna-library",
       "model": "gpt-6.1-sol",
       "reasoning_effort": "high",
@@ -200,7 +200,7 @@
       "id": "arm9-data-triage",
       "status": "active",
       "owner": "sol61_data",
-      "scope": "VRAM maps and mathematical sine/cosine table proposed; review requires resolving split array definitions and interior symbol aliases before acceptance.",
+      "scope": "Accepted VRAM mapping, staging allocations, regional sets and task queue source. Module-local aliases passed fresh build137a03140c21; queue4096B receives no matched-data credit due16B alignment difference.",
       "worktree": "../DQIX-Decomp-luna-data-audit",
       "model": "gpt-6.1-sol",
       "reasoning_effort": "high",
@@ -297,7 +297,7 @@
       "status": "integrated",
       "owner": null,
       "worktree": "../DQIX-Decomp-luna-library",
-      "scope": "ASCII decimal rounding plus binary64 powers and typed formatter text; local +292code bytes/+128initialized data bytes/+1function; integration required",
+      "scope": "ASCII decimal rounding plus binary64 powers and typed formatter text; local +292code bytes/+128initialized data bytes/+1function; full integrated acceptance passed",
       "commits": [
         "70d18b4",
         "a30dca9",
@@ -326,6 +326,48 @@
       "deferred": "Scanline cutoff allocation at020ee694 has24 adjacent unresolved bytes; extracting its known4-byte prefix drops that tail and fails layout checks. Original ownership restored; docs/VRAM_MAPPING_STATE.md records evidence.",
       "token_usage": null,
       "main_acceptance": "ROM, all configured modules/symbols and SHA1 passed; pilot-27 evidence records combined deltas."
+    },
+    {
+      "id": "sol61-grotto-transfers",
+      "status": "integrated",
+      "owner": null,
+      "scope": "20 functions,1248 code bytes; typed metadata/collection layouts and preserved original stack-record behavior.",
+      "acceptance": "Full ROM/module/symbol/SHA1 passed; pilot-28 evidence."
+    },
+    {
+      "id": "sol61-world-persistent",
+      "status": "integrated",
+      "owner": null,
+      "scope": "2 functions,616 code bytes,96 initialized data; actual GameState placement array.",
+      "acceptance": "Full ROM/module/symbol/SHA1 passed; pilot-28 evidence."
+    },
+    {
+      "id": "sol61-math-atan2",
+      "status": "integrated",
+      "owner": null,
+      "scope": "3 functions,1012 report code bytes,520 initialized data; pinned MWCC word-punning limitation documented.",
+      "acceptance": "Full ROM/module/symbol/SHA1 passed; pilot-28 evidence."
+    },
+    {
+      "id": "sol61-native-identity",
+      "status": "integrated",
+      "owner": null,
+      "scope": "10 functions,588 code bytes; label string remains fallback with alignment evidence.",
+      "acceptance": "Full ROM/module/symbol/SHA1 passed; pilot-28 evidence."
+    },
+    {
+      "id": "sol61-arm7-spi-touch",
+      "status": "integrated",
+      "owner": null,
+      "scope": "5 C functions,1104 instructions,88 literal bytes,1392 BSS; original payload exact.",
+      "acceptance": "Full ROM/module/symbol/SHA1 passed; pilot-28 evidence."
+    },
+    {
+      "id": "sol61-itcm-staging",
+      "status": "integrated",
+      "owner": null,
+      "scope": "888 matched-data bytes across allocations/regional sets; queue4096 source BSS separately uncredited,16 linker alignment bytes; fresh archive passed.",
+      "acceptance": "Full ROM/module/symbol/SHA1 passed; pilot-28 evidence."
     }
   ]
 }
