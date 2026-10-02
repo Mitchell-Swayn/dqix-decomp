@@ -896,9 +896,13 @@ src/System/RuntimeUnwindHeader.cpp:
     complete
     .text start:0x0200f2bc end:0x0200f2ec
 
+src/System/RuntimeExceptionRecord.cpp:
+    complete
+    .text start:0x0200ec44 end:0x0200eca0
+
 src/System/RuntimeExceptionCleanup.cpp:
     complete
-    .text start:0x0200edb4 end:0x0200edc8
+    .text start:0x0200ed8c end:0x0200edc8
 
 src/System/RuntimeInitialization.cpp:
     complete

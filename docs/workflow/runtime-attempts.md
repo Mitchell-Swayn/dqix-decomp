@@ -490,3 +490,48 @@ finalization caveat remains. Logs: `build/runtime-batch15d-acceptance.log`,
 unchanged. Seven instruction candidates including the two deferred functions;
 maximum three per function. Draft creation to these notes: 622.4 seconds.
 No gameplay validation.
+
+## Restored original exception-dispatcher branch (2026-10-02)
+
+Based on `165741b`. The pinned MWLD 2.0 build87 `-force_active` mechanism
+successfully retained the original exception dispatcher and passed an independent
+fresh source-archive build. That trial led to stronger original instruction
+evidence, so no new linker retention flag is included in the final change.
+
+At `0x0200f364`, original word `0xeafffe4d` is an unconditional ARM B, not BL.
+Its signed imm24 displacement plus PC+8 targets `0x0200eca0` exactly. It is the
+last instruction of the configured `func_0200f31c` range f31c..f368, following
+saved-register/context setup and `mov r0, sp`. The target is the independently
+configured dispatcher entry eca0..ed8c. Existing call relocation ef08->f31c
+reaches the caller, but the original relocs.txt omitted the f364->eca0 edge.
+The missing metadata was previously masked by a retained shared fallback section.
+The historical reason that this direct branch was not recorded is unknown;
+no claim about the original source/compiler or dsd inference is made.
+
+Add precisely `from:0x0200f364 kind:arm_branch to:0x0200eca0 module:main`.
+The pinned dsd binary supports arm_branch distinctly from arm_call. A bounded
+arm_call-kind probe preserved layout but changed the B to BL and failed the
+main-module check; it was replaced by the correct branch kind. The correct edge
+preserves the original opcode and natural linker reachability without dummy
+references, byte patches, altered comparison rules, target-object modifications
+or a new force-active flag. Dispatcher and context setup remain fallback and
+receive no source credit. The dispatcher's actual call graph reaches the
+previously discarded da70..ed8c and f2bc..f2ec code. e828 is the original
+stack epilogue immediately following df80, not a new independent C body.
+
+The two previously exact sources are restored: exception-record construction
+ec44 and destructor callback ed8c add 132 instruction bytes and two functions,
+no data/BSS. Earlier candidates are reused unchanged (three and one variants,
+respectively); no new instruction variants. Both units are 100% objdiff.
+Full module/symbol/ARM7 checks and guarded finalized USA SHA-1 pass. Valid final
+logs: `build/runtime-batch16c-acceptance.log`,
+`build/runtime-batch16c-finalize.log`. The older configure finalization caveat
+is unchanged. Local code 159,468 -> 159,600; functions 1,191 -> 1,193;
+data remains 26,852, denominators unchanged. Fresh source-archive verification
+of the final branch-only patch passed extraction, all 180 build/check steps and
+exact guarded USA ROM SHA-1. Evidence:
+`build/verification/eh-retention-wvungy8i/manifest.json` and `build.log`.
+No gameplay validation.
+
+Verified staged source tree: `42e447f2a40206c4cc62a1f057ba0936eb4b2742` (only these final notes
+were added afterward). Investigation-script creation to handoff notes: 452.7 seconds.
