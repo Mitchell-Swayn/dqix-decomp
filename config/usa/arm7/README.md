@@ -74,6 +74,11 @@ recovered linker section names. Initialized ranges contain both code and data.
 The first range crosses the WRAM boundary; the addresses above are the literal
 copy-loop destinations, without assuming a particular physical memory mapping.
 
+The startup block now has a bounded instruction/literal/parameter partition; see
+the [startup boundary inventory](../../../docs/workflow/arm7-startup-inventory.md).
+This evidence covers only the 540-byte startup block and does not change the
+unknown whole-payload denominator.
+
 ## Source units and pipeline
 
 `src/BootFlags.c` reconstructs runtime range `[0x037f84b8, 0x037f84f0)` from
