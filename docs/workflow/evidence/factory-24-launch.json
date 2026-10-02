@@ -1,0 +1,17 @@
+{
+  "recorded_utc": "2026-10-02T15:44:40.401343+00:00",
+  "fleet_id": "c2b7c9eb05c44538b6ff1bbd47ca1468",
+  "model": "gpt-6.1-sol",
+  "lanes": 24,
+  "counts": {
+    "pending": 0,
+    "running": 24,
+    "review": 0,
+    "blocked": 0
+  },
+  "baseline_revision": "0ade264",
+  "all_baselines_rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+  "max_unreviewed_batches": 2,
+  "coverage_gain": 0,
+  "note": "24 live PIDs and24 turn.started backend events checked at launch. This is orchestration validation, not source acceptance; logs local build/factory."
+}

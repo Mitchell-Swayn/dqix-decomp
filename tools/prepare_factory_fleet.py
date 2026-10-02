@@ -57,6 +57,8 @@ Read AGENTS.md, GOALS.md, docs/workflow/README.md, Decompiling.md and relevant c
 Do not spawn any subagents: the supervisor already runs24 independent workers.
 Baseline is configured and full ROM/module/symbol/SHA1 checked. .venv and compiler
 directories are shared read-only tooling; never modify them or install packages there.
+Every reconfigure must pass --compiler "{tree / 'tools/mwccarm'}" to avoid
+scheduling compiler downloads against shared tools.
 Original ROM is independent verified extract/baserom_dqix_usa.nds. Never hardlink ROMs.
 
 TASK: reconstruct one coherent bounded family of originally compiler-generated
@@ -110,7 +112,8 @@ def main():
             workers.append(future.result())
             print('Prepared ' + futures[future], flush=True)
     config = dict(backend=str(Path(args.backend).resolve()), model='gpt-6.1-sol',
-                  max_concurrent=24, repeat=True, workers=sorted(workers, key=lambda x: x['id']))
+                  max_concurrent=24, repeat=True, max_unreviewed_batches=2,
+                  workers=sorted(workers, key=lambda x: x['id']))
     output = root / 'build/factory/fleet-config.json'
     output.write_text(json.dumps(config, indent=2) + '\n', encoding='utf-8')
     print(output)

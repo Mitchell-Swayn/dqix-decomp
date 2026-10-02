@@ -21,7 +21,7 @@
     },
     {
       "id": "runtime-next",
-      "status": "active",
+      "status": "review",
       "owner": "sol61_runtime",
       "worktree": "../DQIX-Decomp-luna-runtime",
       "scope": "Accepted native identity/status family (+10 functions,588 code bytes), Grotto transfers and real layouts; next identity tracking/update family active.",
@@ -41,7 +41,7 @@
     },
     {
       "id": "arm7-sound-next",
-      "status": "active",
+      "status": "review",
       "owner": "sol61_arm7",
       "worktree": "../DQIX-Decomp-arm7-power-events",
       "scope": "SPI initialization and token helpers plus touch initialization/IPC accepted; TouchTask dependency active. SPI enqueue at5 variants.",
@@ -53,7 +53,7 @@
     },
     {
       "id": "world-next",
-      "status": "active",
+      "status": "review",
       "owner": "sol61_world",
       "worktree": "../DQIX-Decomp-luna-vram",
       "scope": "Persistent placement initializer/reset accepted (+2 functions,616 code bytes,96 initialized data); actual GameState placement records. ScriptArrayList family active.",
@@ -80,7 +80,7 @@
     },
     {
       "id": "arm7-inventory",
-      "status": "active",
+      "status": "review",
       "owner": "sol61_inventory",
       "scope": "IRQ registration accepted; shared callback/aggregate correction and startup hook under review. BusLockInit capped at10 variants; full denominator unknown.",
       "next_action": "Reconstruct the proven VBlank callback if contracts support C; otherwise batch adjacent evidence-backed inventory.",
@@ -188,7 +188,7 @@
     },
     {
       "id": "runtime-library-next",
-      "status": "active",
+      "status": "review",
       "owner": "sol61_library",
       "scope": "atan2 and public math entries accepted (+3 functions,1012 report code bytes,520 initialized data). Outer pi/2 reducer capped10, kernel dependency active.",
       "worktree": "../DQIX-Decomp-luna-library",
@@ -198,7 +198,7 @@
     },
     {
       "id": "arm9-data-triage",
-      "status": "active",
+      "status": "review",
       "owner": "sol61_data",
       "scope": "Accepted VRAM mapping, staging allocations, regional sets and task queue source. Module-local aliases passed fresh build137a03140c21; queue4096B receives no matched-data credit due16B alignment difference.",
       "worktree": "../DQIX-Decomp-luna-data-audit",
@@ -371,7 +371,7 @@
     },
     {
       "id": "fleet:fleet_ov000",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov000",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov000",
@@ -379,7 +379,7 @@
     },
     {
       "id": "fleet:fleet_ov001",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov001",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov001",
@@ -387,7 +387,7 @@
     },
     {
       "id": "fleet:fleet_ov002",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov002",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov002",
@@ -395,7 +395,7 @@
     },
     {
       "id": "fleet:fleet_ov003",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov003",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov003",
@@ -403,7 +403,7 @@
     },
     {
       "id": "fleet:fleet_ov004",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov004",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov004",
@@ -411,7 +411,7 @@
     },
     {
       "id": "fleet:fleet_ov005",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov005",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov005",
@@ -419,7 +419,7 @@
     },
     {
       "id": "fleet:fleet_ov006",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov006",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov006",
@@ -427,7 +427,7 @@
     },
     {
       "id": "fleet:fleet_ov007",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov007",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov007",
@@ -435,7 +435,7 @@
     },
     {
       "id": "fleet:fleet_ov009",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov009",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov009",
@@ -443,7 +443,7 @@
     },
     {
       "id": "fleet:fleet_ov010",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov010",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov010",
@@ -451,7 +451,7 @@
     },
     {
       "id": "fleet:fleet_ov011",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov011",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov011",
@@ -459,7 +459,7 @@
     },
     {
       "id": "fleet:fleet_ov012",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov012",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov012",
@@ -467,7 +467,7 @@
     },
     {
       "id": "fleet:fleet_ov013",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov013",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov013",
@@ -475,7 +475,7 @@
     },
     {
       "id": "fleet:fleet_ov014",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov014",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov014",
@@ -483,7 +483,7 @@
     },
     {
       "id": "fleet:fleet_ov015",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov015",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov015",
@@ -491,7 +491,7 @@
     },
     {
       "id": "fleet:fleet_ov016",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov016",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov016",
@@ -499,7 +499,7 @@
     },
     {
       "id": "fleet:fleet_ov018",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov018",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov018",
@@ -507,7 +507,7 @@
     },
     {
       "id": "fleet:fleet_ov019",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov019",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov019",
@@ -515,7 +515,7 @@
     },
     {
       "id": "fleet:fleet_ov020",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov020",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov020",
@@ -523,7 +523,7 @@
     },
     {
       "id": "fleet:fleet_ov021",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov021",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov021",
@@ -531,7 +531,7 @@
     },
     {
       "id": "fleet:fleet_ov022",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov022",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov022",
@@ -539,7 +539,7 @@
     },
     {
       "id": "fleet:fleet_ov023",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov023",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov023",
@@ -547,7 +547,7 @@
     },
     {
       "id": "fleet:fleet_ov024",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov024",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov024",
@@ -555,7 +555,7 @@
     },
     {
       "id": "fleet:fleet_ov025",
-      "status": "preparing",
+      "status": "active",
       "owner": "fleet_ov025",
       "model": "gpt-6.1-sol",
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov025",

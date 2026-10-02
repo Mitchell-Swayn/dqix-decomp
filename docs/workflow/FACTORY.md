@@ -102,7 +102,54 @@ After verifying the old process and descendants have stopped, retry explicitly:
 .venv/Scripts/python.exe tools/factory.py retry batch-example --confirmed-stopped
 ```
 
-This release provides a tested local dispatcher and monitor. It does not increase
-the chat session's agent limit, schedule new model sessions by itself, or claim
-that a large unattended fleet has been launched. Current chat workers can keep
-working alongside it in separately owned worktrees.
+The independent fleet now uses native `codex exec` with the existing local
+ChatGPT authentication and explicit `gpt-6.1-sol` model. It runs outside this chat
+session's seven-slot harness. No API key was copied or new subscription created.
+
+## Independent 24-worker fleet
+
+Start or check the hidden supervisor:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File tools/start_factory_fleet.ps1
+```
+
+Its configuration is `build/factory/fleet-config.json`. There are 24 exclusive
+overlay lanes: ov000 through ov025 excluding ov008 and ov017, which have pending
+work from the earlier GameState worker. Every lane has its own Git worktree,
+verified independent original ROM, fresh extraction, objects and baseline full
+ROM/module/symbol/SHA1 checks. Source baseline: `0ade264`. Only Python and the
+pinned compiler tools are shared; generated outputs are independent. Workers
+must reconfigure with `--compiler` pointing to the existing compiler directory
+so the build graph cannot schedule downloads over shared tooling.
+
+The supervisor launches up to 24 hidden native processes, disables nested agent
+delegation, and publishes actual process state every ten seconds. The dashboard
+separates these lanes from the original six session workers, now awaiting review.
+Closing the browser or ending this chat does not stop these independent processes.
+Rebooting or terminating the supervisor does; automatic boot startup is not installed.
+
+Each worker produces bounded batches and compact final handoffs. Successful exit
+requires both the backend completion event and final handoff file. Authentication,
+model and usage-limit failures block the lane; the supervisor does not hot-retry
+or substitute a different model. Logs are under `build/factory/fleet/`, while
+archived final handoffs also live under each worker's ignored `build/factory/`.
+Raw backend completion events retain measured usage; no plan conversion is inferred.
+
+A lane pauses after **two unreviewed batches**. The integrator reviews its archived
+handoffs and updates `build/factory/fleet-acks.json`, mapping lane IDs to the number
+of reviewed completed batches, for example `{"fleet_ov000": 1}`. Acknowledgment
+allows another batch; it does not certify source acceptance. Counts must be
+nondecreasing, cannot exceed completed batches and are validated before release.
+The supervisor remains running while lanes await review. Integration and full
+ROM acceptance remain the root integrator's responsibility.
+
+To drain gracefully, create `build/factory/STOP`. This stops new jobs and lets
+current workers finish; it does not discard their work. A subsequent intentional
+restart requires removing that marker after inspecting old process state. The
+supervisor refuses duplicate instances and refuses to reuse trees while child
+processes from an earlier run are still alive.
+
+The first launch verified 24 live child PIDs, 24 started model turns and zero
+backend error events. This establishes a working fleet, not 24-worker throughput
+or completed reconstruction. See `evidence/factory-24-launch.json`.
