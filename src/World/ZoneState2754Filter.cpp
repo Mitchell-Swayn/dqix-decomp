@@ -1,8 +1,6 @@
 #include "World/Zone3DEmbeddedState.h"
 
 // Selector meanings and packed filter-category semantics remain unresolved.
-typedef bool (*RecordMatchFunction)(ZoneSerializedRecord*, int, int, int);
-extern "C" void func_020de3f4(int, unsigned int, int, int, signed char*, signed char*, signed char*, RecordMatchFunction*);
 
 short ZoneState2754::Data::GetRecordCountBound()
 {
@@ -20,10 +18,10 @@ ZoneSerializedRecord* ZoneState2754::Data::GetRecordAtIndex(int index)
 
 short ZoneState2754::Data::CountMatchingRecords(int alternate, unsigned int kind, int first, signed char second)
 {
-    RecordMatchFunction match;
+    ZoneRecordMatchFunction match;
     signed char a = -1, b = -1, c = -1;
     match = 0;
-    func_020de3f4(alternate, kind, first, second, &a, &b, &c, &match);
+    SelectRecordCategoryMatcher(alternate, kind, first, second, &a, &b, &c, &match);
     if (!match) return 0;
     int count;
     short result = 0;
@@ -38,10 +36,10 @@ short ZoneState2754::Data::CountMatchingRecords(int alternate, unsigned int kind
 
 ZoneSerializedRecord* ZoneState2754::Data::FindMatchingRecord(int index, int alternate, unsigned int kind, signed char first, signed char second)
 {
-    RecordMatchFunction match;
+    ZoneRecordMatchFunction match;
     signed char a = -1, b = -1, c = -1;
     match = 0;
-    func_020de3f4(alternate, kind, first, second, &a, &b, &c, &match);
+    SelectRecordCategoryMatcher(alternate, kind, first, second, &a, &b, &c, &match);
     if (!match) return 0;
     int count;
     short result = 0;

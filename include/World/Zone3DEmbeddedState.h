@@ -55,7 +55,12 @@ struct ZoneSerializedRecord
 {
     union { unsigned int index; ZoneSerializedRecord* pointer; } secondary;
     union { unsigned int offset; void* pointer; } payload;
-    unsigned int unknown_8;
+    struct CategoryBits
+    {
+        unsigned int category : 4;
+        unsigned int subtype : 5;
+        unsigned int unknown : 23;
+    } category;
     struct FilterBits
     {
         unsigned int low : 12;
@@ -126,3 +131,10 @@ bool MatchRecordFirstAttribute(ZoneSerializedRecord* record, int group, int firs
 bool MatchRecordSecondAttribute(ZoneSerializedRecord* record, int group, int first, int second);
 bool MatchRecordBothAttributes(ZoneSerializedRecord* record, int group, int first, int second);
 void SelectRecordAttributeMatcher(int first, int second, ZoneRecordMatchFunction* output);
+
+bool MatchRecordCategory(ZoneSerializedRecord*, int, int, int);
+bool MatchRecordSubtype(ZoneSerializedRecord*, int, int, int);
+bool MatchRecordCategoryRange(ZoneSerializedRecord*, int, int, int);
+bool MatchRecordCategoryAndSubtype(ZoneSerializedRecord*, int, int, int);
+void SelectRecordCategoryMatcher(int alternate, unsigned int kind, int first, int second,
+    signed char* minimum, signed char* maximum, signed char* subtype, ZoneRecordMatchFunction* output);
