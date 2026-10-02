@@ -1,11 +1,11 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **206 C
-functions: 17,000 instruction bytes plus 1,208 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **207 C
+functions: 17,328 instruction bytes plus 1,208 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
-913 bytes of standalone initialized data and 3,508 bytes of BSS now have source
-definitions. The other 148,635 payload bytes
+1,188 bytes of standalone initialized data and 3,508 bytes of BSS now have source
+definitions. The other 148,032 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -19,10 +19,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 17,000 / 1,208 bytes |
-| Reconstructed initialized standalone data / reviewed assembly ranges | 913 / 120 bytes |
+| Reconstructed C instructions / compiler literal pools | 17,328 / 1,208 bytes |
+| Reconstructed initialized standalone data / reviewed assembly ranges | 1,188 / 120 bytes |
 | Reconstructed BSS / total autoload BSS | 3,508 / 22,744 bytes |
-| Binary fallback | 148,635 bytes |
+| Binary fallback | 148,032 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -170,7 +170,7 @@ table; its separate VBlank response and initialized dispatch table remain outsid
 this unit's source data ownership.
 
 `src/Alarms.c` reconstructs eight alarm scheduling functions at
-`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8206 C
+`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8207 C
 instruction bytes, 52 literal bytes and the 12-byte list state at
 `[0x03809164, 0x03809170)`. It initializes and orders the doubly-linked queue,
 programs timer 1, registers timeouts and periodic intervals, and cancels alarms.
@@ -268,7 +268,7 @@ does not add duplicate data credit.
 
 `src/ThreadWait.c` reconstructs blocking, waking all waiters, marking a thread
 ready and selecting the first ready thread at `[0x037fc69c, 0x037fc7cc)`
-(payload `[0x48b8, 0x49e8)`), with 2206 C instruction bytes and 8 literal bytes.
+(payload `[0x48b8, 0x49e8)`), with 2207 C instruction bytes and 8 literal bytes.
 It clears blocked-list links on wakeup and preserves IRQ state. The scheduler switch routine now belongs to `ThreadSwitch.c`; list insertion
 and IRQ dependencies are source-owned. No thread-context storage is counted by this unit.
 
@@ -543,7 +543,7 @@ helper is reconstructed below.
 `[0x037ffee4, 0x03800008)`: 284 instruction bytes and eight literal bytes.
 The tick-controlled state machine advances attack, decay, sustain and release,
 with setters for each parameter and helpers for release and active status.
-Attenuation and attack lookup tables remain external binary dependencies.
+Attenuation and attack lookup tables are typed standalone data sources below.
 
 `src/SoundEnvelopeSetup.c` reconstructs two functions at
 `[0x0380051c, 0x038005a8)`: 132 instruction bytes and eight literal bytes.
@@ -671,6 +671,19 @@ instruction bytes): resolve an entry after the 0x3c-byte archive header, preserv
 zero, add the archive base for values below `0x02000000`, and preserve absolute
 addresses otherwise. Hook calls remain in order around the lookup. The entry
 table is addressed as trailing storage, with no fabricated fixed array bound.
+
+`src/SoundInstrumentStart.c` reconstructs `[0x038021e0, 0x03802328)`
+(328 instruction bytes, no literals): resolve PCM archive or direct-wave data,
+stage PCM/PSG/noise, set key/velocity and ADSR, and convert instrument pan around
+64. Release value 255 clears the release parameter and sets the start argument to
+-1. SoundBank.h checks the 10-byte parameter and 12-byte instrument layouts;
+unknown link words and voice fields keep explicit names.
+
+`src/SoundAttenuationTable.c` owns 128 signed halfwords at
+`[0x038082cc, 0x038083cc)` (256 initialized data bytes), from -32768 to zero.
+`src/SoundAttackTable.c` owns 19 unsigned bytes at
+`[0x038084e0, 0x038084f3)` for the nonlinear attack branch. The following byte
+remains fallback. These 275 bytes are data coverage, separate from function code.
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C

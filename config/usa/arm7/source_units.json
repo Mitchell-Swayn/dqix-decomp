@@ -1862,6 +1862,62 @@
         "ARM7_BeginSoundBankAccess": 58717812,
         "ARM7_EndSoundBankAccess": 58717816
       }
+    },
+    {
+      "name": "SoundInstrumentStart",
+      "source": "config/usa/arm7/src/SoundInstrumentStart.c",
+      "autoload": "wram",
+      "runtime_address": 58728928,
+      "payload_offset": 41980,
+      "size": 328,
+      "code_bytes": 328,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_StartInstrumentVoice",
+      "symbols": {
+        "ARM7_StartInstrumentVoice": 58728928
+      },
+      "externals": {
+        "ARM7_GetSoundWave": 58728864,
+        "ARM7_SetSoundVoicePCM": 58719768,
+        "ARM7_SetSoundVoicePSG": 58719828,
+        "ARM7_SetSoundVoiceNoise": 58719904,
+        "ARM7_SetSoundVoiceAttack": 58720140,
+        "ARM7_SetSoundVoiceDecay": 58720172,
+        "ARM7_SetSoundVoiceSustain": 58720200,
+        "ARM7_SetSoundVoiceRelease": 58720208
+      }
+    },
+    {
+      "name": "SoundAttenuationTable",
+      "source": "config/usa/arm7/src/SoundAttenuationTable.c",
+      "autoload": "wram",
+      "runtime_address": 58753740,
+      "payload_offset": 66792,
+      "size": 256,
+      "code_bytes": 0,
+      "literal_pool_bytes": 0,
+      "data_bytes": 256,
+      "entry": "ARM7_SoundAttenuationTable",
+      "symbols": {
+        "ARM7_SoundAttenuationTable": 58753740
+      },
+      "externals": {}
+    },
+    {
+      "name": "SoundAttackTable",
+      "source": "config/usa/arm7/src/SoundAttackTable.c",
+      "autoload": "wram",
+      "runtime_address": 58754272,
+      "payload_offset": 67324,
+      "size": 19,
+      "code_bytes": 0,
+      "literal_pool_bytes": 0,
+      "data_bytes": 19,
+      "entry": "ARM7_SoundAttackTable",
+      "symbols": {
+        "ARM7_SoundAttackTable": 58754272
+      },
+      "externals": {}
     }
   ]
 }

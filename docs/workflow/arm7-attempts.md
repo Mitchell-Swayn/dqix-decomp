@@ -496,3 +496,23 @@
   SoundBank.h records the proven 0x3c-byte archive header; its table follows as
   variable-length storage. No unproven fixed entry count or lock behavior is added.
 - Validation: full payload and all linked symbols match; all 11 pipeline and six verifier tests pass with tracked SoundBank/SoundVoice header dependencies.
+
+## 2026-10-02 - instrument voice setup and envelope data
+
+- Voice setup 0x038021e0 matched 328-byte size first; direct-address halfword order
+  and failed-wave return target differed. Expressing high halfword first and routing
+  failure through the switch result matched on variant two.
+- Added 128 signed attenuation values (256 bytes) and the 19 unsigned nonlinear
+  attack values as standalone typed data, separately from instructions. The first
+  table ends at its zero value before the next curve; attack padding is excluded.
+- Instrument reader 0x03802020 is deferred at ten variants. Initial switch density
+  and manual copies were wrong; explicit invalid type cases and 10-/12-byte record
+  assignments recovered exact 384-byte size/control flow. Moving per-case data
+  pointers fixed split-region registers, leaving ten bytes different in offset and
+  range-bound register selection. Declaration order had no effect; unsigned bounds
+  changed comparison semantics and were reverted. A packed-entry union regressed
+  size/spilled; an explicit type temporary left 16 bytes different. No decoder draft
+  is integrated. Its typed record evidence is shared by the matching voice setup.
+- Batch adds one function/328 instruction bytes and separately 275 initialized data
+  bytes, with no BSS or literal additions. It does not claim a three-function batch.
+- Validation: full payload, code/data symbols, and all 11 pipeline plus six verifier tests pass. Payload SHA-1 remains a662d5c6a78e990244299926cf6862ce910a475d.

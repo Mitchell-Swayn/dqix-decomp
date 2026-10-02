@@ -22,7 +22,11 @@ typedef struct SoundVoice SoundVoice;
 struct SoundVoice {
     unsigned char channel, type, envelopeState;
     unsigned char active:1, pendingStart:1, advance:1, updates:5;
-    unsigned char unknown4[12];
+    unsigned char unknown4, unknown5;
+    short unknown6;
+    unsigned char unknown8, unknown9, unknownA;
+    signed char unknownB;
+    short unknownC, unknownE;
     int attenuation, elapsed, duration;            /* 0x10 */
     unsigned char attack, sustain;                /* 0x1c */
     unsigned short decay, release;
