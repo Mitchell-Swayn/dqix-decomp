@@ -1,0 +1,35 @@
+{
+  "utc": "2026-10-02T10:19:46.828161+00:00",
+  "source": "C:\\Users\\swayn\\Projects\\DQIX-Decomp\\extract\\baserom_dqix_usa.nds",
+  "source_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+  "repairs": [
+    {
+      "path": "C:\\Users\\swayn\\Projects\\DQIX-Decomp\\dqix_usa.nds",
+      "previous_inode": 1688849861602592,
+      "inode": 3940649675522254,
+      "links": 1,
+      "sha1": "c7c3014c237900c8281289b8bc76a781969b6278"
+    },
+    {
+      "path": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-luna-vram\\extract\\baserom_dqix_usa.nds",
+      "previous_inode": 1688849861602592,
+      "inode": 1407374885126351,
+      "links": 1,
+      "sha1": "c7c3014c237900c8281289b8bc76a781969b6278"
+    },
+    {
+      "path": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-luna-runtime\\extract\\baserom_dqix_usa.nds",
+      "previous_inode": 1688849861602592,
+      "inode": 562949954994384,
+      "links": 1,
+      "sha1": "c7c3014c237900c8281289b8bc76a781969b6278"
+    },
+    {
+      "path": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-luna-runtime\\dqix_usa.nds",
+      "previous_inode": 1688849861602592,
+      "inode": 562949954994385,
+      "links": 1,
+      "sha1": "c7c3014c237900c8281289b8bc76a781969b6278"
+    }
+  ]
+}

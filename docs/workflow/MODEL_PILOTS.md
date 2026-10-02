@@ -70,3 +70,10 @@ The old VRAM pilot input was also linked to that generated output and was fixed.
 All repaired files have one link, distinct identities, and the target SHA-1.
 The runtime worker was stopped during repair and resumed afterward. This is a
 material setup failure and root intervention, not successful autonomous recovery.
+
+The world reviewer inspected eight historical commits without changing the dirty
+worker tree. It flagged the grotto coordinate-to-vector cast and a persistent
+GameState table at an incompletely mapped offset. Root pinned those commits by
+integrating them and rerunning full acceptance on main; all module/symbol/ROM
+checks passed. This is review/integration of earlier Astra work, not Luna source
+reconstruction credit. The two source-layout caveats remain follow-up work.

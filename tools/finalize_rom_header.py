@@ -12,6 +12,7 @@ import hashlib
 from pathlib import Path
 import struct
 import sys
+from guard_rom_files import check_paths
 
 
 USA_SHA1 = "c7c3014c237900c8281289b8bc76a781969b6278"
@@ -63,6 +64,7 @@ def main():
     if args.output.resolve() in (args.input.resolve(), args.baserom.resolve()):
         parser.error("Output must be separate from both inputs")
     try:
+        check_paths([args.input, args.baserom], [args.output])
         with args.baserom.open("rb") as stream:
             if hashlib.file_digest(stream, "sha1").hexdigest() != USA_SHA1:
                 raise ValueError("Reference ROM is not the verified USA input")

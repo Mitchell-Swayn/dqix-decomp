@@ -21,10 +21,10 @@
     },
     {
       "id": "runtime-next",
-      "status": "queued",
-      "owner": null,
-      "worktree": "../DQIX-Decomp-vectors",
-      "scope": "Exception record helpers integrated through ebc7695; continue remaining runtime dependencies after build-graph efficiency task",
+      "status": "active",
+      "owner": "luna_runtime_batch",
+      "worktree": "../DQIX-Decomp-luna-runtime",
+      "scope": "Prior runtime batches through74b9917 integrated; Luna2-4simplefunction trial, setup hardlink incident repaired",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1"
     },
@@ -39,18 +39,18 @@
     {
       "id": "arm7-sound-next",
       "status": "active",
-      "owner": "arm7_batch",
+      "owner": "luna_arm7_functions",
       "worktree": "../DQIX-Decomp-arm7-batch",
-      "scope": "sound alarms and command dispatch; integrated through b59d6ab, shared sequence/voice layouts tracked",
+      "scope": "Prior Astra batches through968dbf8 integrated; Luna bounded small-function trial underway",
       "attempt_limit_per_function": 10,
       "acceptance": "exact full ARM7 payload and pipeline tests; root full ROM integration"
     },
     {
       "id": "world-next",
-      "status": "active",
-      "owner": "world_batch",
+      "status": "queued",
+      "owner": null,
       "worktree": "../DQIX-Decomp-zone3d",
-      "scope": "serialized record access/filtering; integrated through dc263a5, with independent nested Data prefix and corrected bool callbacks",
+      "scope": "Historical batches throughb62d6d6 integrated and reverified on main; dirty old worktree preserved; review grotto vector alias and GameState persistent-table layout",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1"
     },

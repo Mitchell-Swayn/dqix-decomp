@@ -101,3 +101,12 @@ candidate compilations. Start subsequent batch clocks before dispatching work.
   explicitly before trusting candidate objects.
 - Never modify original objdiff inputs to make the report pass. The existing
   allowlisted linker-only metadata copies carry no source credit.
+
+## ROM input/output isolation
+
+Copy the verified original ROM from `extract/baserom_dqix_usa.nds` when setting
+up a worker. Generated ROMs must never be hard-linked to inputs or other worker
+outputs. `guard_rom_files.py` runs before the ROM builder and the finalizer
+checks the same rule: output aliases and multiply-linked files are rejected
+before writing. Seven tests include rejection before a writer can change the
+original input. Read-only tool junctions do not require copying compiler files.

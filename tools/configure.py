@@ -253,7 +253,9 @@ def main():
 
         n.rule(
             name="rom_build",
-            command=f"{DSD} rom build --config $in --rom $out $arm7_bios_flag"
+            command=(f'"{PYTHON}" tools/guard_rom_files.py --input "$baserom" '
+                     f'--output "$out" $final_output_flag -- '
+                     f'"{DSD}" rom build --config $in --rom $out $arm7_bios_flag')
         )
         n.newline()
 
@@ -408,7 +410,7 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, project: Project):
     n.newline()
 
     rom_file = project.build_rom()
-    rom_implicit = [DSD]
+    rom_implicit = [DSD, "tools/guard_rom_files.py"]
     if project.game_version == "usa":
         arm7_units_path = project.game_config / "arm7" / "source_units.json"
         arm7_units = json.loads(arm7_units_path.read_text())
@@ -446,6 +448,8 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, project: Project):
         implicit=rom_implicit,
         rule="rom_build",
         outputs=str(project.game_build / "unfinalized.nds") if project.game_version == "usa" else rom_file,
+        variables={"baserom": project.baserom(),
+                   "final_output_flag": f'--output "{rom_file}"' if project.game_version == "usa" else ""},
     )
     n.newline()
 
@@ -457,7 +461,7 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, project: Project):
         )
         n.build(
             inputs=str(project.game_build / "unfinalized.nds"),
-            implicit=[str(project.baserom()), "tools/finalize_rom_header.py"],
+            implicit=[str(project.baserom()), "tools/finalize_rom_header.py", "tools/guard_rom_files.py"],
             rule="finalize_usa_header",
             outputs=rom_file,
         )
