@@ -24,7 +24,7 @@
       "status": "active",
       "owner": "luna_runtime_batch",
       "worktree": "../DQIX-Decomp-luna-runtime",
-      "scope": "Prior runtime batches through74b9917 integrated; Luna2-4simplefunction trial, setup hardlink incident repaired",
+      "scope": "Luna9c2d576 four accessors integrated; next six preselected GameState helpers in progress",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1"
     },
@@ -41,7 +41,7 @@
       "status": "active",
       "owner": "luna_arm7_functions",
       "worktree": "../DQIX-Decomp-arm7-batch",
-      "scope": "Prior Astra batches through968dbf8 integrated; Luna bounded small-function trial underway",
+      "scope": "Luna e00046d helper integrated; worker now adding manifest-based read-only disassembly tooling to prevent offset errors",
       "attempt_limit_per_function": 10,
       "acceptance": "exact full ARM7 payload and pipeline tests; root full ROM integration"
     },

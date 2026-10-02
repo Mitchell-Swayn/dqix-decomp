@@ -82,3 +82,18 @@ Root resolved the grotto coordinate alias concern by representing the existing
 12-byte coordinate region as an actual Vector3i field. Both affected functions
 remain100% object matches and full combined ROM/module/symbol checks passed.
 The persistent GameState table offset remains a documented mapping limitation.
+
+## First function pilots accepted
+
+Root integrated both function pilots and passed combined module/symbol/ARM7/ROM
+SHA-1 checks. ARM7 e00046d adds one function,32 instruction bytes,4 literal bytes
+after685 seconds including investigation. An initial runtime-to-payload mapping
+omitted the540-byte startup prefix; exact comparison rejected those drafts.
+The GameState pilot9c2d576 adds four functions/32 instruction bytes; all four
+first candidates match. Its616.72-second whole-task interval includes setup and
+the hardlink incident. Neither interval includes root integration/review cost.
+These small samples do not establish a cost/speed advantage over Astra.
+
+Next trials deliberately reduce discovery/setup work: six preselected GameState
+helpers with established boundaries, plus a manifest-driven ARM7 disassembly
+utility. The latter provides tooling rather than source coverage.
