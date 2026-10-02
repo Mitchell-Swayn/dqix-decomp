@@ -1,0 +1,16 @@
+# Project work rules
+
+Read GOALS.md for acceptance and docs/workflow/README.md for the batch workflow.
+Keep queue state in docs/workflow/queue.json. Preserve existing user changes.
+
+- Use independent worktrees for reconstruction workers. One integrator owns main.
+- Give agents bounded subsystem tasks and compact handoffs, not full histories.
+- Compare candidate objects during iteration; run full ROM/module/symbol/SHA1
+  checks before accepting integrated batches. Never lower coverage denominators.
+- After ten unproductive variants, record evidence and switch dependencies.
+  Deferred functions remain required work; no fake matching or binary substitutes.
+- Store verbose logs under ignored build/. Return concise differences and results.
+- Record batch deltas and elapsed time with tools/work_batch.py. Report token
+  usage only when measured; do not invent cost/plan conversion.
+- Keep ARM7 instructions, literals, initialized data, BSS and necessary assembly
+  separate. A byte-perfect ROM with original fallback is not full decompilation.

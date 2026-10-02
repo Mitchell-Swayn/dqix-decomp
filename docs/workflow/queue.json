@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "acceptance": "GOALS.md; no denominator reduction, opaque code substitutions, or unverified coverage credit",
+  "tasks": [
+    {"id":"matching-harness","status":"verified","owner":null,"scope":"tools/match_unit.py and tests","deliverable":"candidate-only build, concise objdiff summary, local attempt ledger; 10 tests pass"},
+    {"id":"world-defaults","status":"integrated","owner":null,"commit":"0a51d42","worktree":"../DQIX-Decomp-zone3d","scope":"four instance-default functions; +204 code bytes","attempt_limit_per_function":10,"acceptance":"exact objects then ROM/check/report/sha1"},
+    {"id":"runtime-next","status":"active","owner":"match_harness","worktree":"../DQIX-Decomp-vectors","scope":"adjacent runtime callbacks/string dependencies","attempt_limit_per_function":10,"acceptance":"exact objects then ROM/check/report/sha1"},
+    {"id":"arm7-threads","status":"active","owner":"arm7_batch","worktree":"../DQIX-Decomp-arm7-batch","scope":"thread creation and initialization adjacent to 0x037fc460","attempt_limit_per_function":10,"acceptance":"exact full ARM7 payload and pipeline tests; root full ROM integration"},
+    {"id":"crc-string-tooling","status":"deferred","owner":null,"scope":"0x01ff860c..0x01ff8640","blocker":"Matching C exists conceptually; extracting it leaves pure-data .text fallback and crashes pinned objdiff ARM mapping logic","next_action":"Investigate tool fix without changing original objects or coverage denominator"},
+    {"id":"native-decompressors","status":"queued","owner":null,"scope":"0x020ca95c..0x020cad00","next_action":"Classify native SWPB/control-flow evidence before choosing C reconstruction versus justified assembly review; existing Unicorn differential harness available"},
+    {"id":"arm7-inventory","status":"queued","owner":null,"scope":"complete function boundaries and code/data partition for ARM7","next_action":"Extend evidence-backed inventory; never treat whole payload as executable code"}
+  ]
+}
