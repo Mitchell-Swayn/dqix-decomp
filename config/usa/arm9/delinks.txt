@@ -933,6 +933,11 @@ src/World/ZoneSerializedRecordKey.cpp:
     complete
     .text start:0x020de56c end:0x020de574
 
+src/World/ZoneState2754Relocate.cpp:
+    complete
+    .text start:0x020de574 end:0x020de650
+    .rodata start:0x020ee794 end:0x020ee798
+
 src/World/ZoneState2754Attach.cpp:
     complete
     .text start:0x020de6c8 end:0x020de7a4

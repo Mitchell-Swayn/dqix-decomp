@@ -1,19 +1,17 @@
 #include "World/Zone3DEmbeddedState.h"
 #include "std_library_functions.h"
 
-extern "C" void func_020de574(ZoneState2754*, void*);
-extern "C" bool func_020de5b0(ZoneState2754*);
 
 bool ZoneState2754::LoadSerializedData(void* file, unsigned int size)
 {
     if (!file || !size) return false;
     bool alreadyRelocated;
-    AttachSerializedData(file, &alreadyRelocated, func_020de574);
+    AttachSerializedData(file, &alreadyRelocated, RelocateSerializedRecordPayload);
     if (alreadyRelocated) return true;
-    return func_020de5b0(this);
+    return RelocateSecondaryRecordLinks();
 }
 
-bool ZoneState2754::AttachSerializedData(void* file, bool* alreadyRelocated, void (*callback)(ZoneState2754*, void*))
+bool ZoneState2754::AttachSerializedData(void* file, bool* alreadyRelocated, bool (*callback)(ZoneState2754*, void*))
 {
     *alreadyRelocated = false;
     if (!file) return false;

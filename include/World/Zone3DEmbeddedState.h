@@ -51,6 +51,16 @@ struct ZoneState2724
     ~ZoneState2724() { Reset(); }
     void Reset();
 };
+struct ZoneSerializedRecord
+{
+    union { unsigned int index; ZoneSerializedRecord* pointer; } secondary;
+    union { unsigned int offset; void* pointer; } payload;
+    char unknown_8[14];
+    unsigned short unknown_16;
+    short key;
+    char unknown_1a[6];
+};
+
 struct ZoneState2754
 {
     struct Data
@@ -70,13 +80,17 @@ struct ZoneState2754
     unsigned char unknown_14;
     char padding[3];
     ZoneState2754();
+    bool RelocateSecondaryRecordLinks();
+    bool ApplySpecialRecordFlags();
     bool LoadSerializedData(void* file, unsigned int size);
-    bool AttachSerializedData(void* file, bool* alreadyRelocated, void (*callback)(ZoneState2754*, void*));
+    bool AttachSerializedData(void* file, bool* alreadyRelocated, bool (*callback)(ZoneState2754*, void*));
     void* FindPrimaryRecord(int key, int (*getKey)(const void*));
     unsigned int GetRecordStorageSize();
-    bool VisitPrimaryRecords(void (*callback)(ZoneState2754*, void*));
+    bool VisitPrimaryRecords(bool (*callback)(ZoneState2754*, void*));
     void Clear();
     void Reset();
 };
 
 int GetSerializedRecordKey(const void* record);
+
+bool RelocateSerializedRecordPayload(ZoneState2754* state, void* record);

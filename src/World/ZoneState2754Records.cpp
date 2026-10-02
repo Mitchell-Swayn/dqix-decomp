@@ -11,7 +11,7 @@ unsigned int ZoneState2754::GetRecordStorageSize()
     return size + secondary * 32 + primary * 32;
 }
 
-bool ZoneState2754::VisitPrimaryRecords(void (*callback)(ZoneState2754*, void*))
+bool ZoneState2754::VisitPrimaryRecords(bool (*callback)(ZoneState2754*, void*))
 {
     int count;
     char* record = data.records;
