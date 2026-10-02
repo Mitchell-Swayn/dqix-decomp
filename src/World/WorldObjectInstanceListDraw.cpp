@@ -1,4 +1,5 @@
 #include "World/WorldObjectInstanceList.h"
+#include "World/WorldPlacementSource.h"
 #include "World/Zone3D.h"
 #include "Resource/GameResources.h"
 
@@ -6,8 +7,6 @@ extern "C" {
     Zone3D* func_02012fe4();
     int func_02046b24(void*);
     bool func_0203b4fc(GameResources*, unsigned int);
-    void* func_0208e0a8();
-    bool func_0208e824(void*, const char*);
 }
 
 void WorldObjectInstanceList::Draw()
@@ -17,9 +16,9 @@ void WorldObjectInstanceList::Draw()
     if (func_02046b24(resources->unknown_ptr_array_36fc[0]) == 10) return;
     if (func_0203b4fc(resources, 2)) return;
     Zone3D_StructPtr_8* info = func_02012fe4()->pUnknownStruct_8_;
-    void* state = func_0208e0a8();
+    WorldPlacementSource* state = WorldPlacementSource::GetInstance();
     if (!info) return;
-    if (!func_0208e824(state, info->mapShortName_)) return;
+    if (!state->IsMapEligible(info->mapShortName_)) return;
     for (Instance* entry = head; entry; entry = entry->next)
     {
         object->SetCurrentAnimationTime(entry->animationTime);

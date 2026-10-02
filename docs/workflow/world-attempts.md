@@ -71,3 +71,16 @@ while MWCC emits a duplicate weak definition in the new translation unit.
 Instruction forms, symbol names and relocation addends agree. The linker keeps
 the original source owner at 02098834, and full module/symbol/ROM checks plus the
 expected SHA-1 pass. This is an object-comparison artifact, not a code mismatch.
+
+
+## Shared-object instance list builder at 0208f168
+
+Deferred after five compiled variants and one initial field-name compile error.
+The 512-byte candidate matches 97.674416% of the 516-byte original: MWCC combines
+adjacent source/map predicate and object-null guards into predicated LDR/CMP,
+where the original keeps a separate BEQ. All remaining instructions and register
+allocation match. Changing helper bool/int return, positive nesting, separate
+returns and a cleanup goto did not affect this conditional-execution decision.
+No range is credited. Draft: build/matching/WorldObjectInstanceListBuild.cpp.
+Next inspect original guard inline provenance or a demonstrated compiler setting
+that changes this one branch without replacing the observed control flow.
