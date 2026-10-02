@@ -610,3 +610,22 @@ Logs: `build/runtime-batch19-acceptance.log`, `build/runtime-batch19-finalize.lo
 Code 160,024/functions 1,195 unchanged; data 26,900 -> 27,184. Denominators
 unchanged. First time-locale inspection to these notes:
 162.3 seconds. No gameplay validation.
+
+## Deferred integer parsing state machine (2026-10-02)
+
+The now source-owned signed wrapper exposes parser `func_020055e4` as its
+remaining dependency. Four ordinary-C variants reconstruct its sign/base-prefix,
+ASCII class/uppercase, digit accumulation, overflow and pushback state machine.
+All produce 984 bytes versus the original 1,000. The switch/loop structure is
+close, but the initial zero stores are shorter, state/count receive swapped
+registers, and threshold/space stack scheduling differs. Separate initialization,
+paired/chained assignments, counter timing and declaration order did not recover
+the original prologue. No source boundary or symbol changes are installed.
+
+Keep the original parser fallback. Further work needs compiler-family evidence
+for the initialization/register-allocation difference. The low-level unsigned
+division helper and both ASCII tables remain unchanged. Draft:
+`build/RuntimeIntegerParser-pending.cpp`; comparison logs
+`build/runtime-parser20-v1.log` through `v4.log`. No ROM or coverage claim for
+these candidates. Inspection to this note:
+234.0 seconds.
