@@ -8,6 +8,10 @@ src/Factory/ov011/AllocatorNodes.cpp:
     complete
     .text start:0x021842a0 end:0x02184374
 
+src/Factory/ov011/AllocatorManagerInit.cpp:
+    complete
+    .text start:0x02184374 end:0x021844a4
+
 src/Factory/ov011/AllocatorNodeCreate.cpp:
     complete
     .text start:0x021845c8 end:0x021845f4
