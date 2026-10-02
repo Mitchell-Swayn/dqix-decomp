@@ -1,6 +1,8 @@
 #include "GameState/GameState.h"
 #include "System/Memory.h"
 
+#if defined(usa)
+
 struct GrottoMetadataTransferInput
 {
     unsigned char kind_;
@@ -130,3 +132,5 @@ extern "C" void func_02011a40(GameState* state)
     metadata.SetMapType(TreasureMapType_Invalid);
     VectorizedInvertedMemcpy(&metadata, &state->grottoInfo_.metadataTransfer_.metadata_, 0x1c);
 }
+
+#endif

@@ -1,6 +1,8 @@
 #include "GameState/GameState.h"
 #include "System/Memory.h"
 
+#if defined(usa)
+
 typedef char TreasureMapCollectionSizeCheck[
     sizeof(TreasureMapCollection) == 0xad6 ? 1 : -1];
 typedef char GrottoStructActiveMapOffsetCheck[
@@ -44,12 +46,16 @@ extern "C" void func_020116c8(GameState* state)
     func_ov017_021cf730(-1, 0);
 }
 
+#endif
+
 // USA: func_02011738
 // JPN: func_020114a8
 GrottoStruct* GameState::GetGrottoStruct()
 {
     return &grottoInfo_;
 }
+
+#if defined(usa)
 
 extern "C" void func_02011744(GameState* state)
 {
@@ -72,3 +78,5 @@ extern "C" void func_020117cc(GameState* state, DetailedTreasureMapData* detail)
     state->grottoInfo_.LoadActiveMetadataFromDetailed(detail);
     state->grottoInfo_.activeMapData.SetInitialByteUnknownBit();
 }
+
+#endif
