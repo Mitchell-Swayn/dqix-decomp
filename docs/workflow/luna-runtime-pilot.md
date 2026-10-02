@@ -31,7 +31,9 @@ baseline, wrote to a separate output, verified secure-area identity, and passed
 the target USA ROM SHA-1 `c7c3014c237900c8281289b8bc76a781969b6278`.
 
 One setup mistake is recorded explicitly: the first private ROM setup used a
-hardlink for the output, which aliased the root output and a vectors output.
+hardlink for the output, which aliased the root output and worker input paths.
+Root checked file identities: the separate vectors output was not in that link
+group, so the initial worker report of a vectors-output alias was unconfirmed.
 The original extracted USA baseline was never changed. Work stopped after the
 raw hash failure; the integrator verified the hashes and independently restored
 the aliased output copies as separate files. No vectors source files were
