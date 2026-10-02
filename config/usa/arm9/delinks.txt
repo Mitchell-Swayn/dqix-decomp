@@ -9,6 +9,10 @@ src/GameState/GameStateInstance.cpp:
 	complete
 	.text start:0x0200f398 end:0x0200f3a4
 
+src/GameState/GameStateResourceAccessors.cpp:
+	complete
+	.text start:0x0200fb84 end:0x0200fba4
+
 src/GameState/GameStateObjects.cpp:
 	complete
 	.text start:0x0200fd70 end:0x0200fea4

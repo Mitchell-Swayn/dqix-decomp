@@ -629,3 +629,24 @@ division helper and both ASCII tables remain unchanged. Draft:
 `build/runtime-parser20-v1.log` through `v4.log`. No ROM or coverage claim for
 these candidates. Inspection to this note:
 234.0 seconds.
+
+## GameState resource and byte accessors (2026-10-02)
+
+Based on `74b9917`. The already source-owned small string and C-locale helper
+units were rechecked first and all remained 100% objdiff. With integrator approval,
+scope moved to four adjacent GameState accessors at `0x0200fb84..0x0200fba4`:
+resource pointer set/get at offset 0 and byte set/get at offset 4. The byte's
+meaning is unknown and remains represented as an unnamed field. All four
+functions matched the first C candidate: 32 instruction bytes, four functions,
+no literal/data/BSS bytes. No denominator changes.
+
+The full `ninja rom check report` run passed ARM9 modules, symbol checks and the
+ARM7 baseline; the guarded separate-output ROM finalizer passed the exact USA
+SHA-1 `c7c3014c237900c8281289b8bc76a781969b6278`. The worker's old configure
+script still has the known raw-SHA1 finalization caveat. Logs:
+`build/luna-runtime-acceptance.log`, `build/luna-runtime-finalize.log`, and the
+single attempt under `build/matching/`. The original extracted ROM was untouched.
+The setup incident involving an unsafe hardlink to output copies and the root
+integrator's repair is documented in `luna-runtime-pilot.md`. The whole-task
+clock includes setup and this incident; `tools/work_batch.py` records the
+separate coverage snapshot interval. No gameplay validation was performed.
