@@ -208,12 +208,13 @@
     },
     {
       "id": "arm7-power-vblank-callback",
-      "status": "verified",
+      "status": "integrated",
       "owner": null,
       "worktree": "../DQIX-Decomp-luna-arm7-inventory-boundary",
       "scope": "Startup-installed callback at 0x037f84f0 checks PowerState.initialized then updates power LED; one function, 32 instructions and four literal bytes replace 36 fallback bytes.",
       "acceptance": "Exact candidate and full ARM7 payload, ARM7 pipeline tests and worker ROM/module/symbol/SHA1; root integration still required",
-      "attempt_limit_per_function": 10
+      "attempt_limit_per_function": 10,
+      "main_acceptance": "ROM, all configured modules/symbols and SHA1 passed; pilot-27 evidence records combined deltas."
     },
     {
       "id": "per-agent-token-measurement",
@@ -227,17 +228,18 @@
     },
     {
       "id": "graphics-source-array-aliases",
-      "status": "awaiting_integrator_acceptance",
-      "owner": "sol61_data",
+      "status": "integrated",
+      "owner": null,
       "worktree": "../DQIX-Decomp-luna-data-audit",
       "scope": "Coherent full 8192-halfword sine/cosine and 48-halfword VRAM arrays; source-owned interior linker aliases replace disjoint array fragments and scalar definitions",
       "acceptance": "Original candidate section bytes exact; all 8192 mathematical sine/cosine values exact; full ROM/module/symbol/SHA1 checks; 148 tool tests with two existing skips",
       "coverage_limit": "Repair retains inherited coverage; integrator must verify cumulative 16496-byte gain from the two preceding unaccepted commits against accepted main",
-      "token_usage": null
+      "token_usage": null,
+      "main_acceptance": "ROM, all configured modules/symbols and SHA1 passed; pilot-27 evidence records combined deltas."
     },
     {
       "id": "arm7-power-events",
-      "status": "awaiting_integrator_acceptance",
+      "status": "integrated",
       "owner": null,
       "worktree": "../DQIX-Decomp-arm7-power-events",
       "scope": "PowerSleep and PowerIpcReceive: 708 instruction bytes and 32 literal bytes; typed PowerRequestState subobject",
@@ -245,12 +247,13 @@
       "attempt_limit_per_function": 10,
       "evidence": "docs/workflow/arm7-power-events.md",
       "remaining_dependency": "SPI enqueue remains unmatched and required; 220B candidate against224B target after three variants.",
-      "token_usage": null
+      "token_usage": null,
+      "main_acceptance": "ROM, all configured modules/symbols and SHA1 passed; pilot-27 evidence records combined deltas."
     },
     {
       "id": "sol61-gamestate-record-fields",
-      "status": "awaiting_integrator_acceptance",
-      "owner": "sol61_runtime",
+      "status": "integrated",
+      "owner": null,
       "worktree": "../DQIX-Decomp-luna-runtime",
       "scope": "Six indexed-record/list functions02010828..0201099c, +372 code bytes; shared-header list embedded and existing readers retained.",
       "commits": [
@@ -260,35 +263,38 @@
       "attempt_limit_per_function": 10,
       "candidate_comparisons": 6,
       "acceptance": "Exact candidate objects and full ROM/module/symbol/SHA1 passed; pending root integration",
-      "token_usage": null
+      "token_usage": null,
+      "main_acceptance": "ROM, all configured modules/symbols and SHA1 passed; pilot-27 evidence records combined deltas."
     },
     {
       "id": "sol61-gamestate-byte-buffers",
-      "status": "awaiting_integrator_acceptance",
-      "owner": "sol61_runtime",
+      "status": "integrated",
+      "owner": null,
       "worktree": "../DQIX-Decomp-luna-runtime",
       "scope": "Ten byte-buffer/bitset helpers020113a8..02011544, +412 code bytes",
       "commit": "c56559c",
       "attempt_limit_per_function": 10,
       "candidate_comparisons": 3,
       "acceptance": "Exact candidate objects and full ROM/module/symbol/SHA1 passed; pending root integration",
-      "token_usage": null
+      "token_usage": null,
+      "main_acceptance": "ROM, all configured modules/symbols and SHA1 passed; pilot-27 evidence records combined deltas."
     },
     {
       "id": "sol61-gamestate-attribute-table",
-      "status": "awaiting_integrator_acceptance",
-      "owner": "sol61_runtime",
+      "status": "integrated",
+      "owner": null,
       "worktree": "../DQIX-Decomp-luna-runtime",
       "scope": "Two table setup/attribute lookup helpers0201133c..020113a8, +108 code bytes",
       "commit": "1886df3",
       "attempt_limit_per_function": 10,
       "candidate_comparisons": 2,
       "acceptance": "Exact candidate objects and full ROM/module/symbol/SHA1 passed; pending root integration",
-      "token_usage": null
+      "token_usage": null,
+      "main_acceptance": "ROM, all configured modules/symbols and SHA1 passed; pilot-27 evidence records combined deltas."
     },
     {
       "id": "sol61-runtime-format",
-      "status": "verified",
+      "status": "integrated",
       "owner": null,
       "worktree": "../DQIX-Decomp-luna-library",
       "scope": "ASCII decimal rounding plus binary64 powers and typed formatter text; local +292code bytes/+128initialized data bytes/+1function; integration required",
@@ -298,7 +304,8 @@
         "a092b99"
       ],
       "acceptance": "Exact objects and whole text data payload; full ROM/module/symbol/ARM7/SHA1 pass; unchanged denominators",
-      "dependency": "Reviewed interior alias tooling501d2c9; identical standalone worker support06c4c13"
+      "dependency": "Reviewed interior alias tooling501d2c9; identical standalone worker support06c4c13",
+      "main_acceptance": "ROM, all configured modules/symbols and SHA1 passed; pilot-27 evidence records combined deltas."
     },
     {
       "id": "runtime-integer-format",
@@ -311,13 +318,14 @@
     },
     {
       "id": "vram-mapping-state",
-      "status": "awaiting_integrator_acceptance",
-      "owner": "sol61_data",
+      "status": "integrated",
+      "owner": null,
       "worktree": "../DQIX-Decomp-luna-data-audit",
       "scope": "Established28-byte palette and32-byte texture VRAM mapping records gain source definitions and a shared internal header;60 bytes BSS",
       "acceptance": "Both objects100%; consumer compiled instructions/relocations unchanged; full ROM/module/symbol/SHA1 passed; unchanged denominators",
       "deferred": "Scanline cutoff allocation at020ee694 has24 adjacent unresolved bytes; extracting its known4-byte prefix drops that tail and fails layout checks. Original ownership restored; docs/VRAM_MAPPING_STATE.md records evidence.",
-      "token_usage": null
+      "token_usage": null,
+      "main_acceptance": "ROM, all configured modules/symbols and SHA1 passed; pilot-27 evidence records combined deltas."
     }
   ]
 }

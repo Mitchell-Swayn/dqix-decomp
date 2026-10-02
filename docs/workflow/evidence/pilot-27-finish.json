@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "pilot-27",
+  "snapshot": {
+    "utc": "2026-10-02T13:44:58.000177+00:00",
+    "revision": "82cf755e178cc223fc7f7e5a1a1cab6df8650f76",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 215352,
+      "matched_data": 65220,
+      "matched_functions": 1616
+    },
+    "arm7": {
+      "source_functions": 270,
+      "source_code_bytes": 23924,
+      "source_literal_pool_bytes": 1656,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 140844,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "cb6d119152cd9782c22e8df35233f02b6da4b8399779a7a299afe4f1219381b1",
+    "arm7_report_sha256": "c49d3d8a4d85957770249ed6524411d99f3dce58cc9de999395ca02cb404a653",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "First Sol6.1 integration interval after user-requested model switch. Accepted27 ARM9 functions/1364 report-code bytes and3 ARM7 C/740 instructions/36 literals; includes8 inherited Luna functions/180 code bytes. ARM9 data gain16684 includes16496 bytes of repaired Luna table drafts,128 new initialized data and60 BSS. Pinned fresh archive8ffd3d6 passed;183 tool tests ran,182passed/1skip. Other worker results remain pending and are excluded.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 1364,
+      "matched_data": 16684,
+      "matched_functions": 27
+    },
+    "arm7": {
+      "source_functions": 3,
+      "source_code_bytes": 740,
+      "source_literal_pool_bytes": 36,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": -776,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 1870.608022
+}

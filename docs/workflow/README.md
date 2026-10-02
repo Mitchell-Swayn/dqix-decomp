@@ -11,6 +11,8 @@ own coherent function families. Shared headers/configuration changes travel with
 their source commit; workers never edit another worktree. New workers receive
 the task scope, relevant paths, commands, acceptance, and a short evidence note,
 not the entire conversation. No routine commit-window messaging is needed.
+The integrator alone updates queue.json. Workers report state in compact handoffs;
+this avoids conflicting edits to stale queue snapshots.
 
 A batch normally covers 3–10 related functions, but a single hard dependency or
 verified data range may be useful. After ten unproductive compiler variants on

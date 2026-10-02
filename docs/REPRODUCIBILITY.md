@@ -146,6 +146,13 @@ ninja rom check report
 
 This revision has no `ninja min` target. Source map changes require reconfiguration.
 
+The source-owned interior-alias milestone `8ffd3d644ad2` passed a fresh source
+archive, extraction, object build, all module/symbol checks and final ROM SHA-1
+with the prior pinned tool hashes. See [its manifest](verification/sol61-alias-clean-build.json).
+The verbose log remains under ignored `build/verification/8ffd3d644ad2-ozjtzfp7/`.
+Later combined source batches passed full incremental acceptance; this clean-build
+claim applies specifically to the recorded revision.
+
 ## Runtime verification
 
 The clean-build manifests themselves do not run gameplay. Subsequent emulator
