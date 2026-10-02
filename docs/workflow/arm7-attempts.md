@@ -597,3 +597,15 @@
   command-state first word is now named statusInitialized from its observed use.
 - Three functions add 372 instruction and 28 literal bytes, no data or BSS.
 - Validation: full payload and every linked symbol/header consumer match; all 11 pipeline and six verifier tests pass, with only the pre-existing reviewed CPU-status warnings.
+
+## 2026-10-02 - cartridge command and identity access
+
+- All five functions matched first compile: command writes, control flags, empty
+  hook, ID read and serialized ID wrapper. Command 0xb8, ROMCTRL ready polling and
+  CARDDATA word access establish the card-ID role. The wrapper's worker begin/end
+  operations were inspected and remain explicit dependencies for a later batch.
+- The four-byte empty hook remains an ordinary C no-op with no invented behavior.
+  CardHeader names the observed offset-0x60 control field; unknown prefix bytes and
+  the external header pointer are not claimed as reconstructed data.
+- Five functions add 236 instruction and 24 literal bytes, no data or BSS.
+- Validation: full payload and linked symbols match; all 11 pipeline and six verifier tests pass.

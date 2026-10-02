@@ -2155,6 +2155,45 @@
         "ARM7_TransferBackupBytes": 58732344,
         "ARM7_WriteBackupByte": 58732540
       }
+    },
+    {
+      "name": "CardCommand",
+      "source": "config/usa/arm7/src/CardCommand.c",
+      "autoload": "wram",
+      "runtime_address": 58734196,
+      "payload_offset": 47248,
+      "size": 96,
+      "code_bytes": 88,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SetCardCommand",
+      "symbols": {
+        "ARM7_SetCardCommand": 58734196
+      },
+      "externals": {}
+    },
+    {
+      "name": "CardIdentity",
+      "source": "config/usa/arm7/src/CardIdentity.c",
+      "autoload": "wram",
+      "runtime_address": 58734408,
+      "payload_offset": 47460,
+      "size": 164,
+      "code_bytes": 148,
+      "literal_pool_bytes": 16,
+      "entry": "ARM7_GetCardControl",
+      "symbols": {
+        "ARM7_GetCardControl": 58734408,
+        "ARM7_CardNoOp": 58734440,
+        "ARM7_ReadCardId": 58734444,
+        "ARM7_ReadCardIdLocked": 58734524
+      },
+      "externals": {
+        "ARM7_CardHeader": 58756324,
+        "ARM7_BackupWorker": 58763648,
+        "ARM7_SetCardCommand": 58734196,
+        "ARM7_BeginCardOperation": 58734572,
+        "ARM7_CompleteCardOperation": 58734292
+      }
     }
   ]
 }
