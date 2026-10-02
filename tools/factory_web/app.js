@@ -133,6 +133,7 @@
       const path = element("div", "worker-path", valueText(worker.worktree, "Worktree unknown"));
       path.title = valueText(worker.worktree, "Worktree unknown");
       card.append(top, element("p", "worker-model", `Model · ${valueText(worker.model)}`), element("p", "worker-task", valueText(worker.task, "Task not reported")), path, times);
+      if (worker.supervised) card.append(element("p", "small muted", `Process ${valueText(worker.pid, "not running")} · ${count(worker.completed_batches)} batches handed off · supervised`));
       return card;
     }));
   }

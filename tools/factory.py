@@ -246,6 +246,11 @@ def snapshot(root, db):
             if fleet['stale']:
                 warnings.append('Fleet supervisor heartbeat is stale; last process counts are unconfirmed.')
             for lane in fleet.get('workers', []):
+                current = workers.setdefault(lane['id'], dict(id=lane['id'], model=fleet.get('model'),
+                    task=lane.get('job_id'), worktree=lane['worktree'], updated_at=fleet['heartbeat_utc']))
+                current.update(status='stale' if fleet['stale'] else lane['status'],
+                               pid=lane.get('pid'), activity_at=lane.get('activity_utc'),
+                               completed_batches=lane.get('completed_batches', 0), supervised=True)
                 jobs['fleet:' + lane['id']] = dict(id='fleet:' + lane['id'],
                     status='stale' if fleet['stale'] else lane['status'], owner=lane['id'],
                     scope='Independent overlay reconstruction; batch ' + str(lane.get('batches_started', 0)))

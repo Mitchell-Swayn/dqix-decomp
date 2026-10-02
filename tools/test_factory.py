@@ -7,7 +7,7 @@ import time
 import unittest
 from unittest.mock import patch
 
-from factory import claim, connect, enqueue, heartbeat, run_worker, snapshot, sync_attempts
+from factory import claim, connect, enqueue, heartbeat, run_worker, snapshot, sync_attempts, utc
 
 
 class FactoryTests(unittest.TestCase):
@@ -87,6 +87,22 @@ class FactoryTests(unittest.TestCase):
             data = snapshot(self.root, self.db)
         self.assertEqual(data['coverage']['arm9']['matched_code'], 12)
         self.assertEqual(data['workers'][0]['status'], 'unknown')
+
+    def test_fleet_status_and_staleness_override_worker_heartbeat(self):
+        heartbeat(self.db, 'fleet_test', 'test', 'running', 'test', str(self.root / 'worker'))
+        fleet_path = self.root / 'build/factory/fleet.json'
+        fleet = dict(heartbeat_utc=utc(), workers=[dict(id='fleet_test', worktree=str(self.root / 'worker'),
+                     status='review', pid=None, completed_batches=2)], counts={'running': 0})
+        fleet_path.write_text(json.dumps(fleet))
+        with patch('factory.worktrees', return_value=[]), patch('factory.subprocess.run') as run:
+            run.return_value.stdout = 'head'
+            data = snapshot(self.root, self.db)
+            self.assertEqual(data['workers'][0]['status'], 'review')
+            fleet['heartbeat_utc'] = '2000-01-01T00:00:00+00:00'
+            fleet_path.write_text(json.dumps(fleet))
+            data = snapshot(self.root, self.db)
+            self.assertEqual(data['workers'][0]['status'], 'stale')
+            self.assertTrue(data['fleet']['stale'])
 
 
 if __name__ == '__main__':
