@@ -1,0 +1,18 @@
+{
+  "data_ov019_0218c2d4": {
+    "base": "data_ov019_0218c2c0", "offset": "0x14",
+    "object": "SceneResources.o", "section": ".data"
+  },
+  "data_ov019_0218c2d8": {
+    "base": "data_ov019_0218c2c0", "offset": "0x18",
+    "object": "SceneResources.o", "section": ".data"
+  },
+  "data_ov019_0218c2ed": {
+    "base": "data_ov019_0218c2c0", "offset": "0x2d",
+    "object": "SceneResources.o", "section": ".data"
+  },
+  "data_ov019_0218c2fe": {
+    "base": "data_ov019_0218c2c0", "offset": "0x3e",
+    "object": "SceneResources.o", "section": ".data"
+  }
+}
