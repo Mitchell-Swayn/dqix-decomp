@@ -212,3 +212,22 @@
 - Next batch underway: sound-worker thread initialization, recurring alarm
   control and queue notifications at `0x037ff588` onward. Fixed-point period
   conversion remains a separate unattempted candidate.
+
+## 2026-10-02 - sound-worker lifecycle, alarm and queue notification
+
+- Initialization/start/stop/notify functions `0x037ff588` through `0x037ff674`
+  matched all 236 bytes on first compilation. Alarm callback `0x037ff67c`
+  matched all 68 bytes on first compilation.
+- Typed 1300-byte worker BSS aggregate also matched on first integrated build.
+  Original worker main at `0x037ff6c0` passes queue `0x03809284`, slots
+  `0x03809264` and count 8 to the source-owned initializer, and alarm
+  `0x038092a4` to its initializer. Creator arguments prove context `0x038092d0`,
+  stack top `0x03809774`, stack size `0x400`; context stride `0xa4` closes the
+  contiguous layout exactly. Thus every aggregate field has access/size evidence.
+- Queue-full handling remains a call through the original callback slot to its
+  original message; no new error-recovery policy is inferred.
+- Validation: complete payload and all symbols/BSS match; 11 pipeline tests
+  and six verifier tests pass. Totals: 141 C functions, 11,360 instruction bytes,
+  980 literals, 913 initialized data bytes, 2,100 BSS; 154,503 fallback bytes.
+- Next candidates: sound capture configuration/status at `0x037ff7b4`, worker
+  main dispatch at `0x037ff6c0`, and fixed-point period conversion at `0x037ff33c`.

@@ -1151,6 +1151,66 @@
         "ARM7_SoundSineTable": 58753704
       },
       "externals": {}
+    },
+    {
+      "name": "SoundWorkerControl",
+      "source": "config/usa/arm7/src/SoundWorkerControl.c",
+      "autoload": "wram",
+      "runtime_address": 58717576,
+      "payload_offset": 30628,
+      "size": 236,
+      "code_bytes": 192,
+      "literal_pool_bytes": 44,
+      "entry": "ARM7_InitializeSoundWorker",
+      "symbols": {
+        "ARM7_InitializeSoundWorker": 58717576,
+        "ARM7_StartSoundWorkerAlarm": 58717684,
+        "ARM7_StopSoundWorkerAlarm": 58717764,
+        "ARM7_NotifySoundWorker": 58717784
+      },
+      "externals": {
+        "ARM7_SoundWorkerInitialized": 58757728,
+        "ARM7_SoundWorkerThread": 58757840,
+        "ARM7_SoundWorkerStackTop": 58759028,
+        "ARM7_SoundWorkerAlarm": 58757796,
+        "ARM7_SoundWorkerQueue": 58757764,
+        "ARM7_InitializeSoundWorkerPlatform": 58729904,
+        "ARM7_CreateThread": 58704992,
+        "ARM7_MarkThreadReady": 58705784,
+        "ARM7_GetCurrentTimestamp": 58710008,
+        "ARM7_SetInterval": 58710844,
+        "ARM7_CancelAlarm": 58710984,
+        "ARM7_SendMessage": 58706692,
+        "ARM7_SoundWorkerMain": 58717888,
+        "ARM7_SoundWorkerAlarmCallback": 58717820
+      },
+      "bss": {
+        "runtime_address": 58757728,
+        "size": 1300,
+        "symbols": {
+          "ARM7_SoundWorkerState": 58757728
+        }
+      }
+    },
+    {
+      "name": "SoundWorkerAlarmCallback",
+      "source": "config/usa/arm7/src/SoundWorkerAlarmCallback.c",
+      "autoload": "wram",
+      "runtime_address": 58717820,
+      "payload_offset": 30872,
+      "size": 68,
+      "code_bytes": 56,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_SoundWorkerAlarmCallback",
+      "symbols": {
+        "ARM7_SoundWorkerAlarmCallback": 58717820
+      },
+      "externals": {
+        "ARM7_SoundWorkerQueue": 58757764,
+        "ARM7_SoundQueueFailureHandler": 58755224,
+        "ARM7_SoundQueueFailureMessage": 58756256,
+        "ARM7_SendMessage": 58706692
+      }
     }
   ]
 }
