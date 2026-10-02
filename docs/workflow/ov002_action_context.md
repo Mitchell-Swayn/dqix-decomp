@@ -51,3 +51,25 @@ c7c3014c237900c8281289b8bc76a781969b6278. work_batch.py measured 406.291506
 seconds, +1 matched function, +380 matched code bytes, +0 data bytes, unchanged
 denominators, and zero ARM7/literal/data/BSS/assembly gains. Source commit:
 d50f939. This is local worker validation; host integration remains separate.
+
+## Return declaration repair
+
+Changed the local declaration of `func_0202b7d8(void*)` from `int` to `bool`,
+consistent with its existing C-linkage declaration in
+`src/World/Zone3DTransitions.cpp`. No other functions or data were reconstructed.
+The freshly rebuilt `src/Factory/ov002/ActionContext` object remains 100%
+matching for `func_ov002_02153ea4`; comparison evidence is under
+`build/matching/20261002T201205-2a4e3e17e48542be926be30096f25d73`.
+
+Inherited conservative unproductive-attempt count: 5. This repair adds one
+productive source variant and no unproductive variants, leaving the cumulative
+unproductive count at 5. Inventory identity and dispatch relocation validation
+remain host responsibilities as recorded above.
+
+Repair acceptance: `ninja -j2 rom check report sha1` passed all configured
+module/symbol checks, ARM7 preservation and exact USA ROM SHA-1
+`c7c3014c237900c8281289b8bc76a781969b6278`.
+Logs: `build/action_repair_baseline.log` and
+`build/action_repair_acceptance.log`. Batch measurement:
+`build/workflow/ov002_action_return_repair`. No runtime testing or measured
+token usage; this declaration repair claims no additional source coverage.

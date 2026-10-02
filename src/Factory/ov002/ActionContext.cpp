@@ -3,7 +3,7 @@
 
 extern "C" void* func_02010828(GameState*);
 extern "C" void* func_0202ae18();
-extern "C" int func_0202b7d8(void*);
+extern "C" bool func_0202b7d8(void*);
 extern "C" int func_02086ef0(void*, int);
 extern "C" void func_ov002_02153e90(ActionResult*);
 extern "C" int func_ov002_02154a6c(void*, int, int);
