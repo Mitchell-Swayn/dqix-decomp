@@ -1,7 +1,6 @@
 /* Select the software LED pattern and reset its phase. */
 #pragma dont_inline on
-typedef struct {unsigned int phase;int pattern;} PowerLedPatternState;
-extern PowerLedPatternState ARM7_PowerLedPatternState;
+#include "PowerLed.h"
 void ARM7_SetPowerLedPattern(int pattern)
 {
  if(pattern<=15) {

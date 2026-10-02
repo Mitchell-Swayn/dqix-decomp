@@ -697,3 +697,18 @@
   queue/state/waiter storage remains external, with no BSS credit.
 - Five functions add228 instruction and24 literal bytes, no data/BSS.
 - Validation: full payload and linked symbols match; all 11 pipeline and six verifier tests pass.
+
+## 2026-10-02 - queued power execution and LED animation
+
+- Both power-task executor and LED updater matched first compile. Verified runtime
+  helper0x038080c4 returns the unsigned quotient before naming its dependency.
+  LED updater retains the 64-bit shifted high-bit mask and wraps phase at the
+  product of step count and frames per step.
+- Added the twelve typed12-byte patterns for indices4..15 as144 initialized data
+  bytes, separately from instruction coverage. Shared PowerLed.h checks record size
+  and prevents layout drift with the previously reconstructed pattern accessors.
+- This batch adds two functions/612 instruction/28 literal bytes plus144 data;
+  it does not count the data table as a third function. No BSS ownership added.
+- Variadic enqueue was inspected but not attempted: this checkout lacks the original
+  stdarg ABI header, and a guessed stack-walk replacement would be premature.
+- Validation: full payload and linked code/data symbols match, including every shared-header consumer; all 11 pipeline and six verifier tests pass.

@@ -2501,6 +2501,71 @@
         "ARM7_SpiTaskHandler2": 58747332,
         "ARM7_ExecutePowerTask": 58743884
       }
+    },
+    {
+      "name": "PowerTask",
+      "source": "config/usa/arm7/src/PowerTask.c",
+      "autoload": "wram",
+      "runtime_address": 58743884,
+      "payload_offset": 56936,
+      "size": 352,
+      "code_bytes": 336,
+      "literal_pool_bytes": 16,
+      "entry": "ARM7_ExecutePowerTask",
+      "symbols": {
+        "ARM7_ExecutePowerTask": 58743884
+      },
+      "externals": {
+        "ARM7_PowerState": 58767212,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_IsSpiServiceAvailable": 58740000,
+        "ARM7_AcquireSpiService": 58740028,
+        "ARM7_ReleaseSpiService": 58740052,
+        "ARM7_SendPowerReply": 58744236,
+        "ARM7_SendIpcCommand": 58714784,
+        "ARM7_EnterPowerSleep": 58745340,
+        "ARM7_ExecutePowerCommand": 58744684,
+        "ARM7_SetPowerLedMode": 58745216
+      }
+    },
+    {
+      "name": "PowerLedUpdate",
+      "source": "config/usa/arm7/src/PowerLedUpdate.c",
+      "autoload": "wram",
+      "runtime_address": 58745772,
+      "payload_offset": 58824,
+      "size": 288,
+      "code_bytes": 276,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_UpdatePowerLed",
+      "symbols": {
+        "ARM7_UpdatePowerLed": 58745772
+      },
+      "externals": {
+        "ARM7_PowerLedPatternState": 58767260,
+        "ARM7_PowerLedPatterns": 58756464,
+        "ARM7_PowerLedMode": 58756428,
+        "ARM7_EnqueueSpiTask": 58740112,
+        "ARM7_SetPowerLedPattern": 58746060,
+        "ARM7_UnsignedDivide": 58753220
+      }
+    },
+    {
+      "name": "PowerLedPatterns",
+      "source": "config/usa/arm7/src/PowerLedPatterns.c",
+      "autoload": "wram",
+      "runtime_address": 58756464,
+      "payload_offset": 69516,
+      "size": 144,
+      "code_bytes": 0,
+      "literal_pool_bytes": 0,
+      "data_bytes": 144,
+      "entry": "ARM7_PowerLedPatterns",
+      "symbols": {
+        "ARM7_PowerLedPatterns": 58756464
+      },
+      "externals": {}
     }
   ]
 }
