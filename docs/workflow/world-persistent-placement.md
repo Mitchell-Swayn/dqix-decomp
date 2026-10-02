@@ -65,3 +65,7 @@ candidate. Full `ninja rom check report sha1` passes; evidence is
 function or initialized-data coverage and leaves all denominators unchanged.
 Queue updates remain integrator-owned. The preserved untracked population draft
 also uses the actual array but retains its uncredited branch mismatch.
+
+The review-correction batch measured 137.438705 seconds after rebased-baseline
+acceptance. Setup/rebase time is excluded. Its start/finish snapshots are archived
+under `evidence/sol61-world-layout-*.json`; token usage remains unknown.

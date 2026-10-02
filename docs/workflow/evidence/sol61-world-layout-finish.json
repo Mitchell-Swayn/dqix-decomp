@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "sol61-world-layout",
+  "snapshot": {
+    "utc": "2026-10-02T13:57:10.113803+00:00",
+    "revision": "8ffeed2797f6d39965df3b81ab88cb72184dc227",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 216964,
+      "matched_data": 66084,
+      "matched_functions": 1631
+    },
+    "arm7": {
+      "source_functions": 274,
+      "source_code_bytes": 24492,
+      "source_literal_pool_bytes": 1712,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 4696,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 140220,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "2ff43fe04a0bb26a1ebc7cc4d95732290fa53cec7036ccffeafb3f2f230c0b17",
+    "arm7_report_sha256": "83be6c61e6999f9b8b0d5967b7d7afe8d862b6005a70336ebfb21b26ba944079",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "ActualGameStatearray100x4bytesat5cdc, neutralbyte5cda; sharedsize7ff4andalloffsetsasserted. Fouraffectedunitsfivefunctions100pct firstcandidate; fullROMmodule/symbol/SHA1passed; zerocoveragedelta. Queueintegratorowned; inheriteduntrackeddraftpreserved.",
+  "attempts": 4,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 0,
+      "matched_data": 0,
+      "matched_functions": 0
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 137.438705
+}
