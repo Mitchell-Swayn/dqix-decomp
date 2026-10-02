@@ -117,4 +117,4 @@ data_ov016_0219d144 kind:bss addr:0x0219d144
 data_ov016_0219d14c kind:bss addr:0x0219d14c
 data_ov016_0219d190 kind:bss addr:0x0219d190
 data_ov016_0219d1bc kind:bss addr:0x0219d1bc
-data_ov016_0219d1c0 kind:bss addr:0x0219d1c0
+data_ov016_0219d1c0 kind:bss(size=0x24) addr:0x0219d1c0

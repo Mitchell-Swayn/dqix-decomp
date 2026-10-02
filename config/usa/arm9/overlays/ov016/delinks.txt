@@ -4,3 +4,12 @@
     .data       start:0x0219cfc0 end:0x0219d0c0 kind:data align:32
     .bss        start:0x0219d0c0 end:0x0219d200 kind:bss align:32
 
+src/Factory/ov016/DecoderTableCache.cpp:
+    complete
+    .text start:0x0218fc78 end:0x0218fea0
+    .bss start:0x0219d1c0 end:0x0219d1e4
+
+src/Factory/ov016/DecoderClampTables.cpp:
+    complete
+    .rodata start:0x0219ca60 end:0x0219cee0
+
