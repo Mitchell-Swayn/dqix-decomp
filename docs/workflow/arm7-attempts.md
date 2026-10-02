@@ -644,3 +644,18 @@
   a CRLF-sensitive text replacement failed; the subsequent explicit edit resolved it.
 - Four functions add 332 instruction and 32 literal bytes, no data or BSS.
 - Validation: full payload and linked symbols match; all 11 pipeline and six verifier tests pass.
+
+## 2026-10-02 - card-removal shutdown path
+
+- Removal callback, termination loop and wireless power-off matched first compile.
+  Verified the idle trampoline's literal target is 0x03803ebf, Thumb BIOS SWI 6,
+  rather than guessing from ARM disassembly of its literal pool. Wireless shutdown
+  clears POWCNT bit 1 and invokes two opaque dependencies; cleanup at 0x038078ec
+  is also deliberately opaque, with no inferred internal device policy.
+- Notification polling at 0x03803da8 is deferred after five variants: correct248-byte
+  size and control flow, initially13 instruction bytes different, then nine after
+  volatile shared-flag accesses preserved load/store order. Snapshot/helper scope
+  changes did not resolve register allocation. Its tentative volatile declarations
+  are not propagated into committed headers, and no polling source is integrated.
+- Three functions add 180 instruction and 12 literal bytes, no data or BSS.
+- Validation: full payload and linked symbols match; all 11 pipeline and six verifier tests pass.

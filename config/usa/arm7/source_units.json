@@ -2276,6 +2276,69 @@
         "ARM7_ReleaseNDSBus": 58702904,
         "ARM7_ReadCardIdLocked": 58734524
       }
+    },
+    {
+      "name": "CardRemovalCallback",
+      "source": "config/usa/arm7/src/CardRemovalCallback.c",
+      "autoload": "wram",
+      "runtime_address": 58735644,
+      "payload_offset": 48696,
+      "size": 120,
+      "code_bytes": 112,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_CardRemovalCallback",
+      "symbols": {
+        "ARM7_CardRemovalCallback": 58735644
+      },
+      "externals": {
+        "ARM7_ResetDmaChannel": 58713452,
+        "ARM7_TerminationCleanup": 58751212,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_PowerOffSound": 58715544,
+        "ARM7_DisableWirelessPower": 58746172,
+        "ARM7_Terminate": 58713320,
+        "ARM7_Panic": 58703664,
+        "ARM7_CardRemovalFile": 58756336,
+        "ARM7_CardRemovalCommandError": 58756356
+      }
+    },
+    {
+      "name": "Terminate",
+      "source": "config/usa/arm7/src/Terminate.c",
+      "autoload": "wram",
+      "runtime_address": 58713320,
+      "payload_offset": 26372,
+      "size": 24,
+      "code_bytes": 24,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_Terminate",
+      "symbols": {
+        "ARM7_Terminate": 58713320
+      },
+      "externals": {
+        "ARM7_TerminationCleanup": 58751212,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_IdleProcessor": 58688684
+      }
+    },
+    {
+      "name": "WirelessPowerOff",
+      "source": "config/usa/arm7/src/WirelessPowerOff.c",
+      "autoload": "wram",
+      "runtime_address": 58746172,
+      "payload_offset": 59224,
+      "size": 48,
+      "code_bytes": 44,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_DisableWirelessPower",
+      "symbols": {
+        "ARM7_DisableWirelessPower": 58746172
+      },
+      "externals": {
+        "ARM7_WirelessPowerOffHook1": 58746060,
+        "ARM7_WirelessPowerOffHook2": 58745216
+      }
     }
   ]
 }
