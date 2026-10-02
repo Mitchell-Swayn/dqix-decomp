@@ -33,6 +33,10 @@ src/GameState/GameStateObjects.cpp:
 	complete
 	.text start:0x0200fd70 end:0x0200fea4
 
+src/GameState/GameStateObjectFlagAccessors.cpp:
+	complete
+	.text start:0x0200fea4 end:0x0200ff94
+
 src/GameState/GameTime.cpp:
     complete
     .text start:0x02010150 end:0x020103c8

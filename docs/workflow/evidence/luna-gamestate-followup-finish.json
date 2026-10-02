@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "luna-gamestate-followup",
+  "snapshot": {
+    "utc": "2026-10-02T12:11:50.813806+00:00",
+    "revision": "1fd54b4eec8bc0c47973c168e89980953f4f1748",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 212392,
+      "matched_data": 48064,
+      "matched_functions": 1560
+    },
+    "arm7": {
+      "source_functions": 265,
+      "source_code_bytes": 22912,
+      "source_literal_pool_bytes": 1588,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 141924,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "0279b349442fc3dd571a93394551848d79ea9c6509abc6051831453465a20514",
+    "arm7_report_sha256": "6f3aaf4f9b7392fa38ff6c7504a2202e44c4c00ffb6122d9dae61b1d89e761f4",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Four C-linkage GameState object slot filters at 0200fea4/0200fee0/0200ff1c/0200ff58 match exact original objects (1 candidate each); unknown mask semantics retained. Full ninja rom check report sha1 passed, target SHA1 c7c3014c237900c8281289b8bc76a781969b6278. Whole task timer began 2026-10-02 12:07:47 UTC before setup.",
+  "attempts": 4,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 240,
+      "matched_data": 0,
+      "matched_functions": 4
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 138.910196
+}

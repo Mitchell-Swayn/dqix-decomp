@@ -48,3 +48,25 @@ The `tools/work_batch.py` snapshots record the post-setup coverage interval
 separately: 394.46 seconds, +32 matched code bytes and +4 functions, with all
 denominators unchanged. Token usage was not measured. Gameplay validation was
 not performed.
+
+## GameState object flag accessors follow-up
+
+The whole-task clock began at `2026-10-02T12:07:47Z`, before branch setup; the
+acceptance snapshot completed at `2026-10-02T12:11:50.813806Z` (243.81 seconds
+elapsed). The fresh worker branch was based on `1fd54b4eec8bc0c47973c168e89980953f4f1748`.
+The baseline `ninja rom check report sha1` passed before the batch snapshot.
+
+`GameStateObjectFlagAccessors.cpp` reconstructs four original filters in
+`0x0200fea4..0x0200ff94`. Each bounds-checks an index into `GameState::objects_`,
+checks for a non-null object, then tests `obj3D_.unknown_0_` against `0x400`,
+`0x200`, `0x100`, or `0x1000`. The flag meanings are unknown and are not named
+as semantic roles. One candidate per function matched all four original objects
+at 100%, adding 240 matched code bytes and four matched functions, with no
+literal/data/BSS changes and unchanged denominators.
+
+The full `ninja rom check report sha1` passed, including ARM9/module and symbol
+checks, ARM7 baseline verification, and target ROM SHA-1
+`c7c3014c237900c8281289b8bc76a781969b6278`. The work-batch snapshot interval
+was 138.91 seconds. Start/finish snapshots are archived as
+`docs/workflow/evidence/luna-gamestate-followup-{start,finish}.json`; detailed
+disassembly, attempts, and build logs remain under ignored `build/`.
