@@ -115,3 +115,37 @@ still applies. Logs: `build/runtime-batch3-acceptance.log`,
 `build/runtime-batch3-finalize.log`, and `build/matching/`.
 Local matched code 149,892 -> 150,460; functions 1,141 -> 1,147; data unchanged
 at 26,488. All denominators unchanged. No gameplay validation was performed.
+
+## Runtime termination and wide conversion (2026-10-02)
+
+Based on `37e290b`. Six functions in three new units add 624 code bytes
+(584 instructions and forty compiler-generated address-literal bytes), no
+data/BSS. Exit callback state, mutex bookkeeping, destructor-list head and
+locale tables remain external fallback globals. Source-defined exit handling
+now reaches the source-defined destructor chain and stream flush routines.
+
+| Function | Distinct variants | Result / useful finding |
+| --- | ---: | --- |
+| `func_02001578` (abort path) | 1 | Raise signal 1, set the original abort flag, and enter termination. |
+| `func_0200159c` (termination dispatch) | 1 | Preserve destructor/early-hook suppression on abort and clear the hook after calling it. |
+| `func_020015e8` (exit callback stack) | 6 | Guarded do/while retains the original first check; explicit index and handler temporaries with volatile count/table preserve the original reload and fetch-before-count-store sequence. |
+| `func_0200edf4` (destructor chain) | 2 | Guarded do/while and explicit reload of the list head reproduce callback-safe traversal. |
+| `func_020019ac` (locale character encoder) | 1 | Dispatch through the locale's character-method table. |
+| `func_020019c8` (wide string conversion) | 1 | Preserve null-pointer handling, the four-byte temporary, truncation/count comparison and original terminating-byte behavior. |
+
+Twelve distinct per-function variants; maximum six for one function. Unchanged
+shared-unit recompiles and formatting checks are excluded. Exit-loop variants
+covered a while loop, separate handler/count expressions, guarded pre-decrement,
+a saved index, and successive explicit shared-access qualifiers. The volatile
+qualifiers model the observed shared callback-stack access ordering; they do
+not establish the original source declarations. Recursive mutex handling keeps
+the same counterintuitive TryLockMutex branch as the earlier signal dispatcher.
+The unused final status argument and ordinary return paths remain as observed.
+
+All three units report 100% objdiff. One full batch build passed ARM9 modules,
+symbols, and ARM7 preservation. Main's existing guarded header finalizer again
+produced exact USA SHA-1 `c7c3014c237900c8281289b8bc76a781969b6278`; the older
+configure-script caveat remains. Logs: `build/runtime-batch4-acceptance.log`,
+`build/runtime-batch4-finalize.log`, and `build/matching/`.
+Local matched code 150,460 -> 151,084; functions 1,147 -> 1,153; data unchanged
+at 26,488. Denominators unchanged. No gameplay validation was performed.
