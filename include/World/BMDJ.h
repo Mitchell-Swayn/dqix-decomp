@@ -125,4 +125,4 @@ void InitializeBMDJTransforms(Zone3D_BMDJStruct::InstanceEntry* instance);
 void ApplyBMDJTransforms(Zone3D_BMDJStruct::InstanceEntry* instance, const Vector3i* parentPosition, const int* parentAngle, const Vector3i* parentScale);
 void ResetBMDJGroup(Zone3D_BMDJStruct* group);
 void SetBMDJUnknownHighFlag(Zone3D_BMDJStruct::InstanceEntry* instance, bool value);
-void UpdateBMDJFlag4(Zone3D_BMDJStruct::InstanceEntry* instance, int unused, bool clear);
+void UpdateBMDJFlag4(Zone3D_BMDJStruct::InstanceEntry* instance, int unused, int clear);

@@ -23,7 +23,6 @@
 #define data_020ef2b0 data_020ef1ec
 #define data_020ef2b5 data_020ef1f1
 
-#define func_020196fc func_0201949c
 #define func_0201e434 func_0201e1c0
 #endif
 
@@ -31,7 +30,6 @@ extern "C"
 {
     // get timer (seconds since game start?)
     void func_020105a8(GameState*, int*);
-    Zone3D_BMDJStruct* func_020196fc(Zone3D*, int);
     void* func_0202ae18();
 }
 
@@ -136,7 +134,7 @@ int Zone3D::ComputeGrottoTileTypes(int floor, ZoneFeatures *featuresArg, TileFea
 
             if (output == NULL)
             {
-                extendedEntry->bmdj = func_020196fc(this, tileType);
+                extendedEntry->bmdj = GetBMDJGroupAtIndex(tileType);
                 TileFeaturePlacementData* knownData = features->GetGrottoTileFeaturePlacementEntry(tileName);
                 if (knownData != NULL)
                     extendedEntry->featurePlacement = *knownData;

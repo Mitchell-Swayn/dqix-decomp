@@ -180,6 +180,10 @@ public:
     ZoneFeatures::Opcode6aEntry* FindNearestType10Feature(const Vector3fix* point);
     ZoneFeatures::Opcode6aEntry* FindType10Feature(unsigned short id);
     ZoneFeatures::Opcode6aEntry* FindNearestType11Feature(const Vector3fix* point);
+    Zone3D_BMDJStruct::InstanceEntry* FindLastBMDJInstance(int groupID, int instanceID);
+    void ApplyBMDJFlag4Overrides(bool alternate);
+    void RestoreBMDJFlag4Overrides();
+    Zone3D_BMDJStruct* GetBMDJGroupAtIndex(int index);
     void RecordBMDJFlag4State();
     void RestoreBMDJFlag4State();
     void ApplyType2InstanceFlags();

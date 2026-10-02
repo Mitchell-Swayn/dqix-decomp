@@ -3,7 +3,7 @@
 extern "C" void* func_0205ec34();
 
 // The middle argument is unused; flag 4's gameplay role is still uncertain.
-void UpdateBMDJFlag4(Zone3D_BMDJStruct::InstanceEntry* instance, int unused, bool clear)
+void UpdateBMDJFlag4(Zone3D_BMDJStruct::InstanceEntry* instance, int unused, int clear)
 {
     func_0205ec34();
     if (clear) instance->flags &= ~4;
