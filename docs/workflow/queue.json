@@ -24,7 +24,7 @@
       "status": "active",
       "owner": "luna_runtime_batch",
       "worktree": "../DQIX-Decomp-luna-runtime",
-      "scope": "GameStatecontext+timestamp batches integrated; next bounded25-minute family active.",
+      "scope": "Three further elapsed-time helpers integrated (+132 code bytes); next bounded GameState family active.",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1"
     },
@@ -71,10 +71,10 @@
     },
     {
       "id": "arm7-inventory",
-      "status": "verified",
-      "owner": null,
+      "status": "active",
+      "owner": "luna_arm7_inventory_next",
       "scope": "Startup, initialautoloadentry and two Thumb BIOS stubs partitioned; structural+ROM-backed checks pass. WholeARM7denominator remains unknown.",
-      "next_action": "Extend evidence-backed inventory; never treat whole payload as executable code"
+      "next_action": "Classify a bounded contiguous unresolved range with control-flow/reference evidence; no guessed whole-payload denominator."
     },
     {
       "id": "integration-helper",
@@ -187,9 +187,13 @@
     },
     {
       "id": "per-agent-token-measurement",
-      "status": "active",
-      "owner": "luna_arm7_inventory_next",
-      "scope": "Analyzer reviewed; historical model attribution, selection validation and failure exit status corrections requested before integration."
+      "status": "integrated",
+      "owner": null,
+      "scope": "Read-only historical model/token measurement; 14 tests pass and recorded 30-minute totals reproduced exactly.",
+      "worker_commits": [
+        "859c802",
+        "3f1b547"
+      ]
     }
   ]
 }

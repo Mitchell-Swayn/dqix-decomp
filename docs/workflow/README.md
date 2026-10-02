@@ -75,6 +75,19 @@ Add `--attempts N` for known experiment counts and `--notes ...` for limitations
 Token usage is explicitly unknown unless separately measured by the runtime;
 do not infer it from account-plan limits or equate aggregate tokens with billing.
 
+`tools/measure_agent_tokens.py --project-root ABSOLUTE_PATH --start START --end END`
+aggregates local Codex per-response telemetry for an explicit UTC interval
+(inclusive start, exclusive end). Use an absolute project path: database cwd
+matching is literal after Windows path normalization. An exact `--agent-path`
+or explicit `--rollout` files may replace project selection. The database is
+opened read-only; conversation events and account data are not exported.
+Response IDs are deduplicated, thread identities checked, and model attribution
+comes from historical turn metadata. Diagnostics return a nonzero exit status;
+never silently use partial totals. Fourteen focused tests cover this accounting.
+Cached input is a subset of input, and reasoning is a subset of output. Report
+accepted batch deltas alongside measured tokens; price equivalents and plan
+allowance usage are different quantities. See [the measured comparison](TOKEN_COST_ANALYSIS.md).
+
 Archive selected batch JSON in `docs/workflow/evidence/` at milestones. Keep
 attempt details and large diffs in ignored build files, not in conversation.
 Track both instruction/code gains and removed fallback dependencies. Preserve
