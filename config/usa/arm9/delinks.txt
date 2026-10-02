@@ -811,6 +811,14 @@ src/System/RuntimeLdexp.cpp:
     complete
     .text start:0x0200aae4 end:0x0200ab10
 
+src/System/RuntimeBitCount.cpp:
+    complete
+    .text start:0x0200a9cc end:0x0200aa60
+
+src/System/RuntimeDecimalFormat.cpp:
+    complete
+    .text start:0x0200a300 end:0x0200a3a8
+
 src/System/RuntimeRandom.cpp:
     complete
     .text start:0x02003d14 end:0x02003d58

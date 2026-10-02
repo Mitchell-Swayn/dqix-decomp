@@ -336,3 +336,33 @@ Older configure caveat unchanged. Logs: `build/runtime-batch10-acceptance.log`,
 `build/runtime-batch10-finalize.log`, and `build/matching/`. Local matched code
 155,784 -> 157,200; functions 1,175 -> 1,177; data 26,488 -> 26,640.
 No gameplay validation was performed.
+
+## Decimal bit count and formatting (2026-10-02)
+
+Based on `ab542e0`. Two exact dependencies add 316 code bytes (304 instructions
+and twelve compiler mask-literal bytes), no data/BSS. Bit count `func_0200a9cc`
+matched its first parallel unsigned-64-bit reduction. Decimal format
+`func_0200a300` took four variants: guarded do/while loops and a separate digit
+load before the postincrement store preserve the original loop scheduling.
+The first format halfword remains explicitly uninterpreted; precision is the
+signed halfword at +2. Special N/I digits bypass numeric padding/conversion.
+
+Decimal multiply `func_02009778` remains fallback after nine variants. Its
+388-byte control flow and division literals match, but local allocation and
+left-length-load scheduling still differ (best direct comparison 323/388 bytes,
+including unresolved call relocation). Guarded loops fixed the initial 12-byte
+shortfall; scoped/predeclared indices, pointer-base hoisting, chained end/cursor
+initialization and explicit available-length locals did not resolve allocation.
+A volatile-read trial had no benefit and is not installed. No further variants
+were attempted. Next useful evidence is original declaration/lifetime structure
+or a independently matching caller; no ABI/register shim or assembly substitute.
+The earlier decimal-increment/no-op boundary issue also remains deferred.
+
+Both installed units are 100% objdiff. Full modules/symbols/ARM7 checks passed;
+guarded separate-output finalization produced exact USA SHA-1
+`c7c3014c237900c8281289b8bc76a781969b6278`. Older configure caveat unchanged.
+Inspection-to-validation artifact timestamps measured 408.4 seconds. Fourteen
+distinct candidates total including the deferred multiply. Logs:
+`build/runtime-batch11-acceptance.log`, `build/runtime-batch11-finalize.log`,
+and `build/matching/`. Local matched code 157,200 -> 157,516; functions
+1,177 -> 1,179; data remains 26,640. Denominators unchanged; no gameplay test.
