@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "pilot-12",
+  "snapshot": {
+    "utc": "2026-10-02T06:25:02.838735+00:00",
+    "revision": "6ebd5706f40ed46204bd7e9e642f9ef1aac618e9",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 189932,
+      "matched_data": 34392,
+      "matched_functions": 1403
+    },
+    "arm7": {
+      "source_functions": 166,
+      "source_code_bytes": 13512,
+      "source_literal_pool_bytes": 1056,
+      "source_data_bytes": 913,
+      "source_bss_bytes": 3444,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 152275,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "305850efc78cebd6fef413a729d5a165b42ac4c8b985741795a922f929c69f17",
+    "arm7_report_sha256": "cdfd4273d7b2bf2ff8bd46c70b584071d36a16a540e2353c93546312fbeb2a25",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Combined ROM/module/symbol/report/SHA1 accepted: four binary64 math helpers, twelve ARM9 context helpers, ARM7 modulation/reservation controls, and World initialization/resource lifecycle. Deferred sleep candidate remains fallback.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 2936,
+      "matched_data": 0,
+      "matched_functions": 19
+    },
+    "arm7": {
+      "source_functions": 7,
+      "source_code_bytes": 428,
+      "source_literal_pool_bytes": 12,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": -440,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 288.824066
+}

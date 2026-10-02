@@ -21,10 +21,10 @@
     },
     {
       "id": "runtime-next",
-      "status": "active",
-      "owner": "match_harness",
+      "status": "queued",
+      "owner": null,
       "worktree": "../DQIX-Decomp-vectors",
-      "scope": "bounded decimal conversion and adjacent runtime dependencies; shared runtime state and console buffers integrated",
+      "scope": "Continue math and runtime dependency reconstruction after ARM7 header tooling; integrated through 64714ba",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1"
     },
@@ -41,7 +41,7 @@
       "status": "active",
       "owner": "arm7_batch",
       "worktree": "../DQIX-Decomp-arm7-batch",
-      "scope": "sound capture, period conversion and worker main; scheduling, GPIO, channel configuration and sound utilities integrated",
+      "scope": "voice allocation, reservation controls and modulation; shared type consolidation awaits header dependency tracking",
       "attempt_limit_per_function": 10,
       "acceptance": "exact full ARM7 payload and pipeline tests; root full ROM integration"
     },
@@ -50,7 +50,7 @@
       "status": "active",
       "owner": "world_batch",
       "worktree": "../DQIX-Decomp-zone3d",
-      "scope": "remaining Zone3D resources and state methods; chest loading and BMDJ definition overrides integrated",
+      "scope": "Zone3D constructor/destructor and embedded lifetime dependencies; transitions and initialization/resource reset integrated",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1"
     },
@@ -99,6 +99,21 @@
       "scope": "0x02111728..0x02111738",
       "blocker": "Replacing interior symbol alias with field access changes existing SearchFileOrDirectory register allocation. Registry remains fallback.",
       "next_action": "Match real caller access or recover justified field-alias representation without weakening comparison"
+    },
+    {
+      "id": "arm7-header-provenance",
+      "status": "active",
+      "owner": "match_harness",
+      "scope": "actual compiler transitive include hashes and Ninja dependencies; real nested-header rebuild tests",
+      "acceptance": "parser/assembly-guard fixtures, MWCC+Ninja dependency smoke, exact ARM7 payload and full ROM checks; root fresh archive build"
+    },
+    {
+      "id": "arm9-context-lifecycle",
+      "status": "active",
+      "owner": "root",
+      "scope": "isolate existing context creation and shutdown C++ candidates; blocking and callback routines integrated",
+      "attempt_limit_per_function": 10,
+      "acceptance": "exact objects then ROM/check/report/sha1"
     }
   ]
 }

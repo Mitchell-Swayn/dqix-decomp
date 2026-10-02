@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "pilot-11",
+  "snapshot": {
+    "utc": "2026-10-02T06:19:35.548402+00:00",
+    "revision": "6e91e4a9e6b78164d99f2161533dbf3637696e62",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 186996,
+      "matched_data": 34392,
+      "matched_functions": 1384
+    },
+    "arm7": {
+      "source_functions": 159,
+      "source_code_bytes": 13084,
+      "source_literal_pool_bytes": 1044,
+      "source_data_bytes": 913,
+      "source_bss_bytes": 3444,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 152715,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "fb8ba3f3ede8c22dbbe38afeb3724712a1e2e8ccb13841be743608792cd401fc",
+    "arm7_report_sha256": "f26bfe4fcd1381330bce4ff068f2581a77672a4b8d324260b696d6b983a9ce34",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Accepted full ROM/module/symbol/report/SHA1: world transition accessor/dispatch chain, ARM7 ADSR/voice-start helpers, 28B timer/alarm BSS, 16B typed infinity/NaN constants; no denominator changes.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 616,
+      "matched_data": 44,
+      "matched_functions": 7
+    },
+    "arm7": {
+      "source_functions": 9,
+      "source_code_bytes": 416,
+      "source_literal_pool_bytes": 16,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": -432,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 228.433551
+}
