@@ -516,3 +516,15 @@
 - Batch adds one function/328 instruction bytes and separately 275 initialized data
   bytes, with no BSS or literal additions. It does not claim a three-function batch.
 - Validation: full payload, code/data symbols, and all 11 pipeline plus six verifier tests pass. Payload SHA-1 remains a662d5c6a78e990244299926cf6862ce910a475d.
+
+## 2026-10-02 - reset IPC and platform quiescing
+
+- All four reset-control functions at 0x037fe3e0 matched first compile: initialize,
+  status, IPC command validation, and reset sequence. os_reset.c/unknown-command
+  literals establish the subsystem; command extraction preserves unsigned-short
+  narrowing and unknown commands follow the original panic path.
+- The final target at 0x038085b0 is a hardware handshake plus entry-point transfer,
+  not a BIOS SWI. Named it ResetBootHandoff and left it an external binary dependency.
+- Adds 236 instruction and 28 literal bytes; separately owns exactly four BSS bytes
+  for the two halfword flags at 0x03809184. Strings remain binary data dependencies.
+- Validation: after correcting an integration-script parenthesis before any source mutation, the integrated full payload and code/BSS symbols match; all 11 pipeline and six verifier tests pass.

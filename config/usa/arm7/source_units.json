@@ -1918,6 +1918,42 @@
         "ARM7_SoundAttackTable": 58754272
       },
       "externals": {}
+    },
+    {
+      "name": "ResetControl",
+      "source": "config/usa/arm7/src/ResetControl.c",
+      "autoload": "wram",
+      "runtime_address": 58713056,
+      "payload_offset": 26108,
+      "size": 264,
+      "code_bytes": 236,
+      "literal_pool_bytes": 28,
+      "entry": "ARM7_InitializeReset",
+      "symbols": {
+        "ARM7_InitializeReset": 58713056,
+        "ARM7_IsResetRequested": 58713112,
+        "ARM7_ResetIpcCallback": 58713128,
+        "ARM7_SoftReset": 58713200
+      },
+      "externals": {
+        "ARM7_ResetSourceFile": 58756220,
+        "ARM7_ResetUnknownCommand": 58756232,
+        "ARM7_SetIpcHandler": 58714668,
+        "ARM7_Panic": 58703664,
+        "ARM7_SetSpecificInterruptsEnabled": 58702040,
+        "ARM7_AcknowledgeSpecificInterrupts": 58702232,
+        "ARM7_ResetDmaChannel": 58713452,
+        "ARM7_ResetSoundChannels": 58715460,
+        "ARM7_SendIpcCommand": 58714784,
+        "ARM7_ResetBootHandoff": 58754480
+      },
+      "bss": {
+        "runtime_address": 58757508,
+        "size": 4,
+        "symbols": {
+          "ARM7_ResetState": 58757508
+        }
+      }
     }
   ]
 }
