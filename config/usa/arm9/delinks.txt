@@ -1409,3 +1409,11 @@ src/World/WorldScriptOpcode100.cpp:
 src/World/WorldScriptOpcode101.cpp:
     complete
     .text start:0x0208d548 end:0x0208d550
+
+src/System/RuntimeGlobalObjectRegistration.cpp:
+    complete
+    .text start:0x0200efd0 end:0x0200eff0
+
+src/System/RuntimeStartupHook.cpp:
+    complete
+    .text start:0x0200d890 end:0x0200d894

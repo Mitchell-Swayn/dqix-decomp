@@ -659,3 +659,32 @@ Callers at02021290..020212d8 pass the same stack cursor with1/2-byte destination
 fields. ByteCursorRead.cpp matches all36 instruction bytes on its first candidate.
 Combined module/symbol/ARM7/ROM checks and exact USA SHA-1 passed. This is root
 reconstruction work, separate from the Luna model pilots.
+
+## Small runtime support helpers (Luna, 2026-10-02)
+
+Based on `1fd54b4`. Two new C units cover small startup and object-lifetime
+helpers: `func_0200d890` (empty startup hook, 4 code bytes) and
+`__register_global_object` (links a 12-byte destructor node into
+`data_020f33b0`, 32 code bytes). Each matched its first source candidate; the
+startup call site invokes the empty hook before the runtime initializer array.
+Registration callers pass object, destructor, and node; the source follows the
+observed field stores and list-head update.
+
+An additional 8-byte helper `func_0200bbd8` has a matching C body that returns
+`0x7fffffff`, but it is not retained as source: after isolating its unreferenced
+symbol, the dead-stripping linker removed it and shifted all following symbols.
+No force-active entry or synthetic reference was added, so the original object
+remains its dependency.
+
+Two nearby candidates remain fallback. A plain reverse-order loop for
+`__cxa_vec_cleanup` scored 33.33% because the original includes an exception
+frame and a separate unwind pad; that boundary and source were removed. Two
+direct `unsigned long long`/`long long` multiply candidates for
+`func_0200cf24` scored 0%; the compiler chose volatile registers and a different
+return sequence from the original. No comparison rules, denominator, BSS
+layout, or fallback bytes were changed.
+
+Both retained units pass 100% objdiff. Full module, symbol, ARM7, ROM and target
+SHA-1 checks pass. Matched coverage increased by 36 code bytes and two functions;
+all denominators are unchanged. The measured batch window was 717.6 seconds.
+Logs and attempt records stay under ignored `build/matching/`.
