@@ -1446,6 +1446,45 @@
         "ARM7_SoundVoices": 58759068,
         "ARM7_StopSoundChannel": 58716336
       }
+    },
+    {
+      "name": "SoundReserve",
+      "source": "config/usa/arm7/src/SoundReserve.c",
+      "autoload": "wram",
+      "runtime_address": 58720744,
+      "payload_offset": 33796,
+      "size": 400,
+      "code_bytes": 384,
+      "literal_pool_bytes": 16,
+      "entry": "ARM7_StopSoundVoices",
+      "symbols": {
+        "ARM7_StopSoundVoices": 58720744,
+        "ARM7_ReserveSoundChannels": 58720920
+      },
+      "externals": {
+        "ARM7_SoundChannelReservations": 58759028,
+        "ARM7_SoundVoices": 58759068,
+        "ARM7_StopSoundChannel": 58716336,
+        "ARM7_ClearSoundVoiceCallback": 58720724
+      }
+    },
+    {
+      "name": "SoundSequenceInit",
+      "source": "config/usa/arm7/src/SoundSequenceInit.c",
+      "autoload": "wram",
+      "runtime_address": 58721704,
+      "payload_offset": 34756,
+      "size": 100,
+      "code_bytes": 92,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_InitializeSoundSequences",
+      "symbols": {
+        "ARM7_InitializeSoundSequences": 58721704
+      },
+      "externals": {
+        "ARM7_SoundSequences": 58760412,
+        "ARM7_SoundTracks": 58760988
+      }
     }
   ]
 }

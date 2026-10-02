@@ -325,3 +325,26 @@
   at 0x03809774. Corrected SoundVoiceInit's type, alias and documentation to two
   unsigned masks, without inventing policy labels for flag-zero/flag-one cases.
 - Validation: complete payload, linked symbols, 11 pipeline tests and six verifier tests pass; payload SHA-1 remains a662d5c6a78e990244299926cf6862ce910a475d.
+
+## 2026-10-02 - sound reservation cleanup and sequence initialization
+
+- Stop/reserve pair: initial 400-byte result had channel/pointer registers swapped.
+  Giving the voice pointer function scope fixed stop on variant two; placing the
+  remaining-mask declaration before the channel index fixed reserve on variant
+  three. Hardware calls and callback timing were already exact.
+- Sequence initialization: initial 104-byte result duplicated the sequence-array
+  base for its index member. A local record pointer and distinct track-loop index
+  matched the original 100 bytes on variant two. Arrays remain external BSS.
+- Voice allocator 0x03800008 is deferred after nine compiler invocations, including
+  two failed source edits (PowerShell replacement and C89 declaration ordering).
+  Initial for-loop source was four bytes long; do/while and separate initialization
+  recovered exact 460-byte size and all control flow. Volume snapshots altered
+  register assignment but left 51 differing bytes. An explicit inline comparator
+  did not inline with the current compiler settings. Moving channel declaration,
+  updating volume snapshots in place, and caching the shift table pointer gave no
+  improvement (last result 52 differing bytes). No allocator draft is integrated.
+  Literal inspection corrected its lookup addresses to 0x038084cc/0x038084d0.
+- Three integrated functions add 476 instruction and 24 literal bytes. Allocation
+  needs new compiler/inlining evidence before another attempt; retain its unknown
+  parameter bytes by offset instead of assigning speculative policy semantics.
+- Validation: complete payload and declared symbols pass, as do all 11 pipeline and six verifier tests. SHA-1 remains a662d5c6a78e990244299926cf6862ce910a475d.

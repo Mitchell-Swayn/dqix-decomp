@@ -1,11 +1,11 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **166 C
-functions: 13,512 instruction bytes plus 1,056 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **169 C
+functions: 13,988 instruction bytes plus 1,080 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
 913 bytes of standalone initialized data and 3,444 bytes of BSS now have source
-definitions. The other 152,275 payload bytes
+definitions. The other 151,775 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -19,10 +19,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 13,512 / 1,056 bytes |
+| Reconstructed C instructions / compiler literal pools | 13,988 / 1,080 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 913 / 120 bytes |
 | Reconstructed BSS / total autoload BSS | 3,444 / 22,744 bytes |
-| Binary fallback | 152,275 bytes |
+| Binary fallback | 151,775 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -170,7 +170,7 @@ table; its separate VBlank response and initialized dispatch table remain outsid
 this unit's source data ownership.
 
 `src/Alarms.c` reconstructs eight alarm scheduling functions at
-`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8166 C
+`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8169 C
 instruction bytes, 52 literal bytes and the 12-byte list state at
 `[0x03809164, 0x03809170)`. It initializes and orders the doubly-linked queue,
 programs timer 1, registers timeouts and periodic intervals, and cancels alarms.
@@ -268,7 +268,7 @@ does not add duplicate data credit.
 
 `src/ThreadWait.c` reconstructs blocking, waking all waiters, marking a thread
 ready and selecting the first ready thread at `[0x037fc69c, 0x037fc7cc)`
-(payload `[0x48b8, 0x49e8)`), with 2166 C instruction bytes and 8 literal bytes.
+(payload `[0x48b8, 0x49e8)`), with 2169 C instruction bytes and 8 literal bytes.
 It clears blocked-list links on wakeup and preserves IRQ state. The scheduler switch routine now belongs to `ThreadSwitch.c`; list insertion
 and IRQ dependencies are source-owned. No thread-context storage is counted by this unit.
 
@@ -562,6 +562,18 @@ bit zero, and stop active PCM voices whose source lies in an inclusive range.
 These consumers establish that the two words at `0x03809774` are channel masks,
 correcting the earlier tentative list-endpoint interpretation. Their policy
 names remain unknown, so fields are named `mask0` and `mask1`.
+
+`src/SoundReserve.c` reconstructs two functions at
+`[0x038001e8, 0x03800378)`: 384 instruction bytes and 16 literal bytes.
+Both walk a supplied channel mask, skip mask1 reservations, invoke an existing
+voice callback, stop hardware, and clear priority/callback/update/active state.
+The reservation variant then ORs the supplied mask into mask0 or mask1.
+
+`src/SoundSequenceInit.c` reconstructs `[0x038005a8, 0x0380060c)`:
+92 instruction bytes and eight literal bytes. It clears the active bits of
+16 sequence records (36-byte stride) and 32 track records (64-byte stride),
+and assigns sequence indices. These arrays remain external BSS dependencies;
+this batch makes no new BSS claim.
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C
