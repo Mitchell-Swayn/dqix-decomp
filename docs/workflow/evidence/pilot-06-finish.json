@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "pilot-06",
+  "snapshot": {
+    "utc": "2026-10-02T05:55:59.792786+00:00",
+    "revision": "ec9a88115dfe7dc5a7b78f0891ad0e78590c0e33",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 182128,
+      "matched_data": 33408,
+      "matched_functions": 1333
+    },
+    "arm7": {
+      "source_functions": 130,
+      "source_code_bytes": 10664,
+      "source_literal_pool_bytes": 880,
+      "source_data_bytes": 880,
+      "source_bss_bytes": 764,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 155332,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "7e582fcf203267c59403afe4c80937a93c84b73130c7922fba0876705457d43a",
+    "arm7_report_sha256": "5698473dae92f6a2a0547d74f9eb696074044527035eec8114dd720b3328541f",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Integration-only window for two preverified worker commits. Helper resolved disjoint delinks conflict; combined ROM/module/symbol/report/SHA1 passed.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 228,
+      "matched_data": 0,
+      "matched_functions": 4
+    },
+    "arm7": {
+      "source_functions": 9,
+      "source_code_bytes": 848,
+      "source_literal_pool_bytes": 100,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": -948,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 63.715666
+}
