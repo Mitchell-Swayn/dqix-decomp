@@ -12,3 +12,15 @@ src/Factory/ov006/ItemSelectionPages.cpp:
     complete
     .text start:0x0215951c end:0x02159564
 
+src/Factory/ov006/ItemSelectionQuantity.cpp:
+    complete
+    .text start:0x02159320 end:0x0215943c
+
+src/Factory/ov006/ItemSelectionUpdate.cpp:
+    complete
+    .text start:0x02159564 end:0x021595b4
+
+src/Factory/ov006/ItemSelectionPending.cpp:
+    complete
+    .text start:0x02159094 end:0x0215919c
+
