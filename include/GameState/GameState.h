@@ -74,12 +74,19 @@ public:
     unsigned char unknownObjectIndices_397d_[3];
     unsigned char unknownObjectIndexCount_3980_;
 #endif
-    char unk_3981[0x5cb0 - 0x3981];
+    char unk_3981[0x5718 - 0x3981];
+    unsigned char unknownByteBuffer_5718_[4];
+    unsigned char unknownByteBufferLength_571c_;
+    signed char unknownByteBuffer_571d_[4];
+    unsigned char unknownByteBufferLength_5721_;
+    char unk_5722[0x5cb0 - 0x5722];
     unsigned int unknown_5cb0_;
     unsigned int unknown_5cb4_;
     unsigned int unknown_5cb8_;
     unsigned int unknown_5cbc_;
-    char unk_5cc0[0x63e0 - 0x5cc0];
+    char unk_5cc0[0x5cd0 - 0x5cc0];
+    unsigned char unknownBitFlags_5cd0_[10];
+    char unk_5cda[0x63e0 - 0x5cda];
 
     unsigned char* treasureMapLanguageData_;
     GrottoStruct grottoInfo_;
