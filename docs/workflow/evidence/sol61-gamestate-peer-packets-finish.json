@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "sol61-gamestate-peer-packets",
+  "snapshot": {
+    "utc": "2026-10-02T14:25:36.169778+00:00",
+    "revision": "9999478af5413efbc86308fdbfe6d26fd3bf63a2",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 217968,
+      "matched_data": 48064,
+      "matched_functions": 1634
+    },
+    "arm7": {
+      "source_functions": 265,
+      "source_code_bytes": 22912,
+      "source_literal_pool_bytes": 1588,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 141924,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "69e8de8f033fee5392c6640ca7c51c73ceb62ac27f64792040d2891d83095cbe",
+    "arm7_report_sha256": "6f3aaf4f9b7392fa38ff6c7504a2202e44c4c00ffb6122d9dae61b1d89e761f4",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Moderate overlay 17 peer packet handler exact after two candidates. Packet fields, stored payload, peer transfer byte fields inferred from accesses. Context is a documented unknown prefix only. Release trusts lengths and offsets. Full ROM/module/symbol/SHA1 pass; affected identity update and comparison remain exact. Runtime untested and tokens unmeasured.",
+  "attempts": 2,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 608,
+      "matched_data": 0,
+      "matched_functions": 1
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 203.308052
+}

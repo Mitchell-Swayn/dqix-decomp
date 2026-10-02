@@ -57,9 +57,15 @@ struct NativeIdentity {
             if (bytes_[i] != 0) return false;
         return true;
     }
+    inline bool Equals(NativeIdentity other) const {
+        for (int i = 0; i < 6; ++i)
+            if (other.bytes_[i] != bytes_[i]) return false;
+        return true;
+    }
 };
 
-// Sixteen stored identities track a sub-minute byte and a saturating counter.
+// Sixteen stored identities track a byte advanced at 60-unit timer intervals
+// and a saturating counter. The timing units are not yet established.
 struct GameStateStoredIdentity {
     NativeIdentity identity_;
     char unknown_06_[0x11 - 6];
@@ -67,15 +73,15 @@ struct GameStateStoredIdentity {
     unsigned short counter_ : 14;
     unsigned short active_ : 1;
     unsigned short unknownFlag_ : 1;
-    char unknown_14_[0x2c - 0x14];
+    unsigned char payload_[0x2c - 0x14];
 };
 
 struct GameStatePeerIdentity {
     NativeIdentity identity_;
     signed char objectIndex_;
-    unsigned char unknown_07_;
-    unsigned char unknown_08_;
-    signed char unknown_09_;
+    unsigned char transferActive_;
+    unsigned char transferOffset_;
+    signed char storedIdentityIndex_;
 };
 
 struct GameStateIdentityRecord {
