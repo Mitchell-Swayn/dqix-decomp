@@ -117,6 +117,32 @@
       ]
     },
     {
+      "name": "wram_startup_vblank_callback",
+      "autoload": "wram",
+      "payload_offset": "0x70c",
+      "runtime_address": "0x037f84f0",
+      "size": "0x24",
+      "totals": {
+        "instruction": 32,
+        "literal_pool": 4,
+        "initialized_data": 0
+      },
+      "ranges": [
+        {
+          "payload_offset": "0x70c",
+          "size": "0x20",
+          "classification": "instruction",
+          "evidence": "Startup passes literal 0x037f8498 as callback to 0x037fb7f0 with mask 1; registration stores it at 0x03808e9c, and VBlank dispatch calls through that address. Both callback paths return at 0x037f850c before the literal."
+        },
+        {
+          "payload_offset": "0x72c",
+          "size": "0x4",
+          "classification": "literal_pool",
+          "evidence": "PC-relative ldr at 0x037f84f4 references word 0x0380b76c at 0x037f8510."
+        }
+      ]
+    },
+    {
       "name": "wram_bios_swi_6_stub",
       "autoload": "wram",
       "payload_offset": "0xc0da",
