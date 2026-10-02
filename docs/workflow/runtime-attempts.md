@@ -217,3 +217,32 @@ existing guarded header finalizer produced exact USA SHA-1
 Logs: `build/runtime-batch6-acceptance.log`, `build/runtime-batch6-finalize.log`,
 and `build/matching/`. Local matched code 151,460 -> 152,268; functions
 1,159 -> 1,163; data unchanged at 26,488. Denominators unchanged. No gameplay test.
+
+## Runtime value, allocator, and termination hooks (2026-10-02)
+
+Based on `ec1482a`. Five functions in three units add 116 code bytes
+(100 instructions and sixteen compiler-generated address-literal bytes), no
+data/BSS. These reconstruct the existing runtime-to-platform interfaces, not
+new assembly trampolines: the pinned compiler emits the observed tail calls.
+
+| Function | Distinct variants | Result / useful finding |
+| --- | ---: | --- |
+| `func_02001710` (stored NaN conversion) | 1 | Load the existing binary32 value and call its existing double converter. |
+| `func_02001728` (conditional release) | 1 | Preserve the null-pointer check before the existing release entry. |
+| `func_0200ab10` (default arena release) | 1 | Call the source-defined `FreeArenaHeap(0, -1, pointer)`. |
+| `func_0200f368` (termination platform hook) | 1 | Call the existing platform routine with the observed tail-call ABI. |
+| `__clear` | 2 | Returning the original destination preserves r0 and matches the separate cursor register; void form was four bytes short. |
+
+Six distinct candidates, maximum two on one function. The `__clear` return type
+is inferred from preserved register behavior; no original declaration is claimed.
+The binary32 NaN storage and conversion/platform routines remain explicit
+fallback dependencies. Source-defined termination now reaches the matching
+platform hook, and conditional release reaches the matching allocator wrapper.
+
+All three units report 100% objdiff. One full ROM build passed all ARM9 modules,
+symbols, and ARM7 preservation; main's existing guarded header finalizer produced
+exact USA SHA-1 `c7c3014c237900c8281289b8bc76a781969b6278`. Older configure
+caveat unchanged. Logs: `build/runtime-batch7-acceptance.log`,
+`build/runtime-batch7-finalize.log`, and `build/matching/`.
+Local matched code 152,268 -> 152,384; functions 1,163 -> 1,168; data remains
+26,488. Denominators unchanged. No gameplay validation was performed.
