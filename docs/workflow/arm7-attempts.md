@@ -628,3 +628,19 @@
   overlay or artificial global alias was introduced; unsuccessful drafts excluded.
 - Two functions add 308 instruction and four literal bytes, no data or BSS.
 - Validation: full payload and linked symbols match, including thread creation/priority and all transitive header consumers; all 11 pipeline and six verifier tests pass.
+
+## 2026-10-02 - card removal initialization and detection
+
+- Initialization and removal query matched first compile. Corrected the IPC entry
+  name to existing StartIPC rather than InitializeIPC after checking the manifest.
+  The card_sp_pullOut.c panic string confirms the subsystem of the callback dependency.
+- Identity check variant two selects the expected-ID pointer before loading it and
+  stores the returned ID in a local before comparison; this reproduces the original
+  conditional address selection and operand order while preserving the volatile
+  expected-ID stack snapshot.
+- Interrupt detection matched on invocation five. A separate IRQ snapshot and inline
+  read alone did not help; assignment order was decisive: update the local result
+  before the global removal flag. Invocation four repeated the prior source because
+  a CRLF-sensitive text replacement failed; the subsequent explicit edit resolved it.
+- Four functions add 332 instruction and 32 literal bytes, no data or BSS.
+- Validation: full payload and linked symbols match; all 11 pipeline and six verifier tests pass.

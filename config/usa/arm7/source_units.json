@@ -2231,6 +2231,51 @@
         "ARM7_BackupWorker": 58763648,
         "ARM7_MarkThreadReady": 58705784
       }
+    },
+    {
+      "name": "CardRemovalInit",
+      "source": "config/usa/arm7/src/CardRemovalInit.c",
+      "autoload": "wram",
+      "runtime_address": 58735556,
+      "payload_offset": 48608,
+      "size": 88,
+      "code_bytes": 80,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_InitializeCardRemoval",
+      "symbols": {
+        "ARM7_InitializeCardRemoval": 58735556
+      },
+      "externals": {
+        "ARM7_CardRemovalState": 58765792,
+        "ARM7_StartIPC": 58714412,
+        "ARM7_IsIpcHandlerRegistered": 58714748,
+        "ARM7_SetIpcHandler": 58714668,
+        "ARM7_CardRemovalCallback": 58735644
+      }
+    },
+    {
+      "name": "CardRemovalCheck",
+      "source": "config/usa/arm7/src/CardRemovalCheck.c",
+      "autoload": "wram",
+      "runtime_address": 58735764,
+      "payload_offset": 48816,
+      "size": 276,
+      "code_bytes": 252,
+      "literal_pool_bytes": 24,
+      "entry": "ARM7_IsCardRemoved",
+      "symbols": {
+        "ARM7_IsCardRemoved": 58735764,
+        "ARM7_CheckCardIdentity": 58735836,
+        "ARM7_CheckCardInterrupt": 58735996
+      },
+      "externals": {
+        "ARM7_CardRemovalState": 58765792,
+        "ARM7_AllocateLockOwner": 58702984,
+        "ARM7_ReleaseLockOwner": 58703152,
+        "ARM7_TryAcquireNDSBus": 58702936,
+        "ARM7_ReleaseNDSBus": 58702904,
+        "ARM7_ReadCardIdLocked": 58734524
+      }
     }
   ]
 }
