@@ -981,6 +981,14 @@ src/World/Zone3DGrottoStateReset.cpp:
     complete
     .text start:0x0201bfd4 end:0x0201c014
 
+src/World/ZoneState0840Reset.cpp:
+    complete
+    .text start:0x020982b4 end:0x02098364
+
+src/World/ZoneState0840Entries.cpp:
+    complete
+    .text start:0x020984b0 end:0x0209854c
+
 src/World/ZoneState0840.cpp:
     complete
     .text start:0x020984ac end:0x020984b0

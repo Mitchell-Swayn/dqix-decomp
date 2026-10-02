@@ -4,14 +4,48 @@ class SafeAllocator;
 
 // Partial embedded types. Names retain offsets until their gameplay purposes
 // are established. Only fields touched by recovered routines are identified.
-extern "C" void func_020982b4(void*);
 
 struct ZoneState0840
 {
-    char unknown[0x1b78];
-    ZoneState0840() { func_020982b4(this); }
+    struct Entry
+    {
+        char unknown_0[12];
+        struct Flags
+        {
+            unsigned int low : 4;
+            unsigned int kind : 4;
+            unsigned int unknown8 : 7;
+            unsigned int unknown15 : 4;
+            unsigned int unknown19 : 5;
+            unsigned int state : 6;
+            unsigned int unknown30 : 1;
+            unsigned int unknown31 : 1;
+        } flags;
+        struct Value
+        {
+            unsigned int low : 2;
+            unsigned int value : 30;
+        } value;
+        char unknown_14[0xe8 - 0x14];
+    } entries[30];
+    char unknown_1b30[4];
+    int unknown_1b34, unknown_1b38, unknown_1b3c;
+    unsigned char unknown_1b40, unknown_1b41, unknown_1b42;
+    char unknown_1b43;
+    int unknown_1b44, unknown_1b48, unknown_1b4c, unknown_1b50, unknown_1b54;
+    int unknown_1b58, unknown_1b5c;
+    unsigned char unknown_1b60, unknown_1b61, unknown_1b62;
+    char unknown_1b63;
+    unsigned short unknown_1b64;
+    char unknown_1b66[2];
+    int unknown_1b68[3];
+    int unknown_1b74;
+    ZoneState0840() { Reset(); }
     ~ZoneState0840() { Finish(); }
+    void Reset();
     void Finish();
+    void ClearEntryStates();
+    int CollectEntriesOfKind(int kind, Entry** output);
 };
 struct ZoneState2664
 {

@@ -7,7 +7,6 @@ extern "C"
     int func_0200fb9c(GameState*);
     bool func_020115a8(GameState*);
     int func_0201201c(GameState*);
-    void func_020982b4(void*);
 }
 
 // Numeric mode tests and the unidentified state fields preserve the original
@@ -81,7 +80,7 @@ void Zone3D::InitializeState()
     if (func_020115a8(game)) return;
     if (func_0201201c(game) == 5 || func_0200fb9c(game) == 4 || func_0200fb9c(game) == 2)
     {
-        func_020982b4(&state_840_);
+        state_840_.Reset();
         unknown_27b4_ = 2;
         unknown_27b6_ = 0;
         unknown_2784_ = 0;
