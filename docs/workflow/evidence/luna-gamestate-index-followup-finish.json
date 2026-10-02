@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "luna-gamestate-index-followup",
+  "snapshot": {
+    "utc": "2026-10-02T12:16:59.850080+00:00",
+    "revision": "258a81f02b3efe44e9453286bb604b925f00a1ea",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 212436,
+      "matched_data": 48064,
+      "matched_functions": 1565
+    },
+    "arm7": {
+      "source_functions": 265,
+      "source_code_bytes": 22912,
+      "source_literal_pool_bytes": 1588,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 141924,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "8767376c76a7ebe629209c113ec54ea82c231bf7263066976bbeed878d5880d7",
+    "arm7_report_sha256": "6f3aaf4f9b7392fa38ff6c7504a2202e44c4c00ffb6122d9dae61b1d89e761f4",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Five C-linkage GameState field accessors at 020100a0/020100a8/020100b0/020100bc/020100c4 match exact original objects (one candidate/function). Reuses established protagonistObjectIndex_, unknownObjectIndex_397c_, and unknown_3b0_ field types; byte semantics and pointer purpose remain unknown. Full ninja rom check report sha1 passed; target SHA1 c7c3014c237900c8281289b8bc76a781969b6278. Whole-task timer began 2026-10-02 12:14:33 UTC before inspection/setup.",
+  "attempts": 5,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 44,
+      "matched_data": 0,
+      "matched_functions": 5
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 138.522534
+}
