@@ -168,7 +168,7 @@ The latter holds a 4-byte initialization-flag/alignment block and the 16-byte
 timer state. The counter runs at a /64 prescale and combines a software overflow
 count with the 16-bit hardware timer. The reader disables IRQs and accounts for
 a pending overflow before returning the combined timestamp. Interrupt-handler
-registration remains an explicit binary dependency; interrupt enabling and timer
+registration now belongs to `InterruptRegistration`; interrupt enabling and timer
 callback registration now belong to the `Interrupts` source unit. `dont_inline` preserves the original call to the flag
 marker; no matching-only assembly is used.
 
@@ -180,9 +180,9 @@ bytes. All register accesses use volatile C loads/stores. The 96-byte BSS range
 `[0x03808e3c, 0x03808e9c)` defines eight DMA/timer response entries containing
 callback, stay-enabled flag and user data. Field-base address expressions preserve
 the original compiler's separate literal addresses for callback-table fields.
-The original handler-registration routine at `0x037fb7f0` still consumes this
-table; its separate VBlank response and initialized dispatch table remain outside
-this unit's source data ownership.
+The reconstructed handler-registration routine at `0x037fb7f0` consumes this
+table and the source-owned VBlank response. Its initialized direct dispatch table
+remains outside this unit's source data ownership.
 
 `src/Alarms.c` reconstructs eight alarm scheduling functions at
 `[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8264 C
@@ -218,8 +218,9 @@ registration and DISPSTAT programming at `[0x037fdea0, 0x037fe04c)` (payload
 `[0x60bc, 0x6268)`), with 388 C instruction bytes and 40 literal bytes.
 It preserves native diagnostic line constants 0x189/0x1c5 and references the
 binary-owned file/error strings at `0x03808c4c` / `0x03808c58`. IRQ handler
-registration (`0x037fb7f0`), panic (`0x037fbf30`) and the vertical-alarm interrupt
-entry (`0x037fe15c`) remain binary dependencies. DISPSTAT accesses are volatile C.
+registration (`0x037fb7f0`) is now reconstructed; panic (`0x037fbf30`) and the
+vertical-alarm interrupt entry (`0x037fe15c`) remain binary dependencies.
+DISPSTAT accesses are volatile C.
 `src/VerticalFrame.c` reconstructs `[0x037fe30c, 0x037fe350)` (payload
 `[0x6528, 0x656c)`): 64 instruction bytes and 4 literal bytes for IRQ-protected
 VCOUNT wrap tracking. Both units reuse existing source-owned vertical-alarm state.
@@ -248,7 +249,7 @@ flag, alignment and 32 callback pointers. Shared CPU registration masks at
 fields use ordinary C bitfields; every bit is assigned before the word is sent.
 The receive handler drains the FIFO, dispatches channel callbacks and marks
 unhandled commands for return to the other CPU. The boot-mode query
-and interrupt registration remain explicit binary dependencies. The boot-mode name describes its use here,
+remains an explicit binary dependency; interrupt registration is now source-owned. The boot-mode name describes its use here,
 not a claim that its wider semantics are fully recovered.
 
 `src/CycleDelay.c` reconstructs the 24-byte wrapper at
@@ -380,6 +381,17 @@ it immediately follows the already reconstructed eight DMA/timer responses.
 `[0x39e8, 0x3a0c)`): 28 instruction bytes and eight literal bytes. It clears
 both IRQ-waiter queue endpoints and the shared VBlank count. Its eight-byte
 queue at `[0x03808e34, 0x03808e3c)` is separately source-owned WRAM BSS.
+
+`src/InterruptRegistration.c` reconstructs the intervening handler-registration
+routine at `[0x037fb7f0, 0x037fb88c)` (payload `[0x3a0c, 0x3aa8)`): one C
+function, 144 instruction bytes and 12 literal bytes. It walks IRQ mask bits
+0-24, routing DMA IDs 8-11 to response slots 0-3, timer IDs 3-6 to slots 4-7,
+and VBlank ID zero to the separate VBlank response. Selected response records
+receive the callback, continued-delivery flag one and userdata zero; other
+selected IDs update the direct handler table. Dispatchers retain their existing
+argument rules. The table at `0x03808830` is an explicit initialized-data
+dependency; no new data/BSS or assembly is credited by registration.
+
 `src/EmptyInterruptHandler.c` reconstructs the four-byte default return handler
 at `[0x037fb66c, 0x037fb670)` (payload `[0x3888, 0x388c)`).
 

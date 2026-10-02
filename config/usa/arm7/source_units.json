@@ -431,6 +431,25 @@
       }
     },
     {
+      "name": "InterruptRegistration",
+      "source": "config/usa/arm7/src/InterruptRegistration.c",
+      "autoload": "wram",
+      "runtime_address": 58701808,
+      "payload_offset": 14860,
+      "size": 156,
+      "code_bytes": 144,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_SetInterruptHandler",
+      "symbols": {
+        "ARM7_SetInterruptHandler": 58701808
+      },
+      "externals": {
+        "ARM7_InterruptHandlerTable": 58755120,
+        "ARM7_VBlankResponse": 58756764,
+        "ARM7_InterruptResponses": 58756668
+      }
+    },
+    {
       "name": "Interrupts",
       "source": "config/usa/arm7/src/Interrupts.c",
       "autoload": "wram",

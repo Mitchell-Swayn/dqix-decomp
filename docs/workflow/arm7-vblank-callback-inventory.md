@@ -51,3 +51,20 @@ the two required contracts: the word loaded from `0x0380b76c` is
 The source manifest credits one function, 32 C instruction bytes, and four
 literal bytes, replacing 36 fallback bytes. Inventory totals remain separate
 and unchanged; the callback introduces no owned data/BSS or assembly exception.
+
+The startup's direct registration dependency is now also partitioned and
+reconstructed as `InterruptRegistration.c`. Runtime `[0x037fb7f0, 0x037fb880)`
+is 144 instruction bytes (payload `[0x3a0c, 0x3a9c)`); the following twelve
+bytes `[0x037fb880, 0x037fb88c)` are literals (payload `[0x3a9c, 0x3aa8)`).
+The three PC-relative loads at `0x037fb7f4`, `0x037fb800`, and `0x037fb804`
+reference those words: direct handler table `0x03808830`, VBlank response
+`0x03808e9c`, and DMA/timer responses `0x03808e3c`. Direct startup entry,
+internal branch destinations, the bounded 25-bit walk and return at
+`0x037fb87c` establish the instruction boundary. No path falls into the pool.
+The second C candidate matches all 156 bytes, adding one source function and
+replacing 156 fallback bytes; the first candidate was eight bytes too long.
+The existing VBlank reference audit still checks this registration path without
+adding a separate audit tool. Full ARM7 byte/symbol checks cover the new source
+unit, while the structural sidecar checks keep its inventory counts separate.
+The direct dispatch table remains an external data dependency, and no data/BSS
+or assembly ownership is added by this source unit.

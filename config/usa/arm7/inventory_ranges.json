@@ -143,6 +143,32 @@
       ]
     },
     {
+      "name": "wram_startup_interrupt_registration",
+      "autoload": "wram",
+      "payload_offset": "0x3a0c",
+      "runtime_address": "0x037fb7f0",
+      "size": "0x9c",
+      "totals": {
+        "instruction": 144,
+        "literal_pool": 12,
+        "initialized_data": 0
+      },
+      "ranges": [
+        {
+          "payload_offset": "0x3a0c",
+          "size": "0x90",
+          "classification": "instruction",
+          "evidence": "Called directly by confirmed startup at 0x037f83f0. All branch destinations and the 25-iteration loop stay within the function; bx lr at 0x037fb87c returns before the pool. Exact C reconstruction independently matches the full unit."
+        },
+        {
+          "payload_offset": "0x3a9c",
+          "size": "0xc",
+          "classification": "literal_pool",
+          "evidence": "PC-relative ldr instructions at 0x037fb7f4, 0x037fb800 and 0x037fb804 reference the three words at 0x037fb880, 0x037fb884 and 0x037fb888."
+        }
+      ]
+    },
+    {
       "name": "wram_bios_swi_6_stub",
       "autoload": "wram",
       "payload_offset": "0xc0da",
