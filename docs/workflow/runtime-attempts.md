@@ -535,3 +535,29 @@ No gameplay validation.
 
 Verified staged source tree: `42e447f2a40206c4cc62a1f057ba0936eb4b2742` (only these final notes
 were added afterward). Investigation-script creation to handoff notes: 452.7 seconds.
+
+## Runtime string-to-number wrappers (2026-10-02)
+
+Based on `ebc7695`. Two functions add 424 code bytes (404 instructions and
+20 literals), no data/BSS: string-to-double wrapper54f4 and signed integer
+wrapper59cc. Both matched their second candidate; four candidates total.
+Moving the input-state fields into a shared 8-byte declaration preserves the
+existing character callback's exact bytes. Assigning fields explicitly avoids
+MWCC's extra aggregate-zeroing store. Computing the saturated integer before
+the error store preserves the original predication and register scheduling.
+
+Native double comparisons establish `_dneq` at0200bedc and `_dls` at0200bdb4;
+only these configured helper names change, with addresses/sizes untouched.
+Old-name references were absent throughout worker and main source/include.
+Parsing state machines42a8/55e4 and the error global remain fallback. The wrappers
+preserve end-pointer updates, positive/negative signed limits, overflow status,
+nonzero subnormal/overlarge floating range errors and observed error value34.
+
+All three affected units are100% objdiff, including the unchanged callback.
+Full module/symbol/ARM7 checks and guarded separate-output finalization pass
+USA SHA-1 `c7c3014c237900c8281289b8bc76a781969b6278`. Logs:
+`build/runtime-batch17-acceptance.log`, `build/runtime-batch17-finalize.log`,
+and `build/matching/`. Older configure finalization caveat unchanged. Local
+code159,600 ->160,024; functions1,193 ->1,195; data26,852 unchanged.
+Denominators unchanged. First inspection script to these notes:
+206.5 seconds. No gameplay validation.

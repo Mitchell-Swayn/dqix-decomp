@@ -1,9 +1,6 @@
-#pragma optimize_for_size off
+#include "System/RuntimeStringInput.h"
 
-struct RuntimeStringInputState {
-    const char* cursor;
-    int endOfInput;
-};
+#pragma optimize_for_size off
 
 extern "C" int func_02003d58(RuntimeStringInputState* state, int value, int operation)
 {

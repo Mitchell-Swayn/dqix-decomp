@@ -913,6 +913,14 @@ src/System/RuntimeExceptionHandler.cpp:
     complete
     .text start:0x0200efb8 end:0x0200efd0
 
+src/System/RuntimeStringToDouble.cpp:
+    complete
+    .text start:0x020054f4 end:0x020055d4
+
+src/System/RuntimeStringToInteger.cpp:
+    complete
+    .text start:0x020059cc end:0x02005a94
+
 src/System/RuntimeRandom.cpp:
     complete
     .text start:0x02003d14 end:0x02003d58
