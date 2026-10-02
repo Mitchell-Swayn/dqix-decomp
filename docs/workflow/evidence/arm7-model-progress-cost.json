@@ -1,0 +1,35 @@
+{
+  "method": "Same subsystem historical worker histories; not matched tasks, not equal elapsed time. Unique local token_usage_record response IDs, Standard short-context API equivalents. Root costs excluded. Luna tooling/investigation included.",
+  "cutoff_utc": "2026-10-02T12:37:00Z",
+  "astra": {
+    "agent": "/root/arm7_batch",
+    "baseline_revision": "d1e61efbf4d456d21a8697a0bd747f9b4ce20eb3",
+    "final_worker_revision": "968dbf8",
+    "c_functions_added": 186,
+    "instruction_bytes_added": 15308,
+    "literal_bytes_added": 1064,
+    "initialized_data_bytes_added": 468,
+    "input_tokens": 54363928,
+    "cached_input_tokens": 53582336,
+    "output_tokens": 243496,
+    "total_tokens": 54607424,
+    "standard_api_equivalent_usd": 73.573056
+  },
+  "luna": {
+    "agent": "/root/luna_arm7_functions",
+    "accepted_source_commits": [
+      "e00046d",
+      "32731e2",
+      "d072483"
+    ],
+    "c_functions_added": 3,
+    "instruction_bytes_added": 304,
+    "literal_bytes_added": 36,
+    "initialized_data_bytes_added": 0,
+    "input_tokens": 17414330,
+    "cached_input_tokens": 16868352,
+    "output_tokens": 115457,
+    "total_tokens": 17529787,
+    "standard_api_equivalent_usd": 0.28100982
+  }
+}

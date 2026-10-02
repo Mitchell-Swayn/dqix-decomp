@@ -68,3 +68,26 @@ A Sol 6.1 reviewer/integrator is worth a controlled trial: its Standard rate is
 $2 fresh / $0.10 cached / $10 output per million tokens. Applying that rate to this
 root token mix gives $1.67 instead of $14.05, but equal token use and equal review
 quality are hypothetical, not measured. Source acceptance must stay unchanged.
+
+## Historical ARM7 worker comparison
+
+The [separate evidence](evidence/arm7-model-progress-cost.json) links the Astra
+ARM7 worker's first batch parent through968dbf8 to its local per-response token
+history, and Luna's three accepted ARM7 source commits through12:37UTC to its
+history. These are unequal task histories, not a controlled benchmark.
+
+| Worker | C functions added | Instruction bytes added | Total recorded tokens | Standard API equivalent |
+|---|---:|---:|---:|---:|
+| Astra ARM7 | 186 | 15,308 | 54,607,424 | $73.5731 |
+| Luna ARM7 | 3 | 304 | 17,529,787 | $0.2810 |
+
+Astra also added1,064 literal bytes and468 initialized-data bytes; Luna added36
+literal bytes. Neither literals nor data are included in the instruction metric.
+The historical Astra branch produced16.16 times more instruction bytes per
+recorded token. Luna's lower listed rate nevertheless yields5.20 times more
+instruction bytes per normalized dollar: $0.924 versus$4.806 per1,000 instruction
+bytes. Root review/integration is excluded, and Luna's disassembly tooling and
+layout investigations are included in its token costs but have no source-byte
+credit. These caveats prohibit interpreting the ratios as model-only causation
+or equal-task speed. They support testing a mixed workflow rather than assuming
+that the cheapest model also maximizes progress per token or elapsed time.
