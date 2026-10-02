@@ -12,3 +12,11 @@ src/Factory/ov011/AllocatorNodeCreate.cpp:
     complete
     .text start:0x021845c8 end:0x021845f4
 
+src/Factory/ov011/AllocatorScript.cpp:
+    complete
+    .text start:0x02184de4 end:0x02184ed0
+
+src/Factory/ov011/AllocatorScriptNumbers.cpp:
+    complete
+    .text start:0x02184c30 end:0x02184c68
+
