@@ -31,18 +31,45 @@ struct ZoneState2664
 };
 struct ZoneState2724
 {
-    int unknown_0;
+    struct Entry
+    {
+        unsigned short unknown_0, unknown_2, unknown_4, unknown_6;
+        union Coordinates
+        {
+            struct { int x, y, z; };
+            int entries[3];
+        } coordinates;
+    };
+    Entry* entries;
     int unknown_4;
     int unknown_8;
+    void SetEntry(const Entry* entry, int index);
+    Entry* GetEntry(int index);
     ZoneState2724() { Reset(); }
     ~ZoneState2724() { Reset(); }
     void Reset();
 };
 struct ZoneState2754
 {
-    char unknown_0[0x14];
+    struct Data
+    {
+        unsigned short primaryCount;
+        struct SecondaryCount
+        {
+            unsigned short count : 15;
+            unsigned short hasExtraBlock : 1;
+        } secondary;
+        unsigned int unknown_4;
+        unsigned int payloadSize : 31;
+        unsigned int relocated : 1;
+        char* records;
+        void* payload;
+    } data;
     unsigned char unknown_14;
     char padding[3];
     ZoneState2754();
+    unsigned int GetRecordStorageSize();
+    bool VisitPrimaryRecords(void (*callback)(ZoneState2754*, void*));
+    void Clear();
     void Reset();
 };

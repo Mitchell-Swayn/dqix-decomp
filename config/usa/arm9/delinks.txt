@@ -873,7 +873,15 @@ src/World/ZoneState2664.cpp:
 
 src/World/ZoneState2724.cpp:
     complete
-    .text start:0x02094d00 end:0x02094d14
+    .text start:0x02094d00 end:0x02094d6c
+
+src/World/ZoneState2754Records.cpp:
+    complete
+    .text start:0x020de7a4 end:0x020de824
+
+src/World/ZoneState2754Clear.cpp:
+    complete
+    .text start:0x020de868 end:0x020de888
 
 src/World/ZoneState2754.cpp:
     complete
