@@ -93,6 +93,10 @@ src/Grotto/Main/GrottoMetadataTransfer.cpp:
 	complete
 	.text start:0x02011818 end:0x02011a74
 
+src/Grotto/Main/GrottoCollectionStorage.cpp:
+	complete
+	.text start:0x020ac734 end:0x020ac7b4
+
 src/World/Zone3D.cpp:
     complete
     .text start:0x0201383c end:0x02013b70

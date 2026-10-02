@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "sol61-grotto-collection-storage",
+  "snapshot": {
+    "utc": "2026-10-02T13:47:42.252509+00:00",
+    "revision": "d7a816dbf4848fdbee467584289b80f7cdffcec1",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 215548,
+      "matched_data": 48064,
+      "matched_functions": 1618
+    },
+    "arm7": {
+      "source_functions": 265,
+      "source_code_bytes": 22912,
+      "source_literal_pool_bytes": 1588,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 141924,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "e21f7da497b2bd412220dfbffe547767406c22981e63c482bf698ab4bd9174e5",
+    "arm7_report_sha256": "6f3aaf4f9b7392fa38ff6c7504a2202e44c4c00ffb6122d9dae61b1d89e761f4",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Threecollectiondependencies020ac734..020ac7b4 exactfirstcandidate; copiedsavedcollection usesactualsharedGameState/GrottoStruct owningfield (absolute64f4), sizeofad6andcountbytechecked. PublictypedCinterfaces replacefilelocaldeclarations; USA-only guards. FullROM/module/symbol/SHA1 passed; noARM7,data,denominatorchanges. No gameplaytests.",
+  "attempts": 1,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 128,
+      "matched_data": 0,
+      "matched_functions": 3
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 77.121466
+}

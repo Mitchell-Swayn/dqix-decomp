@@ -13,8 +13,6 @@ typedef char GameStateGrottoStructOffsetCheck[
     offsetof(GameState, grottoInfo_) == 0x63e4 ? 1 : -1];
 typedef char GameStateGrottoSizeCheck[sizeof(GameState) == 0x7ff4 ? 1 : -1];
 
-extern "C" int func_020ac760(TreasureMapCollection* collection);
-extern "C" int func_020ac734(const TreasureMapCollection* collection);
 extern "C" void func_ov017_021cfabc();
 extern "C" void func_ov017_021cf730(int, int);
 

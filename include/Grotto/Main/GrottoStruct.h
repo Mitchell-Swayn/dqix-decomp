@@ -13,6 +13,12 @@ struct TreasureMapCollection
     TreasureMapMetadata maps[99];
 };
 
+#if defined(usa)
+extern "C" int func_020ac734(const TreasureMapCollection* collection);
+extern "C" int func_020ac760(TreasureMapCollection* collection);
+extern "C" int func_020ac78c(unsigned char* count);
+#endif
+
 struct GrottoMetadataDescriptor
 {
     unsigned char kind_;
