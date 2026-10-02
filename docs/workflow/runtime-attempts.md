@@ -433,3 +433,27 @@ First-inspection artifact timestamp to these notes: 530.1 seconds wall time.
 Logs: `build/runtime-batch13-acceptance.log`, `build/runtime-batch13-finalize.log`,
 and `build/matching/`. Local code 158,800 -> 158,940; functions 1,181 -> 1,184;
 data remains 26,852. Denominators unchanged; no gameplay validation.
+
+## Runtime unwind table lookup (2026-10-02)
+
+Based on `6911520`. Four functions add 440 code bytes (436 instructions and
+one four-byte division literal), no data/BSS. Each matched its first candidate:
+range binary search `func_0200da70`, action lookup `func_0200dad4`, action tag
+`func_0200dbdc`, and descriptor-header skipping `func_0200f2bc`.
+
+The 12-byte range and 20-byte lookup-state types record observed offsets with
+size checks. Range endpoints remain inclusive. Low size bit selects an inline
+descriptor instead of a descriptor pointer. Header flag0x40 consumes a second
+packed integer. The lookup preserves zero termination, delta/length accumulation,
+early out-of-range returns, and the five-bit action tag. Packed decoding and
+table-provider entries remain explicit fallback; no low-level context restore or
+assembly exception gains source credit. The table provider's coincident empty
+boundaries are left untouched pending linker-boundary evidence.
+
+Both units and all four symbols report 100% objdiff. Full modules/symbols/ARM7
+checks and separate-output guarded finalization produce exact USA SHA-1
+`c7c3014c237900c8281289b8bc76a781969b6278`; older configure caveat unchanged.
+Inspection-to-validation timestamps measured 159.9 seconds. Logs:
+`build/runtime-batch14-acceptance.log`, `build/runtime-batch14-finalize.log`,
+and `build/matching/`. Local code 158,940 -> 159,380; functions 1,184 -> 1,188;
+data remains 26,852. Denominators unchanged. No gameplay validation.
