@@ -4,3 +4,11 @@
     .data       start:0x02160080 end:0x02160380 kind:data align:32
     .bss        start:0x02160380 end:0x021603a0 kind:bss align:32
 
+src/Factory/ov006/ItemSelection.cpp:
+    complete
+    .text start:0x0215919c end:0x02159320
+
+src/Factory/ov006/ItemSelectionPages.cpp:
+    complete
+    .text start:0x0215951c end:0x02159564
+
