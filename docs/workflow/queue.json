@@ -21,10 +21,10 @@
     },
     {
       "id": "runtime-next",
-      "status": "integrated",
-      "owner": null,
+      "status": "active",
+      "owner": "luna_runtime_batch",
       "worktree": "../DQIX-Decomp-luna-runtime",
-      "scope": "Luna four accessors, six prepared helpers and 328-byte chunk copy integrated; 11 functions / 456 code bytes. Full main acceptance passed.",
+      "scope": "Next bounded GameState helpers after0200fd70",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1"
     },
@@ -38,19 +38,19 @@
     },
     {
       "id": "arm7-sound-next",
-      "status": "integrated",
-      "owner": null,
+      "status": "active",
+      "owner": "luna_arm7_functions",
       "worktree": "../DQIX-Decomp-arm7-batch",
-      "scope": "Luna ARM7 helper integrated: 32 instruction bytes / 4 literals; manifest disassembler integrated after review correction, 15 tests pass.",
+      "scope": "Touch/SPI helpers around038056ac",
       "attempt_limit_per_function": 10,
       "acceptance": "exact full ARM7 payload and pipeline tests; root full ROM integration"
     },
     {
       "id": "world-next",
-      "status": "queued",
-      "owner": null,
+      "status": "active",
+      "owner": "luna_world_review",
       "worktree": "../DQIX-Decomp-zone3d",
-      "scope": "Historical batches and Luna three-function pilot integrated; grotto vector alias fixed. Persistent GameState table layout remains required investigation.",
+      "scope": "Next bounded World script callbacks",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1"
     },
@@ -71,9 +71,9 @@
     },
     {
       "id": "arm7-inventory",
-      "status": "queued",
-      "owner": null,
-      "scope": "complete function boundaries and code/data partition for ARM7",
+      "status": "active",
+      "owner": "luna_arm7_inventory_next",
+      "scope": "Evidence-backed ARM7 startup code/literal/data partition",
       "next_action": "Extend evidence-backed inventory; never treat whole payload as executable code"
     },
     {
@@ -172,6 +172,18 @@
       "elapsed_seconds": 81,
       "tests_passed": 5,
       "findings": 0
+    },
+    {
+      "id": "runtime-library-next",
+      "status": "active",
+      "owner": "luna_runtime_library",
+      "scope": "3?6 new small runtime library functions, exclude deferred integer parser and BSS"
+    },
+    {
+      "id": "arm9-data-triage",
+      "status": "active",
+      "owner": "luna_data_audit",
+      "scope": "Identify unowned typed data ranges with caller evidence"
     }
   ]
 }

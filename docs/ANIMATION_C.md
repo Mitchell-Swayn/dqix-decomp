@@ -102,3 +102,12 @@ produces the original 384-byte shape and 85.42% object match. The remaining
 instruction differences exchange the bone pointer and pivot index registers
 (r4/r5). Moving the pivot index declaration to function scope did not change
 allocation (two checks). Mapping remains fallback; no new coverage claimed.
+
+Frame-aligned translation was isolated for four additional comparisons. The
+unchanged candidate remains 48.86%; unifying the frame/index variables does not
+resolve register allocation. One intermediate candidate overwrote a reused
+index too early and was rejected. The corrected form is 344 bytes versus the
+original 352: MWCC folds the zero high half of the 64-bit multiplier, removing
+a move and multiply-accumulate. An explicit 3LL constant did not change it.
+Original source/mapping restored; no coverage credit. Next work must explain
+the original full-width multiplication source form before register tuning.
