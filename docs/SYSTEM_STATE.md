@@ -61,3 +61,10 @@ remove terminated contexts from queues, and wake completion waiters. All six
 existing source forms match on their first isolated compile, and full
 ROM/module/symbol acceptance passes. Register initialization and the remaining
 scheduler primitives are still external dependencies.
+
+`ContextStackBoundary.cpp` recovers the 28-byte stack sentinel setter. The two
+neighboring priority schedulers remain fallback after three isolated C++
+variants (plain stores, volatile head store, and inlined store helper). Their
+best comparisons are 86.96% and 83.33%: the compiler predicates the else block
+and removes a branch present in the original. No assembly barrier was added
+to accepted source; deferred candidates remain in ignored build outputs.

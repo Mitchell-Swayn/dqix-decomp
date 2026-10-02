@@ -81,15 +81,6 @@ void CycleCurrentPriorityContexts()
     return;
 }
 
-void MarkContextStackTopUnknownSubspace(ProcessorContext *context, unsigned int size)
-{
-    context->stackUnknownTopSubspaceSize = size;
-    if (size != 0)
-    {
-        *(int*)(context->stackTop + size) = STACK_UNKNOWN_SECTION_MAGIC;
-    }
-}
-
 bool ChangeContextPriority(ProcessorContext* context, unsigned int newPriority)
 {
     ProcessorContext* loopContext = data_021112e0.substruct_24.firstContext;
