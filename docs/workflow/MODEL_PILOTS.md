@@ -77,3 +77,8 @@ GameState table at an incompletely mapped offset. Root pinned those commits by
 integrating them and rerunning full acceptance on main; all module/symbol/ROM
 checks passed. This is review/integration of earlier Astra work, not Luna source
 reconstruction credit. The two source-layout caveats remain follow-up work.
+
+Root resolved the grotto coordinate alias concern by representing the existing
+12-byte coordinate region as an actual Vector3i field. Both affected functions
+remain100% object matches and full combined ROM/module/symbol checks passed.
+The persistent GameState table offset remains a documented mapping limitation.

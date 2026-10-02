@@ -16,7 +16,7 @@ void ZoneState2664::UpdateEntranceObject()
         unsigned short zone = func_02012fe4()->currentZoneID_;
         GrottoStruct* grotto = game->GetGrottoStruct();
         Vector3i scale = gGrottoEntranceUpdateScale;
-        Vector3i position = *(Vector3i*)&grotto->entranceX;
+        Vector3i position = grotto->entrancePosition;
         if (grotto->entranceZoneId && grotto->unknown_0[0])
         {
             if (grotto->entranceZoneId == zone)
@@ -40,7 +40,7 @@ bool ZoneState2664::ShowEntranceObject()
     func_0202ae18(func_ov017_0218b5b0());
     GrottoStruct* grotto = game->GetGrottoStruct();
     Vector3i position;
-    position = *(Vector3i*)&grotto->entranceX;
+    position = grotto->entrancePosition;
     Vector3i scale = gGrottoEntranceShowScale;
     object.position_ = position;
     object.SetScale(&scale);

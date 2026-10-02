@@ -1,6 +1,7 @@
 #pragma once
 
 #include "TreasureMapMetadata.h"
+#include "System/Matrix.h"
 
 struct DetailedTreasureMapData;
 
@@ -19,7 +20,7 @@ struct GrottoStruct
     char unk_a[2];
 
     unsigned int entranceZoneId;
-    int entranceX, entranceY, entranceZ; // centre of the grotto entrance model
+    Vector3i entrancePosition; // centre of the grotto entrance model
     char activeMapImageName[16]; // e.g. tmap_005
 #if defined(usa)
     char activeMapNameNoLevel[64]; // e.g. Granite Tunnel of Woe
@@ -37,3 +38,4 @@ struct GrottoStruct
 };
 
 class GameState;
+typedef char GrottoEntrancePositionSizeCheck[sizeof(Vector3i) == 12 ? 1 : -1];

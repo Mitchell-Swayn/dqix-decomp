@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "pilot-22",
+  "snapshot": {
+    "utc": "2026-10-02T10:25:02.179080+00:00",
+    "revision": "4088364475abf9359200e3c9897bcd430d014778",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 211632,
+      "matched_data": 48064,
+      "matched_functions": 1541
+    },
+    "arm7": {
+      "source_functions": 264,
+      "source_code_bytes": 22880,
+      "source_literal_pool_bytes": 1584,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 141960,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "490f502f3992eda099f58d87ae3c97fd8ba222d034f177f21652d9020e6348e0",
+    "arm7_report_sha256": "b18f8fd5ac15fa25331edfaf8f5e69bd873132a95e050156e38ec80441bae832",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Integrated historical Astra ARM7/runtime/world work; Luna world review separate, no Luna new function credit yet. Guard7tests and finalizer6tests passed plus exact combinedROM. Timing includes integration/review and repair, not source-worker throughput.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 4828,
+      "matched_data": 500,
+      "matched_functions": 30
+    },
+    "arm7": {
+      "source_functions": 42,
+      "source_code_bytes": 4200,
+      "source_literal_pool_bytes": 252,
+      "source_data_bytes": 144,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": -4596,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 489.665229
+}
