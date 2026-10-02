@@ -364,3 +364,14 @@
   consumers report the same actual header SHA-1 in compiler dependency records.
   Eleven pipeline and six verifier tests pass; dependency tests pass (10 passing,
   one environment-gated integration test skipped). No coverage totals change.
+
+## 2026-10-02 - cached sequence byte and 24-bit readers
+
+- Cached byte read at 0x03800948, aligned four-word cache fill at 0x03800e3c,
+  and little-endian 24-bit read at 0x03800e78 all matched their first compile.
+- Shared SoundSequence.h records sequence/track/cache layouts with 36-/64-/28-byte
+  size assertions. Initialization and both reader units include the tracked header.
+  Cursor offset 0x28 and cache buffer at state+0x0c are proven by these consumers.
+  The cache's first word remains unknown; no external storage is claimed as BSS.
+- Three functions add 192 instruction bytes and 12 literal bytes.
+- Validation: full payload and all symbols match; all 11 pipeline and six verifier tests pass. Header dependencies are recorded by the compiler-backed provenance path.

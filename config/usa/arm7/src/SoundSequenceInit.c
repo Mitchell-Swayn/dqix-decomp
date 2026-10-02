@@ -1,7 +1,6 @@
 /* Clear sequence/track active bits and assign sequence indices. Other fields remain unknown. */
 #pragma dont_inline on
-typedef struct { unsigned char active:1,unknownFlags:7; unsigned char index; unsigned char unknown2[34]; } SoundSequence;
-typedef struct { unsigned char active:1,unknownFlags:7; unsigned char unknown1[63]; } SoundTrack;
+#include "SoundSequence.h"
 extern SoundSequence ARM7_SoundSequences[16];
 extern SoundTrack ARM7_SoundTracks[32];
 void ARM7_InitializeSoundSequences(void)
