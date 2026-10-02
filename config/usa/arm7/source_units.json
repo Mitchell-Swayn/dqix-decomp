@@ -2687,6 +2687,62 @@
         "ARM7_ClockTouchCommandByte": 58742444,
         "ARM7_TouchControllerStatus": 58767208
       }
+    },
+    {
+      "name": "PowerSleep",
+      "source": "config/usa/arm7/src/PowerSleep.c",
+      "autoload": "wram",
+      "runtime_address": 58745340,
+      "payload_offset": 58392,
+      "size": 420,
+      "code_bytes": 404,
+      "literal_pool_bytes": 16,
+      "entry": "ARM7_EnterPowerSleep",
+      "symbols": {
+        "ARM7_EnterPowerSleep": 58745340
+      },
+      "externals": {
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_DisableSpecificInterrupts": 58702172,
+        "ARM7_EnableSpecificInterrupts": 58702116,
+        "ARM7_SetSpecificInterruptsEnabled": 58702040,
+        "ARM7_ReadPowerRegister": 58744488,
+        "ARM7_WritePowerRegister": 58744364,
+        "ARM7_SetPowerLedPattern": 58746060,
+        "ARM7_SetPowerLedMode": 58745216,
+        "ARM7_PowerOffSound": 58715544,
+        "ARM7_PowerOnSound": 58715632,
+        "ARM7_ClearPowerControlBits": 58744640,
+        "ARM7_SetPowerControlBits": 58744604,
+        "ARM7_ExecutePowerCommand": 58744684,
+        "ARM7_SetGPIOControlMode": 58715192,
+        "ARM7_SleepUntilInterrupt": 58745760,
+        "ARM7_SendPowerNotification": 58744304,
+        "ARM7_UpdateGPIOControl": 58715160,
+        "ARM7_PowerRequest": 58767216
+      }
+    },
+    {
+      "name": "PowerIpcReceive",
+      "source": "config/usa/arm7/src/PowerIpcReceive.c",
+      "autoload": "wram",
+      "runtime_address": 58743564,
+      "payload_offset": 56616,
+      "size": 320,
+      "code_bytes": 304,
+      "literal_pool_bytes": 16,
+      "entry": "ARM7_PowerIpcReceive",
+      "symbols": {
+        "ARM7_PowerIpcReceive": 58743564
+      },
+      "externals": {
+        "ARM7_PowerState": 58767212,
+        "ARM7_PowerRequest": 58767216,
+        "ARM7_SendIpcCommand": 58714784,
+        "ARM7_EnqueueSpiTask": 58740112,
+        "ARM7_SendPowerReply": 58744236
+      }
     }
   ]
 }

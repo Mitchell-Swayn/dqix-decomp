@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "baseline_revision": "6c28cf4",
+  "candidate_start_utc": "2026-10-02T13:12:10.236950+00:00",
+  "verification_finish_utc": "2026-10-02T13:25:51.683055+00:00",
+  "elapsed_seconds": 821.446105,
+  "timing_limit": "Includes this continuation after baseline inspection; excludes inherited Luna attempts and worktree setup. No full reports existed for work_batch.py snapshot.",
+  "attempts": {
+    "PowerSleep": 4,
+    "PowerIpcReceive": 1,
+    "SpiEnqueue": 3
+  },
+  "delta": {
+    "source_functions": 2,
+    "source_code_bytes": 708,
+    "source_literal_pool_bytes": 32,
+    "binary_fallback_bytes": -740,
+    "source_data_bytes": 0,
+    "source_bss_bytes": 0,
+    "reviewed_assembly_bytes": 0
+  },
+  "arm7_payload_sha1": "a662d5c6a78e990244299926cf6862ce910a475d",
+  "tests_passed": 28,
+  "full_rom_acceptance": "pending integrator",
+  "token_usage": null
+}

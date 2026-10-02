@@ -234,6 +234,18 @@
       "acceptance": "Original candidate section bytes exact; all 8192 mathematical sine/cosine values exact; full ROM/module/symbol/SHA1 checks; 148 tool tests with two existing skips",
       "coverage_limit": "Repair retains inherited coverage; integrator must verify cumulative 16496-byte gain from the two preceding unaccepted commits against accepted main",
       "token_usage": null
+    },
+    {
+      "id": "arm7-power-events",
+      "status": "awaiting_integrator_acceptance",
+      "owner": null,
+      "worktree": "../DQIX-Decomp-arm7-power-events",
+      "scope": "PowerSleep and PowerIpcReceive: 708 instruction bytes and 32 literal bytes; typed PowerRequestState subobject",
+      "acceptance": "Exact complete ARM7 payload and linked symbols; 28 pipeline/verification/dependency tests passed. Integrator ROM/module/SHA1 acceptance pending.",
+      "attempt_limit_per_function": 10,
+      "evidence": "docs/workflow/arm7-power-events.md",
+      "remaining_dependency": "SPI enqueue remains unmatched and required; 220B candidate against224B target after three variants.",
+      "token_usage": null
     }
   ]
 }

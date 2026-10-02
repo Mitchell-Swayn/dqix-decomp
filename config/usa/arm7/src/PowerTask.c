@@ -25,13 +25,13 @@ void ARM7_ExecutePowerTask(SpiTask *task)
  switch(task->command) {
  case 0x62:
   while(ARM7_SendIpcCommand(8,0x0300e200,0)<0) {}
-  ARM7_PowerState.operation=1;
+  ARM7_PowerState.request.operation=1;
   ARM7_EnterPowerSleep(task->arguments[0]&0x1f,task->arguments[1],task->arguments[0]&0xc0);
   break;
  case 0x61:
   {
    unsigned int command,value;
-   ARM7_PowerState.operation=2;
+   ARM7_PowerState.request.operation=2;
    command=task->arguments[0];value=task->arguments[1];
    if(command==14)while(ARM7_SendIpcCommand(8,0x0300e100,0)<0) {}
    value=ARM7_ExecutePowerCommand(command,(unsigned short)value);
