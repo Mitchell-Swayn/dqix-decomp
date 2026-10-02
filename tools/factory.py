@@ -246,7 +246,7 @@ def snapshot(root, db):
                 batches=batches, warnings=warnings)
 
 
-def serve(root, port):
+def serve(root, port, host='127.0.0.1'):
     root = Path(root).resolve()
     cached = {'service': 'dqix-factory', 'project_root': str(root), 'generated_at': None, 'warnings': ['Initial scan in progress']}
     lock = threading.Lock()
@@ -290,8 +290,8 @@ def serve(root, port):
             self.wfile.write(body)
 
     threading.Thread(target=refresh, daemon=True).start()
-    server = ThreadingHTTPServer(('127.0.0.1', port), Handler)
-    print(f'DQIX factory: http://127.0.0.1:{port}', flush=True)
+    server = ThreadingHTTPServer((host, port), Handler)
+    print(f'DQIX factory: http://{host}:{port}', flush=True)
     server.serve_forever()
 
 
@@ -300,6 +300,7 @@ def main():
     parser.add_argument('--root', type=Path, default=ROOT)
     sub = parser.add_subparsers(dest='action', required=True)
     p = sub.add_parser('serve'); p.add_argument('--port', type=int, default=8765)
+    p.add_argument('--host', default='127.0.0.1', help='Local interface address; defaults to loopback')
     sub.add_parser('sync')
     p = sub.add_parser('enqueue')
     p.add_argument('id'); p.add_argument('--scope', required=True); p.add_argument('--worktree', required=True)
@@ -312,7 +313,7 @@ def main():
     p = sub.add_parser('retry'); p.add_argument('id'); p.add_argument('--confirmed-stopped', action='store_true')
     args = parser.parse_args()
     if args.action == 'serve':
-        serve(args.root, args.port)
+        serve(args.root, args.port, args.host)
         return
     if args.action == 'worker':
         run_worker(args.root, args.id, args.model, args.once, args.timeout)

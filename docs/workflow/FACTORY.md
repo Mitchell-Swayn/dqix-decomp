@@ -12,6 +12,14 @@ service, and has a read-only HTTP API. Logs and SQLite state live under ignored
 server preserves jobs and experiments. It must be running for live updates;
 closing the browser does not stop the server.
 
+For this workstation's LAN interface, start with
+`powershell -ExecutionPolicy Bypass -File tools/start_factory.ps1 -BindAddress 192.168.1.49`
+and open **http://192.168.1.49:8765** from another device on the same network.
+The configured Windows rule `DQIX-Factory-LAN-8765` permits TCP 8765 on that
+address through the private Ethernet 2 interface from LocalSubnet only. If DHCP
+changes the workstation address, update both the bind address and firewall rule.
+This is a read-only, unauthenticated LAN monitor; no internet forwarding is set up.
+
 ## What the display means
 
 - Accepted coverage comes from main's archived `pilot-*-finish.json` evidence.
