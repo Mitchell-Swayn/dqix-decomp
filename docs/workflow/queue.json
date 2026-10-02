@@ -134,11 +134,12 @@
     },
     {
       "id": "delink-incremental-outputs",
-      "status": "active",
-      "owner": "match_harness",
+      "status": "integrated",
+      "owner": null,
       "scope": "tools/configure.py delink rule expects delink.yaml that dsd 0.10.2 never produces",
-      "next_action": "Track actual generated outputs with a completion marker only after success; test deleted outputs, config changes, fresh builds and incremental no-op behavior before replacing current always-rebuild behavior",
-      "worktree": "../DQIX-Decomp-delink"
+      "worktree": "../DQIX-Decomp-delink",
+      "commit": "c4da8d4",
+      "acceptance": "5 focused tests; combined ROM/module/symbol/SHA1; repeat verification without ROM rebuild; fresh locked-toolchain build passed"
     },
     {
       "id": "luna-vram-pilot",

@@ -40,3 +40,8 @@ reported no findings, and passed all five focused tests. An initial unittest
 module invocation failed due to import path; direct script invocation passed.
 It independently checked the existing clean-build and recovery evidence and
 left the worktree unchanged. Root acceptance remains a separate step.
+
+Root subsequently integrated the reviewed patch, reran all five tests and full
+acceptance, and completed a fresh locked-toolchain build of `c4da8d4`. All passed.
+The repeat acceptance invocation ran verification checks without rebuilding the
+ROM. Clean-build evidence is archived in `docs/verification/delink-outputs-clean-build.*`.
