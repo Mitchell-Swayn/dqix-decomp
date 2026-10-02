@@ -176,6 +176,7 @@ public:
     void RecordBMDJFlag4State();
     void RestoreBMDJFlag4State();
     void ApplyType2InstanceFlags();
+    void ActivateType2Feature(ZoneFeatures::Opcode6aEntry* feature, bool playSound, bool force, int notify);
     void ReverseType2FeatureMotion(ZoneFeatures::Opcode6aEntry* feature);
     void ResetType2FeaturePosition(ZoneFeatures::Opcode6aEntry* feature);
     void ApplyType2FeatureMask(unsigned int mask);

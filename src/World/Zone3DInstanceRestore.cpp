@@ -1,5 +1,6 @@
 #include "World/Zone3D.h"
 #include "GameState/GameState.h"
+#include "World/BMDJStateNotification.h"
 
 extern "C" void* func_0200fd0c(GameState*);
 extern "C" void* func_0205ec34();
@@ -7,12 +8,6 @@ extern "C" bool func_0206eaec(void*, unsigned char, short);
 
 // Only the zone ID field is initialized for these two state notifications.
 // Remaining payload fields and the event numbers are not yet understood.
-struct BMDJStateNotification
-{
-    int unknown_0[3];
-    int zoneID;
-    int unknown_10[9];
-};
 extern "C" void func_02064b24(void*, int, int, BMDJStateNotification*);
 
 void Zone3D::RestoreBMDJFlag4State()

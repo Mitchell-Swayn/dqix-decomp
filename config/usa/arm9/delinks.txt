@@ -765,6 +765,11 @@ src/World/Zone3DInstanceRestore.cpp:
     complete
     .text start:0x02017a94 end:0x02017c58
 
+src/World/Zone3DType2Activation.cpp:
+    complete
+    .text start:0x02018300 end:0x0201874c
+    .rodata start:0x020e6e74 end:0x020e6e88
+
 src/World/Zone3DType2Motion.cpp:
     complete
     .text start:0x0201874c end:0x02018ab8
