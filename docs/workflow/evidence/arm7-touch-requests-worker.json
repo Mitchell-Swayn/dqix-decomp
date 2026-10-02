@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "baseline_revision": "66374fa",
+  "candidate_start_utc": "2026-10-02T13:53:13.459961+00:00",
+  "verification_finish_utc": "2026-10-02T14:03:12.340544+00:00",
+  "elapsed_seconds": 598.880583,
+  "timing_limit": "After baseline inspection; main full-ROM work_batch snapshots are root-owned.",
+  "attempts": {
+    "TouchIpcReceive": 1,
+    "TouchInitialize": 6
+  },
+  "layout_placement_corrections": 1,
+  "enqueue_total_variants": 5,
+  "delta": {
+    "source_functions": 2,
+    "source_code_bytes": 680,
+    "source_literal_pool_bytes": 44,
+    "binary_fallback_bytes": -724,
+    "source_data_bytes": 0,
+    "source_bss_bytes": 208,
+    "reviewed_assembly_bytes": 0
+  },
+  "arm7_payload_sha1": "a662d5c6a78e990244299926cf6862ce910a475d",
+  "tests_passed": 28,
+  "full_rom_acceptance": "pending integrator",
+  "token_usage": null
+}

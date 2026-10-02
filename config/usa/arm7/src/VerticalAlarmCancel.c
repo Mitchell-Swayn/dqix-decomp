@@ -2,22 +2,7 @@
 
 /* Vertical-count alarm list, ordered by frame then signed scanline.
     * Names describe observed accesses; unknown32 is deliberately uninterpreted. */
-typedef void (*Callback)(void*);
-typedef struct VerticalAlarm VerticalAlarm;
-struct VerticalAlarm {
-    Callback callback;
-    void *userData;
-    unsigned int tag, frame;
-    short scanline, delay;
-    VerticalAlarm *prev, *next;
-    int periodic, unknown32, cancelled;
-};
-typedef struct {
-    unsigned short initialized;
-    int previousScanline;
-    unsigned int frame;
-    VerticalAlarm *first, *last;
-} VerticalAlarmState;
+#include "VerticalAlarm.h"
 extern VerticalAlarmState ARM7_VerticalAlarmState;
 extern int ARM7_DisableIRQInterrupts(void);
 extern int ARM7_SetIRQInterruptState(int);

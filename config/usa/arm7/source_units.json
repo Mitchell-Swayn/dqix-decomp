@@ -2821,6 +2821,56 @@
         "ARM7_BlockCurrentThread": 58705564,
         "ARM7_UnblockThreads": 58705648
       }
+    },
+    {
+      "name": "TouchInitialize",
+      "source": "config/usa/arm7/src/TouchInitialize.c",
+      "autoload": "wram",
+      "runtime_address": 58740580,
+      "payload_offset": 53632,
+      "size": 236,
+      "code_bytes": 204,
+      "literal_pool_bytes": 32,
+      "entry": "ARM7_InitializeTouchState",
+      "symbols": {
+        "ARM7_InitializeTouchState": 58740580
+      },
+      "externals": {
+        "ARM7_TouchRequest": 58766996,
+        "ARM7_IsVerticalAlarmInitialized": 58711456,
+        "ARM7_InitializeVerticalAlarms": 58711380,
+        "ARM7_ZeroInitializeVerticalAlarm": 58711692,
+        "ARM7_SetVerticalAlarmTag": 58712140,
+        "ARM7_ClockTouchSpiByte": 58740816
+      },
+      "bss": {
+        "runtime_address": 58766992,
+        "size": 208,
+        "symbols": {
+          "ARM7_TouchState": 58766992,
+          "ARM7_TouchAlarms": 58767040
+        }
+      }
+    },
+    {
+      "name": "TouchIpcReceive",
+      "source": "config/usa/arm7/src/TouchIpcReceive.c",
+      "autoload": "wram",
+      "runtime_address": 58740852,
+      "payload_offset": 53904,
+      "size": 488,
+      "code_bytes": 476,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_TouchIpcReceive",
+      "symbols": {
+        "ARM7_TouchIpcReceive": 58740852
+      },
+      "externals": {
+        "ARM7_TouchState": 58766992,
+        "ARM7_TouchRequest": 58766996,
+        "ARM7_EnqueueSpiTask": 58740112,
+        "ARM7_SendSpiReply": 58739804
+      }
     }
   ]
 }
