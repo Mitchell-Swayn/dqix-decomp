@@ -5,6 +5,9 @@ extern "C" double func_02008f3c(double);
 
 // atan2 reduction for the pinned little-endian binary64 runtime ABI.
 // Preserve signed-zero quadrants, NaN propagation and compensated pi reduction.
+// The word casts are pinned-MWCC type punning, not portable C++ aliasing.
+// Actual union copies and memcpy word views change the matching instructions;
+// see docs/workflow/sol61-runtime-math.md for the compiler evidence.
 extern "C" double func_02005ac4(double y, double x)
 {
     int hx, hy, iy, lx, ix, ly;

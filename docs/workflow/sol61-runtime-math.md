@@ -22,6 +22,20 @@ the `x == 1` word subtraction unsigned as well, retaining the exact match.
 The source relies on the pinned little-endian MWCC binary64 word-access ABI,
 like the existing source-owned floating-point helpers.
 
+The typed word-pointer casts are compiler-specific type punning; they are not
+standard-C++ alias-safe operations and the source is not promised to work with
+another compiler. During follow-up review, two alternatives were compiled
+against the unchanged original target. Actual union storage copies for x, y
+and the angle matched 28.74%; memcpy copies into typed word storage, including
+copying the angle high word back through its character view, matched 52.45%.
+Both changed the original stack homes and instruction sequences. The exact
+word-view source was preserved and restored, then rechecked at 100%. This is
+direct evidence for the pinned compiler's emitted reads/writes, not a general
+language-level aliasing guarantee. The alternatives and logs are under ignored
+`build/RuntimeArctangent2-union.cpp`,
+`build/RuntimeArctangent2-byte-copy.cpp` and `build/matching/`. The arctangent's
+cumulative source-variant count is now nine; neither alternative adds coverage.
+
 The adjacent entry functions `func_02009598` and `func_020095a4` at
 `02009598..020095b0` call the two-argument arctangent and power routines.
 Each matched its first candidate. The power implementation remains explicit
