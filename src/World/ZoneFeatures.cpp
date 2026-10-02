@@ -1,3 +1,4 @@
+#include "World/ZoneResourceInterfaces.h"
 #include "World/ZoneFeatures.h"
 #include "World/Zone3D.h"
 #include "Resource/Script.h"
@@ -8,7 +9,6 @@
 #define data_020ef388 data_020ef2c4
 #define data_020fdc20 data_020fd98c
 
-#define func_02011584 func_020112f4
 #define func_0209998c func_0209b6c0
 #endif
 
@@ -27,7 +27,7 @@ struct Struct_020fdc20
 
 extern "C"
 {
-    void* func_02011584(GameState*);
+
     // probably get zone data by name
     unsigned short* func_0209998c(void*, const char*);
 }

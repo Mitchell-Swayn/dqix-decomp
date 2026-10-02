@@ -1,3 +1,4 @@
+#include "World/ZoneResourceInterfaces.h"
 #include "PitSequenceState.h"
 #include "Filesystem/BackgroundLoader.h"
 #include "GameState/GameState.h"
@@ -21,7 +22,6 @@ struct PitTextDisplay {
     char unknown_004_[0x998 - 4];
     int busy_;
 };
-struct PitMapLookup;
 struct PitObjectMapKey;
 struct PitEffectManager;
 struct PitEffectMetadata {
@@ -73,9 +73,7 @@ extern "C" {
                        void*, unsigned short, unsigned char);
     GameStateSavedPosition* func_020120a0(GameState*, unsigned int);
     PitObjectMapKey* func_02033fa0(GameObject*);
-    PitMapLookup* func_02011584(GameState*);
     unsigned short func_0204bd7c(PitObjectMapKey*);
-    Zone3D_StructPtr_8* func_02099950(PitMapLookup*, unsigned short);
     void func_0205eaa0(void*, int, int);
     const char* func_02072a68(PitTextTable*, short);
     void func_020e4bf4(PitTextArguments*, int);
@@ -84,7 +82,6 @@ extern "C" {
     int func_020457e0(PitTextDisplay*);
     void func_0205ebc0(void*, int, int);
     void func_0205ebfc(void*, int, int);
-    void func_0207df50(void*);
     void func_0207df90(void*);
     void func_0207dfac(void*);
     PitEffectManager* func_02057924();
@@ -148,7 +145,7 @@ extern "C" int func_ov010_02184354(PitSequenceState* state)
         if (!zoneInfo->unknown_c_low_) {
             PitObjectMapKey* key = func_02033fa0(member);
             if (key) {
-                PitMapLookup* lookup = func_02011584(game);
+                void* lookup = func_02011584(game);
                 Zone3D_StructPtr_8* map = func_02099950(lookup, func_0204bd7c(key));
                 if (map && map->unknown_e_bits_2_5_) state->effectEnabled_ = 0;
             }

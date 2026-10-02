@@ -1,3 +1,4 @@
+#include "World/ZoneResourceInterfaces.h"
 #pragma once
 
 #include "Memory/SafeAllocator.h"
@@ -42,4 +43,3 @@ struct OverlayResources {
 };
 
 extern "C" void func_0207de48(OverlayTextureReservation*, int imageBytes, int paletteBytes);
-extern "C" void func_0207df50(OverlayTextureReservation*);
