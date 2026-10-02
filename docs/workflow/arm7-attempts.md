@@ -723,3 +723,19 @@
   halfword writes/reads and does not invent a returned sample value.
 - Three functions add332 instruction and four literal bytes, no data/BSS.
 - Validation: full payload and linked symbols match; all 11 pipeline and six verifier tests pass.
+
+
+## 2026-10-02 - Luna ARM7 SPI command clock
+
+- Reconstructed the small helper at `0x038056ac` from its volatile SPI data and
+  control accesses and its call from the adjacent touch command path. Its object
+  matches exactly; the source is `TouchCommandClock.c`.
+- An initial dispatch candidate used runtime-to-payload offsets without the
+  540-byte startup prefix. Object comparison rejected it. The candidate sources
+  and manifest changes were removed; no coverage was credited for them. Corrected
+  inspection showed the nearby touch routines require unresolved state layouts.
+- One function adds 32 instruction bytes and 4 literal bytes, no initialized data
+  or BSS; fallback decreases 36 bytes. This is a partial pilot, not completion of
+  the remaining ARM7 range.
+- Validation: complete ARM7 payload and configured source symbols match; all 11
+  ARM7 pipeline tests pass and 10 dependency tests pass (one environment skip).

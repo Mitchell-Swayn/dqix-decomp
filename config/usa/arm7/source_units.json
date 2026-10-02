@@ -2618,6 +2618,21 @@
         "ARM7_ClockTouchSpiByte": 58740816
       },
       "externals": {}
+    },
+    {
+      "name": "TouchCommandClock",
+      "source": "config/usa/arm7/src/TouchCommandClock.c",
+      "autoload": "wram",
+      "runtime_address": 58742444,
+      "payload_offset": 55496,
+      "size": 36,
+      "code_bytes": 32,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_ClockTouchCommandByte",
+      "symbols": {
+        "ARM7_ClockTouchCommandByte": 58742444
+      },
+      "externals": {}
     }
   ]
 }
