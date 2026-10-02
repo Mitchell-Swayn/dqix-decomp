@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "pilot-14",
+  "snapshot": {
+    "utc": "2026-10-02T06:46:21.981107+00:00",
+    "revision": "2185c0ace222224978f15da5d3d23c0bdbcdbb8b",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 194620,
+      "matched_data": 34544,
+      "matched_functions": 1431
+    },
+    "arm7": {
+      "source_functions": 187,
+      "source_code_bytes": 15340,
+      "source_literal_pool_bytes": 1136,
+      "source_data_bytes": 913,
+      "source_bss_bytes": 3444,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 150367,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "23e76476a890f2ad02f49f36afb13f5fca981d9ec1657d41d3f12a394a154919",
+    "arm7_report_sha256": "959515a6b78a852768d4011aa2a70261e5e7a143f23e357c6fb0704822ba44ec",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Integrated seven worker batches plus root stack sentinel. Full ROM/module/symbol/SHA1 pass. Elapsed interval includes pre-existing parallel worker effort; not a throughput estimate. Priority scheduling deferred after three variants.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 1984,
+      "matched_data": 152,
+      "matched_functions": 14
+    },
+    "arm7": {
+      "source_functions": 18,
+      "source_code_bytes": 1352,
+      "source_literal_pool_bytes": 56,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": -1408,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 573.859201
+}

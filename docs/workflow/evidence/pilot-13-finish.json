@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "pilot-13",
+  "snapshot": {
+    "utc": "2026-10-02T06:35:47.037327+00:00",
+    "revision": "d2718c69cdf34bd362d9234b72dd8ed38630f9a1",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 192636,
+      "matched_data": 34392,
+      "matched_functions": 1417
+    },
+    "arm7": {
+      "source_functions": 169,
+      "source_code_bytes": 13988,
+      "source_literal_pool_bytes": 1080,
+      "source_data_bytes": 913,
+      "source_bss_bytes": 3444,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 151775,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "7af7423ae1457923f9a7db1ca34ffd1ef5ddcae245144a984e3e29a2a3160158",
+    "arm7_report_sha256": "1dfdedc97716fc08b8a9a99681271a4f9fce6aa4a0a220dfbedc3a55651a071d",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Full ROM/module/symbol/report/SHA1 accepted: six context lifecycle routines, render-part lifetime/reset dependencies, sine/cosine kernels, ARM7 stop/reserve and sequence-init helpers. Nine ARM7 units now share tracked SoundVoice.h with no coverage credit for deduplication.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 2704,
+      "matched_data": 0,
+      "matched_functions": 14
+    },
+    "arm7": {
+      "source_functions": 3,
+      "source_code_bytes": 476,
+      "source_literal_pool_bytes": 24,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": -500,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 312.852666
+}

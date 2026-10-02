@@ -45,6 +45,16 @@ with the locked tools and target whole-ROM SHA-1:
 It records 1,362 ARM9 functions, 185,300 ARM9 code bytes and 145 ARM7 C functions.
 Original binary fallbacks remain. Later batches have separate integration checks.
 
+The header-dependency milestone `c4cda3a14a89` passed a fresh archive, extraction
+and object build using the locked tools and target whole-ROM SHA-1:
+[manifest](verification/header-provenance-clean-build.json),
+[build log](verification/header-provenance-clean-build.log), and
+[ARM7 report](verification/header-provenance-arm7-report.json).
+It records 1,403 ARM9 functions, 189,932 ARM9 code bytes and 166 ARM7 C functions.
+Actual compiler-discovered transitive ARM7 headers are now hashed and tracked
+by Ninja. Later source batches have separate integration checks; binary fallbacks
+remain required at this milestone.
+
 ## Inputs and tools
 
 - USA ROM: `extract/baserom_dqix_usa.nds`, SHA-1

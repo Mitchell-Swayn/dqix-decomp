@@ -21,10 +21,10 @@
     },
     {
       "id": "runtime-next",
-      "status": "queued",
-      "owner": null,
+      "status": "active",
+      "owner": "match_harness",
       "worktree": "../DQIX-Decomp-vectors",
-      "scope": "Continue math and runtime dependency reconstruction after ARM7 header tooling; integrated through 64714ba",
+      "scope": "math and runtime dependency reconstruction; integrated through ab542e0 arctangent, exponent wrapper and 152 table bytes",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1"
     },
@@ -41,7 +41,7 @@
       "status": "active",
       "owner": "arm7_batch",
       "worktree": "../DQIX-Decomp-arm7-batch",
-      "scope": "voice allocation, reservation controls and modulation; shared type consolidation awaits header dependency tracking",
+      "scope": "sequence and track controls; integrated through 6923fa6, shared voice and sequence layouts tracked by compiler dependency metadata",
       "attempt_limit_per_function": 10,
       "acceptance": "exact full ARM7 payload and pipeline tests; root full ROM integration"
     },
@@ -50,7 +50,7 @@
       "status": "active",
       "owner": "world_batch",
       "worktree": "../DQIX-Decomp-zone3d",
-      "scope": "Zone3D constructor/destructor and embedded lifetime dependencies; transitions and initialization/resource reset integrated",
+      "scope": "embedded serialized-record loading and traversal; integrated through 29595a4; Zone3D constructor deferred after nine variants",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1"
     },
@@ -102,18 +102,28 @@
     },
     {
       "id": "arm7-header-provenance",
-      "status": "active",
-      "owner": "match_harness",
+      "status": "verified",
+      "owner": null,
       "scope": "actual compiler transitive include hashes and Ninja dependencies; real nested-header rebuild tests",
-      "acceptance": "parser/assembly-guard fixtures, MWCC+Ninja dependency smoke, exact ARM7 payload and full ROM checks; root fresh archive build"
+      "acceptance": "116 tooling tests (115 pass, one optional skip), exact ARM7 and integrated ROM checks, fresh locked-tool archive/extraction build passed",
+      "commit": "c4cda3a"
     },
     {
       "id": "arm9-context-lifecycle",
-      "status": "active",
-      "owner": "root",
-      "scope": "isolate existing context creation and shutdown C++ candidates; blocking and callback routines integrated",
+      "status": "integrated",
+      "owner": null,
+      "scope": "six creation/shutdown functions, 648 code bytes; stack boundary setter separately integrated in 6ce6ba3",
       "attempt_limit_per_function": 10,
-      "acceptance": "exact objects then ROM/check/report/sha1"
+      "acceptance": "exact objects then ROM/check/report/sha1",
+      "commit": "c720eb4"
+    },
+    {
+      "id": "context-priority-scheduling",
+      "status": "deferred",
+      "owner": null,
+      "scope": "0x020c79bc..0x020c7a74 and 0x020c7a90..0x020c7b38",
+      "blocker": "Three C++ variants retain compiler predication and branch-elimination mismatch; 86.96% and 83.33%. No source credit.",
+      "next_action": "Find a justified source form preserving original branch without assembly matching barriers"
     }
   ]
 }
