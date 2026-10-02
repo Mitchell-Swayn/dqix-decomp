@@ -7203,7 +7203,7 @@ data_020f1258 kind:data(any) addr:0x020f1258
 gSpecialPlacementOpcodes kind:data(any) addr:0x020f1278
 gFieldPlacementOpcodes kind:data(any) addr:0x020f1290
 gWorldPlacementPaths kind:data(any) addr:0x020f12b8
-data_020f1308 kind:data(any) addr:0x020f1308
+gWorldPlacementPersistentData kind:data(any) addr:0x020f1308
 data_020f1330 kind:data(any) addr:0x020f1330
 data_020f134a kind:data(any) addr:0x020f134a
 data_020f1356 kind:data(any) addr:0x020f1356

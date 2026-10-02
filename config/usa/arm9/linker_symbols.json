@@ -78,5 +78,23 @@
     "offset": "0x3c",
     "object": "RuntimeFormatText.o",
     "section": ".data"
+  },
+  "data_020f1330": {
+    "base": "gWorldPlacementPersistentData",
+    "offset": "0x28",
+    "object": "WorldPlacementPersistentData.o",
+    "section": ".data"
+  },
+  "data_020f134a": {
+    "base": "gWorldPlacementPersistentData",
+    "offset": "0x42",
+    "object": "WorldPlacementPersistentData.o",
+    "section": ".data"
+  },
+  "data_020f1356": {
+    "base": "gWorldPlacementPersistentData",
+    "offset": "0x4e",
+    "object": "WorldPlacementPersistentData.o",
+    "section": ".data"
   }
 }

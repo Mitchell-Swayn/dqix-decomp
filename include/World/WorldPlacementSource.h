@@ -9,7 +9,7 @@ struct WorldPlacementSource
     struct PersistentState
     {
         unsigned int unknown0 : 9, count : 4, unknown13 : 4, flags : 8;
-        unsigned int unknown25 : 6, available : 1;
+        unsigned int unknown25 : 4, unknown29 : 2, available : 1;
     };
     struct Record
     {
