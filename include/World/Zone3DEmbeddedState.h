@@ -111,8 +111,8 @@ struct ZoneState0840
 };
 struct ZoneState2664
 {
-    int unknown_0;
-    int unknown_4;
+    void* archive;
+    unsigned int archiveSize;
     Object3D object;
     unsigned char unknown_b4;
     unsigned char unknown_b5;
@@ -123,6 +123,8 @@ struct ZoneState2664
     unsigned short unknown_ba;
     signed char unknown_bc;
     char unknown_bd[3];
+    bool LoadEntranceObject(SafeAllocator& allocator, void* textureContext);
+    void UpdateEntranceEffects();
     void DrawAtGrottoEntrance();
     void UpdateEntranceObject();
     bool ShowEntranceObject();

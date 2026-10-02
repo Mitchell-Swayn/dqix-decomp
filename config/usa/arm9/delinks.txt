@@ -1087,6 +1087,14 @@ src/World/ZoneState0840.cpp:
     complete
     .text start:0x020984ac end:0x020984b0
 
+src/World/ZoneState2664Loading.cpp:
+    complete
+    .text start:0x0208f588 end:0x0208f68c
+
+src/World/ZoneState2664Effects.cpp:
+    complete
+    .text start:0x0208f4e4 end:0x0208f588
+
 src/World/ZoneState2664ScaleData.cpp:
     complete
     .rodata start:0x020e8d3c end:0x020e8d54

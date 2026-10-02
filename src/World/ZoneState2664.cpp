@@ -1,8 +1,8 @@
 #include "World/Zone3DEmbeddedState.h"
 void ZoneState2664::Reset()
 {
-    unknown_0 = 0;
-    unknown_4 = 0;
+    archive = 0;
+    archiveSize = 0;
     unknown_b4 = 0;
     unknown_b5 = 0;
     unknown_b6 = 1;
@@ -11,3 +11,4 @@ void ZoneState2664::Reset()
     unknown_ba = 0;
     unknown_bc = -1;
 }
+
