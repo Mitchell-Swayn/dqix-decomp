@@ -119,3 +119,10 @@ global placement despite symbol-local matching. Reordering declarations to the
 observed compiler emission order restores every address; combined module/symbol/
 ARM7/ROM SHA-1 checks pass. The descriptor table and following zeros remain
 fallback until their full allocation extent is established.
+
+The five known format descriptors at020f1c90..020f1cb8 match a typed40-byte
+initializer on the first candidate. Extracting only those records causes the
+linker to discard the following40 unreferenced zero bytes and shifts later
+data, so the trial is reverted. Whether those zeros are reserved array slots
+or a separate allocation remains unresolved; no invented padding or retention
+reference was added. Draft is under ignored build/AnimationTypes-deferred.cpp.
