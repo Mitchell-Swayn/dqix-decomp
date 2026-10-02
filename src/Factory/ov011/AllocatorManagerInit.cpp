@@ -12,6 +12,13 @@ struct Ov011ManagerRecord
     void* previous;
 };
 
+// The two state helpers access validity flags at offsets 0x10 and 0x11.
+struct Ov011ManagerState
+{
+    unsigned char payload[0x10];
+    unsigned char validPrimary, validSecondary;
+};
+
 struct Ov011AllocatorManager
 {
     Ov011AllocatorNode root;
@@ -27,8 +34,7 @@ struct Ov011AllocatorManager
     unsigned char subsystem[0x74];
     int field_18c;
     int powerFlag;
-    unsigned char state[0x10];
-    unsigned char flag_1a4, flag_1a5;
+    Ov011ManagerState state;
     unsigned char padding_1a6[2];
     unsigned int displayMode, subDisplayMode;
     unsigned short field_1b0, field_1b2;
@@ -41,13 +47,14 @@ struct Ov011AllocatorManager
 };
 
 typedef char Ov011RecordSizeCheck[sizeof(Ov011ManagerRecord) == 0x7c ? 1 : -1];
+typedef char Ov011StateSizeCheck[sizeof(Ov011ManagerState) == 0x12 ? 1 : -1];
 typedef char Ov011ManagerSizeCheck[sizeof(Ov011AllocatorManager) == 0x1e0 ? 1 : -1];
 
 extern "C" {
     void func_ov023_021f672c(void*);
     void func_0203b4d8(void*, int);
-    void func_02074af4(void*);
-    void func_02074b64(void*);
+    void func_02074af4(Ov011ManagerState*);
+    void func_02074b64(Ov011ManagerState*);
 
     void func_ov011_02184374(Ov011ManagerRecord* record)
     {
@@ -75,10 +82,10 @@ extern "C" {
         manager->field_18c = -1;
         func_0203b4d8(func_ov017_0218b5b0(), 0xc0);
         manager->powerFlag = (*(volatile unsigned short*)0x04000304 & 0x8000) >> 15;
-        manager->flag_1a4 = 0;
-        manager->flag_1a5 = 0;
-        func_02074af4(manager->state);
-        func_02074b64(manager->state);
+        manager->state.validPrimary = 0;
+        manager->state.validSecondary = 0;
+        func_02074af4(&manager->state);
+        func_02074b64(&manager->state);
         manager->displayMode = (*(volatile unsigned int*)0x04000000 & 0x1f00) >> 8;
         manager->subDisplayMode = (*(volatile unsigned int*)0x04001000 & 0x1f00) >> 8;
         manager->field_1b0 = 0;
