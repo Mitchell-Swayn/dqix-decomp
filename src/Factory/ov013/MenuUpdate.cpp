@@ -8,7 +8,7 @@ int func_0204c7cc(Ov013Widget*);
 void func_0205bc24(void*, int);
 int func_0205d0e0(Ov013WidgetGroup*, unsigned int);
 void func_0205c904(void*, unsigned int);
-void func_0205a330(void*, unsigned int);
+void func_0205a330(Ov013TranslationGroup*, unsigned int);
 void func_0205bc10(void*);
 void func_0205ba68(void*, int, int, int);
 void func_0205bacc(void*, int);
@@ -36,7 +36,7 @@ extern "C" unsigned char func_ov013_021847c4(Ov013Menu* menu, unsigned int trans
         func_0205bc24(&menu->widgetGroup.primary, -1);
     menu->mode = func_0205d0e0(&menu->widgetGroup, menu->tickCount);
     func_0205c904(menu->unknown3D4, menu->tickCount);
-    void* translations = *(void**)(func_020421a0() + 0x2e0);
+    Ov013TranslationGroup* translations = *(Ov013TranslationGroup**)(func_020421a0() + 0x2e0);
     if (translations)
         func_0205a330(translations, game->GetTickCount());
     if (menu->state[7]) {

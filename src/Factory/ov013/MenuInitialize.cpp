@@ -5,7 +5,7 @@
 // Only the borrowed background buffer and widget group are observed here.
 struct Ov013MenuParent {
     unsigned char unknown00[0x178];
-    int characterData;
+    void* characterData;
     unsigned char unknown17C[12];
     Ov013WidgetGroup widgetGroup;
 };

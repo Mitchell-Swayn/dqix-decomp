@@ -36,10 +36,10 @@ extern "C" void func_ov013_021846a0(Ov013Menu* menu)
         func_0205d2bc(&menu->widgetGroup);
         func_0205d048(&menu->widgetGroup);
         if (menu->unknown654) {
-            void* characterData = (void*)menu->unknown654;
+            void* characterData = menu->unknown654;
             memset(characterData, 0, 0x20);
-            CleanInvalidateCacheRange((void*)menu->unknown654, 0x20);
-            LoadToMainBG1CharacterData((void*)menu->unknown654, 0, 0x20);
+            CleanInvalidateCacheRange(menu->unknown654, 0x20);
+            LoadToMainBG1CharacterData(menu->unknown654, 0, 0x20);
         }
         volatile unsigned int* displayControl = (volatile unsigned int*)0x04000000;
         *displayControl = (*displayControl & ~0x1f00) | (menu->savedBackgroundMode << 8);

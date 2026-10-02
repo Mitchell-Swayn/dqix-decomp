@@ -109,7 +109,7 @@ struct Ov013Menu {
     int mode; // 0x648
     int unknown64C;
     int task;
-    int unknown654;
+    void* unknown654; // borrowed background character-data buffer
     Ov013TextBuffer* textBuffer; // 0x658, borrowed from func_020421a0()->0x5c
     int primarySelection;
     int optionSelection;
