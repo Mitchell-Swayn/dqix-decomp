@@ -10,3 +10,8 @@ src/Factory/ov003/TextEntryActions.cpp:
     .text start:0x0215ee44 end:0x0215f000
     .rodata start:0x0217f3c8 end:0x0217f3ec
 
+src/Factory/ov003/TextEntryLayout.cpp:
+    complete
+    .text start:0x0215e6d8 end:0x0215e9ec
+    .bss start:0x02180cb8 end:0x02180cc0
+

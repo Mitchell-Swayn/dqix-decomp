@@ -1,40 +1,6 @@
 #include "globaldefs.h"
 #include "std_library_functions.h"
-
-// Layout observed in the text-entry navigation, script setup, and action callers.
-// Coordinates and presentation fields are only named where their use is known.
-struct TextEntryKey {
-    short x;
-    short y;
-    const char* text;
-    const char* alternateText;
-    unsigned char modeMask;
-    unsigned char action;
-    unsigned char extentIndex;
-    unsigned char disabled;
-    short navigationIndex;
-    short unknown12;
-};
-
-struct TextEntryLayout;
-struct TextEntryState {
-    TextEntryKey* selectedKey;
-    TextEntryLayout* layout;
-    char* text;
-    int widthLimit;
-    unsigned int bufferSize;
-    int characterLimit;
-    int lastInput;
-    short repeatTimer;
-    unsigned char mode;
-    unsigned char encoding;
-    unsigned char alternate;
-    unsigned char unknown21;
-    unsigned char allowAlternateConfirm;
-    unsigned char allowBackspace;
-    unsigned char allowTouch;
-    unsigned char padding[3];
-};
+#include "TextEntryTypes.h"
 
 extern "C" {
     int func_020426bc(const char* text, char* codes, int encoding);
