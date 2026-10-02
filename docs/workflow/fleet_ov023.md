@@ -67,3 +67,89 @@ Local ignored evidence:
 
 Batch snapshots were taken before the source commit; their dirty-tree flag and
 baseline revision must not be interpreted as an integrated-main measurement.
+
+## Continuation: model-group allocator lifecycle
+
+Batch `fleet_ov023_20261003_cont_lifecycle`, based on worker commit
+`f88728248e783c750fac6b32b811009194e4fd70`; measured reconstruction/initial acceptance
+interval **235.447501 seconds**. Prior source and experiment evidence were
+preserved. No inherited failed variants or caps cover these three functions.
+One source variant per function matched; no unresolved candidate was accepted.
+
+New source `src/Factory/ov023/ModelGroupLifecycle.cpp` owns instruction/literal
+range `[0x021e4e8c, 0x021e4fd8)` and constant data range
+`[0x021fd6d4, 0x021fd6fc)`. Original symbols remain unchanged.
+
+| Function suffix | Instructions | Literals | Established operation |
+| --- | ---: | ---: | --- |
+| 021e4e8c | 140 | 0 | Initialize ten Object3Ds and allocator pointers, twelve task IDs and tail flags |
+| 021e4f18 | 76 | 0 | Cancel group tasks, initialize Object3Ds, destroy all eleven allocators |
+| 021e4f64 | 112 | 4 | Allocate backing buffers and create ten model allocators plus a 4096-byte auxiliary allocator |
+
+Measured gain: **3 functions, 332 report code bytes** (328 instruction bytes
+and 4 literal-pool bytes), **40 initialized read-only data bytes**, zero BSS,
+alignment or assembly bytes. All ARM9 denominators and ARM7 counters are
+unchanged. Nonselected functions and data retain original fallback.
+
+The full ten-entry unsigned size table is source-defined, including the
+non-round sizes 0x23e8 and 0x1b58. This removes the selected allocation routine's
+original table dependency. Caller `021e33b4` allocates independent 0xc20-byte
+groups and calls initialization, allocator setup and texture-context setup;
+`021fc518` repeats this lifecycle for two embedded groups at stride 0xc20.
+Teardown callers `021e2f38` and `021fc6cc` were inspected in the original
+disassembly. The teardown deliberately calls `Object3D::Initialize`, as the
+original code does, before destroying the allocators.
+
+`ModelGroup.h` is local to ov023 and shares the established real Object3D and
+SafeAllocator arrays between the two source units. Additional assertions check
+the allocator, auxiliary allocator, loading flag and tail-pointer offsets.
+The c12 flag is observed gating pending loads in `021e5020`; c14 gates later
+updates. Uses of c18 in `021e5020`, `021e540c` and `021e5974` establish a pointer,
+but its exact pointee remains unresolved. No cross-module headers changed.
+The 794-bf4 region still requires recovery of its ten 0x70-byte texture-context
+subobjects before reconstructing the next setup/loading family; no raw-offset
+accesses into that region were added by this batch.
+
+The first map experiment incorrectly used two `.text` entries in one delink
+unit; dsd rejected that configuration. Its stale-target unpaired comparison at
+`20261002T155157-40f321d6ef9144ebbcdf36f52c03891f` is diagnostic only, with no
+acceptance credit. Splitting the earlier range into its own source unit retained
+the same first source variant and yielded four of four exact symbols. The prior
+unit also retained ten of ten exact symbols after the shared-layout move. Final
+no-build validation again yielded four of four exact symbols. Thus four tool
+comparisons were recorded, of which three are valid matching/regression checks;
+there were no failed source variants to carry into the next batch. After the
+measured snapshot, two further candidate comparisons checked removal of trailing
+blank lines from the new files: four of four lifecycle symbols and ten of ten
+prior symbols remained exact. Total comparisons: six, five valid and one
+rejected-map diagnostic; still one source variant per new function.
+
+Acceptance: `ninja -j2 rom check report sha1` exited successfully, with full
+module and symbol checks, ARM7 baseline verification, input/output isolation
+guards and exact USA SHA-1 `c7c3014c237900c8281289b8bc76a781969b6278`.
+The original input SHA-1 was rechecked independently. The full acceptance rerun
+after whitespace cleanup also passed. `git diff --cached --check` passed.
+No gameplay/runtime tests; token usage unmeasured. No merge or queue edits.
+
+Ignored local evidence:
+
+- `build/workflow/fleet_ov023_20261003_cont_lifecycle/{start,finish}.json`
+- `build/factory/fleet_ov023_dis/ov023_4.s` (original disassembly and callers)
+- `build/factory/fleet_ov023_cont_lifecycle_evidence.json`
+- `build/factory/fleet_ov023_cont_lifecycle_final_evidence.json`
+- `build/factory/fleet_ov023_cont_lifecycle_postcleanup_evidence.json`
+- `build/factory/fleet_ov023_cont_lifecycle_diff.json` (zero mismatches)
+- `build/factory/fleet_ov023_cont_acceptance.log`
+- `build/factory/fleet_ov023_cont_final_acceptance.log`
+- `build/matching/20261002T155234-fde9c1ecceee45c68436ee7a59d71475/`
+- `build/matching/20261002T155254-ef24ef908c774f8eb4057ecec7e4d8d2/`
+- `build/matching/20261002T155351-be2ee6d61f524ecba1d7731795f2c912/`
+- `build/matching/20261002T155616-5724d6448c694b32be9d4266121004e2/`
+- `build/matching/20261002T155616-bc716b57715f404c8621e4ce0cadfdeb/`
+
+Remaining required work: texture-context layout/setup and its two backing
+tables, model loading/drawing, unselected group methods/data, exact flag and
+Object3D field meanings. This batch does not complete ov023. Snapshots precede
+the source commit and are worker-local evidence, not integrated-main coverage.
+The measured interval excludes the later documentation/whitespace cleanup and
+its final validation rerun.
