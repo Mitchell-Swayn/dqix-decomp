@@ -97,3 +97,26 @@
   880 initialized data bytes, 716 BSS bytes; 157,524 payload bytes remain fallback.
 - Next candidate batch: shared cartridge-bus lock release/acquire functions
   beginning at `0x037fba50`, with ARM9 GamecardBusOwnership as semantic reference.
+
+## 2026-10-02 - shared cartridge-bus locks
+
+- Generic unlock/try-lock and GBA blocking acquire/internal release at
+  `0x037fba50` through `0x037fbbe4`: four functions matched on first compilation.
+  ARM9 GamecardBusOwnership supplied shared-lock semantics; ARM7 instructions
+  independently established strict masking, volatile atomic accesses, callback
+  ordering, retries and the extra platform-hook gating.
+- GBA try-acquire `0x037fbbf0`, NDS release/try-acquire `0x037fbc38`/`0x037fbc58`,
+  and owner getter `0x037fbc80`: first compilation of each unit matched exactly.
+- Shared boot-halfword getter `0x037fcac0`: one compile matched all 28 bytes.
+  Disassembly reads `0x027ffffa` and tests bit 2, so the initial speculative
+  processor-mode name was replaced with the evidence-only TestSharedBootFlag4.
+- Public GBA release trampoline `0x037fbbe4` uses r1 for an indirect tail jump;
+  left binary-owned without attempting to force ordinary C to select a register.
+  Owner-ID allocation/release at `0x037fbc88`/`0x037fbd30` shows redundant branch
+  patterns similar to deferred register initialization and remains unattempted.
+- Validation: complete standalone payload and every declared symbol match;
+  11 pipeline tests and six verifier tests pass. Totals: 108 C functions,
+  9,220 instruction bytes, 700 literals, 880 initialized data bytes, 716 BSS;
+  156,956 payload bytes remain fallback. No new storage or assembly exceptions.
+- Next candidate: input/GPIO polling and periodic-alarm initialization beginning
+  at `0x037fec18`, which connects already source-owned timing and alarm APIs.

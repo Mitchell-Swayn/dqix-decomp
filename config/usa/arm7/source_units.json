@@ -834,6 +834,107 @@
         "ARM7_EmptyInterruptHandler": 58701420
       },
       "externals": {}
+    },
+    {
+      "name": "BusLocks",
+      "source": "config/usa/arm7/src/BusLocks.c",
+      "autoload": "wram",
+      "runtime_address": 58702416,
+      "payload_offset": 15468,
+      "size": 404,
+      "code_bytes": 388,
+      "literal_pool_bytes": 16,
+      "entry": "ARM7_UnlockBus",
+      "symbols": {
+        "ARM7_UnlockBus": 58702416,
+        "ARM7_TryLockBus": 58702540,
+        "ARM7_AcquireGBABus": 58702656,
+        "ARM7_InternalReleaseGBABus": 58702760
+      },
+      "externals": {
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_DisableIRQAndFIQInterrupts": 58712976,
+        "ARM7_SetIRQAndFIQInterruptState": 58712996,
+        "ARM7_AtomicSwap": 58714404,
+        "ARM7_BusLockWait": 58702404,
+        "ARM7_TestSharedBootFlag4": 58706624,
+        "ARM7_BeforeReleaseGBABus": 58736412,
+        "ARM7_AfterAcquireGBABus": 58736416,
+        "ARM7_MarkGBABusAcquired": 58702896,
+        "ARM7_MarkGBABusReleased": 58702900
+      }
+    },
+    {
+      "name": "BusTryAcquire",
+      "source": "config/usa/arm7/src/BusTryAcquire.c",
+      "autoload": "wram",
+      "runtime_address": 58702832,
+      "payload_offset": 15884,
+      "size": 64,
+      "code_bytes": 56,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_TryAcquireGBABus",
+      "symbols": {
+        "ARM7_TryAcquireGBABus": 58702832
+      },
+      "externals": {
+        "ARM7_TryLockBus": 58702540,
+        "ARM7_TestSharedBootFlag4": 58706624,
+        "ARM7_AfterAcquireGBABus": 58736416,
+        "ARM7_MarkGBABusAcquired": 58702896
+      }
+    },
+    {
+      "name": "BusNDS",
+      "source": "config/usa/arm7/src/BusNDS.c",
+      "autoload": "wram",
+      "runtime_address": 58702904,
+      "payload_offset": 15956,
+      "size": 64,
+      "code_bytes": 40,
+      "literal_pool_bytes": 24,
+      "entry": "ARM7_ReleaseNDSBus",
+      "symbols": {
+        "ARM7_ReleaseNDSBus": 58702904,
+        "ARM7_TryAcquireNDSBus": 58702936
+      },
+      "externals": {
+        "ARM7_TryLockBus": 58702540,
+        "ARM7_UnlockBus": 58702416,
+        "ARM7_MarkNDSBusAcquired": 58702968,
+        "ARM7_MarkNDSBusReleased": 58702972
+      }
+    },
+    {
+      "name": "BusLockOwner",
+      "source": "config/usa/arm7/src/BusLockOwner.c",
+      "autoload": "wram",
+      "runtime_address": 58702976,
+      "payload_offset": 16028,
+      "size": 8,
+      "code_bytes": 8,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_GetBusLockOwner",
+      "symbols": {
+        "ARM7_GetBusLockOwner": 58702976
+      },
+      "externals": {}
+    },
+    {
+      "name": "SharedBootFlag",
+      "source": "config/usa/arm7/src/SharedBootFlag.c",
+      "autoload": "wram",
+      "runtime_address": 58706624,
+      "payload_offset": 19676,
+      "size": 28,
+      "code_bytes": 24,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_TestSharedBootFlag4",
+      "symbols": {
+        "ARM7_TestSharedBootFlag4": 58706624
+      },
+      "externals": {}
     }
   ]
 }

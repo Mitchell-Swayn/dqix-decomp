@@ -1,11 +1,11 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **99 C
-functions: 8,704 instruction bytes plus 648 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **108 C
+functions: 9,220 instruction bytes plus 700 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
 880 bytes of standalone initialized data and 716 bytes of BSS now have source
-definitions. The other 157,524 payload bytes
+definitions. The other 156,956 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -19,10 +19,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 8,704 / 648 bytes |
+| Reconstructed C instructions / compiler literal pools | 9,220 / 700 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 880 / 120 bytes |
 | Reconstructed BSS / total autoload BSS | 716 / 22,744 bytes |
-| Binary fallback | 157,524 bytes |
+| Binary fallback | 156,956 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -170,7 +170,7 @@ table; its separate VBlank response and initialized dispatch table remain outsid
 this unit's source data ownership.
 
 `src/Alarms.c` reconstructs eight alarm scheduling functions at
-`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 899 C
+`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8108 C
 instruction bytes, 52 literal bytes and the 12-byte list state at
 `[0x03809164, 0x03809170)`. It initializes and orders the doubly-linked queue,
 programs timer 1, registers timeouts and periodic intervals, and cancels alarms.
@@ -268,7 +268,7 @@ does not add duplicate data credit.
 
 `src/ThreadWait.c` reconstructs blocking, waking all waiters, marking a thread
 ready and selecting the first ready thread at `[0x037fc69c, 0x037fc7cc)`
-(payload `[0x48b8, 0x49e8)`), with 299 C instruction bytes and 8 literal bytes.
+(payload `[0x48b8, 0x49e8)`), with 2108 C instruction bytes and 8 literal bytes.
 It clears blocked-list links on wakeup and preserves IRQ state. The scheduler switch routine now belongs to `ThreadSwitch.c`; list insertion
 and IRQ dependencies are source-owned. No thread-context storage is counted by this unit.
 
@@ -367,6 +367,26 @@ both IRQ-waiter queue endpoints and the shared VBlank count. Its eight-byte
 queue at `[0x03808e34, 0x03808e3c)` is separately source-owned WRAM BSS.
 `src/EmptyInterruptHandler.c` reconstructs the four-byte default return handler
 at `[0x037fb66c, 0x037fb670)` (payload `[0x3888, 0x388c)`).
+
+The cartridge-bus lock batch reconstructs nine functions in five source units:
+
+| Unit | Runtime range | Payload range | Instructions / literals |
+| --- | --- | --- | --- |
+| `BusLocks.c` | `[0x037fba50, 0x037fbbe4)` | `[0x3c6c, 0x3e00)` | 388 / 16 bytes |
+| `BusTryAcquire.c` | `[0x037fbbf0, 0x037fbc30)` | `[0x3e0c, 0x3e4c)` | 56 / 8 bytes |
+| `BusNDS.c` | `[0x037fbc38, 0x037fbc78)` | `[0x3e54, 0x3e94)` | 40 / 24 bytes |
+| `BusLockOwner.c` | `[0x037fbc80, 0x037fbc88)` | `[0x3e9c, 0x3ea4)` | 8 / 0 bytes |
+| `SharedBootFlag.c` | `[0x037fcac0, 0x037fcadc)` | `[0x4cdc, 0x4cf8)` | 24 / 4 bytes |
+
+The generic release and try-acquire routines preserve owner mismatch `-2`,
+atomic claim results, callback ordering, and IRQ-only versus IRQ/FIQ masking.
+GBA acquisition retries positive contention results with a wait loop; GBA
+release and successful acquisition invoke their platform hooks when shared
+halfword `0x027ffffa` bit 2 is clear. The bit getter's name describes the observed
+test without asserting broader flag semantics. NDS wrappers use IRQ-only masking.
+Shared lock records at `0x027fffe0` and `0x027fffe8` remain outside source BSS
+ownership. Atomic swap, wait, platform hooks and the assembly-shaped public GBA
+release trampoline remain binary dependencies; no new assembly is introduced.
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C
