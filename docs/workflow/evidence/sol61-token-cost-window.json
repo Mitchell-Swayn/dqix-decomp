@@ -1,0 +1,83 @@
+{
+  "response_count": 462,
+  "totals": {
+    "response_count": 462,
+    "input_tokens": 41204673,
+    "fresh_input_tokens": 1027009,
+    "cached_input_tokens": 40177664,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 204966,
+    "reasoning_output_tokens": 65055,
+    "total_tokens": 41409639,
+    "max_input_tokens": 159406
+  },
+  "models": {
+    "gpt-6-astra": {
+      "response_count": 70,
+      "input_tokens": 6605871,
+      "fresh_input_tokens": 113711,
+      "cached_input_tokens": 6492160,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 20867,
+      "reasoning_output_tokens": 9568,
+      "total_tokens": 6626738,
+      "max_input_tokens": 136017,
+      "standard_api_equivalent_usd": 8.67262
+    },
+    "gpt-6.1-sol": {
+      "response_count": 392,
+      "input_tokens": 34598802,
+      "fresh_input_tokens": 913298,
+      "cached_input_tokens": 33685504,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 184099,
+      "reasoning_output_tokens": 55487,
+      "total_tokens": 34782901,
+      "max_input_tokens": 159406,
+      "standard_api_equivalent_usd": 7.0361364
+    }
+  },
+  "diagnostics": {
+    "rollouts_scanned": 21,
+    "token_usage_records": 5834,
+    "records_in_window": 462,
+    "records_outside_window": 5372,
+    "rollouts_without_token_usage_records": 0,
+    "duplicate_records_deduplicated": 0,
+    "conflicting_response_ids": 0,
+    "errors_by_kind": {},
+    "error_examples": []
+  },
+  "schema_version": 1,
+  "window_utc": {
+    "start_inclusive": "2026-10-02T13:11:00Z",
+    "end_exclusive": "2026-10-02T13:41:00Z"
+  },
+  "selection": {
+    "kind": "project_root",
+    "selected_threads": 21
+  },
+  "accounting_note": "input_tokens includes cached_input_tokens; fresh_input_tokens is input minus cached. cache_write_input_tokens is reported separately and may overlap input. reasoning_output_tokens is a subset of output_tokens. total_tokens is the recorded total; do not add cached or reasoning subtotals again. No prices or billing charges are inferred.",
+  "accepted_progress": {
+    "baseline_revision": "242633d",
+    "cutoff_accepted_revision": "82cf755",
+    "arm9_functions": 27,
+    "arm9_report_code_bytes": 1364,
+    "arm7_c_functions": 3,
+    "arm7_instruction_bytes": 740,
+    "arm7_literal_bytes": 36,
+    "arm9_report_data_bytes": 16684,
+    "inherited_luna_data_drafts_repaired": 16496,
+    "new_initialized_data_bytes": 128,
+    "new_arm9_bss_bytes": 60,
+    "already_matching_luna_functions_carried_forward": 8,
+    "already_matching_luna_report_code_carried_forward": 180
+  },
+  "limitations": [
+    "Different tasks and contexts than Luna window; not controlled model benchmark.",
+    "Includes inherited Luna source and table drafts plus Sol review/layout/pipeline fixes.",
+    "Includes idle time and pending unintegrated work; accepted code tracked separately from proposed results.",
+    "Standard short-context rate-card equivalents, not Pro charges or allowance conversion.",
+    "The 1924 code/instruction bytes excluding already-matching drafts still include completion of an unmatched Luna IPC-handler draft; this is not source authorship attribution."
+  ]
+}

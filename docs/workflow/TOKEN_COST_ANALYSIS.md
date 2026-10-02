@@ -91,3 +91,37 @@ layout investigations are included in its token costs but have no source-byte
 credit. These caveats prohibit interpreting the ratios as model-only causation
 or equal-task speed. They support testing a mixed workflow rather than assuming
 that the cheapest model also maximizes progress per token or elapsed time.
+
+
+## First Sol 6.1 window after the requested switch
+
+Six Sol 6.1 workers replaced the stopped Luna workers on October 2. The new
+[evidence](evidence/sol61-token-cost-window.json) covers 13:11-13:41 UTC, the same
+30-minute duration as the earlier Luna window. Historical model metadata, unique
+response IDs and accounting checks passed; no request exceeded 272,000 inputs.
+
+| Observed measure | Earlier Luna window | First Sol 6.1 window |
+|---|---:|---:|
+| Worker tokens including cached input | 64,753,187 | 34,782,901 |
+| Worker Standard API equivalent | $0.97 | $7.04 |
+| Root Standard API equivalent | $14.05 | $8.67 |
+| Combined equivalent | $15.02 | $15.71 |
+| Accepted ARM9 + ARM7 functions | 26 | 30 |
+| Accepted ARM9 report-code + ARM7 instructions | 1,244 bytes | 2,104 bytes |
+| Combined equivalent per 1,000 accepted code bytes | $12.08 | $7.47 |
+
+Sol's column includes eight already-matching Luna functions / 180 code bytes.
+Excluding those leaves 22 functions / 1,924 newly matched code bytes and $8.16
+combined equivalent per 1,000 bytes, about 32% below the earlier window. This
+still includes finishing an unmatched Luna IPC-handler draft; it is not a claim
+of exclusively Sol-authored source. Worker-only equivalents are $3.66 versus
+$0.78 per 1,000 such bytes: the saving appears in overall integration output,
+not in the worker-only rate.
+
+Sol also repaired inherited graphics table drafts, accepting 16,496 data bytes,
+and added 128 initialized-data bytes and 60 BSS bytes. These remain separate from
+the code comparison. Tooling, type corrections, failed attempts, pending work,
+idle time and review delays are included in token costs. Smaller new contexts,
+root compaction and batching also affect the comparison. Therefore these are
+observed workflow results, not a controlled model benchmark or a completion-cost
+forecast. Neither dollar figure represents actual Pro-plan charges or allowances.
