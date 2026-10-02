@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "source_rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+  "payload_sha1": "a662d5c6a78e990244299926cf6862ce910a475d",
+  "coverage_note": "Only the listed confirmed scopes are partitioned. All other ARM7 initialized bytes and BSS remain unclassified by this file.",
+  "scopes": [
+    {
+      "name": "startup",
+      "autoload": null,
+      "payload_offset": "0x0",
+      "runtime_address": "0x02380000",
+      "size": "0x21c",
+      "totals": {
+        "instruction": 452,
+        "literal_pool": 64,
+        "initialized_data": 24
+      },
+      "ranges": [
+        {
+          "payload_offset": "0x0",
+          "size": "0xe4",
+          "classification": "instruction",
+          "evidence": "Header entry; calls 0x02380118 and 0x0238018c; returns control with bx r1."
+        },
+        {
+          "payload_offset": "0xe4",
+          "size": "0x34",
+          "classification": "literal_pool",
+          "evidence": "Thirteen PC-relative ldr references from the entry routine."
+        },
+        {
+          "payload_offset": "0x118",
+          "size": "0x6c",
+          "classification": "instruction",
+          "evidence": "Called copy/zero-fill routine; branches over embedded literal and returns at 0x02380188."
+        },
+        {
+          "payload_offset": "0x184",
+          "size": "0x4",
+          "classification": "literal_pool",
+          "evidence": "PC-relative ldr at 0x02380118 points to parameter block."
+        },
+        {
+          "payload_offset": "0x188",
+          "size": "0x4",
+          "classification": "instruction",
+          "evidence": "bx lr return from copy/zero-fill routine."
+        },
+        {
+          "payload_offset": "0x18c",
+          "size": "0x70",
+          "classification": "instruction",
+          "evidence": "Called startup hardware check; loops remain internal and bx lr at 0x023801f8."
+        },
+        {
+          "payload_offset": "0x1fc",
+          "size": "0x8",
+          "classification": "literal_pool",
+          "evidence": "PC-relative ldr references at 0x02380190 and 0x023801f0."
+        },
+        {
+          "payload_offset": "0x204",
+          "size": "0x18",
+          "classification": "initialized_data",
+          "evidence": "Six aligned startup/autoload parameter words validated by arm7_build.py."
+        }
+      ]
+    },
+    {
+      "name": "wram_entry_and_veneers",
+      "autoload": "wram",
+      "payload_offset": "0x21c",
+      "runtime_address": "0x037f8000",
+      "size": "0x4b8",
+      "totals": {
+        "instruction": 1160,
+        "literal_pool": 48,
+        "initialized_data": 0
+      },
+      "ranges": [
+        {
+          "payload_offset": "0x21c",
+          "size": "0x478",
+          "classification": "instruction",
+          "evidence": "Startup tail bx targets 0x037f8000; CFG from that address reaches all 286 ARM instructions and ends in a loop at 0x037f8474 -> 0x037f8450."
+        },
+        {
+          "payload_offset": "0x694",
+          "size": "0x28",
+          "classification": "literal_pool",
+          "evidence": "All ten words are referenced by PC-relative ldr instructions in the entry routine."
+        },
+        {
+          "payload_offset": "0x6bc",
+          "size": "0x8",
+          "classification": "instruction",
+          "evidence": "Called veneer at 0x037f84a0: ldr ip,[pc]; bx ip."
+        },
+        {
+          "payload_offset": "0x6c4",
+          "size": "0x4",
+          "classification": "literal_pool",
+          "evidence": "Word at 0x037f84a8 is loaded by veneer at 0x037f84a0."
+        },
+        {
+          "payload_offset": "0x6c8",
+          "size": "0x8",
+          "classification": "instruction",
+          "evidence": "Called veneer at 0x037f84ac: ldr ip,[pc]; bx ip."
+        },
+        {
+          "payload_offset": "0x6d0",
+          "size": "0x4",
+          "classification": "literal_pool",
+          "evidence": "Word at 0x037f84b4 is loaded by veneer at 0x037f84ac."
+        }
+      ]
+    }
+  ]
+}

@@ -79,6 +79,11 @@ the [startup boundary inventory](../../../docs/workflow/arm7-startup-inventory.m
 This evidence covers only the 540-byte startup block and does not change the
 unknown whole-payload denominator.
 
+The entry loop reachable from startup and its two call veneers are bounded in
+[this autoload 0 note](../../../docs/workflow/arm7-wram-entry-inventory.md).
+`inventory_ranges.json` and its six structural tests preserve these confirmed
+partitions independently of source ownership.
+
 ## Source units and pipeline
 
 `src/BootFlags.c` reconstructs runtime range `[0x037f84b8, 0x037f84f0)` from
