@@ -8,7 +8,6 @@ void func_0204af64(void*);
 void func_0205cfd4(void*);
 void func_0204c684(void*);
 void func_0205bef8(void*);
-void func_ov009_021847c4(void*);
 int func_020424e4(const char*, int);
 extern char data_ov009_0218aca4[];
 }
@@ -60,7 +59,7 @@ extern "C" void func_ov009_0218454c(TextOwner* owner, int category, int mode)
     owner->objectA.Initialize();
     owner->objectB.Initialize();
     func_0205bef8(owner->unknown_bec);
-    func_ov009_021847c4(owner->selectionIndices);
+    func_ov009_021847c4(&owner->selectionIndices);
     owner->selectedIds[0] = -1;
     owner->selectedIds[1] = -1;
     owner->selectedIds[2] = -1;

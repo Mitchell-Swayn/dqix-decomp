@@ -2,6 +2,7 @@
 #define FACTORY_OV009_TEXT_OWNER_H
 #include "Memory/SafeAllocator.h"
 #include "TextPattern.h"
+#include "TextSelection.h"
 #include "World/Object3D.h"
 #include "World/Zone3DEmbeddedState.h"
 
@@ -30,7 +31,7 @@ struct TextOwner {
     Object3D objectA;
     unsigned char unknown_924[0x2c8];
     unsigned char unknown_bec[0x40];
-    int selectionIndices[8];
+    TextSelectionIndices selectionIndices;
     short selectedIds[6];
     signed char state;
     unsigned char substate;
@@ -63,4 +64,5 @@ typedef char TextOwnerPatternCheck[offsetof(TextOwner, pattern) == 0xfc ? 1 : -1
 typedef char TextOwnerObjectACheck[offsetof(TextOwner, objectA) == 0x878 ? 1 : -1];
 typedef char TextOwnerObjectBCheck[offsetof(TextOwner, objectB) == 0xcd8 ? 1 : -1];
 typedef char TextOwnerStateCheck[offsetof(TextOwner, state) == 0xc58 ? 1 : -1];
+typedef char TextOwnerSelectionCheck[offsetof(TextOwner, selectionIndices) == 0xc2c ? 1 : -1];
 #endif

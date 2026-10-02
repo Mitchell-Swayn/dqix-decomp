@@ -1,9 +1,4 @@
-// Eight selection indices; paired indices are reset in the observed order.
-struct TextSelectionIndices {
-    int first[2];
-    int second[2];
-    int remaining[4];
-};
+#include "TextSelection.h"
 
 extern "C" void func_ov009_021847c4(TextSelectionIndices* indices)
 {
