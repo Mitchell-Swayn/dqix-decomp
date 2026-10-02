@@ -263,6 +263,14 @@ src/Graphics/NSBXX/PatternAnimation.cpp:
     complete
     .text start:0x020b7694 end:0x020b7840
 
+src/Graphics/NSBXX/MaterialColorMasks.cpp:
+    complete
+    .rodata start:0x020e9240 end:0x020e9260
+
+src/Graphics/NSBXX/RenderPivotPositions.cpp:
+    complete
+    .rodata start:0x020e9260 end:0x020e9284
+
 src/Graphics/NSBXX/JACPivotPositions.cpp:
     complete
     .rodata start:0x020e9284 end:0x020e92a8

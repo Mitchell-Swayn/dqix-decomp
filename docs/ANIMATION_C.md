@@ -32,3 +32,13 @@ still need investigation. Other animation and rendering dependencies remain
 external to these units, so this is not a complete animation subsystem.
 
 NameListLookup.cpp additionally recovers the existing 448-byte resource lookup routine at 0x020b736c..0x020b752c. It selects linear search for fewer than 16 entries, otherwise traverses the bit-index tree, compares the 16-byte name and returns the associated record. Its original C++ form matches on the first compile and after extraction. Full ROM checks pass. The adjacent index-returning lookup remains fallback after its initial 66.67% register-allocation comparison.
+
+MaterialColorMasks.cpp and RenderPivotPositions.cpp subsequently recover another
+68 bytes at 0x020e9240..0x020e9284: eight material color/control masks and the
+render-command copy of the nine pivot rows. Existing material flag extraction
+and matrix field accesses establish the layouts. The latter's three interior
+labels are represented as base-plus-field offsets, preserving every address.
+Both tables compare at 100% and the complete ROM/module/symbol checks pass.
+The existing 1,120-byte RenderCommand_6 object also compares at 100% with the
+new table representation. Its C++ instructions remain unchanged, and this
+data batch earns no additional function or code-byte coverage.
