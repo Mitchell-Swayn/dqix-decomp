@@ -811,6 +811,14 @@ src/World/ZoneRecordIndices.cpp:
     complete
     .text start:0x02012f24 end:0x02012fa4
 
+src/World/Zone3DGrottoStateReset.cpp:
+    complete
+    .text start:0x0201bfd4 end:0x0201c014
+
+src/World/Zone3DTransitions.cpp:
+    complete
+    .text start:0x0201bdac end:0x0201bf38
+
 src/World/Zone3DTransitionRequests.cpp:
     complete
     .text start:0x0201bf38 end:0x0201bfd4

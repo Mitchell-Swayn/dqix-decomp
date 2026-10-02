@@ -196,6 +196,8 @@ public:
     bool IsZoneInRuleList(int zoneID);
     void UpdateZone170cInstances(bool first, bool second, bool alternate);
     void RequestBMDJObjectStateReset(int groupID, int instanceID);
+    void ResetGrottoStateOutsideGrotto();
+    void ProcessTransitionRequests();
     void SetGrottoTransitionRequest(bool enabled, unsigned char first, unsigned char second, unsigned short third);
     void SetTransitionRequest1(bool enabled);
     void SetTransitionRequest2(bool enabled);

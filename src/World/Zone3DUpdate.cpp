@@ -7,8 +7,6 @@ extern "C"
     void func_020397c0(GameObject*);
     void func_02017208(Zone3D*);
     void func_020a84e0();
-    void func_0201bdac(Zone3D*);
-    void func_0201bfd4(Zone3D*);
 }
 
 void Zone3D::Update()
@@ -40,8 +38,8 @@ void Zone3D::Update()
     LightingManager::GetInstance()->RecomputeAdvancedLighting();
     func_020a84e0();
     RecordCurrentZoneFlag();
-    func_0201bdac(this);
-    func_0201bfd4(this);
+    ProcessTransitionRequests();
+    ResetGrottoStateOutsideGrotto();
 }
 
 void Zone3D::UpdateBMDJInstances(Zone3D_BMDJStruct* group)
