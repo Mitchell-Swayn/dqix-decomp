@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "task": "native-identity-random-label-storage",
+  "status": "deferred",
+  "symbol": "data_020ef0ca",
+  "range": "0x020ef0ca..0x020ef0dc",
+  "source_bytes": "CreateNativeID followed by its NUL and three zero padding bytes",
+  "alignment_hypotheses_tested": 2,
+  "object_result": "18/18 data bytes match; explicit __declspec(align(1)) produces ELF section alignment 1.",
+  "linked_result": "Both the default compiler alignment and explicit alignment 1 place the linked symbol at 0x020ef0cc. Later data moves and the rounded module boundaries move by 32 bytes. Full module/symbol acceptance fails.",
+  "resolution": "Restore original string-pool ownership and retain only the typed external declaration. No data coverage credit was taken. The four source functions then passed full ROM/module/symbol/SHA1 acceptance.",
+  "next_experiment": "Recover a coherent surrounding string-pool range beginning at a naturally aligned boundary, with source-owned aliases for the existing strings; determine the minimum alignment imposed at the individual object boundary before extracting this string alone.",
+  "logs": [
+    "build/sol61-identity-acceptance.log",
+    "build/sol61-identity-acceptance2.log",
+    "build/sol61-identity-align1-match.log",
+    "build/sol61-identity-acceptance3.log"
+  ],
+  "required_work_remains": true,
+  "source_credit_bytes": 0
+}

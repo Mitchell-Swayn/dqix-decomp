@@ -28,7 +28,7 @@
     "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
     "token_usage": null
   },
-  "notes": "Six functions match in the first candidate for each of two units: seven-byte state reset0fb40 and nibble lookup/status word/byte helpers11ff0..12040. Source uses actual shared-header indexed-record bitfields and byte-state subobject; all offsets and overall7ff4size checked. Existing record lookup6/6 exact after adding neutral nibble fields. Full ROM/module/symbol/SHA1 passed, no data/denominator/ARM7 changes. World5cda..5e6c untouched. No gameplay tests.",
+  "notes": "Six functions match in the first candidate for each of two units: the seven-byte state reset at 0x0200fb40, and the indexed-record nibble lookup plus status word/byte helpers at 0x02011ff0..0x02012040. The source uses actual shared-header bitfields and the byte-state subobject. Compiler assertions check offsets and the unchanged 0x7ff4 GameState size. Existing record lookup remains 6/6 exact after adding neutrally named nibble fields. Full ROM/module/symbol/SHA1 checks passed. Data, ARM7, and coverage denominators are unchanged; the World range 0x5cda..0x5e6c is untouched. No gameplay test was performed.",
   "attempts": 2,
   "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
   "delta": {
