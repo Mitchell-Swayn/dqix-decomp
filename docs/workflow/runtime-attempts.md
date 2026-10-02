@@ -585,3 +585,28 @@ Logs: `build/runtime-batch18-acceptance.log`, `build/runtime-batch18-finalize.lo
 Code160,024/functions1,195 unchanged; data26,852 ->26,900. Denominators
 unchanged. First locale inspection to these notes:
 175.7 seconds. No gameplay validation.
+
+## C-locale time formats and names (2026-10-02)
+
+Based on `221b136`. Five data symbols add 284 initialized bytes, no code,
+functions or BSS. The eight-pointer time descriptor refers to the original
+AM/PM, combined date/time, 12-hour time, date, 24-hour time, weekday, month
+and empty text fields. Four readable arrays define the remaining formats and
+paired abbreviated/full weekday/month names, with observed trailing padding.
+The five extents are explicitly 32, 12, 16, 88 and 136 bytes; addresses and
+all eight pointer relocation targets remain unchanged.
+
+The earlier provisional RuntimeNumericFormats declaration is renamed to neutral
+RuntimeLocaleAuxiliary. Inspection of its referenced data suggests character
+collation weights, so numeric semantics were not established. It remains an
+opaque, explicit fallback descriptor; no source credit is claimed for it.
+
+All five new data symbols match on their first candidates. All five affected
+source units remain 100% objdiff, including both unchanged wide-conversion
+functions. Full module/symbol/ARM7 checks and guarded separate-output
+finalization pass exact USA SHA-1
+`c7c3014c237900c8281289b8bc76a781969b6278`. Older configure caveat unchanged.
+Logs: `build/runtime-batch19-acceptance.log`, `build/runtime-batch19-finalize.log`.
+Code 160,024/functions 1,195 unchanged; data 26,900 -> 27,184. Denominators
+unchanged. First time-locale inspection to these notes:
+162.3 seconds. No gameplay validation.
