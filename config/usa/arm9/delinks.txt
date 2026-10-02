@@ -761,6 +761,18 @@ src/System/RuntimeSine.cpp:
     complete
     .text start:0x02009424 end:0x02009598
 
+src/System/RuntimeCosine.cpp:
+    complete
+    .text start:0x02008dcc end:0x02008f3c
+
+src/System/RuntimeSineKernel.cpp:
+    complete
+    .text start:0x020085cc end:0x02008848
+
+src/System/RuntimeCosineKernel.cpp:
+    complete
+    .text start:0x020076f0 end:0x02007a10
+
 src/System/RuntimeRandom.cpp:
     complete
     .text start:0x02003d14 end:0x02003d58

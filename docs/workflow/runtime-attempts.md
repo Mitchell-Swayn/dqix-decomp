@@ -279,3 +279,28 @@ still lacks that final build step, so it wrote a separate ignored output ROM.
 Logs: `build/runtime-batch8-acceptance.log`, `build/runtime-batch8-finalize.log`,
 and `build/matching/`. Local matched code 152,384 -> 153,980; functions
 1,168 -> 1,172; data remains 26,488. No gameplay validation was performed.
+
+## Binary64 trigonometric kernels (2026-10-02)
+
+Based on `64714ba`. Three functions add 1,804 code bytes (1,680 instructions
+and 124 compiler literal bytes), no data/BSS. Each matched its first distinct
+candidate: cosine dispatch `func_02008dcc`, sine kernel `func_020085cc`, and
+cosine kernel `func_020076f0`. All three units report 100% objdiff.
+
+The kernels retain the original polynomial coefficients and evaluation order,
+small-argument integer conversion, compensated tail arithmetic, and cosine's
+high-word-derived quarter argument. Decimal coefficient spellings reproduce the
+original binary64 literal bits. The existing sine dispatcher now reaches two
+source-defined kernels; argument reduction remains fallback. Native `(int)x`
+conversion emits `_dfix`, identifying its original entry at 0x0200af44. Only
+that symbol name changed, with size/address/count untouched and no existing
+src/include references requiring updates in either worktree.
+
+Full module/symbol/ARM7 checks passed, and the guarded separate-output finalizer
+produced USA SHA-1 `c7c3014c237900c8281289b8bc76a781969b6278`. The old local
+configure finalization caveat remains. Logs: `build/runtime-batch9-acceptance.log`,
+`build/runtime-batch9-finalize.log`, and `build/matching/`. Local matched code
+153,980 -> 155,784; functions 1,172 -> 1,175; data unchanged at 26,488.
+Denominators unchanged. No gameplay validation. The work_batch start command
+resolved its imported script's MAIN root, so that ignored timing snapshot does
+not measure this isolated batch's coverage; no elapsed result is claimed here.
