@@ -17,6 +17,10 @@ src/GameState/GameStateLanguage.cpp:
 	complete
 	.text start:0x0200fb08 end:0x0200fb40
 
+src/GameState/GameStateByteSlotsReset.cpp:
+	complete
+	.text start:0x0200fb40 end:0x0200fb84
+
 src/GameState/GameStateNativeIdentity.cpp:
 	complete
 	.text start:0x020120f0 end:0x02012200
@@ -24,6 +28,10 @@ src/GameState/GameStateNativeIdentity.cpp:
 src/GameState/NativeIdentityComparison.cpp:
 	complete
 	.text start:0x02011fb4 end:0x02011ff0
+
+src/GameState/GameStateIdentityStatus.cpp:
+	complete
+	.text start:0x02011ff0 end:0x02012040
 
 src/GameState/GameStateChunkTailCalls.cpp:
 	complete

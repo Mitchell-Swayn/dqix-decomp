@@ -24,7 +24,10 @@ public:
 struct GameStateIndexedRecord {
     char unknown_000[0x568];
     short objectIndex_;
-    char unknown_56a[0x964 - 0x56a];
+    char unknown_56a;
+    unsigned char lowNibble_56b_ : 4;
+    unsigned char highNibble_56b_ : 4;
+    char unknown_56c[0x964 - 0x56c];
 };
 
 struct GameStateIndexList {
@@ -57,6 +60,13 @@ struct GameStateIdentityRecord {
     unsigned char upperFlags_ : 7;
     char unknown_07_;
     float timer_;
+};
+
+struct GameStateByteSlots {
+    unsigned char unknown_00_;
+    unsigned char unknown_01_;
+    unsigned char bytes_02_[4];
+    unsigned char unknown_06_;
 };
 
 // sizeof is probably 0x7ff4 but could be 0x7ff8. (Definitely no lower/higher)
@@ -129,7 +139,12 @@ public:
 #if defined(usa)
     char unk_6fcc[0x74fe - 0x6fcc];
     NativeIdentity nativeIdentity_;
-    char unk_7504[0x7f8c - 0x7504];
+    char unk_7504[0x7f6c - 0x7504];
+    unsigned int unknown_7f6c_;
+    unsigned char unknown_7f70_;
+    char unk_7f71[0x7f74 - 0x7f71];
+    GameStateByteSlots byteSlots_7f74_;
+    char unk_7f7b[0x7f8c - 0x7f7b];
     GameStateIdentityRecord identityRecords_[3];
     char unk_7fb0[0x7ff4 - 0x7fb0];
 #else
