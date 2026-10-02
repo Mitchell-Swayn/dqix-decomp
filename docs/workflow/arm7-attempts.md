@@ -300,3 +300,16 @@
   declared source file, so introducing a shared header would omit layout changes
   from per-unit provenance. Keep the 0x54-byte compile-time checks meanwhile.
 - Validation: full 167,876-byte payload and declared symbols pass; SHA-1 remains a662d5c6a78e990244299926cf6862ce910a475d. All 11 pipeline and six verifier tests pass.
+
+## 2026-10-02 - delayed sound modulation
+
+- Initialization at 0x03800448 matched its first compile. Update/read at
+  0x0380046c/0x038004cc matched size first, but unsigned shifts and multiplication
+  operand order differed. Explicit unsigned phase snapshots and depth-first
+  multiplication fixed these on variant two; a separate phase snapshot before
+  adding speed matched the update load ordering on variant three.
+- Three functions add 212 instruction bytes, with no literal, data or BSS claim.
+  The wrap loop and staged halfword phase updates are preserved by ordinary C.
+  The parameter byte at offset zero remains unknown; delay counter/phase are
+  established at relative offsets six/eight, or voice offsets 0x2e/0x30.
+- Validation: full payload equality and all declared symbols pass; all 11 pipeline and six verifier tests pass. Payload SHA-1 remains a662d5c6a78e990244299926cf6862ce910a475d.

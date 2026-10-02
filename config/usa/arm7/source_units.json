@@ -1391,6 +1391,25 @@
       "externals": {
         "_s32_div_f": 58752696
       }
+    },
+    {
+      "name": "SoundModulation",
+      "source": "config/usa/arm7/src/SoundModulation.c",
+      "autoload": "wram",
+      "runtime_address": 58721352,
+      "payload_offset": 34404,
+      "size": 212,
+      "code_bytes": 212,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_InitializeSoundModulation",
+      "symbols": {
+        "ARM7_InitializeSoundModulation": 58721352,
+        "ARM7_UpdateSoundModulation": 58721388,
+        "ARM7_ReadSoundModulation": 58721484
+      },
+      "externals": {
+        "ARM7_SoundSine": 58717416
+      }
     }
   ]
 }
