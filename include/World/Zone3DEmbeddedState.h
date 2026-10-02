@@ -26,7 +26,8 @@ struct ZoneState0840
             unsigned int low : 2;
             unsigned int value : 30;
         } value;
-        char unknown_14[0xe8 - 0x14];
+        unsigned char identifier[6];
+        char unknown_1a[0xe8 - 0x1a];
     } entries[30];
     char unknown_1b30[4];
     int unknown_1b34, unknown_1b38, unknown_1b3c;
@@ -46,6 +47,10 @@ struct ZoneState0840
     void Finish();
     void ClearEntryStates();
     int CollectEntriesOfKind(int kind, Entry** output);
+    bool IsEntryStateValid(int state);
+    Entry* FindEntryByState(int state);
+    Entry* FindEntryByIdentifier(const void* identifier);
+    Entry* FindEntryByValue(int value);
 };
 struct ZoneState2664
 {
