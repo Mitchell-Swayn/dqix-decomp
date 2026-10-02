@@ -71,3 +71,9 @@ All code/data/function denominators and ARM7 coverage counters are unchanged.
 Ten distinct candidates were measured: seven arctangent forms, one per entry
 function, and one table record. Unchanged verification builds are excluded.
 Token usage was not measured. Queue state is reported to the root integrator.
+
+The snapshot window was 872.6 elapsed seconds, excluding baseline setup.
+Matched code increased from 212480 to 213492 bytes, data from 48448 to 48968
+bytes, and functions from 1559 to 1562. Start/finish records are archived as
+`evidence/sol61-runtime-atan2-start.json` and
+`evidence/sol61-runtime-atan2-finish.json`.

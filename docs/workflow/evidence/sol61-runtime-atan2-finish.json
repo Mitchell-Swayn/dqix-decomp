@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "sol61-runtime-atan2",
+  "snapshot": {
+    "utc": "2026-10-02T13:50:39.157683+00:00",
+    "revision": "f459f618dcceac9f802be031787a4aa6e3820caa",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 213492,
+      "matched_data": 48968,
+      "matched_functions": 1562
+    },
+    "arm7": {
+      "source_functions": 265,
+      "source_code_bytes": 22912,
+      "source_literal_pool_bytes": 1588,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 141924,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "461b97657fb4f88cc9261d514293a5c5e68ba3b0f59fe37cc0b283d78882c031",
+    "arm7_report_sha256": "6f3aaf4f9b7392fa38ff6c7504a2202e44c4c00ffb6122d9dae61b1d89e761f4",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Three matched math functions and520read-only data bytes regenerated mathematically. Seven atan2 forms including unsigned-overflow cleanup, one form per original entry function, one table record. Exact complete table bytes, retained aliases/relocations, generatorcheck and full ROM/module/symbol/ARM7/SHA1 pass. No denominator changes, gameplay tests, independent numerical differential tests or measured token usage.",
+  "attempts": 10,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 1012,
+      "matched_data": 520,
+      "matched_functions": 3
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 872.621891
+}
