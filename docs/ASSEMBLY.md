@@ -54,3 +54,9 @@ record its module, address range, purpose, evidence of necessity/original assemb
 source implementation and module verification. Unknown original provenance must
 remain unknown. Generated fallback objects are a separate, much larger gap and
 are never assembly exceptions merely because a disassembler can print them.
+
+A source-correctness review fixed LockGamecardBusLock falling off the end of
+its int-returning C++ function. It now explicitly returns the final acquisition
+status, as the original r0 return does. All15 symbols in GamecardBusOwnership
+remain100% matches and combined ROM checks pass. This adds no coverage and does
+not approve the separate ReleaseGBABus assembly wrapper.
