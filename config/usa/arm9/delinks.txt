@@ -479,6 +479,10 @@ src/System/DMA.cpp:
     complete
     .text start:0x020c9c0c end:0x020ca0a8
 
+src/System/DMAChannelState.cpp:
+    complete
+    .data start:0x020f2270 end:0x020f2274
+
 src/System/IPC.cpp:
     complete
     .bss start:0x021116a4 end:0x02111728
