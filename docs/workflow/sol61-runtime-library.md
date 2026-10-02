@@ -8,6 +8,10 @@ the baseline passed `ninja rom check report sha1` before the batch snapshot.
 from the numeric-digit arithmetic helpers: it subtracts ASCII zero before
 comparing digits, uses the retained digit's parity for exact half ties, removes
 trailing zero digits, propagates a carry, and normalizes zero/overflow results.
+For a half tie at requested length zero, the original parity read is the
+record's length byte at offset 4. The source uses a character view of the
+complete record and starts its digit cursor at offset 5, so that preceding-byte
+access stays within the object representation rather than outside a subarray.
 The two C candidates differed only in the signedness of the original length
 comparison; the signed local reproduces all 292 instruction bytes. Callers in
 the floating formatter use the same decimal-record field offsets.

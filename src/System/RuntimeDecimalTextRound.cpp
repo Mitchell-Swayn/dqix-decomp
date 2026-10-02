@@ -15,7 +15,9 @@ zero:
     int oldLength = value->length;
     if (length >= oldLength)
         return;
-    char* start = (char*)value->digits;
+    // View the whole record: a half tie at length zero reads offset 4 (the
+    // original length byte) for parity, as the original routine does.
+    char* start = (char*)value + 5;
     char* cursor = start + length + 1;
     char digit = *--cursor - '0';
     int carry;
