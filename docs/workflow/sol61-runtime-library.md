@@ -59,5 +59,15 @@ lists the ten storage-free target interior aliases as unpaired. Full linked
 symbol and module checks, followed by exact USA ROM SHA-1, all pass. The report
 adds exactly 64 source-owned bytes, with no denominator change or alias credit.
 The formatter-data source commit requires the alias generator from `501d2c9`;
-the worker temporarily used its exact file for verification, without including
-another worker's tooling changes in the source commit.
+the worker used its exact file for verification and retained it in standalone
+support commit `06c4c13`, without including tooling in the source commit.
+The integrator should skip `06c4c13` once `501d2c9` is integrated.
+
+The measured snapshot window was 1046.3 seconds and excludes baseline setup.
+The batch recorded 17 distinct candidates: three rounding forms including the
+reviewed whole-record pointer correction, one power-table form, seven text
+layout/type forms including the rejected section declaration, and six integer
+formatter forms. Repeated unchanged comparisons and final builds are excluded.
+Coverage changed from 212188 to 212480 matched code bytes, 48320 to 48448
+matched data bytes, and 1558 to 1559 matched functions. All denominators and
+ARM7 counters stayed unchanged. Token usage was not measured.

@@ -285,6 +285,29 @@
       "candidate_comparisons": 2,
       "acceptance": "Exact candidate objects and full ROM/module/symbol/SHA1 passed; pending root integration",
       "token_usage": null
+    },
+    {
+      "id": "sol61-runtime-format",
+      "status": "verified",
+      "owner": null,
+      "worktree": "../DQIX-Decomp-luna-library",
+      "scope": "ASCII decimal rounding plus binary64 powers and typed formatter text; local +292code bytes/+128initialized data bytes/+1function; integration required",
+      "commits": [
+        "70d18b4",
+        "a30dca9",
+        "a092b99"
+      ],
+      "acceptance": "Exact objects and whole text data payload; full ROM/module/symbol/ARM7/SHA1 pass; unchanged denominators",
+      "dependency": "Reviewed interior alias tooling501d2c9; identical standalone worker support06c4c13"
+    },
+    {
+      "id": "runtime-integer-format",
+      "status": "deferred",
+      "owner": null,
+      "scope": "func_0200216c at0200216c..020023b8",
+      "attempts": 6,
+      "blocker": "Closest92.52%; width/alternate initial loads and spill slot order differ, candidate4Bshort. No source credit.",
+      "next_action": "Investigate source/compiler lifetime evidence before more initialization variants; draft and format descriptor in ignored build, evidence in sol61-runtime-library.md"
     }
   ]
 }
