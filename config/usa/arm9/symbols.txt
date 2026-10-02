@@ -7821,8 +7821,6 @@ data_02111728 kind:bss addr:0x02111728
 data_0211172c kind:bss addr:0x0211172c
 data_02111738 kind:bss addr:0x02111738
 data_0211173c kind:bss addr:0x0211173c
-data_02111744 kind:bss addr:0x02111744
-data_0211174c kind:bss addr:0x0211174c
 data_02111754 kind:bss addr:0x02111754
 data_021117b0 kind:bss addr:0x021117b0
 data_021117cc kind:bss addr:0x021117cc

@@ -149,6 +149,13 @@ the source layout carries six strings, revision metadata, pointers, `ARC`,
 the revision suffix. Source files are `ASCIIUppercaseTable.cpp` and
 `FileIOConfiguration.cpp`; interior references retain explicit relocation addends.
 
+`NitroFSState.cpp` owns 120 BSS bytes at `[0x02111738, 0x021117b0)`: the initialized
+flag, cartridge bus/DMA/overlay-table state, and the 92-byte ROM filesystem handle.
+Compile-time sizes and complete symbol/module checks verify the layouts. The
+separate 16-byte registry at `0x02111728` remains fallback: replacing its directory
+alias with a direct member expression changes a previously matching function's
+address materialization. No source credit is claimed for that deferred registry.
+
 [Script.h](../include/Resource/Script.h) and
 [Script.cpp](../src/Resource/Script.cpp) reconstruct a native interpreter whose
 opcode table is supplied by each caller. Its 16-byte file header holds instruction
