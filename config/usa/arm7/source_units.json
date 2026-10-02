@@ -1828,6 +1828,40 @@
         "ARM7_SendMessage": 58706692,
         "ARM7_NotifySoundWorker": 58717784
       }
+    },
+    {
+      "name": "SoundBankAccess",
+      "source": "config/usa/arm7/src/SoundBankAccess.c",
+      "autoload": "wram",
+      "runtime_address": 58717812,
+      "payload_offset": 30864,
+      "size": 8,
+      "code_bytes": 8,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_BeginSoundBankAccess",
+      "symbols": {
+        "ARM7_BeginSoundBankAccess": 58717812,
+        "ARM7_EndSoundBankAccess": 58717816
+      },
+      "externals": {}
+    },
+    {
+      "name": "SoundWaveLookup",
+      "source": "config/usa/arm7/src/SoundWaveLookup.c",
+      "autoload": "wram",
+      "runtime_address": 58728864,
+      "payload_offset": 41916,
+      "size": 64,
+      "code_bytes": 64,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_GetSoundWave",
+      "symbols": {
+        "ARM7_GetSoundWave": 58728864
+      },
+      "externals": {
+        "ARM7_BeginSoundBankAccess": 58717812,
+        "ARM7_EndSoundBankAccess": 58717816
+      }
     }
   ]
 }

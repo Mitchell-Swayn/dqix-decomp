@@ -485,3 +485,14 @@
 - Callback preserves IRQ state around nonblocking enqueue/worker notification,
   including the original pointer threshold and ignored error parameter.
 - Validation: full payload, linked code/BSS symbols and 11 pipeline plus six verifier tests pass; payload SHA-1 remains a662d5c6a78e990244299926cf6862ce910a475d.
+
+## 2026-10-02 - waveform archive lookup and bank-access hooks
+
+- Two empty bank-access hooks matched first compile as ordinary four-byte C
+  functions. Wave lookup initially differed only in ADD operand order; reversing
+  an integer addition was normalized identically. Expressing the resolved address
+  as a byte pointer and archive-relative pointer addition matched on variant three.
+- Three functions add 72 instruction bytes, with no literals/data/BSS. The shared
+  SoundBank.h records the proven 0x3c-byte archive header; its table follows as
+  variable-length storage. No unproven fixed entry count or lock behavior is added.
+- Validation: full payload and all linked symbols match; all 11 pipeline and six verifier tests pass with tracked SoundBank/SoundVoice header dependencies.
