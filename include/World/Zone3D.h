@@ -165,6 +165,10 @@ public:
     bool ProcessBMDJFile(const void* filedata, unsigned int filesize, ZoneFeatures::Opcode64Entry* misc);
 
     bool ProcessAtmosphericEffects();
+    Zone3D_BMDJStruct::InstanceEntry* FindBMDJInstance(int groupID, unsigned short instanceID);
+    ZoneFeatures::Opcode6aEntry* FindNearestType10Feature(const Vector3fix* point);
+    ZoneFeatures::Opcode6aEntry* FindType10Feature(unsigned short id);
+    ZoneFeatures::Opcode6aEntry* FindNearestType11Feature(const Vector3fix* point);
     void BuildBMDJInstances(Zone3D_BMDJStruct* group, SafeAllocator* allocator);
     bool BuildBMDJObjects(Zone3D_BMDJStruct* group);
     bool LoadBMDJModel(Zone3D_BMDJStruct* group, Zone3D_BMDJStruct::ObjectEntry* entry, Zone3D_BMDJStruct::StructSizeC* definition);

@@ -684,3 +684,7 @@ src/World/ZoneTileDefaults.cpp:
 src/World/BMDJState.cpp:
     complete
     .text start:0x020133b4 end:0x020133cc
+
+src/World/Zone3DLookup.cpp:
+    complete
+    .text start:0x0201b600 end:0x0201b868
