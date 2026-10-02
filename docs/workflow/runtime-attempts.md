@@ -43,3 +43,37 @@ SHA-1 `c7c3014c237900c8281289b8bc76a781969b6278`. No build-pipeline changes are
 included in this batch. Logs: `build/runtime-primitives-acceptance.log` and
 `build/runtime-primitives-finalize.log`. Integration must rerun the current main
 pipeline. This evidence establishes byte equivalence, not gameplay validation.
+
+## Runtime fill, character conversion, and formatted output (2026-10-02)
+
+Based on `ce799e9`. Seven functions in four new units add 448 code bytes
+(444 instruction bytes and one four-byte callback-address literal), no data/BSS.
+The source-defined optimized fill routine removes `memset`'s remaining original
+code dependency. The formatter engine at `02003418` remains original fallback.
+
+| Function | Distinct variants | Result / useful finding |
+| --- | ---: | --- |
+| `func_02001b2c` (aligned memory fill) | 1 | Alignment prologue, eight-word blocks, trailing words and bytes match directly. Preserve conditional byte replication and threshold 32. |
+| `func_02001960` (byte to wide character) | 4 | Ternary and result-variable forms reverse the two predicated result moves; explicit zero return followed by one return matches. |
+| `func_02001998` (wide character to byte) | 1 | Null destination returns zero; otherwise truncate to one byte and return one. |
+| `abs` | 1 | Conditional negation matches. |
+| `func_020017b0` (long absolute value) | 1 | Same compiler family as abs; retain generic symbol. |
+| `func_02003c3c` (bounded output callback) | 1 | Clamp copy length to remaining capacity, copy, then advance the stored count. |
+| `func_02003c80` (bounded formatting wrapper) | 2 | Explicit state-member stores avoid aggregate zero-fill; `(buffer + size)[-1]` retains the target address calculation. |
+
+Eleven distinct per-function variants; maximum four on one function. Formatting
+and unchanged shared-unit recompilation are excluded. Candidate objects were
+compiled without full-ROM builds until they matched. All four units then passed
+objdiff at 100%, including after source formatting. Runtime edge behavior is
+preserved, including unsigned byte conversion, zero-count operations, and the
+original null-buffer/termination logic.
+
+`ninja rom check report` passed ARM9 main, ITCM, DTCM, all overlays, symbol checks,
+and the ARM7 preservation baseline. The existing main-worktree guarded header
+finalizer again produced exact USA SHA-1
+`c7c3014c237900c8281289b8bc76a781969b6278`; the older configure-script caveat from
+the preceding batch still applies. Logs: `build/runtime-batch2-acceptance.log`,
+`build/runtime-batch2-finalize.log`, and `build/matching/` full objdiff/attempts.
+Local matched code 149,444 -> 149,892; matched functions 1,134 -> 1,141;
+matched data stays 26,488. All three denominators are unchanged. Main integration
+must rerun its current pipeline. No gameplay validation was performed.
