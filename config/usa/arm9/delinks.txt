@@ -41,6 +41,10 @@ src/GameState/GameStateFieldAccessors.cpp:
 	complete
 	.text start:0x020100a0 end:0x020100cc
 
+src/GameState/GameStateStateContext.cpp:
+	complete
+	.text start:0x020100cc end:0x02010150
+
 src/GameState/GameStateObjectIndexLookup.cpp:
 	complete
 	.text start:0x0200ff94 end:0x0200ffc0
