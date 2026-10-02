@@ -635,6 +635,10 @@ src/System/RuntimeLockBookkeeping.cpp:
     complete
     .bss start:0x020f2f70 end:0x020f2fb8
 
+src/System/RuntimeConsoleBuffers.cpp:
+    complete
+    .bss start:0x020f3090 end:0x020f3390
+
 src/System/RuntimeSignalState.cpp:
     complete
     .bss start:0x020f3394 end:0x020f33b0

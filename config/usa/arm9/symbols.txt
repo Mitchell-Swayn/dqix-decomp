@@ -7532,9 +7532,7 @@ data_020f2f70 kind:bss addr:0x020f2f70
 data_020f2f94 kind:bss addr:0x020f2f94
 data_020f2fb8 kind:bss addr:0x020f2fb8
 data_020f3060 kind:bss addr:0x020f3060
-data_020f3090 kind:bss addr:0x020f3090
-data_020f3190 kind:bss addr:0x020f3190
-data_020f3290 kind:bss addr:0x020f3290
+gRuntimeConsoleBuffers kind:bss addr:0x020f3090
 data_020f3390 kind:bss addr:0x020f3390
 data_020f3394 kind:bss addr:0x020f3394
 data_020f33b0 kind:bss addr:0x020f33b0

@@ -13,6 +13,18 @@ complete linked symbol ranges. The shared declarations in `RuntimeState.h`
 preserve caller code exactly. Callback allocation size does not by itself
 establish registration policy; mutex objects and other globals remain fallback.
 
+`RuntimeConsoleBuffers.cpp` defines the 768-byte BSS allocation at
+`0x020f3090..0x020f3390`. The three initial stream descriptors at
+`0x020eebe0..0x020eecc4` supply the evidence: each buffer size is 256 and their
+handle-0, handle-1 and handle-2 buffer/cursor pairs point to offsets 512, 256 and
+0 of this allocation. Relocations now express those field offsets explicitly.
+The descriptor table and its incompletely recovered callback ABI remain fallback.
+
+The exit and signal mutexes each use the known 24-byte `Mutex` layout, but their
+surrounding storage still needs recovery. Extracting only those two objects
+caused the linker to discard the newly isolated, unreferenced intervening BSS.
+That experiment was reverted; no mutex storage receives new source credit.
+
 | Source | Range | Functions | Report code bytes |
 | --- | --- | --- | ---: |
 | `RuntimeRandom.cpp` | `0x02003d14..0x02003d58` | `rand`, `srand` | 68 |
@@ -49,7 +61,8 @@ the original recursive-lock bookkeeping, and preserves the special handler
 value 1 and signal-1 default behavior. Its generic symbol name is retained;
 the runtime ABI has not been fully named. In particular, the observed branch
 after `TryLockMutex` is preserved verbatim despite its counterintuitive return
-handling. The five referenced BSS globals remain binary fallback. Twenty of
+handling. The handler and bookkeeping BSS now have the definitions described
+above; the mutex remains binary fallback. Twenty of
 the 304 reported code bytes are compiler-generated address literals.
 
 Validation used the pinned compiler, direct instruction comparison, `ninja rom
