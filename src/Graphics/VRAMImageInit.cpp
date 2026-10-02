@@ -2,9 +2,7 @@
 #include "Graphics/VRAMImagePool.h"
 
 extern Struct_020f1f14* data_020f1ef8[7];
-extern unsigned int (*data_020f1ee8)(unsigned int, bool, unsigned int);
-extern int (*data_020f1eec)(unsigned int);
-extern "C" unsigned int func_020bb588(unsigned int, bool, unsigned int);
+extern "C" unsigned int func_020bb588(unsigned int, unsigned int, unsigned int);
 
 #pragma dont_inline on
 void SetTextureImageVRAMPoolOrder(int first, int second, int third, int fourth, int fifth)

@@ -9,9 +9,6 @@ struct TexturePaletteVRAMAllocator
 };
 TexturePaletteVRAMAllocator data_0210cf88;
 
-extern unsigned int (*data_020f1ef0)(unsigned int, bool, unsigned int);
-extern int (*data_020f1ef4)(unsigned int);
-
 #pragma optimize_for_size off
 #pragma dont_inline on
 
@@ -27,7 +24,7 @@ void InitializeTexturePaletteVRAM(unsigned int size, bool setDefault)
 }
 
 // The explicit branches preserve the original SDK allocator's control flow.
-unsigned int AllocateTexturePaletteVRAM(unsigned int amount, bool eightByteAlign, unsigned int direction)
+unsigned int AllocateTexturePaletteVRAM(unsigned int amount, unsigned int eightByteAlign, unsigned int direction)
 {  
     unsigned int chosenPosition = 0;
     unsigned int frontPadding;

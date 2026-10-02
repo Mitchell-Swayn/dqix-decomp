@@ -18,15 +18,12 @@
 #define func_020c56b0 func_020c717c
 #endif
 
+#include "Graphics/VRAMAllocations.h"
+
 extern "C"
 {
     int func_020c56b0(int*);
 }
-
-extern unsigned int (*data_020f1ee8)(unsigned int, int, int);
-extern unsigned int (*data_020f1eec)(unsigned int);
-extern unsigned int (*data_020f1ef0)(unsigned int, int, int);
-extern unsigned int (*data_020f1ef4)(unsigned int);
 
 void Model3D::Clear()
 {
