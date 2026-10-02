@@ -17,6 +17,18 @@ src/Factory/ov020/TitleSubBGConfiguration.cpp:
     complete
     .text start:0x0218cd64 end:0x0218cd98
 
+src/Factory/ov020/TitleSubDisplay.cpp:
+    complete
+    .text start:0x0218cd98 end:0x0218cf8c
+
+src/Factory/ov020/TitleMainDisplay.cpp:
+    complete
+    .text start:0x0218c98c end:0x0218cd64
+
+src/Factory/ov020/TitleLogoDisplays.cpp:
+    complete
+    .text start:0x0218cf8c end:0x0218d644
+
 src/Factory/ov020/TitleMenu.cpp:
     complete
     .text start:0x0218c7f0 end:0x0218c98c

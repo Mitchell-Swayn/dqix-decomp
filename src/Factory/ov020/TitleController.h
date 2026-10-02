@@ -48,6 +48,15 @@ struct TitleBrightnessTransition {
     int timeRemaining;
 };
 
+// Shared background resource descriptor. The two nibbles select the display
+// engine and BG layer; resource/allocator fields before them remain partial.
+struct TitleBackgroundDescriptor {
+    unsigned char unknown_00[0x1c];
+    unsigned char engine : 4;
+    unsigned char layer : 4;
+    unsigned char unknown_1d[3];
+};
+
 // Earlier UI/resource fields remain partial; no ownership of their storage.
 struct TitleTransitionController {
     int state;
@@ -57,7 +66,10 @@ struct TitleTransitionController {
     unsigned char unknown_244[0x470 - 0x244];
     SafeAllocator primaryAllocator;
     SafeAllocator secondaryAllocator;
-    unsigned char unknown_498[0x4e4 - 0x498];
+    unsigned char unknown_498[4];
+    TitleBackgroundDescriptor mainBackground;
+    TitleBackgroundDescriptor subBackground;
+    unsigned char unknown_4dc[8];
     int waitTimeRemaining;
     TitleBrightnessTransition mainBrightness;
     TitleBrightnessTransition subBrightness;
