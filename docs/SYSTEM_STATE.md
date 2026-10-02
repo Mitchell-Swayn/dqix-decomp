@@ -20,3 +20,9 @@ to the still-external dispatcher. All eight first forms match. Four variants
 of the adjacent wait-list initializer were tried: an absolute pointer matches
 instructions but not the target relocation; the relocatable field access swaps
 the address/zero registers. That 24-byte initializer remains fallback.
+
+`InterruptCallbacks.cpp` recovers the handler lookup and DMA/timer callback
+setters at `0x020c6b74..0x020c6c90` (three functions, 284 report code bytes).
+The existing source forms match on their first isolated compile. DMA callbacks
+retain the prior IRQ enable bit, whereas timer callbacks remain enabled after
+dispatch. Handler registration and the shared dispatcher still need matching.

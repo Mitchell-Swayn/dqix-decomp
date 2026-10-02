@@ -308,6 +308,10 @@ src/System/InterruptDispatchWrappers.cpp:
     complete
     .text start:0x020c6a54 end:0x020c6ad4
 
+src/System/InterruptCallbacks.cpp:
+    complete
+    .text start:0x020c6b74 end:0x020c6c90
+
 src/System/InterruptEnableDisable.cpp:
     complete
     .text start:0x020c6c90 end:0x020c6d48
