@@ -60,3 +60,10 @@ its int-returning C++ function. It now explicitly returns the final acquisition
 status, as the original r0 return does. All15 symbols in GamecardBusOwnership
 remain100% matches and combined ROM checks pass. This adds no coverage and does
 not approve the separate ReleaseGBABus assembly wrapper.
+
+Removing CardReadManager's three DECLARE_ASM_NOP barriers together was tested
+once. ReadSingleSegmentFromCartridge, DMAChainSegmentInterruptHandler and
+SafeReadBlocksFromCartridge fell to36.36%,37.74% and59.52%, respectively, with
+register/instruction changes. All three original barriers were restored. These
+remain unapproved compiler-matching aids requiring real source reconstruction;
+no assembly exception or source coverage change is claimed.
