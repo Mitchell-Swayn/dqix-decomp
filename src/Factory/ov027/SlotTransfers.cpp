@@ -1,5 +1,6 @@
 #include <globaldefs.h>
 #include <System/Memory.h>
+#include "SlotContext.h"
 
 #pragma optimize_for_size off
 
@@ -19,6 +20,8 @@ struct SlotTransferGroup {
     unsigned char unknown1d53[9];
 };
 
+// An explicit one-based indexing view of EventSlotContext. Index zero is
+// never accessed: states[0] overlaps callback and groups[0] is padding.
 struct SlotTransferContext {
     unsigned char unknown0000[0x14e4];
     // Entry zero overlaps the callback; transfer loops use slots 1..15.
@@ -35,7 +38,6 @@ struct SlotTransferMessage {
 };
 
 extern "C" {
-extern SlotTransferContext* data_ov027_021e33ec;
 extern unsigned int data_ov027_021dd920;
 extern unsigned char data_ov027_021dd8e0;
 unsigned short* func_020d49c4(void* packet, unsigned short slot);
@@ -46,7 +48,7 @@ int func_ov027_021dab00(unsigned int operation, unsigned int slots, void* contex
 ARM void func_ov027_021d9618(void* packet) {
     unsigned short group = 0;
     do {
-        SlotTransferContext* context = data_ov027_021e33ec;
+        SlotTransferContext* context = (SlotTransferContext*)data_ov027_021e33ec;
         SlotTransferGroup* transfer = (SlotTransferGroup*)((unsigned char*)context + group * 0x5d4);
         if (transfer->active) transfer->acknowledgement = 0;
     } while (++group < 16);
@@ -73,7 +75,7 @@ ARM int func_ov027_021d9704() {
     SlotTransferMessage message;
     unsigned char counts[16];
     VectorizedMemset(counts, 0, sizeof(counts));
-    SlotTransferContext* context = data_ov027_021e33ec;
+    SlotTransferContext* context = (SlotTransferContext*)data_ov027_021e33ec;
     unsigned short slot = 1;
     do {
         if (context->states[slot] == 5) ++counts[context->groups[slot]];

@@ -2,26 +2,13 @@
 #include <System/Interrupts.h>
 #include <System/Memory.h>
 
-// Slot identifiers are one-based, in the range 1..15. The purpose of the
-// payload and state values is still unknown; offsets follow their users.
-struct SlotPayload {
-    unsigned char bytes[22];
-};
+#include "SlotContext.h"
 
-typedef void (*SlotCallback)(unsigned int, unsigned int, unsigned int);
-struct SlotContext {
-    unsigned char unknown0000[0x1340];
-    SlotPayload payloads[15];
-    unsigned char unknown148a[0x5a];
-    SlotCallback callback;
-    unsigned int states[15];
-    unsigned char unknown1524[0x230];
-    unsigned short results[15];
-    SlotPayload scratch;
-};
+// Use the authoritative layout and callback ABI shared with event handlers.
+typedef EventSlotPayload SlotPayload;
+typedef EventSlotCallback SlotCallback;
 
 extern "C" {
-extern SlotContext* data_ov027_021e33ec;
 int func_ov027_021d9de8(unsigned int slot);
 ARM void func_ov027_021d8c6c(unsigned int slot, unsigned int state, unsigned int detail);
 

@@ -5,7 +5,7 @@ union EventSlotPayload {
     unsigned char bytes[22];
     struct { unsigned char group : 4; unsigned char slot : 4; } header;
 };
-typedef void (*EventSlotCallback)(unsigned int, unsigned int, void*);
+typedef void (*EventSlotCallback)(unsigned int, unsigned int, unsigned int);
 struct EventSlotContext {
     unsigned char unknown0000[0x1340];
     EventSlotPayload payloads[15];
@@ -46,3 +46,10 @@ struct SlotEvent {
     unsigned short slot;
 };
 
+
+// The detail word is an opaque 32-bit value. Event handlers pass pointer bits;
+// state helpers may pass scalar values. Convert pointers explicitly at callers.
+extern "C" {
+extern EventSlotContext* data_ov027_021e33ec;
+ARM void func_ov027_021d8c20(unsigned int slot, unsigned int state, unsigned int detail);
+}

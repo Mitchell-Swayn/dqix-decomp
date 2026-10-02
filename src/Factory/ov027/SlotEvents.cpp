@@ -6,8 +6,6 @@
 #include "SlotContext.h"
 
 extern "C" {
-extern EventSlotContext* data_ov027_021e33ec;
-void func_ov027_021d8c20(unsigned int slot, unsigned int state, void* detail);
 void func_ov027_021dd5f4(unsigned int slot);
 void func_ov027_021d9618(void* packet);
 void func_ov027_021d9bdc();
@@ -24,11 +22,11 @@ ARM void func_ov027_021d8c94(int event, SlotEvent* detail) {
     case 17:
         break;
     case 21:
-        func_ov027_021d8c20(0, 1, detail);
+        func_ov027_021d8c20(0, 1, (unsigned int)detail);
         break;
     case 0:
         if (detail->slot != 0 && detail->slot < 16)
-            func_ov027_021d8c20(detail->slot, 2, detail);
+            func_ov027_021d8c20(detail->slot, 2, (unsigned int)detail);
         break;
     case 1:
         if (detail->slot == 0 || detail->slot >= 16) break;
@@ -58,7 +56,7 @@ ARM void func_ov027_021d8c94(int event, SlotEvent* detail) {
         }
         if (data_ov027_021e33ec->states[detail->slot - 1] == 8)
             func_ov027_021d8c20(detail->slot, 9, 0);
-        func_ov027_021d8c20(detail->slot, 3, detail);
+        func_ov027_021d8c20(detail->slot, 3, (unsigned int)detail);
         data_ov027_021e33ec->states[detail->slot - 1] = 0;
         break;
     case 3:

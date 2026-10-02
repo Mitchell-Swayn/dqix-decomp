@@ -19,10 +19,8 @@ struct ReceivedSlotPayload {
 };
 
 extern "C" {
-extern EventSlotContext* data_ov027_021e33ec;
 extern unsigned int data_ov027_021dd920;
 unsigned char* func_ov027_021dd6bc(void* packet, DecodedSlotMessage* message, unsigned int slot);
-void func_ov027_021d8c20(unsigned int slot, unsigned int state, void* detail);
 unsigned short func_ov027_021d9dd8(unsigned short first, unsigned short second);
 
 ARM void func_ov027_021d9134(void* packet, unsigned int slot) {
@@ -46,7 +44,7 @@ ARM void func_ov027_021d9134(void* packet, unsigned int slot) {
             VectorizedInvertedMemcpy(&received.payload, &data_ov027_021e33ec->payloads[slot - 1], 22);
             EventSlotPayload* destination = &data_ov027_021e33ec->payloads[slot - 1];
             destination->header.slot = (unsigned char)slot;
-            func_ov027_021d8c20(slot, 10, &received.payload);
+            func_ov027_021d8c20(slot, 10, (unsigned int)&received.payload);
         }
         if (state != 10) return;
         {
