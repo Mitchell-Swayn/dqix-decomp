@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "sol61-world-map-record",
+  "snapshot": {
+    "utc": "2026-10-02T15:34:51.395483+00:00",
+    "revision": "f1b18baa3dada53fbd309054fbed98384aa834a9",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 218776,
+      "matched_data": 66164,
+      "matched_functions": 1649
+    },
+    "arm7": {
+      "source_functions": 274,
+      "source_code_bytes": 24492,
+      "source_literal_pool_bytes": 1712,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 4696,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 140220,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "abd8dcaddca197c9a69f3a7156c7a154207291c989f0e7f238b926c0bc7022aa",
+    "arm7_report_sha256": "83be6c61e6999f9b8b0d5967b7d7afe8d862b6005a70336ebfb21b26ba944079",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Twofunc384reportedcode=368instruction16literal;16initializedopcode12BSScontext. Actual44byteoutputrecord and12bytecontext, offsetsasserted; allobjects100pct, fullROM/module/symbol/SHA1pass. Seven distinctsourceSHAversions includesasserts/fieldrename, notinvocationcount. Nodc84candidate; queueuntouched; inheritdraftpreserved. Tokenusageunknown.",
+  "attempts": 7,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 384,
+      "matched_data": 28,
+      "matched_functions": 2
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 490.657456
+}

@@ -41,3 +41,6 @@ The adjacent linked-record callback at `0208dc84` was inspected only; no source
 candidate or coverage credit was taken. The inherited population draft remains
 preserved and uncredited. Per the integrator's fleet transition, this worker stops
 after this verified family.
+
+`tools/work_batch.py` measured 490.657456 seconds (8.18 minutes) after baseline
+acceptance. Snapshots are archived under `evidence/sol61-world-map-record-*.json`.
