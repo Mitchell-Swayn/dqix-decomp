@@ -6610,8 +6610,8 @@ data_020eef2c kind:data(any) addr:0x020eef2c
 data_020eef30 kind:data(any) addr:0x020eef30
 data_020eef34 kind:data(any) addr:0x020eef34
 gRuntimeDecimalPowers kind:data(byte[212]) addr:0x020eef74
-data_020ef048 kind:data(any) addr:0x020ef048
-data_020ef070 kind:data(any) addr:0x020ef070
+data_020ef048 kind:data(byte[40]) addr:0x020ef048
+data_020ef070 kind:data(byte[8]) addr:0x020ef070
 data_020ef078 kind:data(any) addr:0x020ef078
 data_020ef07c kind:data(any) addr:0x020ef07c
 data_020ef08c kind:data(any) addr:0x020ef08c

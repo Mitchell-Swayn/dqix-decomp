@@ -985,6 +985,14 @@ src/System/RuntimeLocaleAuxiliary.cpp:
     complete
     .data start:0x020eecec end:0x020eecfc
 
+src/System/RuntimeDecimalLimitText.cpp:
+    complete
+    .data start:0x020ef048 end:0x020ef070
+
+src/System/RuntimeExceptionCallbacks.cpp:
+    complete
+    .data start:0x020ef070 end:0x020ef078
+
 src/System/RuntimeRandom.cpp:
     complete
     .text start:0x02003d14 end:0x02003d58
