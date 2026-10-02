@@ -62,7 +62,13 @@ struct ZoneSerializedRecord
         unsigned int category : 11;
         unsigned int high : 9;
     } filter;
-    unsigned int unknown_10;
+    struct Attributes
+    {
+        unsigned int first : 10;
+        unsigned int second : 10;
+        unsigned int group : 8;
+        unsigned int unknown : 4;
+    } attributes;
     unsigned short unknown_14;
     unsigned short unknown_16;
     short key;
@@ -86,6 +92,8 @@ struct ZoneState2754
         unsigned int relocated : 1;
         char* records;
         void* payload;
+        ZoneSerializedRecord* FindByAttributes(int group, int first, int second);
+        ZoneSerializedRecord* FindRelatedRecord(int group, const ZoneSerializedRecord* record);
         short GetRecordCountBound();
         ZoneSerializedRecord* GetRecordAtIndex(int index);
         short CountMatchingRecords(int alternate, unsigned int kind, int first, signed char second);
@@ -112,3 +120,9 @@ struct ZoneState2754
 int GetSerializedRecordKey(const void* record);
 
 bool RelocateSerializedRecordPayload(ZoneState2754::Data* state, void* record);
+
+typedef bool (*ZoneRecordMatchFunction)(ZoneSerializedRecord*, int, int, int);
+bool MatchRecordFirstAttribute(ZoneSerializedRecord* record, int group, int first, int second);
+bool MatchRecordSecondAttribute(ZoneSerializedRecord* record, int group, int first, int second);
+bool MatchRecordBothAttributes(ZoneSerializedRecord* record, int group, int first, int second);
+void SelectRecordAttributeMatcher(int first, int second, ZoneRecordMatchFunction* output);

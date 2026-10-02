@@ -974,6 +974,18 @@ src/World/ZoneState2754Relocate.cpp:
     .text start:0x020de574 end:0x020de650
     .rodata start:0x020ee794 end:0x020ee798
 
+src/World/ZoneRecordAttributePredicates.cpp:
+    complete
+    .text start:0x020de38c end:0x020de3f4
+
+src/World/ZoneRecordAttributeSelector.cpp:
+    complete
+    .text start:0x020de524 end:0x020de56c
+
+src/World/ZoneState2754AttributeLookup.cpp:
+    complete
+    .text start:0x020ded1c end:0x020dedd0
+
 src/World/ZoneState2754Filter.cpp:
     complete
     .text start:0x020deb08 end:0x020ded1c
