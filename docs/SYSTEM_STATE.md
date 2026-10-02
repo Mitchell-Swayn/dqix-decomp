@@ -26,3 +26,9 @@ setters at `0x020c6b74..0x020c6c90` (three functions, 284 report code bytes).
 The existing source forms match on their first isolated compile. DMA callbacks
 retain the prior IRQ enable bit, whereas timer callbacks remain enabled after
 dispatch. Handler registration and the shared dispatcher still need matching.
+
+Handler registration (`0x020c6aec..0x020c6b74`) was also isolated and tested in
+five variants: original declarations, shared index scope, register hints,
+size optimization, and initialized declarations. All retained the same 73.53%
+register-allocation mismatch. The source and mapping were restored to fallback;
+its candidate and detailed comparisons remain under ignored build outputs.
