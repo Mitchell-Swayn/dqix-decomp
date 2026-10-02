@@ -1,11 +1,11 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **141 C
-functions: 11,360 instruction bytes plus 980 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **145 C
+functions: 11,900 instruction bytes plus 1,008 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
 913 bytes of standalone initialized data and 2,100 bytes of BSS now have source
-definitions. The other 154,503 payload bytes
+definitions. The other 153,935 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -19,10 +19,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 11,360 / 980 bytes |
+| Reconstructed C instructions / compiler literal pools | 11,900 / 1,008 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 913 / 120 bytes |
 | Reconstructed BSS / total autoload BSS | 2,100 / 22,744 bytes |
-| Binary fallback | 154,503 bytes |
+| Binary fallback | 153,935 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -170,7 +170,7 @@ table; its separate VBlank response and initialized dispatch table remain outsid
 this unit's source data ownership.
 
 `src/Alarms.c` reconstructs eight alarm scheduling functions at
-`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8141 C
+`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8145 C
 instruction bytes, 52 literal bytes and the 12-byte list state at
 `[0x03809164, 0x03809170)`. It initializes and orders the doubly-linked queue,
 programs timer 1, registers timeouts and periodic intervals, and cancels alarms.
@@ -268,7 +268,7 @@ does not add duplicate data credit.
 
 `src/ThreadWait.c` reconstructs blocking, waking all waiters, marking a thread
 ready and selecting the first ready thread at `[0x037fc69c, 0x037fc7cc)`
-(payload `[0x48b8, 0x49e8)`), with 2141 C instruction bytes and 8 literal bytes.
+(payload `[0x48b8, 0x49e8)`), with 2145 C instruction bytes and 8 literal bytes.
 It clears blocked-list links on wakeup and preserves IRQ state. The scheduler switch routine now belongs to `ThreadSwitch.c`; list insertion
 and IRQ dependencies are source-owned. No thread-context storage is counted by this unit.
 
@@ -485,8 +485,30 @@ entry's queue/alarm setup, rather than assuming opaque unused storage:
 | `0x114` | 1,024-byte stack, ending at the creator's `0x03809774` stack-top argument |
 
 Compile-time checks fix total size and context offset; each external field view
-is explicitly linked to its observed address. The worker main loop and platform
-component remain binary-owned. BSS adds no initialized payload or code credit.
+is explicitly linked to its observed address. The platform component remains binary-owned; the worker loop is now
+reconstructed below. BSS adds no initialized payload or code credit.
+
+`src/SoundPeriod.c` reconstructs period conversion and a BIOS-pitch-table
+wrapper at `[0x037ff33c, 0x037ff468)` (payload `[0x7558, 0x7684)`): 292
+instruction bytes and eight literals. It normalizes negative pitch into a
+768-step fractional octave, multiplies the base period by a 64-bit fractional
+ratio, applies the octave shift, and saturates the result to [16, 65535]. The
+native overflow mask is preserved before positive shifts; the underlying Thumb
+pitch-table routine remains binary-owned.
+
+`src/SoundWorkerMain.c` reconstructs `[0x037ff6c0, 0x037ff7b4)` (payload
+`[0x78dc, 0x79d0)`): 224 instruction bytes and 20 literals. It initializes the
+eight-slot queue and alarm, initializes remaining sound subsystems, enables
+master output with volume 127, and starts the recurring worker alarm. Its infinite
+loop blocks for messages, sets a timed-update flag for message 1, invokes the
+observed update sequence, and advances the sound RNG. Message 2 leaves the flag
+clear. Several subsystem initialization/update callees remain explicit binary
+dependencies with deliberately limited call-site names.
+
+`src/SoundCaptureStatus.c` reconstructs `[0x037ff804, 0x037ff81c)` (payload
+`[0x7a20, 0x7a38)`): 24 instruction bytes and no literals for testing capture
+control bit 7. Capture configuration immediately before it remains binary-owned
+pending a conditional-instruction ordering match. This batch adds no data/BSS.
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C

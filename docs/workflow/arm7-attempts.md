@@ -231,3 +231,30 @@
   980 literals, 913 initialized data bytes, 2,100 BSS; 154,503 fallback bytes.
 - Next candidates: sound capture configuration/status at `0x037ff7b4`, worker
   main dispatch at `0x037ff6c0`, and fixed-point period conversion at `0x037ff33c`.
+
+## 2026-10-02 - sound period conversion and worker loop
+
+- Period conversion/wrapper `0x037ff33c` through `0x037ff468`: first compile
+  matched 300-byte size with register/scheduling differences. Reversing multiply
+  operands and reusing octave for the shift count did not change those bytes.
+  Declaring octave before the normalized remainder and snapshotting the BIOS
+  fractional lookup before 64-bit multiplication matched on the third compile.
+- Worker main `0x037ff6c0`: first compile matched all 244 bytes, including the
+  two-message switch and endless blocking-receive loop. Subsystem callees keep
+  opaque names where the routine body has not yet established semantics.
+- Capture configuration `0x037ff7b4`: stopped after eight variants. Initial
+  inline boolean packing had many register differences; naming the inverted
+  repeat flag and reordering commutative packing matched size/registers except
+  for two reversed conditional moves (four bytes). Parameter assignment via
+  if/else or comparison introduced a spill. Ternary, local logical negation,
+  local if/else and default-one initialization failed to reproduce ordering.
+  No forced-register or assembly workaround was used; this function stays binary.
+- Capture-active getter `0x037ff804` matched its original body from the initial
+  compile and is selected independently from the unsuccessful configuration.
+- Validation: complete standalone payload and every declared symbol match;
+  11 pipeline and six verifier tests pass. Totals: 145 C functions, 11,900
+  instruction bytes, 1,008 literals, 913 initialized data bytes, 2,100 BSS;
+  153,935 fallback bytes. No data, BSS, or assembly credit added by this batch.
+- Next candidates: queued sound-channel state initialization and update dispatch
+  at `0x037ff81c`/`0x037ff878`, with subsequent channel-state setters considered
+  as one coherent bounded batch.

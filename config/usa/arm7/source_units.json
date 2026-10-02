@@ -1211,6 +1211,76 @@
         "ARM7_SoundQueueFailureMessage": 58756256,
         "ARM7_SendMessage": 58706692
       }
+    },
+    {
+      "name": "SoundPeriod",
+      "source": "config/usa/arm7/src/SoundPeriod.c",
+      "autoload": "wram",
+      "runtime_address": 58716988,
+      "payload_offset": 30040,
+      "size": 300,
+      "code_bytes": 292,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_ConvertSoundPeriod",
+      "symbols": {
+        "ARM7_ConvertSoundPeriod": 58716988,
+        "ARM7_GetSoundPitchTable": 58717276
+      },
+      "externals": {
+        "ARM7_BiosPitchTable": 58736405
+      }
+    },
+    {
+      "name": "SoundWorkerMain",
+      "source": "config/usa/arm7/src/SoundWorkerMain.c",
+      "autoload": "wram",
+      "runtime_address": 58717888,
+      "payload_offset": 30940,
+      "size": 244,
+      "code_bytes": 224,
+      "literal_pool_bytes": 20,
+      "entry": "ARM7_SoundWorkerMain",
+      "symbols": {
+        "ARM7_SoundWorkerMain": 58717888
+      },
+      "externals": {
+        "ARM7_SoundWorkerQueue": 58757764,
+        "ARM7_SoundWorkerMessages": 58757732,
+        "ARM7_SoundWorkerAlarm": 58757796,
+        "ARM7_InitializeMessageQueue": 58706652,
+        "ARM7_ZeroInitializeAlarm": 58710396,
+        "ARM7_InitializeSoundChannels": 58718236,
+        "ARM7_SoundWorkerInitializeA": 58721704,
+        "ARM7_SoundWorkerInitializeB": 58729468,
+        "ARM7_EnableSoundMaster": 58715436,
+        "ARM7_SetSoundOutputRouting": 58715740,
+        "ARM7_SetSoundMasterVolume": 58715724,
+        "ARM7_GetCurrentTimestamp": 58710008,
+        "ARM7_SetInterval": 58710844,
+        "ARM7_SoundWorkerAlarmCallback": 58717820,
+        "ARM7_ReceiveMessage": 58706832,
+        "ARM7_ApplySoundChannelUpdates": 58718328,
+        "ARM7_SoundWorkerUpdateA": 58729972,
+        "ARM7_SoundWorkerUpdateB": 58721804,
+        "ARM7_SoundWorkerUpdateChannels": 58718820,
+        "ARM7_SoundWorkerUpdateC": 58729316,
+        "ARM7_NextSoundRandom": 58717524
+      }
+    },
+    {
+      "name": "SoundCaptureStatus",
+      "source": "config/usa/arm7/src/SoundCaptureStatus.c",
+      "autoload": "wram",
+      "runtime_address": 58718212,
+      "payload_offset": 31264,
+      "size": 24,
+      "code_bytes": 24,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_IsSoundCaptureActive",
+      "symbols": {
+        "ARM7_IsSoundCaptureActive": 58718212
+      },
+      "externals": {}
     }
   ]
 }
