@@ -366,3 +366,37 @@ distinct candidates total including the deferred multiply. Logs:
 `build/runtime-batch11-acceptance.log`, `build/runtime-batch11-finalize.log`,
 and `build/matching/`. Local matched code 157,200 -> 157,516; functions
 1,177 -> 1,179; data remains 26,640. Denominators unchanged; no gameplay test.
+
+## Decimal decomposition and powers of two (2026-10-02)
+
+Based on `e43be00`. Two functions add 1,284 code bytes (1,200 instructions,
+including the original switch branches, and 84 address literals); their numeric
+text table adds 212 initialized data bytes. No BSS or denominator changes.
+
+| Function/data | Distinct variants | Finding |
+| --- | ---: | --- |
+| `func_0200a180` (double-to-decimal) | 3 | Keep the normalized double live separately from its bit-view union; declare integer/power temporaries in original stack order. |
+| `func_02009998` (decimal power of two) | 4 | Preserve division-toward-zero bias and full 38-byte decimal object copy through a typed union; a memberwise copy omitted padding and memcpy remained a call. |
+| `gRuntimeDecimalPowers` | 1 | Twenty-one numeric strings with their verified zero padding occupy 212 bytes. |
+
+The converter preserves signed zero and N/I exceptional output, computes the
+significand's effective width through bit count, and uses the existing decimal
+multiply fallback. The power routine retains the original precomputed cases,
+recursive squaring, and odd positive/negative adjustment. Source-owned strings
+have their original mutable data-section placement; no ROM byte array is used.
+
+Native unsigned-64-bit conversion identifies `_ll_ufrom_d` at 0x0200afe8; only
+its name changes. The text table's 21 former labels become one typed struct;
+21 affected relocation records express the same addresses as base+member offset
+(the first base reference is already unchanged). A mechanical comparison checked
+that every configured main-module load relocation still resolves identically.
+No USA source references needed updating. An unrelated Japanese-only address
+alias in Zone3D remains untouched.
+
+All three units report 100% objdiff. Full modules/symbols/ARM7 preservation and
+guarded separate-output finalization pass with USA SHA-1
+`c7c3014c237900c8281289b8bc76a781969b6278`; older configure caveat unchanged.
+First-draft creation to final-validation artifact timestamps measured 358.6 seconds.
+Logs: `build/runtime-batch12-acceptance.log`, `build/runtime-batch12-finalize.log`,
+and `build/matching/`. Local code 157,516 -> 158,800; functions 1,179 -> 1,181;
+data 26,640 -> 26,852. No gameplay test. Deferred multiply/increment remain fallback.
