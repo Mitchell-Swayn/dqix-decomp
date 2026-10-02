@@ -649,6 +649,14 @@ src/System/InterruptResponseState.cpp:
     .data start:0x020f2274 end:0x020f2284
     .bss start:0x0211127c end:0x021112dc
 
+src/System/TimerState.cpp:
+    complete
+    .bss start:0x02111638 end:0x02111648
+
+src/System/ActiveAlarmState.cpp:
+    complete
+    .bss start:0x02111648 end:0x02111654
+
 src/System/RuntimeSignalState.cpp:
     complete
     .bss start:0x020f3394 end:0x020f33b0

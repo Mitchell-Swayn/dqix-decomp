@@ -32,3 +32,11 @@ five variants: original declarations, shared index scope, register hints,
 size optimization, and initialized declarations. All retained the same 73.53%
 register-allocation mismatch. The source and mapping were restored to fallback;
 its candidate and detailed comparisons remain under ignored build outputs.
+
+`TimerState.cpp` and `ActiveAlarmState.cpp` own the 16-byte timer overflow state
+and 12-byte ordered alarm-list state at `0x02111638..0x02111654`. Their layouts
+come from the existing initialization, overflow, scheduling and cancellation
+accesses in `Timing.cpp`; compile-time checks enforce both sizes. The former
+interior overflow-count symbol becomes the timer object's offset 8. Both data
+symbols compare at 100%, and full ROM/module/symbol checks pass. The separate
+alarm-initialization bitmask remains fallback.

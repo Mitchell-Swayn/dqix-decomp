@@ -7800,7 +7800,6 @@ data_02111590 kind:bss addr:0x02111590
 data_021115b4 kind:bss addr:0x021115b4
 data_02111634 kind:bss addr:0x02111634
 data_02111638 kind:bss addr:0x02111638
-data_02111640 kind:bss addr:0x02111640
 data_02111648 kind:bss addr:0x02111648
 data_02111654 kind:bss addr:0x02111654
 data_02111668 kind:bss addr:0x02111668
