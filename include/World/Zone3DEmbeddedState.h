@@ -28,7 +28,21 @@ struct ZoneState0840
             unsigned int value : 30;
         } value;
         unsigned char identifier[6];
-        unsigned short unknown_1a[14];
+        union Configuration1a
+        {
+            struct
+            {
+                unsigned short values[10];
+                struct Flags14
+                {
+                    unsigned char low : 1, middle : 3, high : 4;
+                } flags14;
+                struct Flags15 { unsigned char low : 4, high : 4; } flags15;
+                unsigned short unknown16, unknown18, unknown1a;
+            };
+            unsigned short words[14];
+            void Reset();
+        } configuration1a;
         union Block38 { int words[6]; } unknown_38;
         unsigned short unknown_50[14];
         // Assignment copies these 124 bytes as one aligned aggregate.

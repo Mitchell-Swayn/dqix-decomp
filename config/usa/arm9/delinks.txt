@@ -1002,6 +1002,14 @@ src/World/ZoneState0840Lookup.cpp:
     complete
     .text start:0x0209854c end:0x02098630
 
+src/World/ZoneEntryConfiguration.cpp:
+    complete
+    .text start:0x020827c4 end:0x02082828
+
+src/World/ZoneEntryConfigurationData.cpp:
+    complete
+    .rodata start:0x020e8bd8 end:0x020e8bec
+
 src/World/ZoneState0840AddEntry.cpp:
     complete
     .text start:0x02098630 end:0x0209890c

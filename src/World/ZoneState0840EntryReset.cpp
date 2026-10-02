@@ -2,8 +2,6 @@
 #include "System/Memory.h"
 #include "std_library_functions.h"
 
-extern "C" void func_020827c4(void*);
-
 void ZoneState0840::Entry::Reset()
 {
     memset(unknown_0, 0, sizeof(unknown_0));
@@ -35,7 +33,7 @@ void ZoneState0840::Entry::Reset()
     parameters70.unknown9 = 300;
     parameters70.unknown19 = 706;
     unknown_74 = 0;
-    func_020827c4(unknown_1a);
+    configuration1a.Reset();
     VectorizedMemset(&unknown_38, 0, sizeof(unknown_38));
     VectorizedMemset(unknown_50, 0, sizeof(unknown_50));
 }

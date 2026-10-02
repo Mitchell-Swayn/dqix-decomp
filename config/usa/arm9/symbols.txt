@@ -3139,7 +3139,7 @@ func_02082410 kind:function(arm,size=0x6c) addr:0x02082410
 func_0208247c kind:function(arm,size=0x14) addr:0x0208247c
 func_02082490 kind:function(arm,size=0x2bc) addr:0x02082490
 func_0208274c kind:function(arm,size=0x78) addr:0x0208274c
-func_020827c4 kind:function(arm,size=0x64) addr:0x020827c4
+_ZN13ZoneState08405Entry15Configuration1a5ResetEv kind:function(arm,size=0x64) addr:0x020827c4
 func_02082828 kind:function(arm,size=0x4b4) addr:0x02082828
 func_02082cdc kind:function(arm,size=0x5c) addr:0x02082cdc
 func_02082d38 kind:function(arm,size=0x34) addr:0x02082d38
@@ -6416,7 +6416,7 @@ data_020e8b90 kind:data(any) addr:0x020e8b90
 data_020e8b91 kind:data(any) addr:0x020e8b91
 data_020e8bb4 kind:data(any) addr:0x020e8bb4
 data_020e8bb5 kind:data(any) addr:0x020e8bb5
-data_020e8bd8 kind:data(any) addr:0x020e8bd8
+gZoneEntryConfigurationDefaults kind:data(any) addr:0x020e8bd8
 data_020e8bec kind:data(any) addr:0x020e8bec
 data_020e8c00 kind:data(any) addr:0x020e8c00
 data_020e8c58 kind:data(any) addr:0x020e8c58
