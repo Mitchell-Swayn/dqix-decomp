@@ -42,3 +42,5 @@ Both tables compare at 100% and the complete ROM/module/symbol checks pass.
 The existing 1,120-byte RenderCommand_6 object also compares at 100% with the
 new table representation. Its C++ instructions remain unchanged, and this
 data batch earns no additional function or code-byte coverage.
+
+RenderMatrixCommands.cpp owns the two mutable 72-byte graphics command packets at 0x020f1d78..0x020f1e08. Each contains the packed pop/mode/load/scale command sequence, identity rotation, and initially zero translation and scale fields; existing rendering callers populate the mutable fields. Eight interior field labels become base-plus-offset references. Both complete structs match at 100%, and full ROM/module/symbol checks pass. This contributes 144 initialized data bytes.

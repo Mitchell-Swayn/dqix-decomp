@@ -263,6 +263,10 @@ src/Graphics/NSBXX/PatternAnimation.cpp:
     complete
     .text start:0x020b7694 end:0x020b7840
 
+src/Graphics/NSBXX/RenderMatrixCommands.cpp:
+    complete
+    .data start:0x020f1d78 end:0x020f1e08
+
 src/Graphics/NSBXX/MaterialColorMasks.cpp:
     complete
     .rodata start:0x020e9240 end:0x020e9260
