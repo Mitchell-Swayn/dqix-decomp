@@ -3,6 +3,7 @@
 #include "Combat/Main/BattleList.h"
 #include "Resource/GameResources.h"
 #include "World/Object3D.h"
+#include "World/WorldPlacementSource.h"
 #include "Filesystem/NitroVM.h"
 #include "GameState/TimeOfDay.h"
 #include "Grotto/Main/GrottoStruct.h"
@@ -103,7 +104,10 @@ public:
     unsigned int unknown_5cbc_;
     char unk_5cc0[0x5cd0 - 0x5cc0];
     unsigned char unknownBitFlags_5cd0_[10];
-    char unk_5cda[0x63e0 - 0x5cda];
+    unsigned char unknownPlacementByte_5cda_;
+    char unk_5cdb[1];
+    WorldPlacementSource::PersistentState placementStates_[100];
+    char unk_5e6c[0x63e0 - 0x5e6c];
 
     unsigned char* treasureMapLanguageData_;
     GrottoStruct grottoInfo_;

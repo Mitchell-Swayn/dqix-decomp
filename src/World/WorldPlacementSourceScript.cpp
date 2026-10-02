@@ -18,7 +18,7 @@ int WorldPlacementSource::ReadVariantTable(Script::Parameter* parameters, int)
         unsigned short parameter = (unsigned short)(parameters++)->ToInt();
         unsigned char unknown = (unsigned char)(parameters++)->ToInt();
         unsigned char count = (unsigned char)(parameters++)->ToInt();
-        if (i == *((unsigned char*)game + 0x5cda))
+        if (i == game->unknownPlacementByte_5cda_)
         {
             variants[index].parameter = parameter;
             variants[index].unknown2 = unknown;

@@ -16,7 +16,7 @@ extern "C" {
 extern "C" void func_0208ea10(WorldObjectInstanceList* list)
 {
     GameState* game = GameState::GetInstance();
-    if (*((unsigned char*)game + 0x5cda) == 8)
+    if (game->unknownPlacementByte_5cda_ == 8)
     {
         list->Reset();
         func_020120d4(game, (unsigned char)(rand() % 8));
@@ -58,7 +58,7 @@ extern "C" void func_0208ea10(WorldObjectInstanceList* list)
         for (int i = 0; i < 2; ++i)
         {
             WorldPlacementSource::PersistentState* state =
-                &((WorldPlacementSource::PersistentState*)((char*)game + 0x5cdc))[i + 98];
+                &game->placementStates_[i + 98];
             state->available = 1;
             state->unknown25 = 2;
             state->count = 1;

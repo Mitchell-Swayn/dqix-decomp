@@ -48,3 +48,20 @@ The batch clock began after valid baseline acceptance at 2026-10-02 13:14:16 UTC
 `tools/work_batch.py` measured 1,026.881068 seconds (17.11 minutes) after
 baseline acceptance; worker integration time is separate. Snapshots are archived
 as `evidence/sol61-world-start.json` and `evidence/sol61-world-finish.json`. Token usage is unknown.
+
+## GameState ownership review correction
+
+The shared `GameState` layout now owns `unknownPlacementByte_5cda_` and the
+100-element `placementStates_` array at `0x5cdc..0x5e6c`. Reset, initialization,
+existing flag updates, and variant-table selection all use these actual members.
+No placement reader casts into a GameState byte gap. Compile-time checks confirm
+the four-byte record size, byte and array offsets, 400-byte array extent, tail
+offset, and unchanged `0x7ff4` GameState size. Later Grotto fields remain at the
+same offsets.
+
+All four affected units (five functions) compare at 100% on the first layout
+candidate. Full `ninja rom check report sha1` passes; evidence is
+`build/sol61-world-layout/acceptance.log`. The layout correction adds no code,
+function or initialized-data coverage and leaves all denominators unchanged.
+Queue updates remain integrator-owned. The preserved untracked population draft
+also uses the actual array but retains its uncredited branch mismatch.

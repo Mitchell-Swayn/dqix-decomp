@@ -17,9 +17,8 @@ void WorldObjectInstanceList::UpdatePersistentPlacementFlags()
     int remaining = count - 7;
     int bit;
     GameState* game = GameState::GetInstance();
-    // Observed persistent state table offset, pending a broader GameState map.
     WorldPlacementSource::PersistentState* states =
-        (WorldPlacementSource::PersistentState*)((char*)game + 0x5cdc);
+        game->placementStates_;
     bit = 0;
     while (remaining > 0)
     {
