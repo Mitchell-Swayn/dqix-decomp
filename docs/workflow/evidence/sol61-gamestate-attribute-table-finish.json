@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "sol61-gamestate-attribute-table",
+  "snapshot": {
+    "utc": "2026-10-02T13:27:23.355086+00:00",
+    "revision": "c56559cf0d9f96bb9a9f4fd6ad704212bb7a1eb6",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 214424,
+      "matched_data": 48064,
+      "matched_functions": 1602
+    },
+    "arm7": {
+      "source_functions": 265,
+      "source_code_bytes": 22912,
+      "source_literal_pool_bytes": 1588,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 141924,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "423280eff75c6c716d99fc0d6b6d8c4e70ef58d97f22edc1724b44b85fc14304",
+    "arm7_report_sha256": "6f3aaf4f9b7392fa38ff6c7504a2202e44c4c00ffb6122d9dae61b1d89e761f4",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Two functions0201133c..020113a8 match after two unit comparisons; typed eight-byte table and 12-byte record layout from dependency0209a594 reads, script-filled570-byte backing buffer ownership retained. Table semantics and attribute bit meaning remain unknown. Full ninja rom check report sha1 passed, unchanged denominators and ARM7. Getter uses observed shift pair to preserve exact original instructions.",
+  "attempts": 2,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 108,
+      "matched_data": 0,
+      "matched_functions": 2
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 49.287144
+}

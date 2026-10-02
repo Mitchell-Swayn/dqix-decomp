@@ -32,6 +32,20 @@ struct GameStateIndexList {
     unsigned char count_;
 };
 
+// The table lookup at 0x0209a594 reads 12-byte records. It searches the
+// low eleven bits of identifier_, or uses the requested index directly.
+struct GameStateAttributeRecord {
+    unsigned short identifier_;
+    unsigned short unknown_02_;
+    unsigned int attributes_;
+    unsigned int unknown_08_;
+};
+
+struct GameStateAttributeTable {
+    GameStateAttributeRecord* records_;
+    int count_;
+};
+
 // sizeof is probably 0x7ff4 but could be 0x7ff8. (Definitely no lower/higher)
 // For lower bound, look at initialize/reset function func_0200f3a4
 // which writes a byte at offset 0x7ff2.
@@ -79,7 +93,10 @@ public:
     unsigned char unknownByteBufferLength_571c_;
     signed char unknownByteBuffer_571d_[4];
     unsigned char unknownByteBufferLength_5721_;
-    char unk_5722[0x5cb0 - 0x5722];
+    char unk_5722[0x572c - 0x5722];
+    GameStateAttributeTable attributeTable_;
+    unsigned char attributeTableBuffer_[0x570];
+    char unk_5ca4[0x5cb0 - 0x5ca4];
     unsigned int unknown_5cb0_;
     unsigned int unknown_5cb4_;
     unsigned int unknown_5cb8_;

@@ -73,6 +73,10 @@ src/GameState/GameStateRecordLookup.cpp:
 	complete
 	.text start:0x02010828 end:0x0201099c
 
+src/GameState/GameStateAttributeTable.cpp:
+	complete
+	.text start:0x0201133c end:0x020113a8
+
 src/GameState/GameStateByteBuffers.cpp:
 	complete
 	.text start:0x020113a8 end:0x02011544
