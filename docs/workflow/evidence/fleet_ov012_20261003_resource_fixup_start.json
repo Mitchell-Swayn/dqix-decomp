@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "name": "fleet_ov012_20261003_resource_fixup",
+  "snapshot": {
+    "utc": "2026-10-02T15:52:33.355626+00:00",
+    "revision": "3f8aa35c96f6c570fe186b3fb13f3b3f0294490e",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 219104,
+      "matched_data": 66800,
+      "matched_functions": 1655
+    },
+    "arm7": {
+      "source_functions": 276,
+      "source_code_bytes": 25172,
+      "source_literal_pool_bytes": 1756,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 4904,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 139496,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "bbb03777980762f70574ddc17b732568bd2c1e75e18e2b8aa90640425175e697",
+    "arm7_report_sha256": "acd4a1789d477d2c063422a9ad0b36db4b75f23e0423656eb72956965a08370c",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks."
+}

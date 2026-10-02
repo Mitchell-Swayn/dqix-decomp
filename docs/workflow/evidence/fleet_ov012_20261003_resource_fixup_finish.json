@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "fleet_ov012_20261003_resource_fixup",
+  "snapshot": {
+    "utc": "2026-10-02T16:01:49.119625+00:00",
+    "revision": "3f8aa35c96f6c570fe186b3fb13f3b3f0294490e",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 220084,
+      "matched_data": 66800,
+      "matched_functions": 1657
+    },
+    "arm7": {
+      "source_functions": 276,
+      "source_code_bytes": 25172,
+      "source_literal_pool_bytes": 1756,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 4904,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 139496,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "8a184790d454a7063f8b96ec7e7dde2c67d68089d13e1be87ee5f7e92ee65c12",
+    "arm7_report_sha256": "acd4a1789d477d2c063422a9ad0b36db4b75f23e0423656eb72956965a08370c",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Resource fixup 3 cumulative variants; encoded pattern interpreter 8 cumulative variants, both exact. Full ninja -j2 rom check report sha1 passed; no gameplay testing or measured tokens.",
+  "attempts": 11,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 980,
+      "matched_data": 0,
+      "matched_functions": 2
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 555.763999
+}

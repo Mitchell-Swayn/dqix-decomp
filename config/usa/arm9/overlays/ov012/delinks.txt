@@ -17,3 +17,11 @@ src/Factory/ov012/PatternByteSet.cpp:
     complete
     .text start:0x021859f4 end:0x02185a24
 
+src/Factory/ov012/PatternResource.cpp:
+    complete
+    .text start:0x0218558c end:0x021855f0
+
+src/Factory/ov012/PatternInterpreter.cpp:
+    complete
+    .text start:0x02185684 end:0x021859f4
+
