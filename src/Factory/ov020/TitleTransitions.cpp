@@ -1,27 +1,10 @@
 #include "GameState/GameState.h"
-#include "Memory/SafeAllocator.h"
+#include "TitleController.h"
 
 extern "C" {
 void func_020c39a0(volatile unsigned short* reg, int brightness);
 int func_020c39c8(volatile unsigned short* reg);
 }
-
-struct TitleBrightnessTransition {
-    float current;
-    int target;
-    int timeRemaining;
-};
-
-// Partial layout of the title/logo controller. Earlier UI state is unrecovered.
-struct TitleTransitionController {
-    unsigned char unknown_000[0x470];
-    SafeAllocator primaryAllocator;
-    SafeAllocator secondaryAllocator;
-    unsigned char unknown_498[0x4e4 - 0x498];
-    int waitTimeRemaining;
-    TitleBrightnessTransition mainBrightness;
-    TitleBrightnessTransition subBrightness;
-};
 
 static inline int IsMainTransitioning(TitleTransitionController* state) {
     return state->mainBrightness.timeRemaining > 0;

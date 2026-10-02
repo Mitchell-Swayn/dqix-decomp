@@ -9,3 +9,16 @@ src/Factory/ov020/TitleTransitions.cpp:
     complete
     .text start:0x0218d644 end:0x0218d8d8
 
+src/Factory/ov020/TitleBGConfiguration.cpp:
+    complete
+    .text start:0x0218c7bc end:0x0218c7f0
+
+src/Factory/ov020/TitleSubBGConfiguration.cpp:
+    complete
+    .text start:0x0218cd64 end:0x0218cd98
+
+src/Factory/ov020/TitleMenu.cpp:
+    complete
+    .text start:0x0218c7f0 end:0x0218c98c
+    .rodata start:0x0218d974 end:0x0218db90
+
