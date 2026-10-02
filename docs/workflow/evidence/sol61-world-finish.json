@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "sol61-world",
+  "snapshot": {
+    "utc": "2026-10-02T13:31:23.250060+00:00",
+    "revision": "22d199df1396eeb0f8a911e24838804517ffe573",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 214472,
+      "matched_data": 48632,
+      "matched_functions": 1588
+    },
+    "arm7": {
+      "source_functions": 267,
+      "source_code_bytes": 23184,
+      "source_literal_pool_bytes": 1620,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 141620,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "e9c7ab8a8ba530279ec7d63a76b3a95e8f27e51e2be43d8cccb2dc745933fbe1",
+    "arm7_report_sha256": "ed1ef62cd6b641385bb2e9bfac9c2b7119f02c8d1b602a0566934534f3be60df",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Two exact functions and source-owned 96-byte pool; retained original path aliases via accepted integrator helper8ffd3d6 temporarycopy. FullROMmodule/symbol/SHA1pass. Includes6duplicate populatevariants withoutcredit; setup/dispatchtimeexcluded; tokenusageunknown.",
+  "attempts": 16,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 616,
+      "matched_data": 96,
+      "matched_functions": 2
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 1026.881068
+}

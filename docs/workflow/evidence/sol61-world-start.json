@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "name": "sol61-world",
+  "snapshot": {
+    "utc": "2026-10-02T13:14:16.368992+00:00",
+    "revision": "1ca5ae89b86bcd9af13cf3519de4e505398ec69d",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 213856,
+      "matched_data": 48536,
+      "matched_functions": 1586
+    },
+    "arm7": {
+      "source_functions": 267,
+      "source_code_bytes": 23184,
+      "source_literal_pool_bytes": 1620,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 141620,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "7e492fa666b6ced3228361bf7065872ed7791434295e9a7ef1b6a0309f2a7389",
+    "arm7_report_sha256": "ed1ef62cd6b641385bb2e9bfac9c2b7119f02c8d1b602a0566934534f3be60df",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks."
+}

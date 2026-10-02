@@ -45,5 +45,6 @@ and delinks are archived under `build/sol61-world/inherited-*`; the corrected
 delink. Further work requires new evidence for that early branch.
 
 The batch clock began after valid baseline acceptance at 2026-10-02 13:14:16 UTC.
-`tools/work_batch.py` records elapsed time and deltas; worker integration time is
-separate. Token usage is unknown.
+`tools/work_batch.py` measured 1,026.881068 seconds (17.11 minutes) after
+baseline acceptance; worker integration time is separate. Snapshots are archived
+as `evidence/sol61-world-start.json` and `evidence/sol61-world-finish.json`. Token usage is unknown.
