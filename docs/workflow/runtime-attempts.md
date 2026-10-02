@@ -77,3 +77,41 @@ the preceding batch still applies. Logs: `build/runtime-batch2-acceptance.log`,
 Local matched code 149,444 -> 149,892; matched functions 1,134 -> 1,141;
 matched data stays 26,488. All three denominators are unchanged. Main integration
 must rerun its current pipeline. No gameplay validation was performed.
+
+## Runtime stream buffers and sprintf (2026-10-02)
+
+Based on `e41f6a4`. Six functions in three new units add 568 code bytes
+(564 instructions and one four-byte stream-table address literal), no data/BSS.
+The stream table remains original data and the formatter engine remains original
+code. The source-defined flush/reset/write routines now call each other directly.
+
+| Function | Distinct variants | Result / useful finding |
+| --- | ---: | --- |
+| `func_0200173c` (flush three standard streams) | 2 | Invert the next-index condition to retain the branch and original register allocation. |
+| `func_020017bc` (text-conversion hook) | 1 | Original body is exactly one return instruction; reconstructed as the corresponding empty C function, not a substitute for missing behavior. |
+| `func_020017c0` (reset buffer cursor/capacity) | 1 | Preserve alignment-mask subtraction and reload of stream position. |
+| `func_020017f0` (write pending buffer) | 1 | Preserve callback ABI, output count, position advance, and reset only after success. |
+| `func_02001878` (flush stream state) | 1 | Reconstructed bitfields reproduce the observed mode/state extraction and updates. |
+| `sprintf` | 4 | Two unavailable stdarg/builtin spellings rejected; address rounding-up adds an instruction; the observed aligned last-parameter home slot plus four bytes matches. |
+
+Ten distinct per-function variants including rejected compiler candidates;
+maximum four for one function. `RuntimeStream.h` documents an inferred 0x4c-byte
+ABI with reserved fields and a compile-time size check. Names describe observed
+use, not recovered original declarations. `#pragma dont_inline on` retains the
+observed calls, including the original empty text hook. Generic symbols remain.
+
+The sprintf argument-pointer expression is specific to the pinned MWCC ARM
+variadic ABI: taking the last named parameter's address makes the compiler save
+r0-r3 contiguously with stack arguments; the next aligned four-byte slot begins
+the unnamed arguments. This is documented in source and is not a portable host
+varargs implementation. Its complete 44-byte body, including stack register
+saves/restores and call relocation, matches.
+
+All three units pass objdiff at 100% after final source formatting. The single
+batch ROM build passed ARM9 main, ITCM, DTCM, all overlays, symbols, and ARM7
+preservation; the existing main header finalizer produced exact USA SHA-1
+`c7c3014c237900c8281289b8bc76a781969b6278`. The older configure-script caveat
+still applies. Logs: `build/runtime-batch3-acceptance.log`,
+`build/runtime-batch3-finalize.log`, and `build/matching/`.
+Local matched code 149,892 -> 150,460; functions 1,141 -> 1,147; data unchanged
+at 26,488. All denominators unchanged. No gameplay validation was performed.

@@ -708,3 +708,15 @@ src/System/RuntimeMemoryFill.cpp:
 src/System/RuntimeStringOutput.cpp:
     complete
     .text start:0x02003c3c end:0x02003ce8
+
+src/System/RuntimeStreamFlushAll.cpp:
+    complete
+    .text start:0x0200173c end:0x020017a4
+
+src/System/RuntimeStreamBuffers.cpp:
+    complete
+    .text start:0x020017bc end:0x02001960
+
+src/System/RuntimeSprintf.cpp:
+    complete
+    .text start:0x02003ce8 end:0x02003d14
