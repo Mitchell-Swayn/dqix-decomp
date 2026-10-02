@@ -2652,6 +2652,24 @@
       "externals": {}
     },
     {
+      "name": "PowerVBlankCallback",
+      "source": "config/usa/arm7/src/PowerVBlankCallback.c",
+      "autoload": "wram",
+      "runtime_address": 58688752,
+      "payload_offset": 1804,
+      "size": 36,
+      "code_bytes": 32,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_PowerVBlankCallback",
+      "symbols": {
+        "ARM7_PowerVBlankCallback": 58688752
+      },
+      "externals": {
+        "ARM7_PowerState": 58767212,
+        "ARM7_UpdatePowerLed": 58745772
+      }
+    },
+    {
       "name": "TouchControllerStatus",
       "source": "config/usa/arm7/src/TouchControllerStatus.c",
       "autoload": "wram",

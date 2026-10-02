@@ -872,3 +872,13 @@ Replies choose channels by the masked command group; callback dispatch ignores
 errors and routes channels 4/6/8/9. Channel 4 retains its external receive target
 `0x027f52ec`. The touch helper transmits a zero byte and polls SPI busy, preserving
 halfword I/O. Subsystem receiver bodies and all storage remain dependencies.
+
+`src/PowerVBlankCallback.c` reconstructs the startup-installed VBlank callback
+at `[0x037f84f0, 0x037f8514)` (payload `[0x70c, 0x730)`). It checks the shared
+`PowerState.initialized` word and calls the existing `ARM7_UpdatePowerLed(void)`
+routine only when power setup has initialized the state. The first candidate
+matches exactly: one C function, 32 instruction bytes and four literal bytes,
+with no assembly or new data/BSS ownership. `PowerState.h` supplies the shared
+layout; the external state storage remains accounted separately. The callback
+inventory/reference audit remains independent evidence and adds no extra source
+credit for these same bytes.

@@ -42,3 +42,12 @@ python -m unittest discover -s tools -p test_arm7_inventory_ranges.py
 
 Input ROM SHA-1: `c7c3014c237900c8281289b8bc76a781969b6278`.
 ARM7 payload SHA-1: `a662d5c6a78e990244299926cf6862ce910a475d`.
+
+The subsequent C reconstruction is `config/usa/arm7/src/PowerVBlankCallback.c`.
+Existing `PowerState.h`, `PowerStateInit.c`, and `PowerLedUpdate.c` establish
+the two required contracts: the word loaded from `0x0380b76c` is
+`ARM7_PowerState.initialized`, and `0x038063ac` is
+`ARM7_UpdatePowerLed(void)`. The first candidate matched the whole 36-byte unit.
+The source manifest credits one function, 32 C instruction bytes, and four
+literal bytes, replacing 36 fallback bytes. Inventory totals remain separate
+and unchanged; the callback introduces no owned data/BSS or assembly exception.

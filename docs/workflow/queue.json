@@ -207,6 +207,15 @@
       "handoff_note": "User-requested model switch 2026-10-02T13:11..13:14Z; inherited Luna drafts/evidence preserved, not a clean matched-task benchmark."
     },
     {
+      "id": "arm7-power-vblank-callback",
+      "status": "verified",
+      "owner": null,
+      "worktree": "../DQIX-Decomp-luna-arm7-inventory-boundary",
+      "scope": "Startup-installed callback at 0x037f84f0 checks PowerState.initialized then updates power LED; one function, 32 instructions and four literal bytes replace 36 fallback bytes.",
+      "acceptance": "Exact candidate and full ARM7 payload, ARM7 pipeline tests and worker ROM/module/symbol/SHA1; root integration still required",
+      "attempt_limit_per_function": 10
+    },
+    {
       "id": "per-agent-token-measurement",
       "status": "integrated",
       "owner": null,
