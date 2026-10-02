@@ -1,5 +1,6 @@
 #pragma once
 #include "Graphics/Vector.h"
+#include "Resource/Script.h"
 
 // Partial placement-source state. Only fields established by recovered methods
 // are named; the two byte blocks retain their observed reset extents.
@@ -24,8 +25,16 @@ struct WorldPlacementSource
     unsigned short count;
     unsigned char unknownA;
     short* randomValues;
-    unsigned char unknown10[32];
+    struct Variant
+    {
+        unsigned short parameter;
+        unsigned char unknown2;
+        unsigned char slotCount;
+    } variants[8];
 
+    static int ReadVariantTable(Script::Parameter* parameters, int numParameters);
+    static int ReadSpecialRecord(Script::Parameter* parameters, int numParameters);
+    static int ReadRecord(Script::Parameter* parameters, int numParameters);
     WorldPlacementSource();
     static WorldPlacementSource* GetInstance();
     void AppendRecord(Record* record);

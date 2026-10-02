@@ -3517,9 +3517,9 @@ func_0208e06c kind:function(arm,size=0x3c) addr:0x0208e06c
 _ZN20WorldPlacementSource11GetInstanceEv kind:function(arm,size=0xc) addr:0x0208e0a8
 func_0208e0b4 kind:function(arm,size=0x8) addr:0x0208e0b4
 func_0208e0bc kind:function(arm,size=0x8) addr:0x0208e0bc
-func_0208e0c4 kind:function(arm,size=0x1fc) addr:0x0208e0c4
-func_0208e2c0 kind:function(arm,size=0x9c) addr:0x0208e2c0
-func_0208e35c kind:function(arm,size=0xe8) addr:0x0208e35c
+_ZN20WorldPlacementSource10ReadRecordEPN6Script9ParameterEi kind:function(arm,size=0x1fc) addr:0x0208e0c4
+_ZN20WorldPlacementSource16ReadVariantTableEPN6Script9ParameterEi kind:function(arm,size=0x9c) addr:0x0208e2c0
+_ZN20WorldPlacementSource17ReadSpecialRecordEPN6Script9ParameterEi kind:function(arm,size=0xe8) addr:0x0208e35c
 func_0208e444 kind:function(arm,size=0x78) addr:0x0208e444
 _ZN20WorldPlacementSource5ResetEv kind:function(arm,size=0x3c) addr:0x0208e4bc
 _ZN20WorldPlacementSource15ClearPlacementsEv kind:function(arm,size=0x28) addr:0x0208e4f8
@@ -7824,5 +7824,6 @@ data_02153680 kind:bss addr:0x02153680
 data_02153694 kind:bss addr:0x02153694
 data_021536ac kind:bss addr:0x021536ac
 data_021536c4 kind:bss addr:0x021536c4
+
 
 

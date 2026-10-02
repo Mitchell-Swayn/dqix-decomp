@@ -5,7 +5,7 @@
 void WorldPlacementSource::Reset()
 {
     memset(unknown0, 0, sizeof(unknown0));
-    memset(unknown10, 0, sizeof(unknown10));
+    memset(variants, 0, sizeof(variants));
     head = 0;
     count = 0;
     unknownA = 0;

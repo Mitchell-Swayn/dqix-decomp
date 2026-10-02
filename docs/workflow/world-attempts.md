@@ -84,3 +84,23 @@ returns and a cleanup goto did not affect this conditional-execution decision.
 No range is credited. Draft: build/matching/WorldObjectInstanceListBuild.cpp.
 Next inspect original guard inline provenance or a demonstrated compiler setting
 that changes this one branch without replacing the observed control flow.
+
+
+## Placement random-value script callback at 0208e444
+
+Deferred at the ten-variant cap. Best 80% has the correct instructions but swaps
+r4/r5 for the allocation cursor and loop counter. Post-increment parameter
+consumption fixes the initial scheduling differences; declaration placement,
+initialization, signed/unsigned cursor types, indexed stores and assigning the
+global field first did not fix allocation. The opcode table confirms an int
+callback with Parameter*, int ABI, now preserved in the draft. No range is
+credited. Draft: build/matching/WorldPlacementSourceScript.cpp. Next investigate
+why the original reuses the earlier variant register for the allocation cursor.
+
+## Placement record callback at 0208e0c4
+
+Recovered after three variants. All linked bytes match. Object diff alone is
+99.2126% because one literal uses the equivalent containing-object reference
+`data_02108fe4 + 0x10` instead of the original interior symbol `data_02108ff4`.
+The typed reference is the variant array subobject. Both expressions resolve to
+02108ff4; module, symbol, ROM and SHA-1 acceptance all pass.
