@@ -70,4 +70,3 @@ extern "C" void func_ov020_0218c98c(TitleTransitionController* state) {
     func_020c39a0((volatile unsigned short*)0x0400006c,0);
     func_020c39a0((volatile unsigned short*)0x0400106c,0);
 }
-
