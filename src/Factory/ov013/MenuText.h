@@ -21,8 +21,19 @@ struct Ov013Widget {
     unsigned char unknownC6[0x1a];
 };
 
+struct Ov013MenuLayer {
+    unsigned int words[20]; // word 1 is the mode used by the update routine
+};
+
+struct Ov013SecondaryLayer {
+    unsigned int words[16]; // word 1 is the mode used by the update routine
+};
+
 struct Ov013WidgetGroup {
-    unsigned char unknown00[0x98];
+    int unknown00;
+    Ov013MenuLayer primary;
+    Ov013SecondaryLayer secondary;
+    unsigned char flags[4];
     void* resources;
     Ov013Widget* widgets;
     short dimensions[8];
@@ -91,7 +102,10 @@ struct Ov013Menu {
     unsigned char unknown3D4[0x238];
     SafeAllocator stringAllocator; // 0x60c
     Ov013StringCatalog strings; // 0x620, func_020dfc40 / func_020e0434
-    unsigned char state[0x10]; // 0x638
+    unsigned char state[8]; // 0x638
+    unsigned char borrowedGroup; // 0x640
+    unsigned char unknown641[3];
+    unsigned int tickCount; // 0x644
     int mode; // 0x648
     int unknown64C;
     int task;
@@ -99,8 +113,26 @@ struct Ov013Menu {
     Ov013TextBuffer* textBuffer; // 0x658, borrowed from func_020421a0()->0x5c
     int primarySelection;
     int optionSelection;
-    unsigned char unknown664[0x58];
+    unsigned char flags664[2];
+    unsigned char padding666[2];
+    int unknown668;
+    int unknown66C;
+    int unknown670;
+    int primaryValues[5]; // 0x674
+    int secondaryValues[5]; // 0x688
+    unsigned char enabled[5]; // 0x69c
+    unsigned char padding6A1[3];
+    int unknown6A4;
+    unsigned char flag6A8;
+    unsigned char flags6A9[5];
+    unsigned char padding6AE[2];
+    int unknown6B0;
+    unsigned char flag6B4;
+    unsigned char padding6B5[3];
+    int unknown6B8;
     unsigned char cursorFlags; // 0x6bc
+    unsigned char padding6BD;
+    short cursorValues[7]; // 0x6be
 };
 
 typedef char Ov013WidgetSize[sizeof(Ov013Widget) == 0xe0 ? 1 : -1];
@@ -109,7 +141,7 @@ typedef char Ov013CatalogSize[sizeof(Ov013StringCatalog) == 0x18 ? 1 : -1];
 typedef char Ov013TranslationSize[sizeof(Ov013TranslationEntry) == 0x18 ? 1 : -1];
 typedef char Ov013DisplayEntrySize[sizeof(Ov013DisplayEntry) == 0x28 ? 1 : -1];
 typedef char Ov013DisplayPrefixSize[sizeof(Ov013Display) == 0x50 ? 1 : -1];
-typedef char Ov013MenuPrefixSize[sizeof(Ov013Menu) == 0x6c0 ? 1 : -1];
+typedef char Ov013MenuPrefixSize[sizeof(Ov013Menu) == 0x6cc ? 1 : -1];
 
 extern "C" {
 int func_0205d5d0(Ov013WidgetGroup*, unsigned int, const Ov013TextBuffer*, int, unsigned char);

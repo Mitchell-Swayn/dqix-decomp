@@ -24,3 +24,19 @@ src/Factory/ov013/MenuHitTest.cpp:
     complete
     .text start:0x021842a0 end:0x02184338
 
+src/Factory/ov013/MenuInitialize.cpp:
+    complete
+    .text start:0x02184360 end:0x021846a0
+
+src/Factory/ov013/MenuShutdown.cpp:
+    complete
+    .text start:0x021846a0 end:0x021847c4
+
+src/Factory/ov013/MenuUpdate.cpp:
+    complete
+    .text start:0x021847c4 end:0x02184a58
+
+src/Factory/ov013/MenuRefresh.cpp:
+    complete
+    .text start:0x02184a58 end:0x02184aec
+
