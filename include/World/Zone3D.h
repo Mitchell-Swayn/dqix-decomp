@@ -120,7 +120,10 @@ public:
     char unknown_struct_2724_[0xc];
     char unk_2730[0x2754 - 0x2730];
     char unknown_struct_2754_[0x18];
-    char unk_276c[0x281d - 0x276c];
+    char unk_276c[0x27d8 - 0x276c];
+    unsigned short unknown_27d8_;
+    unsigned short unknown_27da_;
+    char unk_27dc[0x281d - 0x27dc];
     unsigned char unknown_281d_;
     unsigned char unknown_281e_;
     char unk_281f;
@@ -187,6 +190,12 @@ public:
     bool IsZoneInRuleList(int zoneID);
     void UpdateZone170cInstances(bool first, bool second, bool alternate);
     void RequestBMDJObjectStateReset(int groupID, int instanceID);
+    void SetUnknown27d8(unsigned short value);
+    void SetUnknown27da(unsigned short value);
+    bool HasMapFlag10OutsideExcludedZones();
+    void ClearInstanceFlag4(int instanceID, int groupID);
+    void SetInstanceFlag4(int instanceID, int groupID);
+    bool IsInstanceFlag4Clear(int instanceID, int groupID);
     void RecordCurrentZoneFlag();
     int GetZoneRecordFlag(int zoneID);
     void RecordBMDJFlag4State();
