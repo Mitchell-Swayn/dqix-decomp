@@ -118,7 +118,13 @@ public:
     ActiveGrottoClass grotto_; // offset 23ec in USA. this is 0x20 bytes larger in JPN
     char unk_2664[0x2724 - 0x2664];
     char unknown_struct_2724_[0xc];
-    char unk_2730[0x2754 - 0x2730];
+    char unk_2730[0x2744 - 0x2730];
+    unsigned char transitionRequests_;
+    unsigned char transitionParameter1_;
+    unsigned char transitionParameter2_;
+    char unk_2747;
+    unsigned short transitionParameter3_;
+    char unk_274a[0x2754 - 0x274a];
     char unknown_struct_2754_[0x18];
     char unk_276c[0x27d8 - 0x276c];
     unsigned short unknown_27d8_;
@@ -190,6 +196,11 @@ public:
     bool IsZoneInRuleList(int zoneID);
     void UpdateZone170cInstances(bool first, bool second, bool alternate);
     void RequestBMDJObjectStateReset(int groupID, int instanceID);
+    void SetGrottoTransitionRequest(bool enabled, unsigned char first, unsigned char second, unsigned short third);
+    void SetTransitionRequest1(bool enabled);
+    void SetTransitionRequest2(bool enabled);
+    void SetTransitionRequest(int index, bool enabled);
+    int GetTransitionRequest(int index);
     void SetUnknown27d8(unsigned short value);
     void SetUnknown27da(unsigned short value);
     bool HasMapFlag10OutsideExcludedZones();
