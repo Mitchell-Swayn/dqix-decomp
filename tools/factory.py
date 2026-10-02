@@ -237,6 +237,24 @@ def snapshot(root, db):
     for row in db.execute('SELECT id,scope,status,owner,result,updated_at FROM jobs'):
         jobs[row['id']] = dict(row)
     fleet = None
+    pipeline = None
+    pipeline_path = root / 'build/factory/pipeline.json'
+    if pipeline_path.exists():
+        try:
+            pipeline = read_json(pipeline_path)
+            pipeline['stale'] = (datetime.now(timezone.utc) - datetime.fromisoformat(pipeline['heartbeat_utc'])).total_seconds() > 30
+            for submission in pipeline.get('submissions', []):
+                jobs['submission:' + submission['id']] = dict(id='submission:' + submission['id'],
+                    status=submission['status'], owner=submission['lane'],
+                    scope='Review/integration of fixed source ' + submission['source_tip'][:12])
+            for entry in pipeline.get('accepted', []):
+                result = entry['result']
+                after = result.get('snapshot', result.get('after', {}))
+                if (result.get('status') == 'accepted' and after.get('rom_sha1') == 'c7c3014c237900c8281289b8bc76a781969b6278'
+                        and after.get('utc', '') > accepted.get('utc', '')):
+                    accepted = after
+        except (OSError, ValueError, KeyError, TypeError):
+            warnings.append('Review/integration state unavailable')
     fleet_path = root / 'build/factory/fleet.json'
     if fleet_path.exists():
         try:
@@ -262,7 +280,7 @@ def snapshot(root, db):
     return dict(service='dqix-factory', project_root=str(root.resolve()), generated_at=utc(), revision=revision,
                 coverage=dict(arm9=accepted.get('arm9', {}), arm7=accepted.get('arm7', {}),
                               accepted_at=accepted.get('utc'), accepted_revision=accepted.get('revision')),
-                fleet=fleet, workers=list(workers.values()), jobs=list(jobs.values()), attempts=attempts,
+                fleet=fleet, pipeline=pipeline, workers=list(workers.values()), jobs=list(jobs.values()), attempts=attempts,
                 batches=batches, warnings=warnings)
 
 

@@ -273,6 +273,13 @@
     byId("last-refresh").title = receivedAt === null ? "" : absoluteTime(new Date(receivedAt).toISOString());
   }
   function renderState() {
+    const pipeline = state.pipeline;
+    const pipelineStatus = byId("pipeline-status");
+    pipelineStatus.hidden = !pipeline;
+    if (pipeline) {
+      const pc = item(pipeline.counts);
+      pipelineStatus.textContent = `${pipeline.stale ? "STALE COORDINATOR" : "Review and integration"}: ${count(pc.reviewing)} in review · ${count(pc.approved)} approved · ${count(pc.integrating)} integrating · ${count(pc.accepted)} accepted · ${count(pc.changes_requested)} returned for fixes · ${count(pc.blocked)} blocked. ${pipeline.stopping ? "Draining." : "Automatic dispatch and acceptance gates enabled."}`;
+    }
     const fleet = state.fleet;
     const fleetStatus = byId("fleet-status");
     fleetStatus.hidden = !fleet;
