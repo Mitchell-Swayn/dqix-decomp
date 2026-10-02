@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "luna-gamestate-search-followup",
+  "snapshot": {
+    "utc": "2026-10-02T12:21:32.514564+00:00",
+    "revision": "c6f1bf11b8a432e14fae222e5d92efb5c9c3f54b",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 212648,
+      "matched_data": 48064,
+      "matched_functions": 1568
+    },
+    "arm7": {
+      "source_functions": 265,
+      "source_code_bytes": 22912,
+      "source_literal_pool_bytes": 1588,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 141924,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "add187a04c44cbf6af83a35a83ecab071afa117e0baab0d7e886a7abe465675d",
+    "arm7_report_sha256": "6f3aaf4f9b7392fa38ff6c7504a2202e44c4c00ffb6122d9dae61b1d89e761f4",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Three GameState helpers at 0200ff94 (bounded non-null slot lookup), 0200ffe0 (scan object slots 0x70..0x9f for flag 0x20 and unknown halfword offset 0x16a), and 02010038 (collect indices 0..3 passing existing mask-0x1000 filter) match exact. Caller evidence: ff94 has main/overlay callers; ffe0 has four overlay17 callers; 10038 has overlay17 and overlay23 callers. Key semantics remain unknown. Five candidate compilations total; full ninja rom check report sha1 passed; target SHA1 c7c3014c237900c8281289b8bc76a781969b6278. Whole-task timer began 2026-10-02 12:18:16 UTC before inspection.",
+  "attempts": 5,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 212,
+      "matched_data": 0,
+      "matched_functions": 3
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 183.5329
+}

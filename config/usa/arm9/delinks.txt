@@ -41,6 +41,14 @@ src/GameState/GameStateFieldAccessors.cpp:
 	complete
 	.text start:0x020100a0 end:0x020100cc
 
+src/GameState/GameStateObjectIndexLookup.cpp:
+	complete
+	.text start:0x0200ff94 end:0x0200ffc0
+
+src/GameState/GameStateObjectScanHelpers.cpp:
+	complete
+	.text start:0x0200ffe0 end:0x02010088
+
 src/GameState/GameTime.cpp:
     complete
     .text start:0x02010150 end:0x020103c8
