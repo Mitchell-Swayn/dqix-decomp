@@ -69,6 +69,13 @@ struct GameStateByteSlots {
     unsigned char unknown_06_;
 };
 
+// func_020120a0 indexes four eight-byte records at +0x74de. ov010 saves
+// the current zone and the position after shifting each component right four.
+struct GameStateSavedPosition {
+    unsigned short zone_;
+    Vector3s position_;
+};
+
 // sizeof is probably 0x7ff4 but could be 0x7ff8. (Definitely no lower/higher)
 // For lower bound, look at initialize/reset function func_0200f3a4
 // which writes a byte at offset 0x7ff2.
@@ -137,7 +144,8 @@ public:
     GrottoStruct grottoInfo_;
 
 #if defined(usa)
-    char unk_6fcc[0x74fe - 0x6fcc];
+    char unk_6fcc[0x74de - 0x6fcc];
+    GameStateSavedPosition savedPositions_[4];
     NativeIdentity nativeIdentity_;
     char unk_7504[0x7f6c - 0x7504];
     unsigned int unknown_7f6c_;

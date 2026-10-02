@@ -31,3 +31,4 @@ struct PitSequenceState {
 
 extern "C" void func_ov010_021842a0(PitSequenceState* state);
 extern "C" void func_ov010_021842d8(PitSequenceState* state);
+extern "C" int func_ov010_02184354(PitSequenceState* state);

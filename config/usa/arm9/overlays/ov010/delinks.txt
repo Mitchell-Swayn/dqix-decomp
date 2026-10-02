@@ -7,3 +7,7 @@ src/Factory/ov010/PitSequenceState.cpp:
     complete
     .text start:0x021842a0 end:0x02184354
 
+src/Factory/ov010/PitSequenceUpdate.cpp:
+    complete
+    .text start:0x02184354 end:0x02184a6c
+

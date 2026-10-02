@@ -1,6 +1,26 @@
 #pragma once
 
 #include "Memory/SafeAllocator.h"
+#include "Graphics/VRAMAllocations.h"
+
+// func_0207de48 initializes allocation keys and five image pool bounds;
+// func_0207df50/90/ac copy, restore and save the working VRAM snapshots.
+struct GameResourceTextureCheckpoint {
+    unsigned int initialImageBounds_[10];
+    unsigned int workingImageBounds_[10];
+    unsigned int imageAllocationKey_;
+    unsigned int imageAllocationSize_;
+    TexturePaletteVRAMState initialPalette_;
+    TexturePaletteVRAMState workingPalette_;
+    unsigned int paletteAllocationKey_;
+    unsigned int paletteAllocationSize_;
+};
+
+struct GameResourceGraphicsRegion {
+    char unknown_000_[0xc40];
+    GameResourceTextureCheckpoint textures_;
+    char unknown_cb0_[0xe70 - 0xcb0];
+};
 
 // sizeof == 0x44c8, or 0x4218 in JPN version.
 // Referenced in a huge number of places, seems to be responsible for all
@@ -35,7 +55,7 @@ struct GameResources
     SafeAllocator lootableContainerAllocator_18c_;
 #if defined(usa)
     SafeAllocator allocator_array_1a0[15];
-    char unknown_2cc[0xe70];
+    GameResourceGraphicsRegion graphicsRegion_2cc_;
 #elif defined(jpn)
     SafeAllocator allocator_array_1a0[11];
     char unknown_2cc[0xcb0];

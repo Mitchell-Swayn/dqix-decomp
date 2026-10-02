@@ -22,7 +22,9 @@ struct Zone3D_StructPtr_8
     unsigned char unknown_c_low_ : 4;
     unsigned char unknown_c_high_ : 1;
     unsigned char unknown_d_;
-    unsigned char unknown_e_low_ : 7;
+    unsigned char unknown_e_bits_0_1_ : 2;
+    unsigned char unknown_e_bits_2_5_ : 4;
+    unsigned char unknown_e_bit_6_ : 1;
     unsigned char unknown_e_high_ : 1;
 };
 

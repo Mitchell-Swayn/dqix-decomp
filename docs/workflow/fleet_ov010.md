@@ -77,3 +77,72 @@ and section alignment remain original fallback; no data credit is claimed.
 ov010 has zero BSS bytes. External text-table helpers, effect-manager helpers,
 allocator backing global and GameObject flag helper also remain dependencies.
 This batch does not establish module completion.
+
+## Continuation: update sequence, 2026-10-02
+
+Batch `fleet_ov010_20261002t1549` starts from the prior worker commit
+`623a89be039355a2a6ae32d335db842eb7c6f941`. The initial worktree was clean;
+the prior two initialization/cleanup variants remain recorded. No previous
+update-function variants were present. Queue ownership and original inputs were
+preserved, and no subagents, integrations or shared-tool changes were made.
+
+`src/Factory/ov010/PitSequenceUpdate.cpp` reconstructs
+`func_ov010_02184354`, `[0x02184354, 0x02184a6c)`, exactly. Its connected phases
+load the localized `str_pit` script, choose/display text, optionally clear the
+saved zone, load `data/effect/ana.chr`, wait fifteen updates, create effect 17 at
+the party member's position, save/send the compact position, and wait for text
+and effect completion before cleanup. The gameplay meaning of this sequence and
+several external flag/parameter names remain uncertain.
+
+Eight `match_unit.py` invocations: one conflicting external declaration failed
+to compile; seven candidates compiled. Three compiled nonexact variants reached
+85.12035%, 91.40969%, and 96.47577%; the fourth compiled variant was exact. The three
+subsequent compilations retained exactness while establishing shared layouts,
+checking offsets, and naming text argument fields. No ten-variant cap was reached.
+The final declaration-order change places persistent member/zone variables
+before the selection pointer, preserving initialization order and matching the
+original r7/r8/r9 allocation. Earlier hypotheses and all snapshots remain in
+`build/matching/`; final exact attempt:
+`20261002T160007-c1b1997a5b1c4dfca991f6bf861b2d24`.
+
+Shared header changes travel with the source because the original calls establish
+actual embedded objects, rather than independent pointer buffers:
+
+- `GameStateSavedPosition savedPositions_[4]` occupies +0x74de..+0x74fe;
+  `func_020120a0` indexes eight-byte records containing a zone and three shorts.
+- `GameResources::graphicsRegion_2cc_` embeds a texture checkpoint at +0xf0c;
+  `func_0207de48` and `func_0207df50/90/ac` establish two ten-word image-bound
+  arrays, allocation key/size fields and two palette-bound records. Unrecovered
+  surrounding fields retain their original reserved layout.
+- `Zone3D_StructPtr_8` byte +0xe is split into observed 2/4/1/1-bit fields;
+  its previous high-bit consumer remains unchanged. No other source used the
+  replaced seven-bit aggregate.
+
+The local effect record is 80 bytes, with a real 16-byte animation-name array,
+flag bits, short parameters and four vector subobjects. The original initializes
+only the observed fields; it does not zero the remaining animation-name bytes or
+alignment padding. The text argument record contains two combat-stat pointers
+and packed flags, as observed in `func_020e4bf4`/`func_020e4b34`. Partial external
+display, selection and metadata views are declarations, not new program storage.
+Compile-time checks verify the effect/saved-record sizes and shared offsets.
+
+Final candidate is 1/1 exact. `factory_evidence.py` and `factory_diff.py` evidence
+is under `build/factory/fleet_ov010/update-*`. Both full acceptance builds passed
+`ninja -j2 rom check report sha1`, including all configured ARM9 modules/symbols,
+ARM7 preservation and ROM SHA-1 `c7c3014c237900c8281289b8bc76a781969b6278`.
+Final verbose log: `build/factory/fleet_ov010/acceptance-update-final.log`.
+
+`work_batch.py finish` measured **673.729377 seconds**, through final acceptance.
+Delta: **+1 function, +1816 matched code-range bytes**, comprising **1792 ARM
+instruction bytes and 24 literal bytes** at `[0x02184a54, 0x02184a6c)`.
+Initialized data, BSS, assembly and ARM7 deltas are **zero**. Denominators are
+unchanged; ARM9 matched functions 1653 -> 1654 and matched bytes 218996 -> 220812.
+The batch snapshots are under `build/workflow/fleet_ov010_20261002t1549/`.
+Token usage was not measured; gameplay was not tested.
+
+All three inventoried ov010 functions now match, but module completion is not
+claimed. The four-byte `.ctor` word, 64-byte initialized string section and
+section alignment remain original fallback. Required external dependencies
+include the text script/table and display helpers, effect manager/catalog,
+overlay-17 position/resource interfaces and allocator backing storage. Future
+work must retain these dependencies and the original coverage denominators.
