@@ -22,11 +22,14 @@
     {
       "id": "runtime-next",
       "status": "active",
-      "owner": "luna_runtime_batch",
+      "owner": "sol61_runtime",
       "worktree": "../DQIX-Decomp-luna-runtime",
       "scope": "Three further elapsed-time helpers integrated (+132 code bytes); next bounded GameState family active.",
       "attempt_limit_per_function": 10,
-      "acceptance": "exact objects then ROM/check/report/sha1"
+      "acceptance": "exact objects then ROM/check/report/sha1",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "handoff_note": "User-requested model switch 2026-10-02T13:11..13:14Z; inherited Luna drafts/evidence preserved, not a clean matched-task benchmark."
     },
     {
       "id": "arm7-threads",
@@ -39,20 +42,26 @@
     {
       "id": "arm7-sound-next",
       "status": "active",
-      "owner": "luna_arm7_functions",
-      "worktree": "../DQIX-Decomp-arm7-batch",
+      "owner": "sol61_arm7",
+      "worktree": "../DQIX-Decomp-arm7-power-events",
       "scope": "Powerinitializer+sharedtypedstate accepted; next25-minute sourcefamily active.",
       "attempt_limit_per_function": 10,
-      "acceptance": "exact full ARM7 payload and pipeline tests; root full ROM integration"
+      "acceptance": "exact full ARM7 payload and pipeline tests; root full ROM integration",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "handoff_note": "User-requested model switch 2026-10-02T13:11..13:14Z; inherited Luna drafts/evidence preserved, not a clean matched-task benchmark."
     },
     {
       "id": "world-next",
       "status": "active",
-      "owner": "luna_world_review",
-      "worktree": "../DQIX-Decomp-zone3d",
+      "owner": "sol61_world",
+      "worktree": "../DQIX-Decomp-luna-vram",
       "scope": "Four array-list helpers integrated and full checks passed (+4 functions, +292 code bytes); next bounded World family active.",
       "attempt_limit_per_function": 10,
-      "acceptance": "exact objects then ROM/check/report/sha1"
+      "acceptance": "exact objects then ROM/check/report/sha1",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "handoff_note": "User-requested model switch 2026-10-02T13:11..13:14Z; inherited Luna drafts/evidence preserved, not a clean matched-task benchmark."
     },
     {
       "id": "crc-string-tooling",
@@ -72,9 +81,13 @@
     {
       "id": "arm7-inventory",
       "status": "active",
-      "owner": "luna_arm7_inventory_next",
+      "owner": "sol61_inventory",
       "scope": "Startup, initialautoloadentry and two Thumb BIOS stubs partitioned; structural+ROM-backed checks pass. WholeARM7denominator remains unknown.",
-      "next_action": "Classify a bounded contiguous unresolved range with control-flow/reference evidence; no guessed whole-payload denominator."
+      "next_action": "Classify a bounded contiguous unresolved range with control-flow/reference evidence; no guessed whole-payload denominator.",
+      "worktree": "../DQIX-Decomp-luna-arm7-inventory-boundary",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "handoff_note": "User-requested model switch 2026-10-02T13:11..13:14Z; inherited Luna drafts/evidence preserved, not a clean matched-task benchmark."
     },
     {
       "id": "integration-helper",
@@ -176,14 +189,22 @@
     {
       "id": "runtime-library-next",
       "status": "active",
-      "owner": "luna_runtime_library",
-      "scope": "Locale+decimaltext+exceptioncallbackdata accepted; failedexceptionwrapperdocumented; newCRTfamilyactive."
+      "owner": "sol61_library",
+      "scope": "Locale+decimaltext+exceptioncallbackdata accepted; failedexceptionwrapperdocumented; newCRTfamilyactive.",
+      "worktree": "../DQIX-Decomp-luna-library",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "handoff_note": "User-requested model switch 2026-10-02T13:11..13:14Z; inherited Luna drafts/evidence preserved, not a clean matched-task benchmark."
     },
     {
       "id": "arm9-data-triage",
       "status": "active",
-      "owner": "luna_data_audit",
-      "scope": "VRAM maps and mathematical sine/cosine table proposed; review requires resolving split array definitions and interior symbol aliases before acceptance."
+      "owner": "sol61_data",
+      "scope": "VRAM maps and mathematical sine/cosine table proposed; review requires resolving split array definitions and interior symbol aliases before acceptance.",
+      "worktree": "../DQIX-Decomp-luna-data-audit",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "handoff_note": "User-requested model switch 2026-10-02T13:11..13:14Z; inherited Luna drafts/evidence preserved, not a clean matched-task benchmark."
     },
     {
       "id": "per-agent-token-measurement",

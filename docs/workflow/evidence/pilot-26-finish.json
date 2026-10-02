@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "pilot-26",
+  "snapshot": {
+    "utc": "2026-10-02T13:13:46.767952+00:00",
+    "revision": "242633d43d02f41f9afb0ee48d0ce07502e0ab92",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 213988,
+      "matched_data": 48536,
+      "matched_functions": 1589
+    },
+    "arm7": {
+      "source_functions": 267,
+      "source_code_bytes": 23184,
+      "source_literal_pool_bytes": 1620,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 141620,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "6a9ffd8e952649ef1bcdf062d05c0b7b245bc4b3a72e500e1255711f2ba799ad",
+    "arm7_report_sha256": "8fda666701461f2cb85ef34ec7b3c7416432c42104022083580fc8b3108adadf",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Accepted Luna World array helpers (+4 functions/292 code) and GameState time helpers (+3 functions/132 code), full ROM/module/symbol/SHA1 pass. Token analyzer14 tests pass. User requested Sol6.1 transition: Luna workers interrupted, six Sol6.1-high replacements dispatched13:11-13:14UTC with inherited drafts, so future totals must distinguish inherited work from new work.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 424,
+      "matched_data": 0,
+      "matched_functions": 7
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 1253.314517
+}
