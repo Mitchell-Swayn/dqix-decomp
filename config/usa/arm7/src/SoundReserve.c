@@ -1,28 +1,6 @@
 /* Stop eligible voices and reserve selected channel masks. */
 #pragma dont_inline on
-typedef struct { unsigned char format,repeat; unsigned short unknown2,basePeriod,loopStart; unsigned int length; } Waveform;
-typedef struct SoundVoice SoundVoice;
-struct SoundVoice {
- unsigned char channel,type,envelopeState;
- unsigned char active:1,pendingStart:1,advance:1,updates:5;
- unsigned char unknown4[12];
- int attenuation,elapsed,duration;
- unsigned char attack,sustain;
- unsigned short decay,release;
- unsigned char priority;
- unsigned char pan;
- unsigned short volume,period;
- unsigned char unknown28[6];
- unsigned short modulationCounter,modulationTime;
- short sweep;
- int startArgument;
- Waveform waveform;
- unsigned int source;
- void (*callback)(SoundVoice*,int,void*);
- void *userData;
- SoundVoice *next;
-};
-typedef char VoiceSizeCheck[sizeof(SoundVoice)==0x54?1:-1];
+#include "SoundVoice.h"
 extern struct { unsigned int mask0,mask1; } ARM7_SoundChannelReservations;
 extern SoundVoice ARM7_SoundVoices[16];
 extern void ARM7_StopSoundChannel(int,unsigned int);

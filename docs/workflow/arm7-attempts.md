@@ -348,3 +348,19 @@
   needs new compiler/inlining evidence before another attempt; retain its unknown
   parameter bytes by offset instead of assigning speculative policy semantics.
 - Validation: complete payload and declared symbols pass, as do all 11 pipeline and six verifier tests. SHA-1 remains a662d5c6a78e990244299926cf6862ce910a475d.
+
+## 2026-10-02 - shared sound record layouts after header provenance support
+
+- Imported the four verified tooling files from main commit c4cda3a as local
+  tooling-only commit 9dc506d. Direct cherry-pick met an unrelated modify/delete
+  conflict in docs/workflow/README.md; aborted it and copied only the authorized
+  tools files. This tooling import earns no source coverage and need not be
+  cherry-picked back into main, where its originating commit already exists.
+- Consolidated Waveform, SoundModulation and SoundVoice into SoundVoice.h for nine
+  source units. The 12-/10-/84-byte size assertions and explicit unknown bytes
+  preserve observed layout. Voice offset 0x30 now has the established phase name,
+  with modulation embedded as the recovered ten-byte record at offset 0x28.
+- Full payload and linked symbols match immediately after consolidation. All nine
+  consumers report the same actual header SHA-1 in compiler dependency records.
+  Eleven pipeline and six verifier tests pass; dependency tests pass (10 passing,
+  one environment-gated integration test skipped). No coverage totals change.

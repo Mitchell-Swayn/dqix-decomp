@@ -1,22 +1,7 @@
 /* Apply pending voice updates in two passes: configure/stop/update all
  * channels first, then enable newly configured channels and clear update bits. */
 #pragma dont_inline on
-typedef struct { unsigned char format,repeat; unsigned short unknown2,basePeriod,loopStart; unsigned int length; } Waveform;
-typedef struct SoundVoice SoundVoice;
-struct SoundVoice {
- unsigned char channel,type,envelopeState;
- unsigned char active:1,pendingStart:1,advance:1,updates:5;
- unsigned char unknown4[0x1f];
- unsigned char pan;
- unsigned short volume,period;
- unsigned char unknown28[0x10];
- Waveform waveform;
- unsigned int source;
- void (*callback)(SoundVoice*,int,void*);
- void *userData;
- SoundVoice *next;
-};
-typedef char VoiceSizeCheck[sizeof(SoundVoice)==0x54?1:-1];
+#include "SoundVoice.h"
 extern SoundVoice ARM7_SoundVoices[16];
 extern void ARM7_StopSoundChannel(int,unsigned int);
 extern void ARM7_ConfigurePCMChannel(int,unsigned int,int,int,int,int,int,int,int,int);

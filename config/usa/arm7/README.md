@@ -510,6 +510,12 @@ dependencies with deliberately limited call-site names.
 control bit 7. Capture configuration immediately before it remains binary-owned
 pending a conditional-instruction ordering match. This batch adds no data/BSS.
 
+`src/SoundVoice.h` shares the recovered waveform, modulation and voice layouts
+across nine sound units. Size assertions enforce 12-, 10- and 84-byte records;
+unknown fields retain offset-based names. Compiler-emitted dependency records
+hash the shared header in every consuming unit, so future layout changes remain
+part of source provenance. This consolidation adds no source-coverage credit.
+
 `src/SoundVoiceInit.c` reconstructs `[0x037ff81c, 0x037ff878)` (payload
 `[0x7a38, 0x7a94)`): 84 instruction bytes and eight literals. It sets each of
 16 voice IDs, clears the active bit and five-bit pending-update field, and clears

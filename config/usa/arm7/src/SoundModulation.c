@@ -1,7 +1,7 @@
 /* Initialize, advance and evaluate delayed sound modulation.
  * Phase retains an eight-bit fractional part and wraps at 128 sine steps. */
 #pragma dont_inline on
-typedef struct { unsigned char unknown0,speed,depth,range; unsigned short delay,counter,phase; } SoundModulation;
+#include "SoundVoice.h"
 extern int ARM7_SoundSine(int);
 void ARM7_InitializeSoundModulation(SoundModulation *mod)
 {
