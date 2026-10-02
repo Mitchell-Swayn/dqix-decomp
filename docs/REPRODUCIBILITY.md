@@ -37,6 +37,14 @@ ROM extraction and object build with the same locked tools:
 It records 1,314 ARM9 functions, 178,224 ARM9 code bytes and 108 ARM7 C functions.
 This remains an intermediate source-plus-fallback build, not complete reconstruction.
 
+The runtime/sound milestone `5c05df14bf51` passed fresh extraction and compilation
+with the locked tools and target whole-ROM SHA-1:
+[manifest](verification/runtime-sound-milestone-clean-build.json),
+[build log](verification/runtime-sound-milestone-clean-build.log), and
+[ARM7 report](verification/runtime-sound-milestone-arm7-report.json).
+It records 1,362 ARM9 functions, 185,300 ARM9 code bytes and 145 ARM7 C functions.
+Original binary fallbacks remain. Later batches have separate integration checks.
+
 ## Inputs and tools
 
 - USA ROM: `extract/baserom_dqix_usa.nds`, SHA-1
