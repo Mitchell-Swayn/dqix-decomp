@@ -16,3 +16,12 @@ src/Factory/ov009/TextByteSet.cpp:
     complete
     .text start:0x0218a888 end:0x0218a8b8
 
+src/Factory/ov009/TextPattern.cpp:
+    complete
+    .text start:0x0218a518 end:0x0218a888
+
+src/Factory/ov009/TextPatternInitialize.cpp:
+    complete
+    .text start:0x021847ec end:0x02184848
+    .rodata start:0x0218aafc end:0x0218ab48
+

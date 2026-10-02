@@ -1,25 +1,7 @@
 // 02189a4c visits 0x20-byte records from a table header at context + 0x114.
 // References are initially unsigned offsets; 0xffffffff is the absent marker.
 // The same storage holds pointers after this callback has relocated the table.
-union TextTableReference {
-    unsigned int offset;
-    const char* pointer;
-};
-
-struct TextPatternRecord {
-    TextTableReference references[7];
-    unsigned char unknown_1c[2];
-    unsigned char referenceCount;
-    unsigned char unknown_1f;
-};
-
-struct TextPatternTable {
-    unsigned int flagsAndCount;
-    TextPatternRecord* records;
-    const char* referenceBase;
-};
-
-typedef char TextPatternRecordSizeCheck[sizeof(TextPatternRecord) == 0x20 ? 1 : -1];
+#include "TextPattern.h"
 
 extern "C" bool func_ov009_0218a420(TextPatternTable* table,
                                    TextPatternRecord* record)
