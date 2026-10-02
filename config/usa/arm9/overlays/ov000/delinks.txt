@@ -20,3 +20,15 @@ src/Factory/ov000/CombatTargetRecords.cpp:
 src/Factory/ov000/CombatTargetRecordReset.cpp:
     complete
     .text start:0x02157cdc end:0x02157d14
+
+src/Factory/ov000/CombatActionRecordReset.cpp:
+    complete
+    .text start:0x02157d14 end:0x02157d3c
+
+src/Factory/ov000/CombatActionResults.cpp:
+    complete
+    .text start:0x0215fe64 end:0x0215fef0
+
+src/Factory/ov000/CombatActionGroups.cpp:
+    complete
+    .text start:0x02160030 end:0x02160130
