@@ -2889,6 +2889,67 @@
         "ARM7_EnqueueSpiTask": 58740112,
         "ARM7_SendSpiReply": 58739804
       }
+    },
+    {
+      "name": "TouchCoordinates",
+      "source": "config/usa/arm7/src/TouchCoordinates.c",
+      "autoload": "wram",
+      "runtime_address": 58742976,
+      "payload_offset": 56028,
+      "size": 528,
+      "code_bytes": 496,
+      "literal_pool_bytes": 32,
+      "entry": "ARM7_ReadTouchCoordinates",
+      "symbols": {
+        "ARM7_ReadTouchCoordinates": 58742976
+      },
+      "externals": {
+        "ARM7_ReadTouchControllerStatus": 58742200,
+        "ARM7_FilterTouchAxis": 58742480,
+        "ARM7_ClockTouchCommandByte": 58742444,
+        "ARM7_TouchSourceFile": 58756384,
+        "ARM7_TouchStateError": 58756400,
+        "ARM7_Panic": 58703800
+      },
+      "bss": {
+        "runtime_address": 58767208,
+        "size": 2,
+        "symbols": {
+          "ARM7_TouchControllerStatus": 58767208
+        }
+      }
+    },
+    {
+      "name": "TouchSourceFile",
+      "source": "config/usa/arm7/src/TouchSourceFile.c",
+      "autoload": "wram",
+      "runtime_address": 58756384,
+      "payload_offset": 69436,
+      "size": 14,
+      "code_bytes": 0,
+      "literal_pool_bytes": 0,
+      "data_bytes": 14,
+      "entry": "ARM7_TouchSourceFile",
+      "symbols": {
+        "ARM7_TouchSourceFile": 58756384
+      },
+      "externals": {}
+    },
+    {
+      "name": "TouchStateError",
+      "source": "config/usa/arm7/src/TouchStateError.c",
+      "autoload": "wram",
+      "runtime_address": 58756400,
+      "payload_offset": 69452,
+      "size": 25,
+      "code_bytes": 0,
+      "literal_pool_bytes": 0,
+      "data_bytes": 25,
+      "entry": "ARM7_TouchStateError",
+      "symbols": {
+        "ARM7_TouchStateError": 58756400
+      },
+      "externals": {}
     }
   ]
 }
