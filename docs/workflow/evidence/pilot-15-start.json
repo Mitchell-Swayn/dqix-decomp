@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "name": "pilot-15",
+  "snapshot": {
+    "utc": "2026-10-02T06:48:40.506989+00:00",
+    "revision": "2b2cb6520e4d9c0e74266a901deac51e620005eb",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 194620,
+      "matched_data": 34544,
+      "matched_functions": 1431
+    },
+    "arm7": {
+      "source_functions": 187,
+      "source_code_bytes": 15340,
+      "source_literal_pool_bytes": 1136,
+      "source_data_bytes": 913,
+      "source_bss_bytes": 3444,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 150367,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "23e76476a890f2ad02f49f36afb13f5fca981d9ec1657d41d3f12a394a154919",
+    "arm7_report_sha256": "959515a6b78a852768d4011aa2a70261e5e7a143f23e357c6fb0704822ba44ec",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Context switch lock source extraction and next worker integrations; elapsed includes parallel work already underway.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks."
+}

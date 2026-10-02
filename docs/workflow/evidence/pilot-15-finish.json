@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "pilot-15",
+  "snapshot": {
+    "utc": "2026-10-02T06:55:20.848323+00:00",
+    "revision": "8b098dba063853217890e867187e16d845c713a2",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 199824,
+      "matched_data": 34580,
+      "matched_functions": 1450
+    },
+    "arm7": {
+      "source_functions": 194,
+      "source_code_bytes": 16228,
+      "source_literal_pool_bytes": 1160,
+      "source_data_bytes": 913,
+      "source_bss_bytes": 3444,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 149455,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "31ab920c23424b88ab7aafaedda4a5e9de63036b52dc8b72736b41566d92cac5",
+    "arm7_report_sha256": "4cf24531fd3cef8ed6d054119fa31ae9bdd035f179c244d31e434a4f1a65d510",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Accepted context locks, ten animation functions plus pivot table, two ARM7 worker batches, world record lookup and runtime decimal batch. Full ROM/module/symbol/SHA1 pass. No denominator change. Interval includes workers already running; not end-to-end throughput.",
+  "attempts": null,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 5204,
+      "matched_data": 36,
+      "matched_functions": 19
+    },
+    "arm7": {
+      "source_functions": 7,
+      "source_code_bytes": 888,
+      "source_literal_pool_bytes": 24,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": -912,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 400.341334
+}

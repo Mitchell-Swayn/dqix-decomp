@@ -24,7 +24,7 @@
       "status": "active",
       "owner": "match_harness",
       "worktree": "../DQIX-Decomp-vectors",
-      "scope": "math and runtime dependency reconstruction; integrated through ab542e0 arctangent, exponent wrapper and 152 table bytes",
+      "scope": "decimal and console dependencies; integrated through 6f9c22f, preserving upstream deletion of false trig-table relocations",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1"
     },
@@ -41,7 +41,7 @@
       "status": "active",
       "owner": "arm7_batch",
       "worktree": "../DQIX-Decomp-arm7-batch",
-      "scope": "sequence and track controls; integrated through 6923fa6, shared voice and sequence layouts tracked by compiler dependency metadata",
+      "scope": "sound alarms and command dispatch; integrated through b59d6ab, shared sequence/voice layouts tracked",
       "attempt_limit_per_function": 10,
       "acceptance": "exact full ARM7 payload and pipeline tests; root full ROM integration"
     },
@@ -50,7 +50,7 @@
       "status": "active",
       "owner": "world_batch",
       "worktree": "../DQIX-Decomp-zone3d",
-      "scope": "embedded serialized-record loading and traversal; integrated through 29595a4; Zone3D constructor deferred after nine variants",
+      "scope": "serialized record access/filtering; integrated through dc263a5, with independent nested Data prefix and corrected bool callbacks",
       "attempt_limit_per_function": 10,
       "acceptance": "exact objects then ROM/check/report/sha1"
     },
@@ -124,6 +124,20 @@
       "scope": "0x020c79bc..0x020c7a74 and 0x020c7a90..0x020c7b38",
       "blocker": "Three C++ variants retain compiler predication and branch-elimination mismatch; 86.96% and 83.33%. No source credit.",
       "next_action": "Find a justified source form preserving original branch without assembly matching barriers"
+    },
+    {
+      "id": "graphics-source-and-data",
+      "status": "active",
+      "owner": "root",
+      "scope": "joint animation matching routines, resource name lookup, typed graphics data; further callback/command table recovery",
+      "acceptance": "exact objects and full ROM/module/symbol/SHA1"
+    },
+    {
+      "id": "delink-incremental-outputs",
+      "status": "queued",
+      "owner": null,
+      "scope": "tools/configure.py delink rule expects delink.yaml that dsd 0.10.2 never produces",
+      "next_action": "Track actual generated outputs with a completion marker only after success; test deleted outputs, config changes, fresh builds and incremental no-op behavior before replacing current always-rebuild behavior"
     }
   ]
 }
