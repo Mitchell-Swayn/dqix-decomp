@@ -263,6 +263,18 @@ src/Graphics/NSBXX/PatternAnimation.cpp:
     complete
     .text start:0x020b7694 end:0x020b7840
 
+src/Graphics/NSBXX/RenderScratchState.cpp:
+    complete
+    .bss start:0x0210a274 end:0x0210a278
+
+src/Graphics/NSBXX/MaterialRenderScratch.cpp:
+    complete
+    .bss start:0x0210a278 end:0x0210b078
+
+src/Graphics/NSBXX/BoneRenderScratch.cpp:
+    complete
+    .bss start:0x0210b078 end:0x0210b678
+
 src/Graphics/NSBXX/RenderBindingState.cpp:
     complete
     .data start:0x020f1d08 end:0x020f1d78

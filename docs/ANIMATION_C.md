@@ -48,3 +48,14 @@ RenderMatrixCommands.cpp owns the two mutable 72-byte graphics command packets a
 RenderCommandDispatch.cpp recovers the 128-byte dispatch table at 0x020f1e08..0x020f1e88. The five-bit opcode mask proves 32 slots: 14 named command functions and 18 null entries. Existing command 9 remains fallback; its unmapped candidate declaration now uses the C++ linkage established by the symbol and table, without claiming its implementation matches. The table compares at 100% and full ROM/module/symbol checks pass.
 
 RenderBindingState.cpp defines the existing 112-byte mutable rendering state at 0x020f1d08..0x020f1d78: texture-image command/argument pairs, four-slot material and mesh callback tables, and the command-13 matrix. Its typed initializer preserves the two original 0x10000 matrix entries. Five interior field labels are consolidated into offsets. The state and its existing material/mesh command callers compare at 100%; full ROM checks pass.
+
+RenderScratchState.cpp, MaterialRenderScratch.cpp and BoneRenderScratch.cpp
+own 5,124 BSS bytes at 0x0210a274..0x0210b678: the active handler pointer,
+64 typed material render records (3,584 bytes), and 64 paired vector/scale
+records (1,536 bytes). Existing declarations and rendering accesses establish
+these bounds/layouts; compile-time checks enforce sizes. Five interior component
+labels become vector/scale array offsets. All three objects compare at 100%,
+and full ROM/module/symbol checks pass. Separate units preserve link order:
+a combined candidate matched individually but placed the smaller array first
+and failed symbol/module checks, so it was not accepted. The following matrix
+scratch array remains separate fallback storage.
