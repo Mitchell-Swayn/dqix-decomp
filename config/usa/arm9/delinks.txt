@@ -1618,3 +1618,16 @@ src/World/WorldScriptArrayReadRecord.cpp:
 src/World/WorldScriptArrayStringData.cpp:
     complete
     .data start:0x020f1244 end:0x020f1248
+
+src/World/WorldScriptZoneReadRecord.cpp:
+    complete
+    .text start:0x0208daf4 end:0x0208dc00
+
+src/World/WorldScriptZoneLoading.cpp:
+    complete
+    .text start:0x0208dc00 end:0x0208dc74
+
+src/World/WorldScriptZoneLoadingData.cpp:
+    complete
+    .data start:0x020f1248 end:0x020f1258
+    .bss start:0x02108fc8 end:0x02108fd4
