@@ -46,3 +46,6 @@ void ActivateZoneChest(ZoneChestEntry* chest, int ownerIndex, bool reset, bool f
 void SetVector3iComponents(Vector3i* vector, int x, int y, int z);
 void ResetZoneContainer(ZoneContainerRenderEntry* entry);
 void ResetZoneChest(ZoneChestEntry* chest);
+struct GrottoTileData;
+void ResetGrottoTileData(GrottoTileData* tile);
+void ResetZoneFragmentParts(ZoneContainerRenderPart* parts);

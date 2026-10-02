@@ -663,3 +663,15 @@ src/System/RuntimeDecimalDouble.cpp:
 src/System/RuntimeTextConversion.cpp:
     complete
     .text start:0x02005a94 end:0x02005ac4
+
+src/World/ZoneRuntimeDefaults.cpp:
+    complete
+    .text start:0x02012fa4 end:0x02012fe4
+
+src/World/ZoneTileDefaults.cpp:
+    complete
+    .text start:0x02013490 end:0x020134e0
+
+src/World/BMDJState.cpp:
+    complete
+    .text start:0x020133b4 end:0x020133cc

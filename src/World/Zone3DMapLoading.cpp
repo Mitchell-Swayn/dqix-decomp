@@ -13,7 +13,6 @@
 #if defined(jpn)
 #define func_02011584 func_020112f4
 #define func_02013750 func_02013518
-#define func_02013490 func_02013258
 #define func_02053c6c func_02054fe4
 #define func_0207a5b8 func_0207b3f0
 #define func_0207b9cc func_0207c804
@@ -45,7 +44,6 @@ extern "C"
     void func_020c9be0(); // abort() or similar
     void func_020de848(void*);
 
-    void func_02013490(void*);
     void func_02013750(Zone3D*, bool);
 
 }
