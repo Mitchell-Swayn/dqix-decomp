@@ -117,7 +117,10 @@ public:
     char unknown_struct_2724_[0xc];
     char unk_2730[0x2754 - 0x2730];
     char unknown_struct_2754_[0x18];
-    char unk_276c[0x2820 - 0x276c];
+    char unk_276c[0x281d - 0x276c];
+    unsigned char unknown_281d_;
+    unsigned char unknown_281e_;
+    char unk_281f;
     char unknown_2820_;
     char unk_2821[3];
 public:
@@ -169,6 +172,9 @@ public:
     ZoneFeatures::Opcode6aEntry* FindNearestType10Feature(const Vector3fix* point);
     ZoneFeatures::Opcode6aEntry* FindType10Feature(unsigned short id);
     ZoneFeatures::Opcode6aEntry* FindNearestType11Feature(const Vector3fix* point);
+    void RecordBMDJFlag4State();
+    void SetBMDJStateRequests();
+    void ClearBMDJStateRequests();
     void BuildBMDJInstances(Zone3D_BMDJStruct* group, SafeAllocator* allocator);
     bool BuildBMDJObjects(Zone3D_BMDJStruct* group);
     bool LoadBMDJModel(Zone3D_BMDJStruct* group, Zone3D_BMDJStruct::ObjectEntry* entry, Zone3D_BMDJStruct::StructSizeC* definition);

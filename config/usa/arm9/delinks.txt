@@ -687,7 +687,7 @@ src/World/ZoneTileDefaults.cpp:
 
 src/World/BMDJState.cpp:
     complete
-    .text start:0x020133b4 end:0x020133cc
+    .text start:0x02013380 end:0x020133cc
 
 src/World/Zone3DLookup.cpp:
     complete
@@ -720,3 +720,7 @@ src/System/RuntimeStreamBuffers.cpp:
 src/System/RuntimeSprintf.cpp:
     complete
     .text start:0x02003ce8 end:0x02003d14
+
+src/World/Zone3DInstanceState.cpp:
+    complete
+    .text start:0x02017c58 end:0x02017d90
