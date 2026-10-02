@@ -26,14 +26,36 @@ class Arm7InventoryRangeTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "contiguous"):
             validate_inventory(inventory, self.baseline, self.config)
 
-    def test_source_unit_overlap_is_rejected(self):
+    def test_legitimate_reconstructed_source_overlap_is_accepted(self):
+        config = copy.deepcopy(self.config)
+        config["units"].append({
+            "name": "ReconstructedEntryHead", "autoload": "wram",
+            "payload_offset": 0x21c, "runtime_address": 0x037f8000, "size": 4,
+            "code_bytes": 4, "literal_pool_bytes": 0, "data_bytes": 0,
+        })
+        self.assertTrue(validate_inventory(self.inventory, self.baseline, config))
+
+    def test_inventory_scopes_remain_disjoint(self):
         inventory = copy.deepcopy(self.inventory)
-        scope = inventory["scopes"][1]
-        scope["size"] = "0x4bc"
-        scope["ranges"][-1]["size"] = "0x8"
-        scope["totals"]["literal_pool"] += 4
-        with self.assertRaisesRegex(ValueError, "overlaps source unit"):
+        duplicate = copy.deepcopy(inventory["scopes"][0])
+        duplicate["name"] = "duplicate_startup_evidence"
+        inventory["scopes"].append(duplicate)
+        with self.assertRaisesRegex(ValueError, "inventory scopes overlap"):
             validate_inventory(inventory, self.baseline, self.config)
+
+    def test_missing_sha1_values_are_rejected_even_when_both_are_missing(self):
+        inventory = copy.deepcopy(self.inventory)
+        baseline = copy.deepcopy(self.baseline)
+        inventory["source_rom_sha1"] = None
+        baseline["source_rom_sha1"] = None
+        with self.assertRaisesRegex(ValueError, "40-character SHA-1"):
+            validate_inventory(inventory, baseline, self.config)
+        inventory = copy.deepcopy(self.inventory)
+        baseline = copy.deepcopy(self.baseline)
+        inventory["payload_sha1"] = None
+        baseline["payload_sha1"] = None
+        with self.assertRaisesRegex(ValueError, "40-character SHA-1"):
+            validate_inventory(inventory, baseline, self.config)
 
     def test_classification_accounting_must_match_byte_ranges(self):
         inventory = copy.deepcopy(self.inventory)

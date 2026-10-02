@@ -23,12 +23,16 @@ payload `[0x21c, 0x6d4)` exactly, ending where the existing `BootFlags` source u
 begins. Its runtime BSS is outside this initialized payload scope. The main loop
 and two veneers are confirmed code ranges, not C source coverage or reviewed
 assembly exceptions; the original language/source of the loop and veneers is
-unknown.
+unknown. These byte-class totals describe inventory only and must never be added
+to source-coverage counters. A later source reconstruction may overlap the same
+bytes without making the underlying partition invalid.
 
 `config/usa/arm7/inventory_ranges.json` records this partition alongside the
 previously established startup partition. Run
 `python -m unittest discover -s tools -p test_arm7_inventory_ranges.py` to check
 that the confirmed scopes reconcile, stay inside their configured payload
-regions, avoid source-unit overlap, and match their recorded classification
-byte totals. These checks constrain only recorded scopes. The rest of autoload
+regions, keep scopes disjoint, and match their recorded classification byte
+totals. Source reconstruction overlap is allowed and does not affect these
+partition checks. These totals are never additive to source-coverage counters;
+the checks constrain only recorded scopes. The rest of autoload
 0, autoload 1, and ARM7-wide code/data/function denominators remain unknown.

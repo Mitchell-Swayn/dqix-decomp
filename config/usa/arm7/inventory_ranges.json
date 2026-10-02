@@ -2,7 +2,7 @@
   "schema_version": 1,
   "source_rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
   "payload_sha1": "a662d5c6a78e990244299926cf6862ce910a475d",
-  "coverage_note": "Only the listed confirmed scopes are partitioned. All other ARM7 initialized bytes and BSS remain unclassified by this file.",
+  "coverage_note": "Only the listed confirmed scopes are partitioned. Byte-class totals are inventory evidence only: never add them to source-coverage counters. Reconstructed source units may overlap these ranges without duplicating payload bytes; all other ARM7 bytes remain unclassified by this file.",
   "scopes": [
     {
       "name": "startup",

@@ -82,7 +82,8 @@ unknown whole-payload denominator.
 The entry loop reachable from startup and its two call veneers are bounded in
 [this autoload 0 note](../../../docs/workflow/arm7-wram-entry-inventory.md).
 `inventory_ranges.json` and its six structural tests preserve these confirmed
-partitions independently of source ownership.
+partitions independently of source ownership; their totals are not added to
+source-coverage counters.
 
 ## Source units and pipeline
 

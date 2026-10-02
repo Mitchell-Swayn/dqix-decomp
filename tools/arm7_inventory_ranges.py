@@ -3,6 +3,13 @@
 CLASSIFICATIONS = {"instruction", "literal_pool", "initialized_data"}
 
 
+def _sha1(value, field):
+    if (not isinstance(value, str) or len(value) != 40
+            or any(character not in "0123456789abcdefABCDEF" for character in value)):
+        raise ValueError(f"{field} must be a 40-character SHA-1 hex string")
+    return value.lower()
+
+
 def _number(value, field):
     if not isinstance(value, str) or not value.startswith("0x"):
         raise ValueError(f"{field} must be a hexadecimal string")
@@ -16,16 +23,17 @@ def validate_inventory(inventory, baseline, config):
     """Validate confirmed subranges without assigning any class to the remainder."""
     if inventory.get("schema_version") != 1:
         raise ValueError("unsupported inventory schema version")
-    if inventory.get("source_rom_sha1") != baseline.get("source_rom_sha1"):
+    if _sha1(inventory.get("source_rom_sha1"), "inventory source ROM SHA-1") != _sha1(
+            baseline.get("source_rom_sha1"), "baseline source ROM SHA-1"):
         raise ValueError("inventory source ROM SHA-1 differs from baseline")
-    if inventory.get("payload_sha1") != baseline.get("payload_sha1"):
+    if _sha1(inventory.get("payload_sha1"), "inventory payload SHA-1") != _sha1(
+            baseline.get("payload_sha1"), "baseline payload SHA-1"):
         raise ValueError("inventory payload SHA-1 differs from baseline")
     scopes = inventory.get("scopes")
     if not isinstance(scopes, list) or not scopes:
         raise ValueError("inventory scopes must be a nonempty list")
 
     autoloads = {item["name"]: item for item in config.get("autoloads", [])}
-    units = config.get("units", [])
     all_ranges = []
     seen_scopes = set()
     for scope in scopes:
@@ -71,11 +79,6 @@ def validate_inventory(inventory, baseline, config):
                 raise ValueError(f"{name} range exceeds its confirmed scope")
             if not isinstance(item.get("evidence"), str) or not item["evidence"].strip():
                 raise ValueError(f"{name} range lacks evidence")
-            for unit in units:
-                unit_start = unit["payload_offset"]
-                unit_end = unit_start + unit["size"]
-                if offset < unit_end and unit_start < end:
-                    raise ValueError(f"{name} range overlaps source unit {unit['name']}")
             totals[classification] += length
             all_ranges.append((offset, end, name))
             cursor = end
