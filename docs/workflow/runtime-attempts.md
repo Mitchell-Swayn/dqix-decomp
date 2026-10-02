@@ -650,3 +650,12 @@ The setup incident involving an unsafe hardlink to output copies and the root
 integrator's repair is documented in `luna-runtime-pilot.md`. The whole-task
 clock includes setup and this incident; `tools/work_batch.py` records the
 separate coverage snapshot interval. No gameplay validation was performed.
+
+## Byte cursor read helper (root, 2026-10-02)
+
+func_0200fd14 at0200fd14..0200fd38 reads from the pointer stored in its first
+argument using VectorizedInvertedMemcpy, then advances that pointer by length.
+Callers at02021290..020212d8 pass the same stack cursor with1/2-byte destination
+fields. ByteCursorRead.cpp matches all36 instruction bytes on its first candidate.
+Combined module/symbol/ARM7/ROM checks and exact USA SHA-1 passed. This is root
+reconstruction work, separate from the Luna model pilots.

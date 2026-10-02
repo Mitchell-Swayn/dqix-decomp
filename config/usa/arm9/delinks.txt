@@ -1361,3 +1361,7 @@ src/World/Zone3DType2Features.cpp:
 src/World/Zone3DInstanceState.cpp:
     complete
     .text start:0x02017c58 end:0x02017d90
+
+src/System/ByteCursorRead.cpp:
+    complete
+    .text start:0x0200fd14 end:0x0200fd38
