@@ -283,3 +283,20 @@
   bytes, 1,028 literals, 913 initialized data bytes, 3,444 BSS; 153,147 fallback.
 - Next batch underway: voice-envelope update and attack/decay/sustain/release
   setters at `0x037ffee4` through `0x03800008`.
+
+## 2026-10-02 - sound voice ADSR envelope and start helpers
+
+- Seven-function envelope batch at 0x037ffee4: first compile matched all but
+  attack setter conditional instruction ordering. Inverting the source condition
+  to express the low-value linear case first reproduced the original scheduling
+  on the second effective variant. One intervening compile repeated the old source
+  because a CRLF-sensitive replacement did not apply; no new hypothesis was tested.
+- Fall-rate conversion and voice start at 0x0380051c matched all 140 bytes on
+  their first compile, including the division helper call and special rates.
+- Nine functions add 416 instruction bytes and 16 literal bytes. No table data
+  or BSS is counted in this batch; both lookup tables remain binary dependencies.
+- Shared SoundVoice/Waveform declarations should be consolidated after the source
+  build tracks transitive header hashes. At present arm7_build.py hashes only the
+  declared source file, so introducing a shared header would omit layout changes
+  from per-unit provenance. Keep the 0x54-byte compile-time checks meanwhile.
+- Validation: full 167,876-byte payload and declared symbols pass; SHA-1 remains a662d5c6a78e990244299926cf6862ce910a475d. All 11 pipeline and six verifier tests pass.

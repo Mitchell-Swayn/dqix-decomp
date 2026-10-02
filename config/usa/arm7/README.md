@@ -1,11 +1,11 @@
 # Cartridge ARM7 reconstruction
 
 The cartridge ARM7 program is a required executable component, distinct from the
-console ARM7 BIOS. The independent source build currently reconstructs **150 C
-functions: 12,668 instruction bytes plus 1,028 bytes of literal pools**. Six necessary
+console ARM7 BIOS. The independent source build currently reconstructs **159 C
+functions: 13,084 instruction bytes plus 1,044 bytes of literal pools**. Six necessary
 CPU-status routines (120 bytes) are separately reviewed assembly exceptions;
 913 bytes of standalone initialized data and 3,444 bytes of BSS now have source
-definitions. The other 153,147 payload bytes
+definitions. The other 152,715 payload bytes
 remain explicit original-binary fallback. Byte equality does not imply
 decompilation completion. `baseline.json` records the original zero-source
 starting point; `source_units.json` describes the active source replacements.
@@ -19,10 +19,10 @@ starting point; `source_units.json` describes the active source replacements.
 | Payload size | 167,876 bytes |
 | Payload SHA-1 | `a662d5c6a78e990244299926cf6862ce910a475d` |
 | ARM7 overlay table size | 0 |
-| Reconstructed C instructions / compiler literal pools | 12,668 / 1,028 bytes |
+| Reconstructed C instructions / compiler literal pools | 13,084 / 1,044 bytes |
 | Reconstructed initialized standalone data / reviewed assembly ranges | 913 / 120 bytes |
 | Reconstructed BSS / total autoload BSS | 3,444 / 22,744 bytes |
-| Binary fallback | 153,147 bytes |
+| Binary fallback | 152,715 bytes |
 | Total function count / complete code-data partition | Unknown |
 
 These load boundaries describe the contiguous cartridge image. The startup code
@@ -170,7 +170,7 @@ table; its separate VBlank response and initialized dispatch table remain outsid
 this unit's source data ownership.
 
 `src/Alarms.c` reconstructs eight alarm scheduling functions at
-`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8150 C
+`[0x037fd89c, 0x037fdc50)` (payload `[0x5ab8, 0x5e6c)`), with 8159 C
 instruction bytes, 52 literal bytes and the 12-byte list state at
 `[0x03809164, 0x03809170)`. It initializes and orders the doubly-linked queue,
 programs timer 1, registers timeouts and periodic intervals, and cancels alarms.
@@ -268,7 +268,7 @@ does not add duplicate data credit.
 
 `src/ThreadWait.c` reconstructs blocking, waking all waiters, marking a thread
 ready and selecting the first ready thread at `[0x037fc69c, 0x037fc7cc)`
-(payload `[0x48b8, 0x49e8)`), with 2150 C instruction bytes and 8 literal bytes.
+(payload `[0x48b8, 0x49e8)`), with 2159 C instruction bytes and 8 literal bytes.
 It clears blocked-list links on wakeup and preserves IRQ state. The scheduler switch routine now belongs to `ThreadSwitch.c`; list insertion
 and IRQ dependencies are source-owned. No thread-context storage is counted by this unit.
 
@@ -531,6 +531,19 @@ period 8006 before invoking the external start helper. Each returns success or
 zero for an ineligible channel. The runtime waveform occupies offsets `0x38`
 through `0x43`, followed by source/duty at `0x44`; callback and list fields follow.
 The list-header storage at `0x03809774` and voice-start helper remain external.
+
+`src/SoundEnvelope.c` reconstructs seven functions at
+`[0x037ffee4, 0x03800008)`: 284 instruction bytes and eight literal bytes.
+The tick-controlled state machine advances attack, decay, sustain and release,
+with setters for each parameter and helpers for release and active status.
+Attenuation and attack lookup tables remain external binary dependencies.
+
+`src/SoundEnvelopeSetup.c` reconstructs two functions at
+`[0x0380051c, 0x038005a8)`: 132 instruction bytes and eight literal bytes.
+It converts fall rates, including the special 126/127 values, and starts a voice
+by resetting attenuation, envelope and modulation state and setting its active
+and pending-start bits. The existing 84-byte record is checked at compile time;
+unidentified fields retain offset-based names.
 
 `src/CpuStatus.c` reconstructs `[0x037fe350, 0x037fe3c8)` (payload
 `[0x656c, 0x65e4)`) using minimal MRS/MSR inline assembly to access CPSR and C

@@ -1348,6 +1348,49 @@
       "externals": {
         "ARM7_StartSoundVoice": 58721648
       }
+    },
+    {
+      "name": "SoundEnvelope",
+      "source": "config/usa/arm7/src/SoundEnvelope.c",
+      "autoload": "wram",
+      "runtime_address": 58719972,
+      "payload_offset": 33024,
+      "size": 292,
+      "code_bytes": 284,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_UpdateSoundEnvelope",
+      "symbols": {
+        "ARM7_UpdateSoundEnvelope": 58719972,
+        "ARM7_SetSoundVoiceAttack": 58720140,
+        "ARM7_SetSoundVoiceDecay": 58720172,
+        "ARM7_SetSoundVoiceSustain": 58720200,
+        "ARM7_SetSoundVoiceRelease": 58720208,
+        "ARM7_BeginSoundVoiceRelease": 58720236,
+        "ARM7_IsSoundVoiceActive": 58720248
+      },
+      "externals": {
+        "ARM7_SoundAttenuationTable": 58753740,
+        "ARM7_SoundAttackTable": 58754272,
+        "ARM7_ConvertEnvelopeFallRate": 58721564
+      }
+    },
+    {
+      "name": "SoundEnvelopeSetup",
+      "source": "config/usa/arm7/src/SoundEnvelopeSetup.c",
+      "autoload": "wram",
+      "runtime_address": 58721564,
+      "payload_offset": 34616,
+      "size": 140,
+      "code_bytes": 132,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_ConvertEnvelopeFallRate",
+      "symbols": {
+        "ARM7_ConvertEnvelopeFallRate": 58721564,
+        "ARM7_StartSoundVoice": 58721648
+      },
+      "externals": {
+        "_s32_div_f": 58752696
+      }
     }
   ]
 }
