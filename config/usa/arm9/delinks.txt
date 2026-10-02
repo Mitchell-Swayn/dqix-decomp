@@ -57,9 +57,13 @@ src/GameState/GameTime.cpp:
     complete
     .text start:0x02010150 end:0x020103c8
 
+src/GameState/GameTimeValue.cpp:
+	complete
+	.text start:0x020103c8 end:0x020103f0
+
 src/GameState/GameTimestampFormatting.cpp:
 	complete
-	.text start:0x020103f0 end:0x020105a8
+	.text start:0x020103f0 end:0x02010604
 
 src/Grotto/Main/GrottoNameDataFile.cpp:
     complete

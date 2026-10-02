@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "luna-gamestate-family-postbuild-audit",
+  "snapshot": {
+    "utc": "2026-10-02T13:05:35.227995+00:00",
+    "revision": "d86ccfc9664ca1de56286a681a2de2edc79559cc",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 213352,
+      "matched_data": 48064,
+      "matched_functions": 1576
+    },
+    "arm7": {
+      "source_functions": 265,
+      "source_code_bytes": 22912,
+      "source_literal_pool_bytes": 1588,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 141924,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "d386dfce028908ce151eb91b0c6e6e654e0c3ddc31e3822e3aed9b1ed5783f67",
+    "arm7_report_sha256": "6f3aaf4f9b7392fa38ff6c7504a2202e44c4c00ffb6122d9dae61b1d89e761f4",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Task clock started 2026-10-02 12:51:46 UTC (whole elapsed 13m36s at finish). The start snapshot was delayed until 12:57:55 UTC after all accepted source had compiled, so this finish measures post-build audit only and reports zero new coverage since that snapshot. Compare the prior accepted snapshot docs/workflow/evidence/luna-gamestate-queue-followup-finish.json (213220 code / 1573 funcs) with the configured worker report snapshot (213352 / 1576): this task added exactly 132 matched ARM9 code bytes and 3 functions: func_020103c8, func_020103e8, func_020105a8. Candidate results: GameTimeValue 2/2 exact (1 compilation); timestamp unit 3/3 exact (1 compilation); 02010604 tried twice, best 92.77%, deferred because remaining differences are register-allocation mismatches around the raw unknown flag triple at 0x5cb0, not claimed. Full ninja rom check report sha1 passed; all modules/symbols and ARM7 baseline passed; ROM SHA1 c7c3014c237900c8281289b8bc76a781969b6278. Independent ROM guard remained active. Detailed attempt logs remain ignored in build/matching/ and build/luna-gamestate-time-state-acceptance.log. Semantics for unknown fields remain unresolved.",
+  "attempts": 4,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 0,
+      "matched_data": 0,
+      "matched_functions": 0
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 460.061789
+}

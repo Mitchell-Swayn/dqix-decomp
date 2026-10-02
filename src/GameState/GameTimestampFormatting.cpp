@@ -36,3 +36,11 @@ extern "C" void func_020104cc(GameState* state, unsigned short* hours,
     *minutes = minuteCount;
     *seconds = secondCount;
 }
+
+extern "C" void func_020105a8(GameState* state, unsigned int* elapsed)
+{
+    uint64_t current = (GetCurrentTimestamp() << 6) / 0x1ff6210;
+    uint64_t stored = (state->mainTimestamp_ << 6) / 0x1ff6210;
+    uint64_t delta = current - stored;
+    *elapsed = delta;
+}
