@@ -50,6 +50,12 @@ Generate progress images at accepted milestones using `tools/progress_image.ps1`
 Images show coverage, not effort completion. Never count unintegrated worker
 results in the main-worktree dashboard.
 
+The first pilot's snapshot interval measures integration only: its workers had
+already started before the baseline snapshot. Do not use its elapsed seconds as
+end-to-end reconstruction throughput. World reported about six minutes on
+inherited matching drafts; ARM7 reported about ten minutes and six per-function
+candidate compilations. Start subsequent batch clocks before dispatching work.
+
 ## Reusable compiler findings
 
 - MWCC named code section: `#pragma define_section init ".init" RX` followed by

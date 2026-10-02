@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "pilot-01",
+  "snapshot": {
+    "utc": "2026-10-02T05:20:43.463120+00:00",
+    "revision": "7d1d1c6062627fe693c6eb1abe064e506dc65030",
+    "dirty": false,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 175604,
+      "matched_data": 30436,
+      "matched_functions": 1280
+    },
+    "arm7": {
+      "source_functions": 83,
+      "source_code_bytes": 8108,
+      "source_literal_pool_bytes": 556,
+      "source_data_bytes": 864,
+      "source_bss_bytes": 696,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 158228,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "bb26b085cd10744b2e718f1ee3dee5ab2d9fb38075cc89dda5b6366984ab489b",
+    "arm7_report_sha256": "c555b3ce036f34e63fe4b12f6ce81dfc13a0f8d269cbb9dadefe642ea70d99b8",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Four inherited World defaults matched without new variants; ARM7 creator two compilations, exit quartet one each. Exact full ROM and all module/symbol checks passed. Attempt count covers ARM7 per-function candidates only; excludes prior drafts and infrastructure.",
+  "attempts": 6,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 204,
+      "matched_data": 0,
+      "matched_functions": 4
+    },
+    "arm7": {
+      "source_functions": 5,
+      "source_code_bytes": 536,
+      "source_literal_pool_bytes": 36,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": -572,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 168.689115
+}
