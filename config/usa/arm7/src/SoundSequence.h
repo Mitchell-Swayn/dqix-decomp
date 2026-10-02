@@ -41,7 +41,8 @@ typedef struct {
 typedef struct { short variables[16]; unsigned int ticks; } SoundSharedSequence;
 typedef struct {
     unsigned int unknown0, activeSequences;
-    unsigned char unknown8[24];
+    unsigned short activeChannels, activeCaptures;
+    unsigned char unknownC[20];
     SoundSharedSequence sequences[16];
     /* Global variables follow this prefix; their count is not yet established. */
 } SoundSharedWork;

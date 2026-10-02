@@ -439,3 +439,23 @@
   lookup addresses the trailing storage without inventing a fixed array bound.
 - Three functions add 484 instruction and 12 literal bytes. No BSS claim changes.
 - Validation: complete payload and symbols match after the shared-layout refinement; all 11 pipeline and six verifier tests pass.
+
+## 2026-10-02 - shared sound variables/status; larger updater attempts
+
+- All three shared-variable/status functions at 0x03802328 matched first compile:
+  200 instruction bytes and 12 literals. Shared offsets 8/10 are channel/capture
+  active masks. Global-variable count and other prefix fields remain unknown.
+- Sequence updater 0x0380060c deferred after four variants. Scope/declaration
+  changes fixed sequence/index/mask and processed-tick register assignment;
+  explicit multiplication snapshot fixed tempo scheduling. Remaining blocker is
+  one extra ADD in typed shared->sequences[index].ticks addressing: original uses
+  base+index*36 with a final +0x40 load/store offset, while C uses base+0x40 with
+  indexed accesses. Named record/counter pointers and expanded assignment did not
+  remove it. Avoid shifted fake-struct overlays solely for instruction selection.
+- Track updater 0x03801250 deferred after four invocations (one duplicate-edit
+  error). First source matches 344-byte size and logic, with scheduling/register
+  differences. Ordering explicit truncated locals and separating pitch calculation
+  reduced mismatch to 110 bytes; changing integer declaration order regressed to
+  143. No candidate is integrated, and experimental layout expansions were restored
+  before this batch. Future work needs original inline-helper/compiler evidence.
+- Validation: full payload and symbols match; all 11 pipeline and six verifier tests pass. Deferred updaters contribute no source credit.

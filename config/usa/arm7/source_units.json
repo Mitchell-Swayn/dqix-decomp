@@ -1731,6 +1731,27 @@
       "externals": {
         "ARM7_SoundSharedWork": 58759064
       }
+    },
+    {
+      "name": "SoundSharedStatus",
+      "source": "config/usa/arm7/src/SoundSharedStatus.c",
+      "autoload": "wram",
+      "runtime_address": 58729256,
+      "payload_offset": 42308,
+      "size": 212,
+      "code_bytes": 200,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_SetSoundSequenceVariable",
+      "symbols": {
+        "ARM7_SetSoundSequenceVariable": 58729256,
+        "ARM7_SetSoundGlobalVariable": 58729288,
+        "ARM7_UpdateSoundSharedStatus": 58729316
+      },
+      "externals": {
+        "ARM7_SoundSharedWork": 58759064,
+        "ARM7_IsSoundChannelActive": 58716640,
+        "ARM7_IsSoundCaptureActive": 58718212
+      }
     }
   ]
 }
