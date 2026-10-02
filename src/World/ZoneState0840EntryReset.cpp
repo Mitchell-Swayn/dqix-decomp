@@ -36,7 +36,7 @@ void ZoneState0840::Entry::Reset()
     parameters70.unknown19 = 706;
     unknown_74 = 0;
     func_020827c4(unknown_1a);
-    VectorizedMemset(unknown_38, 0, sizeof(unknown_38));
+    VectorizedMemset(&unknown_38, 0, sizeof(unknown_38));
     VectorizedMemset(unknown_50, 0, sizeof(unknown_50));
 }
 
