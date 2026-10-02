@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "sol61-gamestate-grotto-metadata",
+  "snapshot": {
+    "utc": "2026-10-02T13:40:34.905673+00:00",
+    "revision": "9a8fb569ccfa229a2e50f15a65454faa7a2cdf3a",
+    "dirty": true,
+    "arm9": {
+      "total_code": 2959478,
+      "total_data": 1602476,
+      "total_functions": 14790,
+      "matched_code": 214816,
+      "matched_data": 48064,
+      "matched_functions": 1606
+    },
+    "arm7": {
+      "source_functions": 265,
+      "source_code_bytes": 22912,
+      "source_literal_pool_bytes": 1588,
+      "source_data_bytes": 1332,
+      "source_bss_bytes": 3512,
+      "reviewed_assembly_bytes": 120,
+      "binary_fallback_bytes": 141924,
+      "payload_bytes": 167876
+    },
+    "report_sha256": "020d58879b686ce6af3d2be2fc8ea0d786e922a46591c169889d2993fb0822d6",
+    "arm7_report_sha256": "6f3aaf4f9b7392fa38ff6c7504a2202e44c4c00ffb6122d9dae61b1d89e761f4",
+    "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+    "token_usage": null
+  },
+  "notes": "Four newfunctions1165c..117f0 plus existingGetGrottoStruct exact. Five valid candidate compilations (initialloops, settertwo variants, guardrecheck, preserving originalunknown_0array for existingWorldcallers); two setup comparisons before correctunitownership produced no usablecandidate. Corrected actualTreasureMapCollection offset110 from binarycopy helpers, retained7ff4GameState size; fixedby-valueVector3i ABI ratherthanvariadic hypothesis. ExistingTreasureMapMetadata11/11 andWorldeffects/visibility/reset units exact. FullROM/module/symbol/SHA1 passed; ARM7/denominators unchanged. Unknownactivation flags neutral. No gameplaytest.",
+  "attempts": 5,
+  "evidence_limit": "Reads existing reports and ROM; does not run or replace acceptance checks.",
+  "delta": {
+    "arm9": {
+      "total_code": 0,
+      "total_data": 0,
+      "total_functions": 0,
+      "matched_code": 392,
+      "matched_data": 0,
+      "matched_functions": 4
+    },
+    "arm7": {
+      "source_functions": 0,
+      "source_code_bytes": 0,
+      "source_literal_pool_bytes": 0,
+      "source_data_bytes": 0,
+      "source_bss_bytes": 0,
+      "reviewed_assembly_bytes": 0,
+      "binary_fallback_bytes": 0,
+      "payload_bytes": 0
+    }
+  },
+  "elapsed_seconds": 518.153021
+}

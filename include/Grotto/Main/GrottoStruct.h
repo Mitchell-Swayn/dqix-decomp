@@ -5,6 +5,14 @@
 
 struct DetailedTreasureMapData;
 
+// Snapshot copied to/from the save-state collection by 0x020ac734/0x020ac760.
+struct TreasureMapCollection
+{
+    unsigned char numMaps;
+    char padding;
+    TreasureMapMetadata maps[99];
+};
+
 // Could probably do with a better name. This is a persistent struct
 // holding data about all grottos, as opposed to the ActiveGrottoStruct
 // which only holds data about a single grotto while you're inside it.
@@ -29,10 +37,12 @@ struct GrottoStruct
 #endif
 
     TreasureMapMetadata activeMapData;
-    char unk_88[0x7c]; // not sure about this part for jpn version
-    unsigned char numMaps;
-    char padding[1];
-    TreasureMapMetadata maps[99];
+#if defined(usa)
+    char unk_88[0x110 - 0x88]; // collection offset confirmed by save copies
+#else
+    char unk_88[0x7c]; // historical JPN layout remains unverified
+#endif
+    TreasureMapCollection metadataCollection_;
 
     void LoadActiveMetadataFromDetailed(DetailedTreasureMapData* detail);
 };

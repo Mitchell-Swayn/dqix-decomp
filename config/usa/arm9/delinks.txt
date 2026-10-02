@@ -87,7 +87,7 @@ src/Grotto/Main/GrottoNameDataFile.cpp:
 
 src/Grotto/Main/GrottoStruct.cpp:
     complete
-    .text start:0x02011738 end:0x02011744
+    .text start:0x0201165c end:0x020117f0
 
 src/World/Zone3D.cpp:
     complete
