@@ -162,8 +162,8 @@ class Project:
     def arm9_objects_txt(self) -> Path:
         return self.game_build / "objects.txt"
 
-    def arm9_delink_yaml(self) -> Path:
-        return self.game_build / "delinks" / "delink.yaml"
+    def arm9_delink_completion(self) -> Path:
+        return self.game_build / "delinks" / "completion.json"
 
     def arm9_o(self) -> Path:
         return self.game_build / "arm9.o"
@@ -180,6 +180,8 @@ def main():
 
     with build_ninja_path.open("w") as file:
         n = ninja_syntax.Writer(file)
+        n.variable("ninja_required_version", "1.10")  # Dynamic delink outputs.
+        n.newline()
 
         n.rule(
             name="download_tool",
@@ -201,7 +203,14 @@ def main():
 
         n.rule(
             name="delink",
-            command=f"{DSD} delink --config-path $config_path"
+            command=f'"{PYTHON}" tools/delink_outputs.py run --dsd "{DSD}" --config "$config_path" --directory "$directory" --plan "$plan" --completion "$completion"'
+        )
+        n.newline()
+
+        n.rule(
+            name="delink_plan",
+            command=f'"{PYTHON}" tools/delink_outputs.py plan --objdiff objdiff.json --extract "$extract" --directory "$directory" --plan "$plan" --completion "$completion" --dyndep "$dyndep_file" --depfile "$dyndep_file.d"',
+            depfile="$dyndep_file.d",
         )
         n.newline()
 
@@ -359,7 +368,7 @@ def add_extract_build(n: ninja_syntax.Writer, project: Project):
 def add_mwld_and_rom_builds(n: ninja_syntax.Writer, project: Project):
     lcf_file = str(project.arm9_lcf())
     objects_file = str(project.arm9_objects_txt())
-    delink_file = str(project.arm9_delink_yaml())
+    delink_file = str(project.arm9_delink_completion())
     elf_file = str(project.arm9_o())
     n.build(
         inputs=project.source_object_files() + [lcf_file, objects_file, delink_file],
@@ -520,31 +529,34 @@ def is_c(name: str):
 
 
 def add_delink_and_lcf_builds(n: ninja_syntax.Writer, project: Project):
-    n.comment("Delink ELF binaries when any delinks.txt file is modified")
+    n.comment("Track every real dsd ELF output, including dynamic fallback units")
     rom_config = str(project.baserom_config())
     delinks_path = project.arm9_delinks()
+    completion = str(project.arm9_delink_completion())
+    plan = str(delinks_path / "outputs.json")
+    dyndep = str(delinks_path / "outputs.dd")
+    common = {"directory": delinks_path, "completion": completion, "plan": plan}
     n.build(
-        inputs=project.dsd_configs() + [rom_config],
-        implicit=DSD,
-        rule="delink",
-        outputs=str(delinks_path / "delink.yaml"),
-        variables={
-            "config_path": project.arm9_config_yaml(),
-        }
+        outputs=[dyndep, plan], rule="delink_plan",
+        inputs=["objdiff.json", rom_config],
+        implicit=["tools/delink_outputs.py"],
+        variables={**common, "extract": project.game_extract, "dyndep_file": dyndep},
     )
     n.newline()
-
     n.build(
-        inputs=str(delinks_path / "delink.yaml"),
-        rule="phony",
-        outputs="delink"
+        inputs=project.dsd_configs() + [rom_config, str(project.arm9_config_yaml()), plan],
+        implicit=[DSD, "tools/delink_outputs.py"],
+        order_only=[dyndep], rule="delink", outputs=completion,
+        variables={**common, "config_path": project.arm9_config_yaml(), "dyndep": dyndep},
     )
+    n.newline()
+    n.build(inputs=completion, rule="phony", outputs="delink")
     n.newline()
 
     lcf_file = project.arm9_lcf()
     objects_file = project.arm9_objects_txt()
     n.build(
-        inputs=project.delinks_files + [str(rom_config)],
+        inputs=project.delinks_files + [str(rom_config), str(project.arm9_config_yaml())],
         implicit=[DSD, "tools/generate_lcf.py"] + [
             str(path) for path in project.arm9_config_yaml().parent.glob("linker_symbols.json")
         ],
@@ -616,7 +628,7 @@ def add_check_builds(n: ninja_syntax.Writer, project: Project):
 
 def add_objdiff_builds(n: ninja_syntax.Writer, project: Project):
     n.build(
-        inputs=project.dsd_configs(),
+        inputs=project.dsd_configs() + [str(project.arm9_config_yaml())],
         implicit=DSD,
         rule="objdiff",
         outputs="objdiff.json",
@@ -637,7 +649,7 @@ def add_objdiff_builds(n: ninja_syntax.Writer, project: Project):
         inputs=["objdiff.json"],
         # objdiff reads original objects written by delink. Without this edge,
         # parallel builds can compare stale objects or race their replacement.
-        implicit=[OBJDIFF, str(project.arm9_delink_yaml())] + project.source_object_files(),
+        implicit=[OBJDIFF, str(project.arm9_delink_completion())] + project.source_object_files(),
         rule="objdiff_report",
         outputs=str(project.objdiff_report()),
     )

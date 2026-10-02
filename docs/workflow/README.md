@@ -46,6 +46,25 @@ exceptions remain bound to their source files. Eleven dependency tests cover
 native Windows and Wine/WSL paths, nested-header hashes and a real pinned
 compiler/Ninja rebuild after changing a nested header in a path containing spaces.
 
+ARM9 delink uses Ninja 1.10 dynamic outputs: objdiff's original-object inventory
+declares every generated source target and fallback ELF. `ninja delink` creates
+`build/usa/delinks/completion.json` only after dsd succeeds and every expected
+object is a newly written ELF; the record includes sizes and SHA-256 hashes.
+Pinned dsd does not produce `delink.yaml`, and no placeholder YAML is created.
+Deleted generated objects rerun delink; deleted compiled candidates rebuild
+through their existing compiler edges. Configurations, tools and extracted ARM9
+program/module metadata are dependencies. Unchanged `ninja rom report` is a
+no-op; explicit check/SHA-1 targets still run their verification commands.
+Five focused tests exercise real Ninja graphs in temporary paths with spaces,
+including deleted objects, changed inputs and failed/partial/invalid delink
+results. The 121-test tool suite passes (two existing skips). A fresh archive
+from source tree `2a9400a6b34a3290b9a61f0801a7aa5adb08ad46` passed all 320
+build/check steps, exact USA ROM SHA-1 and an immediate no-op `rom report`.
+Worker evidence: `build/verification/delink-outputs-3vhbfgc5/`; real pinned-tool
+deletion/change recovery checks: `build/delink-real-tests.json`. No source
+coverage or comparison rules changed. Only this validation note was added after
+the verified tree.
+
 ## Measurement
 
 `tools/work_batch.py start NAME` records current reports and revision under
