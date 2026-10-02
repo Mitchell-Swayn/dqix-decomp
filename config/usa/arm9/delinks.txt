@@ -961,6 +961,10 @@ src/System/RuntimeDecimalTextRound.cpp:
     complete
     .text start:0x02002b90 end:0x02002cb4
 
+src/System/RuntimeFormatText.cpp:
+    complete
+    .data start:0x020eeef0 end:0x020eef30
+
 src/System/RuntimeDecimalTenPowers.cpp:
     complete
     .data start:0x020eef34 end:0x020eef74

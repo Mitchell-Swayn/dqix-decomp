@@ -45,3 +45,19 @@ so full checks correctly rejected their layout. Named data sections and explicit
 character initializers did not fix emission order. All rejected text source
 and boundaries were removed. A coherent record can preserve the fields, provided
 the original interior symbols remain available through reviewed linker aliases.
+
+The subsequent record candidate uses `RuntimeFormatText` and the independently
+reviewed alias generator from `501d2c9`. It retains every original interior
+symbol and all configured load relocations. The final empty fields are a
+two-element 16-bit wide string at `020eef28` (passed to `func_020019c8`) and a
+four-byte narrow string at `020eef2c`. This type distinction follows the actual
+output-engine call sites. The complete target/candidate `.data` payload is
+64 bytes with identical SHA-256
+`5cd80a33cddfab53836fb2d16b73e29ca96bcc6359ee5d642837f4d38b093bcb`.
+The record matches at 100% and aggregate data matching is unchanged; objdiff
+lists the ten storage-free target interior aliases as unpaired. Full linked
+symbol and module checks, followed by exact USA ROM SHA-1, all pass. The report
+adds exactly 64 source-owned bytes, with no denominator change or alias credit.
+The formatter-data source commit requires the alias generator from `501d2c9`;
+the worker temporarily used its exact file for verification, without including
+another worker's tooling changes in the source commit.

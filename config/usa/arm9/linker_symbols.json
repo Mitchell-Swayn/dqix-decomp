@@ -2,15 +2,81 @@
   "SDK_SYS_STACKSIZE": "0x00000000",
   "SDK_IRQ_STACKSIZE": "0x00000400",
   "data_020e9a50": {
-    "base": "data_020e9450", "offset": "0x600",
-    "object": "FixedPointSinCosTable.o", "section": ".rodata"
+    "base": "data_020e9450",
+    "offset": "0x600",
+    "object": "FixedPointSinCosTable.o",
+    "section": ".rodata"
   },
   "data_020ed66a": {
-    "base": "data_020ed668", "offset": "0x2",
-    "object": "VRAMImageMappingTable.o", "section": ".rodata"
+    "base": "data_020ed668",
+    "offset": "0x2",
+    "object": "VRAMImageMappingTable.o",
+    "section": ".rodata"
   },
   "data_020ed66c": {
-    "base": "data_020ed668", "offset": "0x4",
-    "object": "VRAMImageMappingTable.o", "section": ".rodata"
+    "base": "data_020ed668",
+    "offset": "0x4",
+    "object": "VRAMImageMappingTable.o",
+    "section": ".rodata"
+  },
+  "data_020eeef8": {
+    "base": "data_020eeef0",
+    "offset": "0x8",
+    "object": "RuntimeFormatText.o",
+    "section": ".data"
+  },
+  "data_020eef00": {
+    "base": "data_020eeef0",
+    "offset": "0x10",
+    "object": "RuntimeFormatText.o",
+    "section": ".data"
+  },
+  "data_020eef08": {
+    "base": "data_020eeef0",
+    "offset": "0x18",
+    "object": "RuntimeFormatText.o",
+    "section": ".data"
+  },
+  "data_020eef0c": {
+    "base": "data_020eeef0",
+    "offset": "0x1c",
+    "object": "RuntimeFormatText.o",
+    "section": ".data"
+  },
+  "data_020eef10": {
+    "base": "data_020eeef0",
+    "offset": "0x20",
+    "object": "RuntimeFormatText.o",
+    "section": ".data"
+  },
+  "data_020eef18": {
+    "base": "data_020eeef0",
+    "offset": "0x28",
+    "object": "RuntimeFormatText.o",
+    "section": ".data"
+  },
+  "data_020eef20": {
+    "base": "data_020eeef0",
+    "offset": "0x30",
+    "object": "RuntimeFormatText.o",
+    "section": ".data"
+  },
+  "data_020eef24": {
+    "base": "data_020eeef0",
+    "offset": "0x34",
+    "object": "RuntimeFormatText.o",
+    "section": ".data"
+  },
+  "data_020eef28": {
+    "base": "data_020eeef0",
+    "offset": "0x38",
+    "object": "RuntimeFormatText.o",
+    "section": ".data"
+  },
+  "data_020eef2c": {
+    "base": "data_020eeef0",
+    "offset": "0x3c",
+    "object": "RuntimeFormatText.o",
+    "section": ".data"
   }
 }

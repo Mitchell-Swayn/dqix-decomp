@@ -6596,7 +6596,7 @@ data_020eed40 kind:data(byte[16]) addr:0x020eed40
 data_020eed50 kind:data(byte[88]) addr:0x020eed50
 data_020eeda8 kind:data(byte[136]) addr:0x020eeda8
 data_020eee30 kind:data(byte[192]) addr:0x020eee30
-data_020eeef0 kind:data(any) addr:0x020eeef0
+data_020eeef0 kind:data(byte[64]) addr:0x020eeef0
 data_020eeef8 kind:data(any) addr:0x020eeef8
 data_020eef00 kind:data(any) addr:0x020eef00
 data_020eef08 kind:data(any) addr:0x020eef08
