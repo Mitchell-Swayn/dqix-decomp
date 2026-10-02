@@ -149,3 +149,41 @@ configure-script caveat remains. Logs: `build/runtime-batch4-acceptance.log`,
 `build/runtime-batch4-finalize.log`, and `build/matching/`.
 Local matched code 150,460 -> 151,084; functions 1,147 -> 1,153; data unchanged
 at 26,488. Denominators unchanged. No gameplay validation was performed.
+
+## Binary64 inspection and decimal rounding (2026-10-02)
+
+Based on `aee1f08`. Six matched functions in five units add 376 code bytes
+(368 instructions and eight compiler-generated mask-literal bytes), no data/BSS.
+Binary64 helpers preserve raw sign/payload bits, including zero, subnormal,
+infinity and NaN cases. Classification result values remain 1=NaN, 2=infinity,
+3=zero, 4=normal, 5=subnormal. The sign test retains its sign-mask return value.
+
+| Function | Distinct variants | Result / useful finding |
+| --- | ---: | --- |
+| `func_02008da4` (copy sign) | 1 | Direct high-word masking matches both argument homes. |
+| `func_02008f3c` (absolute value) | 1 | Explicit word pointer retains the observed stack address register. |
+| `func_0200aa60` (sign bit) | 1 | High-word sign mask matches. |
+| `func_0200aa74` (classify binary64) | 1 | Separate exponent and fraction tests match both literal masks. |
+| `func_020095b0` (decimal rounding comparison) | 2 | Guarded do/while retains the top range check; exact ties inspect the preceding digit's parity. |
+| `func_0200966c` (round decimal length) | 1 | Preserve length update before testing the rounding direction and calling the increment helper. |
+| `func_0200961c` (increment decimal digits, deferred) | 4 | Best candidate matches the first 76 bytes exactly but MWCC emits an extra unreachable return; alternate while shape does not match. |
+| `func_02009668` (adjacent return, deferred) | 1 | Although an empty function matches this four-byte label alone, it is not accepted independently because the preceding candidate produces this same trailing return. |
+
+Twelve distinct per-function candidates, seven for accepted functions and five
+for the deferred pair; maximum four for one function. The increment helper and
+adjacent label remain original fallback with no new source credit. This is a
+possible function-boundary question, not evidence authorizing a denominator or
+symbol-size change. Next investigation should trace callers/boundaries and the
+compiler's epilogue behavior before further source variants. The ignored draft
+`build/RuntimeDecimalRounding-pending.cpp` retains the best shape. No metadata
+or original target objects were patched.
+
+`RuntimeDecimal.h` records the sign/exponent/length layout and 32-digit capacity,
+confirmed by the limits at `02009880` and `02009924`; no object is source-owned by
+this declaration. All five accepted units report 100% after final formatting.
+One ROM build passed all ARM9 module and symbol checks and ARM7 preservation;
+the existing main guarded finalizer produced exact USA SHA-1
+`c7c3014c237900c8281289b8bc76a781969b6278`. Older configure caveat unchanged.
+Logs: `build/runtime-batch5-acceptance.log`, `build/runtime-batch5-finalize.log`,
+and `build/matching/`. Local matched code 151,084 -> 151,460; functions
+1,153 -> 1,159; data stays 26,488. Denominators unchanged. No gameplay test.
