@@ -25,3 +25,7 @@ src/Factory/ov025/StaticInit.cpp:
     complete
     .init start:0x021ef200 end:0x021ef398
 
+src/Factory/ov025/CopyRecord.cpp:
+    complete
+    .text start:0x021dcd28 end:0x021dcd5c
+
