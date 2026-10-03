@@ -38,3 +38,7 @@ src/Factory/ov004/CountMenuSelection.cpp:
     complete
     .text start:0x02153944 end:0x02153b6c
 
+src/Factory/ov004/CountMenuRefresh.cpp:
+    complete
+    .text start:0x021540a4 end:0x021545f0
+
