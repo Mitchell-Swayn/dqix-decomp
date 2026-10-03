@@ -113,6 +113,10 @@ src/GameState/GameTimestampFormatting.cpp:
 	complete
 	.text start:0x020103f0 end:0x02010604
 
+src/GameState/GameStateUnknownByteAccessor.cpp:
+	complete
+	.text start:0x0201075c end:0x02010768
+
 src/GameState/GameStateOffset5ca4.cpp:
 	complete
 	.text start:0x02010768 end:0x02010774
