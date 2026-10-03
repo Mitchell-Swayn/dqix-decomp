@@ -1412,6 +1412,10 @@ src/World/ZoneState2754Clear.cpp:
     complete
     .text start:0x020de868 end:0x020de888
 
+src/System/ByteQuadClear.cpp:
+    complete
+    .text start:0x020e303c end:0x020e3054
+
 src/World/ZoneState2754.cpp:
     complete
     .text start:0x020de824 end:0x020de868
