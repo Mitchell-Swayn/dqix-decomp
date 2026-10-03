@@ -36,3 +36,7 @@ src/Factory/ov011/AllocatorWorkspace.cpp:
 src/Factory/ov011/AllocatorLifecycle.cpp:
     complete
     .text start:0x021845f4 end:0x0218466c
+
+src/Factory/ov011/AllocatorValueStore.cpp:
+    complete
+    .text start:0x021848a0 end:0x021848a8
