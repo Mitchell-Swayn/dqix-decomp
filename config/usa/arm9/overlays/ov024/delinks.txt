@@ -14,3 +14,7 @@ src/Factory/ov024/DamageAdjustments.cpp:
 src/Factory/ov024/StatDamageAdjustments.cpp:
     complete
     .text start:0x021d8b68 end:0x021d8c10
+
+src/Factory/ov024/CategoryDamageAdjustments.cpp:
+    complete
+    .text start:0x021d8c10 end:0x021d8d38
