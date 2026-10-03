@@ -17,3 +17,7 @@ src/Factory/ov023/ModelGroupLifecycle.cpp:
     .text start:0x021e4e8c end:0x021e4fd8
     .rodata start:0x021fd6d4 end:0x021fd6fc
 
+src/Factory/ov023/CountMenuEntryValue.cpp:
+    complete
+    .text start:0x021f6f08 end:0x021f6f10
+
