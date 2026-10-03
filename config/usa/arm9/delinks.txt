@@ -855,6 +855,10 @@ src/System/RuntimeExit.cpp:
     complete
     .text start:0x02001578 end:0x02001710
 
+src/System/Global02107800Accessor.cpp:
+    complete
+    .text start:0x020421a0 end:0x020421b0
+
 src/System/RuntimeExitState.cpp:
     complete
     .bss start:0x020f2e60 end:0x020f2f70
