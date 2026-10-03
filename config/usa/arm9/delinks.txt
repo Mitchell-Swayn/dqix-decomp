@@ -69,6 +69,10 @@ src/GameState/GameStateObjectFlagAccessors.cpp:
 	complete
 	.text start:0x0200fea4 end:0x0200ff94
 
+src/GameState/GameStateSignedByteAccessor.cpp:
+	complete
+	.text start:0x020546a8 end:0x020546b4
+
 src/GameState/GameStateFieldAccessors.cpp:
 	complete
 	.text start:0x020100a0 end:0x020100cc
