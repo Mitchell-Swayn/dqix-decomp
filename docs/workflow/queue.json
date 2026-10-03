@@ -561,5 +561,26 @@
       "worktree": "C:\\Users\\swayn\\Projects\\DQIX-Decomp-fleet-ov025",
       "scope": "Exclusive overlay ov025; bounded source families; no nested agents; full root acceptance required"
     }
-  ]
+  ],
+  "function_factory": {
+    "authority": "factory/integration",
+    "state_database": "C:\\Users\\swayn\\Projects\\Factory\\.factory\\factory.sqlite3",
+    "function_table": "functions",
+    "relationship_table": "function_calls",
+    "one_function_per_task": true,
+    "model": "gpt-6-luna",
+    "reasoning_effort": "low",
+    "capacity": 30,
+    "priority": "lineage depth ascending, immediately unblocked callers descending, remaining callers descending",
+    "eligibility": "Direct callees have accepted isolated C; unresolved, ambiguous and recursive dependencies remain blocked",
+    "counts": {
+      "blocked": 9206,
+      "queued": 3629,
+      "accepted": 2234
+    },
+    "function_count": 15069,
+    "legacy_tasks_preserved": 2787,
+    "acceptance": "Object match -> independent Luna low review -> full staged ROM/module/symbol/SHA1 -> promotion -> accepted inventory refresh",
+    "paused_at_setup": true
+  }
 }
