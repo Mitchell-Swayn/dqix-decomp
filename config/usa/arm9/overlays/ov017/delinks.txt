@@ -25,3 +25,7 @@ src/GameState/PeerIdentityManagerPayload.cpp:
 	complete
 	.text start:0x021a9998 end:0x021a9a9c
 
+
+src/Factory/ov017/OverrideContext.cpp:
+	complete
+	.text start:0x021b8468 end:0x021b8470
