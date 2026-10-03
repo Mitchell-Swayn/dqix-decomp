@@ -794,6 +794,10 @@ src/System/FixedPointAtan2.cpp:
     complete
     .text start:0x020c338c end:0x020c36ec
 
+src/System/func_020c391c.cpp:
+    complete
+    .text start:0x020c391c end:0x020c3984
+
 src/System/FixedPointAtanTables.cpp:
     complete
     .rodata start:0x020ed450 end:0x020ed658
