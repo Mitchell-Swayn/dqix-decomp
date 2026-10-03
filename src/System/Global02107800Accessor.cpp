@@ -5,6 +5,6 @@ struct Global02107800 {
 
 extern Global02107800 data_02107800;
 
-void* func_020421a0() {
+extern "C" void* func_020421a0() {
     return data_02107800.value1c;
 }
