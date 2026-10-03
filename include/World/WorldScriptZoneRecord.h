@@ -5,7 +5,7 @@
 // Numeric field meanings remain neutral until their consumers are recovered.
 struct WorldScriptZoneRecord
 {
-    unsigned char unknown0;
+    signed char unknown0;
     char unknown1;
     unsigned short selector0;
     char name[16];
