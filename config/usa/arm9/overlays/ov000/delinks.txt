@@ -36,3 +36,6 @@ src/Factory/ov000/CombatActionGroups.cpp:
 src/Factory/ov000/CombatStartupSums.cpp:
     complete
     .init start:0x02183710 end:0x021838a4
+
+src/Factory/ov000/CombatPayloadReset.cpp:
+    .text start:0x021820fc end:0x02182114
