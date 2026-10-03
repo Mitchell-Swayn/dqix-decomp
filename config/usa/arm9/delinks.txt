@@ -185,6 +185,9 @@ src/World/WorldObjectStateSetter.cpp:
     complete
     .text start:0x0202c848 end:0x0202c864
 
+src/World/WorldObjectFlagsReset.cpp:
+    .text start:0x02087838 end:0x02087860
+
 src/Grotto/Main/TileFeatures.cpp:
     complete
     .text start:0x0201ea54 end:0x0201ebc4
