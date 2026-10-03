@@ -28,3 +28,11 @@ src/Factory/ov011/AllocatorScriptNumbers.cpp:
     complete
     .text start:0x02184c30 end:0x02184c68
 
+
+src/Factory/ov011/AllocatorWorkspace.cpp:
+    complete
+    .text start:0x02184550 end:0x021845c8
+
+src/Factory/ov011/AllocatorLifecycle.cpp:
+    complete
+    .text start:0x021845f4 end:0x0218466c
