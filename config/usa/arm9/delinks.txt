@@ -9,6 +9,10 @@ src/System/Function0202df58.cpp:
 	complete
 	.text start:0x0202df58 end:0x0202df68
 
+src/System/Function02087a20.cpp:
+	complete
+	.text start:0x02087a20 end:0x02087a48
+
 src/GameState/FieldAt8.cpp:
 	complete
 	.text start:0x02040528 end:0x02040530
