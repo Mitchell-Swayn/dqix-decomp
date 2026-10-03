@@ -17,6 +17,10 @@ src/GameState/GameStateInstance.cpp:
 	complete
 	.text start:0x0200f398 end:0x0200f3a4
 
+src/Factory/TitleSelectionGridReset.cpp:
+	complete
+	.text start:0x0205ba2c end:0x0205ba68
+
 src/GameState/PeerIdentityManagerPrefixReset.cpp:
 	complete
 	.text start:0x0204693c end:0x02046958
