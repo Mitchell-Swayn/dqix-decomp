@@ -1,10 +1,15 @@
 #include "GameState/GameState.h"
 
 // Layout inferred from this controller's lifecycle and dispatch routines.
+// The resource lifecycle accesses flag_11 at offset 0x11 from its argument.
+struct Ov23WidgetResource {
+    unsigned char unknown_0[0x10];
+    unsigned char flag_10, flag_11;
+};
+
 struct Ov23WidgetController {
     unsigned int unknown_0, unknown_4;
-    unsigned char resource[0x10];
-    unsigned char flag_18, flag_19;
+    Ov23WidgetResource resource;
     unsigned char padding_1a[2];
     unsigned int savedDisplayMode;
     unsigned char widgets[0xbc];
@@ -21,8 +26,8 @@ struct Ov23HandlerTable {
 };
 extern "C" {
 void* memset(void*, int, unsigned int);
-void func_02074b64(void*);
-void func_02074bf4(void*);
+void func_02074b64(Ov23WidgetResource*);
+void func_02074bf4(Ov23WidgetResource*);
 void func_0205cfd4(void*);
 int func_0205d67c(void*);
 void func_0205d6a0(void*, int);
@@ -37,9 +42,9 @@ extern const Ov23WidgetController::Handler data_020e6d5c;
 
 extern "C" void func_ov023_021d8a40(Ov23WidgetController* self)
 {
-    self->flag_18 = 0;
-    self->flag_19 = 0;
-    func_02074b64(self->resource);
+    self->resource.flag_10 = 0;
+    self->resource.flag_11 = 0;
+    func_02074b64(&self->resource);
     self->savedDisplayMode = (*(volatile unsigned int*)0x04001000 & 0x1f00) >> 8;
     self->unknown_0 = 0;
     self->unknown_4 = 0;
@@ -63,7 +68,7 @@ extern "C" void func_ov023_021d8af8(Ov23WidgetController* self)
     if (func_0205d67c(self->widgets)) func_0205d6a0(self->widgets, 1);
     self->unknown_0 = 0;
     *(volatile unsigned int*)0x04001000 = (*(volatile unsigned int*)0x04001000 & ~0x1f00) | (self->savedDisplayMode << 8);
-    func_02074bf4(self->resource);
+    func_02074bf4(&self->resource);
     func_0205cfd4(self->widgets);
     self->state = 0;
     self->flag_11b = 0;
