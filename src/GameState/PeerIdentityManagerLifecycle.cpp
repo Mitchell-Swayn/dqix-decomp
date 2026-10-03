@@ -19,8 +19,8 @@ typedef char PeerManagerIdentityOffsetCheck[
 
 extern "C" void func_0204693c(PeerIdentityManagerPrefix* manager);
 extern "C" void func_0203b4e8(void* object, int flags);
-extern "C" char data_02114e20[];
-extern "C" void func_02012da4(const char* label, void* allocation);
+extern "C" AllocatorUnion data_02114e20;
+extern "C" void func_02012da4(AllocatorUnion* allocator, void* allocation);
 extern "C" void func_ov008_02189404(PeerIdentityPresentation* presentation);
 extern "C" void func_ov008_0218946c(PeerIdentityPresentation* presentation);
 
@@ -49,7 +49,7 @@ extern "C" void func_ov017_021a9714(PeerIdentityManagerPrefix* manager)
     SignedAllocatorHeader* allocation = manager->allocator_.GetSignedAllocator();
     if (allocation) {
         manager->allocator_.Destroy();
-        func_02012da4(data_02114e20, allocation);
+        func_02012da4(&data_02114e20, allocation);
     }
     manager->allocator_.ResetAllocatorPointer();
     manager->state_ = 0;
