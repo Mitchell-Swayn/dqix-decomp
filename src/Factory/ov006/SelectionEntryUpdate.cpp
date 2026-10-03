@@ -13,7 +13,7 @@ extern "C" Record* func_02071d60(void*, int);
 extern "C" void func_ov006_02153e54(Entry*);
 extern "C" void func_ov006_02153e8c(void*, Entry*);
 extern "C" void func_ov006_02154138(void*);
-extern "C" int func_020ac2d4(int, Entry*, Entry*, int);
+extern "C" int func_020ac2d4(int, short*, Entry*, int);
 extern "C" int func_020ac104(void*, Entry*, int);
 extern "C" int func_020ac0b4(unsigned int*);
 extern "C" int func_020ac08c(unsigned int*);
@@ -28,7 +28,7 @@ extern "C" void func_ov006_02153cbc(void* self, Entry first,
     BackgroundLoader::FreeAllocationsGlobal();
     Entry entry;
     func_ov006_02153e54(&entry);
-    if (func_020ac2d4(0, &first, &entry, 1)) {
+    if (func_020ac2d4(0, &first.id, &entry, 1)) {
         entry.flag0 = 1;
         entry.flag1 = 1;
         func_020ac104(data_0211e33c, &entry, 1);
@@ -40,7 +40,7 @@ extern "C" void func_ov006_02153cbc(void* self, Entry first,
     }
     if (second.id > 0) {
         func_ov006_02153e54(&entry);
-        if (func_020ac2d4(0, &second, &entry, 1)) {
+        if (func_020ac2d4(0, &second.id, &entry, 1)) {
             entry.id = second.id;
             entry.flag1 = 1;
             func_020ac104(data_0211e33c, &entry, 1);
