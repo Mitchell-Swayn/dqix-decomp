@@ -13,6 +13,10 @@ src/Graphics/itcm/VRAMStagingITCM.cpp:
     complete
     .text start:0x01ff87a4 end:0x01ff96d4
 
+src/Graphics/itcm/VRAMStagingInitialization.cpp:
+    complete
+    .text start:0x01ff96d4 end:0x01ff9740
+
 src/Graphics/itcm/VRAMStagingAllocations.cpp:
     complete
     .bss start:0x01ffdf70 end:0x01ffe270
