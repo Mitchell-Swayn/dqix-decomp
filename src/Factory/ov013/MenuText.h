@@ -4,7 +4,9 @@
 
 // Layout names describe observed menu/widget operations; screen identity is unknown.
 struct Ov013Widget {
-    unsigned char unknown00[0xc];
+    unsigned int unknown00;
+    void* resourceSlot;
+    unsigned char unknown08[4];
     short hitX[18];
     short hitY[18];
     short hitWidth[18];

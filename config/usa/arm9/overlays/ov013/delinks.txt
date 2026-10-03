@@ -40,3 +40,15 @@ src/Factory/ov013/MenuRefresh.cpp:
     complete
     .text start:0x02184a58 end:0x02184aec
 
+src/Factory/ov013/MenuTransfer.cpp:
+    complete
+    .text start:0x02184aec end:0x02184d80
+
+src/Factory/ov013/MenuSetup.cpp:
+    complete
+    .text start:0x02185310 end:0x02185424
+
+src/Factory/ov013/MenuLoad.cpp:
+    complete
+    .text start:0x02184d80 end:0x02185310
+
