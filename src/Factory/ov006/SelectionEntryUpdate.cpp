@@ -22,31 +22,32 @@ extern "C" int func_020ac494(SelectionSaveState*);
 extern "C" void func_020a0228(void*, int);
 extern "C" unsigned char data_0211e33c[];
 
-extern "C" void func_ov006_02153cbc(void* self, Entry first,
-                                    Entry second, void* records) {
+extern "C" void func_ov006_02153cbc(void* self, short first,
+                                    short second, void* records) {
     BackgroundLoader::AddLockGlobal();
     BackgroundLoader::FreeAllocationsGlobal();
     Entry entry;
     func_ov006_02153e54(&entry);
-    if (func_020ac2d4(0, &first.id, &entry, 1)) {
+    // Callers pass signed halfword IDs, including -1 for an absent second ID.
+    if (func_020ac2d4(0, &first, &entry, 1)) {
         entry.flag0 = 1;
         entry.flag1 = 1;
         func_020ac104(data_0211e33c, &entry, 1);
         func_ov006_02153e8c(self, &entry);
         if (records) {
-            Record* record = func_02071d60(records, first.id);
+            Record* record = func_02071d60(records, first);
             if (record) record->flags |= 0x400000;
         }
     }
-    if (second.id > 0) {
+    if (second > 0) {
         func_ov006_02153e54(&entry);
-        if (func_020ac2d4(0, &second.id, &entry, 1)) {
-            entry.id = second.id;
+        if (func_020ac2d4(0, &second, &entry, 1)) {
+            entry.id = second;
             entry.flag1 = 1;
             func_020ac104(data_0211e33c, &entry, 1);
             func_ov006_02153e8c(self, &entry);
             if (records) {
-                Record* record = func_02071d60(records, second.id);
+                Record* record = func_02071d60(records, second);
                 if (record) record->flags |= 0x400000;
             }
             func_ov006_02154138(self);
