@@ -5,6 +5,10 @@
     .data       start:0x021d7340 end:0x021d82e0 kind:data align:32
     .bss        start:0x021d82e0 end:0x021d8a40 kind:bss align:32
 
+src/Factory/ov017/AllocatorRoot.cpp:
+	complete
+	.text start:0x021b2164 end:0x021b2174
+
 src/GameState/GameStatePeerPackets.cpp:
 	complete
 	.text start:0x021d15b0 end:0x021d1810
