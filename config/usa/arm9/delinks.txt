@@ -153,6 +153,10 @@ src/World/ZoneFeatures.cpp:
     .data start:0x020ef388 end:0x020ef418
     .bss start:0x020fdc20 end:0x020fdc40
 
+src/World/WorldObjectStateSetter.cpp:
+    complete
+    .text start:0x0202c848 end:0x0202c864
+
 src/Grotto/Main/TileFeatures.cpp:
     complete
     .text start:0x0201ea54 end:0x0201ebc4
