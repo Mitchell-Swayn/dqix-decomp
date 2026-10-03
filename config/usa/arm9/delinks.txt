@@ -198,6 +198,10 @@ src/Memory/SafeAllocator.cpp:
     .data start:0x020ef91c end:0x020ef920
     .bss start:0x02104b0c end:0x02104b10
 
+src/Memory/ObjectHeaderInit.cpp:
+    complete
+    .text start:0x02039ee8 end:0x02039f04
+
 src/Resource/BCFG.cpp:
     complete
     .text start:0x020343a0 end:0x020349c8
