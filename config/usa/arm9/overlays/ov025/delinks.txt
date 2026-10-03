@@ -17,3 +17,11 @@ src/Factory/ov025/PrimaryQueueInsert.cpp:
     complete
     .text start:0x021ed380 end:0x021ed5f0
 
+src/Factory/ov025/Dispatch.cpp:
+    complete
+    .text start:0x021d8a40 end:0x021d8c30
+
+src/Factory/ov025/StaticInit.cpp:
+    complete
+    .init start:0x021ef200 end:0x021ef398
+
