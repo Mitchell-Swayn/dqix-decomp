@@ -13,6 +13,10 @@ src/GameState/FieldAt8.cpp:
 	complete
 	.text start:0x02040528 end:0x02040530
 
+src/GameState/UnknownTripleStore.cpp:
+	complete
+	.text start:0x020407b4 end:0x020407c4
+
 src/GameState/GameStateInstance.cpp:
 	complete
 	.text start:0x0200f398 end:0x0200f3a4
