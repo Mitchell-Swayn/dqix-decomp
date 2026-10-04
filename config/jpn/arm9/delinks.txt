@@ -31,19 +31,7 @@ src/World/Zone3D.cpp:
 
 src/Grotto/Main/GenerateObjectPosition.cpp:
 	complete
-	.text start:0x020194c8 end:0x0201a0a0
-
-src/World/ZonePredicates.cpp:
-    complete
-    .text start:0x0201b300 end:0x0201b378
-
-src/World/MapListLoader.cpp:
-    complete
-    .text start:0x0201bf30 end:0x0201c528
-
-//src/World/ZoneFeatures.cpp:
-//    complete
-//    .text start:0x0201c528 end:0x0201e7e0
+	.text start:0x02019f28 end:0x0201a0a0
 
 src/Grotto/Main/TileFeatures.cpp:
 	complete
@@ -51,8 +39,8 @@ src/Grotto/Main/TileFeatures.cpp:
 
 src/Filesystem/BackgroundLoader.cpp:
     complete
-    .text start:0x0202f270 end:0x0203016c
     .bss start:0x02104044 end:0x0210484c
+    .text start:0x0202f270 end:0x0203016c
 
 src/Resource/Script.cpp:
     complete
@@ -161,10 +149,6 @@ src/Grotto/Main/FloorMapGenerator.cpp:
 src/Grotto/Main/FloorMap.cpp:
     complete
     .text start:0x02092f64 end:0x02093394
-
-src/System/SceneOverlays.cpp:
-    complete
-    .text start:0x020a366c end:0x020a36b8
 
 src/Grotto/Main/TreasureMapDataStructs.cpp:
     complete
@@ -276,7 +260,6 @@ src/Graphics/NSBXX/VAV.cpp:
 src/Graphics/NSBXX/RenderCommandProcs.cpp:
     complete
     .text start:0x020bb47c end:0x020bcef0
-    .data start:0x020f1ff4 end:0x020f2054
 
 src/System/VRAM.cpp:
     complete
@@ -333,10 +316,6 @@ src/System/CPSRInterruptState.cpp:
 src/System/DMA.cpp:
     complete
     .text start:0x020cb6d8 end:0x020cbb74
-
-src/System/DMAChannelState.cpp:
-    complete
-    .data start:0x020f23dc end:0x020f23e0
 
 src/System/IPC.cpp:
     complete

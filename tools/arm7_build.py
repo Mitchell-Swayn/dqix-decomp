@@ -225,7 +225,7 @@ def build(args):
         # MWCC writes <source stem>.d in its working directory, even with -o.
         compiler_depfile = output / (source.stem + ".d")
         compiler_depfile.unlink(missing_ok=True)
-        subprocess.run([*runner, str(compiler), *CC_FLAGS, "-i", str(root / "include"),
+        subprocess.run([*runner, str(compiler), *CC_FLAGS, "-i", str(root / "include"), "-i", str(root / "include/ARM7"),
                         "-c", str(source), "-o", f"{name}.o"], cwd=output, check=True)
         dependencies = dependency_records(compiler_depfile, output, root, source, bool(exception_hash))
         all_dependencies.update(record["path"] for record in dependencies)

@@ -1,9 +1,5 @@
 # Dragon Quest IX: Sentinels of the Starry Skies Decompilation Project
 
-[Reconstruction workflow and repository boundaries](docs/DEVELOPMENT.md)
-
-[Interactive USA progress treemap: generation and coverage notes](docs/PROGRESS_TREEMAP.md)
-
 [![USA functions](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FDQIX%2Fdqix-decomp%2Fbadges%2Fusa%2Ffunctions.json)](https://github.com/DQIX/dqix-decomp/actions/workflows/match.yml)
 [![USA bytes](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FDQIX%2Fdqix-decomp%2Fbadges%2Fusa%2Fbytes.json)](https://github.com/DQIX/dqix-decomp/actions/workflows/match.yml)
 [![JPN functions](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FDQIX%2Fdqix-decomp%2Fbadges%2Fjpn%2Ffunctions.json)](https://github.com/DQIX/dqix-decomp/actions/workflows/match.yml)

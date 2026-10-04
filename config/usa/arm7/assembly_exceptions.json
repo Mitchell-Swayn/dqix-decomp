@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "unit": "CpuStatus",
-  "source": "config/usa/arm7/src/CpuStatus.c",
+  "source": "src/ARM7/CpuStatus.c",
   "review_status": "reviewed by coordinating Codex agent on 2026-10-02",
   "approval_scope": "Only the six bounded CPSR routines below; no approval for instruction-matching coercion elsewhere",
   "reason": "CPU status and interrupt-mask access requires MRS/MSR; ordinary C cannot express these processor-register operations",

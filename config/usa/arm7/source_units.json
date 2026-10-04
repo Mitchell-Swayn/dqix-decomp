@@ -22,7 +22,7 @@
   "units": [
     {
       "name": "ArenaHeapCheck",
-      "source": "config/usa/arm7/src/ArenaHeapCheck.c",
+      "source": "src/ARM7/ArenaHeapCheck.c",
       "autoload": "wram",
       "runtime_address": 58708892,
       "payload_offset": 21944,
@@ -55,7 +55,7 @@
     },
     {
       "name": "ArenaHeapDiagnostics",
-      "source": "config/usa/arm7/src/ArenaHeapDiagnostics.c",
+      "source": "src/ARM7/ArenaHeapDiagnostics.c",
       "autoload": "wram",
       "runtime_address": 58755264,
       "payload_offset": 68316,
@@ -71,7 +71,7 @@
     },
     {
       "name": "DmaControl",
-      "source": "config/usa/arm7/src/DmaControl.c",
+      "source": "src/ARM7/DmaControl.c",
       "autoload": "wram",
       "runtime_address": 58713344,
       "payload_offset": 26396,
@@ -90,7 +90,7 @@
     },
     {
       "name": "IPC",
-      "source": "config/usa/arm7/src/IPC.c",
+      "source": "src/ARM7/IPC.c",
       "autoload": "wram",
       "runtime_address": 58714412,
       "payload_offset": 27464,
@@ -127,7 +127,7 @@
     },
     {
       "name": "CycleDelay",
-      "source": "config/usa/arm7/src/CycleDelay.c",
+      "source": "src/ARM7/CycleDelay.c",
       "autoload": "wram",
       "runtime_address": 58713032,
       "payload_offset": 26084,
@@ -144,7 +144,7 @@
     },
     {
       "name": "MessageQueue",
-      "source": "config/usa/arm7/src/MessageQueue.c",
+      "source": "src/ARM7/MessageQueue.c",
       "autoload": "wram",
       "runtime_address": 58706652,
       "payload_offset": 19704,
@@ -168,7 +168,7 @@
     },
     {
       "name": "Mutex",
-      "source": "config/usa/arm7/src/Mutex.c",
+      "source": "src/ARM7/Mutex.c",
       "autoload": "wram",
       "runtime_address": 58707104,
       "payload_offset": 20156,
@@ -195,7 +195,7 @@
     },
     {
       "name": "ThreadLists",
-      "source": "config/usa/arm7/src/ThreadLists.c",
+      "source": "src/ARM7/ThreadLists.c",
       "autoload": "wram",
       "runtime_address": 58704120,
       "payload_offset": 17172,
@@ -216,7 +216,7 @@
     },
     {
       "name": "ThreadWait",
-      "source": "config/usa/arm7/src/ThreadWait.c",
+      "source": "src/ARM7/ThreadWait.c",
       "autoload": "wram",
       "runtime_address": 58705564,
       "payload_offset": 18616,
@@ -240,7 +240,7 @@
     },
     {
       "name": "ThreadSwitch",
-      "source": "config/usa/arm7/src/ThreadSwitch.c",
+      "source": "src/ARM7/ThreadSwitch.c",
       "autoload": "wram",
       "runtime_address": 58704540,
       "payload_offset": 17592,
@@ -268,7 +268,7 @@
     },
     {
       "name": "Alarms",
-      "source": "config/usa/arm7/src/Alarms.c",
+      "source": "src/ARM7/Alarms.c",
       "autoload": "wram",
       "runtime_address": 58710172,
       "payload_offset": 23224,
@@ -310,7 +310,7 @@
     },
     {
       "name": "AlarmHandler",
-      "source": "config/usa/arm7/src/AlarmHandler.c",
+      "source": "src/ARM7/AlarmHandler.c",
       "autoload": "wram",
       "runtime_address": 58711136,
       "payload_offset": 24188,
@@ -331,7 +331,7 @@
     },
     {
       "name": "VerticalAlarms",
-      "source": "config/usa/arm7/src/VerticalAlarms.c",
+      "source": "src/ARM7/VerticalAlarms.c",
       "autoload": "wram",
       "runtime_address": 58711380,
       "payload_offset": 24432,
@@ -360,7 +360,7 @@
     },
     {
       "name": "VerticalAlarmCancel",
-      "source": "config/usa/arm7/src/VerticalAlarmCancel.c",
+      "source": "src/ARM7/VerticalAlarmCancel.c",
       "autoload": "wram",
       "runtime_address": 58712140,
       "payload_offset": 25192,
@@ -385,7 +385,7 @@
     },
     {
       "name": "VerticalFrame",
-      "source": "config/usa/arm7/src/VerticalFrame.c",
+      "source": "src/ARM7/VerticalFrame.c",
       "autoload": "wram",
       "runtime_address": 58712844,
       "payload_offset": 25896,
@@ -404,7 +404,7 @@
     },
     {
       "name": "VerticalAlarmSetup",
-      "source": "config/usa/arm7/src/VerticalAlarmSetup.c",
+      "source": "src/ARM7/VerticalAlarmSetup.c",
       "autoload": "wram",
       "runtime_address": 58711712,
       "payload_offset": 24764,
@@ -432,7 +432,7 @@
     },
     {
       "name": "InterruptRegistration",
-      "source": "config/usa/arm7/src/InterruptRegistration.c",
+      "source": "src/ARM7/InterruptRegistration.c",
       "autoload": "wram",
       "runtime_address": 58701808,
       "payload_offset": 14860,
@@ -451,7 +451,7 @@
     },
     {
       "name": "Interrupts",
-      "source": "config/usa/arm7/src/Interrupts.c",
+      "source": "src/ARM7/Interrupts.c",
       "autoload": "wram",
       "runtime_address": 58701964,
       "payload_offset": 15016,
@@ -478,7 +478,7 @@
     },
     {
       "name": "Timing",
-      "source": "config/usa/arm7/src/Timing.c",
+      "source": "src/ARM7/Timing.c",
       "autoload": "wram",
       "runtime_address": 58709736,
       "payload_offset": 22788,
@@ -511,7 +511,7 @@
     },
     {
       "name": "CpuStatus",
-      "source": "config/usa/arm7/src/CpuStatus.c",
+      "source": "src/ARM7/CpuStatus.c",
       "autoload": "wram",
       "runtime_address": 58712912,
       "payload_offset": 25964,
@@ -533,7 +533,7 @@
     },
     {
       "name": "ArenaHeap",
-      "source": "config/usa/arm7/src/ArenaHeap.c",
+      "source": "src/ARM7/ArenaHeap.c",
       "autoload": "wram",
       "runtime_address": 58707924,
       "payload_offset": 20976,
@@ -564,7 +564,7 @@
     },
     {
       "name": "ArenaBounds",
-      "source": "config/usa/arm7/src/ArenaBounds.c",
+      "source": "src/ARM7/ArenaBounds.c",
       "autoload": "wram",
       "runtime_address": 58707592,
       "payload_offset": 20644,
@@ -589,7 +589,7 @@
     },
     {
       "name": "BootFlags",
-      "source": "config/usa/arm7/src/BootFlags.c",
+      "source": "src/ARM7/BootFlags.c",
       "autoload": "wram",
       "runtime_address": 58688696,
       "payload_offset": 1748,
@@ -604,7 +604,7 @@
     },
     {
       "name": "BitCount",
-      "source": "config/usa/arm7/src/BitCount.c",
+      "source": "src/ARM7/BitCount.c",
       "autoload": "wram",
       "runtime_address": 58736424,
       "payload_offset": 49476,
@@ -619,7 +619,7 @@
     },
     {
       "name": "ThreadCreate",
-      "source": "config/usa/arm7/src/ThreadCreate.c",
+      "source": "src/ARM7/ThreadCreate.c",
       "autoload": "wram",
       "runtime_address": 58704992,
       "payload_offset": 18044,
@@ -642,7 +642,7 @@
     },
     {
       "name": "ThreadExit",
-      "source": "config/usa/arm7/src/ThreadExit.c",
+      "source": "src/ARM7/ThreadExit.c",
       "autoload": "wram",
       "runtime_address": 58705256,
       "payload_offset": 18308,
@@ -674,7 +674,7 @@
     },
     {
       "name": "ThreadPriority",
-      "source": "config/usa/arm7/src/ThreadPriority.c",
+      "source": "src/ARM7/ThreadPriority.c",
       "autoload": "wram",
       "runtime_address": 58705868,
       "payload_offset": 18920,
@@ -696,7 +696,7 @@
     },
     {
       "name": "ThreadCallbacks",
-      "source": "config/usa/arm7/src/ThreadCallbacks.c",
+      "source": "src/ARM7/ThreadCallbacks.c",
       "autoload": "wram",
       "runtime_address": 58706200,
       "payload_offset": 19252,
@@ -717,7 +717,7 @@
     },
     {
       "name": "ThreadSwitchUnlock",
-      "source": "config/usa/arm7/src/ThreadSwitchUnlock.c",
+      "source": "src/ARM7/ThreadSwitchUnlock.c",
       "autoload": "wram",
       "runtime_address": 58706332,
       "payload_offset": 19384,
@@ -736,7 +736,7 @@
     },
     {
       "name": "InterruptDispatch",
-      "source": "config/usa/arm7/src/InterruptDispatch.c",
+      "source": "src/ARM7/InterruptDispatch.c",
       "autoload": "wram",
       "runtime_address": 58701424,
       "payload_offset": 14476,
@@ -755,7 +755,7 @@
     },
     {
       "name": "InterruptVectors",
-      "source": "config/usa/arm7/src/InterruptVectors.c",
+      "source": "src/ARM7/InterruptVectors.c",
       "autoload": "wram",
       "runtime_address": 58701564,
       "payload_offset": 14616,
@@ -779,7 +779,7 @@
     },
     {
       "name": "InterruptResponseIDs",
-      "source": "config/usa/arm7/src/InterruptResponseIDs.c",
+      "source": "src/ARM7/InterruptResponseIDs.c",
       "autoload": "wram",
       "runtime_address": 58755100,
       "payload_offset": 68152,
@@ -795,7 +795,7 @@
     },
     {
       "name": "VBlankDispatch",
-      "source": "config/usa/arm7/src/VBlankDispatch.c",
+      "source": "src/ARM7/VBlankDispatch.c",
       "autoload": "wram",
       "runtime_address": 58701692,
       "payload_offset": 14744,
@@ -819,7 +819,7 @@
     },
     {
       "name": "InterruptWaiters",
-      "source": "config/usa/arm7/src/InterruptWaiters.c",
+      "source": "src/ARM7/InterruptWaiters.c",
       "autoload": "wram",
       "runtime_address": 58701772,
       "payload_offset": 14824,
@@ -841,7 +841,7 @@
     },
     {
       "name": "EmptyInterruptHandler",
-      "source": "config/usa/arm7/src/EmptyInterruptHandler.c",
+      "source": "src/ARM7/EmptyInterruptHandler.c",
       "autoload": "wram",
       "runtime_address": 58701420,
       "payload_offset": 14472,
@@ -856,7 +856,7 @@
     },
     {
       "name": "BusLocks",
-      "source": "config/usa/arm7/src/BusLocks.c",
+      "source": "src/ARM7/BusLocks.c",
       "autoload": "wram",
       "runtime_address": 58702416,
       "payload_offset": 15468,
@@ -886,7 +886,7 @@
     },
     {
       "name": "BusTryAcquire",
-      "source": "config/usa/arm7/src/BusTryAcquire.c",
+      "source": "src/ARM7/BusTryAcquire.c",
       "autoload": "wram",
       "runtime_address": 58702832,
       "payload_offset": 15884,
@@ -906,7 +906,7 @@
     },
     {
       "name": "BusNDS",
-      "source": "config/usa/arm7/src/BusNDS.c",
+      "source": "src/ARM7/BusNDS.c",
       "autoload": "wram",
       "runtime_address": 58702904,
       "payload_offset": 15956,
@@ -927,7 +927,7 @@
     },
     {
       "name": "BusLockOwner",
-      "source": "config/usa/arm7/src/BusLockOwner.c",
+      "source": "src/ARM7/BusLockOwner.c",
       "autoload": "wram",
       "runtime_address": 58702976,
       "payload_offset": 16028,
@@ -942,7 +942,7 @@
     },
     {
       "name": "SharedBootFlag",
-      "source": "config/usa/arm7/src/SharedBootFlag.c",
+      "source": "src/ARM7/SharedBootFlag.c",
       "autoload": "wram",
       "runtime_address": 58706624,
       "payload_offset": 19676,
@@ -957,7 +957,7 @@
     },
     {
       "name": "GPIOControl",
-      "source": "config/usa/arm7/src/GPIOControl.c",
+      "source": "src/ARM7/GPIOControl.c",
       "autoload": "wram",
       "runtime_address": 58715160,
       "payload_offset": 28212,
@@ -972,7 +972,7 @@
     },
     {
       "name": "GPIOControlMode",
-      "source": "config/usa/arm7/src/GPIOControlMode.c",
+      "source": "src/ARM7/GPIOControlMode.c",
       "autoload": "wram",
       "runtime_address": 58715192,
       "payload_offset": 28244,
@@ -989,7 +989,7 @@
     },
     {
       "name": "InputPolling",
-      "source": "config/usa/arm7/src/InputPolling.c",
+      "source": "src/ARM7/InputPolling.c",
       "autoload": "wram",
       "runtime_address": 58715216,
       "payload_offset": 28268,
@@ -1019,7 +1019,7 @@
     },
     {
       "name": "SoundMaster",
-      "source": "config/usa/arm7/src/SoundMaster.c",
+      "source": "src/ARM7/SoundMaster.c",
       "autoload": "wram",
       "runtime_address": 58715436,
       "payload_offset": 28488,
@@ -1048,7 +1048,7 @@
     },
     {
       "name": "SoundChannelStop",
-      "source": "config/usa/arm7/src/SoundChannelStop.c",
+      "source": "src/ARM7/SoundChannelStop.c",
       "autoload": "wram",
       "runtime_address": 58716336,
       "payload_offset": 29388,
@@ -1063,7 +1063,7 @@
     },
     {
       "name": "SoundChannelConfig",
-      "source": "config/usa/arm7/src/SoundChannelConfig.c",
+      "source": "src/ARM7/SoundChannelConfig.c",
       "autoload": "wram",
       "runtime_address": 58715796,
       "payload_offset": 28848,
@@ -1086,7 +1086,7 @@
     },
     {
       "name": "SoundChannelParameters",
-      "source": "config/usa/arm7/src/SoundChannelParameters.c",
+      "source": "src/ARM7/SoundChannelParameters.c",
       "autoload": "wram",
       "runtime_address": 58716376,
       "payload_offset": 29428,
@@ -1112,7 +1112,7 @@
     },
     {
       "name": "SoundVolumeAdjustment",
-      "source": "config/usa/arm7/src/SoundVolumeAdjustment.c",
+      "source": "src/ARM7/SoundVolumeAdjustment.c",
       "autoload": "wram",
       "runtime_address": 58716784,
       "payload_offset": 29836,
@@ -1135,7 +1135,7 @@
     },
     {
       "name": "SoundMath",
-      "source": "config/usa/arm7/src/SoundMath.c",
+      "source": "src/ARM7/SoundMath.c",
       "autoload": "wram",
       "runtime_address": 58717288,
       "payload_offset": 30340,
@@ -1157,7 +1157,7 @@
     },
     {
       "name": "SoundSineTable",
-      "source": "config/usa/arm7/src/SoundSineTable.c",
+      "source": "src/ARM7/SoundSineTable.c",
       "autoload": "wram",
       "runtime_address": 58753704,
       "payload_offset": 66756,
@@ -1173,7 +1173,7 @@
     },
     {
       "name": "SoundWorkerControl",
-      "source": "config/usa/arm7/src/SoundWorkerControl.c",
+      "source": "src/ARM7/SoundWorkerControl.c",
       "autoload": "wram",
       "runtime_address": 58717576,
       "payload_offset": 30628,
@@ -1213,7 +1213,7 @@
     },
     {
       "name": "SoundWorkerAlarmCallback",
-      "source": "config/usa/arm7/src/SoundWorkerAlarmCallback.c",
+      "source": "src/ARM7/SoundWorkerAlarmCallback.c",
       "autoload": "wram",
       "runtime_address": 58717820,
       "payload_offset": 30872,
@@ -1233,7 +1233,7 @@
     },
     {
       "name": "SoundPeriod",
-      "source": "config/usa/arm7/src/SoundPeriod.c",
+      "source": "src/ARM7/SoundPeriod.c",
       "autoload": "wram",
       "runtime_address": 58716988,
       "payload_offset": 30040,
@@ -1251,7 +1251,7 @@
     },
     {
       "name": "SoundWorkerMain",
-      "source": "config/usa/arm7/src/SoundWorkerMain.c",
+      "source": "src/ARM7/SoundWorkerMain.c",
       "autoload": "wram",
       "runtime_address": 58717888,
       "payload_offset": 30940,
@@ -1288,7 +1288,7 @@
     },
     {
       "name": "SoundCaptureStatus",
-      "source": "config/usa/arm7/src/SoundCaptureStatus.c",
+      "source": "src/ARM7/SoundCaptureStatus.c",
       "autoload": "wram",
       "runtime_address": 58718212,
       "payload_offset": 31264,
@@ -1303,7 +1303,7 @@
     },
     {
       "name": "SoundVoiceInit",
-      "source": "config/usa/arm7/src/SoundVoiceInit.c",
+      "source": "src/ARM7/SoundVoiceInit.c",
       "autoload": "wram",
       "runtime_address": 58718236,
       "payload_offset": 31288,
@@ -1327,7 +1327,7 @@
     },
     {
       "name": "SoundVoiceApply",
-      "source": "config/usa/arm7/src/SoundVoiceApply.c",
+      "source": "src/ARM7/SoundVoiceApply.c",
       "autoload": "wram",
       "runtime_address": 58718328,
       "payload_offset": 31380,
@@ -1351,7 +1351,7 @@
     },
     {
       "name": "SoundVoiceSetup",
-      "source": "config/usa/arm7/src/SoundVoiceSetup.c",
+      "source": "src/ARM7/SoundVoiceSetup.c",
       "autoload": "wram",
       "runtime_address": 58719768,
       "payload_offset": 32820,
@@ -1370,7 +1370,7 @@
     },
     {
       "name": "SoundEnvelope",
-      "source": "config/usa/arm7/src/SoundEnvelope.c",
+      "source": "src/ARM7/SoundEnvelope.c",
       "autoload": "wram",
       "runtime_address": 58719972,
       "payload_offset": 33024,
@@ -1395,7 +1395,7 @@
     },
     {
       "name": "SoundEnvelopeSetup",
-      "source": "config/usa/arm7/src/SoundEnvelopeSetup.c",
+      "source": "src/ARM7/SoundEnvelopeSetup.c",
       "autoload": "wram",
       "runtime_address": 58721564,
       "payload_offset": 34616,
@@ -1413,7 +1413,7 @@
     },
     {
       "name": "SoundModulation",
-      "source": "config/usa/arm7/src/SoundModulation.c",
+      "source": "src/ARM7/SoundModulation.c",
       "autoload": "wram",
       "runtime_address": 58721352,
       "payload_offset": 34404,
@@ -1432,7 +1432,7 @@
     },
     {
       "name": "SoundVoiceCallback",
-      "source": "config/usa/arm7/src/SoundVoiceCallback.c",
+      "source": "src/ARM7/SoundVoiceCallback.c",
       "autoload": "wram",
       "runtime_address": 58720724,
       "payload_offset": 33776,
@@ -1447,7 +1447,7 @@
     },
     {
       "name": "SoundReservations",
-      "source": "config/usa/arm7/src/SoundReservations.c",
+      "source": "src/ARM7/SoundReservations.c",
       "autoload": "wram",
       "runtime_address": 58721144,
       "payload_offset": 34196,
@@ -1468,7 +1468,7 @@
     },
     {
       "name": "SoundReserve",
-      "source": "config/usa/arm7/src/SoundReserve.c",
+      "source": "src/ARM7/SoundReserve.c",
       "autoload": "wram",
       "runtime_address": 58720744,
       "payload_offset": 33796,
@@ -1489,7 +1489,7 @@
     },
     {
       "name": "SoundSequenceInit",
-      "source": "config/usa/arm7/src/SoundSequenceInit.c",
+      "source": "src/ARM7/SoundSequenceInit.c",
       "autoload": "wram",
       "runtime_address": 58721704,
       "payload_offset": 34756,
@@ -1507,7 +1507,7 @@
     },
     {
       "name": "SoundTrackRead",
-      "source": "config/usa/arm7/src/SoundTrackRead.c",
+      "source": "src/ARM7/SoundTrackRead.c",
       "autoload": "wram",
       "runtime_address": 58722632,
       "payload_offset": 35684,
@@ -1526,7 +1526,7 @@
     },
     {
       "name": "SoundReadCache",
-      "source": "config/usa/arm7/src/SoundReadCache.c",
+      "source": "src/ARM7/SoundReadCache.c",
       "autoload": "wram",
       "runtime_address": 58723900,
       "payload_offset": 36952,
@@ -1545,7 +1545,7 @@
     },
     {
       "name": "SoundSequenceStart",
-      "source": "config/usa/arm7/src/SoundSequenceStart.c",
+      "source": "src/ARM7/SoundSequenceStart.c",
       "autoload": "wram",
       "runtime_address": 58722728,
       "payload_offset": 35780,
@@ -1564,7 +1564,7 @@
     },
     {
       "name": "SoundSequenceParameters",
-      "source": "config/usa/arm7/src/SoundSequenceParameters.c",
+      "source": "src/ARM7/SoundSequenceParameters.c",
       "autoload": "wram",
       "runtime_address": 58723676,
       "payload_offset": 36728,
@@ -1583,7 +1583,7 @@
     },
     {
       "name": "SoundTrackVoices",
-      "source": "config/usa/arm7/src/SoundTrackVoices.c",
+      "source": "src/ARM7/SoundTrackVoices.c",
       "autoload": "wram",
       "runtime_address": 58724488,
       "payload_offset": 37540,
@@ -1611,7 +1611,7 @@
     },
     {
       "name": "SoundSequenceStop",
-      "source": "config/usa/arm7/src/SoundSequenceStop.c",
+      "source": "src/ARM7/SoundSequenceStop.c",
       "autoload": "wram",
       "runtime_address": 58722808,
       "payload_offset": 35860,
@@ -1634,7 +1634,7 @@
     },
     {
       "name": "SoundSequenceRanges",
-      "source": "config/usa/arm7/src/SoundSequenceRanges.c",
+      "source": "src/ARM7/SoundSequenceRanges.c",
       "autoload": "wram",
       "runtime_address": 58723444,
       "payload_offset": 36496,
@@ -1654,7 +1654,7 @@
     },
     {
       "name": "SoundTrackAllocation",
-      "source": "config/usa/arm7/src/SoundTrackAllocation.c",
+      "source": "src/ARM7/SoundTrackAllocation.c",
       "autoload": "wram",
       "runtime_address": 58728284,
       "payload_offset": 41336,
@@ -1674,7 +1674,7 @@
     },
     {
       "name": "SoundTrackMask",
-      "source": "config/usa/arm7/src/SoundTrackMask.c",
+      "source": "src/ARM7/SoundTrackMask.c",
       "autoload": "wram",
       "runtime_address": 58723224,
       "payload_offset": 36276,
@@ -1694,7 +1694,7 @@
     },
     {
       "name": "SoundTrackInit",
-      "source": "config/usa/arm7/src/SoundTrackInit.c",
+      "source": "src/ARM7/SoundTrackInit.c",
       "autoload": "wram",
       "runtime_address": 58724264,
       "payload_offset": 37316,
@@ -1711,7 +1711,7 @@
     },
     {
       "name": "SoundSequenceAdvance",
-      "source": "config/usa/arm7/src/SoundSequenceAdvance.c",
+      "source": "src/ARM7/SoundSequenceAdvance.c",
       "autoload": "wram",
       "runtime_address": 58723020,
       "payload_offset": 36072,
@@ -1736,7 +1736,7 @@
     },
     {
       "name": "SoundSequenceVariable",
-      "source": "config/usa/arm7/src/SoundSequenceVariable.c",
+      "source": "src/ARM7/SoundSequenceVariable.c",
       "autoload": "wram",
       "runtime_address": 58728216,
       "payload_offset": 41268,
@@ -1753,7 +1753,7 @@
     },
     {
       "name": "SoundSharedStatus",
-      "source": "config/usa/arm7/src/SoundSharedStatus.c",
+      "source": "src/ARM7/SoundSharedStatus.c",
       "autoload": "wram",
       "runtime_address": 58729256,
       "payload_offset": 42308,
@@ -1774,7 +1774,7 @@
     },
     {
       "name": "SoundAlarms",
-      "source": "config/usa/arm7/src/SoundAlarms.c",
+      "source": "src/ARM7/SoundAlarms.c",
       "autoload": "wram",
       "runtime_address": 58729512,
       "payload_offset": 42564,
@@ -1800,7 +1800,7 @@
     },
     {
       "name": "SoundCommandInit",
-      "source": "config/usa/arm7/src/SoundCommandInit.c",
+      "source": "src/ARM7/SoundCommandInit.c",
       "autoload": "wram",
       "runtime_address": 58729904,
       "payload_offset": 42956,
@@ -1829,7 +1829,7 @@
     },
     {
       "name": "SoundCommandCallback",
-      "source": "config/usa/arm7/src/SoundCommandCallback.c",
+      "source": "src/ARM7/SoundCommandCallback.c",
       "autoload": "wram",
       "runtime_address": 58731684,
       "payload_offset": 44736,
@@ -1850,7 +1850,7 @@
     },
     {
       "name": "SoundBankAccess",
-      "source": "config/usa/arm7/src/SoundBankAccess.c",
+      "source": "src/ARM7/SoundBankAccess.c",
       "autoload": "wram",
       "runtime_address": 58717812,
       "payload_offset": 30864,
@@ -1866,7 +1866,7 @@
     },
     {
       "name": "SoundWaveLookup",
-      "source": "config/usa/arm7/src/SoundWaveLookup.c",
+      "source": "src/ARM7/SoundWaveLookup.c",
       "autoload": "wram",
       "runtime_address": 58728864,
       "payload_offset": 41916,
@@ -1884,7 +1884,7 @@
     },
     {
       "name": "SoundInstrumentStart",
-      "source": "config/usa/arm7/src/SoundInstrumentStart.c",
+      "source": "src/ARM7/SoundInstrumentStart.c",
       "autoload": "wram",
       "runtime_address": 58728928,
       "payload_offset": 41980,
@@ -1908,7 +1908,7 @@
     },
     {
       "name": "SoundAttenuationTable",
-      "source": "config/usa/arm7/src/SoundAttenuationTable.c",
+      "source": "src/ARM7/SoundAttenuationTable.c",
       "autoload": "wram",
       "runtime_address": 58753740,
       "payload_offset": 66792,
@@ -1924,7 +1924,7 @@
     },
     {
       "name": "SoundAttackTable",
-      "source": "config/usa/arm7/src/SoundAttackTable.c",
+      "source": "src/ARM7/SoundAttackTable.c",
       "autoload": "wram",
       "runtime_address": 58754272,
       "payload_offset": 67324,
@@ -1940,7 +1940,7 @@
     },
     {
       "name": "ResetControl",
-      "source": "config/usa/arm7/src/ResetControl.c",
+      "source": "src/ARM7/ResetControl.c",
       "autoload": "wram",
       "runtime_address": 58713056,
       "payload_offset": 26108,
@@ -1976,7 +1976,7 @@
     },
     {
       "name": "BackupTransfer",
-      "source": "config/usa/arm7/src/BackupTransfer.c",
+      "source": "src/ARM7/BackupTransfer.c",
       "autoload": "wram",
       "runtime_address": 58732344,
       "payload_offset": 45396,
@@ -1996,7 +1996,7 @@
     },
     {
       "name": "BackupWait",
-      "source": "config/usa/arm7/src/BackupWait.c",
+      "source": "src/ARM7/BackupWait.c",
       "autoload": "wram",
       "runtime_address": 58732036,
       "payload_offset": 45088,
@@ -2015,7 +2015,7 @@
     },
     {
       "name": "BackupStatus",
-      "source": "config/usa/arm7/src/BackupStatus.c",
+      "source": "src/ARM7/BackupStatus.c",
       "autoload": "wram",
       "runtime_address": 58732200,
       "payload_offset": 45252,
@@ -2039,7 +2039,7 @@
     },
     {
       "name": "BackupWriteEnable",
-      "source": "config/usa/arm7/src/BackupWriteEnable.c",
+      "source": "src/ARM7/BackupWriteEnable.c",
       "autoload": "wram",
       "runtime_address": 58732720,
       "payload_offset": 45772,
@@ -2059,7 +2059,7 @@
     },
     {
       "name": "BackupIO",
-      "source": "config/usa/arm7/src/BackupIO.c",
+      "source": "src/ARM7/BackupIO.c",
       "autoload": "wram",
       "runtime_address": 58733020,
       "payload_offset": 46072,
@@ -2086,7 +2086,7 @@
     },
     {
       "name": "BackupErase",
-      "source": "config/usa/arm7/src/BackupErase.c",
+      "source": "src/ARM7/BackupErase.c",
       "autoload": "wram",
       "runtime_address": 58733496,
       "payload_offset": 46548,
@@ -2115,7 +2115,7 @@
     },
     {
       "name": "BackupAddress",
-      "source": "config/usa/arm7/src/BackupAddress.c",
+      "source": "src/ARM7/BackupAddress.c",
       "autoload": "wram",
       "runtime_address": 58732772,
       "payload_offset": 45824,
@@ -2134,7 +2134,7 @@
     },
     {
       "name": "BackupStatusInit",
-      "source": "config/usa/arm7/src/BackupStatusInit.c",
+      "source": "src/ARM7/BackupStatusInit.c",
       "autoload": "wram",
       "runtime_address": 58732932,
       "payload_offset": 45984,
@@ -2154,7 +2154,7 @@
     },
     {
       "name": "BackupStatusWrite",
-      "source": "config/usa/arm7/src/BackupStatusWrite.c",
+      "source": "src/ARM7/BackupStatusWrite.c",
       "autoload": "wram",
       "runtime_address": 58734044,
       "payload_offset": 47096,
@@ -2177,7 +2177,7 @@
     },
     {
       "name": "CardCommand",
-      "source": "config/usa/arm7/src/CardCommand.c",
+      "source": "src/ARM7/CardCommand.c",
       "autoload": "wram",
       "runtime_address": 58734196,
       "payload_offset": 47248,
@@ -2192,7 +2192,7 @@
     },
     {
       "name": "CardIdentity",
-      "source": "config/usa/arm7/src/CardIdentity.c",
+      "source": "src/ARM7/CardIdentity.c",
       "autoload": "wram",
       "runtime_address": 58734408,
       "payload_offset": 47460,
@@ -2216,7 +2216,7 @@
     },
     {
       "name": "CardOperationBegin",
-      "source": "config/usa/arm7/src/CardOperationBegin.c",
+      "source": "src/ARM7/CardOperationBegin.c",
       "autoload": "wram",
       "runtime_address": 58734572,
       "payload_offset": 47624,
@@ -2235,7 +2235,7 @@
     },
     {
       "name": "CardIpcCallback",
-      "source": "config/usa/arm7/src/CardIpcCallback.c",
+      "source": "src/ARM7/CardIpcCallback.c",
       "autoload": "wram",
       "runtime_address": 58734764,
       "payload_offset": 47816,
@@ -2253,7 +2253,7 @@
     },
     {
       "name": "CardRemovalInit",
-      "source": "config/usa/arm7/src/CardRemovalInit.c",
+      "source": "src/ARM7/CardRemovalInit.c",
       "autoload": "wram",
       "runtime_address": 58735556,
       "payload_offset": 48608,
@@ -2274,7 +2274,7 @@
     },
     {
       "name": "CardRemovalCheck",
-      "source": "config/usa/arm7/src/CardRemovalCheck.c",
+      "source": "src/ARM7/CardRemovalCheck.c",
       "autoload": "wram",
       "runtime_address": 58735764,
       "payload_offset": 48816,
@@ -2298,7 +2298,7 @@
     },
     {
       "name": "CardRemovalCallback",
-      "source": "config/usa/arm7/src/CardRemovalCallback.c",
+      "source": "src/ARM7/CardRemovalCallback.c",
       "autoload": "wram",
       "runtime_address": 58735644,
       "payload_offset": 48696,
@@ -2324,7 +2324,7 @@
     },
     {
       "name": "Terminate",
-      "source": "config/usa/arm7/src/Terminate.c",
+      "source": "src/ARM7/Terminate.c",
       "autoload": "wram",
       "runtime_address": 58713320,
       "payload_offset": 26372,
@@ -2343,7 +2343,7 @@
     },
     {
       "name": "WirelessPowerOff",
-      "source": "config/usa/arm7/src/WirelessPowerOff.c",
+      "source": "src/ARM7/WirelessPowerOff.c",
       "autoload": "wram",
       "runtime_address": 58746172,
       "payload_offset": 59224,
@@ -2361,7 +2361,7 @@
     },
     {
       "name": "PowerRegisters",
-      "source": "config/usa/arm7/src/PowerRegisters.c",
+      "source": "src/ARM7/PowerRegisters.c",
       "autoload": "wram",
       "runtime_address": 58744364,
       "payload_offset": 57416,
@@ -2380,7 +2380,7 @@
     },
     {
       "name": "PowerLedMode",
-      "source": "config/usa/arm7/src/PowerLedMode.c",
+      "source": "src/ARM7/PowerLedMode.c",
       "autoload": "wram",
       "runtime_address": 58745216,
       "payload_offset": 58268,
@@ -2402,7 +2402,7 @@
     },
     {
       "name": "PowerLedPattern",
-      "source": "config/usa/arm7/src/PowerLedPattern.c",
+      "source": "src/ARM7/PowerLedPattern.c",
       "autoload": "wram",
       "runtime_address": 58746060,
       "payload_offset": 59112,
@@ -2420,7 +2420,7 @@
     },
     {
       "name": "PowerMessages",
-      "source": "config/usa/arm7/src/PowerMessages.c",
+      "source": "src/ARM7/PowerMessages.c",
       "autoload": "wram",
       "runtime_address": 58744236,
       "payload_offset": 57288,
@@ -2438,7 +2438,7 @@
     },
     {
       "name": "PowerCommands",
-      "source": "config/usa/arm7/src/PowerCommands.c",
+      "source": "src/ARM7/PowerCommands.c",
       "autoload": "wram",
       "runtime_address": 58744684,
       "payload_offset": 57736,
@@ -2462,7 +2462,7 @@
     },
     {
       "name": "SpiService",
-      "source": "config/usa/arm7/src/SpiService.c",
+      "source": "src/ARM7/SpiService.c",
       "autoload": "wram",
       "runtime_address": 58740000,
       "payload_offset": 53052,
@@ -2483,7 +2483,7 @@
     },
     {
       "name": "SpiQueuePeek",
-      "source": "config/usa/arm7/src/SpiQueuePeek.c",
+      "source": "src/ARM7/SpiQueuePeek.c",
       "autoload": "wram",
       "runtime_address": 58740336,
       "payload_offset": 53388,
@@ -2501,7 +2501,7 @@
     },
     {
       "name": "SpiWorker",
-      "source": "config/usa/arm7/src/SpiWorker.c",
+      "source": "src/ARM7/SpiWorker.c",
       "autoload": "wram",
       "runtime_address": 58740368,
       "payload_offset": 53420,
@@ -2523,7 +2523,7 @@
     },
     {
       "name": "PowerStateInit",
-      "source": "config/usa/arm7/src/PowerStateInit.c",
+      "source": "src/ARM7/PowerStateInit.c",
       "autoload": "wram",
       "runtime_address": 58743504,
       "payload_offset": 56556,
@@ -2540,7 +2540,7 @@
     },
     {
       "name": "PowerTask",
-      "source": "config/usa/arm7/src/PowerTask.c",
+      "source": "src/ARM7/PowerTask.c",
       "autoload": "wram",
       "runtime_address": 58743884,
       "payload_offset": 56936,
@@ -2567,7 +2567,7 @@
     },
     {
       "name": "PowerLedUpdate",
-      "source": "config/usa/arm7/src/PowerLedUpdate.c",
+      "source": "src/ARM7/PowerLedUpdate.c",
       "autoload": "wram",
       "runtime_address": 58745772,
       "payload_offset": 58824,
@@ -2589,7 +2589,7 @@
     },
     {
       "name": "PowerLedPatterns",
-      "source": "config/usa/arm7/src/PowerLedPatterns.c",
+      "source": "src/ARM7/PowerLedPatterns.c",
       "autoload": "wram",
       "runtime_address": 58756464,
       "payload_offset": 69516,
@@ -2605,7 +2605,7 @@
     },
     {
       "name": "SpiReply",
-      "source": "config/usa/arm7/src/SpiReply.c",
+      "source": "src/ARM7/SpiReply.c",
       "autoload": "wram",
       "runtime_address": 58739804,
       "payload_offset": 52856,
@@ -2622,7 +2622,7 @@
     },
     {
       "name": "SpiIpcCallback",
-      "source": "config/usa/arm7/src/SpiIpcCallback.c",
+      "source": "src/ARM7/SpiIpcCallback.c",
       "autoload": "wram",
       "runtime_address": 58740476,
       "payload_offset": 53528,
@@ -2642,7 +2642,7 @@
     },
     {
       "name": "TouchSpiClock",
-      "source": "config/usa/arm7/src/TouchSpiClock.c",
+      "source": "src/ARM7/TouchSpiClock.c",
       "autoload": "wram",
       "runtime_address": 58740816,
       "payload_offset": 53868,
@@ -2657,7 +2657,7 @@
     },
     {
       "name": "TouchCommandClock",
-      "source": "config/usa/arm7/src/TouchCommandClock.c",
+      "source": "src/ARM7/TouchCommandClock.c",
       "autoload": "wram",
       "runtime_address": 58742444,
       "payload_offset": 55496,
@@ -2672,7 +2672,7 @@
     },
     {
       "name": "PowerVBlankCallback",
-      "source": "config/usa/arm7/src/PowerVBlankCallback.c",
+      "source": "src/ARM7/PowerVBlankCallback.c",
       "autoload": "wram",
       "runtime_address": 58688752,
       "payload_offset": 1804,
@@ -2690,7 +2690,7 @@
     },
     {
       "name": "TouchControllerStatus",
-      "source": "config/usa/arm7/src/TouchControllerStatus.c",
+      "source": "src/ARM7/TouchControllerStatus.c",
       "autoload": "wram",
       "runtime_address": 58742200,
       "payload_offset": 55252,
@@ -2709,7 +2709,7 @@
     },
     {
       "name": "PowerSleep",
-      "source": "config/usa/arm7/src/PowerSleep.c",
+      "source": "src/ARM7/PowerSleep.c",
       "autoload": "wram",
       "runtime_address": 58745340,
       "payload_offset": 58392,
@@ -2744,7 +2744,7 @@
     },
     {
       "name": "PowerIpcReceive",
-      "source": "config/usa/arm7/src/PowerIpcReceive.c",
+      "source": "src/ARM7/PowerIpcReceive.c",
       "autoload": "wram",
       "runtime_address": 58743564,
       "payload_offset": 56616,
@@ -2765,7 +2765,7 @@
     },
     {
       "name": "SpiInitialize",
-      "source": "config/usa/arm7/src/SpiInitialize.c",
+      "source": "src/ARM7/SpiInitialize.c",
       "autoload": "wram",
       "runtime_address": 58739336,
       "payload_offset": 52388,
@@ -2801,7 +2801,7 @@
     },
     {
       "name": "SpiServiceToken",
-      "source": "config/usa/arm7/src/SpiServiceToken.c",
+      "source": "src/ARM7/SpiServiceToken.c",
       "autoload": "wram",
       "runtime_address": 58739616,
       "payload_offset": 52668,
@@ -2824,7 +2824,7 @@
     },
     {
       "name": "TouchInitialize",
-      "source": "config/usa/arm7/src/TouchInitialize.c",
+      "source": "src/ARM7/TouchInitialize.c",
       "autoload": "wram",
       "runtime_address": 58740580,
       "payload_offset": 53632,
@@ -2854,7 +2854,7 @@
     },
     {
       "name": "TouchIpcReceive",
-      "source": "config/usa/arm7/src/TouchIpcReceive.c",
+      "source": "src/ARM7/TouchIpcReceive.c",
       "autoload": "wram",
       "runtime_address": 58740852,
       "payload_offset": 53904,

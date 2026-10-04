@@ -593,7 +593,7 @@ def add_check_builds(n: ninja_syntax.Writer, project: Project):
         check_inputs.append("check_arm7")
         n.rule(name="check_progress", command=f"{PYTHON} tools/check_progress.py")
         n.build(
-            inputs=[str(project.objdiff_report()), "docs/inventory-usa-report.json.gz",
+            inputs=[str(project.objdiff_report()), "config/usa/arm9/coverage_baseline.json",
                     "tools/check_progress.py"],
             rule="check_progress",
             outputs="check_progress",
