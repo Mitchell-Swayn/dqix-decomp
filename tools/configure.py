@@ -525,8 +525,11 @@ def add_mwcc_builds(n: ninja_syntax.Writer, project: Project, mwcc_implicit: lis
         obj.parent.mkdir(parents=True, exist_ok=True)
         n.build(inputs=view['source_path'], outputs=str(obj), rule='mwcc_view',
                 implicit=mwcc_implicit + ['config/usa/unit_sources.json'],
-                variables={'game_version': project.game_version, 'cc_flags': '-lang=c++ -d ' + view['define'],
+                variables={'game_version': project.game_version, 'cc_flags': '-lang=c++ -gccdep -d ' + view['define'],
                            'basedir': str(obj.parent), 'basefile': str(obj.with_suffix(''))})
+        n.newline()
+        n.build(inputs=view['source_path'], rule='m2ctx',
+                outputs=str(project.game_build / Path(name).with_suffix('.ctx.cpp')))
         n.newline()
 
 
