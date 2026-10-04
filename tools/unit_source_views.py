@@ -1,6 +1,7 @@
 """Compile independently verified function views from shared human-authored files."""
 import argparse
 import json
+import subprocess
 from pathlib import Path
 from functools import lru_cache
 
@@ -76,10 +77,16 @@ def patch_objdiff(root, path):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('action', choices=['objdiff'])
+    p.add_argument('action', choices=['objdiff', 'generate'])
     p.add_argument('--root', type=Path, default=Path('.'))
     p.add_argument('--path', type=Path, default=Path('objdiff.json'))
+    p.add_argument('command', nargs=argparse.REMAINDER)
     args = p.parse_args()
+    if args.action == 'generate':
+        command = args.command[1:] if args.command[:1] == ['--'] else args.command
+        if not command:
+            p.error('generate requires the pinned dsd command')
+        subprocess.run(command, cwd=args.root, check=True)
     patch_objdiff(args.root, args.path)
 
 

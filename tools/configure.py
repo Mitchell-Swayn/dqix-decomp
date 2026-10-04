@@ -263,7 +263,7 @@ def main():
 
         n.rule(
             name="objdiff",
-            command=f'{DSD} objdiff --config-path $config_path {DSD_OBJDIFF_ARGS} && "{PYTHON}" tools/unit_source_views.py objdiff'
+            command=f'"{PYTHON}" tools/unit_source_views.py generate -- {DSD} objdiff --config-path $config_path {DSD_OBJDIFF_ARGS}'
         )
         n.newline()
 
