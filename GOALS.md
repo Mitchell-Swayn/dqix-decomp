@@ -209,7 +209,7 @@ waived, and a byte-identical ROM does not imply that its code is fully reconstru
   counts reconcile with the ARM9 total. ARM7 startup, both autoload copies and
   their BSS are now mapped separately without double-counting the parent payload.
 - Built the original revision from a clean Git source archive and fresh inputs;
-  recorded compiler/tool hashes and complete log in `docs/verification/`.
+  recorded compiler/tool hashes and complete logs under ignored `build/verification/`.
 - Added independent ARM7 C compilation, linking at actual runtime addresses,
   symbol/byte checks and packaging. Source units are explicit; all other bytes
   remain binary fallback. The full ARM7 code/function denominator remains unknown.

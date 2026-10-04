@@ -20,11 +20,8 @@ It is not complete game acceptance.
   Earlier exploratory runs used the identical program payload with the historical
   four-byte header-checksum difference. The archived opening and reload records
   below use the exact-hash ROM.
-- [Opening manifest](verification/runtime/opening.json),
-  [field/menu manifest](verification/runtime/field-menu.json),
-  [fresh cartridge reload manifest](verification/runtime/quick-reload.json).
-  These record input timing, core/ROM hashes, capture hashes and configuration.
-  They contain metadata, not game binaries, saves or screenshot payloads.
+- Opening, field/menu, and cartridge reload manifests are local build evidence
+  under ignored `build/verification/pr2-artifacts/runtime/`.
 
 Screenshots, emulator states and generated cartridge saves remain locally under
 `build/runtime/`; they are deliberately excluded from source commits. Images
@@ -55,13 +52,13 @@ Supply the separately installed matching libretro DLL, build the exact ROM, and
 use an empty output directory for a fresh session:
 
 ```powershell
-.\.venv\Scripts\python.exe tools/runtime_smoke.py --core build/runtime-tools/desmume_libretro.dll --output build/runtime/replay-opening --inputs docs/verification/runtime/opening-inputs.json --frames 22000 --capture-every 2000
+.\.venv\Scripts\python.exe tools/runtime_smoke.py --core build/runtime-tools/desmume_libretro.dll --output build/runtime/replay-opening --inputs build/verification/pr2-artifacts/runtime/opening-inputs.json --frames 22000 --capture-every 2000
 ```
 
 For an existing generated Quick Save, start a fresh emulator process:
 
 ```powershell
-.\.venv\Scripts\python.exe tools/runtime_smoke.py --core build/runtime-tools/desmume_libretro.dll --output build/runtime/replay-reload --load-save build/runtime/saved/dqix_usa.dsv --inputs docs/verification/runtime/reload-inputs.json --frames 3600 --capture-every 1200
+.\.venv\Scripts\python.exe tools/runtime_smoke.py --core build/runtime-tools/desmume_libretro.dll --output build/runtime/replay-reload --load-save build/runtime/saved/dqix_usa.dsv --inputs build/verification/pr2-artifacts/runtime/reload-inputs.json --frames 3600 --capture-every 1200
 ```
 
 The save is not distributed; create it through the in-game Misc. > Quick Save

@@ -38,5 +38,5 @@ standalone DQIX build. Upstream GitHub Actions remain repository CI.
 
 Technical inventory, call graphs, function databases, and progress viewers are
 optional DQIX development tools. They do not supply game instructions or source
-coverage. Verification summaries stay in docs/verification/; verbose logs stay
-under ignored build/verification/ (archived logs in its archive/ directory).
+coverage. Generated verification manifests, reports, and verbose logs stay under ignored
+build/verification/. They are not published with the source.

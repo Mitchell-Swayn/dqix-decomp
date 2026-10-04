@@ -21,4 +21,4 @@ ninja.exe
 /docs/workflow/
 /tools/*factory*
 /tools/test_factory*
-/docs/verification/*.log
+/docs/verification/
