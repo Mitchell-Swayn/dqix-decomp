@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "unit": "CpuStatus",
+  "source": "src/ARM7/CpuStatus.c",
+  "review_status": "reviewed by coordinating Codex agent on 2026-10-02",
+  "approval_scope": "Only the six bounded CPSR routines below; no approval for instruction-matching coercion elsewhere",
+  "reason": "CPU status and interrupt-mask access requires MRS/MSR; ordinary C cannot express these processor-register operations",
+  "original_assembly_authorship": "unknown",
+  "architecture_reference": "https://documentation-service.arm.com/static/5e8e1323fd977155116a3129",
+  "local_reference": "src/System/CPSRInterruptState.cpp",
+  "source_evidence": "Original USA ARM7 payload SHA-1 a662d5c6a78e990244299926cf6862ce910a475d; direct instruction decoding at the recorded WRAM autoload runtime addresses",
+  "verification": "arm7_build.py compiles arm7tdmi source, links each declared symbol, compares all 120 linked bytes against original payload, and verifies complete rebuilt payload equality",
+  "coverage": {
+    "reviewed_assembly_routine_bytes": 120,
+    "inline_assembly_instruction_bytes": 44,
+    "c_instruction_credit": 0,
+    "note": "Reviewed assembly coverage counts entire routines, including C-generated masks and returns, not only MRS/MSR bytes"
+  },
+  "routines": [
+    {"symbol": "ARM7_EnableIRQInterrupts", "start": "0x037fe350", "end": "0x037fe364", "payload_start": "0x656c", "instructions": "MRS r0,CPSR; BIC r1,r0,#0x80; MSR CPSR_c,r1; AND r0,r0,#0x80; BX lr"},
+    {"symbol": "ARM7_DisableIRQInterrupts", "start": "0x037fe364", "end": "0x037fe378", "payload_start": "0x6580", "instructions": "MRS r0,CPSR; ORR r1,r0,#0x80; MSR CPSR_c,r1; AND r0,r0,#0x80; BX lr"},
+    {"symbol": "ARM7_SetIRQInterruptState", "start": "0x037fe378", "end": "0x037fe390", "payload_start": "0x6594", "instructions": "MRS r1,CPSR; BIC r2,r1,#0x80; ORR r2,r2,r0; MSR CPSR_c,r2; AND r0,r1,#0x80; BX lr"},
+    {"symbol": "ARM7_DisableIRQAndFIQInterrupts", "start": "0x037fe390", "end": "0x037fe3a4", "payload_start": "0x65ac", "instructions": "MRS r0,CPSR; ORR r1,r0,#0xc0; MSR CPSR_c,r1; AND r0,r0,#0xc0; BX lr"},
+    {"symbol": "ARM7_SetIRQAndFIQInterruptState", "start": "0x037fe3a4", "end": "0x037fe3bc", "payload_start": "0x65c0", "instructions": "MRS r1,CPSR; BIC r2,r1,#0xc0; ORR r2,r2,r0; MSR CPSR_c,r2; AND r0,r1,#0xc0; BX lr"},
+    {"symbol": "ARM7_GetProcessorMode", "start": "0x037fe3bc", "end": "0x037fe3c8", "payload_start": "0x65d8", "instructions": "MRS r0,CPSR; AND r0,r0,#0x1f; BX lr"}
+  ]
+}

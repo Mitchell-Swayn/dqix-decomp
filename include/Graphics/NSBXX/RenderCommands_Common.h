@@ -58,9 +58,10 @@ extern unsigned int const data_020e9240[];
 
 // pivot matrix a/b/c/d position lookup
 // both arrays are identical
-extern struct {
+struct PivotMatrixPositions {
     uint8_t a, b, c, d;
-} const data_020e9260[], data_020e9284[];
+};
+extern const PivotMatrixPositions data_020e9260[], data_020e9284[];
 
 // Holds { func_020b9a2c, func_020b9b30, func_020ba390 }.
 // Called by command 6 to populate scaling data for the bone matrix
@@ -127,7 +128,7 @@ struct Struct_0210b678
 {
     Matrix4x4 mat4x4;
     Matrix3x3 mat3x3;
-} extern data_0210b678[];
+} extern data_0210b678[64];
 
 extern "C"
 {  

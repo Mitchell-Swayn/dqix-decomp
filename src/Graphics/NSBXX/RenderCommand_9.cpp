@@ -2,7 +2,7 @@
 
 // not a match, 64-bit arithmetic is ruining everything.
 // notably there is no hook/callback stuff in this command.
-extern "C" void RenderCommand_9(RenderCommandHandler* handler, int modifier)
+void RenderCommand_9(RenderCommandHandler* handler, int modifier)
 {
     NSBXXInternalModel* model = handler->modelContext_->internalModel_;
     int numTerms = handler->instructionPointer_[2];

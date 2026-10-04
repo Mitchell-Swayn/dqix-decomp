@@ -67,9 +67,15 @@ struct AllocatorTypeB : public AllocatorBase // nonvirtual inheritance
     static const VTable s_vtable;
 };
 
-// There seems to be a fourth type of allocator, with a vtable at 020e9178.
-// It appears that it is never used in the context of polymorphic allocators,
-// but does see some use elsewhere. It also appears to be much more complicated
-// and its underlying functions are in a different region of memory
-// (func_020c8854 to allocate, func_020c985c to free) so I'm leaving it out 
-// for now.
+// Adapter to the SDK arena/heap allocator. The heap selector is signed:
+// a negative value selects the current heap in the specified arena.
+// USA vtable: 0x020e9178. See ArenaHeap.h for the backing allocator.
+struct AllocatorTypeHeap : public AllocatorBase
+{
+    int heapId;
+    int arenaId;
+
+    static void* Allocate(AllocatorBase* base, unsigned int len);
+    static void Free(AllocatorBase* base, void* data);
+    static const VTable s_vtable;
+};

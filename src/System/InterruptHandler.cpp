@@ -1,28 +1,12 @@
 #include "System/Interrupts.h"
 #include "System/DMA.h"
+#include "System/InterruptResponse.h"
 #include "System/BiosData.h"
 #include "System/DTCM.h"
 #include <globaldefs.h>
 #include <asmhacks.h>
 
 #pragma optimize_for_size off
-
-#if defined(jpn)
-#define data_0211127c data_02110f1c
-#define data_020f2274 data_020f23e0
-#endif
-
-struct DMAOrTimerResponse
-{
-    DMACompletionCallback callback;
-    unsigned int stayEnabledAfter;
-    int userdata;
-};
-
-// 0-3 are DMA, 4-7 are timers
-extern DMAOrTimerResponse data_0211127c[8];
-// maps index in the previous array to interrupt ID
-extern unsigned short data_020f2274[8];
 
 inline DMACompletionCallback& CallbackByIndex(int n, int base = 0)
 {
@@ -88,16 +72,6 @@ void OnDMAOrTimerCompletion(int index)
     }
 }
 
-void DMA0InterruptHandler() { OnDMAOrTimerCompletion(0); }
-void DMA1InterruptHandler() { OnDMAOrTimerCompletion(1); }
-void DMA2InterruptHandler() { OnDMAOrTimerCompletion(2); }
-void DMA3InterruptHandler() { OnDMAOrTimerCompletion(3); }
-
-void Timer0OverflowInterruptHandler() { OnDMAOrTimerCompletion(4); }
-void Timer1OverflowInterruptHandler() { OnDMAOrTimerCompletion(5); }
-void Timer2OverflowInterruptHandler() { OnDMAOrTimerCompletion(6); }
-void Timer3OverflowInterruptHandler() { OnDMAOrTimerCompletion(7); }
-
 void InitializeInterruptContextBlock_020c6ad4()
 {
     BlockedContextList& list = GetInterruptDataBlockedContextList();
@@ -152,44 +126,3 @@ void SetInterruptHandler(unsigned int mask, const void* proc)
     } while (interruptID < 22);
 }
 
-InterruptHandlerProc GetInterruptHandler(unsigned int mask)
-{
-    int interruptId = 0;
-    InterruptHandlerProc* pProc = &data_027e0000.interruptProcTable[0];
-    do
-    {
-        if (!(mask & 1))
-            continue;
-
-        if (interruptId >= 8 && interruptId <= 11)
-        {
-            return (InterruptHandlerProc)data_0211127c[interruptId - 8].callback;
-        }
-        else if (interruptId >= 3 && interruptId <= 6)
-        {
-            return (InterruptHandlerProc)data_0211127c[interruptId + 1].callback;
-        }
-        else
-        {
-            return *pProc;
-        }
-
-    } while (interruptId++, mask >>= 1, pProc++, interruptId < 22);
-    return NULL;
-}
-
-void SetDMACompletionCallback(int channel, DMACompletionCallback callback, int userdata)
-{
-    CallbackByIndex(channel) = callback;
-    CallbackUserdataByIndex(channel) = userdata;
-    unsigned int prior = EnableSpecificInterrupts(1 << (channel + 8));
-    ShouldStayEnabledByIndex(channel) = prior & (1 << (channel + 8));
-}
-
-void SetTimerOverflowCallback(int timer, DMACompletionCallback callback, int userdata)
-{
-    CallbackByIndex(timer, 4) = callback;
-    CallbackUserdataByIndex(timer, 4) = userdata;
-    EnableSpecificInterrupts(1 << (timer + 3));
-    ShouldStayEnabledByIndex(timer, 4) = true;
-}

@@ -419,10 +419,10 @@ func_0201317c kind:function(arm,size=0x18) addr:0x0201317c
 func_02013194 kind:function(arm,size=0x30) addr:0x02013194
 func_020131c4 kind:function(arm,size=0x58) addr:0x020131c4
 func_0201321c kind:function(arm,size=0x3c) addr:0x0201321c
-func_02013258 kind:function(arm,size=0x50) addr:0x02013258
+_Z19ResetGrottoTileDataP14GrottoTileData kind:function(arm,size=0x50) addr:0x02013258
 func_020132a8 kind:function(arm,size=0x238) addr:0x020132a8
 func_020134e0 kind:function(arm,size=0x38) addr:0x020134e0
-func_02013518 kind:function(arm,size=0xec) addr:0x02013518
+_ZN6Zone3D18ResetZoneResourcesEb kind:function(arm,size=0xec) addr:0x02013518
 _ZN6Zone3D10SwitchZoneEt kind:function(arm,size=0x31c) addr:0x02013604
 _ZN8Vector3iaSERKS_ kind:function(arm,size=0x1c) addr:0x02013920
 func_0201393c kind:function(arm,size=0x140) addr:0x0201393c
@@ -496,14 +496,14 @@ func_020194c8 kind:function(arm,size=0x7fc) addr:0x020194c8
 func_02019cc4 kind:function(arm,size=0x48) addr:0x02019cc4
 func_02019d0c kind:function(arm,size=0x19c) addr:0x02019d0c
 func_02019ea8 kind:function(arm,size=0x80) addr:0x02019ea8
-_Z39GenerateGrottoObjectPositionOrientationPviiPiS0_PK24TileFeaturePlacementDatab kind:function(arm,size=0x178) addr:0x02019f28
+_ZN6Zone3D34GetGrottoObjectPositionOrientationEiiPiS0_PK24TileFeaturePlacementDatab kind:function(arm,size=0x178) addr:0x02019f28
 func_0201a0a0 kind:function(arm,size=0x300) addr:0x0201a0a0
 func_0201a3a0 kind:function(arm,size=0x88c) addr:0x0201a3a0
 func_0201ac2c kind:function(arm,size=0x50) addr:0x0201ac2c
 func_0201ac7c kind:function(arm,size=0xf4) addr:0x0201ac7c
 func_0201ad70 kind:function(arm,size=0x590) addr:0x0201ad70
-func_0201b300 kind:function(arm,size=0x28) addr:0x0201b300
-func_0201b328 kind:function(arm,size=0x28) addr:0x0201b328
+_Z12IsGrottoZonei kind:function(arm,size=0x28) addr:0x0201b300
+_Z21IsMainGrottoFloorZonei kind:function(arm,size=0x28) addr:0x0201b328
 func_0201b350 kind:function(arm,size=0x28) addr:0x0201b350
 func_0201b378 kind:function(arm,size=0x78) addr:0x0201b378
 func_0201b3f0 kind:function(arm,size=0xdc) addr:0x0201b3f0
@@ -569,7 +569,7 @@ func_0201d3c4 kind:function(arm,size=0x994) addr:0x0201d3c4
 func_0201dd58 kind:function(arm,size=0x4c) addr:0x0201dd58
 func_0201dda4 kind:function(arm,size=0x1b8) addr:0x0201dda4
 func_0201df5c kind:function(arm,size=0x78) addr:0x0201df5c
-func_0201dfd4 kind:function(arm,size=0x14) addr:0x0201dfd4
+_ZN12ZoneFeatures5ResetEv kind:function(arm,size=0x14) addr:0x0201dfd4
 func_0201dfe8 kind:function(arm,size=0x2c) addr:0x0201dfe8
 func_0201e014 kind:function(arm,size=0x2c) addr:0x0201e014
 func_0201e040 kind:function(arm,size=0x24) addr:0x0201e040
@@ -3523,7 +3523,7 @@ func_02096660 kind:function(arm,size=0x14c) addr:0x02096660
 func_020967ac kind:function(arm,size=0x40) addr:0x020967ac
 func_020967ec kind:function(arm,size=0x140) addr:0x020967ec
 func_0209692c kind:function(arm,size=0x24) addr:0x0209692c
-func_02096950 kind:function(arm,size=0x14) addr:0x02096950
+_ZN13ZoneState27245ResetEv kind:function(arm,size=0x14) addr:0x02096950
 func_02096964 kind:function(arm,size=0x48) addr:0x02096964
 func_020969ac kind:function(arm,size=0x10) addr:0x020969ac
 func_020969bc kind:function(arm,size=0xc) addr:0x020969bc
@@ -4977,7 +4977,7 @@ _Z27RemoveContextFromGlobalListP16ProcessorContext kind:function(arm,size=0x48) 
 _Z13SwitchContextv kind:function(arm,size=0xc8) addr:0x020c8e60
 func_020c8f28 kind:function(arm,size=0x148) addr:0x020c8f28
 func_020c9070 kind:function(arm,size=0x10) addr:0x020c9070
-_Z15PopulateContextP16ProcessorContextjjjjj kind:function(arm,size=0xfc) addr:0x020c9080
+_Z24PopulateProcessorContextP16ProcessorContextjjjjj kind:function(arm,size=0xfc) addr:0x020c9080
 _Z26ContextExecutionReturnProcv kind:function(arm,size=0x20) addr:0x020c917c
 _Z11ExitContextP16ProcessorContexti kind:function(arm,size=0x5c) addr:0x020c919c
 _Z18ExitCurrentContexti kind:function(arm,size=0x38) addr:0x020c91f8
@@ -5794,7 +5794,7 @@ func_020e0090 kind:function(arm,size=0x90) addr:0x020e0090
 func_020e0120 kind:function(arm,size=0x2c) addr:0x020e0120
 func_020e014c kind:function(arm,size=0x54) addr:0x020e014c
 func_020e01a0 kind:function(arm,size=0x24) addr:0x020e01a0
-func_020e01c4 kind:function(arm,size=0x20) addr:0x020e01c4
+_ZN13ZoneState27545ResetEv kind:function(arm,size=0x20) addr:0x020e01c4
 func_020e01e4 kind:function(arm,size=0x20) addr:0x020e01e4
 func_020e0204 kind:function(arm,size=0xf8) addr:0x020e0204
 func_020e02fc kind:function(arm,size=0x24) addr:0x020e02fc
@@ -6459,7 +6459,7 @@ data_020ef008 kind:data(any) addr:0x020ef008
 data_020ef018 kind:data(any) addr:0x020ef018
 data_020ef022 kind:data(any) addr:0x020ef022
 data_020ef024 kind:data(any) addr:0x020ef024
-data_020ef02c kind:data(any) addr:0x020ef02c
+gZone3DPaths kind:data(any) addr:0x020ef02c
 data_020ef042 kind:data(any) addr:0x020ef042
 data_020ef052 kind:data(any) addr:0x020ef052
 data_020ef05b kind:data(any) addr:0x020ef05b

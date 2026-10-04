@@ -88,25 +88,50 @@ class Decompressor
 public:
     unsigned char* writeOutputPtr;
     unsigned int remainingOutputBytes;
-    void* unknown_08;
-    unsigned int unknown_0C;
-    unsigned char unknown_10;
-    unsigned char unknown_11;
-    unsigned char unknown_12[2];
-    short unknown_14;
-    unsigned char unknown_16[2];
-    unsigned char decompressB_typeFlag_18;
-    unsigned char unknown_19[3];
+    // The three native algorithms reuse bytes +0x08..+0x1b differently.
+    // These views describe observed accesses, not recovered original typedefs.
+    union AlgorithmState
+    {
+        struct LZState
+        {
+            unsigned int token;                 // +0x08: pending length/offset bits
+            unsigned char unused_0C[3];
+            unsigned char flags;                // +0x0f: next flag in bit7
+            unsigned char remainingFlagBits;    // +0x10
+            unsigned char tokenReadState;       // +0x11: initialized to3
+            unsigned char extendedLengthMode;   // +0x12: zero in this wrapper
+            unsigned char unused_13[9];
+        } lz;
+        struct HuffmanState
+        {
+            unsigned char* treeCursor;           // +0x08: copy cursor, then node
+            unsigned int inputBits;              // +0x0c
+            unsigned int outputBits;             // +0x10
+            short remainingTreeBytes;            // +0x14: -1 before size byte
+            unsigned char inputBitCount;         // +0x16
+            unsigned char outputBitCount;        // +0x17
+            unsigned char symbolWidth;           // +0x18: four or eight bits
+            unsigned char unused_19[3];
+        } huffman;
+        struct RLEState
+        {
+            unsigned char unused_08[3];
+            unsigned char control;               // +0x0b: bit7 selects repeat
+            unsigned short remainingRunBytes;    // +0x0c
+            unsigned char unused_0E[14];
+        } rle;
+    } state;
 
-    // This might be buffer space tbh
-    unsigned int unknown_1C[0x80];
+    unsigned char huffmanTree[0x200]; // +0x1c; includes the tree-size byte
 
-    unsigned int probablyDecompressedSize;
+    unsigned int declaredOutputSize;
     unsigned int compressionType;
-    void* abstractOutputLocation;
+    void* alignedOutputEnd;
 
 public:
     bool InitAndDecompress(void* out, unsigned int outCapacity, const void* in, unsigned int inLength);
     bool ProcessBytes(const void* input, unsigned int inputLength);
 };
+
+typedef char DecompressorLayoutCheck[sizeof(Decompressor) == 0x228 ? 1 : -1];
 

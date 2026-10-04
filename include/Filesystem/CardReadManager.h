@@ -11,7 +11,7 @@ struct Arm7CardReadData
     int unknown_4[23];
 };
 
-// sizeof <= 0x620
+// sizeof == 0x620 (verified by the source-owned USA BSS definition).
 #define CARTRIDGE_READ_CONTEXT_FLAG_0 0
 #define READ_MANAGER_FLAG_HARDWARE_READ_IN_PROGRESS 2
 #define READ_MANAGER_FLAG_CONTEXT_HAS_TASK_PENDING 3

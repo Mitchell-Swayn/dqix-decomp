@@ -1,0 +1,16 @@
+#include "System/RuntimeArctangent.h"
+
+// Original binary64 coefficients in increasing polynomial order.
+const double gRuntimeArctangentCoefficients[11] = {
+    0.3333333333333293,
+    -0.19999999999876483,
+    0.14285714272503466,
+    -0.11111110405462356,
+    0.09090887133436507,
+    -0.0769187620504483,
+    0.06661073137387531,
+    -0.058335701337905735,
+    0.049768779946159324,
+    -0.036531572744216916,
+    0.016285820115365782
+};

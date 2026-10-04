@@ -83,12 +83,15 @@ void InitializeGamecardBusOwnership()
 // can be static
 int LockGamecardBusLock(unsigned short owner, GamecardBusLock* lock, void (*onLock)(), bool strict)
 {
-    if (TryLockGamecardBusLock(owner, lock, onLock, strict) > 0)
+    int result = TryLockGamecardBusLock(owner, lock, onLock, strict);
+    if (result > 0)
     {
         do {
             WaitByLoop(0x400);
-        } while (TryLockGamecardBusLock(owner, lock, onLock, strict) > 0);
+            result = TryLockGamecardBusLock(owner, lock, onLock, strict);
+        } while (result > 0);
     }
+    return result;
 }
 
 // can be static
