@@ -16,7 +16,8 @@ Keep queue state in docs/workflow/queue.json. Preserve existing user changes.
   separate. A byte-perfect ROM with original fallback is not full decompilation.
 
 - ROM inputs and generated outputs must be independent files. Never hard-link a
-  generated output, or use another worktree's output as an input link. Copy the
-  verified original input from extract/baserom_dqix_usa.nds, then verify its SHA-1.
+  generated output, or use another worktree's output as an input link. Workers may
+  share hash-bound read-only original ROM/compiler inputs via tools/rom_inputs.py.
+  Verify the original ROM SHA-1; keep every generated output workspace-local.
 - Worker edits must use absolute paths inside the assigned worktree. Setting
   exec_command workdir does not change apply_patch's working directory.

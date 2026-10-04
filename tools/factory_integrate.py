@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 from pathlib import Path, PurePosixPath
+from rom_inputs import input_rom, compiler_root, validate as validate_inputs
 import re
 import shutil
 import socket
@@ -109,6 +110,11 @@ def allowed_path(path, module):
     if path.startswith(f"config/usa/arm9/overlays/{module}/"):
         return path in {f"config/usa/arm9/overlays/{module}/{name}" for name in
                         ("delinks.txt", "symbols.txt", "linker_symbols.json")}
+    if module in ('arm9/main','arm9/itcm','arm9/dtcm') or module.startswith('arm9/ov'):
+        from factory_tasks import module_config
+        folder=module_config(module)
+        if path in {folder+'/'+name for name in ('delinks.txt','symbols.txt','linker_symbols.json')}:
+            return True
     if path.startswith("docs/workflow/"):
         return path.casefold() != "docs/workflow/queue.json" and value.suffix.lower() in (".md", ".json", ".txt", ".csv")
     return False
@@ -121,7 +127,22 @@ def validate_submission(runner, root, submission, review):
         if not isinstance(submission.get(key), str) or not submission[key]:
             raise ValueError(f"submission needs {key}")
     module = submission.get("module")
-    if not isinstance(module, str) or not re.fullmatch(r"ov\d{3}", module) or int(module[2:]) > 34:
+    if submission.get('function_id'):
+        from factory_tasks import module_config
+        module_config(module)
+        f=submission.get('function',{})
+        if f.get('id')!=submission['function_id'] or f.get('module_id')!=module:
+            raise ValueError('Function submission must bind assigned function/module')
+        from contextlib import closing
+        from factory import connect
+        with closing(connect(root)) as db:
+            row=db.execute('SELECT id,owner,status,payload FROM function_tasks WHERE job_id=?',(submission.get('job_id'),)).fetchone()
+        if not row or row['id']!=submission['function_id'] or row['owner']!=submission['lane'] or row['status']!='review':
+            raise ValueError('Function submission has no matching review claim in the integrator queue')
+        original=json.loads(row['payload'])
+        for key in ('id','module_id','name','address','size','mode','original_sha256'):
+            if f.get(key)!=original.get(key):raise ValueError('Assigned function metadata changed: '+key)
+    elif not isinstance(module, str) or not re.fullmatch(r"ov\d{3}", module) or int(module[2:]) > 34:
         raise ValueError("submission needs an assigned USA overlay module ov000..ov034")
     for key in ("base_revision", "source_tip"):
         value = submission.get(key)
@@ -172,12 +193,12 @@ def tools_state(root):
     suffix = ".exe" if os.name == "nt" else ""
     python = root / (".venv/Scripts/python.exe" if os.name == "nt" else ".venv/bin/python")
     ninja = root / (".venv/Scripts/ninja.exe" if os.name == "nt" else ".venv/bin/ninja")
-    compiler = root / "tools/mwccarm"
+    compiler = compiler_root(root)
     files = {"python": python, "ninja": ninja, "dsd" + suffix: root / ("dsd" + suffix),
              "objdiff-cli" + suffix: root / ("objdiff-cli" + suffix)}
     for path in sorted((compiler / "2.0/sp2p2").rglob("*")):
         if path.is_file():
-            files[path.relative_to(root).as_posix()] = path
+            files['tools/mwccarm/' + path.relative_to(compiler).as_posix()] = path
     for name in ("mwccarm.exe", "mwldarm.exe"):
         if not (compiler / "2.0/sp2p2" / name).is_file():
             raise ValueError(f"pinned matching compiler missing: {name}")
@@ -189,16 +210,50 @@ def tools_state(root):
             "hashes": {name: digest(path) for name, path in files.items()}}
 
 
+def resolve_function_delinks(runner,stage,module):
+    """Merge only disjoint source blocks in the assigned module's delink map."""
+    from factory_tasks import module_config
+    from integrate_batch import merge_delinks
+    path=module_config(module)+'/delinks.txt'
+    entries=[]
+    for entry in runner.git(stage,'ls-files','--unmerged','-z')[1].split(b'\0'):
+        if entry:
+            metadata,name=entry.split(b'\t',1)
+            mode,_,number=metadata.decode().split()
+            entries.append((name.decode(),mode,int(number)))
+    if set(entries)!={(path,'100644',i) for i in (1,2,3)}:
+        raise CandidateConflict('Only regular three-stage assigned delink conflicts can be merged automatically')
+    try:
+        texts=[runner.git(stage,'show',f':{i}:{path}')[1].decode('utf-8') for i in (1,2,3)]
+        merged=merge_delinks(*texts)
+    except Exception as error:raise CandidateConflict('Delink ranges conflict: '+str(error)) from error
+    output=stage/path
+    if output.is_symlink() or not output.resolve().is_relative_to(stage):
+        raise CandidateConflict('Delink output must remain inside stage')
+    output.write_text(merged,encoding='utf-8',newline='\n')
+    runner.git(stage,'add','--',path);runner.git(stage,'cherry-pick','--continue')
+
+
+def validate_function_snapshot(root,path,submission):
+    from contextlib import closing
+    import sqlite3
+    def verified(database):
+        with closing(sqlite3.connect(Path(database).resolve().as_uri()+'?mode=ro',uri=True)) as db:
+            return {row[0] for row in db.execute("SELECT id FROM functions WHERE completion_status='completed' AND decompiled_c IS NOT NULL AND decompiled_c<>''")}
+    before=verified(root/'build/call-graph/functions.sqlite')
+    after=verified(path)
+    if before-after or after-before!={submission['function_id']}:
+        raise CandidateConflict('Accepted C coverage must add only the assigned function, without losing other verified source')
+
+
 def prepare_stage(root, stage):
     state = tools_state(root)
-    original = root / "extract/baserom_dqix_usa.nds"
+    from rom_inputs import input_rom, provision, compiler_root
+    original = input_rom(root)
     if digest(original, "sha1") != USA_SHA1:
         raise ValueError("original ROM input SHA1 does not match USA acceptance")
-    destination = stage / "extract/baserom_dqix_usa.nds"
-    destination.parent.mkdir(exist_ok=True)
-    shutil.copy2(original, destination)
-    if original.samefile(destination) or destination.stat().st_nlink != 1 or digest(destination, "sha1") != USA_SHA1:
-        raise ValueError("stage ROM must be an independent verified copy of the original input")
+    provision(root, stage)
+    state['compiler'] = str(compiler_root(stage)) if (stage / 'build/factory/inputs.json').exists() else state['compiler']
     suffix = ".exe" if os.name == "nt" else ""
     for name in ("dsd" + suffix, "objdiff-cli" + suffix):
         shutil.copy2(root / name, stage / name)
@@ -267,6 +322,9 @@ def integrate(root, submission, review, workspace):
                     runner.git(stage, "cherry-pick", "--", commit)
                 except Exception as error:
                     if runner.git(stage, "ls-files", "--unmerged", "-z")[1]:
+                        if submission.get('function_id'):
+                            resolve_function_delinks(runner,stage,submission['module'])
+                            continue
                         raise CandidateConflict(f"cherry-pick source conflict: {error}") from error
                     raise InfrastructureError(f"cherry-pick failed without source conflicts: {error}") from error
             result["stage_revision"] = runner.output(stage, "rev-parse", "HEAD")
@@ -276,12 +334,21 @@ def integrate(root, submission, review, workspace):
                 raise InfrastructureError("candidate snapshot does not describe verified stage HEAD")
             phase = "coverage"
             result["delta"] = work_batch.delta(result["baseline"], result["candidate"])
+            if submission.get('function_id'):
+                from factory_tasks import refresh_snapshot
+                phase='function_acceptance'
+                if (result['delta']['arm9']['matched_functions']!=1 or
+                    result['delta']['arm9']['matched_code']!=submission['function']['size']):
+                    raise CandidateConflict('Single-function submission changed coverage outside its exact extent')
+                snapshot=refresh_snapshot(stage,runner)
+                validate_function_snapshot(root,snapshot,submission)
+                result['staged_function_snapshot']=str(snapshot)
             phase = "final_integrity"
             if tools_state(root)["hashes"] != tools["hashes"]:
                 raise ValueError("shared tool hashes changed during acceptance")
-            if digest(root / "extract/baserom_dqix_usa.nds", "sha1") != USA_SHA1:
+            if digest(input_rom(root), "sha1") != USA_SHA1:
                 raise ValueError("original input changed during acceptance")
-            stage_input, stage_output = stage / "extract/baserom_dqix_usa.nds", stage / "dqix_usa.nds"
+            stage_input, stage_output = input_rom(stage), stage / "dqix_usa.nds"
             if (digest(stage_input, "sha1") != USA_SHA1 or stage_input.stat().st_nlink != 1 or
                     stage_output.stat().st_nlink != 1 or stage_input.samefile(stage_output)):
                 raise ValueError("stage input/output must remain independent files with verified original input")
@@ -305,6 +372,13 @@ def integrate(root, submission, review, workspace):
                           before=result["baseline"], snapshot=result["candidate"],
                           accepted_revision=result["stage_revision"], main_revision=result["main_after"],
                           acceptance="independent full ROM/module/symbol/report/SHA1 checks; strict coverage delta; reviewed source tip")
+            if submission.get('function_id'):
+                folder=root/'build/call-graph';folder.mkdir(parents=True,exist_ok=True)
+                for name in ('functions.sqlite','graph.json','index.html','decompilation-order.csv'):
+                    original=stage/'build/call-graph'/name
+                    temporary=folder/(name+'.'+uuid.uuid4().hex+'.tmp')
+                    shutil.copy2(original,temporary);os.replace(temporary,folder/name)
+                result['function_snapshot']=str(folder/'functions.sqlite')
     except Exception as error:
         result["error"] = str(error)
         if isinstance(error, InfrastructureError):

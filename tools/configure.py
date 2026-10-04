@@ -7,6 +7,7 @@ import json
 import sys
 
 from unit_source_views import active_views, reserved_sources
+from rom_inputs import input_rom, compiler_root
 import ninja_syntax
 from get_platform import get_platform
 
@@ -82,7 +83,7 @@ src_path         = root_path / "src"
 libs_path        = root_path / "libs"
 extract_path     = root_path / "extract"
 tools_path       = root_path / "tools"
-mwcc_root        = args.compiler or tools_path / "mwccarm"
+mwcc_root        = args.compiler or compiler_root(root_path)
 mwcc_path        = mwcc_root / MWCC_VERSION
 
 
@@ -140,6 +141,8 @@ class Project:
         return self.game_config / "arm9" / "config.yaml"
 
     def baserom(self) -> Path:
+        if self.game_version == 'usa':
+            return input_rom(root_path)
         return extract_path / f'baserom_{GAME}_{self.game_version}.nds'
 
     def build_rom(self) -> str:
@@ -425,7 +428,7 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, project: Project):
         n.rule(
             name="arm7_source",
             command=(f'{PYTHON} tools/arm7_build.py --compiler "{mwcc_path}"'
-                     f' --output "{arm7_output}" --rom-config $rom_config'
+                     f' --output "{arm7_output}" --baserom "{project.baserom()}" --rom-config $rom_config'
                      f' --output-rom-config "{arm7_rom_config}"'
                      f' --depfile "{arm7_depfile}" --dep-target "{arm7_rom_config}"{runner_flag}'),
             depfile=arm7_depfile,
@@ -461,7 +464,7 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, project: Project):
         n.rule(
             name="finalize_usa_header",
             command=(f"{PYTHON} tools/finalize_rom_header.py $in $out"
-                     f" --baserom {project.baserom()}"),
+                     f' --baserom "{project.baserom()}"'),
         )
         n.build(
             inputs=str(project.game_build / "unfinalized.nds"),
@@ -600,7 +603,7 @@ def add_check_builds(n: ninja_syntax.Writer, project: Project):
         # separate and explicit: binary equality does not earn source coverage.
         n.rule(
             name="check_arm7",
-            command=f"{PYTHON} tools/check_arm7.py",
+            command=f'{PYTHON} tools/check_arm7.py --baserom "{project.baserom()}"',
         )
         n.build(
             inputs=[project.build_rom(), str(project.baserom()),

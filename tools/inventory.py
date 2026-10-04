@@ -8,6 +8,7 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+from rom_inputs import input_rom
 import re
 import struct
 import subprocess
@@ -258,7 +259,7 @@ def arm7_components(root, payload, load_address):
 
 
 def inventory(root):
-    rom_path = root / "extract/baserom_dqix_usa.nds"
+    rom_path = input_rom(root)
     rom = rom_path.read_bytes()
     sha1 = hashlib.sha1(rom).hexdigest()
     if sha1 != TARGET_SHA1:

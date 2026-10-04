@@ -11,6 +11,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+from rom_inputs import input_rom
 import re
 import sqlite3
 import subprocess
@@ -186,7 +187,7 @@ def disassemble(data,address,mode):
 
 
 def original_modules(root):
-    rom=(root/'extract/baserom_dqix_usa.nds').read_bytes()
+    rom=(input_rom(root)).read_bytes()
     if hashlib.sha1(rom).hexdigest()!=TARGET_SHA1: raise ValueError('Original USA ROM hash mismatch')
     records=cartridge(rom); del rom
     result={}
