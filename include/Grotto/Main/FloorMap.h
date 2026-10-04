@@ -9,11 +9,12 @@ struct GrottoTilePoint
     char y;
 };
 
-// sizeof(FloorMap) == 140. (Look at buffer size in
+// sizeof(FloorMap) == 140 == 0x8c. (Look at buffer size in
 // func_ov017_021b4a88 to confirm this).
 class FloorMap
 {
 public:
+    ~FloorMap() { Clear2(); }
     // This is held externally, though seems to be held right after the 
     // end of the generator.
     unsigned char* pMapData; 

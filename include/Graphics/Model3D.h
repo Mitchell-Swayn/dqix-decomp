@@ -47,17 +47,8 @@ public:
     int unknown_flags_a8_1_ : 1;
     int unknown_flags_a8_2_ : 1; // if 0x34, 0x38 match 0x90, 0x94 then this is set
 
-    // the class has what seems to be a constructor (no arguments) and a
-    // destructor at 0207e23c and 0207e250 (usa) respectively. But I'm
-    // not including it because the compiler generates two of each which breaks
-    // the build process. There's probably a way around this, maybe we can 
-    // explicitly mark a symbol to not be included at link time? But for now,
-    // I'm just leaving them out.
-    // 
-    // (For what it's worth, we know it's a constructor and destructor instead
-    // of just an Init() / Destroy() pair because their pointers get passed
-    // to a call to func_0200ee94, which is used to default-initialize an
-    // array of non-trivially constructible objects).
+    Model3D();
+    ~Model3D();
 
     void Clear();
 

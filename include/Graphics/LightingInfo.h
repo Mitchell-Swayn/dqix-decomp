@@ -26,6 +26,7 @@ public:
     // Initialize() doesn't return *this, so it isn't a constructor, but
     // it's called by Zone3D constructor, so our constructor must be inline and call it
     LightingInfo() { Initialize(); }
+    ~LightingInfo() { Initialize(); }
 
     void Initialize();
     void Reset();

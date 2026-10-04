@@ -3,6 +3,7 @@
 #include "Combat/Main/BattleList.h"
 #include "Resource/GameResources.h"
 #include "World/Object3D.h"
+#include "World/WorldPlacementSource.h"
 #include "Filesystem/NitroVM.h"
 #include "GameState/TimeOfDay.h"
 #include "Grotto/Main/GrottoStruct.h"
@@ -18,6 +19,56 @@ public:
     ModifiableCombatStats* currentStats_;
 };
 
+// Four GameState records are indexed by a signed object index. A negative
+// index marks a free record; the other fields have not yet been recovered.
+struct GameStateIndexedRecord {
+    char unknown_000[0x568];
+    short objectIndex_;
+    char unknown_56a;
+    unsigned char lowNibble_56b_ : 4;
+    unsigned char highNibble_56b_ : 4;
+    char unknown_56c[0x964 - 0x56c];
+};
+
+struct GameStateIndexList {
+    char unknown_000[0xf78];
+    unsigned char objectIndices_[4];
+    unsigned char count_;
+};
+
+// The table lookup at 0x0209a594 reads 12-byte records. It searches the
+// low eleven bits of identifier_, or uses the requested index directly.
+struct GameStateAttributeRecord {
+    unsigned short identifier_;
+    unsigned short unknown_02_;
+    unsigned int attributes_;
+    unsigned int unknown_08_;
+};
+
+struct GameStateAttributeTable {
+    GameStateAttributeRecord* records_;
+    int count_;
+};
+
+struct NativeIdentity {
+    unsigned char bytes_[6];
+};
+
+struct GameStateIdentityRecord {
+    NativeIdentity identity_;
+    unsigned char lowFlag_ : 1;
+    unsigned char upperFlags_ : 7;
+    char unknown_07_;
+    float timer_;
+};
+
+struct GameStateByteSlots {
+    unsigned char unknown_00_;
+    unsigned char unknown_01_;
+    unsigned char bytes_02_[4];
+    unsigned char unknown_06_;
+};
+
 // sizeof is probably 0x7ff4 but could be 0x7ff8. (Definitely no lower/higher)
 // For lower bound, look at initialize/reset function func_0200f3a4
 // which writes a byte at offset 0x7ff2.
@@ -30,7 +81,9 @@ class GameState
 {
 public:
     GameResources* pResources_;
-    char unk_4[4];
+    char unk_4[1];
+    unsigned char language_;
+    char unk_6[2];
     GameObject* objects_[0xe9];
     int protagonistObjectIndex_;
     void* unknown_3b0_; // see func_020100bc, LightingManager::MaybeComputeHorizonPosition. Probably a high level camera
@@ -51,18 +104,52 @@ public:
     uint64_t altTimestamp_; // not sure about usage
 
 #if defined(usa)
-    char unk_3f8[0x397c - 0x3f8];
+    char unk_3f8[0x474 - 0x3f8];
+    GameStateIndexedRecord indexedRecords_[4];
+    GameStateIndexList indexList_;
 #elif defined(jpn)
     char unk_3f8[0x371c - 0x3f8];
-#endif
-
     unsigned char unknownObjectIndex_397c_; // jpn: offset 0x731c instead
-    char unk_397d[0x63e0 - 0x397d];
+    unsigned char unknownObjectIndices_397d_[3];
+    unsigned char unknownObjectIndexCount_3980_;
+#endif
+    char unk_3981[0x5718 - 0x3981];
+    unsigned char unknownByteBuffer_5718_[4];
+    unsigned char unknownByteBufferLength_571c_;
+    signed char unknownByteBuffer_571d_[4];
+    unsigned char unknownByteBufferLength_5721_;
+    char unk_5722[0x572c - 0x5722];
+    GameStateAttributeTable attributeTable_;
+    unsigned char attributeTableBuffer_[0x570];
+    char unk_5ca4[0x5cb0 - 0x5ca4];
+    unsigned int unknown_5cb0_;
+    unsigned int unknown_5cb4_;
+    unsigned int unknown_5cb8_;
+    unsigned int unknown_5cbc_;
+    char unk_5cc0[0x5cd0 - 0x5cc0];
+    unsigned char unknownBitFlags_5cd0_[10];
+    unsigned char unknownPlacementByte_5cda_;
+    char unk_5cdb[1];
+    WorldPlacementSource::PersistentState placementStates_[100];
+    char unk_5e6c[0x63e0 - 0x5e6c];
 
     unsigned char* treasureMapLanguageData_;
     GrottoStruct grottoInfo_;
 
+#if defined(usa)
+    char unk_6fcc[0x74fe - 0x6fcc];
+    NativeIdentity nativeIdentity_;
+    char unk_7504[0x7f6c - 0x7504];
+    unsigned int unknown_7f6c_;
+    unsigned char unknown_7f70_;
+    char unk_7f71[0x7f74 - 0x7f71];
+    GameStateByteSlots byteSlots_7f74_;
+    char unk_7f7b[0x7f8c - 0x7f7b];
+    GameStateIdentityRecord identityRecords_[3];
+    char unk_7fb0[0x7ff4 - 0x7fb0];
+#else
     char unk_6fc0[0x7ff4 - 0x6fc0];
+#endif
 
 public:
     // --- GameStateInstance.cpp ---

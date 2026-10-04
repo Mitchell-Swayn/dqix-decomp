@@ -5,17 +5,117 @@
     .data       start:0x020eebe0 end:0x020f2e60 kind:data align:32
     .bss        start:0x020f2e60 end:0x021536e0 kind:bss align:32
 
+src/Lineage/RecordListEntry.cpp:
+    complete
+    .text start:0x02027878 end:0x020278a4
+
+src/Lineage/GameStateIndexedByte.cpp:
+    complete
+    .text start:0x02039730 end:0x02039750
+
+src/Lineage/RecordStateReset.cpp:
+    complete
+    .text start:0x020865ec end:0x0208660c
+
 src/GameState/GameStateInstance.cpp:
 	complete
 	.text start:0x0200f398 end:0x0200f3a4
+
+src/GameState/GameStateIdentityRecordReset.cpp:
+	complete
+	.text start:0x0200fad4 end:0x0200fb08
+
+src/GameState/GameStateLanguage.cpp:
+	complete
+	.text start:0x0200fb08 end:0x0200fb40
+
+src/GameState/GameStateByteSlotsReset.cpp:
+	complete
+	.text start:0x0200fb40 end:0x0200fb84
+
+src/GameState/GameStateNativeIdentity.cpp:
+	complete
+	.text start:0x020120f0 end:0x02012200
+
+src/GameState/NativeIdentityComparison.cpp:
+	complete
+	.text start:0x02011fb4 end:0x02011ff0
+
+src/GameState/GameStateIdentityStatus.cpp:
+	complete
+	.text start:0x02011ff0 end:0x02012040
+
+src/GameState/GameStateChunkTailCalls.cpp:
+	complete
+	.text start:0x0200fba4 end:0x0200fbb4
+
+src/GameState/GameStateChunkCopy.cpp:
+	complete
+	.text start:0x0200fbb4 end:0x0200fcfc
+
+src/GameState/GameStateChunkAccessors.cpp:
+	complete
+	.text start:0x0200fcfc end:0x0200fd14
+
+src/GameState/GameStateObjectSlots.cpp:
+	complete
+	.text start:0x0200fd38 end:0x0200fd70
+
+src/GameState/GameStateResourceAccessors.cpp:
+	complete
+	.text start:0x0200fb84 end:0x0200fba4
 
 src/GameState/GameStateObjects.cpp:
 	complete
 	.text start:0x0200fd70 end:0x0200fea4
 
+src/GameState/GameStateObjectFlagAccessors.cpp:
+	complete
+	.text start:0x0200fea4 end:0x0200ff94
+
+src/GameState/GameStateFieldAccessors.cpp:
+	complete
+	.text start:0x020100a0 end:0x020100cc
+
+src/GameState/GameStateStateContext.cpp:
+	complete
+	.text start:0x020100cc end:0x02010150
+
+src/GameState/GameStateObjectIndexLookup.cpp:
+	complete
+	.text start:0x0200ff94 end:0x0200ffc0
+
+src/GameState/GameStateObjectScanHelpers.cpp:
+	complete
+	.text start:0x0200ffe0 end:0x02010088
+
 src/GameState/GameTime.cpp:
     complete
     .text start:0x02010150 end:0x020103c8
+
+src/GameState/GameTimeValue.cpp:
+	complete
+	.text start:0x020103c8 end:0x020103f0
+
+src/GameState/GameTimestampFormatting.cpp:
+	complete
+	.text start:0x020103f0 end:0x02010604
+
+src/GameState/GameStateUnknownTripletAccessors.cpp:
+	complete
+	.text start:0x02010774 end:0x02010828
+
+src/GameState/GameStateRecordLookup.cpp:
+	complete
+	.text start:0x02010828 end:0x0201099c
+
+src/GameState/GameStateAttributeTable.cpp:
+	complete
+	.text start:0x0201133c end:0x020113a8
+
+src/GameState/GameStateByteBuffers.cpp:
+	complete
+	.text start:0x020113a8 end:0x02011544
 
 src/Grotto/Main/GrottoNameDataFile.cpp:
     complete
@@ -23,32 +123,78 @@ src/Grotto/Main/GrottoNameDataFile.cpp:
 
 src/Grotto/Main/GrottoStruct.cpp:
     complete
-    .text start:0x02011738 end:0x02011744
+    .text start:0x0201165c end:0x020117f0
+
+src/Grotto/Main/GrottoMetadataTransfer.cpp:
+	complete
+	.text start:0x02011818 end:0x02011af0
+
+src/Grotto/Main/GrottoCollectionStorage.cpp:
+	complete
+	.text start:0x020ac734 end:0x020ac7b4
 
 src/World/Zone3D.cpp:
     complete
     .text start:0x0201383c end:0x02013b70
 
+// 0x02013b70 for basic, 0x02019728 for full
+
 src/Grotto/Main/GenerateObjectPosition.cpp:
     complete
-    .text start:0x0201a188 end:0x0201a300
+    .text start:0x02019728 end:0x0201a300
+
+src/World/ZonePredicates.cpp:
+    complete
+    .text start:0x0201b588 end:0x0201b600
+
+src/World/MapListLoader.cpp:
+    complete
+    .text start:0x0201c1b8 end:0x0201c79c
+
+src/World/ZoneFeatures.cpp:
+    complete
+    .text start:0x0201c79c end:0x0201ea54
+    .data start:0x020ef388 end:0x020ef418
+    .bss start:0x020fdc20 end:0x020fdc40
 
 src/Grotto/Main/TileFeatures.cpp:
     complete
     .text start:0x0201ea54 end:0x0201ebc4
 
+src/World/BMDJ.cpp:
+    complete
+    .text start:0x0201ebc4 end:0x0201f390
+    .data start:0x020ef418 end:0x020ef460
+    .bss start:0x020fdc40 end:0x020fdc4c
+
+src/Resource/IndexedRecordLookup.cpp:
+    complete
+    .text start:0x020283fc end:0x02028430
+
+src/System/Vector3fixPlaneDistance.cpp:
+    complete
+    .text start:0x02032124 end:0x02032148
+
 src/Filesystem/BackgroundLoader.cpp:
     complete
-    .bss start:0x02104304 end:0x02104b0c
     .text start:0x0202f700 end:0x02030634
+    .bss start:0x02104304 end:0x02104b0c
 
 src/Resource/Script.cpp:
     complete
     .text start:0x02030634 end:0x02030c68
 
+src/Resource/ScriptParameterResultStore.cpp:
+    complete
+    .text start:0x02099c90 end:0x02099cac
+
 src/Graphics/ExtendedVectorMath.cpp:
     complete
     .text start:0x02030c68 end:0x0203109c
+
+src/Graphics/FixedPointSinCosTable.cpp:
+    complete
+    .rodata start:0x020e9450 end:0x020ed450
 
 src/Memory/SafeAllocator.cpp:
     complete
@@ -77,6 +223,10 @@ src/Resource/Brightness.cpp:
     complete
     .text start:0x0203aee0 end:0x0203b498
 
+src/Graphics/AlphaTweenAccessor.cpp:
+    complete
+    .text start:0x02049fec end:0x0204a00c
+
 src/Graphics/LightingManager.cpp:
     complete
     .text start:0x02050454 end:0x02052958
@@ -96,7 +246,7 @@ src/Combat/Main/BasicAttackCalculation.cpp:
 src/Combat/Main/TensionBonusCalculation.cpp:
 	complete
 	.text start:0x02074764 end:0x020747a4
-	
+
 src/Combat/Main/CritRateCalculation.cpp:
 	complete
 	.text start:0x020747a4 end:0x02074838
@@ -150,6 +300,10 @@ src/Grotto/Main/FloorMap.cpp:
     complete
     .text start:0x02092644 end:0x02092a74
 
+src/System/SceneOverlays.cpp:
+    complete
+    .text start:0x020a18f4 end:0x020a1940
+
 src/Grotto/Main/TreasureMapDataStructs.cpp:
     complete
     .text start:0x020a3a34 end:0x020a3ee4
@@ -186,8 +340,8 @@ src/Filesystem/NarcHandle.cpp:
 
 src/Memory/AllocatorTypes.cpp:
     complete
-    .rodata start:0x020e9160 end:0x020e9178
-    .text start:0x020afdc8 end:0x020afe34
+    .rodata start:0x020e9160 end:0x020e9180
+    .text start:0x020afdc8 end:0x020afe6c
 
 src/Memory/AllocatorUnion.cpp:
     complete
@@ -224,22 +378,91 @@ src/Graphics/NSBXX/RenderCommands_10_13.cpp:
 src/Graphics/NSBXX/GeometryFifo.cpp:
     complete
     .text start:0x020b6998 end:0x020b6e98
+    .bss start:0x0210cf78 end:0x0210cf84
 
 src/Graphics/NSBXX/NSBXX.cpp:
     complete
     .text start:0x020b6e98 end:0x020b736c
 
-//src/Graphics/NSBXX/NameList.cpp:
-//    complete
-//    .text start:0x020b736c end:0x020b7694
+src/Graphics/NSBXX/NameListLookup.cpp:
+    complete
+    .text start:0x020b736c end:0x020b752c
 
 src/Graphics/NSBXX/PatternAnimation.cpp:
     complete
     .text start:0x020b7694 end:0x020b7840
 
-//src/Graphics/NSBXX/JAC.cpp:
-//    complete
-//    .text start:0x020b7840 end:0x020b8e60
+src/Graphics/NSBXX/InverseBindScratch.cpp:
+    complete
+    .bss start:0x0210b678 end:0x0210cf78
+
+src/Graphics/NSBXX/RenderConfigState.cpp:
+    complete
+    .bss start:0x0210a010 end:0x0210a274
+
+src/Graphics/NSBXX/RenderScratchState.cpp:
+    complete
+    .bss start:0x0210a274 end:0x0210a278
+
+src/Graphics/NSBXX/MaterialRenderScratch.cpp:
+    complete
+    .bss start:0x0210a278 end:0x0210b078
+
+src/Graphics/NSBXX/BoneRenderScratch.cpp:
+    complete
+    .bss start:0x0210b078 end:0x0210b678
+
+src/Graphics/NSBXX/RenderModelCallbacks.cpp:
+    complete
+    .data start:0x020f1ce0 end:0x020f1cec
+
+src/Graphics/NSBXX/RenderBoneScaleCallbacks.cpp:
+    complete
+    .data start:0x020f1cec end:0x020f1cf8
+
+src/Graphics/NSBXX/RenderMaterialCallbacks.cpp:
+    complete
+    .data start:0x020f1cf8 end:0x020f1d08
+
+src/Graphics/NSBXX/RenderBindingState.cpp:
+    complete
+    .data start:0x020f1d08 end:0x020f1d78
+
+src/Graphics/NSBXX/RenderCommandDispatch.cpp:
+    complete
+    .data start:0x020f1e08 end:0x020f1e88
+
+src/Graphics/NSBXX/RenderMatrixCommands.cpp:
+    complete
+    .data start:0x020f1d78 end:0x020f1e08
+
+src/Graphics/NSBXX/MaterialColorMasks.cpp:
+    complete
+    .rodata start:0x020e9240 end:0x020e9260
+
+src/Graphics/NSBXX/RenderPivotPositions.cpp:
+    complete
+    .rodata start:0x020e9260 end:0x020e9284
+
+src/Graphics/NSBXX/JACPivotPositions.cpp:
+    complete
+    .rodata start:0x020e9284 end:0x020e92a8
+
+src/Graphics/NSBXX/JACSetup.cpp:
+    complete
+    .text start:0x020b7840 end:0x020b7a20
+
+src/Graphics/NSBXX/JACBoneEvaluation.cpp:
+    complete
+    .text start:0x020b7ba0 end:0x020b7f54
+
+src/Graphics/NSBXX/JACTranslationSmooth.cpp:
+    complete
+    .text start:0x020b80b4 end:0x020b8210
+
+src/Graphics/NSBXX/JACInterpolation.cpp:
+    complete
+    .text start:0x020b8404 end:0x020b8e60
 
 src/Graphics/NSBXX/MAM.cpp:
     complete
@@ -260,6 +483,7 @@ src/Graphics/NSBXX/VAV.cpp:
 src/Graphics/NSBXX/RenderCommandProcs.cpp:
     complete
     .text start:0x020b99b0 end:0x020bb424
+    .data start:0x020f1e88 end:0x020f1ee8
 
 src/System/VRAM.cpp:
     complete
@@ -277,9 +501,23 @@ src/System/LoadToVRAM.cpp:
     complete
     .text start:0x020c5820 end:0x020c6914
 
-//src/System/InterruptHandler.cpp:
-//    complete
-//    .text start:0x020c6954 end:0x020c6c90
+src/System/VRAMPaletteMappingState.cpp:
+    complete
+    .bss start:0x02111240 end:0x0211125c
+
+src/System/VRAMTextureMappingState.cpp:
+    complete
+    .bss start:0x0211125c end:0x0211127c
+
+// Remaining routines in InterruptHandler.cpp are still binary fallback.
+
+src/System/InterruptDispatchWrappers.cpp:
+    complete
+    .text start:0x020c6a54 end:0x020c6ad4
+
+src/System/InterruptCallbacks.cpp:
+    complete
+    .text start:0x020c6b74 end:0x020c6c90
 
 src/System/InterruptEnableDisable.cpp:
     complete
@@ -292,6 +530,30 @@ src/System/GamecardBusOwnership.cpp:
 src/System/ContextList.cpp:
     complete
     .text start:0x020c71a4 end:0x020c745c
+
+src/System/ContextSwitchLocks.cpp:
+    complete
+    .text start:0x020c7c40 end:0x020c7cb0
+
+src/System/ContextStackBoundary.cpp:
+    complete
+    .text start:0x020c7a74 end:0x020c7a90
+
+src/System/ContextSleep.cpp:
+    complete
+    .text start:0x020c7be8 end:0x020c7c40
+
+src/System/ContextPriority.cpp:
+    complete
+    .text start:0x020c7b38 end:0x020c7b40
+
+src/System/ContextBlocking.cpp:
+    complete
+    .text start:0x020c783c end:0x020c79bc
+
+src/System/ContextLifecycle.cpp:
+    complete
+    .text start:0x020c75b4 end:0x020c783c
 
 //src/System/ProcessorContext.cpp:
 //    complete
@@ -316,6 +578,10 @@ src/System/CPSRInterruptState.cpp:
 src/System/DMA.cpp:
     complete
     .text start:0x020c9c0c end:0x020ca0a8
+
+src/System/DMAChannelState.cpp:
+    complete
+    .data start:0x020f2270 end:0x020f2274
 
 src/System/IPC.cpp:
     complete
@@ -359,6 +625,55 @@ src/Filesystem/GPC.cpp:
     complete
     .text start:0x020d8fcc end:0x020d96b0
 
+src/Filesystem/GPCData.cpp:
+    complete
+    .data start:0x020f27c0 end:0x020f2800
+
+src/Filesystem/FileCacheConfiguration.cpp:
+    complete
+    .data start:0x020f2384 end:0x020f27c0
+
+src/Filesystem/FileCacheCRCTable.cpp:
+    complete
+    .rodata start:0x020ee278 end:0x020ee678
+
+src/Graphics/VRAMStagingLookupTables.cpp:
+    complete
+    .rodata start:0x020ee6b0 end:0x020ee700
+
+src/Filesystem/CachedMemory.cpp:
+    complete
+    .text start:0x020d84f8 end:0x020d8550
+
+src/Filesystem/GPCStartup.cpp:
+    complete
+    .init start:0x020e6710 end:0x020e677c
+
+src/Filesystem/FileIOConfiguration.cpp:
+    complete
+    .init start:0x020e60e0 end:0x020e60f8
+    .data start:0x020f0d70 end:0x020f0dc8
+
+src/Filesystem/ASCIIUppercaseTable.cpp:
+    complete
+    .rodata start:0x020e692c end:0x020e69ac
+
+src/Filesystem/NitroFSState.cpp:
+    complete
+    .bss start:0x02111738 end:0x021117b0
+
+src/Filesystem/CardReadState.cpp:
+    complete
+    .bss start:0x02111880 end:0x021118e0
+
+src/Filesystem/CardReadManagerState.cpp:
+    complete
+    .bss start:0x021118e0 end:0x02111f00
+
+src/Filesystem/CardReadScratchState.cpp:
+    complete
+    .bss start:0x02111f00 end:0x02112140
+
 src/Resource/ResourceMutex.cpp:
     complete
     .bss start:0x0214e4a8 end:0x0214e4c8
@@ -368,3 +683,981 @@ src/Graphics/VRAMStaging.cpp:
     complete
     .bss start:0x0214e5e4 end:0x02153628
     .text start:0x020dc07c end:0x020dc214
+
+src/Memory/ArenaHeap.cpp:
+    complete
+    .text start:0x020c8768 end:0x020c89c4
+    .bss start:0x02111564 end:0x02111588
+
+src/Memory/ArenaBoundsGet.cpp:
+    complete
+    .text start:0x020c8520 end:0x020c8548
+
+src/Memory/Arena.cpp:
+    complete
+    .text start:0x020c86d4 end:0x020c86fc
+
+src/Memory/ArenaAllocate.cpp:
+    complete
+    .text start:0x020c86fc end:0x020c8768
+
+src/Memory/ArenaInit.cpp:
+    complete
+    .text start:0x020c83b0 end:0x020c84b4
+    .bss start:0x0211155c end:0x02111564
+
+src/Memory/ArenaInitialLow.cpp:
+    complete
+    .text start:0x020c862c end:0x020c86d4
+
+src/Memory/ArenaExtendedInit.cpp:
+    complete
+    .text start:0x020c84b4 end:0x020c8520
+
+src/System/ConsoleType.cpp:
+    complete
+    .text start:0x020c7dcc end:0x020c7de4
+    .data start:0x020f2284 end:0x020f2288
+
+src/Memory/ArenaInitialHigh.cpp:
+    complete
+    .text start:0x020c8548 end:0x020c862c
+
+src/System/VectorMath.cpp:
+    complete
+    .text start:0x020c2d90 end:0x020c2f18
+
+src/System/VectorDistance.cpp:
+    complete
+    .text start:0x020c3030 end:0x020c30ac
+
+src/System/FixedPointMath.cpp:
+    complete
+    .text start:0x020c2bf4 end:0x020c2d90
+
+src/Graphics/VRAMPaletteAllocation.cpp:
+    complete
+    .text start:0x020bb780 end:0x020bb964
+    .bss start:0x0210cf88 end:0x0210cf94
+
+src/System/Matrix3Scale.cpp:
+    complete
+    .text start:0x020c11a4 end:0x020c1264
+
+src/System/Matrix4Scale.cpp:
+    complete
+    .text start:0x020c1948 end:0x020c197c
+
+src/System/Matrix3Transform.cpp:
+    complete
+    .text start:0x020c17c4 end:0x020c1840
+
+src/System/Matrix4Transform.cpp:
+    complete
+    .text start:0x020c2034 end:0x020c20d4
+
+src/System/Matrix4Translation.cpp:
+    complete
+    .text start:0x020c189c end:0x020c1948
+
+src/World/Zone3DMapLoading.cpp:
+    complete
+    .text start:0x02013fb4 end:0x02014a24
+
+src/World/Zone3DAtmosphereLoading.cpp:
+    complete
+    .text start:0x02014b04 end:0x02014d80
+
+src/World/Zone3DPaths.cpp:
+    complete
+    .data start:0x020ef0f0 end:0x020ef274
+
+src/System/MatrixView.cpp:
+    complete
+    .text start:0x020c20d4 end:0x020c21dc
+
+src/Graphics/VRAMImageState.cpp:
+    complete
+    .text start:0x020bb6f8 end:0x020bb780
+
+src/Graphics/VRAMImageReset.cpp:
+    complete
+    .text start:0x020bb514 end:0x020bb588
+
+src/Graphics/VRAMImageInit.cpp:
+    complete
+    .text start:0x020bb444 end:0x020bb514
+
+src/Graphics/VRAMImagePools.cpp:
+    complete
+    .data start:0x020f1ef8 end:0x020f1f8c
+    .bss start:0x0210cf84 end:0x0210cf88
+
+src/System/MatrixPerspective.cpp:
+    complete
+    .text start:0x020c28a0 end:0x020c29ec
+
+src/System/MatrixOrthographic.cpp:
+    complete
+    .text start:0x020c29ec end:0x020c2bf4
+
+src/Graphics/VRAMDefaults.cpp:
+    complete
+    .text start:0x020bb424 end:0x020bb444
+    .data start:0x020f1ee8 end:0x020f1ef8
+
+src/World/Zone3DActivation.cpp:
+    complete
+    .text start:0x02013e18 end:0x02013fb4
+
+src/World/Zone3DContainers.cpp:
+    complete
+    .text start:0x02013b70 end:0x02013e18
+
+src/System/FixedPointAtan2.cpp:
+    complete
+    .text start:0x020c338c end:0x020c36ec
+
+src/System/FixedPointAtanTables.cpp:
+    complete
+    .rodata start:0x020ed450 end:0x020ed658
+
+src/Graphics/VRAMPaletteMappingTable.cpp:
+    complete
+    .rodata start:0x020ed658 end:0x020ed668
+
+src/Graphics/VRAMImageMappingTable.cpp:
+    complete
+    .rodata start:0x020ed668 end:0x020ed6c8
+
+src/World/BMDJObjectEntry.cpp:
+    complete
+    .text start:0x02012ff0 end:0x02013018
+
+src/World/Zone3DBMDJObjects.cpp:
+    complete
+    .text start:0x02014a24 end:0x02014b04
+
+src/World/Zone3DCollisionLoading.cpp:
+    complete
+    .text start:0x02015134 end:0x020151cc
+
+src/World/Zone3DAnimatedObjects.cpp:
+    complete
+    .text start:0x020151cc end:0x02015438
+
+src/World/Zone3DModelLoading.cpp:
+    complete
+    .text start:0x02014d80 end:0x02015134
+
+src/World/BMDJAnimationRules.cpp:
+    complete
+    .rodata start:0x020e6f48 end:0x020e700c
+
+src/World/Zone3DUpdate.cpp:
+    complete
+    .text start:0x02015438 end:0x02015554
+
+src/World/Zone3DInstanceUpdate.cpp:
+    complete
+    .text start:0x02015554 end:0x020158cc
+
+src/World/BMDJInstance.cpp:
+    complete
+    .text start:0x02013018 end:0x020130a8
+
+src/World/Zone3DChestDrawing.cpp:
+    complete
+    .text start:0x020158cc end:0x020159c0
+    .rodata start:0x020e6e08 end:0x020e6e20
+
+src/World/Zone3DChestState.cpp:
+    complete
+    .text start:0x020159c0 end:0x02015ae4
+
+src/System/RuntimeExit.cpp:
+    complete
+    .text start:0x02001578 end:0x02001710
+
+src/System/RuntimeExitState.cpp:
+    complete
+    .bss start:0x020f2e60 end:0x020f2f70
+
+src/System/RuntimeLockBookkeeping.cpp:
+    complete
+    .bss start:0x020f2f70 end:0x020f2fb8
+
+src/System/RuntimeConsoleBuffers.cpp:
+    complete
+    .bss start:0x020f3090 end:0x020f3390
+
+src/System/RuntimeFloatInfinity.cpp:
+    complete
+    .data start:0x020eecc4 end:0x020eecc8
+
+src/System/RuntimeFloatNaN.cpp:
+    complete
+    .data start:0x020eecc8 end:0x020eeccc
+
+src/System/RuntimeDoubleInfinity.cpp:
+    complete
+    .data start:0x020eeccc end:0x020eecd4
+
+src/System/InterruptResponseState.cpp:
+    complete
+    .data start:0x020f2274 end:0x020f2284
+    .bss start:0x0211127c end:0x021112dc
+
+src/System/TimerState.cpp:
+    complete
+    .bss start:0x02111638 end:0x02111648
+
+src/System/ActiveAlarmState.cpp:
+    complete
+    .bss start:0x02111648 end:0x02111654
+
+src/System/RuntimeSignalState.cpp:
+    complete
+    .bss start:0x020f3394 end:0x020f33b0
+
+src/System/RuntimeDestructorState.cpp:
+    complete
+    .bss start:0x020f33b0 end:0x020f33b4
+
+src/System/RuntimeWideConversion.cpp:
+    complete
+    .text start:0x020019ac end:0x02001a40
+
+src/System/RuntimeDestructors.cpp:
+    complete
+    .text start:0x0200edf4 end:0x0200ee38
+
+src/System/RuntimeCopySign.cpp:
+    complete
+    .text start:0x02008da4 end:0x02008dcc
+
+src/System/RuntimeFloatAbs.cpp:
+    complete
+    .text start:0x02008f3c end:0x02008f5c
+
+src/System/RuntimeFloatClass.cpp:
+    complete
+    .text start:0x0200aa60 end:0x0200aae4
+
+src/System/RuntimeDecimalCompare.cpp:
+    complete
+    .text start:0x020095b0 end:0x0200961c
+
+src/System/RuntimeDecimalRound.cpp:
+    complete
+    .text start:0x0200966c end:0x020096ac
+
+src/System/RuntimeDecimalFromInteger.cpp:
+    complete
+    .text start:0x020096ac end:0x02009778
+
+src/System/RuntimeDecimalFromText.cpp:
+    complete
+    .text start:0x020098fc end:0x02009998
+
+src/System/RuntimeDecimalMagnitude.cpp:
+    complete
+    .text start:0x02009d1c end:0x02009edc
+
+src/System/RuntimeValueHooks.cpp:
+    complete
+    .text start:0x02001710 end:0x0200173c
+
+src/System/RuntimeFreeDefault.cpp:
+    complete
+    .text start:0x0200ab10 end:0x0200ab28
+
+src/System/RuntimeTerminationHook.cpp:
+    complete
+    .text start:0x0200f368 end:0x0200f398
+
+src/System/RuntimeFloor.cpp:
+    complete
+    .text start:0x02008f5c end:0x0200911c
+
+src/System/RuntimeFrexp.cpp:
+    complete
+    .text start:0x0200911c end:0x020091d8
+
+src/System/RuntimeScaleExponent.cpp:
+    complete
+    .text start:0x020091d8 end:0x02009424
+
+src/System/RuntimeSine.cpp:
+    complete
+    .text start:0x02009424 end:0x02009598
+
+src/System/RuntimeCosine.cpp:
+    complete
+    .text start:0x02008dcc end:0x02008f3c
+
+src/System/RuntimeSineKernel.cpp:
+    complete
+    .text start:0x020085cc end:0x02008848
+
+src/System/RuntimeCosineKernel.cpp:
+    complete
+    .text start:0x020076f0 end:0x02007a10
+
+src/System/RuntimeArctangent.cpp:
+    complete
+    .text start:0x02008848 end:0x02008da4
+    .rodata start:0x020e6cc4 end:0x020e6d04
+
+src/System/RuntimeArctangent2.cpp:
+    complete
+    .text start:0x02005ac4 end:0x02005ea0
+
+src/System/RuntimeMathEntries.cpp:
+    complete
+    .text start:0x02009598 end:0x020095b0
+
+src/System/RuntimeMathTables.cpp:
+    complete
+    .rodata start:0x020e6abc end:0x020e6cc4
+
+src/System/RuntimeArctangentCoefficients.cpp:
+    complete
+    .rodata start:0x020e6d04 end:0x020e6d5c
+
+src/System/RuntimeLdexp.cpp:
+    complete
+    .text start:0x0200aae4 end:0x0200ab10
+
+src/System/RuntimeBitCount.cpp:
+    complete
+    .text start:0x0200a9cc end:0x0200aa60
+
+src/System/RuntimeDecimalFormat.cpp:
+    complete
+    .text start:0x0200a300 end:0x0200a3a8
+
+src/System/RuntimeDecimalTextRound.cpp:
+    complete
+    .text start:0x02002b90 end:0x02002cb4
+
+src/System/RuntimeFormatText.cpp:
+    complete
+    .data start:0x020eeef0 end:0x020eef30
+
+src/System/RuntimeDecimalTenPowers.cpp:
+    complete
+    .data start:0x020eef34 end:0x020eef74
+
+src/System/RuntimeDecimalFromDouble.cpp:
+    complete
+    .text start:0x0200a180 end:0x0200a300
+
+src/System/RuntimeDecimalPowerOfTwo.cpp:
+    complete
+    .text start:0x02009998 end:0x02009d1c
+
+src/System/RuntimeDecimalPowers.cpp:
+    complete
+    .data start:0x020eef74 end:0x020ef048
+
+src/System/RuntimeConsoleCallbacks.cpp:
+    complete
+    .text start:0x0200d8cc end:0x0200d958
+
+src/System/RuntimeUnwindLookup.cpp:
+    complete
+    .text start:0x0200da70 end:0x0200dbf8
+
+src/System/RuntimeUnwindHeader.cpp:
+    complete
+    .text start:0x0200f2bc end:0x0200f2ec
+
+src/System/RuntimeExceptionRecord.cpp:
+    complete
+    .text start:0x0200ec44 end:0x0200eca0
+
+src/System/RuntimeExceptionCleanup.cpp:
+    complete
+    .text start:0x0200ed8c end:0x0200edc8
+
+src/System/RuntimeInitialization.cpp:
+    complete
+    .text start:0x0200edc8 end:0x0200edf4
+
+src/System/RuntimeExceptionHandler.cpp:
+    complete
+    .text start:0x0200efb8 end:0x0200efd0
+
+src/System/RuntimeStringToDouble.cpp:
+    complete
+    .text start:0x020054f4 end:0x020055d4
+
+src/System/RuntimeStringToInteger.cpp:
+    complete
+    .text start:0x020059cc end:0x02005a94
+
+src/System/RuntimeLocaleCharacters.cpp:
+    complete
+    .data start:0x020eecd4 end:0x020eecec
+
+src/System/RuntimeLocaleDefault.cpp:
+    complete
+    .data start:0x020eed1c end:0x020eed34
+
+src/System/RuntimeLocaleTime.cpp:
+    complete
+    .data start:0x020eecfc end:0x020eed1c
+
+src/System/RuntimeLocaleTimeText.cpp:
+    complete
+    .data start:0x020eed34 end:0x020eeef0
+
+src/System/RuntimeLocaleAuxiliary.cpp:
+    complete
+    .data start:0x020eecec end:0x020eecfc
+
+src/System/RuntimeDecimalLimitText.cpp:
+    complete
+    .data start:0x020ef048 end:0x020ef070
+
+src/System/RuntimeExceptionCallbacks.cpp:
+    complete
+    .data start:0x020ef070 end:0x020ef078
+
+src/System/RuntimeRandom.cpp:
+    complete
+    .text start:0x02003d14 end:0x02003d58
+    .data start:0x020eef30 end:0x020eef34
+
+src/System/StringLength.cpp:
+    complete
+    .text start:0x02003f0c end:0x02003f28
+
+src/System/StringCopy.cpp:
+    complete
+    .text start:0x02003ff0 end:0x02004070
+
+src/System/StringSearch.cpp:
+    complete
+    .text start:0x02004184 end:0x020042a8
+
+src/System/StringCopyAligned.cpp:
+    complete
+    .text start:0x02003f28 end:0x02003ff0
+
+src/System/StringCompareAligned.cpp:
+    complete
+    .text start:0x02004070 end:0x02004184
+
+src/World/BMDJInstanceLinks.cpp:
+    complete
+    .text start:0x020130b0 end:0x0201310c
+
+src/World/Zone3DInstanceLoading.cpp:
+    complete
+    .text start:0x020177d4 end:0x02017a94
+
+src/World/BMDJTransforms.cpp:
+    complete
+    .text start:0x0201310c end:0x02013380
+    .rodata start:0x020e6dfc end:0x020e6e08
+
+src/System/RuntimeSignal.cpp:
+    complete
+    .text start:0x02003ddc end:0x02003f0c
+
+src/World/ZoneVectorSet.cpp:
+    complete
+    .text start:0x020130a8 end:0x020130b0
+
+src/World/ZoneResourceDefaults.cpp:
+    complete
+    .text start:0x020133cc end:0x02013490
+
+src/System/RuntimeMemory.cpp:
+    complete
+    .text start:0x02001a40 end:0x02001b2c
+
+src/System/RuntimeStringInput.cpp:
+    complete
+    .text start:0x02003d58 end:0x02003ddc
+
+src/System/RuntimeDecimalDouble.cpp:
+    complete
+    .text start:0x020055d4 end:0x020055e4
+
+src/System/RuntimeTextConversion.cpp:
+    complete
+    .text start:0x02005a94 end:0x02005ac4
+
+src/World/ZoneRuntimeDefaults.cpp:
+    complete
+    .text start:0x02012fa4 end:0x02012fe4
+
+src/World/ZoneTileDefaults.cpp:
+    complete
+    .text start:0x02013490 end:0x020134e0
+
+src/World/BMDJState.cpp:
+    complete
+    .text start:0x02013380 end:0x020133cc
+
+src/World/ZoneRecordIndices.cpp:
+    complete
+    .text start:0x02012f24 end:0x02012fa4
+
+src/World/Zone3DGrottoStateReset.cpp:
+    complete
+    .text start:0x0201bfd4 end:0x0201c014
+
+src/World/ZoneState0840StateValidation.cpp:
+    complete
+    .text start:0x02098268 end:0x02098284
+
+src/World/ZoneState0840Lookup.cpp:
+    complete
+    .text start:0x0209854c end:0x02098630
+
+src/World/ZoneEntryConfiguration.cpp:
+    complete
+    .text start:0x020827c4 end:0x02082828
+
+src/World/ZoneEntryConfigurationData.cpp:
+    complete
+    .rodata start:0x020e8bd8 end:0x020e8bec
+
+src/World/ZoneState0840InsertionSlot.cpp:
+    complete
+    .text start:0x02098a84 end:0x02098e3c
+
+src/World/ZoneState0840AddEntry.cpp:
+    complete
+    .text start:0x02098630 end:0x0209890c
+
+src/World/ZoneState0840ValuePredicates.cpp:
+    complete
+    .text start:0x020981e4 end:0x02098268
+
+src/World/ZoneState0840ValueTables.cpp:
+    complete
+    .text start:0x02098284 end:0x020982b4
+
+src/World/ZoneState0840ValueData.cpp:
+    complete
+    .rodata start:0x020e8db8 end:0x020e8e14
+
+src/World/ZoneState0840Tier.cpp:
+    complete
+    .text start:0x020989cc end:0x02098a84
+
+src/World/ZoneState0840Queries.cpp:
+    complete
+    .text start:0x02098e3c end:0x02098f20
+
+src/World/ZoneState0840EntryManagement.cpp:
+    complete
+    .text start:0x0209890c end:0x020989cc
+
+src/World/ZoneState0840EntryReset.cpp:
+    complete
+    .text start:0x02098364 end:0x020984ac
+
+src/World/ZoneState0840Reset.cpp:
+    complete
+    .text start:0x020982b4 end:0x02098364
+
+src/World/ZoneState0840Entries.cpp:
+    complete
+    .text start:0x020984b0 end:0x0209854c
+
+src/World/ZoneState0840.cpp:
+    complete
+    .text start:0x020984ac end:0x020984b0
+
+src/World/WorldPlacementMarkers.cpp:
+    complete
+    .text start:0x0208e0b4 end:0x0208e0c4
+
+src/World/WorldPlacementSourceLoading.cpp:
+    complete
+    .text start:0x0208e520 end:0x0208e778
+
+src/World/WorldPlacementData.cpp:
+    complete
+    .data start:0x020f1278 end:0x020f1308
+
+src/World/WorldPlacementSourceReadRecord.cpp:
+    complete
+    .text start:0x0208e0c4 end:0x0208e2c0
+
+src/World/WorldPlacementSourceScript.cpp:
+    complete
+    .text start:0x0208e2c0 end:0x0208e444
+
+src/World/WorldPlacementSourceRecords.cpp:
+    complete
+    .text start:0x0208e778 end:0x0208e824
+
+src/World/WorldObjectInstanceListFlags.cpp:
+    complete
+    .text start:0x0208f048 end:0x0208f168
+
+src/World/WorldPlacementSourceInstance.cpp:
+    complete
+    .text start:0x0208e0a8 end:0x0208e0b4
+
+src/World/WorldPlacementSourceReset.cpp:
+    complete
+    .text start:0x0208e4bc end:0x0208e520
+
+src/World/WorldPlacementSourceMap.cpp:
+    complete
+    .text start:0x0208e824 end:0x0208e884
+
+src/World/WorldObjectInstanceListReset.cpp:
+    complete
+    .text start:0x0208e9f4 end:0x0208ea10
+
+src/World/WorldObjectInstanceList.cpp:
+    complete
+    .text start:0x0208f36c end:0x0208f410
+
+src/World/WorldObjectInstanceListDraw.cpp:
+    complete
+    .text start:0x0208f410 end:0x0208f4bc
+
+src/World/WorldObjectInstanceListLifetime.cpp:
+    complete
+    .text start:0x0208f4bc end:0x0208f4e4
+
+src/World/ZoneState2664Loading.cpp:
+    complete
+    .text start:0x0208f588 end:0x0208f68c
+
+src/World/ZoneState2664Effects.cpp:
+    complete
+    .text start:0x0208f4e4 end:0x0208f588
+
+src/World/ZoneState2664ScaleData.cpp:
+    complete
+    .rodata start:0x020e8d3c end:0x020e8d54
+
+src/World/ZoneState2664Visibility.cpp:
+    complete
+    .text start:0x0208f68c end:0x0208f7ec
+
+src/World/ZoneState2664Draw.cpp:
+    complete
+    .text start:0x0208f820 end:0x0208f87c
+
+src/World/ZoneState2664.cpp:
+    complete
+    .text start:0x0208f7ec end:0x0208f820
+
+src/World/ZoneState2724.cpp:
+    complete
+    .text start:0x02094d00 end:0x02094d6c
+
+src/World/ZoneState2754Search.cpp:
+    complete
+    .text start:0x020de650 end:0x020de6c8
+
+src/World/ZoneSerializedRecordKey.cpp:
+    complete
+    .text start:0x020de56c end:0x020de574
+
+src/World/ZoneState2754Relocate.cpp:
+    complete
+    .text start:0x020de574 end:0x020de650
+    .rodata start:0x020ee794 end:0x020ee798
+
+src/World/ZoneRecordCategoryPredicates.cpp:
+    complete
+    .text start:0x020de31c end:0x020de38c
+
+src/World/ZoneRecordCategorySelector.cpp:
+    complete
+    .text start:0x020de3f4 end:0x020de524
+
+src/World/ZoneRecordAttributePredicates.cpp:
+    complete
+    .text start:0x020de38c end:0x020de3f4
+
+src/World/ZoneRecordAttributeSelector.cpp:
+    complete
+    .text start:0x020de524 end:0x020de56c
+
+src/World/ZoneState2754AttributeLookup.cpp:
+    complete
+    .text start:0x020ded1c end:0x020dedd0
+
+src/World/ZoneState2754Filter.cpp:
+    complete
+    .text start:0x020deb08 end:0x020ded1c
+
+src/World/ZoneState2754Build.cpp:
+    complete
+    .text start:0x020de980 end:0x020deb08
+
+src/World/ZoneState2754Attach.cpp:
+    complete
+    .text start:0x020de6c8 end:0x020de7a4
+
+src/World/ZoneState2754Records.cpp:
+    complete
+    .text start:0x020de7a4 end:0x020de824
+
+src/World/ZoneState2754Clear.cpp:
+    complete
+    .text start:0x020de868 end:0x020de888
+
+src/World/ZoneState2754.cpp:
+    complete
+    .text start:0x020de824 end:0x020de868
+
+src/World/Zone3DDestructor.cpp:
+    complete
+    .text start:0x0201c124 end:0x0201c1b8
+
+src/World/ZoneRenderPartLifetime.cpp:
+    complete
+    .text start:0x0201c0e8 end:0x0201c124
+
+src/World/ZoneRenderPartReset.cpp:
+    complete
+    .text start:0x0204719c end:0x0204724c
+
+src/World/ZoneRenderPartEntries.cpp:
+    complete
+    .text start:0x02048080 end:0x02048090
+
+src/World/Zone3DInitialization.cpp:
+    complete
+    .text start:0x020134e0 end:0x02013750
+
+src/World/Zone3DResourceReset.cpp:
+    complete
+    .text start:0x02013750 end:0x0201383c
+
+src/World/Zone3DTransitions.cpp:
+    complete
+    .text start:0x0201bdac end:0x0201bf38
+
+src/World/Zone3DTransitionRequests.cpp:
+    complete
+    .text start:0x0201bf38 end:0x0201bfd4
+
+src/World/Zone3DStateAccess.cpp:
+    complete
+    .text start:0x0201bc7c end:0x0201bdac
+
+src/World/Zone3DRecords.cpp:
+    complete
+    .text start:0x0201ba68 end:0x0201bc7c
+
+src/World/Zone3DInstanceRules.cpp:
+    complete
+    .text start:0x0201b868 end:0x0201ba68
+    .rodata start:0x020e6ea8 end:0x020e6ed0
+
+src/World/Zone3DInstanceOverrides.cpp:
+    complete
+    .text start:0x02019508 end:0x02019728
+
+src/World/Zone3DLookup.cpp:
+    complete
+    .text start:0x0201b600 end:0x0201b868
+
+src/System/RuntimeAbs.cpp:
+    complete
+    .text start:0x020017a4 end:0x020017bc
+
+src/System/RuntimeCharacterConversion.cpp:
+    complete
+    .text start:0x02001960 end:0x020019ac
+
+src/System/RuntimeMemoryFill.cpp:
+    complete
+    .text start:0x02001b2c end:0x02001bdc
+
+src/System/RuntimeStringOutput.cpp:
+    complete
+    .text start:0x02003c3c end:0x02003ce8
+
+src/System/RuntimeStreamFlushAll.cpp:
+    complete
+    .text start:0x0200173c end:0x020017a4
+
+src/System/RuntimeStreamBuffers.cpp:
+    complete
+    .text start:0x020017bc end:0x02001960
+
+src/System/RuntimeSprintf.cpp:
+    complete
+    .text start:0x02003ce8 end:0x02003d14
+
+src/World/Zone3DInstanceRestore.cpp:
+    complete
+    .text start:0x02017a94 end:0x02017c58
+
+src/World/Zone3DChestLoading.cpp:
+    complete
+    .text start:0x02018d28 end:0x02018f30
+
+src/World/Zone3DContainerLookup.cpp:
+    complete
+    .text start:0x0201777c end:0x020177d4
+
+src/World/Zone3DRenderProperties.cpp:
+    complete
+    .text start:0x02018f30 end:0x02018fbc
+
+src/World/Zone3DType2Activation.cpp:
+    complete
+    .text start:0x02018300 end:0x0201874c
+    .rodata start:0x020e6e74 end:0x020e6e88
+
+src/World/Zone3DType2Motion.cpp:
+    complete
+    .text start:0x0201874c end:0x02018ab8
+
+src/World/Zone3DType2Mask.cpp:
+    complete
+    .text start:0x02018c74 end:0x02018d28
+
+src/World/Zone3DType2Features.cpp:
+    complete
+    .text start:0x02018ab8 end:0x02018c74
+
+src/World/Zone3DInstanceState.cpp:
+    complete
+    .text start:0x02017c58 end:0x02017d90
+
+src/System/ByteCursorRead.cpp:
+    complete
+    .text start:0x0200fd14 end:0x0200fd38
+
+src/World/WorldPlacementOpcode100.cpp:
+    complete
+    .text start:0x0208e884 end:0x0208e88c
+
+src/World/WorldPlacementOpcode101.cpp:
+    complete
+    .text start:0x0208e88c end:0x0208e894
+
+src/World/WorldObjectInstanceListInstance.cpp:
+    complete
+    .text start:0x0208e9e8 end:0x0208e9f4
+
+src/Graphics/NSBXX/AnimationCallbacks.cpp:
+    complete
+    .data start:0x020f1c6c end:0x020f1c90
+
+src/World/WorldScriptOpcode100.cpp:
+    complete
+    .text start:0x0208d540 end:0x0208d548
+
+src/World/WorldScriptOpcode101.cpp:
+    complete
+    .text start:0x0208d548 end:0x0208d550
+
+src/System/RuntimeGlobalObjectRegistration.cpp:
+    complete
+    .text start:0x0200efd0 end:0x0200eff0
+
+src/System/RuntimeStartupHook.cpp:
+    complete
+    .text start:0x0200d890 end:0x0200d894
+
+src/World/WorldScriptRecordCopy.cpp:
+    complete
+    .text start:0x0208e000 end:0x0208e024
+
+src/World/WorldScriptRecordFindSelector.cpp:
+    complete
+    .text start:0x0208e024 end:0x0208e06c
+
+src/World/WorldScriptRecordFindKey.cpp:
+    complete
+    .text start:0x0208e06c end:0x0208e0a8
+
+src/World/WorldScriptRecordListReset.cpp:
+    complete
+    .text start:0x0208df10 end:0x0208df20
+
+src/World/WorldScriptRecordListAppend.cpp:
+    complete
+    .text start:0x0208df94 end:0x0208e000
+
+src/World/WorldScriptArrayListReset.cpp:
+    complete
+    .text start:0x0208d82c end:0x0208d854
+
+src/World/WorldScriptArrayListAllocate.cpp:
+    complete
+    .text start:0x0208d8ec end:0x0208d928
+
+src/World/WorldScriptArrayListAppend.cpp:
+    complete
+    .text start:0x0208d928 end:0x0208d994
+
+src/World/WorldScriptArrayListFind.cpp:
+    complete
+    .text start:0x0208d994 end:0x0208d9e8
+
+src/World/WorldScriptArrayListGet.cpp:
+    complete
+    .text start:0x0208d9e8 end:0x0208da00
+
+src/World/ArrayStride318.cpp:
+    complete
+    .text start:0x02028bac end:0x02028bd0
+
+src/World/WorldPlacementPersistentReset.cpp:
+    complete
+    .text start:0x0208ec04 end:0x0208ec78
+
+src/World/WorldPlacementPersistentInitialize.cpp:
+    complete
+    .text start:0x0208ea10 end:0x0208ec04
+
+src/World/WorldPlacementPersistentData.cpp:
+    complete
+    .data start:0x020f1308 end:0x020f1368
+
+src/Function02020520.cpp:
+    complete
+    .text start:0x02020520 end:0x0202053c
+
+src/Function020466d0.cpp:
+    complete
+    .text start:0x020466d0 end:0x020466e4
+
+src/System/StateValueOutputs.cpp:
+	complete
+	.text start:0x02012a84 end:0x02012aac
+
+src/Graphics/VRAMStateSnapshotRestore.cpp:
+	complete
+	.text start:0x0207df90 end:0x0207dfac
+
+src/System/ClearObjectPrefix.cpp:
+	complete
+	.text start:0x020df80c end:0x020df828
+
+src/Function02011804.cpp:
+    complete
+    .text start:0x02011804 end:0x02011818
+
+src/World/LineageResetRecord.cpp:
+    complete
+    .text start:0x0201f9b8 end:0x0201f9e8
+
+src/World/LineageObjectFlag.cpp:
+    complete
+    .text start:0x02033fec end:0x0203400c
+
+src/World/LineageStoreParameter.cpp:
+    complete
+    .text start:0x0201f844 end:0x0201f864

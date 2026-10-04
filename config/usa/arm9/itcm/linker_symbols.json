@@ -1,0 +1,62 @@
+{
+  "data_01ffdd84": {
+    "base": "g_vramStagingRegionalTaskSets",
+    "offset": "0xc",
+    "object": "VRAMStagingRegionSets.o",
+    "section": ".bss"
+  },
+  "data_01ffdd90": {
+    "base": "g_vramStagingRegionalTaskSets",
+    "offset": "0x18",
+    "object": "VRAMStagingRegionSets.o",
+    "section": ".bss"
+  },
+  "data_01ffdd9c": {
+    "base": "g_vramStagingRegionalTaskSets",
+    "offset": "0x24",
+    "object": "VRAMStagingRegionSets.o",
+    "section": ".bss"
+  },
+  "data_01ffdda8": {
+    "base": "g_vramStagingRegionalTaskSets",
+    "offset": "0x30",
+    "object": "VRAMStagingRegionSets.o",
+    "section": ".bss"
+  },
+  "data_01ffddb4": {
+    "base": "g_vramStagingRegionalTaskSets",
+    "offset": "0x3c",
+    "object": "VRAMStagingRegionSets.o",
+    "section": ".bss"
+  },
+  "data_01ffddc0": {
+    "base": "g_vramStagingRegionalTaskSets",
+    "offset": "0x48",
+    "object": "VRAMStagingRegionSets.o",
+    "section": ".bss"
+  },
+  "data_01ffddcc": {
+    "base": "g_vramStagingRegionalTaskSets",
+    "offset": "0x54",
+    "object": "VRAMStagingRegionSets.o",
+    "section": ".bss"
+  },
+  "data_01ffddd8": {
+    "base": "g_vramStagingRegionalTaskSets",
+    "offset": "0x60",
+    "object": "VRAMStagingRegionSets.o",
+    "section": ".bss"
+  },
+  "data_01ffdde4": {
+    "base": "g_vramStagingRegionalTaskSets",
+    "offset": "0x6c",
+    "object": "VRAMStagingRegionSets.o",
+    "section": ".bss"
+  },
+  "data_01fff270": {
+    "base": "g_vramStagingTaskQueue",
+    "offset": "0x1000",
+    "object": "VRAMStagingTaskQueue.o",
+    "section": ".bss"
+  }
+}

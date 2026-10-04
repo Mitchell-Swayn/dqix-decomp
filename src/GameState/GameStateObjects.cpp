@@ -30,7 +30,11 @@ GameObject* GameState::GetProtagonist()
 
 GameObject* GameState::GetUnknownGameObject()
 {
+#if defined(usa)
+    return GetGameObjectByIndex(indexList_.objectIndices_[0]);
+#else
     return GetGameObjectByIndex(unknownObjectIndex_397c_);
+#endif
 }
 
 GameObject* GameState::GetPartyMemberByIndex(int idx)

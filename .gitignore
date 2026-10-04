@@ -17,3 +17,8 @@ build.ninja
 .ninja_lock
 /wibo
 ninja.exe
+# Factory instance files live in the separate Factory repository.
+/docs/workflow/
+/tools/*factory*
+/tools/test_factory*
+/docs/verification/*.log

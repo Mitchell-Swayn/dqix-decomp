@@ -1,4 +1,6 @@
 #include "Filesystem/ExtendedNitroVM.h"
+#include "Filesystem/FileCacheState.h"
+#include "Filesystem/FileCacheConfiguration.h"
 #include "Filesystem/FSInnerDefs.h"
 #include "Resource/ResourceMutex.h"
 #include "System/Cache.h"
@@ -32,7 +34,7 @@ extern "C"
     unsigned int func_01ff860c(const char*);
 
     // Zero memory and flush cache
-    void func_020d84f8(void*, unsigned);
+    unsigned int func_020d84f8(void*, unsigned);
     // another memcpy-style function, cleans/invalidates the cache in destination after
     unsigned int func_020d8524(void*, const void*, unsigned);
 
@@ -43,7 +45,13 @@ extern "C"
 // files to prepare accessors in cache for
 extern const char* cachedFilePaths[];
 // Seems to hold whether cached file accessors have been saved or not
+#if defined(usa)
+extern FileCacheReadyFlag data_01ffd998;
+#define FILE_CACHE_READY data_01ffd998.ready
+#else
 extern bool data_01ffd998;
+#define FILE_CACHE_READY data_01ffd998
+#endif
 // CRC hashes for cached file accessors
 extern unsigned int data_01ffd99c[NUM_CACHED_FILES];
 // cached file accessors
@@ -51,10 +59,14 @@ extern NitroFileAccessor data_01ffda90[NUM_CACHED_FILES];
 // holds the intended length of compression metadata (4 bytes)
 // there are two copies of it, the first is used in USA version and the
 // second in JPN version
+#if defined(usa)
+#define data_020f2384 gFileCacheConfiguration.compressionPrefixBytes
+#define data_020f27b8 gFileCacheConfiguration.root
+#else
 extern unsigned int data_020f2384[];
-
 // "data/"
 extern char data_020f27b8[];
+#endif
 
 unsigned int CompressionPrefix::GetDecompressedLength() const
 {
@@ -77,23 +89,23 @@ bool Decompressor::InitAndDecompress(void *out, unsigned int outCapacity, const 
 
     this->writeOutputPtr = (unsigned char*)out;
     this->remainingOutputBytes = decompLength;
-    this->probablyDecompressedSize = decompLength;
+    this->declaredOutputSize = decompLength;
     this->compressionType = compressionType;
     unsigned int bytesLeftRoundedUp = (remainingOutputBytes + 3) & ~3;
-    this->abstractOutputLocation = writeOutputPtr;
-    this->abstractOutputLocation = (unsigned char*)this->abstractOutputLocation + bytesLeftRoundedUp;
+    this->alignedOutputEnd = writeOutputPtr;
+    this->alignedOutputEnd = (unsigned char*)this->alignedOutputEnd + bytesLeftRoundedUp;
     switch (compressionType)
     {
     case 0:
         break;
     case 1:
-        unknown_11 = 3;
+        state.lz.tokenReadState = 3;
         break;
     case 2:
     case 3:
-        decompressB_typeFlag_18 = 1 << compressionType;
-        unknown_14 = -1;
-        unknown_08 = &unknown_1C[0];
+        state.huffman.symbolWidth = 1 << compressionType;
+        state.huffman.remainingTreeBytes = -1;
+        state.huffman.treeCursor = &huffmanTree[0];
         break;
     case 4:
         break;
@@ -128,7 +140,7 @@ bool Decompressor::ProcessBytes(const void* input, unsigned int inputLength)
         default:
             if (inputLength >= remainingOutputBytes)
                 inputLength = remainingOutputBytes;
-            remainingOutputBytes -= func_020d8524(writeStart + probablyDecompressedSize - remainingOutputBytes, input, inputLength);
+            remainingOutputBytes -= func_020d8524(writeStart + declaredOutputSize - remainingOutputBytes, input, inputLength);
             break;
         }
         CleanInvalidateCacheRange(writeStart, writeOutputPtr - writeStart);
@@ -140,7 +152,7 @@ bool Decompressor::ProcessBytes(const void* input, unsigned int inputLength)
 
 void CacheMainFileAccessors()
 {
-    if (!data_01ffd998)
+    if (!FILE_CACHE_READY)
     {
         char fullFilePath[64];
 
@@ -195,7 +207,7 @@ void CacheMainFileAccessors()
             passEnd--;
         }
 
-        data_01ffd998 = true;
+        FILE_CACHE_READY = true;
     }
 }
 
@@ -269,7 +281,7 @@ bool ExtendedNitroVM::Open(const char *filePath, bool skip)
     {
         unsigned int cacheIndex;
         const char* abridgedPath = filePath;
-        if (data_01ffd998)
+        if (FILE_CACHE_READY)
         {   
             if (abridgedPath[0] == '/')
                 abridgedPath++;
@@ -396,13 +408,13 @@ unsigned int ExtendedNitroVM::DecompressWithScratchSpace(Decompressor& decompres
             readPosTracker += successfulLoadSize;
         }
     }
-    unsigned int scratchSpaceUsedAmount = (decompressor.probablyDecompressedSize + 4) & ~3;
+    unsigned int scratchSpaceUsedAmount = (decompressor.declaredOutputSize + 4) & ~3;
     if (scratchSpaceUsedAmount >= scratchSpaceCapacity)
         scratchSpaceUsedAmount = scratchSpaceCapacity;
-    func_020d84f8((unsigned char*)scratchSpace + decompressor.probablyDecompressedSize, 
-        scratchSpaceUsedAmount - decompressor.probablyDecompressedSize);
+    func_020d84f8((unsigned char*)scratchSpace + decompressor.declaredOutputSize, 
+        scratchSpaceUsedAmount - decompressor.declaredOutputSize);
     CleanInvalidateCacheRange(scratchSpace, scratchSpaceUsedAmount);
-    outDecompressedLength = decompressor.probablyDecompressedSize;
+    outDecompressedLength = decompressor.declaredOutputSize;
     return readPosTracker; 
 }
 

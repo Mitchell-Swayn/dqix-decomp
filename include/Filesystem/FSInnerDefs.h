@@ -72,11 +72,9 @@ struct Struct_02111f00
     Struct_02111f20 innerStruct;
 };
 
-// These overlap, but the 72c is accessed from the 728 as well as on its own.
-// It should be possible to just take a reference to mountedDir directly, e.g.
-// if you copy assign from it you'll get .word data_02111728+0x4 (which is
-// the same assembly as .word data_0211172c), but it doesn't always seem to work
 extern Struct_02111728 data_02111728;
+// The directory overlaps the registry at +4. These registry declarations still
+// refer to original fallback storage; a member macro changes matched codegen.
 extern NitroDirectoryAccessor data_0211172c;
 
 extern int data_02111738; // stores whether the rom fs is initialised

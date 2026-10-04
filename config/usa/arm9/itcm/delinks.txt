@@ -8,3 +8,25 @@ src/System/itcm/DMA_ITCM.cpp:
 src/Graphics/itcm/VRAMStagingITCM.cpp:
     complete
     .text start:0x01ff87a4 end:0x01ff96d4
+
+src/Graphics/itcm/VRAMStagingAllocations.cpp:
+    complete
+    .bss start:0x01ffdf70 end:0x01ffe270
+
+src/Graphics/itcm/VRAMStagingRegionSets.cpp:
+    complete
+    .bss start:0x01ffdd78 end:0x01ffddf0
+
+// Queue storage ends at 0x01fff270; the final 16 bytes are LCF ALIGN(32),
+// and data_01fff270 is a zero-sized one-past alias, not another allocation.
+src/Graphics/itcm/VRAMStagingTaskQueue.cpp:
+    complete
+    .bss start:0x01ffe270 end:0x01fff280
+
+src/Filesystem/itcm/FileCacheData.cpp:
+    complete
+    .bss start:0x01ffd998 end:0x01ffdc78
+
+src/Filesystem/itcm/FileCacheCRC.cpp:
+    complete
+    .text start:0x01ff85b8 end:0x01ff860c

@@ -3,6 +3,7 @@
 import os
 from pathlib import Path
 import argparse
+import json
 import sys
 
 import ninja_syntax
@@ -161,8 +162,8 @@ class Project:
     def arm9_objects_txt(self) -> Path:
         return self.game_build / "objects.txt"
 
-    def arm9_delink_yaml(self) -> Path:
-        return self.game_build / "delinks" / "delink.yaml"
+    def arm9_delink_completion(self) -> Path:
+        return self.game_build / "delinks" / "completion.json"
 
     def arm9_o(self) -> Path:
         return self.game_build / "arm9.o"
@@ -179,6 +180,8 @@ def main():
 
     with build_ninja_path.open("w") as file:
         n = ninja_syntax.Writer(file)
+        n.variable("ninja_required_version", "1.10")  # Dynamic delink outputs.
+        n.newline()
 
         n.rule(
             name="download_tool",
@@ -200,7 +203,14 @@ def main():
 
         n.rule(
             name="delink",
-            command=f"{DSD} delink --config-path $config_path"
+            command=f'"{PYTHON}" tools/delink_outputs.py run --dsd "{DSD}" --config "$config_path" --directory "$directory" --plan "$plan" --completion "$completion"'
+        )
+        n.newline()
+
+        n.rule(
+            name="delink_plan",
+            command=f'"{PYTHON}" tools/delink_outputs.py plan --objdiff objdiff.json --extract "$extract" --directory "$directory" --plan "$plan" --completion "$completion" --dyndep "$dyndep_file" --depfile "$dyndep_file.d"',
+            depfile="$dyndep_file.d",
         )
         n.newline()
 
@@ -221,13 +231,17 @@ def main():
         n.rule(
             name="lcf",
            # command=f"{DSD} lcf -c $config_path --lcf-file $lcf_file --objects-file $objects_file"
-            command=f"{DSD} lcf --config-path $config_path"
+            command=f'{PYTHON} tools/generate_lcf.py --dsd "{DSD}" --config-path $config_path --lcf-path $lcf_file'
         )
         n.newline()
 
         n.rule(
             name="mwld",
-            command=f'{WINE} "{LD}" {LD_FLAGS} @$objects_file $lcf_file -o $out'
+            command=(f'{PYTHON} tools/prepare_link_objects.py --objects "$objects_file" '
+                     f'--fallback-dir "$fallback_dir" --output-dir "$link_objects_dir" '
+                     f'--output-list "$link_objects_file" --report "$link_objects_report" '
+                     f'--symbol-config "$symbol_config" --link-command '
+                     f'{WINE} "{LD}" {LD_FLAGS} @"$link_objects_file" $lcf_file -o $out')
         )
         n.newline()
 
@@ -239,7 +253,9 @@ def main():
 
         n.rule(
             name="rom_build",
-            command=f"{DSD} rom build --config $in --rom $out $arm7_bios_flag"
+            command=(f'"{PYTHON}" tools/guard_rom_files.py --input "$baserom" '
+                     f'--output "$out" $final_output_flag -- '
+                     f'"{DSD}" rom build --config $in --rom $out $arm7_bios_flag')
         )
         n.newline()
 
@@ -354,15 +370,20 @@ def add_extract_build(n: ninja_syntax.Writer, project: Project):
 def add_mwld_and_rom_builds(n: ninja_syntax.Writer, project: Project):
     lcf_file = str(project.arm9_lcf())
     objects_file = str(project.arm9_objects_txt())
-    delink_file = str(project.arm9_delink_yaml())
+    delink_file = str(project.arm9_delink_completion())
     elf_file = str(project.arm9_o())
     n.build(
         inputs=project.source_object_files() + [lcf_file, objects_file, delink_file],
-        implicit=LD,
+        implicit=[LD, "tools/prepare_link_objects.py"],
         rule="mwld",
         outputs=elf_file,
         variables={
             "target_dir": project.game_build,
+            "fallback_dir": project.arm9_delinks(),
+            "symbol_config": project.game_config / "arm9" / "symbols.txt",
+            "link_objects_dir": project.game_build / "link_objects",
+            "link_objects_file": project.game_build / "link_objects.txt",
+            "link_objects_report": project.game_build / "link_objects_report.json",
             "objects_file": objects_file,
             "lcf_file": lcf_file,
         }
@@ -389,13 +410,62 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, project: Project):
     n.newline()
 
     rom_file = project.build_rom()
+    rom_implicit = [DSD, "tools/guard_rom_files.py"]
+    if project.game_version == "usa":
+        arm7_units_path = project.game_config / "arm7" / "source_units.json"
+        arm7_units = json.loads(arm7_units_path.read_text())
+        arm7_output = project.game_build / "arm7"
+        arm7_rom_config = str(project.game_build / "build" / "rom_config_arm7.yaml")
+        arm7_depfile = str(arm7_output / "arm7.d")
+        runner_flag = f' --runner "{WINE}"' if WINE else ""
+        n.rule(
+            name="arm7_source",
+            command=(f'{PYTHON} tools/arm7_build.py --compiler "{mwcc_path}"'
+                     f' --output "{arm7_output}" --rom-config $rom_config'
+                     f' --output-rom-config "{arm7_rom_config}"'
+                     f' --depfile "{arm7_depfile}" --dep-target "{arm7_rom_config}"{runner_flag}'),
+            depfile=arm7_depfile,
+        )
+        n.build(
+            inputs=rom_config_file,
+            implicit=[str(project.baserom()), str(arm7_units_path),
+                      "config/usa/arm7/baseline.json", "tools/arm7_build.py",
+                      "tools/check_arm7.py", "tools/arm7_dependencies.py", CC, LD] +
+                     [unit["source"] for unit in arm7_units["units"]] +
+                     [unit["assembly_exception"] for unit in arm7_units["units"]
+                      if "assembly_exception" in unit],
+            rule="arm7_source",
+            outputs=[arm7_rom_config, str(arm7_output / "arm7.bin"),
+                     str(arm7_output / "report.json")],
+            variables={"rom_config": rom_config_file},
+        )
+        n.newline()
+        rom_config_file = arm7_rom_config
+        rom_implicit.append(str(arm7_output / "arm7.bin"))
+
     n.build(
         inputs=rom_config_file,
-        implicit=DSD,
+        implicit=rom_implicit,
         rule="rom_build",
-        outputs=rom_file,
+        outputs=str(project.game_build / "unfinalized.nds") if project.game_version == "usa" else rom_file,
+        variables={"baserom": project.baserom(),
+                   "final_output_flag": f'--output "{rom_file}"' if project.game_version == "usa" else ""},
     )
     n.newline()
+
+    if project.game_version == "usa":
+        n.rule(
+            name="finalize_usa_header",
+            command=(f"{PYTHON} tools/finalize_rom_header.py $in $out"
+                     f" --baserom {project.baserom()}"),
+        )
+        n.build(
+            inputs=str(project.game_build / "unfinalized.nds"),
+            implicit=[str(project.baserom()), "tools/finalize_rom_header.py", "tools/guard_rom_files.py"],
+            rule="finalize_usa_header",
+            outputs=rom_file,
+        )
+        n.newline()
 
     n.build(
         inputs=rom_file,
@@ -463,32 +533,37 @@ def is_c(name: str):
 
 
 def add_delink_and_lcf_builds(n: ninja_syntax.Writer, project: Project):
-    n.comment("Delink ELF binaries when any delinks.txt file is modified")
+    n.comment("Track every real dsd ELF output, including dynamic fallback units")
     rom_config = str(project.baserom_config())
     delinks_path = project.arm9_delinks()
+    completion = str(project.arm9_delink_completion())
+    plan = str(delinks_path / "outputs.json")
+    dyndep = str(delinks_path / "outputs.dd")
+    common = {"directory": delinks_path, "completion": completion, "plan": plan}
     n.build(
-        inputs=project.dsd_configs() + [rom_config],
-        implicit=DSD,
-        rule="delink",
-        outputs=str(delinks_path / "delink.yaml"),
-        variables={
-            "config_path": project.arm9_config_yaml(),
-        }
+        outputs=[dyndep, plan], rule="delink_plan",
+        inputs=["objdiff.json", rom_config],
+        implicit=["tools/delink_outputs.py"],
+        variables={**common, "extract": project.game_extract, "dyndep_file": dyndep},
     )
     n.newline()
-
     n.build(
-        inputs=str(delinks_path / "delink.yaml"),
-        rule="phony",
-        outputs="delink"
+        inputs=project.dsd_configs() + [rom_config, str(project.arm9_config_yaml()), plan],
+        implicit=[DSD, "tools/delink_outputs.py"],
+        order_only=[dyndep], rule="delink", outputs=completion,
+        variables={**common, "config_path": project.arm9_config_yaml(), "dyndep": dyndep},
     )
+    n.newline()
+    n.build(inputs=completion, rule="phony", outputs="delink")
     n.newline()
 
     lcf_file = project.arm9_lcf()
     objects_file = project.arm9_objects_txt()
     n.build(
-        inputs=project.delinks_files + [str(rom_config)],
-        implicit=DSD,
+        inputs=project.delinks_files + project.symbols_files + [str(rom_config), str(project.arm9_config_yaml())],
+        implicit=[DSD, "tools/generate_lcf.py"] + [
+            str(path) for path in sorted(project.arm9_config_yaml().parent.rglob("linker_symbols.json"))
+        ],
         rule="lcf",
         outputs=[str(lcf_file), str(objects_file)],
         variables={
@@ -501,6 +576,31 @@ def add_delink_and_lcf_builds(n: ninja_syntax.Writer, project: Project):
 
 
 def add_check_builds(n: ninja_syntax.Writer, project: Project):
+    check_inputs = ["check_modules", "check_symbols"]
+    if project.game_version == "usa":
+        # dsd verifies only ARM9. Keep the cartridge ARM7 preservation check
+        # separate and explicit: binary equality does not earn source coverage.
+        n.rule(
+            name="check_arm7",
+            command=f"{PYTHON} tools/check_arm7.py",
+        )
+        n.build(
+            inputs=[project.build_rom(), str(project.baserom()),
+                    "config/usa/arm7/baseline.json", "tools/check_arm7.py"],
+            rule="check_arm7",
+            outputs="check_arm7",
+        )
+        check_inputs.append("check_arm7")
+        n.rule(name="check_progress", command=f"{PYTHON} tools/check_progress.py")
+        n.build(
+            inputs=[str(project.objdiff_report()), "docs/inventory-usa-report.json.gz",
+                    "tools/check_progress.py"],
+            rule="check_progress",
+            outputs="check_progress",
+        )
+        check_inputs.append("check_progress")
+        n.newline()
+
     n.build(
         inputs=str(project.arm9_o()),
         rule="check_modules",
@@ -523,7 +623,7 @@ def add_check_builds(n: ninja_syntax.Writer, project: Project):
     n.newline()
 
     n.build(
-        inputs=["check_modules", "check_symbols"],
+        inputs=check_inputs,
         rule="phony",
         outputs="check",
     )
@@ -532,7 +632,7 @@ def add_check_builds(n: ninja_syntax.Writer, project: Project):
 
 def add_objdiff_builds(n: ninja_syntax.Writer, project: Project):
     n.build(
-        inputs=project.dsd_configs(),
+        inputs=project.dsd_configs() + [str(project.arm9_config_yaml())],
         implicit=DSD,
         rule="objdiff",
         outputs="objdiff.json",
@@ -551,7 +651,9 @@ def add_objdiff_builds(n: ninja_syntax.Writer, project: Project):
 
     n.build(
         inputs=["objdiff.json"],
-        implicit=[OBJDIFF] + project.source_object_files(),
+        # objdiff reads original objects written by delink. Without this edge,
+        # parallel builds can compare stale objects or race their replacement.
+        implicit=[OBJDIFF, str(project.arm9_delink_completion())] + project.source_object_files(),
         rule="objdiff_report",
         outputs=str(project.objdiff_report()),
     )

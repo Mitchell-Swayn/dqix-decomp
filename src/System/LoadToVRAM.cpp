@@ -2,6 +2,7 @@
 #include "System/DMA.h"
 #include "System/BGBases.h"
 #include "System/VRAM.h"
+#include "System/VRAMMappingState.h"
 #include <globaldefs.h>
 #include <asmhacks.h>
 
@@ -13,46 +14,12 @@
 
 #define data_020ed658 data_020ed764
 #define data_020ed668 data_020ed774
-#define data_02111240 data_02110ee0
-#define data_0211125c data_02110efc
 #endif
 
 #define ADDR_MAIN_BG_STANDARD_PALETTE 0x05000000
 #define ADDR_MAIN_OBJ_STANDARD_PALETTE 0x05000200
 #define ADDR_SUB_BG_STANDARD_PALETTE 0x05000400
 #define ADDR_SUB_OBJ_STANDARD_PALETTE 0x05000600
-
-struct ExtPaletteMappingData
-{
-    // sub BG: can only use {H} or none, so no need for map address
-    int subBGExtPaletteBanks_240_;
-    // main obj: can use either {F} or {G}, each 2x large enough
-    unsigned int mainObjExtPaletteMapAddress_244_;
-    int mainObjExtPaletteBanks_248_;
-    // main BG: can use subsets of {E, F, G}, max 32k usage.
-    // if only {G} is mapped, we want to treat this as the 'second half'
-    // (presumably so we can add/remove {F} seamlessly) so the start of G
-    // is counted as offset 16384 - this is the first variable below
-    unsigned int mainBGExtPaletteInitialOffset_24c_;
-    unsigned int mainBGExtPaletteMapAddress_250_;
-    int mainBGExtPaletteBanks_254_;
-    // sub OBJ: can only use {I} or none, so no need for map address
-    int subObjExtPaletteBanks_258_;
-} extern data_02111240;
-
-struct TextureMappingData
-{
-    int clearTextureBanks_25c_;
-    // as texture image can use any of banks {A, B, C, D}
-    // it's possible to end up spread over two different blocks
-    unsigned int textureImageFirstMapAddress_260_;
-    unsigned int texturePaletteMapAddress_264_;
-    int texturePaletteBanks_268_;
-    unsigned int clearTextureMapAddress_26c_;
-    int textureImageBanks_270_;
-    unsigned int textureImageSecondMapAddress_274_;
-    unsigned int textureImageFirstMapRegionSize_278_;
-} extern data_0211125c;
 
 // Address lookup table for texture palette memory mapping using
 // banks E, F, G. The bitmasks for these are 0, 0x10, 0x20, ..., 0x70

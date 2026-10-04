@@ -1,0 +1,168 @@
+# Reproducing and verifying the USA build
+
+The starting source revision `94cc9c872266f0a6d15d3fb037fba24b8d3696d6`
+was rebuilt on 2026-10-02 (Australia/Sydney) from a Git source archive, a fresh
+ROM extraction, and fresh compiler objects. All ARM9 main, ITCM, DTCM, 35 overlay,
+and symbol checks passed. This does not establish complete decompilation or
+runtime correctness. The ARM7 payload is still supplied by the extracted ROM.
+
+Evidence is in [the manifest](verification/baseline-clean-build.json) and
+[the full build log](verification/baseline-clean-build.log). The manifest records
+the source revision, input SHA-1, SHA-256 of each matching compiler executable
+and DLL, dsd, objdiff, Ninja, Python version, commands, and coverage counters.
+No ROM, BIOS, or extracted proprietary data is included in these records.
+
+The first fresh build with exact whole-ROM acceptance is source revision
+`0bd66955f2fa`: [manifest](verification/first-exact-clean-build.json),
+[build log](verification/first-exact-clean-build.log), and
+[ARM7 source report](verification/first-exact-arm7-report.json). It used the
+same locked tools, fresh extraction and fresh objects, and passed the target
+USA SHA-1 without a BIOS. This is a verified intermediate revision, not the
+finished decompilation.
+
+Revision `2a0b42ae9ebb` also passed a fresh archive/extraction/object build with
+the locked tools, including the guarded link-only ELF metadata preparation:
+[manifest](verification/runtime-milestone-clean-build.json),
+[build log](verification/runtime-milestone-clean-build.log), and
+[ARM7 report](verification/runtime-milestone-arm7-report.json).
+It reconstructs 1,263 ARM9 functions (172,916 matching code bytes) and 58 ARM7 C
+functions. Original binary fallbacks remain; the metadata preparation supplies
+no source coverage. Subsequent working changes are checked separately.
+
+The post-workflow milestone `81b15cc8ee9c` passed another fresh source archive,
+ROM extraction and object build with the same locked tools:
+[manifest](verification/workflow-milestone-clean-build.json),
+[build log](verification/workflow-milestone-clean-build.log), and
+[ARM7 report](verification/workflow-milestone-arm7-report.json).
+It records 1,314 ARM9 functions, 178,224 ARM9 code bytes and 108 ARM7 C functions.
+This remains an intermediate source-plus-fallback build, not complete reconstruction.
+
+The runtime/sound milestone `5c05df14bf51` passed fresh extraction and compilation
+with the locked tools and target whole-ROM SHA-1:
+[manifest](verification/runtime-sound-milestone-clean-build.json),
+[build log](verification/runtime-sound-milestone-clean-build.log), and
+[ARM7 report](verification/runtime-sound-milestone-arm7-report.json).
+It records 1,362 ARM9 functions, 185,300 ARM9 code bytes and 145 ARM7 C functions.
+Original binary fallbacks remain. Later batches have separate integration checks.
+
+The header-dependency milestone `c4cda3a14a89` passed a fresh archive, extraction
+and object build using the locked tools and target whole-ROM SHA-1:
+[manifest](verification/header-provenance-clean-build.json),
+[build log](verification/header-provenance-clean-build.log), and
+[ARM7 report](verification/header-provenance-arm7-report.json).
+It records 1,403 ARM9 functions, 189,932 ARM9 code bytes and 166 ARM7 C functions.
+Actual compiler-discovered transitive ARM7 headers are now hashed and tracked
+by Ninja. Later source batches have separate integration checks; binary fallbacks
+remain required at this milestone.
+
+The animation milestone `4f417453ca7a` passed another fresh source archive,
+extraction and object build using the locked tools:
+[manifest](verification/animation-milestone-clean-build.json),
+[build log](verification/animation-milestone-clean-build.log), and
+[ARM7 report](verification/animation-milestone-arm7-report.json).
+It records 1,460 ARM9 functions, 202,168 code bytes, 35,008 data bytes and
+197 ARM7 C functions. All module/symbol checks and whole-ROM SHA-1 passed.
+Later rendering scratch/data and worker batches have separate incremental
+acceptance; original binary fallbacks remain and gameplay was not rerun here.
+
+## Inputs and tools
+
+- USA ROM: `extract/baserom_dqix_usa.nds`, SHA-1
+  `c7c3014c237900c8281289b8bc76a781969b6278`.
+- Optional for the current USA build, a user-supplied DS ARM7 BIOS:
+  `arm7_bios.bin`, SHA-1 `24f67bdea115a2c847c8813a262502ee1607b7df`.
+- Python 3.11 or newer and Ninja. This workspace uses `.venv/Scripts/python.exe`
+  and `.venv/Scripts/ninja.exe`.
+- Matching Metrowerks ARM compiler/linker `2.0/sp2p2` in
+  `tools/mwccarm/2.0/sp2p2`, dsd 0.10.2, objdiff 2.7.1. The recorded Windows tool
+  hashes can be enforced with `--tool-lock` below. Upstream's compiler download
+  URL is mutable, so a version directory alone is not a content pin.
+- Linux additionally needs the configured Wine/Wibo runner; this clean-build
+  procedure has been exercised on Windows only.
+
+GCC generates decomp.me contexts in the default Ninja workflow; it is not the
+matching compiler and is unnecessary for the explicit targets below.
+
+## Fresh build without disturbing the workspace
+
+From the repository root in PowerShell:
+
+```powershell
+.\.venv\Scripts\python.exe tools/verify_clean_build.py --revision HEAD --tool-lock docs/verification/baseline-clean-build.json
+```
+
+The script resolves a committed revision, verifies the input hashes and tool
+hashes, and creates a new directory under `build/verification/`. It archives that
+revision, copies only the required external inputs/tools, reconfigures, extracts
+the ROM from scratch, and runs `ninja rom check report`. Existing extraction,
+objects, generated reports and working-tree edits are not used. The temporary
+directory and logs are retained for investigation; the script deletes nothing.
+Commit intended source changes before selecting a revision to verify.
+
+Require final SHA-1 acceptance with:
+
+```powershell
+.\.venv\Scripts\python.exe tools/verify_clean_build.py --revision HEAD --tool-lock docs/verification/baseline-clean-build.json --require-sha1
+```
+
+The current USA build can pass without a BIOS using verified checksum metadata
+preservation, described below. The script runs `ninja sha1` for this build and
+archives a separate ARM7 source report. For old revisions without that mechanism,
+missing BIOS still produces `module_baseline_passed_final_sha1_blocked` unless
+`--require-sha1` forces the failing hash check. The historical baseline SHA-1 is
+`c86d3ee5c7434e9be811ed512f1ef0549acaedc7`, which differs from the target.
+
+## Exact USA cartridge header without BIOS
+
+Investigation showed the historical rebuild differed from the supplied USA ROM
+in just four bytes: the secure-area CRC16 at offsets `0x6c..0x6d`, and the header
+CRC16 at `0x15e..0x15f`. Pinned ds-rom 0.6.1 explicitly writes zero secure-area CRC
+without a BIOS encryption key ([header source](https://github.com/AetiasHax/ds-rom/blob/b7bcb2735e4a774499dc589ed50d8fc0bd99c55b/lib/src/rom/header.rs#L167)).
+Its secure checksum covers the encrypted form of the first `0x4000` ARM9 bytes
+and depends on game code ([ARM9 source](https://github.com/AetiasHax/ds-rom/blob/b7bcb2735e4a774499dc589ed50d8fc0bd99c55b/lib/src/rom/arm9.rs#L311)).
+
+`tools/finalize_rom_header.py` now receives the raw packaged image at
+`build/usa/unfinalized.nds`. It verifies the reference ROM SHA-1, USA game code,
+fixed ARM9 offset, both input header CRCs, and exact equality of all secure-area
+bytes `[0x4000,0x8000)`. Only then does it preserve the original two-byte secure
+CRC field and independently recompute the two-byte header CRC using CRC16/MODBUS.
+It refuses to emit the final `dqix_usa.nds` unless the complete result has target
+SHA-1 `c7c3014c237900c8281289b8bc76a781969b6278`.
+
+This reuses verified header metadata; it does not independently calculate the
+encrypted secure checksum without the BIOS. No executable bytes are copied or
+repaired by finalization, and this step earns no source-coverage credit. Any
+changed secure-area byte is rejected before checksum reuse, and changes elsewhere
+fail the final SHA-1. The optional BIOS path remains available. This guarded
+USA-only procedure does not change the Japanese build.
+
+For day-to-day incremental checks, `build-usa.cmd` is a local convenience helper,
+or activate the environment and run:
+
+```text
+python tools/configure.py usa
+ninja rom check report
+```
+
+This revision has no `ninja min` target. Source map changes require reconfiguration.
+
+The source-owned interior-alias milestone `8ffd3d644ad2` passed a fresh source
+archive, extraction, object build, all module/symbol checks and final ROM SHA-1
+with the prior pinned tool hashes. See [its manifest](verification/sol61-alias-clean-build.json).
+The verbose log remains under ignored `build/verification/8ffd3d644ad2-ozjtzfp7/`.
+Later combined source batches passed full incremental acceptance; this clean-build
+claim applies specifically to the recorded revision.
+
+The module-local alias extension at `137a03140c21` also passed a fresh source
+archive, independent extraction, all objects/module/symbol checks and exact ROM
+SHA-1 using the pinned tool hashes. See [its manifest](verification/sol61-module-alias-clean-build.json).
+The main tool suite ran 188 tests: 187 passed, one skipped. Later source batches
+received full incremental acceptance; the fresh-build claim is revision-specific.
+
+## Runtime verification
+
+The clean-build manifests themselves do not run gameplay. Subsequent emulator
+observations cover boot, character creation, the first battle, opening events,
+Observatory movement/menus and Quick Save followed by fresh cartridge reload.
+See [the runtime record](RUNTIME_TESTS.md) for evidence and untested paths.
+Module equality and whole-ROM hash results remain separate from gameplay tests.

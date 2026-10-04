@@ -1,6 +1,7 @@
 #include "Grotto/Main/ActiveGrottoClass.h"
 #include "Combat/Main/BattleList.h"
 #include "Grotto/Main/TreasureMapDataStructs.h"
+#include "World/ZonePredicates.h"
 #include "GameState/GameState.h"
 #include <globaldefs.h>
 
@@ -8,7 +9,6 @@
     #define func_020323c4 func_02031efc
 
     #define func_02012fe4 func_02012dac
-    #define func_0201b588 func_0201b300
 
     #define func_020a3720 func_020a5498
     #define func_020a395c func_020a5698
@@ -22,10 +22,6 @@ extern "C"
 
     // Returns the 'zone struct' (still need to figure out what this contains)
     void* func_02012fe4();
-
-    // Returns true if the value is between 40001 and 41505, respectively.
-    // Most likely these are the zone IDs corresponding to grottos.
-    bool func_0201b588(unsigned short zoneID);
 
     // Not sure exactly what these do but it involves loading/unloading
     // data/tmap/tdata.gp2
@@ -160,7 +156,7 @@ int ActiveGrottoClass::GetFloorCount() const
 {
     GrottoStruct* grotto = GameState::GetInstance()->GetGrottoStruct();
     void* zone = func_02012fe4();
-    if (!func_0201b588(*(unsigned short*)zone))
+    if (!IsGrottoZone(*(unsigned short*)zone))
         return 0;
 
     if (grotto->activeMapData.GetMapType() == TreasureMapType_Legacy)

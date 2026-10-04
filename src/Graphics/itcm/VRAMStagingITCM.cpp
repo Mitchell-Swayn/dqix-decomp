@@ -33,16 +33,13 @@ extern "C"
     void func_0205e57c(void*);
 
     // zero memory and flush cache
-    void func_020d84f8(void*, unsigned int);
+    unsigned int func_020d84f8(void*, unsigned int);
 
     // gets a byte at 0x0214e4a0
     int func_020d8704();
 }
 
 // seems to be one per VRAMRegion
-extern VRAMStagingManager::CommonVRAMRegionTaskSet g_vramStagingRegionalTaskSets[10];
-extern VRAMStagingManager::StagingSpaceAllocation g_vramStagingAllocations[0x80];
-extern VRAMStagingManager::Task g_vramStagingTaskQueue[0x100];
 extern unsigned char g_vramStagingBuffer[0x5000];
 
 #define TASK_FLAG_VALID_TASK 0
@@ -53,7 +50,7 @@ extern unsigned char g_vramStagingBuffer[0x5000];
 
 #define STAGING_BUFFER_SIZE 0x5000
 
-// elements {262, 212}. 262 is number of scanlines, not sure about the 212
+// Copy-budget scanline cutoffs: 212 for main-engine regions, 262 for sub-engine regions.
 extern const short data_020ee694[];
 
 // maps VRAMRegion enum to {0 = main, 1 = sub}
@@ -594,7 +591,7 @@ void VRAMStagingManager::SendReadyDataToVRAM()
         if (groupingData[1] == 0) // explicitly marked as low priority
         {
             int vcount = VCOUNT;
-            // data_020ee694 is 262 for main engine or 212 for sub engine
+            // data_020ee694 is 212 for main engine or 262 for sub engine.
             maxAmountCopyableThisGroup = (data_020ee694[region >= 4 ? 1 : 0] - vcount) * 0x400;
             maxAmountCopyableThisGroup = (maxAmountCopyableThisGroup + 3) & ~3;
         }  

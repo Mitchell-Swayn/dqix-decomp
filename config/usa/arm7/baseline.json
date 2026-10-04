@@ -1,0 +1,25 @@
+{
+  "processor": "ARM7TDMI",
+  "module": "cartridge_arm7",
+  "source_rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+  "payload_sha1": "a662d5c6a78e990244299926cf6862ce910a475d",
+  "rom_offset": 1975296,
+  "load_address": 37224448,
+  "entry_address": 37224448,
+  "size": 167876,
+  "overlay_table_size": 0,
+  "symbols": [
+    {
+      "name": "arm7_entry",
+      "address": 37224448,
+      "evidence": "USA ROM header ARM7 entry address at offset 0x34",
+      "status": "header-derived label; function extent and original name unknown"
+    }
+  ],
+  "source_code_bytes": 0,
+  "source_data_bytes": 0,
+  "reviewed_assembly_bytes": 0,
+  "binary_fallback_bytes": 167876,
+  "code_data_partition": "unknown",
+  "function_count": null
+}

@@ -57,7 +57,7 @@ extern "C"
     void func_020d1d1c(unsigned short* out, const void* data, unsigned int length);
 
     // memcpy and flush cache
-    void func_020d8524(void*, const void*, unsigned);
+    unsigned int func_020d8524(void*, const void*, unsigned);
 }
 
 // if set, drawing doesn't take place. Also does something with

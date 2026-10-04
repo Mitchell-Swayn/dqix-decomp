@@ -16,6 +16,7 @@
 class ActiveGrottoClass
 {
 public:
+    ~ActiveGrottoClass() { BlankFunction2(); }
     // Data not pertaining to specific floors
     DetailedTreasureMapData overallMapData_;
     

@@ -37,6 +37,9 @@ typedef struct Vector3i
     int32_t x;
     int32_t y;
     int32_t z;
+#ifdef __cplusplus
+    Vector3i& operator=(const Vector3i& other);
+#endif
 } Vector3i;
 
 typedef struct Vector3s
@@ -85,9 +88,9 @@ typedef union Matrix4x4
     Vector4fix rows[4];
 } Matrix4x4;
 
-// These are probably nitro SDK functions, and some are handwritten in assembly.
-// The others are a massive pain because of 64-bit, so I'm not matching them now
-// but it should be useful for clarity to have them named.
+// These appear to be Nitro SDK functions; some matrix routines use assembly.
+// Matched vector arithmetic is in System/VectorMath.cpp. Other declarations
+// still refer to original binary code until their implementations are recovered.
 #ifdef __cplusplus
 extern "C"
 {
@@ -206,16 +209,16 @@ extern "C"
     // computes inA * inB and stores to out.
     void Mat4x4_Multiply(const Matrix4x4* inA, const Matrix4x4* inB, Matrix4x4* out);
     // usa: func_020c28a0
-    // I'm not entirely sure what this does, but the format looks similar to
-    // e.g. glFrustum but doesn't match exactly
-    void Mat4x4_MaybeWriteFrustum(fix32_t a, fix32_t b, fix32_t c, fix32_t d, fix32_t e, fix32_t f, Matrix4x4* out);
+    // Perspective projection from half-angle sine/cosine, aspect ratio, depth
+    // bounds and a homogeneous scale. The legacy symbol name is retained.
+    void Mat4x4_MaybeWriteFrustum(fix32_t sine, fix32_t cosine, fix32_t aspect,
+                                fix32_t near, fix32_t far, fix32_t scale, Matrix4x4* out);
     // usa: func_020c29ec
-    // Similar function to the previous, is used in places to populate the
-    // RenderConfig's projection matrix, but I don't know what exactly it is
-    // Might be something like glOrtho???
-    // From call site in AtmosphericEffect it looks to be (top, bottom, left, right, near, far)
-    // not sure about 7th parameter
-    void Mat4x4_WriteProjectionUnknown(fix32_t a, fix32_t b, fix32_t c, fix32_t d, fix32_t e, fix32_t f, fix32_t g, Matrix4x4* out);
+    // Orthographic projection from the view bounds and a homogeneous scale.
+    // The legacy symbol name is retained.
+    void Mat4x4_WriteProjectionUnknown(fix32_t top, fix32_t bottom, fix32_t left,
+                                      fix32_t right, fix32_t near, fix32_t far,
+                                      fix32_t scale, Matrix4x4* out);
 
 
     // usa: func_020c2bf4
@@ -228,7 +231,7 @@ extern "C"
     // usa: func_020c2c38
     int64_t GetHardwareDividerResult();
     // usa: func_020c2c5c
-    // gets the hardware divider result right shifted 20 places.
+    // Waits for completion, adds 0x80000, then shifts the result right 20 places.
     // use this in conjunction with fix32_QueueComputeReciprocal
     // or fix32_QueueComputeQuotient for async division of fix32 values.
     fix32_t fix32_GetDivisionResult();
@@ -242,7 +245,7 @@ extern "C"
 
     // usa: func_020c2cc4
     // not used outside of this library
-    // gets the hardware sqrt result right shifted 10 places.
+    // Waits for completion, adds 0x200, then shifts the result right 10 places.
     fix32_t fix32_GetSqrtResult();
     // usa: func_020c2cf0
     // primes the hardware divider to compute the integer (2^32*a) / b, where
@@ -267,10 +270,13 @@ extern "C"
     // usa: func_020c2dc4
     void Vector3fix_Subtract(const Vector3fix* a, const Vector3fix* b, Vector3fix* out);
     // usa: func_020c2df8
+    // Rounds the accumulated 64-bit dot product back to 12 fractional bits.
     fix32_t Vector3fix_InnerProduct(const Vector3fix* a, const Vector3fix* b);
     // usa: func_020c2e34
+    // Safe when out aliases either input: components are captured before stores.
     void Vector3fix_CrossProduct(const Vector3fix* a, const Vector3fix* b, Vector3fix* out);
     // usa: func_020c2eb8
+    // Uses the hardware square-root unit and waits for completion.
     fix32_t Vector3fix_Length(const Vector3fix* vec);
     // usa: func_020c2f18
     void Vector3fix_Normalize(const Vector3fix* in, Vector3fix* out);
@@ -278,15 +284,13 @@ extern "C"
     // computes the length of the vector a-b
     fix32_t Vector3fix_Distance(const Vector3fix* a, const Vector3fix* b);
 
-    // 0x020c30ac - 0x020c36ec: functions that compute stuff with a ton of
-    // magic constants. Possibly software implementations of trig functions?
-    // Will come back to this when the call sites come up
-
     // usa: func_020c338c
+    // Signed 20.12 radians, using a 129-sample first-octant lookup table.
     fix32_t fix32_Atan2(fix32_t y, fix32_t x);
-    // usa: func_020c3554
+    // usa: func_020c3544
     // works like Atan2 but the range is rescaled so that pi = 0x8000,
-    // so for example (x = 0, y > 0) gives 0x4000 = 4.0
+    // The result is zero-extended from a wrapping 16-bit angle;
+    // for example (x = 0, y > 0) gives 0x4000 (a quarter turn).
     fix32_t fix32_Atan2_Rescaled(fix32_t y, fix32_t x);
 
 #ifdef __cplusplus

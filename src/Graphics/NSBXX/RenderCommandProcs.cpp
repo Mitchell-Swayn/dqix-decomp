@@ -1025,3 +1025,38 @@ void MaterialTextureMatrixLoadProc_Type3(MaterialRenderData* renderData)
 
     SubmitCommandToGeometryFifo(fifoData.commands, (uint32_t*)&fifoData + 1, 18);
 }
+
+// Select the matrix builder for each combination of rotation, translation,
+// and scale flags. The table order follows the low three bits of flags_.
+void (*data_020f1e88[8])(Matrix4x4*, MaterialRenderData*) = {
+    CreateTextureMatrix_v0_RotateTranslateScale,
+    CreateTextureMatrix_v0_RotateTranslate,
+    CreateTextureMatrix_v0_TranslateScale,
+    CreateTextureMatrix_v0_Translate,
+    CreateTextureMatrix_v0_RotateScale,
+    CreateTextureMatrix_v0_Rotate,
+    CreateTextureMatrix_v0_Scale,
+    CreateTextureMatrix_v0_NoExtensions
+};
+
+void (*data_020f1ea8[8])(Matrix4x4*, MaterialRenderData*) = {
+    CreateTextureMatrix_v2_TranslateRotateScale,
+    CreateTextureMatrix_v2_TranslateRotate,
+    CreateTextureMatrix_v2_TranslateScale,
+    CreateTextureMatrix_v2_Translate,
+    CreateTextureMatrix_v2_RotateScale,
+    CreateTextureMatrix_v2_Rotate,
+    CreateTextureMatrix_v2_Scale,
+    CreateTextureMatrix_v2_NoExtensions
+};
+
+void (*data_020f1ec8[8])(Matrix4x4*, MaterialRenderData*) = {
+    CreateTextureMatrix_v3_ScaleTranslateRotate,
+    CreateTextureMatrix_v3_TranslateRotate,
+    CreateTextureMatrix_v3_TranslateScale,
+    CreateTextureMatrix_v3_Translate,
+    CreateTextureMatrix_v3_RotateScale,
+    CreateTextureMatrix_v3_Rotate,
+    CreateTextureMatrix_v3_Scale,
+    CreateTextureMatrix_v3_NoExtensions
+};
