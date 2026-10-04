@@ -1,3 +1,5 @@
+#if defined(usa)
+// This reconstruction uses USA-specific layout; JPN retains its original range.
 #include "Filesystem/GPCImplementation.h"
 #include "Filesystem/GPC.h"
 
@@ -18,3 +20,5 @@ extern "C" __declspec(section "init") void __sinit_020e6710()
     SetGPCSignatureGPC2(&signature2);
     CopyGPCSignature(&gpcData.runtime.gpc2Signature, &signature2);
 }
+
+#endif // defined(usa)

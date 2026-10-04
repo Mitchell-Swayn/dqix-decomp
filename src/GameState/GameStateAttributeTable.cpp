@@ -1,3 +1,5 @@
+#if defined(usa)
+// This reconstruction uses USA-specific layout; JPN retains its original range.
 #include "GameState/GameState.h"
 
 typedef char GameStateAttributeRecordSizeCheck[
@@ -32,3 +34,5 @@ extern "C" unsigned int func_0201137c(GameState* state, int identifier)
         result = (record->attributes_ << 12) >> 24;
     return result;
 }
+
+#endif // defined(usa)

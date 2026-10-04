@@ -1,3 +1,5 @@
+#if defined(usa)
+// This reconstruction uses USA-specific layout; JPN retains its original range.
 #include "GameState/GameState.h"
 
 typedef char GameStateIndexedRecordSizeCheck[
@@ -69,3 +71,5 @@ extern "C" GameStateIndexedRecord* func_02010954(GameState* state)
     }
     return NULL;
 }
+
+#endif // defined(usa)

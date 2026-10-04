@@ -69,7 +69,12 @@ struct Struct_0210cf78
     QueuedData* pQueuedData;
     volatile int fifoProcessingFlag; // 1 = processing, 0 = done
     int unknown_8;
-} data_0210cf78;
+};
+#if defined(usa)
+Struct_0210cf78 data_0210cf78;
+#else
+extern Struct_0210cf78 data_0210cf78;
+#endif
 typedef char GeometryFifoStateSizeCheck[sizeof(Struct_0210cf78) == 12 ? 1 : -1];
 
 extern "C" void SendQueuedDataToGeometryFifo()

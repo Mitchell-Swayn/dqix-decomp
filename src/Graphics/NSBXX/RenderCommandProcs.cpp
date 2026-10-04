@@ -1026,6 +1026,8 @@ void MaterialTextureMatrixLoadProc_Type3(MaterialRenderData* renderData)
     SubmitCommandToGeometryFifo(fifoData.commands, (uint32_t*)&fifoData + 1, 18);
 }
 
+#if defined(usa)
+// JPN's dispatch tables remain in original fallback storage.
 // Select the matrix builder for each combination of rotation, translation,
 // and scale flags. The table order follows the low three bits of flags_.
 void (*data_020f1e88[8])(Matrix4x4*, MaterialRenderData*) = {
@@ -1060,3 +1062,4 @@ void (*data_020f1ec8[8])(Matrix4x4*, MaterialRenderData*) = {
     CreateTextureMatrix_v3_Scale,
     CreateTextureMatrix_v3_NoExtensions
 };
+#endif

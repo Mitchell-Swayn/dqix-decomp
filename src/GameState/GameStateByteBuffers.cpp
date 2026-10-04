@@ -1,3 +1,5 @@
+#if defined(usa)
+// This reconstruction uses USA-specific layout; JPN retains its original range.
 #include "GameState/GameState.h"
 
 typedef char GameStateByteBuffer5718OffsetCheck[
@@ -79,3 +81,5 @@ extern "C" unsigned int func_02011538(GameState* state)
 {
     return state->unknownByteBufferLength_5721_;
 }
+
+#endif // defined(usa)

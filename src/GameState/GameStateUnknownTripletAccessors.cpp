@@ -1,3 +1,5 @@
+#if defined(usa)
+// This reconstruction uses USA-specific layout; JPN retains its original range.
 #include "GameState/GameState.h"
 
 extern "C" char* func_0205ec34();
@@ -60,3 +62,5 @@ extern "C" unsigned int func_0201081c(GameState* state)
 {
     return state->unknown_5cbc_;
 }
+
+#endif // defined(usa)

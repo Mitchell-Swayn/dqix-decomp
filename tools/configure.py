@@ -447,22 +447,22 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, project: Project):
         inputs=rom_config_file,
         implicit=rom_implicit,
         rule="rom_build",
-        outputs=str(project.game_build / "unfinalized.nds") if project.game_version == "usa" else rom_file,
+        outputs=str(project.game_build / "unfinalized.nds"),
         variables={"baserom": project.baserom(),
-                   "final_output_flag": f'--output "{rom_file}"' if project.game_version == "usa" else ""},
+                   "final_output_flag": f'--output "{rom_file}"'},
     )
     n.newline()
 
-    if project.game_version == "usa":
+    if project.game_version in ("usa", "jpn"):
         n.rule(
-            name="finalize_usa_header",
+            name="finalize_rom_header",
             command=(f"{PYTHON} tools/finalize_rom_header.py $in $out"
                      f" --baserom {project.baserom()}"),
         )
         n.build(
             inputs=str(project.game_build / "unfinalized.nds"),
             implicit=[str(project.baserom()), "tools/finalize_rom_header.py", "tools/guard_rom_files.py"],
-            rule="finalize_usa_header",
+            rule="finalize_rom_header",
             outputs=rom_file,
         )
         n.newline()

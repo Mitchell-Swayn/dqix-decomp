@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Preserve verified USA secure-area checksum metadata without requiring a BIOS.
+"""Preserve verified cartridge checksum metadata without requiring a BIOS.
 
 ds-rom 0.6.1 emits a zero secure-area CRC when its encryption key is absent.
 The supplied cartridge already contains that checksum. It is reusable only if
@@ -16,6 +16,8 @@ from guard_rom_files import check_paths
 
 
 USA_SHA1 = "c7c3014c237900c8281289b8bc76a781969b6278"
+JPN_SHA1 = "4b219246c06343ad56cedfb183ea3bd737776eda"
+TARGETS = {b"YDQE": ("USA", USA_SHA1), b"YDQJ": ("JPN", JPN_SHA1)}
 HEADER_SIZE = 0x160
 SECURE_START = 0x4000
 SECURE_END = 0x8000
@@ -33,11 +35,11 @@ def crc16(data):
 def restore_metadata(rebuilt, original_header, original_secure_area):
     """Return a new image; reject changed data before reusing its checksum."""
     if len(rebuilt) < SECURE_END or len(original_header) != HEADER_SIZE:
-        raise ValueError("Truncated USA ROM/header")
+        raise ValueError("Truncated ROM/header")
     if len(original_secure_area) != SECURE_END - SECURE_START:
         raise ValueError("Truncated reference secure area")
-    if original_header[12:16] != b"YDQE" or rebuilt[12:16] != b"YDQE":
-        raise ValueError("Only the verified USA cartridge layout is supported")
+    if bytes(original_header[12:16]) not in TARGETS or rebuilt[12:16] != original_header[12:16]:
+        raise ValueError("Only matching verified USA/JPN cartridge layouts are supported")
     if struct.unpack_from("<I", original_header, 0x20)[0] != SECURE_START:
         raise ValueError("Unexpected original ARM9 offset")
     if struct.unpack_from("<I", rebuilt, 0x20)[0] != SECURE_START:
@@ -66,20 +68,23 @@ def main():
     try:
         check_paths([args.input, args.baserom], [args.output])
         with args.baserom.open("rb") as stream:
-            if hashlib.file_digest(stream, "sha1").hexdigest() != USA_SHA1:
-                raise ValueError("Reference ROM is not the verified USA input")
+            source_sha1 = hashlib.file_digest(stream, "sha1").hexdigest()
             stream.seek(0)
             header = stream.read(HEADER_SIZE)
+            target = TARGETS.get(header[12:16])
+            if target is None or source_sha1 != target[1]:
+                raise ValueError("Reference ROM is not a verified USA/JPN input")
+            region, expected_sha1 = target
             stream.seek(SECURE_START)
             secure_area = stream.read(SECURE_END - SECURE_START)
         if args.input.stat().st_size != args.baserom.stat().st_size:
             raise ValueError("Rebuilt ROM size differs")
         result = restore_metadata(args.input.read_bytes(), header, secure_area)
-        if hashlib.sha1(result).hexdigest() != USA_SHA1:
-            raise ValueError("Final USA SHA-1 differs: other bytes remain unmatched")
+        if hashlib.sha1(result).hexdigest() != expected_sha1:
+            raise ValueError(f"Final {region} SHA-1 differs: other bytes remain unmatched")
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_bytes(result)
-        print(f"USA ROM PASS: {USA_SHA1}; original secure-area CRC metadata preserved "
+        print(f"{region} ROM PASS: {expected_sha1}; original secure-area CRC metadata preserved "
               "after exact secure-area comparison; header CRC recomputed")
     except (OSError, ValueError) as error:
         print(f"ROM finalization FAIL: {error}", file=sys.stderr)

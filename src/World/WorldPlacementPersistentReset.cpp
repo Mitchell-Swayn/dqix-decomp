@@ -1,3 +1,5 @@
+#if defined(usa)
+// This reconstruction uses USA-specific layout; JPN retains its original range.
 #include "World/WorldPlacementSource.h"
 #include "World/WorldObjectInstanceList.h"
 #include "GameState/GameState.h"
@@ -29,3 +31,5 @@ extern "C" void func_0208ec04(WorldObjectInstanceList*)
         }
     }
 }
+
+#endif // defined(usa)
