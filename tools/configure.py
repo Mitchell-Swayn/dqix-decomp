@@ -6,6 +6,7 @@ import argparse
 import json
 import sys
 
+from unit_source_views import active_views, reserved_sources
 import ninja_syntax
 from get_platform import get_platform
 
@@ -154,7 +155,8 @@ class Project:
         return [
             str(self.game_build / source_file.with_suffix(".o"))
             for source_file in get_c_cpp_files([src_path, libs_path])
-        ]
+            if source_file.as_posix() not in reserved_sources(root_path)
+        ] + [str(self.game_build / Path(name).with_suffix('.o')) for name in active_views(root_path)]
 
     def arm9_lcf(self) -> Path:
         return self.game_build / "arm9.lcf"
@@ -261,7 +263,7 @@ def main():
 
         n.rule(
             name="objdiff",
-            command=f"{DSD} objdiff --config-path $config_path {DSD_OBJDIFF_ARGS}"
+            command=f'{DSD} objdiff --config-path $config_path {DSD_OBJDIFF_ARGS} && "{PYTHON}" tools/unit_source_views.py objdiff'
         )
         n.newline()
 
@@ -269,6 +271,8 @@ def main():
             name="objdiff_report",
             command=f"{OBJDIFF} report generate -o $out"
         )
+        n.newline()
+        n.rule(name="mwcc_view", command=mwcc_cmd.replace('-o $basedir', '-o $out'), depfile="$basefile.d", deps="gcc")
         n.newline()
 
         n.rule(
@@ -487,6 +491,8 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, project: Project):
 
 def add_mwcc_builds(n: ninja_syntax.Writer, project: Project, mwcc_implicit: list[Path]):
     for source_file in get_c_cpp_files([src_path, libs_path]):
+        if source_file.as_posix() in reserved_sources(root_path):
+            continue
         src_obj_path = project.game_build / source_file
         cc_flags = []
         if is_cpp(source_file): cc_flags.append("-lang=c++")
@@ -512,6 +518,15 @@ def add_mwcc_builds(n: ninja_syntax.Writer, project: Project, mwcc_implicit: lis
             rule="m2ctx",
             outputs=ctx_file,
         )
+        n.newline()
+
+    for name, view in active_views(root_path).items():
+        obj = project.game_build / Path(name).with_suffix('.o')
+        obj.parent.mkdir(parents=True, exist_ok=True)
+        n.build(inputs=view['source_path'], outputs=str(obj), rule='mwcc_view',
+                implicit=mwcc_implicit + ['config/usa/unit_sources.json'],
+                variables={'game_version': project.game_version, 'cc_flags': '-lang=c++ -d ' + view['define'],
+                           'basedir': str(obj.parent), 'basefile': str(obj.with_suffix(''))})
         n.newline()
 
 
@@ -633,7 +648,7 @@ def add_check_builds(n: ninja_syntax.Writer, project: Project):
 def add_objdiff_builds(n: ninja_syntax.Writer, project: Project):
     n.build(
         inputs=project.dsd_configs() + [str(project.arm9_config_yaml())],
-        implicit=DSD,
+        implicit=[DSD, 'tools/unit_source_views.py'] + (['config/usa/unit_sources.json'] if (root_path / 'config/usa/unit_sources.json').exists() else []),
         rule="objdiff",
         outputs="objdiff.json",
         variables={

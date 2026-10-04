@@ -128,6 +128,8 @@ def audit(root, report_path):
     for unit in report["units"]:
         source = next((root / (unit["name"] + extension) for extension in (".cpp", ".c")
                        if (root / (unit["name"] + extension)).is_file()), None)
+        if not unit.get('metadata', {}).get('auto_generated', True) and unit.get('metadata', {}).get('source_path'):
+            source = root / unit['metadata']['source_path']
         affected = set()
         if source is None:
             category = "original_binary_units"

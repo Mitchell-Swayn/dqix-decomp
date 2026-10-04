@@ -19,11 +19,20 @@ the assigned function, with necessary header and delink-map changes in the same
 linear commit. The host checks the source destination and preserved contents both
 when receiving the candidate and at independent integration verification.
 
-Only one unresolved candidate may own a unit source file. Other functions in that
-unit wait while different units can progress concurrently. Ownership is retained
-through review, verification and promotion. Rejected candidates do not receive
-source credit. Previously dispatched candidates retain their original contract;
-new packets use the stable catalog after deployment and accepted snapshot refresh.
+Workers reserve functions rather than unit files. Different functions in the same
+unit can run concurrently in independent worktrees. The integrator combines pure
+append conflicts and disjoint delink blocks, then verifies the combined result.
+Other conflicts stop for resolution. Rejected candidates receive no source credit.
+Previously dispatched candidates retain their original contract; new packets use
+the stable catalog after deployment and accepted snapshot refresh.
+
+For reserved units, enclose every appended declaration, include and definition in
+the packet's `#if defined(DQIX_FUNCTION_<address>)` selector. Use its virtual
+`src/UnitObjects/<module>/fn_<address>.cpp` identity in the delink map without
+creating that file. `tools/unit_source_views.py` resolves the identity to the shared
+file, and configure compiles each selected function into an independent object.
+Only its exact original range is selected. Noncontiguous functions can therefore
+share one source file without replacing or claiming the bytes between them.
 
 The catalog covers the ARM9 main program, ITCM, DTCM and configured overlays.
 ARM7 source files remain governed by its separate source-unit configuration and
