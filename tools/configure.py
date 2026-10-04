@@ -517,8 +517,11 @@ def add_mwcc_builds(n: ninja_syntax.Writer, project: Project, mwcc_implicit: lis
 
 def get_c_cpp_files(dirs: list[Path]):
     for dir in dirs:
-        for root, _, files in os.walk(dir):
+        for root, subdirs, files in os.walk(dir):
             root = Path(root)
+            if root == src_path:
+                # ARM7 uses its own CPU flags, linker layout and source manifest.
+                subdirs[:] = [name for name in subdirs if name != "ARM7"]
             for file in files:
                 if is_cpp(file) or is_c(file):
                     yield root / file
