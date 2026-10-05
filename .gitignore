@@ -1,0 +1,24 @@
+build/
+.vscode/
+dqix_*/
+*.nds
+*bios.bin
+/m2ctx
+*.sav
+*.xMAP
+objdiff.json
+/objdiff-cli
+/objdiff-cli.exe
+/dsd
+/dsd.exe
+/dsd.pdb
+build.ninja
+.ninja_log*
+.ninja_lock
+/wibo
+ninja.exe
+# Factory instance files live in the separate Factory repository.
+/docs/workflow/
+/tools/*factory*
+/tools/test_factory*
+/docs/verification/*.log

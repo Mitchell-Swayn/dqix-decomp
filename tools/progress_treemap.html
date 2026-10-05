@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dragon Quest IX · USA progress treemap</title>
+<style>
+:root{color-scheme:dark;--bg:#111315;--panel:#1a1e22;--text:#edf0f3;--muted:#aab3bc;--line:#353c43;--green:#55c54b;--partial:#159eb7}
+*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,sans-serif}main{max-width:1600px;margin:auto;padding:28px}
+a{color:#81c6e7}header{display:flex;justify-content:space-between;gap:20px;align-items:center}h1{font-size:27px;font-weight:550;letter-spacing:-.6px;margin:8px 0}p{margin:8px 0}.eyebrow{color:var(--muted);font-size:12px;letter-spacing:2px}.meta,.note{color:var(--muted);font-size:13px}.metrics{display:flex;gap:38px;flex-wrap:wrap;margin:24px 0}.metric strong{display:block;font-size:29px;font-weight:500}.metric span{color:var(--muted);font-size:13px}.toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:18px 0}button,select,input{font:inherit;color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:8px 12px}button{cursor:pointer}button:hover{background:#30373d}button[aria-pressed=true]{background:#e4e9ed;color:#161a1d}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #81c6e7;outline-offset:2px}input{min-width:0;width:230px}label{display:flex;align-items:center;gap:8px}.spacer{flex:1}.legend{display:flex;flex-wrap:wrap;gap:16px;margin:14px 0;font-size:13px;color:var(--muted)}.swatch{display:inline-block;width:11px;height:11px;margin-right:6px;vertical-align:-1px}.crumb{display:flex;align-items:center;gap:10px;margin:14px 0}#map{position:relative;height:640px;background:#090b0d;overflow:hidden}canvas{display:block;width:100%;height:100%;cursor:pointer}#tooltip{position:fixed;pointer-events:none;display:none;z-index:5;max-width:350px;padding:12px;background:#20262cf2;border:1px solid #77828d;border-radius:5px;white-space:pre-line;font-size:13px;box-shadow:0 4px 20px #0008}#selection{padding:18px 0;min-height:72px}#selection strong{overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font-size:13px}td,th{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line)}td:first-child{overflow-wrap:anywhere}td:not(:first-child),th:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}#table-wrap{overflow:auto;max-height:360px}details{margin:14px 0}summary{cursor:pointer}.footer{margin-top:20px;border-top:1px solid var(--line);padding-top:14px}.empty{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted)}@media(max-width:650px){main{padding:16px}h1{font-size:23px}header{align-items:flex-start;flex-direction:column}.metrics{gap:20px}.metric strong{font-size:24px}#map{height:480px}.spacer{display:none}input{width:100%}.toolbar label{flex-wrap:wrap}#tooltip{max-width:260px}}
+</style>
+</head>
+<body><main>
+<header><div><div class="eyebrow">NINTENDO DS / USA</div><h1>Dragon Quest IX</h1><p class="meta" id="revision"></p></div><a href="https://github.com/DQIX/dqix-decomp">Project repository ↗</a></header>
+<div class="metrics" id="metrics"></div>
+<p class="note">Matching coverage measures bytes and functions, not effort. ARM9 matching includes assembly. Whole-cartridge C/C++ completion is not yet established.</p>
+<div class="toolbar">
+<button id="arm9" aria-pressed="true">ARM9</button><button id="arm7" aria-pressed="false">ARM7</button>
+<label>Area <select id="metric"><option value="code">Code bytes</option><option value="data">Data bytes (includes BSS)</option><option value="functions">Function count</option></select></label>
+<label>Module <select id="module"><option value="all">All modules</option></select></label>
+<label>Tiles <select id="tiles"><option value="functions">Functions within units</option><option value="units">Units</option></select></label><span class="spacer"></span><input id="search" aria-label="Highlight units or functions by name" placeholder="Highlight a name…" type="search">
+</div>
+<div class="legend" id="legend"></div>
+<div class="crumb"><button id="back" hidden>← All modules</button><span id="scope"></span></div>
+<div id="map"><canvas id="canvas" aria-label="Coverage treemap. Use the accessible unit table below to select units."></canvas><div id="empty" class="empty" hidden>No units have this measure.</div></div>
+<p class="note" id="area-note"></p>
+<div id="selection" aria-live="polite">Select a rectangle to inspect a unit. Double-click a rectangle to focus its module.</div>
+<details><summary>Accessible unit table</summary><div id="table-wrap"><table><thead><tr><th>Unit / module</th><th>Area</th><th>Matched / category</th></tr></thead><tbody id="units"></tbody></table></div></details>
+<details id="functions-panel" hidden><summary>Functions in selected unit</summary><p class="note">Similarity is objdiff's fuzzy instruction comparison, not source coverage. Symbol sizes may include literal pools and differ from code-byte totals.</p><div id="function-table"></div></details>
+<div class="footer note"><p>ARM7 total instruction and function denominators remain unknown. Original fallback includes unclassified code and data. Runtime BSS is separate from the stored payload; assembly and literal pools receive no C instruction credit.</p><p>ARM9 data uses objdiff's data measure, which includes BSS. Assembly categories use a conservative scan of whole source units and local headers; they are not exact assembly-byte counts.</p><p id="provenance"></p><a href="https://decomp.dev/doldecomp/brawl">Treemap reference: decomp.dev / Brawl</a></div>
+</main><div id="tooltip" role="tooltip"></div>
+<script id="progress-data" type="application/json">__PROGRESS_DATA__</script>
+<script>
+'use strict';
+const D=JSON.parse(document.getElementById('progress-data').textContent);
+const $=id=>document.getElementById(id), n=x=>x.toLocaleString('en-US'), pct=(a,b)=>b?(100*a/b).toFixed(2)+'%':'—';
+let cpu='arm9', metric='code', module='all', rects=[], selected=null;
+const colors={instructions:'#55c54b',literals:'#d6ab58',data:'#43abc4',assembly:'#b088d6',bss:'#43abc4',fallback:'#303438'};
+const categoryNames={original_binary_units:'Original binary fallback',source_units_with_assembly_syntax:'Source unit affected by assembly syntax',source_units_without_detected_assembly:'Source unit without detected assembly'};
+const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+$('revision').textContent='Revision '+D.revision.slice(0,8)+(D.dirty?' · working tree has changes':'')+' · report '+D.report_time.slice(0,10);
+$('provenance').textContent='Generated '+D.generated+' · ARM9 report SHA-256 '+D.report_sha256+' · ARM7 report SHA-256 '+D.arm7_report_sha256;
+function activeUnits(){return (cpu==='arm9'?D.units:D.arm7.filter(u=>u.view===metric)).filter(u=>module==='all'||u.module===module)}
+function weight(u){return cpu==='arm9'?u.measures['total_'+metric]:u.size}
+function matched(u){return cpu==='arm9'?u.measures['matched_'+metric]:0}
+function color(u){if(cpu==='arm7')return colors[u.kind];let p=weight(u)?matched(u)/weight(u):0;return p===1?'#55c54b':p>0?'#159eb7':'#303438'}
+function tooltip(u){return cpu==='arm9'?u.name+'\nARM9 / '+u.module+'\n'+n(matched(u))+' / '+n(weight(u))+' '+metric+' matched ('+pct(matched(u),weight(u))+')\n'+categoryNames[u.category]:u.name+'\nARM7 / '+u.module+'\n'+n(u.size)+' bytes · '+u.kind}
+// Squarified treemap: every positive measure participates, including fallback.
+function layout(items,x,y,w,h){
+  items=items.filter(i=>i.value>0).sort((a,b)=>b.value-a.value);
+  const total=items.reduce((s,i)=>s+i.value,0), scale=w*h/total;
+  let pending=items.map(i=>({...i,area:i.value*scale})), out=[];
+  function worst(row,side){if(!row.length)return Infinity;let s=row.reduce((a,i)=>a+i.area,0),hi=Math.max(...row.map(i=>i.area)),lo=Math.min(...row.map(i=>i.area));return Math.max(side*side*hi/(s*s),s*s/(side*side*lo))}
+  while(pending.length){let row=[pending.shift()],side=Math.min(w,h);while(pending.length&&worst([...row,pending[0]],side)<=worst(row,side))row.push(pending.shift());let sum=row.reduce((s,i)=>s+i.area,0);
+    if(w>=h){let rw=sum/h,yy=y;for(let i of row){let rh=i.area/rw;out.push({...i,x,y:yy,w:rw,h:rh});yy+=rh}x+=rw;w=Math.max(0,w-rw)}
+    else{let rh=sum/w,xx=x;for(let i of row){let rw=i.area/rh;out.push({...i,x:xx,y,w:rw,h:rh});xx+=rw}y+=rh;h=Math.max(0,h-rh)}
+  }return out;
+}
+function summaries(){let m=D.measures,a=D.arm7_measures;let stats=cpu==='arm9'?[['Code matched',pct(m.matched_code,m.total_code),n(m.matched_code)+' / '+n(m.total_code)+' bytes'],['Data matched',pct(m.matched_data,m.total_data),n(m.matched_data)+' / '+n(m.total_data)+' bytes'],['Functions matched',pct(m.matched_functions,m.total_functions),n(m.matched_functions)+' / '+n(m.total_functions)]]:[['C instructions',n(a.source_code_bytes)+' B',n(a.source_functions)+' source functions · total unknown'],['Literals / initialized data',n(a.source_literal_pool_bytes)+' / '+n(a.source_data_bytes)+' B','Separate from C instructions'],['Reviewed assembly / source BSS',n(a.reviewed_assembly_bytes)+' / '+n(a.source_bss_bytes)+' B','Payload / runtime memory']];$('metrics').innerHTML=stats.map(s=>'<div class="metric"><span>'+s[0]+'</span><strong>'+s[1]+'</strong><span>'+s[2]+'</span></div>').join('')}
+function draw(){
+ const canvas=$('canvas'),ctx=canvas.getContext('2d'),w=$('map').clientWidth,h=$('map').clientHeight,dpr=window.devicePixelRatio||1;
+ canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.scale(dpr,dpr);ctx.fillStyle='#090b0d';ctx.fillRect(0,0,w,h);
+ const units=activeUnits().filter(u=>weight(u)>0),query=$('search').value.toLowerCase();rects=[];
+ const groups=new Map();for(let u of units){if(!groups.has(u.module))groups.set(u.module,[]);groups.get(u.module).push(u)}
+ const boxes=layout([...groups].map(([name,us])=>({name,us,value:us.reduce((s,u)=>s+weight(u),0)})),0,0,w,h);
+ for(let b of boxes){let header=b.w>65&&b.h>40?21:0;ctx.fillStyle='#20252a';ctx.fillRect(b.x,b.y,b.w,b.h);if(header){ctx.save();ctx.beginPath();ctx.rect(b.x,b.y,b.w,header);ctx.clip();ctx.fillStyle='#bbc4cc';ctx.font='12px system-ui';ctx.fillText(b.name,b.x+6,b.y+15);ctx.restore()}
+   let pad=Math.min(2,b.w/8,b.h/8);for(let r of layout(b.us.map(u=>({u,value:weight(u)})),b.x+pad,b.y+header+pad,Math.max(.001,b.w-2*pad),Math.max(.001,b.h-header-2*pad))){
+    const funcs=cpu==='arm9'&&metric==='code'&&$('tiles').value==='functions'?r.u.functions.filter(f=>f.size>0):[];
+    const leaves=funcs.length?layout(funcs.map(f=>({u:r.u,f,value:f.size})),r.x,r.y,r.w,r.h):[r];
+    for(let leaf of leaves){
+      rects.push(leaf);ctx.globalAlpha=query&&![leaf.u.name,leaf.f?.name||''].some(s=>s.toLowerCase().includes(query))?.18:1;ctx.fillStyle=color(leaf.u);let gap=Math.min(1,leaf.w/5,leaf.h/5);ctx.fillRect(leaf.x,leaf.y,Math.max(0,leaf.w-gap),Math.max(0,leaf.h-gap));
+      if(leaf.w>95&&leaf.h>36){ctx.save();ctx.beginPath();ctx.rect(leaf.x+3,leaf.y+3,leaf.w-7,leaf.h-7);ctx.clip();ctx.fillStyle=matched(leaf.u)===weight(leaf.u)&&cpu==='arm9'?'#102010':'#f1f3f4';ctx.font='11px system-ui';ctx.fillText(leaf.f?.name||leaf.u.name.split('/').pop(),leaf.x+5,leaf.y+17);ctx.restore()}
+      if(selected===leaf.u){ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.strokeRect(leaf.x+1,leaf.y+1,Math.max(0,leaf.w-3),Math.max(0,leaf.h-3))}ctx.globalAlpha=1;
+    }
+   }
+ }
+ $('empty').hidden=units.length>0;$('scope').textContent=(cpu==='arm9'?'ARM9':'ARM7')+' / '+(module==='all'?'All modules':module)+' · '+n(units.reduce((s,u)=>s+weight(u),0))+' '+(metric==='functions'?'functions':'bytes')+' · '+units.length+' tiles';$('back').hidden=module==='all';
+ $('tiles').disabled=cpu!=='arm9'||metric!=='code';
+ $('area-note').textContent=cpu==='arm9'?'Area = reported '+metric+'. Color = owning unit matching coverage. '+(metric==='code'&&$('tiles').value==='functions'?'Functions subdivide each unit in proportion to symbol sizes; unit code totals stay unchanged. ':'')+'Highlighting never removes coverage.':'Area = '+(metric==='payload'?'stored ARM7 payload bytes':'runtime BSS bytes')+'. Gray fallback remains fully represented; source categories are separate.';
+ $('units').innerHTML=units.slice().sort((a,b)=>weight(b)-weight(a)).map(u=>'<tr><td><button data-unit="'+escape(u.name)+'" data-kind="'+escape(u.kind||'')+'">'+escape(u.name)+'</button> / '+escape(u.module)+'</td><td>'+n(weight(u))+'</td><td>'+(cpu==='arm9'?pct(matched(u),weight(u)):escape(u.kind))+'</td></tr>').join('');
+}
+function select(u){selected=u;$('selection').innerHTML='<strong>'+escape(u.name)+'</strong><p>'+escape(tooltip(u)).replace(/\n/g,' · ')+'</p>'+(u.source?'<p class="note">'+escape(u.source)+'</p>':'');$('functions-panel').hidden=!u.functions?.length;if(u.functions?.length){$('function-table').innerHTML='<table><thead><tr><th>Symbol</th><th>Bytes</th><th>Similarity</th></tr></thead><tbody>'+u.functions.map(f=>'<tr><td>'+escape(f.name)+'</td><td>'+n(f.size)+'</td><td>'+(f.similarity==null?'Not compared':f.similarity.toFixed(2)+'%')+'</td></tr>').join('')+'</tbody></table>'}draw()}
+function setup(){selected=null;$('selection').textContent='Select a rectangle to inspect a unit. Double-click a rectangle to focus its module.';$('functions-panel').hidden=true;$('arm9').setAttribute('aria-pressed',cpu==='arm9');$('arm7').setAttribute('aria-pressed',cpu==='arm7');$('metric').innerHTML=cpu==='arm9'?'<option value="code">Code bytes</option><option value="data">Data bytes (includes BSS)</option><option value="functions">Function count</option>':'<option value="payload">Stored payload bytes</option><option value="bss">Runtime BSS bytes</option>';$('metric').value=metric;let modules=[...new Set((cpu==='arm9'?D.units:D.arm7.filter(u=>u.view===metric)).map(u=>u.module))].sort();$('module').innerHTML='<option value="all">All modules</option>'+modules.map(m=>'<option value="'+escape(m)+'">'+escape(m)+'</option>').join('');if(!modules.includes(module))module='all';$('module').value=module;let legend=cpu==='arm9'?[['#55c54b','Fully matched'],['#159eb7','Partly matched'],['#303438','No matched coverage']]:Object.entries(colors).filter(([k])=>metric==='bss'?['bss','fallback'].includes(k):k!=='bss').map(([k,c])=>[c,k]);$('legend').innerHTML=legend.map(([c,t])=>'<span><i class="swatch" style="background:'+c+'"></i>'+t+'</span>').join('');summaries();draw()}
+function hit(e){let b=$('canvas').getBoundingClientRect(),x=e.clientX-b.left,y=e.clientY-b.top;return rects.find(r=>x>=r.x&&x<r.x+r.w&&y>=r.y&&y<r.y+r.h)}
+$('canvas').addEventListener('mousemove',e=>{let r=hit(e),t=$('tooltip');t.style.display=r?'block':'none';if(r){t.textContent=(r.f?r.f.name+' · '+n(r.f.size)+' symbol bytes\n':'')+tooltip(r.u);t.style.left=Math.max(4,Math.min(e.clientX+14,window.innerWidth-t.offsetWidth-8))+'px';t.style.top=Math.max(4,Math.min(e.clientY+14,window.innerHeight-t.offsetHeight-8))+'px'}});
+$('canvas').addEventListener('mouseleave',()=>{$('tooltip').style.display='none'});
+$('canvas').addEventListener('click',e=>{let r=hit(e);if(r)select(r.u)});
+$('canvas').addEventListener('dblclick',e=>{let r=hit(e);if(r){module=r.u.module;setup()}});
+$('units').addEventListener('click',e=>{let b=e.target.closest('button');if(b){let u=activeUnits().find(u=>u.name===b.dataset.unit&&(u.kind||'')===b.dataset.kind);if(u)select(u)}});
+for(let c of ['arm9','arm7'])$(c).onclick=()=>{cpu=c;metric=c==='arm9'?'code':'payload';module='all';setup()};
+$('metric').onchange=()=>{metric=$('metric').value;setup()};$('module').onchange=()=>{module=$('module').value;setup()};$('back').onclick=()=>{module='all';setup()};$('search').oninput=draw;$('tiles').value='functions';$('tiles').onchange=draw;new ResizeObserver(draw).observe($('map'));setup();
+</script></body></html>
