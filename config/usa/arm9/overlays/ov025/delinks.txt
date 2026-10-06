@@ -20,3 +20,7 @@ src/Overlay25/Function021ED344.cpp:
 src/Overlay25/Function021E40C4.cpp:
 	complete
 	.text start:0x021e40c4 end:0x021e40cc
+
+src/Overlay25/Function021E40DC.cpp:
+	complete
+	.text start:0x021e40dc end:0x021e40e4
