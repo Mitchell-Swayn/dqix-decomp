@@ -1754,6 +1754,10 @@ src/World/Function02088840.cpp:
     complete
     .text start:0x02088840 end:0x02088854
 
+src/World/Function02088cb8.cpp:
+    complete
+    .text start:0x02088cb8 end:0x02088ccc
+
 src/World/Function02089758.cpp:
     complete
     .text start:0x02089758 end:0x0208977c
