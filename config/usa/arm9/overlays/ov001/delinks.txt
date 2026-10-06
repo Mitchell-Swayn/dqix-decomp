@@ -8,3 +8,7 @@
 src/Overlay1/Function02159B2C.cpp:
 	complete
 	.text start:0x02159b2c end:0x02159b34
+
+src/Overlay1/Function02163510.cpp:
+	complete
+	.text start:0x02163510 end:0x02163518
