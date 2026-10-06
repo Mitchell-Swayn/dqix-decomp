@@ -8,6 +8,10 @@ src/Overlay16/Function0218E14C.cpp:
     complete
     .text start:0x0218e14c end:0x0218e174
 
+src/Overlay16/Function0218EF24.cpp:
+    complete
+    .text start:0x0218ef24 end:0x0218ef2c
+
 src/Overlay16/Function0218FC84.cpp:
     complete
     .text start:0x0218fc84 end:0x0218fc8c
