@@ -5,6 +5,10 @@
     .data       start:0x02249680 end:0x0224c980 kind:data align:32
     .bss        start:0x0224c980 end:0x02292500 kind:bss align:32
 
+src/Overlay31/Function02216744.cpp:
+    complete
+    .text start:0x02216744 end:0x02216758
+
 src/Overlay31/Function02228384.cpp:
     complete
     .text start:0x02228384 end:0x02228388
