@@ -37,6 +37,10 @@ src/Function020BBB80.cpp:
     complete
     .text start:0x020bbb80 end:0x020bbb8c
 
+src/Function020883ac.cpp:
+    complete
+    .text start:0x020883ac end:0x020883cc
+
 src/GameState/GameStateInstance.cpp:
 	complete
 	.text start:0x0200f398 end:0x0200f3a4
