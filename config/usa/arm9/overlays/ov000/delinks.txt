@@ -40,3 +40,7 @@ src/Combat/Overlay_0/Function0215997C.cpp:
 src/Combat/Overlay_0/Function021598EC.cpp:
 	complete
 	.text start:0x021598ec end:0x02159904
+
+src/Combat/Overlay_0/Function02160F08.cpp:
+	complete
+	.text start:0x02160f08 end:0x02160f14
