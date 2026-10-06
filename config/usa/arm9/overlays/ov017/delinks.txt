@@ -9,6 +9,10 @@ src/Overlay17/Function021D4A24.cpp:
     complete
     .text start:0x021d4a24 end:0x021d4a38
 
+src/Overlay17/Function0218D75C.cpp:
+    complete
+    .text start:0x0218d75c end:0x0218d77c
+
 src/Overlay17/Function021A55A4.cpp:
     complete
     .text start:0x021a55a4 end:0x021a55b0
