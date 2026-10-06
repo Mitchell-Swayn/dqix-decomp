@@ -852,6 +852,10 @@ src/System/ConsoleType.cpp:
     .text start:0x020c7dcc end:0x020c7de4
     .data start:0x020f2284 end:0x020f2288
 
+src/Function020c7de4.cpp:
+    complete
+    .text start:0x020c7de4 end:0x020c7e0c
+
 src/Memory/ArenaInitialHigh.cpp:
     complete
     .text start:0x020c8548 end:0x020c862c
