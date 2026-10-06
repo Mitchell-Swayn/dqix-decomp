@@ -171,6 +171,10 @@ src/Resource/IndexedRecordLookup.cpp:
     complete
     .text start:0x020283fc end:0x02028430
 
+src/System/InitializeState.cpp:
+    complete
+    .text start:0x0202b7ec end:0x0202b800
+
 src/GameState/GameStateAttributeRecordLookup.cpp:
     complete
     .text start:0x0209a594 end:0x0209a614
