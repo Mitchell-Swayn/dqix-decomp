@@ -36,3 +36,7 @@ src/Overlay4/ReturnVoid.cpp:
 src/Overlay4/ReturnZero0215E3D4.cpp:
 	complete
 	.text start:0x0215e3d4 end:0x0215e3dc
+
+src/Overlay4/ReturnVoid021537DC.cpp:
+	complete
+	.text start:0x021537dc end:0x021537e0
