@@ -625,6 +625,10 @@ src/Filesystem/LowNitroHandle.cpp:
     complete
     .text start:0x020cc0fc end:0x020cc940
 
+src/Filesystem/CustomStringLength.cpp:
+    complete
+    .text start:0x020d2ff0 end:0x020d3018
+
 src/Filesystem/FileAccessor.cpp:
     complete
     .text start:0x020cc940 end:0x020ccf7c
