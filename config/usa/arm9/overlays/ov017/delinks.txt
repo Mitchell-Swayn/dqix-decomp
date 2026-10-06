@@ -17,6 +17,10 @@ src/Overlay17/Function021A55A4.cpp:
     complete
     .text start:0x021a55a4 end:0x021a55b0
 
+src/Overlay17/Function021A11F4.cpp:
+    complete
+    .text start:0x021a11f4 end:0x021a120c
+
 src/Graphics/Overlay17VRAMStaging.cpp:
     complete
     .text start:0x021a5b08 end:0x021a5b48
