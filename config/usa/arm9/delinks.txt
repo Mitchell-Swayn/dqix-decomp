@@ -13,6 +13,10 @@ src/Function02094a10.cpp:
     complete
     .text start:0x02094a10 end:0x02094a20
 
+src/Function0206da74.cpp:
+    complete
+    .text start:0x0206da74 end:0x0206da80
+
 src/Function0202EA10.cpp:
     complete
     .text start:0x0202ea10 end:0x0202ea20
