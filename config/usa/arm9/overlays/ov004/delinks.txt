@@ -9,6 +9,10 @@ src/Overlay4/ClearTriplet.cpp:
 	complete
 	.text start:0x0215377c end:0x021537a8
 
+src/Overlay4/ReturnZeroEarly.cpp:
+	complete
+	.text start:0x02153d84 end:0x02153d8c
+
 src/Overlay4/ReturnZero.cpp:
 	complete
 	.text start:0x0215e3bc end:0x0215e3c4
