@@ -52,6 +52,10 @@ src/Overlay23/Function021F6F08.cpp:
 	complete
 	.text start:0x021f6f08 end:0x021f6f10
 
+src/Overlay23/Function021F7420.cpp:
+	complete
+	.text start:0x021f7420 end:0x021f7428
+
 src/Overlay23/Function021F9C88.cpp:
 	complete
 	.text start:0x021f9c88 end:0x021f9c90
