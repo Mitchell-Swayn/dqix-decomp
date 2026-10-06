@@ -315,6 +315,10 @@ src/Function0205e0b0.cpp:
     complete
     .text start:0x0205e0b0 end:0x0205e0b8
 
+src/Function0206ef40.cpp:
+    complete
+    .text start:0x0206ef40 end:0x0206ef48
+
 src/Function020535f4.cpp:
     complete
     .text start:0x020535f4 end:0x02053604
