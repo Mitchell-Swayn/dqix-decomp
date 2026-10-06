@@ -4,3 +4,6 @@
     .data       start:0x02193fa0 end:0x02194560 kind:data align:32
     .bss        start:0x02194560 end:0x02194600 kind:bss align:32
 
+src/Overlay15/RecordAppend.cpp:
+	complete
+	.text start:0x0218b9d4 end:0x0218ba1c
