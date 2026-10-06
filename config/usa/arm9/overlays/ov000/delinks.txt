@@ -16,3 +16,7 @@ src/Combat/Overlay_0/UpdateCombatantBuffs.cpp:
 src/Combat/Overlay_0/Function02174A38.cpp:
 	complete
 	.text start:0x02174a38 end:0x02174a50
+
+src/Combat/Overlay_0/Function02181DC0.cpp:
+	complete
+	.text start:0x02181dc0 end:0x02181ddc
