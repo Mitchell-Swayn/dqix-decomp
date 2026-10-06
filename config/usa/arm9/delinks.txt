@@ -308,6 +308,10 @@ src/System/SceneOverlays.cpp:
     complete
     .text start:0x020a18f4 end:0x020a1940
 
+src/Grotto/Main/TreasureMapRecordReset.cpp:
+    complete
+    .text start:0x020a3578 end:0x020a35cc
+
 src/Grotto/Main/TreasureMapDataStructs.cpp:
     complete
     .text start:0x020a3a34 end:0x020a3ee4
