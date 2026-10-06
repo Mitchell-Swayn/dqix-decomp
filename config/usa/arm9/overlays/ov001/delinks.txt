@@ -12,3 +12,7 @@ src/Overlay1/Function02159B2C.cpp:
 src/Overlay1/Function02163510.cpp:
 	complete
 	.text start:0x02163510 end:0x02163518
+
+src/Overlay1/Function0215941C.cpp:
+	complete
+	.text start:0x0215941c end:0x0215942c
