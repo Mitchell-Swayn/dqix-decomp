@@ -4,6 +4,10 @@
     .data       start:0x021fda60 end:0x021ff9e0 kind:data align:32
     .bss        start:0x021ff9e0 end:0x021fff40 kind:bss align:32
 
+src/Overlay23/Function021FAA58.cpp:
+	complete
+	.text start:0x021faa58 end:0x021faa5c
+
 src/Overlay23/Function021F79E4.cpp:
 	complete
 	.text start:0x021f79e4 end:0x021f79ec
