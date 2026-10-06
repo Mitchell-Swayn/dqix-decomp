@@ -21,6 +21,10 @@ src/Function0205C564.cpp:
     complete
     .text start:0x0205c564 end:0x0205c570
 
+src/Function020BBB80.cpp:
+    complete
+    .text start:0x020bbb80 end:0x020bbb8c
+
 src/GameState/GameStateInstance.cpp:
 	complete
 	.text start:0x0200f398 end:0x0200f3a4
