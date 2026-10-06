@@ -171,6 +171,10 @@ src/Resource/IndexedRecordLookup.cpp:
     complete
     .text start:0x020283fc end:0x02028430
 
+src/GameState/GameStateAttributeRecordLookup.cpp:
+    complete
+    .text start:0x0209a594 end:0x0209a614
+
 src/System/Vector3fixPlaneDistance.cpp:
     complete
     .text start:0x02032124 end:0x02032148

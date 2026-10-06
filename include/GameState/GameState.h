@@ -39,7 +39,8 @@ struct GameStateIndexList {
 // The table lookup at 0x0209a594 reads 12-byte records. It searches the
 // low eleven bits of identifier_, or uses the requested index directly.
 struct GameStateAttributeRecord {
-    unsigned short identifier_;
+    unsigned short identifier_ : 11;
+    unsigned short unknownIdentifierBits_ : 5;
     unsigned short unknown_02_;
     unsigned int attributes_;
     unsigned int unknown_08_;
