@@ -1966,3 +1966,7 @@ src/Function0206528c.cpp:
 src/Function0204a5dc.cpp:
     complete
     .text start:0x0204a5dc end:0x0204a5e4
+
+src/Function0205b220.cpp:
+    complete
+    .text start:0x0205b220 end:0x0205b228
