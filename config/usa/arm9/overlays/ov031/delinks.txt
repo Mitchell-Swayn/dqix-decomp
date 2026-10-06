@@ -9,6 +9,10 @@ src/Overlay31/Function02216744.cpp:
     complete
     .text start:0x02216744 end:0x02216758
 
+src/Overlay31/Function0222EA14.cpp:
+    complete
+    .text start:0x0222ea14 end:0x0222ea24
+
 src/Overlay31/Function02228384.cpp:
     complete
     .text start:0x02228384 end:0x02228388
