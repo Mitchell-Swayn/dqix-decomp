@@ -1990,3 +1990,7 @@ src/Function0204a5dc.cpp:
 src/Function0205b220.cpp:
     complete
     .text start:0x0205b220 end:0x0205b228
+
+src/Function020d2880.cpp:
+    complete
+    .text start:0x020d2880 end:0x020d28a8
