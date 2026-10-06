@@ -21,6 +21,10 @@ src/Overlay4/ReturnZeroAt0215e38c.cpp:
 	complete
 	.text start:0x0215e38c end:0x0215e394
 
+src/Overlay4/ReturnZero0215E35C.cpp:
+	complete
+	.text start:0x0215e35c end:0x0215e364
+
 src/Overlay4/ReturnVoid0215E394.cpp:
 	complete
 	.text start:0x0215e394 end:0x0215e398
