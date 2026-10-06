@@ -20,6 +20,10 @@ src/Overlay23/Function021F68B8.cpp:
 	complete
 	.text start:0x021f68b8 end:0x021f68dc
 
+src/Overlay23/Function021F6BA8.cpp:
+	complete
+	.text start:0x021f6ba8 end:0x021f6bb0
+
 src/Overlay23/Function021F73E4.cpp:
 	complete
 	.text start:0x021f73e4 end:0x021f73ec
