@@ -1785,3 +1785,7 @@ src/Function0209ba24.cpp:
 src/Function0205cf04.cpp:
     complete
     .text start:0x0205cf04 end:0x0205cf10
+
+src/Function0205e0fc.cpp:
+    complete
+    .text start:0x0205e0fc end:0x0205e104
