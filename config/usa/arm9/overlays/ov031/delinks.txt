@@ -33,6 +33,10 @@ src/Overlay31/Function02217F9C.cpp:
     complete
     .text start:0x02217f9c end:0x02217fb0
 
+src/Overlay31/Function02211B28.cpp:
+    complete
+    .text start:0x02211b28 end:0x02211b40
+
 src/Overlay31/Function02210EF8.cpp:
     complete
     .text start:0x02210ef8 end:0x02210f24
