@@ -364,6 +364,10 @@ src/Function02079ce8.cpp:
     complete
     .text start:0x02079ce8 end:0x02079cf8
 
+src/Function020806c4.cpp:
+    complete
+    .text start:0x020806c4 end:0x020806d8
+
 src/Filesystem/FileIO.cpp:
     complete
     .text start:0x02075098 end:0x0207568c
