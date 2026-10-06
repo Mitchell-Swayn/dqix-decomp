@@ -7,3 +7,7 @@
 src/Overlay23/CopyEmbeddedVector.cpp:
 	complete
 	.text start:0x021f7174 end:0x021f7188
+
+src/Overlay23/BackgroundControl.cpp:
+	complete
+	.text start:0x021ec454 end:0x021ec480
