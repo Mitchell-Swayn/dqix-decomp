@@ -36,3 +36,7 @@ src/Overlay31/Function02210EF8.cpp:
 src/Overlay31/Function022157C4.cpp:
     complete
     .text start:0x022157c4 end:0x022157e8
+
+src/Overlay31/Function022413B8.cpp:
+    complete
+    .text start:0x022413b8 end:0x022413c8
