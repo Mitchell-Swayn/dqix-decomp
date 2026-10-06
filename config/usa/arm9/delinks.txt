@@ -2014,3 +2014,7 @@ src/Function0205b220.cpp:
 src/Function020d2880.cpp:
     complete
     .text start:0x020d2880 end:0x020d28a8
+
+src/Function02044494.cpp:
+    complete
+    .text start:0x02044494 end:0x020444bc
