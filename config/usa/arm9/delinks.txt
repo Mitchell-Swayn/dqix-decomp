@@ -6,6 +6,10 @@
     .data       start:0x020eebe0 end:0x020f2e60 kind:data align:32
     .bss        start:0x020f2e60 end:0x021536e0 kind:bss align:32
 
+src/Function020bd444.cpp:
+    complete
+    .text start:0x020bd444 end:0x020bd454
+
 src/Function02042648.cpp:
     complete
     .text start:0x02042648 end:0x02042658
