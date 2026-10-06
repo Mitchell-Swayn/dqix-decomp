@@ -1702,6 +1702,10 @@ src/Function02011804.cpp:
     complete
     .text start:0x02011804 end:0x02011818
 
+src/Function02072618.cpp:
+    complete
+    .text start:0x02072618 end:0x02072620
+
 src/World/LineageResetRecord.cpp:
     complete
     .text start:0x0201f9b8 end:0x0201f9e8
