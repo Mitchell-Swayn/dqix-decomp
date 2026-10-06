@@ -23,3 +23,7 @@ src/Overlay_11/Overlay11StateFlags.cpp:
 src/Overlay_11/Overlay11SetStateField.cpp:
 	complete
 	.text start:0x02184ad8 end:0x02184ae4
+
+src/Overlay_11/Overlay11AdvancePointer.cpp:
+	complete
+	.text start:0x021849c8 end:0x021849d0
