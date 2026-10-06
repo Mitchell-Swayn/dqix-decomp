@@ -13,6 +13,10 @@ src/Combat/Overlay_0/GetCombatantByID.cpp:
 	complete
 	.text start:0x021536e0 end:0x021536f8
 
+src/Combat/Overlay_0/Function021536F8.cpp:
+	complete
+	.text start:0x021536f8 end:0x02153710
+
 src/Combat/Overlay_0/UpdateCombatantBuffs.cpp:
 	complete
 	.text start:0x02155a50 end:0x02155e94
