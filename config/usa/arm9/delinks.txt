@@ -1734,6 +1734,10 @@ src/World/LineageResetRecord.cpp:
     complete
     .text start:0x0201f9b8 end:0x0201f9e8
 
+src/World/Function0201f9a8.cpp:
+    complete
+    .text start:0x0201f9a8 end:0x0201f9b0
+
 src/World/LineageObjectFlag.cpp:
     complete
     .text start:0x02033fec end:0x0203400c
