@@ -16,3 +16,7 @@ src/Overlay4/ReturnZeroEarly.cpp:
 src/Overlay4/ReturnZero.cpp:
 	complete
 	.text start:0x0215e3bc end:0x0215e3c4
+
+src/Overlay4/ReturnZeroAssigned.cpp:
+	complete
+	.text start:0x0215e3a4 end:0x0215e3ac
