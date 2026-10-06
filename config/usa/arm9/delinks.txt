@@ -320,6 +320,10 @@ src/Function02053f04.cpp:
     complete
     .text start:0x02053f04 end:0x02053f4c
 
+src/Function0205cef8.cpp:
+    complete
+    .text start:0x0205cef8 end:0x0205cf04
+
 src/Function0205e0b0.cpp:
     complete
     .text start:0x0205e0b0 end:0x0205e0b8
