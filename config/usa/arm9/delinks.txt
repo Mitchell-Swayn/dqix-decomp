@@ -1674,6 +1674,10 @@ src/System/ClearObjectPrefix.cpp:
 	complete
 	.text start:0x020df80c end:0x020df828
 
+src/System/ResetUnknownGlobal020bce9c.cpp:
+    complete
+    .text start:0x020bce9c end:0x020bceb4
+
 src/Function02011804.cpp:
     complete
     .text start:0x02011804 end:0x02011818
