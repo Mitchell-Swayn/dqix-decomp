@@ -21,6 +21,10 @@ src/Combat/Overlay_0/Function0216A420.cpp:
 	complete
 	.text start:0x0216a420 end:0x0216a428
 
+src/Combat/Overlay_0/Function0216A4C0.cpp:
+	complete
+	.text start:0x0216a4c0 end:0x0216a4c8
+
 src/Combat/Overlay_0/Function02174A38.cpp:
 	complete
 	.text start:0x02174a38 end:0x02174a50
