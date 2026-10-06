@@ -17,6 +17,10 @@ src/Lineage/RecordStateReset.cpp:
     complete
     .text start:0x020865ec end:0x0208660c
 
+src/Function0205C564.cpp:
+    complete
+    .text start:0x0205c564 end:0x0205c570
+
 src/GameState/GameStateInstance.cpp:
 	complete
 	.text start:0x0200f398 end:0x0200f3a4
