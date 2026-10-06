@@ -1943,6 +1943,10 @@ src/Function020d1468.cpp:
     complete
     .text start:0x020d1468 end:0x020d14b0
 
+src/Function0205b20c.cpp:
+    complete
+    .text start:0x0205b20c end:0x0205b220
+
 src/Function020d6c00.cpp:
     complete
     .text start:0x020d6c00 end:0x020d6c0c
