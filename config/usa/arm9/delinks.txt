@@ -1798,6 +1798,10 @@ src/Function02094a20.cpp:
     complete
     .text start:0x02094a20 end:0x02094a24
 
+src/Function02098ff4.cpp:
+    complete
+    .text start:0x02098ff4 end:0x02098ffc
+
 src/Function02094d78.cpp:
     complete
     .text start:0x02094d78 end:0x02094d80
