@@ -11,5 +11,9 @@ src/Overlay24/Function021DF704.cpp:
 	complete
 	.text start:0x021df704 end:0x021df71c
 
+src/Overlay24/Function021EDC08.cpp:
+	complete
+	.text start:0x021edc08 end:0x021edc20
+
 src/Combat/Overlay_24/GetAttackBaseDamage.cpp:
 	.text start:0x021e7bc0 end:0x021e80e4
