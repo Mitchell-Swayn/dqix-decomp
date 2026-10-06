@@ -14,6 +14,10 @@ src/Function020421a0.cpp:
     complete
     .text start:0x020421a0 end:0x020421b0
 
+src/Function020429bc.cpp:
+    complete
+    .text start:0x020429bc end:0x020429d4
+
 src/Function0202ae18.cpp:
     complete
     .text start:0x0202ae18 end:0x0202ae24
