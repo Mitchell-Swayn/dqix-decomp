@@ -1983,6 +1983,10 @@ src/Function020d84e8.cpp:
     complete
     .text start:0x020d84e8 end:0x020d84ec
 
+src/Function020d8654.cpp:
+    complete
+    .text start:0x020d8654 end:0x020d8694
+
 src/Function020c0138.cpp:
     complete
     .text start:0x020c0138 end:0x020c013c
