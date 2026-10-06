@@ -231,6 +231,10 @@ src/Resource/Brightness.cpp:
     complete
     .text start:0x0203aee0 end:0x0203b498
 
+src/Graphics/AlphaTweenEnable.cpp:
+    complete
+    .text start:0x02049f28 end:0x02049f3c
+
 src/Graphics/AlphaTweenAccessor.cpp:
     complete
     .text start:0x02049fec end:0x0204a00c
