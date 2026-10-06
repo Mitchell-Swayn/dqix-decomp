@@ -24,3 +24,7 @@ src/Overlay31/Function02235C70.cpp:
 src/Overlay31/Function0223D918.cpp:
     complete
     .text start:0x0223d918 end:0x0223d928
+
+src/Overlay31/Function02210EF8.cpp:
+    complete
+    .text start:0x02210ef8 end:0x02210f24
