@@ -60,3 +60,7 @@ src/Overlay17/Function021B8480.cpp:
 src/Overlay17/Function0218CBCC.cpp:
     complete
     .text start:0x0218cbcc end:0x0218cbd4
+
+src/Overlay17/Function021C6BA8.cpp:
+    complete
+    .text start:0x021c6ba8 end:0x021c6bac
