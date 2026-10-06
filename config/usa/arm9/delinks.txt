@@ -2022,3 +2022,7 @@ src/Function020d2880.cpp:
 src/Function02044494.cpp:
     complete
     .text start:0x02044494 end:0x020444bc
+
+src/Function020c7dc4.cpp:
+    complete
+    .text start:0x020c7dc4 end:0x020c7dcc
