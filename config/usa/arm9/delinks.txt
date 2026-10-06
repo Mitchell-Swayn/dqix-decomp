@@ -9,6 +9,10 @@ src/Function02012528.cpp:
     complete
     .text start:0x02012528 end:0x02012530
 
+src/Function02070ff4.cpp:
+    complete
+    .text start:0x02070ff4 end:0x02070ffc
+
 src/Function02094a10.cpp:
     complete
     .text start:0x02094a10 end:0x02094a20
