@@ -1673,3 +1673,7 @@ src/World/LineageObjectFlag.cpp:
 src/World/LineageStoreParameter.cpp:
     complete
     .text start:0x0201f844 end:0x0201f864
+
+src/World/Function02088840.cpp:
+    complete
+    .text start:0x02088840 end:0x02088854
