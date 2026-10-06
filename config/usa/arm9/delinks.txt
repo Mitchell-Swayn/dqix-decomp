@@ -195,6 +195,10 @@ src/Function020965c0.cpp:
     complete
     .text start:0x020965c0 end:0x020965f8
 
+src/Function0209a774.cpp:
+    complete
+    .text start:0x0209a774 end:0x0209a77c
+
 src/System/Vector3fixPlaneDistance.cpp:
     complete
     .text start:0x02032124 end:0x02032148
