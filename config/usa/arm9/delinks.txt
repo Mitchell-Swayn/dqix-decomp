@@ -1987,6 +1987,10 @@ src/Function0205b228.cpp:
     complete
     .text start:0x0205b228 end:0x0205b234
 
+src/Function0205bd58.cpp:
+    complete
+    .text start:0x0205bd58 end:0x0205bd78
+
 src/Function0205e0fc.cpp:
     complete
     .text start:0x0205e0fc end:0x0205e104
