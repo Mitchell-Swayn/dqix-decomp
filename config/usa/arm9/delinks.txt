@@ -9,6 +9,10 @@ src/Function0202EA10.cpp:
     complete
     .text start:0x0202ea10 end:0x0202ea20
 
+src/Function020D1AE4.cpp:
+    complete
+    .text start:0x020d1ae4 end:0x020d1b28
+
 src/Lineage/RecordListEntry.cpp:
     complete
     .text start:0x02027878 end:0x020278a4
