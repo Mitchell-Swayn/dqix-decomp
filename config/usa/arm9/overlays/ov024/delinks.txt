@@ -3,6 +3,9 @@
     .ctor       start:0x021ff1d4 end:0x021ff1d8 kind:rodata align:4
     .data       start:0x021ff1e0 end:0x02200140 kind:data align:32
     .bss        start:0x02200140 end:0x02200160 kind:bss align:32
+src/Overlay24/ReturnVoid021FC4BC.cpp:
+	complete
+	.text start:0x021fc4bc end:0x021fc4c0
 
 src/Overlay24/Function021DF704.cpp:
 	complete
