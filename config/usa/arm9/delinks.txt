@@ -1919,6 +1919,10 @@ src/Function02094b30.cpp:
     complete
     .text start:0x02094b30 end:0x02094b34
 
+src/Function02094b44.cpp:
+    complete
+    .text start:0x02094b44 end:0x02094b4c
+
 src/Function02098ff4.cpp:
     complete
     .text start:0x02098ff4 end:0x02098ffc
