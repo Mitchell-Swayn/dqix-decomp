@@ -37,6 +37,10 @@ src/Lineage/GameStateIndexedByte.cpp:
     complete
     .text start:0x02039730 end:0x02039750
 
+src/Function02039ee8.cpp:
+    complete
+    .text start:0x02039ee8 end:0x02039f04
+
 src/Lineage/RecordStateReset.cpp:
     complete
     .text start:0x020865ec end:0x0208660c
