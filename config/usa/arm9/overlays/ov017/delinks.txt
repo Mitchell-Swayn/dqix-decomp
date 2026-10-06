@@ -13,6 +13,10 @@ src/Overlay17/Function021AB698.cpp:
     complete
     .text start:0x021ab698 end:0x021ab6a0
 
+src/Overlay17/Function0219DFFC.cpp:
+    complete
+    .text start:0x0219dffc end:0x0219e008
+
 src/Overlay17/Function021C6BB0.cpp:
     complete
     .text start:0x021c6bb0 end:0x021c6bb4
