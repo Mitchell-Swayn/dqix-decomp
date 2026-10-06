@@ -263,6 +263,10 @@ src/Combat/Main/CritRateCalculation.cpp:
 	complete
 	.text start:0x020747a4 end:0x02074838
 
+src/Combat/Main/Function02074988.cpp:
+	complete
+	.text start:0x02074988 end:0x020749ac
+
 src/Filesystem/FileIO.cpp:
     complete
     .text start:0x02075098 end:0x0207568c
