@@ -15,3 +15,7 @@ src/Overlay23/BackgroundControl.cpp:
 src/Overlay23/Function021F7D94.cpp:
 	complete
 	.text start:0x021f7d94 end:0x021f7d9c
+
+src/Overlay23/Function021F73E4.cpp:
+	complete
+	.text start:0x021f73e4 end:0x021f73ec
