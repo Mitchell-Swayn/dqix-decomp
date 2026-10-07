@@ -50,6 +50,10 @@ src/Function020425b4.cpp:
     complete
     .text start:0x020425b4 end:0x020425e4
 
+src/Function02042190.cpp:
+    complete
+    .text start:0x02042190 end:0x020421a0
+
 src/Function020421a0.cpp:
     complete
     .text start:0x020421a0 end:0x020421b0
