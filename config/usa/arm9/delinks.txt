@@ -1460,6 +1460,10 @@ src/Function02012fe4.cpp:
     complete
     .text start:0x02012fe4 end:0x02012ff0
 
+src/Function02012da4.cpp:
+    complete
+    .text start:0x02012da4 end:0x02012db0
+
 src/World/ZoneTileDefaults.cpp:
     complete
     .text start:0x02013490 end:0x020134e0
