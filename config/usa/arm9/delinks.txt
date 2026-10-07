@@ -234,6 +234,10 @@ src/GameState/GameStateNativeIdentity.cpp:
 	complete
 	.text start:0x020120f0 end:0x02012200
 
+src/GameState/NativeIdentityRead.cpp:
+	complete
+	.text start:0x020c99ac end:0x020c99c8
+
 src/GameState/NativeIdentityComparison.cpp:
 	complete
 	.text start:0x02011fb4 end:0x02011ff0
