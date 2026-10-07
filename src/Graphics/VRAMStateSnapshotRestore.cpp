@@ -6,3 +6,8 @@ extern "C" void func_0207df90(const unsigned char* state)
     RestoreTexturePaletteVRAMState((const TexturePaletteVRAMState*)(state + 0x60));
 }
 
+extern "C" void func_0207dfac(unsigned char* state)
+{
+    SaveTextureImageVRAMState((unsigned int*)(state + 0x28));
+    SaveTexturePaletteVRAMState((TexturePaletteVRAMState*)(state + 0x60));
+}

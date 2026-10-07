@@ -1977,7 +1977,7 @@ src/System/StateValueOutputs.cpp:
 
 src/Graphics/VRAMStateSnapshotRestore.cpp:
 	complete
-	.text start:0x0207df90 end:0x0207dfac
+	.text start:0x0207df90 end:0x0207dfc8
 
 src/System/ClearObjectPrefix.cpp:
 	complete
