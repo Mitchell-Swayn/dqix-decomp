@@ -2138,3 +2138,7 @@ src/Function0204f0ec.cpp:
 src/Function0205e18c.cpp:
     complete
     .text start:0x0205e18c end:0x0205e1e4
+
+src/Function020d28f0.cpp:
+    complete
+    .text start:0x020d28f0 end:0x020d2930
