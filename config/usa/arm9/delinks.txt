@@ -18,6 +18,10 @@ src/Function020bd444.cpp:
     complete
     .text start:0x020bd444 end:0x020bd454
 
+src/Function020bd8d4.cpp:
+    complete
+    .text start:0x020bd8d4 end:0x020bd8f0
+
 src/Function0204f138.cpp:
     complete
     .text start:0x0204f138 end:0x0204f160
