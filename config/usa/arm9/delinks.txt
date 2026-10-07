@@ -565,6 +565,10 @@ src/Grotto/Main/TreasureMapRecordReset.cpp:
     complete
     .text start:0x020a3578 end:0x020a35cc
 
+src/Function020a35e0.cpp:
+    complete
+    .text start:0x020a35e0 end:0x020a35f8
+
 src/Grotto/Main/TreasureMapDataStructs.cpp:
     complete
     .text start:0x020a3a34 end:0x020a3ee4
