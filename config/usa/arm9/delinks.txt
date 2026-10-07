@@ -539,6 +539,10 @@ src/Function020bdbe0.cpp:
     complete
     .text start:0x020bdbe0 end:0x020bdbf0
 
+src/Function020bdc24.cpp:
+    complete
+    .text start:0x020bdc24 end:0x020bdc60
+
 src/Function020bc658.cpp:
     complete
     .text start:0x020bc658 end:0x020bc6a8
