@@ -2119,6 +2119,10 @@ src/Function0205b228.cpp:
     complete
     .text start:0x0205b228 end:0x0205b234
 
+src/Function0205b174.cpp:
+    complete
+    .text start:0x0205b174 end:0x0205b190
+
 src/Function0205bd58.cpp:
     complete
     .text start:0x0205bd58 end:0x0205bd78
