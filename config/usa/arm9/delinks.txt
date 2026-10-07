@@ -250,6 +250,10 @@ src/GameState/GameStateObjectScanHelpers.cpp:
 	complete
 	.text start:0x0200ffe0 end:0x02010088
 
+src/GameState/GameStateNestedFlag.cpp:
+    complete
+    .text start:0x02010088 end:0x020100a0
+
 src/GameState/GameTime.cpp:
     complete
     .text start:0x02010150 end:0x020103c8
