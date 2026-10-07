@@ -1967,6 +1967,10 @@ src/Function02046504.cpp:
     complete
     .text start:0x02046504 end:0x02046520
 
+src/Function020465c0.cpp:
+    complete
+    .text start:0x020465c0 end:0x020465d8
+
 src/Function02046708.cpp:
     complete
     .text start:0x02046708 end:0x0204671c
