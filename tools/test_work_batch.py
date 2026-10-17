@@ -1,7 +1,7 @@
 import copy
 import unittest
 
-from work_batch import delta
+from work_batch import accounting, delta
 
 
 class BatchDeltaTests(unittest.TestCase):
@@ -36,6 +36,27 @@ class BatchDeltaTests(unittest.TestCase):
             after[cpu][key] += change
             with self.assertRaises(ValueError):
                 delta(self.before, after)
+
+    def test_runtime_assembly_gain_is_not_c_gain(self):
+        after = copy.deepcopy(self.before)
+        after['arm9']['matched_code'] += 188
+        after['arm9']['matched_functions'] += 1
+        changes = delta(self.before, after)
+        split = accounting(changes, 1, 188)
+        self.assertEqual(split['binary_report_arm9'], dict(matched_functions=1, matched_code=188))
+        self.assertEqual(split['runtime_assembly'], dict(functions=1, bytes=188))
+        self.assertEqual(split['c_reconstruction'], dict(functions=0, code_bytes=0))
+        self.assertEqual(split['c_instruction_credit_from_assembly'], 0)
+        self.assertEqual(accounting(changes)['c_reconstruction'], dict(functions=1, code_bytes=188))
+
+    def test_assembly_gain_cannot_exceed_report_gain(self):
+        after = copy.deepcopy(self.before)
+        after['arm9']['matched_code'] += 188
+        after['arm9']['matched_functions'] += 1
+        changes = delta(self.before, after)
+        for functions, size in ((2, 188), (1, 189), (-1, 0)):
+            with self.assertRaises(ValueError):
+                accounting(changes, functions, size)
 
 
 if __name__ == '__main__':

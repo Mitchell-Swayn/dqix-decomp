@@ -1,0 +1,5 @@
+#include <globaldefs.h>
+#include <Filesystem/BackgroundLoader.h>
+extern "C" char* ReadFirstWordOfGlobalBackgroundTable();extern "C" void ReadGlobalAt02105AB4();extern "C" char* ReadGlobalValueAt021056B4();extern "C" void ProcessAllFileEntriesWhenEnabled(void*,void*,unsigned,unsigned);extern "C" void Object_ApplyRecordConfigurationAndStoreTwoBytes(void*,void*,int,int);
+// Original: arm9/main @ 0x02020AEC; symbol: func_02020aec; size: 0xAC.
+extern "C" void ConsumeLoadedTaskAndInitializeEmbeddedResources(char* self,int* task,unsigned argument) {BackgroundLoader* loader=BackgroundLoader::GetInstance();void* data=0;unsigned size=0;loader->GetLoadedFileByID(*task,&data,&size);char* config=ReadFirstWordOfGlobalBackgroundTable();*(unsigned*)(config+0x508)=0x2000;ReadGlobalAt02105AB4();char* pointer=ReadGlobalValueAt021056B4()+0x2c0;*(char**)ReadFirstWordOfGlobalBackgroundTable()=pointer;ProcessAllFileEntriesWhenEnabled(self+0x94,data,size,argument);BackgroundLoader::GetInstance()->RemoveTask(*task);*task=-1;Object_ApplyRecordConfigurationAndStoreTwoBytes(self+0x94,self+0x250,1,1);Object_ApplyRecordConfigurationAndStoreTwoBytes(self+0x94,self+0x2a0,1,1);}

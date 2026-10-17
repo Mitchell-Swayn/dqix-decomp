@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 import hashlib
 import json
 import os
+import shutil
 from pathlib import Path
 import subprocess
 import sys
@@ -124,6 +125,9 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("unit", help="exact unit name in objdiff.json")
     parser.add_argument("--no-build", action="store_true", help="compare existing objects")
+    parser.add_argument("--ninja", help="Ninja executable (defaults to local venv, then PATH)")
+    parser.add_argument("--require-match", action="store_true", help="Exit 1 if any symbol mismatches")
+    parser.add_argument("--json", action="store_true", help="Return one concise JSON result; retain verbose logs in build/")
     parser.add_argument("--hypothesis", help="specific source/compiler hypothesis being tested")
     parser.add_argument("--worker", help="optional worker identifier")
     parser.add_argument("--job", help="optional job identifier")
@@ -156,9 +160,10 @@ def main(argv=None):
         record["commands"] = commands
         if not args.no_build:
             ninja = ROOT / (".venv/Scripts/ninja.exe" if os.name == "nt" else ".venv/bin/ninja")
-            if not ninja.is_file():
-                raise ValueError(f"local venv Ninja missing: {ninja}")
-            command = [str(ninja), str(base.relative_to(ROOT)).replace("\\", "/")]
+            ninja_command = args.ninja or (str(ninja) if ninja.is_file() else shutil.which("ninja"))
+            if not ninja_command:
+                raise ValueError("Ninja missing; install it or pass --ninja")
+            command = [ninja_command, str(base.relative_to(ROOT)).replace("\\", "/")]
             commands.append(command)
             run_logged(command, ROOT, attempt, "ninja")
         if not base.is_file():
@@ -175,16 +180,19 @@ def main(argv=None):
         analysis = classify(json.loads((attempt / "diff.json").read_text(encoding="utf-8")))
         (attempt / 'diagnosis.json').write_text(json.dumps(analysis, indent=2) + '\n', encoding='utf-8')
         record['diagnosis_path'] = str((attempt / 'diagnosis.json').relative_to(ROOT))
-        print(f"{args.unit}: {len(rows) - len(mismatches)}/{len(rows)} symbols at 100%")
-        for row in mismatches:
-            print(f"  {row['side']} {row['section']} {row['symbol']}: {row['match_percent']:.2f}%"
-                  + (" (unpaired)" if not row["paired"] else ""))
-            for difference in row["differences"]:
-                print(f"    {difference}")
-        return 0
+        if not args.json:
+            print(f"{args.unit}: {len(rows) - len(mismatches)}/{len(rows)} symbols at 100%")
+        if not args.json:
+            for row in mismatches:
+                print(f"  {row['side']} {row['section']} {row['symbol']}: {row['match_percent']:.2f}%"
+                      + (" (unpaired)" if not row["paired"] else ""))
+                for difference in row["differences"]:
+                    print(f"    {difference}")
+        return 1 if args.require_match and mismatches else 0
     except (OSError, ValueError, TypeError, KeyError, AttributeError) as error:
         record.update(status="error", error=str(error))
-        print(f"match_unit: {error}", file=sys.stderr)
+        if not args.json:
+            print(f"match_unit: {error}", file=sys.stderr)
         return 2
     finally:
         record["elapsed_seconds"] = round(time.monotonic() - started, 6)
@@ -194,8 +202,17 @@ def main(argv=None):
             ledger = within(attempt.parent, attempt.parent / "attempts.jsonl")
             with ledger.open("a", encoding="utf-8") as stream:
                 stream.write(json.dumps(record) + "\n")
-            print(f"Artifacts: {attempt}")
-        print(NOTICE)
+            if not args.json:
+                print(f"Artifacts: {attempt}")
+        if args.json:
+            print(json.dumps({"unit": args.unit, "status": record["status"],
+                              "match": record.get("status") == "compared" and record.get("mismatches") == 0,
+                              "symbols": record.get("symbols"), "mismatches": record.get("mismatches"),
+                              "elapsed_seconds": record["elapsed_seconds"],
+                              "artifacts": record.get("attempt"), "error": record.get("error"),
+                              "rom_acceptance": False}))
+        else:
+            print(NOTICE)
 
 
 if __name__ == "__main__":

@@ -12,14 +12,16 @@ typedef char GameStateIndexListCountOffsetCheck[
     offsetof(GameState, indexList_) + offsetof(GameStateIndexList, count_) ==
     0x3980 ? 1 : -1];
 
-extern "C" GameObject* func_0200ff94(GameState* state, int index);
+extern "C" GameObject* GameState_GetValidObjectByIndex(GameState* state, int index);
 
-extern "C" void* func_02010828(GameState* state)
+// Original: arm9/main @ 0x02010828; symbol: func_02010828; size: 0xC.
+extern "C" void* GameState_GetIndexList(GameState* state)
 {
     return &state->indexList_;
 }
 
-extern "C" void func_02010834(GameState* state, int index,
+// Original: arm9/main @ 0x02010834; symbol: func_02010834; size: 0x5C.
+extern "C" void GameState_CopyIndexedObjectList(GameState* state, int index,
                               int* indices, int* count)
 {
     int valid = index >= 0 && index <= 3;
@@ -32,12 +34,13 @@ extern "C" void func_02010834(GameState* state, int index,
     *count = list->count_;
 }
 
-extern "C" void func_02010890(GameState* state, int* indices, int* count)
+// Original: arm9/main @ 0x02010890; symbol: func_02010890; size: 0x48.
+extern "C" void GameState_CollectPresentIndicesAmongFirstFour(GameState* state, int* indices, int* count)
 {
     unsigned int found = 0;
     int i = 0;
     for (; i < 4; ++i) {
-        if (func_0200ff94(state, i) != NULL) {
+        if (GameState_GetValidObjectByIndex(state, i) != NULL) {
             indices[found] = i;
             ++found;
         }
@@ -45,12 +48,14 @@ extern "C" void func_02010890(GameState* state, int* indices, int* count)
     *count = found;
 }
 
-extern "C" GameStateIndexedRecord* func_020108d8(GameState* state, int index)
+// Original: arm9/main @ 0x020108D8; symbol: func_020108d8; size: 0x18.
+extern "C" GameStateIndexedRecord* GameState_ReadIndexedRecordsIndex(GameState* state, int index)
 {
     return state->indexedRecords_ + index;
 }
 
-extern "C" GameStateIndexedRecord* func_020108f0(GameState* state, int index)
+// Original: arm9/main @ 0x020108F0; symbol: func_020108f0; size: 0x64.
+extern "C" GameStateIndexedRecord* GameState_FindRecordByObjectIndex(GameState* state, int index)
 {
     if (index < 0 || index >= 4)
         return NULL;
@@ -61,7 +66,8 @@ extern "C" GameStateIndexedRecord* func_020108f0(GameState* state, int index)
     return NULL;
 }
 
-extern "C" GameStateIndexedRecord* func_02010954(GameState* state)
+// Original: arm9/main @ 0x02010954; symbol: func_02010954; size: 0x48.
+extern "C" GameStateIndexedRecord* GameState_FindUnusedIndexedRecord(GameState* state)
 {
     for (int i = 0; i < 4; ++i) {
         if (state->indexedRecords_[i].objectIndex_ < 0)

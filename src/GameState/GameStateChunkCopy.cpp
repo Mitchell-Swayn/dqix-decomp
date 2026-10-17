@@ -53,7 +53,8 @@ struct GameStateChunkCopyLayout {
 typedef char GameStateChunkCopyLayoutSizeCheck[
     sizeof(GameStateChunkCopyLayout) == 0x70 ? 1 : -1];
 
-extern "C" void* func_0200fbb4(void* destination, const void* source)
+// Original: arm9/main @ 0x0200FBB4; symbol: func_0200fbb4; size: 0x148.
+extern "C" void* GameState_CopyChunkLayout(void* destination, const void* source)
 {
     *(GameStateChunkCopyLayout*)destination =
         *(const GameStateChunkCopyLayout*)source;

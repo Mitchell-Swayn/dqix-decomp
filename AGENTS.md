@@ -4,6 +4,26 @@ Read GOALS.md for acceptance and docs/DEVELOPMENT.md for reconstruction workflow
 Factory orchestration and queue state belong to the separate Factory project.
 Preserve existing user changes.
 
+- Follow `docs/NAMING.md`: reconstructed functions need evidence-based descriptive
+  names and original processor/module/address/symbol comments at their definitions.
+  Address-only function names remain required naming work. Preserve established
+  library/SDK and ABI names; do not invent semantics. Rename source references and
+  owning symbol maps together and verify the full ROM after naming migrations.
+
+- Organize integrated sources by the subsystem and descriptive filename rules in
+  `docs/NAMING.md`. Keep run/worker/batch provenance in `build/`; use
+  `src/Unclassified/` when the subsystem is not established.
+
+- `src/AssemblyFallback/*.inc` (recursively) contains unreconstructed assembly
+  references, not compiled replacements. Keep these functions eligible for C/C++
+  reconstruction; do not count their presence as decompilation or runtime acceptance.
+
+- Runtime helpers listed in `config/usa/arm9/runtime_support.json` are accepted
+  library support. Do not assign or attempt C/C++ reconstruction of them.
+  Keep their labelled matching inline assembly in `.cpp` files (or already
+  matched C) and provenance. Assembly functions do not earn C/C++ credit.
+  Runtime assembly counts separately from C/C++ source reconstruction.
+
 - Use independent worktrees for reconstruction workers. One integrator owns main.
 - Give agents bounded subsystem tasks and compact handoffs, not full histories.
 - Compare candidate objects during iteration; run full ROM/module/symbol/SHA1
@@ -22,3 +42,5 @@ Preserve existing user changes.
   Verify the original ROM SHA-1; keep every generated output workspace-local.
 - Worker edits must use absolute paths inside the assigned worktree. Setting
   exec_command workdir does not change apply_patch's working directory.
+
+- Integrate verified uncommitted worker subsets only through `tools/integrate_verified_subset.py`. Its project-wide process lock must be acquired before reading main state; it holds ownership through validation, rollback and publication. Never use a run-specific lock or mutate main concurrently.

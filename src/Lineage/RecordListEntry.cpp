@@ -8,7 +8,8 @@ struct RecordList
     s32 count;
 };
 
-extern "C" void* func_02027878(RecordList* list, s32 index)
+// Original: arm9/main @ 0x02027878; symbol: func_02027878; size: 0x2C.
+extern "C" void* GetBoundedRecordAtStride24(RecordList* list, s32 index)
 {
     if (index < 0)
         goto invalid;

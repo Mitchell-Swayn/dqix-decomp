@@ -5,23 +5,25 @@
 #include "Memory/AllocatorUnion.h"
 
 #if defined(jpn)
-#define func_020b2a6c func_020b4538
+#define ComputeAlignedResourceSizeByKind func_020b4538
 #endif
 
 extern "C"
 {
     // get allocation size for animation data
-    unsigned int func_020b2a6c(const void* rawAnim, NSBXXInternalModel* model);
+    unsigned int ComputeAlignedResourceSizeByKind(const void* rawAnim, NSBXXInternalModel* model);
 }
 
 #pragma optimize_for_size off
 
+// Original: arm9/main @ 0x020B6E98; symbol: NSBXX_Model_AllocateAnimationData; size: 0x24.
 extern "C" AnimationData* NSBXX_Model_AllocateAnimationData(AllocatorUnion* alloc, const void* rawAnim, NSBXXInternalModel* model)
 {
-    unsigned int size = func_020b2a6c(rawAnim, model);
+    unsigned int size = ComputeAlignedResourceSizeByKind(rawAnim, model);
     return (AnimationData*)alloc->Allocate(size);
 }
 
+// Original: arm9/main @ 0x020B6EBC; symbol: NSBXX_Model_SetAllMaterialFlags; size: 0xA8.
 extern "C" void NSBXX_Model_SetAllMaterialFlags(NSBXXInternalModel *model, int value, unsigned int mask)
 {
     unsigned int numMaterials;
@@ -53,6 +55,7 @@ extern "C" void NSBXX_Model_SetAllMaterialFlags(NSBXXInternalModel *model, int v
 }
 
 // 020b6f64
+// Original: arm9/main @ 0x020B6F64; symbol: NSBXX_Model_AdjustPolygonAttrMask; size: 0xA8.
 extern "C" void NSBXX_Model_AdjustPolygonAttrMask(NSBXXInternalModel* model, bool setBits, unsigned int mask)
 {
     unsigned int numMaterials;
@@ -86,6 +89,7 @@ extern "C" void NSBXX_Model_AdjustPolygonAttrMask(NSBXXInternalModel* model, boo
 
 // func_020b700c
 // color is 15-bits in format BBBBBGGGGGRRRRR
+// Original: arm9/main @ 0x020B700C; symbol: NSBXX_Model_SetMaterialDiffuseReflectionColor; size: 0x80.
 extern "C" void NSBXX_Model_SetMaterialDiffuseReflectionColor(NSBXXInternalModel* model, unsigned int materialIndex, int col)
 {
     NSBXXMaterial* material = model->GetMaterialData()->GetMaterialByIndex(materialIndex);
@@ -95,6 +99,7 @@ extern "C" void NSBXX_Model_SetMaterialDiffuseReflectionColor(NSBXXInternalModel
 
 // func_020b708c
 // color is 15-bits in format BBBBBGGGGGRRRRR
+// Original: arm9/main @ 0x020B708C; symbol: NSBXX_Model_SetMaterialAmbientReflectionColor; size: 0x80.
 extern "C" void NSBXX_Model_SetMaterialAmbientReflectionColor(NSBXXInternalModel* model, unsigned int materialIndex, int col)
 {
     NSBXXMaterial* material = model->GetMaterialData()->GetMaterialByIndex(materialIndex);
@@ -103,6 +108,7 @@ extern "C" void NSBXX_Model_SetMaterialAmbientReflectionColor(NSBXXInternalModel
 }
 
 // 020b710c
+// Original: arm9/main @ 0x020B710C; symbol: NSBXX_Model_SetMaterialPolygonID; size: 0x78.
 extern "C" void NSBXX_Model_SetMaterialPolygonID(NSBXXInternalModel* model, unsigned int materialIndex, int id)
 {
     NSBXXMaterial* material = model->GetMaterialData()->GetMaterialByIndex(materialIndex);
@@ -110,6 +116,7 @@ extern "C" void NSBXX_Model_SetMaterialPolygonID(NSBXXInternalModel* model, unsi
     material->paramPOLYGON_ATTR_ = material->paramPOLYGON_ATTR_ & ~0x3f000000 | (id << 24);
 }
 
+// Original: arm9/main @ 0x020B7184; symbol: NSBXX_Model_SetMaterialAlpha; size: 0x78.
 extern "C" void NSBXX_Model_SetMaterialAlpha(NSBXXInternalModel* model, unsigned int materialIndex, int alpha)
 {
     NSBXXMaterial* material = model->GetMaterialData()->GetMaterialByIndex(materialIndex);
@@ -117,6 +124,7 @@ extern "C" void NSBXX_Model_SetMaterialAlpha(NSBXXInternalModel* model, unsigned
 }
 
 // 020b71fc
+// Original: arm9/main @ 0x020B71FC; symbol: NSBXX_Model_GetMaterialPolygonID; size: 0x70.
 extern "C" int NSBXX_Model_GetMaterialPolygonID(NSBXXInternalModel* model, unsigned int materialIndex)
 {
     NSBXXMaterial* material = model->GetMaterialData()->GetMaterialByIndex(materialIndex);
@@ -125,6 +133,7 @@ extern "C" int NSBXX_Model_GetMaterialPolygonID(NSBXXInternalModel* model, unsig
 }
 
 // 020b726c
+// Original: arm9/main @ 0x020B726C; symbol: NSBXX_Model_SetDiffuseReflectionColor; size: 0x40.
 extern "C" void NSBXX_Model_SetDiffuseReflectionColor(NSBXXInternalModel* model, int col)
 {
     unsigned int matIdx = 0;
@@ -139,6 +148,7 @@ extern "C" void NSBXX_Model_SetDiffuseReflectionColor(NSBXXInternalModel* model,
 }
 
 // 020b72ac
+// Original: arm9/main @ 0x020B72AC; symbol: NSBXX_Model_SetAmbientReflectionColor; size: 0x40.
 extern "C" void NSBXX_Model_SetAmbientReflectionColor(NSBXXInternalModel* model, int col)
 {
     unsigned int matIdx = 0;
@@ -153,6 +163,7 @@ extern "C" void NSBXX_Model_SetAmbientReflectionColor(NSBXXInternalModel* model,
 }
 
 // 020b72ec
+// Original: arm9/main @ 0x020B72EC; symbol: NSBXX_Model_SetPolygonID; size: 0x40.
 extern "C" void NSBXX_Model_SetPolygonID(NSBXXInternalModel* model, int id)
 {
     unsigned int matIdx = 0;
@@ -166,6 +177,7 @@ extern "C" void NSBXX_Model_SetPolygonID(NSBXXInternalModel* model, int id)
     }
 }
 
+// Original: arm9/main @ 0x020B732C; symbol: NSBXX_Model_SetAlpha; size: 0x40.
 extern "C" void NSBXX_Model_SetAlpha(NSBXXInternalModel* model, int alpha)
 {
     unsigned int materialIndex = 0;

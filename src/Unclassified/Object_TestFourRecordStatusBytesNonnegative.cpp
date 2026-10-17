@@ -1,0 +1,4 @@
+// Original assembly and callee argument/return behavior reviewed.
+extern "C" {int ReadElement0At021015A0();int Object_FindSignedByteKeyInSixteenEntries(void*,int);char* FindNonnegativeKeyInEntryArray(void*,int);void* GetGlobalStatePointer();void SetWordMaskBits_Main020466E4(void*,unsigned);char* LinkedList_FindNodeByUnsignedKey(void*,int);void* Object_GetGlobalConnectionState();int IsFirstWordNonzero(void*);char* FindKeyAmongFourRecords(void*,int);void* FindRecordValueByKeyOrZero(void*,int);}struct Nibbles{unsigned char low:4;unsigned char high:4;};
+// Original: arm9/main @ 0x0207D978; symbol: func_0207d978; size: 0x44.
+extern "C" int Object_TestFourRecordStatusBytesNonnegative(char* p,int key){char* q=FindKeyAmongFourRecords(p,key);if(!q)return 0;for(int i=0;i<4;++i)if(*((signed char*)q+i+8)<0)return 0;return 1;}

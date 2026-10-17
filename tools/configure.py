@@ -4,9 +4,11 @@ import os
 from pathlib import Path
 import argparse
 import json
+import re
 import sys
 
 import ninja_syntax
+from linker_retention import retained_data_symbols
 from get_platform import get_platform
 
 
@@ -16,6 +18,8 @@ DEFAULT_WIBO_PATH = "./wibo"
 parser = argparse.ArgumentParser(description="Generates build.ninja")
 parser.add_argument('-w', type=str, default=DEFAULT_WIBO_PATH, dest="wine", required=False, help="Path to Wine/Wibo (linux only)")
 parser.add_argument("--compiler", type=Path, required=False, help="Path to pre-installed compiler root directory")
+parser.add_argument('--objdiff', type=Path, help='Path to pre-installed objdiff CLI')
+parser.add_argument('--keep-symbol', action='append', default=[], help='Preserve an original unused function during linking (repeatable)')
 parser.add_argument("--no-extract", action="store_true", help="Skip extract step")
 parser.add_argument("--dsd", type=Path, required=False, help="Path to pre-installed dsd CLI")
 parser.add_argument('version', help='Game version')
@@ -49,9 +53,31 @@ CC_FLAGS = " ".join([
     "-msgstyle gcc",        # Use GCC-like messages (some IDEs will make file names clickable)
     "-str pool,reuse"       # Pool and reuse strings within translation units
 ])
-active_function_name = "-force_active func_ov030_021d8a40"
+active_function_name = "-force_active func_ov030_021d8a40,func_ov020_0218b5a0,func_ov011_02184a18"
 if args.version == "jpn":
     active_function_name = "-force_active func_ov029_021d9300,func_ov030_021d9300"
+if any(not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', name) for name in args.keep_symbol):
+    parser.error('keep-symbol must be a plain symbol identifier')
+try:
+    declarative_retained_data = retained_data_symbols(Path(__file__).resolve().parents[1], args.version)
+except (OSError, ValueError, KeyError, TypeError) as error:
+    parser.error(str(error))
+retained_data_names = ','.join(declarative_retained_data)
+from runtime_code_retention import all_retained_symbols
+declarative_retained_code = all_retained_symbols(Path(__file__).resolve().parents[1], verify_original=False)
+retained_code_names = ','.join(declarative_retained_code)
+if declarative_retained_code:
+    active_function_name += ',' + retained_code_names
+if declarative_retained_data:
+    active_function_name += ',' + ','.join(declarative_retained_data)
+# Accept historical identities used by existing build commands after source renaming.
+naming_registry = Path(__file__).resolve().parents[1] / 'config' / args.version / 'function_names.json'
+if naming_registry.exists():
+    renamed_functions = json.loads(naming_registry.read_text())['functions'].values()
+    historical_names = {row['old_symbol']: row['new_symbol'] for row in renamed_functions}
+    args.keep_symbol = [historical_names.get(name, name) for name in args.keep_symbol]
+if args.keep_symbol:
+    active_function_name += ',' + ','.join(args.keep_symbol)
 LD_FLAGS = " ".join([
     "-proc arm946e",        # Target processor
     "-nostdlib",            # No C/C++ standard library
@@ -103,9 +129,15 @@ if platform is None:
 EXE = platform.exe
 WINE = args.wine if platform.system != "windows" else ""
 DSD = str(args.dsd or os.path.join('.', str(root_path / f"dsd{EXE}")))
-OBJDIFF = os.path.join('.', str(root_path / f"objdiff-cli{EXE}"))
+OBJDIFF = str(args.objdiff or os.path.join('.', str(root_path / f"objdiff-cli{EXE}")))
+from objdiff_profile import resolve_objdiff
+OBJDIFF_POLICY = config_path / args.version / "objdiff_tool.json"
+OBJDIFF = resolve_objdiff(root_path, args.version, OBJDIFF)
+OBJDIFF_PROFILE_DEPS = ([str(OBJDIFF_POLICY), "tools/objdiff_profile.py",
+    "tools/patches/objdiff-2.7.1-arm-empty-map.patch"] if OBJDIFF_POLICY.exists() else [])
 CC = os.path.join('.', str(mwcc_path / "mwccarm.exe"))
 LD = os.path.join('.', str(mwcc_path / "mwldarm.exe"))
+AS = os.path.join('.', str(mwcc_path / "mwasmarm.exe"))
 PYTHON = sys.executable
 
 
@@ -219,13 +251,21 @@ def main():
         mwcc_implicit = [CC]
         if platform.system != "windows":
             transform_dep = "tools/transform_dep.py"
-            mwcc_cmd += f" && $python {transform_dep} $basefile.d $basefile.d"
+            mwcc_cmd += f' && "{PYTHON}" {transform_dep} $basefile.d $basefile.d'
             mwcc_implicit.append(transform_dep)
         n.rule(
             name="mwcc",
             command=mwcc_cmd,
             depfile="$basefile.d",
         )
+        n.newline()
+
+        n.rule(name="mwcc_profile", command=f'{WINE} "$profile_cc" $profile_flags {CC_INCLUDES} -d $game_version -MD -c $in -o $basedir && "{PYTHON}" tools/transform_dep.py $basefile.d $basefile.d', depfile="$basefile.d")
+        n.rule(name="mwcc_profile_member_aliases", command=f'{WINE} "$profile_cc" $profile_flags {CC_INCLUDES} -d $game_version -MD -c $in -o $basedir && "{PYTHON}" tools/transform_dep.py $basefile.d $basefile.d && "{PYTHON}" tools/normalize_source_member_aliases.py $out $in $profile_policy "$profile_cc"', depfile="$basefile.d")
+        n.rule(name="mwcc_profile_source_extents", command=f'{WINE} "$profile_cc" $profile_flags {CC_INCLUDES} -d $game_version -MD -c $in -o $basedir && "{PYTHON}" tools/transform_dep.py $basefile.d $basefile.d && "{PYTHON}" tools/normalize_source_extents.py $out $in $profile_policy "$profile_cc"', depfile="$basefile.d")
+        n.rule(name="mwcc_profile_absolute_symbols", command=f'{WINE} "$profile_cc" $profile_flags {CC_INCLUDES} -d $game_version -MD -c $in -o $basedir && "{PYTHON}" tools/transform_dep.py $basefile.d $basefile.d && "{PYTHON}" tools/partial_link_absolute_symbols.py $out $in $profile_policy "$profile_cc"', depfile="$basefile.d")
+        n.rule(name="mwcc_runtime_inline", command=f'{WINE} "{CC}" {CC_FLAGS} {CC_INCLUDES} -lang=c++ -d $game_version -MD -c $in -o $basedir && "{PYTHON}" tools/transform_dep.py $basefile.d $basefile.d && "{PYTHON}" tools/normalize_runtime_inline.py $out $in', depfile="$basefile.d", deps="gcc")
+        n.rule(name="mwasm", command=f'{WINE} "{AS}" -gnu -case -proc arm5TE -32 -c $in -o $out && "{PYTHON}" tools/normalize_asm_mapping.py $out')
         n.newline()
 
         n.rule(
@@ -237,17 +277,22 @@ def main():
 
         n.rule(
             name="mwld",
-            command=(f'{PYTHON} tools/prepare_link_objects.py --objects "$objects_file" '
+            command=(f'{PYTHON} tools/runtime_code_retention.py --root . --expected "{retained_code_names}" && '
+                     f'{PYTHON} tools/linker_retention.py --root . --version {args.version} '
+                     f'--expected "{retained_data_names}" && '
+                     f'{PYTHON} tools/prepare_link_objects.py --objects "$objects_file" '
                      f'--fallback-dir "$fallback_dir" --output-dir "$link_objects_dir" '
                      f'--output-list "$link_objects_file" --report "$link_objects_report" '
-                     f'--symbol-config "$symbol_config" --link-command '
+                     f'--symbol-config "$symbol_config" --lcf "$lcf_file" --link-command '
                      f'{WINE} "{LD}" {LD_FLAGS} @"$link_objects_file" $lcf_file -o $out')
         )
         n.newline()
 
         n.rule(
             name="rom_config",
-            command=f"{DSD} rom config --elf $in --config $config_path"
+            command=(f'{PYTHON} tools/stable_rom_config.py --dsd "{DSD}" '
+                     f'--elf $in --config $config_path --output $out'),
+            restat=True,
         )
         n.newline()
 
@@ -317,16 +362,17 @@ def add_download_tool_builds(n: ninja_syntax.Writer):
         )
         n.newline()
 
-    n.build(
-        rule="download_tool",
-        outputs=OBJDIFF,
-        variables={
-            "tool": "objdiff",
-            "tag": OBJDIFF_VERSION,
-            "path": OBJDIFF,
-        }
-    )
-    n.newline()
+    if args.objdiff is None and not OBJDIFF_POLICY.exists():
+        n.build(
+            rule="download_tool",
+            outputs=OBJDIFF,
+            variables={
+                "tool": "objdiff",
+                "tag": OBJDIFF_VERSION,
+                "path": OBJDIFF,
+            }
+        )
+        n.newline()
 
     if args.compiler is None:
         n.build(
@@ -374,7 +420,8 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, project: Project):
     elf_file = str(project.arm9_o())
     n.build(
         inputs=project.source_object_files() + [lcf_file, objects_file, delink_file],
-        implicit=[LD, "tools/prepare_link_objects.py"],
+        implicit=[LD, "tools/prepare_link_objects.py", "tools/short_link.py", "tools/linker_retention.py", "tools/runtime_code_retention.py", "config/usa/arm9/runtime_support.json"] +
+                 [str(path) for path in sorted((project.game_config / "arm9").rglob("retained_data.json"))],
         rule="mwld",
         outputs=elf_file,
         variables={
@@ -400,7 +447,7 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, project: Project):
     rom_config_file = str(project.build_rom_config())
     n.build(
         inputs=elf_file,
-        implicit=DSD,
+        implicit=[DSD, "tools/stable_rom_config.py"],
         rule="rom_config",
         outputs=rom_config_file,
         variables={
@@ -410,7 +457,9 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, project: Project):
     n.newline()
 
     rom_file = project.build_rom()
-    rom_implicit = [DSD, "tools/guard_rom_files.py"]
+    # ROM metadata can be unchanged after an ARM9 relink. The ROM must still
+    # package the freshly linked program even when restat skips ARM7 rebuilding.
+    rom_implicit = [DSD, "tools/guard_rom_files.py", elf_file]
     if project.game_version == "usa":
         arm7_units_path = project.game_config / "arm7" / "source_units.json"
         arm7_units = json.loads(arm7_units_path.read_text())
@@ -486,21 +535,69 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, project: Project):
 
 
 def add_mwcc_builds(n: ninja_syntax.Writer, project: Project, mwcc_implicit: list[Path]):
+    import hashlib, shlex
+    profile_path = Path("config") / project.game_version / "compiler_profiles.json"
+    profiles = json.loads(profile_path.read_text()).get("sources", {}) if profile_path.exists() else {}
+    member_layout_outputs = set()
     for source_file in get_c_cpp_files([src_path, libs_path]):
         src_obj_path = project.game_build / source_file
+        if source_file.suffix == ".s":
+            n.build(inputs=str(source_file), implicit=[AS, 'tools/normalize_asm_mapping.py'], rule="mwasm",
+                    outputs=str(src_obj_path.with_suffix(".o")))
+            n.newline()
+            continue
         cc_flags = []
+        runtime_inline = source_file.parent == Path("src/RuntimeSupport") and source_file.suffix == ".cpp"
         if is_cpp(source_file): cc_flags.append("-lang=c++")
         elif is_c(source_file): cc_flags.append("-lang=c")
+        profile = profiles.get(str(source_file))
+        profile_variables = {}
+        profile_dependencies = []
+        if profile:
+            if runtime_inline:
+                raise ValueError("Runtime assembly cannot silently use a C compiler profile")
+            executable = Path(CC if profile["executable"] == "configured_default" else profile["executable"])
+            if hashlib.sha256(executable.read_bytes()).hexdigest() != profile["executable_sha256"]:
+                raise ValueError("Profile compiler hash mismatch: " + str(executable))
+            profile_variables = {"profile_cc": str(executable), "profile_flags": shlex.join(profile["flags"])}
+            profile_dependencies = [str(profile_path)] + [str(p) for p in executable.parent.iterdir() if p.is_file()]
+            if profile.get("absolute_linker_symbols"):
+                if profile.get("member_aliases") or profile.get("function_extents"):
+                    raise ValueError("Combining source metadata transforms needs explicit review")
+                profile_variables["profile_policy"] = str(profile_path)
+                profile_dependencies += ["tools/partial_link_absolute_symbols.py", "tools/normalize_source_member_aliases.py", profile["absolute_linker_symbols"]["policy"]]
+            if profile.get("function_extents"):
+                if profile.get("member_aliases"):
+                    raise ValueError("Source extent and member-alias policies must be reviewed separately")
+                profile_variables["profile_policy"] = str(profile_path)
+                profile_dependencies += ["tools/normalize_source_extents.py", "tools/normalize_source_member_aliases.py"]
+            if profile.get("member_aliases"):
+                profile_variables["profile_policy"] = str(profile_path)
+                profile_dependencies += ["tools/normalize_source_member_aliases.py"]
+                for alias in profile["member_aliases"]:
+                    profile_dependencies += [alias["owner_source"], alias["layout_header"], alias["owner_object"]]
+                    profile_dependencies += [alias["layout_source"], alias["layout_object"]]
+                    if alias["layout_object"] not in member_layout_outputs:
+                        layout_object = Path(alias["layout_object"])
+                        n.build(inputs=alias["layout_source"], outputs=str(layout_object), rule="mwcc_profile",
+                                implicit=[str(profile_path), str(executable), alias["layout_header"]],
+                                variables={"profile_cc": str(executable), "profile_flags": shlex.join(profile["flags"]),
+                                           "game_version": project.game_version, "basedir": str(layout_object.parent),
+                                           "basefile": str(layout_object.with_suffix(""))})
+                        member_layout_outputs.add(alias["layout_object"])
+
+
         n.build(
             inputs=str(source_file),
-            implicit=mwcc_implicit,
-            rule="mwcc",
+            implicit=(profile_dependencies if profile else mwcc_implicit) + (["tools/normalize_runtime_inline.py", "config/usa/arm9/runtime_support.json"] if runtime_inline else []),
+            rule=("mwcc_profile_absolute_symbols" if profile.get("absolute_linker_symbols") else "mwcc_profile_source_extents" if profile.get("function_extents") else "mwcc_profile_member_aliases" if profile.get("member_aliases") else "mwcc_profile") if profile else ("mwcc_runtime_inline" if runtime_inline else "mwcc"),
             outputs=str(src_obj_path.with_suffix(".o")),
             variables={
                 "game_version": project.game_version,
                 "cc_flags": " ".join(cc_flags),
                 "basedir": os.path.dirname(src_obj_path),
                 "basefile": str(src_obj_path.with_suffix("")),
+                **profile_variables,
             },
         )
         n.newline()
@@ -520,7 +617,7 @@ def get_c_cpp_files(dirs: list[Path]):
         for root, _, files in os.walk(dir):
             root = Path(root)
             for file in files:
-                if is_cpp(file) or is_c(file):
+                if is_cpp(file) or is_c(file) or Path(file).suffix == ".s":
                     yield root / file
 
 
@@ -557,11 +654,12 @@ def add_delink_and_lcf_builds(n: ninja_syntax.Writer, project: Project):
     n.build(inputs=completion, rule="phony", outputs="delink")
     n.newline()
 
+    from lcf_tool import dependencies as lcf_tool_dependencies
     lcf_file = project.arm9_lcf()
     objects_file = project.arm9_objects_txt()
     n.build(
         inputs=project.delinks_files + project.symbols_files + [str(rom_config), str(project.arm9_config_yaml())],
-        implicit=[DSD, "tools/generate_lcf.py"] + [
+        implicit=[DSD, "tools/generate_lcf.py", "tools/runtime_support.py", "tools/lcf_tool.py"] + [str(path) for path in project.arm9_config_yaml().parent.parent.glob("keep_symbols.txt")] + lcf_tool_dependencies(root_path, project.arm9_config_yaml()) + [str(path) for path in project.arm9_config_yaml().parent.glob("runtime_support.json")] + [
             str(path) for path in sorted(project.arm9_config_yaml().parent.rglob("linker_symbols.json"))
         ],
         rule="lcf",
@@ -653,7 +751,7 @@ def add_objdiff_builds(n: ninja_syntax.Writer, project: Project):
         inputs=["objdiff.json"],
         # objdiff reads original objects written by delink. Without this edge,
         # parallel builds can compare stale objects or race their replacement.
-        implicit=[OBJDIFF, str(project.arm9_delink_completion())] + project.source_object_files(),
+        implicit=[OBJDIFF, str(project.arm9_delink_completion())] + OBJDIFF_PROFILE_DEPS + project.source_object_files(),
         rule="objdiff_report",
         outputs=str(project.objdiff_report()),
     )

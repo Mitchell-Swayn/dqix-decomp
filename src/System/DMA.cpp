@@ -5,13 +5,13 @@
 #pragma optimize_for_size off
 
 #if defined(jpn)
-#define func_020c9be0 func_020cb6ac
+#define DisableInterruptsAndHaltForever func_020cb6ac
 #endif
 
 extern "C"
 {
     // abort() or similar
-    void func_020c9be0();
+    void DisableInterruptsAndHaltForever();
 }
 
 void VerifyDMASource(int channel, unsigned int source, unsigned int length, unsigned int sourceCtrlFlags);
@@ -77,6 +77,7 @@ inline volatile unsigned int& DMARegisterFill(int n)
     return *(volatile unsigned int*)(n * 4 + DMA_REGISTER_FILL_BASE);
 }
 
+// Original: arm9/main @ 0x020C9C0C; symbol: _Z20DMAMemsetSynchronousijjj; size: 0x80.
 void DMAMemsetSynchronous(int channel, unsigned int dst, unsigned int value, unsigned int len)
 {
     if (len == 0)
@@ -93,6 +94,7 @@ void DMAMemsetSynchronous(int channel, unsigned int dst, unsigned int value, uns
     while (DMARegisterControl(channel) & DMA_CONTROL_ENABLE) {}
 }
 
+// Original: arm9/main @ 0x020C9C8C; symbol: _Z20DMAMemcpySynchronousijjj; size: 0x70.
 void DMAMemcpySynchronous(int channel, unsigned int src, unsigned int dst, unsigned int len)
 {
     VerifyDMASource(channel, src, len, DMA_CONTROL_SRC_ADDR_INCREMENT);
@@ -110,6 +112,7 @@ void DMAMemcpySynchronous(int channel, unsigned int src, unsigned int dst, unsig
     while (DMARegisterControl(channel) & DMA_CONTROL_ENABLE) {}
 }
 
+// Original: arm9/main @ 0x020C9CFC; symbol: _Z25DMAMemcpySynchronous16Bitijjj; size: 0x6C.
 void DMAMemcpySynchronous16Bit(int channel, unsigned int src, unsigned int dst, unsigned int len)
 {
     if (len == 0)
@@ -126,6 +129,7 @@ void DMAMemcpySynchronous16Bit(int channel, unsigned int src, unsigned int dst, 
     while (DMARegisterControl(channel) & DMA_CONTROL_ENABLE) {}
 }
 
+// Original: arm9/main @ 0x020C9D68; symbol: _Z14DMAMemsetAsyncijjjPFviEi; size: 0xC4.
 void DMAMemsetAsync(int channel, unsigned int dst, unsigned int value, unsigned int len,
     DMACompletionCallback onCompletion, int callbackUserdata)
 {
@@ -160,6 +164,7 @@ void DMAMemsetAsync(int channel, unsigned int dst, unsigned int value, unsigned 
     }
 }
 
+// Original: arm9/main @ 0x020C9E2C; symbol: _Z14DMAMemcpyAsyncijjjPFviEi; size: 0x98.
 void DMAMemcpyAsync(int channel, unsigned int src, unsigned int dst, unsigned int len,
     DMACompletionCallback onCompletion, int callbackUserdata)
 {
@@ -189,6 +194,7 @@ void DMAMemcpyAsync(int channel, unsigned int src, unsigned int dst, unsigned in
     }
 }
 
+// Original: arm9/main @ 0x020C9EC4; symbol: _Z18AwaitDMACompletioni; size: 0x68.
 void AwaitDMACompletion(int id)
 {
     int priorState = DisableIRQInterrupts();
@@ -204,6 +210,7 @@ void AwaitDMACompletion(int id)
     SetIRQInterruptState(priorState);
 }
 
+// Original: arm9/main @ 0x020C9F2C; symbol: _Z15ResetDMAChanneli; size: 0x7C.
 void ResetDMAChannel(int id)
 {
     int priorState = DisableIRQInterrupts();
@@ -226,6 +233,7 @@ void ResetDMAChannel(int id)
     SetIRQInterruptState(priorState);
 }
 
+// Original: arm9/main @ 0x020C9FA8; symbol: _Z19ResetAllDMAChannelsv; size: 0x28.
 void ResetAllDMAChannels()
 {
     ResetDMAChannel(0);
@@ -241,6 +249,7 @@ void ResetAllDMAChannels()
 //     - if newTiming = VBlank, then HBlank timing is permitted 
 //     - if newTiming = HBlank, then VBlank timing is permitted
 // Note that only channels 0, 1, 2 are checked.
+// Original: arm9/main @ 0x020C9FD0; symbol: _Z39VerifyDMATimingChangePermitted_020c9fd0ij; size: 0x84.
 void VerifyDMATimingChangePermitted_020c9fd0(int channel, unsigned int newTimingFlags)
 {
     int loopChannel = 0;
@@ -274,7 +283,7 @@ void VerifyDMATimingChangePermitted_020c9fd0(int channel, unsigned int newTiming
             continue;
         
         
-        func_020c9be0();
+        DisableInterruptsAndHaltForever();
     } while (loopChannel++, pControl += 3, loopChannel < 3);
 }
 
@@ -283,6 +292,7 @@ void VerifyDMATimingChangePermitted_020c9fd0(int channel, unsigned int newTiming
 // This function doesn't place restrictions on the other channels, and in fact
 // doing DMA from GAMECARD_RECEIVED_DATA (0x04100010) is one way to load
 // from the gamecard
+// Original: arm9/main @ 0x020CA054; symbol: _Z15VerifyDMASourceijjj; size: 0x54.
 void VerifyDMASource(int channel, unsigned int source, unsigned int length, unsigned int sourceCtrlFlags)
 {
     if (channel != 0)
@@ -303,5 +313,5 @@ void VerifyDMASource(int channel, unsigned int source, unsigned int length, unsi
 
     if (startPtrSection == 0x04000000 || startPtrSection >= 0x08000000 ||
         endPtrSection == 0x04000000 || endPtrSection >= 0x08000000)
-        func_020c9be0();
+        DisableInterruptsAndHaltForever();
 }

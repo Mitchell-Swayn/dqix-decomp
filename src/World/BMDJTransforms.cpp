@@ -2,6 +2,7 @@
 
 extern const Vector3i data_020e6dfc = { 0x1000, 0x1000, 0x1000 };
 
+// Original: arm9/main @ 0x0201310C; symbol: _Z24InitializeBMDJTransformsPN17Zone3D_BMDJStruct13InstanceEntryE; size: 0x4C.
 void InitializeBMDJTransforms(Zone3D_BMDJStruct::InstanceEntry* instance)
 {
     Vector3i position = { 0, 0, 0 };
@@ -10,12 +11,13 @@ void InitializeBMDJTransforms(Zone3D_BMDJStruct::InstanceEntry* instance)
     ApplyBMDJTransforms(instance, &position, &angle, &scale);
 }
 
+// Original: arm9/main @ 0x02013158; symbol: _Z19ApplyBMDJTransformsPN17Zone3D_BMDJStruct13InstanceEntryEPK8Vector3iPKiS4_; size: 0x228.
 void ApplyBMDJTransforms(Zone3D_BMDJStruct::InstanceEntry* instance, const Vector3i* parentPosition, const int* parentAngle, const Vector3i* parentScale)
 {
     Matrix3x3 rotation;
     fix32_t cosine = fix32cos(*parentAngle);
     fix32_t sine = fix32sin(*parentAngle);
-    Mat3x3_WriteRotationY(&rotation, sine, cosine);
+    MTX_RotY33_(&rotation, sine, cosine);
     if (instance->definition)
     {
         Vector3i position;

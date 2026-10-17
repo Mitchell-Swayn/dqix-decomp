@@ -12,6 +12,7 @@ extern void ARM7_SetVerticalAlarmTag(VerticalAlarm*,unsigned int);
 extern void ARM7_ClockTouchSpiByte(void);
 #define CONTROL (*(volatile unsigned short*)0x040001c0)
 #define DATA (*(volatile unsigned short*)0x040001c2)
+// Original: arm7/wram @ 0x03804F64; symbol: ARM7_InitializeTouchState.
 void ARM7_InitializeTouchState(void)
 {
  int slot;

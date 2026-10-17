@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "symbols": [
+    {
+      "name": "data_ov021_0218bbc4",
+      "address": "0x218bbc4",
+      "size": 16,
+      "section": ".rodata",
+      "source": "src/Data/ov021/Ov021EdgeColors.cpp",
+      "original_sha256": "b142d16e09561f3bc640a27e4b676ae540bd90fc335cdfad3617dacdcdd17015",
+      "source_sha256": "77fe64778f0066d72bd94a5a23888cf89c565dd52159e567f49e756292a7e98b",
+      "reason": "Retain original edge color table even while the entry function remains original fallback."
+    },
+    {
+      "name": "data_ov021_0218bbd4",
+      "address": "0x218bbd4",
+      "size": 4,
+      "section": ".ctor",
+      "source": "src/Data/ov021/Ov021ConstructorTerminator.cpp",
+      "original_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "source_sha256": "312558d873fe9c7ec493085fd38335da077f66dccd77b04e08f38e23b91754d0",
+      "reason": "Retain the null constructor list terminator at the original module address."
+    }
+  ]
+}

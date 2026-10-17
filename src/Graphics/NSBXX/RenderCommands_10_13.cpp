@@ -4,6 +4,7 @@
 // notably, the instruction pointer only advances past the offset and
 // length data, so presumably this is stored past the end, like constants
 // in assembly coming after the return statement
+// Original: arm9/main @ 0x020B5EB4; symbol: _Z16RenderCommand_10P20RenderCommandHandleri; size: 0xDC.
 void RenderCommand_10(RenderCommandHandler* handler, int modifier)
 {
     int callbackStage = (handler->hooks_[10] != NULL) ? handler->hookStages_[10] : 0;
@@ -35,6 +36,7 @@ void RenderCommand_10(RenderCommandHandler* handler, int modifier)
     handler->instructionPointer_ += 9;
 }
 
+// Original: arm9/main @ 0x020B5F90; symbol: _Z16RenderCommand_11P20RenderCommandHandleri; size: 0x70.
 void RenderCommand_11(RenderCommandHandler* handler, int modifier)
 {
     if (!(handler->flags_ & (1 << RCH_FLAG_8)) && !(handler->flags_ & (1 << RCH_FLAG_9)))
@@ -55,6 +57,7 @@ void RenderCommand_11(RenderCommandHandler* handler, int modifier)
 // as in commands 7 and 8, this might be something like matcap lighting
 // 2 parameters: 1) index of material in model's material list to use
 // second parameter is unknown / seems to be unused
+// Original: arm9/main @ 0x020B6000; symbol: _Z16RenderCommand_12P20RenderCommandHandleri; size: 0x344.
 void RenderCommand_12(RenderCommandHandler* handler, int modifier)
 {
     Matrix3x3 directionMat3x3;
@@ -177,6 +180,7 @@ void RenderCommand_12(RenderCommandHandler* handler, int modifier)
 // I have no idea what this is, but it's texture related. I couldn't find any
 // use of it in the game.
 // 2 parameters: 1) index of material in model's material list, 2) unknown/unused
+// Original: arm9/main @ 0x020B6344; symbol: _Z16RenderCommand_13P20RenderCommandHandleri; size: 0x3B0.
 void RenderCommand_13(RenderCommandHandler* handler, int modifier)
 {
     if (!(handler->flags_ & (1 << RCH_FLAG_9)) && (handler->flags_ & (1 << RCH_FLAG_0)))
@@ -286,7 +290,7 @@ void RenderCommand_13(RenderCommandHandler* handler, int modifier)
             GXFIFO_MATRIX_PUSH = 0;
             GXFIFO_MATRIX_IDENTITY = 0;
             Matrix4x4 worldViewAgain;
-            while (func_020c54fc(&worldViewAgain) != 0) {}
+            while (Geometry_ReadClipMatrixWhenIdle(&worldViewAgain) != 0) {}
             GXFIFO_MATRIX_POP = 1;
             GXFIFO_MATRIX_MODE = 3; // texture matrix
             SubmitCommandToGeometryFifo(GXFifoCommand_LoadMat4x4, (uint32_t*)worldViewAgain.entries, 16);
@@ -305,6 +309,7 @@ void RenderCommand_13(RenderCommandHandler* handler, int modifier)
     handler->instructionPointer_ += 3;
 }
 
+// Original: arm9/main @ 0x020B66F4; symbol: _Z22RenderMeshWithMaterialP18NSBXXInternalModeljji; size: 0x2A4.
 void RenderMeshWithMaterial(NSBXXInternalModel* model, unsigned int materialIdx, unsigned int meshIdx, int bind)
 {
     uint32_t commandParams[7];

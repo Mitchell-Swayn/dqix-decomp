@@ -3,9 +3,10 @@
 #pragma optimize_for_size off
 
 extern Mutex data_020f3060;
-extern "C" void func_0200159c(int);
+extern "C" void Runtime_RunEarlyExitHandlerAndTerminate(int);
 
-extern "C" int func_02003ddc(int signal)
+// Original: arm9/main @ 0x02003DDC; symbol: func_02003ddc; size: 0x130.
+extern "C" int Runtime_DispatchSignalHandler(int signal)
 {
     if (signal < 1 || signal > 7)
         return -1;
@@ -28,7 +29,7 @@ extern "C" int func_02003ddc(int signal)
     if (handler == (RuntimeSignalHandler)1 || (handler == 0 && signal == 1))
         return 0;
     if (handler == 0)
-        func_0200159c(0);
+        Runtime_RunEarlyExitHandlerAndTerminate(0);
     handler(signal);
     return 0;
 }

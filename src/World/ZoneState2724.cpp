@@ -1,4 +1,5 @@
 #include "World/Zone3DEmbeddedState.h"
+// Original: arm9/main @ 0x02094D00; symbol: _ZN13ZoneState27245ResetEv; size: 0x14.
 void ZoneState2724::Reset()
 {
     entries = 0;
@@ -6,6 +7,7 @@ void ZoneState2724::Reset()
     unknown_8 = 0;
 }
 
+// Original: arm9/main @ 0x02094D14; symbol: _ZN13ZoneState27248SetEntryEPKNS_5EntryEi; size: 0x48.
 void ZoneState2724::SetEntry(const Entry* entry, int index)
 {
     Entry* target = &entries[index];
@@ -16,6 +18,7 @@ void ZoneState2724::SetEntry(const Entry* entry, int index)
     target->coordinates = entry->coordinates;
 }
 
+// Original: arm9/main @ 0x02094D5C; symbol: _ZN13ZoneState27248GetEntryEi; size: 0x10.
 ZoneState2724::Entry* ZoneState2724::GetEntry(int index)
 {
     return &entries[index];

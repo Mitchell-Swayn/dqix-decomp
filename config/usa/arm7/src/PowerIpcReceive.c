@@ -4,6 +4,7 @@
 extern int ARM7_SendIpcCommand(int,int,int);
 extern int ARM7_EnqueueSpiTask(int,unsigned int,unsigned short,...);
 extern void ARM7_SendPowerReply(unsigned int,unsigned int,int);
+// Original: arm7/wram @ 0x03805B0C; symbol: ARM7_PowerIpcReceive.
 void ARM7_PowerIpcReceive(unsigned int message)
 {
  int i;

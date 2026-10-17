@@ -10,6 +10,7 @@ extern const unsigned char data_020e6e54[];
 extern const unsigned char data_020e6e55[];
 extern const unsigned char data_020e6e56[];
 
+// Original: arm9/main @ 0x0201B868; symbol: _ZN6Zone3D16IsZoneInRuleListEi; size: 0x60.
 bool Zone3D::IsZoneInRuleList(int zoneID)
 {
     unsigned short id = zoneID;
@@ -20,6 +21,7 @@ bool Zone3D::IsZoneInRuleList(int zoneID)
 }
 
 // The four table columns control instances 2, 12, 3 and 9 in zone 0x170c.
+// Original: arm9/main @ 0x0201B8C8; symbol: _ZN6Zone3D23UpdateZone170cInstancesEbbb; size: 0x154.
 void Zone3D::UpdateZone170cInstances(bool first, bool second, bool alternate)
 {
     if (currentZoneID_ != 0x170c) return;
@@ -45,6 +47,7 @@ void Zone3D::UpdateZone170cInstances(bool first, bool second, bool alternate)
     if (instance) UpdateBMDJFlag4(instance, 0, data_020e6e56[row * 4]);
 }
 
+// Original: arm9/main @ 0x0201BA1C; symbol: _ZN6Zone3D27RequestBMDJObjectStateResetEii; size: 0x4C.
 void Zone3D::RequestBMDJObjectStateReset(int groupID, int instanceID)
 {
     Zone3D_BMDJStruct::InstanceEntry* instance = FindLastBMDJInstance(groupID, instanceID);

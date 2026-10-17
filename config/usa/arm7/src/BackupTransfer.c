@@ -4,6 +4,7 @@
 #include "BackupTransfer.h"
 #define CONTROL (*(volatile unsigned short*)0x040001a0)
 #define DATA (*(volatile unsigned short*)0x040001a2)
+// Original: arm7/wram @ 0x03802F38; symbol: ARM7_TransferBackupBytes.
 void ARM7_TransferBackupBytes(const unsigned char *source, unsigned char *destination, unsigned int count, void (*transferByte)(BackupTransfer*))
 {
  BackupTransfer *transfer=&ARM7_BackupTransfer;
@@ -18,6 +19,7 @@ void ARM7_TransferBackupBytes(const unsigned char *source, unsigned char *destin
  }
  if(transfer->remaining==0)CONTROL=0;
 }
+// Original: arm7/wram @ 0x03802FBC; symbol: ARM7_ReadBackupByte.
 void ARM7_ReadBackupByte(BackupTransfer *transfer)
 {
  DATA=0;
@@ -25,6 +27,7 @@ void ARM7_ReadBackupByte(BackupTransfer *transfer)
  *transfer->destination=DATA;
  transfer->destination++;
 }
+// Original: arm7/wram @ 0x03802FFC; symbol: ARM7_WriteBackupByte.
 void ARM7_WriteBackupByte(BackupTransfer *transfer)
 {
  volatile unsigned short received;
@@ -33,6 +36,7 @@ void ARM7_WriteBackupByte(BackupTransfer *transfer)
  while(CONTROL&0x80) {}
  received=DATA;
 }
+// Original: arm7/wram @ 0x0380304C; symbol: ARM7_CompareBackupByte.
 void ARM7_CompareBackupByte(BackupTransfer *transfer)
 {
  DATA=0;

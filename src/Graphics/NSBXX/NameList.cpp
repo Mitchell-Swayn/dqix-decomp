@@ -3,7 +3,7 @@
 #pragma optimize_for_size off
 
 // this doesn't quite match, register issues
-extern "C" int NSBXXNameList_SearchIndex(NSBXXNameList* nameList, const char* name)
+extern "C" int NNS_G3dGetResDictIdxByName(NSBXXNameList* nameList, const char* name)
 {
     volatile NSBXXNameList* volList = nameList;
     const uint32_t* targetIntArray = (const uint32_t*)name;

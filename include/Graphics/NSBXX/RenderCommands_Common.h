@@ -35,11 +35,11 @@
 #define func_020c2cf0 func_020c47bc
 #define func_020c2eb8 func_020c4984
 #define func_020c2f18 func_020c49e4
-#define func_020c54fc func_020c6fc8
-#define func_020ca3ec func_020cbeb8
-#define func_020ca408 func_020cbed4
+#define Geometry_ReadClipMatrixWhenIdle func_020c6fc8
+#define MIi_CpuClear32 func_020cbeb8
+#define MIi_CpuCopy32 func_020cbed4
 #define func_020ca430 func_020cbefc
-#define func_020ca458 func_020cbf24
+#define MIi_CpuClearFast func_020cbf24
 #define func_020ca7d0 func_020cc29c
 #endif
 
@@ -151,26 +151,26 @@ extern "C"
     void func_020c2f18(const void*, void*);
 #endif
     // load the specified matrix into the current matrix (3x4).
-    void func_020c5188(const fix32_t*);
+    void Geometry_LoadMatrix4x3ToCommandFIFO(const fix32_t*);
     // multiply the current matrix by the specified one (3x4), i.e carry
     // out GXFIFO operation 0x19
-    void func_020c51a4(const fix32_t*);
+    void Graphics_SubmitGeometryCommand25(const fix32_t*);
     // multiply by the specified 3x3 matrix (instruction 0x1a)
-    void func_020c51c0(const fix32_t*);
+    void Graphics_WriteGeometryCommand26AndDataBlock(const fix32_t*);
     // try to get the clip matrix into the pointer specified (4x4 fix32_t matrix)
     // returns -1 if still waiting, 0 if done
-    int func_020c54fc(void*);
+    int Geometry_ReadClipMatrixWhenIdle(void*);
     // try to get the result matrix (current directional vector matrix)
     // returns -1 if still waiting, 0 if done
-    int func_020c552c(void*);
+    int Graphics_ReadMatrixWhenGeometryNotBusy(void*);
     // memset via u32 values
-    void func_020ca3ec(int value, void* dst, unsigned int len);
+    void MIi_CpuClear32(int value, void* dst, unsigned int len);
     // memcpy via u32 values
-    void func_020ca408(const void* src, void* dst, unsigned int numBytes);
+    void MIi_CpuCopy32(const void* src, void* dst, unsigned int numBytes);
     // repeatedly write u32s to dst (useful for hardware registers)
     void func_020ca430(const void* src, volatile void* dst, unsigned int numBytes);
     // aligned 32-byte-looped memset
-    void func_020ca458(int value, void* dst, unsigned int len);
+    void MIi_CpuClearFast(int value, void* dst, unsigned int len);
     // zero-initialize matrix
     void func_020ca7d0(void*);
 }

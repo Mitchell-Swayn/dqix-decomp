@@ -11,12 +11,16 @@
 // https://developer.arm.com/documentation/ddi0201/d/programmer-s-model/cp15-register-map-summary/register-7--cache-operations-register
 // Note the manual uses the term 'flush' to mean 'invalidate' (no cleaning).
 
+#pragma optimization_level 1
+// Original: arm9/main @ 0x020C824C; symbol: _Z19InvalidateDataCachev; size: 0xC.
 void InvalidateDataCache()
 {
-    __asm("mov r0, 0");
-    __asm("mcr p15, 0x0, r0, c7, c6, 0");
+    int zero = 0;
+    __asm("mcr p15, 0x0, zero, c7, c6, 0");
 }
+#pragma optimization_level 2
 
+// Original: arm9/main @ 0x020C8258; symbol: _Z14CleanDataCachev; size: 0x2C.
 void CleanDataCache()
 {
     int setId;
@@ -35,6 +39,7 @@ void CleanDataCache()
     } while (wayId != 0);
 }
 
+// Original: arm9/main @ 0x020C8284; symbol: _Z24CleanInvalidateDataCachev; size: 0x34.
 void CleanInvalidateDataCache()
 {
     int setId;
@@ -57,6 +62,7 @@ void CleanInvalidateDataCache()
     } while (wayId != 0);
 }
 
+// Original: arm9/main @ 0x020C82B8; symbol: _Z24InvalidateDataCacheRangePKvj; size: 0x1C.
 void InvalidateDataCacheRange(const void* where, unsigned int len)
 {
     int end = len + (int)where;
@@ -69,6 +75,7 @@ void InvalidateDataCacheRange(const void* where, unsigned int len)
     } while ((int)dst < end);
 }
 
+// Original: arm9/main @ 0x020C82D4; symbol: _Z15CleanCacheRangePKvj; size: 0x1C.
 void CleanCacheRange(const void* where, unsigned int len)
 {
     int end = len + (int)where;
@@ -81,6 +88,7 @@ void CleanCacheRange(const void* where, unsigned int len)
     } while ((int)dst < end);
 }
 
+// Original: arm9/main @ 0x020C82F0; symbol: _Z25CleanInvalidateCacheRangePKvj; size: 0x24.
 void CleanInvalidateCacheRange(const void* where, unsigned int len)
 {
     __asm("mov r12, 0"); // Need a blank register for use with drain write buffer
@@ -96,18 +104,25 @@ void CleanInvalidateCacheRange(const void* where, unsigned int len)
     } while ((int)dst < end);
 }
 
+#pragma optimization_level 1
+// Original: arm9/main @ 0x020C8314; symbol: _Z16DrainWriteBufferv; size: 0xC.
 void DrainWriteBuffer()
 {
-    __asm("mov r0, 0");
-    __asm("mcr p15, 0x0, r0, c7, c10, 4");
+    int zero = 0;
+    __asm("mcr p15, 0x0, zero, c7, c10, 4");
 }
+#pragma optimization_level 2
 
+#pragma optimization_level 1
+// Original: arm9/main @ 0x020C8320; symbol: _Z26InvalidateInstructionCachev; size: 0xC.
 void InvalidateInstructionCache()
 {
-    __asm("mov r0, 0");
-    __asm("mcr p15, 0x0, r0, c7, c5, 0");
+    int zero = 0;
+    __asm("mcr p15, 0x0, zero, c7, c5, 0");
 }
+#pragma optimization_level 2
 
+// Original: arm9/main @ 0x020C832C; symbol: _Z31InvalidateInstructionCacheRangePKvj; size: 0x1C.
 void InvalidateInstructionCacheRange(const void* where, unsigned int len)
 {
     int end = len + (int)where;

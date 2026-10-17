@@ -14,12 +14,12 @@
 #define data_020ee6d0 data_020ee7dc
 #define data_020ee6e8 data_020ee7f4
 
-#define func_0202ae18 func_0202a9d0
-#define func_0202ae24 func_0202a9dc
+#define Object_GetGlobalConnectionState func_0202a9d0
+#define ReadGlobalAt02100044 func_0202a9dc
 #define func_0202b2f0 func_0202aea0
 #define func_0205e57c func_0205f868
-#define func_020d84f8 func_020d9e5c
-#define func_020d8704 func_020da068
+#define Memory_ClearAndCleanInvalidateRangeReturningLength func_020d9e5c
+#define ReadElement0At0214E4A0 func_020da068
 
 #endif
 
@@ -27,16 +27,16 @@
 
 extern "C"
 {
-    void* func_0202ae18();
-    void* func_0202ae24();
+    void* Object_GetGlobalConnectionState();
+    void* ReadGlobalAt02100044();
     void func_0202b2f0(void*);
     void func_0205e57c(void*);
 
     // zero memory and flush cache
-    unsigned int func_020d84f8(void*, unsigned int);
+    unsigned int Memory_ClearAndCleanInvalidateRangeReturningLength(void*, unsigned int);
 
     // gets a byte at 0x0214e4a0
-    int func_020d8704();
+    int ReadElement0At0214E4A0();
 }
 
 // seems to be one per VRAMRegion
@@ -81,6 +81,7 @@ extern const char data_020ee6e8[];
 // subregion
 extern void (*g_vramSubregionLoadFunctions[24])(const void*, unsigned int, unsigned int);
 
+// Original: arm9/itcm @ 0x01FF87A4; symbol: _Z23IsSafeToModifySubregioni; size: 0x6C.
 bool IsSafeToModifySubregion(int subregion)
 {
     int mainOrSubScreen = data_020ee6b0[data_020ee6d0[subregion]];
@@ -100,6 +101,7 @@ bool IsSafeToModifySubregion(int subregion)
     return safe;
 }
 
+// Original: arm9/itcm @ 0x01FF8810; symbol: _ZN18VRAMStagingManager14ZeroInitializeEv; size: 0x40.
 void VRAMStagingManager::ZeroInitialize()
 {
     queueFront_ = 0;
@@ -108,11 +110,12 @@ void VRAMStagingManager::ZeroInitialize()
     maybeMaxHistorialNumSize6_ = 0;
     maybeMaxHistoricalSize6MemoryUse_ = 0;
     stagedTaskCounter_ = 0;
-    func_020d84f8(banksInUse_, 0x30);
+    Memory_ClearAndCleanInvalidateRangeReturningLength(banksInUse_, 0x30);
     textureLockMask_ = 0;
     frameBufferIndex_ = 0;
 }
 
+// Original: arm9/itcm @ 0x01FF8850; symbol: _ZN18VRAMStagingManager11GetTaskByIDEi; size: 0x74.
 VRAMStagingManager::Task* VRAMStagingManager::GetTaskByID(int id)
 {
     Task* entry = &g_vramStagingTaskQueue[queueFront_];
@@ -137,6 +140,7 @@ VRAMStagingManager::Task* VRAMStagingManager::GetTaskByID(int id)
 }
 
 VRAMStagingManager::StagingSpaceAllocation*
+// Original: arm9/itcm @ 0x01FF88C4; symbol: _ZN18VRAMStagingManager25GetStagingSpaceAllocationEPKv; size: 0x58.
 VRAMStagingManager::GetStagingSpaceAllocation(const void* allocation)
 {
     uintptr_t targetOffset = (uintptr_t)allocation - (uintptr_t)&g_vramStagingBuffer[0];
@@ -152,6 +156,7 @@ VRAMStagingManager::GetStagingSpaceAllocation(const void* allocation)
     return NULL;
 }
 
+// Original: arm9/itcm @ 0x01FF891C; symbol: _ZN18VRAMStagingManager22AllocateInStagingSpaceEj; size: 0x198.
 void* VRAMStagingManager::AllocateInStagingSpace(unsigned int length)
 {
     StagingSpaceAllocation* sortedList[0x80];
@@ -246,6 +251,7 @@ void* VRAMStagingManager::AllocateInStagingSpace(unsigned int length)
     return (void*)allocation;
 }
 
+// Original: arm9/itcm @ 0x01FF8AB4; symbol: _ZN18VRAMStagingManager22StagingSpaceAllocation15SetFlagBitValueEib; size: 0x28.
 void VRAMStagingManager::StagingSpaceAllocation::SetFlagBitValue(int bit, bool value)
 {
     unsigned short mask = 1 << bit;
@@ -255,6 +261,7 @@ void VRAMStagingManager::StagingSpaceAllocation::SetFlagBitValue(int bit, bool v
         flags_ &= ~mask;
 }
 
+// Original: arm9/itcm @ 0x01FF8ADC; symbol: _ZN18VRAMStagingManager26FreeStagingSpaceAllocationEPKv; size: 0x2C.
 bool VRAMStagingManager::FreeStagingSpaceAllocation(const void* allocation)
 {
     bool success = false;
@@ -267,6 +274,7 @@ bool VRAMStagingManager::FreeStagingSpaceAllocation(const void* allocation)
     return success;
 }
 
+// Original: arm9/itcm @ 0x01FF8B08; symbol: _ZN18VRAMStagingManager33FreeStagingSpaceAllocationByIndexEj; size: 0x40.
 bool VRAMStagingManager::FreeStagingSpaceAllocationByIndex(unsigned int idx)
 {
     bool success = false;
@@ -282,6 +290,7 @@ bool VRAMStagingManager::FreeStagingSpaceAllocationByIndex(unsigned int idx)
     return success;
 }
 
+// Original: arm9/itcm @ 0x01FF8B48; symbol: _ZN18VRAMStagingManager5StageE13VRAMSubregionPKvjjbb; size: 0x2F8.
 int VRAMStagingManager::Stage(VRAMSubregion subregion, const void* data, unsigned int offset,
     unsigned int length, bool bit2Flag, bool allocateStagingSpace)
 {
@@ -365,6 +374,7 @@ int VRAMStagingManager::Stage(VRAMSubregion subregion, const void* data, unsigne
     return newTaskID;
 }
 
+// Original: arm9/itcm @ 0x01FF8E40; symbol: _ZN18VRAMStagingManager4Task5ResetEv; size: 0x7C.
 void VRAMStagingManager::Task::Reset()
 {
     flags_ = 0;
@@ -378,6 +388,7 @@ void VRAMStagingManager::Task::Reset()
     wordsCopied_ = 0;
 }
 
+// Original: arm9/itcm @ 0x01FF8EBC; symbol: _ZN18VRAMStagingManager4Task15SetFlagBitValueEib; size: 0x44.
 void VRAMStagingManager::Task::SetFlagBitValue(int bit, bool value)
 {
     unsigned char mask = 1 << bit;
@@ -387,6 +398,7 @@ void VRAMStagingManager::Task::SetFlagBitValue(int bit, bool value)
         flags_ &= ~mask;
 }
 
+// Original: arm9/itcm @ 0x01FF8F00; symbol: _ZN18VRAMStagingManager14CancelTaskByIDEi; size: 0x38.
 bool VRAMStagingManager::CancelTaskByID(int id)
 {
     if (id < 0)
@@ -403,6 +415,7 @@ bool VRAMStagingManager::CancelTaskByID(int id)
     return success;
 }
 
+// Original: arm9/itcm @ 0x01FF8F38; symbol: _ZN18VRAMStagingManager22CancelAllTasksInRegionE10VRAMRegion; size: 0x80.
 void VRAMStagingManager::CancelAllTasksInRegion(VRAMRegion region)
 {
     Task* task = &g_vramStagingTaskQueue[queueFront_];
@@ -420,6 +433,7 @@ void VRAMStagingManager::CancelAllTasksInRegion(VRAMRegion region)
     }
 }
 
+// Original: arm9/itcm @ 0x01FF8FB8; symbol: _ZN18VRAMStagingManager22CancelOverwrittenTasksE13VRAMSubregionjj; size: 0xA4.
 void VRAMStagingManager::CancelOverwrittenTasks(VRAMSubregion subregion,
     unsigned int offset, unsigned int length)
 {
@@ -443,6 +457,7 @@ void VRAMStagingManager::CancelOverwrittenTasks(VRAMSubregion subregion,
     }
 }
 
+// Original: arm9/itcm @ 0x01FF905C; symbol: _ZN18VRAMStagingManager14CancelAllTasksEv; size: 0x3C.
 void VRAMStagingManager::CancelAllTasks()
 {
     Task* entry = &g_vramStagingTaskQueue[0];
@@ -450,6 +465,7 @@ void VRAMStagingManager::CancelAllTasks()
         entry->SetFlagBitValue(TASK_FLAG_COMPLETE, true);
 }
 
+// Original: arm9/itcm @ 0x01FF9098; symbol: _ZN18VRAMStagingManager11UpdateBanksEv; size: 0x114.
 void VRAMStagingManager::UpdateBanks()
 {
     for (unsigned int region = 0; region < 10; region++)
@@ -497,6 +513,7 @@ void VRAMStagingManager::UpdateBanks()
     }
 }
 
+// Original: arm9/itcm @ 0x01FF91AC; symbol: _ZN18VRAMStagingManager19SendReadyDataToVRAMEv; size: 0x500.
 void VRAMStagingManager::SendReadyDataToVRAM()
 {
     // Declaring all of these here fixes stack issues
@@ -511,9 +528,9 @@ void VRAMStagingManager::SendReadyDataToVRAM()
     int bVar1;
     int canOverrideCopyLimits = (DATA_027fffa8 & 0x8000) >> 15;
     
-    bVar1 = frameBufferIndex_ != func_020d8704() || canOverrideCopyLimits != 0;
+    bVar1 = frameBufferIndex_ != ReadElement0At0214E4A0() || canOverrideCopyLimits != 0;
     if (bVar1)
-        frameBufferIndex_ = func_020d8704();
+        frameBufferIndex_ = ReadElement0At0214E4A0();
     
     
     unsigned int queueHead;
@@ -681,14 +698,15 @@ void VRAMStagingManager::SendReadyDataToVRAM()
             queueFront_ = 0;
     }
 
-    void* unknownPtr1 = func_0202ae18();
-    void* unknownPtr2 = func_0202ae24();
+    void* unknownPtr1 = Object_GetGlobalConnectionState();
+    void* unknownPtr2 = ReadGlobalAt02100044();
     func_0202b2f0(unknownPtr1);
     func_0205e57c(unknownPtr2);
 
     SetResourceMutexOperational(mutexState);
 }
 
+// Original: arm9/itcm @ 0x01FF96AC; symbol: _ZN18VRAMStagingManager23CommonVRAMRegionTaskSet5ResetEv; size: 0x14.
 void VRAMStagingManager::CommonVRAMRegionTaskSet::Reset()
 {
     numTasksPerPriority_[0] = 0;
@@ -696,6 +714,7 @@ void VRAMStagingManager::CommonVRAMRegionTaskSet::Reset()
     numTasks_ = 0;
 }
 
+// Original: arm9/itcm @ 0x01FF96C0; symbol: _Z24SendStagedVRAMDataToVRAMPv; size: 0x14.
 void SendStagedVRAMDataToVRAM(void* vramStagingManagerUserdata)
 {
     if (vramStagingManagerUserdata == NULL)

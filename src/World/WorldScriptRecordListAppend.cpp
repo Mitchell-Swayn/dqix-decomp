@@ -1,10 +1,11 @@
 #include "World/WorldScriptRecordNode.h"
 #include "Memory/SafeAllocator.h"
 
-extern "C" void func_0208e000(WorldScriptRecordNode*,
+extern "C" void CopyLinkedRecordFields(WorldScriptRecordNode*,
                                const WorldScriptRecordNode*);
 
-extern "C" void func_0208df94(WorldScriptRecordList* list,
+// Original: arm9/main @ 0x0208DF94; symbol: func_0208df94; size: 0x6C.
+extern "C" void WorldScriptRecordList_AllocateAndAppendNode(WorldScriptRecordList* list,
                                SafeAllocator* allocator,
                                const WorldScriptRecordNode* source)
 {
@@ -14,13 +15,13 @@ extern "C" void func_0208df94(WorldScriptRecordList* list,
     if (tail != 0)
     {
         while (tail->next != 0) tail = tail->next;
-        func_0208e000(node, source);
+        CopyLinkedRecordFields(node, source);
         tail->next = node;
     }
     else
     {
         list->head = node;
-        func_0208e000(node, source);
+        CopyLinkedRecordFields(node, source);
     }
     list->count = (short)(list->count + 1);
 }

@@ -12,12 +12,12 @@
 #define func_020c2208 func_020c3cd4
 #define func_020c2c38 func_020c4704
 #define func_020c2c94 func_020c4760
-#define func_020c51dc func_020c6ca8
-#define func_020c54fc func_020c6fc8
-#define func_020c552c func_020c6ff8
-#define func_020ca0a8 func_020cbb74
-#define func_020ca2ac func_020cbd78
-#define func_020ca4b4 func_020cbf80
+#define Geometry_InitializeEngineRegistersAndRenderDefaults func_020c6ca8
+#define Geometry_ReadClipMatrixWhenIdle func_020c6fc8
+#define Graphics_ReadMatrixWhenGeometryNotBusy func_020c6ff8
+#define Geometry_StartInterruptDrivenDMATransfer func_020cbb74
+#define DMA_StartTransferOrInvokeCallbackForZeroSize func_020cbd78
+#define MIi_CpuCopyFast func_020cbf80
 #define func_020ca430 func_020cbefc
 
 #define data_0210cf78 data_0210cc30
@@ -38,18 +38,18 @@ extern "C"
     void func_020c2c94(fix32_t);
 
     // reset various geometry registers
-    void func_020c51dc();
+    void Geometry_InitializeEngineRegistersAndRenderDefaults();
 
-    int func_020c54fc(Matrix4x4*); // try to read clip matrix, -1 on failure
-    int func_020c552c(Matrix3x3*); // try to read vector result matrix, -1 on failure
+    int Geometry_ReadClipMatrixWhenIdle(Matrix4x4*); // try to read clip matrix, -1 on failure
+    int Graphics_ReadMatrixWhenGeometryNotBusy(Matrix3x3*); // try to read vector result matrix, -1 on failure
 
-    void func_020ca0a8(int dmaChannel, const void* source, unsigned int length,
+    void Geometry_StartInterruptDrivenDMATransfer(int dmaChannel, const void* source, unsigned int length,
         DMACompletionCallback onCompletion, int callbackUserdata);
-    void func_020ca2ac(int dmaChannel, const void* source, unsigned int length,
+    void DMA_StartTransferOrInvokeCallbackForZeroSize(int dmaChannel, const void* source, unsigned int length,
         DMACompletionCallback onCompletion, int callbackUserdata);
 
     // inverse memcpy doing 32 bytes at a time, assumes 4 byte alignment
-    void func_020ca4b4(const void*, void*, unsigned);
+    void MIi_CpuCopyFast(const void*, void*, unsigned);
     // repeated u32 memwrite, shifts source ptr along but keeps writing
     // to the same destination
     void func_020ca430(const void* src, volatile void* dst, unsigned int byteCount);
@@ -72,6 +72,7 @@ struct Struct_0210cf78
 } data_0210cf78;
 typedef char GeometryFifoStateSizeCheck[sizeof(Struct_0210cf78) == 12 ? 1 : -1];
 
+// Original: arm9/main @ 0x020B6998; symbol: SendQueuedDataToGeometryFifo; size: 0x5C.
 extern "C" void SendQueuedDataToGeometryFifo()
 {
     if (data_0210cf78.fifoProcessingFlag)
@@ -85,18 +86,21 @@ extern "C" void SendQueuedDataToGeometryFifo()
 }
 
 // can be made static. 020b69f4
+// Original: arm9/main @ 0x020B69F4; symbol: _Z25WaitForFifoProcessingDonev; size: 0x18.
 void WaitForFifoProcessingDone()
 {
     while (data_0210cf78.fifoProcessingFlag) {}
 }
 
 // can be made static. 020b6a0c
+// Original: arm9/main @ 0x020B6A0C; symbol: _Z28OnGeometryFifoProcessingDonei; size: 0xC.
 void OnGeometryFifoProcessingDone(int userdata)
 {
     volatile int* pFlag = reinterpret_cast<volatile int*>(userdata);
     *pFlag = 0;
 }
 
+// Original: arm9/main @ 0x020B6A18; symbol: SendRawDataToGeometryFifo; size: 0xB4.
 extern "C" void SendRawDataToGeometryFifo(const uint32_t* data, unsigned int numBytes)
 {
     if (numBytes < 256 || data_020f2270 == -1)
@@ -106,14 +110,15 @@ extern "C" void SendRawDataToGeometryFifo(const uint32_t* data, unsigned int num
         SendQueuedDataToGeometryFifo();
         data_0210cf78.fifoProcessingFlag = 1;
         if (data_0210cf78.unknown_8)
-            func_020ca2ac(data_020f2270, data, numBytes, &OnGeometryFifoProcessingDone,
+            DMA_StartTransferOrInvokeCallbackForZeroSize(data_020f2270, data, numBytes, &OnGeometryFifoProcessingDone,
                 reinterpret_cast<int>(&data_0210cf78.fifoProcessingFlag));
         else
-            func_020ca0a8(data_020f2270, data, numBytes, &OnGeometryFifoProcessingDone,
+            Geometry_StartInterruptDrivenDMATransfer(data_020f2270, data, numBytes, &OnGeometryFifoProcessingDone,
                 reinterpret_cast<int>(&data_0210cf78.fifoProcessingFlag));
     }
 }
 
+// Original: arm9/main @ 0x020B6ACC; symbol: SubmitCommandToGeometryFifo; size: 0xE4.
 extern "C" void SubmitCommandToGeometryFifo(int command, const uint32_t* params, unsigned int numParams)
 {
     if (data_0210cf78.pQueuedData != NULL)
@@ -127,7 +132,7 @@ extern "C" void SubmitCommandToGeometryFifo(int command, const uint32_t* params,
                 data_0210cf78.pQueuedData->data[priorSize] = command;
                 if (numParams != 0)
                 {
-                    func_020ca4b4(params,
+                    MIi_CpuCopyFast(params,
                         &data_0210cf78.pQueuedData->data[data_0210cf78.pQueuedData->amountQueued],
                         numParams * 4);
                     data_0210cf78.pQueuedData->amountQueued += numParams;
@@ -154,6 +159,7 @@ extern "C" void SubmitCommandToGeometryFifo(int command, const uint32_t* params,
     func_020ca430(params, &GXFIFO, numParams * 4);
 }
 
+// Original: arm9/main @ 0x020B6BB0; symbol: _Z38GetCurrentPositionAndDirectionMatricesP9Matrix4x3P9Matrix3x3; size: 0x8C.
 void GetCurrentPositionAndDirectionMatrices(Matrix4x3* position, Matrix3x3* direction)
 {
     SendQueuedDataToGeometryFifo();
@@ -164,19 +170,20 @@ void GetCurrentPositionAndDirectionMatrices(Matrix4x3* position, Matrix3x3* dire
     if (position != NULL)
     {
         Matrix4x4 clipMatrix4x4;
-        while (func_020c54fc(&clipMatrix4x4) != 0) {}
+        while (Geometry_ReadClipMatrixWhenIdle(&clipMatrix4x4) != 0) {}
         Mat4x4_ConvertTo4x3(&clipMatrix4x4, position);
     }
 
     if (direction != NULL)
     {
-        while (func_020c552c(direction) != 0) {}
+        while (Graphics_ReadMatrixWhenGeometryNotBusy(direction) != 0) {}
     }
 
     GXFIFO_MATRIX_POP = 1;
     GXFIFO_MATRIX_MODE = 2; // return to position+direction mode
 }
 
+// Original: arm9/main @ 0x020B6C3C; symbol: _Z40GetModelBonePositionAndDirectionMatricesP18ModelRenderContextP9Matrix4x3P9Matrix3x3j; size: 0xAC.
 bool GetModelBonePositionAndDirectionMatrices(ModelRenderContext *context,
     Matrix4x3* outPos, Matrix3x3* outDir, unsigned int boneIndex)
 {
@@ -197,14 +204,16 @@ bool GetModelBonePositionAndDirectionMatrices(ModelRenderContext *context,
     return false;
 }
 
+// Original: arm9/main @ 0x020B6CE8; symbol: _Z17Finish3DRenderingv; size: 0x28.
 void Finish3DRendering()
 {
-    func_020c51dc();
+    Geometry_InitializeEngineRegistersAndRenderDefaults();
     RenderConfig::Reset();
     // set IRQ mode to 2: irq when fifo becomes empty
     GXSTATUS = GXSTATUS & ~0xc0000000 | 0x80000000;
 }
 
+// Original: arm9/main @ 0x020B6D10; symbol: _Z31ConvertWorldToScreenCoordinatesPK8Vector3iPiS2_; size: 0x188.
 int ConvertWorldToScreenCoordinates(const Vector3fix *world, int *outX, int *outY)
 {
     int success;

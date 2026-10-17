@@ -1,0 +1,5 @@
+#include <globaldefs.h>
+#include <GameState/GameState.h>
+extern "C" { int GameState_ReadSupportedFirmwareLanguage(GameState*);extern signed char data_020e7e35[],data_020e7e30[];int String_CountBytesUntilTerminator(const char*);int RuntimeMemory_CompareByteRanges(const void*,const void*,unsigned int);struct Suffix{char data[5];};struct Ending{signed char data[7];};
+// Original: arm9/main @ 0x020680CC; symbol: func_020680cc; size: 0xD0.
+ARM int TestLanguageDependentNameEnding(const char* name){Ending ending;Suffix suffix;if(GameState_ReadSupportedFirmwareLanguage(GameState::GetInstance())==3){ending=*(Ending*)data_020e7e35;suffix=*(Suffix*)data_020e7e30;int length=String_CountBytesUntilTerminator(name);if(length){signed char last=name[length-1];signed char* p=ending.data;while(*p){if(!*p)break;if(*p==last)return 1;p++;}if(length>=4 && !RuntimeMemory_CompareByteRanges(name+(length-4),suffix.data,4))return 1;}}return 0;} }

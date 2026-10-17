@@ -6,10 +6,12 @@ extern int ARM7_UnlockBus(unsigned short,BusLock*,LockCallback,int);
 extern int ARM7_TryLockBus(unsigned short,BusLock*,LockCallback,int);
 extern void ARM7_MarkNDSBusAcquired(void);
 extern void ARM7_MarkNDSBusReleased(void);
+// Original: arm7/wram @ 0x037FBC38; symbol: ARM7_ReleaseNDSBus.
 int ARM7_ReleaseNDSBus(unsigned short owner)
 {
  return ARM7_UnlockBus(owner,(BusLock*)0x027fffe0,ARM7_MarkNDSBusReleased,0);
 }
+// Original: arm7/wram @ 0x037FBC58; symbol: ARM7_TryAcquireNDSBus.
 int ARM7_TryAcquireNDSBus(unsigned short owner)
 {
  return ARM7_TryLockBus(owner,(BusLock*)0x027fffe0,ARM7_MarkNDSBusAcquired,0);

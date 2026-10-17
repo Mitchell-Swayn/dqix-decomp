@@ -2,6 +2,7 @@
 #include "std_library_functions.h"
 
 
+// Original: arm9/main @ 0x020DE6C8; symbol: _ZN13ZoneState27544Data18LoadSerializedDataEPvj; size: 0x4C.
 bool ZoneState2754::Data::LoadSerializedData(void* file, unsigned int size)
 {
     if (!file || !size) return false;
@@ -11,6 +12,7 @@ bool ZoneState2754::Data::LoadSerializedData(void* file, unsigned int size)
     return RelocateSecondaryRecordLinks();
 }
 
+// Original: arm9/main @ 0x020DE714; symbol: _ZN13ZoneState27544Data20AttachSerializedDataEPvPbPFbPS0_S1_E; size: 0x90.
 bool ZoneState2754::Data::AttachSerializedData(void* file, bool* alreadyRelocated, bool (*callback)(ZoneState2754::Data*, void*))
 {
     *alreadyRelocated = false;

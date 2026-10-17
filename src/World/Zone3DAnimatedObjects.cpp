@@ -11,19 +11,20 @@ struct ZoneTintState
     char unknown_0[0x20];
     int unknown_20;
 };
-extern "C" ZoneTintState* func_0200fd0c(GameState*);
-extern "C" void func_0207df90(void*);
-extern "C" void func_0207dfac(void*);
+extern "C" ZoneTintState* GameState_ReadUnkF8(GameState*);
+extern "C" void Graphics_RestoreTextureImageAndPaletteVRAMState(void*);
+extern "C" void Object_InvokeSaveTextureImageVRAMState(void*);
 
 
 
+// Original: arm9/main @ 0x020151CC; symbol: _ZN6Zone3D22LoadBMDJAnimatedObjectEPN17Zone3D_BMDJStruct11ObjectEntryEPNS0_11StructSizeCE; size: 0x26C.
 bool Zone3D::LoadBMDJAnimatedObject(Zone3D_BMDJStruct::ObjectEntry* entry, Zone3D_BMDJStruct::StructSizeC* definition)
 {
     GameState* game = GameState::GetInstance();
     SafeAllocator* allocator = pAllocator_68_;
     void* textureContext = unknown_ptr_50_;
     LightingManager* lightingManager = LightingManager::GetInstance();
-    bool tint = func_0200fd0c(game)->unknown_20 < 0;
+    bool tint = GameState_ReadUnkF8(game)->unknown_20 < 0;
     unknown_834_ = tint;
     char path[80];
     unsigned int length;
@@ -37,9 +38,9 @@ bool Zone3D::LoadBMDJAnimatedObject(Zone3D_BMDJStruct::ObjectEntry* entry, Zone3
         if (decompressed && entry->object)
         {
             entry->object->Initialize();
-            func_0207df90(textureContext);
+            Graphics_RestoreTextureImageAndPaletteVRAMState(textureContext);
             entry->object->SetModelFromFile(allocator, decompressed, length, Model3D::TextureStagingMode_Normal);
-            func_0207dfac(textureContext);
+            Object_InvokeSaveTextureImageVRAMState(textureContext);
             Model3D* model = entry->object->pModel_;
             if (model)
             {

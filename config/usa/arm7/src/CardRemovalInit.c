@@ -7,6 +7,7 @@ extern void ARM7_SetIpcHandler(int,void(*)(int,unsigned int,int));
 extern void ARM7_CardRemovalCallback(int,unsigned int,int);
 extern int ARM7_CheckCardIdentity(void);
 extern int ARM7_CheckCardInterrupt(void);
+// Original: arm7/wram @ 0x03803BC4; symbol: ARM7_InitializeCardRemoval.
 void ARM7_InitializeCardRemoval(void)
 {
  if(!ARM7_CardRemovalState.initialized) {

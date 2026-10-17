@@ -3,8 +3,8 @@
 // Bounds and bank metadata for the five texture-image allocation pools.
 struct Struct_020f1f14
 {
-    unsigned int freeStart_;
-    unsigned int freeEnd_;
+    unsigned long freeStart_;
+    unsigned long freeEnd_;
     unsigned int maybeIsUsable_;
     unsigned int halfSize_;
     unsigned short relatedToPairing_;

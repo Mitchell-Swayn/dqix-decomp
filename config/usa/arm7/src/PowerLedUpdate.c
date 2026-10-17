@@ -4,6 +4,7 @@
 extern int ARM7_EnqueueSpiTask(int,unsigned int,unsigned short,...);
 extern void ARM7_SetPowerLedPattern(int);
 extern unsigned int ARM7_UnsignedDivide(unsigned int,unsigned int);
+// Original: arm7/wram @ 0x038063AC; symbol: ARM7_UpdatePowerLed.
 void ARM7_UpdatePowerLed(void)
 {
  int pattern=ARM7_PowerLedPatternState.pattern;

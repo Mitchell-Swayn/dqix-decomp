@@ -2,6 +2,7 @@
 #pragma dont_inline on
 #include "BackupTransfer.h"
 extern const unsigned char ARM7_BackupWriteEnableCommand[];
+// Original: arm7/wram @ 0x038030B0; symbol: ARM7_EnableBackupWrites.
 void ARM7_EnableBackupWrites(void)
 {
  ARM7_BackupCommandState.transfer.remaining=1;

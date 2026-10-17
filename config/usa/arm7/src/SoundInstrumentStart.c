@@ -9,6 +9,7 @@ extern void ARM7_SetSoundVoiceAttack(SoundVoice*,int);
 extern void ARM7_SetSoundVoiceDecay(SoundVoice*,int);
 extern void ARM7_SetSoundVoiceSustain(SoundVoice*,int);
 extern void ARM7_SetSoundVoiceRelease(SoundVoice*,int);
+// Original: arm7/wram @ 0x038021E0; symbol: ARM7_StartInstrumentVoice.
 int ARM7_StartInstrumentVoice(SoundVoice *voice,int key,int velocity,int argument,SoundBank *bank,const SoundInstrument *instrument)
 {
  int release=instrument->parameters.release;

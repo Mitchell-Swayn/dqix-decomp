@@ -34,7 +34,7 @@ class Delinks:
     blocks: dict
 
 
-def parse_delinks(text):
+def parse_delinks(text, allow_empty_sections=False):
     """Keep complete source blocks, including comments and metadata, as units."""
     header, blocks, current, lines = [], {}, None, []
     filenames = set()
@@ -61,11 +61,11 @@ def parse_delinks(text):
     if current is not None:
         blocks[current] = "\n".join(lines).rstrip()
     result = Delinks("\n".join(header).rstrip(), blocks)
-    validate_ranges(result)
+    validate_ranges(result, allow_empty_sections=allow_empty_sections)
     return result
 
 
-def validate_ranges(document):
+def validate_ranges(document, allow_empty_sections=False):
     sections = {}
     for line in document.header.splitlines():
         if not line.strip() or line.strip().startswith(("//", "#")):
@@ -77,7 +77,7 @@ def validate_ranges(document):
         if name in sections:
             raise IntegrationError(f"duplicate top section: {name}")
         start, end = int(start, 16), int(end, 16)
-        if start >= end:
+        if start > end or (start == end and not allow_empty_sections):
             raise IntegrationError(f"empty or reversed top section: {name}")
         sections[name] = (start, end)
     if not sections:

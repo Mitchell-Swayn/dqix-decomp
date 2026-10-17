@@ -96,7 +96,7 @@ extern "C"
 {
 #endif
     // usa: func_020c1180
-    void Mat3x3_WriteIdentity(Matrix3x3* out);
+    void MTX_Identity33_(Matrix3x3* out);
     // usa: func_020c11a4
     // computes diag(x, y, z) * in and writes to out.
     // note the resulting matrix represents first scaling, then applying the
@@ -117,7 +117,7 @@ extern "C"
     //     ( c  0 -s )
     // M = ( 0  1  0 )
     //     ( s  0  c )
-    void Mat3x3_WriteRotationY(Matrix3x3* out, fix32_t sine, fix32_t cosine);
+    void MTX_RotY33_(Matrix3x3* out, fix32_t sine, fix32_t cosine);
     // usa: func_020c129c
     // writes a z-axis rotation into the matrix specified. Instead
     // of providing the angle of rotation, you specify the sine/cosine
@@ -125,7 +125,7 @@ extern "C"
     //     (  c  s  0 )
     // M = ( -s  c  0 )
     //     (  0  0  1 )
-    void Mat3x3_WriteRotationZ(Matrix3x3* out, fix32_t sine, fix32_t cosine);
+    void MTX_RotZ33_(Matrix3x3* out, fix32_t sine, fix32_t cosine);
     // usa: func_020c12b4
     // calculates the inverse of the input matrix.
     // returns 0 if the process succeeded (i.e. the input matrix was invertible)
@@ -141,7 +141,7 @@ extern "C"
 
 
     // usa: func_020c1840
-    void Mat4x3_WriteIdentity(Matrix4x3* out);
+    void MTX_Identity43_(Matrix4x3* out);
     // usa: func_020c1868
     // converts an input 4x3 matrix to a 4x4 matrix.
     void Mat4x3_ConvertTo4x4(const Matrix4x3* in, Matrix4x4* out);

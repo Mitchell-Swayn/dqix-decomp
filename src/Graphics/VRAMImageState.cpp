@@ -4,11 +4,13 @@
 #include "Graphics/VRAMImagePool.h"
 
 // The stack allocator releases images only by restoring or resetting state.
+// Original: arm9/main @ 0x020BB6F8; symbol: FreeTextureImageVRAM; size: 0x8.
 extern "C" int FreeTextureImageVRAM(unsigned int /*key*/)
 {
     return 0;
 }
 
+// Original: arm9/main @ 0x020BB700; symbol: _Z25SaveTextureImageVRAMStatePj; size: 0x40.
 void SaveTextureImageVRAMState(unsigned int* state)
 {
     int index = 0;
@@ -23,6 +25,7 @@ void SaveTextureImageVRAMState(unsigned int* state)
     } while (++index < 5);
 }
 
+// Original: arm9/main @ 0x020BB740; symbol: _Z28RestoreTextureImageVRAMStatePKj; size: 0x40.
 void RestoreTextureImageVRAMState(const unsigned int* state)
 {
     int index = 0;

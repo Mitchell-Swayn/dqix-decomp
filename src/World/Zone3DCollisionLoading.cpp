@@ -4,9 +4,10 @@
 #include "Filesystem/NarcHandle.h"
 #include "Filesystem/FileIO.h"
 
-extern "C" void func_0204bf30(void*);
-extern "C" void func_0204bf44(void*, SafeAllocator*, const void*, unsigned int);
+extern "C" void ClearSeventySixBytes(void*);
+extern "C" void InitializePackedResourcePointersFromHeaderOffsets(void*, SafeAllocator*, const void*, unsigned int);
 
+// Original: arm9/main @ 0x02015134; symbol: _ZN6Zone3D17LoadBMDJCollisionEPN17Zone3D_BMDJStruct11ObjectEntryEPNS0_11StructSizeCE; size: 0x98.
 bool Zone3D::LoadBMDJCollision(Zone3D_BMDJStruct::ObjectEntry* entry, Zone3D_BMDJStruct::StructSizeC* definition)
 {
     SafeAllocator* allocator = pAllocator_68_;
@@ -20,8 +21,8 @@ bool Zone3D::LoadBMDJCollision(Zone3D_BMDJStruct::ObjectEntry* entry, Zone3D_BMD
         unsigned int length;
         void* decompressed = DecompressLZ77FileIntoAllocatedSpace(*allocator, raw, length);
         if (!decompressed) return false;
-        func_0204bf30(entry->unknown_4);
-        func_0204bf44(entry->unknown_4, allocator, decompressed, length);
+        ClearSeventySixBytes(entry->unknown_4);
+        InitializePackedResourcePointersFromHeaderOffsets(entry->unknown_4, allocator, decompressed, length);
     }
     entry->kind = 1;
     return true;

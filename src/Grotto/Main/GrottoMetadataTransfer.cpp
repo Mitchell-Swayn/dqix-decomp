@@ -34,7 +34,8 @@ typedef char GrottoMetadataTransferText7dOffsetCheck[
 typedef char GrottoMetadataTransferGameStateSizeCheck[
     sizeof(GameState) == 0x7ff4 ? 1 : -1];
 
-extern "C" void func_02011818(GameState* state,
+// Original: arm9/main @ 0x02011818; symbol: func_02011818; size: 0xE4.
+extern "C" void GameState_PopulateGrottoMetadataTransferDescriptor(GameState* state,
                               const GrottoMetadataTransferInput* input)
 {
     state->grottoInfo_.metadataTransfer_.available_ = 1;
@@ -52,12 +53,12 @@ extern "C" void func_02011818(GameState* state,
     if (input->text_07_[0] == 0)
         state->grottoInfo_.metadataTransfer_.text_73_[0] = 0;
     else
-        VectorizedInvertedMemcpy(input->text_07_,
+        MI_CpuCopy8(input->text_07_,
                                   state->grottoInfo_.metadataTransfer_.text_73_, 10);
     if (input->text_13_[0] == 0)
         state->grottoInfo_.metadataTransfer_.text_7d_[0] = 0;
     else
-        VectorizedInvertedMemcpy(input->text_13_,
+        MI_CpuCopy8(input->text_13_,
                                   state->grottoInfo_.metadataTransfer_.text_7d_, 10);
     if (input->value_24_ != 0)
         state->grottoInfo_.metadataTransfer_.unknown_10_ = input->value_24_;
@@ -65,7 +66,8 @@ extern "C" void func_02011818(GameState* state,
     state->grottoInfo_.metadataTransfer_.unknown_08_ = -1;
 }
 
-extern "C" void func_020118fc(GameState* state)
+// Original: arm9/main @ 0x020118FC; symbol: func_020118fc; size: 0x34.
+extern "C" void GameState_ResetGrottoMetadataTransfer(GameState* state)
 {
     state->grottoInfo_.metadataTransfer_.available_ = 0;
     state->grottoInfo_.metadataTransfer_.unknown_01_ = 0;
@@ -77,7 +79,8 @@ extern "C" void func_020118fc(GameState* state)
     state->grottoInfo_.metadataTransfer_.unknown_12_ = 0;
 }
 
-extern "C" unsigned int func_02011930(GameState* state,
+// Original: arm9/main @ 0x02011930; symbol: func_02011930; size: 0x9C.
+extern "C" unsigned int GameState_TransferAvailableGrottoDescriptorAndTexts(GameState* state,
                                       GrottoMetadataDescriptor* descriptor,
                                       char* text73, char* text7d)
 {
@@ -88,55 +91,62 @@ extern "C" unsigned int func_02011930(GameState* state,
             descriptor->value_02_ = state->grottoInfo_.metadataTransfer_.descriptor_.value_02_;
         }
         if (text73 != NULL) {
-            VectorizedInvertedMemcpy(state->grottoInfo_.metadataTransfer_.text_73_, text73, 10);
+            MI_CpuCopy8(state->grottoInfo_.metadataTransfer_.text_73_, text73, 10);
             state->grottoInfo_.metadataTransfer_.text_73_[0] = 0;
         }
         if (text7d != NULL) {
-            VectorizedInvertedMemcpy(state->grottoInfo_.metadataTransfer_.text_7d_, text7d, 10);
+            MI_CpuCopy8(state->grottoInfo_.metadataTransfer_.text_7d_, text7d, 10);
             state->grottoInfo_.metadataTransfer_.text_7d_[0] = 0;
         }
     }
     return state->grottoInfo_.metadataTransfer_.available_;
 }
 
-extern "C" unsigned int func_020119cc(GameState* state)
+// Original: arm9/main @ 0x020119CC; symbol: func_020119cc; size: 0xC.
+extern "C" unsigned int ReadGrottoInfoMetadataTransferUnknown(GameState* state)
 {
     return state->grottoInfo_.metadataTransfer_.unknown_01_;
 }
 
-extern "C" void func_020119d8(GameState* state)
+// Original: arm9/main @ 0x020119D8; symbol: func_020119d8; size: 0x10.
+extern "C" void GameState_MarkGrottoMetadataAvailable(GameState* state)
 {
     state->grottoInfo_.metadataTransfer_.metadataAvailable_ = 1;
 }
 
-extern "C" void func_020119e8(GameState* state)
+// Original: arm9/main @ 0x020119E8; symbol: func_020119e8; size: 0x10.
+extern "C" void GameState_ClearGrottoMetadataAvailable(GameState* state)
 {
     state->grottoInfo_.metadataTransfer_.metadataAvailable_ = 0;
 }
 
-extern "C" unsigned int func_020119f8(GameState* state, TreasureMapMetadata* metadata)
+// Original: arm9/main @ 0x020119F8; symbol: func_020119f8; size: 0x2C.
+extern "C" unsigned int GameState_CopyAvailableGrottoTransferMetadata(GameState* state, TreasureMapMetadata* metadata)
 {
     if (metadata != NULL)
-        VectorizedInvertedMemcpy(&state->grottoInfo_.metadataTransfer_.metadata_, metadata, 0x1c);
+        MI_CpuCopy8(&state->grottoInfo_.metadataTransfer_.metadata_, metadata, 0x1c);
     return state->grottoInfo_.metadataTransfer_.metadataAvailable_;
 }
 
-extern "C" void func_02011a24(GameState* state, const TreasureMapMetadata* metadata)
+// Original: arm9/main @ 0x02011A24; symbol: func_02011a24; size: 0x1C.
+extern "C" void GameState_CopyTreasureMapMetadata(GameState* state, const TreasureMapMetadata* metadata)
 {
-    VectorizedInvertedMemcpy(metadata, &state->grottoInfo_.metadataTransfer_.metadata_, 0x1c);
+    MI_CpuCopy8(metadata, &state->grottoInfo_.metadataTransfer_.metadata_, 0x1c);
 }
 
-extern "C" void func_02011a40(GameState* state)
+// Original: arm9/main @ 0x02011A40; symbol: func_02011a40; size: 0x34.
+extern "C" void GameState_SetTransferredTreasureMapTypeInvalid(GameState* state)
 {
     // The release sets only the type bits, then copies this stack record.
     // Its other bits and bytes are uninitialized; no stronger caller contract
     // has been established.
     TreasureMapMetadata metadata;
     metadata.SetMapType(TreasureMapType_Invalid);
-    VectorizedInvertedMemcpy(&metadata, &state->grottoInfo_.metadataTransfer_.metadata_, 0x1c);
+    MI_CpuCopy8(&metadata, &state->grottoInfo_.metadataTransfer_.metadata_, 0x1c);
 }
 
-extern "C" void func_02011a74(GameState* state, unsigned int index, const char* text)
+// Original: arm9/main @ 0x02011A74; symbol: func_02011a74; size: 0x2C.
+extern "C" void GameState_CopyGrottoTransferText(GameState* state, unsigned int index, const char* text)
 {
     if (text == NULL)
         return;
@@ -148,7 +158,8 @@ extern "C" void func_02011a74(GameState* state, unsigned int index, const char* 
     strcpy(destination, text);
 }
 
-extern "C" char* func_02011aa0(GameState* state, unsigned int index)
+// Original: arm9/main @ 0x02011AA0; symbol: func_02011aa0; size: 0x18.
+extern "C" char* GameState_GetGrottoMetadataTextForValidIndex(GameState* state, unsigned int index)
 {
     char* result = NULL;
     if (index <= 3)
@@ -156,12 +167,14 @@ extern "C" char* func_02011aa0(GameState* state, unsigned int index)
     return result;
 }
 
-extern "C" void func_02011ab8(GameState* state)
+// Original: arm9/main @ 0x02011AB8; symbol: func_02011ab8; size: 0x1C.
+extern "C" void GameState_ClearGrottoMetadataText32(GameState* state)
 {
     VectorizedMemset(state->grottoInfo_.metadataTransfer_.text_32_, 0, 64);
 }
 
-extern "C" void func_02011ad4(GameState* state)
+// Original: arm9/main @ 0x02011AD4; symbol: func_02011ad4; size: 0x1C.
+extern "C" void GameState_ClearGrottoTransferText(GameState* state)
 {
     VectorizedMemset(state->grottoInfo_.metadataTransfer_.text_32_, 0, 64);
 }

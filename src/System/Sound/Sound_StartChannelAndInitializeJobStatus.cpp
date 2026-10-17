@@ -1,0 +1,3 @@
+extern "C" void SoundCommand_SubmitOpcodeTwo(unsigned int); extern "C" void SoundCommand_SubmitOpcodeNine(unsigned int,unsigned int,int); extern "C" void ResourceEntry_InitializeTimerAndState(void*); extern "C" int ReadSelectedGlobalValueUnderIRQProtection();
+// Original: arm9/main @ 0x020BC4F8; symbol: func_020bc4f8; size: 0x50.
+ extern "C" void Sound_StartChannelAndInitializeJobStatus(unsigned char *self){unsigned char *context=*(unsigned char **)(self+4);SoundCommand_SubmitOpcodeTwo(self[0x3c]);int value=*(int*)(context+0x1c);if(value)SoundCommand_SubmitOpcodeNine(self[0x3c],65535,value);ResourceEntry_InitializeTimerAndState(self);*(int*)(self+0x30)=ReadSelectedGlobalValueUnderIRQProtection();self[0x2f]=1;self[0x2c]=1;}

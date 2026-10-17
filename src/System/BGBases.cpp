@@ -14,6 +14,7 @@
 //   5     Text/3D  Text     Extended Extended
 //   6     3D       -        Large    -
 
+// Original: arm9/main @ 0x020C4C74; symbol: GetMainBG0ScreenBase; size: 0x34.
 unsigned int GetMainBG0ScreenBase()
 {
     int bg0 = BG0CNT;
@@ -23,11 +24,13 @@ unsigned int GetMainBG0ScreenBase()
     return (dispcnt * 64 * 1024) + 0x06000000 + (bg0 * 2 * 1024);
 }
 
+// Original: arm9/main @ 0x020C4CA8; symbol: GetSubBG0ScreenBase; size: 0x20.
 unsigned int GetSubBG0ScreenBase()
 {
     return ((BG0CNTSUB & BGCNT_MASK_SCREEN_BASE_2K) >> 8) * (2 * 1024) + 0x06200000;
 }
 
+// Original: arm9/main @ 0x020C4CC8; symbol: GetMainBG1ScreenBase; size: 0x34.
 unsigned int GetMainBG1ScreenBase()
 {
     int bg1 = BG1CNT;
@@ -37,11 +40,13 @@ unsigned int GetMainBG1ScreenBase()
     return (dispcnt * 64 * 1024) + 0x06000000 + (bg1 * 2 * 1024);
 }
 
+// Original: arm9/main @ 0x020C4CFC; symbol: GetSubBG1ScreenBase; size: 0x20.
 unsigned int GetSubBG1ScreenBase()
 {
     return ((BG1CNTSUB & BGCNT_MASK_SCREEN_BASE_2K) >> 8) * (2 * 1024) + 0x06200000;
 }
 
+// Original: arm9/main @ 0x020C4D1C; symbol: GetMainBG2ScreenBase; size: 0x84.
 unsigned int GetMainBG2ScreenBase()
 {
     unsigned int mode = DISPCNT & 7;
@@ -69,6 +74,7 @@ unsigned int GetMainBG2ScreenBase()
     return 0;
 }
 
+// Original: arm9/main @ 0x020C4DA0; symbol: GetSubBG2ScreenBase; size: 0x74.
 unsigned int GetSubBG2ScreenBase()
 {
     unsigned int mode = DISPCNTSUB & 7;
@@ -95,6 +101,7 @@ unsigned int GetSubBG2ScreenBase()
     return 0;
 }
 
+// Original: arm9/main @ 0x020C4E14; symbol: GetMainBG3ScreenBase; size: 0x84.
 unsigned int GetMainBG3ScreenBase()
 {
     unsigned int mode = DISPCNT & 7;
@@ -122,6 +129,7 @@ unsigned int GetMainBG3ScreenBase()
     return 0;
 }
 
+// Original: arm9/main @ 0x020C4E98; symbol: GetSubBG3ScreenBase; size: 0x74.
 unsigned int GetSubBG3ScreenBase()
 {
     unsigned int mode = DISPCNTSUB & 7;
@@ -148,6 +156,7 @@ unsigned int GetSubBG3ScreenBase()
     return 0;
 }
 
+// Original: arm9/main @ 0x020C4F0C; symbol: GetMainBG0CharacterBase; size: 0x34.
 unsigned int GetMainBG0CharacterBase()
 {
     int bg0 = BG0CNT;
@@ -159,12 +168,14 @@ unsigned int GetMainBG0CharacterBase()
     return (dispcnt * 64 * 1024) + 0x06000000 + (bg0 * 16 * 1024);
 }
 
+// Original: arm9/main @ 0x020C4F40; symbol: GetSubBG0CharacterBase; size: 0x20.
 unsigned int GetSubBG0CharacterBase()
 {
     return ((BG0CNTSUB & BGCNT_MASK_CHARACTER_BASE_16K) >> 2) * 16 * 1024
         + 0x06200000;
 }
 
+// Original: arm9/main @ 0x020C4F60; symbol: GetMainBG1CharacterBase; size: 0x34.
 unsigned int GetMainBG1CharacterBase()
 {
     int bg1 = BG1CNT;
@@ -176,12 +187,14 @@ unsigned int GetMainBG1CharacterBase()
     return (dispcnt * 64 * 1024) + 0x06000000 + (bg1 * 16 * 1024);
 }
 
+// Original: arm9/main @ 0x020C4F94; symbol: GetSubBG1CharacterBase; size: 0x20.
 unsigned int GetSubBG1CharacterBase()
 {
     return ((BG1CNTSUB & BGCNT_MASK_CHARACTER_BASE_16K) >> 2) * 16 * 1024
         + 0x06200000;
 }
 
+// Original: arm9/main @ 0x020C4FB4; symbol: GetMainBG2CharacterBase; size: 0x50.
 unsigned int GetMainBG2CharacterBase()
 {
     int mode = DISPCNT & 7;
@@ -196,6 +209,7 @@ unsigned int GetMainBG2CharacterBase()
         return 0;
 }
 
+// Original: arm9/main @ 0x020C5004; symbol: GetSubBG2CharacterBase; size: 0x40.
 unsigned int GetSubBG2CharacterBase()
 {
     int mode = DISPCNTSUB & 7;
@@ -209,6 +223,7 @@ unsigned int GetSubBG2CharacterBase()
         return 0;
 }
 
+// Original: arm9/main @ 0x020C5044; symbol: GetMainBG3CharacterBase; size: 0x58.
 unsigned int GetMainBG3CharacterBase()
 {
     int mode = DISPCNT & 7;
@@ -223,6 +238,7 @@ unsigned int GetMainBG3CharacterBase()
         return 0;
 }
 
+// Original: arm9/main @ 0x020C509C; symbol: GetSubBG3CharacterBase; size: 0x48.
 unsigned int GetSubBG3CharacterBase()
 {
     int mode = DISPCNTSUB & 7;

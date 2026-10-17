@@ -1,3 +1,5 @@
+// Original locations for overloaded or compiler-generated definitions in this unit:
+// Original: arm9/main @ 0x020C9188; symbol: _Z30Timer1OverflowInterruptRoutinei; size: 0x10. (Timer1OverflowInterruptRoutine(int))
 #include "System/Timing.h"
 #include "System/Interrupts.h"
 #include "System/DTCM.h"
@@ -20,20 +22,22 @@
 #pragma dont_inline on
 
 #if defined(jpn)
-#define func_020c9be0 func_020cb6ac
+#define DisableInterruptsAndHaltForever func_020cb6ac
 #endif
 
 extern "C"
 {
     // something like abort() (never returns)
-    void func_020c9be0();
+    void DisableInterruptsAndHaltForever();
 }
 
+// Original: arm9/main @ 0x020C8C50; symbol: _Z30MarkAlarmInitializationFlagBiti; size: 0x1C.
 void MarkAlarmInitializationFlagBit(int bit)
 {
     data_02111634 |= (1 << bit);
 }
 
+// Original: arm9/main @ 0x020C8C6C; symbol: _Z20Initialize64BitTimerv; size: 0x78.
 void Initialize64BitTimer()
 {
     if (data_02111638.isInitialized)
@@ -51,11 +55,13 @@ void Initialize64BitTimer()
     data_02111638.reloadTimerOnNextInterrupt = false;
 }
 
+// Original: arm9/main @ 0x020C8CE4; symbol: _Z23Is64BitTimerInitializedv; size: 0x10.
 int Is64BitTimerInitialized()
 {
     return data_02111638.isInitialized;
 }
 
+// Original: arm9/main @ 0x020C8CF4; symbol: _Z20On16BitTimerOverflowi; size: 0x68.
 void On16BitTimerOverflow(int)
 {
     data_02111638.numTimerOverflows++;
@@ -70,6 +76,7 @@ void On16BitTimerOverflow(int)
     SetTimerOverflowCallback(0, &On16BitTimerOverflow, 0);
 }
 
+// Original: arm9/main @ 0x020C8D5C; symbol: _Z19GetCurrentTimestampv; size: 0xA0.
 uint64_t GetCurrentTimestamp()
 {
     int priorState = DisableIRQInterrupts();
@@ -83,11 +90,13 @@ uint64_t GetCurrentTimestamp()
     return (highBits << 16) | lowBits;
 }
 
+// Original: arm9/main @ 0x020C8DFC; symbol: _Z24GetMain16BitTimerCounterv; size: 0x10.
 unsigned short GetMain16BitTimerCounter()
 {
     return TIMER_N_COUNTER(0);
 }
 
+// Original: arm9/main @ 0x020C8E0C; symbol: _Z20MarkNextAlarmToSoundP5Alarm; size: 0x8C.
 void MarkNextAlarmToSound(Alarm *timing)
 {
     uint64_t now = GetCurrentTimestamp();
@@ -109,6 +118,7 @@ void MarkNextAlarmToSound(Alarm *timing)
     EnableSpecificInterrupts(IRQ_MASK_TIMER_1_OVERFLOW);
 }
 
+// Original: arm9/main @ 0x020C8E98; symbol: _Z25InitializeActiveAlarmListv; size: 0x40.
 void InitializeActiveAlarmList()
 {
     if (data_02111648.isInitialized)
@@ -121,17 +131,20 @@ void InitializeActiveAlarmList()
     DisableSpecificInterrupts(IRQ_MASK_TIMER_1_OVERFLOW);
 }
 
+// Original: arm9/main @ 0x020C8ED8; symbol: _Z22IsAlarmListInitializedv; size: 0x10.
 int IsAlarmListInitialized()
 {
     return data_02111648.isInitialized;
 }
 
+// Original: arm9/main @ 0x020C8EE8; symbol: _Z19ZeroInitializeAlarmP5Alarm; size: 0x10.
 void ZeroInitializeAlarm(Alarm* alarm)
 {
     alarm->completionProc = NULL;
     alarm->unknown_8 = 0;
 }
 
+// Original: arm9/main @ 0x020C8EF8; symbol: _Z13RegisterAlarmP5Alarmy; size: 0x12C.
 void RegisterAlarm(Alarm* alarm, uint64_t ringTime)
 {
     if (alarm->alarmIntervalLength != 0)
@@ -189,11 +202,12 @@ void RegisterAlarm(Alarm* alarm, uint64_t ringTime)
     }
 }
 
+// Original: arm9/main @ 0x020C9024; symbol: _Z10SetTimeoutP5AlarmyPFvPP16ProcessorContextES3_; size: 0x6C.
 void SetTimeout(Alarm* alarm, uint64_t numTicks,
     Alarm::PFNCompletion callback, ProcessorContext** ppContext)
 {
     if (alarm == NULL || alarm->completionProc != NULL)
-        func_020c9be0();
+        DisableInterruptsAndHaltForever();
 
     int priorState = DisableIRQInterrupts();
     alarm->alarmIntervalLength = 0;
@@ -205,11 +219,12 @@ void SetTimeout(Alarm* alarm, uint64_t numTicks,
     SetIRQInterruptState(priorState);
 }
 
+// Original: arm9/main @ 0x020C9090; symbol: _Z11SetIntervalP5AlarmyyPFvPP16ProcessorContextES3_; size: 0x70.
 void SetInterval(Alarm *alarm, uint64_t residue, uint64_t interval,
     Alarm::PFNCompletion callback, ProcessorContext **ppContext)
 {
     if (alarm == NULL || alarm->completionProc != NULL)
-        func_020c9be0();
+        DisableInterruptsAndHaltForever();
 
     int priorState = DisableIRQInterrupts();
     alarm->alarmIntervalLength = interval;
@@ -221,6 +236,7 @@ void SetInterval(Alarm *alarm, uint64_t residue, uint64_t interval,
     SetIRQInterruptState(priorState);
 }
 
+// Original: arm9/main @ 0x020C9100; symbol: _Z11CancelAlarmP5Alarm; size: 0x88.
 void CancelAlarm(Alarm *alarm)
 {
     int priorState = DisableIRQInterrupts();
@@ -269,6 +285,7 @@ void Timer1OverflowInterruptRoutine(int)
 }
 #endif
 
+// Original: arm9/main @ 0x020C9198; symbol: _Z20HandleTimer1Overflowv; size: 0xF0.
 void HandleTimer1Overflow()
 {
     TIMER_N_CONTROL(1) = 0;

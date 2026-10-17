@@ -1,0 +1,63 @@
+import hashlib
+import json
+from pathlib import Path
+import tempfile
+import unittest
+from objdiff_profile import resolve_objdiff
+
+
+class ProfileTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        self.old = self.root / 'original-cli'
+        self.new = self.root / 'build/tools/objdiff'
+        self.patch = self.root / 'tools/patches/fix.patch'
+        self.policy = self.root / 'config/usa/objdiff_tool.json'
+        for p in [self.old, self.new, self.patch, self.policy]:
+            p.parent.mkdir(parents=True, exist_ok=True)
+        self.old.write_bytes(b'original')
+        self.new.write_bytes(b'repaired')
+        self.patch.write_bytes(b'upstream patch')
+        digest = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+        self.data = dict(schema_version=1, executable='build/tools/objdiff',
+                         patch='tools/patches/fix.patch', configured_sha256=digest(self.old),
+                         binary_sha256=digest(self.new), patch_sha256=digest(self.patch))
+        self.save()
+
+    def save(self):
+        self.policy.write_text(json.dumps(self.data))
+
+    def test_no_policy_preserves_configured(self):
+        self.policy.unlink()
+        self.assertEqual(resolve_objdiff(self.root, 'usa', self.old), str(self.old))
+
+    def test_valid_and_already_repaired(self):
+        for configured in [self.old, self.new]:
+            self.assertEqual(resolve_objdiff(self.root, 'usa', configured), str(self.new))
+
+    def test_rejects_changed_input_binary(self):
+        self.old.write_bytes(b'unreviewed')
+        with self.assertRaisesRegex(ValueError, 'Configured'):
+            resolve_objdiff(self.root, 'usa', self.old)
+
+    def test_rejects_changed_repaired_binary(self):
+        self.new.write_bytes(b'unreviewed')
+        with self.assertRaisesRegex(ValueError, 'Repaired'):
+            resolve_objdiff(self.root, 'usa', self.old)
+
+    def test_rejects_changed_patch(self):
+        self.patch.write_bytes(b'unreviewed')
+        with self.assertRaisesRegex(ValueError, 'patch hash'):
+            resolve_objdiff(self.root, 'usa', self.old)
+
+    def test_rejects_path_escape(self):
+        self.data['executable'] = '../outside'
+        self.save()
+        with self.assertRaisesRegex(ValueError, 'paths'):
+            resolve_objdiff(self.root, 'usa', self.old)
+
+
+if __name__ == '__main__':
+    unittest.main()

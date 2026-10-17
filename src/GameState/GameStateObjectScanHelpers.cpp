@@ -1,8 +1,9 @@
 #include "GameState/GameState.h"
 
-extern "C" GameObject* func_0200ff58(GameState* state, int index);
+extern "C" GameObject* GameState_FindIndexedObjectWithFlag1000(GameState* state, int index);
 
-extern "C" GameObject* func_0200ffe0(GameState* state, int key)
+// Original: arm9/main @ 0x0200FFE0; symbol: func_0200ffe0; size: 0x58.
+extern "C" GameObject* GameState_FindFlag20ObjectByKey(GameState* state, int key)
 {
     if (key < 0)
         return NULL;
@@ -21,7 +22,8 @@ extern "C" GameObject* func_0200ffe0(GameState* state, int key)
     return NULL;
 }
 
-extern "C" int func_02010038(GameState* state, unsigned char* indices)
+// Original: arm9/main @ 0x02010038; symbol: func_02010038; size: 0x50.
+extern "C" int GameState_CollectPresentMemberIndices(GameState* state, unsigned char* indices)
 {
     if (indices == NULL)
         return 0;
@@ -30,7 +32,7 @@ extern "C" int func_02010038(GameState* state, unsigned char* indices)
     int count = 1;
     indices[index] = index;
     for (; index < 4; ++index) {
-        if (func_0200ff58(state, index) != NULL) {
+        if (GameState_FindIndexedObjectWithFlag1000(state, index) != NULL) {
             indices[count] = index;
             ++count;
         }

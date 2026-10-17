@@ -5,6 +5,7 @@ extern void ARM7_SleepThread(int);
 extern unsigned int ARM7_ReadBackupStatus(void);
 #pragma dont_inline off
 static inline int IsReady(void) { return (ARM7_ReadBackupStatus()&1)==0; }
+// Original: arm7/wram @ 0x03802E04; symbol: ARM7_WaitBackupReady.
 void ARM7_WaitBackupReady(int initialDelay,int timeout)
 {
  if(initialDelay+timeout==0)return;

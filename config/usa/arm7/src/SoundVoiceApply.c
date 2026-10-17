@@ -10,6 +10,7 @@ extern void ARM7_ConfigureNoiseChannel(int,int,int,int,int);
 extern void ARM7_SetSoundChannelPeriod(int,int);
 extern void ARM7_SetSoundChannelVolume(int,int,int);
 extern void ARM7_SetSoundChannelPan(int,int);
+// Original: arm7/wram @ 0x037FF878; symbol: ARM7_ApplySoundChannelUpdates.
 void ARM7_ApplySoundChannelUpdates(void)
 {
  SoundVoice *voice;

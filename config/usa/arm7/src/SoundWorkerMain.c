@@ -26,6 +26,7 @@ extern void ARM7_SoundWorkerUpdateB(int);
 extern void ARM7_SoundWorkerUpdateChannels(int);
 extern void ARM7_SoundWorkerUpdateC(void);
 extern unsigned short ARM7_NextSoundRandom(void);
+// Original: arm7/wram @ 0x037FF6C0; symbol: ARM7_SoundWorkerMain.
 void ARM7_SoundWorkerMain(void *argument)
 {
  void *message;

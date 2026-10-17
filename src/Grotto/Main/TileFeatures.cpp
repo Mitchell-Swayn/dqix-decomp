@@ -3,23 +3,24 @@
 
 #ifdef jpn
 #define data_020e7010 data_020e78b4
-#define func_02012fe4 func_02012dac
+#define ReadGlobalValueAt020FB3F0 func_02012dac
 #define data_020e700c data_020e78b0
 #endif
 
 extern unsigned char const data_020e7010[];
-extern "C" int func_02012fe4(void);
+extern "C" int ReadGlobalValueAt020FB3F0(void);
 extern unsigned char const data_020e700c[];
 
 // USA: func_0201ea54
 // JPN: func_0201e7e0
+// Original: arm9/main @ 0x0201EA54; symbol: _Z25ChooseTileFeaturePositionPK24TileFeaturePlacementData; size: 0x7C.
 int ChooseTileFeaturePosition(const TileFeaturePlacementData* data)
 {
     unsigned char validArray[12];
  
     // This function doesn't seem to do anything besides put a value in r0.
     // We never use the value, but it gets called so yeah   
-    func_02012fe4();
+    ReadGlobalValueAt020FB3F0();
 
     int validCount = 0;
 
@@ -47,12 +48,13 @@ int ChooseTileFeaturePosition(const TileFeaturePlacementData* data)
 
 // USA: func_0201ead0
 // JPN: func_0201e85c
+// Original: arm9/main @ 0x0201EAD0; symbol: _Z28ChooseTileFeatureOrientationPK24TileFeaturePlacementDataib; size: 0xF4.
 int ChooseTileFeatureOrientation(const TileFeaturePlacementData* data,
     int direction, bool preferFaceDown)
 {
     char validDirections[4];
 
-    func_02012fe4();
+    ReadGlobalValueAt020FB3F0();
     int numValidDirections = 0;    
     int j = 4;
     unsigned char* dstPtr = (unsigned char*)validDirections;

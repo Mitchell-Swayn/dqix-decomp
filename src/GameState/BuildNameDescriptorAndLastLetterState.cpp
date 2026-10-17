@@ -1,0 +1,6 @@
+#include <globaldefs.h>
+#include "GameState/GameState.h"
+#include "std_library_functions.h"
+struct Packed {unsigned a:6,b:6,c:6,d:6,e:2,f:1,g:1,h:1,unused:3;};struct Descriptor {unsigned pad[5];unsigned value;Packed fields;};struct Output {unsigned head[2];unsigned a:6,pad:6,c:6,rest:13,active:1;};extern "C" void InitializeCoordinatesAndPackedDescriptorFlags(Output *,const char *,unsigned,unsigned char,unsigned char,unsigned char,unsigned char,unsigned char,unsigned char,unsigned char,unsigned char,int);extern "C" int String_CountBytesUntilTerminator(const char *);extern "C" int GameState_ReadSupportedFirmwareLanguage(GameState *);
+// Original: arm9/main @ 0x020E4CE8; symbol: func_020e4ce8; size: 0x150.
+extern "C" void BuildNameDescriptorAndLastLetterState(Output *out,unsigned char *p,int active){memset(out,0,12);if(p){Descriptor *d=*(Descriptor **)(p+0x144);char *name=(char *)p+0x14c;InitializeCoordinatesAndPackedDescriptorFlags(out,name,d->value,d->fields.a,d->fields.b,d->fields.c,d->fields.d,d->fields.e,d->fields.f,d->fields.g,d->fields.h,0);int n=String_CountBytesUntilTerminator(name);char c;if(!n || (c=name[n-1])<'A'||c>'Z')c=0;if(c&&active){if(GameState_ReadSupportedFirmwareLanguage(GameState::GetInstance())==1){out->c=0;out->a=0;}out->active=1;}}}

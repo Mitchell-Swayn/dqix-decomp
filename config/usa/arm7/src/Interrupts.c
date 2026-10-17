@@ -14,6 +14,7 @@ InterruptResponse ARM7_InterruptResponses[8];
 unsigned int ARM7_DisableInterruptMaster(void);
 unsigned int ARM7_EnableSpecificInterrupts(unsigned int mask);
 
+// Original: arm7/wram @ 0x037FB88C; symbol: ARM7_SetTimerOverflowCallback.
 void ARM7_SetTimerOverflowCallback(int timer, Callback callback, int userdata) {
     /* Field-base arithmetic preserves the original separate literal addresses. */
     *(Callback *)((unsigned int)&ARM7_InterruptResponses[4].callback + timer * sizeof(InterruptResponse)) = callback;
@@ -27,6 +28,7 @@ void ARM7_SetTimerOverflowCallback(int timer, Callback callback, int userdata) {
 
 /* Updates bracket IE/IF writes with IME disabled, retaining the observed
  * volatile read before restoring the previous master-enable state. */
+// Original: arm7/wram @ 0x037FB8D8; symbol: ARM7_SetSpecificInterruptsEnabled.
 unsigned int ARM7_SetSpecificInterruptsEnabled(unsigned int mask) {
     unsigned int oldIME = ARM7_DisableInterruptMaster();
     unsigned int oldIE = IE;
@@ -35,11 +37,13 @@ unsigned int ARM7_SetSpecificInterruptsEnabled(unsigned int mask) {
     IME = oldIME;
     return oldIE;
 }
+// Original: arm7/wram @ 0x037FB90C; symbol: ARM7_DisableInterruptMaster.
 unsigned int ARM7_DisableInterruptMaster(void) {
     unsigned int old = IME;
     IME = 0;
     return old;
 }
+// Original: arm7/wram @ 0x037FB924; symbol: ARM7_EnableSpecificInterrupts.
 unsigned int ARM7_EnableSpecificInterrupts(unsigned int mask) {
     unsigned int oldIME = ARM7_DisableInterruptMaster();
     unsigned int oldIE = IE;
@@ -48,6 +52,7 @@ unsigned int ARM7_EnableSpecificInterrupts(unsigned int mask) {
     IME = oldIME;
     return oldIE;
 }
+// Original: arm7/wram @ 0x037FB95C; symbol: ARM7_DisableSpecificInterrupts.
 unsigned int ARM7_DisableSpecificInterrupts(unsigned int mask) {
     unsigned int oldIME = ARM7_DisableInterruptMaster();
     unsigned int oldIE = IE;
@@ -56,6 +61,7 @@ unsigned int ARM7_DisableSpecificInterrupts(unsigned int mask) {
     IME = oldIME;
     return oldIE;
 }
+// Original: arm7/wram @ 0x037FB998; symbol: ARM7_AcknowledgeSpecificInterrupts.
 unsigned int ARM7_AcknowledgeSpecificInterrupts(unsigned int mask) {
     unsigned int oldIME = ARM7_DisableInterruptMaster();
     unsigned int oldIF = IF;

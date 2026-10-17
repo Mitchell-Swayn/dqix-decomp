@@ -5,6 +5,7 @@ extern struct { unsigned int mask0,mask1; } ARM7_SoundChannelReservations;
 extern SoundVoice ARM7_SoundVoices[16];
 extern void ARM7_StopSoundChannel(int,unsigned int);
 extern void ARM7_ClearSoundVoiceCallback(SoundVoice*);
+// Original: arm7/wram @ 0x038001E8; symbol: ARM7_StopSoundVoices.
 void ARM7_StopSoundVoices(unsigned int mask)
 {
  SoundVoice *voice; int channel=0;
@@ -23,6 +24,7 @@ void ARM7_StopSoundVoices(unsigned int mask)
   channel++;mask>>=1;
  }
 }
+// Original: arm7/wram @ 0x03800298; symbol: ARM7_ReserveSoundChannels.
 void ARM7_ReserveSoundChannels(unsigned int mask,unsigned int flags)
 {
  SoundVoice *voice; unsigned int remaining; int channel=0; remaining=mask;

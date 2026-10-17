@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "symbols": [
+    {
+      "name": "data_ov016_02191578",
+      "address": "0x2191578",
+      "size": 2048,
+      "section": ".rodata",
+      "source": "src/Data/ov016/data_ov016_02191578.cpp",
+      "source_sha256": "3918d96a3e505d9570555a6e947e047aa28c579a7f5e8abb557c79731c1a1442",
+      "original_sha256": "e430cf80ce2f98788407fb1fcdc83ab865eba55f5df95468931a47afa297882e",
+      "reason": "Original embedded ARM audio decoder at021913f8 reaches this signed excitation table using PC-relative ADD, not a symbolic relocation; splitting source loses implicit fallback retention. Local linked ELF omits selected symbol without root."
+    }
+  ]
+}

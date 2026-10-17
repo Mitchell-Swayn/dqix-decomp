@@ -2,6 +2,7 @@
 
 #pragma optimize_for_size off
 
+// Original: arm9/main @ 0x02004184; symbol: strncmp; size: 0x34.
 int strncmp(const char* lhs, const char* rhs, unsigned int count)
 {
     const unsigned char* left = (const unsigned char*)lhs;
@@ -19,6 +20,7 @@ int strncmp(const char* lhs, const char* rhs, unsigned int count)
     return 0;
 }
 
+// Original: arm9/main @ 0x020041B8; symbol: strchr; size: 0x3C.
 char* strchr(const char* str, int ch)
 {
     char value = *str++;
@@ -33,6 +35,7 @@ char* strchr(const char* str, int ch)
     return target != 0 ? 0 : (char*)str - 1;
 }
 
+// Original: arm9/main @ 0x020041F4; symbol: strrchr; size: 0x48.
 char* strrchr(const char* str, int ch)
 {
     const char* current = str;
@@ -51,6 +54,7 @@ char* strrchr(const char* str, int ch)
     return target != 0 ? 0 : (char*)current - 1;
 }
 
+// Original: arm9/main @ 0x0200423C; symbol: strstr; size: 0x6C.
 char* strstr(const char* str, const char* substr)
 {
     const unsigned char* candidate = (const unsigned char*)str;

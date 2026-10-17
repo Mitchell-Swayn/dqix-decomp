@@ -12,6 +12,7 @@ extern int ARM7_SendIpcCommand(int,int,int);
 extern void ARM7_EnterPowerSleep(unsigned int,unsigned int,unsigned int);
 extern unsigned int ARM7_ExecutePowerCommand(int,int);
 extern void ARM7_SetPowerLedMode(int);
+// Original: arm7/wram @ 0x03805C4C; symbol: ARM7_ExecutePowerTask.
 void ARM7_ExecutePowerTask(SpiTask *task)
 {
  int state=ARM7_DisableIRQInterrupts();

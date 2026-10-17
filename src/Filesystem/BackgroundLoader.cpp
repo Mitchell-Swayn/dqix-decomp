@@ -1,3 +1,5 @@
+// Original locations for overloaded or compiler-generated definitions in this unit:
+// Original: arm9/main @ 0x02030310; symbol: _ZN16BackgroundLoader4TaskaSERKS0_; size: 0x80. (BackgroundLoader::Task::operator=(BackgroundLoader::Task const&))
 #include "Filesystem/BackgroundLoader.h"
 #include "std_library_functions.h"
 #include "GameState/GameState.h"
@@ -7,10 +9,10 @@
 #pragma dont_inline on
 
 #ifdef jpn
-#define func_020c9be0 func_020cb6ac
+#define DisableInterruptsAndHaltForever func_020cb6ac
 
-#define func_020d97a8 func_020db1b4
-#define func_020d9828 func_020db234
+#define ProcessorContext_PopulateWithResolvedEntryAndStack func_020db1b4
+#define Context_MarkReadyAndSwitch func_020db234
 
 #define data_020ef8a4 data_020ef794
 #define data_020ef908 data_020ef7f8
@@ -27,14 +29,14 @@ struct Struct_02104304
 extern "C"
 {
     // get system language
-    int func_0200fb08(GameState*);
+    int GameState_ReadSupportedFirmwareLanguage(GameState*);
 
     // abort() or similar
-    void func_020c9be0();
+    void DisableInterruptsAndHaltForever();
 
     // Populates context with priority = relPrio + 16
-    void func_020d97a8(ProcessorContext* context, void* stackSpace, unsigned stackSize, int relPrio, const void* entry, int arg);
-    void func_020d9828(ProcessorContext* context); // thunk for MarkContextReadyAndSwitch
+    void ProcessorContext_PopulateWithResolvedEntryAndStack(ProcessorContext* context, void* stackSpace, unsigned stackSize, int relPrio, const void* entry, int arg);
+    void Context_MarkReadyAndSwitch(ProcessorContext* context); // thunk for MarkContextReadyAndSwitch
 
     char* data_020ef8a4[]; // array of subdirectories within data/
 
@@ -42,6 +44,7 @@ extern "C"
     char data_020ef90f[]; // "data/"
 }
 
+// Original: arm9/main @ 0x0202F700; symbol: _ZN16BackgroundLoader4Task14ZeroInitializeEv; size: 0x44.
 void BackgroundLoader::Task::ZeroInitialize()
 {
     outerFilename_[0] = '\0';
@@ -56,6 +59,7 @@ void BackgroundLoader::Task::ZeroInitialize()
     scratchAlloc_.numWords_ = 0;
 }
 
+// Original: arm9/main @ 0x0202F744; symbol: _Z30BackgroundLoaderThreadFunctionP16BackgroundLoader; size: 0x1C.
 void BackgroundLoaderThreadFunction(BackgroundLoader *loader)
 {
     while (true)
@@ -64,6 +68,7 @@ void BackgroundLoaderThreadFunction(BackgroundLoader *loader)
     }
 }
 
+// Original: arm9/main @ 0x0202F760; symbol: _ZN16BackgroundLoader4Task15GetFullFilenameEPc; size: 0x38.
 bool BackgroundLoader::Task::GetFullFilename(char *outBuffer)
 {
     sprintf(outBuffer, data_020ef908, // "%s%s%s"
@@ -73,29 +78,34 @@ bool BackgroundLoader::Task::GetFullFilename(char *outBuffer)
     return true;
 }
 
+// Original: arm9/main @ 0x0202F798; symbol: _ZN16BackgroundLoader11GetInstanceEv; size: 0x10.
 BackgroundLoader* BackgroundLoader::GetInstance()
 {
     return s_loaderInstanceData.globalInstace_;
 }
 
+// Original: arm9/main @ 0x0202F7A8; symbol: _ZN16BackgroundLoader21FreeAllocationsGlobalEv; size: 0x20.
 void BackgroundLoader::FreeAllocationsGlobal()
 {
     if (s_loaderInstanceData.globalInstace_)
         s_loaderInstanceData.globalInstace_->MaybeFreeAllocations();
 }
 
+// Original: arm9/main @ 0x0202F7C8; symbol: _ZN16BackgroundLoader13AddLockGlobalEv; size: 0x20.
 void BackgroundLoader::AddLockGlobal()
 {
     if (s_loaderInstanceData.globalInstace_)
         s_loaderInstanceData.globalInstace_->AddLock();
 }
 
+// Original: arm9/main @ 0x0202F7E8; symbol: _ZN16BackgroundLoader16RemoveLockGlobalEv; size: 0x20.
 void BackgroundLoader::RemoveLockGlobal()
 {
     if (s_loaderInstanceData.globalInstace_)
         s_loaderInstanceData.globalInstace_->RemoveLock();
 }
 
+// Original: arm9/main @ 0x0202F808; symbol: _ZN16BackgroundLoader17InitializeOrResetEv; size: 0x8C.
 void BackgroundLoader::InitializeOrReset()
 {
     reader_.ZeroInitialize();
@@ -120,6 +130,7 @@ void BackgroundLoader::InitializeOrReset()
     }
 }
 
+// Original: arm9/main @ 0x0202F894; symbol: _ZN16BackgroundLoader8PopulateEPvji; size: 0x8C.
 void BackgroundLoader::Populate(void* fileLoadSpace, unsigned int spaceCapacity, int relativePrio)
 {
     InitializeOrReset();
@@ -130,12 +141,13 @@ void BackgroundLoader::Populate(void* fileLoadSpace, unsigned int spaceCapacity,
     flags_78c_0_ = true;
     flags_78c_2_ = true;
 
-    func_020d97a8(&context_, s_loaderInstanceData.contextStackSpace_,
+    ProcessorContext_PopulateWithResolvedEntryAndStack(&context_, s_loaderInstanceData.contextStackSpace_,
         sizeof(s_loaderInstanceData.contextStackSpace_), relativePrio,
         &BackgroundLoaderThreadFunction, (int)this);
-    func_020d9828(&context_);
+    Context_MarkReadyAndSwitch(&context_);
 }
 
+// Original: arm9/main @ 0x0202F920; symbol: _ZN16BackgroundLoader13MaybeWaitIdleEv; size: 0x64.
 void BackgroundLoader::MaybeWaitIdle()
 {
     MaybeFreeAllocations();
@@ -154,6 +166,7 @@ void BackgroundLoader::MaybeWaitIdle()
     }
 }
 
+// Original: arm9/main @ 0x0202F984; symbol: _ZN16BackgroundLoader7AddLockEv; size: 0x30.
 void BackgroundLoader::AddLock()
 {
     if (numPendingTasks_ == 0 && processLockBits_ == 0)
@@ -163,6 +176,7 @@ void BackgroundLoader::AddLock()
     processLockBits_ |= 1;
 }
 
+// Original: arm9/main @ 0x0202F9B4; symbol: _ZN16BackgroundLoader10RemoveLockEv; size: 0x4C.
 void BackgroundLoader::RemoveLock()
 {
     if (processLockBits_ == 0)
@@ -177,6 +191,7 @@ void BackgroundLoader::RemoveLock()
     }
 }
 
+// Original: arm9/main @ 0x0202FA00; symbol: _ZN16BackgroundLoader14RemoveAllLocksEv; size: 0x38.
 void BackgroundLoader::RemoveAllLocks()
 {
     if (processLockBits_ != 0)
@@ -188,12 +203,13 @@ void BackgroundLoader::RemoveAllLocks()
         SleepIfResourceMutexNotLocked(1);
 }
 
+// Original: arm9/main @ 0x0202FA38; symbol: _ZN16BackgroundLoader13QueueFileTaskEPKciS1_P13SafeAllocator; size: 0x200.
 int BackgroundLoader::QueueFileTask(const char* filename, int type, const char* innerFile, SafeAllocator* alloc)
 {
     int newID = -1;
     LockResourceMutex();
 #if defined(usa)
-    int language = func_0200fb08(GameState::GetInstance());
+    int language = GameState_ReadSupportedFirmwareLanguage(GameState::GetInstance());
     char replacedFilename[80] = { 0 };
     StringReplaceLanguageTag(filename, replacedFilename, language);
 #endif
@@ -201,7 +217,7 @@ int BackgroundLoader::QueueFileTask(const char* filename, int type, const char* 
     if (filename != NULL)
     {
         if (numPendingTasks_ >= 24)
-            func_020c9be0();
+            DisableInterruptsAndHaltForever();
         else
         {   
             BackgroundLoader::Task* entry = &queuedTasks_[numPendingTasks_];
@@ -248,7 +264,7 @@ int BackgroundLoader::QueueFileTask(const char* filename, int type, const char* 
                         unsigned int subdirLength = strlen(candidateSubdir);
                         unsigned int filenameLength = strlen(innerDirPtr + subdirLength);
                         if (filenameLength + 1 > 0x18)
-                            func_020c9be0();
+                            DisableInterruptsAndHaltForever();
                         entry->containerDirectoryIndex_ = subdirIdx;
                         strcpy(entry->outerFilename_, innerDirPtr + subdirLength);
                         success = true;
@@ -271,12 +287,13 @@ int BackgroundLoader::QueueFileTask(const char* filename, int type, const char* 
     return newID;
 }
 
+// Original: arm9/main @ 0x0202FC38; symbol: _ZN16BackgroundLoader16QueueOverlayTaskEjb; size: 0xC4.
 int BackgroundLoader::QueueOverlayTask(unsigned int id, bool load)
 {
     int newID = -1;
     LockResourceMutex();
     if (numPendingTasks_ >= 24)
-        func_020c9be0();
+        DisableInterruptsAndHaltForever();
     else
     {
         BackgroundLoader::Task* entry = &queuedTasks_[numPendingTasks_];
@@ -294,33 +311,38 @@ int BackgroundLoader::QueueOverlayTask(unsigned int id, bool load)
     return newID;
 }
 
+// Original: arm9/main @ 0x0202FCFC; symbol: _ZN16BackgroundLoader13QueueLoadFileEPKcP13SafeAllocator; size: 0x18.
 int BackgroundLoader::QueueLoadFile(const char* filename, SafeAllocator* alloc)
 {  
     return QueueFileTask(filename, TaskType_LoadFileDefault, NULL, alloc);
 }
 
+// Original: arm9/main @ 0x0202FD14; symbol: _ZN16BackgroundLoader12QueueLoadGP1EPKcP13SafeAllocator; size: 0x18.
 int BackgroundLoader::QueueLoadGP1(const char* filename, SafeAllocator* alloc)
 {
     return QueueFileTask(filename, TaskType_LoadGP1, NULL, alloc);
 }
 
+// Original: arm9/main @ 0x0202FD2C; symbol: _ZN16BackgroundLoader18QueueLoadFileInGP2EPKcS1_P13SafeAllocator; size: 0x18.
 int BackgroundLoader::QueueLoadFileInGP2(const char* gp2, const char* innerFile, SafeAllocator* alloc)
 {
     return QueueFileTask(gp2, TaskType_LoadFromGP2, innerFile, alloc);
 }
 
+// Original: arm9/main @ 0x0202FD44; symbol: _ZN16BackgroundLoader16QueueLoadOverlayEj; size: 0x10.
 int BackgroundLoader::QueueLoadOverlay(unsigned int id)
 {
     return QueueOverlayTask(id, true);
 }
 
+// Original: arm9/main @ 0x0202FD54; symbol: _ZN16BackgroundLoader8AddFenceEv; size: 0x7C.
 void BackgroundLoader::AddFence()
 {
     LockResourceMutex();
     if (numPendingTasks_ > 0)
     {
         if (numPendingTasks_ >= 24)
-            func_020c9be0();
+            DisableInterruptsAndHaltForever();
         else
         {
             BackgroundLoader::Task* task = &queuedTasks_[numPendingTasks_];
@@ -334,6 +356,7 @@ void BackgroundLoader::AddFence()
     UnlockResourceMutex();
 }
 
+// Original: arm9/main @ 0x0202FDD0; symbol: _ZN16BackgroundLoader13GetTaskStatusEi; size: 0x88.
 int BackgroundLoader::GetTaskStatus(int taskID)
 {
     int status = -1;
@@ -360,11 +383,13 @@ int BackgroundLoader::GetTaskStatus(int taskID)
     return status;
 }
 
+// Original: arm9/main @ 0x0202FE58; symbol: _ZN16BackgroundLoader8GetFlag0Ev; size: 0x10.
 int BackgroundLoader::GetFlag0()
 {
     return flags_78c_0_;
 }
 
+// Original: arm9/main @ 0x0202FE68; symbol: _ZN16BackgroundLoader21GetDetailedTaskStatusEi; size: 0x60.
 int BackgroundLoader::GetDetailedTaskStatus(int taskID)
 {
     int status = -1;
@@ -384,6 +409,7 @@ int BackgroundLoader::GetDetailedTaskStatus(int taskID)
     return status;
 }
 
+// Original: arm9/main @ 0x0202FEC8; symbol: _ZN16BackgroundLoader17GetLoadedFileByIDEiPPvPj; size: 0x6C.
 void BackgroundLoader::GetLoadedFileByID(int id, void **outPtr, unsigned int *outLength)
 {
     LockResourceMutex();
@@ -405,6 +431,7 @@ void BackgroundLoader::GetLoadedFileByID(int id, void **outPtr, unsigned int *ou
     UnlockResourceMutex();
 }
 
+// Original: arm9/main @ 0x0202FF34; symbol: _ZN16BackgroundLoader19GetLoadedFileByNameEPKcPPvPj; size: 0xA4.
 int BackgroundLoader::GetLoadedFileByName(const char *filename, void **outPtr, unsigned int *outLength)
 {
     int taskID = -1;
@@ -432,6 +459,7 @@ int BackgroundLoader::GetLoadedFileByName(const char *filename, void **outPtr, u
     return taskID;
 }
 
+// Original: arm9/main @ 0x0202FFD8; symbol: _ZN16BackgroundLoader22GetLoadedFileInArchiveEPKcS1_PPvPj; size: 0xB8.
 int BackgroundLoader::GetLoadedFileInArchive(const char *outerFile, const char* innerFile, void **outPtr, unsigned int *outLength)
 {
     int taskID = -1;
@@ -459,6 +487,7 @@ int BackgroundLoader::GetLoadedFileInArchive(const char *outerFile, const char* 
     return taskID;
 }
 
+// Original: arm9/main @ 0x02030090; symbol: _ZN16BackgroundLoader10MaybeResetEv; size: 0x80.
 void BackgroundLoader::MaybeReset()
 {
     LockResourceMutex();
@@ -479,6 +508,7 @@ void BackgroundLoader::MaybeReset()
     UnlockResourceMutex();
 }
 
+// Original: arm9/main @ 0x02030110; symbol: _ZN16BackgroundLoader20MaybeFreeAllocationsEv; size: 0xB8.
 void BackgroundLoader::MaybeFreeAllocations()
 {
     if (numPendingTasks_ == 0)
@@ -512,6 +542,7 @@ void BackgroundLoader::MaybeFreeAllocations()
     UnlockResourceMutex();
 }
 
+// Original: arm9/main @ 0x020301C8; symbol: _ZN16BackgroundLoader10RemoveTaskEi; size: 0x148.
 void BackgroundLoader::RemoveTask(int taskID)
 {
     if (taskID < 0)
@@ -568,11 +599,13 @@ void BackgroundLoader::RemoveTask(int taskID)
 // here goes BackgroundLoader::Task::operator=
 // (the linker will remove duplicates in overlays)
 
+// Original: arm9/main @ 0x02030390; symbol: _ZN16BackgroundLoader17GetNumQueuedTasksEv; size: 0x8.
 int BackgroundLoader::GetNumQueuedTasks()
 {
     return numPendingTasks_;
 }
 
+// Original: arm9/main @ 0x02030398; symbol: _ZN16BackgroundLoader15GetTaskFilenameEiPc; size: 0x68.
 bool BackgroundLoader::GetTaskFilename(int taskID, char* outBuffer)
 {
     bool success = false;
@@ -594,6 +627,7 @@ bool BackgroundLoader::GetTaskFilename(int taskID, char* outBuffer)
     return success;
 }
 
+// Original: arm9/main @ 0x02030400; symbol: _ZN16BackgroundLoader22AllocateInScratchSpaceEPNS_4Task22ScratchSpaceAllocationEj; size: 0x184.
 void* BackgroundLoader::AllocateInScratchSpace(BackgroundLoader::Task::ScratchSpaceAllocation* output, unsigned int filesize)
 {
     BackgroundLoader::Task::ScratchSpaceAllocation* orderedBlocks[24];
@@ -689,6 +723,7 @@ void* BackgroundLoader::AllocateInScratchSpace(BackgroundLoader::Task::ScratchSp
     return returnAddress;
 }
 
+// Original: arm9/main @ 0x02030584; symbol: _ZN16BackgroundLoader16FreeScratchSpaceEPNS_4Task22ScratchSpaceAllocationE; size: 0x44.
 bool BackgroundLoader::FreeScratchSpace(Task::ScratchSpaceAllocation* block)
 {
     bool success = false;
@@ -704,6 +739,7 @@ bool BackgroundLoader::FreeScratchSpace(Task::ScratchSpaceAllocation* block)
     return success;
 }
 
+// Original: arm9/main @ 0x020305C8; symbol: _ZN16BackgroundLoader15RefreshCountersEv; size: 0x6C.
 void BackgroundLoader::RefreshCounters()
 {
     rightmostAllocationByte_ = 0;

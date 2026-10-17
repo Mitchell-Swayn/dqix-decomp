@@ -5,29 +5,30 @@
 #include <globaldefs.h>
 
 #ifdef jpn
-#define func_020100a8 func_0200ff04
-#define func_0200ff1c func_0200fd78
-#define func_02012fe4 func_02012dac
+#define GameState_ReadProtagonistObjectIndex func_0200ff04
+#define GameState_GetObjectWithFlag100 func_0200fd78
+#define ReadGlobalValueAt020FB3F0 func_02012dac
 #endif
 
 extern "C"
 {
 
-unsigned int func_020100a8(GameState*);
-char* func_0200ff1c(GameState*, unsigned int);
+unsigned int GameState_ReadProtagonistObjectIndex(GameState*);
+char* GameState_GetObjectWithFlag100(GameState*, unsigned int);
 
 // returns the overland zone instance
-void* func_02012fe4();
+void* ReadGlobalValueAt020FB3F0();
 }
 
 // USA: func_020a5cb8
 // JPN: func_020a7a5c
+// Original: arm9/main @ 0x020A5CB8; symbol: _Z21GenerateNewMapQualityv; size: 0x158.
 unsigned short GenerateNewMapQuality()
 {
     GameState* gameState = GameState::GetInstance();
-    char* maybeMainCharDataPtr = func_0200ff1c(gameState, func_020100a8(gameState));
+    char* maybeMainCharDataPtr = GameState_GetObjectWithFlag100(gameState, GameState_ReadProtagonistObjectIndex(gameState));
     // Another pointless function call
-    (void)func_02012fe4();
+    (void)ReadGlobalValueAt020FB3F0();
     GrottoStruct* grotto = gameState->GetGrottoStruct();
 
 #ifdef jpn
@@ -94,6 +95,7 @@ unsigned short GenerateNewMapQuality()
 
 // USA: func_020a5e10
 // JPN: func_020a7bb4
+// Original: arm9/main @ 0x020A5E10; symbol: _Z19GenerateMapLocationj; size: 0x6C.
 unsigned short GenerateMapLocation(unsigned int quality)
 {
     if (quality >= 81 && quality <= 248)
@@ -105,6 +107,7 @@ unsigned short GenerateMapLocation(unsigned int quality)
 
 // USA: func_020a5e7c
 // JPN: func_020a7c20
+// Original: arm9/main @ 0x020A5E7C; symbol: _ZN19TreasureMapMetadata24InitialiseAsNonLegacyMapEji; size: 0x80.
 void TreasureMapMetadata::InitialiseAsNonLegacyMap(unsigned int quality, int seed)
 {
     VectorizedMemset(this, 0, 28);
@@ -133,6 +136,7 @@ void TreasureMapMetadata::InitialiseAsNonLegacyMap(unsigned int quality, int see
 
 // USA: func_020a5efc
 // JPN: func_020a7ca0
+// Original: arm9/main @ 0x020A5EFC; symbol: _ZN19TreasureMapMetadata25InitialiseAsLegacyBossMapEjj; size: 0x8C.
 void TreasureMapMetadata::InitialiseAsLegacyBossMap(unsigned int bossID, unsigned int level)
 {
     VectorizedMemset(this, 0, 28);
@@ -167,6 +171,7 @@ void TreasureMapMetadata::InitialiseAsLegacyBossMap(unsigned int bossID, unsigne
 
 // USA: func_020a5f88
 // JPN: func_020a7d2c
+// Original: arm9/main @ 0x020A5F88; symbol: _ZN19TreasureMapMetadata17SetDiscoveryStateE15eDiscoveryState; size: 0x48.
 void TreasureMapMetadata::SetDiscoveryState(eDiscoveryState state)
 {
     DiscoveryStateAndMapTypeAndUnknown &= 0xF8;
@@ -186,6 +191,7 @@ void TreasureMapMetadata::SetDiscoveryState(eDiscoveryState state)
 
 // USA: func_020a5fd0
 // JPN: func_020a7d74
+// Original: arm9/main @ 0x020A5FD0; symbol: _ZNK19TreasureMapMetadata17GetDiscoveryStateEv; size: 0x2C.
 eDiscoveryState TreasureMapMetadata::GetDiscoveryState() const
 {
     if (DiscoveryStateAndMapTypeAndUnknown & 0x01)
@@ -199,6 +205,7 @@ eDiscoveryState TreasureMapMetadata::GetDiscoveryState() const
 
 // USA: func_020a5ffc
 // JPN: func_020a7da0
+// Original: arm9/main @ 0x020A5FFC; symbol: _ZN19TreasureMapMetadata10SetMapTypeE16eTreasureMapType; size: 0x34.
 void TreasureMapMetadata::SetMapType(eTreasureMapType type)
 {
     DiscoveryStateAndMapTypeAndUnknown &= 0xe7;
@@ -214,6 +221,7 @@ void TreasureMapMetadata::SetMapType(eTreasureMapType type)
 
 // USA: func_020a6030
 // JPN: func_020a7dd4
+// Original: arm9/main @ 0x020A6030; symbol: _ZNK19TreasureMapMetadata10GetMapTypeEv; size: 0x20.
 eTreasureMapType TreasureMapMetadata::GetMapType() const
 {
     if (DiscoveryStateAndMapTypeAndUnknown & 0x08)
@@ -225,6 +233,7 @@ eTreasureMapType TreasureMapMetadata::GetMapType() const
 
 // USA: func_020a6050
 // JPN: func_020a7df4
+// Original: arm9/main @ 0x020A6050; symbol: _ZN19TreasureMapMetadata24SetInitialByteUnknownBitEv; size: 0x10.
 void TreasureMapMetadata::SetInitialByteUnknownBit()
 {
     DiscoveryStateAndMapTypeAndUnknown |= 0x20;
@@ -232,6 +241,7 @@ void TreasureMapMetadata::SetInitialByteUnknownBit()
 
 // USA: func_020a6060
 // JPN: func_020a7e04
+// Original: arm9/main @ 0x020A6060; symbol: _ZN19TreasureMapMetadata26ClearInitialByteUnknownBitEv; size: 0x10.
 void TreasureMapMetadata::ClearInitialByteUnknownBit()
 {
     DiscoveryStateAndMapTypeAndUnknown &= 0xdf;
@@ -239,6 +249,7 @@ void TreasureMapMetadata::ClearInitialByteUnknownBit()
 
 // USA: func_020a6070
 // JPN: func_020a7e14
+// Original: arm9/main @ 0x020A6070; symbol: _ZNK19TreasureMapMetadata24GetInitialByteUnknownBitEv; size: 0x14.
 bool TreasureMapMetadata::GetInitialByteUnknownBit() const
 {
     return DiscoveryStateAndMapTypeAndUnknown & 0x20;

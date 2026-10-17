@@ -3,10 +3,12 @@
 #pragma dont_inline on
 #include "SoundVoice.h"
 extern int ARM7_SoundSine(int);
+// Original: arm7/wram @ 0x03800448; symbol: ARM7_InitializeSoundModulation.
 void ARM7_InitializeSoundModulation(SoundModulationParameters *mod)
 {
  mod->unknown0=0;mod->depth=0;mod->range=1;mod->speed=16;mod->delay=0;
 }
+// Original: arm7/wram @ 0x0380046C; symbol: ARM7_UpdateSoundModulation.
 void ARM7_UpdateSoundModulation(SoundModulation *mod)
 {
  unsigned int phase;
@@ -17,6 +19,7 @@ void ARM7_UpdateSoundModulation(SoundModulation *mod)
  mod->phase&=255;
  mod->phase|=phase<<8;
 }
+// Original: arm7/wram @ 0x038004CC; symbol: ARM7_ReadSoundModulation.
 int ARM7_ReadSoundModulation(SoundModulation *mod)
 {
  int sine;

@@ -126,7 +126,9 @@ public:
     unsigned int unknown_5cb4_;
     unsigned int unknown_5cb8_;
     unsigned int unknown_5cbc_;
-    char unk_5cc0[0x5cd0 - 0x5cc0];
+    char unk_5cc0[8];
+    unsigned char unknownByte_5cc8_;
+    char unk_5cc9[7];
     unsigned char unknownBitFlags_5cd0_[10];
     unsigned char unknownPlacementByte_5cda_;
     char unk_5cdb[1];

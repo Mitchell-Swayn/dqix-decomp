@@ -120,13 +120,36 @@ def audit(root, report_path):
     root = root.resolve()
     report = json.loads(report_path.read_text())
     reviewed = reviewed_exceptions(root, report)
-    reviewed_sources = {entry['source'] for entry in reviewed}
+    from runtime_support import SDK_CLASS, evidence_class, load as runtime_policy, summarize
+    runtime = runtime_policy(root)
+    runtime_reviews = []
+    lookup = {unit['name']: unit for unit in report['units']}
+    for row in runtime:
+        if row['classification'] != 'runtime_assembly':
+            continue
+        source = root / row['source']
+        unit = lookup[Path(row['source']).with_suffix('').as_posix()]
+        start = int(row['address'], 0)
+        module = (root / 'build/usa/build/arm9.bin').read_bytes()
+        function = next(f for f in unit['functions'] if f['name'] == row['name'])
+        if (hashlib.sha256(source.read_bytes()).hexdigest() != row['source_sha256'] or
+            hashlib.sha256(module[start-0x02000000:start-0x02000000+row['size']]).hexdigest() != row['original_sha256'] or
+            function.get('fuzzy_match_percent') != 100 or int(function['size']) != row['size']):
+            raise ValueError('Accepted runtime assembly verification changed: ' + row['name'])
+        sdk = evidence_class(row) == SDK_CLASS
+        runtime_reviews.append(dict(source=row['source'], symbol=row['name'], size=row['size'],
+                                    evidence_class=evidence_class(row),
+                                    evidence_origin=row['evidence']['origin'] if sdk else 'vendor_archive',
+                                    review_status=('User-authorized matching SDK assembly (community reconstruction, not a vendor original)'
+                                                   if sdk else 'User-authorized matching runtime assembly'),
+                                    c_instruction_credit=0, evidence=row['evidence']))
+    reviewed_sources = {entry['source'] for entry in reviewed} | {entry['source'] for entry in runtime_reviews}
     cache = {}
     groups = {name: {key: 0 for key in COUNTERS} for name in
               ("original_binary_units", "source_units_with_assembly_syntax", "source_units_without_detected_assembly")}
     units = []
     for unit in report["units"]:
-        source = next((root / (unit["name"] + extension) for extension in (".cpp", ".c")
+        source = next((root / (unit["name"] + extension) for extension in (".cpp", ".c", ".s")
                        if (root / (unit["name"] + extension)).is_file()), None)
         if not unit.get('metadata', {}).get('auto_generated', True) and unit.get('metadata', {}).get('source_path'):
             source = root / unit['metadata']['source_path']
@@ -136,6 +159,8 @@ def audit(root, report_path):
         else:
             inspect(source.resolve(), root, cache)
             affected = affected_files(source.resolve(), cache)
+            if source.suffix == '.s':
+                affected.add(source.relative_to(root).as_posix())
             category = "source_units_with_assembly_syntax" if affected else "source_units_without_detected_assembly"
         for key in COUNTERS:
             groups[category][key] += int(unit["measures"].get(key, 0))
@@ -156,6 +181,10 @@ def audit(root, report_path):
                             "This scan grants no approval; separately recorded reviews are validated against source/module hashes and report matches"],
             "groups": groups, "units": units,
             "reviewed_exceptions": reviewed,
+            "runtime_support": dict(summarize(runtime),
+                                    existing_c_functions=sum(r['classification'] == 'runtime_existing_c' for r in runtime),
+                                    c_instruction_credit=0),
+            "runtime_reviews": runtime_reviews,
             "sites": [dict(source=e["source"], sites=e["sites"]) for _, e in sorted(cache.items()) if e["sites"]]}
 
 

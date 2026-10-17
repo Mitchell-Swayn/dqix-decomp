@@ -2,6 +2,7 @@
 #pragma dont_inline on
 #include "SoundSequence.h"
 extern void ARM7_InitializeSoundModulation(SoundModulationParameters*);
+// Original: arm7/wram @ 0x03800FA8; symbol: ARM7_InitializeSoundTrack.
 void ARM7_InitializeSoundTrack(SoundTrack *track)
 {
  track->start=0;track->cursor=0;

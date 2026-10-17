@@ -1,0 +1,3770 @@
+{
+  "schema_version": 1,
+  "authorization": "User: Use matching assembly for runtime helpers; do not assign C reconstruction.",
+  "functions": [
+    {
+      "module": "arm9/main",
+      "name": "_dadd",
+      "address": "0x0200ab28",
+      "size": 792,
+      "source": "src/RuntimeSupport/_dadd.cpp",
+      "source_sha256": "dc295cbdca4d42c76e985415561cec1b061acd7b0881ce9e1ec97ebc1d1106b5",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_d_add.o",
+        "symbols": [
+          "_d_add",
+          "_dadd"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_d_add.s"
+        ],
+        "size": 792,
+        "method": "exact bytes after resolving relocations",
+        "relocations": [
+          {
+            "offset": 12,
+            "relocation_type": 1,
+            "symbol": "__dsub_start",
+            "resolved_target": "0x200b618"
+          }
+        ]
+      },
+      "original_sha256": "2bf0330f455c85b2c0d20e44b4d2cbcaf38dcc7e2f6d3b3c431cdd0a79d3115b",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [
+          {
+            "offset": 12,
+            "condition": 4,
+            "displacement": 2788
+          }
+        ],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_d2f",
+      "address": "0x0200ae40",
+      "size": 260,
+      "source": "src/RuntimeSupport/_d2f.cpp",
+      "source_sha256": "3c988a7e88316f8f73baf310c59fdea8b04f81b905fc21ebd2da3b8fb0c1617b",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_d_dtof.o",
+        "symbols": [
+          "_f_qtof",
+          "_d_dtof",
+          "_d2f"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_d_dtof.s"
+        ],
+        "size": 260,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "46d1b63c88842e40fffdc01550cd8902742a3ced15bb4c22b9cc8cf0ebf7d459",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_dfix",
+      "address": "0x0200af44",
+      "size": 76,
+      "source": "src/RuntimeSupport/_dfix.cpp",
+      "source_sha256": "0af8280555db3bba76e67ecbac0426df6fb0797d88b976ffb0af27292977ec6c",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_d_dtoi.o",
+        "symbols": [
+          "_d_dtoi",
+          "_dfix"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_d_dtoi.s"
+        ],
+        "size": 76,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "f391de4cee74649ab1507aed3892b723664fe078e8495b127d167e92a53aa2a0",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_dfixu",
+      "address": "0x0200af90",
+      "size": 88,
+      "source": "src/RuntimeSupport/dfixu.cpp",
+      "source_sha256": "a579a6b5e42482580c50637a850bf15039b0b488a9c5f7c9e8008d088a1d2e89",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_d_dtou.o",
+        "symbols": [
+          "_d_dtou",
+          "_dfixu"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_d_dtou.s"
+        ],
+        "size": 88,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "ec215384d1cf23dc4be407c66ab6909a430d5107b89695fbe7a390c9c65ac078",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_ll_ufrom_d",
+      "address": "0x0200afe8",
+      "size": 140,
+      "source": "src/RuntimeSupport/_ll_ufrom_d.cpp",
+      "source_sha256": "8f304452912be984f6f58e612deeb4273da15a77930222f8f3835c0cb9c77b89",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_d_dtoull.o",
+        "symbols": [
+          "_d_dtoull",
+          "_ll_ufrom_d"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_d_dtoull.s"
+        ],
+        "size": 140,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "69a48b26acc1871c63b88f7920dc071f4111e0b99aae88821b76a956890bae8a",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_dflt",
+      "address": "0x0200b074",
+      "size": 64,
+      "source": "src/RuntimeSupport/_dflt.cpp",
+      "source_sha256": "ff020f0ef31a75f44162c2915015639e2431f0d499711fe602bdb34dfb00808c",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_d_itod.o",
+        "symbols": [
+          "_d_itod",
+          "_dflt"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_d_itod.s"
+        ],
+        "size": 64,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "7478e16a269a5835b5258a7df8529b2bf9021a7106421a7ae9623a01b9ac4a4a",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_dfltu",
+      "address": "0x0200b0b4",
+      "size": 60,
+      "source": "src/RuntimeSupport/_dfltu.cpp",
+      "source_sha256": "0febdd9ef0992213a30aa2e28c211ec44f311d9ebcb581b771fdca101b3e9189",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_d_itod.o",
+        "symbols": [
+          "_d_utod",
+          "_dfltu"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_d_itod.s"
+        ],
+        "size": 60,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "3859ba8fff3004ff81ea2ce721d63ef25ac866b11195e2526af9971b6fa4e472",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_dmul",
+      "address": "0x0200b0f0",
+      "size": 868,
+      "source": "src/RuntimeSupport/_dmul.cpp",
+      "source_sha256": "3a65b90d689f883f79baec522ac7bffe51951be48988f7c8f22adbdae7c49a4b",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_d_mul.o",
+        "symbols": [
+          "_d_mul",
+          "_dmul"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_d_mul.s"
+        ],
+        "size": 868,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "16a30a586ebe9ac165d52d79b8d6ece3be666b610328fe3fc4a778744e676c4e",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_dsub",
+      "address": "0x0200b608",
+      "size": 948,
+      "source": "src/RuntimeSupport/_dsub.cpp",
+      "source_sha256": "ed9dd06374604f2559d27f8226ffa1298144351d5bbc9e06bf426c80399cb4f2",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_d_sub.o",
+        "symbols": [
+          "_d_sub",
+          "_dsub"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_d_sub.s"
+        ],
+        "size": 948,
+        "method": "exact bytes after resolving relocations",
+        "relocations": [
+          {
+            "offset": 12,
+            "relocation_type": 1,
+            "symbol": "__dadd_start",
+            "resolved_target": "0x200ab38"
+          }
+        ]
+      },
+      "original_sha256": "839edf66641e5f704ce7925accf57c0ef6375aeccca1666166300a06874d7741",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [
+          {
+            "offset": 12,
+            "condition": 4,
+            "displacement": -2780
+          }
+        ],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_fadd",
+      "address": "0x0200b9bc",
+      "size": 540,
+      "source": "src/RuntimeSupport/_fadd.cpp",
+      "source_sha256": "39073f4a7fd574a689c1a2333774e2a5e3663e7fc48574a7db5775fbe64c46eb",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_add.o",
+        "symbols": [
+          "_f_add",
+          "_fadd"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_add.s"
+        ],
+        "size": 540,
+        "method": "exact bytes after resolving relocations",
+        "relocations": [
+          {
+            "offset": 8,
+            "relocation_type": 1,
+            "symbol": "__fsub_start",
+            "resolved_target": "0x200cab0"
+          }
+        ]
+      },
+      "original_sha256": "8d35dff4865482d187190fc373ad3e0e002ee516689851df0a691d2d36b1f7a3",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [
+          {
+            "offset": 8,
+            "condition": 4,
+            "displacement": 4332
+          }
+        ],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_dgeq",
+      "address": "0x0200bbe0",
+      "size": 152,
+      "source": "src/RuntimeSupport/dgeq.cpp",
+      "source_sha256": "689ee0bfd55963fd83450e3cc81cf70e6444199ac0288561a9091f22cb857152",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_cmp.o",
+        "symbols": [
+          "_d_fge",
+          "_dgeq"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_cmp.s"
+        ],
+        "size": 152,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "08138c3c23982b37134dbfa713d5e18a31ec2157471d9309b31054f23883aa9f",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_dgr",
+      "address": "0x0200bc78",
+      "size": 152,
+      "source": "src/RuntimeSupport/_dgr.cpp",
+      "source_sha256": "bda5688966ecf315bf31752c42d3480b039acadd4ec4fc61eda061691d0c9ec7",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_cmp.o",
+        "symbols": [
+          "_d_fgt",
+          "_dgr"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_cmp.s"
+        ],
+        "size": 152,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "ca8000309ac178595c6eb23e7f8c27797667224867a56b90b5ebdf5f4bbae12d",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_dleq",
+      "address": "0x0200bd10",
+      "size": 164,
+      "source": "src/RuntimeSupport/dleq.cpp",
+      "source_sha256": "b1e5d5b87b7ab32f2738e63ef2a5d9e0f1da52ef3331c10bc591a00eb49db33a",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_cmp.o",
+        "symbols": [
+          "_d_fle",
+          "_dleq"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_cmp.s"
+        ],
+        "size": 164,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "0107b9d5fd30718d14dce4f537f3393c3f8ac4d8b4ee4414796e8e35384265a3",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_dls",
+      "address": "0x0200bdb4",
+      "size": 156,
+      "source": "src/RuntimeSupport/_dls.cpp",
+      "source_sha256": "dd748c7687d6fc829ff547c96cfc5358df30f09478240cfb48880914b64be7f0",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_cmp.o",
+        "symbols": [
+          "_d_flt",
+          "_dls"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_cmp.s"
+        ],
+        "size": 156,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "c89eab0fdc174faf385a8d90c50be7178a9462fc3664374ac6d2100113b84ebc",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_deq",
+      "address": "0x0200be50",
+      "size": 140,
+      "source": "src/RuntimeSupport/_deq.cpp",
+      "source_sha256": "0167f5b5086647083edebd374d1fcd958919f2c44a9daa66c21ca7442df22345",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_cmp.o",
+        "symbols": [
+          "_d_feq",
+          "_deq"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_cmp.s"
+        ],
+        "size": 140,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "d647e60f306d2f4623a7c6c0a1968c53d58225e92554b162c7370f39f90b6f76",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_dneq",
+      "address": "0x0200bedc",
+      "size": 140,
+      "source": "src/RuntimeSupport/_dneq.cpp",
+      "source_sha256": "ba38c677af670c52fab0ca0b5e7d0ecbe482b88b3b7d5abe9cdc690ff438eb7b",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_cmp.o",
+        "symbols": [
+          "_d_fne",
+          "_dneq"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_cmp.s"
+        ],
+        "size": 140,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "72c6fbb9b03bd663f0478fd48cd17308e889897d92b307318ec03b004a76b68e",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_fgeq",
+      "address": "0x0200bf68",
+      "size": 92,
+      "source": "src/RuntimeSupport/_fgeq.cpp",
+      "source_sha256": "be3859159873c84fcd978212530a055455aff3a4f9081bb8d3d479e90bd73ee6",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_cmp.o",
+        "symbols": [
+          "_f_fge",
+          "_fgeq"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_cmp.s"
+        ],
+        "size": 92,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "386719fa984453de893ef70eba0989bb085c318f7ae0adbeac1480436480944a",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_fgr",
+      "address": "0x0200bfc4",
+      "size": 92,
+      "source": "src/RuntimeSupport/_fgr.cpp",
+      "source_sha256": "82b0f3f80a6e5765b18e858d8bb4b75e973c7b69fb0f042043605d8ae8e9f63f",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_cmp.o",
+        "symbols": [
+          "_f_fgt",
+          "_fgr"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_cmp.s"
+        ],
+        "size": 92,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "14781c4eadc2af64900cd3236124dc5851c1e0d73aff5ec1592c0ca0036849a2",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_fleq",
+      "address": "0x0200c020",
+      "size": 104,
+      "source": "src/RuntimeSupport/_fleq.cpp",
+      "source_sha256": "d96114b8b0188d1d020f63862a59ead21ce8206dcb11e60f5aa4ed355a9f501d",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_cmp.o",
+        "symbols": [
+          "_f_fle",
+          "_fleq"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_cmp.s"
+        ],
+        "size": 104,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "843c40fd75846b9dfc4d506851d6179e2f7b910a6b0fa8b9ed857077ca064e37",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_fls",
+      "address": "0x0200c088",
+      "size": 92,
+      "source": "src/RuntimeSupport/_fls.cpp",
+      "source_sha256": "aa1953089f65962f960aff19490732c283b9b2dbccd8d8224c1c51d513a1fdbb",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_cmp.o",
+        "symbols": [
+          "_f_flt",
+          "_fls"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_cmp.s"
+        ],
+        "size": 92,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "999e8951fe0432f49ad3a5549f38a01df9936278ce8082e476c7902ead23cd2f",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_feq",
+      "address": "0x0200c0e4",
+      "size": 104,
+      "source": "src/RuntimeSupport/_feq.cpp",
+      "source_sha256": "b66b4255f52dbaae5ff977f419e0f064354d5d812ef4e185689875bb2e6273b1",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_cmp.o",
+        "symbols": [
+          "_f_feq",
+          "_feq"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_cmp.s"
+        ],
+        "size": 104,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "b8b930efa19ca1d0a51b1f8eb45f326f673e959f4550cec7c5772ee338101c7e",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_fneq",
+      "address": "0x0200c14c",
+      "size": 104,
+      "source": "src/RuntimeSupport/_fneq.cpp",
+      "source_sha256": "b7b0efbbf45544b4814aa93c917121f139003826f2abda422c83b94582eb822d",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_cmp.o",
+        "symbols": [
+          "_f_fne",
+          "_fneq"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_cmp.s"
+        ],
+        "size": 104,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "9cd872ef581cc397b29e335f1e842bee746d9c93434499fafb6527bea0071a5d",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_fdiv",
+      "address": "0x0200c1c0",
+      "size": 952,
+      "source": "src/RuntimeSupport/_fdiv.cpp",
+      "source_sha256": "6db445d303a72a84ac19daaebf833605ecca486ddc9cfd8a3deb630c893acf28",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_div.o",
+        "symbols": [
+          "_f_div",
+          "_fdiv"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_div.s"
+        ],
+        "size": 952,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "ebb0569ce19f6815efb0cdcf0aafb524739ef4b6e3a6dc2092e42402ef686236",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [
+          {
+            "name": ".L_0200c274",
+            "offset": 180,
+            "size": 256,
+            "type": 1
+          }
+        ],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_f2d",
+      "address": "0x0200c578",
+      "size": 132,
+      "source": "src/RuntimeSupport/f2d.cpp",
+      "source_sha256": "8cb1b9963d9e716dcab6d900746c3be311e3c64914c28e20dfc7d300ad3c75ab",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_ftod.o",
+        "symbols": [
+          "_f_ftod",
+          "_f2d"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_ftod.s"
+        ],
+        "size": 132,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "29e8c250fe28c58be66a491d6465ae3c794af8831906ec999a9e1ed1450d766c",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_ffix",
+      "address": "0x0200c5fc",
+      "size": 52,
+      "source": "src/RuntimeSupport/_ffix.cpp",
+      "source_sha256": "3f7a9a99c8da0c338098bbc02ec5a8500929fba7b7790c564a4714c83d91347b",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_ftoi.o",
+        "symbols": [
+          "_f_ftoi",
+          "_ffix"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_ftoi.s"
+        ],
+        "size": 52,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "d5fd0208b26ed20e8eb752c2d96599d06f504fdb31f79713269d19abe2fb9e91",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_ffixu",
+      "address": "0x0200c630",
+      "size": 64,
+      "source": "src/RuntimeSupport/_ffixu.cpp",
+      "source_sha256": "149b0e48aac732c1cb67290dd8738518e915ed74f53a1257651caa2ef7ec8b50",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_ftou.o",
+        "symbols": [
+          "_f_ftou",
+          "_ffixu"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_ftou.s"
+        ],
+        "size": 64,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "bca10f90b1a31d2b3ff9aab49f848e3c98c2e0a2f6df92a6b62e56ebe8c3c7dd",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_fflt",
+      "address": "0x0200c670",
+      "size": 72,
+      "source": "src/RuntimeSupport/_fflt.cpp",
+      "source_sha256": "3d105d21d2aa12ae6687116535d78b9a885a18f53396a322e0ff5db842afddb7",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_itof.o",
+        "symbols": [
+          "_f_itof",
+          "_fflt"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_itof.s"
+        ],
+        "size": 72,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "23ede7780499aa4d14fc532deb5e0ea7b35ee3b155dc70327368c88037330563",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_ffltu",
+      "address": "0x0200c6b8",
+      "size": 72,
+      "source": "src/RuntimeSupport/_ffltu.cpp",
+      "source_sha256": "f85b8949b4e9894759c8f3c411b09c3ae6e1eb25574e648884bddf66a4daa1f6",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_itof.o",
+        "symbols": [
+          "_f_utof",
+          "_ffltu"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_itof.s"
+        ],
+        "size": 72,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "770a6347a450031c316f34fcb22fcf452a2bd1a0f2fcd1abb3b7b70f146dd8ba",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_ll_sto_f",
+      "address": "0x0200c700",
+      "size": 108,
+      "source": "src/RuntimeSupport/ll_sto_f.cpp",
+      "source_sha256": "3f2f6a85f7bdf5dbbcf131182e3072e8bcba6a0a5807df04059b2b1a6aa42230",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_lltof.o",
+        "symbols": [
+          "_f_lltof",
+          "_ll_sto_f"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_lltof.s"
+        ],
+        "size": 108,
+        "method": "exact bytes after resolving relocations",
+        "relocations": [
+          {
+            "offset": 28,
+            "relocation_type": 1,
+            "symbol": "__f_itof_common",
+            "resolved_target": "0x200c67c"
+          }
+        ]
+      },
+      "original_sha256": "3fdbaf51ae4b33f6390b1e1785054f9cf4ed053adcb5b71f2fa7047db3613863",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [
+          {
+            "offset": 28,
+            "condition": 14,
+            "displacement": -160
+          }
+        ],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_ll_uto_f",
+      "address": "0x0200c76c",
+      "size": 104,
+      "source": "src/RuntimeSupport/ll_uto_f.cpp",
+      "source_sha256": "7d9fdf2f9340701cbebb80bb34d4081b757c003d0b9d381f8ff197eeb1aa3098",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_lltof.o",
+        "symbols": [
+          "_f_ulltof",
+          "_ll_uto_f"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_lltof.s"
+        ],
+        "size": 104,
+        "method": "exact bytes after resolving relocations",
+        "relocations": [
+          {
+            "offset": 12,
+            "relocation_type": 1,
+            "symbol": "__f_utof_common",
+            "resolved_target": "0x200c6bc"
+          }
+        ]
+      },
+      "original_sha256": "40ddde464813d60e5086870d8334356a852d4ad7670eba2a44ac006bfdbf1028",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [
+          {
+            "offset": 12,
+            "condition": 14,
+            "displacement": -188
+          }
+        ],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_fmul",
+      "address": "0x0200c7d4",
+      "size": 480,
+      "source": "src/RuntimeSupport/_fmul.cpp",
+      "source_sha256": "db8ae3cc3c613eca450cc56fe48dd66d91baa3d43047bc31021f48b51015e49e",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_mul.o",
+        "symbols": [
+          "_f_mul",
+          "_fmul"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_mul.s"
+        ],
+        "size": 480,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "21410393c8ab1edc30019dd39efd54e8e35b8ca31c39c92fbd114e2211af8bed",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_fsub",
+      "address": "0x0200caa4",
+      "size": 632,
+      "source": "src/RuntimeSupport/_fsub.cpp",
+      "source_sha256": "e6ca6ca75e45944920bd9c424be446a4b440cb60a9f2b39955edef158f535d50",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_f_sub.o",
+        "symbols": [
+          "_f_sub",
+          "_fsub"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_f_sub.s"
+        ],
+        "size": 632,
+        "method": "exact bytes after resolving relocations",
+        "relocations": [
+          {
+            "offset": 8,
+            "relocation_type": 1,
+            "symbol": "__fadd_start",
+            "resolved_target": "0x200b9c8"
+          }
+        ]
+      },
+      "original_sha256": "2e3a275496dab40c1cc3adab85bf88ace3cfebb4aab2c7b65a24a6b099f68e29",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [
+          {
+            "offset": 8,
+            "condition": 4,
+            "displacement": -4324
+          }
+        ],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_ll_mod",
+      "address": "0x0200cd1c",
+      "size": 16,
+      "source": "src/RuntimeSupport/_ll_mod.cpp",
+      "source_sha256": "89817717752291a4d9e56610a4140ed78e3cbca6df351ff9c10666510fd6883c",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_ll_div.o",
+        "symbols": [
+          "_ll_mod"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_ll_div.s"
+        ],
+        "size": 16,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "0cfcdfd477eb7435e397b84772021f2fbf7050853cf54815d11154e2be979bd7",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [
+          {
+            "offset": 12,
+            "condition": 14,
+            "displacement": 20
+          }
+        ],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_ll_sdiv",
+      "address": "0x0200cd2c",
+      "size": 432,
+      "source": "src/RuntimeSupport/_ll_sdiv.cpp",
+      "source_sha256": "441ae4dd4f07e30cf56a857a4e009afa40cba731ce8ac38bdba0a47086c4e76b",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_ll_div.o",
+        "symbols": [
+          "_ll_div",
+          "_ll_sdiv"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_ll_div.s"
+        ],
+        "size": 432,
+        "method": "exact bytes after resolving relocations",
+        "relocations": [
+          {
+            "offset": 60,
+            "relocation_type": 1,
+            "symbol": "_s32_div_f",
+            "resolved_target": "0x200cf44"
+          }
+        ]
+      },
+      "original_sha256": "d3074a755593af60455da034ffaa8829a18a4a6e3872817c1f2fcb7cc250bfc2",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_ll_udiv",
+      "address": "0x0200cedc",
+      "size": 12,
+      "source": "src/RuntimeSupport/_ll_udiv.cpp",
+      "source_sha256": "825e0a4dd27fc1464e0aeb23c1b41fb12b3f05a1313fe7772d3d2a5f1e8da2da",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_ll_div.o",
+        "symbols": [
+          "_ull_div",
+          "_ll_udiv"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_ll_div.s"
+        ],
+        "size": 12,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "1ebc0f6fa62024d985b12560ce08f6c2f79752aed0fd5e0111a55f54acbd802f",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [
+          {
+            "offset": 8,
+            "condition": 14,
+            "displacement": 12
+          }
+        ],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_ull_mod",
+      "address": "0x0200cee8",
+      "size": 60,
+      "source": "src/RuntimeSupport/_ull_mod.cpp",
+      "source_sha256": "d851feb3db4c39137bc1dbbaaf90beac6ef98f39ad6eaa7664217179a4f3b99c",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_ll_div.o",
+        "symbols": [
+          "_ull_mod"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_ll_div.s"
+        ],
+        "size": 60,
+        "method": "exact bytes after resolving relocations",
+        "relocations": [
+          {
+            "offset": 36,
+            "relocation_type": 1,
+            "symbol": "_u32_div_not_0_f",
+            "resolved_target": "0x200d158"
+          },
+          {
+            "offset": 28,
+            "relocation_type": 1,
+            "symbol": ".text",
+            "resolved_target": "0x200cd1c"
+          }
+        ]
+      },
+      "original_sha256": "ec20ea526d86012a89c9257f431ffe738c379a6ebc77dba608657a429fb29b01",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [
+          {
+            "offset": 28,
+            "condition": 1,
+            "displacement": -356
+          }
+        ],
+        "aliases": [],
+        "symbol_aliases": {
+          "data_0200d158": ".L_0200d158"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_ll_mul",
+      "address": "0x0200cf24",
+      "size": 32,
+      "source": "src/RuntimeSupport/ll_mul.cpp",
+      "source_sha256": "7447692a87ce9a4e66b5c98bb291d025ccacfd561102e333fb592dfc9706029f",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_ll_mul.o",
+        "symbols": [
+          "_ull_mul",
+          "_ll_mul"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_ll_mul.s"
+        ],
+        "size": 32,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "661b48b2adf3a6af3987ca653b5aaa2172d0d5137c91c6658cf18189b776a714",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_s32_div_f",
+      "address": "0x0200cf44",
+      "size": 524,
+      "source": "src/RuntimeSupport/_s32_div_f.cpp",
+      "source_sha256": "20ff9e31e4048d7e8ca6f42faec2e97877fd7b5cd01483c7d82940ef2a2b96e9",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_s32_div_f.o",
+        "symbols": [
+          "_s32_div_f"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_s32_div_f.s"
+        ],
+        "size": 524,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "e8183a62ffe6a54210cd7d025b01431ff792025c1b45a0e8537abd8cec16ccfb",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_u32_div_f",
+      "address": "0x0200d150",
+      "size": 484,
+      "source": "src/RuntimeSupport/_u32_div_f.cpp",
+      "source_sha256": "01ba048b367bda8dc3dff08dc51d9bc3ab857013eb543a5522e0207daa1f2418",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_u32_div_f.o",
+        "symbols": [
+          "_u32_div_f"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_u32_div_f.s"
+        ],
+        "size": 484,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "3b0403581ea03e86bdfc0cde00ea2ca13f522291aec399b93ecdf2fef57944eb",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [
+          {
+            "name": ".L_0200d158",
+            "offset": 8,
+            "size": 0,
+            "type": 0
+          }
+        ],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_ddiv",
+      "address": "0x0200d34c",
+      "size": 1348,
+      "source": "src/RuntimeSupport/_ddiv.cpp",
+      "source_sha256": "734bf7df2ed914c55d4fce50ffa8480fb2ea55f48f722aed84f79a2075852ed2",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a",
+        "object": "_d_div.o",
+        "symbols": [
+          "_d_div",
+          "_ddiv"
+        ],
+        "source_files": [
+          "D:\\Products\\ARM\\NITRO_Support_3_0_auto\\output\\ARM_EABI_Support\\Mathlib\\_d_div.s"
+        ],
+        "size": 1348,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "7149929ee02390c1ba274df15d3864c58fde29827f500330717cc0391376a559",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [
+          {
+            "name": ".L_0200d484",
+            "offset": 312,
+            "size": 256,
+            "type": 1
+          }
+        ],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "sys_exit",
+      "address": "0x0200d8bc",
+      "size": 16,
+      "source": "src/RuntimeSupport/sys_exit.cpp",
+      "source_sha256": "3f97135e981324e16896e4513597894b28c2fa43cba1cb37e0879117a618d338",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Runtime/Runtime_ARM/Runtime_NITRO/Lib/NITRO_Runtime_Ai_LE.a",
+        "object": "semihosted_conso",
+        "symbols": [
+          "sys_exit"
+        ],
+        "source_files": [],
+        "size": 16,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "570173cea185f5748ea246c8db528d2cc87d86099124b7d8a09d9356c5942518",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "Runtime_DecodeCompactSignedInteger",
+      "address": "0x0200d958",
+      "size": 140,
+      "source": "src/System/Runtime/Runtime_DecodeCompactSignedInteger.cpp",
+      "classification": "runtime_existing_c",
+      "evidence": {
+        "library": "ds/2.0/sp2/Runtime/Runtime_ARM/Runtime_NITRO/Lib/NITRO_Runtime_Ai_LE.a",
+        "object": "compressednumber",
+        "symbols": [
+          "_Z20__DecodeSignedNumberPcPl"
+        ],
+        "source_files": [],
+        "size": 140,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "6c41f47d46ffc3869e6e9deefb19579d9e6349eb436dee17450690047cd01b87",
+      "c_reconstruction_eligible": false,
+      "source_sha256": "5e279a75694d997a9fe09351927fa272a00d0e942d97390384da7d52935b871c"
+    },
+    {
+      "module": "arm9/main",
+      "name": "RuntimeUnwind_ReadCompactUnsignedInteger",
+      "address": "0x0200d9e4",
+      "size": 140,
+      "source": "src/System/Runtime/RuntimeUnwind_ReadCompactUnsignedInteger.cpp",
+      "classification": "runtime_existing_c",
+      "evidence": {
+        "library": "ds/2.0/sp2/Runtime/Runtime_ARM/Runtime_NITRO/Lib/NITRO_Runtime_Ai_LE.a",
+        "object": "compressednumber",
+        "symbols": [
+          "_Z22__DecodeUnsignedNumberPcPm"
+        ],
+        "source_files": [],
+        "size": 140,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "98eaf6bd6104832e2f150833a57cfa70de9e816b8bdc1646abc98b2791c63930",
+      "c_reconstruction_eligible": false,
+      "source_sha256": "b11a8da135cb4332a1780986bd00e259ed8389dc87ce2e2e6986ac3d1781429a"
+    },
+    {
+      "module": "arm9/main",
+      "name": "RuntimeExceptionRecord_DestroyExceptionObject",
+      "address": "0x0200ed8c",
+      "size": 40,
+      "source": "src/System/RuntimeExceptionCleanup.cpp",
+      "classification": "runtime_existing_c",
+      "evidence": {
+        "library": "ds/2.0/sp2/Runtime/Runtime_ARM/Runtime_NITRO/Lib/NITRO_Runtime_Ai_LE.a",
+        "object": "exceptionhandler",
+        "symbols": [
+          "__end__catch"
+        ],
+        "source_files": [],
+        "size": 40,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "c57dac5697410b32bb73d9fcd0e94d6f7c78175469323475534dbebad2d44f35",
+      "c_reconstruction_eligible": false,
+      "source_sha256": "57b9cd03e52310276ee57a7ced0b1891f37748c0d8fed23278ad316e77abeafd"
+    },
+    {
+      "module": "arm9/main",
+      "name": "__throw_catch_compare",
+      "address": "0x0200eff0",
+      "size": 432,
+      "source": "src/RuntimeSupport/throw_catch_compare.cpp",
+      "source_sha256": "a36c2356168daea2e143f752475be24576c0af77a877ceb671a34a5e504ed09d",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Runtime/Runtime_ARM/Runtime_NITRO/Lib/NITRO_Runtime_Ai_LE.a",
+        "object": "mwexception.o",
+        "symbols": [
+          "__throw_catch_compare"
+        ],
+        "source_files": [],
+        "size": 432,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "4c15dc90f41e09d74477d9e23386e1d5cfe0a292aa3e0d86c992613a0a7a95ae",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_Z15__PopStackFrameP12ThrowContextP13ExceptionInfo",
+      "address": "0x0200f1a0",
+      "size": 92,
+      "source": "src/RuntimeSupport/PopStackFrame.cpp",
+      "source_sha256": "79420a14e2d86d6467632b330bafaef2ee4f4788d69871a7474a3230d2918533",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Runtime/Runtime_ARM/Runtime_NITRO/Lib/NITRO_Runtime_Ai_LE.a",
+        "object": "exceptionhandler",
+        "symbols": [
+          "_Z15__PopStackFrameP12ThrowContextP13ExceptionInfo"
+        ],
+        "source_files": [],
+        "size": 92,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "6f080e9446ea407f39afb2f5007e006e77babc8129d24275c8ce9b5bcc65c945",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_Z17__TransferControlP12ThrowContextP13ExceptionInfoPc",
+      "address": "0x0200f2ec",
+      "size": 48,
+      "source": "src/RuntimeSupport/TransferControl.cpp",
+      "source_sha256": "9147939a8f695edf3789f98c4e07fb6f6c3259ee10c6dd9996251179b7c43c92",
+      "classification": "runtime_assembly",
+      "evidence": {
+        "library": "ds/2.0/sp2/Runtime/Runtime_ARM/Runtime_NITRO/Lib/NITRO_Runtime_Ai_LE.a",
+        "object": "exceptionhandler",
+        "symbols": [
+          "_Z17__TransferControlP12ThrowContextP13ExceptionInfoPc"
+        ],
+        "source_files": [],
+        "size": 48,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "e7ff02e1abff015edc15a122901399abf6a9ccd24e65ba557c6f6d4444cd9f96",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "__clear",
+      "address": "0x0200f374",
+      "size": 36,
+      "source": "src/System/RuntimeTerminationHook.cpp",
+      "classification": "runtime_existing_c",
+      "evidence": {
+        "library": "ds/2.0/sp2/Runtime/Runtime_ARM/Runtime_NITRO/Lib/NITRO_Runtime_Ai_LE.a",
+        "object": "cxxabi_clear.o",
+        "symbols": [
+          "__clear"
+        ],
+        "source_files": [],
+        "size": 36,
+        "method": "exact bytes, no overlapping relocations"
+      },
+      "original_sha256": "acd8c9eda332614f2c7d4a4f23dd2b8bd7995322a8b8f86ba888354160f01852",
+      "c_reconstruction_eligible": false,
+      "source_sha256": "bf5a149b2396634e01598e9f7a7ac2cb90a546f6e689a82c441f92c769c80190"
+    },
+    {
+      "module": "arm9/main",
+      "name": "VectorizedMemset",
+      "address": "0x020ca594",
+      "size": 188,
+      "source": "src/RuntimeSupport/VectorizedMemset.cpp",
+      "source_sha256": "d39da4f7b56a0ea5e4630829e8ebe47bd8f62412fe66e62c6bfd1785ed50ab84",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "MI_CpuFill8"
+        ],
+        "size": 188,
+        "method": "community reconstruction: pret pokediamond/pokeheartgold MI_CpuFill8, assembled and compared word-for-word with the original; NOT a vendor archive object",
+        "external_sources": [
+          {
+            "repository": "pret/pokediamond",
+            "commit": "ed142f69171f575e9359e113cd18f315cb0fcdd3",
+            "path": "arm9/lib/NitroSDK/src/MI_memory.c",
+            "url": "https://raw.githubusercontent.com/pret/pokediamond/ed142f69171f575e9359e113cd18f315cb0fcdd3/arm9/lib/NitroSDK/src/MI_memory.c",
+            "symbol": "MI_CpuFill8",
+            "lines": "173-223",
+            "local_copy": "build/provenance/fetch/pokediamond_MI_memory.c",
+            "sha256": "f8fa42d3c3027fd15796868bd972304f2d5b6315f6a68fda3d1452d6c29d863a"
+          },
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "14c48938174ec92563afc6d03de5fa162f4cfdce",
+            "path": "lib/NitroSDK/asm/mi_memory.s",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/14c48938174ec92563afc6d03de5fa162f4cfdce/lib/NitroSDK/asm/mi_memory.s",
+            "symbol": "MI_CpuFill8",
+            "lines": "221-282",
+            "local_copy": "build/provenance/fetch/pokeheartgold_mi_memory.s",
+            "sha256": "951a8d9cc34621fdf01e22d753fd7a1cb99e35c008385f098e3e4a86a6c71e8d"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/provenance/instruction_comparison.json",
+          "comparison_sha256": "4de8b306139edf861bb4f978ef35ace462a1abb9631df4f8e1c8b286cbb2cb63",
+          "variants": [
+            "pokediamond_expanded",
+            "pokeheartgold_verbatim"
+          ],
+          "instructions": 47
+        },
+        "fresh_object_check": {
+          "result": "build/runtime_append/fresh_object_check/result.json",
+          "result_sha256": "9485e67f2261c223d94a8f0deba2f19e218d83542b7cb058bb11cd0291e694c8",
+          "bytes": "build/runtime_append/fresh_object_check/bytes.json",
+          "bytes_sha256": "924401b833f0d625faffa56998aafb46a8601a798c0bc53aab3aedc6e8c46d11",
+          "candidate_source": "build/runtime_append/fresh_object_check/candidate.cpp",
+          "candidate_source_sha256": "d39da4f7b56a0ea5e4630829e8ebe47bd8f62412fe66e62c6bfd1785ed50ab84",
+          "candidate_object": "build/runtime_append/fresh_object_check/candidate.o",
+          "candidate_object_sha256": "fe50c39cdd6ebe5c8ae0f6e7248211a5f2894b77e89d1d3416dd22216bbbe249",
+          "toolchain": "tools/compile_verify_batch.py --require-raw via mwcc_runtime_inline in factory-dqix:0.1"
+        },
+        "evidence_manifest": {
+          "path": "build/provenance/manifest.json",
+          "sha256": "3af3a425e281bd2ea07319124755214d93a5fde67b4fb8e501ed213ddd53e285"
+        }
+      },
+      "original_sha256": "f5be979a555fb24f4afd7c39b0f4ab0fd7a874d38c37f8c8a3617d03f11c7aa9",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "MIi_CpuCopy16",
+      "address": "0x020ca3b8",
+      "size": 52,
+      "source": "src/RuntimeSupport/MIi_CpuCopy16.cpp",
+      "source_sha256": "86e5a961cd988534552c6200c3d8b1a1a49dcfcc8c74525e889b9fc797f603d6",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "f021442af873ae2cc90cb8efaa33c7ed74b2d40455758bddceefa98d6675c141",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "MIi_CpuCopy16"
+        ],
+        "size": 52,
+        "method": "Pinned community SDK assembly compiles to all52 original bytes; not a vendor archive object.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "14c48938174ec92563afc6d03de5fa162f4cfdce",
+            "path": "lib/NitroSDK/asm/mi_memory.s",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/14c48938174ec92563afc6d03de5fa162f4cfdce/lib/NitroSDK/asm/mi_memory.s",
+            "local_copy": "build/sdk-copy16-evidence/reference-mi_memory.s",
+            "sha256": "951a8d9cc34621fdf01e22d753fd7a1cb99e35c008385f098e3e4a86a6c71e8d"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-copy16-evidence/instruction-comparison.json",
+          "comparison_sha256": "ff80998e6c703c56367ca5e86fb64e75b7f1ef4763372ba0950c3ddbb7c756ec",
+          "variants": [
+            "pokeheartgold_verbatim"
+          ],
+          "instructions": 13
+        },
+        "fresh_object_check": {
+          "result": "build/sdk-copy16-evidence/result.json",
+          "result_sha256": "5a5349f1bf945cc41465a8aa89a7c71d34477639f6a891000c4e3d380d32aa73",
+          "bytes": "build/sdk-copy16-evidence/bytes.json",
+          "bytes_sha256": "d4b3b3beac39631d924cce291689d71d2ce955f27ba2a9518945d8ec060aca0d",
+          "candidate_source": "build/sdk-copy16-evidence/candidate.cpp",
+          "candidate_source_sha256": "86e5a961cd988534552c6200c3d8b1a1a49dcfcc8c74525e889b9fc797f603d6",
+          "candidate_object": "build/sdk-copy16-evidence/candidate.o",
+          "candidate_object_sha256": "8a82bf4051adc1e7cf75400c4698d4b8ddcd89b7293ecf342e98925532213a37",
+          "toolchain": "CodeWarrior2.0/sp2p2 default inline assembler; compile_verify_batch --require-raw"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-copy16-evidence/manifest.json",
+          "sha256": "fa2af4ea9765494fcfac301e493576d0d1ada143f03a2b7236a23a2591ceb241"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "MI_CpuCopy8",
+      "address": "0x020ca650",
+      "size": 384,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/MI_CpuCopy8.cpp",
+      "source_sha256": "50fd37ef259032c02854f265c8daf5ca79530ac2eedac331a4ff541aea48c6a1",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "369b6f2e559f13da0a9ba7a741ebf8ca3213db866a8f4eb97460809d8b54b86e",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "MI_CpuCopy8"
+        ],
+        "size": 384,
+        "method": "Pinned community SDK assembly worker source compiled after export/path/header changes. Sized actual object bytes independently equal unchanged original inventory bytes and unchanged delink target; only local label/register spelling, ABI export wrapper and documented SDK workaround configuration adapted.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "14c48938174ec92563afc6d03de5fa162f4cfdce",
+            "path": "lib/NitroSDK/asm/mi_memory.s",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/14c48938174ec92563afc6d03de5fa162f4cfdce/lib/NitroSDK/asm/mi_memory.s",
+            "local_copy": "build/sdk-assembly-evidence/MI_CpuCopy8/mi_memory.s",
+            "sha256": "951a8d9cc34621fdf01e22d753fd7a1cb99e35c008385f098e3e4a86a6c71e8d"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly-evidence/MI_CpuCopy8/instruction-comparison.json",
+          "comparison_sha256": "409a0845fba0941c1a36aec0d0a75056168f66a63bcf6b75d2a7431673b0aa25",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 96
+        },
+        "fresh_object_check": {
+          "result": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0000/result.json",
+          "result_sha256": "06ac8bdf5db634de868cbfa01aeff91f35f682e0fb4132f8a73233ddaa5933db",
+          "bytes": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0000/bytes.json",
+          "bytes_sha256": "399441d8aaee2ad254646cecd17ad0ec14d816d16a43f7cedd9e2d451faf9d4b",
+          "candidate_source": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0000/candidate.cpp",
+          "candidate_source_sha256": "50fd37ef259032c02854f265c8daf5ca79530ac2eedac331a4ff541aea48c6a1",
+          "candidate_object": "build/usa/src/RuntimeSupport/MI_CpuCopy8.o",
+          "candidate_object_sha256": "2f5c918cd0128e20cc581b412514cb89e05df85eb33db64aea341b50357ca659",
+          "toolchain": "CodeWarrior 2.0/sp2p2 default inline assembler; compile_verify_batch --require-raw; runtime inline metadata normalizer"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly-evidence/MI_CpuCopy8/manifest.json",
+          "sha256": "7396b18a828884b55f1df9f5188e403c990b007de68ab4767feccda30f49c38f"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "MTX_RotY33_",
+      "address": "0x020c1280",
+      "size": 28,
+      "mode": "thumb",
+      "source": "src/RuntimeSupport/MTX_RotY33_.cpp",
+      "source_sha256": "094ccd6b618f31f73cf087233c86690b926e47c7bd8cc3db6334ddb39eecc585",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "f2909671f3fa927b0e9b6a32f865d7d34ec31619ceb15a2e3ce3a2f90e54a942",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "MTX_RotY33_"
+        ],
+        "size": 28,
+        "method": "Pinned community SDK assembly worker source compiled after export/path/header changes. Sized actual object bytes independently equal unchanged original inventory bytes and unchanged delink target; only local label/register spelling, ABI export wrapper and documented SDK workaround configuration adapted.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "9d8b7591f09b65804da2fb2dfd56f320633e0d36",
+            "path": "lib/NitroSDK/asm/fx_mtx33.s",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/9d8b7591f09b65804da2fb2dfd56f320633e0d36/lib/NitroSDK/asm/fx_mtx33.s",
+            "local_copy": "build/sdk-assembly-evidence/MTX_RotY33_/fx_mtx33.s",
+            "sha256": "8e476ab6659879b2fd3ed9ea363b3e92cc5c2f5c89bb87b6129df9f790becc9d"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly-evidence/MTX_RotY33_/instruction-comparison.json",
+          "comparison_sha256": "3ed5096698001bfa2d2154a5d1b016b05689bf2bf7033398cfaadfdabfaeea2d",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 14
+        },
+        "fresh_object_check": {
+          "result": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0001/result.json",
+          "result_sha256": "359530d8624d1e9650592757fb76ebb012ff8b92056acec0944e0d9800e701af",
+          "bytes": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0001/bytes.json",
+          "bytes_sha256": "4c329704ba28a6bde2f9e45bb31bbfdded4c35c8a11c9f9d458e7a33edc52389",
+          "candidate_source": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0001/candidate.cpp",
+          "candidate_source_sha256": "094ccd6b618f31f73cf087233c86690b926e47c7bd8cc3db6334ddb39eecc585",
+          "candidate_object": "build/usa/src/RuntimeSupport/MTX_RotY33_.o",
+          "candidate_object_sha256": "71ff0978e09a837d976a0403c3531b4ce487f9be0362d372c69e5787382fa5cd",
+          "toolchain": "CodeWarrior 2.0/sp2p2 default inline assembler; compile_verify_batch --require-raw; runtime inline metadata normalizer"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly-evidence/MTX_RotY33_/manifest.json",
+          "sha256": "ec7ed72911cd84f5ff0b3cf2c1b04733f2a424c8354c545dd1ca77fabbaaa753"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "OS_Halt",
+      "address": "0x020c9bf0",
+      "size": 12,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/OS_Halt.cpp",
+      "source_sha256": "a19f60427a325cdf78ec8d292c59fb9e6699b223d8553f3e5fe54b4251f68aa2",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "41cf2639ff0928e5c67f842db7e28825020db50d66cef85d75c3943ce8b4b6ac",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "OS_Halt"
+        ],
+        "size": 12,
+        "method": "Pinned community SDK assembly worker source compiled after export/path/header changes. Sized actual object bytes independently equal unchanged original inventory bytes and unchanged delink target; only local label/register spelling, ABI export wrapper and documented SDK workaround configuration adapted.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "9d8b7591f09b65804da2fb2dfd56f320633e0d36",
+            "path": "lib/NitroSDK/src/os/os_terminate_proc.c",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/9d8b7591f09b65804da2fb2dfd56f320633e0d36/lib/NitroSDK/src/os/os_terminate_proc.c",
+            "local_copy": "build/sdk-assembly-evidence/OS_Halt/os_terminate_proc.c",
+            "sha256": "05d3d163357d3cd45c1075b79894e1c9aa2c0c61e3dce98f01b14fdcc60c3c79"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly-evidence/OS_Halt/instruction-comparison.json",
+          "comparison_sha256": "3cb41fc0e6c800ac1cd589b9b9bc1eb1ee304b7ef838717136f7ee6c517bed67",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 3
+        },
+        "fresh_object_check": {
+          "result": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0002/result.json",
+          "result_sha256": "966eb7491cae90e8ab7492054c46ccc925bc55f24553b0be4af1068fada2c2ff",
+          "bytes": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0002/bytes.json",
+          "bytes_sha256": "4786a1e6b3c89cf76bae640a0bf2d0a2ec6b6b1c183f39ffd90a65b965328a2d",
+          "candidate_source": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0002/candidate.cpp",
+          "candidate_source_sha256": "a19f60427a325cdf78ec8d292c59fb9e6699b223d8553f3e5fe54b4251f68aa2",
+          "candidate_object": "build/usa/src/RuntimeSupport/OS_Halt.o",
+          "candidate_object_sha256": "957f6430c3ba3886f2361b22d7128ad4fae7a2429c4a3ed65a44cd3b13a71fec",
+          "toolchain": "CodeWarrior 2.0/sp2p2 default inline assembler; compile_verify_batch --require-raw; runtime inline metadata normalizer"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly-evidence/OS_Halt/manifest.json",
+          "sha256": "77a76dbdca17911b008a919b64608918e5f94d53092460311a2e3842d4f6467c"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "MTX_Identity33_",
+      "address": "0x020c1180",
+      "size": 36,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/MTX_Identity33_.cpp",
+      "source_sha256": "8d443c5328b7a1b13faa011c825a3f17d6e99b6a51206be821af441df1260475",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "2f436dbece5b115fccfb27246b8ddaacbd01e820707ac3d57181122f12b64f37",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "MTX_Identity33_"
+        ],
+        "size": 36,
+        "method": "Pinned community SDK assembly worker source compiled after export/path/header changes. Sized actual object bytes independently equal unchanged original inventory bytes and unchanged delink target; only local label/register spelling, ABI export wrapper and documented SDK workaround configuration adapted.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "14c48938174ec92563afc6d03de5fa162f4cfdce",
+            "path": "lib/NitroSDK/asm/fx_mtx33.s",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/14c48938174ec92563afc6d03de5fa162f4cfdce/lib/NitroSDK/asm/fx_mtx33.s",
+            "local_copy": "build/sdk-assembly-evidence/MTX_Identity33_/fx_mtx33.s",
+            "sha256": "8e476ab6659879b2fd3ed9ea363b3e92cc5c2f5c89bb87b6129df9f790becc9d"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly-evidence/MTX_Identity33_/instruction-comparison.json",
+          "comparison_sha256": "48ed49e7865f7752140fd03e6d66abe4608406601d38506d931f895b5d1360fa",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 9
+        },
+        "fresh_object_check": {
+          "result": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0003/result.json",
+          "result_sha256": "974f794f28a2b5c5d35a5ba5ec93dab6892944951717678d7bea8d698fd0d771",
+          "bytes": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0003/bytes.json",
+          "bytes_sha256": "1f9ffbe9b26460e11606a0c690319fc1396ae4239eb72c57e4f7854dcc19ffb8",
+          "candidate_source": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0003/candidate.cpp",
+          "candidate_source_sha256": "8d443c5328b7a1b13faa011c825a3f17d6e99b6a51206be821af441df1260475",
+          "candidate_object": "build/usa/src/RuntimeSupport/MTX_Identity33_.o",
+          "candidate_object_sha256": "1ca9d775809811af6bc009269064b6ba3cd80b95d1d3fa9784b8e697b98ba46f",
+          "toolchain": "CodeWarrior 2.0/sp2p2 default inline assembler; compile_verify_batch --require-raw; runtime inline metadata normalizer"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly-evidence/MTX_Identity33_/manifest.json",
+          "sha256": "bf685e1dd1be036f5e0fdea3dc49dcf82b93c964c8e16ba28eb7f65d9ffe5e36"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "MI_UncompressLZ8",
+      "address": "0x020ca7e8",
+      "size": 256,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/MI_UncompressLZ8.cpp",
+      "source_sha256": "0c7db51e1544cfcef1aa444f52d8d8daeb628de09e223b88c8f3bea9627d1f12",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "1bb3a9f2a1ac7607619068228ff0720cdac3d91286119b1b557cf825a6d7ac98",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "MI_UncompressLZ8"
+        ],
+        "size": 256,
+        "method": "Pinned community SDK assembly worker source compiled after export/path/header changes. Sized actual object bytes independently equal unchanged original inventory bytes and unchanged delink target; only local label/register spelling, ABI export wrapper and documented SDK workaround configuration adapted.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "14c48938174ec92563afc6d03de5fa162f4cfdce",
+            "path": "lib/NitroSDK/asm/mi_uncompress.s",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/14c48938174ec92563afc6d03de5fa162f4cfdce/lib/NitroSDK/asm/mi_uncompress.s",
+            "local_copy": "build/sdk-assembly-evidence/MI_UncompressLZ8/mi_uncompress.s",
+            "sha256": "6da575aa2eadbcc67c67a8cc89bb3bc8c49132bfacce1d6636413edcad6e3588"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly-evidence/MI_UncompressLZ8/instruction-comparison.json",
+          "comparison_sha256": "bb3f83d1dd4c9b58ab45289c8b5619f636cf91d6628c8ac4feb1003ab3a414ad",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 64
+        },
+        "fresh_object_check": {
+          "result": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0004/result.json",
+          "result_sha256": "7127344fd78958adf0c32d3d1be28a88dc817b51a65aa06e0430b8e093252a4b",
+          "bytes": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0004/bytes.json",
+          "bytes_sha256": "0200109479da2657241ad396717ba26ba728a77e241b60440b7829996d06529d",
+          "candidate_source": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0004/candidate.cpp",
+          "candidate_source_sha256": "0c7db51e1544cfcef1aa444f52d8d8daeb628de09e223b88c8f3bea9627d1f12",
+          "candidate_object": "build/usa/src/RuntimeSupport/MI_UncompressLZ8.o",
+          "candidate_object_sha256": "a13c6f47280d716adc757abbc0b6d8f85e16d0e040789d934460fbed8ea1d39b",
+          "toolchain": "CodeWarrior 2.0/sp2p2 default inline assembler; compile_verify_batch --require-raw; runtime inline metadata normalizer"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly-evidence/MI_UncompressLZ8/manifest.json",
+          "sha256": "aa5b0382df14176ab51f70e4ef950d617c38c7a3b57c2a9a2a615730986196e0"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "MTX_Identity43_",
+      "address": "0x020c1840",
+      "size": 40,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/MTX_Identity43_.cpp",
+      "source_sha256": "40887dc6bc5919e9821b424f13b568ca81c249999e0f4cf7a0ecb4ce1d55cd1a",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "5aa80ef15096ef9bcf995983c2a274f91eaa7f9d8c9b2a733d0b29e1fb61d460",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "MTX_Identity43_"
+        ],
+        "size": 40,
+        "method": "Pinned community SDK assembly worker source compiled after export/path/header changes. Sized actual object bytes independently equal unchanged original inventory bytes and unchanged delink target; only local label/register spelling, ABI export wrapper and documented SDK workaround configuration adapted.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "14c48938174ec92563afc6d03de5fa162f4cfdce",
+            "path": "lib/NitroSDK/asm/fx_mtx43.s",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/14c48938174ec92563afc6d03de5fa162f4cfdce/lib/NitroSDK/asm/fx_mtx43.s",
+            "local_copy": "build/sdk-assembly-evidence/MTX_Identity43_/fx_mtx43.s",
+            "sha256": "805e064293aad03a5f62c7a01af92b4b5fea8a03fa282deb64d55ebca0b110e1"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly-evidence/MTX_Identity43_/instruction-comparison.json",
+          "comparison_sha256": "f65487e1ed47a60b9836651aebce61acf9388935a33c89f73111cd8f8b0392aa",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 10
+        },
+        "fresh_object_check": {
+          "result": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0005/result.json",
+          "result_sha256": "aefd28b42062a10ca3fb9cf015f61e08cdd0a86178405938bbf82ccd09a5db89",
+          "bytes": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0005/bytes.json",
+          "bytes_sha256": "0fac849ca6079ab43cf7edcc1f44db0a3200dc225ec6a8bf13e16c7961f7b3e6",
+          "candidate_source": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0005/candidate.cpp",
+          "candidate_source_sha256": "40887dc6bc5919e9821b424f13b568ca81c249999e0f4cf7a0ecb4ce1d55cd1a",
+          "candidate_object": "build/usa/src/RuntimeSupport/MTX_Identity43_.o",
+          "candidate_object_sha256": "43af4e6d1faab8611d7e1ac460a7718d2f6853e1336a8d1b708b4adf67583be2",
+          "toolchain": "CodeWarrior 2.0/sp2p2 default inline assembler; compile_verify_batch --require-raw; runtime inline metadata normalizer"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly-evidence/MTX_Identity43_/manifest.json",
+          "sha256": "111c7886c6c0b3c68e7c8af2e40d3059d80122581af45dcf77cec9b0652ecde9"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "MIi_CpuCopy32",
+      "address": "0x020ca408",
+      "size": 40,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/MIi_CpuCopy32.cpp",
+      "source_sha256": "6591c62692e84ac86ae4d7106eef0531d5e26e2e2bf1c4955b725fb0c8d27424",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "b27f68ffb60533ae45a529d05d533cb37f8ecbe1fa5cef0ccd089040be67f335",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "MIi_CpuCopy32"
+        ],
+        "size": 40,
+        "method": "Pinned community SDK assembly worker source compiled after export/path/header changes. Sized actual object bytes independently equal unchanged original inventory bytes and unchanged delink target; only local label/register spelling, ABI export wrapper and documented SDK workaround configuration adapted.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "14c48938174ec92563afc6d03de5fa162f4cfdce",
+            "path": "lib/NitroSDK/asm/mi_memory.s",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/14c48938174ec92563afc6d03de5fa162f4cfdce/lib/NitroSDK/asm/mi_memory.s",
+            "local_copy": "build/sdk-assembly-evidence/MIi_CpuCopy32/mi_memory.s",
+            "sha256": "951a8d9cc34621fdf01e22d753fd7a1cb99e35c008385f098e3e4a86a6c71e8d"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly-evidence/MIi_CpuCopy32/instruction-comparison.json",
+          "comparison_sha256": "3a5730029b2309941e5a71330020535098c48398de0993a75f00998873997f11",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 10
+        },
+        "fresh_object_check": {
+          "result": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0006/result.json",
+          "result_sha256": "554727d810ea1942bdb7aa4f374f962acc65e20cc03143eb20e1515b2d18562c",
+          "bytes": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0006/bytes.json",
+          "bytes_sha256": "222d0f1f7d92a2e738c3be45091f82e8c3361c877f5cf0955dbc4a5ecbea77e3",
+          "candidate_source": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0006/candidate.cpp",
+          "candidate_source_sha256": "6591c62692e84ac86ae4d7106eef0531d5e26e2e2bf1c4955b725fb0c8d27424",
+          "candidate_object": "build/usa/src/RuntimeSupport/MIi_CpuCopy32.o",
+          "candidate_object_sha256": "bb369c0745a563a1d4d59377ebae93f692ebc117f2b5793d1081865e11d42109",
+          "toolchain": "CodeWarrior 2.0/sp2p2 default inline assembler; compile_verify_batch --require-raw; runtime inline metadata normalizer"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly-evidence/MIi_CpuCopy32/manifest.json",
+          "sha256": "cc397a9b4e97fcfd6784863373dc46b6ca0f036ce926f5f95aa0c7dc7da68b15"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "MIi_CpuClearFast",
+      "address": "0x020ca458",
+      "size": 92,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/MIi_CpuClearFast.cpp",
+      "source_sha256": "7b111e0daa0ef1ffef9e7b7c2ff4c90e1c622cafe3e0adb9cfebed8b566d766d",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "10577c29bdbc6913eba507a029157099a73f377ee8d0e6617ff2cc72def5f8a5",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "MIi_CpuClearFast"
+        ],
+        "size": 92,
+        "method": "Pinned community SDK assembly worker source compiled after export/path/header changes. Sized actual object bytes independently equal unchanged original inventory bytes and unchanged delink target; only local label/register spelling, ABI export wrapper and documented SDK workaround configuration adapted.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "14c48938174ec92563afc6d03de5fa162f4cfdce",
+            "path": "lib/NitroSDK/asm/mi_memory.s",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/14c48938174ec92563afc6d03de5fa162f4cfdce/lib/NitroSDK/asm/mi_memory.s",
+            "local_copy": "build/sdk-assembly-evidence/MIi_CpuClearFast/mi_memory.s",
+            "sha256": "951a8d9cc34621fdf01e22d753fd7a1cb99e35c008385f098e3e4a86a6c71e8d"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly-evidence/MIi_CpuClearFast/instruction-comparison.json",
+          "comparison_sha256": "1fa56fcf8a7300ebdde862d064e224c531c789e5f7407cb0ca697e9cb123a210",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 23
+        },
+        "fresh_object_check": {
+          "result": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0007/result.json",
+          "result_sha256": "aa09dbba9d5e913ec1fa1f13b135d37449f0852e77ece7d2e94e4ec40d741d3d",
+          "bytes": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0007/bytes.json",
+          "bytes_sha256": "811c9afb1dbf122cad1aac9c482b9475f457a378d6f4e7f55ad0ee6758c7e784",
+          "candidate_source": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0007/candidate.cpp",
+          "candidate_source_sha256": "7b111e0daa0ef1ffef9e7b7c2ff4c90e1c622cafe3e0adb9cfebed8b566d766d",
+          "candidate_object": "build/usa/src/RuntimeSupport/MIi_CpuClearFast.o",
+          "candidate_object_sha256": "7c33cda11e2b82b5325729328f32e1a9011cc927bd9aea0f7548df09da4d3ee4",
+          "toolchain": "CodeWarrior 2.0/sp2p2 default inline assembler; compile_verify_batch --require-raw; runtime inline metadata normalizer"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly-evidence/MIi_CpuClearFast/manifest.json",
+          "sha256": "0764d53919d959eab509a5ef792fbee8afd010baa2b3eea0878fbfdd2ea4edbf"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "MIi_CpuClear32",
+      "address": "0x020ca3ec",
+      "size": 28,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/MIi_CpuClear32.cpp",
+      "source_sha256": "0bcabcddd04f825af23ab58ce6fab4247e20cf14334d625cdeb53ff0a648f01d",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "234da5c7e8e76dbad0ffa50de07656f92dea67450b7905091f3e46d53bcdcaf5",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "MIi_CpuClear32"
+        ],
+        "size": 28,
+        "method": "Pinned community SDK assembly worker source compiled after export/path/header changes. Sized actual object bytes independently equal unchanged original inventory bytes and unchanged delink target; only local label/register spelling, ABI export wrapper and documented SDK workaround configuration adapted.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "14c48938174ec92563afc6d03de5fa162f4cfdce",
+            "path": "lib/NitroSDK/asm/mi_memory.s",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/14c48938174ec92563afc6d03de5fa162f4cfdce/lib/NitroSDK/asm/mi_memory.s",
+            "local_copy": "build/sdk-assembly-evidence/MIi_CpuClear32/mi_memory.s",
+            "sha256": "951a8d9cc34621fdf01e22d753fd7a1cb99e35c008385f098e3e4a86a6c71e8d"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly-evidence/MIi_CpuClear32/instruction-comparison.json",
+          "comparison_sha256": "3cdece0b30067eb00194057bf36c21d204ecfbbea6807a9646f07c484cfff02e",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 7
+        },
+        "fresh_object_check": {
+          "result": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0008/result.json",
+          "result_sha256": "e4c568e2744abcbb29b9e43ccd39e9344f814a6afafcd9b25c32428fe51e6286",
+          "bytes": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0008/bytes.json",
+          "bytes_sha256": "6acdad52be05067d9e37b848e7f9a9f0c827e8653f58991c311f56806bfcb7a9",
+          "candidate_source": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0008/candidate.cpp",
+          "candidate_source_sha256": "0bcabcddd04f825af23ab58ce6fab4247e20cf14334d625cdeb53ff0a648f01d",
+          "candidate_object": "build/usa/src/RuntimeSupport/MIi_CpuClear32.o",
+          "candidate_object_sha256": "7f90b12a3272101bdf131f39dc4a551536add810acb02c576553ea764ba61c49",
+          "toolchain": "CodeWarrior 2.0/sp2p2 default inline assembler; compile_verify_batch --require-raw; runtime inline metadata normalizer"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly-evidence/MIi_CpuClear32/manifest.json",
+          "sha256": "8764945affec9f8d0d6e036a9b6fb2d5af0cd59676484364b551ea0daafd6a32"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "MIi_CpuClear16",
+      "address": "0x020ca390",
+      "size": 40,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/MIi_CpuClear16.cpp",
+      "source_sha256": "7405c91bfbc41d58d1c31b22a0826c51105e592d44aa99173480d508131b9452",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "ae5642193b432ff4b2fe5696366cbca25d053cf0f81e650a7507b352ae630e0d",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "MIi_CpuClear16"
+        ],
+        "size": 40,
+        "method": "Pinned community SDK assembly worker source compiled after export/path/header changes. Sized actual object bytes independently equal unchanged original inventory bytes and unchanged delink target; only local label/register spelling, ABI export wrapper and documented SDK workaround configuration adapted.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "14c48938174ec92563afc6d03de5fa162f4cfdce",
+            "path": "lib/NitroSDK/asm/mi_memory.s",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/14c48938174ec92563afc6d03de5fa162f4cfdce/lib/NitroSDK/asm/mi_memory.s",
+            "local_copy": "build/sdk-assembly-evidence/MIi_CpuClear16/mi_memory.s",
+            "sha256": "951a8d9cc34621fdf01e22d753fd7a1cb99e35c008385f098e3e4a86a6c71e8d"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly-evidence/MIi_CpuClear16/instruction-comparison.json",
+          "comparison_sha256": "64023f1e8d427650a19b4a1cb8c8da640556972e4259cbb45e260a5a5596c728",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 10
+        },
+        "fresh_object_check": {
+          "result": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0009/result.json",
+          "result_sha256": "a602ea44484bdffe17950236075ea2e5e18580ee299e85daa0e6ee16e78ab618",
+          "bytes": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0009/bytes.json",
+          "bytes_sha256": "66e4e35d36aa500311206e44634e611b40db283e39d103662811d696d63d402e",
+          "candidate_source": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0009/candidate.cpp",
+          "candidate_source_sha256": "7405c91bfbc41d58d1c31b22a0826c51105e592d44aa99173480d508131b9452",
+          "candidate_object": "build/usa/src/RuntimeSupport/MIi_CpuClear16.o",
+          "candidate_object_sha256": "4fb52a2a7c3746bae458fa0130039a0cde01b360b32c8495a2af1bd84742d5d0",
+          "toolchain": "CodeWarrior 2.0/sp2p2 default inline assembler; compile_verify_batch --require-raw; runtime inline metadata normalizer"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly-evidence/MIi_CpuClear16/manifest.json",
+          "sha256": "db992b901f653d7357d741135ee99284c4efecad695328af53ea3842dfcf67d8"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "WaitByLoop",
+      "address": "0x02000466",
+      "size": 4,
+      "mode": "thumb",
+      "source": "src/RuntimeSupport/WaitByLoop.cpp",
+      "source_sha256": "05dc3a727161fcb13126c382f9f235cab65bd016d81c7ac87e9b486c8c1f88fd",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "498a35dfd2a6c72167d58697263323cd3392f37ed1ef8eddc11ed0852fb1720b",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {},
+        "text_alignment": 2
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "WaitByLoop"
+        ],
+        "size": 4,
+        "method": "Pinned community SDK assembly worker source compiled after export/path/header changes. Sized actual object bytes independently equal unchanged original inventory bytes and unchanged delink target; only local label/register spelling, ABI export wrapper and documented SDK workaround configuration adapted.",
+        "external_sources": [
+          {
+            "repository": "ntrtwl/NitroSDK",
+            "commit": "9eec6c92c9d7bba9350732b11296ed16aab3a8bc",
+            "path": "libraries/syscall/asm/subpsyscall.s",
+            "url": "https://raw.githubusercontent.com/ntrtwl/NitroSDK/9eec6c92c9d7bba9350732b11296ed16aab3a8bc/libraries/syscall/asm/subpsyscall.s",
+            "local_copy": "build/sdk-assembly-evidence/WaitByLoop/subpsyscall.s",
+            "sha256": "9a5e936adfba61e73c1da75e51acc13128aa03a42e61a9f0aadb9acf6c2c4659"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly-evidence/WaitByLoop/instruction-comparison.json",
+          "comparison_sha256": "08105db1f2bfcf1cfc827a409d1b6a14e7cd39ad0b22083e1fe8fb2190ea0733",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 2
+        },
+        "fresh_object_check": {
+          "result": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0010/result.json",
+          "result_sha256": "08ef174c7395d0b860cf00e5775c99a35fd6af09ee9166001dcc3fb6002b4516",
+          "bytes": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0010/bytes.json",
+          "bytes_sha256": "a8e85da25f38f0b6d28ab3e8a8cf5a4bd0d6fbd53534fb2891120d9d1e0989bf",
+          "candidate_source": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0010/candidate.cpp",
+          "candidate_source_sha256": "05dc3a727161fcb13126c382f9f235cab65bd016d81c7ac87e9b486c8c1f88fd",
+          "candidate_object": "build/usa/src/RuntimeSupport/WaitByLoop.o",
+          "candidate_object_sha256": "0cb96a0a6bd15a93a1b8926d51c99de7e2cf8eeeac2cd32fb55d472781211e7b",
+          "toolchain": "CodeWarrior 2.0/sp2p2 default inline assembler; compile_verify_batch --require-raw; runtime inline metadata normalizer"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly-evidence/WaitByLoop/manifest.json",
+          "sha256": "b14ffaae374045795278ed673c136ccd9317235aebe34e03bbbeaed2e7b46302"
+        },
+        "alignment_evidence": {
+          "original_address": "0x02000466",
+          "instruction_mode": "thumb",
+          "required_alignment": 2,
+          "reason": "Four-byte alignment inserts two bytes before BIOS SWI veneer and shifts subsequent module addresses; source instruction bytes and Thumb symbol value unchanged."
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "OS_SpinWait",
+      "address": "0x020c976c",
+      "size": 12,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/OS_SpinWait.cpp",
+      "source_sha256": "04ef887c9989c5173829e38fa2a8608b0b7e1fed8967bcab935673ce8f214ad2",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "f7e146ee9e88c39b1758c3dd337d6e4d5cf4bb336b965a5f72911e6bd4a17587",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "OS_SpinWait"
+        ],
+        "size": 12,
+        "method": "Pinned community SDK assembly worker source compiled after export/path/header changes. Sized actual object bytes independently equal unchanged original inventory bytes and unchanged delink target; only local label/register spelling, ABI export wrapper and documented SDK workaround configuration adapted.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "14c48938174ec92563afc6d03de5fa162f4cfdce",
+            "path": "lib/NitroSDK/src/os/os_system.c",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/14c48938174ec92563afc6d03de5fa162f4cfdce/lib/NitroSDK/src/os/os_system.c",
+            "local_copy": "build/sdk-assembly-evidence/OS_SpinWait/os_system.c",
+            "sha256": "3950fccebf73c41d1a889e97af2e2def36fee308e9c6f9d3e8d1c1d4b42531bf"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly-evidence/OS_SpinWait/instruction-comparison.json",
+          "comparison_sha256": "cf79605cf8220ccdee8ff0f900bea1f55a229ddc32f066493fdbc5943cdeaa1a",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 3
+        },
+        "fresh_object_check": {
+          "result": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0011/result.json",
+          "result_sha256": "7f562d2a83fca17c65750dc65b85f84e5d9893195696fc3cac532d0c1a4a0087",
+          "bytes": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0011/bytes.json",
+          "bytes_sha256": "e77ee0b27dfa72a4584b24238b0e96e9793aa4fc560b100ff7354587e26093c9",
+          "candidate_source": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0011/candidate.cpp",
+          "candidate_source_sha256": "04ef887c9989c5173829e38fa2a8608b0b7e1fed8967bcab935673ce8f214ad2",
+          "candidate_object": "build/usa/src/RuntimeSupport/OS_SpinWait.o",
+          "candidate_object_sha256": "10407fd3633c98a9366502bab502d48f78a056b888471ed8acccf02264c5ae3c",
+          "toolchain": "CodeWarrior 2.0/sp2p2 default inline assembler; compile_verify_batch --require-raw; runtime inline metadata normalizer"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly-evidence/OS_SpinWait/manifest.json",
+          "sha256": "7e1edcd2ab43408df8664a221af3c056f31aa2a8965fb8031633f997adee9522"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "_Z19GenerateLockOwnerIDv",
+      "address": "0x020c7080",
+      "size": 104,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/GenerateLockOwnerID.cpp",
+      "source_sha256": "e224f4d2cfe32e08608908ee9081d0851302db7917be7717ead659602aeccde9",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "556fa362686600c516a56683bea964a3211ff2292ee25807a73aa3fdabb40a68",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "_Z19GenerateLockOwnerIDv"
+        ],
+        "size": 104,
+        "method": "Pinned community SDK assembly worker source compiled after export/path/header changes. Sized actual object bytes independently equal unchanged original inventory bytes and unchanged delink target; only local label/register spelling, ABI export wrapper and documented SDK workaround configuration adapted.",
+        "external_sources": [
+          {
+            "repository": "ntrtwl/NitroSDK",
+            "commit": "9eec6c92c9d7bba9350732b11296ed16aab3a8bc",
+            "path": "libraries/os/src/os_spinLock.c",
+            "url": "https://raw.githubusercontent.com/ntrtwl/NitroSDK/9eec6c92c9d7bba9350732b11296ed16aab3a8bc/libraries/os/src/os_spinLock.c",
+            "local_copy": "build/sdk-assembly-evidence/GenerateLockOwnerID/os_spinLock.c",
+            "sha256": "e1c8f60473e1ab30630955021a50e373cba5b1939be80808b5ca941a53f960fc"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly-evidence/GenerateLockOwnerID/instruction-comparison.json",
+          "comparison_sha256": "c5f8660c3074a213b4e6f66087b5ea1a72ad3b17fae2281413d8ebdc6ddec256",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 26
+        },
+        "fresh_object_check": {
+          "result": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0012/result.json",
+          "result_sha256": "89634b59347e176ec912f04e6b8b4b1e275fd31fc16ebdf7093b64e382d410a3",
+          "bytes": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0012/bytes.json",
+          "bytes_sha256": "ff3a74359bdbff4c13f3ac6bec38c6467354e6662add912fcef5fce05d7e72bc",
+          "candidate_source": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0012/candidate.cpp",
+          "candidate_source_sha256": "e224f4d2cfe32e08608908ee9081d0851302db7917be7717ead659602aeccde9",
+          "candidate_object": "build/usa/src/RuntimeSupport/GenerateLockOwnerID.o",
+          "candidate_object_sha256": "003e4e1c52b22a3ad3d263bf33cdb40a0f2c9de89c6f7f1f51d2bd1bca740cda",
+          "toolchain": "CodeWarrior 2.0/sp2p2 default inline assembler; compile_verify_batch --require-raw; runtime inline metadata normalizer"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly-evidence/GenerateLockOwnerID/manifest.json",
+          "sha256": "5da49dc0568e84ad72c0a413339c1debb3888062d07ae36d51046f21c401a165"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "MI_Copy36B",
+      "address": "0x020ca528",
+      "size": 28,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/MI_Copy36B.cpp",
+      "source_sha256": "eb292a15af8537e66e8151b5de3a3e2295b307356beeda44228987d32e2d0a53",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "589bf04eb1792b8434ef1e17b8b3895652d792c16c85de3730dd17223abbfa3a",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "MI_Copy36B"
+        ],
+        "size": 28,
+        "method": "Pinned community SDK assembly worker source compiled after export/path/header changes. Sized actual object bytes independently equal unchanged original inventory bytes and unchanged delink target; only local label/register spelling, ABI export wrapper and documented SDK workaround configuration adapted.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "14c48938174ec92563afc6d03de5fa162f4cfdce",
+            "path": "lib/NitroSDK/asm/mi_memory.s",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/14c48938174ec92563afc6d03de5fa162f4cfdce/lib/NitroSDK/asm/mi_memory.s",
+            "local_copy": "build/sdk-assembly-evidence/MI_Copy36B/mi_memory.s",
+            "sha256": "951a8d9cc34621fdf01e22d753fd7a1cb99e35c008385f098e3e4a86a6c71e8d"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly-evidence/MI_Copy36B/instruction-comparison.json",
+          "comparison_sha256": "4296e91a7bfc3f22c636214a8f462d519c9b253918be38896f0f7fd5e9070926",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 7
+        },
+        "fresh_object_check": {
+          "result": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0013/result.json",
+          "result_sha256": "a205d356cc0c3c72ac3a59d1413a5d20d89dc38da6e92d004fad28e13683c4cf",
+          "bytes": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0013/bytes.json",
+          "bytes_sha256": "f5b34b132ac4732c060165fa0b30282889b48440655aab7d270e43244128411b",
+          "candidate_source": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0013/candidate.cpp",
+          "candidate_source_sha256": "eb292a15af8537e66e8151b5de3a3e2295b307356beeda44228987d32e2d0a53",
+          "candidate_object": "build/usa/src/RuntimeSupport/MI_Copy36B.o",
+          "candidate_object_sha256": "faf852f61bcd74d3c00ffc2873f337f3a67c7ed79a9d37772dad2727253aca28",
+          "toolchain": "CodeWarrior 2.0/sp2p2 default inline assembler; compile_verify_batch --require-raw; runtime inline metadata normalizer"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly-evidence/MI_Copy36B/manifest.json",
+          "sha256": "b1adc124c2d700bcef54e26c25d6ea76ae4fc335a17b62ee7cf995f199b005fb"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "MIi_CpuCopyFast",
+      "address": "0x020ca4b4",
+      "size": 88,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/MIi_CpuCopyFast.cpp",
+      "source_sha256": "b83896e0584c5edb4442a50b4d7cf8de9fb9646909b7273b79a1adb1be7c4897",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "57113ad4afc8448b8c9d1ba20af6e7c256a0371644b9d88fce20dfa5166e379e",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "MIi_CpuCopyFast"
+        ],
+        "size": 88,
+        "method": "Pinned community SDK assembly worker source compiled after export/path/header changes. Sized actual object bytes independently equal unchanged original inventory bytes and unchanged delink target; only local label/register spelling, ABI export wrapper and documented SDK workaround configuration adapted.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "14c48938174ec92563afc6d03de5fa162f4cfdce",
+            "path": "lib/NitroSDK/asm/mi_memory.s",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/14c48938174ec92563afc6d03de5fa162f4cfdce/lib/NitroSDK/asm/mi_memory.s",
+            "local_copy": "build/sdk-assembly-evidence/MIi_CpuCopyFast/mi_memory.s",
+            "sha256": "951a8d9cc34621fdf01e22d753fd7a1cb99e35c008385f098e3e4a86a6c71e8d"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly-evidence/MIi_CpuCopyFast/instruction-comparison.json",
+          "comparison_sha256": "e235b4f263dee8938f0498c142eb1e02fba6ada8c1724054a005fc215aeef121",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 22
+        },
+        "fresh_object_check": {
+          "result": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0014/result.json",
+          "result_sha256": "c558b2bcb85943251f204eda0fbb1d47078c7361fa49b818d45aa0a17f2fb28e",
+          "bytes": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0014/bytes.json",
+          "bytes_sha256": "633b6b44afda55233b0d00cce7341bc8edf8d543d4709e97edd3e27922014880",
+          "candidate_source": "build/matching/20261014T164305-1cf4bc79bf65464cbb7fb3a130bf211a/unit-0014/candidate.cpp",
+          "candidate_source_sha256": "b83896e0584c5edb4442a50b4d7cf8de9fb9646909b7273b79a1adb1be7c4897",
+          "candidate_object": "build/usa/src/RuntimeSupport/MIi_CpuCopyFast.o",
+          "candidate_object_sha256": "032f98552b1bf1f3c5b28d0e878d846c10609cd6334f9d4c5ab8217e04a6caf2",
+          "toolchain": "CodeWarrior 2.0/sp2p2 default inline assembler; compile_verify_batch --require-raw; runtime inline metadata normalizer"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly-evidence/MIi_CpuCopyFast/manifest.json",
+          "sha256": "89819a21a6e4ef283ddde5c1cee2ef2a10a02b2a623020b7e22f420c00089c50"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "MTX_RotZ33_",
+      "address": "0x020c129c",
+      "size": 24,
+      "mode": "thumb",
+      "source": "src/RuntimeSupport/MTX_RotZ33_.cpp",
+      "source_sha256": "bfc4650e2287e4ae0893ac5cb566dea2d5fcadcdfe687917b2b3c07468deaeb3",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "a6d1dfbde73c8c629d95075631c88a75bd015ed65668060e607581c807711fed",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {},
+        "text_alignment": 2
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "MTX_RotZ33_"
+        ],
+        "size": 24,
+        "method": "Pinned independent SDK assembly body adapted only for inline assembler spelling, ABI exports, literal symbol binding and SDK platform constants; compiled after naming/path changes. No target-derived instructions.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "14c48938174ec92563afc6d03de5fa162f4cfdce",
+            "path": "lib/NitroSDK/asm/fx_mtx33.s",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/14c48938174ec92563afc6d03de5fa162f4cfdce/lib/NitroSDK/asm/fx_mtx33.s",
+            "local_copy": "build/sdk-assembly02-evidence/MTX_RotZ33_/fx_mtx33.s",
+            "sha256": "8e476ab6659879b2fd3ed9ea363b3e92cc5c2f5c89bb87b6129df9f790becc9d"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly02-evidence/MTX_RotZ33_/instruction-comparison.json",
+          "comparison_sha256": "2f372e1f64c79f3126469ac4f97ca1d9af5829d84ec14d7d3870fc23ea11c7fd",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 12
+        },
+        "fresh_object_check": {
+          "result": "build/sdk-assembly02-evidence/MTX_RotZ33_/result.json",
+          "result_sha256": "f898089dfde3ec2d23af4d0d092a2bf89e0922d6b99cd189665a6bdb317ae9f7",
+          "bytes": "build/sdk-assembly02-evidence/MTX_RotZ33_/bytes.json",
+          "bytes_sha256": "703e2282ad621a98b4513a3d41c84d6439fb0cb0a509dace08e583a6b405512c",
+          "candidate_source": "build/sdk-assembly02-evidence/MTX_RotZ33_/candidate.cpp",
+          "candidate_source_sha256": "bfc4650e2287e4ae0893ac5cb566dea2d5fcadcdfe687917b2b3c07468deaeb3",
+          "candidate_object": "build/sdk-assembly02-evidence/MTX_RotZ33_/candidate.o",
+          "candidate_object_sha256": "69f010b6d5b62d8038da083ca838bd1a2c26285e9007c9615db23d9d2a5e5131"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly02-evidence/MTX_RotZ33_/manifest.json",
+          "sha256": "46b9df0c85324d56e219b0274ea95b7248881dafe37e2a81d9a15ffaeb2e81d8"
+        },
+        "alignment_evidence": {
+          "original_address": "0x020c129c",
+          "instruction_mode": "thumb",
+          "required_alignment": 2,
+          "reason": "Source-bound Thumb subsection uses two-byte instruction alignment so no four-byte section padding shifts the BIOS veneer or following functions; all instruction/literal bytes unchanged."
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "OSi_WaitVCount0",
+      "address": "0x020c8348",
+      "size": 32,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/OSi_WaitVCount0.cpp",
+      "source_sha256": "0e45a7877dfe94d032b6b8196b86400483f260053a03cffe2f015cd7874d4793",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "a0c36ccb5edc3515054aaa53aca9c76adef20934ef60337de1ee801a04f8b16b",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "OSi_WaitVCount0"
+        ],
+        "size": 32,
+        "method": "Pinned independent SDK assembly body adapted only for inline assembler spelling, ABI exports, literal symbol binding and SDK platform constants; compiled after naming/path changes. No target-derived instructions.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "14c48938174ec92563afc6d03de5fa162f4cfdce",
+            "path": "lib/NitroSDK/src/os/os_init.c",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/14c48938174ec92563afc6d03de5fa162f4cfdce/lib/NitroSDK/src/os/os_init.c",
+            "local_copy": "build/sdk-assembly02-evidence/OSi_WaitVCount0/os_init.c",
+            "sha256": "0b65a05929835f017aff113345aa4c70ad53d57d2b95a3a57758572fa8009cae"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly02-evidence/OSi_WaitVCount0/instruction-comparison.json",
+          "comparison_sha256": "ed32993d09d68f59bc831310acb5ff9b9098737def0fce45a1ab48138763f64b",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 8
+        },
+        "fresh_object_check": {
+          "result": "build/sdk-assembly02-evidence/OSi_WaitVCount0/result.json",
+          "result_sha256": "f7bdc393f9541481c87674cef0adfff9b38d966f234242e2c1dc43da2a6098e7",
+          "bytes": "build/sdk-assembly02-evidence/OSi_WaitVCount0/bytes.json",
+          "bytes_sha256": "575f6978883a9a4e983de12f32e093d88c49016920cc63c4315caace6aea680b",
+          "candidate_source": "build/sdk-assembly02-evidence/OSi_WaitVCount0/candidate.cpp",
+          "candidate_source_sha256": "0e45a7877dfe94d032b6b8196b86400483f260053a03cffe2f015cd7874d4793",
+          "candidate_object": "build/sdk-assembly02-evidence/OSi_WaitVCount0/candidate.o",
+          "candidate_object_sha256": "86d5fcad811d6197457415438568fc53124fb30f60eeed02f2de21228de8d582"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly02-evidence/OSi_WaitVCount0/manifest.json",
+          "sha256": "ba591b36d3b1959b0b5bff1998ffe3e6442a974478af66baca6112ad7bbae203"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "MI_Copy64B",
+      "address": "0x020ca568",
+      "size": 44,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/MI_Copy64B.cpp",
+      "source_sha256": "eaed049590abf388ad657fb84e5cd708c12bc88a6942751059352fa5e1442b9f",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "cb45d51c411b14ca622d146ba77e1b16c6076b1e5710228cbb14fb41a3268a27",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "MI_Copy64B"
+        ],
+        "size": 44,
+        "method": "Pinned independent SDK assembly body adapted only for inline assembler spelling, ABI exports, literal symbol binding and SDK platform constants; compiled after naming/path changes. No target-derived instructions.",
+        "external_sources": [
+          {
+            "repository": "ntrtwl/NitroSDK",
+            "commit": "9eec6c92c9d7bba9350732b11296ed16aab3a8bc",
+            "path": "libraries/mi/src/mi_memory.c",
+            "url": "https://raw.githubusercontent.com/ntrtwl/NitroSDK/9eec6c92c9d7bba9350732b11296ed16aab3a8bc/libraries/mi/src/mi_memory.c",
+            "local_copy": "build/sdk-assembly02-evidence/MI_Copy64B/mi_memory.c",
+            "sha256": "3a0fd7e93aa8be87c8aec57852095d3e64c52ee62fe78c57ff05171c11e1ffc5"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly02-evidence/MI_Copy64B/instruction-comparison.json",
+          "comparison_sha256": "21506b06129a1b6a6aab311fa1f6be1f48bcebcfc5f3cd044eb037f5ff2de8a1",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 11
+        },
+        "fresh_object_check": {
+          "result": "build/sdk-assembly02-evidence/MI_Copy64B/result.json",
+          "result_sha256": "dd530f00e759186ea2cee1b3dc6b7676146efaba1e884f1ec1d27a92df7cb44d",
+          "bytes": "build/sdk-assembly02-evidence/MI_Copy64B/bytes.json",
+          "bytes_sha256": "38b338f7eb5b4523aeefd8054e0b61d89130106ab1971ac8f0a20a1155f50944",
+          "candidate_source": "build/sdk-assembly02-evidence/MI_Copy64B/candidate.cpp",
+          "candidate_source_sha256": "eaed049590abf388ad657fb84e5cd708c12bc88a6942751059352fa5e1442b9f",
+          "candidate_object": "build/sdk-assembly02-evidence/MI_Copy64B/candidate.o",
+          "candidate_object_sha256": "902f53667287055dbb968c6e987ce3a541f1794b32f41a6eccad471ca7bb85c1"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly02-evidence/MI_Copy64B/manifest.json",
+          "sha256": "dcb49c0b533de52ef35db7562a352e3ff1e664c4b2c15b68792e1d61c883ea03"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "GXi_NopClearFifo128_",
+      "address": "0x020c56dc",
+      "size": 148,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/GXi_NopClearFifo128_.cpp",
+      "source_sha256": "2c6ec0f6825b1b20083ab5ebbbb3c877046ec1ed8c548b1a37d773308eb60ae2",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "b829db3b5e40e87e4edeacb39c8554be4fe06384eeab2ad0264f0bc532378f82",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "GXi_NopClearFifo128_"
+        ],
+        "size": 148,
+        "method": "Pinned independent SDK assembly body adapted only for inline assembler spelling, ABI exports, literal symbol binding and SDK platform constants; compiled after naming/path changes. No target-derived instructions.",
+        "external_sources": [
+          {
+            "repository": "pret/pokediamond",
+            "commit": "b623abef1b4dfe204ca50aab42447ac00c134290",
+            "path": "arm9/lib/NitroSDK/src/GX_g3x.c",
+            "url": "https://raw.githubusercontent.com/pret/pokediamond/b623abef1b4dfe204ca50aab42447ac00c134290/arm9/lib/NitroSDK/src/GX_g3x.c",
+            "local_copy": "build/sdk-assembly02-evidence/GXi_NopClearFifo128_/GX_g3x.c",
+            "sha256": "a7599d921055028ac2bfa8bb499cb15399396b399f04296d9c204d13eb14c878"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly02-evidence/GXi_NopClearFifo128_/instruction-comparison.json",
+          "comparison_sha256": "e4b51520b6978c6e7973158f4db310e25755800a68f7166684e63e15f5d5f0ad",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 37
+        },
+        "fresh_object_check": {
+          "result": "build/sdk-assembly02-evidence/GXi_NopClearFifo128_/result.json",
+          "result_sha256": "492e9f2d5e803d369f6d9513057cc9c66d88ae69707bc889281cef74e8e3fda7",
+          "bytes": "build/sdk-assembly02-evidence/GXi_NopClearFifo128_/bytes.json",
+          "bytes_sha256": "591ef59fe8c4241c6c72112ee38281d708013b6ce21fbb4fc50139ccebf8cad2",
+          "candidate_source": "build/sdk-assembly02-evidence/GXi_NopClearFifo128_/candidate.cpp",
+          "candidate_source_sha256": "2c6ec0f6825b1b20083ab5ebbbb3c877046ec1ed8c548b1a37d773308eb60ae2",
+          "candidate_object": "build/sdk-assembly02-evidence/GXi_NopClearFifo128_/candidate.o",
+          "candidate_object_sha256": "752d94349afd5e7b3c21745c9b4386315414c7253171edf014bfc61d60eec319"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly02-evidence/GXi_NopClearFifo128_/manifest.json",
+          "sha256": "fb1db83e06d4bbb6fe6cbabd25bb8d6759e298a0f75aa2261eb601e6030c95bd"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "MIi_UncompressBackward",
+      "address": "0x02000970",
+      "size": 172,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/MIi_UncompressBackward.cpp",
+      "source_sha256": "7eb0270e3ef023d1efa35ef4ffc57345a42cbbad3abbe98e3a6681dfb5f2b546",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "c3979e93bb0e390fbef9cf64dd91479895dee1945ad61c964af19e34fefb976f",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "MIi_UncompressBackward"
+        ],
+        "size": 172,
+        "method": "Pinned independent SDK assembly body adapted only for inline assembler spelling, ABI exports, literal symbol binding and SDK platform constants; compiled after naming/path changes. No target-derived instructions.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "9d8b7591f09b65804da2fb2dfd56f320633e0d36",
+            "path": "lib/asm/crt0.s",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/9d8b7591f09b65804da2fb2dfd56f320633e0d36/lib/asm/crt0.s",
+            "local_copy": "build/sdk-assembly02-evidence/MIi_UncompressBackward/crt0.s",
+            "sha256": "23ce16a867003ce96413f27b0a8397732a94979fa5670cccdd549eb57a508808"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly02-evidence/MIi_UncompressBackward/instruction-comparison.json",
+          "comparison_sha256": "6845f74ae889fe92ae49f62ea880a60f718a760fba940f5f822e826b6fa78079",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 43
+        },
+        "fresh_object_check": {
+          "result": "build/sdk-assembly02-evidence/MIi_UncompressBackward/result.json",
+          "result_sha256": "7f204077867f3ccba0b95898cd4bd7045d95e108e44862c46cdd3dae1585ba1b",
+          "bytes": "build/sdk-assembly02-evidence/MIi_UncompressBackward/bytes.json",
+          "bytes_sha256": "fb8b7d9bf488c395fa731fe48d70c35a95506f41225da49574cbc178d211fc15",
+          "candidate_source": "build/sdk-assembly02-evidence/MIi_UncompressBackward/candidate.cpp",
+          "candidate_source_sha256": "7eb0270e3ef023d1efa35ef4ffc57345a42cbbad3abbe98e3a6681dfb5f2b546",
+          "candidate_object": "build/sdk-assembly02-evidence/MIi_UncompressBackward/candidate.o",
+          "candidate_object_sha256": "02543a51ade297d31436a91a3879586fbeaf49eb5b252e8a0115453a87379023"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly02-evidence/MIi_UncompressBackward/manifest.json",
+          "sha256": "69e6ae85ad43d105fdabaaa3e4dd33fb27b114a59399bd720274a89138733192"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "OS_EnableDTCM",
+      "address": "0x020c89d4",
+      "size": 16,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/OS_EnableDTCM.cpp",
+      "source_sha256": "aa4bbd2e9f0850cd2b7defea0c3ade76f638e49dbe35417deb91221d3ab7076e",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "f336efa2009ee478e1032c27ddd39641677495cc3d5e8545ebdbe15f73813008",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "OS_EnableDTCM"
+        ],
+        "size": 16,
+        "method": "Pinned independent SDK assembly body adapted only for inline assembler spelling, ABI exports, literal symbol binding and SDK platform constants; compiled after naming/path changes. No target-derived instructions.",
+        "external_sources": [
+          {
+            "repository": "RushRE/SonicRushAdventure-Decomp",
+            "commit": "b449036259b8eff92ceb2b226474149bcf8a0a30",
+            "path": "lib/NitroSDK/src/os/ARM9/os_tcm.c",
+            "url": "https://raw.githubusercontent.com/RushRE/SonicRushAdventure-Decomp/b449036259b8eff92ceb2b226474149bcf8a0a30/lib/NitroSDK/src/os/ARM9/os_tcm.c",
+            "local_copy": "build/sdk-assembly02-evidence/OS_EnableDTCM/os_tcm.c",
+            "sha256": "29ca25fe544233ceee730a8d98253f58d3b09e5ebfbad1abd1f53cd1d01169a5"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly02-evidence/OS_EnableDTCM/instruction-comparison.json",
+          "comparison_sha256": "e0c35dbe1ef993f0967f51d0b3999d7835711612f9b784496c16b104191c43a4",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 4
+        },
+        "fresh_object_check": {
+          "result": "build/sdk-assembly02-evidence/OS_EnableDTCM/result.json",
+          "result_sha256": "a8704305a878382337bcd1b1fb91c98b3f031e3083df1b6644d7d553e6d0816f",
+          "bytes": "build/sdk-assembly02-evidence/OS_EnableDTCM/bytes.json",
+          "bytes_sha256": "ea24f34baeafcc4d745128594d3712469c19c224d6ae53743158578b9b954440",
+          "candidate_source": "build/sdk-assembly02-evidence/OS_EnableDTCM/candidate.cpp",
+          "candidate_source_sha256": "aa4bbd2e9f0850cd2b7defea0c3ade76f638e49dbe35417deb91221d3ab7076e",
+          "candidate_object": "build/sdk-assembly02-evidence/OS_EnableDTCM/candidate.o",
+          "candidate_object_sha256": "6ea8cea6191c89c75b309e06d3135b39b8c12d68e31f387782829aad617be0e3"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly02-evidence/OS_EnableDTCM/manifest.json",
+          "sha256": "037c1dfebd968f31c9dc402899b29f301ff33747d910a53ed4ac429317c577d6"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "OS_SetDPermissionsForProtectionRegion",
+      "address": "0x020c8a18",
+      "size": 20,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/OS_SetDPermissionsForProtectionRegion.cpp",
+      "source_sha256": "91fdf1adfdf95b49c4ef771f88cdc404a7e49efa12288c8aed9e031242551090",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "03852eb39b240892992253f91e56625e6b0f3b021e5d759a193c7045594e30ac",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "OS_SetDPermissionsForProtectionRegion"
+        ],
+        "size": 20,
+        "method": "Pinned independent SDK assembly body adapted only for inline assembler spelling, ABI exports, literal symbol binding and SDK platform constants; compiled after naming/path changes. No target-derived instructions.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "14c48938174ec92563afc6d03de5fa162f4cfdce",
+            "path": "lib/NitroSDK/src/os/os_protectionRegion.c",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/14c48938174ec92563afc6d03de5fa162f4cfdce/lib/NitroSDK/src/os/os_protectionRegion.c",
+            "local_copy": "build/sdk-assembly02-evidence/OS_SetDPermissionsForProtectionRegion/os_protectionRegion.c",
+            "sha256": "409a2145300071cfe63f46fe443ab8f154b6594c1268d2810d59030d0aeddaf2"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly02-evidence/OS_SetDPermissionsForProtectionRegion/instruction-comparison.json",
+          "comparison_sha256": "1c9efaa13bacf35c9a6e4d7f2354bb2456231757fdb32f4ef1fc6895ebe532d7",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 5
+        },
+        "fresh_object_check": {
+          "result": "build/sdk-assembly02-evidence/OS_SetDPermissionsForProtectionRegion/result.json",
+          "result_sha256": "ba269465d9c734c271b2a26f1aba04b61d69af7754bfe58e6201624efd687288",
+          "bytes": "build/sdk-assembly02-evidence/OS_SetDPermissionsForProtectionRegion/bytes.json",
+          "bytes_sha256": "b251f29988a8909647dd8733ece1f28996196dbae942163848e65f2d00edd08b",
+          "candidate_source": "build/sdk-assembly02-evidence/OS_SetDPermissionsForProtectionRegion/candidate.cpp",
+          "candidate_source_sha256": "91fdf1adfdf95b49c4ef771f88cdc404a7e49efa12288c8aed9e031242551090",
+          "candidate_object": "build/sdk-assembly02-evidence/OS_SetDPermissionsForProtectionRegion/candidate.o",
+          "candidate_object_sha256": "ca18354d9df7d84ecb7c9a3f1376d66ab42ca9891b3e3453330a6ddfd1537a3e"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly02-evidence/OS_SetDPermissionsForProtectionRegion/manifest.json",
+          "sha256": "251f8f9b79a188493306926e8356c175fd2355f375efe93928701734eb90ee86"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "Startup_FillWords",
+      "address": "0x02000954",
+      "size": 28,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/Startup_FillWords.cpp",
+      "source_sha256": "1aa5fd909738bc7b90e88d8ba8839cb33c34d0f601bc3001a5622041d4dbb522",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "234da5c7e8e76dbad0ffa50de07656f92dea67450b7905091f3e46d53bcdcaf5",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "Startup_FillWords"
+        ],
+        "size": 28,
+        "method": "Pinned independent SDK assembly body adapted only for inline assembler spelling, ABI exports, literal symbol binding and SDK platform constants; compiled after naming/path changes. No target-derived instructions.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "14c48938174ec92563afc6d03de5fa162f4cfdce",
+            "path": "lib/NitroSDK/asm/mi_memory.s",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/14c48938174ec92563afc6d03de5fa162f4cfdce/lib/NitroSDK/asm/mi_memory.s",
+            "local_copy": "build/sdk-assembly02-evidence/Startup_FillWords/mi_memory.s",
+            "sha256": "951a8d9cc34621fdf01e22d753fd7a1cb99e35c008385f098e3e4a86a6c71e8d"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly02-evidence/Startup_FillWords/instruction-comparison.json",
+          "comparison_sha256": "e9d3f70d68ee6bf257beb11b49fa81e29e174db9f039438f9d3b9a1014d2da30",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 7
+        },
+        "fresh_object_check": {
+          "result": "build/sdk-assembly02-evidence/Startup_FillWords/result.json",
+          "result_sha256": "00502ebc1d76b6ab38cfd701a5ab9dbe24ce593238af682b1d93db660201157a",
+          "bytes": "build/sdk-assembly02-evidence/Startup_FillWords/bytes.json",
+          "bytes_sha256": "9550bf4be1836014ca7ff308aa39457e13e50e07c3b8e7c291a6fa9220291b4f",
+          "candidate_source": "build/sdk-assembly02-evidence/Startup_FillWords/candidate.cpp",
+          "candidate_source_sha256": "1aa5fd909738bc7b90e88d8ba8839cb33c34d0f601bc3001a5622041d4dbb522",
+          "candidate_object": "build/sdk-assembly02-evidence/Startup_FillWords/candidate.o",
+          "candidate_object_sha256": "2839039e07e18f0b47ffdd36f50a56df2a64246540bba8c9add6dc30e0b44cf8"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly02-evidence/Startup_FillWords/manifest.json",
+          "sha256": "cc6a38fb2634ea3ad4227602282c51e8780d11e32c5f59e93ea47215103ab844"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "CpuSet",
+      "address": "0x020001c0",
+      "size": 4,
+      "mode": "thumb",
+      "source": "src/RuntimeSupport/CpuSet.cpp",
+      "source_sha256": "82b38e3aab8b71a0d72270360bd1ba9f15af06af53bb5efc2511747f14bbd22e",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "07967ebdc3979cd4fd4de37fd22b3e6de8965b00dae4ac5585577c9709839652",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {},
+        "text_alignment": 2
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "CpuSet"
+        ],
+        "size": 4,
+        "method": "Pinned independent SDK assembly body adapted only for inline assembler spelling, ABI exports, literal symbol binding and SDK platform constants; compiled after naming/path changes. No target-derived instructions.",
+        "external_sources": [
+          {
+            "repository": "devkitPro/libnds",
+            "commit": "b83ba2aecb782d3540753badde6a5ad7428c5a09",
+            "path": "source/common/biosCalls.s",
+            "url": "https://raw.githubusercontent.com/devkitPro/libnds/b83ba2aecb782d3540753badde6a5ad7428c5a09/source/common/biosCalls.s",
+            "local_copy": "build/sdk-assembly02-evidence/CpuSet/biosCalls.s",
+            "sha256": "015e24c0a3638aed392d3d038c785cc41d63591cbb191583452f3ca39c3a1544"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-assembly02-evidence/CpuSet/instruction-comparison.json",
+          "comparison_sha256": "a34f4ea1bd6df36f99ec26553588fe585f0fb899a45f67b22a1eeef16061757d",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 2
+        },
+        "fresh_object_check": {
+          "result": "build/sdk-assembly02-evidence/CpuSet/result.json",
+          "result_sha256": "8dfb72ced8ec0e29f98a6c2212581d46007418e743d0ccd74008d8500b5259d7",
+          "bytes": "build/sdk-assembly02-evidence/CpuSet/bytes.json",
+          "bytes_sha256": "294b56de14d9519b4eb94798f5263c5aa6b636b542beb68b0cd9bd7c40cab902",
+          "candidate_source": "build/sdk-assembly02-evidence/CpuSet/candidate.cpp",
+          "candidate_source_sha256": "82b38e3aab8b71a0d72270360bd1ba9f15af06af53bb5efc2511747f14bbd22e",
+          "candidate_object": "build/sdk-assembly02-evidence/CpuSet/candidate.o",
+          "candidate_object_sha256": "9a72b33e0973c36cc865506d8f43501cfd9e8cccb414bdd6d50da8787ca78519"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-assembly02-evidence/CpuSet/manifest.json",
+          "sha256": "aac2c2a6d7d0559efce73498bc3033c85efa161b9c1e3ba120af664294cc3875"
+        },
+        "alignment_evidence": {
+          "original_address": "0x020001c0",
+          "instruction_mode": "thumb",
+          "required_alignment": 2,
+          "reason": "Source-bound Thumb subsection uses two-byte instruction alignment so no four-byte section padding shifts the BIOS veneer or following functions; all instruction/literal bytes unchanged."
+        }
+      },
+      "retained_fallback_code": {
+        "start": "0x020001c4",
+        "end": "0x02000466",
+        "original_sha256": "06d425baa49f07e27952869156b9d5ea42067a3575ffc4b1795706e6853dc6cf",
+        "symbols": [
+          {
+            "name": "Mod",
+            "address": "0x2000216",
+            "size": 6,
+            "mode": "thumb",
+            "original_sha256": "60fbe450e50aaefd910a0b8dc4b96ebf7f2e159fcf32ef9592c6641842f866e6"
+          },
+          {
+            "name": "BitUnPack",
+            "address": "0x200026a",
+            "size": 4,
+            "mode": "thumb",
+            "original_sha256": "6e20b0803117ba9fffba8ee7e11d8d62b4ddf8fe18230eb3f90251c58614806e"
+          },
+          {
+            "name": "LZ77UnCompReadByCallbackWrite16bit",
+            "address": "0x20002cc",
+            "size": 4,
+            "mode": "thumb",
+            "original_sha256": "4f32a5a0727704ed8cc1e46af9875d484bb379b73cdd4ae15086deeb7426b8a0"
+          },
+          {
+            "name": "CpuFastSet",
+            "address": "0x200033e",
+            "size": 4,
+            "mode": "thumb",
+            "original_sha256": "dedc152a89df8aadc9dc9526881c29e92f681504cf9bf438bbac1c6362fd9b42"
+          },
+          {
+            "name": "RLUnCompReadByCallbackWrite16bit",
+            "address": "0x200038e",
+            "size": 4,
+            "mode": "thumb",
+            "original_sha256": "92180fdd5a99d438bbf8c27c41c529abc571a5cd47d4e6d10311a84b4c44859c"
+          },
+          {
+            "name": "VBlankIntrWait",
+            "address": "0x2000412",
+            "size": 4,
+            "mode": "thumb",
+            "original_sha256": "7ab868d01804f476d79cf68ccf3bd18c9230d9aaa8612d09c3e718823ac0809b"
+          }
+        ],
+        "reason": "Extracting CpuSet disconnects the remaining BIOS SWI entry section from its linkerroot. Preserve these existing executable entries at their originaladdresses. Retaining originalfallback earns no sourcecredit; all six remain eligible for originreview/reconstruction.",
+        "c_instruction_credit": 0,
+        "root_symbol": "Mod"
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "CP_SaveContext",
+      "address": "0x020cd594",
+      "size": 64,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/CP_SaveContext.cpp",
+      "source_sha256": "246f9b54574b24228b84a7c9980595249b7c0249f111a1382fa165f5dfebf231",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "4034224020f4081f046cdf7cf9d0c004aad1275f050493662b665c1e016c3c7e",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "CP_SaveContext"
+        ],
+        "size": 64,
+        "method": "Fresh inline assembly source copied from pinned authored SDK assembly or necessary processor/BIOS instructions. Export names/constants/SDK platform bindings adapted; no target-derived code. Genuine ABS32 relocations resolved against owning symbols without altering the object. IntrWait is explicitly a4Btail, not full6Bveneer.",
+        "external_sources": [
+          {
+            "repository": "ntrtwl/NitroSDK",
+            "commit": "9eec6c92c9d7bba9350732b11296ed16aab3a8bc",
+            "path": "libraries/cp/src/cp_context.c",
+            "url": "https://raw.githubusercontent.com/ntrtwl/NitroSDK/9eec6c92c9d7bba9350732b11296ed16aab3a8bc/libraries/cp/src/cp_context.c",
+            "local_copy": "build/sdk-drain-evidence/CP_SaveContext/cp_context.c",
+            "sha256": "be158563746e465a29856ac4e81f402e4d7ef9ca89c49c8f751a6483a8bff87d"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-drain-evidence/CP_SaveContext/instruction-comparison.json",
+          "comparison_sha256": "9e1e7b5775bed15cbc59c113599ba98c06dbc55c50139a78b2a2e2f8ebe29cdc",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 16
+        },
+        "fresh_object_check": {
+          "result": "build/sdk-drain-evidence/CP_SaveContext/result.json",
+          "result_sha256": "7dd3b94dacbb49718a499bf6d446af5c3088b1abf4186878777a5e4b8d069cb7",
+          "bytes": "build/sdk-drain-evidence/CP_SaveContext/bytes.json",
+          "bytes_sha256": "2a5fb0a7433b5da33f24be879b86ffa2619dcc2870df85f9edbb14c94f4a60dc",
+          "candidate_source": "build/sdk-drain-evidence/CP_SaveContext/candidate.cpp",
+          "candidate_source_sha256": "246f9b54574b24228b84a7c9980595249b7c0249f111a1382fa165f5dfebf231",
+          "candidate_object": "build/sdk-drain-evidence/CP_SaveContext/candidate.o",
+          "candidate_object_sha256": "bdf6755adbbe84b13efb9cdd34bcc89855ad965ecda9b8a88ad539ccc9ce632d"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-drain-evidence/CP_SaveContext/manifest.json",
+          "sha256": "8421ec1b8bf0f9e1bf1fb2a0fc5c453288137d32eed4600a3bf583a98db27545"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "MI_Copy48B",
+      "address": "0x020ca544",
+      "size": 36,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/MI_Copy48B.cpp",
+      "source_sha256": "8bec0c9b25e107cdec939c0a19ed08bbbbe0daf439d846174bdcf03de4a02963",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "d9a84fcf48143a2bbf70e084ee6b1a76fbae459cced44c3166f72b5ab5aa6ca9",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "MI_Copy48B"
+        ],
+        "size": 36,
+        "method": "Fresh inline assembly source copied from pinned authored SDK assembly or necessary processor/BIOS instructions. Export names/constants/SDK platform bindings adapted; no target-derived code. Genuine ABS32 relocations resolved against owning symbols without altering the object. IntrWait is explicitly a4Btail, not full6Bveneer.",
+        "external_sources": [
+          {
+            "repository": "pret/pokediamond",
+            "commit": "b623abef1b4dfe204ca50aab42447ac00c134290",
+            "path": "arm9/lib/NitroSDK/src/MI_memory.c",
+            "url": "https://raw.githubusercontent.com/pret/pokediamond/b623abef1b4dfe204ca50aab42447ac00c134290/arm9/lib/NitroSDK/src/MI_memory.c",
+            "local_copy": "build/sdk-drain-evidence/MI_Copy48B/MI_memory.c",
+            "sha256": "f8fa42d3c3027fd15796868bd972304f2d5b6315f6a68fda3d1452d6c29d863a"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-drain-evidence/MI_Copy48B/instruction-comparison.json",
+          "comparison_sha256": "c610c8d1a7cbe370ca8a6485e49782c518ff21ad4f2545eab144e7a3ed738a4e",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 9
+        },
+        "fresh_object_check": {
+          "result": "build/sdk-drain-evidence/MI_Copy48B/result.json",
+          "result_sha256": "b32fbbfedbf5d32e140dbc927201a3b6da0cfd9d47448ef787416a5daa1ae5ed",
+          "bytes": "build/sdk-drain-evidence/MI_Copy48B/bytes.json",
+          "bytes_sha256": "a827502175e4bd6f9f17bc073854e700af6b2ed61d49eca9bdd61e3c48dc19b3",
+          "candidate_source": "build/sdk-drain-evidence/MI_Copy48B/candidate.cpp",
+          "candidate_source_sha256": "8bec0c9b25e107cdec939c0a19ed08bbbbe0daf439d846174bdcf03de4a02963",
+          "candidate_object": "build/sdk-drain-evidence/MI_Copy48B/candidate.o",
+          "candidate_object_sha256": "7fb49fda4e973d2f98b30723994229d9272cb3e32e2187ea5ded8c75d06e721b"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-drain-evidence/MI_Copy48B/manifest.json",
+          "sha256": "c9175c90f3e0b08d987a03b0d070a3247520ccb92ef75ac6e53d286f5e1a138a"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "OS_SetProtectionRegion1",
+      "address": "0x020c8a2c",
+      "size": 8,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/OS_SetProtectionRegion1.cpp",
+      "source_sha256": "aaa88e8d7e212a36f6e1a4093de657cd1751b8a7ed9415b1f25e3a2e1636d60e",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "6e9918c3ae85c4beba206bb22bdbbbc76808da64f56d439644a4df5843bb707b",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "OS_SetProtectionRegion1"
+        ],
+        "size": 8,
+        "method": "Fresh inline assembly source copied from pinned authored SDK assembly or necessary processor/BIOS instructions. Export names/constants/SDK platform bindings adapted; no target-derived code. Genuine ABS32 relocations resolved against owning symbols without altering the object. IntrWait is explicitly a4Btail, not full6Bveneer.",
+        "external_sources": [
+          {
+            "repository": "ntrtwl/NitroSDK",
+            "commit": "9eec6c92c9d7bba9350732b11296ed16aab3a8bc",
+            "path": "libraries/os/src/os_protectionRegion.c",
+            "url": "https://raw.githubusercontent.com/ntrtwl/NitroSDK/9eec6c92c9d7bba9350732b11296ed16aab3a8bc/libraries/os/src/os_protectionRegion.c",
+            "local_copy": "build/sdk-drain-evidence/OS_SetProtectionRegion1/os_protectionRegion.c",
+            "sha256": "b2d30c7d9d926a9374c0b090476abe74f153e6e647d310dc39f0ff69304bc0bb"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-drain-evidence/OS_SetProtectionRegion1/instruction-comparison.json",
+          "comparison_sha256": "479de521a95a8e1cf082c57c557c380b0f957317e9bb648b53e4b0d5b2f895d6",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 2
+        },
+        "fresh_object_check": {
+          "result": "build/sdk-drain-evidence/OS_SetProtectionRegion1/result.json",
+          "result_sha256": "1369815f4c34092e31fd2a7953eac46a9a9eccf56b328a2be792c4c1990bdf5a",
+          "bytes": "build/sdk-drain-evidence/OS_SetProtectionRegion1/bytes.json",
+          "bytes_sha256": "6bfe647bb568f0a97d083a20ac4d70ea96add4442089becfe0d80e0fa8d677e6",
+          "candidate_source": "build/sdk-drain-evidence/OS_SetProtectionRegion1/candidate.cpp",
+          "candidate_source_sha256": "aaa88e8d7e212a36f6e1a4093de657cd1751b8a7ed9415b1f25e3a2e1636d60e",
+          "candidate_object": "build/sdk-drain-evidence/OS_SetProtectionRegion1/candidate.o",
+          "candidate_object_sha256": "5bdbf82cc4fb5907d294ef02a78391eee17f3450eea0748da7b3493f72b7bcec"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-drain-evidence/OS_SetProtectionRegion1/manifest.json",
+          "sha256": "42d1be5a8b5f99fba9eee970add5e604b1f9ee401d6d429cc1d4a86a70cdb48a"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "MI_ReadUncompLZ8",
+      "address": "0x020caa10",
+      "size": 388,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/MI_ReadUncompLZ8.cpp",
+      "source_sha256": "5951bef5fa0d8bb34227c10e93dd4eb417d39d4623eff4c9e00fb27fb4bb4d53",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "3bc1beb64a0de5abb0c883eda6b32c6e2028ec260ca0ea071439d34692e15b8c",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "MI_ReadUncompLZ8"
+        ],
+        "size": 388,
+        "method": "Fresh inline assembly source copied from pinned authored SDK assembly or necessary processor/BIOS instructions. Export names/constants/SDK platform bindings adapted; no target-derived code. Genuine ABS32 relocations resolved against owning symbols without altering the object. IntrWait is explicitly a4Btail, not full6Bveneer.",
+        "external_sources": [
+          {
+            "repository": "ntrtwl/NitroSDK",
+            "commit": "9eec6c92c9d7bba9350732b11296ed16aab3a8bc",
+            "path": "libraries/mi/src/mi_uncomp_stream.c",
+            "url": "https://raw.githubusercontent.com/ntrtwl/NitroSDK/9eec6c92c9d7bba9350732b11296ed16aab3a8bc/libraries/mi/src/mi_uncomp_stream.c",
+            "local_copy": "build/sdk-drain-evidence/MI_ReadUncompLZ8/mi_uncomp_stream.c",
+            "sha256": "bba5598c5e7e4b9f56ac93d09aa483fa5eb5688ecdc30ade4f3acbc0f52c4c7f"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-drain-evidence/MI_ReadUncompLZ8/instruction-comparison.json",
+          "comparison_sha256": "f96aeaeaf4eebd680f96fdba27ed2407831335e6ec0d29b2ea13f0c5863befc6",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 97
+        },
+        "fresh_object_check": {
+          "result": "build/sdk-drain-evidence/MI_ReadUncompLZ8/result.json",
+          "result_sha256": "96990fdf223a92f3d49aa88b60e43552eedf25555a4645cf4eeaa3204e5b02e8",
+          "bytes": "build/sdk-drain-evidence/MI_ReadUncompLZ8/bytes.json",
+          "bytes_sha256": "cc885ad899c83cf12acf39ddd59df83fe40fe7006faa568a925d12e2a2d21133",
+          "candidate_source": "build/sdk-drain-evidence/MI_ReadUncompLZ8/candidate.cpp",
+          "candidate_source_sha256": "5951bef5fa0d8bb34227c10e93dd4eb417d39d4623eff4c9e00fb27fb4bb4d53",
+          "candidate_object": "build/sdk-drain-evidence/MI_ReadUncompLZ8/candidate.o",
+          "candidate_object_sha256": "c577a9d05e551bfdcc6e2e26aac9b5af5fa2a145e947d55f410c4f74e663884e"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-drain-evidence/MI_ReadUncompLZ8/manifest.json",
+          "sha256": "e2f789a020d0d9e0412b3860f31d8c605c59c4556c281e91f496513790c567c7"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "OS_SetProtectionRegion2",
+      "address": "0x020c8a34",
+      "size": 8,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/OS_SetProtectionRegion2.cpp",
+      "source_sha256": "3c2186c5ffac26e778d8327c466a28d5b3d28b9af040f5e79cf42c8f5d343f1d",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "92431ce8a41e4a29855e6b5e9757ee5c9798e357db757638f24b6a14f5f09791",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "OS_SetProtectionRegion2"
+        ],
+        "size": 8,
+        "method": "Fresh inline assembly source copied from pinned authored SDK assembly or necessary processor/BIOS instructions. Export names/constants/SDK platform bindings adapted; no target-derived code. Genuine ABS32 relocations resolved against owning symbols without altering the object. IntrWait is explicitly a4Btail, not full6Bveneer.",
+        "external_sources": [
+          {
+            "repository": "pret/pokediamond",
+            "commit": "b623abef1b4dfe204ca50aab42447ac00c134290",
+            "path": "arm9/lib/NitroSDK/src/OS_protectionRegion.c",
+            "url": "https://raw.githubusercontent.com/pret/pokediamond/b623abef1b4dfe204ca50aab42447ac00c134290/arm9/lib/NitroSDK/src/OS_protectionRegion.c",
+            "local_copy": "build/sdk-drain-evidence/OS_SetProtectionRegion2/OS_protectionRegion.c",
+            "sha256": "561b9339f1208f568756b78f13f30ac2f9f6e2230fbc0cf2f1058a72af5c1ba1"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-drain-evidence/OS_SetProtectionRegion2/instruction-comparison.json",
+          "comparison_sha256": "417b4b3b4a5e0ffb19a5f889b1ee5b314c8941be3580f34f2891d7f6ad39a4e2",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 2
+        },
+        "fresh_object_check": {
+          "result": "build/sdk-drain-evidence/OS_SetProtectionRegion2/result.json",
+          "result_sha256": "f56985ae74c7be2ab39607164c57218e3bd409f0a07e4c6000ba730264df0dcc",
+          "bytes": "build/sdk-drain-evidence/OS_SetProtectionRegion2/bytes.json",
+          "bytes_sha256": "f1d3c66bd86fdf7589a380f11b3f6ae37b8feb03e846631bcb362c5531ec1ba0",
+          "candidate_source": "build/sdk-drain-evidence/OS_SetProtectionRegion2/candidate.cpp",
+          "candidate_source_sha256": "3c2186c5ffac26e778d8327c466a28d5b3d28b9af040f5e79cf42c8f5d343f1d",
+          "candidate_object": "build/sdk-drain-evidence/OS_SetProtectionRegion2/candidate.o",
+          "candidate_object_sha256": "eea2f587959045afbd66577c91fb6b1ebbd072fb7e1a1d615ec9c6a28d04a8b7"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-drain-evidence/OS_SetProtectionRegion2/manifest.json",
+          "sha256": "dabe445cc6b19a729cd7d714c2d1c246b42b0a29c7b24421809f9e9181a4cc20"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "MI_SwapWord",
+      "address": "0x020ca7e0",
+      "size": 8,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/MI_SwapWord.cpp",
+      "source_sha256": "ead2bbd37c939b21bbdbdad929d0e615ec1f7a4b33e10d1d581106237e4d4f49",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "97cc6ada39388bbf4899441b1363060543fa78d5477c410985b5f214641a9f25",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "MI_SwapWord"
+        ],
+        "size": 8,
+        "method": "Fresh inline assembly source copied from pinned authored SDK assembly or necessary processor/BIOS instructions. Export names/constants/SDK platform bindings adapted; no target-derived code. Genuine ABS32 relocations resolved against owning symbols without altering the object. IntrWait is explicitly a4Btail, not full6Bveneer.",
+        "external_sources": [
+          {
+            "repository": "pret/pokediamond",
+            "commit": "b623abef1b4dfe204ca50aab42447ac00c134290",
+            "path": "arm9/lib/NitroSDK/src/MI_swap.c",
+            "url": "https://raw.githubusercontent.com/pret/pokediamond/b623abef1b4dfe204ca50aab42447ac00c134290/arm9/lib/NitroSDK/src/MI_swap.c",
+            "local_copy": "build/sdk-drain-evidence/MI_SwapWord/MI_swap.c",
+            "sha256": "55055b2393073bbfbbdc57b5c06bf9ecea95881870981a94a8e26e1a5f966c82"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-drain-evidence/MI_SwapWord/instruction-comparison.json",
+          "comparison_sha256": "221e1991d8e40782964b9f97ee217477e6a442be4dd1da708b9fc7bf0f7e940c",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 2
+        },
+        "fresh_object_check": {
+          "result": "build/sdk-drain-evidence/MI_SwapWord/result.json",
+          "result_sha256": "841308f1f2b1bc091dbc72f2661e2bc5a5a02e02a748ec3964c3f75a2d04657a",
+          "bytes": "build/sdk-drain-evidence/MI_SwapWord/bytes.json",
+          "bytes_sha256": "76aa875d275db04266a72de30a0c993db59d46ad5c93a2ffd9d9c64ec08b0463",
+          "candidate_source": "build/sdk-drain-evidence/MI_SwapWord/candidate.cpp",
+          "candidate_source_sha256": "ead2bbd37c939b21bbdbdad929d0e615ec1f7a4b33e10d1d581106237e4d4f49",
+          "candidate_object": "build/sdk-drain-evidence/MI_SwapWord/candidate.o",
+          "candidate_object_sha256": "2c6cdf87c3110905e41d311a661eac8a579cc2c3b4698152528edf8e0f0c1a8c"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-drain-evidence/MI_SwapWord/manifest.json",
+          "sha256": "d2cdc36ae9c7ea80615f404966fc36f6fc582da40e70009d504c48c88bc86e66"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "OsCountZeroBits",
+      "address": "0x020c9a4c",
+      "size": 8,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/OsCountZeroBits.cpp",
+      "source_sha256": "94303a041d0c6c610daab8c4e1ed5796db20b388a12d69f2fb42c5ef90dd65f3",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "060682c80d3a37098de575f51eabcbe853bedcd07c00051f839c558df4b37d67",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "OsCountZeroBits"
+        ],
+        "size": 8,
+        "method": "Fresh inline assembly source copied from pinned authored SDK assembly or necessary processor/BIOS instructions. Export names/constants/SDK platform bindings adapted; no target-derived code. Genuine ABS32 relocations resolved against owning symbols without altering the object. IntrWait is explicitly a4Btail, not full6Bveneer.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "14c48938174ec92563afc6d03de5fa162f4cfdce",
+            "path": "lib/NitroSDK/src/os/os_vramExclusive.c",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/14c48938174ec92563afc6d03de5fa162f4cfdce/lib/NitroSDK/src/os/os_vramExclusive.c",
+            "local_copy": "build/sdk-drain-evidence/OsCountZeroBits/os_vramExclusive.c",
+            "sha256": "e240edab4c87659b50e86f9470d34c9049934ccd18423f21f6f87da634099378"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-drain-evidence/OsCountZeroBits/instruction-comparison.json",
+          "comparison_sha256": "ee54a9c8bcee3e839271478dcff91487523f2a1a2d861eb74c22d7a6cfd5aa5e",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 2
+        },
+        "fresh_object_check": {
+          "result": "build/sdk-drain-evidence/OsCountZeroBits/result.json",
+          "result_sha256": "d7078103a150e0b8b3f49c66b43471accfa4b1d4085d93ba9eee2f1cfa784666",
+          "bytes": "build/sdk-drain-evidence/OsCountZeroBits/bytes.json",
+          "bytes_sha256": "b5ec671337367fdec56a2989b468268ddff2fb49fac4d695c1ae89651114bb5b",
+          "candidate_source": "build/sdk-drain-evidence/OsCountZeroBits/candidate.cpp",
+          "candidate_source_sha256": "94303a041d0c6c610daab8c4e1ed5796db20b388a12d69f2fb42c5ef90dd65f3",
+          "candidate_object": "build/sdk-drain-evidence/OsCountZeroBits/candidate.o",
+          "candidate_object_sha256": "8c4b83f830a5398c9aa5b928460a6fca4234ba8d54f75391f92f9d5e3aaeecf2"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-drain-evidence/OsCountZeroBits/manifest.json",
+          "sha256": "2f21dd2d0172029baf156a79c0bb7a8910f016be89637c6f82235cbd7522e32c"
+        }
+      }
+    },
+    {
+      "module": "arm9/main",
+      "name": "OS_GetDTCMAddress",
+      "address": "0x020c89e4",
+      "size": 20,
+      "mode": "arm",
+      "source": "src/RuntimeSupport/OS_GetDTCMAddress.cpp",
+      "source_sha256": "41ef5e2155ce6e3c920b722aed23755d865c936fb67b7b089256e7c53af6d305",
+      "classification": "runtime_assembly",
+      "evidence_class": "sdk_reconstruction",
+      "original_sha256": "f59481cb320d1a0506d614cd603b2fe6dee8c06b1ef7bf7859a0afb9e040c93e",
+      "c_reconstruction_eligible": false,
+      "assembly_form": "codewarrior_inline",
+      "inline_metadata": {
+        "branches": [],
+        "aliases": [],
+        "symbol_aliases": {}
+      },
+      "evidence": {
+        "origin": "community_reconstruction",
+        "vendor_archive_match": false,
+        "library": null,
+        "object": null,
+        "symbols": [
+          "OS_GetDTCMAddress"
+        ],
+        "size": 20,
+        "method": "Fresh inline assembly source copied from pinned authored SDK assembly or necessary processor/BIOS instructions. Export names/constants/SDK platform bindings adapted; no target-derived code. Genuine ABS32 relocations resolved against owning symbols without altering the object. IntrWait is explicitly a4Btail, not full6Bveneer.",
+        "external_sources": [
+          {
+            "repository": "pret/pokeheartgold",
+            "commit": "14c48938174ec92563afc6d03de5fa162f4cfdce",
+            "path": "lib/NitroSDK/src/os/os_tcm.c",
+            "url": "https://raw.githubusercontent.com/pret/pokeheartgold/14c48938174ec92563afc6d03de5fa162f4cfdce/lib/NitroSDK/src/os/os_tcm.c",
+            "local_copy": "build/sdk-drain-evidence/OS_GetDTCMAddress/os_tcm.c",
+            "sha256": "708b1963c0c8e48800b09735b24dd533d520cbc17299657c6be05ea948d70982"
+          }
+        ],
+        "instruction_identity": {
+          "comparison": "build/sdk-drain-evidence/OS_GetDTCMAddress/instruction-comparison.json",
+          "comparison_sha256": "f6262057117e5511dda23a38a3fbf89bef019e0a198c62853826d906af14d673",
+          "variants": [
+            "pinned_sdk_body"
+          ],
+          "instructions": 5
+        },
+        "fresh_object_check": {
+          "result": "build/sdk-drain-evidence/OS_GetDTCMAddress/result.json",
+          "result_sha256": "7cef48d858d4357370c1bd176c0eb635f2e41f74ce06e0d744efdc04b2cd8b70",
+          "bytes": "build/sdk-drain-evidence/OS_GetDTCMAddress/bytes.json",
+          "bytes_sha256": "d2b65fa310ed17cfa011612d126e4025fc5732da4042ef80f0d604e0cee58a4e",
+          "candidate_source": "build/sdk-drain-evidence/OS_GetDTCMAddress/candidate.cpp",
+          "candidate_source_sha256": "41ef5e2155ce6e3c920b722aed23755d865c936fb67b7b089256e7c53af6d305",
+          "candidate_object": "build/sdk-drain-evidence/OS_GetDTCMAddress/candidate.o",
+          "candidate_object_sha256": "5b3fba7850b290cd4c7c28c8509a2ef2c3160e2c03bc0c955011637d436ea768"
+        },
+        "evidence_manifest": {
+          "path": "build/sdk-drain-evidence/OS_GetDTCMAddress/manifest.json",
+          "sha256": "72ea8b03f7712ad0f866a5360ac23d6e54c9d420adc85ca3aa752a426115bcd2"
+        }
+      }
+    }
+  ],
+  "package_url": "https://github.com/mid-kid/metroskrew/releases/download/0.1.3/metroskrew-linux-0.1.3.tar.xz",
+  "package_sha256": "2fec5ba308690a25157afc532ed87411a413501d43d85892ae4bfb9eb3975790",
+  "report_aliases": [
+    {
+      "source": "src/RuntimeSupport/_fdiv.cpp",
+      "name": ".L_0200c274",
+      "size": 256
+    },
+    {
+      "source": "src/RuntimeSupport/_ddiv.cpp",
+      "name": ".L_0200d484",
+      "size": 256
+    },
+    {
+      "source": "src/RuntimeSupport/_u32_div_f.cpp",
+      "name": ".L_0200d158",
+      "size": 500
+    }
+  ]
+}

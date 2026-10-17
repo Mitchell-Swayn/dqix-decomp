@@ -29,6 +29,7 @@ typedef char ContextSizeCheck[sizeof(ProcessorContext) == 0xa4 ? 1 : -1];
 extern ThreadGlobals ARM7_ThreadGlobals;
 extern int ARM7_DisableIRQInterrupts(void);
 extern int ARM7_SetIRQInterruptState(int);
+// Original: arm7/wram @ 0x037FC99C; symbol: ARM7_UnlockThreadSwitch.
 unsigned int ARM7_UnlockThreadSwitch(void)
 {
  int state=ARM7_DisableIRQInterrupts();

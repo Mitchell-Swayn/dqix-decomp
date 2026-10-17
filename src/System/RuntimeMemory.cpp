@@ -2,6 +2,7 @@
 
 extern "C" {
 
+// Original: arm9/main @ 0x02001A40; symbol: memcpy; size: 0x20.
 void* memcpy(void* dest, const void* source, unsigned int count)
 {
     char* d = (char*)dest;
@@ -14,6 +15,7 @@ void* memcpy(void* dest, const void* source, unsigned int count)
     return dest;
 }
 
+// Original: arm9/main @ 0x02001A60; symbol: memmove; size: 0x4C.
 void* memmove(void* dest, const void* source, unsigned int count)
 {
     const char* s = (const char*)source;
@@ -37,16 +39,18 @@ void* memmove(void* dest, const void* source, unsigned int count)
 }
 
 // The optimized fill implementation remains a separate runtime dependency.
-void func_02001b2c(void*, int, unsigned int);
+void Runtime_FillMemoryBytes(void*, int, unsigned int);
 
+// Original: arm9/main @ 0x02001AAC; symbol: memset; size: 0x14.
 void* memset(void* dest, int value, unsigned int count)
 {
-    func_02001b2c(dest, value, count);
+    Runtime_FillMemoryBytes(dest, value, count);
     return dest;
 }
 
 // memchr: compare the low byte and return the first matching address.
-void* func_02001ac0(const void* source, int value, unsigned int count)
+// Original: arm9/main @ 0x02001AC0; symbol: func_02001ac0; size: 0x2C.
+void* Runtime_FindByteInMemory(const void* source, int value, unsigned int count)
 {
     const unsigned char* s = (const unsigned char*)source;
     unsigned char byte = value;
@@ -60,7 +64,8 @@ void* func_02001ac0(const void* source, int value, unsigned int count)
 }
 
 // memcmp returns -1 or 1 for unequal bytes, rather than their difference.
-int func_02001aec(const void* lhs, const void* rhs, unsigned int count)
+// Original: arm9/main @ 0x02001AEC; symbol: func_02001aec; size: 0x40.
+int RuntimeMemory_CompareByteRanges(const void* lhs, const void* rhs, unsigned int count)
 {
     const unsigned char* a = (const unsigned char*)lhs;
     const unsigned char* b = (const unsigned char*)rhs;

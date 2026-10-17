@@ -6,9 +6,10 @@ extern "C" {
     extern WorldPlacementSource::Variant data_02108ff4[8];
 }
 
+// Original: arm9/main @ 0x0208E0C4; symbol: _ZN20WorldPlacementSource10ReadRecordEPN6Script9ParameterEi; size: 0x1FC.
 int WorldPlacementSource::ReadRecord(Script::Parameter* parameters, int)
 {
-    Record* record = (Record*)func_ov017_0218b5b0()->allocator_array_1a0[0].Allocate(sizeof(Record));
+    Record* record = (Record*)GameResources_GetInstance()->allocator_array_1a0[0].Allocate(sizeof(Record));
     record->next = 0;
     record->index = (unsigned short)parameters[0].ToInt();
     record->value = (unsigned short)parameters[1].ToInt();

@@ -1,5 +1,6 @@
 #include "System/Matrix.h"
 
+// Original: arm9/main @ 0x020C20D4; symbol: Mat4x3_WriteViewMatrix; size: 0x108.
 void Mat4x3_WriteViewMatrix(const Vector3fix* eye, const Vector3fix* up, const Vector3fix* target, Matrix4x3* out)
 {
     Vector3fix forward;

@@ -7,6 +7,7 @@ extern int ARM7_SetIRQInterruptState(int);
 extern int ARM7_SendMessage(SoundMessageQueue*,void*,int);
 extern void ARM7_NotifySoundWorker(void);
 void ARM7_SoundCommandIpcCallback(int,unsigned int,int);
+// Original: arm7/wram @ 0x03802CA4; symbol: ARM7_SoundCommandIpcCallback.
 void ARM7_SoundCommandIpcCallback(int channel,unsigned int message,int error)
 {
  int state=ARM7_DisableIRQInterrupts();

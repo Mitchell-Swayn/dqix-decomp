@@ -4,6 +4,7 @@
 extern int ARM7_CheckBackupReady(void);
 extern void ARM7_EnableBackupWrites(void);
 extern void ARM7_WaitBackupReady(int,int);
+// Original: arm7/wram @ 0x038035DC; symbol: ARM7_WriteBackupStatus.
 void ARM7_WriteBackupStatus(unsigned int status)
 {
  if(ARM7_CheckBackupReady()) {

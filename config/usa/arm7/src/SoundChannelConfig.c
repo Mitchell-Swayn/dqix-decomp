@@ -12,6 +12,7 @@ extern int ARM7_AdjustSoundVolume(int,int);
 #define TIMER(n) (*(volatile unsigned short*)(0x04000408+(n)))
 #define LOOP(n) (*(volatile unsigned short*)(0x0400040a+(n)))
 #define LENGTH(n) (*(volatile unsigned int*)(0x0400040c+(n)))
+// Original: arm7/wram @ 0x037FEE94; symbol: ARM7_ConfigurePCMChannel.
 void ARM7_ConfigurePCMChannel(int channel,unsigned int source,int format,int repeat,int loopStart,int length,int volume,int divisor,int period,int pan)
 {
  unsigned int offset=channel*16;
@@ -25,6 +26,7 @@ void ARM7_ConfigurePCMChannel(int channel,unsigned int source,int format,int rep
  LENGTH(offset)=length;
  SOURCE(offset)=source;
 }
+// Original: arm7/wram @ 0x037FEF60; symbol: ARM7_ConfigurePSGChannel.
 void ARM7_ConfigurePSGChannel(int channel,int duty,int volume,int divisor,int period,int pan)
 {
  unsigned int offset=channel*16;
@@ -35,6 +37,7 @@ void ARM7_ConfigurePSGChannel(int channel,int duty,int volume,int divisor,int pe
  CONTROL(offset)=(duty<<24)|0x60000000|(pan<<16)|(divisor<<8)|volume;
  TIMER(offset)=0x10000-period;
 }
+// Original: arm7/wram @ 0x037FF00C; symbol: ARM7_ConfigureNoiseChannel.
 void ARM7_ConfigureNoiseChannel(int channel,int volume,int divisor,int period,int pan)
 {
  unsigned int offset=channel*16;

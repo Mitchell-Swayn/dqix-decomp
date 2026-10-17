@@ -1,0 +1,4 @@
+#include <globaldefs.h>
+struct Node { unsigned pad[3];unsigned key;short priority;unsigned short unused; Node *prev,*next; };struct List { unsigned pad[3];Node *first; }; extern "C" List data_02111654;extern "C" void System_ConfigureInterruptFourAndDisplayStatusBit(Node *); extern "C" void PrependDoublyLinkedGlobalNode(Node *);
+// Original: arm9/main @ 0x020C92D0; symbol: func_020c92d0; size: 0x7C.
+ extern "C" void SortedTimerQueue_InsertByKeyAndPriority(Node *node) { Node *at=data_02111654.first;if(at) { unsigned key=node->key; do { if(at->key>=key && (at->key!=key || at->priority>node->priority)) { Node *prev=at->prev;node->prev=prev;node->next=at;at->prev=node;if(prev) { prev->next=node;return; } data_02111654.first=node;System_ConfigureInterruptFourAndDisplayStatusBit(node);return; } at=at->next; }while(at); }PrependDoublyLinkedGlobalNode(node); }

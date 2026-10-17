@@ -8,6 +8,7 @@ extern void ARM7_ClearPowerControlBits(unsigned int);
 extern void ARM7_PowerOffSound(void);
 extern unsigned int ARM7_ReadPowerRegister(unsigned int);
 extern void ARM7_WritePowerRegister(unsigned int,unsigned int);
+// Original: arm7/wram @ 0x03805F6C; symbol: ARM7_ExecutePowerCommand.
 unsigned int ARM7_ExecutePowerCommand(int command,int value)
 {
  switch(command) {

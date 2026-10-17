@@ -3,6 +3,7 @@
 #include "TouchState.h"
 extern int ARM7_EnqueueSpiTask(int,unsigned int,unsigned short,...);
 extern void ARM7_SendSpiReply(int,unsigned int);
+// Original: arm7/wram @ 0x03805074; symbol: ARM7_TouchIpcReceive.
 void ARM7_TouchIpcReceive(unsigned int message)
 {
  int i;

@@ -3,6 +3,7 @@
 #include "Combat/Main/CombatCalculations.h"
 #include "GameState/GameState.h"
 
+// Original: arm9/ov000 @ 0x02155A50; symbol: _Z21UpdateCombatantAttackii; size: 0xA4.
 ARM void UpdateCombatantAttack(int unused, int combatantId) {
     int maxAttack;
     GameState* gameState;
@@ -33,6 +34,7 @@ ARM void UpdateCombatantAttack(int unused, int combatantId) {
     }
 }
 
+// Original: arm9/ov000 @ 0x02155AF4; symbol: _Z22UpdateCombatantDefenseii; size: 0xA4.
 ARM void UpdateCombatantDefense(int unused, int combatantId) {
     int maxDefense;
     struct GameState* gameState;
@@ -63,6 +65,7 @@ ARM void UpdateCombatantDefense(int unused, int combatantId) {
     }
 }
 
+// Original: arm9/ov000 @ 0x02155B98; symbol: _Z22UpdateCombatantAgilityii; size: 0x80.
 ARM void UpdateCombatantAgility(int unused, int combatantId) {
     GameState* gameState;
     GameObject* combatant;
@@ -85,6 +88,7 @@ ARM void UpdateCombatantAgility(int unused, int combatantId) {
     }
 }
 
+// Original: arm9/ov000 @ 0x02155C18; symbol: _Z20UpdateCombatantCharmii; size: 0xC4.
 ARM void UpdateCombatantCharm(int unused, int combatantId) {
     GameState *gameState = GameState::GetInstance();
     GameObject* combatant = gameState->GetCombatantByIndex(combatantId);
@@ -107,6 +111,7 @@ ARM void UpdateCombatantCharm(int unused, int combatantId) {
     }
 }
 
+// Original: arm9/ov000 @ 0x02155CDC; symbol: _Z27UpdateCombatantMagicalMightii; size: 0xB4.
 ARM void UpdateCombatantMagicalMight(int unused, int combatantId) {
     unsigned short magicalMight;
     unsigned int magicalMightBuff;
@@ -129,6 +134,7 @@ ARM void UpdateCombatantMagicalMight(int unused, int combatantId) {
     }
 }
 
+// Original: arm9/ov000 @ 0x02155D90; symbol: _Z29UpdateCombatantMagicalMendingii; size: 0xB4.
 ARM void UpdateCombatantMagicalMending(int unused, int combatantId) {
     unsigned short magicalMending;
     unsigned int magicalMendingBuff;
@@ -151,6 +157,7 @@ ARM void UpdateCombatantMagicalMending(int unused, int combatantId) {
     }
 }
 
+// Original: arm9/ov000 @ 0x02155E44; symbol: _Z19ApplyCombatantBuffsii; size: 0x50.
 ARM void ApplyCombatantBuffs(int unused, int combatantId) {
     UpdateCombatantAttack(unused, combatantId);
     UpdateCombatantDefense(unused, combatantId);

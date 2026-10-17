@@ -1,16 +1,17 @@
 #include "System/RuntimeDecimal.h"
 #pragma optimize_for_size off
-extern "C" int func_0200aa60(double);
-extern "C" int func_0200aa74(double);
-extern "C" double func_0200911c(double, int*);
-extern "C" double func_020091d8(double, int);
-extern "C" int func_0200a9cc(unsigned long long);
-extern "C" void func_02009998(RuntimeDecimal*, int);
-extern "C" void func_020096ac(RuntimeDecimal*, unsigned long long);
+extern "C" int RuntimeFloatClass_ReadDoubleSignBit(double);
+extern "C" int Runtime_ClassifyDouble(double);
+extern "C" double RuntimeFrexp_DecomposeDoubleExponent(double, int*);
+extern "C" double Runtime_ScaleDoubleExponent(double, int);
+extern "C" int Runtime_CountSetBits64(unsigned long long);
+extern "C" void RuntimeDecimalPowerOfTwo_ComputeDecimalPowerOfTwo(RuntimeDecimal*, int);
+extern "C" void Runtime_ConvertUnsignedToDecimalDigits(RuntimeDecimal*, unsigned long long);
 extern "C" void func_02009778(RuntimeDecimal*, const RuntimeDecimal*, const RuntimeDecimal*);
-extern "C" void func_0200a180(RuntimeDecimal* result, double value)
+// Original: arm9/main @ 0x0200A180; symbol: func_0200a180; size: 0x180.
+extern "C" void RuntimeDecimalFromDouble_ConvertDoubleToDecimal(RuntimeDecimal* result, double value)
 {
-    char negative = func_0200aa60(value) != 0;
+    char negative = RuntimeFloatClass_ReadDoubleSignBit(value) != 0;
     if (0.0 == value) {
         result->sign = negative;
         result->exponent = 0;
@@ -18,24 +19,24 @@ extern "C" void func_0200a180(RuntimeDecimal* result, double value)
         result->digits[0] = 0;
         return;
     }
-    if (func_0200aa74(value) <= 2) {
+    if (Runtime_ClassifyDouble(value) <= 2) {
         result->sign = negative;
         result->exponent = 0;
         result->length = 1;
-        result->digits[0] = func_0200aa74(value) == 1 ? 'N' : 'I';
+        result->digits[0] = Runtime_ClassifyDouble(value) == 1 ? 'N' : 'I';
         return;
     }
     if (negative)
         value = -value;
     int exponent;
     union { double floating; unsigned long long bits; } fraction;
-    value = func_0200911c(value, &exponent);
+    value = RuntimeFrexp_DecomposeDoubleExponent(value, &exponent);
     fraction.floating = value;
     unsigned long long bits = fraction.bits | (1ULL << 52);
-    int precision = 53 - func_0200a9cc((bits & -bits) - 1);
+    int precision = 53 - Runtime_CountSetBits64((bits & -bits) - 1);
     RuntimeDecimal integer, power;
-    func_02009998(&power, exponent - precision);
-    func_020096ac(&integer, (unsigned long long)func_020091d8(value, precision));
+    RuntimeDecimalPowerOfTwo_ComputeDecimalPowerOfTwo(&power, exponent - precision);
+    Runtime_ConvertUnsignedToDecimalDigits(&integer, (unsigned long long)Runtime_ScaleDoubleExponent(value, precision));
     func_02009778(result, &integer, &power);
     result->sign = negative;
 }

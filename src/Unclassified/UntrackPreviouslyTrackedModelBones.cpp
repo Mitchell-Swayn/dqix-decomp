@@ -1,0 +1,7 @@
+#include <globaldefs.h>
+ARM
+#include <World/Object3D.h>
+#include <Graphics/Model3D.h>
+extern Object3D::TrackedBoneMatrix data_02107870;extern unsigned char data_021078a8[],data_021078e0[];
+// Original: arm9/main @ 0x0204A4AC; symbol: func_0204a4ac; size: 0x128.
+extern "C" void UntrackPreviouslyTrackedModelBones(unsigned char* object){Object3D* model=*(Object3D**)(object+0x21c);Model3D* mesh;if(!model||!(mesh=*(Model3D**)((unsigned char*)model+8)))return;if(*(int*)(object+0x258)>=0)model->UntrackBoneByIndex(*(int*)(object+0x254));if(*(int*)(object+0x258)>=0)(*(Object3D**)(object+0x21c))->UntrackBoneByIndex(*(int*)(object+0x258));if(*(int*)(object+0x25c)>=0)(*(Object3D**)(object+0x21c))->UntrackBoneByIndex(*(int*)(object+0x25c));if(*(int*)(object+0x254)==-1)*(int*)(object+0x254)=mesh->GetBoneIndex((char*)object+0x224);if(*(int*)(object+0x258)==-1)*(int*)(object+0x258)=mesh->GetBoneIndex((char*)object+0x234);if(*(int*)(object+0x25c)==-1)*(int*)(object+0x25c)=mesh->GetBoneIndex((char*)object+0x244);if(*(int*)(object+0x258)>=0){*(short*)&data_02107870=*(int*)(object+0x254);(*(Object3D**)(object+0x21c))->TrackBone(&data_02107870);}if(*(int*)(object+0x258)>=0){*(short*)((unsigned char*)&data_02107870+0x38)=*(int*)(object+0x258);(*(Object3D**)(object+0x21c))->TrackBone((Object3D::TrackedBoneMatrix*)data_021078a8);}if(*(int*)(object+0x25c)>=0){*(short*)((unsigned char*)&data_02107870+0x70)=*(int*)(object+0x25c);(*(Object3D**)(object+0x21c))->TrackBone((Object3D::TrackedBoneMatrix*)data_021078e0);}}

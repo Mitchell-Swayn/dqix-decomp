@@ -1,5 +1,6 @@
 #include "Graphics/NSBXX/JACInternal.h"
 
+// Original: arm9/main @ 0x020B80B4; symbol: _Z32CalculateTranslationAmountSmoothPiiPN17NSBXXAnimationJAC5Track15ChannelNonConstEPS0_; size: 0x15C.
 void CalculateTranslationAmountSmooth(fix32_t* out, fix32_t time, NSBXXAnimationJAC::Track::ChannelNonConst* channel, NSBXXAnimationJAC* jac)
 {
     unsigned int frameIdx = time >> 12;

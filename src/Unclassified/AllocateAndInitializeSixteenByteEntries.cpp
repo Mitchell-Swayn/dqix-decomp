@@ -1,0 +1,6 @@
+// Original field widths, callee calling behavior and exact symbols reviewed.
+#include <GameState/GameState.h>
+#include <Memory/SafeAllocator.h>
+extern "C" {void ClearFourBytes_Main020E303C(void*);void InitializeFourWordsWithInvalidIndex(void*);void ClearField14Flag400AndField58Flag7AndBytes6EAnd91(void*);void InitializeHalfwordFields956Through95E(void*);void GameState_SetByteField5CDAAndClearPlacementFlag(void*,int);void* memcpy(void*,const void*,unsigned);void* ReadGlobalAt02105AB4();int Graphics_ReadSelectedScreenPowerState(void*);void Object_WriteIndexedByteAtOffsetC(void*,unsigned,int);void Object_InitializeThirtyTwoByteBufferAndSlotFlags(void*);void* Object_GetGlobalConnectionState();int IsFirstWordNonzero(void*);char* FindNonnegativeKeyInEntryArray(void*,int);unsigned short* ReadGlobalValueAt020FB3F0();void ClearWordAndTwoHalfwords_Main020727D8(void*);int ToggleMaskedFlagsAtOffset34(void*,unsigned);void ClearFourLeadingBytesAndWordAtOffsetC(void*);}struct SignedThree{signed int low:3;unsigned int rest:29;};
+// Original: arm9/main @ 0x020286FC; symbol: func_020286fc; size: 0x58.
+extern "C" void AllocateAndInitializeSixteenByteEntries(char* p,SafeAllocator* a,int count){*(void**)(p+4)=a->Allocate(count<<4);if(!*(void**)(p+4)){p[0]=0;return;}p[0]=count;for(int i=0;i<(unsigned char)p[0];++i)ClearFourLeadingBytesAndWordAtOffsetC(*(char**)(p+4)+i*16);}

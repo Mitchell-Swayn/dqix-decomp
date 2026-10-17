@@ -143,11 +143,10 @@ struct TreasureMapLanguageDataOffsets
     unsigned int legacyBossData;
 };
 
-// Will rename this after getting a better idea of what the struct is
 #ifdef jpn
-#define func_ov017_0218b5b0 func_ov017_0218c1d0
+#define GameResources_GetInstance func_ov017_0218c1d0
 #endif
 
 // This is the second function in overlay 17 (the first one stores this pointer).
 // So it's possible the struct is some sort of overall struct for the overlay.
-extern "C" GameResources* func_ov017_0218b5b0();
+extern "C" GameResources* GameResources_GetInstance();

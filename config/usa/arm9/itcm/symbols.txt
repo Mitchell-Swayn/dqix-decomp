@@ -1,6 +1,6 @@
 func_01ff8000 kind:function(arm,size=0x68) addr:0x01ff8000
 func_01ff8068 kind:function(arm,size=0x17c) addr:0x01ff8068
-func_01ff81e4 kind:function(arm,size=0x34) addr:0x01ff81e4
+System_WaitForHardwareHalfwordAndClear kind:function(arm,size=0x34) addr:0x01ff81e4
 func_01ff8218 kind:function(arm,size=0xcc) addr:0x01ff8218
 func_01ff82e4 kind:function(arm,size=0x1c) addr:0x01ff82e4
 func_01ff8300 kind:function(arm,size=0xa8) addr:0x01ff8300
@@ -9,9 +9,9 @@ _Z26ConfigureDMATransferAtomicijjj kind:function(arm,size=0x40) addr:0x01ff8480
 _Z30ConfigureDMATransferSafeAtomicijjj kind:function(arm,size=0x70) addr:0x01ff84c0
 _Z20ConfigureDMATransferijjj kind:function(arm,size=0x24) addr:0x01ff8530
 _Z24ConfigureDMATransferSafeijjj kind:function(arm,size=0x64) addr:0x01ff8554
-func_01ff85b8 kind:function(arm,size=0x38) addr:0x01ff85b8
-func_01ff85f0 kind:function(arm,size=0x1c) addr:0x01ff85f0
-func_01ff860c kind:function(arm,size=0x34) addr:0x01ff860c
+FileCache_ComputeCRC32 kind:function(arm,size=0x38) addr:0x01ff85b8
+FileCache_UpdateCRCWithByte kind:function(arm,size=0x1c) addr:0x01ff85f0
+FileCache_CalculateStringCRC kind:function(arm,size=0x34) addr:0x01ff860c
 cachedFilePaths kind:bss addr:0x01ff8640
 g_masterBrightnessFunctions kind:data(any) addr:0x01ff8734
 g_activeComponentFunctions kind:data(any) addr:0x01ff873c
@@ -35,10 +35,10 @@ _ZN18VRAMStagingManager11UpdateBanksEv kind:function(arm,size=0x114) addr:0x01ff
 _ZN18VRAMStagingManager19SendReadyDataToVRAMEv kind:function(arm,size=0x500) addr:0x01ff91ac
 _ZN18VRAMStagingManager23CommonVRAMRegionTaskSet5ResetEv kind:function(arm,size=0x14) addr:0x01ff96ac
 _Z24SendStagedVRAMDataToVRAMPv kind:function(arm,size=0x14) addr:0x01ff96c0
-func_01ff96d4 kind:function(arm,size=0x14) addr:0x01ff96d4
+VRAMStagingManager_TaskReset kind:function(arm,size=0x14) addr:0x01ff96d4
 func_01ff96e8 kind:function(arm,size=0x14) addr:0x01ff96e8
-func_01ff96fc kind:function(arm,size=0x1c) addr:0x01ff96fc
-func_01ff9718 kind:function(arm,size=0x14) addr:0x01ff9718
+VRAM_InitializeCommonRegionTaskSet kind:function(arm,size=0x1c) addr:0x01ff96fc
+Graphics_ZeroInitializeVRAMStagingManager kind:function(arm,size=0x14) addr:0x01ff9718
 func_01ff972c kind:function(arm,size=0x14) addr:0x01ff972c
 data_01ff9740 kind:bss addr:0x01ff9740
 data_01ffd340 kind:bss addr:0x01ffd340

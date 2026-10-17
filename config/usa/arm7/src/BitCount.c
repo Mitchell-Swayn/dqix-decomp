@@ -1,5 +1,6 @@
 /* Count bits in parallel: first pairs, then nibbles, bytes, and the whole word.
  * Unsigned arithmetic supplies the logical shifts used by the original code. */
+// Original: arm7/wram @ 0x03803F28; symbol: ARM7_CountSetBits.
 unsigned int ARM7_CountSetBits(unsigned int value) {
     value -= (value >> 1) & 0x55555555;
     value = (value & 0x33333333) + ((value >> 2) & 0x33333333);

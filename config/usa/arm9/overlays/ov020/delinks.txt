@@ -5,3 +5,54 @@
     .data       start:0x0218dbc0 end:0x0218dd20 kind:data align:32
     .bss        start:0x0218dd20 end:0x0218dd20 kind:bss align:32
 
+src/Unclassified/ov020/func_ov020_0218b700.cpp:
+    complete
+    .text start:0x0218b700 end:0x0218b710
+
+src/Unclassified/ov020/func_ov020_0218c7f0.cpp:
+    complete
+    .text start:0x0218c7f0 end:0x0218c840
+
+src/Unclassified/ov020/func_ov020_0218d7ac.cpp:
+    complete
+    .text start:0x0218d7ac end:0x0218d800
+
+src/Unclassified/ov020/func_ov020_0218d800.cpp:
+    complete
+    .text start:0x0218d800 end:0x0218d854
+
+src/Unclassified/ov020/func_ov020_0218d8d8.cpp:
+    complete
+    .text start:0x0218d8d8 end:0x0218d944
+
+src/GameState/ov020/func_ov020_0218d854.cpp:
+    complete
+    .text start:0x0218d854 end:0x0218d898
+
+src/Unclassified/ov020/func_ov020_0218d898.cpp:
+    complete
+    .text start:0x0218d898 end:0x0218d8d8
+
+src/GameState/ov020/func_ov020_0218d644.cpp:
+    complete
+    .text start:0x0218d644 end:0x0218d7ac
+
+src/Unclassified/ov020/func_ov020_0218c7bc.cpp:
+    complete
+    .text start:0x0218c7bc end:0x0218c7f0
+
+src/Graphics/ov020/Graphics_SetDisplayControlBits.cpp:
+    complete
+    .text start:0x0218cd64 end:0x0218cd98
+
+src/Graphics/ov020/Graphics_InitializeDualScreenCanvasResources.cpp:
+    complete
+    .text start:0x0218cf8c end:0x0218d32c
+
+src/Graphics/ov020/Graphics_LoadDualScreenCanvasResources.cpp:
+    complete
+    .text start:0x0218c98c end:0x0218cd64
+
+src/Graphics/ov020/Graphics_InitializeSubBackgroundCanvasAndDisplay.cpp:
+    complete
+    .text start:0x0218cd98 end:0x0218cf8c

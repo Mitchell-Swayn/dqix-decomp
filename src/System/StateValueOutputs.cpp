@@ -9,7 +9,8 @@ struct StateRecord
     unsigned int wideSecond;
 };
 
-extern "C" unsigned int func_02012a84(const StateRecord* state, unsigned int* first, unsigned int* second)
+// Original: arm9/main @ 0x02012A84; symbol: func_02012a84; size: 0x28.
+extern "C" unsigned int ReadSelectedCoordinatePair(const StateRecord* state, unsigned int* first, unsigned int* second)
 {
     unsigned int result;
     if (state->useWideValues)

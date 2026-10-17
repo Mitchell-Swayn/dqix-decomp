@@ -6,3 +6,851 @@
 
 src/Combat/Overlay_24/GetAttackBaseDamage.cpp:
 	.text start:0x021e7bc0 end:0x021e80e4
+
+src/Unclassified/ov024/SelectHalfwordForPartyIndex.cpp:
+    complete
+    .text start:0x021da644 end:0x021da670
+
+src/Unclassified/ov024/TestDescriptorFlag100.cpp:
+    complete
+    .text start:0x021dd010 end:0x021dd028
+
+src/Unclassified/ov024/TestDescriptorFlag20.cpp:
+    complete
+    .text start:0x021de25c end:0x021de274
+
+src/Unclassified/ov024/TestDescriptorFlag400000.cpp:
+    complete
+    .text start:0x021e47dc end:0x021e47f4
+
+src/Unclassified/ov024/ClearHalfwordForRecordFlags.cpp:
+    complete
+    .text start:0x021e8bf0 end:0x021e8c48
+
+src/Unclassified/ov024/SelectNonzeroByteEntry.cpp:
+    complete
+    .text start:0x021fe698 end:0x021fe6b4
+
+src/Unclassified/ov024/CacheSelectedByteEntry.cpp:
+    complete
+    .text start:0x021fe6b4 end:0x021fe6c8
+
+src/Unclassified/ov024/TestRecordFlags14Mask01000000.cpp:
+    complete
+    .text start:0x021dd260 end:0x021dd278
+
+src/Unclassified/ov024/TestRecordFlags14Mask40.cpp:
+    complete
+    .text start:0x021df6ec end:0x021df704
+
+src/Unclassified/ov024/TestRecordFlags18Mask2000.cpp:
+    complete
+    .text start:0x021e6798 end:0x021e67b0
+
+src/Unclassified/ov024/TestFlagsWithoutBlockedOrRequestedBits.cpp:
+    complete
+    .text start:0x021eb4b0 end:0x021eb4e4
+
+src/Unclassified/ov024/TestRecordFlags14Mask200.cpp:
+    complete
+    .text start:0x021eda60 end:0x021eda78
+
+src/Unclassified/ov024/ComputeRecordHalfwordRatioOrZero.cpp:
+    complete
+    .text start:0x021db358 end:0x021db3a4
+
+src/Unclassified/ov024/TestLinkedDescriptorFlag800000.cpp:
+    complete
+    .text start:0x021da998 end:0x021da9b0
+
+src/Unclassified/ov024/TestLinkedDescriptorFlag8.cpp:
+    complete
+    .text start:0x021da9b0 end:0x021da9c8
+
+src/Unclassified/ov024/TestLinkedDescriptorFlag80000.cpp:
+    complete
+    .text start:0x021da9c8 end:0x021da9e0
+
+src/Unclassified/ov024/SelectRandomHalfwordIntoFirstSlot.cpp:
+    complete
+    .text start:0x021ed890 end:0x021ed8c0
+
+src/Unclassified/ov024/ScaleTypeTwelveCoordinatePair.cpp:
+    complete
+    .text start:0x021f6f10 end:0x021f6f60
+
+src/Unclassified/ov024/HasNestedFlagBit10.cpp:
+    complete
+    .text start:0x021fcac0 end:0x021fcad8
+
+src/Unclassified/ov024/HasNestedFlagBit16.cpp:
+    complete
+    .text start:0x021fb460 end:0x021fb478
+
+src/Unclassified/ov024/HasNestedFlagBit3.cpp:
+    complete
+    .text start:0x021f273c end:0x021f2754
+
+src/Unclassified/ov024/TestLinkedDescriptorFlag10000000.cpp:
+    complete
+	.text start:0x021edbd8 end:0x021edbf0
+
+src/Unclassified/ov024/TestLinkedDescriptorFlag20000000.cpp:
+    complete
+	.text start:0x021edbf0 end:0x021edc08
+
+src/Unclassified/ov024/TestLinkedDescriptorFlag04000000.cpp:
+    complete
+	.text start:0x021edc08 end:0x021edc20
+
+src/Unclassified/ov024/TestLinkedDescriptorFlag00100000.cpp:
+    complete
+	.text start:0x021edc20 end:0x021edc38
+
+src/Unclassified/ov024/TestLinkedDescriptorFlag00200000.cpp:
+    complete
+	.text start:0x021edc38 end:0x021edc50
+
+src/Unclassified/ov024/ReadContextFlags18Bit11.cpp:
+    complete
+    .text start:0x021e7ba8 end:0x021e7bc0
+
+src/Unclassified/ov024/ReadContextFlags14Bit27.cpp:
+    complete
+    .text start:0x021edbc0 end:0x021edbd8
+
+src/Unclassified/ov024/ReadContextFlags14Bit30.cpp:
+    complete
+    .text start:0x021edc50 end:0x021edc68
+
+src/Unclassified/ov024/ReadContextFlags14Bit31.cpp:
+    complete
+    .text start:0x021edc68 end:0x021edc80
+
+src/Unclassified/ov024/TestDescriptorFlag10AtOffset18.cpp:
+    complete
+    .text start:0x021df704 end:0x021df71c
+
+src/Unclassified/ov024/TestDescriptorFlag200AtOffset18.cpp:
+    complete
+    .text start:0x021eadfc end:0x021eae14
+
+src/Unclassified/ov024/TestDescriptorFlag1000.cpp:
+    complete
+    .text start:0x021e05e4 end:0x021e05fc
+
+src/Unclassified/ov024/StoreFirstEmptyEntry.cpp:
+    complete
+    .text start:0x021eb4e4 end:0x021eb510
+
+src/Unclassified/ov024/CopyTenByteRecord.cpp:
+    complete
+    .text start:0x021f6a4c end:0x021f6a88
+
+src/Unclassified/ov024/TestDescriptorFlagFour.cpp:
+    complete
+    .text start:0x021fb448 end:0x021fb460
+
+src/Unclassified/ov024/TestRecordFlags18Mask20.cpp:
+    complete
+    .text start:0x021e67b0 end:0x021E67C8
+
+src/Unclassified/ov024/func_ov024_021fbec0.cpp:
+    complete
+    .text start:0x021fbec0 end:0x021fbec4
+
+src/Unclassified/ov024/func_ov024_021fbff4.cpp:
+    complete
+    .text start:0x021fbff4 end:0x021fbff8
+
+src/Unclassified/ov024/func_ov024_021fc378.cpp:
+    complete
+    .text start:0x021fc378 end:0x021fc37c
+
+src/Unclassified/ov024/func_ov024_021fc4bc.cpp:
+    complete
+    .text start:0x021fc4bc end:0x021fc4c0
+
+src/Unclassified/ov024/func_ov024_021fc68c.cpp:
+    complete
+    .text start:0x021fc68c end:0x021fc690
+
+src/Unclassified/ov024/func_ov024_021fc690.cpp:
+    complete
+    .text start:0x021fc690 end:0x021fc694
+
+src/Unclassified/ov024/func_ov024_021fc694.cpp:
+    complete
+    .text start:0x021fc694 end:0x021fc698
+
+src/Unclassified/ov024/func_ov024_021fc6cc.cpp:
+    complete
+    .text start:0x021fc6cc end:0x021fc6d0
+
+src/Unclassified/ov024/func_ov024_021fc6d0.cpp:
+    complete
+    .text start:0x021fc6d0 end:0x021fc6d4
+
+src/Unclassified/ov024/func_ov024_021fc6d4.cpp:
+    complete
+    .text start:0x021fc6d4 end:0x021fc6d8
+
+src/Unclassified/ov024/func_ov024_021fc6d8.cpp:
+    complete
+    .text start:0x021fc6d8 end:0x021fc6dc
+
+src/Unclassified/ov024/func_ov024_021fc74c.cpp:
+    complete
+    .text start:0x021fc74c end:0x021fc750
+
+src/Unclassified/ov024/func_ov024_021fc750.cpp:
+    complete
+    .text start:0x021fc750 end:0x021fc754
+
+src/Unclassified/ov024/func_ov024_021fcad8.cpp:
+    complete
+    .text start:0x021fcad8 end:0x021fcadc
+
+src/Unclassified/ov024/func_ov024_021fcadc.cpp:
+    complete
+    .text start:0x021fcadc end:0x021fcae0
+
+src/Unclassified/ov024/func_ov024_021fcae0.cpp:
+    complete
+    .text start:0x021fcae0 end:0x021fcae4
+
+src/Unclassified/ov024/func_ov024_021fcae4.cpp:
+    complete
+    .text start:0x021fcae4 end:0x021fcae8
+
+src/Unclassified/ov024/func_ov024_021fcae8.cpp:
+    complete
+    .text start:0x021fcae8 end:0x021fcaec
+
+src/Unclassified/ov024/func_ov024_021fcaec.cpp:
+    complete
+    .text start:0x021fcaec end:0x021fcaf0
+
+src/Unclassified/ov024/func_ov024_021fcb58.cpp:
+    complete
+    .text start:0x021fcb58 end:0x021fcb5c
+
+src/Unclassified/ov024/func_ov024_021fcb5c.cpp:
+    complete
+    .text start:0x021fcb5c end:0x021fcb60
+
+src/Unclassified/ov024/func_ov024_021fcf9c.cpp:
+    complete
+    .text start:0x021fcf9c end:0x021fcfa0
+
+src/Unclassified/ov024/func_ov024_021fd078.cpp:
+    complete
+    .text start:0x021fd078 end:0x021fd07c
+
+src/Unclassified/ov024/func_ov024_021fd07c.cpp:
+    complete
+    .text start:0x021fd07c end:0x021fd080
+
+src/Unclassified/ov024/func_ov024_021fd080.cpp:
+    complete
+    .text start:0x021fd080 end:0x021fd084
+
+src/Unclassified/ov024/func_ov024_021fd084.cpp:
+    complete
+    .text start:0x021fd084 end:0x021fd088
+
+src/Unclassified/ov024/func_ov024_021fd5c0.cpp:
+    complete
+    .text start:0x021fd5c0 end:0x021fd5c4
+
+src/Unclassified/ov024/func_ov024_021f4174.cpp:
+    complete
+    .text start:0x021f4174 end:0x021f417c
+
+src/Unclassified/ov024/func_ov024_021f417c.cpp:
+    complete
+    .text start:0x021f417c end:0x021f4184
+
+src/Unclassified/ov024/func_ov024_021f4184.cpp:
+    complete
+    .text start:0x021f4184 end:0x021f418c
+
+src/Unclassified/ov024/func_ov024_021f4878.cpp:
+    complete
+    .text start:0x021f4878 end:0x021f4880
+
+src/Unclassified/ov024/func_ov024_021f5420.cpp:
+    complete
+    .text start:0x021f5420 end:0x021f5428
+
+src/Unclassified/ov024/func_ov024_021f59bc.cpp:
+    complete
+    .text start:0x021f59bc end:0x021f59c4
+
+src/Unclassified/ov024/func_ov024_021f6d24.cpp:
+    complete
+    .text start:0x021f6d24 end:0x021f6d2c
+
+src/Unclassified/ov024/func_ov024_021f6fe4.cpp:
+    complete
+    .text start:0x021f6fe4 end:0x021f6fec
+
+src/Unclassified/ov024/func_ov024_021f7150.cpp:
+    complete
+    .text start:0x021f7150 end:0x021f7158
+
+src/GameState/ov024/GameState_SelectLowestRatioGroupObject.cpp:
+    complete
+    .text start:0x021f8628 end:0x021f875c
+
+src/Unclassified/ov024/func_ov024_021f66c0.cpp:
+    complete
+    .text start:0x021f66c0 end:0x021f66cc
+
+src/Unclassified/ov024/func_ov024_021fbff8.cpp:
+    complete
+    .text start:0x021fbff8 end:0x021fc004
+
+src/Unclassified/ov024/func_ov024_021da550.cpp:
+    complete
+    .text start:0x021da550 end:0x021da55c
+
+src/Unclassified/ov024/func_ov024_021d8e60.cpp:
+    complete
+    .text start:0x021d8e60 end:0x021d8e6c
+
+src/Combat/ov024/Combat_GetRandomizedCombatantValue.cpp:
+    complete
+    .text start:0x021d9654 end:0x021d96d0
+
+src/Unclassified/ov024/Object_TestDescriptorExclusionFlagsClear.cpp:
+    complete
+    .text start:0x021fa76c end:0x021fa7ec
+
+src/Unclassified/ov024/func_ov024_021f6820.cpp:
+    complete
+    .text start:0x021f6820 end:0x021f6830
+
+src/Unclassified/ov024/func_ov024_021fc27c.cpp:
+    complete
+    .text start:0x021fc27c end:0x021fc28c
+
+src/Unclassified/ov024/func_ov024_021fc368.cpp:
+    complete
+    .text start:0x021fc368 end:0x021fc378
+
+src/Unclassified/ov024/func_ov024_021fbec4.cpp:
+    complete
+    .text start:0x021fbec4 end:0x021fbed4
+
+src/Unclassified/ov024/func_ov024_021fc4ac.cpp:
+    complete
+    .text start:0x021fc4ac end:0x021fc4bc
+
+src/GameState/ov024/GameState_HasObjectLowFlags.cpp:
+    complete
+    .text start:0x021ea500 end:0x021ea584
+
+src/Unclassified/ov024/func_ov024_021f6b28.cpp:
+    complete
+    .text start:0x021f6b28 end:0x021f6b5c
+
+src/Math/ov024/func_ov024_021f6b8c.cpp:
+    complete
+    .text start:0x021f6b8c end:0x021f6bc0
+
+src/Unclassified/ov024/func_ov024_021f6fb0.cpp:
+    complete
+    .text start:0x021f6fb0 end:0x021f6fe4
+
+src/Graphics/ov024/Graphics_ScaleTwoValuesByFourFifths.cpp:
+    complete
+    .text start:0x021f703c end:0x021f7070
+
+src/Math/ov024/Math_ScalePairByThreeTenths.cpp:
+    complete
+    .text start:0x021f6e54 end:0x021f6e88
+
+src/Unclassified/ov024/SelectPartyRecordValueWithFlagOverrides.cpp:
+    complete
+    .text start:0x021e99d8 end:0x021e9b24
+
+src/Unclassified/ov024/func_ov024_021fc498.cpp:
+    complete
+    .text start:0x021fc498 end:0x021fc4ac
+
+src/Math/ov024/Math_HalfSignedStackValuePlus37.cpp:
+    complete
+    .text start:0x021d9d6c end:0x021d9d80
+
+src/Math/ov024/Math_ScalePairByThreeTenthsAndOneTenth.cpp:
+    complete
+    .text start:0x021f6ed8 end:0x021f6f10
+
+src/GameState/ov024/HasBit1AtNestedOffset18From138.cpp:
+    complete
+    .text start:0x021fb430 end:0x021fb448
+
+src/GameState/ov024/GameState_IsFlagBit17Set.cpp:
+    complete
+    .text start:0x021fb478 end:0x021fb490
+
+src/Math/ov024/func_ov024_021d9224.cpp:
+    complete
+    .text start:0x021d9224 end:0x021d923c
+
+src/Unclassified/ov024/TryActivateIndexedObjectByPackedRandomChance.cpp:
+    complete
+    .text start:0x021eb08c end:0x021eb1ec
+
+src/Combat/ov024/Combat_GetGuardedAttributeModifier.cpp:
+    complete
+    .text start:0x021f875c end:0x021f87dc
+
+src/GameState/ov024/func_ov024_021f3524.cpp:
+    complete
+    .text start:0x021f3524 end:0x021f3564
+
+src/GameState/ov024/func_ov024_021f26fc.cpp:
+    complete
+    .text start:0x021f26fc end:0x021f273c
+
+src/Math/ov024/CoordinateScale_ApplyNestedFlagDefaults.cpp:
+    complete
+    .text start:0x021f6ae8 end:0x021f6b28
+
+src/Unclassified/ov024/func_ov024_021d8cf4.cpp:
+    complete
+    .text start:0x021d8cf4 end:0x021d8d38
+
+src/GameState/ov024/func_ov024_021d8a40.cpp:
+    complete
+    .text start:0x021d8a40 end:0x021d8a84
+
+src/Math/ov024/Object_ScaleValueByThreeHalvesWhenPacked.cpp:
+    complete
+    .text start:0x021d8f4c end:0x021d8f90
+
+src/Math/ov024/Math_ScaleValueIfIndexedObjectModeMatches.cpp:
+    complete
+    .text start:0x021d901c end:0x021d9060
+
+src/Unclassified/ov024/Object_AdjustIntegerByThreeQuartersForIndexedMode.cpp:
+    complete
+    .text start:0x021d9174 end:0x021d91b8
+
+src/Resource/ov024/Resource_ConvertValueForPackedMode.cpp:
+    complete
+    .text start:0x021d8c90 end:0x021d8cd4
+
+src/Math/ov024/func_ov024_021d8e6c.cpp:
+    complete
+    .text start:0x021d8e6c end:0x021d8eb0
+
+src/GameState/ov024/GameState_TryReadIndexedValue.cpp:
+    complete
+    .text start:0x021f59c4 end:0x021f5a08
+
+src/GameState/ov024/func_ov024_021f70bc.cpp:
+    complete
+    .text start:0x021f70bc end:0x021f7100
+
+src/Math/ov024/Math_ScaleValueByOneAndHalfWhenIndexedModeMatches.cpp:
+    complete
+    .text start:0x021d91c0 end:0x021d9204
+
+src/Math/ov024/AdjustValueByPackedMode.cpp:
+    complete
+    .text start:0x021d8f90 end:0x021d8fd4
+
+src/Resource/ov024/Ov024_ScaleValueWhenPackedMode.cpp:
+    complete
+    .text start:0x021d8ed4 end:0x021d8f18
+
+src/GameState/ov024/GameState_StoreIndexIfObjectFlagClear.cpp:
+    complete
+    .text start:0x021f5558 end:0x021f559c
+
+src/Math/ov024/Math_ScaleByThreeHalvesWhenPackedMode.cpp:
+    complete
+    .text start:0x021d9084 end:0x021d90c8
+
+src/GameState/ov024/GameState_MarkRatioBelowHalf.cpp:
+    complete
+    .text start:0x021f3688 end:0x021f36cc
+
+src/GameState/ov024/GameState_WriteValueForEligibleIndexedObject.cpp:
+    complete
+    .text start:0x021f5300 end:0x021f5344
+
+src/GameState/ov024/GameState_IsNestedFlagBit1Set.cpp:
+    complete
+    .text start:0x021f0d0c end:0x021f0d28
+
+src/Unclassified/ov024/func_ov024_021f1440.cpp:
+    complete
+    .text start:0x021f1440 end:0x021f145c
+
+src/Combat/ov024/Combat_CalculateThreeQuarterAttackPhysicalDamage.cpp:
+    complete
+    .text start:0x021d8ad8 end:0x021d8b68
+
+src/Resource/ov024/Resource_ScaleValueForMatchingIndexedObject.cpp:
+    complete
+    .text start:0x021d8e18 end:0x021d8e60
+
+src/Combat/ov024/Combat_SelectHighestPriorityCandidate.cpp:
+    complete
+    .text start:0x021f8d80 end:0x021f8f20
+
+src/Combat/ov024/Combat_ScaleTwoCombatantValuesByFourFifths.cpp:
+    complete
+    .text start:0x021d923c end:0x021d92d0
+
+src/Grotto/ov024/Grotto_CheckNestedModeAndWriteOutputs.cpp:
+    complete
+    .text start:0x021f51d4 end:0x021f5220
+
+src/GameState/ov024/func_ov024_021f2d4c.cpp:
+    complete
+    .text start:0x021f2d4c end:0x021f2d98
+
+src/GameState/ov024/GameState_TryWriteIndexedValueBelowThreshold.cpp:
+    complete
+    .text start:0x021f331c end:0x021f3368
+
+src/Unclassified/ov024/Unclassified_DispatchObjectModeHandler.cpp:
+    complete
+    .text start:0x021f736c end:0x021f73b8
+
+src/Graphics/ov024/Graphics_ScaleValuesForZeroPackedMode.cpp:
+    complete
+    .text start:0x021f7070 end:0x021f70bc
+
+src/Unclassified/ov024/func_ov024_021d8cd4.cpp:
+    complete
+    .text start:0x021d8cd4 end:0x021d8cf4
+
+src/Math/ov024/func_ov024_021d8c70.cpp:
+    complete
+    .text start:0x021d8c70 end:0x021d8c90
+
+src/Math/ov024/Math_ConvertSixthIntegerToThreeHalves.cpp:
+    complete
+    .text start:0x021d9204 end:0x021d9224
+
+src/Math/ov024/Math_ScaleSixthArgumentByThreeHalves.cpp:
+    complete
+    .text start:0x021d92d0 end:0x021d92f0
+
+src/Combat/ov024/Combat_ComputeClampedStatPercentage.cpp:
+    complete
+    .text start:0x021f8bd8 end:0x021f8d80
+
+src/GameState/ov024/func_ov024_021f4e84.cpp:
+    complete
+    .text start:0x021f4e84 end:0x021f4ed4
+
+src/Math/ov024/Math_ScaleFloatPairByThreeHalvesWhenModeThree.cpp:
+    complete
+    .text start:0x021f6c70 end:0x021f6cc0
+
+src/GameState/ov024/func_ov024_021f6e04.cpp:
+    complete
+    .text start:0x021f6e04 end:0x021f6e54
+
+src/Resource/ov024/Resource_ScaleValuesByThreeQuartersForFlag.cpp:
+    complete
+    .text start:0x021f6bf0 end:0x021f6c40
+
+src/Unclassified/ov024/func_ov024_021f6fec.cpp:
+    complete
+    .text start:0x021f6fec end:0x021f703c
+
+src/GameState/ov024/GameState_FindIndexedObjectAndWriteOutputs.cpp:
+    complete
+    .text start:0x021f5428 end:0x021f5478
+
+src/Unclassified/ov024/Object_ScalePairByThreeHalvesForModeSeven.cpp:
+    complete
+    .text start:0x021f6e88 end:0x021f6ed8
+
+src/Math/ov024/func_ov024_021f6f60.cpp:
+    complete
+    .text start:0x021f6f60 end:0x021f6fb0
+
+src/World/ov024/World_ScaleFieldsForSubtype4.cpp:
+    complete
+    .text start:0x021f7100 end:0x021f7150
+
+src/GameState/ov024/Ov024_SelectRecordHalfword.cpp:
+    complete
+    .text start:0x021e9b24 end:0x021e9b74
+
+src/Math/ov024/Math_ScaleCoordinatePairWhenFieldEqualsTen.cpp:
+    complete
+    .text start:0x021f7158 end:0x021f71a8
+
+src/Math/ov024/Math_InsertScoredRecordIntoFourSlots.cpp:
+    complete
+    .text start:0x021f6830 end:0x021f68c8
+
+src/Unclassified/ov024/AdjustDescriptorValueForObject.cpp:
+    complete
+    .text start:0x021f87dc end:0x021f8874
+
+src/GameState/ov024/GameState_FindObjectAndSetOutputs.cpp:
+    complete
+    .text start:0x021f2548 end:0x021f259c
+
+src/GameState/ov024/GameState_WriteValueIfObjectHasEligibleDescriptor.cpp:
+    complete
+    .text start:0x021f2064 end:0x021f20b8
+
+src/Unclassified/ov024/func_ov024_021f6d2c.cpp:
+    complete
+    .text start:0x021f6d2c end:0x021f6d80
+
+src/Math/ov024/Math_ScalePairByFiveQuartersForNestedType11.cpp:
+    complete
+    .text start:0x021f6d80 end:0x021f6dd4
+
+src/GameState/ov024/GameState_InitializeBufferForAvailableObject.cpp:
+    complete
+    .text start:0x021f5888 end:0x021f58dc
+
+src/GameState/ov024/GameState_SetObjectNibbleByThreshold.cpp:
+    complete
+    .text start:0x021eb3e0 end:0x021eb47c
+
+src/GameState/ov024/GameState_MapObjectValueRatioToByte.cpp:
+    complete
+    .text start:0x021eb344 end:0x021eb3e0
+
+src/GameState/ov024/GameState_MapIndexToCode.cpp:
+    complete
+    .text start:0x021e8c48 end:0x021e8ca0
+
+src/Math/ov024/Math_ScaleIntegerBy2_5.cpp:
+    complete
+    .text start:0x021d8bc8 end:0x021d8bec
+
+src/Math/ov024/Math_ScaleSixthArgumentBySixFifths.cpp:
+    complete
+    .text start:0x021d8ff8 end:0x021d901c
+
+src/Math/ov024/Math_ScaleIntegerBy0_8.cpp:
+    complete
+    .text start:0x021d9060 end:0x021d9084
+
+src/Math/ov024/ConvertSixthIntByFloatScale03.cpp:
+    complete
+    .text start:0x021d8eb0 end:0x021d8ed4
+
+src/Math/ov024/Math_ScaleIntegerBySevenTenths.cpp:
+    complete
+    .text start:0x021d92f8 end:0x021d931c
+
+src/GameState/ov024/Ov024_TestNestedByteEqualFive.cpp:
+    complete
+    .text start:0x021edca4 end:0x021edcc8
+
+src/Combat/ov024/Combat_RepeatTargetListForActionProperties.cpp:
+    complete
+    .text start:0x021e8dc0 end:0x021e8fa4
+
+src/GameState/ov024/GameState_FindMatchingRequestRequirement.cpp:
+    complete
+    .text start:0x021df71c end:0x021df924
+
+src/GameState/ov024/GameState_UpdateIndexedRecordHistory.cpp:
+    complete
+    .text start:0x021ea584 end:0x021ea78c
+
+src/Combat/ov024/AdjustRecordValueForCombatant.cpp:
+    complete
+    .text start:0x021d8c10 end:0x021d8c70
+
+src/Combat/ov024/Combat_ComputeRandomFractionOfCombatantValue.cpp:
+    complete
+    .text start:0x021d937c end:0x021d93dc
+
+src/Combat/ov024/Combat_GetRandomizedCombatantStatWithFallback.cpp:
+    complete
+    .text start:0x021d931c end:0x021d937c
+
+src/GameState/ov024/GameState_CreateAndAppendIndexedRecord.cpp:
+    complete
+    .text start:0x021e8ca0 end:0x021e8cfc
+
+src/Unclassified/ov024/Object_ScalePairByThreeHalvesWhenFlagPredicateMatches.cpp:
+    complete
+    .text start:0x021f6cc0 end:0x021f6d24
+
+src/GameState/ov024/GameState_StoreValueUnlessThreeFlagGroupsPassThreshold.cpp:
+    complete
+    .text start:0x021f5c80 end:0x021f5ce4
+
+src/Combat/ov024/Combat_AdjustInputByCombatantFlags.cpp:
+    complete
+    .text start:0x021d8db4 end:0x021d8e18
+
+src/Combat/ov024/QueueQuarterOfLinkedNodeValuesForPartyObject.cpp:
+    complete
+    .text start:0x021e6104 end:0x021e62cc
+
+src/Unclassified/ov024/Grotto_FindEntryBySlotIndex.cpp:
+    complete
+    .text start:0x021f69b4 end:0x021f6a1c
+
+src/Grotto/ov024/Grotto_ApplyPositiveSlotDescriptor.cpp:
+    complete
+    .text start:0x021f691c end:0x021f69b4
+
+src/GameState/ov024/GameState_SelectCombatantScaledValue.cpp:
+    complete
+    .text start:0x021d95e0 end:0x021d9654
+
+src/Unclassified/ov024/Util_IsType3Or4WithBits14To18Clear.cpp:
+    complete
+    .text start:0x021ea4d0 end:0x021ea500
+
+src/Math/ov024/Ov024_ScaleObjectFieldsByThreeQuarters.cpp:
+    complete
+    .text start:0x021f6bc0 end:0x021f6bf0
+
+src/Graphics/ov024/Object3D_ScaleAdjacentFloatFieldsByThreeQuarters.cpp:
+    complete
+    .text start:0x021f6b5c end:0x021f6b8c
+
+src/Math/ov024/Ov024_ScaleObjectFieldsByThreeHalves.cpp:
+    complete
+    .text start:0x021f71a8 end:0x021f71d8
+
+src/Math/ov024/Math_HalveFloatFields14And18To1CAnd20.cpp:
+    complete
+    .text start:0x021f6c40 end:0x021f6c70
+
+src/Unclassified/ov024/Unclassified_AddPackedModeMatchToBase.cpp:
+    complete
+    .text start:0x021d8a84 end:0x021d8ab4
+
+src/Resource/ov024/AppendTenByteRecordIfCapacity.cpp:
+    complete
+    .text start:0x021f6a1c end:0x021f6a4c
+
+src/Graphics/ov024/SubmitPercentScaledDisplayRecord.cpp:
+    complete
+    .text start:0x021fd088 end:0x021fd104
+
+src/World/ov024/Effect_ApplyMagnitudeAndChannelSetting.cpp:
+    complete
+    .text start:0x021fd104 end:0x021fd160
+
+src/Graphics/ov024/UpdateConditionalDisplayPercentFromNestedState.cpp:
+    complete
+    .text start:0x021fd358 end:0x021fd3f0
+
+src/Combat/ov024/Combat_ApplyClampedDescriptorPercentage.cpp:
+    complete
+    .text start:0x021fd5c4 end:0x021fd66c
+
+src/Unclassified/ov024/UpdateClampedDescriptorPercentage.cpp:
+    complete
+    .text start:0x021fd45c end:0x021fd504
+
+src/Combat/ov024/Combat_ApplyClampedScaledEntryValue.cpp:
+    complete
+    .text start:0x021fd2b4 end:0x021fd358
+
+src/Graphics/ov024/Graphics_ScaleAndApplyCopiedConfiguration.cpp:
+    complete
+    .text start:0x021fd7b8 end:0x021fd858
+
+src/Resource/ov024/Resource_UpdateSelectedEntryIfEnabled.cpp:
+    complete
+    .text start:0x021fcaf0 end:0x021fcb24
+
+src/GameState/ov024/Ov024_UpdateSelectedEntry.cpp:
+    complete
+    .text start:0x021fc698 end:0x021fc6cc
+
+src/Graphics/ov024/Graphics_ApplyModeThreeIfDescriptorReady.cpp:
+    complete
+    .text start:0x021fd428 end:0x021fd45c
+
+src/Unclassified/ov024/Ov024_ForwardFifthArgument.cpp:
+    complete
+    .text start:0x021f090c end:0x021f0920
+
+src/GameState/ov024/Ov024_UpdateWhenModeTwoAndInactive.cpp:
+    complete
+    .text start:0x021fd3f0 end:0x021fd428
+
+src/Unclassified/ov024/Combatant_ClearWordWhenCapacityThresholdReached.cpp:
+    complete
+    .text start:0x021ee33c end:0x021ee378
+
+src/GameState/ov024/InvokeObjectProcessorIndex4WhenCountAtLeast3.cpp:
+    complete
+    .text start:0x021fbefc end:0x021fbf18
+
+src/Combat/ov024/Combat_SetCombatantNestedFlag21ByID.cpp:
+    complete
+    .text start:0x021e57c0 end:0x021e57e0
+
+src/Graphics/ov024/Graphics_UpdateSelectedEntryPercentage.cpp:
+    complete
+    .text start:0x021fd504 end:0x021fd5c0
+
+src/GameState/ov024/GameState_ClearSelectedRecordAndMarkCombatant.cpp:
+    complete
+    .text start:0x021e5e80 end:0x021e5ec4
+
+src/Combat/ov024/Ov024_GetActionForMissingCombatant.cpp:
+    complete
+    .text start:0x021e9990 end:0x021e99d8
+
+src/Graphics/ov024/Ov024_ProcessObjectWhenEntryOneSelected.cpp:
+    complete
+    .text start:0x021fbed4 end:0x021fbefc
+
+src/Unclassified/ov024/Unclassified_InvokeHelperSevenWhenEntryOneNonzero.cpp:
+    complete
+    .text start:0x021fc28c end:0x021fc2b4
+
+src/Resource/ov024/Object_ProcessEntryFiveWhenByteEntryOneSelected.cpp:
+    complete
+    .text start:0x021fc254 end:0x021fc27c
+
+src/GameState/ov024/ProcessObjectAtIndex6WhenEntryFlagPresent.cpp:
+    complete
+    .text start:0x021fc018 end:0x021fc040
+
+src/Unclassified/ov024/OV024_ValidateAndStoreIndexedResult.cpp:
+    complete
+    .text start:0x021f26a8 end:0x021f26fc
+
+src/Combat/ov024/Combat_InitializeTurnWorkBuffer.cpp:
+    complete
+    .text start:0x021eb510 end:0x021eb5d0
+
+src/Combat/ov024/Combatant_GetPartyStateValue.cpp:
+    complete
+    .text start:0x021e9464 end:0x021e94c4
+
+src/Combat/ov024/Object_ApplyConditionalFloatBlendAndRestoreField124.cpp:
+    complete
+    .text start:0x021fcb60 end:0x021fcbc8
+
+src/Unclassified/ov024/Network_ValidateAndDispatchRecord.cpp:
+    complete
+    .text start:0x021f1844 end:0x021f18a0
+
+src/GameState/ov024/Ov024_UpdateEntryForPackedMode.cpp:
+    complete
+    .text start:0x021fc2b4 end:0x021fc320
+
+src/Resource/ov024/Resource_ScaleIntegerByRandomFactor.cpp:
+    complete
+    .text start:0x021d8f18 end:0x021d8f4c

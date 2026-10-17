@@ -1,5 +1,6 @@
 #include "World/Zone3DEmbeddedState.h"
 
+// Original: arm9/main @ 0x020DE650; symbol: _ZN13ZoneState27544Data17FindPrimaryRecordEiPFiPKvE; size: 0x78.
 void* ZoneState2754::Data::FindPrimaryRecord(int key, int (*getKey)(const void*))
 {
     char* records = this->records;

@@ -3,6 +3,7 @@
 
 extern void ARM7_UpdatePowerLed(void);
 
+// Original: arm7/wram @ 0x037F84F0; symbol: ARM7_PowerVBlankCallback.
 void ARM7_PowerVBlankCallback(void)
 {
     if (ARM7_PowerState.initialized) {

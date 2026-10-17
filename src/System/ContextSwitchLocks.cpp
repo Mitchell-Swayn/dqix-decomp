@@ -4,6 +4,7 @@
 #pragma dont_inline on
 #pragma optimize_for_size off
 
+// Original: arm9/main @ 0x020C7C40; symbol: _Z20AddContextSwitchLockv; size: 0x34.
 unsigned int AddContextSwitchLock()
 {
     int priorState = DisableIRQInterrupts();
@@ -21,6 +22,7 @@ unsigned int AddContextSwitchLock()
     return oldCount;
 }
 
+// Original: arm9/main @ 0x020C7C74; symbol: _Z23RemoveContextSwitchLockv; size: 0x34.
 unsigned int RemoveContextSwitchLock()
 {
     int priorState = DisableIRQInterrupts();
@@ -36,6 +38,7 @@ unsigned int RemoveContextSwitchLock()
     return oldCount;
 }
 
+// Original: arm9/main @ 0x020C7CA8; symbol: _Z17SetContextEndProcP16ProcessorContextPFviE; size: 0x8.
 void SetContextEndProc(ProcessorContext* context, ProcessorContext::ExitRoutine proc)
 {
     context->exitProc = proc;

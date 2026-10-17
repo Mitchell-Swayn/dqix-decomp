@@ -4,6 +4,7 @@
 // SetArenaLow, while the original contains a call.
 
 // USA: 0x020c86fc
+// Original: arm9/main @ 0x020C86FC; symbol: _Z16AllocateArenaLowijj; size: 0x6C.
 void* AllocateArenaLow(int arenaId, unsigned int size, unsigned int alignment)
 {
     unsigned int low = (unsigned int)GetArenaLow(arenaId);

@@ -1,0 +1,2 @@
+// Original: arm9/ov017 @ 0x021A4700; symbol: func_ov017_021a4700; size: 0x54.
+extern "C" void Vector3fix_Subtract(void*,void*,void*); extern "C" void Vector3fix_Normalize(void*,void*); extern "C" int fix32_Atan2(int,int); extern "C" int _Z24fix32SignedAngleDistanceii(int,int); extern "C" short ComputeSignedAngleToTargetVector(void* a,int angle,void* out) { int v[3]; Vector3fix_Subtract(out,a,v); Vector3fix_Normalize(v,v); return (short)_Z24fix32SignedAngleDistanceii(angle,fix32_Atan2(v[0],v[2])); }

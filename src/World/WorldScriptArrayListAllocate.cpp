@@ -1,7 +1,8 @@
 #include "World/WorldScriptArrayList.h"
 #include "Memory/SafeAllocator.h"
 
-extern "C" void func_0208d8ec(WorldScriptArrayList* list,
+// Original: arm9/main @ 0x0208D8EC; symbol: func_0208d8ec; size: 0x3C.
+extern "C" void AllocateWorldScriptArrayEntries(WorldScriptArrayList* list,
                                SafeAllocator* allocator, int capacity)
 {
     if (allocator == 0) return;

@@ -39,6 +39,7 @@ extern int ARM7_GetProcessorMode(void);
 extern ProcessorContext *ARM7_GetFirstReadyThread(void);
 extern int ARM7_SaveThreadContext(ProcessorContext*);
 extern void ARM7_RestoreThreadContext(ProcessorContext*);
+// Original: arm7/wram @ 0x037FC29C; symbol: ARM7_SwitchThread.
 void ARM7_SwitchThread(void)
 {
  ThreadSystem *system;

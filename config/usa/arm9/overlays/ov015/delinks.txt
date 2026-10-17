@@ -4,3 +4,694 @@
     .data       start:0x02193fa0 end:0x02194560 kind:data align:32
     .bss        start:0x02194560 end:0x02194600 kind:bss align:32
 
+src/Unclassified/ov015/func_ov015_02191284.cpp:
+    complete
+    .text start:0x02191284 end:0x02191294
+
+src/Unclassified/ov015/func_ov015_02193150.cpp:
+    complete
+    .text start:0x02193150 end:0x02193160
+
+src/Unclassified/ov015/func_ov015_021933ac.cpp:
+    complete
+    .text start:0x021933ac end:0x021933bc
+
+src/Unclassified/ov015/func_ov015_0218bc9c.cpp:
+    complete
+    .text start:0x0218bc9c end:0x0218bcb0
+
+src/Unclassified/ov015/func_ov015_0219313c.cpp:
+    complete
+    .text start:0x0219313c end:0x02193150
+
+src/Unclassified/ov015/func_ov015_0218b810.cpp:
+    complete
+    .text start:0x0218b810 end:0x0218b828
+
+src/Unclassified/ov015/func_ov015_021931b4.cpp:
+    complete
+    .text start:0x021931b4 end:0x021931cc
+
+src/Unclassified/ov015/func_ov015_0218ba1c.cpp:
+    complete
+    .text start:0x0218ba1c end:0x0218ba44
+
+src/Unclassified/ov015/func_ov015_0218bb14.cpp:
+    complete
+    .text start:0x0218bb14 end:0x0218bb3c
+
+src/Unclassified/ov015/func_ov015_0218bae8.cpp:
+    complete
+    .text start:0x0218bae8 end:0x0218bb14
+
+src/Unclassified/ov015/func_ov015_021931cc.cpp:
+    complete
+    .text start:0x021931cc end:0x021931f8
+
+src/Unclassified/ov015/func_ov015_0218ffa8.cpp:
+    complete
+    .text start:0x0218ffa8 end:0x0218ffd0
+
+src/Unclassified/ov015/func_ov015_0218ffd0.cpp:
+    complete
+    .text start:0x0218ffd0 end:0x0218fff8
+
+src/Unclassified/ov015/func_ov015_0218fff8.cpp:
+    complete
+    .text start:0x0218fff8 end:0x02190020
+
+src/Unclassified/ov015/func_ov015_0218ff7c.cpp:
+    complete
+    .text start:0x0218ff7c end:0x0218ffa8
+
+src/Unclassified/ov015/func_ov015_0219005c.cpp:
+    complete
+    .text start:0x0219005c end:0x02190090
+
+src/Unclassified/ov015/func_ov015_021931f8.cpp:
+    complete
+    .text start:0x021931f8 end:0x0219322c
+
+src/Unclassified/ov015/func_ov015_0219322c.cpp:
+    complete
+    .text start:0x0219322c end:0x02193260
+
+src/Unclassified/ov015/func_ov015_02193260.cpp:
+    complete
+    .text start:0x02193260 end:0x02193294
+
+src/Resource/ov015/func_ov015_0218b5a0.cpp:
+    complete
+    .text start:0x0218b5a0 end:0x0218b5c8
+
+src/Resource/ov015/func_ov015_0218b6bc.cpp:
+    complete
+    .text start:0x0218b6bc end:0x0218b6e4
+
+src/Resource/ov015/func_ov015_0218b9ac.cpp:
+    complete
+    .text start:0x0218b9ac end:0x0218b9d4
+
+src/Resource/ov015/func_ov015_0218b978.cpp:
+    complete
+    .text start:0x0218b978 end:0x0218b9ac
+
+src/Unclassified/ov015/func_ov015_0218b828.cpp:
+    complete
+    .text start:0x0218b828 end:0x0218b978
+
+src/Resource/ov015/func_ov015_0218b5c8.cpp:
+    complete
+    .text start:0x0218b5c8 end:0x0218b6bc
+
+src/Unclassified/ov015/func_ov015_0218b9d4.cpp:
+    complete
+    .text start:0x0218b9d4 end:0x0218ba1c
+
+src/Data/ov015/data_ov015_02193fc8.cpp:
+    complete
+    .data start:0x2193fc8 end:0x2193fe0
+
+src/Data/ov015/data_ov015_02193fe4.cpp:
+    complete
+    .data start:0x2193fe4 end:0x2193fea
+
+src/Data/ov015/data_ov015_02193fea.cpp:
+    complete
+    .data start:0x2193fea end:0x2193ffa
+
+src/Data/ov015/data_ov015_02193ffa.cpp:
+    complete
+    .data start:0x2193ffa end:0x219400a
+
+src/Data/ov015/data_ov015_0219400a.cpp:
+    complete
+    .data start:0x219400a end:0x219400d
+
+src/Data/ov015/data_ov015_0219400d.cpp:
+    complete
+    .data start:0x219400d end:0x2194010
+
+src/Data/ov015/data_ov015_02194010.cpp:
+    complete
+    .data start:0x2194010 end:0x2194013
+
+src/Data/ov015/data_ov015_02194013.cpp:
+    complete
+    .data start:0x2194013 end:0x2194020
+
+src/Data/ov015/data_ov015_02194020.cpp:
+    complete
+    .data start:0x2194020 end:0x219403b
+
+src/Data/ov015/data_ov015_0219403b.cpp:
+    complete
+    .data start:0x219403b end:0x2194042
+
+src/Data/ov015/data_ov015_02194042.cpp:
+    complete
+    .data start:0x2194042 end:0x219404a
+
+src/Data/ov015/data_ov015_0219404a.cpp:
+    complete
+    .data start:0x219404a end:0x2194052
+
+src/Data/ov015/data_ov015_02194052.cpp:
+    complete
+    .data start:0x2194052 end:0x2194064
+
+src/Data/ov015/data_ov015_02194064.cpp:
+    complete
+    .data start:0x2194064 end:0x2194078
+
+src/Data/ov015/data_ov015_02194078.cpp:
+    complete
+    .data start:0x2194078 end:0x219408e
+
+src/Data/ov015/data_ov015_0219408e.cpp:
+    complete
+    .data start:0x219408e end:0x2194094
+
+src/Data/ov015/data_ov015_02194094.cpp:
+    complete
+    .data start:0x2194094 end:0x21940af
+
+src/Data/ov015/data_ov015_021940af.cpp:
+    complete
+    .data start:0x21940af end:0x21940b8
+
+src/Data/ov015/data_ov015_021940b8.cpp:
+    complete
+    .data start:0x21940b8 end:0x21940c0
+
+src/Data/ov015/data_ov015_021940c0.cpp:
+    complete
+    .data start:0x21940c0 end:0x21940db
+
+src/Data/ov015/data_ov015_021940db.cpp:
+    complete
+    .data start:0x21940db end:0x21940e1
+
+src/Data/ov015/data_ov015_021940e1.cpp:
+    complete
+    .data start:0x21940e1 end:0x21940e7
+
+src/Data/ov015/data_ov015_021940e7.cpp:
+    complete
+    .data start:0x21940e7 end:0x21940ed
+
+src/Data/ov015/data_ov015_021940ed.cpp:
+    complete
+    .data start:0x21940ed end:0x21940f0
+
+src/Data/ov015/data_ov015_021940f0.cpp:
+    complete
+    .data start:0x21940f0 end:0x21940f5
+
+src/Data/ov015/data_ov015_021940f5.cpp:
+    complete
+    .data start:0x21940f5 end:0x21940fe
+
+src/Data/ov015/data_ov015_021940fe.cpp:
+    complete
+    .data start:0x21940fe end:0x2194105
+
+src/Data/ov015/data_ov015_02194105.cpp:
+    complete
+    .data start:0x2194105 end:0x219411d
+
+src/Data/ov015/data_ov015_0219411d.cpp:
+    complete
+    .data start:0x219411d end:0x2194123
+
+src/Data/ov015/data_ov015_02194123.cpp:
+    complete
+    .data start:0x2194123 end:0x2194129
+
+src/Data/ov015/data_ov015_02194129.cpp:
+    complete
+    .data start:0x2194129 end:0x219413f
+
+src/Data/ov015/data_ov015_0219413f.cpp:
+    complete
+    .data start:0x219413f end:0x2194152
+
+src/Data/ov015/data_ov015_02194152.cpp:
+    complete
+    .data start:0x2194152 end:0x2194156
+
+src/Data/ov015/data_ov015_02194156.cpp:
+    complete
+    .data start:0x2194156 end:0x219415c
+
+src/Data/ov015/data_ov015_0219415c.cpp:
+    complete
+    .data start:0x219415c end:0x2194160
+
+src/Data/ov015/data_ov015_02194160.cpp:
+    complete
+    .data start:0x2194160 end:0x2194167
+
+src/Data/ov015/data_ov015_02194167.cpp:
+    complete
+    .data start:0x2194167 end:0x219416b
+
+src/Data/ov015/data_ov015_0219416b.cpp:
+    complete
+    .data start:0x219416b end:0x2194170
+
+src/Data/ov015/data_ov015_02194170.cpp:
+    complete
+    .data start:0x2194170 end:0x2194176
+
+src/Data/ov015/data_ov015_02194176.cpp:
+    complete
+    .data start:0x2194176 end:0x219417c
+
+src/Data/ov015/data_ov015_0219417c.cpp:
+    complete
+    .data start:0x219417c end:0x2194192
+
+src/Data/ov015/data_ov015_02194192.cpp:
+    complete
+    .data start:0x2194192 end:0x21941a8
+
+src/Data/ov015/data_ov015_021941a8.cpp:
+    complete
+    .data start:0x21941a8 end:0x21941be
+
+src/Data/ov015/data_ov015_021941be.cpp:
+    complete
+    .data start:0x21941be end:0x21941d4
+
+src/Data/ov015/data_ov015_021941d4.cpp:
+    complete
+    .data start:0x21941d4 end:0x21941ea
+
+src/Data/ov015/data_ov015_021941ea.cpp:
+    complete
+    .data start:0x21941ea end:0x2194200
+
+src/Data/ov015/data_ov015_02194200.cpp:
+    complete
+    .data start:0x2194200 end:0x2194216
+
+src/Data/ov015/data_ov015_02194216.cpp:
+    complete
+    .data start:0x2194216 end:0x219422c
+
+src/Data/ov015/data_ov015_0219422c.cpp:
+    complete
+    .data start:0x219422c end:0x2194242
+
+src/Data/ov015/data_ov015_02194242.cpp:
+    complete
+    .data start:0x2194242 end:0x2194256
+
+src/Data/ov015/data_ov015_02194256.cpp:
+    complete
+    .data start:0x2194256 end:0x2194261
+
+src/Data/ov015/data_ov015_02194261.cpp:
+    complete
+    .data start:0x2194261 end:0x219426a
+
+src/Data/ov015/data_ov015_0219426a.cpp:
+    complete
+    .data start:0x219426a end:0x2194273
+
+src/Data/ov015/data_ov015_02194273.cpp:
+    complete
+    .data start:0x2194273 end:0x219427b
+
+src/Data/ov015/data_ov015_0219427b.cpp:
+    complete
+    .data start:0x219427b end:0x2194288
+
+src/Data/ov015/data_ov015_02194288.cpp:
+    complete
+    .data start:0x2194288 end:0x2194295
+
+src/Data/ov015/data_ov015_02194295.cpp:
+    complete
+    .data start:0x2194295 end:0x21942a2
+
+src/Data/ov015/data_ov015_021942a2.cpp:
+    complete
+    .data start:0x21942a2 end:0x21942ae
+
+src/Data/ov015/data_ov015_021942ae.cpp:
+    complete
+    .data start:0x21942ae end:0x21942ba
+
+src/Data/ov015/data_ov015_021942ba.cpp:
+    complete
+    .data start:0x21942ba end:0x21942c8
+
+src/Data/ov015/data_ov015_021942c8.cpp:
+    complete
+    .data start:0x21942c8 end:0x21942d4
+
+src/Data/ov015/data_ov015_021942d4.cpp:
+    complete
+    .data start:0x21942d4 end:0x21942e0
+
+src/Data/ov015/data_ov015_021942e0.cpp:
+    complete
+    .data start:0x21942e0 end:0x21942ec
+
+src/Data/ov015/data_ov015_021942ec.cpp:
+    complete
+    .data start:0x21942ec end:0x21942f6
+
+src/Data/ov015/data_ov015_021942f6.cpp:
+    complete
+    .data start:0x21942f6 end:0x2194302
+
+src/Data/ov015/data_ov015_02194302.cpp:
+    complete
+    .data start:0x2194302 end:0x219430e
+
+src/Data/ov015/data_ov015_0219430e.cpp:
+    complete
+    .data start:0x219430e end:0x219431a
+
+src/Data/ov015/data_ov015_0219431a.cpp:
+    complete
+    .data start:0x219431a end:0x2194324
+
+src/Data/ov015/data_ov015_02194324.cpp:
+    complete
+    .data start:0x2194324 end:0x219432e
+
+src/Data/ov015/data_ov015_0219432e.cpp:
+    complete
+    .data start:0x219432e end:0x2194338
+
+src/Data/ov015/data_ov015_02194338.cpp:
+    complete
+    .data start:0x2194338 end:0x2194342
+
+src/Data/ov015/data_ov015_02194342.cpp:
+    complete
+    .data start:0x2194342 end:0x219434b
+
+src/Data/ov015/data_ov015_0219434b.cpp:
+    complete
+    .data start:0x219434b end:0x219435a
+
+src/Data/ov015/data_ov015_0219435a.cpp:
+    complete
+    .data start:0x219435a end:0x2194369
+
+src/Data/ov015/data_ov015_02194369.cpp:
+    complete
+    .data start:0x2194369 end:0x2194378
+
+src/Data/ov015/data_ov015_02194378.cpp:
+    complete
+    .data start:0x2194378 end:0x2194387
+
+src/Data/ov015/data_ov015_02194387.cpp:
+    complete
+    .data start:0x2194387 end:0x2194396
+
+src/Data/ov015/data_ov015_02194396.cpp:
+    complete
+    .data start:0x2194396 end:0x21943a5
+
+src/Data/ov015/data_ov015_021943a5.cpp:
+    complete
+    .data start:0x21943a5 end:0x21943b0
+
+src/Data/ov015/data_ov015_021943b0.cpp:
+    complete
+    .data start:0x21943b0 end:0x21943b7
+
+src/Data/ov015/data_ov015_021943b7.cpp:
+    complete
+    .data start:0x21943b7 end:0x21943bd
+
+src/Data/ov015/data_ov015_021943bd.cpp:
+    complete
+    .data start:0x21943bd end:0x21943c6
+
+src/Data/ov015/data_ov015_021943c6.cpp:
+    complete
+    .data start:0x21943c6 end:0x21943d0
+
+src/Data/ov015/data_ov015_021943d0.cpp:
+    complete
+    .data start:0x21943d0 end:0x21943d9
+
+src/Data/ov015/data_ov015_021943d9.cpp:
+    complete
+    .data start:0x21943d9 end:0x21943df
+
+src/Data/ov015/data_ov015_021943df.cpp:
+    complete
+    .data start:0x21943df end:0x21943ef
+
+src/Data/ov015/data_ov015_021943ef.cpp:
+    complete
+    .data start:0x21943ef end:0x21943f8
+
+src/Data/ov015/data_ov015_021943f8.cpp:
+    complete
+    .data start:0x21943f8 end:0x21943ff
+
+src/Data/ov015/data_ov015_021943ff.cpp:
+    complete
+    .data start:0x21943ff end:0x219440c
+
+src/Data/ov015/data_ov015_0219440c.cpp:
+    complete
+    .data start:0x219440c end:0x219441a
+
+src/Data/ov015/data_ov015_0219441a.cpp:
+    complete
+    .data start:0x219441a end:0x2194426
+
+src/Data/ov015/data_ov015_02194426.cpp:
+    complete
+    .data start:0x2194426 end:0x2194434
+
+src/Data/ov015/data_ov015_02194434.cpp:
+    complete
+    .data start:0x2194434 end:0x219443d
+
+src/Data/ov015/data_ov015_0219443d.cpp:
+    complete
+    .data start:0x219443d end:0x2194442
+
+src/Data/ov015/data_ov015_02194442.cpp:
+    complete
+    .data start:0x2194442 end:0x219444b
+
+src/Data/ov015/data_ov015_0219444b.cpp:
+    complete
+    .data start:0x219444b end:0x2194452
+
+src/Data/ov015/data_ov015_02194452.cpp:
+    complete
+    .data start:0x2194452 end:0x2194459
+
+src/Data/ov015/data_ov015_02194459.cpp:
+    complete
+    .data start:0x2194459 end:0x219445e
+
+src/Data/ov015/data_ov015_0219445e.cpp:
+    complete
+    .data start:0x219445e end:0x2194463
+
+src/Data/ov015/data_ov015_02194463.cpp:
+    complete
+    .data start:0x2194463 end:0x2194470
+
+src/Data/ov015/data_ov015_02194470.cpp:
+    complete
+    .data start:0x2194470 end:0x219447f
+
+src/Data/ov015/data_ov015_0219447f.cpp:
+    complete
+    .data start:0x219447f end:0x219448e
+
+src/Data/ov015/data_ov015_0219448e.cpp:
+    complete
+    .data start:0x219448e end:0x2194496
+
+src/Data/ov015/data_ov015_02194496.cpp:
+    complete
+    .data start:0x2194496 end:0x219449e
+
+src/Data/ov015/data_ov015_0219449e.cpp:
+    complete
+    .data start:0x219449e end:0x21944a9
+
+src/Data/ov015/data_ov015_021944a9.cpp:
+    complete
+    .data start:0x21944a9 end:0x21944b6
+
+src/Data/ov015/data_ov015_021944b6.cpp:
+    complete
+    .data start:0x21944b6 end:0x21944c5
+
+src/Data/ov015/data_ov015_021944c5.cpp:
+    complete
+    .data start:0x21944c5 end:0x21944d4
+
+src/Data/ov015/data_ov015_021944d4.cpp:
+    complete
+    .data start:0x21944d4 end:0x21944e3
+
+src/Data/ov015/data_ov015_021944e3.cpp:
+    complete
+    .data start:0x21944e3 end:0x21944ec
+
+src/Data/ov015/data_ov015_021944ec.cpp:
+    complete
+    .data start:0x21944ec end:0x21944f3
+
+src/Data/ov015/data_ov015_021944f3.cpp:
+    complete
+    .data start:0x21944f3 end:0x21944fa
+
+src/Data/ov015/data_ov015_021944fa.cpp:
+    complete
+    .data start:0x21944fa end:0x2194503
+
+src/Data/ov015/data_ov015_02194503.cpp:
+    complete
+    .data start:0x2194503 end:0x2194508
+
+src/Data/ov015/data_ov015_02194508.cpp:
+    complete
+    .data start:0x2194508 end:0x219450f
+
+src/Data/ov015/data_ov015_0219450f.cpp:
+    complete
+    .data start:0x219450f end:0x2194517
+
+src/Data/ov015/data_ov015_02194517.cpp:
+    complete
+    .data start:0x2194517 end:0x219451b
+
+src/Data/ov015/data_ov015_0219451b.cpp:
+    complete
+    .data start:0x219451b end:0x219451f
+
+src/Data/ov015/data_ov015_0219451f.cpp:
+    complete
+    .data start:0x219451f end:0x2194528
+
+src/Data/ov015/data_ov015_02194528.cpp:
+    complete
+    .data start:0x2194528 end:0x2194560
+
+src/Unclassified/ov015/func_ov015_0218c274.cpp:
+    complete
+    .text start:0x0218c274 end:0x0218c3a4
+
+src/Graphics/ov015/UI_ToggleSelectedFlagAndUpdateText.cpp:
+    complete
+    .text start:0x02191f04 end:0x02192064
+
+src/Resource/ov015/Resource_SetLinkedEntryState.cpp:
+    complete
+    .text start:0x02190020 end:0x0219005c
+
+src/Graphics/ov015/Graphics_CaptureSelectedPositionMatrices.cpp:
+    complete
+    .text start:0x0218bb3c end:0x0218bc9c
+
+src/Util/ov015/Util_InitializeRecordDefaults.cpp:
+    complete
+    .text start:0x0218eef0 end:0x0218ef7c
+
+src/World/ov015/World_AddYawToModeSelectedVectors.cpp:
+    complete
+    .text start:0x0218f5f8 end:0x0218f794
+
+src/Graphics/ov015/Ov015_AdvanceEffectsWhenActive.cpp:
+    complete
+    .text start:0x0218e574 end:0x0218e5c0
+
+src/Graphics/ov015/Graphics_AdvanceEffectsWhenReady.cpp:
+    complete
+    .text start:0x0218e5c0 end:0x0218e60c
+
+src/Graphics/ov015/Graphics_TranslateObjectPositionVariants.cpp:
+    complete
+    .text start:0x0218f44c end:0x0218f5f8
+
+src/Resource/ov015/Resource_MapTypeAndInitializeObject.cpp:
+    complete
+    .text start:0x0218f02c end:0x0218f0c4
+
+src/Graphics/ov015/Graphics_ApplyInputToSelectedObjectTransform.cpp:
+    complete
+    .text start:0x02191874 end:0x021919e4
+
+src/Unclassified/ov015/func_ov015_02193160.cpp:
+    complete
+    .text start:0x02193160 end:0x021931b4
+
+src/System/ov015/Input_UpdateField238FromKeyMask.cpp:
+    complete
+    .text start:0x021925a8 end:0x02192600
+
+src/Graphics/ov015/Graphics_DrawBoneAttachedObjectParts.cpp:
+    complete
+    .text start:0x0218eb04 end:0x0218ecd8
+
+src/Resource/ov015/Resource_LoadAndExecuteScriptWithOwner.cpp:
+    complete
+    .text start:0x0218ba44 end:0x0218bae8
+
+src/Graphics/ov015/Graphics_LoadNamedModelAndConfigureBones.cpp:
+    complete
+    .text start:0x0218e2a4 end:0x0218e498
+
+src/Resource/ov015/Resource_ReloadObjectGroupAnimationFromGPC.cpp:
+    complete
+    .text start:0x0218c920 end:0x0218cb2c
+
+src/GameState/ov015/GameState_ConfigureFlaggedObjectEndpoint.cpp:
+    complete
+    .text start:0x02192544 end:0x021925a8
+
+src/Graphics/ov015/Text_FormatSerializedRecordValue.cpp:
+    complete
+    .text start:0x0218c03c end:0x0218c274
+
+src/Unclassified/ov015/InitializeRecordModeFromOwnerType.cpp:
+    complete
+    .text start:0x0218ef7c end:0x0218f02c
+
+src/Resource/ov015/Resource_IsAcceptedObjectType.cpp:
+    complete
+    .text start:0x02190d08 end:0x02190d7c
+
+src/Graphics/ov015/Graphics_DrawHandleOrObjectAndCollectCounts.cpp:
+    complete
+    .text start:0x0218ee38 end:0x0218eef0
+
+src/Graphics/ov015/UpdateCachedAnimationEntry.cpp:
+    complete
+    .text start:0x021900dc end:0x0219011c
+
+src/World/ov015/Object_SetValueOnResolvedLinkedSubrecord.cpp:
+    complete
+    .text start:0x0219011c end:0x0219015c
+
+src/Graphics/ov015/AdvanceAnimationForType.cpp:
+    complete
+    .text start:0x02190090 end:0x021900dc
+
+src/Unclassified/ov015/Overlay_DispatchObjectByMode.cpp:
+    complete
+    .text start:0x0218f22c end:0x0218f27c
+
+src/Unclassified/ov015/Overlay_DispatchObjectByEffectMode.cpp:
+    complete
+    .text start:0x0218f1c4 end:0x0218f22c

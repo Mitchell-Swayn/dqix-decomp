@@ -1,0 +1,5 @@
+#include <globaldefs.h>
+#include <System/Interrupts.h>
+struct Alarm {void* handler;void* argument;unsigned unknown,time;unsigned short start,period;unsigned unknown2,unknownBeforeActive;unsigned active;unsigned unknown3,zero;};extern "C" void DisableInterruptsAndHaltForever();extern "C" unsigned Timer_ExtendWrappingCounter(unsigned);extern "C" void SortedTimerQueue_InsertByKeyAndPriority(Alarm*);
+// Original: arm9/main @ 0x020C93D0; symbol: func_020c93d0; size: 0x8C.
+extern "C" void ConfigurePeriodicScanlineAlarmUnderIRQProtection(Alarm* alarm,int start,unsigned short period,void* handler,void* argument) {int irq=DisableIRQInterrupts();if(!alarm || alarm->handler)DisableInterruptsAndHaltForever();unsigned short line=*(volatile unsigned short*)0x04000006;unsigned time=Timer_ExtendWrappingCounter(line);alarm->active=1;alarm->start=start;if(start<=line)++time;alarm->time=time;alarm->period=period;alarm->handler=handler;alarm->argument=argument;alarm->zero=0;SortedTimerQueue_InsertByKeyAndPriority(alarm);SetIRQInterruptState(irq);}

@@ -6,16 +6,17 @@
 #if defined(jpn)
 #define data_02111222 data_02110ec2
 
-#define func_020c9a88 func_020cb554
+#define System_ReleaseOwnedInterruptSlots func_020cb554
 #endif
 
 extern unsigned short data_02111222;
 
 extern "C"
 {
-    void func_020c9a88(unsigned short banks, unsigned short owner);
+    void System_ReleaseOwnedInterruptSlots(unsigned short banks, unsigned short owner);
 }
 
+// Original: arm9/main @ 0x020C3A4C; symbol: InitializeVRAM; size: 0x60.
 void InitializeVRAM()
 {
     data_02111224.lcdcMappedBanks_ = 0;
@@ -40,6 +41,7 @@ void InitializeVRAM()
     *(short*)(vramAddr + 8) = 0; // banks H, I
 }
 
+// Original: arm9/main @ 0x020C3AAC; symbol: InternalMapVRAMBanksToLCDC; size: 0xB8.
 void InternalMapVRAMBanksToLCDC(int banks)
 {
     // 0x80 = enabled, MST = 0 (LCDC), offset = 0 (not relevant)
@@ -63,6 +65,7 @@ void InternalMapVRAMBanksToLCDC(int banks)
         VRAMCNT_I = 0x80;
 }
 
+// Original: arm9/main @ 0x020C3B64; symbol: MapVRAMBanksToMainBG; size: 0x290.
 extern "C" void MapVRAMBanksToMainBG(int banks)
 {
     data_02111224.lcdcMappedBanks_ = ~banks & (data_02111224.lcdcMappedBanks_ | data_02111224.mainBGBanks_);
@@ -146,6 +149,7 @@ extern "C" void MapVRAMBanksToMainBG(int banks)
     InternalMapVRAMBanksToLCDC(data_02111224.lcdcMappedBanks_);
 }
 
+// Original: arm9/main @ 0x020C3DF4; symbol: MapVRAMBanksToMainObj; size: 0x150.
 extern "C" void MapVRAMBanksToMainObj(int banks)
 {
     data_02111224.lcdcMappedBanks_ = ~banks & (data_02111224.lcdcMappedBanks_ | data_02111224.mainOBJBanks_);
@@ -190,6 +194,7 @@ extern "C" void MapVRAMBanksToMainObj(int banks)
     InternalMapVRAMBanksToLCDC(data_02111224.lcdcMappedBanks_);
 }
 
+// Original: arm9/main @ 0x020C3F44; symbol: MapVRAMBanksToMainBGExtendedPalette; size: 0x100.
 void MapVRAMBanksToMainBGExtendedPalette(int banks)
 {
     data_02111224.lcdcMappedBanks_ = ~banks & (data_02111224.lcdcMappedBanks_ | data_02111224.mainBGExtPaletteBanks_);
@@ -219,6 +224,7 @@ void MapVRAMBanksToMainBGExtendedPalette(int banks)
     InternalMapVRAMBanksToLCDC(data_02111224.lcdcMappedBanks_);
 }
 
+// Original: arm9/main @ 0x020C4044; symbol: MapVRAMBanksToMainObjExtendedPalette; size: 0xAC.
 void MapVRAMBanksToMainObjExtendedPalette(int banks)
 {
     data_02111224.lcdcMappedBanks_ = ~banks & (data_02111224.lcdcMappedBanks_ | data_02111224.mainObjExtPaletteBanks_);
@@ -241,6 +247,7 @@ void MapVRAMBanksToMainObjExtendedPalette(int banks)
     InternalMapVRAMBanksToLCDC(data_02111224.lcdcMappedBanks_);
 }
 
+// Original: arm9/main @ 0x020C40F0; symbol: MapVRAMBanksToTextureImage; size: 0x1D8.
 void MapVRAMBanksToTextureImage(int banks)
 {
     data_02111224.lcdcMappedBanks_ = ~banks & (data_02111224.lcdcMappedBanks_ | data_02111224.textureImageBanks_);
@@ -304,6 +311,7 @@ void MapVRAMBanksToTextureImage(int banks)
     InternalMapVRAMBanksToLCDC(data_02111224.lcdcMappedBanks_);
 }
 
+// Original: arm9/main @ 0x020C42C8; symbol: MapVRAMBanksToTexturePalette; size: 0xE8.
 void MapVRAMBanksToTexturePalette(int banks)
 {
     data_02111224.lcdcMappedBanks_ = ~banks & (data_02111224.lcdcMappedBanks_ | data_02111224.texturePaletteBanks_);
@@ -333,6 +341,7 @@ void MapVRAMBanksToTexturePalette(int banks)
     InternalMapVRAMBanksToLCDC(data_02111224.lcdcMappedBanks_);
 }
 
+// Original: arm9/main @ 0x020C43B0; symbol: MapVRAMBanksToClearTextures; size: 0x134.
 void MapVRAMBanksToClearTextures(int banks)
 {
     data_02111224.lcdcMappedBanks_ = ~banks & (data_02111224.lcdcMappedBanks_ | data_02111224.clearTextureBanks_);
@@ -367,6 +376,7 @@ void MapVRAMBanksToClearTextures(int banks)
 }
 
 // This match is a war crime but switch(...) just wasn't cooperating here
+// Original: arm9/main @ 0x020C44E4; symbol: MapVRAMBanksToArm7WorkRAM; size: 0xAC.
 void MapVRAMBanksToArm7WorkRAM(int banks)
 {
     data_02111224.lcdcMappedBanks_ = ~banks & (data_02111224.lcdcMappedBanks_ | data_02111224.arm7WorkRAMBanks_);
@@ -401,6 +411,7 @@ workram_switch_end:
     InternalMapVRAMBanksToLCDC(data_02111224.lcdcMappedBanks_);
 }
 
+// Original: arm9/main @ 0x020C4590; symbol: MapVRAMBanksToLCDC; size: 0x20.
 void MapVRAMBanksToLCDC(int banks)
 {
     data_02111224.lcdcMappedBanks_ |= banks;
@@ -408,6 +419,7 @@ void MapVRAMBanksToLCDC(int banks)
 }
 
 // more war crimes here
+// Original: arm9/main @ 0x020C45B0; symbol: MapVRAMBanksToSubBG; size: 0xA8.
 void MapVRAMBanksToSubBG(int banks)
 {
     data_02111224.lcdcMappedBanks_ = ~banks & (data_02111224.lcdcMappedBanks_ | data_02111224.subBGBanks_);
@@ -440,6 +452,7 @@ subBG_switch_end:
     InternalMapVRAMBanksToLCDC(data_02111224.lcdcMappedBanks_);
 }
 
+// Original: arm9/main @ 0x020C4658; symbol: MapVRAMBanksToSubObj; size: 0x70.
 void MapVRAMBanksToSubObj(int banks)
 {
     data_02111224.lcdcMappedBanks_ = ~banks & (data_02111224.lcdcMappedBanks_ | data_02111224.subOBJBanks_);
@@ -459,6 +472,7 @@ void MapVRAMBanksToSubObj(int banks)
     InternalMapVRAMBanksToLCDC(data_02111224.lcdcMappedBanks_);
 }
 
+// Original: arm9/main @ 0x020C46C8; symbol: MapVRAMBanksToSubBGExtendedPalette; size: 0x80.
 void MapVRAMBanksToSubBGExtendedPalette(int banks)
 {
     data_02111224.lcdcMappedBanks_ = ~banks & (data_02111224.lcdcMappedBanks_ | data_02111224.subBGExtPaletteBanks_);
@@ -476,6 +490,7 @@ void MapVRAMBanksToSubBGExtendedPalette(int banks)
     InternalMapVRAMBanksToLCDC(data_02111224.lcdcMappedBanks_);
 }
 
+// Original: arm9/main @ 0x020C4748; symbol: MapVRAMBanksToSubObjExtendedPalette; size: 0x80.
 void MapVRAMBanksToSubObjExtendedPalette(int banks)
 {
     data_02111224.lcdcMappedBanks_ = ~banks & (data_02111224.lcdcMappedBanks_ | data_02111224.subObjExtPaletteBanks_);
@@ -493,6 +508,7 @@ void MapVRAMBanksToSubObjExtendedPalette(int banks)
     InternalMapVRAMBanksToLCDC(data_02111224.lcdcMappedBanks_);
 }
 
+// Original: arm9/main @ 0x020C47C8; symbol: ResetAssignedVRAMBanksByUsage; size: 0x34.
 unsigned short ResetAssignedVRAMBanksByUsage(unsigned short* usage)
 {
     int banks = *usage;
@@ -502,60 +518,71 @@ unsigned short ResetAssignedVRAMBanksByUsage(unsigned short* usage)
     return banks;
 }
 
+// Original: arm9/main @ 0x020C47FC; symbol: ReleaseMainBGVRAMBanks; size: 0x14.
 unsigned short ReleaseMainBGVRAMBanks()
 {
     return ResetAssignedVRAMBanksByUsage(&data_02111224.mainBGBanks_);
 }
 
+// Original: arm9/main @ 0x020C4810; symbol: ReleaseMainBGExtendedPaletteVRAMBanks; size: 0x24.
 unsigned short ReleaseMainBGExtendedPaletteVRAMBanks()
 {
     DISPCNT &= ~DISPCNT_ENABLE_BG_EXTENDED_PALETTE;
     return ResetAssignedVRAMBanksByUsage(&data_02111224.mainBGExtPaletteBanks_);
 }
 
+// Original: arm9/main @ 0x020C4834; symbol: ReleaseMainObjExtendedPaletteVRAMBanks; size: 0x24.
 unsigned short ReleaseMainObjExtendedPaletteVRAMBanks()
 {
     DISPCNT &= ~DISPCNT_ENABLE_OBJ_EXTENDED_PALETTE;
     return ResetAssignedVRAMBanksByUsage(&data_02111224.mainObjExtPaletteBanks_);
 }
 
+// Original: arm9/main @ 0x020C4858; symbol: ReleaseTextureImageVRAMBanks; size: 0x14.
 unsigned short ReleaseTextureImageVRAMBanks()
 {
     return ResetAssignedVRAMBanksByUsage(&data_02111224.textureImageBanks_);
 }
 
+// Original: arm9/main @ 0x020C486C; symbol: ReleaseTexturePaletteVRAMBanks; size: 0x14.
 unsigned short ReleaseTexturePaletteVRAMBanks()
 {
     return ResetAssignedVRAMBanksByUsage(&data_02111224.texturePaletteBanks_);
 }
 
+// Original: arm9/main @ 0x020C4880; symbol: ReleaseClearTextureVRAMBanks; size: 0x14.
 unsigned short ReleaseClearTextureVRAMBanks()
 {
     return ResetAssignedVRAMBanksByUsage(&data_02111224.clearTextureBanks_);
 }
 
+// Original: arm9/main @ 0x020C4894; symbol: ReleaseSubBGVRAMBanks; size: 0x14.
 unsigned short ReleaseSubBGVRAMBanks()
 {
     return ResetAssignedVRAMBanksByUsage(&data_02111224.subBGBanks_);
 }
 
+// Original: arm9/main @ 0x020C48A8; symbol: ReleaseSubObjVRAMBanks; size: 0x14.
 unsigned short ReleaseSubObjVRAMBanks()
 {
     return ResetAssignedVRAMBanksByUsage(&data_02111224.subOBJBanks_);
 }
 
+// Original: arm9/main @ 0x020C48BC; symbol: ReleaseSubBGExtendedPaletteVRAMBanks; size: 0x28.
 unsigned short ReleaseSubBGExtendedPaletteVRAMBanks()
 {
     DISPCNTSUB &= ~DISPCNT_ENABLE_BG_EXTENDED_PALETTE;
     return ResetAssignedVRAMBanksByUsage(&data_02111224.subBGExtPaletteBanks_);
 }
 
+// Original: arm9/main @ 0x020C48E4; symbol: ReleaseSubObjExtendedPaletteVRAMBanks; size: 0x28.
 unsigned short ReleaseSubObjExtendedPaletteVRAMBanks()
 {
     DISPCNTSUB &= ~DISPCNT_ENABLE_OBJ_EXTENDED_PALETTE;
     return ResetAssignedVRAMBanksByUsage(&data_02111224.subObjExtPaletteBanks_);
 }
 
+// Original: arm9/main @ 0x020C490C; symbol: DisableAssignedVRAMBanksByUsage; size: 0xE0.
 unsigned int DisableAssignedVRAMBanksByUsage(unsigned short* usage)
 {
     unsigned int banks = *usage;
@@ -578,90 +605,114 @@ unsigned int DisableAssignedVRAMBanksByUsage(unsigned short* usage)
         VRAMCNT_H = 0;
     if (banks & VRAM_BANK_I)
         VRAMCNT_I = 0;
-    func_020c9a88(banks, data_02111222);
+    System_ReleaseOwnedInterruptSlots(banks, data_02111222);
     return banks;
 }
 
+// Original: arm9/main @ 0x020C49EC; symbol: DisableMainBGVRAMBanks; size: 0x14.
 unsigned int DisableMainBGVRAMBanks()
 {
     return DisableAssignedVRAMBanksByUsage(&data_02111224.mainBGBanks_);
 }
 
+// Original: arm9/main @ 0x020C4A00; symbol: DisableMainObjVRAMBanks; size: 0x14.
 unsigned int DisableMainObjVRAMBanks()
 {
     return DisableAssignedVRAMBanksByUsage(&data_02111224.mainOBJBanks_);
 }
 
+// Original: arm9/main @ 0x020C4A14; symbol: DisableMainBGExtendedPaletteVRAMBanks; size: 0x24.
 unsigned int DisableMainBGExtendedPaletteVRAMBanks()
 {
     DISPCNT &= ~DISPCNT_ENABLE_BG_EXTENDED_PALETTE;
     return DisableAssignedVRAMBanksByUsage(&data_02111224.mainBGExtPaletteBanks_);
 }
 
+// Original: arm9/main @ 0x020C4A38; symbol: DisableMainObjExtendedPaletteVRAMBanks; size: 0x24.
 unsigned int DisableMainObjExtendedPaletteVRAMBanks()
 {
     DISPCNT &= ~DISPCNT_ENABLE_OBJ_EXTENDED_PALETTE;
     return DisableAssignedVRAMBanksByUsage(&data_02111224.mainObjExtPaletteBanks_);
 }
 
+// Original: arm9/main @ 0x020C4A5C; symbol: DisableTextureImageVRAMBanks; size: 0x14.
 unsigned int DisableTextureImageVRAMBanks()
 {
     return DisableAssignedVRAMBanksByUsage(&data_02111224.textureImageBanks_);
 }
 
+// Original: arm9/main @ 0x020C4A70; symbol: DisableTexturePaletteVRAMBanks; size: 0x14.
 unsigned int DisableTexturePaletteVRAMBanks()
 {
     return DisableAssignedVRAMBanksByUsage(&data_02111224.texturePaletteBanks_);
 }
 
+// Original: arm9/main @ 0x020C4A84; symbol: DisableClearTextureVRAMBanks; size: 0x14.
 unsigned int DisableClearTextureVRAMBanks()
 {
     return DisableAssignedVRAMBanksByUsage(&data_02111224.clearTextureBanks_);
 }
 
+// Original: arm9/main @ 0x020C4A98; symbol: DisableArm7WorkVRAMBanks; size: 0x14.
 unsigned int DisableArm7WorkVRAMBanks()
 {
     return DisableAssignedVRAMBanksByUsage(&data_02111224.arm7WorkRAMBanks_);
 }
 
+// Original: arm9/main @ 0x020C4AAC; symbol: DisableLCDCMappedVRAMBanks; size: 0x14.
 unsigned int DisableLCDCMappedVRAMBanks()
 {
     return DisableAssignedVRAMBanksByUsage(&data_02111224.lcdcMappedBanks_);
 }
 
+// Original: arm9/main @ 0x020C4AC0; symbol: DisableSubBGVRAMBanks; size: 0x14.
 unsigned int DisableSubBGVRAMBanks()
 {
     return DisableAssignedVRAMBanksByUsage(&data_02111224.subBGBanks_);
 }
 
+// Original: arm9/main @ 0x020C4AD4; symbol: DisableSubObjVRAMBanks; size: 0x14.
 unsigned int DisableSubObjVRAMBanks()
 {
     return DisableAssignedVRAMBanksByUsage(&data_02111224.subOBJBanks_);
 }
 
+// Original: arm9/main @ 0x020C4AE8; symbol: DisableSubBGExtendedPaletteVRAMBanks; size: 0x28.
 unsigned int DisableSubBGExtendedPaletteVRAMBanks()
 {
     DISPCNTSUB &= ~DISPCNT_ENABLE_BG_EXTENDED_PALETTE;
     return DisableAssignedVRAMBanksByUsage(&data_02111224.subBGExtPaletteBanks_);
 }
 
+// Original: arm9/main @ 0x020C4B10; symbol: DisableSubObjExtendedPaletteVRAMBanks; size: 0x28.
 unsigned int DisableSubObjExtendedPaletteVRAMBanks()
 {
     DISPCNTSUB &= ~DISPCNT_ENABLE_OBJ_EXTENDED_PALETTE;
     return DisableAssignedVRAMBanksByUsage(&data_02111224.subObjExtPaletteBanks_);
 }
 
+// Original: arm9/main @ 0x020C4B38; symbol: GetMainBGVRAMBanks; size: 0x10.
 unsigned short GetMainBGVRAMBanks() { return data_02111224.mainBGBanks_; }
+// Original: arm9/main @ 0x020C4B48; symbol: GetMainObjVRAMBanks; size: 0x10.
 unsigned short GetMainObjVRAMBanks() { return data_02111224.mainOBJBanks_; }
+// Original: arm9/main @ 0x020C4B58; symbol: GetMainBGExtendedPaletteVRAMBanks; size: 0x10.
 unsigned short GetMainBGExtendedPaletteVRAMBanks() { return data_02111224.mainBGExtPaletteBanks_; }
+// Original: arm9/main @ 0x020C4B68; symbol: GetMainObjExtendedPaletteVRAMBanks; size: 0x10.
 unsigned short GetMainObjExtendedPaletteVRAMBanks() { return data_02111224.mainObjExtPaletteBanks_; }
+// Original: arm9/main @ 0x020C4B78; symbol: GetTextureImageVRAMBanks; size: 0x10.
 unsigned short GetTextureImageVRAMBanks(){ return data_02111224.textureImageBanks_; }
+// Original: arm9/main @ 0x020C4B88; symbol: GetTexturePaletteVRAMBanks; size: 0x10.
 unsigned short GetTexturePaletteVRAMBanks() { return data_02111224.texturePaletteBanks_; }
+// Original: arm9/main @ 0x020C4B98; symbol: GetSubBGVRAMBanks; size: 0x10.
 unsigned short GetSubBGVRAMBanks() { return data_02111224.subBGBanks_; }
+// Original: arm9/main @ 0x020C4BA8; symbol: GetSubObjVRAMBanks; size: 0x10.
 unsigned short GetSubObjVRAMBanks() { return data_02111224.subOBJBanks_; }
+// Original: arm9/main @ 0x020C4BB8; symbol: GetSubBGExtendedPaletteVRAMBanks; size: 0x10.
 unsigned short GetSubBGExtendedPaletteVRAMBanks() { return data_02111224.subBGExtPaletteBanks_; }
+// Original: arm9/main @ 0x020C4BC8; symbol: GetSubObjExtendedPaletteVRAMBanks; size: 0x10.
 unsigned short GetSubObjExtendedPaletteVRAMBanks() { return data_02111224.subObjExtPaletteBanks_; }
 
+// Original: arm9/main @ 0x020C4BD8; symbol: GetTotalComponentVRAMSize; size: 0x54.
 unsigned int GetTotalComponentVRAMSize(int banks)
 {
     unsigned int total = 0;
@@ -686,6 +737,9 @@ unsigned int GetTotalComponentVRAMSize(int banks)
     return total;
 }
 
+// Original: arm9/main @ 0x020C4C2C; symbol: GetMainBGAssignedVRAMSize; size: 0x18.
 unsigned int GetMainBGAssignedVRAMSize() { return GetTotalComponentVRAMSize(data_02111224.mainBGBanks_); }
+// Original: arm9/main @ 0x020C4C44; symbol: GetTextureImageAssignedVRAMSize; size: 0x18.
 unsigned int GetTextureImageAssignedVRAMSize() { return GetTotalComponentVRAMSize(data_02111224.textureImageBanks_); }
+// Original: arm9/main @ 0x020C4C5C; symbol: GetTexturePaletteAssignedVRAMSize; size: 0x18.
 unsigned int GetTexturePaletteAssignedVRAMSize() { return GetTotalComponentVRAMSize(data_02111224.texturePaletteBanks_); }

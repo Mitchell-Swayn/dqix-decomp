@@ -1,3 +1,4 @@
+import os
 import struct
 import tempfile
 import unittest
@@ -49,6 +50,21 @@ class LinkObjectsTests(unittest.TestCase):
             with self.assertRaises(InvalidElf):
                 prepare_elf(original, CONFIG)
 
+    def test_halfword_text_copy_alignment_preserves_target_and_payload(self):
+        original = fixture(object_size=0)
+        patched, changes = prepare_elf(original, {'_fdiv': dict(address=0x02000466, size=0x3b8, type=2)})
+        self.assertEqual(patched[52:52+0x3b8], original[52:52+0x3b8])
+        self.assertEqual(len(changes), 1)
+        change = changes[0]
+        self.assertEqual(change['configured_base'], 0x02000466)
+        offset = change['section_alignment_offset']
+        self.assertEqual(patched, original[:offset] + struct.pack('<I', 2) + original[offset+4:])
+        self.assertEqual(prepare_elf(patched, {'_fdiv': dict(address=0x02000466, size=0x3b8, type=2)})[0], patched)
+
+    def test_conflicting_halfword_slice_addresses_rejected(self):
+        with self.assertRaisesRegex(InvalidElf, 'disagree'):
+            prepare_elf(fixture(text_size=0x4b8), dict(CONFIG, _fdiv=dict(address=0x0200c1c2,size=0x3b8,type=2)))
+
     def test_configured_address_and_owner_required(self):
         for config in [{}, dict(CONFIG, _fdiv=dict(address=0x0200c1c4, size=0x3b8, type=2))]:
             with self.assertRaises(InvalidElf):
@@ -59,6 +75,34 @@ class LinkObjectsTests(unittest.TestCase):
         for bad in [b'', original[:40], original[:-1], original[:4] + b'\x02' + original[5:], original[:18] + b'\x03\0' + original[20:]]:
             with self.subTest(length=len(bad)), self.assertRaises(InvalidElf):
                 prepare_elf(bad, CONFIG)
+
+    def test_unterminated_symbol_name_rejected(self):
+        blob = bytearray(fixture())
+        header = struct.unpack_from('<16sHHIIIIIHHHHHH', blob)
+        strings = struct.unpack_from('<10I', blob, header[6] + 2 * 40)
+        blob[strings[4] + strings[5] - 1] = ord('X')
+        with self.assertRaisesRegex(InvalidElf, 'symbol name'):
+            prepare_elf(bytes(blob), CONFIG)
+
+    @unittest.skipUnless(os.name == 'posix', 'requires unprivileged symlinks')
+    def test_file_and_parent_symlinks_resolve_to_fallback(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            fallback = root / 'delinks'
+            fallback.mkdir()
+            original = fallback / 'main_5.o'
+            original.write_bytes(fixture())
+            parent = root / 'parent_alias'
+            parent.symlink_to(fallback, target_is_directory=True)
+            file = root / 'file_alias.o'
+            file.symlink_to(original)
+            for path in (parent / original.name, file):
+                objects = root / 'objects.txt'
+                objects.write_text(str(path) + '\n')
+                output = root / 'objects-link.txt'
+                prepare_objects(objects, fallback, root/'link', output, root/'report.json', CONFIG)
+                self.assertEqual(original.read_bytes(), fixture())
+                self.assertEqual((root/'link/main_5.o').read_bytes(), prepare_elf(fixture(), CONFIG)[0])
 
     def test_originals_and_source_objects_preserved(self):
         with tempfile.TemporaryDirectory() as directory:

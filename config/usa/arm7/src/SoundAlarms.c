@@ -13,12 +13,14 @@ extern void ARM7_SetInterval(Alarm*,Tick,Tick,void(*)(void*),void*);
 extern Tick ARM7_GetCurrentTimestamp(void);
 extern int ARM7_SendIpcCommand(int,unsigned int,int);
 void ARM7_SoundAlarmCallback(void*);
+// Original: arm7/wram @ 0x03802428; symbol: ARM7_ConfigureSoundAlarm.
 void ARM7_ConfigureSoundAlarm(int index,Tick delay,Tick interval,unsigned int tag)
 {
  SoundAlarmSlot *slot=&ARM7_SoundAlarmSlots[index];
  if(slot->active){ARM7_CancelAlarm(&slot->alarm);slot->active=0;}
  slot->delay=delay;slot->interval=interval;slot->tag=tag;
 }
+// Original: arm7/wram @ 0x03802484; symbol: ARM7_StartSoundAlarm.
 void ARM7_StartSoundAlarm(int index)
 {
  Tick delay,interval; SoundAlarmSlot *slot=&ARM7_SoundAlarmSlots[index];
@@ -30,11 +32,13 @@ void ARM7_StartSoundAlarm(int index)
  else ARM7_SetInterval(&slot->alarm,ARM7_GetCurrentTimestamp()+delay,interval,ARM7_SoundAlarmCallback,(void*)argument);
  slot->active=1;
 }
+// Original: arm7/wram @ 0x03802540; symbol: ARM7_StopSoundAlarm.
 void ARM7_StopSoundAlarm(int index)
 {
  SoundAlarmSlot *slot=&ARM7_SoundAlarmSlots[index];
  if(slot->active){ARM7_CancelAlarm(&slot->alarm);slot->tag++;slot->active=0;}
 }
+// Original: arm7/wram @ 0x03802580; symbol: ARM7_SoundAlarmCallback.
 void ARM7_SoundAlarmCallback(void *argument)
 {
  while(ARM7_SendIpcCommand(7,(unsigned int)argument,0)<0){}

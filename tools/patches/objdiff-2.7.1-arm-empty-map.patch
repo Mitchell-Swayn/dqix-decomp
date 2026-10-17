@@ -1,0 +1,23 @@
+From e28a2021eb3e669f6011f7645b009f73aa19ddbc Mon Sep 17 00:00:00 2001
+From: LagoLunatic <LagoLunatic@users.noreply.github.com>
+Date: Tue, 2 Jun 2026 13:09:18 -0400
+Subject: [PATCH] ARM: Fix index out of bounds error when there are no mapping
+ symbols
+
+---
+ objdiff-core/src/arch/arm.rs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/objdiff-core/src/arch/arm.rs b/objdiff-core/src/arch/arm.rs
+index 35416c9f..3ae98a11 100644
+--- a/objdiff-core/src/arch/arm.rs
++++ b/objdiff-core/src/arch/arm.rs
+@@ -183,7 +183,7 @@ impl Arch for ArchArm {
+         let mapping_symbols = self
+             .disasm_modes
+             .get(&section_index)
+-            .map(|x| x.as_slice())
++            .map(|x| if x.is_empty() { &fallback_mappings } else { x.as_slice() })
+             .unwrap_or(&fallback_mappings);
+         let first_mapping_idx = mapping_symbols
+             .binary_search_by_key(&start_addr, |x| x.address)

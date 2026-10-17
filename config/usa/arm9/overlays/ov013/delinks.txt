@@ -4,3 +4,50 @@
     .data       start:0x02187e00 end:0x02187ee0 kind:data align:32
     .bss        start:0x02187ee0 end:0x02187ee0 kind:bss align:32
 
+src/Graphics/ov013/Graphics_InitializeTextCanvasPanel.cpp:
+    complete
+    .text start:0x02184360 end:0x021846a0
+
+src/Graphics/ov013/Graphics_FormatFiveRowSelectionText.cpp:
+    complete
+    .text start:0x02185424 end:0x02185774
+
+src/Resource/ov013/Resource_SetLoadSelection.cpp:
+    complete
+    .text start:0x0218782c end:0x021878b0
+
+src/Memory/ov013/Memory_InitializeOptionalParentAndNestedAllocator.cpp:
+    complete
+    .text start:0x02184cf0 end:0x02184d80
+
+src/Graphics/ov013/Graphics_AppendModeSelectedSizeTaggedText.cpp:
+    complete
+    .text start:0x02185900 end:0x02185990
+
+src/Graphics/ov013/func_ov013_02186bd4.cpp:
+    complete
+    .text start:0x02186bd4 end:0x02186c1c
+
+src/Graphics/ov013/func_ov013_02186c64.cpp:
+    complete
+    .text start:0x02186c64 end:0x02186cac
+
+src/System/ov013/System_TestReadyRecordBoundsContainStoredPoint.cpp:
+    complete
+    .text start:0x021842a0 end:0x02184338
+
+src/Resource/ov013/ComputeIndexedEntryAddressAtStride40.cpp:
+    complete
+    .text start:0x02184338 end:0x02184360
+
+src/GameState/ov013/CopyFiveIndexedValuesToObject.cpp:
+    complete
+    .text start:0x02184c8c end:0x02184cf0
+
+src/Graphics/ov013/Graphics_InitializeCanvasAndDisplaySnapshot.cpp:
+    complete
+    .text start:0x02186eec end:0x02186fa0
+
+src/Memory/ov013/SafeAllocator_CreateFiveTypedRecords.cpp:
+    complete
+    .text start:0x02186e74 end:0x02186eec

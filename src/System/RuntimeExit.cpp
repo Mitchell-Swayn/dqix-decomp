@@ -6,30 +6,33 @@
 
 // Keep the handler fetch before publishing the decremented callback count.
 extern Mutex data_020f2fb8;
-extern "C" int func_02003ddc(int);
-extern "C" void func_0200edf4();
-extern "C" void func_0200f368();
-extern "C" void func_0200159c(int);
-extern "C" void func_020015e8(int);
+extern "C" int Runtime_DispatchSignalHandler(int);
+extern "C" void RuntimeDestructors_DestroyRegisteredObjects();
+extern "C" void Runtime_InvokeConsoleExitHook();
+extern "C" void Runtime_RunEarlyExitHandlerAndTerminate(int);
+extern "C" void Runtime_RunRegisteredExitHandlersAndTerminate(int);
 
-extern "C" void func_02001578()
+// Original: arm9/main @ 0x02001578; symbol: func_02001578; size: 0x24.
+extern "C" void Runtime_AbortProcess()
 {
-    func_02003ddc(1);
+    Runtime_DispatchSignalHandler(1);
     data_020f2e60.aborting = 1;
-    func_0200159c(1);
+    Runtime_RunEarlyExitHandlerAndTerminate(1);
 }
-extern "C" void func_0200159c(int status)
+// Original: arm9/main @ 0x0200159C; symbol: func_0200159c; size: 0x4C.
+extern "C" void Runtime_RunEarlyExitHandlerAndTerminate(int status)
 {
     if (!data_020f2e60.aborting) {
-        func_0200edf4();
+        RuntimeDestructors_DestroyRegisteredObjects();
         if (data_020f2e60.earlyHandler) {
             data_020f2e60.earlyHandler();
             data_020f2e60.earlyHandler = 0;
         }
     }
-    func_020015e8(status);
+    Runtime_RunRegisteredExitHandlersAndTerminate(status);
 }
-extern "C" void func_020015e8(int)
+// Original: arm9/main @ 0x020015E8; symbol: func_020015e8; size: 0x128.
+extern "C" void Runtime_RunRegisteredExitHandlersAndTerminate(int)
 {
     // Preserve the runtime's observed recursive-lock return-value test.
     if (!TryLockMutex(&data_020f2fb8)) {
@@ -56,8 +59,8 @@ extern "C" void func_020015e8(int)
         data_020f2e60.lateHandler();
         data_020f2e60.lateHandler = 0;
     }
-    func_02001878(0);
-    func_0200f368();
+    RuntimeStreamBuffers_FlushStreamOrAllStreams(0);
+    Runtime_InvokeConsoleExitHook();
 }
 
 

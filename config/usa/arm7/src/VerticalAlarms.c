@@ -6,6 +6,7 @@
 VerticalAlarmState ARM7_VerticalAlarmState;
 extern unsigned int ARM7_DisableSpecificInterrupts(unsigned int);
 extern void ARM7_ArmVerticalAlarm(VerticalAlarm*);
+// Original: arm7/wram @ 0x037FDD54; symbol: ARM7_InitializeVerticalAlarms.
 void ARM7_InitializeVerticalAlarms(void)
 {
     if (ARM7_VerticalAlarmState.initialized)
@@ -17,10 +18,12 @@ void ARM7_InitializeVerticalAlarms(void)
     ARM7_VerticalAlarmState.frame=0;
     ARM7_VerticalAlarmState.previousScanline=0;
 }
+// Original: arm7/wram @ 0x037FDDA0; symbol: ARM7_IsVerticalAlarmInitialized.
 int ARM7_IsVerticalAlarmInitialized(void)
 {
     return ARM7_VerticalAlarmState.initialized;
 }
+// Original: arm7/wram @ 0x037FDDB0; symbol: ARM7_InsertVerticalAlarm.
 void ARM7_InsertVerticalAlarm(VerticalAlarm *alarm)
 {
     VerticalAlarm *next=ARM7_VerticalAlarmState.first;
@@ -44,6 +47,7 @@ void ARM7_InsertVerticalAlarm(VerticalAlarm *alarm)
     if(prev)prev->next=alarm;
     else {ARM7_VerticalAlarmState.first=alarm;ARM7_ArmVerticalAlarm(alarm);}
 }
+// Original: arm7/wram @ 0x037FDE54; symbol: ARM7_RemoveVerticalAlarm.
 void ARM7_RemoveVerticalAlarm(VerticalAlarm *alarm)
 {
     VerticalAlarm *prev,*next;
@@ -56,6 +60,7 @@ void ARM7_RemoveVerticalAlarm(VerticalAlarm *alarm)
     if(prev)prev->next=next;
     else ARM7_VerticalAlarmState.first=next;
 }
+// Original: arm7/wram @ 0x037FDE8C; symbol: ARM7_ZeroInitializeVerticalAlarm.
 void ARM7_ZeroInitializeVerticalAlarm(VerticalAlarm *alarm)
 {
     alarm->callback = 0;

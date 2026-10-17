@@ -5,3 +5,350 @@
     .data       start:0x021895a0 end:0x02189800 kind:data align:32
     .bss        start:0x02189800 end:0x02189820 kind:bss align:32
 
+src/Unclassified/ov014/func_ov014_02188b18.cpp:
+    complete
+    .text start:0x02188b18 end:0x02188b20
+
+src/Unclassified/ov014/func_ov014_021845d4.cpp:
+    complete
+    .text start:0x021845d4 end:0x021845ec
+
+src/Unclassified/ov014/func_ov014_02186d64.cpp:
+    complete
+    .text start:0x02186d64 end:0x02186d7c
+
+src/Unclassified/ov014/func_ov014_02189380.cpp:
+    complete
+    .text start:0x02189380 end:0x02189398
+
+src/Unclassified/ov014/func_ov014_0218940c.cpp:
+    complete
+    .text start:0x0218940c end:0x02189430
+
+src/Unclassified/ov014/func_ov014_021874f8.cpp:
+    complete
+    .text start:0x021874f8 end:0x02187520
+
+src/Unclassified/ov014/func_ov014_021893e4.cpp:
+    complete
+    .text start:0x021893e4 end:0x0218940c
+
+src/Unclassified/ov014/func_ov014_02187450.cpp:
+    complete
+    .text start:0x02187450 end:0x02187488
+
+src/Unclassified/ov014/func_ov014_02186dc8.cpp:
+    complete
+    .text start:0x02186dc8 end:0x02186df0
+
+src/Filesystem/ov014/func_ov014_02188bd0.cpp:
+    complete
+    .text start:0x02188bd0 end:0x02188bfc
+
+src/Unclassified/ov014/func_ov014_02189398.cpp:
+    complete
+    .text start:0x02189398 end:0x021893c4
+
+src/Unclassified/ov014/func_ov014_02188bfc.cpp:
+    complete
+    .text start:0x02188bfc end:0x02188c34
+
+src/Filesystem/ov014/func_ov014_02188d10.cpp:
+    complete
+    .text start:0x02188d10 end:0x02188d48
+
+src/Unclassified/ov014/func_ov014_02189430.cpp:
+    complete
+    .text start:0x02189430 end:0x02189468
+
+src/Unclassified/ov014/func_ov014_02186df0.cpp:
+    complete
+    .text start:0x02186df0 end:0x02186e2c
+
+src/Unclassified/ov014/func_ov014_02187520.cpp:
+    complete
+    .text start:0x02187520 end:0x02187568
+
+src/Unclassified/ov014/func_ov014_02186d7c.cpp:
+    complete
+    .text start:0x02186d7c end:0x02186dc8
+
+src/Unclassified/ov014/func_ov014_021892d4.cpp:
+    complete
+    .text start:0x021892d4 end:0x0218934c
+
+src/Filesystem/ov014/func_ov014_02185c48.cpp:
+    complete
+    .text start:0x02185c48 end:0x02185c90
+
+src/Filesystem/ov014/func_ov014_021882d4.cpp:
+    complete
+    .text start:0x021882d4 end:0x02188330
+
+src/Filesystem/ov014/func_ov014_02184f10.cpp:
+    complete
+    .text start:0x02184f10 end:0x02184f78
+
+src/Filesystem/ov014/func_ov014_0218854c.cpp:
+    complete
+    .text start:0x0218854c end:0x021885bc
+
+src/Filesystem/ov014/func_ov014_021884cc.cpp:
+    complete
+    .text start:0x021884cc end:0x0218854c
+
+src/Filesystem/ov014/func_ov014_02188b20.cpp:
+    complete
+    .text start:0x02188b20 end:0x02188ba0
+
+src/Filesystem/ov014/func_ov014_02187488.cpp:
+    complete
+    .text start:0x02187488 end:0x021874f8
+
+src/Filesystem/ov014/func_ov014_02188a8c.cpp:
+    complete
+    .text start:0x02188a8c end:0x02188b18
+
+src/Unclassified/ov014/sinit_ov014_02189510.cpp:
+    complete
+    .init start:0x02189510 end:0x02189598
+
+src/Unclassified/ov014/func_ov014_02186ff0.cpp:
+    complete
+    .text start:0x02186ff0 end:0x02187074
+
+src/Unclassified/ov014/func_ov014_02189244.cpp:
+    complete
+    .text start:0x02189244 end:0x021892d4
+
+src/Unclassified/ov014/func_ov014_02186b30.cpp:
+    complete
+    .text start:0x02186b30 end:0x02186bc8
+
+src/Unclassified/ov014/func_ov014_02186a70.cpp:
+    complete
+    .text start:0x02186a70 end:0x02186b30
+
+src/Unclassified/ov014/func_ov014_02184d08.cpp:
+    complete
+    .text start:0x02184d08 end:0x02184dcc
+
+src/Unclassified/ov014/func_ov014_02188c34.cpp:
+    complete
+    .text start:0x02188c34 end:0x02188d10
+
+src/Unclassified/ov014/func_ov014_02184c08.cpp:
+    complete
+    .text start:0x02184c08 end:0x02184d08
+
+src/Unclassified/ov014/func_ov014_021893c4.cpp:
+    complete
+    .text start:0x021893c4 end:0x021893e4
+
+src/Unclassified/ov014/func_ov014_02188ba0.cpp:
+    complete
+    .text start:0x02188ba0 end:0x02188bd0
+
+src/Unclassified/ov014/func_ov014_021891f0.cpp:
+    complete
+    .text start:0x021891f0 end:0x02189244
+
+src/Unclassified/ov014/func_ov014_021872dc.cpp:
+    complete
+    .text start:0x021872dc end:0x02187340
+
+src/Unclassified/ov014/func_ov014_021842a0.cpp:
+    complete
+    .text start:0x021842a0 end:0x02184300
+
+src/Unclassified/ov014/func_ov014_02187340.cpp:
+    complete
+    .text start:0x02187340 end:0x021873a0
+
+src/Unclassified/ov014/func_ov014_021873a0.cpp:
+    complete
+    .text start:0x021873a0 end:0x02187450
+
+src/Unclassified/ov014/func_ov014_02184e3c.cpp:
+    complete
+    .text start:0x02184e3c end:0x02184f10
+
+src/Unclassified/ov014/func_ov014_02186f10.cpp:
+    complete
+    .text start:0x02186f10 end:0x02186ff0
+
+src/Unclassified/ov014/func_ov014_02187b38.cpp:
+    complete
+    .text start:0x02187b38 end:0x02187c04
+
+src/Filesystem/ov014/func_ov014_021844c4.cpp:
+    complete
+    .text start:0x021844c4 end:0x021845d4
+
+src/Filesystem/ov014/func_ov014_021845ec.cpp:
+    complete
+    .text start:0x021845ec end:0x02184700
+
+src/Unclassified/ov014/func_ov014_02187228.cpp:
+    complete
+    .text start:0x02187228 end:0x021872dc
+
+src/Unclassified/ov014/func_ov014_02186e2c.cpp:
+    complete
+    .text start:0x02186e2c end:0x02186f10
+
+src/Unclassified/ov014/func_ov014_021885bc.cpp:
+    complete
+    .text start:0x021885bc end:0x021886f8
+
+src/Filesystem/ov014/func_ov014_02184f78.cpp:
+    complete
+    .text start:0x02184f78 end:0x021850cc
+
+src/Memory/ov014/func_ov014_021868b8.cpp:
+    complete
+    .text start:0x021868b8 end:0x02186a70
+
+src/Unclassified/ov014/func_ov014_02187c04.cpp:
+    complete
+    .text start:0x02187c04 end:0x02187db8
+
+src/Unclassified/ov014/func_ov014_02188330.cpp:
+    complete
+    .text start:0x02188330 end:0x021884cc
+
+src/Data/ov014/data_ov014_021895c8.cpp:
+    complete
+    .data start:0x021895c8 end:0x021895ce
+
+src/Data/ov014/data_ov014_021895ce.cpp:
+    complete
+    .data start:0x021895ce end:0x021895d5
+
+src/Data/ov014/data_ov014_021895d5.cpp:
+    complete
+    .data start:0x021895d5 end:0x021895ed
+
+src/Data/ov014/data_ov014_021895ed.cpp:
+    complete
+    .data start:0x021895ed end:0x02189603
+
+src/Data/ov014/data_ov014_02189603.cpp:
+    complete
+    .data start:0x02189603 end:0x02189615
+
+src/Data/ov014/data_ov014_02189615.cpp:
+    complete
+    .data start:0x02189615 end:0x0218962c
+
+src/Data/ov014/data_ov014_0218962c.cpp:
+    complete
+    .data start:0x0218962c end:0x0218963f
+
+src/Data/ov014/data_ov014_0218963f.cpp:
+    complete
+    .data start:0x0218963f end:0x02189652
+
+src/Data/ov014/data_ov014_02189652.cpp:
+    complete
+    .data start:0x02189652 end:0x02189661
+
+src/Data/ov014/data_ov014_02189661.cpp:
+    complete
+    .data start:0x02189661 end:0x02189668
+
+src/Data/ov014/data_ov014_02189668.cpp:
+    complete
+    .data start:0x02189668 end:0x02189680
+
+src/Data/ov014/data_ov014_02189680.cpp:
+    complete
+    .data start:0x02189680 end:0x02189686
+
+src/Data/ov014/data_ov014_02189686.cpp:
+    complete
+    .data start:0x02189686 end:0x0218968c
+
+src/Data/ov014/data_ov014_0218968c.cpp:
+    complete
+    .data start:0x0218968c end:0x02189692
+
+src/Data/ov014/data_ov014_02189692.cpp:
+    complete
+    .data start:0x02189692 end:0x021896a7
+
+src/Data/ov014/data_ov014_021896a7.cpp:
+    complete
+    .data start:0x021896a7 end:0x021896bc
+
+src/Data/ov014/data_ov014_021896bc.cpp:
+    complete
+    .data start:0x021896bc end:0x021896d4
+
+src/Data/ov014/data_ov014_0218970c.cpp:
+    complete
+    .data start:0x0218970c end:0x02189722
+
+src/Data/ov014/data_ov014_02189722.cpp:
+    complete
+    .data start:0x02189722 end:0x02189734
+
+src/Data/ov014/data_ov014_02189734.cpp:
+    complete
+    .data start:0x02189734 end:0x0218974d
+
+src/Data/ov014/data_ov014_0218974d.cpp:
+    complete
+    .data start:0x0218974d end:0x02189754
+
+src/Data/ov014/data_ov014_02189754.cpp:
+    complete
+    .data start:0x02189754 end:0x0218976a
+
+src/Data/ov014/data_ov014_0218976a.cpp:
+    complete
+    .data start:0x0218976a end:0x02189784
+
+src/Data/ov014/data_ov014_02189784.cpp:
+    complete
+    .data start:0x02189784 end:0x02189795
+
+src/Data/ov014/data_ov014_02189795.cpp:
+    complete
+    .data start:0x02189795 end:0x021897ac
+
+src/Data/ov014/data_ov014_021897ac.cpp:
+    complete
+    .data start:0x021897ac end:0x021897c4
+
+src/Data/ov014/data_ov014_021897cc.cpp:
+    complete
+    .data start:0x021897cc end:0x021897dc
+
+src/Data/ov014/data_ov014_021897dc.cpp:
+    complete
+    .data start:0x021897dc end:0x02189800
+
+src/Unclassified/ov014/func_ov014_02185c3c.cpp:
+    complete
+    .text start:0x02185c3c end:0x02185c48
+
+src/Graphics/ov014/Graphics_LoadLocalizedCanvasResources.cpp:
+    complete
+    .text start:0x021886f8 end:0x02188a8c
+
+src/Graphics/ov014/Graphics_ToggleSelectionFromTouchOrButton.cpp:
+    complete
+    .text start:0x02187074 end:0x02187228
+
+src/Memory/ov014/Memory_AllocateGraphicsBuffersAndNestedAllocators.cpp:
+    complete
+    .text start:0x02184300 end:0x021844c4
+
+src/Graphics/ov014/Graphics_UpdateFilteredDisplaySelection.cpp:
+    complete
+    .text start:0x02187db8 end:0x02188010
+
+src/Graphics/ov014/Graphics_AdvanceObjectArchiveAndTextLoads.cpp:
+    complete
+    .text start:0x021850cc end:0x0218580c

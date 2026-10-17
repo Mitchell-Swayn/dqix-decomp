@@ -1,0 +1,6 @@
+#include <globaldefs.h>
+#include <GameState/GameState.h>
+#include <System/Matrix.h>
+extern "C" char* GameState_ReadPResources(GameState*);extern "C" int ReadIndirectByteOrMinusOne(void*);extern "C" void* ReadOverlayControlSecondWord();extern "C" Vector3i* GameState_GetObjectPositionAndZoneRequest(void*,short);extern "C" unsigned short* ReadGlobalValueAt020FB3F0();extern "C" unsigned GameState_TestByteFlagsAtOffset63DC(GameState*,unsigned);extern "C" void GameState_QueuePositionAndZoneRequest(Vector3i,unsigned,unsigned,unsigned,int);
+// Original: arm9/main @ 0x02092D60; symbol: func_02092d60; size: 0xAC.
+extern "C" void GameState_EmitObjectPositionAndZoneRequest(char* self,unsigned arg) {GameState* state=GameState::GetInstance();GameObject* object=state->GetUnknownGameObject();if(!object)return;Vector3i pos;pos=*(Vector3i*)((char*)object+0x44);char* resource=GameState_ReadPResources(state);if(ReadIndirectByteOrMinusOne(*(void**)(resource+0x36fc))==10) {void* context=ReadOverlayControlSecondWord();if(context) {Vector3i* special=GameState_GetObjectPositionAndZoneRequest(context,*(short*)((char*)object+4));if(special)pos=*special;}}unsigned short zone=*ReadGlobalValueAt020FB3F0();unsigned flag=GameState_TestByteFlagsAtOffset63DC(state,1);GameState_QueuePositionAndZoneRequest(pos,zone,arg,flag,(signed char)self[0x38]);}

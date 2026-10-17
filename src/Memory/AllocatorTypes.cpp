@@ -25,6 +25,7 @@ const AllocatorBase::VTable AllocatorTypeB::s_vtable = {
 
 // USA: func_020afdc8
 // JPN: func_020b1894
+// Original: arm9/main @ 0x020AFDC8; symbol: _ZN14AllocatorTypeB8AllocateEP13AllocatorBasej; size: 0x14.
 void* AllocatorTypeB::Allocate(AllocatorBase* base, unsigned int len)
 {
     AllocatorTypeB* self = static_cast<AllocatorTypeB*>(base);
@@ -33,6 +34,7 @@ void* AllocatorTypeB::Allocate(AllocatorBase* base, unsigned int len)
 
 // USA: func_020afddc
 // JPN: func_020b18a8
+// Original: arm9/main @ 0x020AFDDC; symbol: _ZN14AllocatorTypeB4FreeEP13AllocatorBasePv; size: 0x10.
 void AllocatorTypeB::Free(AllocatorBase* base, void* data)
 {
     AllocatorTypeB* self = static_cast<AllocatorTypeB*>(base);
@@ -41,6 +43,7 @@ void AllocatorTypeB::Free(AllocatorBase* base, void* data)
 
 // USA: func_020afdec
 // JPN: func_020b18b8
+// Original: arm9/main @ 0x020AFDEC; symbol: _ZN14AllocatorTypeA8AllocateEP13AllocatorBasej; size: 0x14.
 void* AllocatorTypeA::Allocate(AllocatorBase* base, unsigned int len)
 {
     AllocatorTypeA* self = static_cast<AllocatorTypeA*>(base);
@@ -49,6 +52,7 @@ void* AllocatorTypeA::Allocate(AllocatorBase* base, unsigned int len)
 
 // USA: func_020afe00
 // JPN: func_020b18cc
+// Original: arm9/main @ 0x020AFE00; symbol: _ZN14AllocatorTypeA4FreeEP13AllocatorBasePv; size: 0x4.
 void AllocatorTypeA::Free(AllocatorBase* base, void* data)
 {
     // Don't do anything
@@ -56,6 +60,7 @@ void AllocatorTypeA::Free(AllocatorBase* base, void* data)
 
 // USA: func_020afe04
 // JPN: func_020b18d0
+// Original: arm9/main @ 0x020AFE04; symbol: _ZN19AllocatorTypeUnused8AllocateEP13AllocatorBasej; size: 0x20.
 void* AllocatorTypeUnused::Allocate(AllocatorBase* base, unsigned int len)
 {
     AllocatorTypeUnused* self = static_cast<AllocatorTypeUnused*>(base);
@@ -67,6 +72,7 @@ void* AllocatorTypeUnused::Allocate(AllocatorBase* base, unsigned int len)
 
 // USA: func_020afe24
 // JPN: func_020b18f0
+// Original: arm9/main @ 0x020AFE24; symbol: _ZN19AllocatorTypeUnused4FreeEP13AllocatorBasePv; size: 0x10.
 void AllocatorTypeUnused::Free(AllocatorBase* base, void* data)
 {
     AllocatorTypeUnused* self = static_cast<AllocatorTypeUnused*>(base);
@@ -81,6 +87,7 @@ const AllocatorBase::VTable AllocatorTypeHeap::s_vtable = {
 };
 
 // USA: 0x020afe34
+// Original: arm9/main @ 0x020AFE34; symbol: _ZN17AllocatorTypeHeap8AllocateEP13AllocatorBasej; size: 0x1C.
 void* AllocatorTypeHeap::Allocate(AllocatorBase* base, unsigned int len)
 {
     AllocatorTypeHeap* self = static_cast<AllocatorTypeHeap*>(base);
@@ -88,6 +95,7 @@ void* AllocatorTypeHeap::Allocate(AllocatorBase* base, unsigned int len)
 }
 
 // USA: 0x020afe50
+// Original: arm9/main @ 0x020AFE50; symbol: _ZN17AllocatorTypeHeap4FreeEP13AllocatorBasePv; size: 0x1C.
 void AllocatorTypeHeap::Free(AllocatorBase* base, void* data)
 {
     AllocatorTypeHeap* self = static_cast<AllocatorTypeHeap*>(base);

@@ -1,5 +1,6 @@
 #include "World/Zone3DEmbeddedState.h"
 
+// Original: arm9/main @ 0x020982B4; symbol: _ZN13ZoneState08405ResetEv; size: 0xB0.
 void ZoneState0840::Reset()
 {
     unknown_1b34 = 0;

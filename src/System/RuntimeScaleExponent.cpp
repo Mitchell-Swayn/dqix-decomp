@@ -1,11 +1,12 @@
 #pragma optimize_for_size off
 
 // Binary64 word access follows the pinned little-endian ARM runtime ABI.
-extern "C" int func_0200aa74(double);
-extern "C" double func_02008da4(double, double);
-extern "C" double func_020091d8(double value, int shift)
+extern "C" int Runtime_ClassifyDouble(double);
+extern "C" double Runtime_CopyDoubleSign(double, double);
+// Original: arm9/main @ 0x020091D8; symbol: func_020091d8; size: 0x24C.
+extern "C" double Runtime_ScaleDoubleExponent(double value, int shift)
 {
-    if (func_0200aa74(value) <= 2 || 0.0 == value)
+    if (Runtime_ClassifyDouble(value) <= 2 || 0.0 == value)
         return value;
     int high = ((int*)&value)[1];
     int low = ((int*)&value)[0];
@@ -23,15 +24,15 @@ extern "C" double func_020091d8(double value, int shift)
         return value + value;
     exponent += shift;
     if (exponent > 0x7fe)
-        return 1.0e300 * func_02008da4(1.0e300, value);
+        return 1.0e300 * Runtime_CopyDoubleSign(1.0e300, value);
     if (exponent > 0) {
         ((int*)&value)[1] = (high & 0x800fffff) | (exponent << 20);
         return value;
     }
     if (exponent <= -54) {
         if (shift > 50000)
-            return 1.0e300 * func_02008da4(1.0e300, value);
-        return 1.0e-300 * func_02008da4(1.0e-300, value);
+            return 1.0e300 * Runtime_CopyDoubleSign(1.0e300, value);
+        return 1.0e-300 * Runtime_CopyDoubleSign(1.0e-300, value);
     }
     exponent += 54;
     ((int*)&value)[1] = (high & 0x800fffff) | (exponent << 20);

@@ -17,6 +17,7 @@ extern void ARM7_VerticalAlarmInterrupt(int);
 extern unsigned int ARM7_EnableSpecificInterrupts(unsigned int);
 #define VCOUNT (*(volatile unsigned short*)0x04000006)
 #define DISPSTAT (*(volatile unsigned short*)0x04000004)
+// Original: arm7/wram @ 0x037FDEA0; symbol: ARM7_SetVerticalTimeout.
 void ARM7_SetVerticalTimeout(VerticalAlarm *alarm,int scanline,int delay,Callback callback,void *userData)
 {
  int state=ARM7_DisableIRQInterrupts();
@@ -35,6 +36,7 @@ void ARM7_SetVerticalTimeout(VerticalAlarm *alarm,int scanline,int delay,Callbac
  ARM7_InsertVerticalAlarm(alarm);
  ARM7_SetIRQInterruptState(state);
 }
+// Original: arm7/wram @ 0x037FDF48; symbol: ARM7_SetVerticalInterval.
 void ARM7_SetVerticalInterval(VerticalAlarm *alarm,int scanline,int delay,Callback callback,void *userData)
 {
  int state=ARM7_DisableIRQInterrupts();
@@ -53,6 +55,7 @@ void ARM7_SetVerticalInterval(VerticalAlarm *alarm,int scanline,int delay,Callba
  ARM7_InsertVerticalAlarm(alarm);
  ARM7_SetIRQInterruptState(state);
 }
+// Original: arm7/wram @ 0x037FDFF0; symbol: ARM7_ArmVerticalAlarm.
 void ARM7_ArmVerticalAlarm(VerticalAlarm *alarm)
 {
  int scanline;

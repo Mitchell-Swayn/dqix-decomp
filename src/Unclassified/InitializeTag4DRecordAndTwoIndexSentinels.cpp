@@ -1,0 +1,6 @@
+// Original field widths, callee calling behavior and exact symbols reviewed.
+#include <GameState/GameState.h>
+#include <Memory/SafeAllocator.h>
+extern "C" {void ClearFourBytes_Main020E303C(void*);void InitializeFourWordsWithInvalidIndex(void*);void ClearField14Flag400AndField58Flag7AndBytes6EAnd91(void*);void InitializeHalfwordFields956Through95E(void*);void GameState_SetByteField5CDAAndClearPlacementFlag(void*,int);void* memcpy(void*,const void*,unsigned);void* ReadGlobalAt02105AB4();int Graphics_ReadSelectedScreenPowerState(void*);void Object_WriteIndexedByteAtOffsetC(void*,unsigned,int);void Object_InitializeThirtyTwoByteBufferAndSlotFlags(void*);void* Object_GetGlobalConnectionState();int IsFirstWordNonzero(void*);char* FindNonnegativeKeyInEntryArray(void*,int);unsigned short* ReadGlobalValueAt020FB3F0();void ClearWordAndTwoHalfwords_Main020727D8(void*);int ToggleMaskedFlagsAtOffset34(void*,unsigned);void ClearFourLeadingBytesAndWordAtOffsetC(void*);}struct SignedThree{signed int low:3;unsigned int rest:29;};
+// Original: arm9/main @ 0x020E3C34; symbol: func_020e3c34; size: 0x60.
+extern "C" void InitializeTag4DRecordAndTwoIndexSentinels(char* p){InitializeFourWordsWithInvalidIndex(p);p[0]=0x4d;*(int*)(p+28)=0;*(int*)(p+32)=0;for(int i=0;i<2;++i)*(int*)(p+i*4+20)=-1;p[8]=0;p[9]=0;*(short*)(p+10)=0;*(int*)(p+12)=0;*(int*)(p+16)=0;p[36]=1;}

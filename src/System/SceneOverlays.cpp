@@ -14,6 +14,7 @@ extern int data_01ffd348;            // current slot bank
 extern signed char data_01ffd364[];  // six slots per bank, 8 banks?
 
 // usa: func_020a18f4
+// Original: arm9/main @ 0x020A18F4; symbol: _Z13IsSceneLoadedj; size: 0x4C.
 ARM bool IsSceneLoaded(unsigned int scene)
 {
     bool loaded = false;

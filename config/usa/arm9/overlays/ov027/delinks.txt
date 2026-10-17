@@ -4,3 +4,86 @@
     .data       start:0x021dd8e0 end:0x021dd920 kind:data align:32
     .bss        start:0x021dd920 end:0x021e3440 kind:bss align:32
 
+src/Unclassified/ov027/IsValueFromOneThroughFifteen.cpp:
+    complete
+    .text start:0x021d9de8 end:0x021d9e04
+
+src/Unclassified/ov027/ReadNestedGlobalWordAtOffset8.cpp:
+    complete
+    .text start:0x021dd024 end:0x021dd038
+
+src/Unclassified/ov027/ReadNestedGlobalHalfwordAtOffset12.cpp:
+    complete
+    .text start:0x021dd038 end:0x021dd04c
+
+src/Unclassified/ov027/IsGlobalWordAt3420Nonzero.cpp:
+    complete
+    .text start:0x021dd3b0 end:0x021dd3cc
+
+src/Unclassified/ov027/func_ov027_021dcc80.cpp:
+    complete
+    .text start:0x021dcc80 end:0x021dcc8c
+
+src/Unclassified/ov027/func_ov027_021dcee8.cpp:
+    complete
+    .text start:0x021dcee8 end:0x021dcef8
+
+src/Util/ov027/SerializeTaggedHalfwordPair.cpp:
+    complete
+    .text start:0x021dd638 end:0x021dd6bc
+
+src/Unclassified/ov027/Math_MaxUnsigned.cpp:
+    complete
+    .text start:0x021d9dd8 end:0x021d9de8
+
+src/Memory/ov027/Memory_Clear0x70Bytes.cpp:
+    complete
+    .text start:0x021dd104 end:0x021dd118
+
+src/Memory/ov027/ClearTaskInfo.cpp:
+    complete
+    .text start:0x021dd3cc end:0x021dd3e0
+
+src/Memory/ov027/SetParentPieceBufferAndClear.cpp:
+    complete
+    .text start:0x021dd5d4 end:0x021dd5f4
+
+src/Network/ov027/MBi_IsStarted.cpp:
+    complete
+    .text start:0x021dd0ac end:0x021dd0cc
+
+src/Network/ov027/Network_SetParentStartFlagAndInvokeHandler.cpp:
+    complete
+    .text start:0x021dcc24 end:0x021dcc48
+
+src/Network/ov027/Network_SetParentStateCallback.cpp:
+    complete
+    .text start:0x021d8a40 end:0x021d8a68
+
+src/Unclassified/ov027/MBi_ClearSendStatus.cpp:
+    complete
+    .text start:0x021dae1c end:0x021dae40
+
+src/Network/ov027/Network_InitializeSendGameInfoStatus.cpp:
+    complete
+    .text start:0x021dadf0 end:0x021dae1c
+
+src/Network/ov027/Network_SetChildMPMaxSize.cpp:
+    complete
+    .text start:0x021dd5a4 end:0x021dd5d4
+
+src/Network/ov027/MBi_InitSendVolatBeacon.cpp:
+    complete
+    .text start:0x021db124 end:0x021db154
+
+src/Unclassified/ov027/CountUtf16Units.cpp:
+    complete
+    .text start:0x021dad84 end:0x021dadac
+
+src/Unclassified/ov027/InvokeCallbackWithCode13AndHalfword.cpp:
+    complete
+    .text start:0x021d9e04 end:0x021d9e1c
+
+src/Network/ov027/Network_CalculateOnesComplementChecksum.cpp:
+    complete
+    .text start:0x021dab38 end:0x021dab84

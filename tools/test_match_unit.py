@@ -1,5 +1,7 @@
 """Focused CLI tests; schema examples reduced from local objdiff-cli 2.7.1 output."""
 import copy
+import contextlib
+import io
 import json
 from pathlib import Path
 import tempfile
@@ -99,6 +101,36 @@ class SummaryTests(unittest.TestCase):
 
 
 class WorkflowTests(unittest.TestCase):
+    def test_strict_json_reports_mismatch_and_build_failure(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "objdiff.json").write_text(json.dumps({"units": [UNIT]}))
+            for filename in (UNIT["target_path"], UNIT["base_path"]):
+                path = root / filename
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(b"object")
+            different = copy.deepcopy(MATCHED)
+            different["left"]["sections"][0]["symbols"][1]["match_percent"] = 90.0
+
+            def run(command, cwd, attempt, label):
+                if label == "objdiff":
+                    (attempt / "diff.json").write_text(json.dumps(different))
+
+            output = io.StringIO()
+            with patch.object(match_unit, "ROOT", root), patch.object(match_unit, "run_logged", run), contextlib.redirect_stdout(output):
+                self.assertEqual(match_unit.main([UNIT["name"], "--ninja", "ninja", "--require-match", "--json"]), 1)
+            result = json.loads(output.getvalue())
+            self.assertFalse(result["match"])
+            self.assertEqual(result["mismatches"], 1)
+
+            output = io.StringIO()
+            with patch.object(match_unit, "ROOT", root), patch.object(match_unit, "run_logged", side_effect=ValueError("ninja exited 1")) as run, contextlib.redirect_stdout(output):
+                self.assertEqual(match_unit.main([UNIT["name"], "--ninja", "ninja", "--require-match", "--json"]), 2)
+                self.assertEqual(run.call_count, 1)
+            result = json.loads(output.getvalue())
+            self.assertFalse(result["match"])
+            self.assertEqual(result["status"], "error")
+
     def test_missing_candidate_is_recorded_without_build(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

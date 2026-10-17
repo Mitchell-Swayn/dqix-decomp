@@ -22,6 +22,7 @@ typedef struct ArenaHeapInfo {
 extern int ARM7_DisableIRQInterrupts(void);
 extern int ARM7_SetIRQInterruptState(int state);
 // USA: 0x037fcfd4
+// Original: arm7/wram @ 0x037FCFD4; symbol: ARM7_RemoveArenaHeapBlock.
 ArenaHeapBlock* ARM7_RemoveArenaHeapBlock(ArenaHeapBlock* head, ArenaHeapBlock* block)
 {
     if (block->next != 0)
@@ -35,6 +36,7 @@ ArenaHeapBlock* ARM7_RemoveArenaHeapBlock(ArenaHeapBlock* head, ArenaHeapBlock* 
 
 // USA: 0x037fcffc
 // Free blocks are address-ordered; merge adjacent blocks on both sides.
+// Original: arm7/wram @ 0x037FCFFC; symbol: ARM7_InsertFreeArenaHeapBlock.
 ArenaHeapBlock* ARM7_InsertFreeArenaHeapBlock(ArenaHeapBlock* head, ArenaHeapBlock* block)
 {
     ArenaHeapBlock* previous = 0;
@@ -79,6 +81,7 @@ ArenaHeapBlock* ARM7_InsertFreeArenaHeapBlock(ArenaHeapBlock* head, ArenaHeapBlo
 ArenaHeapInfo* ARM7_g_arenaHeapInfo[9];
 
 // USA: 0x037fd0a4
+// Original: arm7/wram @ 0x037FD0A4; symbol: ARM7_AllocateArenaHeap.
 void* ARM7_AllocateArenaHeap(int arenaId, int heapId, unsigned int len)
 {
     // Declaration order preserves the original compiler's register allocation.
@@ -140,6 +143,7 @@ void* ARM7_AllocateArenaHeap(int arenaId, int heapId, unsigned int len)
 }
 
 // USA: 0x037fd1b4
+// Original: arm7/wram @ 0x037FD1B4; symbol: ARM7_FreeArenaHeap.
 void ARM7_FreeArenaHeap(int arenaId, int heapId, void* data)
 {
     // Declaration order preserves the original compiler's register allocation.
@@ -158,6 +162,7 @@ void ARM7_FreeArenaHeap(int arenaId, int heapId, void* data)
     heap->freeBlocks = ARM7_InsertFreeArenaHeapBlock(heap->freeBlocks, block);
     ARM7_SetIRQInterruptState(interruptState);
 }
+// Original: arm7/wram @ 0x037FD220; symbol: ARM7_SetCurrentHeap.
 int ARM7_SetCurrentHeap(int arena, int heapId) {
     ArenaHeapInfo *info;
     int oldHeap;
@@ -169,6 +174,7 @@ int ARM7_SetCurrentHeap(int arena, int heapId) {
     return oldHeap;
 }
 
+// Original: arm7/wram @ 0x037FD254; symbol: ARM7_InitializeHeapArena.
 void *ARM7_InitializeHeapArena(int arena, void *start, void *end, int maxHeaps) {
     ArenaHeapInfo *info = (ArenaHeapInfo *)start;
     int state = ARM7_DisableIRQInterrupts();
@@ -191,6 +197,7 @@ void *ARM7_InitializeHeapArena(int arena, void *start, void *end, int maxHeaps) 
     return info->arenaStart;
 }
 
+// Original: arm7/wram @ 0x037FD2FC; symbol: ARM7_CreateHeap.
 int ARM7_CreateHeap(int arena, void *start, void *end) {
     ArenaHeapInfo *info;
     int count;

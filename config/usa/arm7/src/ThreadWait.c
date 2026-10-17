@@ -14,6 +14,7 @@ extern int ARM7_DisableIRQInterrupts(void);
 extern int ARM7_SetIRQInterruptState(int);
 extern void ARM7_InsertBlockedThread(BlockedContextList*,ProcessorContext*);
 extern void ARM7_SwitchThread(void);
+// Original: arm7/wram @ 0x037FC69C; symbol: ARM7_BlockCurrentThread.
 void ARM7_BlockCurrentThread(BlockedContextList *queue)
 {
  int state=ARM7_DisableIRQInterrupts();
@@ -23,6 +24,7 @@ void ARM7_BlockCurrentThread(BlockedContextList *queue)
  ARM7_SwitchThread();
  ARM7_SetIRQInterruptState(state);
 }
+// Original: arm7/wram @ 0x037FC6F0; symbol: ARM7_UnblockThreads.
 void ARM7_UnblockThreads(BlockedContextList *queue)
 {
  int state=ARM7_DisableIRQInterrupts();
@@ -48,6 +50,7 @@ void ARM7_UnblockThreads(BlockedContextList *queue)
  }
  ARM7_SetIRQInterruptState(state);
 }
+// Original: arm7/wram @ 0x037FC778; symbol: ARM7_MarkThreadReady.
 void ARM7_MarkThreadReady(ProcessorContext *thread)
 {
  int state=ARM7_DisableIRQInterrupts();
@@ -55,6 +58,7 @@ void ARM7_MarkThreadReady(ProcessorContext *thread)
  ARM7_SwitchThread();
  ARM7_SetIRQInterruptState(state);
 }
+// Original: arm7/wram @ 0x037FC7A4; symbol: ARM7_GetFirstReadyThread.
 ProcessorContext *ARM7_GetFirstReadyThread(void)
 {
  ProcessorContext *thread=ARM7_ThreadGlobals.firstContext;

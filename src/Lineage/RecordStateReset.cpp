@@ -7,7 +7,8 @@ struct RecordState
     unsigned char unknown_11[3];
 };
 
-extern "C" void func_020865ec(RecordState* object)
+// Original: arm9/main @ 0x020865EC; symbol: func_020865ec; size: 0x20.
+extern "C" void Object_ClearRecordAndInvalidateField10(RecordState* object)
 {
     memset(object, 0, sizeof(*object));
     object->unknown_10 = -1;

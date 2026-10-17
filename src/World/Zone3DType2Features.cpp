@@ -1,5 +1,6 @@
 #include "World/Zone3D.h"
 
+// Original: arm9/main @ 0x02018AB8; symbol: _ZN6Zone3D23ApplyType2InstanceFlagsEv; size: 0x7C.
 void Zone3D::ApplyType2InstanceFlags()
 {
     ZoneFeatures::Opcode6aEntry* feature = bFeatures_.GetTypeEntries(2);
@@ -15,6 +16,7 @@ void Zone3D::ApplyType2InstanceFlags()
     }
 }
 
+// Original: arm9/main @ 0x02018B34; symbol: _ZN6Zone3D21FindType2BMDJInstanceEPN12ZoneFeatures13Opcode6aEntryE; size: 0x90.
 Zone3D_BMDJStruct::InstanceEntry* Zone3D::FindType2BMDJInstance(ZoneFeatures::Opcode6aEntry* feature)
 {
     if (feature->maybeType != 2) return NULL;
@@ -36,6 +38,7 @@ Zone3D_BMDJStruct::InstanceEntry* Zone3D::FindType2BMDJInstance(ZoneFeatures::Op
     return result;
 }
 
+// Original: arm9/main @ 0x02018BC4; symbol: _ZN6Zone3D20GetType2FeatureIndexEPN12ZoneFeatures13Opcode6aEntryE; size: 0x5C.
 int Zone3D::GetType2FeatureIndex(ZoneFeatures::Opcode6aEntry* feature)
 {
     ZoneFeatures::Opcode6aEntry* entry = bFeatures_.GetOpcode6aEntry(0);
@@ -53,6 +56,7 @@ int Zone3D::GetType2FeatureIndex(ZoneFeatures::Opcode6aEntry* feature)
     return -1;
 }
 
+// Original: arm9/main @ 0x02018C20; symbol: _ZN6Zone3D15GetType2FeatureEi; size: 0x54.
 ZoneFeatures::Opcode6aEntry* Zone3D::GetType2Feature(int index)
 {
     ZoneFeatures::Opcode6aEntry* entry = bFeatures_.GetOpcode6aEntry(0);

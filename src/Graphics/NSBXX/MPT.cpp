@@ -5,19 +5,20 @@
 #pragma optimize_for_size off
 
 #if defined(jpn)
-#define func_020ca390 func_020cbe5c
+#define MIi_CpuClear16 func_020cbe5c
 #define data_020f1c7c data_020f1de8
 #endif
 
 extern "C"
 {
     // memset
-    void func_020ca390(int, void*, unsigned);
+    void MIi_CpuClear16(int, void*, unsigned);
 }
 
 // processing callback for M.PT animations
 extern void (*data_020f1c7c)(void*, AnimationData*, int);
 
+// Original: arm9/main @ 0x020B969C; symbol: _Z31InitializeModelAnimationFromMPTP13AnimationDataPvP18NSBXXInternalModel; size: 0xDC.
 void InitializeModelAnimationFromMPT(AnimationData* anim, void* pvMPT, NSBXXInternalModel* model)
 {
     unsigned int track;
@@ -32,7 +33,7 @@ void InitializeModelAnimationFromMPT(AnimationData* anim, void* pvMPT, NSBXXInte
     anim->numEntries_ = model->numMaterials_;
     NSBXXAnimationMPT* mpt = (NSBXXAnimationMPT*)pvMPT;
     anim->pRawData_ = mpt;
-    func_020ca390(0, &anim->entries_[0], anim->numEntries_ * 2);
+    MIi_CpuClear16(0, &anim->entries_[0], anim->numEntries_ * 2);
     
     track = 0;
     if (track < mpt->tracks_.numEntries_)
@@ -46,7 +47,7 @@ void InitializeModelAnimationFromMPT(AnimationData* anim, void* pvMPT, NSBXXInte
             if (materials == NULL)
                 idx = -1;
             else
-                idx = NSBXXNameList_SearchIndex(&materials->materialOffsetList_, trackName);
+                idx = NNS_G3dGetResDictIdxByName(&materials->materialOffsetList_, trackName);
 
             if (idx >= 0)
             {
@@ -58,6 +59,7 @@ void InitializeModelAnimationFromMPT(AnimationData* anim, void* pvMPT, NSBXXInte
     }
 }
 
+// Original: arm9/main @ 0x020B9778; symbol: _Z27SetMaterialTextureForRenderP8NSBXXTexPKcP18MaterialRenderData; size: 0xD8.
 void SetMaterialTextureForRender(NSBXXTex* tex, const char* textureName, MaterialRenderData* renderData)
 {
     NSBXXTexTexture* innerTexture = tex ? (NSBXXTexTexture*)NSBXXNameList_Search(&tex->textureList_, textureName) : NULL;
@@ -86,6 +88,7 @@ void SetMaterialTextureForRender(NSBXXTex* tex, const char* textureName, Materia
     renderData->materialyScale_ = rescaleY;
 }
 
+// Original: arm9/main @ 0x020B9850; symbol: _Z27SetMaterialPaletteForRenderP8NSBXXTexPKcP18MaterialRenderData; size: 0x68.
 void SetMaterialPaletteForRender(NSBXXTex* tex, const char* paletteName, MaterialRenderData* renderData)
 {
     NSBXXTexPalette* palette;
@@ -111,6 +114,7 @@ void SetMaterialPaletteForRender(NSBXXTex* tex, const char* paletteName, Materia
     renderData->texturePaletteBase_ = offsetInBlock + blockStartPos;
 }
 
+// Original: arm9/main @ 0x020B98B8; symbol: _Z30MPTAnimationProcessingCallbackPvP13AnimationDatai; size: 0x74.
 void MPTAnimationProcessingCallback(void* data, AnimationData* anim, int arg)
 {
     MaterialRenderData* renderData = (MaterialRenderData*)data;

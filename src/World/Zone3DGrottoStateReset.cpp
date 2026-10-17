@@ -4,6 +4,7 @@
 
 extern "C" Zone3D data_020fb3f0;
 
+// Original: arm9/main @ 0x0201BFD4; symbol: _ZN6Zone3D29ResetGrottoStateOutsideGrottoEv; size: 0x40.
 void Zone3D::ResetGrottoStateOutsideGrotto()
 {
     GrottoStruct* state = GameState::GetInstance()->GetGrottoStruct();

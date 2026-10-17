@@ -19,6 +19,7 @@ src/Graphics/itcm/VRAMStagingRegionSets.cpp:
 
 // Queue storage ends at 0x01fff270; the final 16 bytes are LCF ALIGN(32),
 // and data_01fff270 is a zero-sized one-past alias, not another allocation.
+
 src/Graphics/itcm/VRAMStagingTaskQueue.cpp:
     complete
     .bss start:0x01ffe270 end:0x01fff280
@@ -30,3 +31,79 @@ src/Filesystem/itcm/FileCacheData.cpp:
 src/Filesystem/itcm/FileCacheCRC.cpp:
     complete
     .text start:0x01ff85b8 end:0x01ff860c
+
+src/Data/itcm/itcm_01ffdc78.cpp:
+    complete
+    .bss start:0x01ffdc78 end:0x01ffdc88
+
+src/Data/itcm/itcm_01ffdc88.cpp:
+    complete
+    .bss start:0x01ffdc88 end:0x01ffdc98
+
+src/Data/itcm/itcm_01ffdc98.cpp:
+    complete
+    .bss start:0x01ffdc98 end:0x01ffdca8
+
+src/Data/itcm/itcm_01ffdca8.cpp:
+    complete
+    .bss start:0x01ffdca8 end:0x01ffdcb8
+
+src/Data/itcm/itcm_01ffdcb8.cpp:
+    complete
+    .bss start:0x01ffdcb8 end:0x01ffdcd8
+
+src/Data/itcm/itcm_01ffdcd8.cpp:
+    complete
+    .bss start:0x01ffdcd8 end:0x01ffdcf8
+
+src/Data/itcm/itcm_01ffdcf8.cpp:
+    complete
+    .bss start:0x01ffdcf8 end:0x01ffdd38
+
+src/Data/itcm/itcm_01ffdd38.cpp:
+    complete
+    .bss start:0x01ffdd38 end:0x01ffdd78
+
+src/Data/itcm/itcm_01ffddf0.cpp:
+    complete
+    .bss start:0x01ffddf0 end:0x01ffde70
+
+src/Data/itcm/itcm_01ffde70.cpp:
+    complete
+    .bss start:0x01ffde70 end:0x01ffdf70
+
+src/Data/itcm/itcm_01ffd340.cpp:
+    complete
+    .bss start:0x01ffd340 end:0x01ffd998
+
+src/Data/itcm/itcm_01ff9740.cpp:
+    complete
+    .bss start:0x01ff9740 end:0x01ffd340
+
+src/Filesystem/itcm/FileCache_CalculateStringCRC.cpp:
+    complete
+    .text start:0x01ff860c end:0x01ff8640
+
+src/Memory/itcm/VRAMStagingManager_TaskReset.cpp:
+    complete
+    .text start:0x01ff96d4 end:0x01ff96e8
+
+src/Unclassified/itcm/func_01ff96e8.cpp:
+    complete
+    .text start:0x01ff96e8 end:0x01ff96fc
+
+src/Unclassified/itcm/func_01ff972c.cpp:
+    complete
+    .text start:0x01ff972c end:0x01ff9740
+
+src/Unclassified/itcm/Graphics_ZeroInitializeVRAMStagingManager.cpp:
+    complete
+    .text start:0x01ff9718 end:0x01ff972c
+
+src/Graphics/itcm/VRAM_InitializeCommonRegionTaskSet.cpp:
+    complete
+    .text start:0x01ff96fc end:0x01ff9718
+
+src/System/itcm/System_WaitForHardwareHalfwordAndClear.cpp:
+    complete
+    .text start:0x01ff81e4 end:0x01ff8218

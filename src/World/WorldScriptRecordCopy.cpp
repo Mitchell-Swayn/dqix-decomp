@@ -1,6 +1,7 @@
 #include "World/WorldScriptRecordNode.h"
 
-extern "C" void func_0208e000(WorldScriptRecordNode* destination,
+// Original: arm9/main @ 0x0208E000; symbol: func_0208e000; size: 0x24.
+extern "C" void CopyLinkedRecordFields(WorldScriptRecordNode* destination,
                                const WorldScriptRecordNode* source)
 {
     destination->key = source->key;

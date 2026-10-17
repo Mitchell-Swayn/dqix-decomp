@@ -8,6 +8,7 @@ extern unsigned int ARM7_DisableSpecificInterrupts(unsigned int);
 extern void ARM7_ArmVerticalAlarm(VerticalAlarm*);
 extern int ARM7_DisableIRQInterrupts(void);
 extern int ARM7_SetIRQInterruptState(int);
+// Original: arm7/wram @ 0x037FE30C; symbol: ARM7_UpdateVerticalFrame.
 unsigned int ARM7_UpdateVerticalFrame(int scanline)
 {
  int state=ARM7_DisableIRQInterrupts();

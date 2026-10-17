@@ -3,18 +3,19 @@
 
 struct EntranceArchivePath { char text[40]; };
 extern "C" {
-    Zone3D* func_02012fe4();
-    void func_0207df90(void*);
-    void func_0207dfac(void*);
+    Zone3D* ReadGlobalValueAt020FB3F0();
+    void Graphics_RestoreTextureImageAndPaletteVRAMState(void*);
+    void Object_InvokeSaveTextureImageVRAMState(void*);
     extern const EntranceArchivePath data_020e8d54;
 }
 
+// Original: arm9/main @ 0x0208F588; symbol: _ZN13ZoneState266418LoadEntranceObjectER13SafeAllocatorPv; size: 0x104.
 bool ZoneState2664::LoadEntranceObject(SafeAllocator& allocator, void* textureContext)
 {
     unknown_b4 = 0;
     object.Destroy();
     object.Initialize();
-    if (func_02012fe4()->pUnknownStruct_8_->unknown_c_low_) return false;
+    if (ReadGlobalValueAt020FB3F0()->pUnknownStruct_8_->unknown_c_low_) return false;
     EntranceArchivePath path = data_020e8d54;
     unsigned int size;
     void* file = LoadFileIntoNewAllocation(path.text, allocator, &size);
@@ -35,10 +36,10 @@ bool ZoneState2664::LoadEntranceObject(SafeAllocator& allocator, void* textureCo
     info.allocator = &allocator;
     info.fileData = archive;
     info.unk_8 = archiveSize;
-    func_0207df90(textureContext);
+    Graphics_RestoreTextureImageAndPaletteVRAMState(textureContext);
     object.Initialize();
     object.LoadFromCHRArchive(&info);
     object.MakeHidden();
-    func_0207dfac(textureContext);
+    Object_InvokeSaveTextureImageVRAMState(textureContext);
     return true;
 }

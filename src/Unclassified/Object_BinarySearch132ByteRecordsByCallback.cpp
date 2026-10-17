@@ -1,0 +1,3 @@
+struct Table { unsigned int count;unsigned char *records;}; typedef int (*GetId)(void*);
+// Original: arm9/main @ 0x02070E60; symbol: func_02070e60; size: 0x80.
+ extern "C" void *Object_BinarySearch132ByteRecordsByCallback(Table *self,int id,GetId getId) { unsigned char *records=self->records; if(!records || !getId)return 0; unsigned int count=self->count<<20;count=count>>20;if(!count)return 0;int lower=0,upper=count-1;while(lower<=upper){int middle=lower+((upper-lower+1)>>1);int offset=middle*132;int found=getId(records+offset);if(found==id)return records+offset;if(found>id)upper=middle-1;else lower=middle+1;}return 0;}

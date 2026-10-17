@@ -15,6 +15,7 @@ extern void ARM7_BeforeReleaseGBABus(void);
 extern void ARM7_AfterAcquireGBABus(void);
 extern void ARM7_MarkGBABusAcquired(void);
 extern void ARM7_MarkGBABusReleased(void);
+// Original: arm7/wram @ 0x037FBA50; symbol: ARM7_UnlockBus.
 int ARM7_UnlockBus(unsigned short owner,BusLock *lock,LockCallback callback,int strict)
 {
  int state;
@@ -28,6 +29,7 @@ int ARM7_UnlockBus(unsigned short owner,BusLock *lock,LockCallback callback,int 
  else ARM7_SetIRQInterruptState(state);
  return 0;
 }
+// Original: arm7/wram @ 0x037FBACC; symbol: ARM7_TryLockBus.
 int ARM7_TryLockBus(unsigned short owner,BusLock *lock,LockCallback callback,int strict)
 {
  int state;
@@ -40,6 +42,7 @@ int ARM7_TryLockBus(unsigned short owner,BusLock *lock,LockCallback callback,int
  else ARM7_SetIRQInterruptState(state);
  return old;
 }
+// Original: arm7/wram @ 0x037FBB40; symbol: ARM7_AcquireGBABus.
 int ARM7_AcquireGBABus(unsigned short owner)
 {
  int result;
@@ -47,6 +50,7 @@ int ARM7_AcquireGBABus(unsigned short owner)
  if(!ARM7_TestSharedBootFlag4())ARM7_AfterAcquireGBABus();
  return result;
 }
+// Original: arm7/wram @ 0x037FBBA8; symbol: ARM7_InternalReleaseGBABus.
 int ARM7_InternalReleaseGBABus(unsigned short owner)
 {
  if(!ARM7_TestSharedBootFlag4())ARM7_BeforeReleaseGBABus();

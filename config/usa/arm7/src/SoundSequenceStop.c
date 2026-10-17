@@ -7,6 +7,7 @@ extern void ARM7_StopSequence(SoundSequence*);
 extern SoundTrack *ARM7_GetSequenceTrack(SoundSequence*,int);
 extern void ARM7_ReleaseSoundTrackVoices(SoundTrack*,SoundSequence*,int);
 extern void ARM7_ClearSoundTrackVoices(SoundTrack*);
+// Original: arm7/wram @ 0x038009F8; symbol: ARM7_StopSoundSequence.
 void ARM7_StopSoundSequence(int index)
 {
  SoundSequence *sequence=&ARM7_SoundSequences[index];
@@ -15,6 +16,7 @@ void ARM7_StopSoundSequence(int index)
   if(ARM7_SoundSharedWork)ARM7_SoundSharedWork->activeSequences&=~(1<<index);
  }
 }
+// Original: arm7/wram @ 0x03800A54; symbol: ARM7_PauseSoundSequence.
 void ARM7_PauseSoundSequence(int index,int paused)
 {
  SoundSequence *sequence=&ARM7_SoundSequences[index];

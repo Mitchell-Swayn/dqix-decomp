@@ -1,24 +1,27 @@
 #include "GameState/GameState.h"
 
-extern "C" unsigned int func_0202e09c(void* value);
+extern "C" unsigned int ReadFirstValue_Main0202E09C(void* value);
 
-extern "C" void* func_020100cc(GameState* state)
+// Original: arm9/main @ 0x020100CC; symbol: func_020100cc; size: 0x2C.
+extern "C" void* GameState_FindOffset3B0ObjectWithFlag2(GameState* state)
 {
     if (state->unknown_3b0_ != NULL &&
-        (func_0202e09c(state->unknown_3b0_) & 2))
+        (ReadFirstValue_Main0202E09C(state->unknown_3b0_) & 2))
         return state->unknown_3b0_;
     return NULL;
 }
 
-extern "C" void* func_020100f8(GameState* state)
+// Original: arm9/main @ 0x020100F8; symbol: func_020100f8; size: 0x2C.
+extern "C" void* GameState_GetField3B0ObjectWithFlag4(GameState* state)
 {
     if (state->unknown_3b0_ != NULL &&
-        (func_0202e09c(state->unknown_3b0_) & 4))
+        (ReadFirstValue_Main0202E09C(state->unknown_3b0_) & 4))
         return state->unknown_3b0_;
     return NULL;
 }
 
-extern "C" void func_02010124(GameState* state)
+// Original: arm9/main @ 0x02010124; symbol: func_02010124; size: 0x2C.
+extern "C" void GameState_InitializeTimingDefaults(GameState* state)
 {
     state->effectiveDeltaTimeMilliseconds_ = 0x21;
     state->trueDeltaTimeMilliseconds_ = 0x21;

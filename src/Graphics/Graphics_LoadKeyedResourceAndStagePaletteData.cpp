@@ -1,0 +1,7 @@
+#include <globaldefs.h>
+ARM
+#include <Graphics/itcm/VRAMStaging.h>
+extern int StageMemoryToVRAM(VRAMSubregion,const void*,unsigned,unsigned,bool,bool);extern bool CancelVRAMStagingOperation(int);
+extern "C" void Graphics_RestoreTextureImageAndPaletteVRAMState(unsigned);extern "C" void Object_InvokeSaveTextureImageVRAMState(unsigned);extern "C" short func_0204027c(unsigned,unsigned,unsigned,unsigned,unsigned);extern "C" unsigned char* Object_GetValidSixtyByteEntry(unsigned,int);extern "C" int NNS_GfdAllocFrmTexVram(unsigned,int,int);
+// Original: arm9/main @ 0x0203F02C; symbol: func_0203f02c; size: 0xD0.
+extern "C" void Graphics_LoadKeyedResourceAndStagePaletteData(unsigned char* object,unsigned a,unsigned b,unsigned context,unsigned opt,unsigned opt2){Graphics_RestoreTextureImageAndPaletteVRAMState(context);short id;if(opt)id=func_0204027c(*(unsigned*)object,a,b,opt,opt2);else id=func_0204027c(*(unsigned*)object,a,b,0,0);*(short*)(object+0x28)=id;unsigned char* entry=Object_GetValidSixtyByteEntry(*(unsigned*)object,*(short*)(object+0x28));if(entry){int value=NNS_GfdAllocFrmTexVram(*(unsigned*)(entry+0x34),0,0);*(unsigned*)(object+0x4c)=((unsigned)value<<16)>>13;CancelVRAMStagingOperation(*(short*)(object+0x5a));*(short*)(object+0x5a)=StageMemoryToVRAM((VRAMSubregion)0,*(void**)(entry+0x20),*(unsigned*)(entry+0x24),*(unsigned*)(entry+0x1c)<<1,false,false);}Object_InvokeSaveTextureImageVRAMState(context);}

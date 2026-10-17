@@ -7,3 +7,4 @@ data_ov032_02270227 kind:bss addr:0x02270227 ambiguous
 data_ov032_02270fdb kind:bss addr:0x02270fdb ambiguous
 data_ov032_0227f025 kind:bss addr:0x0227f025 ambiguous
 data_ov032_02292500 kind:bss addr:0x02292500
+data_ov032_02200160 kind:data(any) addr:0x02200160

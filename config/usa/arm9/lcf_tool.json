@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "executable": "build/tools/dsd-fast-lcf",
+  "patch": "tools/patches/dsd-0.10.2-fast-lcf.patch",
+  "configured_sha256": "53f7079c3ed4ffcb3b9af9bd4f4c82f5744b99a3dd776200a3d6c1578b4b6d93",
+  "binary_sha256": "1ac0a57a20a1c7966940db77aa91ae5fe9b0c6845c43cddbbeef7d6596909c8b",
+  "patch_sha256": "1e078db9dd461161b8e368e76ee62d9cea8aa0f1c5b1f8427d4bdc80ab79c27a",
+  "source_commit": "561be9b11bc6e61127070d3c5e6ac9533ea825d0",
+  "cargo_lock_sha256": "2072281fea6b5ca2ec3917499057e0fa2fcbb60a606c34304b208e93926a2419",
+  "image": "sha256:af306cfa71d987911a781c37b59d7d67d934f49684058f96cf72079c3626bfe0",
+  "scope": "LCF generation only; implicit original comparison graph with unchanged neighbor order, explicit cycle validation, one ownership sort per module; no output caching"
+}

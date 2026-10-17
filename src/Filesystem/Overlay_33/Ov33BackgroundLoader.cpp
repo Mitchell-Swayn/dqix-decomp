@@ -1,29 +1,34 @@
+// Original locations for overloaded or compiler-generated definitions in this unit:
+// Original: arm9/ov033 @ 0x022A2998; symbol: _ZN20Ov33BackgroundLoaderD1Ev; size: 0x20. (Ov33BackgroundLoader::~Ov33BackgroundLoader())
+// Original: arm9/ov033 @ 0x022A29B8; symbol: __sinit_Ov33BackgroundLoader.cpp; size: 0x2C. (__sinit_Ov33BackgroundLoader.cpp)
 #include "Filesystem/Overlay_33/Ov33BackgroundLoader.h"
 #include "Filesystem/GPC.h"
 #include "Resource/ResourceMutex.h"
 
 #ifdef jpn
 #define func_020a1a40 func_020a37b8
-#define func_020a1ccc func_020a3a44
+#define OverlayLoader_LoadIndexedOverlayWithSharedStatusLocks func_020a3a44
 #endif
 
 extern "C"
 {
     // get crc for string
-    unsigned int func_01ff860c(const char*);
+    unsigned int FileCache_CalculateStringCRC(const char*);
     // alternate version of load overlay
     void func_020a1a40(int);
     // alternate unload overlay
-    void func_020a1ccc(int);
+    void OverlayLoader_LoadIndexedOverlayWithSharedStatusLocks(int);
 }
 
 static Ov33BackgroundLoader loaderInstance;
 
+// Original: arm9/ov033 @ 0x022A2180; symbol: _Z28PopulateOv33BackgroundLoaderPvji; size: 0x28.
 void PopulateOv33BackgroundLoader(void* fileLoadSpace, unsigned int capacity, int relativePrio)
 {
     loaderInstance.Populate(fileLoadSpace, capacity, relativePrio);
 }
 
+// Original: arm9/ov033 @ 0x022A21A8; symbol: _ZN20Ov33BackgroundLoader7ProcessEv; size: 0x7C4.
 int Ov33BackgroundLoader::Process()
 {
     GPCFile* pGPC;
@@ -52,7 +57,7 @@ int Ov33BackgroundLoader::Process()
             {
                 pTask->status_ = TaskStatus_InFlight;
                 UnlockResourceMutex();
-                func_020a1ccc(pTask->fileLengthOrOverlayID_);
+                OverlayLoader_LoadIndexedOverlayWithSharedStatusLocks(pTask->fileLengthOrOverlayID_);
                 LockResourceMutex();
                 pTask->status_ = TaskStatus_Complete;
                 break;
@@ -107,7 +112,7 @@ int Ov33BackgroundLoader::Process()
                 }
                 else if (queuedTasks_[j].status_ == TaskStatus_Unallocated &&
                     queuedTasks_[j].type_ == TaskType_LoadFromGP2 &&
-                    currentArchiveCRC == func_01ff860c(queuedTasks_[j].outerFilename_))
+                    currentArchiveCRC == FileCache_CalculateStringCRC(queuedTasks_[j].outerFilename_))
                 {
                     flags_78c_0_ = false;
                     gpcTask = &queuedTasks_[j];
@@ -239,7 +244,7 @@ int Ov33BackgroundLoader::Process()
             }
             else
             {
-                currentArchiveCRC = func_01ff860c(inFlightTask.outerFilename_);
+                currentArchiveCRC = FileCache_CalculateStringCRC(inFlightTask.outerFilename_);
                 // note that prior to this instruction, one of these is always zero:
                 // if the previous iteration handled this archive, then we didn't reload
                 // it (short-circuit && in the if-statement above) so outLength = 0,
@@ -337,6 +342,7 @@ end:
     return 0;
 }
 
+// Original: arm9/ov033 @ 0x022A296C; symbol: _ZN20Ov33BackgroundLoaderC1Ev; size: 0x2C.
 Ov33BackgroundLoader::Ov33BackgroundLoader()
 {
 }

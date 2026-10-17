@@ -3,6 +3,7 @@
 
 // Unlike FindBMDJInstance, this continues past a matching group and can return
 // an instance from a later group with the same ID.
+// Original: arm9/main @ 0x02019508; symbol: _ZN6Zone3D20FindLastBMDJInstanceEii; size: 0x60.
 Zone3D_BMDJStruct::InstanceEntry* Zone3D::FindLastBMDJInstance(int groupID, int instanceID)
 {
     Zone3D_BMDJStruct::InstanceEntry* result = NULL;
@@ -27,6 +28,7 @@ Zone3D_BMDJStruct::InstanceEntry* Zone3D::FindLastBMDJInstance(int groupID, int 
 
 // Bit 0x20 stores the inverse of flag 4 while these definition-based overrides
 // are active. The alternate mode's gameplay interpretation is still unknown.
+// Original: arm9/main @ 0x02019568; symbol: _ZN6Zone3D23ApplyBMDJFlag4OverridesEb; size: 0x110.
 void Zone3D::ApplyBMDJFlag4Overrides(bool alternate)
 {
     GameState::GetInstance();
@@ -56,6 +58,7 @@ void Zone3D::ApplyBMDJFlag4Overrides(bool alternate)
     }
 }
 
+// Original: arm9/main @ 0x02019678; symbol: _ZN6Zone3D25RestoreBMDJFlag4OverridesEv; size: 0x84.
 void Zone3D::RestoreBMDJFlag4Overrides()
 {
     GameState::GetInstance();
@@ -76,6 +79,7 @@ void Zone3D::RestoreBMDJFlag4Overrides()
     }
 }
 
+// Original: arm9/main @ 0x020196FC; symbol: _ZN6Zone3D19GetBMDJGroupAtIndexEi; size: 0x2C.
 Zone3D_BMDJStruct* Zone3D::GetBMDJGroupAtIndex(int index)
 {
     Zone3D_BMDJStruct* group = firstBMDJStruct_41c_;

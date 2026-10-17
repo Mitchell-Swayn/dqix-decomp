@@ -3,6 +3,7 @@
 #pragma dont_inline on
 #include "SoundVoice.h"
 extern void ARM7_StartSoundVoice(SoundVoice*,int);
+// Original: arm7/wram @ 0x037FFE18; symbol: ARM7_SetSoundVoicePCM.
 int ARM7_SetSoundVoicePCM(SoundVoice *voice,const Waveform *waveform,unsigned int source,int argument)
 {
  voice->type=0;
@@ -11,6 +12,7 @@ int ARM7_SetSoundVoicePCM(SoundVoice *voice,const Waveform *waveform,unsigned in
  ARM7_StartSoundVoice(voice,argument);
  return 1;
 }
+// Original: arm7/wram @ 0x037FFE54; symbol: ARM7_SetSoundVoicePSG.
 int ARM7_SetSoundVoicePSG(SoundVoice *voice,unsigned int duty,int argument)
 {
  if(voice->channel<8)return 0;
@@ -21,6 +23,7 @@ int ARM7_SetSoundVoicePSG(SoundVoice *voice,unsigned int duty,int argument)
  ARM7_StartSoundVoice(voice,argument);
  return 1;
 }
+// Original: arm7/wram @ 0x037FFEA0; symbol: ARM7_SetSoundVoiceNoise.
 int ARM7_SetSoundVoiceNoise(SoundVoice *voice,int argument)
 {
  if(voice->channel<14)return 0;

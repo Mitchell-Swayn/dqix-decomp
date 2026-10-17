@@ -1,0 +1,19 @@
+{
+  "upstream_tag": "v2.7.1",
+  "source_archive_sha256": "05f9510335dbfad26a18175abc8e3d5d316e5cd0fbd2b1033a5e8f4929688916",
+  "upstream_fix_commit": "e28a2021eb3e669f6011f7645b009f73aa19ddbc",
+  "upstream_fix_url": "https://github.com/encounter/objdiff/pull/359",
+  "patch_sha256": "e5a669723eefa09fd23d77168b75dd523481e7943862c377503f1a21cdb66c81",
+  "binary_sha256": "1a7410afcbd5053e70e7f40ef1ac2782659b2cbc919f6c845534b5c45d275958",
+  "rust_toolchain": "1.85.1-x86_64-unknown-linux-gnu",
+  "build_container": "factory-dqix:0.1",
+  "command": "RUST_MIN_STACK=33554432 cargo build --locked --release -p objdiff-cli -j 8",
+  "cargo_lock_sha256": "699712fc49c3f5a5dfef9f0f51dbb64910eb95463006a2d76466d9fc2a77df57",
+  "patched_source_sha256": "a262784df335a4a30ab45a380c84520a924b5093593e1ffa7776f58e263508dc",
+  "version": "objdiff-cli-2.7.1-arm-empty-map 2.7.1",
+  "schema_version": 1,
+  "executable": "build/tools/objdiff-cli-arm-empty-map",
+  "configured_sha256": "75be77f91eefb9956998ce040aaf5cdd53d27c3e0ca4fe117154fe8b864478f6",
+  "patch": "tools/patches/objdiff-2.7.1-arm-empty-map.patch",
+  "scope": "Same2.7.1 parser with upstream fallback-mode fix only; no original object changes or unit filtering."
+}

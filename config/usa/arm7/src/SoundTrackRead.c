@@ -4,6 +4,7 @@
 extern SoundReadCache ARM7_SoundReadCache;
 extern unsigned char ARM7_SoundReadBuffer[16];
 extern void ARM7_FillSoundReadCache(const unsigned char*);
+// Original: arm7/wram @ 0x03800948; symbol: ARM7_ReadSoundTrackByte.
 unsigned char ARM7_ReadSoundTrackByte(SoundTrack *track)
 {
  const unsigned char *cursor=track->cursor;

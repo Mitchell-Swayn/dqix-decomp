@@ -2,6 +2,7 @@
 
 #pragma optimize_for_size off
 
+// Original: arm9/main @ 0x020C29EC; symbol: Mat4x4_WriteProjectionUnknown; size: 0x208.
 void Mat4x4_WriteProjectionUnknown(fix32_t top, fix32_t bottom, fix32_t left, fix32_t right, fix32_t near, fix32_t far, fix32_t scale, Matrix4x4* out)
 {
     fix32_QueueComputeReciprocal(right - left);

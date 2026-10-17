@@ -2,9 +2,10 @@
 #include "Graphics/VRAMImagePool.h"
 
 extern Struct_020f1f14* data_020f1ef8[7];
-extern "C" unsigned int func_020bb588(unsigned int, unsigned int, unsigned int);
+extern "C" unsigned int NNS_GfdAllocFrmTexVram(unsigned int, unsigned int, unsigned int);
 
 #pragma dont_inline on
+// Original: arm9/main @ 0x020BB444; symbol: _Z28SetTextureImageVRAMPoolOrderiiiii; size: 0x48.
 void SetTextureImageVRAMPoolOrder(int first, int second, int third, int fourth, int fifth)
 {
     data_020f1ef8[2] = &data_020f1f14[first];
@@ -14,6 +15,7 @@ void SetTextureImageVRAMPoolOrder(int first, int second, int third, int fourth, 
     data_020f1ef8[6] = &data_020f1f14[fifth];
 }
 
+// Original: arm9/main @ 0x020BB48C; symbol: _Z26InitializeTextureImageVRAMjb; size: 0x88.
 void InitializeTextureImageVRAM(unsigned int banks, bool setDefault)
 {
     if (banks <= 2)
@@ -24,7 +26,7 @@ void InitializeTextureImageVRAM(unsigned int banks, bool setDefault)
     ResetTextureImageVRAM();
     if (setDefault)
     {
-        data_020f1ee8 = func_020bb588;
+        data_020f1ee8 = NNS_GfdAllocFrmTexVram;
         data_020f1eec = FreeTextureImageVRAM;
     }
 }

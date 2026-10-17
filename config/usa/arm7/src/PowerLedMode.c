@@ -5,6 +5,7 @@ extern void ARM7_ClearPowerControlBits(unsigned int);
 extern void ARM7_Panic(const char*,int,const char*,...);
 extern const char ARM7_PowerUtilityFile[],ARM7_BadPowerLedMode[];
 extern int ARM7_PowerLedMode;
+// Original: arm7/wram @ 0x03806180; symbol: ARM7_SetPowerLedMode.
 void ARM7_SetPowerLedMode(int mode)
 {
  switch(mode) {

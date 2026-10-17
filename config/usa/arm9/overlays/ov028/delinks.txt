@@ -5,3 +5,130 @@
     .data       start:0x021d9aa0 end:0x021d9ae0 kind:data align:32
     .bss        start:0x021d9ae0 end:0x021d9be0 kind:bss align:32
 
+src/Unclassified/ov028/func_ov028_021d987c.cpp:
+    complete
+    .text start:0x021d987c end:0x021d9898
+
+src/Unclassified/ov028/func_ov028_021d98b8.cpp:
+    complete
+    .text start:0x021d98b8 end:0x021d98d4
+
+src/Unclassified/ov028/func_ov028_021d99f8.cpp:
+    complete
+    .text start:0x021d99f8 end:0x021d9a18
+
+src/Unclassified/ov028/func_ov028_021d999c.cpp:
+    complete
+    .text start:0x021d999c end:0x021d99f8
+
+src/Unclassified/ov028/func_ov028_021d9898.cpp:
+    complete
+    .text start:0x021d9898 end:0x021d98b8
+
+src/Unclassified/ov028/func_ov028_021d98d4.cpp:
+    complete
+    .text start:0x021d98d4 end:0x021d98e0
+
+src/Unclassified/ov028/func_ov028_021d977c.cpp:
+    complete
+    .text start:0x021d977c end:0x021d979c
+
+src/Unclassified/ov028/func_ov028_021d9940.cpp:
+    complete
+    .text start:0x021d9940 end:0x021d999c
+
+src/Unclassified/ov028/func_ov028_021d97b0.cpp:
+    complete
+    .text start:0x021d97b0 end:0x021d97d8
+
+src/Unclassified/ov028/func_ov028_021d979c.cpp:
+    complete
+    .text start:0x021d979c end:0x021d97b0
+
+src/Unclassified/ov028/func_ov028_021d8a40.cpp:
+    complete
+    .text start:0x021d8a40 end:0x021d8a74
+
+src/Unclassified/ov028/func_ov028_021d8b44.cpp:
+    complete
+    .text start:0x021d8b44 end:0x021d8b90
+
+src/Unclassified/ov028/func_ov028_021d9188.cpp:
+    complete
+    .text start:0x021d9188 end:0x021d9208
+
+src/Unclassified/ov028/func_ov028_021d9734.cpp:
+    complete
+    .text start:0x021d9734 end:0x021d9748
+
+src/Unclassified/ov028/func_ov028_021d8b90.cpp:
+    complete
+    .text start:0x021d8b90 end:0x021d8c20
+
+src/Unclassified/ov028/func_ov028_021d9714.cpp:
+    complete
+    .text start:0x021d9714 end:0x021d9734
+
+src/Unclassified/ov028/func_ov028_021d9530.cpp:
+    complete
+    .text start:0x021d9530 end:0x021d9574
+
+src/Unclassified/ov028/func_ov028_021d9624.cpp:
+    complete
+    .text start:0x021d9624 end:0x021d9668
+
+src/Unclassified/ov028/func_ov028_021d96bc.cpp:
+    complete
+    .text start:0x021d96bc end:0x021d9714
+
+src/Unclassified/ov028/func_ov028_021d9668.cpp:
+    complete
+    .text start:0x021d9668 end:0x021d96bc
+
+src/Unclassified/ov028/func_ov028_021d94e4.cpp:
+    complete
+    .text start:0x021d94e4 end:0x021d9530
+
+src/Unclassified/ov028/func_ov028_021d9748.cpp:
+    complete
+    .text start:0x021d9748 end:0x021d977c
+
+src/Unclassified/ov028/func_ov028_021d97d8.cpp:
+    complete
+    .text start:0x021d97d8 end:0x021d987c
+
+src/Unclassified/ov028/func_ov028_021d8ad4.cpp:
+    complete
+    .text start:0x021d8ad4 end:0x021d8b44
+
+src/Unclassified/ov028/func_ov028_021d9574.cpp:
+    complete
+    .text start:0x021d9574 end:0x021d9624
+
+src/Unclassified/ov028/func_ov028_021d8a74.cpp:
+    complete
+    .text start:0x021d8a74 end:0x021d8ad4
+
+src/Unclassified/ov028/func_ov028_021d942c.cpp:
+    complete
+    .text start:0x021d942c end:0x021d9494
+
+src/Unclassified/ov028/func_ov028_021d8c20.cpp:
+    complete
+    .text start:0x021d8c20 end:0x021d8d40
+
+src/Unclassified/ov028/func_ov028_021d8dd0.cpp:
+    complete
+    .text start:0x021d8dd0 end:0x021d9188
+
+src/Unclassified/ov028/func_ov028_021d8d40.cpp:
+    complete
+    .text start:0x021d8d40 end:0x021d8dd0
+
+src/Unclassified/ov028/sinit_ov028_021d9a54.cpp:
+    complete
+    .init start:0x021d9a54 end:0x021d9a80
+
+src/Unclassified/ov028/func_ov028_021d98e0.cpp:
+    complete
+    .text start:0x021d98e0 end:0x021d9940

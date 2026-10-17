@@ -32,11 +32,13 @@ void ARM7_On16BitTimerOverflow(int);
 #define IRQ_MASK_TIMER_0_OVERFLOW 8
 #define INTERRUPT_REQUEST_FLAGS (*(volatile unsigned int*)0x04000214)
 
+// Original: arm7/wram @ 0x037FD6E8; symbol: ARM7_MarkAlarmInitializationFlagBit.
 void ARM7_MarkAlarmInitializationFlagBit(int bit)
 {
     ARM7_TimerInitFlags.flags |= (1 << bit);
 }
 
+// Original: arm7/wram @ 0x037FD704; symbol: ARM7_Initialize64BitTimer.
 void ARM7_Initialize64BitTimer(void)
 {
     if (ARM7_TimerState.isInitialized)
@@ -54,11 +56,13 @@ void ARM7_Initialize64BitTimer(void)
     ARM7_TimerState.reloadTimerOnNextInterrupt = 0;
 }
 
+// Original: arm7/wram @ 0x037FD780; symbol: ARM7_Is64BitTimerInitialized.
 int ARM7_Is64BitTimerInitialized(void)
 {
     return ARM7_TimerState.isInitialized;
 }
 
+// Original: arm7/wram @ 0x037FD790; symbol: ARM7_On16BitTimerOverflow.
 void ARM7_On16BitTimerOverflow(int unused)
 {
     ARM7_TimerState.numTimerOverflows++;
@@ -73,6 +77,7 @@ void ARM7_On16BitTimerOverflow(int unused)
     ARM7_SetTimerOverflowCallback(0, &ARM7_On16BitTimerOverflow, 0);
 }
 
+// Original: arm7/wram @ 0x037FD7F8; symbol: ARM7_GetCurrentTimestamp.
 uint64_t ARM7_GetCurrentTimestamp(void)
 {
     int priorState = ARM7_DisableIRQInterrupts();

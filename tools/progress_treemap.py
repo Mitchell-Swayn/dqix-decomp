@@ -88,7 +88,7 @@ def arm7_tiles(report):
     return tiles
 
 
-def generate(root, report_path, arm7_path, output):
+def build_data(root, report_path, arm7_path):
     raw = report_path.read_bytes()
     a7raw = arm7_path.read_bytes()
     report, arm7 = json.loads(raw), json.loads(a7raw)
@@ -105,6 +105,15 @@ def generate(root, report_path, arm7_path, output):
                     'source_literal_pool_bytes', 'source_data_bytes', 'source_functions',
                     'reviewed_assembly_bytes', 'binary_fallback_bytes', 'source_bss_bytes',
                     'total_bss_bytes', 'unreconstructed_bss_bytes')})
+    data["complete_measures"] = {k: int(report["measures"].get(k, 0)) for k in
+        ("complete_code", "complete_data", "complete_units", "total_units")}
+    data["assembly_groups"] = assembly["groups"]
+    data["runtime_support"] = assembly['runtime_support']
+    return data
+
+
+def generate(root, report_path, arm7_path, output):
+    data = build_data(root, report_path, arm7_path)
     # Prevent source/symbol names from terminating the embedded script element.
     payload = json.dumps(data, separators=(',', ':'), ensure_ascii=True).replace('<', '\\u003c')
     template = (root / 'tools/progress_treemap.html').read_text(encoding='utf-8')

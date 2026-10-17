@@ -3,6 +3,7 @@
 #include "SoundSequence.h"
 extern SoundSequence ARM7_SoundSequences[16];
 extern SoundTrack *ARM7_GetSequenceTrack(SoundSequence*,int);
+// Original: arm7/wram @ 0x03800D5C; symbol: ARM7_WriteSoundSequenceParameter.
 void ARM7_WriteSoundSequenceParameter(int sequence,int offset,unsigned int value,int size)
 {
  unsigned char *record=(unsigned char*)&ARM7_SoundSequences[sequence];
@@ -12,6 +13,7 @@ void ARM7_WriteSoundSequenceParameter(int sequence,int offset,unsigned int value
  case 4:*(unsigned int*)(record+offset)=value;break;
  }
 }
+// Original: arm7/wram @ 0x03800DA0; symbol: ARM7_WriteSoundTrackParameter.
 void ARM7_WriteSoundTrackParameter(int sequence,unsigned int mask,int offset,unsigned int value,int size)
 {
  SoundSequence *player=&ARM7_SoundSequences[sequence]; int track=0;

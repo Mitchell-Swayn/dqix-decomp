@@ -1,0 +1,4 @@
+#include <globaldefs.h>
+struct Entry{char pad[40];};extern "C" int TestFieldBitsAtOffset24(Entry*);extern "C" int Object_ReadUnsignedCharAtOffset24Mask4(Entry*);extern "C" int Object_TestPowerOrNestedResourceReadyState(void*);extern "C" void func_020ddea0(Entry*,unsigned short,unsigned char,int,unsigned char,int);
+// Original: arm9/main @ 0x020DB768; symbol: func_020db768; size: 0xAC.
+extern "C" ARM void AdvanceModulo190AndUpdateThreeEntries(unsigned char* p,int base){*(unsigned short*)(p+110)=((int)*(unsigned short*)(p+110)+1)%190;for(int i=0;i<3;i++){Entry* entries=(Entry*)(p+112);Entry* e=entries+i;int value=base;if(TestFieldBitsAtOffset24(e))value=base+4;else if(Object_ReadUnsignedCharAtOffset24Mask4(e))value=base+8;int mode=15;if(Object_TestPowerOrNestedResourceReadyState(p))mode=14;func_020ddea0(e,*(unsigned short*)(p+110),(unsigned char)(i*4+4),value,p[60],mode);}}

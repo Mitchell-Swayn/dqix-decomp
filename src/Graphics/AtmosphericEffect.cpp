@@ -1,3 +1,5 @@
+// Original locations for overloaded or compiler-generated definitions in this unit:
+// Original: arm9/main @ 0x020E6124; symbol: __sinit_AtmosphericEffect.cpp; size: 0x88. (__sinit_AtmosphericEffect.cpp)
 #include "Graphics/AtmosphericEffect.h"
 #include "Filesystem/BackgroundLoader.h"
 #include "Filesystem/NarcHandle.h"
@@ -42,21 +44,22 @@ struct EffectScriptData
 } static effectScriptData;
 
 #if defined(jpn)
-#define func_02033fa0 func_02033ad8 
-#define func_0204be20 func_0204cc40 
-#define func_0207df90 func_0207ed10 
-#define func_0207dfac func_0207ed2c 
+#define GetFieldAddress114 func_02033ad8
+#define PackedColor_TestGreenEqualsTwo func_0204cc40
+#define Graphics_RestoreTextureImageAndPaletteVRAMState func_0207ed10
+#define Object_InvokeSaveTextureImageVRAMState func_0207ed2c
 #endif
 
 extern "C"
 {
-    void* func_02033fa0(void*);
-    bool func_0204be20(void*);
+    void* GetFieldAddress114(void*);
+    bool PackedColor_TestGreenEqualsTwo(void*);
 
-    void func_0207df90(void*);
-    void func_0207dfac(void*);
+    void Graphics_RestoreTextureImageAndPaletteVRAMState(void*);
+    void Object_InvokeSaveTextureImageVRAMState(void*);
 }
 
+// Original: arm9/main @ 0x0207A060; symbol: _ZN17AtmosphericEffect10InitializeEv; size: 0x68.
 void AtmosphericEffect::Initialize()
 {
     object_.Initialize();
@@ -79,6 +82,7 @@ void AtmosphericEffect::Initialize()
     alpha_ = 31;
 }
 
+// Original: arm9/main @ 0x0207A0C8; symbol: _Z27EffectScript_SetScrollSpeedPN6Script9ParameterEi; size: 0x9C.
 static int EffectScript_SetScrollSpeed(Script::Parameter* params, int numParams) 
 { 
     if (effectScriptData.effect == NULL)
@@ -102,6 +106,7 @@ static int EffectScript_SetScrollSpeed(Script::Parameter* params, int numParams)
     }
 }
 
+// Original: arm9/main @ 0x0207A164; symbol: _Z27EffectScript_SetScrollFlagsPN6Script9ParameterEi; size: 0x8C.
 static int EffectScript_SetScrollFlags(Script::Parameter* params, int numParams) 
 {
     if (effectScriptData.effect == NULL)
@@ -129,6 +134,7 @@ static int EffectScript_SetScrollFlags(Script::Parameter* params, int numParams)
     return 1;
 }
 
+// Original: arm9/main @ 0x0207A1F0; symbol: _Z25EffectScript_SelectEffectPN6Script9ParameterEi; size: 0x30.
 static int EffectScript_SelectEffect(Script::Parameter* params, int numParams) 
 {
     if (effectScriptData.effect == NULL)
@@ -137,6 +143,7 @@ static int EffectScript_SelectEffect(Script::Parameter* params, int numParams)
     return 1;
 }
 
+// Original: arm9/main @ 0x0207A220; symbol: _Z27EffectScript_SetOriginFlagsPN6Script9ParameterEi; size: 0x8C.
 static int EffectScript_SetOriginFlags(Script::Parameter* params, int numParams) 
 {
     if (effectScriptData.effect == NULL)
@@ -162,6 +169,7 @@ static int EffectScript_SetOriginFlags(Script::Parameter* params, int numParams)
         return 1;
 }
 
+// Original: arm9/main @ 0x0207A2AC; symbol: _Z28EffectScript_SetScrollOriginPN6Script9ParameterEi; size: 0x9C.
 static int EffectScript_SetScrollOrigin(Script::Parameter* params, int numParams) 
 {
     if (effectScriptData.effect == NULL)
@@ -185,6 +193,7 @@ static int EffectScript_SetScrollOrigin(Script::Parameter* params, int numParams
     }
 }
 
+// Original: arm9/main @ 0x0207A348; symbol: _Z22EffectScript_DuplicatePN6Script9ParameterEi; size: 0xB4.
 static int EffectScript_Duplicate(Script::Parameter* params, int numParams) 
 {
     if (effectScriptData.effect == NULL)
@@ -210,6 +219,7 @@ static int EffectScript_Duplicate(Script::Parameter* params, int numParams)
     return 1;
 }
 
+// Original: arm9/main @ 0x0207A3FC; symbol: _Z21EffectScript_SetScalePN6Script9ParameterEi; size: 0x68.
 static int EffectScript_SetScale(Script::Parameter* params, int numParams) 
 {
     if (effectScriptData.effect == NULL)
@@ -225,6 +235,7 @@ static int EffectScript_SetScale(Script::Parameter* params, int numParams)
     return 1;
 }
 
+// Original: arm9/main @ 0x0207A464; symbol: _Z21EffectScript_SetAlphaPN6Script9ParameterEi; size: 0x60.
 static int EffectScript_SetAlpha(Script::Parameter* params, int numParams) 
 { 
     if (effectScriptData.effect == NULL)
@@ -242,6 +253,7 @@ static int EffectScript_SetAlpha(Script::Parameter* params, int numParams)
     return 1;
 }
 
+// Original: arm9/main @ 0x0207A4C4; symbol: _Z30EffectScript_SetTileDimensionsPN6Script9ParameterEi; size: 0x94.
 static int EffectScript_SetTileDimensions(Script::Parameter* params, int numParams) 
 { 
     if (effectScriptData.effect == NULL)
@@ -261,6 +273,7 @@ static int EffectScript_SetTileDimensions(Script::Parameter* params, int numPara
     return 1;
 }
 
+// Original: arm9/main @ 0x0207A558; symbol: _Z32EffectScript_SetHiddenTimesOfDayPN6Script9ParameterEi; size: 0x60.
 static int EffectScript_SetHiddenTimesOfDay(Script::Parameter* params, int numParams) 
 { 
     unsigned char mask = 0;
@@ -286,6 +299,7 @@ static Script::OpcodeLookupEntry effectScriptOpcodes[] = {
     { 0x6d, &EffectScript_SetHiddenTimesOfDay },
     { 0, NULL }};
 
+// Original: arm9/main @ 0x0207A5B8; symbol: _ZN20AtmosphericEffectSet5ResetEv; size: 0x5C.
 void AtmosphericEffectSet::Reset()
 {
     firstThing_ = NULL;
@@ -302,6 +316,7 @@ void AtmosphericEffectSet::Reset()
     visibilityDirty_ = true;
 }
 
+// Original: arm9/main @ 0x0207A614; symbol: _ZN20AtmosphericEffectSet11LoadArchiveEPKc; size: 0x90.
 void AtmosphericEffectSet::LoadArchive(const char* name)
 {
     BackgroundLoader* loader = BackgroundLoader::GetInstance();
@@ -319,6 +334,7 @@ void AtmosphericEffectSet::LoadArchive(const char* name)
     visibilityDirty_ = true;
 }
 
+// Original: arm9/main @ 0x0207A6A4; symbol: _ZN20AtmosphericEffectSet15IsArchiveLoadedEv; size: 0x90.
 bool AtmosphericEffectSet::IsArchiveLoaded()
 {
     BackgroundLoader* loader = BackgroundLoader::GetInstance();
@@ -343,6 +359,7 @@ bool AtmosphericEffectSet::IsArchiveLoaded()
     return false;
 }
 
+// Original: arm9/main @ 0x0207A734; symbol: _ZN20AtmosphericEffectSet14ProcessArchiveEPS_P13SafeAllocatorPv; size: 0x524.
 void AtmosphericEffectSet::ProcessArchive(AtmosphericEffectSet *target, SafeAllocator *allocator, void *pZone50Thing)
 {
     if (rawArchive_ == NULL)
@@ -454,13 +471,13 @@ void AtmosphericEffectSet::ProcessArchive(AtmosphericEffectSet *target, SafeAllo
                 fileID++;
             }
             narc.Destroy();
-            func_0207df90(pZone50Thing);
+            Graphics_RestoreTextureImageAndPaletteVRAMState(pZone50Thing);
             loadInfo.allocator = allocator;
             loadInfo.fileData = loopObject->archiveFileData_;
             loadInfo.unk_8 = loopObject->archiveFileSize_;
             loadInfo.unk_10 = 1;
             loopObject->object_.LoadFromCHRArchive(&loadInfo);
-            func_0207dfac(pZone50Thing);
+            Object_InvokeSaveTextureImageVRAMState(pZone50Thing);
         }
     }
 
@@ -523,6 +540,7 @@ void AtmosphericEffectSet::ProcessArchive(AtmosphericEffectSet *target, SafeAllo
     archiveLength_ = 0;
 }
 
+// Original: arm9/main @ 0x0207AC58; symbol: _ZN20AtmosphericEffectSet4DrawEv; size: 0x338.
 bool AtmosphericEffectSet::Draw()
 {
     if (firstThing_ == NULL)
@@ -655,6 +673,7 @@ bool AtmosphericEffectSet::Draw()
     return true;
 }
 
+// Original: arm9/main @ 0x0207AF90; symbol: _ZN20AtmosphericEffectSet15AddEffectObjectEP17AtmosphericEffect; size: 0x2C.
 void AtmosphericEffectSet::AddEffectObject(AtmosphericEffect *obj)
 {
     if (firstThing_ == NULL)
@@ -668,6 +687,7 @@ void AtmosphericEffectSet::AddEffectObject(AtmosphericEffect *obj)
     listEnd->pNext_ = obj;
 }
 
+// Original: arm9/main @ 0x0207AFBC; symbol: _ZN20AtmosphericEffectSet15GetEffectByNameEPKc; size: 0x44.
 AtmosphericEffect* AtmosphericEffectSet::GetEffectByName(const char *name)
 {
     if (name == NULL)
@@ -681,8 +701,10 @@ AtmosphericEffect* AtmosphericEffectSet::GetEffectByName(const char *name)
     return NULL;
 }
 
+// Original: arm9/main @ 0x0207B000; symbol: _ZN20AtmosphericEffectSet14GetFirstEffectEv; size: 0x8.
 AtmosphericEffect* AtmosphericEffectSet::GetFirstEffect() { return firstThing_; }
 
+// Original: arm9/main @ 0x0207B008; symbol: _ZN20AtmosphericEffectSet16AdvanceAlphaFadeEv; size: 0x100.
 void AtmosphericEffectSet::AdvanceAlphaFade()
 {
     if (!(effectFlags_ & (1 << 1)) && !(effectFlags_ & (1 << 2)))
@@ -711,6 +733,7 @@ void AtmosphericEffectSet::AdvanceAlphaFade()
     }
 }
 
+// Original: arm9/main @ 0x0207B108; symbol: _ZN20AtmosphericEffectSet12StartFadeOutEv; size: 0x4C.
 void AtmosphericEffectSet::StartFadeOut()
 {
     float alphaScaleFactor = alpha_ / 31.0f;
@@ -719,6 +742,7 @@ void AtmosphericEffectSet::StartFadeOut()
         effectFlags_ = (effectFlags_ | (1 << 2)) & ~(1 << 1);
 }
 
+// Original: arm9/main @ 0x0207B154; symbol: _ZN20AtmosphericEffectSet11StartFadeInEv; size: 0x50.
 void AtmosphericEffectSet::StartFadeIn()
 {
     float missingAlphaScaleFactor = (31 - alpha_) / 31.0f;
@@ -727,6 +751,7 @@ void AtmosphericEffectSet::StartFadeIn()
         effectFlags_ = (effectFlags_ | (1 << 1)) & ~(1 << 2);
 }
 
+// Original: arm9/main @ 0x0207B1A4; symbol: _ZN20AtmosphericEffectSet32DetermineVisibilityFromTimeOfDayEv; size: 0xA0.
 void AtmosphericEffectSet::DetermineVisibilityFromTimeOfDay()
 {
     if (timeOfDayHideBits_ == 0)
@@ -749,9 +774,10 @@ void AtmosphericEffectSet::DetermineVisibilityFromTimeOfDay()
     timeOfDayIndex_ = inputTimeOfDay;
 }
 
+// Original: arm9/main @ 0x0207B244; symbol: _ZN20AtmosphericEffectSet30DetermineVisibilityFromUnknownEv; size: 0x88.
 void AtmosphericEffectSet::DetermineVisibilityFromUnknown()
 {
-    bool inputShouldHide = func_0204be20(func_02033fa0(GameState::GetInstance()->GetUnknownGameObject()));
+    bool inputShouldHide = PackedColor_TestGreenEqualsTwo(GetFieldAddress114(GameState::GetInstance()->GetUnknownGameObject()));
 
     if (inputShouldHide != unknown_14_bit_2_ || visibilityDirty_)
     {

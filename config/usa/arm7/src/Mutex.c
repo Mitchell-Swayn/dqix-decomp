@@ -18,6 +18,7 @@ extern void ARM7_UnblockThreads(ThreadQueue*);
 extern Mutex* ARM7_PopFrontMutexFromList(MutexList*);
 void ARM7_AddMutexToContextLockedList(ProcessorContext*,Mutex*);
 void ARM7_RemoveMutexFromContextLockedList(ProcessorContext*,Mutex*);
+// Original: arm7/wram @ 0x037FCCA0; symbol: ARM7_ZeroInitializeMutex.
 void ARM7_ZeroInitializeMutex(Mutex* mutex)
 {
     mutex->waitingContexts_.first = mutex->waitingContexts_.last = 0;
@@ -25,6 +26,7 @@ void ARM7_ZeroInitializeMutex(Mutex* mutex)
     mutex->ownerRefcount_ = 0;
 }
 
+// Original: arm7/wram @ 0x037FCCB8; symbol: ARM7_LockMutex.
 void ARM7_LockMutex(Mutex* mutex)
 {
     int priorState = ARM7_DisableIRQInterrupts();
@@ -53,6 +55,7 @@ void ARM7_LockMutex(Mutex* mutex)
     ARM7_SetIRQInterruptState(priorState);
 }
 
+// Original: arm7/wram @ 0x037FCD3C; symbol: ARM7_UnlockMutex.
 void ARM7_UnlockMutex(Mutex* mutex)
 {
     int priorState = ARM7_DisableIRQInterrupts();
@@ -70,6 +73,7 @@ void ARM7_UnlockMutex(Mutex* mutex)
     ARM7_SetIRQInterruptState(priorState);
 }
 
+// Original: arm7/wram @ 0x037FCD9C; symbol: ARM7_UnlockAllMutexesLockedByContext.
 void ARM7_UnlockAllMutexesLockedByContext(ProcessorContext *context)
 {
     while (context->lockedMutexes.pFirst != 0)
@@ -81,6 +85,7 @@ void ARM7_UnlockAllMutexesLockedByContext(ProcessorContext *context)
     }
 }
 
+// Original: arm7/wram @ 0x037FCDD4; symbol: ARM7_AddMutexToContextLockedList.
 void ARM7_AddMutexToContextLockedList(ProcessorContext* context, Mutex* mutex)
 {
     Mutex* oldLast = context->lockedMutexes.pLast;
@@ -95,6 +100,7 @@ void ARM7_AddMutexToContextLockedList(ProcessorContext* context, Mutex* mutex)
     context->lockedMutexes.pLast = mutex;
 }
 
+// Original: arm7/wram @ 0x037FCDF8; symbol: ARM7_RemoveMutexFromContextLockedList.
 void ARM7_RemoveMutexFromContextLockedList(ProcessorContext* context, Mutex* mutex)
 {
     Mutex* after = mutex->pNext_;

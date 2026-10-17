@@ -3,6 +3,7 @@
 #include "SoundBank.h"
 extern void ARM7_BeginSoundBankAccess(void);
 extern void ARM7_EndSoundBankAccess(void);
+// Original: arm7/wram @ 0x038021A0; symbol: ARM7_GetSoundWave.
 Waveform *ARM7_GetSoundWave(SoundWaveArchive *archive,int index)
 {
  unsigned char *address;

@@ -2,6 +2,7 @@
 #include "World/BMDJ.h"
 
 
+// Original: arm9/main @ 0x020133CC; symbol: _Z18ResetZoneContainerP24ZoneContainerRenderEntry; size: 0x30.
 void ResetZoneContainer(ZoneContainerRenderEntry* entry)
 {
     entry->containerID = 0;
@@ -11,6 +12,7 @@ void ResetZoneContainer(ZoneContainerRenderEntry* entry)
     entry->brokenPart.Reset();
 }
 
+// Original: arm9/main @ 0x020133FC; symbol: _Z14ResetZoneChestP14ZoneChestEntry; size: 0x58.
 void ResetZoneChest(ZoneChestEntry* chest)
 {
     SetVector3iComponents(&chest->position, 0, 0, 0);
@@ -28,6 +30,7 @@ void ResetZoneChest(ZoneChestEntry* chest)
     chest->unknown_18 = 0;
 }
 
+// Original: arm9/main @ 0x02013454; symbol: _Z14ResetBMDJGroupP17Zone3D_BMDJStruct; size: 0x3C.
 void ResetBMDJGroup(Zone3D_BMDJStruct* group)
 {
     group->unknown_0_ = -1;

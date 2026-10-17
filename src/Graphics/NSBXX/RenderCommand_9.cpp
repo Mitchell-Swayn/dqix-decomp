@@ -12,7 +12,7 @@ void RenderCommand_9(RenderCommandHandler* handler, int modifier)
     
     uint8_t* instructionPtr = handler->instructionPointer_ + 3;
     
-    func_020ca458(0, &localCopy, sizeof(NSBXXInvBindMatrix));
+    MIi_CpuClearFast(0, &localCopy, sizeof(NSBXXInvBindMatrix));
     SendQueuedDataToGeometryFifo();
 
     GXFIFO_MATRIX_MODE = 0; // projection
@@ -39,7 +39,7 @@ void RenderCommand_9(RenderCommandHandler* handler, int modifier)
                 // retrieve the local-to-world matrix from the stack
                 GXFIFO_MATRIX_GET = instructionPtr[0];
                 GXFIFO_MATRIX_MODE = 1; // position
-                func_020c51a4(invBindMatrices[inverseBindIndex].mat4x3.entries);
+                Graphics_SubmitGeometryCommand25(invBindMatrices[inverseBindIndex].mat4x3.entries);
             }
             if (termCounter != 0)
             {
@@ -56,9 +56,9 @@ void RenderCommand_9(RenderCommandHandler* handler, int modifier)
             }
             if (!inBitfield)
             {
-                while (func_020c54fc(&ptr_r7->mat4x4) != 0) {}
+                while (Geometry_ReadClipMatrixWhenIdle(&ptr_r7->mat4x4) != 0) {}
                 GXFIFO_MATRIX_MODE = 2; // position+vector
-                func_020c51c0(invBindMatrices[inverseBindIndex].mat3x3.entries);
+                Graphics_WriteGeometryCommand26AndDataBlock(invBindMatrices[inverseBindIndex].mat3x3.entries);
             }
             weight = instructionPtr[5] << 4; // as int -> fixed point this is division by 256
             localCopy.mat4x3.entries[0] +=  (weight * (int64_t)ptr_r7->mat4x4.entries[ 0]) >> 12;
@@ -80,7 +80,7 @@ void RenderCommand_9(RenderCommandHandler* handler, int modifier)
             mat3x3_unaffr8 = (fix32_t*)((intptr_t)&data_0210b678[0].mat3x3.entries[0] + offset);
             if (!inBitfield)
             {
-                while (func_020c552c(mat3x3_unaffr8) != 0) {}
+                while (Graphics_ReadMatrixWhenGeometryNotBusy(mat3x3_unaffr8) != 0) {}
             }
             termCounter++;
             
@@ -98,9 +98,9 @@ void RenderCommand_9(RenderCommandHandler* handler, int modifier)
     localCopy.mat3x3.entries[7] += (uWeight * (int64_t)mat3x3_unaffr8[7]) >> 12;
     localCopy.mat3x3.entries[8] += (uWeight * (int64_t)mat3x3_unaffr8[8]) >> 12;
 
-    func_020c5188(localCopy.mat3x3.entries); // isn't this supposed to take a 3x4 matrix?
+    Geometry_LoadMatrix4x3ToCommandFIFO(localCopy.mat3x3.entries); // isn't this supposed to take a 3x4 matrix?
     GXFIFO_MATRIX_MODE = 1;
-    func_020c5188(localCopy.mat4x3.entries);
+    Geometry_LoadMatrix4x3ToCommandFIFO(localCopy.mat4x3.entries);
     GXFIFO_MATRIX_MODE = 0;
     GXFIFO_MATRIX_GET = 1;
     GXFIFO_MATRIX_MODE = 2;

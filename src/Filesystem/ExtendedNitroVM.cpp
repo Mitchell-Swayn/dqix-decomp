@@ -9,8 +9,8 @@
 
 //#pragma optimize_for_size off
 #if defined(jpn)
-#define func_020d84f8 func_020d9e5c
-#define func_020d8524 func_020d9e88
+#define Memory_ClearAndCleanInvalidateRangeReturningLength func_020d9e5c
+#define CopyRangeCleanCacheAndReturnLength func_020d9e88
 
 #define func_020ca95c func_020cc428
 
@@ -31,14 +31,14 @@
 extern "C"
 {
     // Get CRC hash for a null terminated string
-    unsigned int func_01ff860c(const char*);
+    unsigned int FileCache_CalculateStringCRC(const char*);
 
     // Zero memory and flush cache
-    unsigned int func_020d84f8(void*, unsigned);
+    unsigned int Memory_ClearAndCleanInvalidateRangeReturningLength(void*, unsigned);
     // another memcpy-style function, cleans/invalidates the cache in destination after
-    unsigned int func_020d8524(void*, const void*, unsigned);
+    unsigned int CopyRangeCleanCacheAndReturnLength(void*, const void*, unsigned);
 
-    void DecompressA(Decompressor*, const void*, unsigned);
+    void MI_ReadUncompLZ8(Decompressor*, const void*, unsigned);
     void DecompressB(Decompressor*, const void*, unsigned);
     void DecompressC(Decompressor*, const void*, unsigned);
 }
@@ -68,14 +68,16 @@ extern unsigned int data_020f2384[];
 extern char data_020f27b8[];
 #endif
 
+// Original: arm9/main @ 0x020D8714; symbol: _ZNK17CompressionPrefix21GetDecompressedLengthEv; size: 0xC.
 unsigned int CompressionPrefix::GetDecompressedLength() const
 {
     return decompressedLength;
 }
 
+// Original: arm9/main @ 0x020D8720; symbol: _ZN12Decompressor17InitAndDecompressEPvjPKvj; size: 0x104.
 bool Decompressor::InitAndDecompress(void *out, unsigned int outCapacity, const void *in, unsigned int inLength)
 {
-    func_020d84f8(this, sizeof(Decompressor));
+    Memory_ClearAndCleanInvalidateRangeReturningLength(this, sizeof(Decompressor));
     if (out == NULL || in == NULL || inLength < 4)
         return false;
     
@@ -117,6 +119,7 @@ bool Decompressor::InitAndDecompress(void *out, unsigned int outCapacity, const 
     return true;
 }
 
+// Original: arm9/main @ 0x020D8824; symbol: _ZN12Decompressor12ProcessBytesEPKvj; size: 0xE8.
 bool Decompressor::ProcessBytes(const void* input, unsigned int inputLength)
 {
     bool success = false;
@@ -127,7 +130,7 @@ bool Decompressor::ProcessBytes(const void* input, unsigned int inputLength)
         switch (compressionType)
         {
         case 1:
-            DecompressA(this, input, inputLength);
+            MI_ReadUncompLZ8(this, input, inputLength);
             break;
         case 2:
         case 3:
@@ -140,7 +143,7 @@ bool Decompressor::ProcessBytes(const void* input, unsigned int inputLength)
         default:
             if (inputLength >= remainingOutputBytes)
                 inputLength = remainingOutputBytes;
-            remainingOutputBytes -= func_020d8524(writeStart + declaredOutputSize - remainingOutputBytes, input, inputLength);
+            remainingOutputBytes -= CopyRangeCleanCacheAndReturnLength(writeStart + declaredOutputSize - remainingOutputBytes, input, inputLength);
             break;
         }
         CleanInvalidateCacheRange(writeStart, writeOutputPtr - writeStart);
@@ -150,6 +153,7 @@ bool Decompressor::ProcessBytes(const void* input, unsigned int inputLength)
     return success;
 }
 
+// Original: arm9/main @ 0x020D890C; symbol: _Z22CacheMainFileAccessorsv; size: 0x13C.
 void CacheMainFileAccessors()
 {
     if (!FILE_CACHE_READY)
@@ -164,7 +168,7 @@ void CacheMainFileAccessors()
             strcat(fullFilePath, *pCurrentFilePath);
             unsigned int crc = 0;
             if (CreateFileAccessor(&data_01ffda90[i], fullFilePath))
-                crc = func_01ff860c(fullFilePath);
+                crc = FileCache_CalculateStringCRC(fullFilePath);
             // silly goofy register hack (see RemoveFurigana)
             unsigned int iplusone = i + 1;
             data_01ffd99c[iplusone - 1] = crc;
@@ -211,13 +215,15 @@ void CacheMainFileAccessors()
     }
 }
 
+// Original: arm9/main @ 0x020D8A48; symbol: _ZN15ExtendedNitroVM14ZeroInitializeEv; size: 0x20.
 void ExtendedNitroVM::ZeroInitialize()
 {
-    func_020d84f8(this, sizeof(ExtendedNitroVM));
+    Memory_ClearAndCleanInvalidateRangeReturningLength(this, sizeof(ExtendedNitroVM));
     status = Status_NotOpen;
     isBadState = false;
 }
 
+// Original: arm9/main @ 0x020D8A68; symbol: _ZN15ExtendedNitroVM17IsInReadableStateEv; size: 0x48.
 bool ExtendedNitroVM::IsInReadableState()
 {
     switch (status)
@@ -230,6 +236,7 @@ bool ExtendedNitroVM::IsInReadableState()
     return false;
 }
 
+// Original: arm9/main @ 0x020D8AB0; symbol: _ZN15ExtendedNitroVM11GetFileSizeEv; size: 0x38.
 unsigned int ExtendedNitroVM::GetFileSize()
 {
     switch (status)
@@ -242,6 +249,7 @@ unsigned int ExtendedNitroVM::GetFileSize()
     return 0;
 }
 
+// Original: arm9/main @ 0x020D8AE8; symbol: _ZN15ExtendedNitroVM4SeekEj; size: 0x64.
 bool ExtendedNitroVM::Seek(unsigned int where)
 {
     if (!IsInReadableState())
@@ -257,6 +265,7 @@ bool ExtendedNitroVM::Seek(unsigned int where)
     return false;
 }
 
+// Original: arm9/main @ 0x020D8B4C; symbol: _ZN15ExtendedNitroVM5CloseEv; size: 0x48.
 bool ExtendedNitroVM::Close()
 {
     bool didSomething = false;
@@ -267,12 +276,13 @@ bool ExtendedNitroVM::Close()
     else if (NitroVM_FinishRead(&machine))
         didSomething = true;
 
-    func_020d84f8(this, sizeof(ExtendedNitroVM));
+    Memory_ClearAndCleanInvalidateRangeReturningLength(this, sizeof(ExtendedNitroVM));
     status = Status_NotOpen;
     isBadState = false;
     return didSomething;
 }
 
+// Original: arm9/main @ 0x020D8B94; symbol: _ZN15ExtendedNitroVM4OpenEPKcb; size: 0xE4.
 bool ExtendedNitroVM::Open(const char *filePath, bool skip)
 {
     Close();
@@ -285,7 +295,7 @@ bool ExtendedNitroVM::Open(const char *filePath, bool skip)
         {   
             if (abridgedPath[0] == '/')
                 abridgedPath++;
-            unsigned int targetCRC = func_01ff860c(abridgedPath);
+            unsigned int targetCRC = FileCache_CalculateStringCRC(abridgedPath);
 
             int searchMax, searchMin;
             searchMin = 0;
@@ -321,6 +331,7 @@ bool ExtendedNitroVM::Open(const char *filePath, bool skip)
     return (status != Status_NotOpen);
 }
 
+// Original: arm9/main @ 0x020D8C78; symbol: _ZN15ExtendedNitroVM4ReadEPvj; size: 0xA8.
 unsigned int ExtendedNitroVM::Read(void* into, unsigned int capacity)
 {
     isBadState = false;
@@ -348,6 +359,7 @@ unsigned int ExtendedNitroVM::Read(void* into, unsigned int capacity)
     return length;
 }
 
+// Original: arm9/main @ 0x020D8D20; symbol: _ZN15ExtendedNitroVM5AbortEv; size: 0x3C.
 bool ExtendedNitroVM::Abort()
 {
     bool wasProcessing = false;
@@ -364,6 +376,7 @@ bool ExtendedNitroVM::Abort()
     return wasProcessing;
 }
 
+// Original: arm9/main @ 0x020D8D5C; symbol: _ZN15ExtendedNitroVM26DecompressWithScratchSpaceER12DecompressorRjS2_S2_Pvj; size: 0x188.
 unsigned int ExtendedNitroVM::DecompressWithScratchSpace(Decompressor& decompressor, 
     unsigned int& outDecompressedLength, unsigned int& remainingInputBytes,
     unsigned int& readPosTracker, void *scratchSpace, unsigned int scratchSpaceCapacity)
@@ -411,13 +424,14 @@ unsigned int ExtendedNitroVM::DecompressWithScratchSpace(Decompressor& decompres
     unsigned int scratchSpaceUsedAmount = (decompressor.declaredOutputSize + 4) & ~3;
     if (scratchSpaceUsedAmount >= scratchSpaceCapacity)
         scratchSpaceUsedAmount = scratchSpaceCapacity;
-    func_020d84f8((unsigned char*)scratchSpace + decompressor.declaredOutputSize, 
+    Memory_ClearAndCleanInvalidateRangeReturningLength((unsigned char*)scratchSpace + decompressor.declaredOutputSize,
         scratchSpaceUsedAmount - decompressor.declaredOutputSize);
     CleanInvalidateCacheRange(scratchSpace, scratchSpaceUsedAmount);
     outDecompressedLength = decompressor.declaredOutputSize;
     return readPosTracker; 
 }
 
+// Original: arm9/main @ 0x020D8EE4; symbol: _ZN15ExtendedNitroVM15DecompressBytesEPvRjjj; size: 0xE8.
 unsigned int ExtendedNitroVM::DecompressBytes(void* output,
     unsigned int& outDecompressedSize, unsigned int numBytesToRead, unsigned int outputCapacity)
 {

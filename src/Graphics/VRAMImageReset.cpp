@@ -4,6 +4,7 @@
 #include "Graphics/VRAMImagePool.h"
 
 
+// Original: arm9/main @ 0x020BB514; symbol: _Z21ResetTextureImageVRAMv; size: 0x74.
 void ResetTextureImageVRAM()
 {
     int index;

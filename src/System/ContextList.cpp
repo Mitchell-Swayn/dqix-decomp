@@ -12,6 +12,7 @@ extern "C"
     void func_020c75b4(ProcessorContext*, const void* proc, void* maybeUserdata, void* stackBottom, unsigned stackSize, int prio);
 }
 
+// Original: arm9/main @ 0x020C71A4; symbol: _Z23GenerateUniqueContextIDv; size: 0x18.
 int GenerateUniqueContextID()
 {
     return ++(data_021112e0.contextUniqueIDCounter);
@@ -19,6 +20,7 @@ int GenerateUniqueContextID()
 
 #pragma optimize_for_size off
 
+// Original: arm9/main @ 0x020C71BC; symbol: _ZN18BlockedContextList6InsertEP16ProcessorContext; size: 0x78.
 void BlockedContextList::Insert(ProcessorContext* insertion)
 {
     ProcessorContext* elementAfter = this->first;
@@ -54,6 +56,7 @@ void BlockedContextList::Insert(ProcessorContext* insertion)
     }
 }
 
+// Original: arm9/main @ 0x020C7234; symbol: _ZN18BlockedContextList8PopFrontEv; size: 0x34.
 ProcessorContext* BlockedContextList::PopFront()
 {
     ProcessorContext* front = this->first;
@@ -75,6 +78,7 @@ ProcessorContext* BlockedContextList::PopFront()
     return front;
 }
 
+// Original: arm9/main @ 0x020C7268; symbol: _ZN18BlockedContextList6RemoveEP16ProcessorContext; size: 0x54.
 ProcessorContext* BlockedContextList::Remove(ProcessorContext* context)
 {
     ProcessorContext* searchNode = this->first;
@@ -107,6 +111,7 @@ ProcessorContext* BlockedContextList::Remove(ProcessorContext* context)
     return searchNode;
 }
 
+// Original: arm9/main @ 0x020C72BC; symbol: _Z21PopFrontMutexFromListP9MutexList; size: 0x30.
 Mutex* PopFrontMutexFromList(MutexList* list)
 {
     Mutex* front = list->pFirst;
@@ -122,6 +127,7 @@ Mutex* PopFrontMutexFromList(MutexList* list)
     return front;
 }
 
+// Original: arm9/main @ 0x020C72EC; symbol: _Z27InsertContextIntoGlobalListP16ProcessorContext; size: 0x60.
 ProcessorContext* InsertContextIntoGlobalList(ProcessorContext *context)
 {
     ProcessorContext* loopEntry = data_021112e0.substruct_24.firstContext;
@@ -146,6 +152,7 @@ ProcessorContext* InsertContextIntoGlobalList(ProcessorContext *context)
     return context;
 }
 
+// Original: arm9/main @ 0x020C734C; symbol: _Z27RemoveContextFromGlobalListP16ProcessorContext; size: 0x48.
 void RemoveContextFromGlobalList(ProcessorContext *context)
 {
     ProcessorContext* loopEntry = data_021112e0.substruct_24.firstContext;
@@ -163,6 +170,7 @@ void RemoveContextFromGlobalList(ProcessorContext *context)
         nodeBefore->pNext = context->pNext;
 }
 
+// Original: arm9/main @ 0x020C7394; symbol: _Z13SwitchContextv; size: 0xC8.
 void SwitchContext()
 {
     if (data_021112e0.contextSwitchLock != 0)

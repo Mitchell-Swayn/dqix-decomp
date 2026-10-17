@@ -7,6 +7,7 @@ SoundChannelState ARM7_SoundChannelState;
 #define ARM7_SoundVolumeAdjustment ARM7_SoundChannelState.adjustment
 #define ARM7_RequestedSoundVolume ARM7_SoundChannelState.requestedVolume
 int ARM7_AdjustSoundVolume(int,int);
+// Original: arm7/wram @ 0x037FF270; symbol: ARM7_SetSoundVolumeAdjustment.
 void ARM7_SetSoundVolumeAdjustment(int factor)
 {
  int channel=0;
@@ -21,6 +22,7 @@ void ARM7_SetSoundVolumeAdjustment(int factor)
   channel++;
  }while(channel<16);
 }
+// Original: arm7/wram @ 0x037FF2D0; symbol: ARM7_AdjustSoundVolume.
 int ARM7_AdjustSoundVolume(int volume,int pan)
 {
  if(pan<24)return (volume*(ARM7_SoundVolumeAdjustment*(pan+40)+((32767-ARM7_SoundVolumeAdjustment)<<6)))>>21;

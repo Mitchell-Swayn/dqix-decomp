@@ -9,6 +9,7 @@ extern void ARM7_DisableWirelessPower(void);
 extern void ARM7_Terminate(void);
 extern void ARM7_Panic(const char*,int,const char*,...);
 extern const char ARM7_CardRemovalFile[],ARM7_CardRemovalCommandError[];
+// Original: arm7/wram @ 0x03803C1C; symbol: ARM7_CardRemovalCallback.
 void ARM7_CardRemovalCallback(int channel,unsigned int message,int flag)
 {
  if((message&0x3f)==1) {

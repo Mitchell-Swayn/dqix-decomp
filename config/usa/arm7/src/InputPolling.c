@@ -15,6 +15,7 @@ extern Tick ARM7_GetCurrentTimestamp(void);
 extern void ARM7_SetInterval(Alarm*,Tick,Tick,Callback,void*);
 extern void ARM7_SetGPIOControlMode(unsigned int);
 void ARM7_PollSharedInput(void*);
+// Original: arm7/wram @ 0x037FEC50; symbol: ARM7_InitializeInputPolling.
 int ARM7_InitializeInputPolling(void)
 {
  Tick now;
@@ -26,6 +27,7 @@ int ARM7_InitializeInputPolling(void)
  ARM7_InputPollingState.initialized=1;
  return 1;
 }
+// Original: arm7/wram @ 0x037FECEC; symbol: ARM7_PollSharedInput.
 void ARM7_PollSharedInput(void *argument)
 {
  unsigned int highFlag=0;

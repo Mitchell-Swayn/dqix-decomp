@@ -14,9 +14,9 @@ struct TreasureMapCollection
 };
 
 #if defined(usa)
-extern "C" int func_020ac734(const TreasureMapCollection* collection);
-extern "C" int func_020ac760(TreasureMapCollection* collection);
-extern "C" int func_020ac78c(unsigned char* count);
+extern "C" int GameState_CopyGrottoMetadataCollection(const TreasureMapCollection* collection);
+extern "C" int GameState_CopyTreasureMapMetadataCollection(TreasureMapCollection* collection);
+extern "C" int GameState_ReadTreasureMapCollectionCount(unsigned char* count);
 #endif
 
 struct GrottoMetadataDescriptor

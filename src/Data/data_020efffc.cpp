@@ -1,0 +1,5 @@
+// UI format storage; adjacent formats retain explicit interior terminators.
+extern "C" {
+__declspec(align(1)) char data_020efffc[15] =
+    "<XR=%d>%s</XR>";
+}

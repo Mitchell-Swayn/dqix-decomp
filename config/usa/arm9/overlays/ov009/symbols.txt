@@ -24,11 +24,11 @@ func_ov009_02187b34 kind:function(arm,size=0x898) addr:0x02187b34
 func_ov009_021883cc kind:function(arm,size=0x88) addr:0x021883cc
 func_ov009_02188454 kind:function(arm,size=0x164) addr:0x02188454
 func_ov009_021885b8 kind:function(arm,size=0x4c) addr:0x021885b8
-func_ov009_02188604 kind:function(arm,size=0x340) addr:0x02188604
+Input_UpdateObjectYawFromButtonsAndTarget kind:function(arm,size=0x340) addr:0x02188604
 func_ov009_02188944 kind:function(arm,size=0x1d0) addr:0x02188944
 func_ov009_02188b14 kind:function(arm,size=0xe4) addr:0x02188b14
 func_ov009_02188bf8 kind:function(arm,size=0x34) addr:0x02188bf8
-func_ov009_02188c2c kind:function(arm,size=0x170) addr:0x02188c2c
+ConfigureGridSelectionForCurrentMode kind:function(arm,size=0x170) addr:0x02188c2c
 func_ov009_02188d9c kind:function(arm,size=0xd4) addr:0x02188d9c
 func_ov009_02188e70 kind:function(arm,size=0x78) addr:0x02188e70
 func_ov009_02188ee8 kind:function(arm,size=0x96c) addr:0x02188ee8
@@ -37,7 +37,7 @@ func_ov009_02189a4c kind:function(arm,size=0x9d4) addr:0x02189a4c
 func_ov009_0218a420 kind:function(arm,size=0x64) addr:0x0218a420
 func_ov009_0218a484 kind:function(arm,size=0x44) addr:0x0218a484
 func_ov009_0218a4c8 kind:function(arm,size=0x50) addr:0x0218a4c8
-func_ov009_0218a518 kind:function(arm,size=0x370) addr:0x0218a518
+Util_MatchEncodedBytePattern kind:function(arm,size=0x370) addr:0x0218a518
 func_ov009_0218a888 kind:function(arm,size=0x30) addr:0x0218a888
 func_ov009_0218a8b8 kind:function(arm,size=0x78) addr:0x0218a8b8
 func_ov009_0218a930 kind:function(arm,size=0x2c) addr:0x0218a930
@@ -70,7 +70,7 @@ data_ov009_0218aa54 kind:data(any) addr:0x0218aa54
 data_ov009_0218aa70 kind:data(any) addr:0x0218aa70
 data_ov009_0218aa98 kind:data(any) addr:0x0218aa98
 data_ov009_0218aac8 kind:data(any) addr:0x0218aac8
-data_ov009_0218aafc kind:data(any) addr:0x0218aafc
+data_ov009_0218aafc kind:data(byte[75]) addr:0x0218aafc
 data_ov009_0218ab48 kind:data(any) addr:0x0218ab48
 data_ov009_0218ab9c kind:data(any) addr:0x0218ab9c
 data_ov009_0218ac04 kind:data(any) addr:0x0218ac04

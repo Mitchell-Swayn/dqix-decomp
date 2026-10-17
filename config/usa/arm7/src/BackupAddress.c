@@ -2,6 +2,7 @@
 #pragma dont_inline on
 #include "BackupTransfer.h"
 /* The request must select a supported one-, two- or three-byte address. */
+// Original: arm7/wram @ 0x038030E4; symbol: ARM7_SendBackupAddress.
 void ARM7_SendBackupAddress(unsigned int address,unsigned int operation)
 {
  unsigned int command;

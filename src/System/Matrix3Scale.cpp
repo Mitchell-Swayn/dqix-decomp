@@ -1,5 +1,6 @@
 #include "System/Matrix.h"
 
+// Original: arm9/main @ 0x020C11A4; symbol: Mat3x3_ApplyScale; size: 0xC0.
 void Mat3x3_ApplyScale(const Matrix3x3* in, Matrix3x3* out, fix32_t x, fix32_t y, fix32_t z)
 {
     out->entries[0] = FIX32_MULTIPLY_SIMPLE(x, in->entries[0]);

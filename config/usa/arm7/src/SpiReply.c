@@ -1,6 +1,7 @@
 /* Route encoded SPI replies by command group and retry negative IPC results. */
 #pragma dont_inline on
 extern int ARM7_SendIpcCommand(int,int,int);
+// Original: arm7/wram @ 0x03804C5C; symbol: ARM7_SendSpiReply.
 void ARM7_SendSpiReply(int command,unsigned int value)
 {
  int channel;

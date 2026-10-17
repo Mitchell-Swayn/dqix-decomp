@@ -3,30 +3,31 @@
 
 extern "C"
 {
-    void* func_0202ae18();
-    void* func_02010828(GameState*);
-    bool func_02046b08(void*);
-    bool func_0203b5f8(GameResources*, int);
+    void* Object_GetGlobalConnectionState();
+    void* GameState_GetIndexList(GameState*);
+    bool IsFirstSignedWordZero(void*);
+    bool IsSelectedFloatFieldZeroAfterIntegerConversion(GameResources*, int);
     void func_ov017_021a9bc4(void*, int);
     void func_ov017_021a9a9c(void*, int, int, int, int);
-    void func_020469b4(void*, void*);
-    void func_020d9850(void*);
-    void func_020ae53c(int);
-    bool func_0202b7d8(void*);
-    bool func_02086b98(void*);
-    void func_ov017_021aa4cc(GameResources*, int);
+    void AppendLinkedNodeAndMarkActive(void*, void*);
+    void InitializeRecordKind48(void*);
+    void ApplyZoneModeAndRecordedFlagStates(int);
+    bool IsFirstWordNonzero(void*);
+    bool GameState_TestAllListedObjectLinkedFlags(void*);
+    void QueueTransitionRequestIfUninitialized(GameResources*, int);
 }
 
+// Original: arm9/main @ 0x0201BDAC; symbol: _ZN6Zone3D25ProcessTransitionRequestsEv; size: 0x18C.
 void Zone3D::ProcessTransitionRequests()
 {
     GameState* game = GameState::GetInstance();
-    GameResources* resources = func_ov017_0218b5b0();
+    GameResources* resources = GameResources_GetInstance();
     void* controller = resources->unknown_ptr_array_36fc[0];
-    void* context = func_0202ae18();
-    void* gameContext = func_02010828(game);
-    if (!func_02046b08(controller)) return;
-    if (!func_0203b5f8(resources, 0)) return;
-    if (!func_0203b5f8(resources, 1)) return;
+    void* context = Object_GetGlobalConnectionState();
+    void* gameContext = GameState_GetIndexList(game);
+    if (!IsFirstSignedWordZero(controller)) return;
+    if (!IsSelectedFloatFieldZeroAfterIntegerConversion(resources, 0)) return;
+    if (!IsSelectedFloatFieldZeroAfterIntegerConversion(resources, 1)) return;
     // Requests have priority in bit order and only their own bit is consumed.
     if (transitionRequests_ & 1)
     {
@@ -34,28 +35,28 @@ void Zone3D::ProcessTransitionRequests()
         void* target = resources->unknown_ptr_array_3afc[27];
         func_ov017_021a9bc4(target, 0);
         func_ov017_021a9a9c(target, transitionParameter1_, transitionParameter2_, transitionParameter3_, 0);
-        func_020469b4(controller, target);
+        AppendLinkedNodeAndMarkActive(controller, target);
         transitionRequests_ &= ~1;
         return;
     }
     if (transitionRequests_ & 2)
     {
         void* target = resources->unknown_ptr_array_3afc[47];
-        func_020d9850(target);
-        func_020469b4(controller, target);
+        InitializeRecordKind48(target);
+        AppendLinkedNodeAndMarkActive(controller, target);
         transitionRequests_ &= ~2;
         return;
     }
     if (transitionRequests_ & 4)
     {
-        func_020ae53c(0);
+        ApplyZoneModeAndRecordedFlagStates(0);
         transitionRequests_ &= ~4;
         return;
     }
-    if (func_0202b7d8(context))
+    if (IsFirstWordNonzero(context))
     {
-        if (func_02086b98(gameContext) || (transitionRequests_ & 8))
-            func_ov017_021aa4cc(resources, 1);
+        if (GameState_TestAllListedObjectLinkedFlags(gameContext) || (transitionRequests_ & 8))
+            QueueTransitionRequestIfUninitialized(resources, 1);
     }
     transitionRequests_ = 0;
 }

@@ -2,6 +2,7 @@
 
 #pragma optimize_for_size off
 
+// Original: arm9/main @ 0x020B736C; symbol: NSBXXNameList_Search; size: 0x1C0.
 extern "C" void* NSBXXNameList_Search(NSBXXNameList* nameList, const char* name)
 {
     volatile NSBXXNameList* volList = nameList;

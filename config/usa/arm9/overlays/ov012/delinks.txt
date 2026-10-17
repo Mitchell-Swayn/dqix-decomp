@@ -4,3 +4,198 @@
     .data       start:0x0218b220 end:0x0218b320 kind:data align:32
     .bss        start:0x0218b320 end:0x0218b320 kind:bss align:32
 
+src/Unclassified/ov012/func_ov012_021859f4.cpp:
+    complete
+    .text start:0x021859f4 end:0x02185a24
+
+src/Unclassified/ov012/func_ov012_02185634.cpp:
+    complete
+    .text start:0x02185634 end:0x02185684
+
+src/Data/ov012/data_ov012_0218b224.cpp:
+    complete
+    .data start:0x0218b224 end:0x0218b23b
+
+src/Data/ov012/data_ov012_0218b23b.cpp:
+    complete
+    .data start:0x0218b23b end:0x0218b24e
+
+src/Data/ov012/data_ov012_0218b24e.cpp:
+    complete
+    .data start:0x0218b24e end:0x0218b263
+
+src/Data/ov012/data_ov012_0218b263.cpp:
+    complete
+    .data start:0x0218b263 end:0x0218b274
+
+src/Data/ov012/data_ov012_0218b274.cpp:
+    complete
+    .data start:0x0218b274 end:0x0218b289
+
+src/Data/ov012/data_ov012_0218b289.cpp:
+    complete
+    .data start:0x0218b289 end:0x0218b29a
+
+src/Data/ov012/data_ov012_0218b29a.cpp:
+    complete
+    .data start:0x0218b29a end:0x0218b2ad
+
+src/Data/ov012/data_ov012_0218b2ad.cpp:
+    complete
+    .data start:0x0218b2ad end:0x0218b2c2
+
+src/Data/ov012/data_ov012_0218b2c2.cpp:
+    complete
+    .data start:0x0218b2c2 end:0x0218b2d3
+
+src/Data/ov012/data_ov012_0218b2d3.cpp:
+    complete
+    .data start:0x0218b2d3 end:0x0218b2ea
+
+src/Data/ov012/data_ov012_0218b2ea.cpp:
+    complete
+    .data start:0x0218b2ea end:0x0218b303
+
+src/Data/ov012/data_ov012_0218b303.cpp:
+    complete
+    .data start:0x0218b303 end:0x0218b305
+
+src/Data/ov012/data_ov012_0218b305.cpp:
+    complete
+    .data start:0x0218b305 end:0x0218b310
+
+src/Data/ov012/data_ov012_0218b310.cpp:
+    complete
+    .data start:0x0218b310 end:0x0218b312
+
+src/Unclassified/ov012/func_ov012_021855f0.cpp:
+    complete
+    .text start:0x021855f0 end:0x02185634
+
+src/Unclassified/ov012/func_ov012_02185ab8.cpp:
+    complete
+    .text start:0x02185ab8 end:0x02185af0
+
+src/Unclassified/ov012/func_ov012_02185a24.cpp:
+    complete
+    .text start:0x02185a24 end:0x02185ab8
+
+src/Unclassified/ov012/func_ov012_021842a0.cpp:
+    complete
+    .text start:0x021842a0 end:0x0218432c
+
+src/Unclassified/ov012/func_ov012_021898bc.cpp:
+    complete
+    .text start:0x021898bc end:0x02189934
+
+src/Unclassified/ov012/func_ov012_02189c44.cpp:
+    complete
+    .text start:0x02189c44 end:0x02189cbc
+
+src/Unclassified/ov012/func_ov012_02189f38.cpp:
+    complete
+    .text start:0x02189f38 end:0x02189fb0
+
+src/Unclassified/ov012/func_ov012_0218a438.cpp:
+    complete
+    .text start:0x0218a438 end:0x0218a4b0
+
+src/Unclassified/ov012/func_ov012_0218943c.cpp:
+    complete
+    .text start:0x0218943c end:0x021894b4
+
+src/Unclassified/ov012/func_ov012_0218a974.cpp:
+    complete
+    .text start:0x0218a974 end:0x0218a9ec
+
+src/Unclassified/ov012/func_ov012_0218aabc.cpp:
+    complete
+    .text start:0x0218aabc end:0x0218ab34
+
+src/Unclassified/ov012/func_ov012_02189a78.cpp:
+    complete
+    .text start:0x02189a78 end:0x02189af4
+
+src/Unclassified/ov012/func_ov012_0218a574.cpp:
+    complete
+    .text start:0x0218a574 end:0x0218a5f0
+
+src/Unclassified/ov012/func_ov012_02189d68.cpp:
+    complete
+    .text start:0x02189d68 end:0x02189dfc
+
+src/GameState/ov012/func_ov012_02184384.cpp:
+    complete
+    .text start:0x02184384 end:0x021843d4
+
+src/Unclassified/ov012/func_ov012_02189fb0.cpp:
+    complete
+    .text start:0x02189fb0 end:0x0218a054
+
+src/Unclassified/ov012/func_ov012_0218a4b0.cpp:
+    complete
+    .text start:0x0218a4b0 end:0x0218a574
+
+src/Unclassified/ov012/func_ov012_0218a1f4.cpp:
+    complete
+    .text start:0x0218a1f4 end:0x0218a2b8
+
+src/Unclassified/ov012/func_ov012_0218a374.cpp:
+    complete
+    .text start:0x0218a374 end:0x0218a438
+
+src/Unclassified/ov012/func_ov012_0218a2b8.cpp:
+    complete
+    .text start:0x0218a2b8 end:0x0218a374
+
+src/Unclassified/ov012/func_ov012_0218a7a0.cpp:
+    complete
+    .text start:0x0218a7a0 end:0x0218a844
+
+src/Unclassified/ov012/InitializeByteLookupState.cpp:
+    complete
+    .text start:0x021845f8 end:0x02184654
+
+src/Graphics/ov012/Text_AppendProfileRecordFragments.cpp:
+    complete
+    .text start:0x02189934 end:0x02189a78
+
+src/Graphics/ov012/Graphics_ConfigureProfilePageLayout.cpp:
+    complete
+    .text start:0x021893b4 end:0x0218943c
+
+src/Util/ov012/Util_MatchBytePattern.cpp:
+    complete
+    .text start:0x02185684 end:0x021859f4
+
+src/Resource/ov012/Resource_ExecuteLoadedScriptAndStoreFirstValue.cpp:
+    complete
+    .text start:0x02185e18 end:0x02185ea8
+
+src/Graphics/ov012/Graphics_AppendCenteredSummaryText.cpp:
+    complete
+    .text start:0x021894b4 end:0x021898bc
+
+src/Filesystem/ov012/Filesystem_ConsumeLoadedFileTask.cpp:
+    complete
+    .text start:0x02185ea8 end:0x02185f04
+
+src/Graphics/ov012/Text_AppendEightIndexedRecordFragments.cpp:
+    complete
+    .text start:0x02189cbc end:0x02189d68
+
+src/Memory/ov012/Memory_InitializeScreenPoolsAndBuffers.cpp:
+    complete
+    .text start:0x02184884 end:0x02184acc
+
+src/Graphics/ov012/Graphics_LoadThreeCanvasLayersAndThirteenRecords.cpp:
+    complete
+    .text start:0x02185f74 end:0x021861e0
+
+src/Graphics/ov012/Graphics_UpdateSixChoiceMenuState.cpp:
+    complete
+    .text start:0x02186a7c end:0x02186c1c
+
+src/Filesystem/ov012/BackgroundLoader_LoadTaskIntoAllocatorAndRemove.cpp:
+    complete
+    .text start:0x02185f04 end:0x02185f74

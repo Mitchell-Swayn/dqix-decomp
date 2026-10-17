@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "resources": {
+    "signature:arm9/main:02032544": {
+      "kind": "signature",
+      "state": "known",
+      "importance": 3,
+      "evidence": [
+        {
+          "path": "include/Memory/SafeAllocator.h",
+          "line": 26,
+          "sha256": "7109768c0cc7f50cd89dcc08ff35f2be4d7fc0caa05788bbf1cf191b30793299"
+        },
+        {
+          "path": "src/Memory/SafeAllocator.cpp",
+          "line": 52,
+          "sha256": "649fe9b25c1184bb164b2ce1765aab7201bf856d34c9330c4043ddcb293b2a8a"
+        }
+      ],
+      "note": "Reviewed declaration and implementation: non-static SafeAllocator::Allocate(unsigned int) returns void*. The allocator object is the implicit this argument. This fact covers the call signature only; class layout and caller-owned fields need separate evidence."
+    }
+  },
+  "functions": {}
+}

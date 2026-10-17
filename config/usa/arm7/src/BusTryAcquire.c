@@ -6,6 +6,7 @@ extern int ARM7_TestSharedBootFlag4(void);
 extern void ARM7_AfterAcquireGBABus(void);
 extern void ARM7_MarkGBABusAcquired(void);
 extern int ARM7_TryLockBus(unsigned short,BusLock*,LockCallback,int);
+// Original: arm7/wram @ 0x037FBBF0; symbol: ARM7_TryAcquireGBABus.
 int ARM7_TryAcquireGBABus(unsigned short owner)
 {
  int result=ARM7_TryLockBus(owner,(BusLock*)0x027fffe8,ARM7_MarkGBABusAcquired,1);

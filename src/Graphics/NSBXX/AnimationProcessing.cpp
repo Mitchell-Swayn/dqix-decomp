@@ -3,16 +3,17 @@
 #pragma optimize_for_size off
 
 #if defined(jpn)
-#define func_020ca408 func_020cbed4
-#define func_020ca458 func_020cbf24
+#define MIi_CpuCopy32 func_020cbed4
+#define MIi_CpuClearFast func_020cbf24
 #endif
 
 extern "C"
 {
-    void func_020ca408(const void* src, void* dst, unsigned len);
-    void func_020ca458(int value, void* data, unsigned len);
+    void MIi_CpuCopy32(const void* src, void* dst, unsigned len);
+    void MIi_CpuClearFast(int value, void* data, unsigned len);
 }
 
+// Original: arm9/main @ 0x020B3AD0; symbol: _Z40ProcessMaterialAnimationsOnBoundMaterialP18MaterialRenderDataP13AnimationDataj; size: 0x6C.
 bool ProcessMaterialAnimationsOnBoundMaterial(MaterialRenderData* material, AnimationData* anim, unsigned int matIdx)
 {
     bool success = false;
@@ -35,6 +36,7 @@ bool ProcessMaterialAnimationsOnBoundMaterial(MaterialRenderData* material, Anim
     return success;
 }
 
+// Original: arm9/main @ 0x020B3B3C; symbol: _Z21AccumulateScaleVectorPN20BoneMatrixRenderData5ScaleEPKS0_ii; size: 0x70.
 void AccumulateScaleVector(BoneMatrixRenderData::Scale* accumulator, const BoneMatrixRenderData::Scale* source, fix32_t scale, int useIdentity)
 {
     if (useIdentity)
@@ -51,6 +53,7 @@ void AccumulateScaleVector(BoneMatrixRenderData::Scale* accumulator, const BoneM
     }
 }
 
+// Original: arm9/main @ 0x020B3BAC; symbol: _Z34ProcessJointAnimationsOnBoneMatrixP20BoneMatrixRenderDataP13AnimationDataj; size: 0x3EC.
 bool ProcessJointAnimationsOnBoneMatrix(BoneMatrixRenderData* bone, AnimationData* anim, unsigned int boneIdx)
 {
     if (anim == NULL)
@@ -109,7 +112,7 @@ bool ProcessJointAnimationsOnBoneMatrix(BoneMatrixRenderData* bone, AnimationDat
     }
 
     // Multiple animations to deal with
-    func_020ca458(0, bone, sizeof(BoneMatrixRenderData));
+    MIi_CpuClearFast(0, bone, sizeof(BoneMatrixRenderData));
     bone->flags_ = 0xffffffff;
 
     Vector3fix rootRotationTopRow;
@@ -124,8 +127,8 @@ bool ProcessJointAnimationsOnBoneMatrix(BoneMatrixRenderData* bone, AnimationDat
             anim->callback_(&tempData, anim, anim->entries_[boneIdx] & 0xff);
             if (numAnimsProcessed == 0)
             {
-                func_020ca408(&tempData.rotationMatrix_.rows[0], &rootRotationTopRow, sizeof(Vector3fix));
-                func_020ca408(&tempData.rotationMatrix_.rows[2], &rootRotationBottomRow, sizeof(Vector3fix));
+                MIi_CpuCopy32(&tempData.rotationMatrix_.rows[0], &rootRotationTopRow, sizeof(Vector3fix));
+                MIi_CpuCopy32(&tempData.rotationMatrix_.rows[2], &rootRotationBottomRow, sizeof(Vector3fix));
             }
 
             fix32_t thisIntensity = (totalWeight == 0x1000) ? anim->weight_ : fix32_Divide(anim->weight_, totalWeight);
@@ -169,7 +172,7 @@ bool ProcessJointAnimationsOnBoneMatrix(BoneMatrixRenderData* bone, AnimationDat
 
     if (bone->rotationMatrix_.rows[0].x == 0 && bone->rotationMatrix_.rows[0].y == 0 && bone->rotationMatrix_.rows[0].z == 0)
     {
-        func_020ca408(&rootRotationTopRow, &bone->rotationMatrix_.rows[0], sizeof(Vector3fix));
+        MIi_CpuCopy32(&rootRotationTopRow, &bone->rotationMatrix_.rows[0], sizeof(Vector3fix));
     }
     else
     {
@@ -178,7 +181,7 @@ bool ProcessJointAnimationsOnBoneMatrix(BoneMatrixRenderData* bone, AnimationDat
 
     if (bone->rotationMatrix_.rows[2].x == 0 && bone->rotationMatrix_.rows[2].y == 0 && bone->rotationMatrix_.rows[2].z == 0)
     {
-        func_020ca408(&rootRotationBottomRow, &bone->rotationMatrix_.rows[2], sizeof(Vector3fix));
+        MIi_CpuCopy32(&rootRotationBottomRow, &bone->rotationMatrix_.rows[2], sizeof(Vector3fix));
     }
     else
     {
@@ -193,6 +196,7 @@ bool ProcessJointAnimationsOnBoneMatrix(BoneMatrixRenderData* bone, AnimationDat
     return true;
 }
 
+// Original: arm9/main @ 0x020B3F98; symbol: _Z27ProcessVisibilityAnimationsPiP13AnimationDataj; size: 0x88.
 bool ProcessVisibilityAnimations(int* output, AnimationData* anim, unsigned int boneIdx)
 {
     bool success = false;

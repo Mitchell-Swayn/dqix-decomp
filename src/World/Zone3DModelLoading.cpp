@@ -11,13 +11,14 @@ struct ZoneTintState
     char unknown_0[0x20];
     int unknown_20;
 };
-extern "C" ZoneTintState* func_0200fd0c(GameState*);
-extern "C" void func_0207df90(void*);
-extern "C" void func_0207dfac(void*);
-extern "C" void func_020e2fc0(RenderCommandHandler*);
+extern "C" ZoneTintState* GameState_ReadUnkF8(GameState*);
+extern "C" void Graphics_RestoreTextureImageAndPaletteVRAMState(void*);
+extern "C" void Object_InvokeSaveTextureImageVRAMState(void*);
+extern "C" void WindowControl_ConfigureGlobalTable(RenderCommandHandler*);
 
 
 
+// Original: arm9/main @ 0x02014D80; symbol: _ZN6Zone3D13LoadBMDJModelEP17Zone3D_BMDJStructPNS0_11ObjectEntryEPNS0_11StructSizeCE; size: 0x3B4.
 bool Zone3D::LoadBMDJModel(Zone3D_BMDJStruct* group, Zone3D_BMDJStruct::ObjectEntry* entry, Zone3D_BMDJStruct::StructSizeC* definition)
 {
     GameState* game = GameState::GetInstance();
@@ -26,7 +27,7 @@ bool Zone3D::LoadBMDJModel(Zone3D_BMDJStruct* group, Zone3D_BMDJStruct::ObjectEn
     LightingManager* lightingManager = LightingManager::GetInstance();
     int timeOfDay = lightingManager->timeOfDayIndex_;
     Model3DListNode* alternate = NULL;
-    bool tint = func_0200fd0c(game)->unknown_20 < 0;
+    bool tint = GameState_ReadUnkF8(game)->unknown_20 < 0;
     unknown_834_ = tint;
     for (Zone3D_BMDJStruct::StructSizeC* variant = definition->pNext; variant; variant = variant->pNext)
     {
@@ -47,9 +48,9 @@ bool Zone3D::LoadBMDJModel(Zone3D_BMDJStruct* group, Zone3D_BMDJStruct::ObjectEn
         if (decompressed && entry->model)
         {
             entry->model->Clear();
-            func_0207df90(textureContext);
+            Graphics_RestoreTextureImageAndPaletteVRAMState(textureContext);
             entry->model->SetAndProcessRawFile(decompressed, length, Model3D::TextureStagingMode_Normal);
-            func_0207dfac(textureContext);
+            Object_InvokeSaveTextureImageVRAMState(textureContext);
             NSBXXTex* texture = entry->model->GetTEX0();
             if (texture)
             {
@@ -58,7 +59,7 @@ bool Zone3D::LoadBMDJModel(Zone3D_BMDJStruct* group, Zone3D_BMDJStruct::ObjectEn
             }
             ModelRenderContext* context = entry->model->unknown_flags_a8_0_ ? &entry->model->renderContext_ : NULL;
             if (context)
-                SetModelRenderContextRenderCommandHook(context, func_020e2fc0, 0, 8, 1);
+                SetModelRenderContextRenderCommandHook(context, WindowControl_ConfigureGlobalTable, 0, 8, 1);
             if (!(definition->unk_2 & 0x20) && tint)
                 lightingManager->ModelTransformTintBrightnessContrast(entry->model->rawInternalModel_);
             for (Model3DListNode* donor = firstModel_418_; donor; donor = donor->pNext_)

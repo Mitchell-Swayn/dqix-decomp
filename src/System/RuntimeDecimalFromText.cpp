@@ -2,7 +2,8 @@
 
 #pragma optimize_for_size off
 
-extern "C" void func_020098fc(RuntimeDecimal* decimal, const char* text, short exponent)
+// Original: arm9/main @ 0x020098FC; symbol: func_020098fc; size: 0x9C.
+extern "C" void Runtime_InitializeDecimalDigitsFromText(RuntimeDecimal* decimal, const char* text, short exponent)
 {
     decimal->exponent = exponent;
     decimal->sign = 0;
@@ -30,5 +31,5 @@ extern "C" void func_020098fc(RuntimeDecimal* decimal, const char* text, short e
             return;
     }
 round_up:
-    func_0200961c(decimal, decimal->length);
+    __dorounddecup(decimal, decimal->length);
 }

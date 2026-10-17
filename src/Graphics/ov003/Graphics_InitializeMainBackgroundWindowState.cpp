@@ -1,0 +1,85 @@
+#include <globaldefs.h>
+ARM
+extern "C" {
+void* memset(void*,int,unsigned);
+void _ZN13SafeAllocator21ResetAllocatorPointerEv(void*);
+void Graphics_CacheFourMainBackgroundControlsOnce(void*);
+void InitializeRecordBuffersAndEnabledByte(unsigned char*);
+void Object_InitializeOptionalRecordAndByteDefaults(char*,char*);
+void ClearRecordAndInvalidateTwoIndices(char*);
+void ClearTwoBytesAndWord4(unsigned char*);
+}
+// Original: arm9/ov003 @ 0x0215F9C0; symbol: func_ov003_0215f9c0; size: 0x1D4.
+extern "C" void Graphics_InitializeMainBackgroundWindowState(char* self,int enabled) {
+ memset(self,0,0x226);
+ *(short*)(self+0x226)=0;
+ _ZN13SafeAllocator21ResetAllocatorPointerEv(self+0x228);
+ _ZN13SafeAllocator21ResetAllocatorPointerEv(self+0x23c);
+ _ZN13SafeAllocator21ResetAllocatorPointerEv(self+0x264);
+ _ZN13SafeAllocator21ResetAllocatorPointerEv(self+0x278);
+ _ZN13SafeAllocator21ResetAllocatorPointerEv(self+0x28c);
+ _ZN13SafeAllocator21ResetAllocatorPointerEv(self+0x2a0);
+ _ZN13SafeAllocator21ResetAllocatorPointerEv(self+0x2b4);
+ self[0x304]=0;
+ self[0x305]=0;
+ Graphics_CacheFourMainBackgroundControlsOnce(self+0x2f4);
+ *(unsigned*)(self+0x330)=(*(volatile unsigned*)0x04000000 & 0x1f00)>>8;
+ *(volatile unsigned*)0x04000000=(*(volatile unsigned*)0x04000000 & ~0x1f00)|0x100;
+ InitializeRecordBuffersAndEnabledByte((unsigned char*)self+0x334);
+ *(int*)(self+0x388)=0;
+ Object_InitializeOptionalRecordAndByteDefaults(self+0x308,self+0x314);
+ ClearRecordAndInvalidateTwoIndices(self+0x2dc);
+ *(int*)(self+0x318)=0;
+ *(int*)(self+0x31c)=0;
+ *(int*)(self+0x320)=0;
+ *(int*)(self+0x324)=0;
+ *(int*)(self+0x328)=0;
+ *(int*)(self+0x32c)=0;
+ *(int*)(self+0x390)=0;
+ *(int*)(self+0x394)=0;
+ *(int*)(self+0x398)=0;
+ *(int*)(self+0x45c)=0;
+ *(int*)(self+0x460)=0;
+ *(int*)(self+0x464)=0;
+ memset(self+0x468,0,4);
+ *(int*)(self+0x46c)=-1;
+ *(int*)(self+0x470)=0;
+ *(short*)(self+0x474)=-1;
+ *(short*)(self+0x476)=0;
+ *(short*)(self+0x478)=0;
+ *(short*)(self+0x47a)=0;
+ *(short*)(self+0x47c)=-1;
+ *(short*)(self+0x47e)=-1;
+ *(short*)(self+0x480)=-1;
+ *(short*)(self+0x482)=-1;
+ *(short*)(self+0x486)=-1;
+ *(short*)(self+0x484)=*(volatile short*)(self+0x486);
+ *(short*)(self+0x48a)=-1;
+ *(short*)(self+0x48e)=-1;
+ *(short*)(self+0x490)=-1;
+ *(short*)(self+0x492)=-1;
+ *(short*)(self+0x494)=-1;
+ *(short*)(self+0x496)=-1;
+ *(short*)(self+0x498)=-1;
+ *(short*)(self+0x49a)=-1;
+ *(short*)(self+0x49c)=-1;
+ *(short*)(self+0x488)=-1;
+ self[0x49f]=0;
+ self[0x4a0]=0;
+ self[0x4a1]=0;
+ self[0x4a2]=-1;
+ self[0x4a3]=0;
+ self[0x4a4]=0;
+ self[0x4a5]=0;
+ self[0x4a6]=0;
+ self[0x4a7]=0;
+ self[0x4a8]=0;
+ *(int*)(self+0x4b0)=0;
+ ClearTwoBytesAndWord4((unsigned char*)self+0x4b4);
+ self[0x4bc]=0;
+ if(enabled)*(unsigned*)(self+0x464)|=0x30000;
+ *(unsigned char*)(self+0x4bd)=255;
+ self[0x4be]=0;
+ self[0x4bf]=0;
+ self[0x4c0]=0;
+}

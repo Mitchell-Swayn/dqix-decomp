@@ -1,5 +1,6 @@
 #include "System/Matrix.h"
 
+// Original: arm9/main @ 0x020C2034; symbol: Mat4x3_ApplyToVector; size: 0xA0.
 void Mat4x3_ApplyToVector(const Vector3fix* inVec, const Matrix4x3* inMat, Vector3fix* out)
 {
     // Capture inputs before writing output; declaration order preserves register allocation.

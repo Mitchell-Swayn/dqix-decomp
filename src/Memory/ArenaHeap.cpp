@@ -2,6 +2,7 @@
 #include "System/Interrupts.h"
 
 // USA: 0x020c8768
+// Original: arm9/main @ 0x020C8768; symbol: _Z21PrependArenaHeapBlockP14ArenaHeapBlockS0_; size: 0x1C.
 ArenaHeapBlock* PrependArenaHeapBlock(ArenaHeapBlock* head, ArenaHeapBlock* block)
 {
     block->next = head;
@@ -12,6 +13,7 @@ ArenaHeapBlock* PrependArenaHeapBlock(ArenaHeapBlock* head, ArenaHeapBlock* bloc
 }
 
 // USA: 0x020c8784
+// Original: arm9/main @ 0x020C8784; symbol: _Z20RemoveArenaHeapBlockP14ArenaHeapBlockS0_; size: 0x28.
 ArenaHeapBlock* RemoveArenaHeapBlock(ArenaHeapBlock* head, ArenaHeapBlock* block)
 {
     if (block->next != 0)
@@ -25,6 +27,7 @@ ArenaHeapBlock* RemoveArenaHeapBlock(ArenaHeapBlock* head, ArenaHeapBlock* block
 
 // USA: 0x020c87ac
 // Free blocks are address-ordered; merge adjacent blocks on both sides.
+// Original: arm9/main @ 0x020C87AC; symbol: _Z24InsertFreeArenaHeapBlockP14ArenaHeapBlockS0_; size: 0xA8.
 ArenaHeapBlock* InsertFreeArenaHeapBlock(ArenaHeapBlock* head, ArenaHeapBlock* block)
 {
     ArenaHeapBlock* previous = 0;
@@ -74,6 +77,7 @@ ArenaHeapBlock* InsertFreeArenaHeapBlock(ArenaHeapBlock* head, ArenaHeapBlock* b
 ArenaHeapInfo* g_arenaHeapInfo[9];
 
 // USA: 0x020c8854
+// Original: arm9/main @ 0x020C8854; symbol: _Z17AllocateArenaHeapiij; size: 0x108.
 void* AllocateArenaHeap(int arenaId, int heapId, unsigned int len)
 {
     // Declaration order preserves the original compiler's register allocation.
@@ -131,6 +135,7 @@ void* AllocateArenaHeap(int arenaId, int heapId, unsigned int len)
 }
 
 // USA: 0x020c895c
+// Original: arm9/main @ 0x020C895C; symbol: _Z13FreeArenaHeapiiPv; size: 0x68.
 void FreeArenaHeap(int arenaId, int heapId, void* data)
 {
     // Declaration order preserves the original compiler's register allocation.

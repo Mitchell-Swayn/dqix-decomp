@@ -4,6 +4,7 @@ extern "C"
 {
 }
 
+// Original: arm9/main @ 0x02014A24; symbol: _ZN6Zone3D16BuildBMDJObjectsEP17Zone3D_BMDJStruct; size: 0xE0.
 bool Zone3D::BuildBMDJObjects(Zone3D_BMDJStruct* group)
 {
     int count = group->scriptData_.counter_4;

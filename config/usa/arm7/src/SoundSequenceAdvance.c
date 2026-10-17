@@ -10,6 +10,7 @@ extern void ARM7_StopSoundWorkerAlarm(void);
 extern void ARM7_StartSoundWorkerAlarm(void);
 extern int ARM7_ProcessSequenceTick(SoundSequence*,int);
 extern void ARM7_StopSequence(SoundSequence*);
+// Original: arm7/wram @ 0x03800ACC; symbol: ARM7_AdvanceSoundSequence.
 void ARM7_AdvanceSoundSequence(int index,unsigned int ticks)
 {
  SoundSequence *sequence=&ARM7_SoundSequences[index];

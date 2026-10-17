@@ -3,6 +3,7 @@
 #include "BackupTransfer.h"
 extern unsigned int ARM7_ReadBackupStatus(void);
 extern void ARM7_WriteBackupStatus(unsigned int);
+// Original: arm7/wram @ 0x03803184; symbol: ARM7_InitializeBackupStatus.
 void ARM7_InitializeBackupStatus(void)
 {
  unsigned int status=ARM7_BackupWorker.request->initialStatus;

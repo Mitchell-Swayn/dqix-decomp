@@ -1,3 +1,5 @@
+// Original locations for overloaded or compiler-generated definitions in this unit:
+// Original: arm9/main @ 0x02019F24; symbol: _ZN24TileFeaturePlacementDataaSERKS_; size: 0x48. (TileFeaturePlacementData::operator=(TileFeaturePlacementData const&))
 #include "World/Zone3DPaths.h"
 #include <globaldefs.h>
 #include "Grotto/Main/TileFeatures.h"
@@ -29,8 +31,8 @@
 extern "C"
 {
     // get timer (seconds since game start?)
-    void func_020105a8(GameState*, int*);
-    void* func_0202ae18();
+    void GameState_ComputeElapsedMainTimestamp(GameState*, int*);
+    void* Object_GetGlobalConnectionState();
 }
 
 struct RelativePosition
@@ -47,6 +49,7 @@ extern const char data_020ef274[], data_020ef279[], data_020ef27e[],
 extern const RelativePosition data_020e6f00[];
 extern char const data_020ef292[];
 
+// Original: arm9/main @ 0x02019728; symbol: _ZN6Zone3D22ComputeGrottoTileTypesEiP12ZoneFeaturesP24TileFeaturePlacementDataP8FloorMap; size: 0x7FC.
 int Zone3D::ComputeGrottoTileTypes(int floor, ZoneFeatures *featuresArg, TileFeaturePlacementData *output, FloorMap *floorMapArg)
 {
     ZoneFeatures* features = (featuresArg == NULL) ? &bFeatures_ : featuresArg;
@@ -67,7 +70,7 @@ int Zone3D::ComputeGrottoTileTypes(int floor, ZoneFeatures *featuresArg, TileFea
             adj.y = adj.x;
             Matrix3x3 tileRotationMatrix;
             GrottoTileData* extendedEntry = grottoTileMapData_420_ + 16 * tileY + tileX;
-            Mat3x3_WriteIdentity(&tileRotationMatrix);
+            MTX_Identity33_(&tileRotationMatrix);
             switch (adj.y2)
             {
             case 0xff:
@@ -153,21 +156,21 @@ int Zone3D::ComputeGrottoTileTypes(int floor, ZoneFeatures *featuresArg, TileFea
             case 0x8f: case 0xab: case 0xaf: case 0xe2: case 0xee: case 0xef:
                 // East-facing tile, 90 degrees, sin = 1, cos = 0
                 rotationAngle = 0x1921;
-                Mat3x3_WriteRotationY(&tileRotationMatrix, 1 << 12, 0);
+                MTX_RotY33_(&tileRotationMatrix, 1 << 12, 0);
                 tileDirection = 1;
                 break;
             case 0x08: case 0x0a: case 0x0e: case 0x2a: case 0x3a: 
             case 0x3e: case 0x8b: case 0xae: case 0xbe: case 0xbf:
                 // South-facing tile, 180 degrees, sin = 0, cos = -1
                 rotationAngle = 0x3243;
-                Mat3x3_WriteRotationY(&tileRotationMatrix, 0, -1 << 12);
+                MTX_RotY33_(&tileRotationMatrix, 0, -1 << 12);
                 tileDirection = 2;
                 break;
             case 0x20: case 0x28: case 0x2e: case 0x38: case 0xa8:
             case 0xba: case 0xe8: case 0xf8: case 0xfa: case 0xfe:
                 // West-facing tile, 270 degrees, sin = -1, cos = 0
                 rotationAngle = 0x4b65;
-                Mat3x3_WriteRotationY(&tileRotationMatrix, -1 << 12, 0);
+                MTX_RotY33_(&tileRotationMatrix, -1 << 12, 0);
                 tileDirection = 3;
                 break;
             case 0xff:
@@ -195,6 +198,7 @@ int Zone3D::ComputeGrottoTileTypes(int floor, ZoneFeatures *featuresArg, TileFea
     return 1;
 }
 
+// Original: arm9/main @ 0x02019F6C; symbol: _ZN6Zone3D36RotateGrottoTileFeaturePlacementDataEPhi; size: 0x19C.
 void Zone3D::RotateGrottoTileFeaturePlacementData(unsigned char *placementArray, int numTurns)
 {
     unsigned char original[9];
@@ -243,6 +247,7 @@ void Zone3D::RotateGrottoTileFeaturePlacementData(unsigned char *placementArray,
     }
 }
 
+// Original: arm9/main @ 0x0201A108; symbol: _ZN6Zone3D34RotateGrottoObjectDirectionBitmaskEPhi; size: 0x80.
 void Zone3D::RotateGrottoObjectDirectionBitmask(unsigned char *mask, int numTurns)
 {
     unsigned char up = *mask & 1;
@@ -266,6 +271,7 @@ void Zone3D::RotateGrottoObjectDirectionBitmask(unsigned char *mask, int numTurn
 
 // USA: func_0201a188
 // JPN: func_02019f28
+// Original: arm9/main @ 0x0201A188; symbol: _ZN6Zone3D34GetGrottoObjectPositionOrientationEiiPiS0_PK24TileFeaturePlacementDatab; size: 0x178.
 int Zone3D::GetGrottoObjectPositionOrientation(int tileX, int tileY, fix32_t *outX, fix32_t *outY,
     const TileFeaturePlacementData *tileDataArray, bool preferFaceDown)
 {

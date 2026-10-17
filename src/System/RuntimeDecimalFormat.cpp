@@ -1,17 +1,18 @@
 #include "System/RuntimeDecimal.h"
 #pragma optimize_for_size off
-extern "C" void func_0200a180(RuntimeDecimal*, double);
+extern "C" void RuntimeDecimalFromDouble_ConvertDoubleToDecimal(RuntimeDecimal*, double);
 // The first format halfword is not interpreted by this conversion entry.
 struct RuntimeDecimalFormat { unsigned short reserved; short precision; };
-extern "C" void func_0200a300(const RuntimeDecimalFormat* format, double value, RuntimeDecimal* result)
+// Original: arm9/main @ 0x0200A300; symbol: func_0200a300; size: 0xA8.
+extern "C" void Runtime_FormatDecimalToPrecision(const RuntimeDecimalFormat* format, double value, RuntimeDecimal* result)
 {
     int precision = format->precision;
-    func_0200a180(result, value);
+    RuntimeDecimalFromDouble_ConvertDoubleToDecimal(result, value);
     if (result->digits[0] > 9)
         return;
     if (precision > 32)
         precision = 32;
-    func_0200966c(result, precision);
+    RuntimeDecimalRound_RoundToDigitCount(result, precision);
     if (result->length < precision) {
         do {
             result->digits[result->length++] = 0;

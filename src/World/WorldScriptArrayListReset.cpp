@@ -1,6 +1,7 @@
 #include "World/WorldScriptArrayList.h"
 
-extern "C" void func_0208d82c(WorldScriptArrayList* list)
+// Original: arm9/main @ 0x0208D82C; symbol: func_0208d82c; size: 0x28.
+extern "C" void InitializeWorldScriptArrayList(WorldScriptArrayList* list)
 {
     list->entries = 0;
     list->capacity = 0;

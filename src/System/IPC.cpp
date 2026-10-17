@@ -54,11 +54,13 @@ struct Unknown_027ffc00
     unsigned int ipcHandlersRegistered[2];
 };
 
+// Original: arm9/main @ 0x020CAD18; symbol: _Z37InitializeInterProcessorCommunicationv; size: 0xC.
 void InitializeInterProcessorCommunication()
 {
     ZeroInitializeIPCCommandHandling();
 }
 
+// Original: arm9/main @ 0x020CAD24; symbol: _Z32ZeroInitializeIPCCommandHandlingv; size: 0x100.
 void ZeroInitializeIPCCommandHandling()
 {
     int priorState = DisableIRQInterrupts();
@@ -112,6 +114,7 @@ void ZeroInitializeIPCCommandHandling()
     SetIRQInterruptState(priorState);
 }
 
+// Original: arm9/main @ 0x020CAE24; symbol: _Z24SetArm9IPCCommandHandleriPFvjjjE; size: 0x4C.
 void SetArm9IPCCommandHandler(int command, IPCCommandHandler handler)
 {
     int priorState = DisableIRQInterrupts();
@@ -126,12 +129,14 @@ void SetArm9IPCCommandHandler(int command, IPCCommandHandler handler)
     SetIRQInterruptState(priorState);
 }
 
+// Original: arm9/main @ 0x020CAE70; symbol: _Z29IsIPCCommandHandlerRegisteredi7IPCSide; size: 0x24.
 bool IsIPCCommandHandlerRegistered(int command, IPCSide side)
 {
     Unknown_027ffc00* data = (Unknown_027ffc00*)0x027ffc00;
     return data->ipcHandlersRegistered[side] & (1 << command);
 }
 
+// Original: arm9/main @ 0x020CAE94; symbol: _Z17SendCommandToArm7iib; size: 0x88.
 IPCResult SendCommandToArm7(int channel, int argument, bool flag)
 {
     IPCCommand command;
@@ -162,6 +167,7 @@ IPCResult SendCommandToArm7(int channel, int argument, bool flag)
     return IPCResult_Success;
 }
 
+// Original: arm9/main @ 0x020CAF1C; symbol: _Z29HandleCommandReceivedFromArm7v; size: 0x118.
 void HandleCommandReceivedFromArm7()
 {
     while (true)

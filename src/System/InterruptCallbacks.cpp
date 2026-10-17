@@ -19,6 +19,7 @@ inline int& CallbackUserdataByIndex(int n, int base = 0)
     return *(int*)((unsigned int)&data_0211127c[base].userdata + n * sizeof(DMAOrTimerResponse));
 }
 
+// Original: arm9/main @ 0x020C6B74; symbol: _Z19GetInterruptHandlerj; size: 0x8C.
 InterruptHandlerProc GetInterruptHandler(unsigned int mask)
 {
     int interruptId = 0;
@@ -45,6 +46,7 @@ InterruptHandlerProc GetInterruptHandler(unsigned int mask)
     return NULL;
 }
 
+// Original: arm9/main @ 0x020C6C00; symbol: _Z24SetDMACompletionCallbackiPFviEi; size: 0x48.
 void SetDMACompletionCallback(int channel, DMACompletionCallback callback, int userdata)
 {
     CallbackByIndex(channel) = callback;
@@ -53,6 +55,7 @@ void SetDMACompletionCallback(int channel, DMACompletionCallback callback, int u
     ShouldStayEnabledByIndex(channel) = prior & (1 << (channel + 8));
 }
 
+// Original: arm9/main @ 0x020C6C48; symbol: _Z24SetTimerOverflowCallbackiPFviEi; size: 0x48.
 void SetTimerOverflowCallback(int timer, DMACompletionCallback callback, int userdata)
 {
     CallbackByIndex(timer, 4) = callback;

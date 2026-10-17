@@ -31,6 +31,7 @@ extern ThreadGlobals ARM7_ThreadGlobals;
 extern int ARM7_DisableIRQInterrupts(void);
 extern int ARM7_SetIRQInterruptState(int);
 extern void ARM7_MarkThreadReady(ProcessorContext*);
+// Original: arm7/wram @ 0x037FC918; symbol: ARM7_WakeSleepingThread.
 void ARM7_WakeSleepingThread(void *argument)
 {
  ProcessorContext **slot=argument;
@@ -39,6 +40,7 @@ void ARM7_WakeSleepingThread(void *argument)
  thread->sleepAlarm=0;
  ARM7_MarkThreadReady(thread);
 }
+// Original: arm7/wram @ 0x037FC938; symbol: ARM7_SetThreadSwitchCallback.
 SwitchCallback ARM7_SetThreadSwitchCallback(SwitchCallback callback)
 {
  int state=ARM7_DisableIRQInterrupts();

@@ -1,0 +1,4 @@
+#include <globaldefs.h>
+extern "C" void _ZN16BackgroundLoader13AddLockGlobalEv();extern "C" void _ZN16BackgroundLoader16RemoveLockGlobalEv();extern "C" void* _Z18LoadFileIntoMemoryPKcPvPj(const char*,void*,unsigned*);extern "C" char data_020f0d40[];extern "C" char data_0211e33c[];extern "C" void Script_ExecuteCodeWithTwoGlobalValuesAndReturnSuccess(void*,void*,void*,unsigned);
+// Original: arm9/main @ 0x02074114; symbol: func_02074114; size: 0x58.
+extern "C" ARM int LoadNamedFileAndProcessUnderLoaderLock(void* a,void* b){unsigned size;_ZN16BackgroundLoader13AddLockGlobalEv();void* ptr=_Z18LoadFileIntoMemoryPKcPvPj(data_020f0d40,data_0211e33c,&size);if(ptr){Script_ExecuteCodeWithTwoGlobalValuesAndReturnSuccess(a,b,ptr,size);_ZN16BackgroundLoader16RemoveLockGlobalEv();return 1;}_ZN16BackgroundLoader16RemoveLockGlobalEv();return 0;}

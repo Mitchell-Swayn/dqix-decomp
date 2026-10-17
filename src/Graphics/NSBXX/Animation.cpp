@@ -3,7 +3,7 @@
 #pragma optimize_for_size off
 
 #if defined(jpn)
-#define func_020ca3ec func_020cbeb8
+#define MIi_CpuClear32 func_020cbeb8
 
 #define data_020f1c6c data_020f1dd8
 #define data_020f1c84 data_020f1df0
@@ -15,7 +15,7 @@
 extern "C"
 {
     // memset
-    void func_020ca3ec(int value, void* dst, unsigned len);
+    void MIi_CpuClear32(int value, void* dst, unsigned len);
 }
 
 extern unsigned int data_020f1c6c; // number of animation types (5)
@@ -30,6 +30,7 @@ struct AnimationTypeDescription
     void (*initializer)(AnimationData* anim, void* pvMAT, NSBXXInternalModel* model);
 } extern data_020f1c90[];
 
+// Original: arm9/main @ 0x020B2ACC; symbol: _Z24InitializeModelAnimationP13AnimationDataPvP18NSBXXInternalModelP8NSBXXTex; size: 0xA0.
 void InitializeModelAnimation(AnimationData *anim, void *pRawData, NSBXXInternalModel *model, NSBXXTex *tex)
 {
     unsigned int animType = 0;
@@ -72,15 +73,17 @@ void InitializeModelAnimation(AnimationData *anim, void *pRawData, NSBXXInternal
     }
 }
 
+// Original: arm9/main @ 0x020B2B6C; symbol: _Z26PopulateModelRenderContextP18ModelRenderContextP18NSBXXInternalModel; size: 0x54.
 void PopulateModelRenderContext(ModelRenderContext *context, NSBXXInternalModel *model)
 {
-    func_020ca3ec(0, context, sizeof(ModelRenderContext));
+    MIi_CpuClear32(0, context, sizeof(ModelRenderContext));
     context->pfnProcessMaterialAnimations_ = data_020f1c8c;
     context->pfnProcessJointAnimations_ = data_020f1c88;
     context->pfnProcessVisibilityAnimations_ = data_020f1c84;
     context->internalModel_ = model;
 }
 
+// Original: arm9/main @ 0x020B2BC0; symbol: _Z19AddAnimationsToListPP13AnimationDataS0_; size: 0xB8.
 void AddAnimationsToList(AnimationData** pListStart, AnimationData* newEntry)
 {
     AnimationData* mainListEntry = *pListStart;
@@ -145,6 +148,7 @@ void AddAnimationsToList(AnimationData** pListStart, AnimationData* newEntry)
 
 // the exact same function exists in RenderCommands.cpp so we give it a slightly
 // different name to distinguish it. Later can make both versions static
+// Original: arm9/main @ 0x020B2C78; symbol: _Z29PopulateBitfieldFromAnimData0PjP13AnimationData; size: 0x68.
 void PopulateBitfieldFromAnimData0(unsigned int* bitfield, AnimationData* anim)
 {
     if (anim == NULL)
@@ -168,6 +172,7 @@ void PopulateBitfieldFromAnimData0(unsigned int* bitfield, AnimationData* anim)
     } while (anim != NULL);
 }
 
+// Original: arm9/main @ 0x020B2CE0; symbol: _Z33AddAnimationsToModelRenderContextP18ModelRenderContextP13AnimationData; size: 0x80.
 void AddAnimationsToModelRenderContext(ModelRenderContext *context, AnimationData *anim)
 {
     if (anim == NULL || anim->pRawData_ == NULL)
@@ -193,6 +198,7 @@ void AddAnimationsToModelRenderContext(ModelRenderContext *context, AnimationDat
 }
 
 // can be made static
+// Original: arm9/main @ 0x020B2D60; symbol: _Z23RemoveAnimationFromListPP13AnimationDataS0_; size: 0x74.
 bool RemoveAnimationFromList(AnimationData** pList, AnimationData* entry)
 {
     AnimationData* firstEntry = *pList;
@@ -227,6 +233,7 @@ bool RemoveAnimationFromList(AnimationData** pList, AnimationData* entry)
     return false;
 }
 
+// Original: arm9/main @ 0x020B2DD4; symbol: _Z37RemoveAnimationFromModelRenderContextP18ModelRenderContextP13AnimationData; size: 0x54.
 void RemoveAnimationFromModelRenderContext(ModelRenderContext *context, AnimationData *anim)
 {
     if (RemoveAnimationFromList(&context->materialAnimations_, anim) ||
@@ -237,6 +244,7 @@ void RemoveAnimationFromModelRenderContext(ModelRenderContext *context, Animatio
     }
 }
 
+// Original: arm9/main @ 0x020B2E28; symbol: _Z38SetModelRenderContextRenderCommandHookP18ModelRenderContextPFvP20RenderCommandHandlerEiii; size: 0x14.
 void SetModelRenderContextRenderCommandHook(ModelRenderContext *context,
     RenderCommandHook hook, int unknown, int commandID, int stage)
 {

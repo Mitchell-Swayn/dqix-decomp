@@ -2,6 +2,7 @@
 #pragma dont_inline on
 #include "BackupTransfer.h"
 extern const unsigned char ARM7_BackupReadStatusCommand[];
+// Original: arm7/wram @ 0x03802EA8; symbol: ARM7_ReadBackupStatus.
 unsigned int ARM7_ReadBackupStatus(void)
 {
  unsigned char status;
@@ -11,6 +12,7 @@ unsigned int ARM7_ReadBackupStatus(void)
  return status;
 }
 extern void ARM7_WaitBackupReady(int,int);
+// Original: arm7/wram @ 0x03802EFC; symbol: ARM7_CheckBackupReady.
 int ARM7_CheckBackupReady(void)
 {
  ARM7_WaitBackupReady(0,50);

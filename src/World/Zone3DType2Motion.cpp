@@ -5,11 +5,12 @@ struct ZoneType2StoredState
     int unknown_0;
     unsigned short featureMask;
 };
-extern "C" void* func_02027ca4();
-extern "C" ZoneType2StoredState* func_02028bd0(void*, unsigned short);
+extern "C" void* ReadGlobalAt020FDD44();
+extern "C" ZoneType2StoredState* FindRecordAmongFourByNonnegativeKey(void*, unsigned short);
 
 // These reset the feature's active bit and its linked instance flags. Names
 // describe observed movement behavior; the exact gameplay role remains unknown.
+// Original: arm9/main @ 0x0201874C; symbol: _ZN6Zone3D25ReverseType2FeatureMotionEPN12ZoneFeatures13Opcode6aEntryE; size: 0x1CC.
 void Zone3D::ReverseType2FeatureMotion(ZoneFeatures::Opcode6aEntry* feature)
 {
     Zone3D_BMDJStruct::InstanceEntry* instance = FindType2BMDJInstance(feature);
@@ -51,11 +52,12 @@ void Zone3D::ReverseType2FeatureMotion(ZoneFeatures::Opcode6aEntry* feature)
     if (!(feature->unk_2c.type2.unk_2_high & 8))
     {
         int index = GetType2FeatureIndex(feature);
-        ZoneType2StoredState* stored = func_02028bd0(func_02027ca4(), currentZoneID_);
+        ZoneType2StoredState* stored = FindRecordAmongFourByNonnegativeKey(ReadGlobalAt020FDD44(), currentZoneID_);
         if (stored) stored->featureMask &= ~(1 << index);
     }
 }
 
+// Original: arm9/main @ 0x02018918; symbol: _ZN6Zone3D25ResetType2FeaturePositionEPN12ZoneFeatures13Opcode6aEntryE; size: 0x1A0.
 void Zone3D::ResetType2FeaturePosition(ZoneFeatures::Opcode6aEntry* feature)
 {
     Zone3D_BMDJStruct::InstanceEntry* instance = FindType2BMDJInstance(feature);
@@ -93,7 +95,7 @@ void Zone3D::ResetType2FeaturePosition(ZoneFeatures::Opcode6aEntry* feature)
     if (!(feature->unk_2c.type2.unk_2_high & 8))
     {
         int index = GetType2FeatureIndex(feature);
-        ZoneType2StoredState* stored = func_02028bd0(func_02027ca4(), currentZoneID_);
+        ZoneType2StoredState* stored = FindRecordAmongFourByNonnegativeKey(ReadGlobalAt020FDD44(), currentZoneID_);
         if (stored) stored->featureMask &= ~(1 << index);
     }
 }

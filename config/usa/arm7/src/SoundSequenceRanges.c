@@ -4,6 +4,7 @@
 extern SoundSequence ARM7_SoundSequences[16];
 extern void ARM7_StopSequence(SoundSequence*);
 extern SoundTrack *ARM7_GetSequenceTrack(SoundSequence*,int);
+// Original: arm7/wram @ 0x03800C74; symbol: ARM7_StopSoundSequencesByCursor.
 void ARM7_StopSoundSequencesByCursor(unsigned int start,unsigned int end)
 {
  int index=0;
@@ -20,6 +21,7 @@ void ARM7_StopSoundSequencesByCursor(unsigned int start,unsigned int end)
   index++;
  }while(index<16);
 }
+// Original: arm7/wram @ 0x03800D00; symbol: ARM7_StopSoundSequencesByArgument.
 void ARM7_StopSoundSequencesByArgument(unsigned int start,unsigned int end)
 {
  int index=0;

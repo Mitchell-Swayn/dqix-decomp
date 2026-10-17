@@ -1,0 +1,5 @@
+#include <globaldefs.h>
+#include <Graphics/Vector.h>
+extern "C" int _Z8fix32cosi(int);extern "C" int _Z8fix32sini(int);extern "C" void ObjectTransform_WriteThreeWordComponents(Vector3i*,int,int,int);extern "C" void _Z24Vector3fixMultiplyScalarPK8Vector3iiPS_(const Vector3i*,int,Vector3i*);extern "C" void _ZN8Vector3iaSERKS_(Vector3i*,const Vector3i*);
+// Original: arm9/main @ 0x020ADFA8; symbol: func_020adfa8; size: 0xCC.
+extern "C" ARM void ComputeTwoPositionsBehindObjectDirection(char* p){Vector3i saved=*(Vector3i*)(p+0x44);Vector3i direction,back,scaled,first,second;int angle=*(short*)(p+0xae);int cosine=_Z8fix32cosi(angle);direction.x=_Z8fix32sini(angle);direction.y=0;direction.z=cosine;Vector3fix_Normalize(&direction,&direction);ObjectTransform_WriteThreeWordComponents(&back,-direction.x,-direction.y,-direction.z);_Z24Vector3fixMultiplyScalarPK8Vector3iiPS_(&back,0x1ccc,&scaled);Vector3fix_Add(&saved,&scaled,&first);_ZN8Vector3iaSERKS_((Vector3i*)(p+0x164),&first);Vector3fix_Add(&first,&scaled,&second);_ZN8Vector3iaSERKS_((Vector3i*)(p+0x174),&second);*(int*)(p+0x170)=angle;*(int*)(p+0x180)=angle;}

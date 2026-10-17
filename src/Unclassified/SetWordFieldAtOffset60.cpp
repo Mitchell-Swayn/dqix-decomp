@@ -1,0 +1,16 @@
+#include <globaldefs.h>
+typedef unsigned char undefined1;
+typedef unsigned short undefined2;
+typedef unsigned int undefined4;
+typedef unsigned int uint;
+typedef unsigned short ushort;
+typedef unsigned char byte;
+extern "C" {
+// Original: arm9/main @ 0x0209FF64; symbol: func_0209ff64; size: 0x8.
+ARM void SetWordFieldAtOffset60(int param_1,undefined4 param_2)
+
+{
+  *(undefined4 *)(param_1 + 0x60) = param_2;
+  return;
+}
+}

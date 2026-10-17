@@ -14,6 +14,7 @@
 
 #pragma optimize_for_size off
 
+// Original: arm9/main @ 0x020AFB58; symbol: _Z15IsFileValidNarcPKh; size: 0x44.
 bool IsFileValidNarc(const unsigned char* buffer)
 {
     const NarcHandle::ArchiveHeader& narc = *(const NarcHandle::ArchiveHeader*)buffer;
@@ -29,6 +30,7 @@ bool IsFileValidNarc(const unsigned char* buffer)
     return true;
 }
 
+// Original: arm9/main @ 0x020AFB9C; symbol: _ZN10NarcHandle10InitializeEPKcPKh; size: 0x148.
 bool NarcHandle::Initialize(const char* signatureString, const unsigned char* buffer)
 {
     const SectionHeader* fatPtr = NULL;
@@ -86,6 +88,7 @@ bool NarcHandle::Initialize(const char* signatureString, const unsigned char* bu
     }
 }
 
+// Original: arm9/main @ 0x020AFCE4; symbol: _ZN10NarcHandle7DestroyEv; size: 0x28.
 bool NarcHandle::Destroy()
 {
     if (!NitroHandle_Destroy(&initial))
@@ -95,6 +98,7 @@ bool NarcHandle::Destroy()
     return true;
 }
 
+// Original: arm9/main @ 0x020AFD0C; symbol: _Z23GetFileFromNARCInMemoryPKc; size: 0x50.
 const void* GetFileFromNARCInMemory(const char* filename)
 {
     const unsigned char* addr = NULL;
@@ -112,6 +116,7 @@ const void* GetFileFromNARCInMemory(const char* filename)
     return addr;
 }
 
+// Original: arm9/main @ 0x020AFD5C; symbol: _ZNK10NarcHandle14GetFileByIndexEj; size: 0x2C.
 const void* NarcHandle::GetFileByIndex(unsigned int idx) const
 {
     const void* ret = NULL;
@@ -122,6 +127,7 @@ const void* NarcHandle::GetFileByIndex(unsigned int idx) const
     return ret;
 }
 
+// Original: arm9/main @ 0x020AFD88; symbol: _Z25PrepareReadFileInNARCByIDP7NitroVMP10NarcHandlej; size: 0x40.
 bool PrepareReadFileInNARCByID(NitroVM* vm, NarcHandle* handle, unsigned int id)
 {
     bool success = false;

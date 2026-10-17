@@ -6,6 +6,7 @@ extern void ARM7_SpiTaskHandler0(SpiTask*);
 extern void ARM7_SpiTaskHandler1(SpiTask*);
 extern void ARM7_SpiTaskHandler2(SpiTask*);
 extern void ARM7_ExecutePowerTask(SpiTask*);
+// Original: arm7/wram @ 0x03804E90; symbol: ARM7_SpiWorkerMain.
 void ARM7_SpiWorkerMain(void)
 {
  SpiTask *task;

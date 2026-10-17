@@ -2,7 +2,8 @@
 
 #pragma optimize_for_size off
 
-extern "C" void func_020096ac(RuntimeDecimal* decimal, unsigned long long value)
+// Original: arm9/main @ 0x020096AC; symbol: func_020096ac; size: 0xCC.
+extern "C" void Runtime_ConvertUnsignedToDecimalDigits(RuntimeDecimal* decimal, unsigned long long value)
 {
     decimal->sign = 0;
     decimal->length = 0;

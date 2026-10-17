@@ -12,6 +12,7 @@ TexturePaletteVRAMAllocator data_0210cf88;
 #pragma optimize_for_size off
 #pragma dont_inline on
 
+// Original: arm9/main @ 0x020BB780; symbol: _Z28InitializeTexturePaletteVRAMjb; size: 0x4C.
 void InitializeTexturePaletteVRAM(unsigned int size, bool setDefault)
 {
     data_0210cf88.size = size;
@@ -24,6 +25,7 @@ void InitializeTexturePaletteVRAM(unsigned int size, bool setDefault)
 }
 
 // The explicit branches preserve the original SDK allocator's control flow.
+// Original: arm9/main @ 0x020BB7CC; symbol: AllocateTexturePaletteVRAM; size: 0x13C.
 unsigned int AllocateTexturePaletteVRAM(unsigned int amount, unsigned int eightByteAlign, unsigned int direction)
 {  
     unsigned int chosenPosition = 0;
@@ -108,20 +110,24 @@ end:
 }
 // Original successful no-op: the frame allocator releases storage via reset
 // or state restoration rather than freeing individual keys.
+// Original: arm9/main @ 0x020BB908; symbol: FreeTexturePaletteVRAM; size: 0x8.
 extern "C" int FreeTexturePaletteVRAM(unsigned int key) { return 0; }
 
+// Original: arm9/main @ 0x020BB910; symbol: _Z27SaveTexturePaletteVRAMStateP23TexturePaletteVRAMState; size: 0x1C.
 void SaveTexturePaletteVRAMState(TexturePaletteVRAMState* state)
 {
     state->freeStart = data_0210cf88.freeStart_;
     state->freeEnd = data_0210cf88.freeEnd_;
 }
 
+// Original: arm9/main @ 0x020BB92C; symbol: _Z30RestoreTexturePaletteVRAMStatePK23TexturePaletteVRAMState; size: 0x1C.
 void RestoreTexturePaletteVRAMState(const TexturePaletteVRAMState* state)
 {
     data_0210cf88.freeStart_ = state->freeStart;
     data_0210cf88.freeEnd_ = state->freeEnd;
 }
 
+// Original: arm9/main @ 0x020BB948; symbol: _Z23ResetTexturePaletteVRAMv; size: 0x1C.
 void ResetTexturePaletteVRAM()
 {
     data_0210cf88.freeStart_ = 0;

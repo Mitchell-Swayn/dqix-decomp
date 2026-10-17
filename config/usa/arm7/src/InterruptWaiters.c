@@ -5,6 +5,7 @@
 typedef struct ProcessorContext ProcessorContext;
 typedef struct { ProcessorContext *first,*last; } ThreadQueue;
 ThreadQueue ARM7_InterruptWaiters;
+// Original: arm7/wram @ 0x037FB7CC; symbol: ARM7_InitializeInterruptWaiters.
 void ARM7_InitializeInterruptWaiters(void)
 {
  ARM7_InterruptWaiters.first=ARM7_InterruptWaiters.last=0;

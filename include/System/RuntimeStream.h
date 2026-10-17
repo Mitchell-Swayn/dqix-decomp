@@ -30,11 +30,11 @@ struct RuntimeStream {
     void* context;
 };
 extern RuntimeStream data_020eebe0[3];
-extern "C" int func_0200173c();
-extern "C" void func_020017bc(char*, unsigned int*);
-extern "C" void func_020017c0(RuntimeStream*);
-extern "C" int func_020017f0(RuntimeStream*, unsigned int*);
-extern "C" int func_02001878(RuntimeStream*);
+extern "C" int Runtime_FlushAllOpenStreams();
+extern "C" void RuntimeStreamBuffers_IgnoreBufferRelease(char*, unsigned int*);
+extern "C" void Runtime_ResetAlignedStreamBuffer(RuntimeStream*);
+extern "C" int Runtime_FlushBufferedStreamOutput(RuntimeStream*, unsigned int*);
+extern "C" int RuntimeStreamBuffers_FlushStreamOrAllStreams(RuntimeStream*);
 
 typedef char RuntimeStreamSizeCheck[sizeof(RuntimeStream) == 0x4c ? 1 : -1];
 

@@ -14,6 +14,7 @@ extern unsigned int ARM7_DisableSpecificInterrupts(unsigned int);
 #define IRQ_MASK_TIMER_1_OVERFLOW 0x10
 extern void ARM7_MarkNextAlarmToSound(Alarm*);
 extern void ARM7_RegisterAlarm(Alarm*,uint64_t);
+// Original: arm7/wram @ 0x037FDC60; symbol: ARM7_HandleTimer1Overflow.
 void ARM7_HandleTimer1Overflow()
 {
     uint64_t now;

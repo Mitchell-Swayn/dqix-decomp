@@ -3,6 +3,7 @@
 #include "SoundSequence.h"
 extern SoundSequence ARM7_SoundSequences[16];
 extern SoundTrack ARM7_SoundTracks[32];
+// Original: arm7/wram @ 0x038005A8; symbol: ARM7_InitializeSoundSequences.
 void ARM7_InitializeSoundSequences(void)
 {
  int index=0; int track;

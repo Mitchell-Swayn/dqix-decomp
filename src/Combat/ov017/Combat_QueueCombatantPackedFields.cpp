@@ -1,0 +1,80 @@
+#include <globaldefs.h>
+ARM
+struct Object;
+extern "C" void* _ZN9GameState11GetInstanceEv();
+extern "C" void* _ZN9GameState19GetCombatantByIndexEi(void*,int);
+extern "C" void* ReadGlobalAt02100044();
+extern "C" void MoveQueuedRecordAndApplySourceValue(Object*,const void*,short);
+extern "C" unsigned int ToggleMaskedFlagsAtOffset34(unsigned char*,unsigned int);
+extern "C" unsigned char* GameResources_GetInstance();
+extern "C" unsigned char* OV017_GetEmbeddedField1C(void*);
+struct Packed { unsigned short id,index;
+unsigned int a0:3;
+unsigned int a1:3;
+unsigned int a2:3;
+unsigned int a3:3;
+unsigned int a4:3;
+unsigned int a5:3;
+unsigned int a6:3;
+unsigned int a7:3;
+unsigned int a8:3;
+unsigned int a9:3;
+unsigned int :2;
+unsigned int b0:3;
+unsigned int b1:3;
+unsigned int b2:3;
+unsigned int b3:3;
+unsigned int b4:4;
+unsigned int :16;
+unsigned char flag; };
+struct Message { unsigned char code; Packed value; };
+// Original: arm9/ov017 @ 0x021C7B8C; symbol: func_ov017_021c7b8c; size: 0x330.
+extern "C" void Combat_QueueCombatantPackedFields() {
+void* state=_ZN9GameState11GetInstanceEv();
+unsigned char* field=OV017_GetEmbeddedField1C(*(void**)(GameResources_GetInstance()+0x3718));
+Object* queue=(Object*)ReadGlobalAt02100044();
+Message msg; msg.code=0x73;
+Packed* record=&msg.value;
+for(int i=0;i<4;i++) {
+if(!ToggleMaskedFlagsAtOffset34(field,(unsigned char)i)) continue;
+unsigned char* obj=(unsigned char*)_ZN9GameState19GetCombatantByIndexEi(state,i);
+if(!obj || !(*(unsigned char**)(obj+0x138))[0x26]) continue;
+record->id=*(unsigned short*)(field+8); record->index=i;
+unsigned char* data=*(unsigned char**)(obj+0x138);
+record->flag=1;
+record->a0=data[0x70];
+record->a1=data[0x71];
+record->a2=data[0x72];
+record->a3=data[0x73];
+record->a4=data[0x74];
+record->a5=data[0x75];
+record->a6=data[0x76];
+record->a7=data[0x77];
+record->a8=data[0x78];
+record->a9=data[0x79];
+record->b0=data[0x7a];
+record->b1=data[0x7b];
+record->b2=data[0x7c];
+record->b3=data[0x7d];
+record->b4=data[0x7e];
+MoveQueuedRecordAndApplySourceValue(queue,&msg,0);
+data=*(unsigned char**)(obj+0x138);
+record->flag=0;
+record->a0=data[0x93];
+record->a1=data[0x94];
+record->a2=data[0x95];
+record->a3=data[0x96];
+record->a4=data[0x97];
+record->a5=data[0x98];
+record->a6=data[0x99];
+record->a7=data[0x9a];
+record->a8=data[0x9b];
+record->a9=data[0x9c];
+record->b0=data[0x9d];
+record->b1=data[0x9e];
+record->b2=data[0x9f];
+record->b3=data[0xa0];
+record->b4=data[0xa1];
+MoveQueuedRecordAndApplySourceValue(queue,&msg,0);
+}
+}

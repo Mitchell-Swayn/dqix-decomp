@@ -9,21 +9,21 @@
 #pragma optimize_for_size off
 
 #if defined(jpn)
-#define func_020c9bf0 func_020cb6bc
-#define func_020c9be0 func_020cb6ac
-#define func_020ca3ec func_020cbeb8
+#define OS_Halt func_020cb6bc
+#define DisableInterruptsAndHaltForever func_020cb6ac
+#define MIi_CpuClear32 func_020cbeb8
 #endif
 
 extern "C"
 {
     // wait for an interrupt
-    void func_020c9bf0();
+    void OS_Halt();
 
     // something like abort()
-    void func_020c9be0();
+    void DisableInterruptsAndHaltForever();
 
     // memset with silly signature and assuming alignment
-    void func_020ca3ec(int value, void* dst, unsigned len);
+    void MIi_CpuClear32(int value, void* dst, unsigned len);
 }
 
 void CycleCurrentPriorityContexts()

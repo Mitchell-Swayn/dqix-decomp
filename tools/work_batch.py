@@ -51,12 +51,26 @@ def delta(before, after):
     return result
 
 
+def accounting(changes, assembly_functions=0, assembly_bytes=0):
+    """Split the binary-report gain: accepted runtime/SDK assembly earns no C/C++ reconstruction credit."""
+    arm9 = changes['arm9']
+    c_functions = arm9['matched_functions'] - assembly_functions
+    c_bytes = arm9['matched_code'] - assembly_bytes
+    if assembly_functions < 0 or assembly_bytes < 0 or c_functions < 0 or c_bytes < 0:
+        raise ValueError('Runtime assembly gain exceeds the reported matched gain')
+    return dict(binary_report_arm9=dict(matched_functions=arm9['matched_functions'], matched_code=arm9['matched_code']),
+                runtime_assembly=dict(functions=assembly_functions, bytes=assembly_bytes),
+                c_reconstruction=dict(functions=c_functions, code_bytes=c_bytes), c_instruction_credit_from_assembly=0)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('action', choices=('start', 'finish'))
     parser.add_argument('name')
     parser.add_argument('--attempts', type=int)
     parser.add_argument('--notes', default='')
+    parser.add_argument('--runtime-assembly-functions', type=int, default=0)
+    parser.add_argument('--runtime-assembly-bytes', type=int, default=0)
     args = parser.parse_args()
     if not re.fullmatch(r'[a-z0-9][a-z0-9_-]{0,79}', args.name):
         parser.error('name must contain only lowercase letters, digits, underscores and hyphens')
@@ -75,6 +89,8 @@ def main():
     if args.action == 'finish':
         before = json.loads((directory / 'start.json').read_text())['snapshot']
         record['delta'] = delta(before, current)
+        if args.runtime_assembly_functions or args.runtime_assembly_bytes:
+            record['accounting'] = accounting(record['delta'], args.runtime_assembly_functions, args.runtime_assembly_bytes)
         record['elapsed_seconds'] = (datetime.fromisoformat(current['utc']) -
                                      datetime.fromisoformat(before['utc'])).total_seconds()
     directory.mkdir(parents=True, exist_ok=True)

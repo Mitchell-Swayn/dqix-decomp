@@ -1,0 +1,137 @@
+{
+  "inputs": "~/.local/share/factory-inputs/dqix",
+  "compiler": "mwccarm/2.0/sp2p2/mwccarm.exe",
+  "wibo": "wibo",
+  "flags": [
+    "-O2",
+    "-enum",
+    "int",
+    "-char",
+    "signed",
+    "-str",
+    "noreuse",
+    "-proc",
+    "arm946e",
+    "-gccext,on",
+    "-fp",
+    "soft",
+    "-inline",
+    "noauto",
+    "-lang=c++",
+    "-Cpp_exceptions",
+    "off",
+    "-RTTI",
+    "off",
+    "-interworking",
+    "-w",
+    "off",
+    "-sym",
+    "on",
+    "-gccinc",
+    "-nolink",
+    "-msgstyle",
+    "gcc",
+    "-str",
+    "pool,reuse",
+    "-d",
+    "usa"
+  ],
+  "modules": [
+    "arm9/main",
+    "arm9/itcm",
+    "arm9/dtcm",
+    "arm9/ov000",
+    "arm9/ov001",
+    "arm9/ov002",
+    "arm9/ov003",
+    "arm9/ov004",
+    "arm9/ov005",
+    "arm9/ov006",
+    "arm9/ov007",
+    "arm9/ov008",
+    "arm9/ov009",
+    "arm9/ov010",
+    "arm9/ov011",
+    "arm9/ov012",
+    "arm9/ov013",
+    "arm9/ov014",
+    "arm9/ov015",
+    "arm9/ov016",
+    "arm9/ov017",
+    "arm9/ov018",
+    "arm9/ov019",
+    "arm9/ov020",
+    "arm9/ov021",
+    "arm9/ov022",
+    "arm9/ov023",
+    "arm9/ov024",
+    "arm9/ov025",
+    "arm9/ov026",
+    "arm9/ov027",
+    "arm9/ov028",
+    "arm9/ov029",
+    "arm9/ov030",
+    "arm9/ov031",
+    "arm9/ov032",
+    "arm9/ov033",
+    "arm9/ov034"
+  ],
+  "lease_seconds": 2700,
+  "subsystems": [
+    "Filesystem",
+    "Graphics",
+    "Resource",
+    "System",
+    "Memory",
+    "GameState",
+    "World",
+    "Combat",
+    "Grotto",
+    "Math",
+    "Network",
+    "Util",
+    "Unclassified"
+  ],
+  "keep_symbols": [
+    "func_0200bbd8",
+    "func_020dc008",
+    "func_020dc020"
+  ],
+  "container": {
+    "image": "factory-dqix:0.1",
+    "configure": "python3 tools/configure.py usa --compiler /opt/dqix/mwccarm --dsd /inputs/dsd --objdiff /inputs/objdiff-cli -w /inputs/wibo",
+    "build": "ninja -j 8 rom check report sha1"
+  },
+  "profiles": {
+    "default": {
+      "version": "2.0/sp2p2",
+      "opt": "-O2",
+      "interworking": true
+    },
+    "O4p": {
+      "version": "2.0/sp2p2",
+      "opt": "-O4,p",
+      "interworking": true
+    },
+    "O4p-noiw": {
+      "version": "2.0/sp2p2",
+      "opt": "-O4,p",
+      "interworking": false
+    },
+    "sp2-O2p": {
+      "version": "2.0/sp2",
+      "opt": "-O2,p",
+      "interworking": true
+    },
+    "base-O2": {
+      "version": "2.0/base",
+      "opt": "-O2",
+      "interworking": true
+    },
+    "1.2-O4p-noiw": {
+      "version": "1.2/sp2p3",
+      "opt": "-O4,p",
+      "interworking": false
+    }
+  }
+}

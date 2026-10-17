@@ -11,6 +11,7 @@ extern unsigned short ARM7_TouchControllerStatus;
 /* GPIO base plus these byte offsets spans the adjacent SPI control/data MMIO. */
 #define TOUCH_SPI_CONTROL_FROM_GPIO (*(volatile unsigned short*)((unsigned int)&TOUCH_GPIO+SPI_CONTROL_FROM_GPIO))
 #define TOUCH_SPI_DATA_FROM_GPIO (*(volatile unsigned short*)((unsigned int)&TOUCH_GPIO+SPI_DATA_FROM_GPIO))
+// Original: arm7/wram @ 0x038055B8; symbol: ARM7_ReadTouchControllerStatus.
 int ARM7_ReadTouchControllerStatus(void)
 {
  int result;

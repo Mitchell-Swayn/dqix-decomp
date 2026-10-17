@@ -4,14 +4,15 @@
 #include "GameState/GameState.h"
 
 extern "C" {
-    Zone3D* func_02012fe4();
+    Zone3D* ReadGlobalValueAt020FB3F0();
     void func_ov017_021d38f8(int, int, unsigned char, int, WorldPlacementSource::PersistentState*);
 }
 
+// Original: arm9/main @ 0x0208F048; symbol: _ZN23WorldObjectInstanceList30UpdatePersistentPlacementFlagsEv; size: 0x120.
 void WorldObjectInstanceList::UpdatePersistentPlacementFlags()
 {
     if (unknown0 != 98) return;
-    ZoneState0840* zoneState = &func_02012fe4()->state_840_;
+    ZoneState0840* zoneState = &ReadGlobalValueAt020FB3F0()->state_840_;
     int count = (int)zoneState->unknown_1b34 / 100 + 4;
     if (count > 14) count = 14;
     int remaining = count - 7;

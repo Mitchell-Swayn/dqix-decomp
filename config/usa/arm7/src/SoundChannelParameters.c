@@ -14,16 +14,19 @@ extern int ARM7_AdjustSoundVolume(int,int);
 #define LENGTH(n) (*(volatile unsigned int*)(0x0400040c+(n)))
 #define PAN(n) (*(volatile unsigned char*)(0x04000402+16*(n)))
 #define VOLUME(n) (*(volatile unsigned char*)(0x04000400+16*(n)))
+// Original: arm7/wram @ 0x037FF0D8; symbol: ARM7_SetSoundChannelVolume.
 void ARM7_SetSoundChannelVolume(int channel,int volume,int divisor)
 {
  ARM7_RequestedSoundVolume[channel]=volume;
  if(ARM7_SoundVolumeAdjustment>0 && (0xfff5 & (1<<channel))){int pan=PAN(channel);volume=ARM7_AdjustSoundVolume(volume,pan);}
  *(volatile unsigned short*)(0x04000400+16*channel)=volume|(divisor<<8);
 }
+// Original: arm7/wram @ 0x037FF150; symbol: ARM7_SetSoundChannelPeriod.
 void ARM7_SetSoundChannelPeriod(int channel,int period)
 {
  TIMER(channel*16)=0x10000-period;
 }
+// Original: arm7/wram @ 0x037FF168; symbol: ARM7_SetSoundChannelPan.
 void ARM7_SetSoundChannelPan(int channel,int pan)
 {
  unsigned int offset=16*channel;
@@ -33,16 +36,19 @@ void ARM7_SetSoundChannelPan(int channel,int pan)
  if(ARM7_SoundVolumeAdjustment>0 && (0xfff5 & (1<<channel)))
   *(volatile unsigned char*)(0x04000400+offset)=ARM7_AdjustSoundVolume(ARM7_RequestedSoundVolume[channel],pan);
 }
+// Original: arm7/wram @ 0x037FF1E0; symbol: ARM7_IsSoundChannelActive.
 int ARM7_IsSoundChannelActive(int channel)
 {
  return (*(volatile unsigned char*)(0x04000403+16*channel)&0x80)!=0;
 }
+// Original: arm7/wram @ 0x037FF1FC; symbol: ARM7_SetSoundPanOverride.
 void ARM7_SetSoundPanOverride(int pan)
 {
  ARM7_SoundPanOverride=pan;
  if(pan>=0){int channel=0;do{PAN(channel)=pan;channel++;}while(channel<16);}
  else{int channel=0;do{PAN(channel)=ARM7_RequestedSoundPan[channel];channel++;}while(channel<16);}
 }
+// Original: arm7/wram @ 0x037FF260; symbol: ARM7_GetSoundChannelControl.
 unsigned int ARM7_GetSoundChannelControl(int channel)
 {
  return CONTROL(channel*16);

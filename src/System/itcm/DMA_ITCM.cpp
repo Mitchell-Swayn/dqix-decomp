@@ -14,6 +14,7 @@ inline volatile DMARegisterSet& DMARegisters(int n)
     return *(volatile DMARegisterSet*)(12 * n + 0x040000b0);
 }
 
+// Original: arm9/itcm @ 0x01FF8480; symbol: _Z26ConfigureDMATransferAtomicijjj; size: 0x40.
 void ConfigureDMATransferAtomic(int channel, unsigned src, unsigned dst, unsigned ctrl)
 {
     int priorState = DisableIRQInterrupts();
@@ -26,6 +27,7 @@ void ConfigureDMATransferAtomic(int channel, unsigned src, unsigned dst, unsigne
     SetIRQInterruptState(priorState);
 }
 
+// Original: arm9/itcm @ 0x01FF84C0; symbol: _Z30ConfigureDMATransferSafeAtomicijjj; size: 0x70.
 void ConfigureDMATransferSafeAtomic(int channel, unsigned src, unsigned dst, unsigned ctrl)
 {
     int priorState = DisableIRQInterrupts();
@@ -53,6 +55,7 @@ void ConfigureDMATransferSafeAtomic(int channel, unsigned src, unsigned dst, uns
     SetIRQInterruptState(priorState);
 }
 
+// Original: arm9/itcm @ 0x01FF8530; symbol: _Z20ConfigureDMATransferijjj; size: 0x24.
 void ConfigureDMATransfer(int channel, unsigned src, unsigned dst, unsigned ctrl)
 {
     volatile DMARegisterSet& regs = DMARegisters(channel);
@@ -61,6 +64,7 @@ void ConfigureDMATransfer(int channel, unsigned src, unsigned dst, unsigned ctrl
     regs.controlAndSize.u32 = ctrl;
 }
 
+// Original: arm9/itcm @ 0x01FF8554; symbol: _Z24ConfigureDMATransferSafeijjj; size: 0x64.
 void ConfigureDMATransferSafe(int channel, unsigned src, unsigned dst, unsigned ctrl)
 {
     volatile DMARegisterSet& regs = DMARegisters(channel);

@@ -1,16 +1,19 @@
 #include "GameState/GameState.h"
 
-extern "C" void func_020100a0(GameState* state, int index)
+// Original: arm9/main @ 0x020100A0; symbol: func_020100a0; size: 0x8.
+extern "C" void GameState_SetProtagonistObjectIndex(GameState* state, int index)
 {
     state->protagonistObjectIndex_ = index;
 }
 
-extern "C" int func_020100a8(GameState* state)
+// Original: arm9/main @ 0x020100A8; symbol: func_020100a8; size: 0x8.
+extern "C" int GameState_ReadProtagonistObjectIndex(GameState* state)
 {
     return state->protagonistObjectIndex_;
 }
 
-extern "C" unsigned char func_020100b0(GameState* state)
+// Original: arm9/main @ 0x020100B0; symbol: func_020100b0; size: 0xC.
+extern "C" unsigned char GameState_ReadFirstObjectIndex(GameState* state)
 {
 #if defined(usa)
     return state->indexList_.objectIndices_[0];
@@ -19,12 +22,14 @@ extern "C" unsigned char func_020100b0(GameState* state)
 #endif
 }
 
-extern "C" void* func_020100bc(GameState* state)
+// Original: arm9/main @ 0x020100BC; symbol: func_020100bc; size: 0x8.
+extern "C" void* GameState_ReadUnknownB0(GameState* state)
 {
     return state->unknown_3b0_;
 }
 
-extern "C" void func_020100c4(GameState* state, void* value)
+// Original: arm9/main @ 0x020100C4; symbol: func_020100c4; size: 0x8.
+extern "C" void GameState_SetUnknown3b0(GameState* state, void* value)
 {
     state->unknown_3b0_ = value;
 }

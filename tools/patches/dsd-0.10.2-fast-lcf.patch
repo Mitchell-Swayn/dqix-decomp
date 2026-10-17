@@ -1,0 +1,258 @@
+diff --git a/cli/src/cmd/lcf.rs b/cli/src/cmd/lcf.rs
+index 0293443..62873f6 100644
+--- a/cli/src/cmd/lcf.rs
++++ b/cli/src/cmd/lcf.rs
+@@ -17,7 +17,6 @@ use tinytemplate::TinyTemplate;
+ 
+ use crate::{
+     analysis::overlay_groups::OverlayGroups,
+-    cmd::JsonDelinks,
+     config::{delinks::DelinksExt, section::SectionExt},
+     util::{
+         io::{create_dir_all, create_file_and_dirs},
+@@ -47,6 +46,8 @@ struct LcfModule {
+     link_section: String,
+     object: String,
+     sections: Vec<LcfSection>,
++    #[serde(skip)]
++    objects: Vec<PathBuf>,
+ }
+ 
+ #[derive(Serialize, Clone)]
+@@ -110,7 +111,7 @@ impl Lcf {
+                 .collect(),
+         };
+         self.write_arm9_lcf(&arm9_context, &tt, &build_path)?;
+-        self.write_arm9_objects(&config, &build_path)?;
++        self.write_arm9_objects(&config, &build_path, &arm9_context.modules)?;
+ 
+         // mwldarm doesn't create the build directory for the modules
+         create_dir_all(build_path.join("build"))?;
+@@ -129,19 +130,23 @@ impl Lcf {
+         Ok(())
+     }
+ 
+-    fn write_arm9_objects(&self, config: &Config, lcf_path: &Path) -> Result<()> {
+-        let config_dir = self.config_path.parent().unwrap();
++    fn write_arm9_objects(&self, config: &Config, lcf_path: &Path, modules: &[LcfModule]) -> Result<()> {
+         let objects_file_path = lcf_path.join(ARM9_OBJECTS_FILE_NAME);
+         let mut writer = BufWriter::new(create_file_and_dirs(objects_file_path)?);
+-        for file in JsonDelinks::get_delink_files(config_dir, config)?.iter() {
+-            let (file_path, _) = file.split_file_ext();
+-            let base_path = if file.complete {
+-                &config_dir.join(&config.build_path)
+-            } else {
+-                &config_dir.join(&config.delinks_path)
+-            };
+-            let file = base_path.join(file_path).with_extension("o").clean();
+-            writeln!(writer, "{}", file.display())?;
++        // Keep the original config order, independently of MEMORY group order.
++        let names = std::iter::once("ARM9".to_string())
++            .chain(config.autoloads.iter().map(|a| match a.kind {
++                AutoloadKind::Itcm => "ITCM".to_string(),
++                AutoloadKind::Dtcm => "DTCM".to_string(),
++                AutoloadKind::Unknown(id) => format!("AUTOLOAD_{id}"),
++            }))
++            .chain(config.overlays.iter().map(|o| format!("OV{:03}", o.id)));
++        for name in names {
++            let module = modules.iter().find(|m| m.name == name)
++                .ok_or_else(|| anyhow::anyhow!("Missing link module {name}"))?;
++            for file in &module.objects {
++                writeln!(writer, "{}", file.display())?;
++            }
+         }
+         Ok(())
+     }
+@@ -232,6 +237,11 @@ impl LcfModule {
+             Delinks::from_file_and_generate_gaps(delinks_path, kind)?.without_dtcm_sections()
+         };
+ 
++        let objects = delinks.files.iter().map(|file| {
++            let (path, _) = file.split_file_ext();
++            let base = if file.complete { &config.build_path } else { &config.delinks_path };
++            config_dir.join(base).join(path).with_extension("o").clean()
++        }).collect();
+         let sections = delinks
+             .sections
+             .sorted_by_address()
+@@ -260,7 +270,7 @@ impl LcfModule {
+ 
+         let end_address = delinks.sections.end_address().unwrap();
+ 
+-        Ok(Self { name: module_name, origin, end_address, output_file, link_section, object, sections })
++        Ok(Self { name: module_name, origin, end_address, output_file, link_section, object, sections, objects })
+     }
+ }
+ 
+diff --git a/cli/src/config/delinks.rs b/cli/src/config/delinks.rs
+index ff51785..d511262 100644
+--- a/cli/src/config/delinks.rs
++++ b/cli/src/config/delinks.rs
+@@ -8,6 +8,7 @@ use ds_decomp::config::{
+     section::{DTCM_SECTION, Section, Sections},
+ };
+ use ds_rom::rom::raw::AutoloadKind;
++#[cfg(test)]
+ use petgraph::{Graph, graph::NodeIndex};
+ 
+ pub trait DelinksExt
+@@ -21,6 +22,7 @@ where
+ trait DelinksPrivExt {
+     fn generate_gap_files(&mut self) -> Result<()>;
+     fn sort_files(&mut self) -> Result<()>;
++    #[cfg(test)]
+     fn compare_files(&self, a: &DelinkFile, b: &DelinkFile) -> Ordering;
+     fn validate_files(&self) -> Result<()>;
+     fn append_dtcm_sections<P: AsRef<Path>>(
+@@ -116,41 +118,68 @@ impl DelinksPrivExt for Delinks {
+     }
+ 
+     fn sort_files(&mut self) -> Result<()> {
+-        let mut graph = Graph::<(), ()>::new();
+-
+-        for _ in 0..self.files.len() {
+-            graph.add_node(());
+-        }
+-
+-        for i in 0..self.files.len() {
+-            let i_node = NodeIndex::new(i);
+-            for j in i + 1..self.files.len() {
+-                let j_node = NodeIndex::new(j);
+-                match self.compare_files(&self.files[i], &self.files[j]) {
+-                    Ordering::Less => {
+-                        graph.add_edge(i_node, j_node, ());
++        // Preserve the original dense graph's comparison and neighbor order,
++        // but discover edges on demand instead of allocating millions of them.
++        let starts: Vec<Vec<Option<u32>>> = self.files.iter().map(|file|
++            self.sections.iter().map(|section|
++                file.sections.by_name(section.name()).map(|(_, s)| s.start_address())
++            ).collect()
++        ).collect();
++        let compare = |i: usize, j: usize| {
++            starts[i].iter().zip(&starts[j]).find_map(|(a, b)| match (a, b) {
++                (Some(a), Some(b)) if a != b => Some(a.cmp(b)),
++                _ => None,
++            }).unwrap_or(Ordering::Equal)
++        };
++        let count = self.files.len();
++        let mut discovered = vec![false; count];
++        let mut finished = vec![false; count];
++        let mut stack = Vec::new();
++        let mut nodes = Vec::with_capacity(count);
++        for i in 0..count {
++            if discovered[i] { continue; }
++            stack.push(i);
++            while let Some(&current) = stack.last() {
++                if !discovered[current] {
++                    discovered[current] = true;
++                    // Original graph edges are inserted in increasing target
++                    // index; petgraph iterates each adjacency list in reverse.
++                    for next in (0..count).rev() {
++                        if !discovered[next] && compare(current, next) == Ordering::Less {
++                            stack.push(next);
++                        }
+                     }
+-                    Ordering::Equal => {}
+-                    Ordering::Greater => {
+-                        graph.add_edge(j_node, i_node, ());
++                } else {
++                    stack.pop();
++                    if !finished[current] {
++                        finished[current] = true;
++                        nodes.push(current);
+                     }
+                 }
+             }
+         }
+-
+-        let mut nodes = match petgraph::algo::toposort(&graph, None) {
+-            Ok(nodes) => nodes,
+-            Err(_) => bail!("Cycle detected when sorting delink files"),
+-        };
+-
++        nodes.reverse();
++        // A valid topological order puts every original edge forwards. This
++        // catches cycles without materializing a second reversed graph walk.
++        let mut position = vec![0; count];
++        for (index, &node) in nodes.iter().enumerate() { position[node] = index; }
++        for i in 0..count {
++            for j in i+1..count {
++                let ordering = compare(i, j);
++                if (ordering == Ordering::Less && position[i] >= position[j])
++                    || (ordering == Ordering::Greater && position[j] >= position[i]) {
++                    bail!("Cycle detected when sorting delink files");
++                }
++            }
++        }
+         // Sort by node indices
+         for i in 0..self.files.len() {
+-            if nodes[i].index() != i {
++            if nodes[i] != i {
+                 let mut current = i;
+                 loop {
+-                    let target = nodes[current].index();
+-                    nodes[current] = NodeIndex::new(current);
+-                    if nodes[target] == NodeIndex::new(target) {
++                    let target = nodes[current];
++                    nodes[current] = current;
++                    if nodes[target] == target {
+                         break;
+                     }
+                     self.files.swap(current, target);
+@@ -162,6 +191,7 @@ impl DelinksPrivExt for Delinks {
+         Ok(())
+     }
+ 
++    #[cfg(test)]
+     fn compare_files(&self, a: &DelinkFile, b: &DelinkFile) -> Ordering {
+         for section in self.sections.iter() {
+             let Some((_, a_section)) = a.sections.by_name(section.name()) else {
+@@ -290,3 +320,48 @@ impl DelinkFileExt for DelinkFile {
+         Ok(Self { name, sections: Sections::new(), complete: false, gap: true })
+     }
+ }
++
++#[cfg(test)]
++mod fast_order_tests {
++    use super::*;
++    use ds_decomp::config::section::{SectionKind, SectionOptions};
++
++    #[test]
++    fn indexed_order_matches_original_graph_and_cycle_rejection() {
++        for seed in 0..200u32 {
++            let headers: Vec<_> = (0..3).map(|i| Section::new(SectionOptions {
++                name: format!(".s{i}"), kind: SectionKind::Data,
++                start_address: i * 4096, end_address: (i + 1) * 4096, alignment: 1, functions: None,
++            }).unwrap()).collect();
++            let mut state = seed + 1;
++            let mut random = || { state = state.wrapping_mul(1664525).wrapping_add(1013904223); state };
++            let files = (0..24).map(|i| {
++                let sections = headers.iter().filter_map(|header| {
++                    if random() % 3 == 0 { return None; }
++                    let address = if seed % 2 == 0 { i * 4 } else { random() % 24 * 4 };
++                    Some(Section::inherit(header, header.start_address() + address, header.start_address() + address + 4).unwrap())
++                }).collect();
++                DelinkFile::new(format!("file{i}"), Sections::from_sections(sections).unwrap(), false)
++            }).collect();
++            let mut delinks = Delinks::new(Sections::from_sections(headers).unwrap(), files, ModuleKind::Arm9);
++            let mut graph = Graph::<(), ()>::new();
++            for _ in &delinks.files { graph.add_node(()); }
++            for i in 0..delinks.files.len() {
++                for j in i+1..delinks.files.len() {
++                    match delinks.compare_files(&delinks.files[i], &delinks.files[j]) {
++                        Ordering::Less => { graph.add_edge(NodeIndex::new(i), NodeIndex::new(j), ()); },
++                        Ordering::Greater => { graph.add_edge(NodeIndex::new(j), NodeIndex::new(i), ()); },
++                        Ordering::Equal => {},
++                    }
++                }
++            }
++            let expected = petgraph::algo::toposort(&graph, None);
++            let actual = delinks.sort_files();
++            assert_eq!(actual.is_ok(), expected.is_ok(), "seed {seed}");
++            if let Ok(nodes) = expected {
++                let names: Vec<_> = nodes.iter().map(|n| format!("file{}", n.index())).collect();
++                assert_eq!(delinks.files.iter().map(|f| &f.name).collect::<Vec<_>>(), names.iter().collect::<Vec<_>>(), "seed {seed}");
++            }
++        }
++    }
++}

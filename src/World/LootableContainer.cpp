@@ -5,7 +5,7 @@
 #include "Filesystem/FileIO.h"
 
 #ifdef jpn
-#define func_02032370 func_02031ea8
+#define ComputeRandomScaledIntegerThroughDouble func_02031ea8
 
 #define data_02108e78 data_02108dbc
 #define data_02108e90 data_02108dd4
@@ -14,7 +14,7 @@
 extern "C"
 {
     // rng value between 0 and max-1 from A-table
-    int func_02032370(int max);
+    int ComputeRandomScaledIntegerThroughDouble(int max);
 }
 
 struct {
@@ -25,23 +25,28 @@ struct {
 
 extern LootableContainerManager data_02108e90;
 
+// Original: arm9/main @ 0x0207BA54; symbol: _ZN24LootableContainerManager15GetMainInstanceEv; size: 0xC.
 LootableContainerManager *LootableContainerManager::GetMainInstance() {
     return &data_02108e90;
 }
 
+// Original: arm9/main @ 0x0207BA60; symbol: _Z14Loot_Opcode_64PN6Script9ParameterEi; size: 0x8.
 int Loot_Opcode_64(Script::Parameter* params, int numParams) { return 1; }
 
+// Original: arm9/main @ 0x0207BA68; symbol: _Z14Loot_Opcode_65PN6Script9ParameterEi; size: 0x8.
 int Loot_Opcode_65(Script::Parameter* params, int numParams) { return 1; }
 
+// Original: arm9/main @ 0x0207BA70; symbol: _Z22LootManager_Unknown_66PN6Script9ParameterEi; size: 0x20.
 int LootManager_Unknown_66(Script::Parameter* params, int numParams)
 {
     data_02108e78.manager->unk_10 = params[0].ToInt();
     return 1;
 }
 
+// Original: arm9/main @ 0x0207BA90; symbol: _Z27LootManager_CreateContainerPN6Script9ParameterEi; size: 0x234.
 int LootManager_CreateContainer(Script::Parameter* params, int numParams)
 {
-    (void)func_ov017_0218b5b0();
+    (void)GameResources_GetInstance();
     LootableContainerManager::Container* container =
         (LootableContainerManager::Container*)data_02108e78.allocator->Allocate(sizeof(LootableContainerManager::Container));
     if (container == NULL)
@@ -114,6 +119,7 @@ int LootManager_CreateContainer(Script::Parameter* params, int numParams)
     return 1;
 }
 
+// Original: arm9/main @ 0x0207BCC4; symbol: _ZN24LootableContainerManager5ResetEv; size: 0x28.
 void LootableContainerManager::Reset()
 {
     memset(unk_0, 0, 4);
@@ -122,9 +128,10 @@ void LootableContainerManager::Reset()
     unk_10 = 0;
 }
 
+// Original: arm9/main @ 0x0207BCEC; symbol: _ZN24LootableContainerManager14ResetAllocatorEP13SafeAllocator; size: 0x48.
 void LootableContainerManager::ResetAllocator(SafeAllocator *alloc)
 {
-    data_02108e78.allocator = &func_ov017_0218b5b0()->lootableContainerAllocator_18c_;
+    data_02108e78.allocator = &GameResources_GetInstance()->lootableContainerAllocator_18c_;
     if (alloc != NULL)
         alloc->Reset();
     else
@@ -141,6 +148,7 @@ static Script::OpcodeLookupEntry s_zoneContainerOpcodes[] = {
     { 0, NULL }
 };
 
+// Original: arm9/main @ 0x0207BD34; symbol: _ZN24LootableContainerManager18LoadZoneContainersEPKvjPKcP13SafeAllocator; size: 0x278.
 void LootableContainerManager::LoadZoneContainers(const void *treasureArchive,
     unsigned int archiveLength, const char *zoneName, SafeAllocator *alloc)
 {
@@ -152,7 +160,7 @@ void LootableContainerManager::LoadZoneContainers(const void *treasureArchive,
     if (!GetFileInNarcPermissive(treasureArchive, scriptFilename, &scriptFile, &scriptFileLength))
         return;
     data_02108e78.manager = this;
-    GameResources* resources = func_ov017_0218b5b0();
+    GameResources* resources = GameResources_GetInstance();
 
     if (alloc != NULL)
         data_02108e78.allocator = alloc;
@@ -224,6 +232,7 @@ void LootableContainerManager::LoadZoneContainers(const void *treasureArchive,
     tempAlloc.Destroy(); // not the destructor, but might be called by an inline destructor?
 }
 
+// Original: arm9/main @ 0x0207BFAC; symbol: _ZN24LootableContainerManager17RegisterContainerEPNS_9ContainerE; size: 0x2C.
 void LootableContainerManager::RegisterContainer(LootableContainerManager::Container* container)
 {
     LootableContainerManager::Container** pplistEnd = &pContainerList_;
@@ -233,6 +242,7 @@ void LootableContainerManager::RegisterContainer(LootableContainerManager::Conta
     numEntries_++;
 }
 
+// Original: arm9/main @ 0x0207BFD8; symbol: _ZN24LootableContainerManager16GetContainerByIDEiPt; size: 0x44.
 LootableContainerManager::Container* LootableContainerManager::GetContainerByID(int id, unsigned short *outListPos)
 {
     unsigned short index = 0;
@@ -251,6 +261,7 @@ LootableContainerManager::Container* LootableContainerManager::GetContainerByID(
     return NULL;
 }
 
+// Original: arm9/main @ 0x0207C01C; symbol: _Z31LootDistribution_DeclareOutcomePN6Script9ParameterEi; size: 0x68.
 int LootDistribution_DeclareOutcome(Script::Parameter* params, int numParams)
 {
     int packed = params[0].ToInt();
@@ -268,12 +279,14 @@ int LootDistribution_DeclareOutcome(Script::Parameter* params, int numParams)
     return 1;
 }
 
+// Original: arm9/main @ 0x0207C084; symbol: _Z33LootDistribution_AllocateOutcomesPN6Script9ParameterEi; size: 0x28.
 int LootDistribution_AllocateOutcomes(Script::Parameter* params, int numParams)
 {
     data_02108e78.distribution->AllocateOutcomes(params[0].ToInt());
     return 1;
 }
 
+// Original: arm9/main @ 0x0207C0AC; symbol: _ZN16LootDistribution5ResetEv; size: 0x18.
 void LootDistribution::Reset()
 {
     pOutcomes_ = NULL;
@@ -290,6 +303,7 @@ static Script::OpcodeLookupEntry s_distributionOpcodes[] = {
     { 0, NULL } 
 };
 
+// Original: arm9/main @ 0x0207C0C4; symbol: _ZN16LootDistribution14LoadFromScriptEP13SafeAllocatorPKvj; size: 0x64.
 void LootDistribution::LoadFromScript(SafeAllocator* alloc, const void* script, unsigned int length)
 {
     data_02108e78.distribution = this;
@@ -302,6 +316,7 @@ void LootDistribution::LoadFromScript(SafeAllocator* alloc, const void* script, 
     data_02108e78.distribution = NULL;
 }
 
+// Original: arm9/main @ 0x0207C128; symbol: _ZN16LootDistribution13InsertOutcomeEPNS_7OutcomeE; size: 0x3C.
 void LootDistribution::InsertOutcome(Outcome *source)
 {
     if (outcomeArraySize_ >= outcomeArrayCapacity_)
@@ -315,6 +330,7 @@ void LootDistribution::InsertOutcome(Outcome *source)
     dest->itemID = source->itemID;
 }
 
+// Original: arm9/main @ 0x0207C164; symbol: _ZN16LootDistribution16AllocateOutcomesEt; size: 0x28.
 void LootDistribution::AllocateOutcomes(unsigned short count)
 {
     pOutcomes_ = (Outcome*)pAllocator_->Allocate(count * sizeof(Outcome));
@@ -322,6 +338,7 @@ void LootDistribution::AllocateOutcomes(unsigned short count)
         outcomeArrayCapacity_ = count;
 }
 
+// Original: arm9/main @ 0x0207C18C; symbol: _ZN16LootDistribution6SampleEi; size: 0x60.
 const LootDistribution::Outcome* LootDistribution::Sample(int rank)
 {
     const Outcome* outcomes[32];
@@ -329,7 +346,7 @@ const LootDistribution::Outcome* LootDistribution::Sample(int rank)
     if (numOutcomes == 0)
         return NULL;
 
-    int rng = func_02032370(100);
+    int rng = ComputeRandomScaledIntegerThroughDouble(100);
     for (int i = 0; i < numOutcomes; i++)
     {
         rng -= outcomes[i]->percentage;
@@ -340,6 +357,7 @@ const LootDistribution::Outcome* LootDistribution::Sample(int rank)
     return NULL;
 }
 
+// Original: arm9/main @ 0x0207C1EC; symbol: _ZN16LootDistribution17GetOutcomesByRankEiPPKNS_7OutcomeEi; size: 0x58.
 int LootDistribution::GetOutcomesByRank(int rank, const Outcome** outList, int outCapacity)
 {
     int numFound = 0;

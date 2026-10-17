@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dragon Quest IX · Decompilation progress</title>
+<style>
+:root{color-scheme:dark;--bg:#151a23;--panel:#1d2330;--text:#e2e7ef;--muted:#97a3b5;--line:#323b4c;--green:#00b982;--blue:#0da6dc}
+*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,sans-serif}a{color:#55b9e4;text-decoration:none}a:hover{text-decoration:underline}button,select,input{font:inherit;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:10px 13px}button{cursor:pointer}button:hover{background:#293448}button:disabled{opacity:.4;cursor:default}button[aria-pressed=true]{background:#183e50;color:#65d4ec;border-color:#28718b}button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid #65d4ec;outline-offset:3px}nav{border-bottom:1px solid #29313f;padding:18px max(24px,calc((100vw - 1160px)/2));display:flex;align-items:center;gap:16px;background:#171d27;white-space:nowrap}nav b{color:#f1f5fa;font-size:18px}nav span{color:#5c6a7e}nav .project{font-weight:600;color:#52b7dc}.tag{font-size:11px;letter-spacing:1px;border:1px solid #344053;color:#a7b4c6;border-radius:4px;padding:4px 7px}main{max-width:1210px;margin:0 auto;padding:32px 25px 24px}.eyebrow{color:#6c91a7;letter-spacing:2px;font-size:11px;margin-bottom:9px}header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}h1{font-size:27px;font-weight:650;letter-spacing:-.5px;line-height:1.3;margin:0;max-width:780px}#subtitle{font-size:19px;font-weight:550;color:var(--muted);margin:10px 0 26px}.repo{border:1px solid #526074;border-radius:6px;padding:10px 15px;color:#b6c4d8;font-size:13px;white-space:nowrap}.bar-head{display:flex;justify-content:space-between;gap:12px;color:#b4bfce;font-size:13px;font-weight:550;margin:12px 0 8px}.bar-head small{color:#8896ab;font-weight:400}.progress-track{height:30px;background:#242c3b;border-radius:5px;overflow:hidden;margin-bottom:19px}.progress-track i{display:block;height:100%;min-width:0;transition:width .2s}.green i{background:var(--green)}.blue i{background:var(--blue)}.bar-note,.note,.meta{font-size:12px;color:var(--muted)}p{margin:8px 0}.metrics{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:7px;margin:22px 0}.metric{padding:15px 20px;border-right:1px solid var(--line)}.metric:last-child{border:0}.metric strong{display:block;font-size:25px;font-weight:550}.metric span{font-size:12px;color:var(--muted)}.notice{color:#91a0b5;font-size:12px;margin:10px 0 22px;line-height:1.6}.history{margin:20px 0 26px}.section-label{font-size:13px;font-weight:600;color:#bdc8d7;margin:14px 0 8px}.commit-row{display:flex;align-items:center;justify-content:space-between;gap:15px;background:#111720;border:1px solid #283141;border-radius:5px;padding:10px 13px}.commit-row code{color:#59bde2;font-size:12px}.meta{margin-left:10px}.history-controls{display:flex;gap:0;margin-top:10px}.history-controls button{flex:1;border-radius:0}.history-controls button:first-child{border-radius:5px 0 0 5px}.history-controls button:last-child{border-radius:0 5px 5px 0;background:#194764}.history-select{margin-top:10px;display:flex;align-items:center;gap:12px}.history-select select{flex:1;min-width:0;font-size:12px}#history-note,#delta{font-size:12px;color:#8fa1b9}.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:16px 0}.toolbar label{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--muted)}.toolbar select{padding:8px 10px;font-size:12px}.spacer{flex:1}#search{width:205px;font-size:12px}h2{font-size:19px;letter-spacing:-.2px;margin:0}.section-top{display:flex;align-items:center;justify-content:space-between;margin-top:30px}.section-top button{font-size:12px}.legend{display:flex;flex-wrap:wrap;gap:18px;font-size:12px;color:#a2afc1;margin:12px 0}.swatch{display:inline-block;width:10px;height:10px;margin-right:6px;border-radius:2px}.crumb{display:flex;gap:10px;align-items:center;color:#94a7be;font-size:12px;margin:12px 0}.crumb button{padding:5px 10px;font-size:12px}#map{position:relative;height:480px;background:#090b0d;border:1px solid var(--line);border-radius:7px;overflow:hidden}canvas{display:block;width:100%;height:100%;cursor:pointer}.empty{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted)}#tooltip{position:fixed;pointer-events:none;display:none;z-index:5;max-width:350px;padding:12px;background:#202936f5;border:1px solid #64748b;border-radius:5px;white-space:pre-line;font-size:12px;box-shadow:0 4px 20px #0008}#selection{margin:15px 0;padding:14px 16px;min-height:60px;border:1px solid var(--line);border-radius:6px;background:#1a212c;font-size:13px;overflow-wrap:anywhere}#selection p{font-size:12px;color:#a4b5c9}details{border:1px solid var(--line);border-radius:6px;margin:14px 0;background:#181f2a}summary{cursor:pointer;padding:13px 16px;color:#b8c5d6;font-size:13px}details>.note{padding:0 16px}.table-controls{display:flex;align-items:center;gap:10px;padding:4px 14px 14px;flex-wrap:wrap}.table-controls input{flex:1;min-width:180px}.table-controls select{font-size:12px}.table-controls span{font-size:12px;color:var(--muted)}#table-wrap{overflow:auto;max-height:440px}table{border-collapse:collapse;width:100%;font-size:12px}td,th{text-align:left;padding:10px 13px;border-bottom:1px solid #293345}th{background:#1d2735;position:sticky;top:0;color:#a5b8ce;font-weight:500}td:first-child{overflow-wrap:anywhere}td:not(:first-child),th:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}td button{font-size:12px;padding:3px 5px;color:#68badb;background:transparent;border-color:transparent;text-align:left}#function-table{overflow:auto;max-height:420px}#source-breakdown{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0 16px 15px}#source-breakdown span,#source-breakdown small{display:block;font-size:11px;color:var(--muted)}#source-breakdown strong{display:block;font-size:18px;margin:5px 0}.footer{border-top:1px solid var(--line);margin-top:24px;padding-top:16px;color:#788ba4;font-size:11px}.footer p{overflow-wrap:anywhere}.footer-row{display:flex;justify-content:space-between;gap:20px}#refresh{font-size:12px;padding:6px 12px}.footer details{margin-bottom:16px}.footer summary{font-size:12px}.footer details p{padding:0 16px 10px}@media(max-width:700px){nav{padding:14px 16px;gap:9px;font-size:12px;overflow:auto}nav b{font-size:15px}main{padding:24px 16px}header{flex-direction:column}h1{font-size:23px}.repo{display:none}.bar-head{flex-wrap:wrap;gap:2px}.metrics{grid-template-columns:1fr}.metric{border-right:0;border-bottom:1px solid var(--line)}.metric strong{font-size:23px}.toolbar{gap:8px}.toolbar label{flex-wrap:wrap}.spacer{display:none}#search{width:100%}#map{height:380px}.commit-row{align-items:flex-start;flex-direction:column;gap:4px}.meta{margin-left:0}#source-breakdown{grid-template-columns:1fr}.table-controls input{width:100%}.footer-row{flex-wrap:wrap}}
+</style></head><body>
+<nav><b>dqix.progress</b><span>/</span><a class="project" href="#">Dragon Quest IX</a><span class="tag">USA · LOCAL</span></nav>
+<main><header><div><div class="eyebrow">NINTENDO DS · RECONSTRUCTION</div><h1 id="headline"></h1><p id="subtitle"></p></div><a class="repo" href="https://github.com/DQIX/dqix-decomp" target="_blank" rel="noopener">↗ Upstream repository</a></header>
+<div id="bars"></div><div class="metrics" id="metrics"></div>
+<p class="notice">Matching is measured against the original binary and includes assembly. These are the reports from this checkout; unmerged worker results are not added. ARM7 has separate coverage and unknown total instruction/function counts.</p>
+<section class="history"><div class="section-label">Report snapshot</div><div class="commit-row"><code id="revision"></code><span class="meta" id="report-date"></span></div><p id="delta"></p><div class="history-controls"><button id="previous">‹ Previous</button><button id="next">Next ›</button><button id="latest">Latest</button></div><div class="history-select"><select id="snapshot" aria-label="Report snapshot"></select><span id="live-status" class="note" role="status">Live · updates every 30s</span><button id="refresh">↻ Refresh reports</button></div><p id="history-note"></p></section>
+<div class="section-top"><h2>Explore the reconstruction</h2><button id="expand-table">Browse units ↓</button></div>
+<div class="toolbar"><button id="arm9" aria-pressed="true">ARM9</button><button id="arm7" aria-pressed="false">ARM7</button><label>Measure <select id="metric"></select></label><label>Module <select id="module"></select></label><label>Tiles <select id="tiles"><option value="units">Units</option><option value="functions">Functions</option></select></label><span class="spacer"></span><input id="search" aria-label="Highlight units or functions by name" placeholder="Highlight a symbol…" type="search"></div>
+<div class="legend" id="legend"></div><div class="crumb"><button id="back" hidden>← All modules</button><span id="scope"></span></div>
+<div id="map"><canvas id="canvas" aria-label="Progress treemap. Select a unit below for keyboard-accessible details."></canvas><div id="empty" class="empty" hidden>No units have this measure.</div></div>
+<p class="note" id="area-note"></p><div id="selection" aria-live="polite">Select a tile to inspect its source unit. Double-click to focus its module.</div>
+<details id="unit-panel" open><summary>Units · searchable progress table</summary><div class="table-controls"><input id="table-search" type="search" aria-label="Filter unit table" placeholder="Filter, e.g. camera &lt;70% &gt;10kb"><select id="status" aria-label="Matching status"><option value="all">All statuses</option><option value="matched">Fully matched</option><option value="partial">Partly matched</option><option value="unmatched">No matched coverage</option></select><select id="sort" aria-label="Sort units"><option value="size">Largest first</option><option value="match">Most matched</option><option value="name">Name</option></select><span id="result-count"></span></div><div id="table-wrap"><table><thead><tr><th>Unit / module</th><th>Area</th><th>Matched / category</th></tr></thead><tbody id="units"></tbody></table></div></details>
+<details id="functions-panel" hidden><summary>Functions in selected unit</summary><p class="note">Similarity is objdiff's fuzzy instruction comparison, not source credit. Symbol sizes may include literal pools.</p><div id="function-table"></div></details>
+<div class="footer"><details><summary>How coverage is counted</summary><p>ARM9 measures reconcile with the complete input report. Data includes BSS. Purple identifies accepted runtime assembly helpers; other treemap colors represent owning-unit coverage; function tiles subdivide units by symbol size. Filtering the table does not reduce the coverage denominator.</p><div id="source-breakdown"></div><p>The source audit conservatively flags whole units containing assembly syntax, including local headers. It does not measure exact assembly instruction bytes or establish that all other units are pure C/C++.</p><p>ARM7 separates C instructions, literals, initialized data, reviewed assembly, runtime BSS and original fallback. Its fallback may contain both code and data. A matching ROM alone does not establish complete decompilation or gameplay correctness.</p></details><p id="provenance"></p><div class="footer-row"><span>Generated from local build reports · no ROM bytes included</span><a href="https://decomp.dev/shibbo/3DWDecomp" target="_blank" rel="noopener">Interface reference: decomp.dev ↗</a></div></div>
+</main><div id="tooltip" role="tooltip"></div><script id="progress-data" type="application/json">__PROGRESS_HISTORY__</script><script>
+'use strict';
+const HISTORY=JSON.parse(document.getElementById('progress-data').textContent);
+let historyIndex=HISTORY.length-1,D=HISTORY[historyIndex];
+const $=id=>document.getElementById(id), n=x=>x.toLocaleString('en-US'), pct=(a,b)=>b?(100*a/b).toFixed(2)+'%':'—';
+let cpu='arm9', metric='code', module='all', rects=[], selected=null;
+const colors={instructions:'#55c54b',literals:'#d6ab58',data:'#43abc4',assembly:'#b088d6',bss:'#43abc4',fallback:'#303438'};
+const categoryNames={original_binary_units:'Original binary fallback',source_units_with_assembly_syntax:'Source unit affected by assembly syntax',source_units_without_detected_assembly:'Source unit without detected assembly'};
+const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+
+function activeUnits(){return (cpu==='arm9'?D.units:D.arm7.filter(u=>u.view===metric)).filter(u=>module==='all'||u.module===module)}
+function weight(u){return cpu==='arm9'?u.measures['total_'+metric]:u.size}
+function matched(u){return cpu==='arm9'?u.measures['matched_'+metric]:0}
+function runtimeAssembly(u){return /^src\/RuntimeSupport\//.test(u.source||u.name)}
+function color(u){if(cpu==='arm7')return colors[u.kind];if(runtimeAssembly(u))return colors.assembly;let p=weight(u)?matched(u)/weight(u):0;return p===1?'#55c54b':p>0?'#159eb7':'#303438'}
+function tooltip(u){return cpu==='arm9'?u.name+'\nARM9 / '+u.module+'\n'+n(matched(u))+' / '+n(weight(u))+' '+metric+' matched ('+pct(matched(u),weight(u))+')\n'+(runtimeAssembly(u)?'Runtime helper · accepted inline assembly · excluded from C++ reconstruction':categoryNames[u.category]):u.name+'\nARM7 / '+u.module+'\n'+n(u.size)+' bytes · '+u.kind}
+// Squarified treemap: every positive measure participates, including fallback.
+function layout(items,x,y,w,h){
+  items=items.filter(i=>i.value>0).sort((a,b)=>b.value-a.value);
+  const total=items.reduce((s,i)=>s+i.value,0), scale=w*h/total;
+  let pending=items.map(i=>({...i,area:i.value*scale})), out=[];
+  function worst(row,side){if(!row.length)return Infinity;let s=row.reduce((a,i)=>a+i.area,0),hi=Math.max(...row.map(i=>i.area)),lo=Math.min(...row.map(i=>i.area));return Math.max(side*side*hi/(s*s),s*s/(side*side*lo))}
+  while(pending.length){let row=[pending.shift()],side=Math.min(w,h);while(pending.length&&worst([...row,pending[0]],side)<=worst(row,side))row.push(pending.shift());let sum=row.reduce((s,i)=>s+i.area,0);
+    if(w>=h){let rw=sum/h,yy=y;for(let i of row){let rh=i.area/rw;out.push({...i,x,y:yy,w:rw,h:rh});yy+=rh}x+=rw;w=Math.max(0,w-rw)}
+    else{let rh=sum/w,xx=x;for(let i of row){let rw=i.area/rh;out.push({...i,x:xx,y,w:rw,h:rh});xx+=rw}y+=rh;h=Math.max(0,h-rh)}
+  }return out;
+}
+function summaries(){let m=D.measures,a=D.arm7_measures;let stats=cpu==='arm9'?[['Code matched',pct(m.matched_code,m.total_code),n(m.matched_code)+' / '+n(m.total_code)+' bytes'],['Data matched',pct(m.matched_data,m.total_data),n(m.matched_data)+' / '+n(m.total_data)+' bytes'],['Functions matched',pct(m.matched_functions,m.total_functions),n(m.matched_functions)+' / '+n(m.total_functions)]]:[['C instructions',n(a.source_code_bytes)+' B',n(a.source_functions)+' source functions · total unknown'],['Literals / initialized data',n(a.source_literal_pool_bytes)+' / '+n(a.source_data_bytes)+' B','Separate from C instructions'],['Reviewed assembly / source BSS',n(a.reviewed_assembly_bytes)+' / '+n(a.source_bss_bytes)+' B','Payload / runtime memory']];$('metrics').innerHTML=stats.map(s=>'<div class="metric"><span>'+s[0]+'</span><strong>'+s[1]+'</strong><span>'+s[2]+'</span></div>').join('')}
+function draw(){
+ const canvas=$('canvas'),ctx=canvas.getContext('2d'),w=$('map').clientWidth,h=$('map').clientHeight,dpr=window.devicePixelRatio||1;
+ canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.scale(dpr,dpr);ctx.fillStyle='#090b0d';ctx.fillRect(0,0,w,h);
+ const units=activeUnits().filter(u=>weight(u)>0),query=$('search').value.toLowerCase();rects=[];
+ const groups=new Map();for(let u of units){if(!groups.has(u.module))groups.set(u.module,[]);groups.get(u.module).push(u)}
+ const boxes=layout([...groups].map(([name,us])=>({name,us,value:us.reduce((s,u)=>s+weight(u),0)})),0,0,w,h);
+ for(let b of boxes){let header=b.w>65&&b.h>40?21:0;ctx.fillStyle='#20252a';ctx.fillRect(b.x,b.y,b.w,b.h);if(header){ctx.save();ctx.beginPath();ctx.rect(b.x,b.y,b.w,header);ctx.clip();ctx.fillStyle='#bbc4cc';ctx.font='12px system-ui';ctx.fillText(b.name,b.x+6,b.y+15);ctx.restore()}
+   let pad=Math.min(2,b.w/8,b.h/8);for(let r of layout(b.us.map(u=>({u,value:weight(u)})),b.x+pad,b.y+header+pad,Math.max(.001,b.w-2*pad),Math.max(.001,b.h-header-2*pad))){
+    const funcs=cpu==='arm9'&&metric==='code'&&$('tiles').value==='functions'?r.u.functions.filter(f=>f.size>0):[];
+    const leaves=funcs.length?layout(funcs.map(f=>({u:r.u,f,value:f.size})),r.x,r.y,r.w,r.h):[r];
+    for(let leaf of leaves){
+      rects.push(leaf);ctx.globalAlpha=query&&![leaf.u.name,leaf.f?.name||''].some(s=>s.toLowerCase().includes(query))?.18:1;ctx.fillStyle=color(leaf.u);let gap=Math.min(1,leaf.w/5,leaf.h/5);ctx.fillRect(leaf.x,leaf.y,Math.max(0,leaf.w-gap),Math.max(0,leaf.h-gap));
+      if(leaf.w>95&&leaf.h>36){ctx.save();ctx.beginPath();ctx.rect(leaf.x+3,leaf.y+3,leaf.w-7,leaf.h-7);ctx.clip();ctx.fillStyle=matched(leaf.u)===weight(leaf.u)&&cpu==='arm9'?'#102010':'#f1f3f4';ctx.font='11px system-ui';ctx.fillText(leaf.f?.name||leaf.u.name.split('/').pop(),leaf.x+5,leaf.y+17);ctx.restore()}
+      if(selected===leaf.u){ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.strokeRect(leaf.x+1,leaf.y+1,Math.max(0,leaf.w-3),Math.max(0,leaf.h-3))}ctx.globalAlpha=1;
+    }
+   }
+ }
+ $('empty').hidden=units.length>0;$('scope').textContent=(cpu==='arm9'?'ARM9':'ARM7')+' / '+(module==='all'?'All modules':module)+' · '+n(units.reduce((s,u)=>s+weight(u),0))+' '+(metric==='functions'?'functions':'bytes')+' · '+units.length+' tiles';$('back').hidden=module==='all';
+ $('tiles').disabled=cpu!=='arm9'||metric!=='code';
+ $('status').disabled=cpu!=='arm9';
+ $('area-note').textContent=cpu==='arm9'?'Area = reported '+metric+'. Purple = accepted runtime assembly; other colors = owning unit matching coverage. '+(metric==='code'&&$('tiles').value==='functions'?'Functions subdivide each unit in proportion to symbol sizes; unit code totals stay unchanged. ':'')+'Highlighting never removes coverage.':'Area = '+(metric==='payload'?'stored ARM7 payload bytes':'runtime BSS bytes')+'. Gray fallback remains fully represented; source categories are separate.';
+ $('units').innerHTML=filteredUnits(units).map(u=>'<tr><td><button data-unit="'+escape(u.name)+'" data-kind="'+escape(u.kind||'')+'">'+escape(u.name)+'</button> / '+escape(u.module)+'</td><td>'+n(weight(u))+'</td><td>'+(cpu==='arm9'?pct(matched(u),weight(u)):escape(u.kind))+'</td></tr>').join('');
+}
+function select(u){selected=u;$('selection').innerHTML='<strong>'+escape(u.name)+'</strong><p>'+escape(tooltip(u)).replace(/\n/g,' · ')+'</p>'+(u.source?'<p class="note">'+escape(u.source)+'</p>':'');$('functions-panel').hidden=!u.functions?.length;if(u.functions?.length){$('function-table').innerHTML='<table><thead><tr><th>Symbol</th><th>Bytes</th><th>Similarity</th></tr></thead><tbody>'+u.functions.map(f=>'<tr><td>'+escape(f.name)+'</td><td>'+n(f.size)+'</td><td>'+(f.similarity==null?'Not compared':f.similarity.toFixed(2)+'%')+'</td></tr>').join('')+'</tbody></table>'}draw()}
+function setup(){if(D.arm7_available===false&&cpu==='arm7'){cpu='arm9';metric='code';module='all'}$('arm7').disabled=D.arm7_available===false;selected=null;$('selection').textContent='Select a rectangle to inspect a unit. Double-click a rectangle to focus its module.';$('functions-panel').hidden=true;$('arm9').setAttribute('aria-pressed',cpu==='arm9');$('arm7').setAttribute('aria-pressed',cpu==='arm7');$('metric').innerHTML=cpu==='arm9'?'<option value="code">Code bytes</option><option value="data">Data bytes (includes BSS)</option><option value="functions">Function count</option>':'<option value="payload">Stored payload bytes</option><option value="bss">Runtime BSS bytes</option>';$('metric').value=metric;let modules=[...new Set((cpu==='arm9'?D.units:D.arm7.filter(u=>u.view===metric)).map(u=>u.module))].sort();$('module').innerHTML='<option value="all">All modules</option>'+modules.map(m=>'<option value="'+escape(m)+'">'+escape(m)+'</option>').join('');if(!modules.includes(module))module='all';$('module').value=module;let legend=cpu==='arm9'?[[colors.assembly,'Runtime helpers (inline assembly)'],['#55c54b','Fully matched'],['#159eb7','Partly matched'],['#303438','No matched coverage']]:Object.entries(colors).filter(([k])=>metric==='bss'?['bss','fallback'].includes(k):k!=='bss').map(([k,c])=>[c,k]);$('legend').innerHTML=legend.map(([c,t])=>'<span><i class="swatch" style="background:'+c+'"></i>'+t+'</span>').join('');summaries();overview();draw()}
+function hit(e){let b=$('canvas').getBoundingClientRect(),x=e.clientX-b.left,y=e.clientY-b.top;return rects.find(r=>x>=r.x&&x<r.x+r.w&&y>=r.y&&y<r.y+r.h)}
+$('canvas').addEventListener('mousemove',e=>{let r=hit(e),t=$('tooltip');t.style.display=r?'block':'none';if(r){t.textContent=(r.f?r.f.name+' · '+n(r.f.size)+' symbol bytes\n':'')+tooltip(r.u);t.style.left=Math.max(4,Math.min(e.clientX+14,window.innerWidth-t.offsetWidth-8))+'px';t.style.top=Math.max(4,Math.min(e.clientY+14,window.innerHeight-t.offsetHeight-8))+'px'}});
+$('canvas').addEventListener('mouseleave',()=>{$('tooltip').style.display='none'});
+$('canvas').addEventListener('click',e=>{let r=hit(e);if(r)select(r.u)});
+$('canvas').addEventListener('dblclick',e=>{let r=hit(e);if(r){module=r.u.module;setup()}});
+$('units').addEventListener('click',e=>{let b=e.target.closest('button');if(b){let u=activeUnits().find(u=>u.name===b.dataset.unit&&(u.kind||'')===b.dataset.kind);if(u)select(u)}});
+for(let c of ['arm9','arm7'])$(c).onclick=()=>{cpu=c;metric=c==='arm9'?'code':'payload';module='all';setup()};
+$('metric').onchange=()=>{metric=$('metric').value;setup()};$('module').onchange=()=>{module=$('module').value;setup()};$('back').onclick=()=>{module='all';setup()};$('search').oninput=draw;$('tiles').value='functions';$('tiles').onchange=draw;new ResizeObserver(draw).observe($('map'));
+
+function byteText(value){return value>=1048576?(value/1048576).toFixed(2)+' MiB':value>=1024?(value/1024).toFixed(1)+' KiB':n(value)+' B'}
+function progressBar(label,matched,total,tone,extra=''){
+ const percent=total?100*matched/total:0;
+ return '<div class="bar-head"><span>'+escape(label)+'</span><span>'+pct(matched,total)+' <small>· '+n(matched)+' / '+n(total)+'</small></span></div><div class="progress-track '+tone+'" role="progressbar" aria-label="'+escape(label)+'" aria-valuenow="'+percent.toFixed(2)+'" aria-valuemin="0" aria-valuemax="100"><i style="width:'+percent+'%"></i></div>'+(extra?'<p class="bar-note">'+escape(extra)+'</p>':'');
+}
+function overview(){
+ const m=D.measures,a=D.arm7_measures;
+ $('headline').textContent=cpu==='arm9'?'Dragon Quest IX · '+pct(m.matched_code,m.total_code)+' ARM9 code matched':'Dragon Quest IX · ARM7 reconstruction';
+ $('subtitle').textContent=cpu==='arm9'?n(m.matched_functions)+' / '+n(m.total_functions)+' ARM9 functions matched':'C instructions, literals, data and assembly tracked separately';
+ $('bars').innerHTML=cpu==='arm9'?
+ progressBar('Code · '+byteText(m.total_code),m.matched_code,m.total_code,'green')+progressBar('Data including BSS · '+byteText(m.total_data),m.matched_data,m.total_data,'blue'):
+ progressBar('Stored payload · '+byteText(a.payload_bytes),a.payload_bytes-a.binary_fallback_bytes,a.payload_bytes,'green','Source-owned payload includes C instructions, literals, data and reviewed assembly.')+progressBar('Runtime BSS · '+byteText(a.total_bss_bytes),a.source_bss_bytes,a.total_bss_bytes,'blue');
+ $('revision').textContent=(D.snapshot_kind==='upstream'?'Original upstream · ':'Your project · ')+D.revision.slice(0,8)+(D.dirty?' · uncommitted checkout':' · committed checkout');
+ $('report-date').textContent='Report '+new Date(D.report_time).toLocaleString();
+ $('snapshot').innerHTML=HISTORY.map((d,i)=>'<option value="'+i+'">'+escape(d.snapshot_label||(d.snapshot_kind==='upstream'?'Original upstream':'Your project'))+' · '+new Date(d.generated).toLocaleString()+' · '+d.revision.slice(0,8)+'</option>').join('');
+ $('snapshot').value=historyIndex;
+ $('previous').disabled=historyIndex===0;$('next').disabled=historyIndex===HISTORY.length-1;$('latest').disabled=historyIndex===HISTORY.length-1;
+ $('history-note').textContent=HISTORY.length===1?'First local snapshot. History accumulates when the reports or audited checkout state change.':HISTORY.length+' snapshots · viewing '+(historyIndex+1)+' of '+HISTORY.length;
+ $('history-note').textContent+=(D.snapshot_kind==='upstream'?' · Pinned upstream reference; ARM7 coverage is not reported upstream.':'');
+ $('provenance').textContent=(D.snapshot_kind==='upstream'?D.repository+' @ '+D.revision+' · ':'')+'Captured '+D.generated+' · ARM9 SHA-256 '+D.report_sha256+' · ARM7 SHA-256 '+D.arm7_report_sha256;
+ $('metrics').querySelectorAll?.('.metric').forEach(el=>el.classList.add('stat'));
+ const previous=HISTORY[historyIndex-1];
+ const baseline=HISTORY.find(d=>d.snapshot_kind==='upstream');
+ const comparable=baseline&&['total_functions','total_code','total_data'].every(k=>m[k]===baseline.measures[k]);
+ $('delta').textContent=cpu!=='arm9'?'':D.snapshot_kind==='upstream'?'Original repository reference · select Latest to compare your project.':baseline?(comparable?'Compared with original upstream: '+signed(m.matched_functions-baseline.measures.matched_functions)+' matched functions · '+signed(m.matched_code-baseline.measures.matched_code)+' matched code bytes · '+signed(m.matched_data-baseline.measures.matched_data)+' matched data bytes':'Upstream totals differ; direct coverage deltas are unavailable.'):(previous?'Change from previous snapshot: '+signed(m.matched_functions-previous.measures.matched_functions)+' functions · '+signed(m.matched_code-previous.measures.matched_code)+' code bytes':'');
+ const groups=D.assembly_groups;
+ $('source-breakdown').innerHTML=groups?Object.entries(groups).map(([category,values])=>'<div><span>'+escape(categoryNames[category])+'</span><strong>'+byteText(values.matched_code)+'</strong><small>matched code in these units</small></div>').join(''):'';
+ if(D.runtime_support&&D.runtime_support.assembly_functions){const r=D.runtime_support,s=r.sdk_reconstruction_functions||0,cf=s?r.compiler_runtime_functions:r.assembly_functions,cb=s?r.compiler_runtime_bytes:r.assembly_bytes;$('source-breakdown').innerHTML+='<div><span>Accepted compiler runtime assembly</span><strong>'+byteText(cb)+'</strong><small>'+n(cf)+' functions · excluded from C reconstruction</small></div>';if(s)$('source-breakdown').innerHTML+='<div><span>Accepted SDK assembly (community reconstruction)</span><strong>'+byteText(r.sdk_reconstruction_bytes)+'</strong><small>'+n(s)+' functions · not a vendor original · excluded from C reconstruction</small></div>';}
+}
+function signed(v){return(v>=0?'+':'')+n(v)}
+function filteredUnits(units){
+ const tokens=$('table-search').value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+ const status=$('status').value;
+ const filtered=units.filter(u=>{
+  const total=weight(u),amount=matched(u),ratio=total?100*amount/total:0;
+  if(cpu==='arm9'&&status==='matched'&&amount!==total)return false;
+  if(cpu==='arm9'&&status==='partial'&&!(amount>0&&amount<total))return false;
+  if(cpu==='arm9'&&status==='unmatched'&&amount!==0)return false;
+  return tokens.every(token=>{
+   const match=token.match(/^([<>])(\d+(?:\.\d+)?)(%|kb|mb|b)?$/);
+   if(!match)return (u.name+' '+u.module+' '+(u.source||'')).toLowerCase().includes(token);
+   const threshold=Number(match[2])*(match[3]==='kb'?1024:match[3]==='mb'?1048576:1);
+   const value=match[3]==='%'?ratio:total;
+   return match[1]==='<'?value<threshold:value>threshold;
+  });
+ });
+ const sort=$('sort').value;
+ filtered.sort((a,b)=>sort==='name'?a.name.localeCompare(b.name):sort==='match'?(matched(b)/weight(b)-matched(a)/weight(a))||a.name.localeCompare(b.name):weight(b)-weight(a));
+ $('result-count').textContent=n(filtered.length)+' of '+n(units.length)+' units';
+ return filtered;
+}
+function changeSnapshot(index){historyIndex=index;D=HISTORY[index];setup()}
+$('previous').onclick=()=>changeSnapshot(Math.max(0,historyIndex-1));
+$('next').onclick=()=>changeSnapshot(Math.min(HISTORY.length-1,historyIndex+1));
+$('latest').onclick=()=>changeSnapshot(HISTORY.length-1);
+$('snapshot').onchange=()=>changeSnapshot(Number($('snapshot').value));
+$('refresh').onclick=()=>refreshLive(true);
+let refreshing=false;
+async function refreshLive(manual=false){
+ if(refreshing||location.protocol==='file:')return;
+ refreshing=true;
+ try{
+  const response=await fetch(location.href,{cache:'no-store'});
+  if(!response.ok)throw Error('Report unavailable');
+  const documentCopy=new DOMParser().parseFromString(await response.text(),'text/html');
+  const fresh=JSON.parse(documentCopy.getElementById('progress-data').textContent);
+  const latest=fresh[fresh.length-1],oldLatest=HISTORY[HISTORY.length-1];
+  const same=latest.report_sha256===oldLatest.report_sha256&&latest.arm7_report_sha256===oldLatest.arm7_report_sha256&&latest.revision===oldLatest.revision&&latest.dirty===oldLatest.dirty&&JSON.stringify(latest.assembly_groups)===JSON.stringify(oldLatest.assembly_groups);
+  if(!same||JSON.stringify(fresh.map(d=>[d.snapshot_kind,d.revision,d.report_sha256,d.snapshot_label]))!==JSON.stringify(HISTORY.map(d=>[d.snapshot_kind,d.revision,d.report_sha256,d.snapshot_label]))){
+   const atLatest=historyIndex===HISTORY.length-1;
+   const selectedReport=D.report_sha256,selectedARM7=D.arm7_report_sha256;
+   HISTORY.splice(0,HISTORY.length,...fresh);
+   const retained=HISTORY.findIndex(d=>d.report_sha256===selectedReport&&d.arm7_report_sha256===selectedARM7);
+   historyIndex=atLatest||retained<0?HISTORY.length-1:retained;
+   D=HISTORY[historyIndex];setup();
+  }
+  $('live-status').textContent='Live · checked '+new Date().toLocaleTimeString();
+ }catch(error){$('live-status').textContent='Waiting for verified reports · retrying';}
+ finally{refreshing=false;}
+}
+if(location.protocol!=='file:')setInterval(refreshLive,30000);
+else $('live-status').textContent='Offline snapshot';
+for(const id of ['table-search','status','sort'])$(id).addEventListener(id==='table-search'?'input':'change',draw);
+$('expand-table').onclick=()=>{const panel=$('unit-panel');panel.open=!panel.open;if(panel.open)panel.scrollIntoView({behavior:'smooth',block:'start'})};
+setup();
+</script></body></html>

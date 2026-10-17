@@ -1,0 +1,3 @@
+struct Node { char padding[6]; unsigned char key; char rest[9]; Node *next; Node *group; }; extern "C" unsigned char data_02108844[];
+// Original: arm9/main @ 0x020643FC; symbol: func_020643fc; size: 0x60.
+ extern "C" void LinkedList_AppendNodeToMatchingKeyGroup(void *,Node *node) { Node *current=*(Node **)(data_02108844+0x47c); Node *previous; if(!current) { *(Node **)(data_02108844+0x47c)=node; return; } for(;current;previous=current,current=current->group) { if(current->key==node->key) { while(current->next)current=current->next; current->next=node; return; } } if(!current)previous->group=node; }

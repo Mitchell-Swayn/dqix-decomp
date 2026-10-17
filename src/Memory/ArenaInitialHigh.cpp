@@ -11,6 +11,7 @@ extern char SDK_IRQ_STACKSIZE[];
 extern char data_027e0000[];
 
 // USA: 0x020c8548
+// Original: arm9/main @ 0x020C8548; symbol: _Z19GetInitialArenaHighi; size: 0xE4.
 void* GetInitialArenaHigh(int arenaId)
 {
     switch (arenaId)

@@ -229,6 +229,8 @@ def create_database(root,graph,destination):
     exceptions=set()
     for exc in json.loads((root/'config/usa/arm9/assembly_exceptions.json').read_text())['exceptions']:
         exceptions.update(('arm9',routine['symbol']) for routine in exc['routines'])
+    from runtime_support import load as runtime_policy
+    exceptions.update(('arm9', row['name']) for row in runtime_policy(root) if row['classification'] == 'runtime_assembly')
     definitions={}; source_cache={}; source_notes=[]
     def get_definitions(obj):
         if obj not in definitions:

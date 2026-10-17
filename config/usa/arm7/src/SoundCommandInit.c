@@ -12,6 +12,7 @@ extern SoundSharedWork *ARM7_SoundSharedWork;
 extern void ARM7_InitializeMessageQueue(SoundMessageQueue*,void**,int);
 extern void ARM7_SetIpcHandler(int,void(*)(int,unsigned int,int));
 void ARM7_SoundCommandIpcCallback(int,unsigned int,int);
+// Original: arm7/wram @ 0x038025B0; symbol: ARM7_InitializeSoundCommandQueue.
 void ARM7_InitializeSoundCommandQueue(void)
 {
  ARM7_InitializeMessageQueue(&ARM7_SoundCommandQueue,ARM7_SoundCommandMessages,8);

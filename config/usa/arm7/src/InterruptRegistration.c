@@ -12,6 +12,7 @@ extern InterruptResponse ARM7_VBlankResponse;
 /* Only entries 0-24 are used here; the complete table extent remains external. */
 extern Callback ARM7_InterruptHandlerTable[];
 
+// Original: arm7/wram @ 0x037FB7F0; symbol: ARM7_SetInterruptHandler.
 void ARM7_SetInterruptHandler(unsigned int mask, Callback callback)
 {
     int index = 0;

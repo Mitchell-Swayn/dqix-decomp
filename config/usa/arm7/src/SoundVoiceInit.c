@@ -4,6 +4,7 @@
 #include "SoundVoice.h"
 SoundVoice ARM7_SoundVoices[16];
 extern struct { unsigned int mask0,mask1; } ARM7_SoundChannelReservations;
+// Original: arm7/wram @ 0x037FF81C; symbol: ARM7_InitializeSoundChannels.
 void ARM7_InitializeSoundChannels(void)
 {
  int channel=0;

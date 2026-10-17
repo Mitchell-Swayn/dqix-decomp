@@ -4,14 +4,17 @@
 extern SoundSharedWork *ARM7_SoundSharedWork;
 extern int ARM7_IsSoundChannelActive(int);
 extern int ARM7_IsSoundCaptureActive(int);
+// Original: arm7/wram @ 0x03802328; symbol: ARM7_SetSoundSequenceVariable.
 void ARM7_SetSoundSequenceVariable(int sequence,int index,int value)
 {
  ARM7_SoundSharedWork->sequences[sequence].variables[index]=value;
 }
+// Original: arm7/wram @ 0x03802348; symbol: ARM7_SetSoundGlobalVariable.
 void ARM7_SetSoundGlobalVariable(int index,int value)
 {
  ((short*)(ARM7_SoundSharedWork+1))[index]=value;
 }
+// Original: arm7/wram @ 0x03802364; symbol: ARM7_UpdateSoundSharedStatus.
 void ARM7_UpdateSoundSharedStatus(void)
 {
  unsigned short channels=0,captures=0;

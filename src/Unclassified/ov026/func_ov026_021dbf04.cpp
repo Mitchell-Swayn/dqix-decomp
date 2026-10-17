@@ -1,0 +1,8 @@
+struct Vector3 { int x,y,z; };
+extern "C" {void ClearSelectedRecordActiveBits(void*,int); void *memset(void*,int,unsigned); void *_ZN9GameState11GetInstanceEv(); char *GameState_GetIndexList(void*); void *func_ov026_021dae60(void*,int); void func_ov000_0217f518(void*); void Util_CopyFourSlotRecordSummary(void*,int,Vector3*); void func_ov017_021c6814(unsigned short,unsigned short,Vector3*,int,int,int); int ReadMaskedFlagsAt55F4(void*,unsigned); void EnableField55F4Bits(void*,unsigned); void *GetGlobalStatePointer(); void SetWordMaskBits_Main020466E4(void*,int); void func_ov000_02176038(void*); }
+// Original: arm9/ov026 @ 0x021DBF04; symbol: func_ov026_021dbf04; size: 0x13C.
+extern "C" void func_ov026_021dbf04(char *state) { int mode=*(int*)(state+0xeac); if(mode==0) *(int*)(state+0xeac)=0; else if(mode!=0 && mode!=1 && mode!=2) *(int*)(state+0xeac)=3;
+ClearSelectedRecordActiveBits(state+0x3760,-1);state[0x772f]=0;memset(state+0x54f4,0,16);char *party=GameState_GetIndexList(_ZN9GameState11GetInstanceEv());Vector3 position;
+for(int i=0;i<*(unsigned char*)(party+0xf7c);++i){int index=*(signed char*)(party+0xf78+i);void *entry=func_ov026_021dae60(state+0x3760,index);if(entry){func_ov000_0217f518(entry);Util_CopyFourSlotRecordSummary(state,index,&position);func_ov017_021c6814(*(unsigned short*)(*(char**)(state+0x2a0)+8),(unsigned short)index,&position,0,-1,0);}}
+int flag=ReadMaskedFlagsAt55F4(state,0x2000000);*(int*)(state+0x55f4)=*(int*)(state+0x7734);if(flag)EnableField55F4Bits(state,0x2000000);SetWordMaskBits_Main020466E4(GetGlobalStatePointer(),*(int*)(state+0x7738));func_ov000_02176038(state+0x3760);
+}

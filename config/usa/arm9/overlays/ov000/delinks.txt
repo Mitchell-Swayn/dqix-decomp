@@ -12,3 +12,1947 @@ src/Combat/Overlay_0/GetCombatantByID.cpp:
 src/Combat/Overlay_0/UpdateCombatantBuffs.cpp:
 	complete
 	.text start:0x02155a50 end:0x02155e94
+
+src/Data/ov000/data_ov000_02182e24.cpp:
+    complete
+    .rodata start:0x02182e24 end:0x02182e6c
+
+src/Data/ov000/data_ov000_02182e6c.cpp:
+    complete
+    .rodata start:0x02182e6c end:0x02182efc
+
+src/Data/ov000/data_ov000_02182efc.cpp:
+    complete
+    .rodata start:0x02182efc end:0x02182fd4
+
+src/Data/ov000/data_ov000_02183118.cpp:
+    complete
+    .rodata start:0x02183118 end:0x02183158
+
+src/Data/ov000/data_ov000_02183158.cpp:
+    complete
+    .rodata start:0x02183158 end:0x02183198
+
+src/Data/ov000/data_ov000_02183198.cpp:
+    complete
+    .rodata start:0x02183198 end:0x021831d8
+
+src/Data/ov000/data_ov000_021831d8.cpp:
+    complete
+    .rodata start:0x021831d8 end:0x02183218
+
+src/Data/ov000/data_ov000_02182ae4.cpp:
+    complete
+    .rodata start:0x02182ae4 end:0x02182af4
+
+src/Data/ov000/data_ov000_02182af4.cpp:
+    complete
+    .rodata start:0x02182af4 end:0x02182b04
+
+src/Data/ov000/data_ov000_02182b04.cpp:
+    complete
+    .rodata start:0x02182b04 end:0x02182b14
+
+src/Data/ov000/data_ov000_02182b14.cpp:
+    complete
+    .rodata start:0x02182b14 end:0x02182b24
+
+src/Data/ov000/data_ov000_02182b24.cpp:
+    complete
+    .rodata start:0x02182b24 end:0x02182b34
+
+src/Data/ov000/data_ov000_02182b44.cpp:
+    complete
+    .rodata start:0x02182b44 end:0x02182b54
+
+src/Data/ov000/data_ov000_02182b54.cpp:
+    complete
+    .rodata start:0x02182b54 end:0x02182b64
+
+src/Data/ov000/data_ov000_02182b64.cpp:
+    complete
+    .rodata start:0x02182b64 end:0x02182b74
+
+src/Data/ov000/data_ov000_02182b74.cpp:
+    complete
+    .rodata start:0x02182b74 end:0x02182b84
+
+src/Data/ov000/data_ov000_02182b84.cpp:
+    complete
+    .rodata start:0x02182b84 end:0x02182b94
+
+src/Data/ov000/data_ov000_02182b94.cpp:
+    complete
+    .rodata start:0x02182b94 end:0x02182ba4
+
+src/Data/ov000/data_ov000_02182ba4.cpp:
+    complete
+    .rodata start:0x02182ba4 end:0x02182bb4
+
+src/Data/ov000/data_ov000_02182bb4.cpp:
+    complete
+    .rodata start:0x02182bb4 end:0x02182bc4
+
+src/Data/ov000/data_ov000_02182bc4.cpp:
+    complete
+    .rodata start:0x02182bc4 end:0x02182bd4
+
+src/Data/ov000/data_ov000_02182be4.cpp:
+    complete
+    .rodata start:0x02182be4 end:0x02182bf4
+
+src/Data/ov000/data_ov000_02182c14.cpp:
+    complete
+    .rodata start:0x02182c14 end:0x02182c24
+
+src/Data/ov000/data_ov000_02182c24.cpp:
+    complete
+    .rodata start:0x02182c24 end:0x02182c34
+
+src/Data/ov000/data_ov000_02182c34.cpp:
+    complete
+    .rodata start:0x02182c34 end:0x02182c44
+
+src/Data/ov000/data_ov000_02182c44.cpp:
+    complete
+    .rodata start:0x02182c44 end:0x02182c54
+
+src/Data/ov000/data_ov000_02182c54.cpp:
+    complete
+    .rodata start:0x02182c54 end:0x02182c64
+
+src/Data/ov000/data_ov000_02182c64.cpp:
+    complete
+    .rodata start:0x02182c64 end:0x02182c74
+
+src/Data/ov000/data_ov000_02182c74.cpp:
+    complete
+    .rodata start:0x02182c74 end:0x02182c84
+
+src/Data/ov000/data_ov000_02182c84.cpp:
+    complete
+    .rodata start:0x02182c84 end:0x02182c94
+
+src/Data/ov000/data_ov000_02182c94.cpp:
+    complete
+    .rodata start:0x02182c94 end:0x02182ca4
+
+src/Data/ov000/data_ov000_02182cb4.cpp:
+    complete
+    .rodata start:0x02182cb4 end:0x02182cd4
+
+src/Data/ov000/data_ov000_02182cd4.cpp:
+    complete
+    .rodata start:0x02182cd4 end:0x02182cf4
+
+src/Data/ov000/data_ov000_02182cf4.cpp:
+    complete
+    .rodata start:0x02182cf4 end:0x02182d14
+
+src/Data/ov000/data_ov000_02182d14.cpp:
+    complete
+    .rodata start:0x02182d14 end:0x02182d34
+
+src/Data/ov000/data_ov000_02182d34.cpp:
+    complete
+    .rodata start:0x02182d34 end:0x02182d54
+
+src/Data/ov000/data_ov000_02183b5c.cpp:
+    complete
+    .data start:0x02183b5c end:0x02183fbc
+
+src/Data/ov000/data_ov000_0218409c.cpp:
+    complete
+    .data start:0x0218409c end:0x02184184
+
+src/Data/ov000/data_ov000_021830b4.cpp:
+    complete
+    .rodata start:0x021830b4 end:0x021830c0
+
+src/Data/ov000/data_ov000_021830c0.cpp:
+    complete
+    .rodata start:0x021830c0 end:0x021830cc
+
+src/Data/ov000/data_ov000_021830cc.cpp:
+    complete
+    .rodata start:0x021830cc end:0x021830d8
+
+src/Data/ov000/data_ov000_021830d8.cpp:
+    complete
+    .rodata start:0x021830d8 end:0x021830e4
+
+src/Data/ov000/data_ov000_021830e4.cpp:
+    complete
+    .rodata start:0x021830e4 end:0x021830f0
+
+src/Data/ov000/data_ov000_021830f0.cpp:
+    complete
+    .rodata start:0x021830f0 end:0x021830fc
+
+src/Data/ov000/data_ov000_021830fc.cpp:
+    complete
+    .rodata start:0x021830fc end:0x02183108
+
+src/Data/ov000/data_ov000_02183274.cpp:
+    complete
+    .rodata start:0x02183274 end:0x02183280
+
+src/Data/ov000/data_ov000_02183280.cpp:
+    complete
+    .rodata start:0x02183280 end:0x0218328c
+
+src/Data/ov000/data_ov000_0218328c.cpp:
+    complete
+    .rodata start:0x0218328c end:0x02183298
+
+src/Data/ov000/data_ov000_02183298.cpp:
+    complete
+    .rodata start:0x02183298 end:0x021832a4
+
+src/Data/ov000/data_ov000_02182ad4.cpp:
+    complete
+    .rodata start:0x02182ad4 end:0x02182ae4
+
+src/Data/ov000/data_ov000_02182bd4.cpp:
+    complete
+    .rodata start:0x02182bd4 end:0x02182be4
+
+src/Data/ov000/data_ov000_021838c8.cpp:
+    complete
+    .data start:0x021838c8 end:0x021838d8
+
+src/Data/ov000/data_ov000_021838e8.cpp:
+    complete
+    .data start:0x021838e8 end:0x021838fc
+
+src/Data/ov000/data_ov000_02183b0c.cpp:
+    complete
+    .data start:0x02183b0c end:0x02183b20
+
+src/Data/ov000/data_ov000_02183910.cpp:
+    complete
+    .data start:0x02183910 end:0x02183960
+
+src/Unclassified/ov000/OV000_ReadWordFieldEA4.cpp:
+    complete
+    .text start:0x02163524 end:0x0216352c
+
+src/Unclassified/ov000/ClearCurrentIndexedRecord.cpp:
+    complete
+    .text start:0x0215e958 end:0x0215e9b8
+
+src/Unclassified/ov000/ClassifyField81FE.cpp:
+    complete
+    .text start:0x0215fc60 end:0x0215fc8c
+
+src/Unclassified/ov000/TestSplitWordBit.cpp:
+    complete
+    .text start:0x0215fd90 end:0x0215fe00
+
+src/Unclassified/ov000/InitializeInvalidIndexRecord.cpp:
+    complete
+    .text start:0x02160030 end:0x02160068
+
+src/Unclassified/ov000/SetPendingFieldEA8.cpp:
+    complete
+    .text start:0x02160d80 end:0x02160da0
+
+src/Unclassified/ov000/GetEmbeddedFieldC18.cpp:
+    complete
+    .text start:0x02160f14 end:0x02160f20
+
+src/Unclassified/ov000/EnableField55F4Bits.cpp:
+    complete
+    .text start:0x02160fa8 end:0x02160fbc
+
+src/Unclassified/ov000/BuildStaggeredGridNeighborIndices.cpp:
+    complete
+    .text start:0x0216f82c end:0x0216fcfc
+
+src/Unclassified/ov000/FindRecordByTwelveBitIdentifier.cpp:
+    complete
+    .text start:0x02170cf8 end:0x02170db0
+
+src/Unclassified/ov000/FindIndexedGameStateObjectWithFlag400.cpp:
+    complete
+    .text start:0x021536f8 end:0x02153710
+
+src/Unclassified/ov000/ReadPartyObjectWord150.cpp:
+    complete
+    .text start:0x02153710 end:0x02153758
+
+src/Unclassified/ov000/PopulateRecordFromDescriptorFields.cpp:
+    complete
+    .text start:0x0215ccbc end:0x0215cd44
+
+src/Unclassified/ov000/AppendNodeToIndexedList.cpp:
+    complete
+    .text start:0x0215ffc4 end:0x0215fff4
+
+src/Unclassified/ov000/ReadIndexedListNode.cpp:
+    complete
+    .text start:0x0215fff4 end:0x02160030
+
+src/Unclassified/ov000/AppendNodeToOffset30List.cpp:
+    complete
+    .text start:0x02160068 end:0x02160094
+
+src/Unclassified/ov000/GetEmbeddedRegionAtOffset3760.cpp:
+    complete
+    .text start:0x02160f08 end:0x02160f14
+
+src/Unclassified/ov000/ComputeGridIndexCoordinatePair.cpp:
+    complete
+    .text start:0x0216f74c end:0x0216f82c
+
+src/Unclassified/ov000/ClassifyRatioAtThresholds.cpp:
+    complete
+    .text start:0x02170c7c end:0x02170cf8
+
+src/Unclassified/ov000/DispatchCombatSelectionProcedure.cpp:
+    complete
+    .text start:0x021820bc end:0x021820fc
+
+src/Unclassified/ov000/TestIndexedObjectPackedMode.cpp:
+    complete
+    .text start:0x02156068 end:0x02156118
+
+src/Unclassified/ov000/SetBitInTwoWordMask.cpp:
+    complete
+    .text start:0x02159eac end:0x02159f18
+
+src/Unclassified/ov000/IncrementByteCounterWithSpecialIndex.cpp:
+    complete
+    .text start:0x0215a8d4 end:0x0215a908
+
+src/Unclassified/ov000/AppendNodeAtOffset20AndIncrementCount.cpp:
+    complete
+    .text start:0x021600cc end:0x021600f8
+
+src/Unclassified/ov000/FindIndexedRecordMatchingCurrentKey.cpp:
+    complete
+    .text start:0x0217f8c0 end:0x0217f910
+
+src/Unclassified/ov000/AppendLinkedEntryAndIncrementCount.cpp:
+    complete
+    .text start:0x0215fe84 end:0x0215feb4
+
+src/Unclassified/ov000/ResolveOverrideOrIndexedRecord.cpp:
+    complete
+    .text start:0x02160f20 end:0x02160f60
+
+src/Unclassified/ov000/ReadMaskedFlagsAt55F4.cpp:
+    complete
+    .text start:0x02160fd4 end:0x02160fe4
+
+src/Unclassified/ov000/FindFourSlotRecordByIndex.cpp:
+    complete
+    .text start:0x02161318 end:0x02161380
+
+src/Unclassified/ov000/IsStateAt118EqualTwo.cpp:
+    complete
+    .text start:0x0217542c end:0x02175440
+
+src/Unclassified/ov000/CollectEnabledEightEntryIds.cpp:
+    complete
+    .text start:0x0215ec1c end:0x0215ec80
+
+src/Unclassified/ov000/TestNestedRecordFlag200.cpp:
+    complete
+    .text start:0x02153a8c end:0x02153aa4
+
+src/Unclassified/ov000/TestNestedRecordFlag2000.cpp:
+    complete
+    .text start:0x02153c0c end:0x02153c24
+
+src/Unclassified/ov000/GetSelectedThirtySixByteRecord.cpp:
+    complete
+    .text start:0x0215e938 end:0x0215e958
+
+src/Unclassified/ov000/ReadHalfwordByClampedByteSelector.cpp:
+    complete
+    .text start:0x0215ffa0 end:0x0215ffc4
+
+src/Unclassified/ov000/TestFourWord28Flags.cpp:
+    complete
+    .text start:0x021719f8 end:0x02171a60
+
+src/Unclassified/ov000/GetSelectedRecord52.cpp:
+    complete
+    .text start:0x0215e918 end:0x0215e938
+
+src/Unclassified/ov000/GetSelectedRecord40.cpp:
+    complete
+    .text start:0x0215e9d8 end:0x0215e9fc
+
+src/Unclassified/ov000/GetPrimaryLinkedRecordByIndex.cpp:
+    complete
+    .text start:0x02160094 end:0x021600cc
+
+src/Unclassified/ov000/GetSecondaryLinkedRecordByIndex.cpp:
+    complete
+    .text start:0x021600f8 end:0x02160130
+
+src/Unclassified/ov000/TestLinkedRecordFlag20.cpp:
+    complete
+    .text start:0x021543f4 end:0x0215440c
+
+src/Unclassified/ov000/InitializeInvalidHalfwordRecord.cpp:
+    complete
+    .text start:0x02157cdc end:0x02157d14
+
+src/Unclassified/ov000/AddClampedLinkedHalfwordValue.cpp:
+    complete
+    .text start:0x0215a16c end:0x0215a1d4
+
+src/Unclassified/ov000/ReadOverlayControlSecondWord.cpp:
+    complete
+    .text start:0x02160130 end:0x02160140
+
+src/Unclassified/ov000/AdvanceDelayThenTestRecordInput.cpp:
+    complete
+    .text start:0x0217c594 end:0x0217c5f4
+
+src/Unclassified/ov000/TestNestedFlags8000At13814.cpp:
+	complete
+	.text start:0x02159994 end:0x021599ac
+
+src/Unclassified/ov000/TestNestedFlags10000At13814.cpp:
+	complete
+	.text start:0x021599ac end:0x021599c4
+
+src/Unclassified/ov000/TestNestedFlags20000At13814.cpp:
+	complete
+	.text start:0x021599c4 end:0x021599dc
+
+src/Unclassified/ov000/ClearByteHalfwordAndWordFields.cpp:
+	complete
+	.text start:0x021620d8 end:0x021620f0
+
+src/Unclassified/ov000/SetByteAt5901AndFlag8000At55F4.cpp:
+	complete
+	.text start:0x02163404 end:0x0216341c
+
+src/Unclassified/ov000/StoreThreeArgumentWords.cpp:
+	complete
+	.text start:0x02167b54 end:0x02167b5c
+
+src/Unclassified/ov000/ReadByteAtOffset445.cpp:
+	complete
+	.text start:0x0217f5dc end:0x0217f5e4
+
+src/Unclassified/ov000/ClearFiveWordAndHalfwordRecordFields.cpp:
+    complete
+    .text start:0x02169a40 end:0x02169a58
+
+src/Unclassified/ov000/ClearRecordFlag445.cpp:
+    complete
+    .text start:0x0217f5d0 end:0x0217f5dc
+
+src/Unclassified/ov000/ClearThreeByteAndHalfwordRecordFields.cpp:
+    complete
+    .text start:0x021820fc end:0x02182114
+
+src/Unclassified/ov000/SetThreeCombatantHalfwordFields.cpp:
+    complete
+    .text start:0x0215fa70 end:0x0215fa84
+
+src/Unclassified/ov000/SetThreeRecordHalfwordFields.cpp:
+    complete
+    .text start:0x02163440 end:0x02163454
+
+src/Unclassified/ov000/StoreWordThroughOptionalNestedPointer.cpp:
+    complete
+    .text start:0x02165480 end:0x02165490
+
+src/Unclassified/ov000/HasObjectFlag02000000.cpp:
+    complete
+    .text start:0x021563ec end:0x02156404
+
+src/Unclassified/ov000/HasObjectFlag100.cpp:
+    complete
+    .text start:0x0215985c end:0x02159874
+
+src/Unclassified/ov000/HasNestedObjectFlag04.cpp:
+    complete
+    .text start:0x02159904 end:0x0215991c
+
+src/Unclassified/ov000/HasNestedField138Flag1000At18.cpp:
+	complete
+	.text start:0x02155154 end:0x0215516C
+
+src/Unclassified/ov000/HasNestedField138Flag08000000At14.cpp:
+	complete
+	.text start:0x0215516C end:0x02155184
+
+src/Unclassified/ov000/HasNestedField138Flag40At18.cpp:
+	complete
+	.text start:0x02156B08 end:0x02156B20
+
+src/Unclassified/ov000/HasNestedField138Flag00400000At14.cpp:
+	complete
+	.text start:0x021598D4 end:0x021598EC
+
+src/Unclassified/ov000/FindEntryBySignedHalfwordInFourSlotTable.cpp:
+	complete
+	.text start:0x02162D88 end:0x02162DC4
+
+src/Unclassified/ov000/HasNestedFlag10.cpp:
+	complete
+	.text start:0x02156cac end:0x02156cc4
+
+src/Unclassified/ov000/HasNestedFlag28.cpp:
+	complete
+	.text start:0x0215988c end:0x021598a4
+
+src/Unclassified/ov000/ClearSelectedPersistentFlags.cpp:
+	complete
+	.text start:0x02160fbc end:0x02160fd4
+
+src/Unclassified/ov000/GetIndexedFieldA4.cpp:
+	complete
+	.text start:0x0217199c end:0x021719c0
+
+src/Unclassified/ov000/TestNestedStateWordBit0.cpp:
+    complete
+    .text start:0x02156258 end:0x02156270
+
+src/Unclassified/ov000/TestNestedStateWordBit31.cpp:
+    complete
+    .text start:0x02158324 end:0x0215833c
+
+src/Unclassified/ov000/GetIndexedWordAtFixedOffset.cpp:
+    complete
+    .text start:0x021761ec end:0x02176210
+
+src/Unclassified/ov000/TestIndexedFlagBit.cpp:
+    complete
+    .text start:0x0217c4e8 end:0x0217c514
+
+src/Unclassified/ov000/ReadSignedIndexedByte.cpp:
+    complete
+    .text start:0x021815c8 end:0x021815e4
+
+src/Unclassified/ov000/ClearStateBytesAndWord.cpp:
+    complete
+    .text start:0x0215cd80 end:0x0215cda0
+
+src/Unclassified/ov000/FindValueInLinkedHalfwordLists.cpp:
+    complete
+    .text start:0x02169a58 end:0x02169aa4
+
+src/Unclassified/ov000/CountNonzeroIndexedWords.cpp:
+    complete
+    .text start:0x021719c0 end:0x021719f8
+
+src/Unclassified/ov000/UpdateIndexedStatusFields.cpp:
+    complete
+    .text start:0x02182498 end:0x021824d8
+
+src/Unclassified/ov000/TestNestedField18Bit800.cpp:
+	complete
+	.text start:0x02156af0 end:0x02156b08
+
+src/Unclassified/ov000/TestNestedField14Bit40.cpp:
+	complete
+	.text start:0x02156b20 end:0x02156b38
+
+src/Unclassified/ov000/TestNestedField14Bit04000000.cpp:
+	complete
+	.text start:0x021598bc end:0x021598d4
+
+src/Unclassified/ov000/IsOneOfFourOverlayCodes.cpp:
+	complete
+	.text start:0x02163690 end:0x021636ac
+
+src/Unclassified/ov000/ReadWordForIndexBelow66.cpp:
+	complete
+	.text start:0x02171674 end:0x02171698
+
+src/Combat/ov000/func_ov000_0216a350.cpp:
+    complete
+    .text start:0x0216a350 end:0x0216a364
+
+src/Combat/ov000/func_ov000_0216a55c.cpp:
+    complete
+    .text start:0x0216a55c end:0x0216a570
+
+src/Combat/ov000/func_ov000_0216a934.cpp:
+    complete
+    .text start:0x0216a934 end:0x0216a948
+
+src/Combat/ov000/func_ov000_0216a948.cpp:
+    complete
+    .text start:0x0216a948 end:0x0216a95c
+
+src/Combat/ov000/CombatScript_InvokeHandler02169bb4With1F.cpp:
+    complete
+    .text start:0x0216ac68 end:0x0216ac7c
+
+src/Combat/ov000/CombatScript_InvokeHandler02169bb4With20.cpp:
+    complete
+    .text start:0x0216ac7c end:0x0216ac90
+
+src/Combat/ov000/CombatScript_IgnoreOpcodeAndReturnTrue.cpp:
+    complete
+    .text start:0x0216a428 end:0x0216a430
+
+src/Unclassified/ov000/func_ov000_02163778.cpp:
+    complete
+    .text start:0x02163778 end:0x0216377c
+
+src/Unclassified/ov000/func_ov000_02169d00.cpp:
+    complete
+    .text start:0x02169d00 end:0x02169d08
+
+src/Unclassified/ov000/func_ov000_0216a420.cpp:
+    complete
+    .text start:0x0216a420 end:0x0216a428
+
+src/Unclassified/ov000/func_ov000_0216a430.cpp:
+    complete
+    .text start:0x0216a430 end:0x0216a438
+
+src/Unclassified/ov000/func_ov000_0216a4c0.cpp:
+    complete
+    .text start:0x0216a4c0 end:0x0216a4c8
+
+src/Unclassified/ov000/func_ov000_02163338.cpp:
+    complete
+    .text start:0x02163338 end:0x02163344
+
+src/Unclassified/ov000/func_ov000_02168720.cpp:
+    complete
+    .text start:0x02168720 end:0x0216872c
+
+src/Unclassified/ov000/func_ov000_02160f9c.cpp:
+    complete
+    .text start:0x02160f9c end:0x02160fa8
+
+src/Util/ov000/func_ov000_0215faa4.cpp:
+    complete
+    .text start:0x0215faa4 end:0x0215fab0
+
+src/World/ov000/func_ov000_02163b90.cpp:
+    complete
+    .text start:0x02163b90 end:0x02163c0c
+
+src/Unclassified/ov000/func_ov000_021637c8.cpp:
+    complete
+    .text start:0x021637c8 end:0x021637fc
+
+src/Unclassified/ov000/func_ov000_02163344.cpp:
+    complete
+    .text start:0x02163344 end:0x02163378
+
+src/Unclassified/ov000/func_ov000_02171968.cpp:
+    complete
+    .text start:0x02171968 end:0x0217199c
+
+src/Util/ov000/Util_GetRandomizedTableByte.cpp:
+    complete
+    .text start:0x0215fbe0 end:0x0215fc60
+
+src/GameState/ov000/GameState_AddLinkedObjectCategoryBit.cpp:
+    complete
+    .text start:0x0217c514 end:0x0217c594
+
+src/GameState/ov000/GameState_HasIndexedRecordFlagOne.cpp:
+    complete
+    .text start:0x0217fe30 end:0x0217feb0
+
+src/Graphics/ov000/Graphics_SetDisplayControlFields.cpp:
+    complete
+    .text start:0x02172944 end:0x02172978
+
+src/Graphics/ov000/Graphics_SetBg1ControlFields.cpp:
+    complete
+    .text start:0x02172978 end:0x021729ac
+
+src/Graphics/ov000/Text_AppendSixObjectRecordLabels.cpp:
+    complete
+    .text start:0x02176500 end:0x02176634
+
+src/Combat/ov000/Combat_ComputeObjectAttributeWeight.cpp:
+    complete
+    .text start:0x02156118 end:0x02156258
+
+src/Unclassified/ov000/func_ov000_02161264.cpp:
+    complete
+    .text start:0x02161264 end:0x02161274
+
+src/Unclassified/ov000/func_ov000_0216fcfc.cpp:
+    complete
+    .text start:0x0216fcfc end:0x0216fd0c
+
+src/Unclassified/ov000/func_ov000_02174504.cpp:
+    complete
+    .text start:0x02174504 end:0x02174514
+
+src/Unclassified/ov000/func_ov000_0216872c.cpp:
+    complete
+    .text start:0x0216872c end:0x0216873c
+
+src/Unclassified/ov000/func_ov000_021820ac.cpp:
+    complete
+    .text start:0x021820ac end:0x021820bc
+
+src/GameState/ov000/Ov000_SetPointerAtOffset4.cpp:
+    complete
+    .text start:0x021744f4 end:0x02174504
+
+src/GameState/ov000/GameState_UpdateFourSlotRecord.cpp:
+    complete
+    .text start:0x02162b90 end:0x02162c14
+
+src/Unclassified/ov000/ResetRecordDefaults.cpp:
+    complete
+    .text start:0x0216fe9c end:0x0216ff20
+
+src/Unclassified/ov000/func_ov000_02171a60.cpp:
+    complete
+    .text start:0x02171a60 end:0x02171a74
+
+src/System/ov000/System_ResetReadPairAndRemoveGlobalLock.cpp:
+    complete
+    .text start:0x0216638c end:0x021663a0
+
+src/Unclassified/ov000/func_ov000_02181f4c.cpp:
+    complete
+    .text start:0x02181f4c end:0x02181f60
+
+src/Unclassified/ov000/func_ov000_02180b3c.cpp:
+    complete
+    .text start:0x02180b3c end:0x02180b50
+
+src/Unclassified/ov000/func_ov000_0216f0bc.cpp:
+    complete
+    .text start:0x0216f0bc end:0x0216f0d0
+
+src/Unclassified/ov000/func_ov000_02181f60.cpp:
+    complete
+    .text start:0x02181f60 end:0x02181f74
+
+src/Unclassified/ov000/func_ov000_02181f9c.cpp:
+    complete
+    .text start:0x02181f9c end:0x02181fb0
+
+src/Unclassified/ov000/func_ov000_02181fc4.cpp:
+    complete
+    .text start:0x02181fc4 end:0x02181fd8
+
+src/Unclassified/ov000/func_ov000_02181f74.cpp:
+    complete
+    .text start:0x02181f74 end:0x02181f88
+
+src/Unclassified/ov000/Ov000_ForwardThirdArgWithMode3.cpp:
+    complete
+    .text start:0x02181f88 end:0x02181f9c
+
+src/Unclassified/ov000/func_ov000_02181fd8.cpp:
+    complete
+    .text start:0x02181fd8 end:0x02181fec
+
+src/Unclassified/ov000/func_ov000_02181fb0.cpp:
+    complete
+    .text start:0x02181fb0 end:0x02181fc4
+
+src/GameState/ov000/ClearThreeByteAndHalfwordRecordFieldsAtOffset6E8.cpp:
+    complete
+    .text start:0x02182a44 end:0x02182a58
+
+src/Graphics/ov000/Text_AppendIndexedObjectNames.cpp:
+    complete
+    .text start:0x02177d04 end:0x02177e50
+
+src/Util/ov000/Util_TestSelectedSplitWordFlags.cpp:
+    complete
+    .text start:0x02159f7c end:0x0215a004
+
+src/Unclassified/ov000/func_ov000_02171698.cpp:
+    complete
+    .text start:0x02171698 end:0x021716d0
+
+src/Util/ov000/Util_GetListNodeAtIndex.cpp:
+    complete
+    .text start:0x0215fe2c end:0x0215fe64
+
+src/World/ov000/ResetZoneContainerRenderParts.cpp:
+    complete
+    .text start:0x02182114 end:0x0218214c
+
+src/Resource/ov000/Overlay_CopyIndexedEntryValueIfPresent.cpp:
+    complete
+    .text start:0x02181990 end:0x021819c8
+
+src/World/ov000/ZoneContainer_ResetRenderParts.cpp:
+    complete
+    .text start:0x021823a4 end:0x021823dc
+
+src/GameState/ov000/func_ov000_02176054.cpp:
+    complete
+    .text start:0x02176054 end:0x0217608c
+
+src/Unclassified/ov000/func_ov000_02171640.cpp:
+    complete
+    .text start:0x02171640 end:0x02171674
+
+src/Unclassified/ov000/func_ov000_02156050.cpp:
+    complete
+    .text start:0x02156050 end:0x02156068
+
+src/GameState/ov000/Ov000_TestNestedFlagBit3.cpp:
+    complete
+    .text start:0x02156c94 end:0x02156cac
+
+src/Unclassified/ov000/func_ov000_0215830c.cpp:
+    complete
+    .text start:0x0215830c end:0x02158324
+
+src/GameState/ov000/HasBit3AtNestedOffset14From138.cpp:
+    complete
+    .text start:0x02156038 end:0x02156050
+
+src/Unclassified/ov000/func_ov000_02156404.cpp:
+    complete
+    .text start:0x02156404 end:0x0215641c
+
+src/Unclassified/ov000/func_ov000_021598a4.cpp:
+    complete
+    .text start:0x021598a4 end:0x021598bc
+
+src/GameState/ov000/GameState_IsFlagBit23Set.cpp:
+    complete
+    .text start:0x02157cc4 end:0x02157cdc
+
+src/GameState/ov000/Ov000_TestNestedFlagBit1.cpp:
+    complete
+    .text start:0x021598ec end:0x02159904
+
+src/Unclassified/ov000/func_ov000_02159874.cpp:
+    complete
+    .text start:0x02159874 end:0x0215988c
+
+src/Unclassified/ov000/func_ov000_0215997c.cpp:
+    complete
+    .text start:0x0215997c end:0x02159994
+
+src/Unclassified/ov000/func_ov000_02159934.cpp:
+    complete
+    .text start:0x02159934 end:0x0215994c
+
+src/Unclassified/ov000/func_ov000_0215991c.cpp:
+    complete
+    .text start:0x0215991c end:0x02159934
+
+src/Combat/ov000/Ov000_TestNestedFlagBit8.cpp:
+    complete
+    .text start:0x021599dc end:0x021599f4
+
+src/Unclassified/ov000/func_ov000_02159964.cpp:
+    complete
+    .text start:0x02159964 end:0x0215997c
+
+src/GameState/ov000/HasBit12AtNestedOffset14From138.cpp:
+    complete
+    .text start:0x0215994c end:0x02159964
+
+src/Unclassified/ov000/func_ov000_02174a38.cpp:
+    complete
+    .text start:0x02174a38 end:0x02174a50
+
+src/Memory/ov000/Memory_ClearThreeHalfwords.cpp:
+    complete
+    .text start:0x02163454 end:0x0216346c
+
+src/Unclassified/ov000/Ov000_ForwardSecondThirdWithZeroes.cpp:
+    complete
+    .text start:0x02181fec end:0x02182004
+
+src/Unclassified/ov000/Ov000_ForwardSecondThirdWithMode2Flag1.cpp:
+    complete
+    .text start:0x0218207c end:0x02182094
+
+src/Unclassified/ov000/func_ov000_02182034.cpp:
+    complete
+    .text start:0x02182034 end:0x0218204c
+
+src/Unclassified/ov000/func_ov000_0218204c.cpp:
+    complete
+    .text start:0x0218204c end:0x02182064
+
+src/Unclassified/ov000/func_ov000_02174e1c.cpp:
+    complete
+    .text start:0x02174e1c end:0x02174e34
+
+src/Unclassified/ov000/func_ov000_02182004.cpp:
+    complete
+    .text start:0x02182004 end:0x0218201c
+
+src/Unclassified/ov000/func_ov000_0218201c.cpp:
+    complete
+    .text start:0x0218201c end:0x02182034
+
+src/Unclassified/ov000/func_ov000_02182064.cpp:
+    complete
+    .text start:0x02182064 end:0x0218207c
+
+src/Unclassified/ov000/Ov000_ForwardSecondThirdWithMode3Flag1.cpp:
+    complete
+    .text start:0x02182094 end:0x021820ac
+
+src/Util/ov000/Util_GetNestedListNodeAtIndex.cpp:
+    complete
+    .text start:0x0215feb4 end:0x0215fef0
+
+src/GameState/ov000/FindSetFlagIndexByOrdinal.cpp:
+    complete
+    .text start:0x0218158c end:0x021815c8
+
+src/Graphics/ov000/Text_AppendSelectionPageEntries.cpp:
+    complete
+    .text start:0x0217936c end:0x021794cc
+
+src/GameState/ov000/GameState_MarkMatchingObjectAndBuildName.cpp:
+    complete
+    .text start:0x02161274 end:0x02161300
+
+src/Combat/ov000/Combat_UpdateSelectedObjectVisibility.cpp:
+    complete
+    .text start:0x021626a0 end:0x021627fc
+
+src/Resource/ov000/Resource_ReleaseObjectIndexedRecords.cpp:
+    complete
+    .text start:0x02181608 end:0x02181694
+
+src/GameState/ov000/GameState_CopyIndexedObjectHalfwordFields.cpp:
+    complete
+    .text start:0x021710ac end:0x02171138
+
+src/GameState/ov000/GameState_TestFlagD0RandomRoll.cpp:
+    complete
+    .text start:0x021564cc end:0x02156558
+
+src/Memory/ov000/Memory_InitializePoolsAndFortyTransformStates.cpp:
+    complete
+    .text start:0x02172128 end:0x0217228c
+
+src/GameState/ov000/GameState_UpdateFourAnimationCountdowns.cpp:
+    complete
+    .text start:0x02163928 end:0x021639b4
+
+src/Combat/ov000/Combat_ComputeClampedAttributeModifier.cpp:
+    complete
+    .text start:0x02156b38 end:0x02156c94
+
+src/GameState/ov000/GameState_CopyFourWordsAndSetFlag.cpp:
+    complete
+    .text start:0x02163378 end:0x021633b8
+
+src/GameState/ov000/func_ov000_02175440.cpp:
+    complete
+    .text start:0x02175440 end:0x02175480
+
+src/GameState/ov000/GameState_SetFourSlotRecordRelativeByteTo67.cpp:
+    complete
+    .text start:0x0218173c end:0x0218177c
+
+src/Graphics/ov000/DrawEightIndexedObjectsAndShadows.cpp:
+    complete
+    .text start:0x02161020 end:0x0216118c
+
+src/Unclassified/ov000/func_ov000_02168268.cpp:
+    complete
+    .text start:0x02168268 end:0x02168284
+
+src/Memory/ov000/Memory_CopyConstantBlock16.cpp:
+    complete
+    .text start:0x02174da4 end:0x02174dc0
+
+src/GameState/ov000/GameState_SetFourSlotRecordFlag2.cpp:
+    complete
+    .text start:0x021754e0 end:0x021754fc
+
+src/Unclassified/ov000/Object_CountEntriesWithPositiveHalfword18.cpp:
+    complete
+    .text start:0x02171bc0 end:0x02171c04
+
+src/Unclassified/ov000/func_ov000_0217f464.cpp:
+    complete
+    .text start:0x0217f464 end:0x0217f480
+
+src/Unclassified/ov000/ResetFourSixByteRecordsAndFlag.cpp:
+    complete
+    .text start:0x02168230 end:0x02168268
+
+src/Unclassified/ov000/func_ov000_02176038.cpp:
+    complete
+    .text start:0x02176038 end:0x02176054
+
+src/Unclassified/ov000/func_ov000_02181d4c.cpp:
+    complete
+    .text start:0x02181d4c end:0x02181d68
+
+src/Unclassified/ov000/func_ov000_02181d88.cpp:
+    complete
+    .text start:0x02181d88 end:0x02181da4
+
+src/GameState/ov000/GameState_ClassifyIndexedRecord.cpp:
+    complete
+    .text start:0x02174e34 end:0x02174e50
+
+src/Unclassified/ov000/func_ov000_02181da4.cpp:
+    complete
+    .text start:0x02181da4 end:0x02181dc0
+
+src/Unclassified/ov000/func_ov000_02181df8.cpp:
+    complete
+    .text start:0x02181df8 end:0x02181e14
+
+src/Unclassified/ov000/func_ov000_02181dc0.cpp:
+    complete
+    .text start:0x02181dc0 end:0x02181ddc
+
+src/Unclassified/ov000/func_ov000_02181e50.cpp:
+    complete
+    .text start:0x02181e50 end:0x02181e6c
+
+src/Unclassified/ov000/Object_SetIndexedEntryAndRefreshCount.cpp:
+    complete
+    .text start:0x02171b68 end:0x02171b9c
+
+src/GameState/ov000/Ov000_DecrementStateTimers.cpp:
+    complete
+    .text start:0x021824d8 end:0x0218251c
+
+src/Unclassified/ov000/func_ov000_02181ea4.cpp:
+    complete
+    .text start:0x02181ea4 end:0x02181ec0
+
+src/Unclassified/ov000/Ov000_ForwardSecondAndThirdWithMode0Index2.cpp:
+    complete
+    .text start:0x02181e6c end:0x02181e88
+
+src/Unclassified/ov000/func_ov000_02181ddc.cpp:
+    complete
+    .text start:0x02181ddc end:0x02181df8
+
+src/Unclassified/ov000/func_ov000_02181e88.cpp:
+    complete
+    .text start:0x02181e88 end:0x02181ea4
+
+src/Unclassified/ov000/func_ov000_02181ec0.cpp:
+    complete
+    .text start:0x02181ec0 end:0x02181edc
+
+src/Unclassified/ov000/func_ov000_02181f14.cpp:
+    complete
+    .text start:0x02181f14 end:0x02181f30
+
+src/Unclassified/ov000/func_ov000_02181edc.cpp:
+    complete
+    .text start:0x02181edc end:0x02181ef8
+
+src/Unclassified/ov000/func_ov000_02181e14.cpp:
+    complete
+    .text start:0x02181e14 end:0x02181e30
+
+src/Unclassified/ov000/Ov000_ForwardSecondAndThirdWithMode2Index1.cpp:
+    complete
+    .text start:0x02181f30 end:0x02181f4c
+
+src/GameState/ov000/Object_CountMatchesAtOffset1D1C.cpp:
+    complete
+    .text start:0x02175348 end:0x0217538c
+
+src/Unclassified/ov000/Object_InitializeNextRecordAndSetByte.cpp:
+    complete
+    .text start:0x02168644 end:0x0216867c
+
+src/Unclassified/ov000/func_ov000_02181ef8.cpp:
+    complete
+    .text start:0x02181ef8 end:0x02181f14
+
+src/GameState/ov000/GameState_SetEligiblePartySlotValue100.cpp:
+    complete
+    .text start:0x02175628 end:0x021756b8
+
+src/GameState/ov000/GameState_MarkFourSlotRecordByStoredIndex.cpp:
+    complete
+    .text start:0x0218142c end:0x021814bc
+
+src/Resource/ov000/Resource_InitializeThreeEntryCounts.cpp:
+    complete
+    .text start:0x0215d414 end:0x0215d588
+
+src/GameState/ov000/GameState_IsFieldEa8ValueSupported.cpp:
+    complete
+    .text start:0x0216265c end:0x021626a0
+
+src/GameState/ov000/func_ov000_0217608c.cpp:
+    complete
+    .text start:0x0217608c end:0x021760d4
+
+src/GameState/ov000/GameState_DecreaseCombatantFieldByIndex.cpp:
+    complete
+    .text start:0x0215a124 end:0x0215a16c
+
+src/GameState/ov000/CountFourSlotRecordsWithoutFlag.cpp:
+    complete
+    .text start:0x02175f80 end:0x02175fc8
+
+src/Filesystem/ov000/Ov000_IsBackgroundTaskComplete.cpp:
+    complete
+    .text start:0x0216fd38 end:0x0216fd80
+
+src/GameState/ov000/CopyEnabledIdsToWords.cpp:
+    complete
+    .text start:0x02181d04 end:0x02181d4c
+
+src/Unclassified/ov000/Unclassified_FindSentinelRecordAndWriteValues.cpp:
+    complete
+    .text start:0x0215fb54 end:0x0215fb9c
+
+src/GameState/ov000/GameState_AppendActiveObjectRecords.cpp:
+    complete
+    .text start:0x02171c04 end:0x02171d90
+
+src/Unclassified/ov000/func_ov000_0215fa84.cpp:
+    complete
+    .text start:0x0215fa84 end:0x0215faa4
+
+src/Util/ov000/Util_IncrementByteCounterWrapAt18.cpp:
+    complete
+    .text start:0x02161bec end:0x02161c0c
+
+src/Unclassified/ov000/func_ov000_0215e9b8.cpp:
+    complete
+    .text start:0x0215e9b8 end:0x0215e9d8
+
+src/GameState/ov000/GameState_SetFourSlotRecordByte43E.cpp:
+    complete
+    .text start:0x02162b70 end:0x02162b90
+
+src/Unclassified/ov000/Util_CallStateHandlerIfLastStackEntryIs3.cpp:
+    complete
+    .text start:0x02163d94 end:0x02163db4
+
+src/GameState/ov000/FilterAndCompactSignedObjectIndices.cpp:
+    complete
+    .text start:0x0217ee7c end:0x0217f00c
+
+src/System/ov000/System_CallStateFunctionWhenLastStackEntryIsThree.cpp:
+    complete
+    .text start:0x02163b40 end:0x02163b60
+
+src/Unclassified/ov000/func_ov000_0215ff80.cpp:
+    complete
+    .text start:0x0215ff80 end:0x0215ffa0
+
+src/Unclassified/ov000/EnableField55F4Bits2And4.cpp:
+    complete
+    .text start:0x02166e3c end:0x02166e5c
+
+src/GameState/ov000/GameState_ShuffleFourActiveIndices.cpp:
+    complete
+    .text start:0x02163894 end:0x02163928
+
+src/GameState/ov000/GameState_GetValidLinkedObjectIndex.cpp:
+    complete
+    .text start:0x021819c8 end:0x02181a5c
+
+src/Graphics/ov000/Graphics_ApplySelectedAndIndexedCombatantTransforms.cpp:
+    complete
+    .text start:0x02167dd8 end:0x02167e6c
+
+src/Unclassified/ov000/Object_GetHalfwordRatioAt138.cpp:
+    complete
+    .text start:0x02155a04 end:0x02155a50
+
+src/GameState/ov000/GameState_BuildIndexedNameBufferAndLoadRecord.cpp:
+    complete
+    .text start:0x02177cb8 end:0x02177d04
+
+src/GameState/ov000/func_ov000_021633b8.cpp:
+    complete
+    .text start:0x021633b8 end:0x02163404
+
+src/GameState/ov000/GameState_UpdateStoredProtagonistIndex.cpp:
+    complete
+    .text start:0x0216377c end:0x021637c8
+
+src/Combat/ov000/Combat_TestCriticalHitRoll.cpp:
+    complete
+    .text start:0x02156cc4 end:0x02156e30
+
+src/GameState/ov000/GameState_CalculateIndexedObjectWeightedValue.cpp:
+    complete
+    .text start:0x02156270 end:0x021563ec
+
+src/Resource/ov000/Resource_InitializeTextCommandState.cpp:
+    complete
+    .text start:0x0217f480 end:0x0217f518
+
+src/Util/ov000/Util_InitializeStateTwoAndFixedPointDefaults.cpp:
+    complete
+    .text start:0x0216d2d0 end:0x0216d368
+
+src/GameState/ov000/GameState_QueueFourSlotObjectCountdown.cpp:
+    complete
+    .text start:0x021637fc end:0x02163894
+
+src/GameState/ov000/GameState_CopyStateAndResetRandomStreams.cpp:
+    complete
+    .text start:0x021605d0 end:0x02160620
+
+src/GameState/ov000/GameState_UpdateSelectionIfEligible.cpp:
+    complete
+    .text start:0x02153cc0 end:0x02153d10
+
+src/Util/ov000/Util_ClearFlagForMatchingEntry.cpp:
+    complete
+    .text start:0x02167434 end:0x02167484
+
+src/Util/ov000/Object_AddUniquePositiveHalfword.cpp:
+    complete
+    .text start:0x0216fdf8 end:0x0216fe48
+
+src/GameState/ov000/GameState_MarkUnflaggedListedPartyRecords.cpp:
+    complete
+    .text start:0x021756b8 end:0x02175754
+
+src/Util/ov000/Util_ReplaceInactiveIndexWithRandomActiveRecord.cpp:
+    complete
+    .text start:0x02153c24 end:0x02153cc0
+
+src/Math/ov000/Math_BuildYUpBasisAndTranslation.cpp:
+    complete
+    .text start:0x0216d234 end:0x0216d2d0
+
+src/GameState/ov000/GameState_SetReadyFlagOnSlots.cpp:
+    complete
+    .text start:0x02181694 end:0x021816e8
+
+src/GameState/ov000/func_ov000_021816e8.cpp:
+    complete
+    .text start:0x021816e8 end:0x0218173c
+
+src/Combat/ov000/Combat_TestCombatantBlockingFlags.cpp:
+    complete
+    .text start:0x02155f9c end:0x02156038
+
+src/Unclassified/ov000/ClearSelectedRecordActiveBits.cpp:
+    complete
+    .text start:0x0217fcc4 end:0x0217fd60
+
+src/Combat/ov000/Combat_TestDescriptorAttributeRoll.cpp:
+    complete
+    .text start:0x02156e30 end:0x02156f98
+
+src/Combat/ov000/Combat_BuildRecordCompatibilityBitset.cpp:
+    complete
+    .text start:0x0217c32c end:0x0217c4e8
+
+src/GameState/ov000/func_ov000_02160c60.cpp:
+    complete
+    .text start:0x02160c60 end:0x02160c84
+
+src/Unclassified/ov000/func_ov000_0216341c.cpp:
+    complete
+    .text start:0x0216341c end:0x02163440
+
+src/Unclassified/ov000/Unclassified_FindLinkedListNodeByFirstWord.cpp:
+    complete
+    .text start:0x02169b54 end:0x02169b78
+
+src/Graphics/ov000/func_ov000_02170054.cpp:
+    complete
+    .text start:0x02170054 end:0x02170078
+
+src/GameState/ov000/GameState_GetIndexedWordIfValid.cpp:
+    complete
+    .text start:0x02171b9c end:0x02171bc0
+
+src/GameState/ov000/GameState_GetObjectPositionAndZoneRequest.cpp:
+    complete
+    .text start:0x021677d8 end:0x021677fc
+
+src/Unclassified/ov000/func_ov000_0216f1e4.cpp:
+    complete
+    .text start:0x0216f1e4 end:0x0216f208
+
+src/Unclassified/ov000/func_ov000_021815e4.cpp:
+    complete
+    .text start:0x021815e4 end:0x02181608
+
+src/Unclassified/ov000/Unclassified_GetPointerAtIndexOrDefaultZero.cpp:
+    complete
+    .text start:0x021761c8 end:0x021761ec
+
+src/Util/ov000/Util_CopyFourSlotRecordSummary.cpp:
+    complete
+    .text start:0x02162c14 end:0x02162c90
+
+src/Graphics/ov000/Graphics_FormatPagedRecordNamesWithStyle.cpp:
+    complete
+    .text start:0x0217979c end:0x0217992c
+
+src/GameState/ov000/func_ov000_0215fd24.cpp:
+    complete
+    .text start:0x0215fd24 end:0x0215fd7c
+
+src/GameState/ov000/func_ov000_02175754.cpp:
+    complete
+    .text start:0x02175754 end:0x021757ac
+
+src/Math/ov000/Math_ComputeThresholdedIntegerRatio.cpp:
+    complete
+    .text start:0x02167b5c end:0x02167bb4
+
+src/Graphics/ov000/Graphics_FormatAvailablePartyMemberChoices.cpp:
+    complete
+    .text start:0x021777e4 end:0x021779b4
+
+src/Combat/ov000/Combat_ResetSelectedCombatantComponentStates.cpp:
+    complete
+    .text start:0x02167f10 end:0x02167fb0
+
+src/GameState/ov000/Owner_ResetCacheAndLoadMatchingRecord.cpp:
+    complete
+    .text start:0x02177798 end:0x021777e4
+
+src/Graphics/ov000/UpdateMatrixFromIndexedObjectHeading.cpp:
+    complete
+    .text start:0x0216d560 end:0x0216d600
+
+src/Unclassified/ov000/Overlay_CopyConfiguredRecordHalfwords.cpp:
+    complete
+    .text start:0x0215ed34 end:0x0215ed8c
+
+src/Unclassified/ov000/IsOneOfSixAcceptedIds.cpp:
+    complete
+    .text start:0x02159c58 end:0x02159cb4
+
+src/GameState/ov000/AccumulateIndexedRecordFlags.cpp:
+    complete
+    .text start:0x0217fb98 end:0x0217fbf4
+
+src/Util/ov000/Util_FindLinkedNodeByWord.cpp:
+    complete
+    .text start:0x02169b04 end:0x02169b2c
+
+src/Util/ov000/Util_AppendNodeToLinkedListTail.cpp:
+    complete
+    .text start:0x02169b2c end:0x02169b54
+
+src/Graphics/ov000/Graphics_AllocateTexturePaletteSlots.cpp:
+    complete
+    .text start:0x0216733c end:0x021673e0
+
+src/GameState/ov000/GameState_GetIndexedObjectStateBits3And4.cpp:
+    complete
+    .text start:0x02159d94 end:0x02159dbc
+
+src/Util/ov000/Util_CopyLinkedListFieldToArray.cpp:
+    complete
+    .text start:0x02181c94 end:0x02181cbc
+
+src/Util/ov000/Util_CopyLinkedNodeHalfwordsToArray.cpp:
+    complete
+    .text start:0x02181c6c end:0x02181c94
+
+src/Network/ov000/Overlay_EnqueueLinkedNode.cpp:
+    complete
+    .text start:0x02169b78 end:0x02169bb4
+
+src/Resource/ov000/Script_QueueCopiedStringNode.cpp:
+    complete
+    .text start:0x0216ac90 end:0x0216ad0c
+
+src/Network/ov000/Network_AllocateAndEnqueueTypeNinetyFourNode.cpp:
+    complete
+    .text start:0x0216c28c end:0x0216c2c4
+
+src/Resource/ov000/Script_AllocateType4EIntegerEntry.cpp:
+    complete
+    .text start:0x0216bcac end:0x0216bcf0
+
+src/Combat/ov000/Combat_AllocateAndRegisterOwnerEntry.cpp:
+    complete
+    .text start:0x02169bb4 end:0x02169bf0
+
+src/Resource/ov000/AllocateScriptParameterRecord.cpp:
+    complete
+    .text start:0x0216a300 end:0x0216a350
+
+src/Resource/ov000/Script_AllocateAndQueueStringRecord.cpp:
+    complete
+    .text start:0x02169d08 end:0x02169e54
+
+src/Resource/ov000/Resource_AllocateType100ScriptCommand.cpp:
+    complete
+    .text start:0x0216c414 end:0x0216c490
+
+src/Resource/ov000/Script_QueueCommand37WithOptionalValues.cpp:
+    complete
+    .text start:0x0216b564 end:0x0216b6ac
+
+src/Resource/ov000/Script_AllocateTaggedHalfwordEntry.cpp:
+    complete
+    .text start:0x0216aad4 end:0x0216ab24
+
+src/Network/ov000/Network_AllocateAndEnqueueTypeNinetyTwoNode.cpp:
+    complete
+    .text start:0x0216c1ec end:0x0216c23c
+
+src/Resource/ov000/Script_AllocateTypedParameterEntry.cpp:
+    complete
+    .text start:0x0216c584 end:0x0216c5d4
+
+src/GameState/ov000/Script_AllocateTypeTwentyEightEntry.cpp:
+    complete
+    .text start:0x0216ab24 end:0x0216ab74
+
+src/Resource/ov000/Script_AllocateType39EntryFromParameter.cpp:
+    complete
+    .text start:0x0216adcc end:0x0216ae1c
+
+src/Resource/ov000/AllocateScriptIntegerRecord.cpp:
+    complete
+    .text start:0x0216c5d4 end:0x0216c624
+
+src/Resource/ov000/Script_AllocateTypeSevenHalfwordEntry.cpp:
+    complete
+    .text start:0x0216a018 end:0x0216a1a4
+
+src/Resource/ov000/Resource_ScriptAllocateAndSubmitType1DEntry.cpp:
+    complete
+    .text start:0x0216ab74 end:0x0216abc4
+
+src/Resource/ov000/Script_QueueIndexedFixedPointNode.cpp:
+    complete
+    .text start:0x0216a95c end:0x0216a9dc
+
+src/Resource/ov000/Resource_ScriptQueueType2BRecord.cpp:
+    complete
+    .text start:0x0216b088 end:0x0216b110
+
+src/Resource/ov000/Script_AllocateTaggedHalfwordEntry6E.cpp:
+    complete
+    .text start:0x0216c6d0 end:0x0216c720
+
+src/Resource/ov000/Script_AllocateBooleanParameterEntry.cpp:
+    complete
+    .text start:0x0216cc88 end:0x0216ccd8
+
+src/Network/ov000/Network_AllocateAndEnqueueTypeNinetyEightNode.cpp:
+    complete
+    .text start:0x0216c9ac end:0x0216c9fc
+
+src/Resource/ov000/Script_AllocateTypeFortySixRecordWithOptionalString.cpp:
+    complete
+    .text start:0x0216b180 end:0x0216b204
+
+src/Resource/ov000/Script_AllocateType40EntryFromParameterMinus26.cpp:
+    complete
+    .text start:0x0216ae1c end:0x0216ae70
+
+src/GameState/ov000/Script_AllocateTypeOneHundredThirtyTwoEntry.cpp:
+    complete
+    .text start:0x0216cf84 end:0x0216cfd4
+
+src/Resource/ov000/Script_AllocateType5DHalfwordEntry.cpp:
+    complete
+    .text start:0x0216c23c end:0x0216c28c
+
+src/Combat/ov000/CombatScript_InvokeHandler02169bb4With25.cpp:
+    complete
+    .text start:0x0216ada4 end:0x0216adb8
+
+src/Resource/ov000/AllocateScriptHalfwordRecord.cpp:
+    complete
+    .text start:0x0216b700 end:0x0216b754
+
+src/Resource/ov000/Resource_AllocateType115ScriptCommand.cpp:
+    complete
+    .text start:0x0216c85c end:0x0216c8e4
+
+src/Resource/ov000/Resource_ScriptAllocateAndSubmitType40Entry.cpp:
+    complete
+    .text start:0x0216b900 end:0x0216b954
+
+src/Resource/ov000/Script_AllocateCoordinateHalfwordEntry.cpp:
+    complete
+    .text start:0x0216b8ac end:0x0216b900
+
+src/Resource/ov000/Script_TryAllocateTypedParameterEntry.cpp:
+    complete
+    .text start:0x0216bc00 end:0x0216bc54
+
+src/Resource/ov000/Script_AllocateTaggedHalfwordEntry47.cpp:
+    complete
+    .text start:0x0216bb1c end:0x0216bb70
+
+src/Unclassified/ov000/Ov000_ApplyValue2DAndReturnOne.cpp:
+    complete
+    .text start:0x0216b16c end:0x0216b180
+
+src/Resource/ov000/Ov000_AllocateAndInitializeLinkedEntry.cpp:
+    complete
+    .text start:0x0216b6ac end:0x0216b700
+
+src/Network/ov000/Network_AllocateAndEnqueueTypeSixtySixNode.cpp:
+    complete
+    .text start:0x0216b9a8 end:0x0216ba00
+
+src/Resource/ov000/Resource_ScriptQueueType42VectorRecord.cpp:
+    complete
+    .text start:0x0216aed0 end:0x0216b088
+
+src/Resource/ov000/Script_AllocateType82ConditionalByteEntry.cpp:
+    complete
+    .text start:0x0216cf18 end:0x0216cf70
+
+src/Resource/ov000/Script_AllocateType84EntryFromFloatParameter.cpp:
+    complete
+    .text start:0x0216be00 end:0x0216be58
+
+src/GameState/ov000/Script_AllocateTypeOneHundredFourteenEntry.cpp:
+    complete
+    .text start:0x0216c804 end:0x0216c85c
+
+src/Resource/ov000/Script_QueueOpcode76FixedPointParameters.cpp:
+    complete
+    .text start:0x0216cad0 end:0x0216cc88
+
+src/Combat/ov000/CombatScript_InvokeHandler02169bb4With4B.cpp:
+    complete
+    .text start:0x0216bbec end:0x0216bc00
+
+src/Resource/ov000/Script_QueueFixedRadianCommand8C.cpp:
+    complete
+    .text start:0x0216d110 end:0x0216d19c
+
+src/Resource/ov000/Resource_ScriptQueueType1ERecord.cpp:
+    complete
+    .text start:0x0216abc4 end:0x0216ac68
+
+src/Unclassified/ov000/Ov000_ApplyValue67AndReturnOne.cpp:
+    complete
+    .text start:0x0216c500 end:0x0216c514
+
+src/Resource/ov000/Script_AllocateAndInitializeType48Record.cpp:
+    complete
+    .text start:0x0216bb70 end:0x0216bbc4
+
+src/Resource/ov000/AllocateScriptBytePairRecord.cpp:
+    complete
+    .text start:0x0216a8d8 end:0x0216a934
+
+src/Resource/ov000/Script_AllocateTaggedHalfwordIntEntry.cpp:
+    complete
+    .text start:0x0216c4a4 end:0x0216c500
+
+src/Resource/ov000/Resource_ScriptAllocateAndSubmitType34Entry.cpp:
+    complete
+    .text start:0x0216b408 end:0x0216b464
+
+src/Combat/ov000/CombatScript_InvokeHandler02169bb4With83.cpp:
+    complete
+    .text start:0x0216cf70 end:0x0216cf84
+
+src/Resource/ov000/Resource_AllocateScriptType44Entry.cpp:
+    complete
+    .text start:0x0216ba14 end:0x0216ba68
+
+src/Resource/ov000/Script_AllocateTwoHalfwordParameterEntry.cpp:
+    complete
+    .text start:0x0216c514 end:0x0216c570
+
+src/Unclassified/ov000/Ov000_ApplyValue87AndReturnOne.cpp:
+    complete
+    .text start:0x0216cffc end:0x0216d010
+
+src/Resource/ov000/Ov000_AllocateOptionalLinkedEntry.cpp:
+    complete
+    .text start:0x0216cdec end:0x0216ce48
+
+src/Resource/ov000/Script_AllocateType69EntryWithTwoIntegers.cpp:
+    complete
+    .text start:0x0216ba68 end:0x0216bac8
+
+src/Combat/ov000/CombatScript_InvokeHandler02169bb4With8D.cpp:
+    complete
+    .text start:0x0216d19c end:0x0216d1b0
+
+src/Resource/ov000/Script_AllocateTaggedByteAndHalfwordEntry.cpp:
+    complete
+    .text start:0x0216c624 end:0x0216c680
+
+src/Resource/ov000/Script_AllocateType29BytePairEntry.cpp:
+    complete
+    .text start:0x0216ae70 end:0x0216aed0
+
+src/Resource/ov000/Script_QueuePatchedStringNode.cpp:
+    complete
+    .text start:0x0216a4c8 end:0x0216a55c
+
+src/Unclassified/ov000/Util_CallFunctionWithConstant7E.cpp:
+    complete
+    .text start:0x0216ce48 end:0x0216ce5c
+
+src/Combat/ov000/Combat_ResetRecordPools.cpp:
+    complete
+    .text start:0x0215d090 end:0x0215d414
+
+src/Resource/ov000/Script_AllocateVectorAndThreeFixedPointScalars.cpp:
+    complete
+    .text start:0x0216bfa4 end:0x0216c04c
+
+src/Resource/ov000/Script_QueueTwoVectorCommand59.cpp:
+    complete
+    .text start:0x0216c04c end:0x0216c0f4
+
+src/Resource/ov000/Script_QueueOptionalStringNode.cpp:
+    complete
+    .text start:0x0216c144 end:0x0216c1ec
+
+src/Math/ov000/Math_ComputeCosineEasingFromHorizontalLength.cpp:
+    complete
+    .text start:0x0216f210 end:0x0216f2b8
+
+src/GameState/ov000/GameState_CollectPresentFourSlotPartyIndices.cpp:
+    complete
+    .text start:0x0217edd4 end:0x0217ee7c
+
+src/Combat/ov000/Combat_SelectPrioritizedStatusCode.cpp:
+    complete
+    .text start:0x0217ff34 end:0x02180394
+
+src/GameState/ov000/GameState_ResetExtendedStateAndRandomSeed.cpp:
+    complete
+    .text start:0x0215ce80 end:0x0215d090
+
+src/Filesystem/ov000/Filesystem_RemoveFailedTaskAndResetLoadState.cpp:
+    complete
+    .text start:0x02160e94 end:0x02160ef8
+
+src/Resource/ov000/AllocateScriptValueWithOptionalFlag.cpp:
+    complete
+    .text start:0x0216a1a4 end:0x0216a208
+
+src/Resource/ov000/Script_AllocateTaggedIntegerEntry3A.cpp:
+    complete
+    .text start:0x0216b754 end:0x0216b7b8
+
+src/Resource/ov000/AllocateScriptFixedPointRecord.cpp:
+    complete
+    .text start:0x0216ce5c end:0x0216cec0
+
+src/Filesystem/ov000/BackgroundLoader_RemoveFailedTaskAndResetOwnerState.cpp:
+    complete
+    .text start:0x02160de4 end:0x02160e48
+
+src/Resource/ov000/Script_AllocateScaledFloatParameterEntry.cpp:
+    complete
+    .text start:0x0216c7a0 end:0x0216c804
+
+src/Unclassified/ov000/Object_UpdateFourRecordType65Offsets.cpp:
+    complete
+    .text start:0x02174fc0 end:0x02175024
+
+src/Util/ov000/Util_AppendLinkedNodeAndIncrementCount.cpp:
+    complete
+    .text start:0x0215fe00 end:0x0215fe2c
+
+src/Resource/ov000/Resource_AllocateAndInitializeLinkedCoordinateEntry.cpp:
+    complete
+    .text start:0x02169e54 end:0x02169e80
+
+src/Unclassified/ov000/Util_ResetObjectStateFields.cpp:
+    complete
+    .text start:0x0216fe48 end:0x0216fe74
+
+src/World/ov000/World_GetObjectDimensionByMode.cpp:
+    complete
+    .text start:0x021635e4 end:0x02163690
+
+src/Memory/ov000/Memory_Clear66WordsAndHalfword.cpp:
+    complete
+    .text start:0x02171614 end:0x02171640
+
+src/GameState/ov000/GameState_ResetSelectedPartyMemberState.cpp:
+    complete
+    .text start:0x021674f4 end:0x021675a0
+
+src/Unclassified/ov000/Object_AddIndexedEntryAndLink.cpp:
+    complete
+    .text start:0x0215a88c end:0x0215a8d4
+
+src/GameState/ov000/GameState_ClearSixteenWordsAndByte86.cpp:
+    complete
+    .text start:0x02171b3c end:0x02171b68
+
+src/Resource/ov000/Script_AllocateTypeSeventyNineBitfieldRecord.cpp:
+    complete
+    .text start:0x0216bcf0 end:0x0216bd9c
+
+src/GameState/ov000/StoreValueAtIndexedField54F4ForIndex0To3.cpp:
+    complete
+    .text start:0x02162c90 end:0x02162cbc
+
+src/Filesystem/ov000/Filesystem_QueueLoadFileInGP2IntoOutput.cpp:
+    complete
+    .text start:0x0216fd0c end:0x0216fd38
+
+src/Combat/ov000/SelectWeightedEligibleCombatantIndex.cpp:
+    complete
+    .text start:0x02154f30 end:0x02155154
+
+src/GameState/ov000/GameState_ResetFlaggedEntriesOutsideSelectedOwner.cpp:
+    complete
+    .text start:0x021751ac end:0x02175258
+
+src/Combat/ov000/Combat_TestEffectSuccessAndConsumeWard.cpp:
+    complete
+    .text start:0x02156648 end:0x02156af0
+
+src/Combat/ov000/Combat_CopySecondaryLinkedRecords.cpp:
+    complete
+    .text start:0x0215b278 end:0x0215b5a0
+
+src/Combat/ov000/Combat_AppendCombatantDescriptorRecords.cpp:
+    complete
+    .text start:0x0215acb8 end:0x0215ae80
+
+src/Unclassified/ov000/Script_AllocateTaggedBytePairHalfwordEntry.cpp:
+    complete
+    .text start:0x0216b204 end:0x0216b26c
+
+src/GameState/ov000/Script_AllocateTypeNinetySevenEntry.cpp:
+    complete
+    .text start:0x0216c384 end:0x0216c3ec
+
+src/Resource/ov000/Ov000_AllocateConditionalLinkedEntry.cpp:
+    complete
+    .text start:0x0216d0a8 end:0x0216d110
+
+src/GameState/ov000/Overlay_TestResolvedRecordTransformState.cpp:
+    complete
+    .text start:0x021627fc end:0x02162864
+
+src/GameState/ov000/GameState_AddCombatantValueUpToMaximum.cpp:
+    complete
+    .text start:0x0215a1d4 end:0x0215a23c
+
+src/Resource/ov000/LoadOverlayHeaderAndReturnLength.cpp:
+    complete
+    .text start:0x02166008 end:0x02166070
+
+src/Unclassified/ov000/Script_AllocateScaledFloatEntry.cpp:
+    complete
+    .text start:0x0216cd28 end:0x0216cd90
+
+src/Graphics/ov000/Graphics_RebuildOwnerTextRecords.cpp:
+    complete
+    .text start:0x02176498 end:0x02176500
+
+src/GameState/ov000/GameState_ReadLinkedRecordValueByMode.cpp:
+    complete
+    .text start:0x021818e0 end:0x02181990
+
+src/Graphics/ov000/Graphics_AppendSelectableRecordNameList.cpp:
+    complete
+    .text start:0x0217a2dc end:0x0217a514
+
+src/Resource/ov000/Script_TryAllocateOptionalHalfwordEntry.cpp:
+    complete
+    .text start:0x0216c734 end:0x0216c7a0
+
+src/Combat/ov000/Combat_AppendDescriptorActionForCombatant.cpp:
+    complete
+    .text start:0x0215af54 end:0x0215b198
+
+src/Resource/ov000/Script_CreateTag22RecordFromStringParameter.cpp:
+    complete
+    .text start:0x0216ad0c end:0x0216ad7c
+
+src/GameState/ov000/Script_AllocateTypeOneHundredThirtyEightVectorEntry.cpp:
+    complete
+    .text start:0x0216d038 end:0x0216d0a8
+
+src/Unclassified/ov000/Script_ExecuteBufferAndReturnGlobalValue.cpp:
+    complete
+    .text start:0x0216d1c4 end:0x0216d234
+
+src/Util/ov000/String_FormatAndTrimSuffix.cpp:
+    complete
+    .text start:0x0217aa08 end:0x0217aa78
+
+src/GameState/ov000/GameState_AppendIndexedEvent.cpp:
+    complete
+    .text start:0x0215ff50 end:0x0215ff80
+
+src/Memory/ov000/Memory_Initialize32ByteRecordWithSentinels.cpp:
+    complete
+    .text start:0x0215fef0 end:0x0215ff20
+
+src/GameState/ov000/GameState_CountSetBitsInWord68.cpp:
+    complete
+    .text start:0x0218155c end:0x0218158c
+
+src/Combat/ov000/Combat_TestDescriptorThresholdChance.cpp:
+    complete
+    .text start:0x02156f98 end:0x0215704c
+
+src/Unclassified/ov000/Util_DecrementCountAndReadIndexedByte.cpp:
+    complete
+    .text start:0x0215fad4 end:0x0215fb04
+
+src/Unclassified/ov000/CreateAllocatedStringParameterRecord.cpp:
+    complete
+    .text start:0x0216b394 end:0x0216b408
+
+src/Resource/ov000/Script_AllocateTypeSixEntryFromFloats.cpp:
+    complete
+    .text start:0x02169fa4 end:0x0216a018
+
+src/Resource/ov000/Resource_ScriptQueueType3BWithCopiedString.cpp:
+    complete
+    .text start:0x0216b7b8 end:0x0216b870
+
+src/GameState/ov000/GameState_InterpolateIndexedFixedValue.cpp:
+    complete
+    .text start:0x0216352c end:0x021635e4
+
+src/Combat/ov000/Combat_DecrementActiveFlagCounters.cpp:
+    complete
+    .text start:0x021599f4 end:0x02159c58
+
+src/GameState/ov000/ProcessEmbeddedRecord.cpp:
+    complete
+    .text start:0x021540c8 end:0x021540fc
+
+src/Unclassified/ov000/Util_CallTargetWithFlagsOne.cpp:
+    complete
+    .text start:0x02181a5c end:0x02181a74
+
+src/Unclassified/ov000/Unclassified_InvokeHelperWithZeroFlags.cpp:
+    complete
+    .text start:0x02181aa4 end:0x02181abc
+
+src/Resource/ov000/Script_QueueTypedFloatVectorNode.cpp:
+    complete
+    .text start:0x0216a364 end:0x0216a420
+
+src/Graphics/ov000/Graphics_AppendPagedPartyStateText.cpp:
+    complete
+    .text start:0x02179ed8 end:0x02179f94
+
+src/Unclassified/ov000/ProcessEightFlaggedIndexedObjects.cpp:
+    complete
+    .text start:0x02160fe4 end:0x02161020
+
+src/GameState/ov000/SetBoundedStatusAndDispatchTransition.cpp:
+    complete
+    .text start:0x021823dc end:0x02182498
+
+src/Unclassified/ov000/GameState_SetHalfwordAtEAndNotifyIfChanged.cpp:
+    complete
+    .text start:0x02176150 end:0x0217616c
+
+src/Graphics/ov000/Graphics_AppendGroupedMemberNameText.cpp:
+    complete
+    .text start:0x02178938 end:0x02178ba8
+
+src/Unclassified/ov000/Object_RebuildReadyRecordBufferAndLoad.cpp:
+    complete
+    .text start:0x021788d8 end:0x02178938
+
+src/Unclassified/ov000/OV000_HasRelevantFlagOrStatus.cpp:
+    complete
+    .text start:0x0217c5f4 end:0x0217c638
+
+src/Util/ov000/Ov000_ConvertFourHalfwordsToWords.cpp:
+    complete
+    .text start:0x02181cbc end:0x02181d04
+
+src/Unclassified/ov000/OV000_ClearLookupScratchAndRefresh.cpp:
+    complete
+    .text start:0x02177a7c end:0x02177ac8
+
+src/Unclassified/ov000/World_ResetCachedBufferAndReloadOwner.cpp:
+    complete
+    .text start:0x02177330 end:0x0217737c
+
+src/GameState/ov000/RebuildPartySelectionTextForOwner.cpp:
+    complete
+    .text start:0x021785fc end:0x02178648
+
+src/Unclassified/ov000/Script_ResetFourRecordsAndRefresh.cpp:
+    complete
+    .text start:0x021813d4 end:0x0218142c
+
+src/GameState/ov000/GameState_ConfigureAndSubmitIndexedRecord.cpp:
+    complete
+    .text start:0x021811f4 end:0x0218124c
+
+src/GameState/ov000/ResetStateEntryResources.cpp:
+    complete
+    .text start:0x021742c8 end:0x02174324
+
+src/Unclassified/ov000/OV000_ApplyTransformWhenObjectFlagged.cpp:
+    complete
+    .text start:0x0217616c end:0x021761c8
+
+src/System/ov000/InitializeObjectAndConfigureSelectionIfPresent.cpp:
+    complete
+    .text start:0x02170fd0 end:0x02170ffc
+
+src/Memory/ov000/Memory_ZeroThirtyTwoByteBlock.cpp:
+    complete
+    .text start:0x0215fd7c end:0x0215fd90
+
+src/Unclassified/ov000/GameState_RefreshFourIndexedRecordValues.cpp:
+    complete
+    .text start:0x02174514 end:0x0217457c
+
+src/Resource/ov000/Ov000_BuildIndexedDescription.cpp:
+    complete
+    .text start:0x021795e0 end:0x0217964c
+
+src/GameState/ov000/GameState_ProcessEligibleListedMemberRecords.cpp:
+    complete
+    .text start:0x0217fa60 end:0x0217fb98
+
+src/GameState/ov000/GameState_ResetIndexedRecordsAndFinalize.cpp:
+    complete
+    .text start:0x02181364 end:0x021813d4
+
+src/Filesystem/ov000/CompleteBackgroundFileLoad.cpp:
+    complete
+    .text start:0x0216fd80 end:0x0216fdf8
+
+src/GameState/ov000/Ov000_ApplyIndexedSlotOrReset.cpp:
+    complete
+    .text start:0x0217f78c end:0x0217f7d4
+
+src/Unclassified/ov000/World_ResetBufferForCurrentIndexedRecord.cpp:
+    complete
+    .text start:0x0217819c end:0x021781f8
+
+src/Graphics/ov000/Object_BuildAlternateSelectionBufferAndLoadOwnerRecord.cpp:
+    complete
+    .text start:0x02178cbc end:0x02178d28
+
+src/Unclassified/ov000/GameState_UpdateReadyRecordProgress.cpp:
+    complete
+    .text start:0x0217a9d0 end:0x0217aa08
+
+src/Unclassified/ov000/Unclassified_SelectModeValue.cpp:
+    complete
+    .text start:0x021681f8 end:0x02168230
+
+src/Unclassified/ov000/Object_BuildSelectionBufferAndLoadOwnerRecord.cpp:
+    complete
+    .text start:0x02179128 end:0x02179194

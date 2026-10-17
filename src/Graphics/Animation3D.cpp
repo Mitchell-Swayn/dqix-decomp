@@ -4,6 +4,7 @@
 
 #define ANIMATION_FLAG_NOT_LOOPING 0
 
+// Original: arm9/main @ 0x0207E060; symbol: _ZN11Animation3D17DefaultInitializeEv; size: 0x1C.
 void Animation3D::DefaultInitialize()
 {
     pRawFile_ = NULL;
@@ -12,6 +13,7 @@ void Animation3D::DefaultInitialize()
     flags_ = 0;
 }
 
+// Original: arm9/main @ 0x0207E07C; symbol: _ZN11Animation3D10SetRawFileEP14NSBXXContainer; size: 0x14.
 bool Animation3D::SetRawFile(NSBXXContainer* file)
 {
     if (file == NULL)
@@ -20,6 +22,7 @@ bool Animation3D::SetRawFile(NSBXXContainer* file)
     return true;
 }
 
+// Original: arm9/main @ 0x0207E090; symbol: _ZN11Animation3D10CreateDataEP7Model3DP13SafeAllocatorS1_; size: 0xD8.
 bool Animation3D::CreateData(Model3D *attachedModel, SafeAllocator *alloc, Model3D *alternateModel)
 {
     if (pRawFile_ == NULL)
@@ -58,6 +61,7 @@ bool Animation3D::CreateData(Model3D *attachedModel, SafeAllocator *alloc, Model
     return true;
 }
 
+// Original: arm9/main @ 0x0207E168; symbol: _ZN11Animation3D12AdvanceTimerEi; size: 0xBC.
 void Animation3D::AdvanceTimer(fix32_t dt)
 {
     if (!(pAnimData_ != NULL ? 1 : 0))
@@ -84,8 +88,10 @@ void Animation3D::AdvanceTimer(fix32_t dt)
     }
 }
 
+// Original: arm9/main @ 0x0207E224; symbol: _ZN11Animation3D21GetBasicAnimationDataEv; size: 0x8.
 AnimationData* Animation3D::GetBasicAnimationData() { return pAnimData_; }
 
+// Original: arm9/main @ 0x0207E22C; symbol: _ZN11Animation3D16SetAnimationTimeEi; size: 0x10.
 void Animation3D::SetAnimationTime(fix32_t to)
 {
     if (pAnimData_ != NULL)

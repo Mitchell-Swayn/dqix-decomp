@@ -5,10 +5,11 @@
 #pragma optimize_for_size off
 
 #if defined(jpn)
-#define func_020c9bf0 func_020cb6bc
+#define OS_Halt func_020cb6bc
 #endif
-extern "C" void func_020c9bf0();
+extern "C" void OS_Halt();
 
+// Original: arm9/main @ 0x020C7BE8; symbol: _Z19SleepCompletionProcPP16ProcessorContext; size: 0x20.
 void SleepCompletionProc(ProcessorContext **ppContext)
 {
     ProcessorContext* context = *ppContext;
@@ -17,6 +18,7 @@ void SleepCompletionProc(ProcessorContext **ppContext)
     MarkContextReadyAndSwitch(context);
 }
 
+// Original: arm9/main @ 0x020C7C08; symbol: _Z21SetSwitchContextProcBPFvP16ProcessorContextS0_E; size: 0x28.
 PFNSwitchContextProc SetSwitchContextProcB(PFNSwitchContextProc proc)
 {
     int priorState = DisableIRQInterrupts();
@@ -26,10 +28,11 @@ PFNSwitchContextProc SetSwitchContextProcB(PFNSwitchContextProc proc)
     return oldProc;
 }
 
+// Original: arm9/main @ 0x020C7C30; symbol: _Z25InterruptWaitLoopFunctionPv; size: 0x10.
 void InterruptWaitLoopFunction(void* unusedUserdata)
 {
     EnableIRQInterrupts();
     while (true)
-        func_020c9bf0();
+        OS_Halt();
 }
 

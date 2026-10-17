@@ -4,6 +4,7 @@
 extern const short ARM7_SoundAttenuationTable[128];
 extern const unsigned char ARM7_SoundAttackTable[19];
 extern unsigned short ARM7_ConvertEnvelopeFallRate(int);
+// Original: arm7/wram @ 0x037FFEE4; symbol: ARM7_UpdateSoundEnvelope.
 int ARM7_UpdateSoundEnvelope(SoundVoice *voice,int tick)
 {
  if(tick){
@@ -24,27 +25,33 @@ int ARM7_UpdateSoundEnvelope(SoundVoice *voice,int tick)
  }
  return voice->attenuation>>7;
 }
+// Original: arm7/wram @ 0x037FFF8C; symbol: ARM7_SetSoundVoiceAttack.
 void ARM7_SetSoundVoiceAttack(SoundVoice *voice,int attack)
 {
  if(attack<109)attack=255-attack; else attack=ARM7_SoundAttackTable[127-attack];
  voice->attack=attack;
 }
+// Original: arm7/wram @ 0x037FFFAC; symbol: ARM7_SetSoundVoiceDecay.
 void ARM7_SetSoundVoiceDecay(SoundVoice *voice,int decay)
 {
  voice->decay=ARM7_ConvertEnvelopeFallRate(decay);
 }
+// Original: arm7/wram @ 0x037FFFC8; symbol: ARM7_SetSoundVoiceSustain.
 void ARM7_SetSoundVoiceSustain(SoundVoice *voice,int sustain)
 {
  voice->sustain=sustain;
 }
+// Original: arm7/wram @ 0x037FFFD0; symbol: ARM7_SetSoundVoiceRelease.
 void ARM7_SetSoundVoiceRelease(SoundVoice *voice,int release)
 {
  voice->release=ARM7_ConvertEnvelopeFallRate(release);
 }
+// Original: arm7/wram @ 0x037FFFEC; symbol: ARM7_BeginSoundVoiceRelease.
 void ARM7_BeginSoundVoiceRelease(SoundVoice *voice)
 {
  voice->envelopeState=3;
 }
+// Original: arm7/wram @ 0x037FFFF8; symbol: ARM7_IsSoundVoiceActive.
 int ARM7_IsSoundVoiceActive(SoundVoice *voice)
 {
  return voice->active;

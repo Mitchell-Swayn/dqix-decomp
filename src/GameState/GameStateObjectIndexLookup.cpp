@@ -1,6 +1,7 @@
 #include "GameState/GameState.h"
 
-extern "C" GameObject* func_0200ff94(GameState* state, int index)
+// Original: arm9/main @ 0x0200FF94; symbol: func_0200ff94; size: 0x2C.
+extern "C" GameObject* GameState_GetValidObjectByIndex(GameState* state, int index)
 {
     if (index < 0)
         return NULL;

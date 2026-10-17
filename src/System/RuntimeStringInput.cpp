@@ -2,7 +2,8 @@
 
 #pragma optimize_for_size off
 
-extern "C" int func_02003d58(RuntimeStringInputState* state, int value, int operation)
+// Original: arm9/main @ 0x02003D58; symbol: func_02003d58; size: 0x84.
+extern "C" int RuntimeStringInput_ReadUnreadOrTestEnd(RuntimeStringInputState* state, int value, int operation)
 {
     switch (operation) {
     case 0: {

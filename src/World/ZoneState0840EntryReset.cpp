@@ -2,6 +2,7 @@
 #include "System/Memory.h"
 #include "std_library_functions.h"
 
+// Original: arm9/main @ 0x02098364; symbol: _ZN13ZoneState08405Entry5ResetEv; size: 0x148.
 void ZoneState0840::Entry::Reset()
 {
     memset(unknown_0, 0, sizeof(unknown_0));

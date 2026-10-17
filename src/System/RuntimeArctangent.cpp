@@ -6,9 +6,10 @@ extern const RuntimeArctangentAngles gRuntimeArctangentAngles = {{
 }, {
     0.4636476090008061, 0.7853981633974483, 0.982793723247329, 1.5707963267948966
 }};
-extern "C" double func_02008f3c(double);
+extern "C" double Runtime_ComputeDoubleAbsoluteValue(double);
 // Preserve the binary64 reduction intervals and compensated polynomial order.
-extern "C" double func_02008848(double x)
+// Original: arm9/main @ 0x02008848; symbol: func_02008848; size: 0x55C.
+extern "C" double Runtime_ComputeDoubleArctangent(double x)
 {
     int high = ((int*)&x)[1];
     int magnitude = high & 0x7fffffff;
@@ -25,7 +26,7 @@ extern "C" double func_02008848(double x)
             return x;
         id = -1;
     } else {
-        x = func_02008f3c(x);
+        x = Runtime_ComputeDoubleAbsoluteValue(x);
         if (magnitude < 0x3ff30000) {
             if (magnitude < 0x3fe60000) {
                 id = 0;

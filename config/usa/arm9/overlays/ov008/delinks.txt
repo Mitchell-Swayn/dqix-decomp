@@ -4,3 +4,130 @@
     .data       start:0x0218b3e0 end:0x0218b5a0 kind:data align:32
     .bss        start:0x0218b5a0 end:0x0218b5a0 kind:bss align:32
 
+src/Unclassified/ov008/func_ov008_02184a2c.cpp:
+    complete
+    .text start:0x02184a2c end:0x02184a3c
+
+src/Unclassified/ov008/func_ov008_02184a3c.cpp:
+    complete
+    .text start:0x02184a3c end:0x02184a4c
+
+src/Unclassified/ov008/func_ov008_02184598.cpp:
+    complete
+    .text start:0x02184598 end:0x021845ac
+
+src/Unclassified/ov008/func_ov008_021862c4.cpp:
+    complete
+    .text start:0x021862c4 end:0x021862e0
+
+src/Unclassified/ov008/func_ov008_021862e0.cpp:
+    complete
+    .text start:0x021862e0 end:0x021862fc
+
+src/Unclassified/ov008/func_ov008_021862fc.cpp:
+    complete
+    .text start:0x021862fc end:0x02186318
+
+src/Unclassified/ov008/func_ov008_02186318.cpp:
+    complete
+    .text start:0x02186318 end:0x02186334
+
+src/Unclassified/ov008/func_ov008_02186334.cpp:
+    complete
+    .text start:0x02186334 end:0x02186350
+
+src/Unclassified/ov008/func_ov008_02186350.cpp:
+    complete
+    .text start:0x02186350 end:0x0218636c
+
+src/Unclassified/ov008/func_ov008_0218636c.cpp:
+    complete
+    .text start:0x0218636c end:0x02186388
+
+src/Unclassified/ov008/func_ov008_02185964.cpp:
+    complete
+    .text start:0x02185964 end:0x0218599c
+
+src/Unclassified/ov008/func_ov008_02186280.cpp:
+    complete
+    .text start:0x02186280 end:0x021862c4
+
+src/Unclassified/ov008/func_ov008_0218946c.cpp:
+    complete
+    .text start:0x0218946c end:0x021894b8
+
+src/World/ov008/func_ov008_02184918.cpp:
+    complete
+    .text start:0x02184918 end:0x02184968
+
+src/Unclassified/ov008/func_ov008_021889f8.cpp:
+    complete
+    .text start:0x021889f8 end:0x02188a54
+
+src/World/ov008/func_ov008_021870e4.cpp:
+    complete
+    .text start:0x021870e4 end:0x0218712c
+
+src/System/ov008/func_ov008_02189228.cpp:
+    complete
+    .text start:0x02189228 end:0x02189284
+
+src/Unclassified/ov008/func_ov008_02189404.cpp:
+    complete
+    .text start:0x02189404 end:0x0218946c
+
+src/Unclassified/ov008/func_ov008_0218936c.cpp:
+    complete
+    .text start:0x0218936c end:0x02189404
+
+src/Unclassified/ov008/func_ov008_02184878.cpp:
+    complete
+    .text start:0x02184878 end:0x02184918
+
+src/Graphics/ov008/Text_AppendSelectedPackedRecord.cpp:
+    complete
+    .text start:0x02187278 end:0x021873ac
+
+src/Memory/ov008/Memory_InitializeNestedAllocatorPools.cpp:
+    complete
+    .text start:0x021842a0 end:0x021843f8
+
+src/Unclassified/ov008/Selection_BuildEnabledOptionList.cpp:
+    complete
+    .text start:0x02186cec end:0x02186e4c
+
+src/Graphics/ov008/Graphics_LoadIndexedResourceBlocks.cpp:
+    complete
+    .text start:0x02188d74 end:0x02188ef0
+
+src/Graphics/ov008/Graphics_ResetAllocatorCanvasAndSelectionState.cpp:
+    complete
+    .text start:0x021843f8 end:0x02184598
+
+src/Graphics/ov008/UI_HitTestScrollableRowsAndActionButtons.cpp:
+    complete
+    .text start:0x02186b18 end:0x02186cec
+
+src/Graphics/ov008/Text_AppendSixClampedStatisticRows.cpp:
+    complete
+    .text start:0x02187b20 end:0x02187f6c
+
+src/GameState/ov008/GameState_SetFirstUnusedRecordFromParameter.cpp:
+    complete
+    .text start:0x0218b1e0 end:0x0218b240
+
+src/Unclassified/ov008/Object_StartMode13TransitionWhenEligible.cpp:
+    complete
+    .text start:0x02188ef0 end:0x02188f5c
+
+src/Graphics/ov008/Graphics_UpdateSelectionFadeOut.cpp:
+    complete
+    .text start:0x021868a8 end:0x02186964
+
+src/World/ov008/World_UpdateYawFromKeysOrTarget.cpp:
+    complete
+    .text start:0x02186e4c end:0x021870e4
+
+src/Filesystem/ov008/Filesystem_RemoveFourOwnerLoadTasksAndMarkComplete.cpp:
+    complete
+    .text start:0x0218b240 end:0x0218b300

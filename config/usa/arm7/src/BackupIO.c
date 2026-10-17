@@ -7,6 +7,7 @@ extern void ARM7_SendBackupAddress(unsigned int,unsigned int);
 extern void ARM7_WaitBackupReady(int,int);
 #pragma dont_inline off
 static inline unsigned int Min(unsigned int a,unsigned int b) { return a>b?b:a; }
+// Original: arm7/wram @ 0x038031DC; symbol: ARM7_ReadBackup.
 void ARM7_ReadBackup(unsigned int address,unsigned char *destination,unsigned int count)
 {
  if(ARM7_CheckBackupReady()) {
@@ -15,6 +16,7 @@ void ARM7_ReadBackup(unsigned int address,unsigned char *destination,unsigned in
   ARM7_TransferBackupBytes(0,destination,count,ARM7_ReadBackupByte);
  }
 }
+// Original: arm7/wram @ 0x03803248; symbol: ARM7_WriteBackup.
 void ARM7_WriteBackup(unsigned int address,const unsigned char *source,unsigned int count)
 {
  BackupRequest *request;
@@ -38,6 +40,7 @@ void ARM7_WriteBackup(unsigned int address,const unsigned char *source,unsigned 
   }
  }
 }
+// Original: arm7/wram @ 0x03803300; symbol: ARM7_ProgramBackup.
 void ARM7_ProgramBackup(unsigned int address,const unsigned char *source,unsigned int count)
 {
  BackupRequest *request;

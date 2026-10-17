@@ -2,6 +2,7 @@
 #pragma dont_inline on
 #include "SoundSequence.h"
 extern SoundSharedWork *ARM7_SoundSharedWork;
+// Original: arm7/wram @ 0x03801F18; symbol: ARM7_GetSoundSequenceVariable.
 short *ARM7_GetSoundSequenceVariable(SoundSequence *sequence,int index)
 {
  if(!ARM7_SoundSharedWork)return 0;

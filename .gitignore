@@ -22,3 +22,10 @@ ninja.exe
 /tools/*factory*
 /tools/test_factory*
 /docs/verification/*.log
+
+# Local caches and generated reconstruction references.
+.ninja_deps
+__pycache__/
+*.pyc
+/src/AssemblyFallback/
+/config/usa/assembly_fallbacks.json

@@ -7,6 +7,7 @@ extern void ARM7_SendBackupAddress(unsigned int,unsigned int);
 extern void ARM7_WaitBackupReady(int,int);
 #pragma dont_inline off
 static inline unsigned int AlignmentRemainder(unsigned int value,unsigned int alignment) {return (alignment-1)&value;}
+// Original: arm7/wram @ 0x038033B8; symbol: ARM7_CompareBackup.
 void ARM7_CompareBackup(unsigned int address,const unsigned char *source,unsigned int count)
 {
  if(ARM7_CheckBackupReady()) {
@@ -18,6 +19,7 @@ void ARM7_CompareBackup(unsigned int address,const unsigned char *source,unsigne
   if(request->result==0 && !ARM7_BackupCommandState.transfer.matched)request->result=1;
  }
 }
+// Original: arm7/wram @ 0x03803448; symbol: ARM7_EraseBackupSectors.
 void ARM7_EraseBackupSectors(unsigned int address,unsigned int count)
 {
  BackupRequest *request=ARM7_BackupWorker.request;
@@ -35,6 +37,7 @@ void ARM7_EraseBackupSectors(unsigned int address,unsigned int count)
   }
  }
 }
+// Original: arm7/wram @ 0x038034E4; symbol: ARM7_EraseBackupSubsectors.
 void ARM7_EraseBackupSubsectors(unsigned int address,unsigned int count)
 {
  BackupRequest *request=ARM7_BackupWorker.request;
@@ -54,6 +57,7 @@ void ARM7_EraseBackupSubsectors(unsigned int address,unsigned int count)
 }
 
 extern const unsigned char ARM7_BackupChipEraseCommand[];
+// Original: arm7/wram @ 0x03803580; symbol: ARM7_EraseBackupChip.
 void ARM7_EraseBackupChip(void)
 {
  if(ARM7_CheckBackupReady()) {

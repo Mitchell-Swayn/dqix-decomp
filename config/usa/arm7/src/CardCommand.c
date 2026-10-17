@@ -3,6 +3,7 @@
 #define ROMCTRL (*(volatile unsigned int*)0x040001a4)
 #define AUXSPI_HIGH (*(volatile unsigned char*)0x040001a1)
 #define COMMAND ((volatile unsigned char*)0x040001a8)
+// Original: arm7/wram @ 0x03803674; symbol: ARM7_SetCardCommand.
 void ARM7_SetCardCommand(unsigned int first,unsigned int second)
 {
  while(ROMCTRL&0x80000000) {}

@@ -10,6 +10,7 @@ extern InterruptResponseView ARM7_InterruptResponses;
 VBlankResponse ARM7_VBlankResponse;
 #define VBLANK_COUNT (*(volatile unsigned int*)0x027ffc3c)
 #define FIRED (*(volatile unsigned int*)0x0380fff8)
+// Original: arm7/wram @ 0x037FB77C; symbol: ARM7_VBlankInterruptHandler.
 void ARM7_VBlankInterruptHandler(void)
 {
  Handler callback=ARM7_InterruptResponses.verticalBlank.callback;

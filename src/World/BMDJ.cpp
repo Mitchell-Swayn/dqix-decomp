@@ -12,6 +12,7 @@ struct Struct_020fdc40
     Zone3D_BMDJStruct::ScriptData* instance;
 } extern data_020fdc40;
 
+// Original: arm9/main @ 0x0201EBC4; symbol: _Z14BMDJ_Opcode_6aPN6Script9ParameterEi; size: 0x34.
 int BMDJ_Opcode_6a(Script::Parameter* params, int numParams)
 {
     int count = params[0].ToInt();
@@ -22,8 +23,10 @@ int BMDJ_Opcode_6a(Script::Parameter* params, int numParams)
 }
 
 // Original opcode is a successful no-op (0x0201ebf8).
+// Original: arm9/main @ 0x0201EBF8; symbol: _Z14BMDJ_Opcode_6bPN6Script9ParameterEi; size: 0x8.
 int BMDJ_Opcode_6b(Script::Parameter* params, int numParams) { return 1; }
 
+// Original: arm9/main @ 0x0201EC00; symbol: _Z14BMDJ_Opcode_6cPN6Script9ParameterEi; size: 0xD4.
 int BMDJ_Opcode_6c(Script::Parameter* params, int numParams)
 {
     Zone3D_BMDJStruct::StructSizeC entry;
@@ -57,6 +60,7 @@ int BMDJ_Opcode_6c(Script::Parameter* params, int numParams)
     return 1;
 }
 
+// Original: arm9/main @ 0x0201ECD4; symbol: _Z14BMDJ_Opcode_72PN6Script9ParameterEi; size: 0xEC.
 int BMDJ_Opcode_72(Script::Parameter* params, int numParams)
 {
     if (data_020fdc40.structC == NULL)
@@ -88,6 +92,7 @@ int BMDJ_Opcode_72(Script::Parameter* params, int numParams)
     return 1;
 }
 
+// Original: arm9/main @ 0x0201EDC0; symbol: _Z14BMDJ_Opcode_6dPN6Script9ParameterEi; size: 0x28.
 int BMDJ_Opcode_6d(Script::Parameter* params, int numParams)
 {
     data_020fdc40.instance->AllocateStruct20Array(params[0].ToInt(), data_020fdc40.allocator);
@@ -95,8 +100,10 @@ int BMDJ_Opcode_6d(Script::Parameter* params, int numParams)
 }
 
 // Original opcode is a successful no-op (0x0201ede8).
+// Original: arm9/main @ 0x0201EDE8; symbol: _Z14BMDJ_Opcode_6ePN6Script9ParameterEi; size: 0x8.
 int BMDJ_Opcode_6e(Script::Parameter* params, int numParams) { return 1; }
 
+// Original: arm9/main @ 0x0201EDF0; symbol: _Z14BMDJ_Opcode_6fPN6Script9ParameterEi; size: 0x200.
 int BMDJ_Opcode_6f(Script::Parameter* params, int numParams)
 {
     int id = (params++)->ToInt();
@@ -164,6 +171,7 @@ int BMDJ_Opcode_6f(Script::Parameter* params, int numParams)
     return 1;
 }
 
+// Original: arm9/main @ 0x0201EFF0; symbol: _Z14BMDJ_Opcode_70PN6Script9ParameterEi; size: 0x2C.
 int BMDJ_Opcode_70(Script::Parameter* params, int numParams)
 {
     const char* name = params[0].ToString();
@@ -172,6 +180,7 @@ int BMDJ_Opcode_70(Script::Parameter* params, int numParams)
     return 1;
 }
 
+// Original: arm9/main @ 0x0201F01C; symbol: _ZN17Zone3D_BMDJStruct10ScriptData5ResetEv; size: 0x24.
 void Zone3D_BMDJStruct::ScriptData::Reset()
 {
     ptr_0 = NULL;
@@ -183,6 +192,7 @@ void Zone3D_BMDJStruct::ScriptData::Reset()
     stringCount_38 = 0;
 }
 
+// Original: arm9/main @ 0x0201F040; symbol: _ZN17Zone3D_BMDJStruct10ScriptData4LoadEP13SafeAllocatorPKvj; size: 0xB0.
 void Zone3D_BMDJStruct::ScriptData::Load(SafeAllocator *alloc, const void *script, unsigned int length)
 {
     bool externalFile = false;
@@ -212,6 +222,7 @@ void Zone3D_BMDJStruct::ScriptData::Load(SafeAllocator *alloc, const void *scrip
         BackgroundLoader::RemoveLockGlobal();
 }
 
+// Original: arm9/main @ 0x0201F0F0; symbol: _ZN17Zone3D_BMDJStruct10ScriptData13InsertStructCERKNS_11StructSizeCE; size: 0x54.
 void Zone3D_BMDJStruct::ScriptData::InsertStructC(const StructSizeC& source)
 {
     if (capacity_8 <= counter_4)
@@ -224,6 +235,7 @@ void Zone3D_BMDJStruct::ScriptData::InsertStructC(const StructSizeC& source)
     dest.pNext = source.pNext;
 }
 
+// Original: arm9/main @ 0x0201F144; symbol: _ZN17Zone3D_BMDJStruct10ScriptData10GetStructCEi; size: 0x2C.
 Zone3D_BMDJStruct::StructSizeC* Zone3D_BMDJStruct::ScriptData::GetStructC(int idx)
 {
     if (idx < 0 || capacity_8 <= idx) // bug? should be size and not capacity
@@ -231,6 +243,7 @@ Zone3D_BMDJStruct::StructSizeC* Zone3D_BMDJStruct::ScriptData::GetStructC(int id
     return &ptr_0[idx];
 }
 
+// Original: arm9/main @ 0x0201F170; symbol: _ZN17Zone3D_BMDJStruct10ScriptData14GetStructCByIDEi; size: 0x40.
 Zone3D_BMDJStruct::StructSizeC* Zone3D_BMDJStruct::ScriptData::GetStructCByID(int id)
 {
     for (int i = 0; i < counter_4; i++)
@@ -241,6 +254,7 @@ Zone3D_BMDJStruct::StructSizeC* Zone3D_BMDJStruct::ScriptData::GetStructCByID(in
     return NULL;
 }
 
+// Original: arm9/main @ 0x0201F1B0; symbol: _ZNK17Zone3D_BMDJStruct10ScriptData15FindStructCByIDEi; size: 0x40.
 int Zone3D_BMDJStruct::ScriptData::FindStructCByID(int id) const
 {
     for (int i = 0; i < counter_4; i++)
@@ -251,12 +265,14 @@ int Zone3D_BMDJStruct::ScriptData::FindStructCByID(int id) const
     return -1;
 }
 
+// Original: arm9/main @ 0x0201F1F0; symbol: _ZN17Zone3D_BMDJStruct10ScriptData21AllocateStruct20ArrayEiP13SafeAllocator; size: 0x24.
 void Zone3D_BMDJStruct::ScriptData::AllocateStruct20Array(int count, SafeAllocator* alloc)
 {
     ptr_c = (StructSize20*)alloc->Allocate(count * sizeof(StructSize20));
     capacity_14 = count;
 }
 
+// Original: arm9/main @ 0x0201F214; symbol: _ZN17Zone3D_BMDJStruct10ScriptData14InsertStruct20ERKNS_12StructSize20E; size: 0x90.
 void Zone3D_BMDJStruct::ScriptData::InsertStruct20(const StructSize20& source)
 {
     if (capacity_14 <= counter_10)
@@ -275,6 +291,7 @@ void Zone3D_BMDJStruct::ScriptData::InsertStruct20(const StructSize20& source)
     dest.unk_1e = (unsigned short)source.unk_1e;
 }
 
+// Original: arm9/main @ 0x0201F2A4; symbol: _ZN17Zone3D_BMDJStruct10ScriptData11GetStruct20Ei; size: 0x28.
 Zone3D_BMDJStruct::StructSize20* Zone3D_BMDJStruct::ScriptData::GetStruct20(int idx)
 {
     if (idx < 0 || counter_10 <= idx)
@@ -282,6 +299,7 @@ Zone3D_BMDJStruct::StructSize20* Zone3D_BMDJStruct::ScriptData::GetStruct20(int 
     return &ptr_c[idx];
 }
 
+// Original: arm9/main @ 0x0201F2CC; symbol: _ZN17Zone3D_BMDJStruct10ScriptData15GetStruct20ByIDEi; size: 0x3C.
 Zone3D_BMDJStruct::StructSize20* Zone3D_BMDJStruct::ScriptData::GetStruct20ByID(int id)
 {
     for (int i = 0; i < counter_10; i++)
@@ -292,6 +310,7 @@ Zone3D_BMDJStruct::StructSize20* Zone3D_BMDJStruct::ScriptData::GetStruct20ByID(
     return NULL;
 }
 
+// Original: arm9/main @ 0x0201F308; symbol: _ZN17Zone3D_BMDJStruct10ScriptData11StoreStringEPKcP13SafeAllocator; size: 0x60.
 void Zone3D_BMDJStruct::ScriptData::StoreString(const char* str, SafeAllocator* alloc)
 {
     char* copy = (char*)alloc->Allocate(strlen(str) + 1);
@@ -302,6 +321,7 @@ void Zone3D_BMDJStruct::ScriptData::StoreString(const char* str, SafeAllocator* 
     stringCount_38++;
 }
 
+// Original: arm9/main @ 0x0201F368; symbol: _ZNK17Zone3D_BMDJStruct10ScriptData9GetStringEi; size: 0x28.
 const char* Zone3D_BMDJStruct::ScriptData::GetString(int idx) const
 {
     if (idx < 0 || stringCount_38 <= idx)

@@ -166,3 +166,18 @@ observations cover boot, character creation, the first battle, opening events,
 Observatory movement/menus and Quick Save followed by fresh cartridge reload.
 See [the runtime record](RUNTIME_TESTS.md) for evidence and untested paths.
 Module equality and whole-ROM hash results remain separate from gameplay tests.
+
+### Per-source historical SDK compiler
+
+`config/usa/compiler_profiles.json` selects CodeWarrior 1.2/sp2p3 for
+`src/System/ContextSleepMilliseconds.cpp` only. Other ARM9 files retain the
+configured default compiler. The selected executable is a local input at
+`tools/mwccarm/1.2/sp2p3/mwccarm.exe`; configure verifies its SHA-256 before
+writing its compile rule. Keep the companion DLLs from the same compiler package.
+The package used for this comparison was downloaded from
+`https://decomp.aetias.com/files/mwccarm.zip` (SHA-256
+`6f7b16098d2b1bc9b45b278f6e6e24327c4da9b3ebf7924be1afd4a721d83976`).
+It contains multiple compiler versions; do not replace the default compiler globally.
+The per-source flags, executable hash and SDK identity are recorded in the profile.
+SDK structural candidates do not automatically select this profile: each new file
+must independently match before a profile is assigned.

@@ -8,6 +8,7 @@ extern void ARM7_ReleaseLockOwner(unsigned short);
 extern int ARM7_TryAcquireNDSBus(unsigned short);
 extern int ARM7_ReleaseNDSBus(unsigned short);
 extern unsigned int ARM7_ReadCardIdLocked(void);
+// Original: arm7/wram @ 0x03803C94; symbol: ARM7_IsCardRemoved.
 unsigned int ARM7_IsCardRemoved(void)
 {
  if(!ARM7_CardRemovalState.removed) {
@@ -16,6 +17,7 @@ unsigned int ARM7_IsCardRemoved(void)
  }
  return ARM7_CardRemovalState.removed;
 }
+// Original: arm7/wram @ 0x03803CDC; symbol: ARM7_CheckCardIdentity.
 int ARM7_CheckCardIdentity(void)
 {
  int present=1;
@@ -36,6 +38,7 @@ int ARM7_CheckCardIdentity(void)
 }
 #pragma dont_inline off
 static inline unsigned int ReadPendingInterrupts(void) {return *(volatile unsigned int*)0x04000214;}
+// Original: arm7/wram @ 0x03803D7C; symbol: ARM7_CheckCardInterrupt.
 int ARM7_CheckCardInterrupt(void)
 {
  unsigned int pending=ReadPendingInterrupts();

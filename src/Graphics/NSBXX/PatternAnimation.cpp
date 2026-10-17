@@ -1,15 +1,16 @@
 #include "Graphics/NSBXX/NSBXX.h"
-#include <asmhacks.h>
 
 #pragma optimize_for_size off
 
 #define SUBFILE_OFFSETS(nsb) ((uint32_t*)((intptr_t)(nsb) + nsb->headerSize_))
 
+// Original: arm9/main @ 0x020B7694; symbol: NSBXX_GetFirstSubfile; size: 0x10.
 void* NSBXX_GetFirstSubfile(NSBXXContainer* nsbxx)
 {
     return (char*)nsbxx + SUBFILE_OFFSETS(nsbxx)[0];
 }
 
+// Original: arm9/main @ 0x020B76A4; symbol: NSBXX_GetTEXFile; size: 0x40.
 NSBXXTex* NSBXX_GetTEXFile(NSBXXContainer* nsbxx)
 {
     const uint32_t* subfiles = SUBFILE_OFFSETS(nsbxx);
@@ -23,6 +24,7 @@ NSBXXTex* NSBXX_GetTEXFile(NSBXXContainer* nsbxx)
     return (NSBXXTex*)((intptr_t)nsbxx + subfiles[1]);
 }
 
+// Original: arm9/main @ 0x020B76E4; symbol: NSBXX_GetObjectFromFirstSubfile; size: 0x5C.
 void* NSBXX_GetObjectFromFirstSubfile(NSBXXContainer* nsbxx, unsigned int idx)
 {
     if (nsbxx != NULL)
@@ -49,26 +51,27 @@ void* NSBXX_GetObjectFromFirstSubfile(NSBXXContainer* nsbxx, unsigned int idx)
     return NULL;
 }
 
+// Original: arm9/main @ 0x020B7740; symbol: NSBXX_PatternAnimation_GetTextureName; size: 0x2C.
 const char* NSBXX_PatternAnimation_GetTextureName(NSBXXAnimationMPT* anim, unsigned int idx)
 {
     if (anim != NULL && idx < anim->numTextureNames_)
     {
-        DECLARE_ASM_NOP();
         return (const char*)((intptr_t)anim + anim->textureNamesOffset_ + idx * 0x10);
     }
     return NULL;
 }
 
+// Original: arm9/main @ 0x020B776C; symbol: NSBXX_PatternAnimation_GetPaletteName; size: 0x2C.
 const char* NSBXX_PatternAnimation_GetPaletteName(NSBXXAnimationMPT* anim, unsigned int idx)
 {
     if (anim != NULL && idx < anim->numPaletteNames_)
     {
-        DECLARE_ASM_NOP();
         return (const char*)((intptr_t)anim + anim->paletteNamesOffset_ + idx * 0x10);
     }
     return NULL;
 }
 
+// Original: arm9/main @ 0x020B7798; symbol: NSBXX_PatternAnimation_GetKeyframe; size: 0x74.
 NSBXXAnimationMPT::Track::Keyframe* NSBXX_PatternAnimation_GetKeyframe(
     NSBXXAnimationMPT* anim, uint16_t track, uint16_t frameTime)
 {
@@ -89,6 +92,7 @@ NSBXXAnimationMPT::Track::Keyframe* NSBXX_PatternAnimation_GetKeyframe(
     return &keyframes[index];
 }
 
+// Original: arm9/main @ 0x020B780C; symbol: NSBXX_PatternAnimation_GetTrack; size: 0x34.
 NSBXXAnimationMPT::Track* NSBXX_PatternAnimation_GetTrack(
     NSBXXAnimationMPT* anim, unsigned int track)
 {

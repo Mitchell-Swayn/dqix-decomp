@@ -1,0 +1,28 @@
+#include <globaldefs.h>
+extern "C" int func_ov011_02184c30(void*);
+extern "C" float func_ov011_02184c4c(void*);
+extern "C" void* func_ov017_021b2164();
+extern "C" void* func_ov011_021849c8(void*);
+extern "C" void* func_ov023_021f6880(void*,unsigned);
+extern "C" unsigned OV023_ReadHalfwordField04(void*);
+extern "C" void func_ov023_021fb25c(void*,unsigned,unsigned,unsigned,unsigned);
+extern "C" unsigned WriteBoundedHalfwordGridCell(void*,unsigned,unsigned,unsigned);
+extern "C" void func_ov011_02184c00(void*);
+extern "C" void func_ov011_02184c14(void*);
+extern "C" void MapVRAMBanksToMainBG(unsigned);
+extern "C" void MapVRAMBanksToSubBG(unsigned);
+extern "C" void ColorEffect_ConfigureAlphaBlend(void*,unsigned,unsigned,unsigned,unsigned);
+typedef void (*Setup)(unsigned,unsigned,unsigned,unsigned,unsigned);
+typedef void (*Priority)(unsigned);
+struct SetupTable { Setup entries[2][4]; };
+struct PriorityTable { Priority entries[2][4]; };
+struct MainBankTable { unsigned values[17]; };
+struct SubBankTable { unsigned values[4]; };
+extern "C" const SetupTable data_ov011_02188914;
+extern "C" const PriorityTable data_ov011_02188934;
+extern "C" const MainBankTable data_ov011_02188954;
+extern "C" const SubBankTable data_ov011_02188904;
+struct Vector { int x,y,z; };
+struct Object { void (**methods)(); };
+// Original: arm9/ov011 @ 0x021862A4; symbol: func_ov011_021862a4; size: 0xBC.
+extern "C" unsigned func_ov011_021862a4(void* self) { unsigned screen=func_ov011_02184c30(self); int bg=func_ov011_02184c30((char*)self+8); unsigned a=func_ov011_02184c30((char*)self+16); unsigned b=func_ov011_02184c30((char*)self+24); unsigned c=func_ov011_02184c30((char*)self+32); unsigned d=func_ov011_02184c30((char*)self+40); unsigned e=func_ov011_02184c30((char*)self+48); SetupTable table=data_ov011_02188914; Setup fn=table.entries[screen][bg]; if(bg<2) fn(a,b,c,d,e); else ((void(*)(unsigned,unsigned,unsigned,unsigned))fn)(a,b,c,d); return 1; }

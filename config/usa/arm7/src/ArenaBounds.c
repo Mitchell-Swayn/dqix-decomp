@@ -11,19 +11,23 @@ extern char ARM7_MainRamBssEnd[];
 extern void *ARM7_GetInitialArenaLow(int arena);
 extern void *ARM7_GetInitialArenaHigh(int arena);
 
+// Original: arm7/wram @ 0x037FCE88; symbol: ARM7_InitializeArena.
 void ARM7_InitializeArena(int arena) {
     ((void *volatile *)0x027ffdc4)[arena] = ARM7_GetInitialArenaHigh(arena);
     ((void *volatile *)0x027ffda0)[arena] = ARM7_GetInitialArenaLow(arena);
 }
 
+// Original: arm7/wram @ 0x037FCEC4; symbol: ARM7_GetArenaHigh.
 void *ARM7_GetArenaHigh(int arena) {
     return ((void *volatile *)0x027ffdc4)[arena];
 }
 
+// Original: arm7/wram @ 0x037FCED8; symbol: ARM7_GetArenaLow.
 void *ARM7_GetArenaLow(int arena) {
     return ((void *volatile *)0x027ffda0)[arena];
 }
 
+// Original: arm7/wram @ 0x037FCEEC; symbol: ARM7_GetInitialArenaHigh.
 void *ARM7_GetInitialArenaHigh(int arena) {
     switch (arena) {
     case 1:
@@ -49,6 +53,7 @@ void *ARM7_GetInitialArenaHigh(int arena) {
     }
 }
 
+// Original: arm7/wram @ 0x037FCF68; symbol: ARM7_GetInitialArenaLow.
 void *ARM7_GetInitialArenaLow(int arena) {
     switch (arena) {
     case 1:
@@ -68,6 +73,7 @@ void *ARM7_GetInitialArenaLow(int arena) {
     }
 }
 
+// Original: arm7/wram @ 0x037FCFC0; symbol: ARM7_SetArenaLow.
 void ARM7_SetArenaLow(int arena, void *low) {
     ((void *volatile *)0x027ffda0)[arena] = low;
 }

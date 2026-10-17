@@ -1,6 +1,7 @@
 /* Convert envelope fall rates and reset envelope/modulation state for a start. */
 #pragma dont_inline on
 #include "SoundVoice.h"
+// Original: arm7/wram @ 0x0380051C; symbol: ARM7_ConvertEnvelopeFallRate.
 unsigned short ARM7_ConvertEnvelopeFallRate(int value)
 {
  if(value==127)return 65535;
@@ -8,6 +9,7 @@ unsigned short ARM7_ConvertEnvelopeFallRate(int value)
  if(value<50)return value*2+1;
  return 0x1e00/(126-value);
 }
+// Original: arm7/wram @ 0x03800570; symbol: ARM7_StartSoundVoice.
 void ARM7_StartSoundVoice(SoundVoice *voice,int argument)
 {
  voice->attenuation=-92544;

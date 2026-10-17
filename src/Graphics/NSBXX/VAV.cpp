@@ -11,6 +11,7 @@
 // processing callback for V.AV animations
 extern void (*data_020f1c70)(void* data, AnimationData* anim, int arg);
 
+// Original: arm9/main @ 0x020B992C; symbol: _Z31InitializeModelAnimationFromVAVP13AnimationDataPvP18NSBXXInternalModel; size: 0x4C.
 void InitializeModelAnimationFromVAV(AnimationData* anim, void* pvVAV, NSBXXInternalModel* model)
 {
     unsigned int index = 0;
@@ -27,6 +28,7 @@ void InitializeModelAnimationFromVAV(AnimationData* anim, void* pvVAV, NSBXXInte
     }
 }
 
+// Original: arm9/main @ 0x020B9978; symbol: _Z30VAVAnimationProcessingCallbackPvP13AnimationDatai; size: 0x38.
 void VAVAnimationProcessingCallback(void* data, AnimationData* anim, int arg)
 {
     int* outVis = (int*)data;

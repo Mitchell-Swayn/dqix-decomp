@@ -4,6 +4,7 @@
 typedef unsigned long long U64;
 extern unsigned int ARM7_BiosPitchTable(unsigned int);
 unsigned int ARM7_GetSoundPitchTable(unsigned int);
+// Original: arm7/wram @ 0x037FF33C; symbol: ARM7_ConvertSoundPeriod.
 unsigned short ARM7_ConvertSoundPeriod(int basePeriod,int pitch)
 {
  int octave=0;
@@ -24,6 +25,7 @@ unsigned short ARM7_ConvertSoundPeriod(int basePeriod,int pitch)
  else if(period>65535)period=65535;
  return period;
 }
+// Original: arm7/wram @ 0x037FF45C; symbol: ARM7_GetSoundPitchTable.
 unsigned int ARM7_GetSoundPitchTable(unsigned int index)
 {
  return ARM7_BiosPitchTable(index);

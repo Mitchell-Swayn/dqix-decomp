@@ -4,3 +4,2238 @@
     .data       start:0x021fda60 end:0x021ff9e0 kind:data align:32
     .bss        start:0x021ff9e0 end:0x021fff40 kind:bss align:32
 
+src/Data/ov023/data_ov023_021fda60.cpp:
+    complete
+    .data start:0x021fda60 end:0x021fda65
+
+src/Data/ov023/data_ov023_021fda65.cpp:
+    complete
+    .data start:0x021fda65 end:0x021fda6b
+
+src/Data/ov023/data_ov023_021fda6b.cpp:
+    complete
+    .data start:0x021fda6b end:0x021fda71
+
+src/Data/ov023/data_ov023_021fda71.cpp:
+    complete
+    .data start:0x021fda71 end:0x021fda78
+
+src/Data/ov023/data_ov023_021fdb28.cpp:
+    complete
+    .data start:0x021fdb28 end:0x021fdb2d
+
+src/Data/ov023/data_ov023_021fdb2d.cpp:
+    complete
+    .data start:0x021fdb2d end:0x021fdb31
+
+src/Data/ov023/data_ov023_021fdb31.cpp:
+    complete
+    .data start:0x021fdb31 end:0x021fdb35
+
+src/Data/ov023/data_ov023_021fdb35.cpp:
+    complete
+    .data start:0x021fdb35 end:0x021fdb39
+
+src/Data/ov023/data_ov023_021fdb39.cpp:
+    complete
+    .data start:0x021fdb39 end:0x021fdb3b
+
+src/Data/ov023/data_ov023_021fdb3b.cpp:
+    complete
+    .data start:0x021fdb3b end:0x021fdb3e
+
+src/Data/ov023/data_ov023_021fdb3e.cpp:
+    complete
+    .data start:0x021fdb3e end:0x021fdb40
+
+src/Data/ov023/data_ov023_021fdb40.cpp:
+    complete
+    .data start:0x021fdb40 end:0x021fdb52
+
+src/Data/ov023/data_ov023_021fdb52.cpp:
+    complete
+    .data start:0x021fdb52 end:0x021fdb60
+
+src/Data/ov023/data_ov023_021fdb60.cpp:
+    complete
+    .data start:0x021fdb60 end:0x021fdb72
+
+src/Data/ov023/data_ov023_021fdb72.cpp:
+    complete
+    .data start:0x021fdb72 end:0x021fdb80
+
+src/Data/ov023/data_ov023_021fdb80.cpp:
+    complete
+    .data start:0x021fdb80 end:0x021fdb99
+
+src/Data/ov023/data_ov023_021fdb99.cpp:
+    complete
+    .data start:0x021fdb99 end:0x021fdba9
+
+src/Data/ov023/data_ov023_021fdba9.cpp:
+    complete
+    .data start:0x021fdba9 end:0x021fdbbe
+
+src/Data/ov023/data_ov023_021fdbbe.cpp:
+    complete
+    .data start:0x021fdbbe end:0x021fdbd5
+
+src/Data/ov023/data_ov023_021fdbd5.cpp:
+    complete
+    .data start:0x021fdbd5 end:0x021fdbeb
+
+src/Data/ov023/data_ov023_021fdbeb.cpp:
+    complete
+    .data start:0x021fdbeb end:0x021fdbfd
+
+src/Data/ov023/data_ov023_021fdbfd.cpp:
+    complete
+    .data start:0x021fdbfd end:0x021fdc12
+
+src/Data/ov023/data_ov023_021fdc12.cpp:
+    complete
+    .data start:0x021fdc12 end:0x021fdc23
+
+src/Data/ov023/data_ov023_021fdc23.cpp:
+    complete
+    .data start:0x021fdc23 end:0x021fdc36
+
+src/Data/ov023/data_ov023_021fdc36.cpp:
+    complete
+    .data start:0x021fdc36 end:0x021fdc4c
+
+src/Data/ov023/data_ov023_021fdc4c.cpp:
+    complete
+    .data start:0x021fdc4c end:0x021fdc61
+
+src/Data/ov023/data_ov023_021fdc61.cpp:
+    complete
+    .data start:0x021fdc61 end:0x021fdc78
+
+src/Data/ov023/data_ov023_021fdc90.cpp:
+    complete
+    .data start:0x021fdc90 end:0x021fdc94
+
+src/Data/ov023/data_ov023_021fdca4.cpp:
+    complete
+    .data start:0x021fdca4 end:0x021fdcb6
+
+src/Data/ov023/data_ov023_021fdcb6.cpp:
+    complete
+    .data start:0x021fdcb6 end:0x021fdcc4
+
+src/Data/ov023/data_ov023_021fdcc4.cpp:
+    complete
+    .data start:0x021fdcc4 end:0x021fdcd8
+
+src/Data/ov023/data_ov023_021fdcd8.cpp:
+    complete
+    .data start:0x021fdcd8 end:0x021fdce0
+
+src/Data/ov023/data_ov023_021fdce0.cpp:
+    complete
+    .data start:0x021fdce0 end:0x021fdce9
+
+src/Data/ov023/data_ov023_021fdce9.cpp:
+    complete
+    .data start:0x021fdce9 end:0x021fdcef
+
+src/Data/ov023/data_ov023_021fdcef.cpp:
+    complete
+    .data start:0x021fdcef end:0x021fdcf4
+
+src/Data/ov023/data_ov023_021fdcf4.cpp:
+    complete
+    .data start:0x021fdcf4 end:0x021fdcfa
+
+src/Data/ov023/data_ov023_021fdcfa.cpp:
+    complete
+    .data start:0x021fdcfa end:0x021fdd00
+
+src/Data/ov023/data_ov023_021fdd00.cpp:
+    complete
+    .data start:0x021fdd00 end:0x021fdd08
+
+src/Data/ov023/data_ov023_021fdd08.cpp:
+    complete
+    .data start:0x021fdd08 end:0x021fdd10
+
+src/Data/ov023/data_ov023_021fdd10.cpp:
+    complete
+    .data start:0x021fdd10 end:0x021fdd16
+
+src/Data/ov023/data_ov023_021fdd16.cpp:
+    complete
+    .data start:0x021fdd16 end:0x021fdd1c
+
+src/Data/ov023/data_ov023_021fdd1c.cpp:
+    complete
+    .data start:0x021fdd1c end:0x021fdd2a
+
+src/Data/ov023/data_ov023_021fdd2a.cpp:
+    complete
+    .data start:0x021fdd2a end:0x021fdd45
+
+src/Data/ov023/data_ov023_021fdd45.cpp:
+    complete
+    .data start:0x021fdd45 end:0x021fdd58
+
+src/Data/ov023/data_ov023_021fdd58.cpp:
+    complete
+    .data start:0x021fdd58 end:0x021fdd6c
+
+src/Data/ov023/data_ov023_021fdd6c.cpp:
+    complete
+    .data start:0x021fdd6c end:0x021fdd6e
+
+src/Data/ov023/data_ov023_021fdd6e.cpp:
+    complete
+    .data start:0x021fdd6e end:0x021fdd88
+
+src/Data/ov023/data_ov023_021fdd88.cpp:
+    complete
+    .data start:0x021fdd88 end:0x021fdd99
+
+src/Data/ov023/data_ov023_021fdd99.cpp:
+    complete
+    .data start:0x021fdd99 end:0x021fddb0
+
+src/Data/ov023/data_ov023_021fddb0.cpp:
+    complete
+    .data start:0x021fddb0 end:0x021fddb4
+
+src/Data/ov023/data_ov023_021fddb4.cpp:
+    complete
+    .data start:0x021fddb4 end:0x021fddb8
+
+src/Data/ov023/data_ov023_021fe108.cpp:
+    complete
+    .data start:0x021fe108 end:0x021fe121
+
+src/Data/ov023/data_ov023_021fe121.cpp:
+    complete
+    .data start:0x021fe121 end:0x021fe131
+
+src/Data/ov023/data_ov023_021fe131.cpp:
+    complete
+    .data start:0x021fe131 end:0x021fe144
+
+src/Data/ov023/data_ov023_021fe144.cpp:
+    complete
+    .data start:0x021fe144 end:0x021fe148
+
+src/Data/ov023/data_ov023_021fe1d8.cpp:
+    complete
+    .data start:0x021fe1d8 end:0x021fe1ee
+
+src/Data/ov023/data_ov023_021fe1ee.cpp:
+    complete
+    .data start:0x021fe1ee end:0x021fe200
+
+src/Data/ov023/data_ov023_021fe200.cpp:
+    complete
+    .data start:0x021fe200 end:0x021fe218
+
+src/Data/ov023/data_ov023_021fe218.cpp:
+    complete
+    .data start:0x021fe218 end:0x021fe230
+
+src/Data/ov023/data_ov023_021fe230.cpp:
+    complete
+    .data start:0x021fe230 end:0x021fe246
+
+src/Data/ov023/data_ov023_021fe246.cpp:
+    complete
+    .data start:0x021fe246 end:0x021fe258
+
+src/Data/ov023/data_ov023_021fe258.cpp:
+    complete
+    .data start:0x021fe258 end:0x021fe25e
+
+src/Data/ov023/data_ov023_021fe25e.cpp:
+    complete
+    .data start:0x021fe25e end:0x021fe273
+
+src/Data/ov023/data_ov023_021fe273.cpp:
+    complete
+    .data start:0x021fe273 end:0x021fe284
+
+src/Data/ov023/data_ov023_021fe284.cpp:
+    complete
+    .data start:0x021fe284 end:0x021fe2a0
+
+src/Data/ov023/data_ov023_021fe2a0.cpp:
+    complete
+    .data start:0x021fe2a0 end:0x021fe2b7
+
+src/Data/ov023/data_ov023_021fe2b7.cpp:
+    complete
+    .data start:0x021fe2b7 end:0x021fe2ca
+
+src/Data/ov023/data_ov023_021fe2ca.cpp:
+    complete
+    .data start:0x021fe2ca end:0x021fe2e5
+
+src/Data/ov023/data_ov023_021fe2e5.cpp:
+    complete
+    .data start:0x021fe2e5 end:0x021fe2f7
+
+src/Data/ov023/data_ov023_021fe2f7.cpp:
+    complete
+    .data start:0x021fe2f7 end:0x021fe316
+
+src/Data/ov023/data_ov023_021fe316.cpp:
+    complete
+    .data start:0x021fe316 end:0x021fe334
+
+src/Data/ov023/data_ov023_021fe338.cpp:
+    complete
+    .data start:0x021fe338 end:0x021fe34c
+
+src/Data/ov023/data_ov023_021fe3ac.cpp:
+    complete
+    .data start:0x021fe3ac end:0x021fe3b1
+
+src/Data/ov023/data_ov023_021fe3b1.cpp:
+    complete
+    .data start:0x021fe3b1 end:0x021fe3b5
+
+src/Data/ov023/data_ov023_021fe3b5.cpp:
+    complete
+    .data start:0x021fe3b5 end:0x021fe3ba
+
+src/Data/ov023/data_ov023_021fe3ba.cpp:
+    complete
+    .data start:0x021fe3ba end:0x021fe3c2
+
+src/Data/ov023/data_ov023_021fe3c2.cpp:
+    complete
+    .data start:0x021fe3c2 end:0x021fe3c8
+
+src/Data/ov023/data_ov023_021fe3c8.cpp:
+    complete
+    .data start:0x021fe3c8 end:0x021fe3e4
+
+src/Data/ov023/data_ov023_021fe4e0.cpp:
+    complete
+    .data start:0x021fe4e0 end:0x021fe4f0
+
+src/Data/ov023/data_ov023_021fe5ec.cpp:
+    complete
+    .data start:0x021fe5ec end:0x021fe5f4
+
+src/Data/ov023/data_ov023_021fe5f4.cpp:
+    complete
+    .data start:0x021fe5f4 end:0x021fe604
+
+src/Data/ov023/data_ov023_021feb30.cpp:
+    complete
+    .data start:0x021feb30 end:0x021feb40
+
+src/Data/ov023/data_ov023_021fec3c.cpp:
+    complete
+    .data start:0x021fec3c end:0x021fec44
+
+src/Data/ov023/data_ov023_021fec44.cpp:
+    complete
+    .data start:0x021fec44 end:0x021fec49
+
+src/Data/ov023/data_ov023_021fec49.cpp:
+    complete
+    .data start:0x021fec49 end:0x021fec4e
+
+src/Data/ov023/data_ov023_021fec4e.cpp:
+    complete
+    .data start:0x021fec4e end:0x021fec53
+
+src/Data/ov023/data_ov023_021fec53.cpp:
+    complete
+    .data start:0x021fec53 end:0x021fec60
+
+src/Data/ov023/data_ov023_021fef64.cpp:
+    complete
+    .data start:0x021fef64 end:0x021fef74
+
+src/Data/ov023/data_ov023_021ff480.cpp:
+    complete
+    .data start:0x021ff480 end:0x021ff496
+
+src/Data/ov023/data_ov023_021ff496.cpp:
+    complete
+    .data start:0x021ff496 end:0x021ff4b0
+
+src/Data/ov023/data_ov023_021ff7b4.cpp:
+    complete
+    .data start:0x021ff7b4 end:0x021ff7c4
+
+src/Unclassified/ov023/OV023_WriteWordField04.cpp:
+    complete
+    .text start:0x021f6bb0 end:0x021f6bb8
+
+src/Unclassified/ov023/OV023_ReadWordField04.cpp:
+    complete
+    .text start:0x021f6bb8 end:0x021f6bc0
+
+src/Unclassified/ov023/OV023_ReadHalfwordField04.cpp:
+    complete
+    .text start:0x021f6f10 end:0x021f6f18
+
+src/Unclassified/ov023/OV023_GetEmbeddedField28.cpp:
+    complete
+    .text start:0x021f79e4 end:0x021f79ec
+
+src/Unclassified/ov023/OV023_WriteHalfwordField28.cpp:
+    complete
+    .text start:0x021f9ba8 end:0x021f9bb0
+
+src/Unclassified/ov023/OV023_ReadHalfwordField28.cpp:
+    complete
+    .text start:0x021f9bb0 end:0x021f9bb8
+
+src/Unclassified/ov023/OV023_GetEmbeddedField20.cpp:
+    complete
+    .text start:0x021fa598 end:0x021fa5a0
+
+src/Unclassified/ov023/OV023_GetEmbeddedField24.cpp:
+    complete
+    .text start:0x021fad18 end:0x021fad20
+
+src/Unclassified/ov023/SetHalfwordPair10C.cpp:
+    complete
+    .text start:0x021f8960 end:0x021f8970
+
+src/Unclassified/ov023/AttachSharedBufferAndSetFourHalfwords.cpp:
+    complete
+    .text start:0x021ddc34 end:0x021ddc98
+
+src/Unclassified/ov023/ClearRecordPointersAndActiveBits.cpp:
+    complete
+    .text start:0x021e1518 end:0x021e1564
+
+src/Unclassified/ov023/ClearResourceTableHeaderFields.cpp:
+    complete
+    .text start:0x021e20c0 end:0x021e20f0
+
+src/Unclassified/ov023/InitializeRecordSentinelsAndFlags.cpp:
+    complete
+    .text start:0x021eefac end:0x021eefd0
+
+src/Unclassified/ov023/AppendEnabledNodeToForwardChain.cpp:
+    complete
+    .text start:0x021f67ac end:0x021f67ec
+
+src/Unclassified/ov023/ComputeRowMajorIndexFromThreeHalfwords.cpp:
+    complete
+    .text start:0x021f9bc8 end:0x021f9bdc
+
+src/Unclassified/ov023/CopyVectorAtOffset50.cpp:
+    complete
+    .text start:0x021e613c end:0x021e6150
+
+src/Unclassified/ov023/ResetRecordWithInvalidIndex.cpp:
+    complete
+    .text start:0x021f6ed8 end:0x021f6f08
+
+src/Unclassified/ov023/TestGlobalOrLocalInputMask.cpp:
+    complete
+    .text start:0x021e6de4 end:0x021e6e20
+
+src/Unclassified/ov023/ResolveCharacterBySignedSelector.cpp:
+    complete
+    .text start:0x021e8f28 end:0x021e8fe8
+
+src/Unclassified/ov023/TestGlobalInputOrInactiveState.cpp:
+    complete
+    .text start:0x021f4fc8 end:0x021f50fc
+
+src/Unclassified/ov023/RemoveNonnegativeStoredBackgroundTask.cpp:
+    complete
+    .text start:0x021db2e4 end:0x021db314
+
+src/Unclassified/ov023/FindTwentyFourByteRecordBySignedKey.cpp:
+    complete
+    .text start:0x021db4e4 end:0x021db544
+
+src/Unclassified/ov023/WriteBoundedHalfwordGridCell.cpp:
+    complete
+    .text start:0x021f9b30 end:0x021f9b6c
+
+src/Unclassified/ov023/ConfigurePairedControlsFromStateSelector.cpp:
+    complete
+    .text start:0x021e6e60 end:0x021e709c
+
+src/Unclassified/ov023/GetIndexedRecordAddressOrZero.cpp:
+    complete
+    .text start:0x021fa854 end:0x021fa87c
+
+src/Unclassified/ov023/InitializeTwoWordsAndTwoHalfwords.cpp:
+    complete
+    .text start:0x021e1318 end:0x021e1330
+
+src/Unclassified/ov023/ReadHalfwordAtOffset2A.cpp:
+    complete
+    .text start:0x021f9bc0 end:0x021f9bc8
+
+src/Unclassified/ov023/ReadHalfwordAtOffset6.cpp:
+    complete
+    .text start:0x021f6f08 end:0x021f6f10
+
+src/Unclassified/ov023/WriteHalfwordAtOffset22.cpp:
+    complete
+    .text start:0x021fb27c end:0x021fb284
+
+src/Unclassified/ov023/WriteByteAtOffset60.cpp:
+	complete
+	.text start:0x021f9da0 end:0x021f9da8
+
+src/Unclassified/ov023/SetCharacterDescriptorByteC11.cpp:
+    complete
+    .text start:0x021e6150 end:0x021e6158
+
+src/Unclassified/ov023/SetCharacterDescriptorWordC0C.cpp:
+    complete
+    .text start:0x021e6198 end:0x021e61a0
+
+src/Unclassified/ov023/ReadWordAtOffset18.cpp:
+    complete
+    .text start:0x021f6f18 end:0x021f6f20
+
+src/Unclassified/ov023/AdvancePointerBy32Bytes.cpp:
+    complete
+    .text start:0x021f7318 end:0x021f7320
+
+src/Unclassified/ov023/ClearWordAndTwoHalfwords.cpp:
+    complete
+    .text start:0x021dad78 end:0x021dad8c
+
+src/Unclassified/ov023/SetIndexedRecordHalfword2ToFFFF.cpp:
+    complete
+    .text start:0x021e6158 end:0x021e616c
+
+src/Unclassified/ov023/CopyBytesToBufferAndStoreLength.cpp:
+    complete
+    .text start:0x021d9988 end:0x021d99a4
+
+src/Unclassified/ov023/ClearFourByteRecord.cpp:
+    complete
+    .text start:0x021e71a0 end:0x021e71b4
+
+src/Unclassified/ov023/ReadIndexedField138ThroughObjectChain.cpp:
+    complete
+    .text start:0x021eea98 end:0x021eeaac
+
+src/Unclassified/ov023/Field_SetRecordStateTwo.cpp:
+    complete
+    .text start:0x021f7320 end:0x021f732c
+
+src/Unclassified/ov023/func_ov023_021e4e1c.cpp:
+    complete
+    .text start:0x021e4e1c end:0x021e4e20
+
+src/Unclassified/ov023/func_ov023_021e6194.cpp:
+    complete
+    .text start:0x021e6194 end:0x021e6198
+
+src/Unclassified/ov023/func_ov023_021f66f0.cpp:
+    complete
+    .text start:0x021f66f0 end:0x021f66f4
+
+src/Unclassified/ov023/func_ov023_021f6728.cpp:
+    complete
+    .text start:0x021f6728 end:0x021f672c
+
+src/Unclassified/ov023/func_ov023_021f6984.cpp:
+    complete
+    .text start:0x021f6984 end:0x021f6988
+
+src/Unclassified/ov023/func_ov023_021f6988.cpp:
+    complete
+    .text start:0x021f6988 end:0x021f698c
+
+src/Unclassified/ov023/func_ov023_021f69b8.cpp:
+    complete
+    .text start:0x021f69b8 end:0x021f69bc
+
+src/Unclassified/ov023/func_ov023_021f69e8.cpp:
+    complete
+    .text start:0x021f69e8 end:0x021f69ec
+
+src/Unclassified/ov023/func_ov023_021f6a18.cpp:
+    complete
+    .text start:0x021f6a18 end:0x021f6a1c
+
+src/Unclassified/ov023/func_ov023_021f7130.cpp:
+    complete
+    .text start:0x021f7130 end:0x021f7134
+
+src/Unclassified/ov023/func_ov023_021f7344.cpp:
+    complete
+    .text start:0x021f7344 end:0x021f7348
+
+src/Unclassified/ov023/func_ov023_021f7350.cpp:
+    complete
+    .text start:0x021f7350 end:0x021f7354
+
+src/Unclassified/ov023/func_ov023_021f7354.cpp:
+    complete
+    .text start:0x021f7354 end:0x021f7358
+
+src/Unclassified/ov023/func_ov023_021f7358.cpp:
+    complete
+    .text start:0x021f7358 end:0x021f735c
+
+src/Unclassified/ov023/func_ov023_021f7388.cpp:
+    complete
+    .text start:0x021f7388 end:0x021f738c
+
+src/Unclassified/ov023/func_ov023_021f738c.cpp:
+    complete
+    .text start:0x021f738c end:0x021f7390
+
+src/Unclassified/ov023/func_ov023_021f73a8.cpp:
+    complete
+    .text start:0x021f73a8 end:0x021f73ac
+
+src/Unclassified/ov023/func_ov023_021f73ac.cpp:
+    complete
+    .text start:0x021f73ac end:0x021f73b0
+
+src/Unclassified/ov023/func_ov023_021f73b0.cpp:
+    complete
+    .text start:0x021f73b0 end:0x021f73b4
+
+src/Unclassified/ov023/func_ov023_021f73bc.cpp:
+    complete
+    .text start:0x021f73bc end:0x021f73c0
+
+src/Unclassified/ov023/func_ov023_021f73c8.cpp:
+    complete
+    .text start:0x021f73c8 end:0x021f73cc
+
+src/Unclassified/ov023/func_ov023_021f73d4.cpp:
+    complete
+    .text start:0x021f73d4 end:0x021f73d8
+
+src/Unclassified/ov023/func_ov023_021f73e0.cpp:
+    complete
+    .text start:0x021f73e0 end:0x021f73e4
+
+src/Unclassified/ov023/func_ov023_021f73ec.cpp:
+    complete
+    .text start:0x021f73ec end:0x021f73f0
+
+src/Unclassified/ov023/func_ov023_021f73f8.cpp:
+    complete
+    .text start:0x021f73f8 end:0x021f73fc
+
+src/Unclassified/ov023/func_ov023_021f7404.cpp:
+    complete
+    .text start:0x021f7404 end:0x021f7408
+
+src/Unclassified/ov023/func_ov023_021f7410.cpp:
+    complete
+    .text start:0x021f7410 end:0x021f7414
+
+src/Unclassified/ov023/func_ov023_021f741c.cpp:
+    complete
+    .text start:0x021f741c end:0x021f7420
+
+src/Unclassified/ov023/func_ov023_021f7428.cpp:
+    complete
+    .text start:0x021f7428 end:0x021f742c
+
+src/Unclassified/ov023/func_ov023_021f7434.cpp:
+    complete
+    .text start:0x021f7434 end:0x021f7438
+
+src/Unclassified/ov023/func_ov023_021f7440.cpp:
+    complete
+    .text start:0x021f7440 end:0x021f7444
+
+src/Unclassified/ov023/func_ov023_021f744c.cpp:
+    complete
+    .text start:0x021f744c end:0x021f7450
+
+src/Unclassified/ov023/func_ov023_021f7458.cpp:
+    complete
+    .text start:0x021f7458 end:0x021f745c
+
+src/Unclassified/ov023/func_ov023_021f7d90.cpp:
+    complete
+    .text start:0x021f7d90 end:0x021f7d94
+
+src/Unclassified/ov023/func_ov023_021f7d9c.cpp:
+    complete
+    .text start:0x021f7d9c end:0x021f7da0
+
+src/Unclassified/ov023/func_ov023_021f8190.cpp:
+    complete
+    .text start:0x021f8190 end:0x021f8194
+
+src/Unclassified/ov023/func_ov023_021f8194.cpp:
+    complete
+    .text start:0x021f8194 end:0x021f8198
+
+src/Unclassified/ov023/func_ov023_021f8ae8.cpp:
+    complete
+    .text start:0x021f8ae8 end:0x021f8aec
+
+src/Unclassified/ov023/func_ov023_021f8cf0.cpp:
+    complete
+    .text start:0x021f8cf0 end:0x021f8cf4
+
+src/Unclassified/ov023/func_ov023_021f9b18.cpp:
+    complete
+    .text start:0x021f9b18 end:0x021f9b1c
+
+src/Unclassified/ov023/func_ov023_021fa038.cpp:
+    complete
+    .text start:0x021fa038 end:0x021fa03c
+
+src/Unclassified/ov023/func_ov023_021faa58.cpp:
+    complete
+    .text start:0x021faa58 end:0x021faa5c
+
+src/Unclassified/ov023/func_ov023_021faa5c.cpp:
+    complete
+    .text start:0x021faa5c end:0x021faa60
+
+src/Unclassified/ov023/func_ov023_021fbaac.cpp:
+    complete
+    .text start:0x021fbaac end:0x021fbab0
+
+src/Unclassified/ov023/func_ov023_021fbc20.cpp:
+    complete
+    .text start:0x021fbc20 end:0x021fbc24
+
+src/Unclassified/ov023/func_ov023_021fbcf8.cpp:
+    complete
+    .text start:0x021fbcf8 end:0x021fbcfc
+
+src/Unclassified/ov023/func_ov023_021fbcfc.cpp:
+    complete
+    .text start:0x021fbcfc end:0x021fbd00
+
+src/Unclassified/ov023/func_ov023_021fc46c.cpp:
+    complete
+    .text start:0x021fc46c end:0x021fc470
+
+src/Unclassified/ov023/func_ov023_021fc514.cpp:
+    complete
+    .text start:0x021fc514 end:0x021fc518
+
+src/Unclassified/ov023/func_ov023_021fd008.cpp:
+    complete
+    .text start:0x021fd008 end:0x021fd00c
+
+src/Unclassified/ov023/func_ov023_021fd234.cpp:
+    complete
+    .text start:0x021fd234 end:0x021fd238
+
+src/Unclassified/ov023/func_ov023_021fd390.cpp:
+    complete
+    .text start:0x021fd390 end:0x021fd394
+
+src/Unclassified/ov023/func_ov023_021fd50c.cpp:
+    complete
+    .text start:0x021fd50c end:0x021fd510
+
+src/Unclassified/ov023/func_ov023_021f55a8.cpp:
+    complete
+    .text start:0x021f55a8 end:0x021f55b0
+
+src/Unclassified/ov023/func_ov023_021f55b0.cpp:
+    complete
+    .text start:0x021f55b0 end:0x021f55b8
+
+src/Unclassified/ov023/func_ov023_021f5b94.cpp:
+    complete
+    .text start:0x021f5b94 end:0x021f5b9c
+
+src/Unclassified/ov023/func_ov023_021f6ab8.cpp:
+    complete
+    .text start:0x021f6ab8 end:0x021f6ac0
+
+src/Unclassified/ov023/func_ov023_021f6ac0.cpp:
+    complete
+    .text start:0x021f6ac0 end:0x021f6ac8
+
+src/Unclassified/ov023/func_ov023_021f6ba8.cpp:
+    complete
+    .text start:0x021f6ba8 end:0x021f6bb0
+
+src/Unclassified/ov023/func_ov023_021f732c.cpp:
+    complete
+    .text start:0x021f732c end:0x021f7334
+
+src/Unclassified/ov023/func_ov023_021f7334.cpp:
+    complete
+    .text start:0x021f7334 end:0x021f733c
+
+src/Unclassified/ov023/func_ov023_021f733c.cpp:
+    complete
+    .text start:0x021f733c end:0x021f7344
+
+src/Unclassified/ov023/func_ov023_021f7348.cpp:
+    complete
+    .text start:0x021f7348 end:0x021f7350
+
+src/Unclassified/ov023/func_ov023_021f7390.cpp:
+    complete
+    .text start:0x021f7390 end:0x021f7398
+
+src/Unclassified/ov023/func_ov023_021f7398.cpp:
+    complete
+    .text start:0x021f7398 end:0x021f73a0
+
+src/Unclassified/ov023/func_ov023_021f73a0.cpp:
+    complete
+    .text start:0x021f73a0 end:0x021f73a8
+
+src/Unclassified/ov023/func_ov023_021f73b4.cpp:
+    complete
+    .text start:0x021f73b4 end:0x021f73bc
+
+src/Unclassified/ov023/func_ov023_021f73c0.cpp:
+    complete
+    .text start:0x021f73c0 end:0x021f73c8
+
+src/Unclassified/ov023/func_ov023_021f73cc.cpp:
+    complete
+    .text start:0x021f73cc end:0x021f73d4
+
+src/Unclassified/ov023/func_ov023_021f73d8.cpp:
+    complete
+    .text start:0x021f73d8 end:0x021f73e0
+
+src/Unclassified/ov023/func_ov023_021f73e4.cpp:
+    complete
+    .text start:0x021f73e4 end:0x021f73ec
+
+src/Unclassified/ov023/func_ov023_021f73f0.cpp:
+    complete
+    .text start:0x021f73f0 end:0x021f73f8
+
+src/Unclassified/ov023/func_ov023_021f73fc.cpp:
+    complete
+    .text start:0x021f73fc end:0x021f7404
+
+src/Unclassified/ov023/func_ov023_021f7408.cpp:
+    complete
+    .text start:0x021f7408 end:0x021f7410
+
+src/Unclassified/ov023/func_ov023_021f7414.cpp:
+    complete
+    .text start:0x021f7414 end:0x021f741c
+
+src/Unclassified/ov023/func_ov023_021f7420.cpp:
+    complete
+    .text start:0x021f7420 end:0x021f7428
+
+src/Unclassified/ov023/func_ov023_021f742c.cpp:
+    complete
+    .text start:0x021f742c end:0x021f7434
+
+src/Unclassified/ov023/func_ov023_021f7438.cpp:
+    complete
+    .text start:0x021f7438 end:0x021f7440
+
+src/Unclassified/ov023/func_ov023_021f7444.cpp:
+    complete
+    .text start:0x021f7444 end:0x021f744c
+
+src/Unclassified/ov023/func_ov023_021f7450.cpp:
+    complete
+    .text start:0x021f7450 end:0x021f7458
+
+src/Unclassified/ov023/func_ov023_021f7d88.cpp:
+    complete
+    .text start:0x021f7d88 end:0x021f7d90
+
+src/Unclassified/ov023/func_ov023_021f7d94.cpp:
+    complete
+    .text start:0x021f7d94 end:0x021f7d9c
+
+src/Unclassified/ov023/func_ov023_021fbb30.cpp:
+    complete
+    .text start:0x021fbb30 end:0x021fbb38
+
+src/Unclassified/ov023/func_ov023_021fbb38.cpp:
+    complete
+    .text start:0x021fbb38 end:0x021fbb40
+
+src/Unclassified/ov023/func_ov023_021fbcf0.cpp:
+    complete
+    .text start:0x021fbcf0 end:0x021fbcf8
+
+src/Graphics/ov023/TextCanvas_InitializeState.cpp:
+    complete
+    .text start:0x021eb138 end:0x021eb26c
+
+src/Unclassified/ov023/ForwardInitializeTwoWordsAndTwoHalfwords.cpp:
+    complete
+    .text start:0x021e1330 end:0x021e133c
+
+src/GameState/ov023/GameState_EnableGlobalFlag64_Forwarder.cpp:
+    complete
+    .text start:0x021fbb58 end:0x021fbb64
+
+src/Graphics/ov023/Graphics_ClearInactiveResourceState.cpp:
+    complete
+    .text start:0x021d8c60 end:0x021d8c94
+
+src/Unclassified/ov023/func_ov023_021e31b0.cpp:
+    complete
+    .text start:0x021e31b0 end:0x021e31e4
+
+src/Resource/ov023/Script_AppendHalfwordWhenElement0Available.cpp:
+    complete
+    .text start:0x021e915c end:0x021e9190
+
+src/Grotto/ov023/Grotto_CopyStateAndSetTypeThreeValue.cpp:
+    complete
+    .text start:0x021e98dc end:0x021e9910
+
+src/GameState/ov023/GameState_SetNestedTypeThreeValueFromSnapshot.cpp:
+    complete
+    .text start:0x021e9910 end:0x021e9944
+
+src/Unclassified/ov023/Script_TryAppendHalfwordParameter.cpp:
+    complete
+    .text start:0x021e9244 end:0x021e9278
+
+src/Unclassified/ov023/func_ov023_021dcb70.cpp:
+    complete
+    .text start:0x021dcb70 end:0x021dcba4
+
+src/Grotto/ov023/Grotto_CopyStateAndSetPercent.cpp:
+    complete
+    .text start:0x021e99dc end:0x021e9a10
+
+src/GameState/ov023/GameState_SetNestedTypeThreePercentage.cpp:
+    complete
+    .text start:0x021e9a10 end:0x021e9a44
+
+src/Grotto/ov023/Grotto_SetNestedTypeThreePercentFromGameState.cpp:
+    complete
+    .text start:0x021e99a8 end:0x021e99dc
+
+src/Unclassified/ov023/ComputeScaledValueWithPositiveMinimum.cpp:
+    complete
+    .text start:0x021f44d0 end:0x021f454c
+
+src/GameState/ov023/GameState_SetNestedTypeThreeIndex.cpp:
+    complete
+    .text start:0x021e9b7c end:0x021e9bb0
+
+src/Grotto/ov023/Grotto_SetNestedTypeThreeFieldFromGameState.cpp:
+    complete
+    .text start:0x021e9bb0 end:0x021e9be4
+
+src/Grotto/ov023/func_ov023_021e9a44.cpp:
+    complete
+    .text start:0x021e9a44 end:0x021e9a78
+
+src/Grotto/ov023/Grotto_SetTypeThreeSecondWordFromGameState.cpp:
+    complete
+    .text start:0x021e9974 end:0x021e99a8
+
+src/Grotto/ov023/Grotto_SetTypeThreeSecondWordFromStateWord.cpp:
+    complete
+    .text start:0x021e9d94 end:0x021e9dc8
+
+src/Grotto/ov023/func_ov023_021e9d60.cpp:
+    complete
+    .text start:0x021e9d60 end:0x021e9d94
+
+src/Grotto/ov023/Grotto_SetTypeThreeSecondWordFromStateBits.cpp:
+    complete
+    .text start:0x021e9dfc end:0x021e9e30
+
+src/Grotto/ov023/Grotto_SetTypeThreeSecondWordFromStateHalfword.cpp:
+    complete
+    .text start:0x021e9e64 end:0x021e9e98
+
+src/Grotto/ov023/func_ov023_021e9e30.cpp:
+    complete
+    .text start:0x021e9e30 end:0x021e9e64
+
+src/Grotto/ov023/Grotto_SetTypeThreeSecondWordFromStateWord40.cpp:
+    complete
+    .text start:0x021e9e98 end:0x021e9ecc
+
+src/Grotto/ov023/func_ov023_021e9ecc.cpp:
+    complete
+    .text start:0x021e9ecc end:0x021e9f00
+
+src/Grotto/ov023/Grotto_SetTypeThreeSecondWordFromStateHalfword24.cpp:
+    complete
+    .text start:0x021e9f30 end:0x021e9f64
+
+src/Grotto/ov023/func_ov023_021ea0b4.cpp:
+    complete
+    .text start:0x021ea0b4 end:0x021ea0e8
+
+src/Grotto/ov023/Grotto_CopyDetailedMapKind.cpp:
+    complete
+    .text start:0x021e9cf8 end:0x021e9d2c
+
+src/Grotto/ov023/Grotto_CopyDetailedMapIndex.cpp:
+    complete
+    .text start:0x021ea17c end:0x021ea1b0
+
+src/Grotto/ov023/Grotto_CopyDetailedMapLevel.cpp:
+    complete
+    .text start:0x021ea1e0 end:0x021ea214
+
+src/Grotto/ov023/Grotto_CopyMapField.cpp:
+    complete
+    .text start:0x021ea214 end:0x021ea248
+
+src/Grotto/ov023/Grotto_CopyMapField16.cpp:
+    complete
+    .text start:0x021ea278 end:0x021ea2ac
+
+src/GameState/ov023/GameState_WriteCountOfSecondaryObjectsWithZeroField4.cpp:
+    complete
+    .text start:0x021ea3ec end:0x021ea46c
+
+src/Graphics/ov023/Graphics_DrawObjectWithBoneAttachments.cpp:
+    complete
+    .text start:0x021e5628 end:0x021e5974
+
+src/Resource/ov023/Script_InitializeOpcodeHandlers.cpp:
+    complete
+    .text start:0x021eb000 end:0x021eb080
+
+src/Util/ov023/DispatchIndexedMemberAndUpdateState.cpp:
+    complete
+    .text start:0x021f7550 end:0x021f75d0
+
+src/Unclassified/ov023/Object_DispatchStateHandlerAndUpdateState.cpp:
+    complete
+    .text start:0x021f6f90 end:0x021f7010
+
+src/System/ov023/System_DispatchStateHandlerAndStoreResult.cpp:
+    complete
+    .text start:0x021fa87c end:0x021fa8fc
+
+src/Unclassified/ov023/DispatchStateHandler.cpp:
+    complete
+    .text start:0x021fb680 end:0x021fb700
+
+src/Util/ov023/DispatchIndexedMemberAndUpdateState_Ov023021FBE70.cpp:
+    complete
+    .text start:0x021fbe70 end:0x021fbef0
+
+src/System/ov023/System_DispatchStateHandlerAndStoreResult_Ov023021FCE38.cpp:
+    complete
+    .text start:0x021fce38 end:0x021fceb8
+
+src/Unclassified/ov023/Object_DispatchSecondaryStateHandlerAndUpdateState.cpp:
+    complete
+    .text start:0x021fc238 end:0x021fc2b8
+
+src/Util/ov023/Util_DispatchStateHandler.cpp:
+    complete
+    .text start:0x021fbab0 end:0x021fbb30
+
+src/Unclassified/ov023/DispatchStateHandler021FD238.cpp:
+    complete
+    .text start:0x021fd238 end:0x021fd2b8
+
+src/Unclassified/ov023/func_ov023_021f5598.cpp:
+    complete
+    .text start:0x021f5598 end:0x021f55a8
+
+src/Unclassified/ov023/func_ov023_021f5524.cpp:
+    complete
+    .text start:0x021f5524 end:0x021f5534
+
+src/Graphics/ov023/Graphics_ResetLayoutAndDisplayFlagsAt20.cpp:
+    complete
+    .text start:0x021f8120 end:0x021f8130
+
+src/Unclassified/ov023/func_ov023_021fb23c.cpp:
+    complete
+    .text start:0x021fb23c end:0x021fb24c
+
+src/Unclassified/ov023/func_ov023_021fa588.cpp:
+    complete
+    .text start:0x021fa588 end:0x021fa598
+
+src/Util/ov023/func_ov023_021f86e4.cpp:
+    complete
+    .text start:0x021f86e4 end:0x021f86f4
+
+src/Unclassified/ov023/Ov023_ForwardObjectAt20.cpp:
+    complete
+    .text start:0x021fbdcc end:0x021fbddc
+
+src/Unclassified/ov023/func_ov023_021fbdbc.cpp:
+    complete
+    .text start:0x021fbdbc end:0x021fbdcc
+
+src/Unclassified/ov023/func_ov023_021fbdac.cpp:
+    complete
+    .text start:0x021fbdac end:0x021fbdbc
+
+src/Unclassified/ov023/func_ov023_021f8130.cpp:
+    complete
+    .text start:0x021f8130 end:0x021f8140
+
+src/Unclassified/ov023/func_ov023_021fbddc.cpp:
+    complete
+    .text start:0x021fbddc end:0x021fbdec
+
+src/Grotto/ov023/func_ov023_021fbb48.cpp:
+    complete
+    .text start:0x021fbb48 end:0x021fbb58
+
+src/Graphics/ov023/ZoneContainer_ResetIfFlag0.cpp:
+    complete
+    .text start:0x021f6f80 end:0x021f6f90
+
+src/Graphics/ov023/Ov023_InitializeEmbeddedObject3D.cpp:
+    complete
+    .text start:0x021fce28 end:0x021fce38
+
+src/Unclassified/ov023/func_ov023_021fc228.cpp:
+    complete
+    .text start:0x021fc228 end:0x021fc238
+
+src/Grotto/ov023/Grotto_SetNestedSecondWordFromByteState.cpp:
+    complete
+    .text start:0x021ea310 end:0x021ea344
+
+src/Grotto/ov023/CopyTypeThreeSecondWordFromGameState.cpp:
+    complete
+    .text start:0x021ea2dc end:0x021ea310
+
+src/Grotto/ov023/CopyTypeThreeSecondWordFromGameStateField8C.cpp:
+    complete
+    .text start:0x021ea378 end:0x021ea3ac
+
+src/Grotto/ov023/CopyTypeThreeSecondWordFromGameStateField98.cpp:
+    complete
+    .text start:0x021eaba0 end:0x021eabd4
+
+src/Grotto/ov023/Grotto_SetNestedWordAt20FromByteState.cpp:
+    complete
+    .text start:0x021ea884 end:0x021ea8b8
+
+src/Grotto/ov023/CopyTypeThreeSecondWordFromGameStateField9C.cpp:
+    complete
+    .text start:0x021eac3c end:0x021eac70
+
+src/Grotto/ov023/Grotto_SetNestedWordFromPackedByteState.cpp:
+    complete
+    .text start:0x021eac08 end:0x021eac3c
+
+src/Resource/ov023/Script_SetPackedStateFields.cpp:
+    complete
+    .text start:0x021f57c4 end:0x021f5848
+
+src/GameState/ov023/GameState_UpdateRecordTextBuffers.cpp:
+    complete
+    .text start:0x021e66ac end:0x021e67f4
+
+src/GameState/ov023/func_ov023_021eac70.cpp:
+    complete
+    .text start:0x021eac70 end:0x021eaca4
+
+src/Grotto/ov023/func_ov023_021eabd4.cpp:
+    complete
+    .text start:0x021eabd4 end:0x021eac08
+
+src/GameState/ov023/func_ov023_021ead40.cpp:
+    complete
+    .text start:0x021ead40 end:0x021ead74
+
+src/Grotto/ov023/CopyTypeThreeSecondWordFromGameStateBits24.cpp:
+    complete
+    .text start:0x021eaca4 end:0x021eacd8
+
+src/GameState/ov023/func_ov023_021ead74.cpp:
+    complete
+    .text start:0x021ead74 end:0x021eada8
+
+src/Graphics/ov023/ConfigureDisp3DControl.cpp:
+    complete
+    .text start:0x021ec420 end:0x021ec454
+
+src/Graphics/ov023/Graphics_SetTransferCallbackIndicesFromFixedPoint.cpp:
+    complete
+    .text start:0x021f7d14 end:0x021f7d48
+
+src/GameState/ov023/Item_InitializeWithIdAndKind.cpp:
+    complete
+    .text start:0x021fc1f4 end:0x021fc228
+
+src/Grotto/ov023/func_ov023_021eada8.cpp:
+    complete
+    .text start:0x021eada8 end:0x021eaddc
+
+src/Unclassified/ov023/func_ov023_021dbb20.cpp:
+    complete
+    .text start:0x021dbb20 end:0x021dbb34
+
+src/Unclassified/ov023/func_ov023_021e338c.cpp:
+    complete
+    .text start:0x021e338c end:0x021e33a0
+
+src/Unclassified/ov023/func_ov023_021e33a0.cpp:
+    complete
+    .text start:0x021e33a0 end:0x021e33b4
+
+src/Unclassified/ov023/func_ov023_021eb564.cpp:
+    complete
+    .text start:0x021eb564 end:0x021eb578
+
+src/Unclassified/ov023/func_ov023_021f9b1c.cpp:
+    complete
+    .text start:0x021f9b1c end:0x021f9b30
+
+src/Unclassified/ov023/Ov023_ClearFourByteRecord.cpp:
+    complete
+    .text start:0x021f9eb4 end:0x021f9ec8
+
+src/Unclassified/ov023/func_ov023_021fb1c8.cpp:
+    complete
+    .text start:0x021fb1c8 end:0x021fb1dc
+
+src/Unclassified/ov023/func_ov023_021fb878.cpp:
+    complete
+    .text start:0x021fb878 end:0x021fb88c
+
+src/Unclassified/ov023/func_ov023_021fb28c.cpp:
+    complete
+    .text start:0x021fb28c end:0x021fb2a0
+
+src/Unclassified/ov023/func_ov023_021fbdf4.cpp:
+    complete
+    .text start:0x021fbdf4 end:0x021fbe08
+
+src/Unclassified/ov023/func_ov023_021fd4f8.cpp:
+    complete
+    .text start:0x021fd4f8 end:0x021fd50c
+
+src/GameState/ov023/ReadByteAtBase150PlusOffset950Plus186.cpp:
+    complete
+    .text start:0x021e4250 end:0x021e4264
+
+src/Filesystem/ov023/Filesystem_QueueFormattedBackgroundResource.cpp:
+    complete
+    .text start:0x021fa370 end:0x021fa4c8
+
+src/Grotto/ov023/Grotto_SetNestedWordFromClampedState.cpp:
+    complete
+    .text start:0x021e9f9c end:0x021e9fd4
+
+src/Grotto/ov023/UpdateTypeThreeFromConnectionState.cpp:
+    complete
+    .text start:0x021ea920 end:0x021ea958
+
+src/GameState/ov023/func_ov023_021ea978.cpp:
+    complete
+    .text start:0x021ea978 end:0x021ea9b0
+
+src/GameState/ov023/SetNestedSecondWordFromStateBuffer.cpp:
+    complete
+    .text start:0x021e9f64 end:0x021e9f9c
+
+src/Filesystem/ov023/BackgroundLoader_RemoveTaskAndResetLoadState.cpp:
+    complete
+    .text start:0x021f5410 end:0x021f5448
+
+src/Unclassified/ov023/func_ov023_021f6880.cpp:
+    complete
+    .text start:0x021f6880 end:0x021f68b8
+
+src/Unclassified/ov023/ConfigureAndSubmitIndexedRecord.cpp:
+    complete
+    .text start:0x021e32cc end:0x021e3304
+
+src/Graphics/ov023/Graphics_AreBothIndicesUnset.cpp:
+    complete
+    .text start:0x021f21f4 end:0x021f222c
+
+src/Graphics/ov023/Graphics_SetBoundedEntryAndUpdate.cpp:
+    complete
+    .text start:0x021f7c68 end:0x021f7ca0
+
+src/Resource/ov023/Ov023_FindRangeStart.cpp:
+    complete
+    .text start:0x021f6dd8 end:0x021f6e10
+
+src/Graphics/ov023/Text_AppendGlyphGrid.cpp:
+    complete
+    .text start:0x021e8cdc end:0x021e8e34
+
+src/Resource/ov023/Resource_ResetAndPositionFirstEntry.cpp:
+    complete
+    .text start:0x021e3304 end:0x021e338c
+
+src/GameState/ov023/GameState_ConfigureAndProcessFirstIndexedStage.cpp:
+    complete
+    .text start:0x021e8604 end:0x021e868c
+
+src/GameState/ov023/CountSelectedObjectsWithNestedKindsTwoThreeTen.cpp:
+    complete
+    .text start:0x021ea51c end:0x021ea5a4
+
+src/Unclassified/ov023/HasTypeSevenAtResolvedHandle.cpp:
+    complete
+    .text start:0x021f6524 end:0x021f6558
+
+src/GameState/ov023/func_ov023_021f66f4.cpp:
+    complete
+    .text start:0x021f66f4 end:0x021f6728
+
+src/Resource/ov023/InvokeEntryHandlerForStateKey.cpp:
+    complete
+    .text start:0x021f66bc end:0x021f66f0
+
+src/Util/ov023/Util_InsertNodeByAscendingKey.cpp:
+    complete
+    .text start:0x021f6d14 end:0x021f6d9c
+
+src/World/ov023/World_LoadZoneRenderPartWithSavedVram.cpp:
+    complete
+    .text start:0x021f7290 end:0x021f7318
+
+src/Unclassified/ov023/func_ov023_021db0d4.cpp:
+    complete
+    .text start:0x021db0d4 end:0x021db110
+
+src/GameState/ov023/func_ov023_021e9208.cpp:
+    complete
+    .text start:0x021e9208 end:0x021e9244
+
+src/Graphics/ov023/func_ov023_021ddbf8.cpp:
+    complete
+    .text start:0x021ddbf8 end:0x021ddc34
+
+src/GameState/ov023/func_ov023_021e9864.cpp:
+    complete
+    .text start:0x021e9864 end:0x021e98a0
+
+src/Graphics/ov023/Graphics_ClearMainBG1Screen.cpp:
+    complete
+    .text start:0x021dcd78 end:0x021dcd90
+
+src/Resource/ov023/Resource_ResetTablesAndCachePartyIndices.cpp:
+    complete
+    .text start:0x021e2dd8 end:0x021e2f38
+
+src/Unclassified/ov023/func_ov023_021fd420.cpp:
+    complete
+    .text start:0x021fd420 end:0x021fd45c
+
+src/Unclassified/ov023/func_ov023_021fcfd0.cpp:
+    complete
+    .text start:0x021fcfd0 end:0x021fcfe8
+
+src/Grotto/ov023/Grotto_SetNestedWordsFromStateBuffer.cpp:
+    complete
+    .text start:0x021eab28 end:0x021eab64
+
+src/Unclassified/ov023/func_ov023_021f6444.cpp:
+    complete
+    .text start:0x021f6444 end:0x021f645c
+
+src/Util/ov023/func_ov023_021f6d9c.cpp:
+    complete
+    .text start:0x021f6d9c end:0x021f6dd8
+
+src/Resource/ov023/func_ov023_021f5788.cpp:
+    complete
+    .text start:0x021f5788 end:0x021f57c4
+
+src/Unclassified/ov023/func_ov023_021fb25c.cpp:
+    complete
+    .text start:0x021fb25c end:0x021fb274
+
+src/GameState/ov023/GameState_SetCharacterTypeThreeFieldFromSelector.cpp:
+    complete
+    .text start:0x021e98a0 end:0x021e98dc
+
+src/Resource/ov023/Ov023_FindUnusedRecord.cpp:
+    complete
+    .text start:0x021fa03c end:0x021fa078
+
+src/Unclassified/ov023/func_ov023_021f650c.cpp:
+    complete
+    .text start:0x021f650c end:0x021f6524
+
+src/Unclassified/ov023/func_ov023_021eab64.cpp:
+    complete
+    .text start:0x021eab64 end:0x021eaba0
+
+src/Grotto/ov023/Grotto_InitializeNestedValueFromGameState.cpp:
+    complete
+    .text start:0x021ea3ac end:0x021ea3ec
+
+src/Grotto/ov023/Grotto_SetNestedSumFromScriptParameter.cpp:
+    complete
+    .text start:0x021eaae8 end:0x021eab28
+
+src/Graphics/ov023/Graphics_InitializeSubBgPriorities.cpp:
+    complete
+    .text start:0x021d8ea0 end:0x021d8f2c
+
+src/Graphics/ov023/Graphics_SetMainOrSubBrightness.cpp:
+    complete
+    .text start:0x021ddbb8 end:0x021ddbf8
+
+src/Graphics/ov023/DisplayContext_CancelAndIgnoreCommand.cpp:
+    complete
+    .text start:0x021fd2b8 end:0x021fd2f8
+
+src/Graphics/ov023/AdvanceFadeOutAndResetOwnerPhase.cpp:
+    complete
+    .text start:0x021e3f34 end:0x021e3fc0
+
+src/GameState/ov023/GameState_StoreQualifyingPartyObjectCount.cpp:
+    complete
+    .text start:0x021ea5a4 end:0x021ea630
+
+src/GameState/ov023/GameState_WriteListedObjectZeroValueCount.cpp:
+    complete
+    .text start:0x021ea630 end:0x021ea6bc
+
+src/Util/ov023/Util_ClassifyCoordinateInRecordRegions.cpp:
+    complete
+    .text start:0x021e63bc end:0x021e6448
+
+src/Graphics/ov023/Graphics_IsSelectedCoordinateInsideObjectBounds.cpp:
+    complete
+    .text start:0x021fd46c end:0x021fd4f8
+
+src/Resource/ov023/Script_SumCharacterPackedRecordStats.cpp:
+    complete
+    .text start:0x021e96a8 end:0x021e9818
+
+src/Graphics/ov023/Graphics_InitializeTenModelsAndAllocators.cpp:
+    complete
+    .text start:0x021e4e8c end:0x021e4f18
+
+src/Util/ov023/FindLinkedNodeIndexByHalfword8.cpp:
+    complete
+    .text start:0x021e1da4 end:0x021e1de8
+
+src/GameState/ov023/func_ov023_021e6378.cpp:
+    complete
+    .text start:0x021e6378 end:0x021e63bc
+
+src/Unclassified/ov023/func_ov023_021fbc24.cpp:
+    complete
+    .text start:0x021fbc24 end:0x021fbc68
+
+src/Util/ov023/func_ov023_021f2304.cpp:
+    complete
+    .text start:0x021f2304 end:0x021f2348
+
+src/Grotto/ov023/Grotto_ResetRecordAndZoneState.cpp:
+    complete
+    .text start:0x021fbe08 end:0x021fbe4c
+
+src/Math/ov023/Math_ConvertFixedPointPairToHalfwords.cpp:
+    complete
+    .text start:0x021fb498 end:0x021fb4dc
+
+src/Resource/ov023/Resource_SetupTextAndLocalizedNumericFields.cpp:
+    complete
+    .text start:0x021e83c8 end:0x021e853c
+
+src/World/ov023/Unclassified_ConvertFixedCoordinatesToWhole.cpp:
+    complete
+    .text start:0x021f8aec end:0x021f8b30
+
+src/Unclassified/ov023/SetRecordScaledCoordinatePair.cpp:
+    complete
+    .text start:0x021fc470 end:0x021fc4b4
+
+src/Resource/ov023/Resource_ConvertDimensions.cpp:
+    complete
+    .text start:0x021fd394 end:0x021fd3d8
+
+src/Unclassified/ov023/Ov023_CopyThreeWordsToOffset50.cpp:
+    complete
+    .text start:0x021e60c4 end:0x021e60e0
+
+src/Unclassified/ov023/func_ov023_021e76a8.cpp:
+    complete
+    .text start:0x021e76a8 end:0x021e76c4
+
+src/Unclassified/ov023/func_ov023_021e8cc0.cpp:
+    complete
+    .text start:0x021e8cc0 end:0x021e8cdc
+
+src/Memory/ov023/Memory_CopyThreeWords.cpp:
+    complete
+    .text start:0x021edf38 end:0x021edf54
+
+src/Unclassified/ov023/func_ov023_021f8cd4.cpp:
+    complete
+    .text start:0x021f8cd4 end:0x021f8cf0
+
+src/Unclassified/ov023/func_ov023_021fd00c.cpp:
+    complete
+    .text start:0x021fd00c end:0x021fd028
+
+src/Unclassified/ov023/func_ov023_021f7158.cpp:
+    complete
+    .text start:0x021f7158 end:0x021f7174
+
+src/Unclassified/ov023/func_ov023_021e6088.cpp:
+    complete
+    .text start:0x021e6088 end:0x021e60c4
+
+src/Unclassified/ov023/Ov023_InitializeFieldsAndSetFlags.cpp:
+    complete
+    .text start:0x021f79ec end:0x021f7a08
+
+src/Unclassified/ov023/func_ov023_021fbcd4.cpp:
+    complete
+    .text start:0x021fbcd4 end:0x021fbcf0
+
+src/Resource/ov023/RefreshOwnerRecordsTwelveAndThirteen.cpp:
+    complete
+    .text start:0x021e81f4 end:0x021e8270
+
+src/Util/ov023/Util_GetNonNullPointerAtOffset128.cpp:
+    complete
+    .text start:0x021e4e20 end:0x021e4e3c
+
+src/System/ov023/Calendar_UpdateBirthDateAdjustmentFlags.cpp:
+    complete
+    .text start:0x021e61f4 end:0x021e6378
+
+src/Graphics/ov023/Graphics_BlitFourMaskedEightPixelTiles.cpp:
+    complete
+    .text start:0x021e2030 end:0x021e20c0
+
+src/Util/ov023/AccumulateLinkedRecordOffsets.cpp:
+    complete
+    .text start:0x021e2acc end:0x021e2b5c
+
+src/Graphics/ov023/Graphics_DecrementActiveRecordAngle.cpp:
+    complete
+    .text start:0x021fccec end:0x021fcd70
+
+src/Graphics/ov023/Graphics_InitializeObjectVectorRecord.cpp:
+    complete
+    .text start:0x021fa078 end:0x021fa108
+
+src/Graphics/ov023/Graphics_LoadIndexedSubBG1Screen.cpp:
+    complete
+    .text start:0x021e7b34 end:0x021e7bc4
+
+src/Graphics/ov023/Graphics_ApplyLinkedRecordPositionAndConsumeOffsets.cpp:
+    complete
+    .text start:0x021db45c end:0x021db4e4
+
+src/Filesystem/ov023/func_ov023_021e0a48.cpp:
+    complete
+    .text start:0x021e0a48 end:0x021e0a90
+
+src/Graphics/ov023/Graphics_ResetOwnedResourceBundle.cpp:
+    complete
+    .text start:0x021d8b6c end:0x021d8bb4
+
+src/Unclassified/ov023/Unclassified_SetNestedWordToSixteenPlusMaskPopulation.cpp:
+    complete
+    .text start:0x021e9b00 end:0x021e9b48
+
+src/World/ov023/World_UpdateAcceleratingMotionToTarget.cpp:
+    complete
+    .text start:0x021fa108 end:0x021fa298
+
+src/Filesystem/ov023/Filesystem_QueueFixedGP2LoadAndClearState.cpp:
+    complete
+    .text start:0x021e0b54 end:0x021e0b9c
+
+src/Graphics/ov023/func_ov023_021e4fd8.cpp:
+    complete
+    .text start:0x021e4fd8 end:0x021e5020
+
+src/Util/ov023/FindEntryBySignedId.cpp:
+    complete
+    .text start:0x021db08c end:0x021db0d4
+
+src/Filesystem/ov023/Filesystem_ClearAndQueueInitialGP2.cpp:
+    complete
+    .text start:0x021e07f8 end:0x021e0840
+
+src/Graphics/ov023/Graphics_OffsetSelectedVectorAngle.cpp:
+    complete
+    .text start:0x021fcc68 end:0x021fccec
+
+src/Filesystem/ov023/Filesystem_QueueBackgroundPair.cpp:
+    complete
+    .text start:0x021e0c38 end:0x021e0c80
+
+src/Filesystem/ov023/Filesystem_RemoveStoredTasksAndResetLoadFlags.cpp:
+    complete
+    .text start:0x021dcdf4 end:0x021dce88
+
+src/Unclassified/ov023/DispatchReadyObjectIndexedMemberCallback.cpp:
+    complete
+    .text start:0x021e7bc4 end:0x021e7c58
+
+src/Unclassified/ov023/func_ov023_021ea958.cpp:
+    complete
+    .text start:0x021ea958 end:0x021ea978
+
+src/System/ov023/System_DispatchSelectedHandlerWithValidatedValue.cpp:
+    complete
+    .text start:0x021e7c58 end:0x021e7cec
+
+src/Unclassified/ov023/func_ov023_021d8c94.cpp:
+    complete
+    .text start:0x021d8c94 end:0x021d8cb4
+
+src/Unclassified/ov023/func_ov023_021f3a8c.cpp:
+    complete
+    .text start:0x021f3a8c end:0x021f3aac
+
+src/Unclassified/ov023/FindRecordBySignedKeyAndSetHalfwords.cpp:
+    complete
+    .text start:0x021db544 end:0x021db564
+
+src/Graphics/ov023/Graphics_UpdateSelectedResourcePositions.cpp:
+    complete
+    .text start:0x021da9b4 end:0x021dab5c
+
+src/Unclassified/ov023/func_ov023_021f7864.cpp:
+    complete
+    .text start:0x021f7864 end:0x021f7884
+
+src/Unclassified/ov023/func_ov023_021f65b4.cpp:
+    complete
+    .text start:0x021f65b4 end:0x021f65d4
+
+src/Graphics/ov023/Graphics_DrawEmbeddedObjectUnlessFlagged.cpp:
+    complete
+    .text start:0x021fcfe8 end:0x021fd008
+
+src/Util/ov023/Util_UpdateRandomPointTimers.cpp:
+    complete
+    .text start:0x021db110 end:0x021db2b8
+
+src/Graphics/ov023/Graphics_CleanConfiguredDestinationCacheIfFlagClear.cpp:
+    complete
+    .text start:0x021f7884 end:0x021f78a4
+
+src/Util/ov023/Util_UpdateHalfwordFlag10At438.cpp:
+    complete
+    .text start:0x021f2348 end:0x021f2368
+
+src/GameState/ov023/ReadDisplayContextThenReturnTwoOrStoredWord.cpp:
+    complete
+    .text start:0x021fd2f8 end:0x021fd318
+
+src/GameState/ov023/GameState_SetNestedWordFromCharacterByte.cpp:
+    complete
+    .text start:0x021e9818 end:0x021e9864
+
+src/System/ov023/func_ov023_021ed014.cpp:
+    complete
+    .text start:0x021ed014 end:0x021ed064
+
+src/Resource/ov023/Resource_ScriptSetPackedThreeFieldRecord.cpp:
+    complete
+    .text start:0x021f55e8 end:0x021f5680
+
+src/Unclassified/ov023/DispatchInitializedObjectStateMemberCallback.cpp:
+    complete
+    .text start:0x021dc488 end:0x021dc520
+
+src/GameState/ov023/GameState_HasEnabledConnectionIndex.cpp:
+    complete
+    .text start:0x021f4438 end:0x021f44d0
+
+src/Unclassified/ov023/func_ov023_021fbd90.cpp:
+    complete
+    .text start:0x021fbd90 end:0x021fbdac
+
+src/Filesystem/ov023/func_ov023_021fc2b8.cpp:
+    complete
+    .text start:0x021fc2b8 end:0x021fc30c
+
+src/GameState/ov023/GameState_SetField158ForPresentIndexObjects.cpp:
+    complete
+    .text start:0x021f50fc end:0x021f5150
+
+src/Grotto/ov023/Grotto_InitializeType13Record.cpp:
+    complete
+    .text start:0x021fd1e0 end:0x021fd234
+
+src/Util/ov023/Unclassified_AccumulateBytesModuloConstant.cpp:
+    complete
+    .text start:0x021f6324 end:0x021f6378
+
+src/Resource/ov023/ResetFlaggedSelectedResourceEntry.cpp:
+    complete
+    .text start:0x021ecf78 end:0x021ed014
+
+src/Util/ov023/Util_SelectFirstEligibleLinkedNode.cpp:
+    complete
+    .text start:0x021f6a1c end:0x021f6ab8
+
+src/GameState/ov023/GameState_AdvanceDateToNextTwoHourBoundary.cpp:
+    complete
+    .text start:0x021f6158 end:0x021f6324
+
+src/Filesystem/ov023/Filesystem_CancelStoredBackgroundTasks.cpp:
+    complete
+    .text start:0x021dca88 end:0x021dcae0
+
+src/Resource/ov023/Script_SetRecordRandomThresholdResult.cpp:
+    complete
+    .text start:0x021f5848 end:0x021f5a1c
+
+src/Unclassified/ov023/Ov023_ClearThreeWordsAt784.cpp:
+    complete
+    .text start:0x021dce88 end:0x021dceac
+
+src/GameState/ov023/SetOutputFieldFromGameStateIndexList.cpp:
+    complete
+    .text start:0x021e9a78 end:0x021e9a9c
+
+src/Util/ov023/Util_AdvanceLinkedPointer.cpp:
+    complete
+    .text start:0x021f68b8 end:0x021f68dc
+
+src/Memory/ov023/DestroyNestedSafeAllocatorIfSignedAllocatorPresent.cpp:
+    complete
+    .text start:0x021fbe4c end:0x021fbe70
+
+src/Resource/ov023/Script_ReadSelectedCharacterPackedAttribute.cpp:
+    complete
+    .text start:0x021e94cc end:0x021e96a8
+
+src/Memory/ov023/Memory_Clear22BytesAndSetTwoSentinels.cpp:
+    complete
+    .text start:0x021f6788 end:0x021f67ac
+
+src/GameState/ov023/Ov023_SetIndexedHalfwordBit.cpp:
+    complete
+    .text start:0x021f6e10 end:0x021f6e34
+
+src/Graphics/ov023/Graphics_ClearAndDispatchOffsetRecord.cpp:
+    complete
+    .text start:0x021ecdfc end:0x021ece9c
+
+src/GameState/ov023/TestCopiedFlagFieldBit.cpp:
+    complete
+    .text start:0x021ed6cc end:0x021ed724
+
+src/Memory/ov023/Memory_InitializeRecordAtIndexIfLessThanThree.cpp:
+    complete
+    .text start:0x021f6eb8 end:0x021f6ed8
+
+src/Graphics/ov023/Graphics_ConfigureRecordFromByteLayoutTable.cpp:
+    complete
+    .text start:0x021e7cec end:0x021e7d8c
+
+src/Graphics/ov023/Graphics_KeepAttributeBits25To31.cpp:
+    complete
+    .text start:0x021ed7e0 end:0x021ed804
+
+src/Resource/ov023/Ov023_InitializeFourEmbeddedFields.cpp:
+    complete
+    .text start:0x021e60e0 end:0x021e613c
+
+src/Grotto/ov023/OV023_FindTypeSixFromTypeEight.cpp:
+    complete
+    .text start:0x021f9cb8 end:0x021f9d14
+
+src/Math/ov023/Math_ConvertVectorToScaledHalfwordPair.cpp:
+    complete
+    .text start:0x021f8198 end:0x021f81f4
+
+src/Filesystem/ov023/Ov023_QueueAssetWhenHandleInvalid.cpp:
+    complete
+    .text start:0x021fbef0 end:0x021fbf4c
+
+src/Unclassified/ov023/Unclassified_InvokeType15ObjectCallbacks.cpp:
+    complete
+    .text start:0x021f64a8 end:0x021f6504
+
+src/Graphics/ov023/Graphics_ConfigureFixedGeometryState.cpp:
+    complete
+    .text start:0x021dacd4 end:0x021dad78
+
+src/World/ov023/World_LinkKeyedRecordsAndSetEnabledFlags.cpp:
+    complete
+    .text start:0x021e1474 end:0x021e1518
+
+src/Graphics/ov023/Graphics_GetDescriptorOffsetPosition.cpp:
+    complete
+    .text start:0x021f8b78 end:0x021f8c1c
+
+src/Graphics/ov023/Graphics_AdvanceTimedFade.cpp:
+    complete
+    .text start:0x021dac40 end:0x021dacd4
+
+src/Resource/ov023/InitializeTenEntryHalfwordSentinels.cpp:
+    complete
+    .text start:0x021e616c end:0x021e6194
+
+src/Unclassified/ov023/GameState_SetIndexedRecordFields.cpp:
+    complete
+    .text start:0x021dceac end:0x021dced4
+
+src/GameState/ov023/InitializeThreeStateBytesOnce.cpp:
+    complete
+    .text start:0x021eb414 end:0x021eb43c
+
+src/Filesystem/ov023/Filesystem_ResetBackgroundLoaderState.cpp:
+    complete
+    .text start:0x021f52a0 end:0x021f52c8
+
+src/GameState/ov023/Ov023_SetObjectFlagAndGlobalValue.cpp:
+    complete
+    .text start:0x021dbfa8 end:0x021dbfd0
+
+src/Memory/ov023/Memory_CopyIntoIndexedRecord.cpp:
+    complete
+    .text start:0x021f6e90 end:0x021f6eb8
+
+src/Unclassified/ov023/Unclassified_ClearIndexedHalfwordBit.cpp:
+    complete
+    .text start:0x021f6e34 end:0x021f6e5c
+
+src/GameState/ov023/GameState_SetCharacterByteSumFromSelector.cpp:
+    complete
+    .text start:0x021ea6bc end:0x021ea71c
+
+src/GameState/ov023/GameState_DispatchPendingTableSelection.cpp:
+    complete
+    .text start:0x021fb818 end:0x021fb878
+
+src/Resource/ov023/Resource_CollectBufferedRecordValues.cpp:
+    complete
+    .text start:0x021fa7d4 end:0x021fa854
+
+src/GameState/ov023/GameState_SetTypeThreeFieldFromCharacterFlag.cpp:
+    complete
+    .text start:0x021ea71c end:0x021ea77c
+
+src/Unclassified/ov023/Unclassified_RemoveType6ReferencesAndResetRecord.cpp:
+    complete
+    .text start:0x021f7984 end:0x021f79e4
+
+src/Unclassified/ov023/Util_SetHalfwordPairIfResultExists.cpp:
+    complete
+    .text start:0x021e2cc8 end:0x021e2ce8
+
+src/Resource/ov023/SetReturnedEntryHalfwordsFromArguments.cpp:
+    complete
+    .text start:0x021e2ca8 end:0x021e2cc8
+
+src/Unclassified/ov023/ConfigureResolvedRecordOptions.cpp:
+    complete
+    .text start:0x021e24b0 end:0x021e2550
+
+src/Graphics/ov023/Graphics_RebuildAlignedRecordDetailText.cpp:
+    complete
+    .text start:0x021d9a6c end:0x021d9c7c
+
+src/Filesystem/ov023/Filesystem_QueuePendingFileOrArchiveLoad.cpp:
+    complete
+    .text start:0x021fa8fc end:0x021fa9a4
+
+src/Resource/ov023/Script_TestCharacterIndexedHalfwordPairs.cpp:
+    complete
+    .text start:0x021e9424 end:0x021e94cc
+
+src/Graphics/ov023/Graphics_UpdatePanelCollapseTransition.cpp:
+    complete
+    .text start:0x021ecbe8 end:0x021ecdfc
+
+src/Resource/ov023/Resource_InitializeSharedRecordState.cpp:
+    complete
+    .text start:0x021dc134 end:0x021dc354
+
+src/Resource/ov023/Resource_DestroyAndResetSharedRecordState.cpp:
+    complete
+    .text start:0x021dc354 end:0x021dc488
+
+src/Graphics/ov023/Graphics_UpdateMainBackgroundScreens.cpp:
+    complete
+    .text start:0x021dcd90 end:0x021dcdf4
+
+src/Unclassified/ov023/Unclassified_InitializeType19RecordFromArguments.cpp:
+    complete
+    .text start:0x021fc408 end:0x021fc46c
+
+src/Graphics/ov023/Graphics_UpdateSelectionAndDispatchPhase.cpp:
+    complete
+    .text start:0x021d8bb4 end:0x021d8c60
+
+src/Unclassified/ov023/CopyHalfwordParametersWithDefaults.cpp:
+    complete
+    .text start:0x021e5fdc end:0x021e6088
+
+src/World/ov023/World_PollZoneRenderPartLoad.cpp:
+    complete
+    .text start:0x021f707c end:0x021f7128
+
+src/Graphics/ov023/Graphics_LoadNamedResourcesAndStageSharedState.cpp:
+    complete
+    .text start:0x021fab48 end:0x021fad18
+
+src/Resource/ov023/Resource_QueueGP2LoadAndSelectNextState.cpp:
+    complete
+    .text start:0x021e05e4 end:0x021e0690
+
+src/Resource/ov023/Resource_PollLoadedFileAndAdvanceState.cpp:
+    complete
+    .text start:0x021fa9a4 end:0x021faa50
+
+src/Graphics/ov023/Graphics_GetSelectedBackgroundScreenBase.cpp:
+    complete
+    .text start:0x021db2b8 end:0x021db2e4
+
+src/Graphics/ov023/System_UpdateDisplayControlFields.cpp:
+    complete
+    .text start:0x021ec3c8 end:0x021ec3f4
+
+src/System/ov023/System_UpdateDisplayControlBits.cpp:
+    complete
+    .text start:0x021ec3f4 end:0x021ec420
+
+src/Graphics/ov023/Graphics_ConfigureBackground2Control.cpp:
+    complete
+    .text start:0x021ec454 end:0x021ec480
+
+src/GameState/ov023/GameState_AppendValueAndSetNodeFlags.cpp:
+    complete
+    .text start:0x021f65d4 end:0x021f6600
+
+src/Graphics/ov023/Graphics_ResetObjectDisplayFlags.cpp:
+    complete
+    .text start:0x021ecbbc end:0x021ecbe8
+
+src/Memory/ov023/Memory_ClearThreeWordRecord.cpp:
+    complete
+    .text start:0x021f735c end:0x021f7388
+
+src/GameState/ov023/GameState_InitializeRecordType14.cpp:
+    complete
+    .text start:0x021fba80 end:0x021fbaac
+
+src/Unclassified/ov023/Util_CallVtableSlot5ForLinkedNodes.cpp:
+    complete
+    .text start:0x021f69ec end:0x021f6a18
+
+src/Filesystem/ov023/Filesystem_FormatInlinePathRecord.cpp:
+    complete
+    .text start:0x021f229c end:0x021f2304
+
+src/Resource/ov023/Resource_InitializeAllocatorSet.cpp:
+    complete
+    .text start:0x021e71b4 end:0x021e7220
+
+src/Unclassified/ov023/OV023_QueueBackgroundLoadIfUnloaded.cpp:
+    complete
+    .text start:0x021fceb8 end:0x021fcf24
+
+src/Filesystem/ov023/Ov023_LoadAssetForNegativeField.cpp:
+    complete
+    .text start:0x021f7010 end:0x021f707c
+
+src/Graphics/ov023/Graphics_UpdateCountdownAndDrawAttachedObject.cpp:
+    complete
+    .text start:0x021e3084 end:0x021e3134
+
+src/Resource/ov023/Script_CountListedObjectsInSelectedStates.cpp:
+    complete
+    .text start:0x021ea46c end:0x021ea51c
+
+src/Memory/ov023/InitializeTypeNineRecordArray.cpp:
+    complete
+    .text start:0x021f9ec8 end:0x021f9f78
+
+src/Grotto/ov023/Grotto_WriteTypeTwoStateBits.cpp:
+    complete
+    .text start:0x021eaf50 end:0x021eb000
+
+src/Grotto/ov023/Grotto_WriteActiveTypeOneStateValue.cpp:
+    complete
+    .text start:0x021eaea0 end:0x021eaf50
+
+src/Graphics/ov023/Graphics_TransitionIndexedObjectAlpha.cpp:
+    complete
+    .text start:0x021ed988 end:0x021ed9f8
+
+src/Unclassified/ov023/InitializeRecordWithModeAndValues.cpp:
+    complete
+    .text start:0x021fd320 end:0x021fd390
+
+src/Unclassified/ov023/OV023_ResetSelectionOwner.cpp:
+    complete
+    .text start:0x021d8af8 end:0x021d8b6c
+
+src/GameState/ov023/SetObjectNestedWordFromCopiedStateTopByte.cpp:
+    complete
+    .text start:0x021e9944 end:0x021e9974
+
+src/Unclassified/ov023/Script_ExecuteConfiguredBuffer.cpp:
+    complete
+    .text start:0x021e133c end:0x021e13b0
+
+src/GameState/ov023/GameState_SetTotalProtagonistRecordValue.cpp:
+    complete
+    .text start:0x021ea7e0 end:0x021ea854
+
+src/Unclassified/ov023/Util_AppendRecordTextForKey77.cpp:
+    complete
+    .text start:0x021e8ef8 end:0x021e8f28
+
+src/Graphics/ov023/Graphics_SetBackgroundStateAndClearTilemap.cpp:
+    complete
+    .text start:0x021dcba4 end:0x021dcc58
+
+src/GameState/ov023/SetObjectNestedWordFromCopiedStateMiddleByte.cpp:
+    complete
+    .text start:0x021ea0e8 end:0x021ea118
+
+src/GameState/ov023/GameState_CopyAndSetNestedWordForTypeThree.cpp:
+    complete
+    .text start:0x021ea1b0 end:0x021ea1e0
+
+src/Unclassified/ov023/Grotto_CopyStateAndSetMapKind.cpp:
+    complete
+    .text start:0x021ea248 end:0x021ea278
+
+src/Grotto/ov023/Grotto_SetTypeThreeValueFromCopiedGameStateBuffer.cpp:
+    complete
+    .text start:0x021ea854 end:0x021ea884
+
+src/Graphics/ov023/Graphics_SelectBackgroundStateRecord.cpp:
+    complete
+    .text start:0x021dcae0 end:0x021dcb70
+
+src/Unclassified/ov023/BackgroundLoader_ResetStateAroundTaskRemoval.cpp:
+    complete
+    .text start:0x021f52c8 end:0x021f52f8
+
+src/GameState/ov023/SetObjectNestedWordFromCopiedStateByteAt22.cpp:
+    complete
+    .text start:0x021ea8b8 end:0x021ea8e8
+
+src/Resource/ov023/Script_StoreParameterIntToConfiguredHalfword.cpp:
+    complete
+    .text start:0x021f55b8 end:0x021f55e8
+
+src/GameState/ov023/GameState_CopyAndSetTopFieldForTypeThree.cpp:
+    complete
+    .text start:0x021eaddc end:0x021eae0c
+
+src/Resource/ov023/Resource_AdvanceMemberTaskStateMachine.cpp:
+    complete
+    .text start:0x021dfb4c end:0x021dfc90
+
+src/Graphics/ov023/Graphics_InitializeSubDisplayStateAndRecordGrid.cpp:
+    complete
+    .text start:0x021d8a40 end:0x021d8af8
+
+src/GameState/ov023/GameState_ReadPartyDerivedFloatValues.cpp:
+    complete
+    .text start:0x021dbc58 end:0x021dbd10
+
+src/Resource/ov023/Resource_GenerateAndLoadThreeHandlerRecords.cpp:
+    complete
+    .text start:0x021e7eb0 end:0x021e7f68
+
+src/Memory/ov023/Memory_InitializeFourNestedAllocatorsAndBuffers.cpp:
+    complete
+    .text start:0x021eb080 end:0x021eb138
+
+src/Filesystem/ov023/Filesystem_QueueNamedFileOrArchiveLoad.cpp:
+    complete
+    .text start:0x021f75d0 end:0x021f7688
+
+src/Unclassified/ov023/Script_SetNestedTypeThreeStateFromFlag.cpp:
+    complete
+    .text start:0x021e9278 end:0x021e92f0
+
+src/Unclassified/ov023/Unclassified_AppendComputedValueToObjectStateList.cpp:
+    complete
+    .text start:0x021f6590 end:0x021f65b4
+
+src/World/ov023/World_ApplyStateValueToMatchingType6Entry.cpp:
+    complete
+    .text start:0x021f6680 end:0x021f66bc
+
+src/GameState/ov023/GameState_MergeIdsAndIncrementPackedCounter.cpp:
+    complete
+    .text start:0x021ed724 end:0x021ed7e0
+
+src/GameState/ov023/GameState_HasMaskOrModeTwoAtOffsetAC.cpp:
+    complete
+    .text start:0x021e6e20 end:0x021e6e60
+
+src/Unclassified/ov023/ExtractHighSixBitsOrFallback.cpp:
+    complete
+    .text start:0x021f5578 end:0x021f5598
+
+src/Resource/ov023/Script_SetPackedNibbleFlagsAndSharedMarker.cpp:
+    complete
+    .text start:0x021f5a1c end:0x021f5ad8
+
+src/Util/ov023/InitializeTypeFifteenPackedRecord.cpp:
+    complete
+    .text start:0x021fbb64 end:0x021fbc20
+
+src/Unclassified/ov023/Grotto_ResetObjectBufferAndLoadRecord.cpp:
+    complete
+    .text start:0x021e7fe4 end:0x021e802c
+
+src/Unclassified/ov023/BackgroundLoader_ResetAndQueueTaskState.cpp:
+    complete
+    .text start:0x021f52f8 end:0x021f5340
+
+src/Resource/ov023/Resource_PollAndBuildSelectedZoneData.cpp:
+    complete
+    .text start:0x021fbf4c end:0x021fc1e4
+
+src/GameState/ov023/GameState_CalculateWeightedPartyValue.cpp:
+    complete
+    .text start:0x021f4098 end:0x021f4438
+
+src/Graphics/ov023/Ov023_ResetDisplayInstances.cpp:
+    complete
+    .text start:0x021fc6cc end:0x021fc71c
+
+src/Graphics/ov023/Text_FormatCharacterPackedSummary.cpp:
+    complete
+    .text start:0x021e868c end:0x021e8cc0
+
+src/Grotto/ov023/Ov023_UpdateTypeSixRecord.cpp:
+    complete
+    .text start:0x021f6630 end:0x021f6680
+
+src/Unclassified/ov023/OV023_BuildLinkedNodeChain.cpp:
+    complete
+    .text start:0x021e1b0c end:0x021e1b5c
+
+src/Unclassified/ov023/Unclassified_ProcessFirstPointerWhenSignedFieldValid.cpp:
+    complete
+    .text start:0x021e3184 end:0x021e31b0
+
+src/Unclassified/ov023/Grotto_BuildLinkedNodeChain.cpp:
+    complete
+    .text start:0x021e15b4 end:0x021e1604
+
+src/Resource/ov023/Resource_BuildLinkedNodeChain.cpp:
+    complete
+    .text start:0x021e1b5c end:0x021e1bac
+
+src/GameState/ov023/GameState_MarkRequestedScriptFlags.cpp:
+    complete
+    .text start:0x021f5ad8 end:0x021f5b94
+
+src/Graphics/ov023/Object3D_InitializeParameterizedRecord.cpp:
+    complete
+    .text start:0x021fcdd4 end:0x021fce28
+
+src/Graphics/ov023/Graphics_ConfigureSubBackgroundsForModeOne.cpp:
+    complete
+    .text start:0x021dcc58 end:0x021dcd18
+
+src/Resource/ov023/Resource_BuildLinkedNodeChainWithExtraArgument.cpp:
+    complete
+    .text start:0x021e1870 end:0x021e18cc
+
+src/Graphics/ov023/Graphics_LoadEmbeddedCHRObjectWithAllocators.cpp:
+    complete
+    .text start:0x021fd120 end:0x021fd1e0
+
+src/Unclassified/ov023/BuildLinkedListFromFactory.cpp:
+    complete
+    .text start:0x021e1814 end:0x021e1870
+
+src/Util/ov023/Object_ConvertMappedKeyToTwoHalfwords.cpp:
+    complete
+    .text start:0x021e2bdc end:0x021e2c38
+
+src/Grotto/ov023/Ov023_InitializeTypeFourRecord.cpp:
+    complete
+    .text start:0x021fa298 end:0x021fa2f4
+
+src/Filesystem/ov023/PollLoadedFileAndAdvanceRecordState.cpp:
+    complete
+    .text start:0x021fcf24 end:0x021fcfd0
+
+src/Unclassified/ov023/Grotto_InitializeContainerRecord.cpp:
+    complete
+    .text start:0x021f6f20 end:0x021f6f80
+
+src/Resource/ov023/InitializeAllocatedRecordArray.cpp:
+    complete
+    .text start:0x021e13b0 end:0x021e1410
+
+src/Resource/ov023/UpdateRecordAndClearMatchingFlag.cpp:
+    complete
+    .text start:0x021fb364 end:0x021fb3c8
+
+src/Resource/ov023/Resource_ResetOwnerCacheWhenFlagged.cpp:
+    complete
+    .text start:0x021ed44c end:0x021ed4b8
+
+src/Resource/ov023/Resource_ResetActiveOwnerState.cpp:
+    complete
+    .text start:0x021eb4f4 end:0x021eb564
+
+src/World/ov023/Object_SetTwoFixedPointRecordPositions.cpp:
+    complete
+    .text start:0x021e31e4 end:0x021e3258
+
+src/Unclassified/ov023/OV023_InitializeCenteredPanel.cpp:
+    complete
+    .text start:0x021d921c end:0x021d9290
+
+src/Resource/ov023/Resource_ConfigureTwoFixedPointRecords.cpp:
+    complete
+    .text start:0x021e3258 end:0x021e32cc
+
+src/Grotto/ov023/Ov023_InitializeTypeTenRecord.cpp:
+    complete
+    .text start:0x021fa760 end:0x021fa7d4
+
+src/Graphics/ov023/Object_UpdateAndDrawPresentRecord.cpp:
+    complete
+    .text start:0x021f8140 end:0x021f8190
+
+src/Unclassified/ov023/OV023_DispatchOwnerPhase.cpp:
+    complete
+    .text start:0x021e3030 end:0x021e3084
+
+src/Unclassified/ov023/Object_RunNestedSetupForValidState.cpp:
+    complete
+    .text start:0x021e3134 end:0x021e3184
+
+src/Grotto/ov023/Grotto_SetNestedSecondWordFromCopiedState.cpp:
+    complete
+    .text start:0x021ea118 end:0x021ea14c
+
+src/Unclassified/ov023/Object_GetField38ForMatchingTypeEightByKey.cpp:
+    complete
+    .text start:0x021f6378 end:0x021f63ac
+
+src/GameState/ov023/Ov023_SetNestedWordFromConnectionState.cpp:
+    complete
+    .text start:0x021ea8e8 end:0x021ea920
+
+src/Resource/ov023/FindRecordByFirstByte.cpp:
+    complete
+    .text start:0x021d994c end:0x021d9988
+
+src/Unclassified/ov023/GameState_CheckAllIndexedObjectsNestedFlagSet.cpp:
+    complete
+    .text start:0x021ed92c end:0x021ed988

@@ -5,13 +5,14 @@
 extern "C"
 {
     void func_0201a600(Zone3D*);
-    void func_020c5588(unsigned int, int, unsigned int, int, int);
-    void func_0203b4d8(void*, int);
-    void func_0203b4e8(void*, int);
+    void WriteCaptureControlRegisterPair(unsigned int, int, unsigned int, int, int);
+    void Object_SetUnsignedIntAtOffset4(void*, int);
+    void ClearWordAtOffset4MaskedBits(void*, int);
     void func_020181fc(Zone3D*);
-    void func_020100f8(GameState*);
+    void GameState_GetField3B0ObjectWithFlag4(GameState*);
 }
 
+// Original: arm9/main @ 0x02013E18; symbol: _ZN6Zone3D19ProcessPendingLoadsEv; size: 0x19C.
 bool Zone3D::ProcessPendingLoads()
 {
     if (!unknown_424_)
@@ -39,16 +40,16 @@ bool Zone3D::ProcessPendingLoads()
     unsigned int backgroundColor = lighting_.maybeMode_ == 1
         ? lighting_.basic_.backgroundColor[timeOfDay]
         : lighting_.advanced_.backgroundColor[timeOfDay];
-    func_020c5588(backgroundColor, 16, 0x7fff, 0, 0);
+    WriteCaptureControlRegisterPair(backgroundColor, 16, 0x7fff, 0, 0);
 
-    void* scene = func_ov017_0218b5b0();
+    void* scene = GameResources_GetInstance();
     if (pUnknownStruct_8_->unknown_e_high_ == 0)
-        func_0203b4d8(scene, 0x800);
+        Object_SetUnsignedIntAtOffset4(scene, 0x800);
     else
-        func_0203b4e8(scene, 0x800);
+        ClearWordAtOffset4MaskedBits(scene, 0x800);
     UpdateChestDiffuseColor();
     func_020181fc(this);
-    func_020100f8(GameState::GetInstance());
+    GameState_GetField3B0ObjectWithFlag4(GameState::GetInstance());
     unk_830[1] = lightingManager->timeOfDayIndex_;
     unk_830[2] = 0;
     unknown_424_ = 0;

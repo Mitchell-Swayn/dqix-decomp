@@ -1,0 +1,3 @@
+extern "C" unsigned char *FindReadyRecordByIdBeforeStopIndex(unsigned char*,unsigned int); extern "C" void GetFourHalfwordArrayAddresses(void*,int*,int*,int*,int*); extern "C" void SetFiveWordFieldsAtOffsets343C4044And48(void*,int,int,int,int,int);
+// Original: arm9/main @ 0x0205D904; symbol: func_0205d904; size: 0x78.
+ extern "C" void ReadSelectedRecordGeometryAndScaleCoordinates(unsigned char *self) { int a,b,c,d; unsigned char *target=FindReadyRecordByIdBeforeStopIndex(self,self[0xb0]); if(target) { GetFourHalfwordArrayAddresses(target,&a,&b,&c,&d); SetFiveWordFieldsAtOffsets343C4044And48(self+4,18,a,b,c,d); short x=*(short*)(target+0xac),y=*(short*)(target+0xae); *(short*)(self+0x3c)=x*8; *(short*)(self+0x3e)=y*8; } }

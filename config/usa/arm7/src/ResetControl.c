@@ -12,6 +12,7 @@ extern void ARM7_ResetSoundChannels(void);
 extern int ARM7_SendIpcCommand(int,unsigned int,int);
 extern void ARM7_ResetBootHandoff(void);
 void ARM7_ResetIpcCallback(int,unsigned int,int);
+// Original: arm7/wram @ 0x037FE3E0; symbol: ARM7_InitializeReset.
 void ARM7_InitializeReset(void)
 {
  if(!ARM7_ResetState.initialized){
@@ -19,16 +20,19 @@ void ARM7_InitializeReset(void)
   ARM7_SetIpcHandler(12,ARM7_ResetIpcCallback);
  }
 }
+// Original: arm7/wram @ 0x037FE418; symbol: ARM7_IsResetRequested.
 int ARM7_IsResetRequested(void)
 {
  return ARM7_ResetState.requested;
 }
+// Original: arm7/wram @ 0x037FE428; symbol: ARM7_ResetIpcCallback.
 void ARM7_ResetIpcCallback(int channel,unsigned int message,int error)
 {
  unsigned short command=(message&0x7f00)>>8;
  if(command==16)ARM7_ResetState.requested=1;
  else ARM7_Panic(ARM7_ResetSourceFile,0xe7,ARM7_ResetUnknownCommand);
 }
+// Original: arm7/wram @ 0x037FE470; symbol: ARM7_SoftReset.
 void ARM7_SoftReset(void)
 {
  ARM7_SetSpecificInterruptsEnabled(0x40000);

@@ -4,6 +4,7 @@
 extern SoundTrack ARM7_SoundTracks[32];
 extern void ARM7_ReleaseSoundTrackVoices(SoundTrack*,SoundSequence*,int);
 extern void ARM7_ClearSoundTrackVoices(SoundTrack*);
+// Original: arm7/wram @ 0x03801F5C; symbol: ARM7_AllocateSoundTrack.
 int ARM7_AllocateSoundTrack(void)
 {
  int index;
@@ -12,6 +13,7 @@ int ARM7_AllocateSoundTrack(void)
  }
  return -1;
 }
+// Original: arm7/wram @ 0x03801FA0; symbol: ARM7_SetSoundTrackMute.
 void ARM7_SetSoundTrackMute(SoundTrack *track,SoundSequence *sequence,int mode)
 {
  switch(mode){

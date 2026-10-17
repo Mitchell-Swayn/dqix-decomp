@@ -1,0 +1,4 @@
+#include <globaldefs.h>
+extern "C" void Object3D_InitializeExtendedAnimationWrapper(void*); extern "C" void ClearAndStageSharedGraphicsBuffers(void*); extern "C" void Object_ClearOptionalOffset440RecordWord8(void*);
+// Original: arm9/main @ 0x02043224; symbol: func_02043224; size: 0xA0.
+extern "C" ARM void Object_ResetOneHundredTwentyEightTextEntriesAndPointers(char* state) { state[0x19cc]=0; *(unsigned*)(state+0x9b4)=0; char* entries=state+0x9b8; for(int i=0;i<128;++i) { Object3D_InitializeExtendedAnimationWrapper(entries+i*28); (state+i)[0x17b8]=0; } ClearAndStageSharedGraphicsBuffers(state); Object_ClearOptionalOffset440RecordWord8(state+0x19e0); *(char**)(state+0x1e20)=state+0x930; Object_ClearOptionalOffset440RecordWord8(state+0x19e0); *(char**)(state+0x1e20)=state+0x914; state[0x19b1]=0; *(int*)(state+0x1838)=-1; *(int*)(state+0x183c)=0; }

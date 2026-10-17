@@ -9,6 +9,7 @@ typedef struct { unsigned int source,destination,control; } DmaRegisters;
 #define DMA_REGS(n) (*(volatile DmaRegisters*)((n)*12+0x040000b0))
 #define DMA_CONTROL(n) (*(volatile unsigned int*)(((n)*3+2)*4+0x040000b0))
 #define DMA_HIGH(n) (*(volatile unsigned short*)(((n)*6+5)*2+0x040000b0))
+// Original: arm7/wram @ 0x037FE500; symbol: ARM7_AwaitDmaCompletion.
 void ARM7_AwaitDmaCompletion(int id)
 {
  int state=ARM7_DisableIRQInterrupts();
@@ -21,6 +22,7 @@ void ARM7_AwaitDmaCompletion(int id)
  }
  ARM7_SetIRQInterruptState(state);
 }
+// Original: arm7/wram @ 0x037FE56C; symbol: ARM7_ResetDmaChannel.
 void ARM7_ResetDmaChannel(int id)
 {
  int state=ARM7_DisableIRQInterrupts();

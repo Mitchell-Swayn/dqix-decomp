@@ -4,6 +4,7 @@ extern void ARM7_TouchIpcReceive(unsigned int);
 extern void ARM7_MicrophoneIpcReceive(unsigned int);
 extern void ARM7_PowerIpcReceive(unsigned int);
 extern void ARM7_SpiIpcReceiveExternal(unsigned int);
+// Original: arm7/wram @ 0x03804EFC; symbol: ARM7_SpiIpcCallback.
 void ARM7_SpiIpcCallback(int channel,unsigned int message,int error)
 {
  if(!error) {

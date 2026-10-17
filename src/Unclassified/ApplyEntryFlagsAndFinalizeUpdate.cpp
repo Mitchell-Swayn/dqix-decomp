@@ -1,0 +1,4 @@
+#include <globaldefs.h>
+struct Obj{char pad[0x1c];unsigned short id;unsigned char flags,padding;void* entry;};extern "C" void Input_UpdateSelectionFromPointerOrDirectionalKeys(Obj*),Object_ResetSelectedEntryCoordinatesAndFlags(void*,unsigned short),ApplyValueToAllHalfwordCountedEntries(void*,int),Window_ReadCoordinatesAndApplyMargins(Obj*);extern "C" unsigned char* FindRecordPointerByKey(void*,unsigned short);
+// Original: arm9/main @ 0x020E263C; symbol: func_020e263c; size: 0x60.
+extern "C" ARM void ApplyEntryFlagsAndFinalizeUpdate(Obj* p,int arg){if(!p->entry)return;Input_UpdateSelectionFromPointerOrDirectionalKeys(p);Object_ResetSelectedEntryCoordinatesAndFlags(p->entry,p->id);unsigned char flags=p->flags;unsigned char* item=FindRecordPointerByKey(p->entry,p->id);if(item)item[0x15]|=flags;ApplyValueToAllHalfwordCountedEntries(p->entry,arg);Window_ReadCoordinatesAndApplyMargins(p);}

@@ -1,3 +1,6 @@
+// Original locations for overloaded or compiler-generated definitions in this unit:
+// Original: arm9/main @ 0x020CD1F0; symbol: _Z21LoadCompressedOverlayRK15OverlayMetadataP7NitroVM; size: 0x8C. (LoadCompressedOverlay(OverlayMetadata const&, NitroVM*))
+// Original: arm9/main @ 0x020CD27C; symbol: _Z21LoadCompressedOverlayRK15OverlayMetadata; size: 0x90. (LoadCompressedOverlay(OverlayMetadata const&))
 #include "Filesystem/OverlayFSManagement.h"
 #include "Filesystem/FSInnerDefs.h"
 #include "System/Cache.h"
@@ -12,9 +15,9 @@
 #define data_020f2e44 data_020f2e58
 #define data_020f2290 data_020f23fc
 
-#define func_02000970 func_02000970
-#define func_020c9be0 func_020cb6ac
-#define func_020c0c3c func_020c2708
+#define MIi_UncompressBackward MIi_UncompressBackward
+#define DisableInterruptsAndHaltForever func_020cb6ac
+#define System_ExecuteSHA1HashOperation func_020c2708
 #endif
 
 // might be some kind of overlay-like thing for download play
@@ -36,12 +39,13 @@ extern struct {
 
 extern "C"
 {
-    int func_02000970(unsigned int);
-    void func_020c9be0();
-    void func_020c0c3c(UnknownDownloadPlayStruct*, unsigned, unsigned, unsigned char*, unsigned);
+    int MIi_UncompressBackward(unsigned int);
+    void DisableInterruptsAndHaltForever();
+    void System_ExecuteSHA1HashOperation(UnknownDownloadPlayStruct*, unsigned, unsigned, unsigned char*, unsigned);
 }
 
 
+// Original: arm9/main @ 0x020CCF7C; symbol: _Z25GetOverlaySizeOnCartridgeRK15OverlayMetadata; size: 0x1C.
 unsigned int GetOverlaySizeOnCartridge(const OverlayMetadata& overlay)
 {
     bool isCompressed = overlay.overlayFlags & (1 << OVERLAY_FLAG_COMPRESSED);
@@ -50,6 +54,7 @@ unsigned int GetOverlaySizeOnCartridge(const OverlayMetadata& overlay)
     return overlay.compressedSize;
 }
 
+// Original: arm9/main @ 0x020CCF98; symbol: _Z29InvalidateCacheAndZeroOverlayRK15OverlayMetadata; size: 0x3C.
 void InvalidateCacheAndZeroOverlay(const OverlayMetadata &overlay)
 {
     unsigned char* startAddr = (unsigned char*)overlay.loadAddress;
@@ -61,6 +66,7 @@ void InvalidateCacheAndZeroOverlay(const OverlayMetadata &overlay)
     VectorizedMemset(startAddr + copySize, 0, totalSize - copySize);
 }
 
+// Original: arm9/main @ 0x020CCFD4; symbol: _Z28CreateFileAccessorForOverlayP17NitroFileAccessorRK15OverlayMetadata; size: 0x28.
 void CreateFileAccessorForOverlay(NitroFileAccessor *outAccessor, const OverlayMetadata &overlay)
 {
     NitroFileAccessor temp;
@@ -72,6 +78,7 @@ void CreateFileAccessorForOverlay(NitroFileAccessor *outAccessor, const OverlayM
     *outAccessor = *(NitroFileAccessor*)&temp;
 }
 
+// Original: arm9/main @ 0x020CCFFC; symbol: _Z28LoadOverlayMetadataFromNitroP15OverlayMetadatabjP11NitroHandlejjjj; size: 0xF8.
 bool LoadOverlayMetadataFromNitro(OverlayMetadata *into, bool isArm7,
                 unsigned int overlayIdx, NitroHandle *romHandle,
                 unsigned int arm9OverlayTableStart, unsigned int arm9OverlayTableSize,
@@ -139,6 +146,7 @@ bool LoadOverlayMetadataFromNitro(OverlayMetadata *into, bool isArm7,
     return true;
 }
 
+// Original: arm9/main @ 0x020CD0F4; symbol: _Z19LoadOverlayMetadataP15OverlayMetadatabj; size: 0xFC.
 bool LoadOverlayMetadata(OverlayMetadata* into, bool isArm7, unsigned int idx)
 {
     Struct_0211173c::ArmOverlayDataTableData* armData;
@@ -155,7 +163,7 @@ bool LoadOverlayMetadata(OverlayMetadata* into, bool isArm7, unsigned int idx)
         __asm("mov copyDst, into");
         __asm("add shifted, source, offset");
         DECLARE_ASM_NOP();
-        VectorizedInvertedMemcpy(shifted, copyDst, 0x20);
+        MI_CpuCopy8(shifted, copyDst, 0x20);
         into->isArm7 = isArm7;
 
         NitroVM machine;
@@ -220,6 +228,7 @@ bool LoadCompressedOverlay(const OverlayMetadata& overlay)
     return true;
 }
 
+// Original: arm9/main @ 0x020CD30C; symbol: _Z24VerifyDownloadPlayStructRK25UnknownDownloadPlayStructjj; size: 0x94.
 bool VerifyDownloadPlayStruct(const UnknownDownloadPlayStruct& data,
     unsigned int loadAddress, unsigned int size)
 {
@@ -227,8 +236,8 @@ bool VerifyDownloadPlayStruct(const UnknownDownloadPlayStruct& data,
     VectorizedMemset(&clone, 0, sizeof(UnknownDownloadPlayStruct));
 
     unsigned char buffer[64];
-    VectorizedInvertedMemcpy(data_020f2290.pointer, buffer, data_020f2290.length);
-    func_020c0c3c(&clone, loadAddress, size, buffer, data_020f2290.length);
+    MI_CpuCopy8(data_020f2290.pointer, buffer, data_020f2290.length);
+    System_ExecuteSHA1HashOperation(&clone, loadAddress, size, buffer, data_020f2290.length);
 
     unsigned int offsetCounter = 0;
     unsigned int* cloneReader = &clone.unknown[0];
@@ -266,14 +275,14 @@ void DecompressAndStaticInitializeOverlay(const OverlayMetadata& overlay)
         if (!result)
         {
             VectorizedMemset((void*)overlay.loadAddress, 0, initialSize);
-            func_020c9be0();
+            DisableInterruptsAndHaltForever();
             return;
         }
     }
 
     // Decompress the overlay in place
     if (overlay.overlayFlags & (1 << OVERLAY_FLAG_COMPRESSED))
-        func_02000970(overlay.loadAddress + initialSize);
+        MIi_UncompressBackward(overlay.loadAddress + initialSize);
     
     CleanInvalidateCacheRange((void*)overlay.loadAddress, overlay.uncompressedSize);
     OverlayMetadata::StaticInitializer* pInitializer = overlay.staticInitStart;

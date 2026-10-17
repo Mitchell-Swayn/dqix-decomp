@@ -11,6 +11,7 @@ struct ProcessorContext { char registers[0x48]; int state; ProcessorContext *pNe
 struct Mutex { BlockedContextList waiters; ProcessorContext *owner; int count; Mutex *pNext_,*pPrev_; };
 typedef struct { char prefix[0x2c]; ProcessorContext *firstContext; } ThreadGlobals;
 extern ThreadGlobals ARM7_ThreadGlobals;
+// Original: arm7/wram @ 0x037FC0F8; symbol: ARM7_InsertBlockedThread.
 void ARM7_InsertBlockedThread(BlockedContextList *queue, ProcessorContext* insertion)
 {
     ProcessorContext* elementAfter = queue->first;
@@ -46,6 +47,7 @@ void ARM7_InsertBlockedThread(BlockedContextList *queue, ProcessorContext* inser
     }
 }
 
+// Original: arm7/wram @ 0x037FC170; symbol: ARM7_RemoveBlockedThread.
 ProcessorContext* ARM7_RemoveBlockedThread(BlockedContextList *queue, ProcessorContext* context)
 {
     ProcessorContext* searchNode = queue->first;
@@ -73,6 +75,7 @@ ProcessorContext* ARM7_RemoveBlockedThread(BlockedContextList *queue, ProcessorC
     return searchNode;
 }
 
+// Original: arm7/wram @ 0x037FC1C8; symbol: ARM7_PopFrontMutexFromList.
 Mutex* ARM7_PopFrontMutexFromList(MutexList* list)
 {
     Mutex* front = list->pFirst;
@@ -88,6 +91,7 @@ Mutex* ARM7_PopFrontMutexFromList(MutexList* list)
     return front;
 }
 
+// Original: arm7/wram @ 0x037FC1F8; symbol: ARM7_InsertThreadGlobal.
 ProcessorContext* ARM7_InsertThreadGlobal(ProcessorContext *context)
 {
     ProcessorContext* loopEntry = ARM7_ThreadGlobals.firstContext;
@@ -112,6 +116,7 @@ ProcessorContext* ARM7_InsertThreadGlobal(ProcessorContext *context)
     return context;
 }
 
+// Original: arm7/wram @ 0x037FC258; symbol: ARM7_RemoveThreadGlobal.
 void ARM7_RemoveThreadGlobal(ProcessorContext *context)
 {
     ProcessorContext* loopEntry = ARM7_ThreadGlobals.firstContext;

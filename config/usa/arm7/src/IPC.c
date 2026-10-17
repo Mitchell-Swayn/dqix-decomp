@@ -23,11 +23,13 @@ extern void ARM7_WaitCycles(int);
 int ARM7_SendIpcWord(unsigned int);
 void ARM7_InitializeIPC(void);
 
+// Original: arm7/wram @ 0x037FE92C; symbol: ARM7_StartIPC.
 void ARM7_StartIPC(void)
 {
     ARM7_InitializeIPC();
 }
 
+// Original: arm7/wram @ 0x037FE938; symbol: ARM7_InitializeIPC.
 void ARM7_InitializeIPC(void)
 {
  int state=ARM7_DisableIRQInterrupts();
@@ -54,6 +56,7 @@ void ARM7_InitializeIPC(void)
  }
  ARM7_SetIRQInterruptState(state);
 }
+// Original: arm7/wram @ 0x037FEA2C; symbol: ARM7_SetIpcHandler.
 void ARM7_SetIpcHandler(int channel,IPCHandler handler)
 {
  int state=ARM7_DisableIRQInterrupts();
@@ -63,11 +66,13 @@ void ARM7_SetIpcHandler(int channel,IPCHandler handler)
  else data->masks[1]&=~(1<<channel);
  ARM7_SetIRQInterruptState(state);
 }
+// Original: arm7/wram @ 0x037FEA7C; symbol: ARM7_IsIpcHandlerRegistered.
 int ARM7_IsIpcHandlerRegistered(int channel,int side)
 {
  IPCShared *data=(IPCShared*)0x027ffc00;
  return !!(data->masks[side]&(1<<channel));
 }
+// Original: arm7/wram @ 0x037FEAA0; symbol: ARM7_SendIpcCommand.
 int ARM7_SendIpcCommand(int channel,int argument,int flag)
 {
  IPCCommand command;
@@ -76,6 +81,7 @@ int ARM7_SendIpcCommand(int channel,int argument,int flag)
  command.parts.argument=argument;
  return ARM7_SendIpcWord(command.word);
 }
+// Original: arm7/wram @ 0x037FEAD8; symbol: ARM7_SendIpcWord.
 int ARM7_SendIpcWord(unsigned int word)
 {
  int state;
@@ -88,6 +94,7 @@ int ARM7_SendIpcWord(unsigned int word)
 }
 
 #define IPC_RECEIVE (*(volatile unsigned int*)0x04100000)
+// Original: arm7/wram @ 0x037FEB38; symbol: ARM7_HandleIPCReceive.
 void ARM7_HandleIPCReceive(int unused)
 {
  IPCCommand command;

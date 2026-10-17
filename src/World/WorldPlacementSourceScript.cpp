@@ -8,6 +8,7 @@ extern "C" {
     extern WorldPlacementSource::Variant data_02108ff4[8];
 }
 
+// Original: arm9/main @ 0x0208E2C0; symbol: _ZN20WorldPlacementSource16ReadVariantTableEPN6Script9ParameterEi; size: 0x9C.
 int WorldPlacementSource::ReadVariantTable(Script::Parameter* parameters, int)
 {
     GameState* game = GameState::GetInstance();
@@ -29,9 +30,10 @@ int WorldPlacementSource::ReadVariantTable(Script::Parameter* parameters, int)
     return 0;
 }
 
+// Original: arm9/main @ 0x0208E35C; symbol: _ZN20WorldPlacementSource17ReadSpecialRecordEPN6Script9ParameterEi; size: 0xE8.
 int WorldPlacementSource::ReadSpecialRecord(Script::Parameter* parameters, int)
 {
-    Record* record = (Record*)func_ov017_0218b5b0()->allocator_array_1a0[0].Allocate(sizeof(Record));
+    Record* record = (Record*)GameResources_GetInstance()->allocator_array_1a0[0].Allocate(sizeof(Record));
     record->next = 0;
     record->index = parameters->ToInt();
     record->slotCount = 8;

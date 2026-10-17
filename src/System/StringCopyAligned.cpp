@@ -2,6 +2,7 @@
 
 #pragma optimize_for_size off
 
+// Original: arm9/main @ 0x02003F28; symbol: strcpy; size: 0xC8.
 char* strcpy(char* dst, const char* src)
 {
     unsigned char* output = (unsigned char*)dst;

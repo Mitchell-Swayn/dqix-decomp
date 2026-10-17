@@ -1,6 +1,7 @@
 /* Track data cursors, voice release/cleanup, track lookup, and list callbacks. */
 #pragma dont_inline on
 #include "SoundSequence.h"
+// Original: arm7/wram @ 0x03801088; symbol: ARM7_SetSoundTrackData.
 void ARM7_SetSoundTrackData(SoundTrack *track,const unsigned char *data,unsigned int offset)
 {
  track->start=data;track->cursor=data+offset;
@@ -11,6 +12,7 @@ extern int ARM7_IsSoundVoiceActive(SoundVoice*);
 extern void ARM7_SetSoundVoiceRelease(SoundVoice*,int);
 extern void ARM7_BeginSoundVoiceRelease(SoundVoice*);
 extern void ARM7_ClearSoundVoiceCallback(SoundVoice*);
+// Original: arm7/wram @ 0x03801098; symbol: ARM7_ReleaseSoundTrackVoices.
 void ARM7_ReleaseSoundTrackVoices(SoundTrack *track,SoundSequence *sequence,int release)
 {
  SoundVoice *voice; unsigned char releaseByte;
@@ -25,12 +27,14 @@ void ARM7_ReleaseSoundTrackVoices(SoundTrack *track,SoundSequence *sequence,int 
   voice=voice->next;
  }
 }
+// Original: arm7/wram @ 0x03801100; symbol: ARM7_ClearSoundTrackVoices.
 void ARM7_ClearSoundTrackVoices(SoundTrack *track)
 {
  SoundVoice *voice=track->voices;
  while(voice){ARM7_ClearSoundVoiceCallback(voice);voice=voice->next;}
  track->voices=0;
 }
+// Original: arm7/wram @ 0x03801134; symbol: ARM7_GetSequenceTrack.
 SoundTrack *ARM7_GetSequenceTrack(SoundSequence *sequence,int index)
 {
  int id;
@@ -39,6 +43,7 @@ SoundTrack *ARM7_GetSequenceTrack(SoundSequence *sequence,int index)
  if(id==255)return 0;
  return &ARM7_SoundTracks[id];
 }
+// Original: arm7/wram @ 0x03801160; symbol: ARM7_StopSequenceTrack.
 void ARM7_StopSequenceTrack(SoundSequence *sequence,int index)
 {
  SoundTrack *track=ARM7_GetSequenceTrack(sequence,index);
@@ -49,6 +54,7 @@ void ARM7_StopSequenceTrack(SoundSequence *sequence,int index)
   sequence->trackIds[index]=255;
  }
 }
+// Original: arm7/wram @ 0x038011B8; symbol: ARM7_StopSequence.
 void ARM7_StopSequence(SoundSequence *sequence)
 {
  int index=0;
@@ -57,6 +63,7 @@ void ARM7_StopSequence(SoundSequence *sequence)
 }
 
 extern void ARM7_ClearSoundVoiceCallback(SoundVoice*);
+// Original: arm7/wram @ 0x038011F0; symbol: ARM7_SoundTrackVoiceCallback.
 void ARM7_SoundTrackVoiceCallback(SoundVoice *voice,int event,void *userData)
 {
  SoundTrack *track=userData;

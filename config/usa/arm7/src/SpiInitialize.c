@@ -15,6 +15,7 @@ extern void ARM7_FillBytes(void*,unsigned int,unsigned int);
 extern void ARM7_CreateThread(ProcessorContext*,unsigned int,unsigned int,unsigned int,unsigned int,unsigned int);
 extern void ARM7_MarkThreadReady(ProcessorContext*);
 extern void ARM7_SpiWorkerMain(void);
+// Original: arm7/wram @ 0x03804A88; symbol: ARM7_InitializeSpiServices.
 void ARM7_InitializeSpiServices(unsigned int priority)
 {
  int i;

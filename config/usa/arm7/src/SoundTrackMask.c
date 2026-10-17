@@ -4,6 +4,7 @@
 extern SoundSequence ARM7_SoundSequences[16];
 extern SoundTrack *ARM7_GetSequenceTrack(SoundSequence*,int);
 extern void ARM7_SetSoundTrackMute(SoundTrack*,SoundSequence*,int);
+// Original: arm7/wram @ 0x03800B98; symbol: ARM7_SetSequenceTrackMute.
 void ARM7_SetSequenceTrackMute(int index,unsigned int mask,int mode)
 {
  SoundSequence *sequence=&ARM7_SoundSequences[index];
@@ -16,6 +17,7 @@ void ARM7_SetSequenceTrackMute(int index,unsigned int mask,int mode)
   trackIndex++;mask>>=1;
  }
 }
+// Original: arm7/wram @ 0x03800C04; symbol: ARM7_SetSequenceTrackParameter1E.
 void ARM7_SetSequenceTrackParameter1E(int index,unsigned int mask,unsigned int parameter)
 {
  SoundSequence *sequence=&ARM7_SoundSequences[index];

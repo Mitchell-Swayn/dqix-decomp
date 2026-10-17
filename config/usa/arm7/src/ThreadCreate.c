@@ -13,6 +13,7 @@ extern ProcessorContext* ARM7_InsertThreadGlobal(ProcessorContext*);
 extern void ARM7_InitializeThreadRegisters(ProcessorContext*,unsigned int,unsigned int);
 extern void ARM7_ThreadReturn(void);
 extern void ARM7_FillWords(unsigned int,void*,unsigned int);
+// Original: arm7/wram @ 0x037FC460; symbol: ARM7_CreateThread.
 void ARM7_CreateThread(ProcessorContext *thread,unsigned int entry,unsigned int userData,unsigned int stackHigh,unsigned int stackSize,unsigned int priority)
 {
  int id;

@@ -3,3 +3,30 @@
     .data       start:0x02184a80 end:0x02184ac0 kind:data align:32
     .bss        start:0x02184ac0 end:0x02184ac0 kind:bss align:32
 
+src/Data/ov010/data_ov010_02184a80.cpp:
+    complete
+    .data start:0x02184a80 end:0x02184a95
+
+src/Data/ov010/data_ov010_02184a95.cpp:
+    complete
+    .data start:0x02184a95 end:0x02184aa6
+
+src/Data/ov010/data_ov010_02184aa6.cpp:
+    complete
+    .data start:0x02184aa6 end:0x02184ac0
+
+src/Data/ov010/PitConstructorTerminator.cpp:
+    complete
+    .ctor start:0x02184a6c end:0x02184a70
+
+src/Memory/ov010/func_ov010_021842a0.cpp:
+    complete
+    .text start:0x021842a0 end:0x021842d8
+
+src/Unclassified/ov010/func_ov010_02184354.cpp:
+    complete
+    .text start:0x02184354 end:0x02184a6c
+
+src/Unclassified/ov010/func_ov010_021842d8.cpp:
+    complete
+    .text start:0x021842d8 end:0x02184354

@@ -1,7 +1,8 @@
 #pragma optimize_for_size off
 
 // Binary64 word access follows the pinned little-endian ARM runtime ABI.
-extern "C" double func_02008f5c(double value)
+// Original: arm9/main @ 0x02008F5C; symbol: func_02008f5c; size: 0x1C0.
+extern "C" double Runtime_CeilDouble(double value)
 {
     int high = ((int*)&value)[1];
     unsigned int mask, incremented;

@@ -7,7 +7,8 @@ struct RuntimeStringOutputState {
 };
 
 extern "C" void* memcpy(void*, const void*, unsigned int);
-extern "C" int func_02003c3c(RuntimeStringOutputState* state, const char* text, unsigned int count)
+// Original: arm9/main @ 0x02003C3C; symbol: func_02003c3c; size: 0x44.
+extern "C" int Runtime_AppendBoundedStringOutput(RuntimeStringOutputState* state, const char* text, unsigned int count)
 {
     if (state->written + count > state->capacity)
         count = state->capacity - state->written;
@@ -18,13 +19,14 @@ extern "C" int func_02003c3c(RuntimeStringOutputState* state, const char* text, 
 
 typedef int (*RuntimeStringWriter)(RuntimeStringOutputState*, const char*, unsigned int);
 extern "C" int func_02003418(RuntimeStringWriter, RuntimeStringOutputState*, const char*, void*);
-extern "C" int func_02003c80(char* buffer, unsigned int size, const char* format, void* args)
+// Original: arm9/main @ 0x02003C80; symbol: func_02003c80; size: 0x68.
+extern "C" int Runtime_FormatIntoBoundedString(char* buffer, unsigned int size, const char* format, void* args)
 {
     RuntimeStringOutputState state;
     state.buffer = buffer;
     state.capacity = size;
     state.written = 0;
-    int result = func_02003418(func_02003c3c, &state, format, args);
+    int result = func_02003418(Runtime_AppendBoundedStringOutput, &state, format, args);
     if (buffer) {
         if ((unsigned int)result < size)
             buffer[result] = 0;

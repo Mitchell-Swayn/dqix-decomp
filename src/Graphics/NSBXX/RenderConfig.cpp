@@ -15,6 +15,7 @@ static inline void ArrayCopyVec3(void* dst, const void* src)
     *(ArrayVec3*)dst = *(const ArrayVec3*)src;
 }
 
+// Original: arm9/main @ 0x020B36C0; symbol: _ZN12RenderConfig5ResetEv; size: 0x154.
 void RenderConfig::Reset()
 {
     data_0210a010.magicCommands_0 = COMBINE_GXFIFO_COMMANDS4(
@@ -54,7 +55,7 @@ void RenderConfig::Reset()
         GXFifoCommand_SetTexImageParams
     );
 
-    Mat4x3_WriteIdentity(&data_0210a010.viewMatrix);
+    MTX_Identity43_(&data_0210a010.viewMatrix);
     Mat4x4_WriteIdentity(&data_0210a010.projectionMatrix);
 
     uint32_t minusInvSqrt3 = 0x2d8;
@@ -79,7 +80,7 @@ void RenderConfig::Reset()
     data_0210a010.objectRotationPosition.translation.y = 0;
     data_0210a010.objectRotationPosition.translation.z = 0;
 
-    Mat3x3_WriteIdentity(&data_0210a010.objectRotationPosition.rotation);
+    MTX_Identity33_(&data_0210a010.objectRotationPosition.rotation);
 
     data_0210a010.objectScale.x = 1 << 12;
     data_0210a010.objectScale.y = 1 << 12;
@@ -113,6 +114,7 @@ void RenderConfig::SubmitToFifo()
     instance->flags &= ~(1 << RENDER_CONFIG_FLAG_1);
 }
 
+// Original: arm9/main @ 0x020B3850; symbol: _ZN12RenderConfig17SetObjectPositionEP8Vector3i; size: 0x30.
 void RenderConfig::SetObjectPosition(Vector3fix *pos)
 {
     if (pos != NULL)
@@ -122,6 +124,7 @@ void RenderConfig::SetObjectPosition(Vector3fix *pos)
     }
 }
 
+// Original: arm9/main @ 0x020B3880; symbol: _ZN12RenderConfig14SetObjectScaleEP8Vector3i; size: 0x30.
 void RenderConfig::SetObjectScale(Vector3fix *scale)
 {
     if (scale != NULL)
@@ -131,6 +134,7 @@ void RenderConfig::SetObjectScale(Vector3fix *scale)
     }
 }
 
+// Original: arm9/main @ 0x020B38B0; symbol: _ZN12RenderConfig14SetLightVectorEjsss; size: 0x3C.
 void RenderConfig::SetLightVector(unsigned int light, fix16_t x, fix16_t y, fix16_t z)
 {
     uint32_t formattedX = (x >> 3) & 0x3ff;
@@ -139,17 +143,20 @@ void RenderConfig::SetLightVector(unsigned int light, fix16_t x, fix16_t y, fix1
     data_0210a010.lightVectors[light] = formattedX | formattedY | formattedZ | (light << 30);
 }
 
+// Original: arm9/main @ 0x020B38EC; symbol: _ZN12RenderConfig13SetLightColorEjj; size: 0x14.
 void RenderConfig::SetLightColor(unsigned int light, uint32_t rgb)
 {
     data_0210a010.lightColors[light] = rgb | (light << 30);
 }
 
+// Original: arm9/main @ 0x020B3900; symbol: _ZN12RenderConfig23SetDiffuseAmbientColorsEjji; size: 0x24.
 void RenderConfig::SetDiffuseAmbientColors(uint32_t diffuseRGB, uint32_t ambientRGB, int setVertexColor)
 {
     setVertexColor = (setVertexColor ? 1 : 0);
     data_0210a010.diffuseAmbientArg = diffuseRGB | (ambientRGB << 16) | (setVertexColor << 15);
 }
 
+// Original: arm9/main @ 0x020B3924; symbol: _ZN12RenderConfig20SetPolygonAttributesEjjjjjj; size: 0x2C.
 void RenderConfig::SetPolygonAttributes(unsigned int lights, unsigned int mode,
     unsigned int culling, unsigned int polygonID, unsigned int alpha, unsigned int miscFlags)
 {
@@ -157,6 +164,7 @@ void RenderConfig::SetPolygonAttributes(unsigned int lights, unsigned int mode,
         (lights | mode << 4 | culling << 6) | polygonID << 24 | alpha << 16;
 }
 
+// Original: arm9/main @ 0x020B3950; symbol: _ZN12RenderConfig20GetInverseViewMatrixEv; size: 0x44.
 const Matrix4x3* RenderConfig::GetInverseViewMatrix()
 {
     if (!(data_0210a010.flags & (1 << RENDER_CONFIG_FLAG_INVERSE_VIEW_CACHE_VALID)))
@@ -168,6 +176,7 @@ const Matrix4x3* RenderConfig::GetInverseViewMatrix()
 }
 
 // can be made static later
+// Original: arm9/main @ 0x020B3994; symbol: _Z30RecalculateWorldViewAndInversev; size: 0x58.
 void RecalculateWorldViewAndInverse()
 {
     Mat4x3_Multiply(&data_0210a010.objectRotationPosition, &data_0210a010.viewMatrix, &data_0210a010.cachedWorldView);
@@ -176,6 +185,7 @@ void RecalculateWorldViewAndInverse()
     Mat4x3_Invert(&data_0210a010.cachedWorldView, &data_0210a010.cachedInverseWorldView);
 }
 
+// Original: arm9/main @ 0x020B39EC; symbol: _ZN12RenderConfig26GetCombinedWorldViewMatrixEv; size: 0x38.
 const Matrix4x3* RenderConfig::GetCombinedWorldViewMatrix()
 {
     if (!(data_0210a010.flags & (1 << RENDER_CONFIG_FLAG_WORLDVIEW_CACHE_VALID)))
@@ -186,6 +196,7 @@ const Matrix4x3* RenderConfig::GetCombinedWorldViewMatrix()
     return &data_0210a010.cachedWorldView;
 }
 
+// Original: arm9/main @ 0x020B3A24; symbol: _ZN12RenderConfig33GetInverseCombinedWorldViewMatrixEv; size: 0x38.
 const Matrix4x3* RenderConfig::GetInverseCombinedWorldViewMatrix()
 {
     if (!(data_0210a010.flags & (1 << RENDER_CONFIG_FLAG_WORLDVIEW_CACHE_VALID)))
@@ -196,6 +207,7 @@ const Matrix4x3* RenderConfig::GetInverseCombinedWorldViewMatrix()
     return &data_0210a010.cachedInverseWorldView;
 }
 
+// Original: arm9/main @ 0x020B3A5C; symbol: _ZN12RenderConfig11GetViewportEPiS0_S0_S0_; size: 0x74.
 void RenderConfig::GetViewport(int *left, int *top, int *right, int *bottom)
 {
     if (left != NULL)

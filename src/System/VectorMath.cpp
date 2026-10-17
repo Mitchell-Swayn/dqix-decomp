@@ -4,6 +4,7 @@
 #define SQRT_RESULT (*(volatile int32_t*)0x040002b4)
 #define SQRT_PARAMETER (*(volatile uint64_t*)0x040002b8)
 
+// Original: arm9/main @ 0x020C2D90; symbol: Vector3fix_Add; size: 0x34.
 void Vector3fix_Add(const Vector3fix* a, const Vector3fix* b, Vector3fix* out)
 {
     out->x = a->x + b->x;
@@ -11,6 +12,7 @@ void Vector3fix_Add(const Vector3fix* a, const Vector3fix* b, Vector3fix* out)
     out->z = a->z + b->z;
 }
 
+// Original: arm9/main @ 0x020C2DC4; symbol: Vector3fix_Subtract; size: 0x34.
 void Vector3fix_Subtract(const Vector3fix* a, const Vector3fix* b, Vector3fix* out)
 {
     out->x = a->x - b->x;
@@ -18,6 +20,7 @@ void Vector3fix_Subtract(const Vector3fix* a, const Vector3fix* b, Vector3fix* o
     out->z = a->z - b->z;
 }
 
+// Original: arm9/main @ 0x020C2DF8; symbol: Vector3fix_InnerProduct; size: 0x3C.
 fix32_t Vector3fix_InnerProduct(const Vector3fix* a, const Vector3fix* b)
 {
     // Round the combined product, rather than each component independently.
@@ -25,6 +28,7 @@ fix32_t Vector3fix_InnerProduct(const Vector3fix* a, const Vector3fix* b)
                      + (int64_t)a->z * b->z + 0x800) >> 12);
 }
 
+// Original: arm9/main @ 0x020C2E34; symbol: Vector3fix_CrossProduct; size: 0x84.
 void Vector3fix_CrossProduct(const Vector3fix* a, const Vector3fix* b, Vector3fix* out)
 {
     // Capture every component before writing so out may alias either input.
@@ -40,6 +44,7 @@ void Vector3fix_CrossProduct(const Vector3fix* a, const Vector3fix* b, Vector3fi
     out->z = (fix32_t)(((int64_t)ax * by - (int64_t)ay * bx + 0x800) >> 12);
 }
 
+// Original: arm9/main @ 0x020C2EB8; symbol: Vector3fix_Length; size: 0x60.
 fix32_t Vector3fix_Length(const Vector3fix* vec)
 {
     fix32_t x = vec->x;

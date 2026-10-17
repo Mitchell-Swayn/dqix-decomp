@@ -2,18 +2,19 @@
 #include "GameState/GameState.h"
 
 extern "C" {
-    Zone3D* func_02012fe4();
-    void func_0202ae18(void*);
+    Zone3D* ReadGlobalValueAt020FB3F0();
+    void Object_GetGlobalConnectionState(void*);
     extern const Vector3i gGrottoEntranceUpdateScale;
     extern const Vector3i gGrottoEntranceShowScale;
 }
 
+// Original: arm9/main @ 0x0208F68C; symbol: _ZN13ZoneState266420UpdateEntranceObjectEv; size: 0xBC.
 void ZoneState2664::UpdateEntranceObject()
 {
     if (unknown_b4)
     {
         GameState* game = GameState::GetInstance();
-        unsigned short zone = func_02012fe4()->currentZoneID_;
+        unsigned short zone = ReadGlobalValueAt020FB3F0()->currentZoneID_;
         GrottoStruct* grotto = game->GetGrottoStruct();
         Vector3i scale = gGrottoEntranceUpdateScale;
         Vector3i position = grotto->entrancePosition;
@@ -32,12 +33,13 @@ void ZoneState2664::UpdateEntranceObject()
     }
 }
 
+// Original: arm9/main @ 0x0208F748; symbol: _ZN13ZoneState266418ShowEntranceObjectEv; size: 0xA4.
 bool ZoneState2664::ShowEntranceObject()
 {
-    if (func_02012fe4()->pUnknownStruct_8_->unknown_c_low_) return false;
+    if (ReadGlobalValueAt020FB3F0()->pUnknownStruct_8_->unknown_c_low_) return false;
     GameState* game = GameState::GetInstance();
     game->GetProtagonist();
-    func_0202ae18(func_ov017_0218b5b0());
+    Object_GetGlobalConnectionState(GameResources_GetInstance());
     GrottoStruct* grotto = game->GetGrottoStruct();
     Vector3i position;
     position = grotto->entrancePosition;

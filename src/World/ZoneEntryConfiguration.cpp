@@ -3,6 +3,7 @@
 
 extern const unsigned short gZoneEntryConfigurationDefaults[10];
 
+// Original: arm9/main @ 0x020827C4; symbol: _ZN13ZoneState08405Entry15Configuration1a5ResetEv; size: 0x64.
 void ZoneState0840::Entry::Configuration1a::Reset()
 {
     memcpy(values, gZoneEntryConfigurationDefaults, sizeof(values));

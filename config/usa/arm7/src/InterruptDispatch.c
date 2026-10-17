@@ -8,6 +8,7 @@ extern InterruptResponse ARM7_InterruptResponses[8];
 extern const unsigned short ARM7_InterruptResponseIDs[8];
 extern unsigned int ARM7_DisableSpecificInterrupts(unsigned int);
 #define FIRED (*(volatile unsigned int*)0x0380fff8)
+// Original: arm7/wram @ 0x037FB670; symbol: ARM7_DispatchInterruptResponse.
 void ARM7_DispatchInterruptResponse(int index)
 {
  unsigned int mask=1<<ARM7_InterruptResponseIDs[index];

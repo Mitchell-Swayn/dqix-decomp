@@ -20,10 +20,10 @@
 #define ROMCTRL_FLAG_BUSY (1u << 31)
 
 #if defined(jpn)
-#define func_020c89e4 func_020ca4b0
-#define func_020ca8e8 func_020cc3b4
-#define func_020d1118 func_020d2be4
-#define func_020d1234 func_020d2d00
+#define OS_GetDTCMAddress func_020ca4b0
+#define ValidateAndStartSingleWordDMAAfterIdle func_020cc3b4
+#define InitializeIPCAndRegisterCommand14 func_020d2be4
+#define IPC_NotifyWhenSelectedSharedMemoryValueDiffers ReadNextTypedSerializedTableEntry
 #endif
 
 void SendTaskToReadContext(CardReadManager::ReadProc);
@@ -31,21 +31,22 @@ void SendTaskToReadContext(CardReadManager::ReadProc);
 extern "C"
 {
     // Gets the base of the tightly coupled memory region
-    unsigned int func_020c89e4();
+    unsigned int OS_GetDTCMAddress();
 
     // Seems to set up DMA to repeatedly read from the read parameter into write
     // pointer, incrementing the write pointer but not the read pointer.
-    void func_020ca8e8(unsigned int dmaChannel, const void* readFrom, void* writeTo, unsigned int length);
+    void ValidateAndStartSingleWordDMAAfterIdle(unsigned int dmaChannel, const void* readFrom, void* writeTo, unsigned int length);
     
-    void func_020d1118();
+    void InitializeIPCAndRegisterCommand14();
 
-    void func_020d1234(unsigned int);
+    void IPC_NotifyWhenSelectedSharedMemoryValueDiffers(unsigned int);
 }
 
 void WaitForReadManagerIdle_Internal();
 Struct_02111f20::LowLevelReadProc GetLowLevelCartridgeReadProc();
 
 // Returns true if there's more to be copied after
+// Original: arm9/main @ 0x020D084C; symbol: TransferScratchBuffer; size: 0x8C.
 extern "C" bool TransferScratchBuffer(Struct_02111f20* input)
 {
     CardReadManager* ptr = &data_021118e0;
@@ -58,7 +59,7 @@ extern "C" bool TransferScratchBuffer(Struct_02111f20* input)
         if (usefulLength > ptr->writeLength)
             usefulLength = ptr->writeLength;
         
-        VectorizedInvertedMemcpy(input->scratchBuffer + offsetFromAlignment,
+        MI_CpuCopy8(input->scratchBuffer + offsetFromAlignment,
             ptr->writeDst, usefulLength);
         ptr->cartridgeReadOffset += usefulLength;
         ptr->writeDst += usefulLength;
@@ -70,6 +71,7 @@ extern "C" bool TransferScratchBuffer(Struct_02111f20* input)
 // Notably this is not a uint64 parameter. This way you can write
 // (0x11223344, 0x55667788) and it will write the eight bytes
 // (11, 22, 33, 44, 55, 66, 77, 88)
+// Original: arm9/main @ 0x020D08D8; symbol: _Z22SendGamecardBusCommandjj; size: 0x60.
 void SendGamecardBusCommand(unsigned int firstWord, unsigned int secondWord)
 {
     volatile unsigned int* control = (unsigned int*)ADDR_GAMECARD_BUS_ROMCTRL;
@@ -92,6 +94,7 @@ void SendGamecardBusCommand(unsigned int firstWord, unsigned int secondWord)
     GAMECARD_BUS_COMMAND_BYTE(7) = secondWord >> 0;
 }
 
+// Original: arm9/main @ 0x020D0938; symbol: _Z30ReadSingleSegmentFromCartridgev; size: 0x54.
 void ReadSingleSegmentFromCartridge()
 {
     CardReadManager* readManager = &data_021118e0;
@@ -100,12 +103,13 @@ void ReadSingleSegmentFromCartridge()
 
     DECLARE_ASM_NOP();
 
-    func_020ca8e8(readManager->dmaChannel, gamecardReceivedDataRegister, readManager->writeDst, 0x200);
+    ValidateAndStartSingleWordDMAAfterIdle(readManager->dmaChannel, gamecardReceivedDataRegister, readManager->writeDst, 0x200);
     unsigned int offset = readManager->cartridgeReadOffset;
     SendGamecardBusCommand(0xb7000000 | (offset >> 8), offset << 24);
     *(unsigned int*)ADDR_GAMECARD_BUS_ROMCTRL = ps1f20->control_4;
 }
 
+// Original: arm9/main @ 0x020D098C; symbol: _Z31DMAChainSegmentInterruptHandlerv; size: 0xD0.
 void DMAChainSegmentInterruptHandler()
 {
     ResetDMAChannel(data_021118e0.dmaChannel);
@@ -124,7 +128,7 @@ void DMAChainSegmentInterruptHandler()
         AcknowledgeSpecificInterrupts(IRQ_MASK_GAMECARD_DATA_TRANSFER_DONE);
         CardReadManager* readManager = &data_021118e0;
         unsigned int romChipID = SetupNormalGamecardBusCommandMode();
-        func_020d1234(romChipID);
+        IPC_NotifyWhenSelectedSharedMemoryValueDiffers(romChipID);
 
         readManager->pSharedData->unknown_0 = 0;
         CardReadManager::CompletionCallback cleanProc = readManager->onComplete;
@@ -166,7 +170,7 @@ extern "C" bool TryReadViaDMA(Struct_02111f20* handler)
     
     if (destinationIsCacheAligned)
     {
-        unsigned int dtcmBase = func_020c89e4();
+        unsigned int dtcmBase = OS_GetDTCMAddress();
         bool isDTCM = true;
         bool isITCM = false;
         if (destination + length > ADDR_ITCM_START && destination < ADDR_ITCM_END)
@@ -223,6 +227,7 @@ extern "C" bool TryReadViaDMA(Struct_02111f20* handler)
     return canDoDMARead;
 }
 
+// Original: arm9/main @ 0x020D0BE8; symbol: ReadBlocksFromCartridge; size: 0xF0.
 extern "C" void ReadBlocksFromCartridge(Struct_02111f20* handler)
 {
     CardReadManager* readManager = &data_021118e0;
@@ -283,6 +288,7 @@ extern "C" void ReadBlocksFromCartridge(Struct_02111f20* handler)
     }
 }
 
+// Original: arm9/main @ 0x020D0CD8; symbol: _Z33SetupNormalGamecardBusCommandModev; size: 0x5C.
 unsigned int SetupNormalGamecardBusCommandMode()
 {
     // Get ROM chip ID
@@ -299,6 +305,7 @@ unsigned int SetupNormalGamecardBusCommandMode()
 
 // I don't know that this is safe per se, but in practice it wraps
 // ReadBlocksFromCartridge (the readProc) with some auxiliary stuff
+// Original: arm9/main @ 0x020D0D34; symbol: SafeReadBlocksFromCartridge; size: 0x98.
 extern "C" void SafeReadBlocksFromCartridge(CardReadManager*)
 {
     Struct_02111f20* rawHandler = &data_02111f00.innerStruct;
@@ -313,7 +320,7 @@ extern "C" void SafeReadBlocksFromCartridge(CardReadManager*)
     unsigned int romChipID = SetupNormalGamecardBusCommandMode();
     // Does a few things, but in the end it resets all four DMA channels,
     // so it's some kind of cleanup
-    func_020d1234(romChipID);
+    IPC_NotifyWhenSelectedSharedMemoryValueDiffers(romChipID);
 
     readManager->pSharedData->unknown_0 = 0;
     CardReadManager::CompletionCallback callback = readManager->onComplete;
@@ -333,6 +340,7 @@ extern "C" void SafeReadBlocksFromCartridge(CardReadManager*)
     DECLARE_ASM_NOP();
 }
 
+// Original: arm9/main @ 0x020D0DCC; symbol: _Z29LoadDataFromCartridgeToMemoryjjPvjPFvP11NitroHandleES1_i; size: 0xF8.
 void LoadDataFromCartridgeToMemory(unsigned int dmaChannel,
     unsigned int cartridgeOffset, void* dest, unsigned int length,
     CardReadManager::CompletionCallback onComplete, NitroHandle* handle, CBool async)
@@ -375,6 +383,7 @@ void LoadDataFromCartridgeToMemory(unsigned int dmaChannel,
     }
 }
 
+// Original: arm9/main @ 0x020D0EC4; symbol: _Z21InitializeCardReadingv; size: 0x64.
 void InitializeCardReading()
 {
     CardReadManager* readManager = &data_021118e0;
@@ -392,19 +401,22 @@ void InitializeCardReading()
     data_02111f00.number = 0;
     InitializeCardReadManager();
     data_02111f00.innerStruct.lowLevelReadProc = GetLowLevelCartridgeReadProc();
-    func_020d1118();
+    InitializeIPCAndRegisterCommand14();
 }
 
+// Original: arm9/main @ 0x020D0F28; symbol: _Z31WaitForReadManagerIdle_Internalv; size: 0xC.
 void WaitForReadManagerIdle_Internal()
 {
     AwaitCardReadManagerIdle();
 }
 
+// Original: arm9/main @ 0x020D0F34; symbol: _Z28GetLowLevelCartridgeReadProcv; size: 0xC.
 Struct_02111f20::LowLevelReadProc GetLowLevelCartridgeReadProc()
 {
     return &ReadBlocksFromCartridge;
 }
 
+// Original: arm9/main @ 0x020D0F40; symbol: _Z16IPCCommand11Procjjj; size: 0x34.
 void IPCCommand11Proc(unsigned int command, unsigned int argument, unsigned int flag)
 {
     if (command != 11 || !flag)
@@ -418,6 +430,7 @@ void IPCCommand11Proc(unsigned int command, unsigned int argument, unsigned int 
     MarkContextReadyAndSwitch(context);
 }
 
+// Original: arm9/main @ 0x020D0F74; symbol: _Z24CartridgeReadContextLoopv; size: 0x50.
 void CartridgeReadContextLoop()
 {
     CardReadManager* readManager = &data_021118e0;

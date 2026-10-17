@@ -3,7 +3,8 @@
 #pragma optimize_for_size off
 
 // Unlike the arithmetic helpers, the formatter stores ASCII digits here.
-extern "C" void func_02002b90(RuntimeDecimal* value, int length)
+// Original: arm9/main @ 0x02002B90; symbol: func_02002b90; size: 0x124.
+extern "C" void RuntimeDecimal_RoundTextDigitsToEven(RuntimeDecimal* value, int length)
 {
     if (length < 0) {
 zero:

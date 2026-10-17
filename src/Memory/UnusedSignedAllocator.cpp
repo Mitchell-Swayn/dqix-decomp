@@ -1,7 +1,7 @@
 #include "Memory/UnusedSignedAllocator.h"
 
 #ifdef jpn
-#define func_020ca3ec func_020cbeb8
+#define MIi_CpuClear32 func_020cbeb8
 #endif
 
 extern "C"
@@ -10,11 +10,12 @@ extern "C"
     // 4-byte alignment (it writes ints).
     // Notably, if dst is not 4-byte aligned it might write before the start,
     // and if len is not a multiple of 4 it might write a bit past the end.
-    void func_020ca3ec(int value, void* start, unsigned length);
+    void MIi_CpuClear32(int value, void* start, unsigned length);
 }
 
 // USA: func_020afaf0
 // JPN: func_020b15bc
+// Original: arm9/main @ 0x020AFAF0; symbol: _ZN21UnusedSignedAllocator17PopFrontAndUpdateEPPNS_5BlockE; size: 0x18.
 UnusedSignedAllocator::Block* UnusedSignedAllocator::PopFrontAndUpdate(Block** ppBlock)
 {
     Block* oldFront = *ppBlock;
@@ -27,6 +28,7 @@ UnusedSignedAllocator::Block* UnusedSignedAllocator::PopFrontAndUpdate(Block** p
 
 // USA: func_020afb08
 // JPN: func_020b15d4
+// Original: arm9/main @ 0x020AFB08; symbol: _ZN21UnusedSignedAllocator8AllocateEv; size: 0x40.
 void* UnusedSignedAllocator::Allocate()
 {
     Block* ret = PopFrontAndUpdate(&pFirstAvailableBlock);
@@ -35,13 +37,14 @@ void* UnusedSignedAllocator::Allocate()
     {
         unsigned int clearLength = blockSize;
         if ((unsigned char)header.clearFlags & 1)
-            func_020ca3ec(0, ret, clearLength);
+            MIi_CpuClear32(0, ret, clearLength);
     }
     return ret;
 }
 
 // USA: func_020afb48
 // JPN: func_020b1614
+// Original: arm9/main @ 0x020AFB48; symbol: _ZN21UnusedSignedAllocator4FreeEPv; size: 0x10.
 void UnusedSignedAllocator::Free(void* data)
 {
     Block* newBlock = (Block*)data;

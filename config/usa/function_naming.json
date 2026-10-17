@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "convention": "docs/NAMING.md",
+  "enforce_new_functions": true,
+  "meaningful_names_required": true,
+  "original_location_comments_required": true,
+  "registry": "config/usa/function_names.json"
+}

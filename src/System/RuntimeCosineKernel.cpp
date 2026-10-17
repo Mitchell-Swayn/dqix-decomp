@@ -1,7 +1,8 @@
 #pragma optimize_for_size off
 
 // Binary64 words and polynomial evaluation order follow the ARM runtime ABI.
-extern "C" double func_020076f0(double x, double y)
+// Original: arm9/main @ 0x020076F0; symbol: func_020076f0; size: 0x320.
+extern "C" double Runtime_ComputeCosineKernel(double x, double y)
 {
     int high = ((int*)&x)[1] & 0x7fffffff;
     if (high < 0x3e400000) {

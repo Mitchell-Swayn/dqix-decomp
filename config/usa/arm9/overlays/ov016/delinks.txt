@@ -4,3 +4,266 @@
     .data       start:0x0219cfc0 end:0x0219d0c0 kind:data align:32
     .bss        start:0x0219d0c0 end:0x0219d200 kind:bss align:32
 
+src/Data/ov016/data_ov016_0219ca60.cpp:
+    complete
+    .rodata start:0x0219ca60 end:0x0219cbe0
+
+src/Data/ov016/data_ov016_0219cbe0.cpp:
+    complete
+    .rodata start:0x0219cbe0 end:0x0219cee0
+
+src/Data/ov016/data_ov016_0219cee0.cpp:
+    complete
+    .rodata start:0x0219cee0 end:0x0219cef0
+
+src/Data/ov016/data_ov016_0219cfc0.cpp:
+    complete
+    .data start:0x0219cfc0 end:0x0219cfc6
+
+src/Data/ov016/data_ov016_0219cfc6.cpp:
+    complete
+    .data start:0x0219cfc6 end:0x0219cfcc
+
+src/Data/ov016/data_ov016_0219cfcc.cpp:
+    complete
+    .data start:0x0219cfcc end:0x0219cfe6
+
+src/Data/ov016/data_ov016_0219cfe6.cpp:
+    complete
+    .data start:0x0219cfe6 end:0x0219cff7
+
+src/Data/ov016/data_ov016_0219cff7.cpp:
+    complete
+    .data start:0x0219cff7 end:0x0219d011
+
+src/Data/ov016/data_ov016_0219d011.cpp:
+    complete
+    .data start:0x0219d011 end:0x0219d022
+
+src/Data/ov016/data_ov016_0219d022.cpp:
+    complete
+    .data start:0x0219d022 end:0x0219d030
+
+src/Data/ov016/data_ov016_0219d030.cpp:
+    complete
+    .data start:0x0219d030 end:0x0219d044
+
+src/Data/ov016/data_ov016_0219d054.cpp:
+    complete
+    .data start:0x0219d054 end:0x0219d06d
+
+src/Data/ov016/data_ov016_0219d06d.cpp:
+    complete
+    .data start:0x0219d06d end:0x0219d06f
+
+src/Data/ov016/data_ov016_0219d06f.cpp:
+    complete
+    .data start:0x0219d06f end:0x0219d07c
+
+src/Data/ov016/data_ov016_0219cef0.cpp:
+    complete
+    .rodata start:0x0219cef0 end:0x0219cfa4
+
+src/Data/ov016/data_ov016_02191d78.cpp:
+    complete
+    .rodata start:0x02191d78 end:0x02193e78
+
+src/Data/ov016/data_ov016_02193e78.cpp:
+    complete
+    .rodata start:0x02193e78 end:0x02195f78
+
+src/Data/ov016/data_ov016_02191578.cpp:
+    complete
+    .rodata start:0x02191578 end:0x02191d78
+
+src/Unclassified/ov016/GetResourceStateConstant659C.cpp:
+    complete
+    .text start:0x0218fc78 end:0x0218fc84
+
+src/Unclassified/ov016/func_ov016_0218e78c.cpp:
+    complete
+    .text start:0x0218e78c end:0x0218e790
+
+src/Unclassified/ov016/func_ov016_0218f6b4.cpp:
+    complete
+    .text start:0x0218f6b4 end:0x0218f6b8
+
+src/Unclassified/ov016/func_ov016_0218fc84.cpp:
+    complete
+    .text start:0x0218fc84 end:0x0218fc8c
+
+src/Unclassified/ov016/func_ov016_0218f4fc.cpp:
+    complete
+    .text start:0x0218f4fc end:0x0218f508
+
+src/Unclassified/ov016/func_ov016_0218e7a4.cpp:
+    complete
+    .text start:0x0218e7a4 end:0x0218e7b0
+
+src/Unclassified/ov016/func_ov016_0218f4f0.cpp:
+    complete
+    .text start:0x0218f4f0 end:0x0218f4fc
+
+src/Memory/ov016/Memory_FreeOverlayAllocation.cpp:
+    complete
+    .text start:0x0218e7b0 end:0x0218e7bc
+
+src/Resource/ov016/Resource_AdvanceDoubleBufferedRecord.cpp:
+    complete
+    .text start:0x0218ef50 end:0x0218f088
+
+src/Filesystem/ov016/Filesystem_ReadAlignedAsync.cpp:
+    complete
+    .text start:0x0218f5fc end:0x0218f678
+
+src/Memory/ov016/GetOrCopyDataBlock.cpp:
+    complete
+    .text start:0x0218fcd4 end:0x0218fd50
+
+src/Unclassified/ov016/func_ov016_0218f330.cpp:
+    complete
+    .text start:0x0218f330 end:0x0218f340
+
+src/Unclassified/ov016/func_ov016_0218e62c.cpp:
+    complete
+    .text start:0x0218e62c end:0x0218e640
+
+src/Memory/ov016/Memory_ClearThreeWords.cpp:
+    complete
+    .text start:0x0218e00c end:0x0218e020
+
+src/Unclassified/ov016/func_ov016_0218f6a0.cpp:
+    complete
+    .text start:0x0218f6a0 end:0x0218f6b4
+
+src/Memory/ov016/Memory_ReleaseNonNullPointerIndirectAndReturn.cpp:
+    complete
+    .text start:0x0218e790 end:0x0218e7a4
+
+src/Unclassified/ov016/func_ov016_0218fea0.cpp:
+    complete
+    .text start:0x0218fea0 end:0x0218feb4
+
+src/System/ov016/System_ReadMaskedHardwareStatus.cpp:
+    complete
+    .text start:0x0218ca70 end:0x0218caa8
+
+src/Unclassified/ov016/func_ov016_0218e750.cpp:
+    complete
+    .text start:0x0218e750 end:0x0218e768
+
+src/Resource/ov016/Script_LoadFileAndExecuteWithOwner.cpp:
+    complete
+    .text start:0x0218e098 end:0x0218e124
+
+src/GameState/ov016/AdvanceBoundedCounters.cpp:
+    complete
+    .text start:0x0218f2f0 end:0x0218f330
+
+src/Unclassified/ov016/func_ov016_0218bc70.cpp:
+    complete
+    .text start:0x0218bc70 end:0x0218bc8c
+
+src/Memory/ov016/Memory_AllocateSafe.cpp:
+    complete
+    .text start:0x0218bc8c end:0x0218bca8
+
+src/Memory/ov016/FreeWithGlobalSafeAllocator.cpp:
+    complete
+    .text start:0x0218bca8 end:0x0218bcc4
+
+src/Memory/ov016/Memory_ReleaseOwnedResources.cpp:
+    complete
+    .text start:0x0218edac end:0x0218ef14
+
+src/Unclassified/ov016/Ov016_UpdateObjectAndReturnSelf.cpp:
+    complete
+    .text start:0x0218e7ec end:0x0218e800
+
+src/Graphics/ov016/Graphics_ToggleMainDisplayMode.cpp:
+    complete
+    .text start:0x0218be7c end:0x0218bec4
+
+src/Graphics/ov016/Graphics_GetVramAddressForModeFlag.cpp:
+    complete
+    .text start:0x0218be5c end:0x0218be7c
+
+src/Unclassified/ov016/func_ov016_0218fc8c.cpp:
+    complete
+    .text start:0x0218fc8c end:0x0218fcac
+
+src/Memory/ov016/CleanupAndFreeOverlayAllocationIfPresent.cpp:
+    complete
+    .text start:0x0218e640 end:0x0218e660
+
+src/System/ov016/NitroVM_SeekAndTrackPosition.cpp:
+    complete
+    .text start:0x0218f540 end:0x0218f58c
+
+src/Resource/ov016/Resource_TryAdvanceDoubleBufferedRecord.cpp:
+    complete
+    .text start:0x0218e6c0 end:0x0218e6e4
+
+src/GameState/ov016/Ov016_SelectStatusFromObjectPointers.cpp:
+    complete
+    .text start:0x0218ef2c end:0x0218ef50
+
+src/GameState/ov016/Ov016_GetObjectPointerStatus.cpp:
+    complete
+    .text start:0x0218e6a8 end:0x0218e6c0
+
+src/Util/ov016/Util_IncrementGlobal64BitCounterAt44.cpp:
+    complete
+    .text start:0x0218cf34 end:0x0218cf58
+
+src/Memory/ov016/IncrementGlobal64BitCounterAt48.cpp:
+    complete
+    .text start:0x0218bcc4 end:0x0218bce8
+
+src/Graphics/ov016/Graphics_ToggleDisplayModeAndSignal.cpp:
+    complete
+    .text start:0x0218d034 end:0x0218d0d4
+
+src/GameState/ov016/System_SetGlobalActiveAndCountIfIdle.cpp:
+    complete
+    .text start:0x0218c024 end:0x0218c04c
+
+src/Resource/ov016/Resource_SetGlobalFlagAndAdvanceCounterIfReady.cpp:
+    complete
+    .text start:0x0218d294 end:0x0218d2bc
+
+src/System/ov016/System_AwaitPendingNitroVMCommand.cpp:
+    complete
+    .text start:0x0218f678 end:0x0218f6a0
+
+src/Unclassified/ov016/Util_ConfigureGlobalState.cpp:
+    complete
+    .text start:0x0218fcac end:0x0218fcd4
+
+src/Unclassified/ov016/GetOrCopyGeometryDataChunk.cpp:
+    complete
+    .text start:0x0218fe30 end:0x0218fea0
+
+src/Filesystem/ov016/Filesystem_ReadFromNitroVMState.cpp:
+    complete
+    .text start:0x0218f58c end:0x0218f5fc
+
+src/Unclassified/ov016/Util_CallHandlerIfObjectExists.cpp:
+    complete
+    .text start:0x0218e660 end:0x0218e678
+
+src/Unclassified/ov016/CallFunctionIfNonNull.cpp:
+    complete
+    .text start:0x0218e678 end:0x0218e690
+
+src/Resource/ov016/Resource_IsNonNullAndHelperReturnsOne.cpp:
+    complete
+    .text start:0x0218e708 end:0x0218e72c
+
+src/System/ov016/Ov016_ReadMaskedHardwareState.cpp:
+    complete
+    .text start:0x0218d2bc end:0x0218d2f4
+
+src/Unclassified/ov016/Unclassified_InitializeRangeMetrics.cpp:
+    complete
+    .text start:0x0218f508 end:0x0218f540

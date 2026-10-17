@@ -22,6 +22,7 @@ extern void ARM7_SendPowerNotification(unsigned int,unsigned int);
 #define IME (*(volatile unsigned short*)0x04000208)
 #define KEYCNT (*(volatile unsigned short*)0x04000132)
 #define GPIOCONTROL (*(volatile unsigned short*)0x04000134)
+// Original: arm7/wram @ 0x038061FC; symbol: ARM7_EnterPowerSleep.
 void ARM7_EnterPowerSleep(unsigned int sources,unsigned int keys,unsigned int restore)
 {
  int irq;

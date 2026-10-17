@@ -1,0 +1,8 @@
+extern "C" void* memcpy(void*,const void*,unsigned);
+#include <globaldefs.h>
+#include <System/Memory.h>
+ARM
+extern "C"{int ReturnZero_Main020D84EC(void*);void* ResourceManager_ExchangeGlobalValue(void*);int ResolveGroupEntryAndInvokeOwnerHandler(void*,int,int);void Text_ParseDelimitedSignedIntegerSequence(void*,void*,int);char* ReadWordFieldAtOffset1C();void* func_02001a40(void*,const void*,unsigned);unsigned Halfword_ExtractLowTwelveBitsTimesEight(void*);void InvokeCallbackForEachEightByteEntry(void*,int);void System_PushInterruptFourEnabledStateAndDisable(void*);void Interrupts_UpdateTimerOneFromShiftingGlobalMask();void CopyStructuredRecordFields(void*,const void*);char* GetRecordArrayEndForEightOrSixteenByteStride(void*);char* GetBoundedRecordForEightOrSixteenByteStride(void*,int);void ResourceRecord_InitializeEmbeddedOffset8State(void*);void Object_ClearBit4OnReferencedGroupParts(void*);char* FindNonnegativeKeyInCountedRecordArray(void*,int);char* FindNonnegativeKeyInEntryArray(void*,int);void Object_CreateAndConfigureSelectedDisplayPart(void*,int);}
+#pragma force_active on
+// Original: arm9/main @ 0x020E0280; symbol: func_020e0280; size: 0x90.
+extern "C" int InitializeRelocatedBlobPointersAndMarkProcessed(char* p,char* blob,unsigned char* changed,int mode){*changed=0;if(!blob)return 0;memcpy(p,blob,4);*(char**)(p+4)=blob+4;*(char**)(p+8)=blob+(Halfword_ExtractLowTwelveBitsTimesEight(p)+4);if(*(unsigned*)p>>31){*changed=1;return 1;}InvokeCallbackForEachEightByteEntry(p,mode);*(unsigned*)p=(*(unsigned*)p&0x7fffffff)|0x80000000;*(unsigned*)blob=(*(unsigned*)blob&0x7fffffff)|0x80000000;return 1;}

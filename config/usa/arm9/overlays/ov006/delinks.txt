@@ -4,3 +4,418 @@
     .data       start:0x02160080 end:0x02160380 kind:data align:32
     .bss        start:0x02160380 end:0x021603a0 kind:bss align:32
 
+src/Data/ov006/data_ov006_02160080.cpp:
+    complete
+    .data start:0x02160080 end:0x02160087
+
+src/Data/ov006/data_ov006_02160087.cpp:
+    complete
+    .data start:0x02160087 end:0x02160089
+
+src/Data/ov006/data_ov006_02160089.cpp:
+    complete
+    .data start:0x02160089 end:0x0216008b
+
+src/Data/ov006/data_ov006_0216008b.cpp:
+    complete
+    .data start:0x0216008b end:0x02160092
+
+src/Data/ov006/data_ov006_02160092.cpp:
+    complete
+    .data start:0x02160092 end:0x02160094
+
+src/Data/ov006/data_ov006_02160094.cpp:
+    complete
+    .data start:0x02160094 end:0x02160096
+
+src/Data/ov006/data_ov006_02160096.cpp:
+    complete
+    .data start:0x02160096 end:0x0216009e
+
+src/Data/ov006/data_ov006_0216009e.cpp:
+    complete
+    .data start:0x0216009e end:0x021600a0
+
+src/Data/ov006/data_ov006_021600a0.cpp:
+    complete
+    .data start:0x021600a0 end:0x021600a9
+
+src/Data/ov006/data_ov006_021600a9.cpp:
+    complete
+    .data start:0x021600a9 end:0x021600af
+
+src/Data/ov006/data_ov006_021600af.cpp:
+    complete
+    .data start:0x021600af end:0x021600c4
+
+src/Data/ov006/data_ov006_021600c4.cpp:
+    complete
+    .data start:0x021600c4 end:0x021600d7
+
+src/Data/ov006/data_ov006_021600d7.cpp:
+    complete
+    .data start:0x021600d7 end:0x021600f0
+
+src/Data/ov006/data_ov006_021600f0.cpp:
+    complete
+    .data start:0x021600f0 end:0x021600f7
+
+src/Data/ov006/data_ov006_021600f7.cpp:
+    complete
+    .data start:0x021600f7 end:0x0216010b
+
+src/Data/ov006/data_ov006_0216010b.cpp:
+    complete
+    .data start:0x0216010b end:0x02160125
+
+src/Data/ov006/data_ov006_02160125.cpp:
+    complete
+    .data start:0x02160125 end:0x0216013d
+
+src/Data/ov006/data_ov006_0216013d.cpp:
+    complete
+    .data start:0x0216013d end:0x02160156
+
+src/Data/ov006/data_ov006_02160156.cpp:
+    complete
+    .data start:0x02160156 end:0x02160172
+
+src/Data/ov006/data_ov006_02160172.cpp:
+    complete
+    .data start:0x02160172 end:0x0216018b
+
+src/Data/ov006/data_ov006_0216018b.cpp:
+    complete
+    .data start:0x0216018b end:0x02160190
+
+src/Data/ov006/data_ov006_02160190.cpp:
+    complete
+    .data start:0x02160190 end:0x02160195
+
+src/Data/ov006/data_ov006_02160195.cpp:
+    complete
+    .data start:0x02160195 end:0x0216019a
+
+src/Data/ov006/data_ov006_0216019a.cpp:
+    complete
+    .data start:0x0216019a end:0x021601b6
+
+src/Data/ov006/data_ov006_021601b6.cpp:
+    complete
+    .data start:0x021601b6 end:0x021601cc
+
+src/Data/ov006/data_ov006_021601cc.cpp:
+    complete
+    .data start:0x021601cc end:0x021601e5
+
+src/Data/ov006/data_ov006_021601e5.cpp:
+    complete
+    .data start:0x021601e5 end:0x021601fc
+
+src/Data/ov006/data_ov006_0216026c.cpp:
+    complete
+    .data start:0x0216026c end:0x02160286
+
+src/Data/ov006/data_ov006_02160286.cpp:
+    complete
+    .data start:0x02160286 end:0x02160297
+
+src/Data/ov006/data_ov006_02160297.cpp:
+    complete
+    .data start:0x02160297 end:0x021602ab
+
+src/Data/ov006/data_ov006_021602ab.cpp:
+    complete
+    .data start:0x021602ab end:0x021602bb
+
+src/Data/ov006/data_ov006_021602bb.cpp:
+    complete
+    .data start:0x021602bb end:0x021602d2
+
+src/Data/ov006/data_ov006_021602d2.cpp:
+    complete
+    .data start:0x021602d2 end:0x021602e7
+
+src/Data/ov006/data_ov006_021602e7.cpp:
+    complete
+    .data start:0x021602e7 end:0x021602f8
+
+src/Data/ov006/data_ov006_021602f8.cpp:
+    complete
+    .data start:0x021602f8 end:0x0216030a
+
+src/Data/ov006/data_ov006_0216030a.cpp:
+    complete
+    .data start:0x0216030a end:0x02160318
+
+src/Data/ov006/data_ov006_02160318.cpp:
+    complete
+    .data start:0x02160318 end:0x0216032e
+
+src/Data/ov006/data_ov006_0216032e.cpp:
+    complete
+    .data start:0x0216032e end:0x02160340
+
+src/Data/ov006/data_ov006_02160340.cpp:
+    complete
+    .data start:0x02160340 end:0x02160359
+
+src/Data/ov006/data_ov006_02160359.cpp:
+    complete
+    .data start:0x02160359 end:0x02160360
+
+src/Data/ov006/data_ov006_02160360.cpp:
+    complete
+    .data start:0x02160360 end:0x02160380
+
+src/Unclassified/ov006/ResetWordAndSentinelByteRecord.cpp:
+    complete
+    .text start:0x021536e0 end:0x02153730
+
+src/Unclassified/ov006/TestInputOrAssociatedObjectGate.cpp:
+    complete
+    .text start:0x02158b78 end:0x02158c28
+
+src/Unclassified/ov006/ClearSelectionOnNewInputMask800.cpp:
+    complete
+    .text start:0x02158c28 end:0x02158c70
+
+src/Unclassified/ov006/UpdateSelectionFromNewInputOrCoordinates.cpp:
+    complete
+    .text start:0x02158a28 end:0x02158b78
+
+src/Unclassified/ov006/Object_SetStateByteAtOffset12BC.cpp:
+    complete
+    .text start:0x0215728c end:0x0215729c
+
+src/Unclassified/ov006/Object_ReadFirstHalfwordThroughPointerOrZero.cpp:
+    complete
+    .text start:0x021599ac end:0x021599c0
+
+src/Unclassified/ov006/func_ov006_02153c60.cpp:
+    complete
+    .text start:0x02153c60 end:0x02153c6c
+
+src/Unclassified/ov006/ResetWordAndSentinelByteRecordForwarder.cpp:
+    complete
+    .text start:0x02153730 end:0x0215373c
+
+src/GameState/ov006/GameState_CountAndStoreFlaggedEntries.cpp:
+    complete
+    .text start:0x02154138 end:0x0215426c
+
+src/Graphics/ov006/Graphics_ConfigureSelectedDisplayPartTen.cpp:
+    complete
+    .text start:0x0215f9e8 end:0x0215fa1c
+
+src/Graphics/ov006/Graphics_UpdateFlaggedAnimationStages.cpp:
+    complete
+    .text start:0x02155068 end:0x021553a8
+
+src/Util/ov006/Util_DecodeSplitByteSelector.cpp:
+    complete
+    .text start:0x0215745c end:0x0215759c
+
+src/Unclassified/ov006/Object_UpdateKeyedEntryFlags.cpp:
+    complete
+    .text start:0x02153744 end:0x021537c8
+
+src/Unclassified/ov006/func_ov006_021571b8.cpp:
+    complete
+    .text start:0x021571b8 end:0x021571cc
+
+src/GameState/ov006/SetFlagBit3AtOffsetAE2.cpp:
+    complete
+    .text start:0x021553a8 end:0x021553bc
+
+src/Util/ov006/Util_DispatchPendingModeOnce.cpp:
+    complete
+    .text start:0x02159f0c end:0x02159f94
+
+src/Unclassified/ov006/Unclassified_HasKeyedRecordWithFlagBitFiveClear.cpp:
+    complete
+    .text start:0x02158080 end:0x021580b8
+
+src/Graphics/ov006/Graphics_CaptureMatchingSlotMatrices.cpp:
+    complete
+    .text start:0x0215426c end:0x021542f4
+
+src/GameState/ov006/GameState_TestFlagOrNewHalfwordMask.cpp:
+    complete
+    .text start:0x02158c70 end:0x02158cac
+
+src/Unclassified/ov006/func_ov006_021585ac.cpp:
+    complete
+    .text start:0x021585ac end:0x021585c4
+
+src/Graphics/ov006/ConfigureSelectedPartsWithFlaggedEntryPercentage.cpp:
+    complete
+    .text start:0x0215fa1c end:0x0215fb7c
+
+src/Graphics/ov006/Graphics_ConfigureDisplayPartFromRecordCodes.cpp:
+    complete
+    .text start:0x0215fb7c end:0x0215fcf0
+
+src/Graphics/ov006/Graphics_ConfigureThreeModeSelectedDisplayEntries.cpp:
+    complete
+    .text start:0x0215f348 end:0x0215f3d8
+
+src/Graphics/ov006/Graphics_InitializeAndActivateRenderRecord.cpp:
+    complete
+    .text start:0x021571fc end:0x0215728c
+
+src/Unclassified/ov006/Util_ClearField3ACIf3A4Nonzero.cpp:
+    complete
+    .text start:0x02159f94 end:0x02159fb0
+
+src/Memory/ov006/func_ov006_02157c78.cpp:
+    complete
+    .text start:0x02157c78 end:0x02157cc0
+
+src/Unclassified/ov006/func_ov006_021570b4.cpp:
+    complete
+    .text start:0x021570b4 end:0x021570fc
+
+src/GameState/ov006/func_ov006_0215951c.cpp:
+    complete
+    .text start:0x0215951c end:0x02159564
+
+src/Unclassified/ov006/DecrementMatchingCountersAndRecordChange.cpp:
+    complete
+    .text start:0x02159108 end:0x0215919c
+
+src/Graphics/ov006/Graphics_AdvanceFadeToBlackState.cpp:
+    complete
+    .text start:0x0215f2b4 end:0x0215f348
+
+src/Unclassified/ov006/Object_RecountLinkedNodesAndSetGroupBytes.cpp:
+    complete
+    .text start:0x02158cac end:0x02158cfc
+
+src/Util/ov006/Util_UpdateOrInsertHalfwordRecord.cpp:
+    complete
+    .text start:0x02153e8c end:0x02153f24
+
+src/Resource/ov006/Resource_QueueFormattedRecordFile.cpp:
+    complete
+    .text start:0x0215fe34 end:0x0215fecc
+
+src/GameState/ov006/func_ov006_02158d8c.cpp:
+    complete
+    .text start:0x02158d8c end:0x02158de0
+
+src/Graphics/ov006/Graphics_InitializeCameraIfPresent.cpp:
+    complete
+    .text start:0x021542f4 end:0x02154348
+
+src/Util/ov006/Util_FindNodeAndUpdateSixteenEntryAnchor.cpp:
+    complete
+    .text start:0x02158cfc end:0x02158d50
+
+src/Graphics/ov006/Graphics_DrawFourObjectsWithConditionalCameraSetup.cpp:
+    complete
+    .text start:0x02154e58 end:0x02154fe4
+
+src/Graphics/ov006/Graphics_ProjectBoneAnchorsAndDrawScreenMarkers.cpp:
+    complete
+    .text start:0x02154a60 end:0x02154e58
+
+src/Graphics/ov006/Graphics_ConfigureDisplayPartSevenAndResetLinkedOwner.cpp:
+    complete
+    .text start:0x02159db0 end:0x02159e50
+
+src/Util/ov006/Util_UpdateElapsedStateAndDispatchAt60.cpp:
+    complete
+    .text start:0x02159fb0 end:0x0215a00c
+
+src/Graphics/ov006/Graphics_AdvanceBrightnessTransitionFromInput.cpp:
+    complete
+    .text start:0x0215b0fc end:0x0215b1a0
+
+src/Graphics/ov006/Graphics_ToggleFourTextureEntries.cpp:
+    complete
+    .text start:0x0215e5f8 end:0x0215e69c
+
+src/Resource/ov006/Resource_FindIndexedRecordByHalfword.cpp:
+    complete
+    .text start:0x02157368 end:0x021573c8
+
+src/Graphics/ov006/Text_AdvanceFormattedMessageAndRefreshDisplay.cpp:
+    complete
+    .text start:0x0215a00c end:0x0215a33c
+
+src/Unclassified/ov006/ConfigureFiveIndexedRecordFlags.cpp:
+    complete
+    .text start:0x021573c8 end:0x0215745c
+
+src/Filesystem/ov006/CancelTwoBackgroundTasksAndResetObject.cpp:
+    complete
+    .text start:0x02155508 end:0x021555b0
+
+src/GameState/ov006/GameState_InterpolateProtagonistAttributePercent.cpp:
+    complete
+    .text start:0x02153f24 end:0x02154138
+
+src/Graphics/ov006/Graphics_ClearFlagAndRefreshBackgrounds.cpp:
+    complete
+    .text start:0x02157184 end:0x021571b8
+
+src/Graphics/ov006/Graphics_InitializeBackgroundPriorities.cpp:
+    complete
+    .text start:0x02155480 end:0x02155508
+
+src/Unclassified/ov006/Unclassified_GetTableHalfwordByObjectIndexMinus5B.cpp:
+    complete
+    .text start:0x021591ec end:0x02159218
+
+src/Graphics/ov006/Graphics_PollConditionalCanvasResourceLoad.cpp:
+    complete
+    .text start:0x02156bd8 end:0x02156d70
+
+src/Graphics/ov006/Graphics_UpdateTwoStageDisplaySelection.cpp:
+    complete
+    .text start:0x0215daf0 end:0x0215dee8
+
+src/Unclassified/ov006/ReadSelectedParallelTableValues.cpp:
+    complete
+    .text start:0x02159274 end:0x02159320
+
+src/Graphics/ov006/Object_ConfigureSelectedDisplayPart.cpp:
+    complete
+    .text start:0x0215fcf0 end:0x0215fd60
+
+src/Util/ov006/Util_AddCountToGroupedHalfwordEntry.cpp:
+    complete
+    .text start:0x02158fd8 end:0x02159094
+
+src/Graphics/ov006/Graphics_UpdateSelectionAndFinalizeInputResult.cpp:
+    complete
+    .text start:0x02159e50 end:0x02159f0c
+
+src/Unclassified/ov006/Object_UpdateRelatedField10State.cpp:
+    complete
+    .text start:0x0215a5dc end:0x0215a5fc
+
+src/Unclassified/ov006/OV006_UpdateObjectEffectsAndAnimation.cpp:
+    complete
+    .text start:0x02156b80 end:0x02156bd8
+
+src/Graphics/ov006/Object_SetIndexedRecordCoordinatesAndSubmit.cpp:
+    complete
+    .text start:0x02158054 end:0x02158080
+
+src/GameState/ov006/Ov006_ProcessObjectWhenFlag800Set.cpp:
+    complete
+    .text start:0x021571cc end:0x021571fc
+
+src/Resource/ov006/Resource_ResolveThreeRequiredEntries.cpp:
+    complete
+    .text start:0x021537d0 end:0x02153a78
+
+src/GameState/ov006/Object_RefreshIndexedPointerAndCheckSignedState.cpp:
+    complete
+    .text start:0x02159564 end:0x021595b4
+
+src/Unclassified/ov006/Object_HasPositiveShortInResolvedList.cpp:
+    complete
+    .text start:0x02159218 end:0x02159274

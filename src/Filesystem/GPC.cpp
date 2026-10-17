@@ -5,9 +5,9 @@
 #pragma dont_inline on
 
 #if defined(jpn)
-#define func_02075090 func_0207621c
-#define func_020d84f8 func_020d9e5c
-#define func_020d8524 func_020d9e88
+#define ReturnZero_Main02075090 func_0207621c
+#define Memory_ClearAndCleanInvalidateRangeReturningLength func_020d9e5c
+#define CopyRangeCleanCacheAndReturnLength func_020d9e88
 
 #define data_020f27c0 data_020f297c
 #define data_020f27e8 data_020f29a4
@@ -18,17 +18,17 @@
 extern "C"
 {
     // Calculate CRC for a null-terminated string
-    unsigned int func_01ff860c(const char*);
+    unsigned int FileCache_CalculateStringCRC(const char*);
 
     // always zero. Based on where it is, and the fact that the argument
     // is a file path, maybe it used to check if the file was loaded into 
     // memory? But now it just says no
-    int func_02075090(const char*);
+    int ReturnZero_Main02075090(const char*);
 
     // zero memory and flush
-    unsigned int func_020d84f8(void*, unsigned int);
+    unsigned int Memory_ClearAndCleanInvalidateRangeReturningLength(void*, unsigned int);
     // memcpy and flush
-    unsigned int func_020d8524(void*, const void*, unsigned int);
+    unsigned int CopyRangeCleanCacheAndReturnLength(void*, const void*, unsigned int);
 }
 
 #if defined(usa)
@@ -47,6 +47,7 @@ extern char data_020f27f0[8];
 extern char data_020f27f8[8];
 #endif
 
+// Original: arm9/main @ 0x020D8FCC; symbol: GetUnknownGP2Data_020d8fcc; size: 0x44.
 extern "C" bool GetUnknownGP2Data_020d8fcc(void** pOutPtr, unsigned int* pOutNumber, GPCFile* gpc, const GPCFile::FileEntry* file)
 {
     if (file == NULL)
@@ -57,12 +58,14 @@ extern "C" bool GetUnknownGP2Data_020d8fcc(void** pOutPtr, unsigned int* pOutNum
     return true;
 }
 
+// Original: arm9/main @ 0x020D9010; symbol: _ZN7GPCFile16GetMainDataStartEv; size: 0xC.
 void* GPCFile::GetMainDataStart()
 {
     unsigned int* ptr = (unsigned int*)this;
     return &ptr[header.headerLength];
 }
 
+// Original: arm9/main @ 0x020D901C; symbol: _ZN7GPCFile12GetFileByCRCEj; size: 0xB4.
 GPCFile::FileEntry* GPCFile::GetFileByCRC(unsigned int crc)
 {
     if (header.headerLength == 0)
@@ -100,13 +103,15 @@ GPCFile::FileEntry* GPCFile::GetFileByCRC(unsigned int crc)
     return &entryList[found];
 }
 
+// Original: arm9/main @ 0x020D90D0; symbol: GetUnknownGP2InnerFileDataByName; size: 0x30.
 extern "C" bool GetUnknownGP2InnerFileDataByName(void** pOutPtr,
     unsigned int* pOutNumber, GPCFile* gpc, const char* name)
 {
-    unsigned int crc = func_01ff860c(name);
+    unsigned int crc = FileCache_CalculateStringCRC(name);
     return GetUnknownGP2InnerFileDataByCRC(pOutPtr, pOutNumber, gpc, crc);
 }
 
+// Original: arm9/main @ 0x020D9100; symbol: GetUnknownGP2InnerFileDataByCRC; size: 0x64.
 extern "C" bool GetUnknownGP2InnerFileDataByCRC(void** pOutPtr,
     unsigned int* pOutNumber, GPCFile* gpc, unsigned int crc)
 {
@@ -119,16 +124,19 @@ extern "C" bool GetUnknownGP2InnerFileDataByCRC(void** pOutPtr,
     return GetUnknownGP2Data_020d8fcc(pOutPtr, pOutNumber, gpc, entry);
 }
 
+// Original: arm9/main @ 0x020D9164; symbol: _Z18ZeroInitGPCPointerPP7GPCFile; size: 0xC.
 void ZeroInitGPCPointer(GPCFile** ppGPC)
 {
     *ppGPC = NULL;
 }
 
+// Original: arm9/main @ 0x020D9170; symbol: _Z21ZeroDestroyGPCPointerPP7GPCFile; size: 0xC.
 void ZeroDestroyGPCPointer(GPCFile** ppGPC)
 {
     *ppGPC = NULL;
 }
 
+// Original: arm9/main @ 0x020D917C; symbol: CheckGPCPairValid_020d917c; size: 0x2C.
 bool CheckGPCPairValid_020d917c(GPCFile* const& gpc, ExtendedNitroVM& machine)
 {
     if (gpc != NULL && machine.IsInReadableState())
@@ -136,6 +144,7 @@ bool CheckGPCPairValid_020d917c(GPCFile* const& gpc, ExtendedNitroVM& machine)
     return false;
 }
 
+// Original: arm9/main @ 0x020D91A8; symbol: _Z12ResetGPCPairPP7GPCFileR15ExtendedNitroVM; size: 0x34.
 bool ResetGPCPair(GPCFile **ppGPC, ExtendedNitroVM &machine)
 {
     if (machine.IsInReadableState())
@@ -144,6 +153,7 @@ bool ResetGPCPair(GPCFile **ppGPC, ExtendedNitroVM &machine)
     return true;
 }
 
+// Original: arm9/main @ 0x020D91DC; symbol: _Z42LoadAndDecompressGPCHeaderAndInnerFileInfoPP7GPCFileR15ExtendedNitroVMPKcPvRjjbPb; size: 0x178.
 bool LoadAndDecompressGPCHeaderAndInnerFileInfo(GPCFile **ppGPC, ExtendedNitroVM &machine,
     const char *gpcFilePath, void *outputBuffer, unsigned int &outDecompressedLength,
     unsigned int outputCapacity, bool rightAlignOutput, bool *pOutReadSuccessful)
@@ -157,7 +167,7 @@ bool LoadAndDecompressGPCHeaderAndInnerFileInfo(GPCFile **ppGPC, ExtendedNitroVM
     outDecompressedLength = 0;
 
     ResetGPCPair(ppGPC, machine);
-    int unknownPurposeButAlwaysZero = func_02075090(gpcFilePath);
+    int unknownPurposeButAlwaysZero = ReturnZero_Main02075090(gpcFilePath);
     {
     if (!machine.Open(gpcFilePath, unknownPurposeButAlwaysZero != 0))
         goto end;
@@ -166,7 +176,7 @@ bool LoadAndDecompressGPCHeaderAndInnerFileInfo(GPCFile **ppGPC, ExtendedNitroVM
         *pOutReadSuccessful = true;
 
     GPCFile::Header header;
-    func_020d84f8(&header, sizeof(GPCFile::Header));
+    Memory_ClearAndCleanInvalidateRangeReturningLength(&header, sizeof(GPCFile::Header));
     unsigned int desiredSignature = data_020f27c0.gpc2Signature;
     header.signature = desiredSignature;
     if (!machine.Read(&header, sizeof(GPCFile::Header)))
@@ -182,7 +192,7 @@ bool LoadAndDecompressGPCHeaderAndInnerFileInfo(GPCFile **ppGPC, ExtendedNitroVM
 
     if (rightAlignOutput)
         outputBuffer = (void*)((((int)outputBuffer + outputCapacity) & ~3) - longerLength);
-    func_020d8524(outputBuffer, &header, sizeof(GPCFile::Header));
+    CopyRangeCleanCacheAndReturnLength(outputBuffer, &header, sizeof(GPCFile::Header));
     ((GPCFile::Header*)outputBuffer)->headerLength = 0;
     ((GPCFile::Header*)outputBuffer)->fileInfoLength = 0;
     unsigned int decompressProcOutputLength = 0;
@@ -206,6 +216,7 @@ end:
     return success;
 }
 
+// Original: arm9/main @ 0x020D9354; symbol: _Z21GetGPCInnerFileLengthR15ExtendedNitroVMRKN7GPCFile6HeaderEPKNS1_9FileEntryE; size: 0x84.
 unsigned int GetGPCInnerFileLength(ExtendedNitroVM& machine,
     const GPCFile::Header& header, const GPCFile::FileEntry* file)
 {
@@ -227,13 +238,15 @@ unsigned int GetGPCInnerFileLength(ExtendedNitroVM& machine,
     return length;
 }
 
+// Original: arm9/main @ 0x020D93D8; symbol: _Z27GetGPCInnerFileLengthByNameRKP7GPCFileR15ExtendedNitroVMPKc; size: 0x28.
 unsigned int GetGPCInnerFileLengthByName(GPCFile* const& gpc, 
     ExtendedNitroVM& machine, const char* filename)
 {
-    unsigned int crc = func_01ff860c(filename);
+    unsigned int crc = FileCache_CalculateStringCRC(filename);
     return GetGPCInnerFileLengthByCRC(gpc, machine, crc);
 }
 
+// Original: arm9/main @ 0x020D9400; symbol: _Z26GetGPCInnerFileLengthByCRCRKP7GPCFileR15ExtendedNitroVMj; size: 0x58.
 unsigned int GetGPCInnerFileLengthByCRC(GPCFile *const &gpc, 
     ExtendedNitroVM &machine, unsigned int crc)
 {
@@ -244,6 +257,7 @@ unsigned int GetGPCInnerFileLengthByCRC(GPCFile *const &gpc,
     return GetGPCInnerFileLength(machine, header, entry);
 }
 
+// Original: arm9/main @ 0x020D9458; symbol: _Z21DecompressFileFromGPCR15ExtendedNitroVMPvRjjRKN7GPCFile6HeaderEPKNS3_9FileEntryE; size: 0xE0.
 bool DecompressFileFromGPC(ExtendedNitroVM &machine, void *outputBuffer,
     unsigned int &outDecompressedLength, unsigned int outputCapacity,
     const GPCFile::Header &gpcHeader, const GPCFile::FileEntry *file)
@@ -276,15 +290,17 @@ bool DecompressFileFromGPC(ExtendedNitroVM &machine, void *outputBuffer,
     }
 }
 
+// Original: arm9/main @ 0x020D9538; symbol: _Z27DecompressFileFromGPCByNameRKP7GPCFileR15ExtendedNitroVMPvRjjPKc; size: 0x48.
 bool DecompressFileFromGPCByName(GPCFile* const& gpc, ExtendedNitroVM& machine,
     void* outputBuffer, unsigned int& outDecompressedLength,
     unsigned int outputCapacity, const char* filename)
 {
-    unsigned int crc = func_01ff860c(filename);
+    unsigned int crc = FileCache_CalculateStringCRC(filename);
     return DecompressFileFromGPCByCRC(gpc, machine, outputBuffer,
         outDecompressedLength, outputCapacity, crc);
 }
 
+// Original: arm9/main @ 0x020D9580; symbol: _Z26DecompressFileFromGPCByCRCRKP7GPCFileR15ExtendedNitroVMPvRjjj; size: 0x78.
 bool DecompressFileFromGPCByCRC(GPCFile* const& gpc, ExtendedNitroVM& machine,
     void* outputBuffer, unsigned int& outDecompressedLength,
     unsigned int outputCapacity, unsigned int crc)
@@ -299,33 +315,39 @@ bool DecompressFileFromGPCByCRC(GPCFile* const& gpc, ExtendedNitroVM& machine,
         outDecompressedLength, outputCapacity, header, entry);
 }
 
+// Original: arm9/main @ 0x020D95F8; symbol: _ZN11GPCReadPair14ZeroInitializeEv; size: 0x14.
 void GPCReadPair::ZeroInitialize()
 {
     pGPCFile = NULL;
     machine.ZeroInitialize();
 }
 
+// Original: arm9/main @ 0x020D960C; symbol: _ZN11GPCReadPair21ZeroInitializeMachineEv; size: 0x10.
 void GPCReadPair::ZeroInitializeMachine()
 {
     machine.ZeroInitialize();
 }
 
+// Original: arm9/main @ 0x020D961C; symbol: _ZN11GPCReadPair5ResetEv; size: 0x10.
 bool GPCReadPair::Reset()
 {
     return ResetGPCPair(&pGPCFile, machine);
 }
 
+// Original: arm9/main @ 0x020D962C; symbol: _Z16CopyGPCSignaturePjS_; size: 0xC.
 void CopyGPCSignature(unsigned int *dst, unsigned int *src)
 {
     *dst = *src;
 }
 
+// Original: arm9/main @ 0x020D9638; symbol: _Z19SetGPCSignatureGPC0Pj; size: 0x1C.
 unsigned int* SetGPCSignatureGPC0(unsigned int* dst)
 {
     CopyGPCSignatureFromString(dst, data_020f27e8);
     return dst;
 }
 
+// Original: arm9/main @ 0x020D9654; symbol: _Z26CopyGPCSignatureFromStringPjPKc; size: 0x24.
 void CopyGPCSignatureFromString(unsigned int* dst, const char* src)
 {
     char* dstString = reinterpret_cast<char*>(dst);
@@ -335,12 +357,14 @@ void CopyGPCSignatureFromString(unsigned int* dst, const char* src)
     dstString[3] = src[3];
 }
 
+// Original: arm9/main @ 0x020D9678; symbol: _Z19SetGPCSignatureGPC1Pj; size: 0x1C.
 unsigned int* SetGPCSignatureGPC1(unsigned int* dst)
 {
     CopyGPCSignatureFromString(dst, data_020f27f0);
     return dst;
 }
 
+// Original: arm9/main @ 0x020D9694; symbol: _Z19SetGPCSignatureGPC2Pj; size: 0x1C.
 unsigned int* SetGPCSignatureGPC2(unsigned int* dst)
 {
     CopyGPCSignatureFromString(dst, data_020f27f8);

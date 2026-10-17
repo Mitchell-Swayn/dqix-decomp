@@ -4,6 +4,7 @@
 extern int ARM7_DisableIRQInterrupts(void);
 extern int ARM7_SetIRQInterruptState(int);
 extern void ARM7_BlockCurrentThread(BlockedContextList*);
+// Original: arm7/wram @ 0x038037EC; symbol: ARM7_BeginCardOperation.
 void ARM7_BeginCardOperation(BackupWorker *worker,void (*callback)(void*),void *userData)
 {
  int state=ARM7_DisableIRQInterrupts();

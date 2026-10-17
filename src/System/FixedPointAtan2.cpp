@@ -5,6 +5,7 @@
 extern "C" const int16_t data_020ed450[];
 extern "C" const int16_t data_020ed554[];
 
+// Original: arm9/main @ 0x020C338C; symbol: fix32_Atan2; size: 0x1B8.
 fix32_t fix32_Atan2(fix32_t y, fix32_t x)
 {
     fix32_t numerator;
@@ -80,6 +81,7 @@ fix32_t fix32_Atan2(fix32_t y, fix32_t x)
     return (int16_t)(base - data_020ed450[fix32_Divide(numerator, x) >> 5]);
 }
 
+// Original: arm9/main @ 0x020C3544; symbol: fix32_Atan2_Rescaled; size: 0x1A8.
 fix32_t fix32_Atan2_Rescaled(fix32_t y, fix32_t x)
 {
     fix32_t numerator;

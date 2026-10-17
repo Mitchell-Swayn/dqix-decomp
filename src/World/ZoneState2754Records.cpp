@@ -2,6 +2,7 @@
 
 // Serialized record areas contain two counts of 32-byte records and an
 // optional 88-byte block. Their payload semantics remain unresolved.
+// Original: arm9/main @ 0x020DE7A4; symbol: _ZN13ZoneState27544Data20GetRecordStorageSizeEv; size: 0x2C.
 unsigned int ZoneState2754::Data::GetRecordStorageSize()
 {
     unsigned int secondary = this->secondary.count;
@@ -11,6 +12,7 @@ unsigned int ZoneState2754::Data::GetRecordStorageSize()
     return size + secondary * 32 + primary * 32;
 }
 
+// Original: arm9/main @ 0x020DE7D0; symbol: _ZN13ZoneState27544Data19VisitPrimaryRecordsEPFbPS0_PvE; size: 0x54.
 bool ZoneState2754::Data::VisitPrimaryRecords(bool (*callback)(ZoneState2754::Data*, void*))
 {
     int count;

@@ -58,6 +58,7 @@ extern const char ARM7_HeapCheckMessage16[];
 #define FAIL17() { ARM7_HeapWarning(ARM7_HeapCheckMessage9, 1286); goto cleanup; }
 extern const char ARM7_HeapCheckMessage18[];
 #define FAIL18() { ARM7_HeapWarning(ARM7_HeapCheckMessage18, 1293); goto cleanup; }
+// Original: arm7/wram @ 0x037FD39C; symbol: ARM7_CheckArenaHeap.
 int ARM7_CheckArenaHeap(int arena,int heap)
 {
  int total=0;

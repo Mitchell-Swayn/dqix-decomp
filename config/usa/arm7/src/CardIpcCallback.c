@@ -2,6 +2,7 @@
 #pragma dont_inline on
 #include "BackupTransfer.h"
 extern void ARM7_MarkThreadReady(ProcessorContext*);
+// Original: arm7/wram @ 0x038038AC; symbol: ARM7_CardIpcCallback.
 void ARM7_CardIpcCallback(int channel,unsigned int message,int flag)
 {
  if(channel==11 && flag) {

@@ -25,6 +25,7 @@ extern const char ARM7_AlarmSourceFile[],ARM7_AlarmAllocationError[];
 #define TIMER_CONTROL_FLAGS_ENABLE_IRQ_ON_OVERFLOW 0x40
 #define TIMER_CONTROL_FLAGS_PRESCALE_64X 1
 #define IRQ_MASK_TIMER_1_OVERFLOW 0x10
+// Original: arm7/wram @ 0x037FD89C; symbol: ARM7_MarkNextAlarmToSound.
 void ARM7_MarkNextAlarmToSound(Alarm *timing)
 {
     int64_t timeRemaining;
@@ -48,6 +49,7 @@ void ARM7_MarkNextAlarmToSound(Alarm *timing)
     ARM7_EnableSpecificInterrupts(IRQ_MASK_TIMER_1_OVERFLOW);
 }
 
+// Original: arm7/wram @ 0x037FD928; symbol: ARM7_InitializeActiveAlarmList.
 void ARM7_InitializeActiveAlarmList()
 {
     if (ARM7_ActiveAlarmList.isInitialized)
@@ -60,17 +62,20 @@ void ARM7_InitializeActiveAlarmList()
     ARM7_DisableSpecificInterrupts(IRQ_MASK_TIMER_1_OVERFLOW);
 }
 
+// Original: arm7/wram @ 0x037FD96C; symbol: ARM7_IsAlarmListInitialized.
 int ARM7_IsAlarmListInitialized()
 {
     return ARM7_ActiveAlarmList.isInitialized;
 }
 
+// Original: arm7/wram @ 0x037FD97C; symbol: ARM7_ZeroInitializeAlarm.
 void ARM7_ZeroInitializeAlarm(Alarm* alarm)
 {
     alarm->completionProc = 0;
     alarm->unknown_8 = 0;
 }
 
+// Original: arm7/wram @ 0x037FD98C; symbol: ARM7_RegisterAlarm.
 void ARM7_RegisterAlarm(Alarm* alarm, uint64_t ringTime)
 {
     Alarm *loopAlarm, *prevAlarm;
@@ -127,6 +132,7 @@ void ARM7_RegisterAlarm(Alarm* alarm, uint64_t ringTime)
     }
 }
 
+// Original: arm7/wram @ 0x037FDAB8; symbol: ARM7_SetTimeout.
 void ARM7_SetTimeout(Alarm* alarm, uint64_t numTicks,
     Callback callback, void* ppContext)
 {
@@ -145,6 +151,7 @@ void ARM7_SetTimeout(Alarm* alarm, uint64_t numTicks,
     ARM7_SetIRQInterruptState(priorState);
 }
 
+// Original: arm7/wram @ 0x037FDB3C; symbol: ARM7_SetInterval.
 void ARM7_SetInterval(Alarm *alarm, uint64_t residue, uint64_t interval,
     Callback callback, void*ppContext)
 {
@@ -162,6 +169,7 @@ void ARM7_SetInterval(Alarm *alarm, uint64_t residue, uint64_t interval,
     ARM7_SetIRQInterruptState(priorState);
 }
 
+// Original: arm7/wram @ 0x037FDBC8; symbol: ARM7_CancelAlarm.
 void ARM7_CancelAlarm(Alarm *alarm)
 {
     int priorState;

@@ -6,6 +6,7 @@ array and add no storage. MWLD evaluates aliases in order and gives them the
 current output section, so each alias follows its owning input object section.
 """
 import argparse
+from bisect import bisect_right
 import json
 import re
 import subprocess
@@ -88,14 +89,129 @@ def apply_module_symbols(lcf_path: Path, config_directory: Path) -> None:
         raise
 
 
+def apply_source_data_alignment(lcf_path: Path, config_directory: Path) -> None:
+    """Honor byte-aligned source splits without changing legacy fallback packing.
+
+    DSD emits ALIGNALL(4) for a module. A new initialized-data unit may start or
+    end between words. Lower the minimum only around that input and, when its end
+    is unaligned, the immediately following same-kind input. Object alignment
+    remains authoritative. Restore the legacy minimum immediately afterwards.
+    """
+    text = lcf_path.read_text()
+    lines = text.splitlines()
+    spans = []
+    # Index the generated script once. Repeated whole-script regular-expression
+    # scans made this step quadratic in the number of split data units.
+    blocks = {}
+    owners = {}
+    following_inputs = {}
+    module_pattern = re.compile(r"\s*\.(arm9|itcm|dtcm|ov[0-9]{3})\s*:\s*\{")
+    input_pattern = re.compile(r"\s*(\S+\.o)\((\.[A-Za-z0-9_]+)\)\s*")
+    following_pattern = re.compile(r"\s*[A-Za-z_][A-Za-z0-9_]*\.o\(\.[A-Za-z0-9_]+\)\s*")
+    current = None
+    for index, value in enumerate(lines):
+        match = module_pattern.fullmatch(value)
+        if match and match[1] not in blocks:
+            current = match[1]
+            blocks[current] = [index, None]
+            following_inputs[current] = []
+        elif current is not None and re.fullmatch(r"\s*}.*", value):
+            blocks[current][1] = index
+            current = None
+        elif current is not None:
+            match = input_pattern.fullmatch(value)
+            if match:
+                owners.setdefault((current, match[1], match[2]), []).append(index)
+                if following_pattern.fullmatch(value):
+                    following_inputs[current].append(index)
+    runtime_path = config_directory / 'runtime_support.json'
+    text_rows = {Path(r['source']).stem + '.o': r for r in json.loads(runtime_path.read_text()).get('functions', []) if r.get('inline_metadata', {}).get('text_alignment') == 2} if runtime_path.exists() else {}
+    for path in sorted(config_directory.rglob("delinks.txt")):
+        module = path.parent.name
+        if not re.fullmatch(r"arm9|itcm|dtcm|ov[0-9]{3}", module):
+            continue
+        source = None
+        for line in path.read_text().splitlines():
+            if line.startswith("src/") and line.endswith(":"):
+                source = Path(line[:-1]).stem + ".o"
+                continue
+            match = re.fullmatch(r"\s*(\.data|\.rodata|\.ctor|\.text)\s+start:0x([0-9a-fA-F]+)\s+end:0x([0-9a-fA-F]+)\s*", line)
+            if source is None or match is None:
+                continue
+            section, start, end = match.groups()
+            if section == '.text':
+                row = text_rows.get(source)
+                if row is None: continue
+                if row.get('mode') != 'thumb' or int(row['address'], 0) != int(start, 16) or int(end, 16)-int(start, 16) != row['size']:
+                    raise ValueError('Thumb text alignment differs from accepted source range')
+            if int(start, 16) % 4 == 0 and int(end, 16) % 4 == 0:
+                continue
+            block = blocks.get(module)
+            if block is None:
+                raise ValueError("Missing linked module block: " + module)
+            if block[1] is None:
+                raise ValueError("Unclosed linked module block: " + module)
+            positions = owners.get((module, source, section), [])
+            if len(positions) != 1:
+                raise ValueError("Expected one owning data section: " + source)
+            first = last = positions[0]
+            if int(end, 16) % 4:
+                inputs = following_inputs[module]
+                index = bisect_right(inputs, first)
+                following = inputs[index] if index < len(inputs) else None
+                if following is not None and lines[following].strip().endswith("(" + section + ")"):
+                    last = following
+            spans.append((first, last))
+    merged = []
+    for first, last in sorted(spans):
+        if merged and first <= merged[-1][1] + 1:
+            merged[-1] = (merged[-1][0], max(last, merged[-1][1]))
+        else:
+            merged.append((first, last))
+    starts = {first for first, last in merged}
+    ends = {last for first, last in merged}
+    output = []
+    for i, line in enumerate(lines):
+        indent = line[:len(line) - len(line.lstrip())]
+        if i in starts:
+            output.append(indent + "ALIGNALL(1);")
+        output.append(line)
+        if i in ends:
+            output.append(indent + "ALIGNALL(4);")
+    lcf_path.write_text("\n".join(output) + "\n")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dsd", type=Path, required=True)
     parser.add_argument("--config-path", type=Path, required=True)
     parser.add_argument("--lcf-path", type=Path, required=True)
     args = parser.parse_args()
-    subprocess.run([str(args.dsd.resolve()), "lcf", "--config-path", str(args.config_path)], check=True)
+    from lcf_tool import resolve_lcf_tool
+    tool = resolve_lcf_tool(Path(__file__).resolve().parents[1], args.config_path, args.dsd)
+    subprocess.run([tool, "lcf", "--config-path", str(args.config_path)], check=True)
     apply_module_symbols(args.lcf_path, args.config_path.parent)
+    apply_source_data_alignment(args.lcf_path, args.config_path.parent)
+    # MWLD's command-line force_active list is limited to 255 characters.
+    # The LCF directive has no such limit and retains all shared runtime tails.
+    names = []
+    policy = args.config_path.parent / 'runtime_support.json'
+    if policy.exists():
+        from runtime_support import load
+        names.extend(row['name'] for row in load(Path(__file__).resolve().parents[1])
+                     if row['classification'] == 'runtime_assembly')
+        if any(not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', name) for name in names):
+            raise ValueError('Invalid runtime retention symbol')
+    # Reconstructed functions that would otherwise be dead-stripped, one symbol per line.
+    keep = args.config_path.parent.parent / 'keep_symbols.txt'
+    if keep.exists():
+        kept = [line.strip() for line in keep.read_text().splitlines() if line.strip() and not line.startswith('#')]
+        if any(not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', name) for name in kept):
+            raise ValueError('Invalid keep_symbols.txt entry')
+        names.extend(kept)
+    if names:
+        with args.lcf_path.open('a') as output:
+            output.write('\nFORCEACTIVE {\n' + ''.join('    ' + name + '\n' for name in dict.fromkeys(names)) + '}\n')
 
 
 if __name__ == "__main__":

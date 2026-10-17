@@ -5,6 +5,7 @@
 // USA: 0x020c862c
 // Bounds are those of the original linked USA image. Arena 1 belongs to ARM7;
 // arena 2 is only exposed when extended memory is enabled and available.
+// Original: arm9/main @ 0x020C862C; symbol: _Z18GetInitialArenaLowi; size: 0xA8.
 void* GetInitialArenaLow(int arenaId)
 {
     switch (arenaId)

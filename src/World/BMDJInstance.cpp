@@ -1,5 +1,6 @@
 #include "World/BMDJ.h"
 
+// Original: arm9/main @ 0x02013018; symbol: _Z17ResetBMDJInstancePN17Zone3D_BMDJStruct13InstanceEntryE; size: 0x90.
 void ResetBMDJInstance(Zone3D_BMDJStruct::InstanceEntry* instance)
 {
     instance->id = 0xffff;

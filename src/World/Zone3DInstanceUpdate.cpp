@@ -4,9 +4,10 @@
 
 extern char data_02108760[];
 extern char data_02109bf4[];
-extern "C" void func_0205eaa0(void*, int, int);
-extern "C" int func_0209ca2c(void*);
+extern "C" void DispatchStoredHalfwordIndexWithTwoArguments(void*, int, int);
+extern "C" int TestNonnegativeIdentifierWithByteOverride(void*);
 
+// Original: arm9/main @ 0x02015554; symbol: _ZN6Zone3D18UpdateBMDJInstanceEPN17Zone3D_BMDJStruct13InstanceEntryE; size: 0x378.
 void Zone3D::UpdateBMDJInstance(Zone3D_BMDJStruct::InstanceEntry* instance)
 {
     GameState* game = GameState::GetInstance();
@@ -78,9 +79,9 @@ void Zone3D::UpdateBMDJInstance(Zone3D_BMDJStruct::InstanceEntry* instance)
         {
             instance->object->SetAnimationPlaybackSpeed(0x1800, 0);
             if (instance->object->MaybeSetRegularAnimation(gZone3DPaths.openAnimation, 1))
-                func_0205eaa0(data_02108760, 0x12, 0);
+                DispatchStoredHalfwordIndexWithTwoArguments(data_02108760, 0x12, 0);
             else if (instance->object->MaybeSetRegularAnimation(gZone3DPaths.openAnimation2, 1))
-                func_0205eaa0(data_02108760, 0x62, 0);
+                DispatchStoredHalfwordIndexWithTwoArguments(data_02108760, 0x62, 0);
             instance->doorState = 1;
         }
         else if (instance->doorState == 1)
@@ -96,12 +97,12 @@ void Zone3D::UpdateBMDJInstance(Zone3D_BMDJStruct::InstanceEntry* instance)
             unsigned int elapsed = game->GetEffectiveDeltaTime();
             if (elapsed < instance->doorTimer)
                 instance->doorTimer -= elapsed;
-            else if (!func_0209ca2c(data_02109bf4))
+            else if (!TestNonnegativeIdentifierWithByteOverride(data_02109bf4))
             {
                 if (instance->object->MaybeSetRegularAnimation(gZone3DPaths.closeAnimation, 5))
-                    func_0205eaa0(data_02108760, 0x13, 0);
+                    DispatchStoredHalfwordIndexWithTwoArguments(data_02108760, 0x13, 0);
                 else if (instance->object->MaybeSetRegularAnimation(gZone3DPaths.closeAnimation2, 5))
-                    func_0205eaa0(data_02108760, 0x62, 0);
+                    DispatchStoredHalfwordIndexWithTwoArguments(data_02108760, 0x62, 0);
                 instance->flags &= ~0x100;
             }
         }

@@ -11,15 +11,15 @@
 #include "World/ZonePredicates.h"
 
 #if defined(jpn)
-#define func_02011584 func_020112f4
+#define GameState_GetFieldAddress468 func_020112f4
 #define func_02013750 func_02013518
-#define func_02053c6c func_02054fe4
+#define ReadWordFieldAtOffset150 func_02054fe4
 #define func_0207a5b8 func_0207b3f0
 #define func_0207b9cc func_0207c804
-#define func_0207df50 func_0207ecd0
-#define func_0208a9b4 func_0208b2a8
+#define SnapshotBlockAndVolatileWordPair func_0207ecd0
+#define ReadGlobalAt02108F0C func_0208b2a8
 #define func_02094d00 func_02096950
-#define func_02099950 func_0209b684
+#define Object_FindRecordByKeyInCountedArray func_0209b684
 #define func_020de848 func_020e01c4
 
 
@@ -27,21 +27,21 @@
 
 extern "C"
 {
-    void* func_02011584(GameState*);
+    void* GameState_GetFieldAddress468(GameState*);
 
-    void* func_02053c6c(void*);
-    void func_0205e104(const char*, SafeAllocator*, const void*, unsigned int);
+    void* ReadWordFieldAtOffset150(void*);
+    void Script_InitializeAndExecuteOwnerContextCode(const char*, SafeAllocator*, const void*, unsigned int);
 
     // Texture functions
-    void* func_0207df50(void*);
-    void func_0207df90(void*);
-    void func_0207dfac(void*);
+    void* SnapshotBlockAndVolatileWordPair(void*);
+    void Graphics_RestoreTextureImageAndPaletteVRAMState(void*);
+    void Object_InvokeSaveTextureImageVRAMState(void*);
 
-    void* func_0208a9b4();
+    void* ReadGlobalAt02108F0C();
     void func_02094d00(void*);
-    Zone3D_StructPtr_8* func_02099950(void*, unsigned short id);
+    Zone3D_StructPtr_8* Object_FindRecordByKeyInCountedArray(void*, unsigned short id);
 
-    void func_020c9be0(); // abort() or similar
+    void DisableInterruptsAndHaltForever(); // abort() or similar
     void func_020de848(void*);
 
     void func_02013750(Zone3D*, bool);
@@ -49,6 +49,7 @@ extern "C"
 }
 
 
+// Original: arm9/main @ 0x02013FB4; symbol: _ZN6Zone3D15ProcessMaplist9Ev; size: 0x88.
 bool Zone3D::ProcessMaplist9()
 {
     if (mapListLoadHandle_ < 0)
@@ -67,6 +68,7 @@ bool Zone3D::ProcessMaplist9()
     return true;
 }
 
+// Original: arm9/main @ 0x0201403C; symbol: _ZN6Zone3D11LoadMapAMBLEv; size: 0xCC.
 void Zone3D::LoadMapAMBL()
 {
     BackgroundLoader* loader = BackgroundLoader::GetInstance();
@@ -94,6 +96,7 @@ void Zone3D::LoadMapAMBL()
     mapAMBLLoadHandle_ = loader->QueueLoadFile(filenameBuffer, NULL);
 }
 
+// Original: arm9/main @ 0x02014108; symbol: _ZN6Zone3D13UnpackMapAMBLEv; size: 0x288.
 bool Zone3D::UnpackMapAMBL()
 {
     if (mapAMBLLoadHandle_ < 0)
@@ -157,7 +160,7 @@ bool Zone3D::UnpackMapAMBL()
                         unsigned int decompressedSize;
                         const void* decompressed = DecompressLZ77FileIntoScratchSpace(*alloc, innerFilePtr, decompressedSize);
                         // this call is responsible for setting the top-screen map
-                        func_0205e104(mapListInfo_.maybeModelName, alloc, decompressed, decompressedSize);
+                        Script_InitializeAndExecuteOwnerContextCode(mapListInfo_.maybeModelName, alloc, decompressed, decompressedSize);
                     }
                     // bpos file. From testing these seem to be a grotto thing
                     else if (strcmp(gZone3DPaths.positionExtension, extension) == 0)
@@ -172,7 +175,7 @@ bool Zone3D::UnpackMapAMBL()
             unsigned int allocSize = pAllocator_4c_->GetMaxPossibleAllocation();
             void* memory = pAllocator_4c_->Allocate(allocSize);
             if (memory == NULL)
-                func_020c9be0();
+                DisableInterruptsAndHaltForever();
             internalAllocator_.ResetAllocatorPointer();
             internalAllocator_.CreateTypeA(memory, allocSize);
             pAllocator_68_ = &internalAllocator_;
@@ -185,6 +188,7 @@ bool Zone3D::UnpackMapAMBL()
     return true;
 }
 
+// Original: arm9/main @ 0x02014390; symbol: _ZN6Zone3D15ProcessBMBLFileEPKvj; size: 0x48.
 bool Zone3D::ProcessBMBLFile(const void* filedata, unsigned int /*filesize*/)
 {
     SafeAllocator* allocator = pAllocator_68_;
@@ -199,6 +203,7 @@ bool Zone3D::ProcessBMBLFile(const void* filedata, unsigned int /*filesize*/)
     return true;
 }
 
+// Original: arm9/main @ 0x020143D8; symbol: _ZN6Zone3D15ProcessBPOSFileEPKvj; size: 0x3C.
 bool Zone3D::ProcessBPOSFile(const void* filedata, unsigned int /*filesize*/)
 {
     SafeAllocator* allocator = pAllocator_68_;
@@ -211,6 +216,7 @@ bool Zone3D::ProcessBPOSFile(const void* filedata, unsigned int /*filesize*/)
     return true;
 }
 
+// Original: arm9/main @ 0x02014414; symbol: _ZN6Zone3D15ProcessBATSFileEPKvj; size: 0x48.
 bool Zone3D::ProcessBATSFile(const void* filedata, unsigned int /*filesize*/)
 {
     SafeAllocator* allocator = pAllocator_68_;
@@ -221,6 +227,7 @@ bool Zone3D::ProcessBATSFile(const void* filedata, unsigned int /*filesize*/)
     return true;
 }
 
+// Original: arm9/main @ 0x0201445C; symbol: _ZN6Zone3D16ProcessNSBTXFileEPKvjPKc; size: 0x14C.
 bool Zone3D::ProcessNSBTXFile(const void* filedata, unsigned int filesize, const char* filename)
 {
     SafeAllocator* allocator = pAllocator_68_;
@@ -243,11 +250,11 @@ bool Zone3D::ProcessNSBTXFile(const void* filedata, unsigned int filesize, const
             void* decompressed = DecompressLZ77FileIntoScratchSpace(*allocator, filedata, decompressedLength);
             if (decompressed != NULL)
             {
-                func_0207df90(graphicsPtr);
+                Graphics_RestoreTextureImageAndPaletteVRAMState(graphicsPtr);
                 modelNode->model_.SetRawFile(decompressed, decompressedLength);
                 modelNode->model_.ClearRawFileCache();
                 modelNode->model_.ProcessRawFile(Model3D::TextureStagingMode_Immediate);
-                func_0207dfac(graphicsPtr);
+                Object_InvokeSaveTextureImageVRAMState(graphicsPtr);
                 NSBXXTex* texture = modelNode->model_.GetTEX0();
                 if (texture != NULL)
                 {
@@ -275,6 +282,7 @@ bool Zone3D::ProcessNSBTXFile(const void* filedata, unsigned int filesize, const
     return true;
 }
 
+// Original: arm9/main @ 0x020145A8; symbol: _ZN6Zone3D11LoadMapAMDJEv; size: 0x154.
 void Zone3D::LoadMapAMDJ()
 {
     BackgroundLoader* loader = BackgroundLoader::GetInstance();
@@ -316,6 +324,7 @@ void Zone3D::LoadMapAMDJ()
     mapAMDJLoadHandle_ = loader->QueueLoadFile(filenameBuffer, NULL);
 }
 
+// Original: arm9/main @ 0x020146FC; symbol: _ZN6Zone3D13UnpackMapAMDJEv; size: 0x204.
 bool Zone3D::UnpackMapAMDJ()
 {
     if (mapAMDJLoadHandle_ < 0)
@@ -390,6 +399,7 @@ bool Zone3D::UnpackMapAMDJ()
     return true;
 }
 
+// Original: arm9/main @ 0x02014900; symbol: _ZN6Zone3D15ProcessBMDJFileEPKvjPN12ZoneFeatures13Opcode64EntryE; size: 0x8C.
 bool Zone3D::ProcessBMDJFile(const void* filedata, unsigned int filesize, ZoneFeatures::Opcode64Entry* misc)
 {
     SafeAllocator* allocator = pAllocator_68_;
@@ -411,6 +421,7 @@ bool Zone3D::ProcessBMDJFile(const void* filedata, unsigned int filesize, ZoneFe
     return true;
 }
 
+// Original: arm9/main @ 0x0201498C; symbol: _ZN6Zone3D25ProcessAtmosphericEffectsEv; size: 0x98.
 bool Zone3D::ProcessAtmosphericEffects()
 {
     if (!atmosphericEffects_.IsArchiveLoaded())

@@ -2,6 +2,7 @@
 
 #pragma optimize_for_size off
 
+// Original: arm9/main @ 0x020C28A0; symbol: Mat4x4_MaybeWriteFrustum; size: 0x14C.
 void Mat4x4_MaybeWriteFrustum(fix32_t sine, fix32_t cosine, fix32_t aspect, fix32_t near, fix32_t far, fix32_t scale, Matrix4x4* out)
 {
     fix32_t cotangent = fix32_Divide(cosine, sine);

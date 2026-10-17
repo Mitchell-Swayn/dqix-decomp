@@ -25,17 +25,17 @@
 extern "C"
 {
     // some sort of bit test of a struct member at offset 0
-    bool func_02046708(void*, unsigned int);
+    bool TestWordMaskNonzero(void*, unsigned int);
     // returns pointer to some unknown struct (at 02114e04)
-    void* func_020d6c00();
+    void* GetGlobalStatePointer();
 
     // get system language?
-    int func_0200fb08(GameState*);
+    int GameState_ReadSupportedFirmwareLanguage(GameState*);
 
     // Looks like a custom implementation of strstr
-    char* func_020d2f88(char* searchString, const char* targetString);
+    char* String_FindFirstSubstring(char* searchString, const char* targetString);
     // Custom implementation of strlen
-    int func_020d2ff0(const char* str);
+    int String_CountBytesUntilTerminator(const char* str);
 
     void LZ77UnCompReadNormalWrite8bit(const void* src, void* dst);
 }
@@ -63,6 +63,7 @@ extern char data_020f0dc2[]; // "<LG>" (USA only)
 #endif
 
 // JPN: func_02076224
+// Original: arm9/main @ 0x02075098; symbol: _Z18LoadFileIntoMemoryPKcPvPj; size: 0xE4.
 void* LoadFileIntoMemory(const char* path, void* buffer, unsigned int* outLength)
 {
     if (outLength != NULL)
@@ -72,7 +73,7 @@ void* LoadFileIntoMemory(const char* path, void* buffer, unsigned int* outLength
     GameState* gameState = GameState::GetInstance();
     
     char replacedPath[128] = { 0 };
-    int language = func_0200fb08(gameState);
+    int language = GameState_ReadSupportedFirmwareLanguage(gameState);
     StringReplaceLanguageTag(path, replacedPath, language);
 #elif defined(jpn)
     const char* replacedPath = path;
@@ -105,6 +106,7 @@ void* LoadFileIntoMemory(const char* path, void* buffer, unsigned int* outLength
     return output;
 }
 
+// Original: arm9/main @ 0x0207517C; symbol: _Z25LoadFileIntoNewAllocationPKcR13SafeAllocatorPj; size: 0xCC.
 void* LoadFileIntoNewAllocation(const char* path, SafeAllocator& alloc, unsigned int* outLength)
 {
 #if defined(usa)
@@ -112,7 +114,7 @@ void* LoadFileIntoNewAllocation(const char* path, SafeAllocator& alloc, unsigned
 
     char replacedPath[128] = { 0 };
 
-    int language = func_0200fb08(gameState);
+    int language = GameState_ReadSupportedFirmwareLanguage(gameState);
     StringReplaceLanguageTag(path, replacedPath, language);
 #elif defined(jpn)
     const char* replacedPath = path;
@@ -143,6 +145,7 @@ void* LoadFileIntoNewAllocation(const char* path, SafeAllocator& alloc, unsigned
     return copyDst;
 }
 
+// Original: arm9/main @ 0x02075248; symbol: _Z13GetFileInNarcPKvPKcPS0_Pjj; size: 0xFC.
 bool GetFileInNarc(const void *narcBuffer, const char *targetFilePath,
     const void **pOutFilePtr, unsigned int *pOutFileSize, unsigned int firstFileIdx)
 {
@@ -180,6 +183,7 @@ bool GetFileInNarc(const void *narcBuffer, const char *targetFilePath,
     return success;
 }
 
+// Original: arm9/main @ 0x02075344; symbol: _Z23GetFileInNarcPermissivePKvPKcPS0_Pj; size: 0x1A8.
 bool GetFileInNarcPermissive(const void *narcBuffer, const char *targetFilePath,
     const void **pOutFilePtr, unsigned int *pOutFileSize)
 {
@@ -247,6 +251,7 @@ bool GetFileInNarcPermissive(const void *narcBuffer, const char *targetFilePath,
     return success;
 }
 
+// Original: arm9/main @ 0x020754EC; symbol: _Z17MakeCharUpperCasec; size: 0x20.
 int MakeCharUpperCase(char ch)
 {
     if (ch < 0 || ch >= 0x80)
@@ -254,6 +259,7 @@ int MakeCharUpperCase(char ch)
     return (unsigned char)data_020e692c[ch];
 }
 
+// Original: arm9/main @ 0x0207550C; symbol: _Z26FindFilesInNarcBySubstringPKvPKcPS0_Pjj; size: 0xFC.
 unsigned int FindFilesInNarcBySubstring(const void* narcBuffer, const char* substr,
     const void** pOutFilePtrs, unsigned int* pOutFileSizes, unsigned int maxOut)
 {
@@ -304,6 +310,7 @@ unsigned int FindFilesInNarcBySubstring(const void* narcBuffer, const char* subs
     return numFound;
 }
 
+// Original: arm9/main @ 0x02075608; symbol: _Z34DecompressLZ77FileIntoScratchSpaceR13SafeAllocatorPKvRj; size: 0x4C.
 void* DecompressLZ77FileIntoScratchSpace(SafeAllocator& allocator,
     const void* fileData, unsigned int& outDecompressedSize)
 {
@@ -318,6 +325,7 @@ void* DecompressLZ77FileIntoScratchSpace(SafeAllocator& allocator,
     return writeDst;
 }
 
+// Original: arm9/main @ 0x02075654; symbol: _Z36DecompressLZ77FileIntoAllocatedSpaceR13SafeAllocatorPKvRj; size: 0x38.
 void* DecompressLZ77FileIntoAllocatedSpace(SafeAllocator& allocator,
     const void* fileData, unsigned int& outDecompressedSize)
 {

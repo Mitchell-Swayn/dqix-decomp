@@ -1,5 +1,6 @@
 #include "Graphics/NSBXX/RenderCommands_Common.h"
 
+// Original: arm9/main @ 0x020B4020; symbol: _Z21ExecuteRenderCommandsP20RenderCommandHandler; size: 0x48.
 void ExecuteRenderCommands(RenderCommandHandler* handler)
 {
     do
@@ -10,9 +11,10 @@ void ExecuteRenderCommands(RenderCommandHandler* handler)
     } while (!(handler->flags_ & (1 << RCH_FLAG_5)));
 }
 
+// Original: arm9/main @ 0x020B4068; symbol: _Z25SetUpRenderCommandHandlerP20RenderCommandHandlerP18ModelRenderContext; size: 0x19C.
 void SetUpRenderCommandHandler(RenderCommandHandler* handler, ModelRenderContext* modelData)
 {
-    func_020ca458(0, handler, sizeof(RenderCommandHandler));
+    MIi_CpuClearFast(0, handler, sizeof(RenderCommandHandler));
     handler->boneMatrixBitfield_[0] = 1;
     handler->flags_ = 1;
 
@@ -62,6 +64,7 @@ void SetUpRenderCommandHandler(RenderCommandHandler* handler, ModelRenderContext
     modelData->flags_ &= ~1;
 }
 
+// Original: arm9/main @ 0x020B4204; symbol: _Z28PopulateBitfieldFromAnimDataPjP13AnimationData; size: 0x68.
 void PopulateBitfieldFromAnimData(unsigned int* bitfield, AnimationData* anim)
 {
     if (anim == NULL)
@@ -85,15 +88,16 @@ void PopulateBitfieldFromAnimData(unsigned int* bitfield, AnimationData* anim)
     } while (anim != NULL);
 }
 
+// Original: arm9/main @ 0x020B426C; symbol: _Z25RenderModelFromRenderDataP18ModelRenderContext; size: 0xDC.
 void RenderModelFromRenderData(ModelRenderContext* renderData)
 {
     RenderCommandHandler handler;
     
     if ((renderData->flags_ & 0x10) == 0x10)
     {
-        func_020ca3ec(0, renderData->animatedMaterials_, sizeof(renderData->animatedMaterials_));
-        func_020ca3ec(0, renderData->animatedBoneMatrices_, sizeof(renderData->animatedBoneMatrices_));
-        func_020ca3ec(0, renderData->animatedVisibilityConditions_, sizeof(renderData->animatedVisibilityConditions_));
+        MIi_CpuClear32(0, renderData->animatedMaterials_, sizeof(renderData->animatedMaterials_));
+        MIi_CpuClear32(0, renderData->animatedBoneMatrices_, sizeof(renderData->animatedBoneMatrices_));
+        MIi_CpuClear32(0, renderData->animatedVisibilityConditions_, sizeof(renderData->animatedVisibilityConditions_));
         if (renderData->materialAnimations_ != NULL)
             PopulateBitfieldFromAnimData(renderData->animatedMaterials_, renderData->materialAnimations_);
         if (renderData->jointAnimations_ != NULL)
@@ -117,6 +121,7 @@ void RenderModelFromRenderData(ModelRenderContext* renderData)
 }
 
 // nsbmd docs call this 'nop' though the callback still occurs
+// Original: arm9/main @ 0x020B4348; symbol: _Z15RenderCommand_0P20RenderCommandHandleri; size: 0x28.
 void RenderCommand_0(RenderCommandHandler* handler, int modifier)
 {
     if (handler->hooks_[0] != NULL)
@@ -125,6 +130,7 @@ void RenderCommand_0(RenderCommandHandler* handler, int modifier)
 }
 
 // signal end of render commands
+// Original: arm9/main @ 0x020B4370; symbol: _Z15RenderCommand_1P20RenderCommandHandleri; size: 0x28.
 void RenderCommand_1(RenderCommandHandler* handler, int modifier)
 {
     if (handler->hooks_[1] != NULL)
@@ -134,6 +140,7 @@ void RenderCommand_1(RenderCommandHandler* handler, int modifier)
 
 // apply visibility condition to be used by animation
 // params: condition index, default value (lowest bit used)
+// Original: arm9/main @ 0x020B4398; symbol: _Z15RenderCommand_2P20RenderCommandHandleri; size: 0x17C.
 void RenderCommand_2(RenderCommandHandler* handler, int modifier)
 {
     if (!(handler->flags_ & (1 << RCH_FLAG_9)))
@@ -196,6 +203,7 @@ void RenderCommand_2(RenderCommandHandler* handler, int modifier)
 
 // load matrix from stack
 // parameters: index to load from
+// Original: arm9/main @ 0x020B4514; symbol: _Z15RenderCommand_3P20RenderCommandHandleri; size: 0xCC.
 void RenderCommand_3(RenderCommandHandler* handler, int modifier)
 {
     if (!(handler->flags_ & (1 << RCH_FLAG_9)) && (handler->flags_ & (1 << RCH_FLAG_0)))
@@ -231,6 +239,7 @@ void RenderCommand_3(RenderCommandHandler* handler, int modifier)
     handler->instructionPointer_ += 2;
 }
 
+// Original: arm9/main @ 0x020B45E0; symbol: _Z16MaterialBindProcP20RenderCommandHandleriP13NSBXXMaterialj; size: 0x488.
 void MaterialBindProc(RenderCommandHandler* handler, int modifier, NSBXXMaterial* material, unsigned int idx)
 {
     handler->boundMaterial_ = idx;
@@ -409,6 +418,7 @@ void MaterialBindProc(RenderCommandHandler* handler, int modifier, NSBXXMaterial
 
 // bind material
 // parameters: index of material within the model's MaterialList
+// Original: arm9/main @ 0x020B4A68; symbol: _Z15RenderCommand_4P20RenderCommandHandleri; size: 0xB0.
 void RenderCommand_4(RenderCommandHandler* handler, int modifier)
 {
     if (!(handler->flags_ & (1 << RCH_FLAG_9)))
@@ -424,6 +434,7 @@ void RenderCommand_4(RenderCommandHandler* handler, int modifier)
     handler->instructionPointer_ += 2;
 }
 
+// Original: arm9/main @ 0x020B4B18; symbol: _Z12MeshDrawProcP20RenderCommandHandleriP9NSBXXMeshj; size: 0xD4.
 void MeshDrawProc(RenderCommandHandler* handler, int modifier, NSBXXMesh* mesh, unsigned int meshIdx)
 {
     int callbackStage = (handler->hooks_[5] != NULL) ? handler->hookStages_[5] : 0;
@@ -457,6 +468,7 @@ void MeshDrawProc(RenderCommandHandler* handler, int modifier, NSBXXMesh* mesh, 
 
 // draw mesh
 // parameters: index of mesh to draw
+// Original: arm9/main @ 0x020B4BEC; symbol: _Z15RenderCommand_5P20RenderCommandHandleri; size: 0xA0.
 void RenderCommand_5(RenderCommandHandler* handler, int modifier)
 {
     if (!(handler->flags_ & (1 << RCH_FLAG_9)) && (handler->flags_ & (1 << RCH_FLAG_0)) && !(handler->flags_ & (1 << RCH_FLAG_1)))
@@ -477,6 +489,7 @@ void RenderCommand_5(RenderCommandHandler* handler, int modifier)
 // if modifier & 0x20: stack position to store result at the end
 // if modifier & 0x40: stack position of matrix to retrieve at the start, i.e. 
 // you'll retrieve a matrix off the stack and pre-multiply that by the bone matrix
+// Original: arm9/main @ 0x020B4C8C; symbol: _Z15RenderCommand_6P20RenderCommandHandleri; size: 0x460.
 void RenderCommand_6(RenderCommandHandler* handler, int modifier)
 {
     int boneIdx = handler->instructionPointer_[1];
@@ -673,6 +686,7 @@ void RenderCommand_6(RenderCommandHandler* handler, int modifier)
 // if modifier & 0x20: stack position to store result at the end
 // if modifier & 0x40: stack position of matrix to retrieve at the start, i.e. 
 // you'll retrieve a matrix off the stack and pre-multiply that by the bone matrix
+// Original: arm9/main @ 0x020B50EC; symbol: _Z15RenderCommand_7P20RenderCommandHandleri; size: 0x308.
 void RenderCommand_7(RenderCommandHandler* handler, int modifier)
 {
     int numBytesConsumed = 2;
@@ -724,7 +738,7 @@ void RenderCommand_7(RenderCommandHandler* handler, int modifier)
         Matrix4x4 clipMatrix;
         // get the current world * view matrix (we set projection matrix to identity, so
         // it doesn't contribute here)
-        while (func_020c54fc(&clipMatrix) != 0) {}
+        while (Geometry_ReadClipMatrixWhenIdle(&clipMatrix) != 0) {}
         if (data_0210a010.flags & (1 << RENDER_CONFIG_FLAG_0))
         {
             const Matrix4x3* worldView4x3 = RenderConfig::GetCombinedWorldViewMatrix();
@@ -805,6 +819,7 @@ void RenderCommand_7(RenderCommandHandler* handler, int modifier)
 
 // seems to be used for axis-aligned billboarding - noticeable on trees in
 // Angel Falls & lights in cave grottos
+// Original: arm9/main @ 0x020B53F4; symbol: _Z15RenderCommand_8P20RenderCommandHandleri; size: 0x364.
 void RenderCommand_8(RenderCommandHandler* handler, int modifier)
 {
     int numBytesConsumed = 2;
@@ -855,7 +870,7 @@ void RenderCommand_8(RenderCommandHandler* handler, int modifier)
         GXFIFO = 0; // matrix mode 0: projection
         GXFIFO = 0; // why is this here?
         Matrix4x4 clipMatrix;
-        while (func_020c54fc(&clipMatrix) != 0) {}
+        while (Geometry_ReadClipMatrixWhenIdle(&clipMatrix) != 0) {}
         if (data_0210a010.flags & (1 << RENDER_CONFIG_FLAG_0))
         {
             const Matrix4x3* worldView4x3 = RenderConfig::GetCombinedWorldViewMatrix();

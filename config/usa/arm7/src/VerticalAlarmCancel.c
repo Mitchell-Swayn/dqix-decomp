@@ -10,11 +10,13 @@ extern void ARM7_Panic(const char*,int,const char*,...);
 extern const char ARM7_VerticalAlarmFile[],ARM7_VerticalAlarmError[];
 extern const char ARM7_VerticalTagError[];
 extern void ARM7_RemoveVerticalAlarm(VerticalAlarm*);
+// Original: arm7/wram @ 0x037FE04C; symbol: ARM7_SetVerticalAlarmTag.
 void ARM7_SetVerticalAlarmTag(VerticalAlarm *alarm,unsigned int tag)
 {
  if(tag==0)ARM7_Panic(ARM7_VerticalAlarmFile,0x212,ARM7_VerticalTagError);
  if(alarm)alarm->tag=tag;
 }
+// Original: arm7/wram @ 0x037FE088; symbol: ARM7_CancelVerticalAlarm.
 void ARM7_CancelVerticalAlarm(VerticalAlarm *alarm)
 {
  int state=ARM7_DisableIRQInterrupts();
@@ -24,6 +26,7 @@ void ARM7_CancelVerticalAlarm(VerticalAlarm *alarm)
  alarm->callback=0;
  ARM7_SetIRQInterruptState(state);
 }
+// Original: arm7/wram @ 0x037FE0D4; symbol: ARM7_CancelVerticalAlarmsByTag.
 void ARM7_CancelVerticalAlarmsByTag(unsigned int tag)
 {
  int state=ARM7_DisableIRQInterrupts();

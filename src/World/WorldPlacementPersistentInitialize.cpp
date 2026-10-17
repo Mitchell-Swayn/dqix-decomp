@@ -8,22 +8,23 @@
 #include "std_library_functions.h"
 
 extern "C" {
-    void func_020120d4(GameState*, unsigned char);
-    void func_0208ec04(WorldObjectInstanceList*);
+    void GameState_SetByteField5CDAAndClearPlacementFlag(GameState*, unsigned char);
+    void WorldPlacement_ResetFlaggedAvailablePersistentStates(WorldObjectInstanceList*);
     int rand();
 }
 
-extern "C" void func_0208ea10(WorldObjectInstanceList* list)
+// Original: arm9/main @ 0x0208EA10; symbol: func_0208ea10; size: 0x1F4.
+extern "C" void ResetPlacementListOrLoadPlacementResources(WorldObjectInstanceList* list)
 {
     GameState* game = GameState::GetInstance();
     if (game->unknownPlacementByte_5cda_ == 8)
     {
         list->Reset();
-        func_020120d4(game, (unsigned char)(rand() % 8));
+        GameState_SetByteField5CDAAndClearPlacementFlag(game, (unsigned char)(rand() % 8));
     }
     else
     {
-        func_0208ec04(list);
+        WorldPlacement_ResetFlaggedAvailablePersistentStates(list);
         return;
     }
     BackgroundLoader::AddLockGlobal();

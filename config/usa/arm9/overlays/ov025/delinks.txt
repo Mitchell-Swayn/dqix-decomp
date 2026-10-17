@@ -5,3 +5,970 @@
     .data       start:0x021ef3c0 end:0x021ef960 kind:data align:32
     .bss        start:0x021ef960 end:0x021ef9e0 kind:bss align:32
 
+src/Data/ov025/data_ov025_021eef78.cpp:
+    complete
+    .rodata start:0x021eef78 end:0x021eefa0
+
+src/Data/ov025/data_ov025_021eefa0.cpp:
+    complete
+    .rodata start:0x021eefa0 end:0x021eeff0
+
+src/Data/ov025/data_ov025_021ef3d0.cpp:
+    complete
+    .data start:0x021ef3d0 end:0x021ef3d5
+
+src/Data/ov025/data_ov025_021ef3d5.cpp:
+    complete
+    .data start:0x021ef3d5 end:0x021ef3e0
+
+src/Data/ov025/data_ov025_021ef3e0.cpp:
+    complete
+    .data start:0x021ef3e0 end:0x021ef3e8
+
+src/Data/ov025/data_ov025_021ef3e8.cpp:
+    complete
+    .data start:0x021ef3e8 end:0x021ef3ef
+
+src/Data/ov025/data_ov025_021ef3ef.cpp:
+    complete
+    .data start:0x021ef3ef end:0x021ef3f5
+
+src/Data/ov025/data_ov025_021ef3f5.cpp:
+    complete
+    .data start:0x021ef3f5 end:0x021ef3fc
+
+src/Data/ov025/data_ov025_021ef3fc.cpp:
+    complete
+    .data start:0x021ef3fc end:0x021ef404
+
+src/Data/ov025/data_ov025_021ef40c.cpp:
+    complete
+    .data start:0x021ef40c end:0x021ef424
+
+src/Data/ov025/data_ov025_021ef424.cpp:
+    complete
+    .data start:0x021ef424 end:0x021ef43c
+
+src/Data/ov025/data_ov025_021ef43c.cpp:
+    complete
+    .data start:0x021ef43c end:0x021ef454
+
+src/Data/ov025/data_ov025_021ef454.cpp:
+    complete
+    .data start:0x021ef454 end:0x021ef460
+
+src/Data/ov025/data_ov025_021ef460.cpp:
+    complete
+    .data start:0x021ef460 end:0x021ef464
+
+src/Data/ov025/data_ov025_021ef478.cpp:
+    complete
+    .data start:0x021ef478 end:0x021ef47d
+
+src/Data/ov025/data_ov025_021ef47d.cpp:
+    complete
+    .data start:0x021ef47d end:0x021ef483
+
+src/Data/ov025/data_ov025_021ef483.cpp:
+    complete
+    .data start:0x021ef483 end:0x021ef489
+
+src/Data/ov025/data_ov025_021ef489.cpp:
+    complete
+    .data start:0x021ef489 end:0x021ef48f
+
+src/Data/ov025/data_ov025_021ef48f.cpp:
+    complete
+    .data start:0x021ef48f end:0x021ef495
+
+src/Data/ov025/data_ov025_021ef495.cpp:
+    complete
+    .data start:0x021ef495 end:0x021ef49b
+
+src/Data/ov025/data_ov025_021ef49b.cpp:
+    complete
+    .data start:0x021ef49b end:0x021ef4a2
+
+src/Data/ov025/data_ov025_021ef4a2.cpp:
+    complete
+    .data start:0x021ef4a2 end:0x021ef4af
+
+src/Data/ov025/data_ov025_021ef4af.cpp:
+    complete
+    .data start:0x021ef4af end:0x021ef4c5
+
+src/Data/ov025/data_ov025_021ef4c5.cpp:
+    complete
+    .data start:0x021ef4c5 end:0x021ef4db
+
+src/Data/ov025/data_ov025_021ef4db.cpp:
+    complete
+    .data start:0x021ef4db end:0x021ef4f2
+
+src/Data/ov025/data_ov025_021ef4f2.cpp:
+    complete
+    .data start:0x021ef4f2 end:0x021ef509
+
+src/Data/ov025/data_ov025_021ef509.cpp:
+    complete
+    .data start:0x021ef509 end:0x021ef520
+
+src/Data/ov025/data_ov025_021ef778.cpp:
+    complete
+    .data start:0x021ef778 end:0x021ef781
+
+src/Data/ov025/data_ov025_021ef781.cpp:
+    complete
+    .data start:0x021ef781 end:0x021ef78a
+
+src/Data/ov025/data_ov025_021ef78a.cpp:
+    complete
+    .data start:0x021ef78a end:0x021ef791
+
+src/Data/ov025/data_ov025_021ef791.cpp:
+    complete
+    .data start:0x021ef791 end:0x021ef7ac
+
+src/Data/ov025/data_ov025_021ef7ac.cpp:
+    complete
+    .data start:0x021ef7ac end:0x021ef7b5
+
+src/Data/ov025/data_ov025_021ef7b5.cpp:
+    complete
+    .data start:0x021ef7b5 end:0x021ef7be
+
+src/Data/ov025/data_ov025_021ef7be.cpp:
+    complete
+    .data start:0x021ef7be end:0x021ef7d9
+
+src/Data/ov025/data_ov025_021ef7d9.cpp:
+    complete
+    .data start:0x021ef7d9 end:0x021ef7df
+
+src/Data/ov025/data_ov025_021ef7df.cpp:
+    complete
+    .data start:0x021ef7df end:0x021ef7e6
+
+src/Data/ov025/data_ov025_021ef7e6.cpp:
+    complete
+    .data start:0x021ef7e6 end:0x021ef7ef
+
+src/Data/ov025/data_ov025_021ef7ef.cpp:
+    complete
+    .data start:0x021ef7ef end:0x021ef7f7
+
+src/Data/ov025/data_ov025_021ef7f7.cpp:
+    complete
+    .data start:0x021ef7f7 end:0x021ef7fb
+
+src/Data/ov025/data_ov025_021ef7fb.cpp:
+    complete
+    .data start:0x021ef7fb end:0x021ef802
+
+src/Data/ov025/data_ov025_021ef802.cpp:
+    complete
+    .data start:0x021ef802 end:0x021ef809
+
+src/Data/ov025/data_ov025_021ef809.cpp:
+    complete
+    .data start:0x021ef809 end:0x021ef811
+
+src/Data/ov025/data_ov025_021ef811.cpp:
+    complete
+    .data start:0x021ef811 end:0x021ef81e
+
+src/Data/ov025/data_ov025_021ef81e.cpp:
+    complete
+    .data start:0x021ef81e end:0x021ef82b
+
+src/Data/ov025/data_ov025_021ef82b.cpp:
+    complete
+    .data start:0x021ef82b end:0x021ef834
+
+src/Data/ov025/data_ov025_021ef834.cpp:
+    complete
+    .data start:0x021ef834 end:0x021ef83e
+
+src/Data/ov025/data_ov025_021ef83e.cpp:
+    complete
+    .data start:0x021ef83e end:0x021ef857
+
+src/Data/ov025/data_ov025_021ef857.cpp:
+    complete
+    .data start:0x021ef857 end:0x021ef86d
+
+src/Data/ov025/data_ov025_021ef86d.cpp:
+    complete
+    .data start:0x021ef86d end:0x021ef87f
+
+src/Data/ov025/data_ov025_021ef87f.cpp:
+    complete
+    .data start:0x021ef87f end:0x021ef898
+
+src/Data/ov025/data_ov025_021ef898.cpp:
+    complete
+    .data start:0x021ef898 end:0x021ef89a
+
+src/Data/ov025/data_ov025_021ef89a.cpp:
+    complete
+    .data start:0x021ef89a end:0x021ef89d
+
+src/Data/ov025/data_ov025_021ef89d.cpp:
+    complete
+    .data start:0x021ef89d end:0x021ef8a0
+
+src/Data/ov025/data_ov025_021ef8b4.cpp:
+    complete
+    .data start:0x021ef8b4 end:0x021ef8ca
+
+src/Data/ov025/data_ov025_021ef8ca.cpp:
+    complete
+    .data start:0x021ef8ca end:0x021ef8dc
+
+src/Data/ov025/data_ov025_021ef8dc.cpp:
+    complete
+    .data start:0x021ef8dc end:0x021ef8de
+
+src/Data/ov025/data_ov025_021ef8de.cpp:
+    complete
+    .data start:0x021ef8de end:0x021ef8e0
+
+src/Data/ov025/data_ov025_021ef8e0.cpp:
+    complete
+    .data start:0x021ef8e0 end:0x021ef8e9
+
+src/Data/ov025/data_ov025_021ef8e9.cpp:
+    complete
+    .data start:0x021ef8e9 end:0x021ef8fc
+
+src/Data/ov025/data_ov025_021ef8fc.cpp:
+    complete
+    .data start:0x021ef8fc end:0x021ef916
+
+src/Data/ov025/data_ov025_021ef916.cpp:
+    complete
+    .data start:0x021ef916 end:0x021ef91f
+
+src/Data/ov025/data_ov025_021ef91f.cpp:
+    complete
+    .data start:0x021ef91f end:0x021ef93c
+
+src/Data/ov025/data_ov025_021ef080.cpp:
+    complete
+    .rodata start:0x021ef080 end:0x021ef0c0
+
+src/Data/ov025/data_ov025_021ef0c0.cpp:
+    complete
+    .rodata start:0x021ef0c0 end:0x021ef100
+
+src/Data/ov025/data_ov025_021ef100.cpp:
+    complete
+    .rodata start:0x021ef100 end:0x021ef140
+
+src/Data/ov025/data_ov025_021ef140.cpp:
+    complete
+    .rodata start:0x021ef140 end:0x021ef180
+
+src/Data/ov025/data_ov025_021ef180.cpp:
+    complete
+    .rodata start:0x021ef180 end:0x021ef1c0
+
+src/Data/ov025/data_ov025_021ef1c0.cpp:
+    complete
+    .rodata start:0x021ef1c0 end:0x021ef200
+
+src/Data/ov025/data_ov025_021ef020.cpp:
+    complete
+    .rodata start:0x021ef020 end:0x021ef040
+
+src/Data/ov025/data_ov025_021ef040.cpp:
+    complete
+    .rodata start:0x021ef040 end:0x021ef060
+
+src/Data/ov025/data_ov025_021ef060.cpp:
+    complete
+    .rodata start:0x021ef060 end:0x021ef080
+
+src/Data/ov025/data_ov025_021eeed4.cpp:
+    complete
+    .rodata start:0x021eeed4 end:0x021eeee0
+
+src/Data/ov025/data_ov025_021eeee0.cpp:
+    complete
+    .rodata start:0x021eeee0 end:0x021eeeec
+
+src/Data/ov025/data_ov025_021eeeec.cpp:
+    complete
+    .rodata start:0x021eeeec end:0x021eeef8
+
+src/Data/ov025/data_ov025_021eeef8.cpp:
+    complete
+    .rodata start:0x021eeef8 end:0x021eef04
+
+src/Data/ov025/data_ov025_021eef04.cpp:
+    complete
+    .rodata start:0x021eef04 end:0x021eef10
+
+src/Data/ov025/data_ov025_021eef24.cpp:
+    complete
+    .rodata start:0x021eef24 end:0x021eef30
+
+src/Data/ov025/data_ov025_021ef538.cpp:
+    complete
+    .data start:0x021ef538 end:0x021ef778
+
+src/Unclassified/ov025/GetPointerSelectedByByteIndex.cpp:
+    complete
+    .text start:0x021e8a54 end:0x021e8a64
+
+src/Unclassified/ov025/SetResourceRecordWordAt0C.cpp:
+    complete
+    .text start:0x021e8a4c end:0x021e8a54
+
+src/Unclassified/ov025/Object_WriteHalfwordAtOffset57C.cpp:
+    complete
+    .text start:0x021eb044 end:0x021eb050
+
+src/Unclassified/ov025/Object_WriteHalfwordAtOffset160.cpp:
+    complete
+    .text start:0x021ed344 end:0x021ed350
+
+src/Unclassified/ov025/GetObjectFieldAtOffset770C.cpp:
+    complete
+    .text start:0x021def24 end:0x021def30
+
+src/Unclassified/ov025/ClearThreeRecordWords.cpp:
+    complete
+    .text start:0x021de110 end:0x021de124
+
+src/Unclassified/ov025/CopyThreeHalfwordValues.cpp:
+    complete
+    .text start:0x021ded84 end:0x021deda0
+
+src/Unclassified/ov025/ClearMatchingBytesInFixedBuffer.cpp:
+    complete
+    .text start:0x021e169c end:0x021e16c8
+
+src/Unclassified/ov025/LinkRecordAndNormalizePreviousHead.cpp:
+    complete
+    .text start:0x021e23d0 end:0x021e23e8
+
+src/Unclassified/ov025/GetIndexedEntryPointerOrNull.cpp:
+    complete
+    .text start:0x021e8cf0 end:0x021e8d14
+
+src/Unclassified/ov025/AppendNonnegativeValueToBoundedHalfwordList.cpp:
+    complete
+    .text start:0x021eb05c end:0x021eb084
+
+src/Unclassified/ov025/CopyPackedRecordFields.cpp:
+    complete
+    .text start:0x021ecb90 end:0x021ecc54
+
+src/Unclassified/ov025/func_ov025_021e2f4c.cpp:
+    complete
+    .text start:0x021e2f4c end:0x021e2f54
+
+src/Unclassified/ov025/func_ov025_021e3c78.cpp:
+    complete
+    .text start:0x021e3c78 end:0x021e3c80
+
+src/Unclassified/ov025/func_ov025_021e40bc.cpp:
+    complete
+    .text start:0x021e40bc end:0x021e40c4
+
+src/Unclassified/ov025/func_ov025_021e40c4.cpp:
+    complete
+    .text start:0x021e40c4 end:0x021e40cc
+
+src/Unclassified/ov025/func_ov025_021e40cc.cpp:
+    complete
+    .text start:0x021e40cc end:0x021e40d4
+
+src/Unclassified/ov025/func_ov025_021e40d4.cpp:
+    complete
+    .text start:0x021e40d4 end:0x021e40dc
+
+src/Unclassified/ov025/func_ov025_021e40dc.cpp:
+    complete
+    .text start:0x021e40dc end:0x021e40e4
+
+src/Unclassified/ov025/func_ov025_021e4a00.cpp:
+    complete
+    .text start:0x021e4a00 end:0x021e4a08
+
+src/Unclassified/ov025/func_ov025_021e7eb8.cpp:
+    complete
+    .text start:0x021e7eb8 end:0x021e7ec0
+
+src/Unclassified/ov025/func_ov025_021e8548.cpp:
+    complete
+    .text start:0x021e8548 end:0x021e8550
+
+src/Unclassified/ov025/func_ov025_021e8740.cpp:
+    complete
+    .text start:0x021e8740 end:0x021e8748
+
+src/Unclassified/ov025/Object_FindSecondTargetForMatchingLinkedRecords.cpp:
+    complete
+    .text start:0x021dfa9c end:0x021dfbd4
+
+src/Unclassified/ov025/func_ov025_021dcc58.cpp:
+    complete
+    .text start:0x021dcc58 end:0x021dcc64
+
+src/Unclassified/ov025/func_ov025_021e8a40.cpp:
+    complete
+    .text start:0x021e8a40 end:0x021e8a4c
+
+src/Unclassified/ov025/func_ov025_021eb050.cpp:
+    complete
+    .text start:0x021eb050 end:0x021eb05c
+
+src/Unclassified/ov025/func_ov025_021ed110.cpp:
+    complete
+    .text start:0x021ed110 end:0x021ed11c
+
+src/Unclassified/ov025/func_ov025_021dcc64.cpp:
+    complete
+    .text start:0x021dcc64 end:0x021dcc70
+
+src/Unclassified/ov025/func_ov025_021e8d14.cpp:
+    complete
+    .text start:0x021e8d14 end:0x021e8d20
+
+src/Unclassified/ov025/func_ov025_021ed350.cpp:
+    complete
+    .text start:0x021ed350 end:0x021ed35c
+
+src/Util/ov025/Util_PopFrontThreeHalfwordRecord.cpp:
+    complete
+    .text start:0x021deda0 end:0x021dee20
+
+src/Unclassified/ov025/func_ov025_021e8a64.cpp:
+    complete
+    .text start:0x021e8a64 end:0x021e8a74
+
+src/World/ov025/World_FindAdjacentCellWithValue.cpp:
+    complete
+    .text start:0x021e161c end:0x021e169c
+
+src/Combat/ov025/Combat_SetSelectedMonsterFlag4.cpp:
+    complete
+    .text start:0x021e7e34 end:0x021e7eb8
+
+src/Memory/ov025/Memory_PushAllocatorState.cpp:
+    complete
+    .text start:0x021e8a74 end:0x021e8af8
+
+src/Combat/ov025/Combat_SetSelectedObjectAnimationFlags.cpp:
+    complete
+    .text start:0x021e7520 end:0x021e75a4
+
+src/Unclassified/ov025/func_ov025_021dcd28.cpp:
+    complete
+    .text start:0x021dcd28 end:0x021dcd5c
+
+src/Unclassified/ov025/func_ov025_021e2114.cpp:
+    complete
+    .text start:0x021e2114 end:0x021e2148
+
+src/Graphics/ov025/Graphics_UpdateObjectAndApplyCurrentGameState.cpp:
+    complete
+    .text start:0x021e7214 end:0x021e7248
+
+src/Unclassified/ov025/SetStateFieldsAfterOptionalCounterIncrement.cpp:
+    complete
+    .text start:0x021def30 end:0x021def64
+
+src/Graphics/ov025/Graphics_DrawAlphaPositionSamples.cpp:
+    complete
+    .text start:0x021df864 end:0x021df9b0
+
+src/Unclassified/ov025/func_ov025_021df554.cpp:
+    complete
+    .text start:0x021df554 end:0x021df568
+
+src/Unclassified/ov025/func_ov025_021e20d8.cpp:
+    complete
+    .text start:0x021e20d8 end:0x021e20ec
+
+src/Unclassified/ov025/func_ov025_021e2494.cpp:
+    complete
+    .text start:0x021e2494 end:0x021e24a8
+
+src/Unclassified/ov025/func_ov025_021ed0fc.cpp:
+    complete
+    .text start:0x021ed0fc end:0x021ed110
+
+src/Graphics/ov025/Graphics_ClearAndStageFieldBuffers.cpp:
+    complete
+    .text start:0x021e5f40 end:0x021e5f54
+
+src/Unclassified/ov025/FindRecordByByte12.cpp:
+    complete
+    .text start:0x021e1010 end:0x021e1048
+
+src/Unclassified/ov025/func_ov025_021e1f08.cpp:
+    complete
+    .text start:0x021e1f08 end:0x021e1f40
+
+src/Graphics/ov025/Overlay_SetEmbeddedAngleFromField8.cpp:
+    complete
+    .text start:0x021e8510 end:0x021e8548
+
+src/Combat/ov025/Combat_DetachSelectedObjectAndApplyLinkedPlacement.cpp:
+    complete
+    .text start:0x021e73c8 end:0x021e7450
+
+src/Combat/ov025/Combat_SetDisplayRecordSelectedTarget.cpp:
+    complete
+    .text start:0x021e5014 end:0x021e509c
+
+src/Resource/ov025/Resource_ResetPendingAndStatusFields.cpp:
+    complete
+    .text start:0x021dcd5c end:0x021dcd98
+
+src/Resource/ov025/func_ov025_021e86f0.cpp:
+    complete
+    .text start:0x021e86f0 end:0x021e8708
+
+src/Util/ov025/GetLastNodeFollowingOffset8.cpp:
+    complete
+    .text start:0x021df5cc end:0x021df5e4
+
+src/Unclassified/ov025/Object_ClearOffset57COnMatchingValue.cpp:
+    complete
+    .text start:0x021e3c3c end:0x021e3c78
+
+src/Combat/ov025/Combat_FormatScaledValue.cpp:
+    complete
+    .text start:0x021e278c end:0x021e27c8
+
+src/Util/ov025/Util_PrependNodeToListAtOffset1D8.cpp:
+    complete
+    .text start:0x021e8bac end:0x021e8bc4
+
+src/Unclassified/ov025/func_ov025_021e856c.cpp:
+    complete
+    .text start:0x021e856c end:0x021e8584
+
+src/GameState/ov025/GameState_SetVectorFromParameterAndMarkOverlay.cpp:
+    complete
+    .text start:0x021e5a2c end:0x021e5a6c
+
+src/Util/ov025/FindMatchingRecordIndex.cpp:
+    complete
+    .text start:0x021ed564 end:0x021ed5f0
+
+src/GameState/ov025/func_ov025_021df9b0.cpp:
+    complete
+    .text start:0x021df9b0 end:0x021df9f4
+
+src/Combat/ov025/Combat_TestSelectedObjectAnimationReady.cpp:
+    complete
+    .text start:0x021e4868 end:0x021e49e0
+
+src/Combat/ov025/Combat_CopySelectionFieldsToCurrentState.cpp:
+    complete
+    .text start:0x021e82a0 end:0x021e82e4
+
+src/Unclassified/ov025/func_ov025_021e4a90.cpp:
+    complete
+    .text start:0x021e4a90 end:0x021e4aac
+
+src/Graphics/ov025/Resource_IsBrightnessTransitionInactive.cpp:
+    complete
+    .text start:0x021e58d4 end:0x021e58f0
+
+src/Unclassified/ov025/func_ov025_021e6030.cpp:
+    complete
+    .text start:0x021e6030 end:0x021e604c
+
+src/GameState/ov025/StoreInputOffset8ToGlobalNestedOffset544AndReturnOne.cpp:
+    complete
+    .text start:0x021e6254 end:0x021e6270
+
+src/Unclassified/ov025/func_ov025_021e6270.cpp:
+    complete
+    .text start:0x021e6270 end:0x021e628c
+
+src/Unclassified/ov025/func_ov025_021e6304.cpp:
+    complete
+    .text start:0x021e6304 end:0x021e6320
+
+src/Memory/ov025/Memory_PushGlobalAllocatorState.cpp:
+    complete
+    .text start:0x021e4eac end:0x021e4ec8
+
+src/Resource/ov025/Resource_StoreObjectField8InGlobal54C.cpp:
+    complete
+    .text start:0x021e628c end:0x021e62a8
+
+src/GameState/ov025/StoreInputOffset8ToGlobalNestedOffset560AndReturnOne.cpp:
+    complete
+    .text start:0x021e6394 end:0x021e63b0
+
+src/Resource/ov025/Resource_StoreObjectByte8InGlobal5D0.cpp:
+    complete
+    .text start:0x021e8724 end:0x021e8740
+
+src/Unclassified/ov025/Script_SetCurrentHalfword19DAFromObjectOffset8.cpp:
+    complete
+    .text start:0x021e8550 end:0x021e856c
+
+src/Unclassified/ov025/func_ov025_021e8008.cpp:
+    complete
+    .text start:0x021e8008 end:0x021e8024
+
+src/Unclassified/ov025/func_ov025_021e812c.cpp:
+    complete
+    .text start:0x021e812c end:0x021e8148
+
+src/Resource/ov025/func_ov025_021e861c.cpp:
+    complete
+    .text start:0x021e861c end:0x021e8638
+
+src/Resource/ov025/Resource_ClearGameResourceByte448A.cpp:
+    complete
+    .text start:0x021e8708 end:0x021e8724
+
+src/Memory/ov025/RemoveNodeFromNextLinkedList.cpp:
+    complete
+    .text start:0x021e244c end:0x021e2494
+
+src/Util/ov025/AppendChainedRecordUpToFive.cpp:
+    complete
+    .text start:0x021dcde8 end:0x021dce7c
+
+src/GameState/ov025/GameState_ApplyOverlayControlledVectorTransform.cpp:
+    complete
+    .text start:0x021e72a8 end:0x021e72f4
+
+src/GameState/ov025/ClearIndexedDisplayObjectAndEntry.cpp:
+    complete
+    .text start:0x021e4fc8 end:0x021e5014
+
+src/Unclassified/ov025/func_ov025_021e5ff0.cpp:
+    complete
+    .text start:0x021e5ff0 end:0x021e6010
+
+src/Unclassified/ov025/func_ov025_021e3158.cpp:
+    complete
+    .text start:0x021e3158 end:0x021e3178
+
+src/GameState/ov025/DispatchObjectHalfwordIndexWithZeroAndReturnOne.cpp:
+    complete
+    .text start:0x021e49e0 end:0x021e4a00
+
+src/Unclassified/ov025/func_ov025_021e6010.cpp:
+    complete
+    .text start:0x021e6010 end:0x021e6030
+
+src/Graphics/ov025/Graphics_SetMainBrightnessFromFields.cpp:
+    complete
+    .text start:0x021e58b4 end:0x021e58d4
+
+src/Unclassified/ov025/func_ov025_021e6320.cpp:
+    complete
+    .text start:0x021e6320 end:0x021e6340
+
+src/Unclassified/ov025/func_ov025_021e8024.cpp:
+    complete
+    .text start:0x021e8024 end:0x021e8044
+
+src/Unclassified/ov025/func_ov025_021e85a8.cpp:
+    complete
+    .text start:0x021e85a8 end:0x021e85c8
+
+src/Resource/ov025/Resource_SetOverlayFlagIfPresent.cpp:
+    complete
+    .text start:0x021e8898 end:0x021e88b8
+
+src/Memory/ov025/Memory_InitializeRecordSentinel.cpp:
+    complete
+    .text start:0x021e8a20 end:0x021e8a40
+
+src/World/ov025/World_InitializeMotionBetweenObjects.cpp:
+    complete
+    .text start:0x021df5e4 end:0x021df794
+
+src/Resource/ov025/Resource_SetOverlayFlagAt6ff9IfPresent.cpp:
+    complete
+    .text start:0x021e88b8 end:0x021e88d8
+
+src/Unclassified/ov025/func_ov025_021eb3c0.cpp:
+    complete
+    .text start:0x021eb3c0 end:0x021eb3e0
+
+src/GameState/ov025/GameState_AreRecordFields150And15EClear.cpp:
+    complete
+    .text start:0x021ed2f4 end:0x021ed314
+
+src/Unclassified/ov025/func_ov025_021ed324.cpp:
+    complete
+    .text start:0x021ed324 end:0x021ed344
+
+src/Unclassified/ov025/func_ov025_021e8748.cpp:
+    complete
+    .text start:0x021e8748 end:0x021e8798
+
+src/Resource/ov025/FindFirstAvailableTwelveByteEntry.cpp:
+    complete
+    .text start:0x021eb3e0 end:0x021eb42c
+
+src/Graphics/ov025/Graphics_ApplyHeightScaledVectorToCurrentObject.cpp:
+    complete
+    .text start:0x021e5c68 end:0x021e5e1c
+
+src/Unclassified/ov025/Object_ResetFieldsAndFillEightBytes.cpp:
+    complete
+    .text start:0x021dcd98 end:0x021dcde8
+
+src/GameState/ov025/func_ov025_021ee438.cpp:
+    complete
+    .text start:0x021ee438 end:0x021ee488
+
+src/GameState/ov025/GameState_UpdateTimedCallbacksAndRecycleTasks.cpp:
+    complete
+    .text start:0x021eedb0 end:0x021eee48
+
+src/Util/ov025/AddUniqueFourSlotRecord.cpp:
+    complete
+    .text start:0x021eb188 end:0x021eb204
+
+src/Unclassified/ov025/func_ov025_021eb42c.cpp:
+    complete
+    .text start:0x021eb42c end:0x021eb46c
+
+src/Resource/ov025/Resource_ProcessFourDisplayLoadRequests.cpp:
+    complete
+    .text start:0x021eb204 end:0x021eb3c0
+
+src/Unclassified/ov025/OV025_InitializeAndApplyParameterTriple.cpp:
+    complete
+    .text start:0x021eb148 end:0x021eb188
+
+src/Filesystem/ov025/Filesystem_AreBackgroundTasksReady.cpp:
+    complete
+    .text start:0x021eb0f4 end:0x021eb148
+
+src/Unclassified/ov025/Object_SetFlag80ForMatchingTypeTwoRecord.cpp:
+    complete
+    .text start:0x021eba60 end:0x021ebab4
+
+src/Unclassified/ov025/Object_ApplyPackedHalfwordSettings.cpp:
+    complete
+    .text start:0x021e5f54 end:0x021e5ff0
+
+src/Memory/ov025/Memory_InitializeLinkedResourceEntries.cpp:
+    complete
+    .text start:0x021eed58 end:0x021eedb0
+
+src/Graphics/ov025/SetOverlayEmbeddedHalfwordFromObjectFields.cpp:
+    complete
+    .text start:0x021e8584 end:0x021e85a8
+
+src/Graphics/ov025/Object_ApplyHeightScaledVectorUpdate.cpp:
+    complete
+    .text start:0x021e5a6c end:0x021e5c68
+
+src/Combat/ov025/Combat_AttachSelectedObjectToSelectedParent.cpp:
+    complete
+    .text start:0x021e7324 end:0x021e73c8
+
+src/Combat/ov025/Combat_SetFirstSelectedObjectAngle.cpp:
+    complete
+    .text start:0x021e87f4 end:0x021e8898
+
+src/Util/ov025/Util_ContainsLinkedNode.cpp:
+    complete
+    .text start:0x021e24a8 end:0x021e24d0
+
+src/GameState/ov025/GameState_ReplaceTemporaryObjectAndRevealIndexed.cpp:
+    complete
+    .text start:0x021e7470 end:0x021e74d0
+
+src/GameState/ov025/GameState_ApplyVectorInterpolationOrMarkOverlay.cpp:
+    complete
+    .text start:0x021e7248 end:0x021e72a8
+
+src/Combat/ov025/Combat_TurnLinkedCombatantTowardTarget.cpp:
+    complete
+    .text start:0x021e45c4 end:0x021e4624
+
+src/Unclassified/ov025/GameState_MapIndexToOffset.cpp:
+    complete
+    .text start:0x021dfbd4 end:0x021dfbfc
+
+src/Combat/ov025/DispatchSelectionAndNotifyResource.cpp:
+    complete
+    .text start:0x021e8084 end:0x021e80d8
+
+src/Memory/ov025/Memory_CopyObjectHalfwordsToGlobalContext.cpp:
+    complete
+    .text start:0x021e6ef8 end:0x021e6f20
+
+src/Graphics/ov025/ConfigureTransformWithCombatantHeightScale.cpp:
+    complete
+    .text start:0x021e6ff8 end:0x021e7214
+
+src/Unclassified/ov025/InitializeObjectStateFields.cpp:
+    complete
+    .text start:0x021e3084 end:0x021e30e8
+
+src/Util/ov025/Util_UnlinkLowestPriorityNode.cpp:
+    complete
+    .text start:0x021e23e8 end:0x021e244c
+
+src/Util/ov025/Util_InsertSortedNodeByValue.cpp:
+    complete
+    .text start:0x021df568 end:0x021df5cc
+
+src/Resource/ov025/Resource_UpdateFlagFromObjectByte8.cpp:
+    complete
+    .text start:0x021e7fdc end:0x021e8008
+
+src/Graphics/ov025/Graphics_BeginLightingFadeAndSetOverlayFlag.cpp:
+    complete
+    .text start:0x021e74f4 end:0x021e7520
+
+src/GameState/ov025/GameState_SetWordPairFromFieldsWhenUnknownB0Nonzero.cpp:
+    complete
+    .text start:0x021e8100 end:0x021e812c
+
+src/Unclassified/ov025/World_ShowIndexedObjectAndHideRelated.cpp:
+    complete
+    .text start:0x021e6910 end:0x021e697c
+
+src/Graphics/ov025/Graphics_RunLinkedObjectEffectUntilNearTarget.cpp:
+    complete
+    .text start:0x021e4624 end:0x021e4868
+
+src/Graphics/ov025/Graphics_SetSelectedDisplayRecordParentAndBone.cpp:
+    complete
+    .text start:0x021e509c end:0x021e514c
+
+src/Unclassified/ov025/RemoveFirstParallelArrayEntry.cpp:
+    complete
+    .text start:0x021ed1f0 end:0x021ed2a0
+
+src/Resource/ov025/Resource_RemoveIndexedHalfword.cpp:
+    complete
+    .text start:0x021eb084 end:0x021eb0f4
+
+src/Resource/ov025/Resource_LoadCHRAndCreateBoneTrackingState.cpp:
+    complete
+    .text start:0x021e4be4 end:0x021e4e10
+
+src/Combat/ov025/Combat_IsSelectedObjectAnimationComplete.cpp:
+    complete
+    .text start:0x021e6f44 end:0x021e6ff8
+
+src/Combat/ov025/Combat_AdvanceInterpolatedObjectAngle.cpp:
+    complete
+    .text start:0x021eeca4 end:0x021eed58
+
+src/GameState/ov025/TestDifferentIndexAndComponentFlagsClear.cpp:
+    complete
+    .text start:0x021e1f40 end:0x021e1ff4
+
+src/Resource/ov025/Resource_UpdateMaskFromInputFlag.cpp:
+    complete
+    .text start:0x021e8314 end:0x021e8344
+
+src/Unclassified/ov025/Util_TestNestedObjectIfField4Zero.cpp:
+    complete
+    .text start:0x021e9528 end:0x021e9558
+
+src/Resource/ov025/GameResources_UpdateFlag2000FromParameter.cpp:
+    complete
+    .text start:0x021e72f4 end:0x021e7324
+
+src/World/ov025/ForwardSevenRecordFields.cpp:
+    complete
+    .text start:0x021d8bfc end:0x021d8c30
+
+src/Unclassified/ov025/Object_AppendRecordWithPreviousValue.cpp:
+    complete
+    .text start:0x021dcc70 end:0x021dcd28
+
+src/Unclassified/ov025/World_LoadFormattedResource.cpp:
+    complete
+    .text start:0x021e4168 end:0x021e41a0
+
+src/Unclassified/ov025/Resource_ApplyLinkedRecordParameter.cpp:
+    complete
+    .text start:0x021e8638 end:0x021e8670
+
+src/Unclassified/ov025/World_ResetIndexedAllocatorAndSnapshot.cpp:
+    complete
+    .text start:0x021e8b6c end:0x021e8ba4
+
+src/Unclassified/ov025/Unclassified_InitializeFromGlobalContextField.cpp:
+    complete
+    .text start:0x021e4ee4 end:0x021e4f00
+
+src/Unclassified/ov025/Overlay_RefreshControlOnceForObject.cpp:
+    complete
+    .text start:0x021eb00c end:0x021eb044
+
+src/Combat/ov025/Combat_SetMappedSelectionVisibility.cpp:
+    complete
+    .text start:0x021e4450 end:0x021e44fc
+
+src/World/ov025/Ov025_CheckOverlayTaskAndCondition.cpp:
+    complete
+    .text start:0x021e62c8 end:0x021e6304
+
+src/Unclassified/ov025/RegisterAndInitializeIndexedRecord.cpp:
+    complete
+    .text start:0x021e3048 end:0x021e3084
+
+src/World/ov025/World_FindStaggeredGridPathReverse.cpp:
+    complete
+    .text start:0x021e2148 end:0x021e23d0
+
+src/Resource/ov025/Resource_DispatchGlobalObjectOne.cpp:
+    complete
+    .text start:0x021e85c8 end:0x021e85e8
+
+src/Combat/ov025/Combat_CopySelectedCombatantName.cpp:
+    complete
+    .text start:0x021e5e84 end:0x021e5f40
+
+src/Resource/ov025/Resource_PollPartyMemberArchiveLoad.cpp:
+    complete
+    .text start:0x021eb46c end:0x021eb6fc
+
+src/Filesystem/ov025/BackgroundLoader_FormatAndAppendSelectedValue.cpp:
+    complete
+    .text start:0x021e4a08 end:0x021e4a58
+
+src/Unclassified/ov025/FormatAndAppendSelectedValue.cpp:
+    complete
+    .text start:0x021e40e4 end:0x021e413c
+
+src/System/ov025/UpdateOverlayControlFromByte.cpp:
+    complete
+    .text start:0x021e82e4 end:0x021e8314
+
+src/Math/ov025/Math_InterpolateCubicSplineVector.cpp:
+    complete
+    .text start:0x021ee488 end:0x021eeb8c
+
+src/Resource/ov025/PopAllocatorStack.cpp:
+    complete
+    .text start:0x021e8af8 end:0x021e8b6c
+
+src/World/ov025/ProcessIndexedRecordCounts.cpp:
+    complete
+    .text start:0x021d8a40 end:0x021d8ab8
+
+src/Unclassified/ov025/Unclassified_CopyThreeObjectFieldsToOverlayRecord.cpp:
+    complete
+    .text start:0x021e821c end:0x021e8248
+
+src/Resource/ov025/SetResourceFlagFromStateByte.cpp:
+    complete
+    .text start:0x021e85e8 end:0x021e861c

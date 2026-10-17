@@ -3,7 +3,8 @@
 #pragma optimize_for_size off
 
 // Compare decimal magnitudes; the original helpers do not inspect sign.
-extern "C" int func_02009d1c(RuntimeDecimal* left, RuntimeDecimal* right)
+// Original: arm9/main @ 0x02009D1C; symbol: func_02009d1c; size: 0xE0.
+extern "C" int Runtime_TestDecimalValuesEqual(RuntimeDecimal* left, RuntimeDecimal* right)
 {
     if (!left->digits[0])
         return right->digits[0] == 0;
@@ -29,7 +30,8 @@ extern "C" int func_02009d1c(RuntimeDecimal* left, RuntimeDecimal* right)
     }
     return 0;
 }
-extern "C" int func_02009dfc(RuntimeDecimal* left, RuntimeDecimal* right)
+// Original: arm9/main @ 0x02009DFC; symbol: func_02009dfc; size: 0xE0.
+extern "C" int Runtime_ComparePositiveDecimals(RuntimeDecimal* left, RuntimeDecimal* right)
 {
     if (!left->digits[0])
         return right->digits[0] != 0;

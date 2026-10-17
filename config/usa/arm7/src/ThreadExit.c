@@ -42,11 +42,13 @@ extern void ARM7_Terminate(void);
 void ARM7_ExitThread(ProcessorContext*,int);
 void ARM7_RunThreadExitCallback(int);
 void ARM7_DestroyCurrentThread(void);
+// Original: arm7/wram @ 0x037FC568; symbol: ARM7_ThreadReturn.
 void ARM7_ThreadReturn(void)
 {
  ARM7_DisableIRQInterrupts();
  ARM7_ExitThread(ARM7_ThreadGlobals.current,0);
 }
+// Original: arm7/wram @ 0x037FC58C; symbol: ARM7_ExitThread.
 void ARM7_ExitThread(ProcessorContext *thread,int argument)
 {
  if(ARM7_ThreadGlobals.exitStack){
@@ -57,6 +59,7 @@ void ARM7_ExitThread(ProcessorContext *thread,int argument)
   ARM7_RestoreThreadContext(thread);
  }else ARM7_RunThreadExitCallback(argument);
 }
+// Original: arm7/wram @ 0x037FC5EC; symbol: ARM7_RunThreadExitCallback.
 void ARM7_RunThreadExitCallback(int argument)
 {
  ProcessorContext *thread=*ARM7_ThreadGlobals.active;
@@ -68,6 +71,7 @@ void ARM7_RunThreadExitCallback(int argument)
  }
  ARM7_DestroyCurrentThread();
 }
+// Original: arm7/wram @ 0x037FC62C; symbol: ARM7_DestroyCurrentThread.
 void ARM7_DestroyCurrentThread(void)
 {
  ProcessorContext *thread=*ARM7_ThreadGlobals.active;

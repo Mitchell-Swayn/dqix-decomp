@@ -1,7 +1,8 @@
 #pragma optimize_for_size off
 
 // Binary64 words and polynomial evaluation order follow the ARM runtime ABI.
-extern "C" double func_020085cc(double x, double y, int tail)
+// Original: arm9/main @ 0x020085CC; symbol: func_020085cc; size: 0x27C.
+extern "C" double RuntimeSineKernel_EvaluateReducedSinePolynomial(double x, double y, int tail)
 {
     int high = ((int*)&x)[1] & 0x7fffffff;
     if (high < 0x3e400000) {

@@ -5,6 +5,7 @@ extern int ARM7_DisableIRQInterrupts(void);
 extern int ARM7_SetIRQInterruptState(int);
 extern void ARM7_BlockCurrentThread(BlockedContextList*);
 extern void ARM7_UnblockThreads(BlockedContextList*);
+// Original: arm7/wram @ 0x03804BA0; symbol: ARM7_AcquireSpiServiceToken.
 void ARM7_AcquireSpiServiceToken(unsigned int cookie)
 {
  int state;
@@ -19,6 +20,7 @@ void ARM7_AcquireSpiServiceToken(unsigned int cookie)
  ARM7_SpiServiceState.body.cookie=cookie;
  ARM7_SetIRQInterruptState(state);
 }
+// Original: arm7/wram @ 0x03804BFC; symbol: ARM7_ReleaseSpiServiceToken.
 void ARM7_ReleaseSpiServiceToken(unsigned int cookie)
 {
  if(ARM7_SpiServiceState.body.busy &&

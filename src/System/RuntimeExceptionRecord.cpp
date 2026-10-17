@@ -1,6 +1,7 @@
 #include "System/RuntimeExceptionRecord.h"
 #pragma optimize_for_size off
-extern "C" void func_0200ec44(RuntimeExceptionState* state, int recordOffset, int objectOffset)
+// Original: arm9/main @ 0x0200EC44; symbol: func_0200ec44; size: 0x5C.
+extern "C" void Runtime_PopulateExceptionObjectRecord(RuntimeExceptionState* state, int recordOffset, int objectOffset)
 {
     RuntimeExceptionRecord* record = (RuntimeExceptionRecord*)(state->frame + recordOffset);
     record->object = state->object;

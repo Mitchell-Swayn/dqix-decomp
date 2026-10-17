@@ -73,6 +73,7 @@ extern void (*data_020f1e88[8])(Matrix4x4*, MaterialRenderData*);
 extern void (*data_020f1ea8[8])(Matrix4x4*, MaterialRenderData*);
 extern void (*data_020f1ec8[8])(Matrix4x4*, MaterialRenderData*);
 
+// Original: arm9/main @ 0x020B99B0; symbol: _Z34BoneMatrixDataSubmissionProc_Type0P20BoneMatrixRenderData; size: 0x7C.
 void BoneMatrixDataSubmissionProc_Type0(BoneMatrixRenderData* renderData)
 {
     if (!(renderData->flags_ & 4))
@@ -98,6 +99,7 @@ void BoneMatrixDataSubmissionProc_Type0(BoneMatrixRenderData* renderData)
     }
 }
 
+// Original: arm9/main @ 0x020B9A2C; symbol: _Z36BoneMatrixScaleCalculationProc_Type0P20BoneMatrixRenderDataPN15NSBXXBoneMatrix7ScalingEPhi; size: 0x40.
 void BoneMatrixScaleCalculationProc_Type0(BoneMatrixRenderData* renderData, NSBXXBoneMatrix::Scaling* scaling, uint8_t* ip, int boneMatrixFlags)
 {
     if (boneMatrixFlags & 4) // bone matrix has no scaling data
@@ -112,6 +114,7 @@ void BoneMatrixScaleCalculationProc_Type0(BoneMatrixRenderData* renderData, NSBX
     renderData->flags_ |= 0x18;
 }
 
+// Original: arm9/main @ 0x020B9A6C; symbol: _Z34BoneMatrixDataSubmissionProc_Type1P20BoneMatrixRenderData; size: 0xC4.
 void BoneMatrixDataSubmissionProc_Type1(BoneMatrixRenderData* renderData)
 {
     bool needSubmitTranslateCommand = false;
@@ -152,6 +155,7 @@ void BoneMatrixDataSubmissionProc_Type1(BoneMatrixRenderData* renderData)
     }
 }
 
+// Original: arm9/main @ 0x020B9B30; symbol: _Z36BoneMatrixScaleCalculationProc_Type1P20BoneMatrixRenderDataPN15NSBXXBoneMatrix7ScalingEPhi; size: 0x150.
 void BoneMatrixScaleCalculationProc_Type1(BoneMatrixRenderData* renderData, NSBXXBoneMatrix::Scaling* scaling, uint8_t* ip, int boneMatrixFlags)
 {
     int thirdArg = ip[3];
@@ -196,6 +200,7 @@ void BoneMatrixScaleCalculationProc_Type1(BoneMatrixRenderData* renderData, NSBX
     renderData->flags_ |= 0x10;
 }
 
+// Original: arm9/main @ 0x020B9C80; symbol: CreateTextureMatrix_v0_RotateTranslateScale; size: 0x108.
 extern "C" void CreateTextureMatrix_v0_RotateTranslateScale(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     fix32_t matWidth = renderData->materialWidth_ << 12;
@@ -229,6 +234,7 @@ extern "C" void CreateTextureMatrix_v0_RotateTranslateScale(Matrix4x4* matrix, M
     matrix->entries[4] = (scaleXsin * invAspectRatio) >> 12;
 }
 
+// Original: arm9/main @ 0x020B9D88; symbol: CreateTextureMatrix_v0_RotateTranslate; size: 0xD0.
 extern "C" void CreateTextureMatrix_v0_RotateTranslate(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     fix32_t matWidth = renderData->materialWidth_ << 12;
@@ -253,6 +259,7 @@ extern "C" void CreateTextureMatrix_v0_RotateTranslate(Matrix4x4* matrix, Materi
     matrix->entries[4] = (renderData->rotationSine_ * invAspectRatio) >> 12;
 }
 
+// Original: arm9/main @ 0x020B9E58; symbol: CreateTextureMatrix_v0_TranslateScale; size: 0x7C.
 extern "C" void CreateTextureMatrix_v0_TranslateScale(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     matrix->entries[0] = renderData->extensionScaleX_;
@@ -268,6 +275,7 @@ extern "C" void CreateTextureMatrix_v0_TranslateScale(Matrix4x4* matrix, Materia
     matrix->entries[4] = 0;
 }
 
+// Original: arm9/main @ 0x020B9ED4; symbol: CreateTextureMatrix_v0_Translate; size: 0x48.
 extern "C" void CreateTextureMatrix_v0_Translate(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     matrix->entries[0] = 1 << 12;
@@ -278,6 +286,7 @@ extern "C" void CreateTextureMatrix_v0_Translate(Matrix4x4* matrix, MaterialRend
     matrix->entries[4] = 0;
 }
 
+// Original: arm9/main @ 0x020B9F1C; symbol: CreateTextureMatrix_v0_RotateScale; size: 0xE0.
 extern "C" void CreateTextureMatrix_v0_RotateScale(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     fix32_t matWidth = renderData->materialWidth_ << 12;
@@ -303,6 +312,7 @@ extern "C" void CreateTextureMatrix_v0_RotateScale(Matrix4x4* matrix, MaterialRe
     matrix->entries[4] = (scaleXsin * invAspectRatio) >> 12;
 }
 
+// Original: arm9/main @ 0x020B9FFC; symbol: CreateTextureMatrix_v0_Rotate; size: 0xB8.
 extern "C" void CreateTextureMatrix_v0_Rotate(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     fix32_t matWidth = renderData->materialWidth_ << 12;
@@ -330,6 +340,7 @@ extern "C" void CreateTextureMatrix_v0_Rotate(Matrix4x4* matrix, MaterialRenderD
     matrix->entries[4] = (renderData->rotationSine_ * invAspectRatio) >> 12;
 }
 
+// Original: arm9/main @ 0x020BA0B4; symbol: CreateTextureMatrix_v0_Scale; size: 0x44.
 extern "C" void CreateTextureMatrix_v0_Scale(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     matrix->entries[0] = renderData->extensionScaleX_;
@@ -342,6 +353,7 @@ extern "C" void CreateTextureMatrix_v0_Scale(Matrix4x4* matrix, MaterialRenderDa
     matrix->entries[4] = 0;
 }
 
+// Original: arm9/main @ 0x020BA0F8; symbol: CreateTextureMatrix_v0_NoExtensions; size: 0x24.
 extern "C" void CreateTextureMatrix_v0_NoExtensions(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     matrix->entries[0] = 1 << 12;
@@ -352,6 +364,7 @@ extern "C" void CreateTextureMatrix_v0_NoExtensions(Matrix4x4* matrix, MaterialR
     matrix->entries[13] = 0;
 }
 
+// Original: arm9/main @ 0x020BA11C; symbol: _Z35MaterialTextureMatrixLoadProc_Type0P18MaterialRenderData; size: 0x148.
 void MaterialTextureMatrixLoadProc_Type0(MaterialRenderData* renderData)
 {
     struct {
@@ -395,6 +408,7 @@ void MaterialTextureMatrixLoadProc_Type0(MaterialRenderData* renderData)
     SubmitCommandToGeometryFifo(fifoData.commands, (uint32_t*)&fifoData + 1, 18);
 }
 
+// Original: arm9/main @ 0x020BA264; symbol: _Z34BoneMatrixDataSubmissionProc_Type2P20BoneMatrixRenderData; size: 0x12C.
 void BoneMatrixDataSubmissionProc_Type2(BoneMatrixRenderData* renderData)
 {
     bool bVar2 = false;
@@ -436,6 +450,7 @@ void BoneMatrixDataSubmissionProc_Type2(BoneMatrixRenderData* renderData)
         SubmitCommandToGeometryFifo(GXFifoCommand_ScaleMatrix, (uint32_t*)&renderData->scale_v0_, 3);
 }
 
+// Original: arm9/main @ 0x020BA390; symbol: _Z36BoneMatrixScaleCalculationProc_Type2P20BoneMatrixRenderDataPN15NSBXXBoneMatrix7ScalingEPhi; size: 0x21C.
 void BoneMatrixScaleCalculationProc_Type2(BoneMatrixRenderData* renderData, NSBXXBoneMatrix::Scaling* scaling, uint8_t* ip, int boneMatrixFlags)
 {
     unsigned int thisBoneIdx = ip[1];
@@ -451,9 +466,9 @@ void BoneMatrixScaleCalculationProc_Type2(BoneMatrixRenderData* renderData, NSBX
         else
         {
             Struct_0210b078* parent = &data_0210b078[parentBoneIdx];
-            func_020ca408(parent, &data_0210b078[thisBoneIdx], sizeof(Struct_0210b078));
+            MIi_CpuCopy32(parent, &data_0210b078[thisBoneIdx], sizeof(Struct_0210b078));
             // copy to scale2 and scale3
-            func_020ca408(parent, &renderData->scale_v1_, 2 * 3 * sizeof(fix32_t));
+            MIi_CpuCopy32(parent, &renderData->scale_v1_, 2 * 3 * sizeof(fix32_t));
         }
     }
     else
@@ -463,7 +478,7 @@ void BoneMatrixScaleCalculationProc_Type2(BoneMatrixRenderData* renderData, NSBX
         renderData->scale_v0_.z = scaling->z;
         if (data_0210a274->boneMatrixBitfield_[parentBoneIdx >> 5] & (1 << (parentBoneIdx & 0x1f)))
         {
-            func_020ca408(scaling, &data_0210b078[thisBoneIdx], 2 * 3 * sizeof(fix32_t));
+            MIi_CpuCopy32(scaling, &data_0210b078[thisBoneIdx], 2 * 3 * sizeof(fix32_t));
             data_0210a274->boneMatrixBitfield_[thisBoneIdx >> 5] &= ~(1 << (thisBoneIdx & 0x1f));
             renderData->flags_ |= 0x18;
         }
@@ -476,11 +491,12 @@ void BoneMatrixScaleCalculationProc_Type2(BoneMatrixRenderData* renderData, NSBX
             data_0210b078[thisBoneIdx].vec1_.x = ((int64_t)scaling->x_v2 * (int64_t)data_0210b078[parentBoneIdx].vec1_.x) >> 12;
             data_0210b078[thisBoneIdx].vec1_.y = ((int64_t)scaling->y_v2 * (int64_t)data_0210b078[parentBoneIdx].vec1_.y) >> 12;
             data_0210b078[thisBoneIdx].vec1_.z = ((int64_t)scaling->z_v2 * (int64_t)data_0210b078[parentBoneIdx].vec1_.z) >> 12;
-            func_020ca408(&data_0210b078[parentBoneIdx], &renderData->scale_v1_, 2 * 3 * sizeof(fix32_t));
+            MIi_CpuCopy32(&data_0210b078[parentBoneIdx], &renderData->scale_v1_, 2 * 3 * sizeof(fix32_t));
         }
     }
 }
 
+// Original: arm9/main @ 0x020BA5AC; symbol: _Z35MaterialTextureMatrixLoadProc_Type1P18MaterialRenderData; size: 0x1CC.
 void MaterialTextureMatrixLoadProc_Type1(MaterialRenderData* renderData)
 {
     struct {
@@ -552,6 +568,7 @@ void MaterialTextureMatrixLoadProc_Type1(MaterialRenderData* renderData)
     SubmitCommandToGeometryFifo(fifoData.commands, (uint32_t*)&fifoData + 1, 14);
 }
 
+// Original: arm9/main @ 0x020BA778; symbol: CreateTextureMatrix_v2_TranslateRotateScale; size: 0x108.
 extern "C" void CreateTextureMatrix_v2_TranslateRotateScale(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     fix32_t matWidth = renderData->materialWidth_ << 12;
@@ -588,6 +605,7 @@ extern "C" void CreateTextureMatrix_v2_TranslateRotateScale(Matrix4x4* matrix, M
     matrix->entries[4] = (-scaleXsin * invAspectRatio) >> 12;
 }
 
+// Original: arm9/main @ 0x020BA880; symbol: CreateTextureMatrix_v2_TranslateRotate; size: 0xE8.
 extern "C" void CreateTextureMatrix_v2_TranslateRotate(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     fix32_t matWidth = renderData->materialWidth_ << 12;
@@ -620,6 +638,7 @@ extern "C" void CreateTextureMatrix_v2_TranslateRotate(Matrix4x4* matrix, Materi
     matrix->entries[4] = (-renderData->rotationSine_ * invAspectRatio) >> 12;
 }
 
+// Original: arm9/main @ 0x020BA968; symbol: CreateTextureMatrix_v2_TranslateScale; size: 0x80.
 extern "C" void CreateTextureMatrix_v2_TranslateScale(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     matrix->entries[0] = renderData->extensionScaleX_;
@@ -636,6 +655,7 @@ extern "C" void CreateTextureMatrix_v2_TranslateScale(Matrix4x4* matrix, Materia
     matrix->entries[4] = 0;
 }
 
+// Original: arm9/main @ 0x020BA9E8; symbol: CreateTextureMatrix_v2_Translate; size: 0x48.
 extern "C" void CreateTextureMatrix_v2_Translate(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     matrix->entries[0] = 1 << 12;
@@ -646,6 +666,7 @@ extern "C" void CreateTextureMatrix_v2_Translate(Matrix4x4* matrix, MaterialRend
     matrix->entries[4] = 0;
 }
 
+// Original: arm9/main @ 0x020BAA30; symbol: CreateTextureMatrix_v2_RotateScale; size: 0xF8.
 extern "C" void CreateTextureMatrix_v2_RotateScale(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     fix32_t matWidth = renderData->materialWidth_ << 12;
@@ -683,6 +704,7 @@ extern "C" void CreateTextureMatrix_v2_RotateScale(Matrix4x4* matrix, MaterialRe
     matrix->entries[4] = (-scaleXsin * invAspectRatio) >> 12;
 }
 
+// Original: arm9/main @ 0x020BAB28; symbol: CreateTextureMatrix_v2_Rotate; size: 0xD8.
 extern "C" void CreateTextureMatrix_v2_Rotate(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     fix32_t matWidth = renderData->materialWidth_ << 12;
@@ -714,6 +736,7 @@ extern "C" void CreateTextureMatrix_v2_Rotate(Matrix4x4* matrix, MaterialRenderD
     matrix->entries[4] = (-renderData->rotationSine_ * invAspectRatio) >> 12;
 }
 
+// Original: arm9/main @ 0x020BAC00; symbol: CreateTextureMatrix_v2_Scale; size: 0x50.
 extern "C" void CreateTextureMatrix_v2_Scale(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     matrix->entries[0] = renderData->extensionScaleX_;
@@ -727,6 +750,7 @@ extern "C" void CreateTextureMatrix_v2_Scale(Matrix4x4* matrix, MaterialRenderDa
     matrix->entries[4] = 0;
 }
 
+// Original: arm9/main @ 0x020BAC50; symbol: CreateTextureMatrix_v2_NoExtensions; size: 0x24.
 extern "C" void CreateTextureMatrix_v2_NoExtensions(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     matrix->entries[0] = 1 << 12;
@@ -737,6 +761,7 @@ extern "C" void CreateTextureMatrix_v2_NoExtensions(Matrix4x4* matrix, MaterialR
     matrix->entries[13] = 0;
 }
 
+// Original: arm9/main @ 0x020BAC74; symbol: _Z35MaterialTextureMatrixLoadProc_Type2P18MaterialRenderData; size: 0x148.
 void MaterialTextureMatrixLoadProc_Type2(MaterialRenderData* renderData)
 {
     struct {
@@ -781,6 +806,7 @@ void MaterialTextureMatrixLoadProc_Type2(MaterialRenderData* renderData)
     SubmitCommandToGeometryFifo(fifoData.commands, (uint32_t*)&fifoData + 1, 18);
 }
 
+// Original: arm9/main @ 0x020BADBC; symbol: CreateTextureMatrix_v3_ScaleTranslateRotate; size: 0x154.
 extern "C" void CreateTextureMatrix_v3_ScaleTranslateRotate(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     fix32_t matWidth = renderData->materialWidth_ << 12;
@@ -829,6 +855,7 @@ extern "C" void CreateTextureMatrix_v3_ScaleTranslateRotate(Matrix4x4* matrix, M
     matrix->entries[4] = (-scaleXsin * invAspectRatio) >> 12;
 }
 
+// Original: arm9/main @ 0x020BAF10; symbol: CreateTextureMatrix_v3_TranslateRotate; size: 0xE0.
 extern "C" void CreateTextureMatrix_v3_TranslateRotate(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     fix32_t matWidth = renderData->materialWidth_ << 12;
@@ -864,6 +891,7 @@ extern "C" void CreateTextureMatrix_v3_TranslateRotate(Matrix4x4* matrix, Materi
     matrix->entries[4] = (-renderData->rotationSine_ * invAspectRatio) >> 12;
 }
 
+// Original: arm9/main @ 0x020BAFF0; symbol: CreateTextureMatrix_v3_TranslateScale; size: 0x84.
 extern "C" void CreateTextureMatrix_v3_TranslateScale(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     matrix->entries[0] = renderData->extensionScaleX_;
@@ -880,6 +908,7 @@ extern "C" void CreateTextureMatrix_v3_TranslateScale(Matrix4x4* matrix, Materia
     matrix->entries[4] = 0;
 }
 
+// Original: arm9/main @ 0x020BB074; symbol: CreateTextureMatrix_v3_Translate; size: 0x54.
 extern "C" void CreateTextureMatrix_v3_Translate(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     matrix->entries[0] = 1 << 12;
@@ -894,6 +923,7 @@ extern "C" void CreateTextureMatrix_v3_Translate(Matrix4x4* matrix, MaterialRend
     matrix->entries[4] = 0;
 }
 
+// Original: arm9/main @ 0x020BB0C8; symbol: CreateTextureMatrix_v3_RotateScale; size: 0xCC.
 extern "C" void CreateTextureMatrix_v3_RotateScale(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     fix32_t matWidth = renderData->materialWidth_ << 12;
@@ -927,6 +957,7 @@ extern "C" void CreateTextureMatrix_v3_RotateScale(Matrix4x4* matrix, MaterialRe
     matrix->entries[4] = (-xsin * invAspectRatio) >> 12;
 }
 
+// Original: arm9/main @ 0x020BB194; symbol: CreateTextureMatrix_v3_Rotate; size: 0xA4.
 extern "C" void CreateTextureMatrix_v3_Rotate(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     fix32_t matWidth = renderData->materialWidth_ << 12;
@@ -949,6 +980,7 @@ extern "C" void CreateTextureMatrix_v3_Rotate(Matrix4x4* matrix, MaterialRenderD
     matrix->entries[4] = (-renderData->rotationSine_ * invAspectRatio) >> 12;
 }
 
+// Original: arm9/main @ 0x020BB238; symbol: CreateTextureMatrix_v3_Scale; size: 0x40.
 extern "C" void CreateTextureMatrix_v3_Scale(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     matrix->entries[0] = renderData->extensionScaleX_;
@@ -959,6 +991,7 @@ extern "C" void CreateTextureMatrix_v3_Scale(Matrix4x4* matrix, MaterialRenderDa
     matrix->entries[4] = 0;
 }
 
+// Original: arm9/main @ 0x020BB278; symbol: CreateTextureMatrix_v3_NoExtensions; size: 0x24.
 extern "C" void CreateTextureMatrix_v3_NoExtensions(Matrix4x4* matrix, MaterialRenderData* renderData)
 {
     matrix->entries[0] = 1 << 12;
@@ -969,6 +1002,7 @@ extern "C" void CreateTextureMatrix_v3_NoExtensions(Matrix4x4* matrix, MaterialR
     matrix->entries[13] = 0;
 }
 
+// Original: arm9/main @ 0x020BB29C; symbol: _Z35MaterialTextureMatrixLoadProc_Type3P18MaterialRenderData; size: 0x188.
 void MaterialTextureMatrixLoadProc_Type3(MaterialRenderData* renderData)
 {
     struct {

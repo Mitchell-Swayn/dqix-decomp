@@ -1,16 +1,19 @@
+// Original locations for overloaded or compiler-generated definitions in this unit:
+// Original: arm9/main @ 0x02098834; symbol: _ZN13ZoneState08405EntryaSERKS0_; size: 0xD8. (ZoneState0840::Entry::operator=(ZoneState0840::Entry const&))
 #include "World/Zone3DEmbeddedState.h"
 
 extern "C" {
-    int func_02001aec(const void*, const void*, unsigned int);
-    int func_020cf0fc(void*);
+    int RuntimeMemory_CompareByteRanges(const void*, const void*, unsigned int);
+    int Calendar_ReadCurrentDateThroughSynchronousReply(void*);
 }
 
+// Original: arm9/main @ 0x02098630; symbol: _ZN13ZoneState08408AddEntryEPKNS_5EntryEbb; size: 0x204.
 bool ZoneState0840::AddEntry(const Entry* entry, bool incrementValue, bool updateTier)
 {
     int i;
     if (!entry->parameters6c.unknown26) return false;
     for (i = 0; i < 30; ++i)
-        if (!func_02001aec(entries[i].identifier, entry->identifier, 6)) return false;
+        if (!RuntimeMemory_CompareByteRanges(entries[i].identifier, entry->identifier, 6)) return false;
     int index = PrepareEntryInsertionSlot();
     if (incrementValue) ++unknown_1b34;
     unknown_1b38 = 0;
@@ -26,7 +29,7 @@ bool ZoneState0840::AddEntry(const Entry* entry, bool incrementValue, bool updat
     destination->flags.unknown30 = 1;
     destination->value.value = unknown_1b34;
     int date[4];
-    if (!func_020cf0fc(date))
+    if (!Calendar_ReadCurrentDateThroughSynchronousReply(date))
     {
         entries[index].byteFlags.low = (unsigned char)date[0];
         entries[index].flags.unknown15 = date[1];

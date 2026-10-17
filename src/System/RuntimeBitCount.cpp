@@ -1,6 +1,7 @@
 #pragma optimize_for_size off
 // Count significand bits with the original parallel 64-bit mask reductions.
-extern "C" int func_0200a9cc(unsigned long long value)
+// Original: arm9/main @ 0x0200A9CC; symbol: func_0200a9cc; size: 0x94.
+extern "C" int Runtime_CountSetBits64(unsigned long long value)
 {
     value -= (value >> 1) & 0x5555555555555555ULL;
     value = (value & 0x3333333333333333ULL) + ((value >> 2) & 0x3333333333333333ULL);

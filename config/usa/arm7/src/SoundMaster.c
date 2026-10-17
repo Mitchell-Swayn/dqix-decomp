@@ -13,10 +13,12 @@ extern void ARM7_BiosSoundBiasDown(int);
 extern void ARM7_BiosSoundBiasUp(int);
 void ARM7_RampSoundBiasDown(int);
 void ARM7_RampSoundBiasUp(int);
+// Original: arm7/wram @ 0x037FED2C; symbol: ARM7_EnableSoundMaster.
 void ARM7_EnableSoundMaster(void)
 {
  SOUND_CONTROL_HIGH|=0x80;
 }
+// Original: arm7/wram @ 0x037FED44; symbol: ARM7_ResetSoundChannels.
 void ARM7_ResetSoundChannels(void)
 {
  int channel;
@@ -26,6 +28,7 @@ void ARM7_ResetSoundChannels(void)
  *(volatile unsigned char*)0x04000508=0;
  *(volatile unsigned char*)0x04000509=0;
 }
+// Original: arm7/wram @ 0x037FED98; symbol: ARM7_PowerOffSound.
 void ARM7_PowerOffSound(void)
 {
  SOUND_CONTROL_HIGH&=~0x80;
@@ -34,10 +37,12 @@ void ARM7_PowerOffSound(void)
  ARM7_SoundPowerOffHook(1);
  SOUND_POWER&=~1;
 }
+// Original: arm7/wram @ 0x037FEDE4; symbol: ARM7_RampSoundBiasDown.
 void ARM7_RampSoundBiasDown(int delay)
 {
  ARM7_BiosSoundBiasDown(delay);
 }
+// Original: arm7/wram @ 0x037FEDF0; symbol: ARM7_PowerOnSound.
 void ARM7_PowerOnSound(void)
 {
  SOUND_POWER|=1;
@@ -46,14 +51,17 @@ void ARM7_PowerOnSound(void)
  ARM7_WaitCycles(0x7ab80);
  SOUND_CONTROL_HIGH|=0x80;
 }
+// Original: arm7/wram @ 0x037FEE40; symbol: ARM7_RampSoundBiasUp.
 void ARM7_RampSoundBiasUp(int delay)
 {
  ARM7_BiosSoundBiasUp(delay);
 }
+// Original: arm7/wram @ 0x037FEE4C; symbol: ARM7_SetSoundMasterVolume.
 void ARM7_SetSoundMasterVolume(unsigned int volume)
 {
  SOUND_MASTER_VOLUME=volume;
 }
+// Original: arm7/wram @ 0x037FEE5C; symbol: ARM7_SetSoundOutputRouting.
 void ARM7_SetSoundOutputRouting(unsigned int left,unsigned int right,unsigned int channel1,unsigned int channel3)
 {
  unsigned int enabled=(SOUND_CONTROL_HIGH&0x80)!=0;

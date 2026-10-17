@@ -1,6 +1,7 @@
 #include "World/Zone3D.h"
 #include "World/LootableContainer.h"
 
+// Original: arm9/main @ 0x020159C0; symbol: _ZN6Zone3D21ReleaseChestsForOwnerEi; size: 0x6C.
 void Zone3D::ReleaseChestsForOwner(int ownerIndex)
 {
     int valid = ownerIndex >= 0 && ownerIndex <= 3;
@@ -16,6 +17,7 @@ void Zone3D::ReleaseChestsForOwner(int ownerIndex)
     }
 }
 
+// Original: arm9/main @ 0x02015A2C; symbol: _ZN6Zone3D14HasActiveChestEv; size: 0x6C.
 bool Zone3D::HasActiveChest()
 {
     if (!LootableContainerManager::GetMainInstance()) return false;
@@ -28,6 +30,7 @@ bool Zone3D::HasActiveChest()
     return false;
 }
 
+// Original: arm9/main @ 0x02015A98; symbol: _Z17ActivateZoneChestP14ZoneChestEntryibb; size: 0x4C.
 void ActivateZoneChest(ZoneChestEntry* chest, int ownerIndex, bool reset, bool force)
 {
     if (chest->state == 1)

@@ -5,6 +5,7 @@
 
 
 // The existing startup table invokes this routine once before archive access.
+// Original: arm9/main @ 0x020E6710; symbol: __sinit_020e6710; size: 0x6C.
 extern "C" __declspec(section "init") void __sinit_020e6710()
 {
     unsigned int signature0;

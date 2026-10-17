@@ -10,17 +10,20 @@ struct Struct_02104b10
     BCFG* pBCFG;
 } static currentBCFGScriptData;
 
+// Original: arm9/main @ 0x020343A0; symbol: _Z20BCFGScript_Opcode_64PN6Script9ParameterEi; size: 0x28.
 int BCFGScript_Opcode_64(Script::Parameter* params, int paramCount)
 {
     currentBCFGScriptData.pBCFG->AllocateAnimationEntries(currentBCFGScriptData.allocator, params[0].ToInt());
     return 1;
 }
 
+// Original: arm9/main @ 0x020343C8; symbol: _Z20BCFGScript_Opcode_65PN6Script9ParameterEi; size: 0x8.
 int BCFGScript_Opcode_65(Script::Parameter* params, int paramCount)
 {
     return 1;
 }
 
+// Original: arm9/main @ 0x020343D0; symbol: _Z20BCFGScript_Opcode_66PN6Script9ParameterEi; size: 0xA8.
 int BCFGScript_Opcode_66(Script::Parameter* params, int paramCount)
 {
     const char* name = params[0].ToString();
@@ -42,12 +45,14 @@ int BCFGScript_Opcode_66(Script::Parameter* params, int paramCount)
     return success;
 }
 
+// Original: arm9/main @ 0x02034478; symbol: _Z20BCFGScript_Opcode_6aPN6Script9ParameterEi; size: 0x28.
 int BCFGScript_Opcode_6a(Script::Parameter* params, int paramCount)
 {
     currentBCFGScriptData.pBCFG->AllocateSizeCEntries(currentBCFGScriptData.allocator, params[0].ToInt());
     return 1;
 }
 
+// Original: arm9/main @ 0x020344A0; symbol: _Z20BCFGScript_Opcode_6bPN6Script9ParameterEi; size: 0x8.
 int BCFGScript_Opcode_6b(Script::Parameter* params, int paramCount)
 {
     return 1;
@@ -55,6 +60,7 @@ int BCFGScript_Opcode_6b(Script::Parameter* params, int paramCount)
 
 // when enemies have these it's nearly always only attack1 or attack1a,
 // i.e. the regular attack.
+// Original: arm9/main @ 0x020344A8; symbol: _Z20BCFGScript_Opcode_6cPN6Script9ParameterEi; size: 0x70.
 int BCFGScript_Opcode_6c(Script::Parameter* params, int paramCount)
 {
     BCFG::SizeCEntry entry;
@@ -66,17 +72,20 @@ int BCFGScript_Opcode_6c(Script::Parameter* params, int paramCount)
     return 1;
 }
 
+// Original: arm9/main @ 0x02034518; symbol: _Z20BCFGScript_Opcode_6dPN6Script9ParameterEi; size: 0x28.
 int BCFGScript_Opcode_6d(Script::Parameter* params, int paramCount)
 {
     currentBCFGScriptData.pBCFG->AllocateAltSizeCEntries(currentBCFGScriptData.allocator, params[0].ToInt());
     return 1;
 }
 
+// Original: arm9/main @ 0x02034540; symbol: _Z20BCFGScript_Opcode_6ePN6Script9ParameterEi; size: 0x8.
 int BCFGScript_Opcode_6e(Script::Parameter* params, int paramCount)
 {
     return 1;
 }
 
+// Original: arm9/main @ 0x02034548; symbol: _Z20BCFGScript_Opcode_6fPN6Script9ParameterEi; size: 0x70.
 int BCFGScript_Opcode_6f(Script::Parameter* params, int paramCount)
 {
     BCFG::AltSizeCEntry entry;
@@ -88,6 +97,7 @@ int BCFGScript_Opcode_6f(Script::Parameter* params, int paramCount)
     return 1;
 }
 
+// Original: arm9/main @ 0x020345B8; symbol: _Z20BCFGScript_Opcode_71PN6Script9ParameterEi; size: 0x28.
 int BCFGScript_Opcode_71(Script::Parameter* params, int paramCount)
 {
     currentBCFGScriptData.pBCFG->MaybeSetRootBoneName(currentBCFGScriptData.allocator, params[0].ToString());
@@ -108,6 +118,7 @@ Script::OpcodeLookupEntry bcfgScriptOpcodes[] = {
     { 0 }
 };
 
+// Original: arm9/main @ 0x020345E0; symbol: _ZN4BCFG5ResetEv; size: 0x3C.
 void BCFG::Reset()
 {
     animations_ = NULL;
@@ -123,6 +134,7 @@ void BCFG::Reset()
     maybeRootBoneName_ = NULL;
 }
 
+// Original: arm9/main @ 0x0203461C; symbol: _ZN4BCFG14LoadFromScriptEP13SafeAllocatorPKvj; size: 0x98.
 void BCFG::LoadFromScript(SafeAllocator* alloc, const void *data, unsigned int length)
 {
     if (length != 0 && data != NULL)
@@ -141,6 +153,7 @@ void BCFG::LoadFromScript(SafeAllocator* alloc, const void *data, unsigned int l
     }
 }
 
+// Original: arm9/main @ 0x020346B4; symbol: _ZN4BCFG24AllocateAnimationEntriesEP13SafeAllocatori; size: 0x44.
 void BCFG::AllocateAnimationEntries(SafeAllocator *alloc, int count)
 {
     if (alloc == NULL)
@@ -159,6 +172,7 @@ void BCFG::AllocateAnimationEntries(SafeAllocator *alloc, int count)
     }
 }
 
+// Original: arm9/main @ 0x020346F8; symbol: _ZN4BCFG21InsertAnimationRecordEPKNS_15AnimationRecordE; size: 0x70.
 void BCFG::InsertAnimationRecord(const AnimationRecord *entry)
 {
     if (maybeAnimationCapacity > maybeAnimationCount)
@@ -173,6 +187,7 @@ void BCFG::InsertAnimationRecord(const AnimationRecord *entry)
     }
 }
 
+// Original: arm9/main @ 0x02034768; symbol: _ZN4BCFG21SearchAnimationByNameEPKc; size: 0x4C.
 int BCFG::SearchAnimationByName(const char* name)
 {
     for (int i = 0; i < maybeAnimationCount; i++)
@@ -183,6 +198,7 @@ int BCFG::SearchAnimationByName(const char* name)
     return -1;
 }
 
+// Original: arm9/main @ 0x020347B4; symbol: _ZN4BCFG18GetAnimationRecordEi; size: 0x2C.
 BCFG::AnimationRecord* BCFG::GetAnimationRecord(int idx)
 {
     if (idx < 0 || maybeAnimationCount <= idx)
@@ -190,11 +206,13 @@ BCFG::AnimationRecord* BCFG::GetAnimationRecord(int idx)
     return &animations_[idx];
 }
 
+// Original: arm9/main @ 0x020347E0; symbol: _ZNK4BCFG16GetNumAnimationsEv; size: 0x8.
 int BCFG::GetNumAnimations() const
 {
     return maybeAnimationCount;
 }
 
+// Original: arm9/main @ 0x020347E8; symbol: _ZN4BCFG20AllocateSizeCEntriesEP13SafeAllocatori; size: 0x38.
 void BCFG::AllocateSizeCEntries(SafeAllocator *alloc, int count)
 {
     sizeCEntries_ = (SizeCEntry*)alloc->Allocate(count * sizeof(SizeCEntry));
@@ -210,6 +228,7 @@ void BCFG::AllocateSizeCEntries(SafeAllocator *alloc, int count)
     }
 }
 
+// Original: arm9/main @ 0x02034820; symbol: _ZN4BCFG16InsertSizeCEntryEPKNS_10SizeCEntryE; size: 0x94.
 void BCFG::InsertSizeCEntry(const SizeCEntry *entry)
 {
     if (sizeCCapacity_ > sizeCCount_)
@@ -228,6 +247,7 @@ void BCFG::InsertSizeCEntry(const SizeCEntry *entry)
     }
 }
 
+// Original: arm9/main @ 0x020348B4; symbol: _ZN4BCFG23AllocateAltSizeCEntriesEP13SafeAllocatori; size: 0x38.
 void BCFG::AllocateAltSizeCEntries(SafeAllocator *alloc, int count)
 {
     altSizeCEntries_ = (AltSizeCEntry*)alloc->Allocate(count * sizeof(AltSizeCEntry));
@@ -243,6 +263,7 @@ void BCFG::AllocateAltSizeCEntries(SafeAllocator *alloc, int count)
     }
 }
 
+// Original: arm9/main @ 0x020348EC; symbol: _ZN4BCFG19InsertAltSizeCEntryEPKNS_13AltSizeCEntryE; size: 0x94.
 void BCFG::InsertAltSizeCEntry(const AltSizeCEntry *entry)
 {
     if (altSizeCCapacity_ > altSizeCCount_)
@@ -261,6 +282,7 @@ void BCFG::InsertAltSizeCEntry(const AltSizeCEntry *entry)
     }
 }
 
+// Original: arm9/main @ 0x02034980; symbol: _ZN4BCFG20MaybeSetRootBoneNameEP13SafeAllocatorPKc; size: 0x40.
 void BCFG::MaybeSetRootBoneName(SafeAllocator *alloc, const char *name)
 {
     maybeRootBoneName_ = (char*)alloc->Allocate(strlen(name) + 1);
@@ -268,6 +290,7 @@ void BCFG::MaybeSetRootBoneName(SafeAllocator *alloc, const char *name)
         strcpy(maybeRootBoneName_, name);
 }
 
+// Original: arm9/main @ 0x020349C0; symbol: _ZN4BCFG20MaybeGetRootBoneNameEv; size: 0x8.
 const char *BCFG::MaybeGetRootBoneName()
 {
     return maybeRootBoneName_;

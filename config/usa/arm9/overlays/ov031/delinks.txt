@@ -5,3 +5,5954 @@
     .data       start:0x02249680 end:0x0224c980 kind:data align:32
     .bss        start:0x0224c980 end:0x02292500 kind:bss align:32
 
+src/Data/ov031/data_ov031_02246110.cpp:
+    complete
+    .rodata start:0x02246110 end:0x02246510
+
+src/Data/ov031/data_ov031_02246510.cpp:
+    complete
+    .rodata start:0x02246510 end:0x02246910
+
+src/Data/ov031/data_ov031_02246910.cpp:
+    complete
+    .rodata start:0x02246910 end:0x02246d10
+
+src/Data/ov031/data_ov031_02246d10.cpp:
+    complete
+    .rodata start:0x02246d10 end:0x02247110
+
+src/Data/ov031/data_ov031_02247110.cpp:
+    complete
+    .rodata start:0x02247110 end:0x02247510
+
+src/Data/ov031/data_ov031_02247510.cpp:
+    complete
+    .rodata start:0x02247510 end:0x02247910
+
+src/Data/ov031/data_ov031_02247910.cpp:
+    complete
+    .rodata start:0x02247910 end:0x02247d10
+
+src/Data/ov031/data_ov031_02247d10.cpp:
+    complete
+    .rodata start:0x02247d10 end:0x02248110
+
+src/Data/ov031/data_ov031_02248110.cpp:
+    complete
+    .rodata start:0x02248110 end:0x02248510
+
+src/Data/ov031/data_ov031_02248510.cpp:
+    complete
+    .rodata start:0x02248510 end:0x02248910
+
+src/Data/ov031/data_ov031_02245fe8.cpp:
+    complete
+    .rodata start:0x02245fe8 end:0x02245ff4
+
+src/Data/ov031/data_ov031_02248990.cpp:
+    complete
+    .rodata start:0x02248990 end:0x02248998
+
+src/Data/ov031/data_ov031_02248d74.cpp:
+    complete
+    .rodata start:0x02248d74 end:0x02248d80
+
+src/Data/ov031/data_ov031_02248d80.cpp:
+    complete
+    .rodata start:0x02248d80 end:0x02248d8c
+
+src/Data/ov031/data_ov031_02248dae.cpp:
+    complete
+    .rodata start:0x02248dae end:0x02248dc4
+
+src/Data/ov031/data_ov031_02248dcc.cpp:
+    complete
+    .rodata start:0x02248dcc end:0x02248de2
+
+src/Data/ov031/data_ov031_02248de2.cpp:
+    complete
+    .rodata start:0x02248de2 end:0x02248dfa
+
+src/Data/ov031/data_ov031_02248e2d.cpp:
+    complete
+    .rodata start:0x02248e2d end:0x02248e43
+
+src/Data/ov031/data_ov031_02248e43.cpp:
+    complete
+    .rodata start:0x02248e43 end:0x02248e5c
+
+src/Data/ov031/data_ov031_02248fa8.cpp:
+    complete
+    .rodata start:0x02248fa8 end:0x02248fbd
+
+src/Data/ov031/data_ov031_02248fbd.cpp:
+    complete
+    .rodata start:0x02248fbd end:0x02248fd3
+
+src/Data/ov031/data_ov031_02248fd3.cpp:
+    complete
+    .rodata start:0x02248fd3 end:0x02248fea
+
+src/Data/ov031/data_ov031_0224906c.cpp:
+    complete
+    .rodata start:0x0224906c end:0x02249082
+
+src/Data/ov031/data_ov031_02249118.cpp:
+    complete
+    .rodata start:0x02249118 end:0x0224912e
+
+src/Data/ov031/data_ov031_02249288.cpp:
+    complete
+    .rodata start:0x02249288 end:0x02249294
+
+src/Data/ov031/data_ov031_022493c4.cpp:
+    complete
+    .rodata start:0x022493c4 end:0x02249408
+
+src/Data/ov031/data_ov031_02249408.cpp:
+    complete
+    .rodata start:0x02249408 end:0x02249418
+
+src/Data/ov031/data_ov031_02249418.cpp:
+    complete
+    .rodata start:0x02249418 end:0x02249424
+
+src/Data/ov031/data_ov031_02249424.cpp:
+    complete
+    .rodata start:0x02249424 end:0x02249430
+
+src/Data/ov031/data_ov031_02249430.cpp:
+    complete
+    .rodata start:0x02249430 end:0x02249440
+
+src/Data/ov031/data_ov031_022494d8.cpp:
+    complete
+    .rodata start:0x022494d8 end:0x02249500
+
+src/Data/ov031/data_ov031_02249500.cpp:
+    complete
+    .rodata start:0x02249500 end:0x0224954c
+
+src/Data/ov031/data_ov031_02249698.cpp:
+    complete
+    .data start:0x02249698 end:0x022496a4
+
+src/Data/ov031/data_ov031_02249754.cpp:
+    complete
+    .data start:0x02249754 end:0x0224975c
+
+src/Data/ov031/data_ov031_0224975c.cpp:
+    complete
+    .data start:0x0224975c end:0x02249764
+
+src/Data/ov031/data_ov031_02249944.cpp:
+    complete
+    .data start:0x02249944 end:0x02249950
+
+src/Data/ov031/data_ov031_02249950.cpp:
+    complete
+    .data start:0x02249950 end:0x02249974
+
+src/Data/ov031/data_ov031_022499f8.cpp:
+    complete
+    .data start:0x022499f8 end:0x02249a14
+
+src/Data/ov031/data_ov031_02249a14.cpp:
+    complete
+    .data start:0x02249a14 end:0x02249a3c
+
+src/Data/ov031/data_ov031_02249a3c.cpp:
+    complete
+    .data start:0x02249a3c end:0x02249a60
+
+src/Data/ov031/data_ov031_02249a60.cpp:
+    complete
+    .data start:0x02249a60 end:0x02249a80
+
+src/Data/ov031/data_ov031_02249a80.cpp:
+    complete
+    .data start:0x02249a80 end:0x02249a88
+
+src/Data/ov031/data_ov031_02249a8c.cpp:
+    complete
+    .data start:0x02249a8c end:0x02249aa0
+
+src/Data/ov031/data_ov031_02249aa0.cpp:
+    complete
+    .data start:0x02249aa0 end:0x02249ab4
+
+src/Data/ov031/data_ov031_02249ab4.cpp:
+    complete
+    .data start:0x02249ab4 end:0x02249abc
+
+src/Data/ov031/data_ov031_02249abc.cpp:
+    complete
+    .data start:0x02249abc end:0x02249ac8
+
+src/Data/ov031/data_ov031_02249ac8.cpp:
+    complete
+    .data start:0x02249ac8 end:0x02249ad4
+
+src/Data/ov031/data_ov031_02249ae4.cpp:
+    complete
+    .data start:0x02249ae4 end:0x02249af4
+
+src/Data/ov031/data_ov031_02249af4.cpp:
+    complete
+    .data start:0x02249af4 end:0x02249b04
+
+src/Data/ov031/data_ov031_02249b04.cpp:
+    complete
+    .data start:0x02249b04 end:0x02249b20
+
+src/Data/ov031/data_ov031_02249b20.cpp:
+    complete
+    .data start:0x02249b20 end:0x02249b3c
+
+src/Data/ov031/data_ov031_02249b3c.cpp:
+    complete
+    .data start:0x02249b3c end:0x02249b48
+
+src/Data/ov031/data_ov031_02249b48.cpp:
+    complete
+    .data start:0x02249b48 end:0x02249b54
+
+src/Data/ov031/data_ov031_02249b70.cpp:
+    complete
+    .data start:0x02249b70 end:0x02249b98
+
+src/Data/ov031/data_ov031_02249b98.cpp:
+    complete
+    .data start:0x02249b98 end:0x02249ba8
+
+src/Data/ov031/data_ov031_02249ba8.cpp:
+    complete
+    .data start:0x02249ba8 end:0x02249bb8
+
+src/Data/ov031/data_ov031_02249bb8.cpp:
+    complete
+    .data start:0x02249bb8 end:0x02249bd8
+
+src/Data/ov031/data_ov031_02249bd8.cpp:
+    complete
+    .data start:0x02249bd8 end:0x02249be8
+
+src/Data/ov031/data_ov031_02249be8.cpp:
+    complete
+    .data start:0x02249be8 end:0x02249bf4
+
+src/Data/ov031/data_ov031_02249bf4.cpp:
+    complete
+    .data start:0x02249bf4 end:0x02249bfc
+
+src/Data/ov031/data_ov031_02249bfc.cpp:
+    complete
+    .data start:0x02249bfc end:0x02249c08
+
+src/Data/ov031/data_ov031_02249c08.cpp:
+    complete
+    .data start:0x02249c08 end:0x02249c14
+
+src/Data/ov031/data_ov031_02249c14.cpp:
+    complete
+    .data start:0x02249c14 end:0x02249c1c
+
+src/Data/ov031/data_ov031_02249c1c.cpp:
+    complete
+    .data start:0x02249c1c end:0x02249c24
+
+src/Data/ov031/data_ov031_02249c24.cpp:
+    complete
+    .data start:0x02249c24 end:0x02249c30
+
+src/Data/ov031/data_ov031_02249c30.cpp:
+    complete
+    .data start:0x02249c30 end:0x02249c3c
+
+src/Data/ov031/data_ov031_02249c3c.cpp:
+    complete
+    .data start:0x02249c3c end:0x02249c48
+
+src/Data/ov031/data_ov031_02249c48.cpp:
+    complete
+    .data start:0x02249c48 end:0x02249c54
+
+src/Data/ov031/data_ov031_02249c54.cpp:
+    complete
+    .data start:0x02249c54 end:0x02249c5c
+
+src/Data/ov031/data_ov031_02249c5c.cpp:
+    complete
+    .data start:0x02249c5c end:0x02249c64
+
+src/Data/ov031/data_ov031_02249c64.cpp:
+    complete
+    .data start:0x02249c64 end:0x02249c6c
+
+src/Data/ov031/data_ov031_02249c70.cpp:
+    complete
+    .data start:0x02249c70 end:0x02249c78
+
+src/Data/ov031/data_ov031_02249c78.cpp:
+    complete
+    .data start:0x02249c78 end:0x02249c84
+
+src/Data/ov031/data_ov031_02249c84.cpp:
+    complete
+    .data start:0x02249c84 end:0x02249c8c
+
+src/Data/ov031/data_ov031_02249c8c.cpp:
+    complete
+    .data start:0x02249c8c end:0x02249c94
+
+src/Data/ov031/data_ov031_02249c94.cpp:
+    complete
+    .data start:0x02249c94 end:0x02249c9c
+
+src/Data/ov031/data_ov031_02249c9c.cpp:
+    complete
+    .data start:0x02249c9c end:0x02249ca8
+
+src/Data/ov031/data_ov031_02249ca8.cpp:
+    complete
+    .data start:0x02249ca8 end:0x02249cc4
+
+src/Data/ov031/data_ov031_02249cc4.cpp:
+    complete
+    .data start:0x02249cc4 end:0x02249cd4
+
+src/Data/ov031/data_ov031_02249cd4.cpp:
+    complete
+    .data start:0x02249cd4 end:0x02249ce0
+
+src/Data/ov031/data_ov031_02249ce0.cpp:
+    complete
+    .data start:0x02249ce0 end:0x02249ce8
+
+src/Data/ov031/data_ov031_02249ce8.cpp:
+    complete
+    .data start:0x02249ce8 end:0x02249cf0
+
+src/Data/ov031/data_ov031_02249cf0.cpp:
+    complete
+    .data start:0x02249cf0 end:0x02249cf8
+
+src/Data/ov031/data_ov031_02249cf8.cpp:
+    complete
+    .data start:0x02249cf8 end:0x02249d00
+
+src/Data/ov031/data_ov031_02249d00.cpp:
+    complete
+    .data start:0x02249d00 end:0x02249d08
+
+src/Data/ov031/data_ov031_02249d08.cpp:
+    complete
+    .data start:0x02249d08 end:0x02249d10
+
+src/Data/ov031/data_ov031_02249d10.cpp:
+    complete
+    .data start:0x02249d10 end:0x02249d18
+
+src/Data/ov031/data_ov031_02249d18.cpp:
+    complete
+    .data start:0x02249d18 end:0x02249d20
+
+src/Data/ov031/data_ov031_02249d20.cpp:
+    complete
+    .data start:0x02249d20 end:0x02249d28
+
+src/Data/ov031/data_ov031_02249d28.cpp:
+    complete
+    .data start:0x02249d28 end:0x02249d30
+
+src/Data/ov031/data_ov031_02249d30.cpp:
+    complete
+    .data start:0x02249d30 end:0x02249d38
+
+src/Data/ov031/data_ov031_02249d38.cpp:
+    complete
+    .data start:0x02249d38 end:0x02249d40
+
+src/Data/ov031/data_ov031_02249d40.cpp:
+    complete
+    .data start:0x02249d40 end:0x02249d48
+
+src/Data/ov031/data_ov031_02249d48.cpp:
+    complete
+    .data start:0x02249d48 end:0x02249d50
+
+src/Data/ov031/data_ov031_02249d50.cpp:
+    complete
+    .data start:0x02249d50 end:0x02249d68
+
+src/Data/ov031/data_ov031_02249d68.cpp:
+    complete
+    .data start:0x02249d68 end:0x02249d74
+
+src/Data/ov031/data_ov031_02249d74.cpp:
+    complete
+    .data start:0x02249d74 end:0x02249d84
+
+src/Data/ov031/data_ov031_02249db4.cpp:
+    complete
+    .data start:0x02249db4 end:0x02249dcc
+
+src/Data/ov031/data_ov031_02249dcc.cpp:
+    complete
+    .data start:0x02249dcc end:0x02249de4
+
+src/Data/ov031/data_ov031_02249de4.cpp:
+    complete
+    .data start:0x02249de4 end:0x02249df0
+
+src/Data/ov031/data_ov031_02249df0.cpp:
+    complete
+    .data start:0x02249df0 end:0x02249df8
+
+src/Data/ov031/data_ov031_02249df8.cpp:
+    complete
+    .data start:0x02249df8 end:0x02249e00
+
+src/Data/ov031/data_ov031_02249e04.cpp:
+    complete
+    .data start:0x02249e04 end:0x02249e14
+
+src/Data/ov031/data_ov031_02249e14.cpp:
+    complete
+    .data start:0x02249e14 end:0x02249e28
+
+src/Data/ov031/data_ov031_02249e2c.cpp:
+    complete
+    .data start:0x02249e2c end:0x02249e44
+
+src/Data/ov031/data_ov031_02249e44.cpp:
+    complete
+    .data start:0x02249e44 end:0x02249e5c
+
+src/Data/ov031/data_ov031_02249e5c.cpp:
+    complete
+    .data start:0x02249e5c end:0x02249eb0
+
+src/Data/ov031/data_ov031_02249eb0.cpp:
+    complete
+    .data start:0x02249eb0 end:0x02249ed0
+
+src/Data/ov031/data_ov031_02249ed0.cpp:
+    complete
+    .data start:0x02249ed0 end:0x02249edc
+
+src/Data/ov031/data_ov031_02249ee0.cpp:
+    complete
+    .data start:0x02249ee0 end:0x02249ee8
+
+src/Data/ov031/data_ov031_02249eec.cpp:
+    complete
+    .data start:0x02249eec end:0x02249f00
+
+src/Data/ov031/data_ov031_02249f00.cpp:
+    complete
+    .data start:0x02249f00 end:0x02249f14
+
+src/Data/ov031/data_ov031_02249f14.cpp:
+    complete
+    .data start:0x02249f14 end:0x02249f24
+
+src/Data/ov031/data_ov031_02249f24.cpp:
+    complete
+    .data start:0x02249f24 end:0x02249f2c
+
+src/Data/ov031/data_ov031_02249f2c.cpp:
+    complete
+    .data start:0x02249f2c end:0x02249f38
+
+src/Data/ov031/data_ov031_02249f40.cpp:
+    complete
+    .data start:0x02249f40 end:0x02249f60
+
+src/Data/ov031/data_ov031_02249f60.cpp:
+    complete
+    .data start:0x02249f60 end:0x02249f80
+
+src/Data/ov031/data_ov031_02249f80.cpp:
+    complete
+    .data start:0x02249f80 end:0x02249f9c
+
+src/Data/ov031/data_ov031_02249f9c.cpp:
+    complete
+    .data start:0x02249f9c end:0x02249fb8
+
+src/Data/ov031/data_ov031_02249fbc.cpp:
+    complete
+    .data start:0x02249fbc end:0x02249fc8
+
+src/Data/ov031/data_ov031_02249fd8.cpp:
+    complete
+    .data start:0x02249fd8 end:0x02249ff4
+
+src/Data/ov031/data_ov031_02249ff4.cpp:
+    complete
+    .data start:0x02249ff4 end:0x0224a010
+
+src/Data/ov031/data_ov031_0224a014.cpp:
+    complete
+    .data start:0x0224a014 end:0x0224a038
+
+src/Data/ov031/data_ov031_0224a038.cpp:
+    complete
+    .data start:0x0224a038 end:0x0224a04c
+
+src/Data/ov031/data_ov031_0224a04c.cpp:
+    complete
+    .data start:0x0224a04c end:0x0224a05c
+
+src/Data/ov031/data_ov031_0224a05c.cpp:
+    complete
+    .data start:0x0224a05c end:0x0224a06c
+
+src/Data/ov031/data_ov031_0224a06c.cpp:
+    complete
+    .data start:0x0224a06c end:0x0224a088
+
+src/Data/ov031/data_ov031_0224a088.cpp:
+    complete
+    .data start:0x0224a088 end:0x0224a0a8
+
+src/Data/ov031/data_ov031_0224a0a8.cpp:
+    complete
+    .data start:0x0224a0a8 end:0x0224a0bc
+
+src/Data/ov031/data_ov031_0224a0bc.cpp:
+    complete
+    .data start:0x0224a0bc end:0x0224a0d8
+
+src/Data/ov031/data_ov031_0224a0d8.cpp:
+    complete
+    .data start:0x0224a0d8 end:0x0224a0e4
+
+src/Data/ov031/data_ov031_0224a0e4.cpp:
+    complete
+    .data start:0x0224a0e4 end:0x0224a0f4
+
+src/Data/ov031/data_ov031_0224a0f4.cpp:
+    complete
+    .data start:0x0224a0f4 end:0x0224a104
+
+src/Data/ov031/data_ov031_0224a104.cpp:
+    complete
+    .data start:0x0224a104 end:0x0224a124
+
+src/Data/ov031/data_ov031_0224a124.cpp:
+    complete
+    .data start:0x0224a124 end:0x0224a130
+
+src/Data/ov031/data_ov031_0224a130.cpp:
+    complete
+    .data start:0x0224a130 end:0x0224a150
+
+src/Data/ov031/data_ov031_0224a150.cpp:
+    complete
+    .data start:0x0224a150 end:0x0224a158
+
+src/Data/ov031/data_ov031_0224a158.cpp:
+    complete
+    .data start:0x0224a158 end:0x0224a160
+
+src/Data/ov031/data_ov031_0224a160.cpp:
+    complete
+    .data start:0x0224a160 end:0x0224a170
+
+src/Data/ov031/data_ov031_0224a170.cpp:
+    complete
+    .data start:0x0224a170 end:0x0224a178
+
+src/Data/ov031/data_ov031_0224a178.cpp:
+    complete
+    .data start:0x0224a178 end:0x0224a180
+
+src/Data/ov031/data_ov031_0224a180.cpp:
+    complete
+    .data start:0x0224a180 end:0x0224a18c
+
+src/Data/ov031/data_ov031_0224a190.cpp:
+    complete
+    .data start:0x0224a190 end:0x0224a198
+
+src/Data/ov031/data_ov031_0224a198.cpp:
+    complete
+    .data start:0x0224a198 end:0x0224a1a0
+
+src/Data/ov031/data_ov031_0224a1a0.cpp:
+    complete
+    .data start:0x0224a1a0 end:0x0224a1ac
+
+src/Data/ov031/data_ov031_0224a1ac.cpp:
+    complete
+    .data start:0x0224a1ac end:0x0224a1b8
+
+src/Data/ov031/data_ov031_0224a1b8.cpp:
+    complete
+    .data start:0x0224a1b8 end:0x0224a1c4
+
+src/Data/ov031/data_ov031_0224a224.cpp:
+    complete
+    .data start:0x0224a224 end:0x0224a244
+
+src/Data/ov031/data_ov031_0224a244.cpp:
+    complete
+    .data start:0x0224a244 end:0x0224a254
+
+src/Data/ov031/data_ov031_0224a254.cpp:
+    complete
+    .data start:0x0224a254 end:0x0224a264
+
+src/Data/ov031/data_ov031_0224a264.cpp:
+    complete
+    .data start:0x0224a264 end:0x0224a284
+
+src/Data/ov031/data_ov031_0224a284.cpp:
+    complete
+    .data start:0x0224a284 end:0x0224a28c
+
+src/Data/ov031/data_ov031_0224a28c.cpp:
+    complete
+    .data start:0x0224a28c end:0x0224a294
+
+src/Data/ov031/data_ov031_0224a298.cpp:
+    complete
+    .data start:0x0224a298 end:0x0224a2a0
+
+src/Data/ov031/data_ov031_0224a2a0.cpp:
+    complete
+    .data start:0x0224a2a0 end:0x0224a2ac
+
+src/Data/ov031/data_ov031_0224a2ac.cpp:
+    complete
+    .data start:0x0224a2ac end:0x0224a2b8
+
+src/Data/ov031/data_ov031_0224a2b8.cpp:
+    complete
+    .data start:0x0224a2b8 end:0x0224a2c0
+
+src/Data/ov031/data_ov031_0224a2c0.cpp:
+    complete
+    .data start:0x0224a2c0 end:0x0224a2d0
+
+src/Data/ov031/data_ov031_0224a2d0.cpp:
+    complete
+    .data start:0x0224a2d0 end:0x0224a2dc
+
+src/Data/ov031/data_ov031_0224a2e0.cpp:
+    complete
+    .data start:0x0224a2e0 end:0x0224a324
+
+src/Data/ov031/data_ov031_0224a33c.cpp:
+    complete
+    .data start:0x0224a33c end:0x0224a370
+
+src/Data/ov031/data_ov031_0224a488.cpp:
+    complete
+    .data start:0x0224a488 end:0x0224a4c0
+
+src/Data/ov031/data_ov031_0224a5d8.cpp:
+    complete
+    .data start:0x0224a5d8 end:0x0224a628
+
+src/Data/ov031/data_ov031_0224a6c0.cpp:
+    complete
+    .data start:0x0224a6c0 end:0x0224a6ec
+
+src/Data/ov031/data_ov031_0224a784.cpp:
+    complete
+    .data start:0x0224a784 end:0x0224a7d4
+
+src/Data/ov031/data_ov031_0224a8ec.cpp:
+    complete
+    .data start:0x0224a8ec end:0x0224a974
+
+src/Data/ov031/data_ov031_0224a98c.cpp:
+    complete
+    .data start:0x0224a98c end:0x0224aa0c
+
+src/Data/ov031/data_ov031_0224ab24.cpp:
+    complete
+    .data start:0x0224ab24 end:0x0224abb8
+
+src/Data/ov031/data_ov031_0224abd0.cpp:
+    complete
+    .data start:0x0224abd0 end:0x0224ac6c
+
+src/Data/ov031/data_ov031_0224ad84.cpp:
+    complete
+    .data start:0x0224ad84 end:0x0224adc8
+
+src/Data/ov031/data_ov031_0224ae60.cpp:
+    complete
+    .data start:0x0224ae60 end:0x0224aea4
+
+src/Data/ov031/data_ov031_0224af3c.cpp:
+    complete
+    .data start:0x0224af3c end:0x0224af6c
+
+src/Data/ov031/data_ov031_0224b0d0.cpp:
+    complete
+    .data start:0x0224b0d0 end:0x0224b0dc
+
+src/Data/ov031/data_ov031_0224b0dc.cpp:
+    complete
+    .data start:0x0224b0dc end:0x0224b0e4
+
+src/Data/ov031/data_ov031_0224b180.cpp:
+    complete
+    .data start:0x0224b180 end:0x0224b188
+
+src/Data/ov031/data_ov031_0224b188.cpp:
+    complete
+    .data start:0x0224b188 end:0x0224b194
+
+src/Data/ov031/data_ov031_0224b1d4.cpp:
+    complete
+    .data start:0x0224b1d4 end:0x0224b1dc
+
+src/Data/ov031/data_ov031_0224b1dc.cpp:
+    complete
+    .data start:0x0224b1dc end:0x0224b1f0
+
+src/Data/ov031/data_ov031_0224b1f0.cpp:
+    complete
+    .data start:0x0224b1f0 end:0x0224b204
+
+src/Data/ov031/data_ov031_0224b204.cpp:
+    complete
+    .data start:0x0224b204 end:0x0224b218
+
+src/Data/ov031/data_ov031_0224b218.cpp:
+    complete
+    .data start:0x0224b218 end:0x0224b22c
+
+src/Data/ov031/data_ov031_0224b22c.cpp:
+    complete
+    .data start:0x0224b22c end:0x0224b240
+
+src/Data/ov031/data_ov031_0224b240.cpp:
+    complete
+    .data start:0x0224b240 end:0x0224b258
+
+src/Data/ov031/data_ov031_0224b258.cpp:
+    complete
+    .data start:0x0224b258 end:0x0224b270
+
+src/Data/ov031/data_ov031_0224b270.cpp:
+    complete
+    .data start:0x0224b270 end:0x0224b288
+
+src/Data/ov031/data_ov031_0224b288.cpp:
+    complete
+    .data start:0x0224b288 end:0x0224b2a0
+
+src/Data/ov031/data_ov031_0224b2a0.cpp:
+    complete
+    .data start:0x0224b2a0 end:0x0224b2b8
+
+src/Data/ov031/data_ov031_0224b2b8.cpp:
+    complete
+    .data start:0x0224b2b8 end:0x0224b2d0
+
+src/Data/ov031/data_ov031_0224b2d0.cpp:
+    complete
+    .data start:0x0224b2d0 end:0x0224b2e8
+
+src/Data/ov031/data_ov031_0224b2e8.cpp:
+    complete
+    .data start:0x0224b2e8 end:0x0224b300
+
+src/Data/ov031/data_ov031_0224b300.cpp:
+    complete
+    .data start:0x0224b300 end:0x0224b318
+
+src/Data/ov031/data_ov031_0224b318.cpp:
+    complete
+    .data start:0x0224b318 end:0x0224b330
+
+src/Data/ov031/data_ov031_0224b330.cpp:
+    complete
+    .data start:0x0224b330 end:0x0224b348
+
+src/Data/ov031/data_ov031_0224b348.cpp:
+    complete
+    .data start:0x0224b348 end:0x0224b360
+
+src/Data/ov031/data_ov031_0224b360.cpp:
+    complete
+    .data start:0x0224b360 end:0x0224b378
+
+src/Data/ov031/data_ov031_0224b378.cpp:
+    complete
+    .data start:0x0224b378 end:0x0224b390
+
+src/Data/ov031/data_ov031_0224b390.cpp:
+    complete
+    .data start:0x0224b390 end:0x0224b3a8
+
+src/Data/ov031/data_ov031_0224b3a8.cpp:
+    complete
+    .data start:0x0224b3a8 end:0x0224b3c0
+
+src/Data/ov031/data_ov031_0224b410.cpp:
+    complete
+    .data start:0x0224b410 end:0x0224b424
+
+src/Data/ov031/data_ov031_0224b44c.cpp:
+    complete
+    .data start:0x0224b44c end:0x0224b47c
+
+src/Data/ov031/data_ov031_0224b47c.cpp:
+    complete
+    .data start:0x0224b47c end:0x0224b4ac
+
+src/Data/ov031/data_ov031_0224b4ac.cpp:
+    complete
+    .data start:0x0224b4ac end:0x0224b4dc
+
+src/Data/ov031/data_ov031_0224b608.cpp:
+    complete
+    .data start:0x0224b608 end:0x0224b628
+
+src/Data/ov031/data_ov031_0224b628.cpp:
+    complete
+    .data start:0x0224b628 end:0x0224b63c
+
+src/Data/ov031/data_ov031_0224b63c.cpp:
+    complete
+    .data start:0x0224b63c end:0x0224b654
+
+src/Data/ov031/data_ov031_0224b654.cpp:
+    complete
+    .data start:0x0224b654 end:0x0224b66c
+
+src/Data/ov031/data_ov031_0224b688.cpp:
+    complete
+    .data start:0x0224b688 end:0x0224b698
+
+src/Data/ov031/data_ov031_0224b698.cpp:
+    complete
+    .data start:0x0224b698 end:0x0224b6a8
+
+src/Data/ov031/data_ov031_0224b6a8.cpp:
+    complete
+    .data start:0x0224b6a8 end:0x0224b6b8
+
+src/Data/ov031/data_ov031_0224b6b8.cpp:
+    complete
+    .data start:0x0224b6b8 end:0x0224b6c8
+
+src/Data/ov031/data_ov031_0224b6c8.cpp:
+    complete
+    .data start:0x0224b6c8 end:0x0224b6d8
+
+src/Data/ov031/data_ov031_0224b6d8.cpp:
+    complete
+    .data start:0x0224b6d8 end:0x0224b6e8
+
+src/Data/ov031/data_ov031_0224b6e8.cpp:
+    complete
+    .data start:0x0224b6e8 end:0x0224b6f8
+
+src/Data/ov031/data_ov031_0224b714.cpp:
+    complete
+    .data start:0x0224b714 end:0x0224b724
+
+src/Data/ov031/data_ov031_0224b724.cpp:
+    complete
+    .data start:0x0224b724 end:0x0224b738
+
+src/Data/ov031/data_ov031_0224b738.cpp:
+    complete
+    .data start:0x0224b738 end:0x0224b74c
+
+src/Data/ov031/data_ov031_0224b74c.cpp:
+    complete
+    .data start:0x0224b74c end:0x0224b760
+
+src/Data/ov031/data_ov031_0224b760.cpp:
+    complete
+    .data start:0x0224b760 end:0x0224b774
+
+src/Data/ov031/data_ov031_0224b774.cpp:
+    complete
+    .data start:0x0224b774 end:0x0224b78c
+
+src/Data/ov031/data_ov031_0224b78c.cpp:
+    complete
+    .data start:0x0224b78c end:0x0224b7a4
+
+src/Data/ov031/data_ov031_0224b7a4.cpp:
+    complete
+    .data start:0x0224b7a4 end:0x0224b7bc
+
+src/Data/ov031/data_ov031_0224b7bc.cpp:
+    complete
+    .data start:0x0224b7bc end:0x0224b7d4
+
+src/Data/ov031/data_ov031_0224b7d4.cpp:
+    complete
+    .data start:0x0224b7d4 end:0x0224b7ec
+
+src/Data/ov031/data_ov031_0224b7ec.cpp:
+    complete
+    .data start:0x0224b7ec end:0x0224b804
+
+src/Data/ov031/data_ov031_0224b804.cpp:
+    complete
+    .data start:0x0224b804 end:0x0224b818
+
+src/Data/ov031/data_ov031_0224b818.cpp:
+    complete
+    .data start:0x0224b818 end:0x0224b82c
+
+src/Data/ov031/data_ov031_0224b82c.cpp:
+    complete
+    .data start:0x0224b82c end:0x0224b844
+
+src/Data/ov031/data_ov031_0224b844.cpp:
+    complete
+    .data start:0x0224b844 end:0x0224b85c
+
+src/Data/ov031/data_ov031_0224b85c.cpp:
+    complete
+    .data start:0x0224b85c end:0x0224b870
+
+src/Data/ov031/data_ov031_0224b870.cpp:
+    complete
+    .data start:0x0224b870 end:0x0224b884
+
+src/Data/ov031/data_ov031_0224b884.cpp:
+    complete
+    .data start:0x0224b884 end:0x0224b898
+
+src/Data/ov031/data_ov031_0224b898.cpp:
+    complete
+    .data start:0x0224b898 end:0x0224b8ac
+
+src/Data/ov031/data_ov031_0224b8ac.cpp:
+    complete
+    .data start:0x0224b8ac end:0x0224b8cc
+
+src/Data/ov031/data_ov031_0224b8cc.cpp:
+    complete
+    .data start:0x0224b8cc end:0x0224b8e0
+
+src/Data/ov031/data_ov031_0224b8e0.cpp:
+    complete
+    .data start:0x0224b8e0 end:0x0224b8f4
+
+src/Data/ov031/data_ov031_0224b8f4.cpp:
+    complete
+    .data start:0x0224b8f4 end:0x0224b90c
+
+src/Data/ov031/data_ov031_0224b90c.cpp:
+    complete
+    .data start:0x0224b90c end:0x0224b924
+
+src/Data/ov031/data_ov031_0224b924.cpp:
+    complete
+    .data start:0x0224b924 end:0x0224b938
+
+src/Data/ov031/data_ov031_0224b938.cpp:
+    complete
+    .data start:0x0224b938 end:0x0224b94c
+
+src/Data/ov031/data_ov031_0224b94c.cpp:
+    complete
+    .data start:0x0224b94c end:0x0224b960
+
+src/Data/ov031/data_ov031_0224b960.cpp:
+    complete
+    .data start:0x0224b960 end:0x0224b974
+
+src/Data/ov031/data_ov031_0224b974.cpp:
+    complete
+    .data start:0x0224b974 end:0x0224b988
+
+src/Data/ov031/data_ov031_0224b988.cpp:
+    complete
+    .data start:0x0224b988 end:0x0224b99c
+
+src/Data/ov031/data_ov031_0224b99c.cpp:
+    complete
+    .data start:0x0224b99c end:0x0224b9b4
+
+src/Data/ov031/data_ov031_0224b9b4.cpp:
+    complete
+    .data start:0x0224b9b4 end:0x0224b9cc
+
+src/Data/ov031/data_ov031_0224b9cc.cpp:
+    complete
+    .data start:0x0224b9cc end:0x0224b9e0
+
+src/Data/ov031/data_ov031_0224b9e0.cpp:
+    complete
+    .data start:0x0224b9e0 end:0x0224b9f4
+
+src/Data/ov031/data_ov031_0224b9f4.cpp:
+    complete
+    .data start:0x0224b9f4 end:0x0224ba0c
+
+src/Data/ov031/data_ov031_0224ba0c.cpp:
+    complete
+    .data start:0x0224ba0c end:0x0224ba20
+
+src/Data/ov031/data_ov031_0224ba20.cpp:
+    complete
+    .data start:0x0224ba20 end:0x0224ba38
+
+src/Data/ov031/data_ov031_0224ba38.cpp:
+    complete
+    .data start:0x0224ba38 end:0x0224ba50
+
+src/Data/ov031/data_ov031_0224ba50.cpp:
+    complete
+    .data start:0x0224ba50 end:0x0224ba64
+
+src/Data/ov031/data_ov031_0224ba64.cpp:
+    complete
+    .data start:0x0224ba64 end:0x0224ba7c
+
+src/Data/ov031/data_ov031_0224ba80.cpp:
+    complete
+    .data start:0x0224ba80 end:0x0224ba94
+
+src/Data/ov031/data_ov031_0224ba94.cpp:
+    complete
+    .data start:0x0224ba94 end:0x0224baac
+
+src/Data/ov031/data_ov031_0224baac.cpp:
+    complete
+    .data start:0x0224baac end:0x0224bac4
+
+src/Data/ov031/data_ov031_0224bac4.cpp:
+    complete
+    .data start:0x0224bac4 end:0x0224badc
+
+src/Data/ov031/data_ov031_0224badc.cpp:
+    complete
+    .data start:0x0224badc end:0x0224baf4
+
+src/Data/ov031/data_ov031_0224baf4.cpp:
+    complete
+    .data start:0x0224baf4 end:0x0224bb08
+
+src/Data/ov031/data_ov031_0224bb0c.cpp:
+    complete
+    .data start:0x0224bb0c end:0x0224bb20
+
+src/Data/ov031/data_ov031_0224bb20.cpp:
+    complete
+    .data start:0x0224bb20 end:0x0224bb38
+
+src/Data/ov031/data_ov031_0224bb38.cpp:
+    complete
+    .data start:0x0224bb38 end:0x0224bb50
+
+src/Data/ov031/data_ov031_0224bb50.cpp:
+    complete
+    .data start:0x0224bb50 end:0x0224bb64
+
+src/Data/ov031/data_ov031_0224bb64.cpp:
+    complete
+    .data start:0x0224bb64 end:0x0224bb7c
+
+src/Data/ov031/data_ov031_0224bb7c.cpp:
+    complete
+    .data start:0x0224bb7c end:0x0224bb8c
+
+src/Data/ov031/data_ov031_0224bb8c.cpp:
+    complete
+    .data start:0x0224bb8c end:0x0224bba4
+
+src/Data/ov031/data_ov031_0224bba4.cpp:
+    complete
+    .data start:0x0224bba4 end:0x0224bbbc
+
+src/Data/ov031/data_ov031_0224bbbc.cpp:
+    complete
+    .data start:0x0224bbbc end:0x0224bbd0
+
+src/Data/ov031/data_ov031_0224bbd0.cpp:
+    complete
+    .data start:0x0224bbd0 end:0x0224bbe4
+
+src/Data/ov031/data_ov031_0224bbe4.cpp:
+    complete
+    .data start:0x0224bbe4 end:0x0224bbf8
+
+src/Data/ov031/data_ov031_0224bbf8.cpp:
+    complete
+    .data start:0x0224bbf8 end:0x0224bc0c
+
+src/Data/ov031/data_ov031_0224bc0c.cpp:
+    complete
+    .data start:0x0224bc0c end:0x0224bc24
+
+src/Data/ov031/data_ov031_0224bc24.cpp:
+    complete
+    .data start:0x0224bc24 end:0x0224bc3c
+
+src/Data/ov031/data_ov031_0224bc3c.cpp:
+    complete
+    .data start:0x0224bc3c end:0x0224bc50
+
+src/Data/ov031/data_ov031_0224bc50.cpp:
+    complete
+    .data start:0x0224bc50 end:0x0224bc68
+
+src/Data/ov031/data_ov031_0224bc68.cpp:
+    complete
+    .data start:0x0224bc68 end:0x0224bc80
+
+src/Data/ov031/data_ov031_0224bc80.cpp:
+    complete
+    .data start:0x0224bc80 end:0x0224bc94
+
+src/Data/ov031/data_ov031_0224bc94.cpp:
+    complete
+    .data start:0x0224bc94 end:0x0224bca8
+
+src/Data/ov031/data_ov031_0224bca8.cpp:
+    complete
+    .data start:0x0224bca8 end:0x0224bcc0
+
+src/Data/ov031/data_ov031_0224bcc0.cpp:
+    complete
+    .data start:0x0224bcc0 end:0x0224bcd8
+
+src/Data/ov031/data_ov031_0224bcd8.cpp:
+    complete
+    .data start:0x0224bcd8 end:0x0224bcec
+
+src/Data/ov031/data_ov031_0224bcec.cpp:
+    complete
+    .data start:0x0224bcec end:0x0224bd04
+
+src/Data/ov031/data_ov031_0224bd04.cpp:
+    complete
+    .data start:0x0224bd04 end:0x0224bd1c
+
+src/Data/ov031/data_ov031_0224bd1c.cpp:
+    complete
+    .data start:0x0224bd1c end:0x0224bd34
+
+src/Data/ov031/data_ov031_0224bd34.cpp:
+    complete
+    .data start:0x0224bd34 end:0x0224bd48
+
+src/Data/ov031/data_ov031_0224bd48.cpp:
+    complete
+    .data start:0x0224bd48 end:0x0224bd60
+
+src/Data/ov031/data_ov031_0224bd60.cpp:
+    complete
+    .data start:0x0224bd60 end:0x0224bd78
+
+src/Data/ov031/data_ov031_0224bd78.cpp:
+    complete
+    .data start:0x0224bd78 end:0x0224bd8c
+
+src/Data/ov031/data_ov031_0224bd8c.cpp:
+    complete
+    .data start:0x0224bd8c end:0x0224bda0
+
+src/Data/ov031/data_ov031_0224bda0.cpp:
+    complete
+    .data start:0x0224bda0 end:0x0224bdb4
+
+src/Data/ov031/data_ov031_0224bdb4.cpp:
+    complete
+    .data start:0x0224bdb4 end:0x0224bdc8
+
+src/Data/ov031/data_ov031_0224bdc8.cpp:
+    complete
+    .data start:0x0224bdc8 end:0x0224bde0
+
+src/Data/ov031/data_ov031_0224bde0.cpp:
+    complete
+    .data start:0x0224bde0 end:0x0224bdf8
+
+src/Data/ov031/data_ov031_0224bdf8.cpp:
+    complete
+    .data start:0x0224bdf8 end:0x0224be0c
+
+src/Data/ov031/data_ov031_0224be0c.cpp:
+    complete
+    .data start:0x0224be0c end:0x0224be24
+
+src/Data/ov031/data_ov031_0224be24.cpp:
+    complete
+    .data start:0x0224be24 end:0x0224be3c
+
+src/Data/ov031/data_ov031_0224be3c.cpp:
+    complete
+    .data start:0x0224be3c end:0x0224be50
+
+src/Data/ov031/data_ov031_0224be50.cpp:
+    complete
+    .data start:0x0224be50 end:0x0224be60
+
+src/Data/ov031/data_ov031_0224be60.cpp:
+    complete
+    .data start:0x0224be60 end:0x0224be78
+
+src/Data/ov031/data_ov031_0224be78.cpp:
+    complete
+    .data start:0x0224be78 end:0x0224be8c
+
+src/Data/ov031/data_ov031_0224be8c.cpp:
+    complete
+    .data start:0x0224be8c end:0x0224bea0
+
+src/Data/ov031/data_ov031_0224bea0.cpp:
+    complete
+    .data start:0x0224bea0 end:0x0224beb4
+
+src/Data/ov031/data_ov031_0224beb4.cpp:
+    complete
+    .data start:0x0224beb4 end:0x0224bec8
+
+src/Data/ov031/data_ov031_0224bec8.cpp:
+    complete
+    .data start:0x0224bec8 end:0x0224bedc
+
+src/Data/ov031/data_ov031_0224bef0.cpp:
+    complete
+    .data start:0x0224bef0 end:0x0224bf04
+
+src/Data/ov031/data_ov031_0224bf04.cpp:
+    complete
+    .data start:0x0224bf04 end:0x0224bf18
+
+src/Data/ov031/data_ov031_0224bf18.cpp:
+    complete
+    .data start:0x0224bf18 end:0x0224bf30
+
+src/Data/ov031/data_ov031_0224bf30.cpp:
+    complete
+    .data start:0x0224bf30 end:0x0224bf48
+
+src/Data/ov031/data_ov031_0224bf48.cpp:
+    complete
+    .data start:0x0224bf48 end:0x0224bf60
+
+src/Data/ov031/data_ov031_0224bfd4.cpp:
+    complete
+    .data start:0x0224bfd4 end:0x0224bfec
+
+src/Data/ov031/data_ov031_0224bfec.cpp:
+    complete
+    .data start:0x0224bfec end:0x0224c008
+
+src/Data/ov031/data_ov031_0224c008.cpp:
+    complete
+    .data start:0x0224c008 end:0x0224c024
+
+src/Data/ov031/data_ov031_0224c024.cpp:
+    complete
+    .data start:0x0224c024 end:0x0224c040
+
+src/Data/ov031/data_ov031_0224c040.cpp:
+    complete
+    .data start:0x0224c040 end:0x0224c05c
+
+src/Data/ov031/data_ov031_0224c05c.cpp:
+    complete
+    .data start:0x0224c05c end:0x0224c078
+
+src/Data/ov031/data_ov031_0224c078.cpp:
+    complete
+    .data start:0x0224c078 end:0x0224c094
+
+src/Data/ov031/data_ov031_0224c094.cpp:
+    complete
+    .data start:0x0224c094 end:0x0224c0b0
+
+src/Data/ov031/data_ov031_0224c0b0.cpp:
+    complete
+    .data start:0x0224c0b0 end:0x0224c0cc
+
+src/Data/ov031/data_ov031_0224c0cc.cpp:
+    complete
+    .data start:0x0224c0cc end:0x0224c0e8
+
+src/Data/ov031/data_ov031_0224c0e8.cpp:
+    complete
+    .data start:0x0224c0e8 end:0x0224c104
+
+src/Data/ov031/data_ov031_0224c104.cpp:
+    complete
+    .data start:0x0224c104 end:0x0224c120
+
+src/Data/ov031/data_ov031_0224c120.cpp:
+    complete
+    .data start:0x0224c120 end:0x0224c13c
+
+src/Data/ov031/data_ov031_0224c13c.cpp:
+    complete
+    .data start:0x0224c13c end:0x0224c15c
+
+src/Data/ov031/data_ov031_0224c15c.cpp:
+    complete
+    .data start:0x0224c15c end:0x0224c17c
+
+src/Data/ov031/data_ov031_0224c17c.cpp:
+    complete
+    .data start:0x0224c17c end:0x0224c19c
+
+src/Data/ov031/data_ov031_0224c19c.cpp:
+    complete
+    .data start:0x0224c19c end:0x0224c1bc
+
+src/Data/ov031/data_ov031_0224c1bc.cpp:
+    complete
+    .data start:0x0224c1bc end:0x0224c1dc
+
+src/Data/ov031/data_ov031_0224c1dc.cpp:
+    complete
+    .data start:0x0224c1dc end:0x0224c1f8
+
+src/Data/ov031/data_ov031_0224c1f8.cpp:
+    complete
+    .data start:0x0224c1f8 end:0x0224c214
+
+src/Data/ov031/data_ov031_0224c214.cpp:
+    complete
+    .data start:0x0224c214 end:0x0224c230
+
+src/Data/ov031/data_ov031_0224c230.cpp:
+    complete
+    .data start:0x0224c230 end:0x0224c24c
+
+src/Data/ov031/data_ov031_0224c24c.cpp:
+    complete
+    .data start:0x0224c24c end:0x0224c26c
+
+src/Data/ov031/data_ov031_0224c26c.cpp:
+    complete
+    .data start:0x0224c26c end:0x0224c28c
+
+src/Data/ov031/data_ov031_0224c28c.cpp:
+    complete
+    .data start:0x0224c28c end:0x0224c2ac
+
+src/Data/ov031/data_ov031_0224c2ac.cpp:
+    complete
+    .data start:0x0224c2ac end:0x0224c2d0
+
+src/Data/ov031/data_ov031_0224c2d0.cpp:
+    complete
+    .data start:0x0224c2d0 end:0x0224c2f4
+
+src/Data/ov031/data_ov031_0224c2f4.cpp:
+    complete
+    .data start:0x0224c2f4 end:0x0224c318
+
+src/Data/ov031/data_ov031_0224c340.cpp:
+    complete
+    .data start:0x0224c340 end:0x0224c348
+
+src/Data/ov031/data_ov031_0224c34c.cpp:
+    complete
+    .data start:0x0224c34c end:0x0224c378
+
+src/Data/ov031/data_ov031_0224c378.cpp:
+    complete
+    .data start:0x0224c378 end:0x0224c3a4
+
+src/Data/ov031/data_ov031_0224c3a4.cpp:
+    complete
+    .data start:0x0224c3a4 end:0x0224c3c4
+
+src/Data/ov031/data_ov031_0224c3c4.cpp:
+    complete
+    .data start:0x0224c3c4 end:0x0224c3f4
+
+src/Data/ov031/data_ov031_0224c3f4.cpp:
+    complete
+    .data start:0x0224c3f4 end:0x0224c41c
+
+src/Data/ov031/data_ov031_0224c41c.cpp:
+    complete
+    .data start:0x0224c41c end:0x0224c434
+
+src/Data/ov031/data_ov031_0224c434.cpp:
+    complete
+    .data start:0x0224c434 end:0x0224c44c
+
+src/Data/ov031/data_ov031_0224c44c.cpp:
+    complete
+    .data start:0x0224c44c end:0x0224c464
+
+src/Data/ov031/data_ov031_0224c464.cpp:
+    complete
+    .data start:0x0224c464 end:0x0224c47c
+
+src/Data/ov031/data_ov031_0224c47c.cpp:
+    complete
+    .data start:0x0224c47c end:0x0224c498
+
+src/Data/ov031/data_ov031_0224c498.cpp:
+    complete
+    .data start:0x0224c498 end:0x0224c4c8
+
+src/Data/ov031/data_ov031_0224c4c8.cpp:
+    complete
+    .data start:0x0224c4c8 end:0x0224c4fc
+
+src/Data/ov031/data_ov031_0224c4fc.cpp:
+    complete
+    .data start:0x0224c4fc end:0x0224c520
+
+src/Data/ov031/data_ov031_0224c520.cpp:
+    complete
+    .data start:0x0224c520 end:0x0224c544
+
+src/Data/ov031/data_ov031_0224c544.cpp:
+    complete
+    .data start:0x0224c544 end:0x0224c55c
+
+src/Data/ov031/data_ov031_0224c55c.cpp:
+    complete
+    .data start:0x0224c55c end:0x0224c564
+
+src/Data/ov031/data_ov031_0224c564.cpp:
+    complete
+    .data start:0x0224c564 end:0x0224c56c
+
+src/Data/ov031/data_ov031_0224c580.cpp:
+    complete
+    .data start:0x0224c580 end:0x0224c590
+
+src/Data/ov031/data_ov031_0224c590.cpp:
+    complete
+    .data start:0x0224c590 end:0x0224c5a0
+
+src/Data/ov031/data_ov031_0224c5a0.cpp:
+    complete
+    .data start:0x0224c5a0 end:0x0224c5b0
+
+src/Data/ov031/data_ov031_0224c5c8.cpp:
+    complete
+    .data start:0x0224c5c8 end:0x0224c618
+
+src/Data/ov031/data_ov031_0224c698.cpp:
+    complete
+    .data start:0x0224c698 end:0x0224c6b0
+
+src/Data/ov031/data_ov031_0224c6b4.cpp:
+    complete
+    .data start:0x0224c6b4 end:0x0224c6c4
+
+src/Data/ov031/data_ov031_0224c6c4.cpp:
+    complete
+    .data start:0x0224c6c4 end:0x0224c6d0
+
+src/Data/ov031/data_ov031_0224c6d0.cpp:
+    complete
+    .data start:0x0224c6d0 end:0x0224c6dc
+
+src/Data/ov031/data_ov031_0224c6dc.cpp:
+    complete
+    .data start:0x0224c6dc end:0x0224c6e4
+
+src/Data/ov031/data_ov031_0224c6e4.cpp:
+    complete
+    .data start:0x0224c6e4 end:0x0224c6f0
+
+src/Data/ov031/data_ov031_0224c6f0.cpp:
+    complete
+    .data start:0x0224c6f0 end:0x0224c6f8
+
+src/Data/ov031/data_ov031_0224c6f8.cpp:
+    complete
+    .data start:0x0224c6f8 end:0x0224c700
+
+src/Data/ov031/data_ov031_0224c700.cpp:
+    complete
+    .data start:0x0224c700 end:0x0224c708
+
+src/Data/ov031/data_ov031_0224c708.cpp:
+    complete
+    .data start:0x0224c708 end:0x0224c710
+
+src/Data/ov031/data_ov031_0224c710.cpp:
+    complete
+    .data start:0x0224c710 end:0x0224c718
+
+src/Data/ov031/data_ov031_0224c718.cpp:
+    complete
+    .data start:0x0224c718 end:0x0224c720
+
+src/Data/ov031/data_ov031_0224c720.cpp:
+    complete
+    .data start:0x0224c720 end:0x0224c728
+
+src/Data/ov031/data_ov031_0224c728.cpp:
+    complete
+    .data start:0x0224c728 end:0x0224c730
+
+src/Data/ov031/data_ov031_0224c730.cpp:
+    complete
+    .data start:0x0224c730 end:0x0224c738
+
+src/Data/ov031/data_ov031_0224c738.cpp:
+    complete
+    .data start:0x0224c738 end:0x0224c748
+
+src/Data/ov031/data_ov031_0224c748.cpp:
+    complete
+    .data start:0x0224c748 end:0x0224c750
+
+src/Data/ov031/data_ov031_0224c754.cpp:
+    complete
+    .data start:0x0224c754 end:0x0224c760
+
+src/Data/ov031/data_ov031_0224c760.cpp:
+    complete
+    .data start:0x0224c760 end:0x0224c770
+
+src/Data/ov031/data_ov031_0224c770.cpp:
+    complete
+    .data start:0x0224c770 end:0x0224c778
+
+src/Data/ov031/data_ov031_0224c778.cpp:
+    complete
+    .data start:0x0224c778 end:0x0224c784
+
+src/Data/ov031/data_ov031_0224c784.cpp:
+    complete
+    .data start:0x0224c784 end:0x0224c794
+
+src/Data/ov031/data_ov031_0224c794.cpp:
+    complete
+    .data start:0x0224c794 end:0x0224c79c
+
+src/Data/ov031/data_ov031_0224c79c.cpp:
+    complete
+    .data start:0x0224c79c end:0x0224c7a4
+
+src/Data/ov031/data_ov031_0224c7a4.cpp:
+    complete
+    .data start:0x0224c7a4 end:0x0224c7ac
+
+src/Data/ov031/data_ov031_0224c7b0.cpp:
+    complete
+    .data start:0x0224c7b0 end:0x0224c7bc
+
+src/Data/ov031/data_ov031_0224c7bc.cpp:
+    complete
+    .data start:0x0224c7bc end:0x0224c7c4
+
+src/Data/ov031/data_ov031_0224c7cc.cpp:
+    complete
+    .data start:0x0224c7cc end:0x0224c7fc
+
+src/Data/ov031/data_ov031_0224c7fc.cpp:
+    complete
+    .data start:0x0224c7fc end:0x0224c830
+
+src/Data/ov031/data_ov031_0224c830.cpp:
+    complete
+    .data start:0x0224c830 end:0x0224c844
+
+src/Data/ov031/data_ov031_0224c848.cpp:
+    complete
+    .data start:0x0224c848 end:0x0224c850
+
+src/Data/ov031/data_ov031_0224c858.cpp:
+    complete
+    .data start:0x0224c858 end:0x0224c860
+
+src/Data/ov031/data_ov031_0224c860.cpp:
+    complete
+    .data start:0x0224c860 end:0x0224c870
+
+src/Data/ov031/data_ov031_0224c870.cpp:
+    complete
+    .data start:0x0224c870 end:0x0224c87c
+
+src/Data/ov031/data_ov031_0224c87c.cpp:
+    complete
+    .data start:0x0224c87c end:0x0224c888
+
+src/Data/ov031/data_ov031_0224c888.cpp:
+    complete
+    .data start:0x0224c888 end:0x0224c89c
+
+src/Data/ov031/data_ov031_0224c89c.cpp:
+    complete
+    .data start:0x0224c89c end:0x0224c8a4
+
+src/Data/ov031/data_ov031_0224c90c.cpp:
+    complete
+    .data start:0x0224c90c end:0x0224c920
+
+src/Data/ov031/data_ov031_0224c920.cpp:
+    complete
+    .data start:0x0224c920 end:0x0224c938
+
+src/Data/ov031/data_ov031_0224c938.cpp:
+    complete
+    .data start:0x0224c938 end:0x0224c93d
+
+src/Data/ov031/data_ov031_0224c93d.cpp:
+    complete
+    .data start:0x0224c93d end:0x0224c94e
+
+src/Data/ov031/data_ov031_022497e4.cpp:
+    complete
+    .data start:0x022497e4 end:0x022498e4
+
+src/Data/ov031/data_ov031_02249440.cpp:
+    complete
+    .rodata start:0x02249440 end:0x022494c0
+
+src/Data/ov031/data_ov031_022460e8.cpp:
+    complete
+    .rodata start:0x022460e8 end:0x02246110
+
+src/Data/ov031/data_ov031_0224b4dc.cpp:
+    complete
+    .data start:0x0224b4dc end:0x0224b540
+
+src/Data/ov031/data_ov031_0224b540.cpp:
+    complete
+    .data start:0x0224b540 end:0x0224b5a4
+
+src/Data/ov031/data_ov031_0224b5a4.cpp:
+    complete
+    .data start:0x0224b5a4 end:0x0224b608
+
+src/Data/ov031/data_ov031_0224a370.cpp:
+    complete
+    .data start:0x0224a370 end:0x0224a470
+
+src/Data/ov031/data_ov031_0224a324.cpp:
+    complete
+    .data start:0x0224a324 end:0x0224a328
+
+src/Data/ov031/data_ov031_0224a4c0.cpp:
+    complete
+    .data start:0x0224a4c0 end:0x0224a5c0
+
+src/Data/ov031/data_ov031_0224a470.cpp:
+    complete
+    .data start:0x0224a470 end:0x0224a474
+
+src/Data/ov031/data_ov031_0224a628.cpp:
+    complete
+    .data start:0x0224a628 end:0x0224a6a8
+
+src/Data/ov031/data_ov031_0224a5c0.cpp:
+    complete
+    .data start:0x0224a5c0 end:0x0224a5c4
+
+src/Data/ov031/data_ov031_0224a6ec.cpp:
+    complete
+    .data start:0x0224a6ec end:0x0224a76c
+
+src/Data/ov031/data_ov031_0224a6a8.cpp:
+    complete
+    .data start:0x0224a6a8 end:0x0224a6ac
+
+src/Data/ov031/data_ov031_0224a7d4.cpp:
+    complete
+    .data start:0x0224a7d4 end:0x0224a854
+
+src/Data/ov031/data_ov031_0224a76c.cpp:
+    complete
+    .data start:0x0224a76c end:0x0224a770
+
+src/Data/ov031/data_ov031_0224a86c.cpp:
+    complete
+    .data start:0x0224a86c end:0x0224a8ec
+
+src/Data/ov031/data_ov031_0224a854.cpp:
+    complete
+    .data start:0x0224a854 end:0x0224a858
+
+src/Data/ov031/data_ov031_0224aa0c.cpp:
+    complete
+    .data start:0x0224aa0c end:0x0224aa8c
+
+src/Data/ov031/data_ov031_0224a974.cpp:
+    complete
+    .data start:0x0224a974 end:0x0224a978
+
+src/Data/ov031/data_ov031_0224aaa4.cpp:
+    complete
+    .data start:0x0224aaa4 end:0x0224ab24
+
+src/Data/ov031/data_ov031_0224aa8c.cpp:
+    complete
+    .data start:0x0224aa8c end:0x0224aa90
+
+src/Data/ov031/data_ov031_0224ac6c.cpp:
+    complete
+    .data start:0x0224ac6c end:0x0224ad6c
+
+src/Data/ov031/data_ov031_0224abb8.cpp:
+    complete
+    .data start:0x0224abb8 end:0x0224abbc
+
+src/Data/ov031/data_ov031_0224adc8.cpp:
+    complete
+    .data start:0x0224adc8 end:0x0224ae48
+
+src/Data/ov031/data_ov031_0224ad6c.cpp:
+    complete
+    .data start:0x0224ad6c end:0x0224ad70
+
+src/Data/ov031/data_ov031_0224aea4.cpp:
+    complete
+    .data start:0x0224aea4 end:0x0224af24
+
+src/Data/ov031/data_ov031_0224ae48.cpp:
+    complete
+    .data start:0x0224ae48 end:0x0224ae4c
+
+src/Data/ov031/data_ov031_0224af6c.cpp:
+    complete
+    .data start:0x0224af6c end:0x0224b06c
+
+src/Data/ov031/data_ov031_0224af24.cpp:
+    complete
+    .data start:0x0224af24 end:0x0224af28
+
+src/Data/ov031/data_ov031_0224a328.cpp:
+    complete
+    .data start:0x0224a328 end:0x0224a33c
+
+src/Data/ov031/data_ov031_0224a474.cpp:
+    complete
+    .data start:0x0224a474 end:0x0224a488
+
+src/Data/ov031/data_ov031_0224a5c4.cpp:
+    complete
+    .data start:0x0224a5c4 end:0x0224a5d8
+
+src/Data/ov031/data_ov031_0224a6ac.cpp:
+    complete
+    .data start:0x0224a6ac end:0x0224a6c0
+
+src/Data/ov031/data_ov031_0224a770.cpp:
+    complete
+    .data start:0x0224a770 end:0x0224a784
+
+src/Data/ov031/data_ov031_0224a858.cpp:
+    complete
+    .data start:0x0224a858 end:0x0224a86c
+
+src/Data/ov031/data_ov031_0224a978.cpp:
+    complete
+    .data start:0x0224a978 end:0x0224a98c
+
+src/Data/ov031/data_ov031_0224aa90.cpp:
+    complete
+    .data start:0x0224aa90 end:0x0224aaa4
+
+src/Data/ov031/data_ov031_0224abbc.cpp:
+    complete
+    .data start:0x0224abbc end:0x0224abd0
+
+src/Data/ov031/data_ov031_0224ad70.cpp:
+    complete
+    .data start:0x0224ad70 end:0x0224ad84
+
+src/Data/ov031/data_ov031_0224ae4c.cpp:
+    complete
+    .data start:0x0224ae4c end:0x0224ae60
+
+src/Data/ov031/data_ov031_0224af28.cpp:
+    complete
+    .data start:0x0224af28 end:0x0224af3c
+
+src/Data/ov031/data_ov031_02249d84.cpp:
+    complete
+    .data start:0x02249d84 end:0x02249db4
+
+src/Data/ov031/data_ov031_0224b3c0.cpp:
+    complete
+    .data start:0x0224b3c0 end:0x0224b410
+
+src/Data/ov031/data_ov031_0224bf60.cpp:
+    complete
+    .data start:0x0224bf60 end:0x0224bfd4
+
+src/Data/ov031/data_ov031_0224c318.cpp:
+    complete
+    .data start:0x0224c318 end:0x0224c340
+
+src/Data/ov031/data_ov031_022497a4.cpp:
+    complete
+    .data start:0x022497a4 end:0x022497e4
+
+src/Data/ov031/data_ov031_022495b4.cpp:
+    complete
+    .rodata start:0x022495b4 end:0x022495d4
+
+src/Data/ov031/data_ov031_02249974.cpp:
+    complete
+    .data start:0x02249974 end:0x022499f4
+
+src/Data/ov031/data_ov031_02249924.cpp:
+    complete
+    .data start:0x02249924 end:0x02249928
+
+src/Data/ov031/data_ov031_0224c618.cpp:
+    complete
+    .data start:0x0224c618 end:0x0224c698
+
+src/Data/ov031/data_ov031_0224c5b0.cpp:
+    complete
+    .data start:0x0224c5b0 end:0x0224c5b4
+
+src/Data/ov031/data_ov031_02249930.cpp:
+    complete
+    .data start:0x02249930 end:0x02249944
+
+src/Data/ov031/data_ov031_0224c5b4.cpp:
+    complete
+    .data start:0x0224c5b4 end:0x0224c5c8
+
+src/Data/ov031/data_ov031_02248a0c.cpp:
+    complete
+    .rodata start:0x02248a0c end:0x02248ac8
+
+src/Data/ov031/data_ov031_02248cda.cpp:
+    complete
+    .rodata start:0x02248cda end:0x02248d02
+
+src/Data/ov031/data_ov031_02248b9c.cpp:
+    complete
+    .rodata start:0x02248b9c end:0x02248c70
+
+src/Data/ov031/data_ov031_02248d3a.cpp:
+    complete
+    .rodata start:0x02248d3a end:0x02248d74
+
+src/Data/ov031/data_ov031_0224e9a0.cpp:
+    complete
+    .bss start:0x0224e9a0 end:0x0224eda0
+
+src/Data/ov031/data_ov031_0224d9c0.cpp:
+    complete
+    .bss start:0x0224d9c0 end:0x0224e1c0
+
+src/Data/ov031/data_ov031_0224b0e4.cpp:
+    complete
+    .data start:0x0224b0e4 end:0x0224b114
+
+src/Data/ov031/data_ov031_02245ff4.cpp:
+    complete
+    .rodata start:0x02245ff4 end:0x02246028
+
+src/Data/ov031/data_ov031_0224b424.cpp:
+    complete
+    .data start:0x0224b424 end:0x0224b430
+
+src/Data/ov031/data_ov031_0224b430.cpp:
+    complete
+    .data start:0x0224b430 end:0x0224b43c
+
+src/Data/ov031/data_ov031_0224b6f8.cpp:
+    complete
+    .data start:0x0224b6f8 end:0x0224b714
+
+src/Data/ov031/data_ov031_0224bedc.cpp:
+    complete
+    .data start:0x0224bedc end:0x0224bef0
+
+src/Data/ov031/data_ov031_0224c570.cpp:
+    complete
+    .data start:0x0224c570 end:0x0224c578
+
+src/Data/ov031/data_ov031_0224c578.cpp:
+    complete
+    .data start:0x0224c578 end:0x0224c580
+
+src/Data/ov031/data_ov031_02249ad4.cpp:
+    complete
+    .data start:0x02249ad4 end:0x02249ae4
+
+src/Data/ov031/data_ov031_02249724.cpp:
+    complete
+    .data start:0x02249724 end:0x02249730
+
+src/Data/ov031/data_ov031_02249730.cpp:
+    complete
+    .data start:0x02249730 end:0x0224973c
+
+src/Data/ov031/data_ov031_0224973c.cpp:
+    complete
+    .data start:0x0224973c end:0x02249748
+
+src/Data/ov031/data_ov031_02249582.cpp:
+    complete
+    .rodata start:0x02249582 end:0x02249594
+
+src/Data/ov031/data_ov031_0224c94e.cpp:
+    complete
+    .data start:0x0224c94e end:0x0224c954
+
+src/Data/ov031/data_ov031_02248e5c.cpp:
+    complete
+    .rodata start:0x02248e5c end:0x02248e84
+
+src/Data/ov031/data_ov031_0224909a.cpp:
+    complete
+    .rodata start:0x0224909a end:0x022490d2
+
+src/Data/ov031/data_ov031_02249158.cpp:
+    complete
+    .rodata start:0x02249158 end:0x02249198
+
+src/Data/ov031/data_ov031_0224912e.cpp:
+    complete
+    .rodata start:0x0224912e end:0x02249150
+
+src/Data/ov031/data_ov031_02248ac8.cpp:
+    complete
+    .rodata start:0x02248ac8 end:0x02248aca
+
+src/Data/ov031/data_ov031_02248aca.cpp:
+    complete
+    .rodata start:0x02248aca end:0x02248b9c
+
+src/Data/ov031/data_ov031_02248d02.cpp:
+    complete
+    .rodata start:0x02248d02 end:0x02248d04
+
+src/Data/ov031/data_ov031_02248d04.cpp:
+    complete
+    .rodata start:0x02248d04 end:0x02248d3a
+
+src/Unclassified/ov031/SetMainLoopCallback.cpp:
+    complete
+    .text start:0x022274c0 end:0x022274d0
+
+src/Unclassified/ov031/OV031_StoreGlobalContextWord10.cpp:
+    complete
+    .text start:0x0221d060 end:0x0221d06c
+
+src/Unclassified/ov031/OV031_GetEightByteEntry.cpp:
+    complete
+    .text start:0x0223baa0 end:0x0223baac
+
+src/Unclassified/ov031/OV031_WriteWordField08.cpp:
+    complete
+    .text start:0x0223e2b8 end:0x0223e2c0
+
+src/Unclassified/ov031/ReadSharedObjectWord2260WithIRQDisabled.cpp:
+    complete
+    .text start:0x0220d540 end:0x0220d570
+
+src/Unclassified/ov031/WaitForSharedObjectWord2C.cpp:
+    complete
+    .text start:0x0220fea0 end:0x0220fed8
+
+src/Unclassified/ov031/SetSharedWordPairUnlessStateNine.cpp:
+    complete
+    .text start:0x02211b08 end:0x02211b20
+
+src/Unclassified/ov031/ReadOptionalObjectByteNine.cpp:
+    complete
+    .text start:0x022134b0 end:0x022134cc
+
+src/Unclassified/ov031/SetSharedWords10And14.cpp:
+    complete
+    .text start:0x022274d0 end:0x022274e4
+
+src/Unclassified/ov031/ReadOptionalSharedWords18And1C.cpp:
+    complete
+    .text start:0x02227520 end:0x02227548
+
+src/Unclassified/ov031/ReadSharedFirstByte.cpp:
+    complete
+    .text start:0x02227548 end:0x02227558
+
+src/Unclassified/ov031/ReadSharedObjectSignedByte1B.cpp:
+    complete
+    .text start:0x02237e9c end:0x02237eb0
+
+src/Unclassified/ov031/SetSharedObjectWord54UnlessStateNineOrTen.cpp:
+    complete
+    .text start:0x022393e4 end:0x02239404
+
+src/Unclassified/ov031/SetSpriteAttributePriority.cpp:
+    complete
+    .text start:0x0223bcc8 end:0x0223bd28
+
+src/Unclassified/ov031/BuildHalfwordRectangleFromOriginAndSize.cpp:
+    complete
+    .text start:0x0223cb34 end:0x0223cb68
+
+src/Unclassified/ov031/ClearDisplayPlaneMask.cpp:
+    complete
+    .text start:0x0223cbbc end:0x0223cc18
+
+src/Unclassified/ov031/FreeSharedAllocationAndClearFlagWithInterruptMask.cpp:
+    complete
+    .text start:0x0223cf70 end:0x0223cfb4
+
+src/Unclassified/ov031/ExpandPackedSixByteEntriesToEight.cpp:
+    complete
+    .text start:0x0223bdb0 end:0x0223be44
+
+src/Unclassified/ov031/InitializeFourWordDigestState.cpp:
+    complete
+    .text start:0x0220afe0 end:0x0220b028
+
+src/Unclassified/ov031/GetOverlaySharedWord.cpp:
+    complete
+    .text start:0x0220d60c end:0x0220d61c
+
+src/Unclassified/ov031/SetSharedByte18.cpp:
+    complete
+    .text start:0x02222e98 end:0x02222eb0
+
+src/Unclassified/ov031/SetMainLoopWordPair.cpp:
+    complete
+    .text start:0x0222750c end:0x02227520
+
+src/Unclassified/ov031/ReadPackedEntryFields.cpp:
+    complete
+    .text start:0x0223bd28 end:0x0223bd58
+
+src/Unclassified/ov031/ReadSelectedContextByte9.cpp:
+    complete
+    .text start:0x0223c054 end:0x0223c078
+
+src/Unclassified/ov031/EnableDisplayControlPlaneBits.cpp:
+    complete
+    .text start:0x0223cb68 end:0x0223cbbc
+
+src/Unclassified/ov031/AreInputMaskBitsHeld.cpp:
+    complete
+    .text start:0x0223d354 end:0x0223d394
+
+src/Unclassified/ov031/IsInputPointWithinRectangle.cpp:
+    complete
+    .text start:0x0223d49c end:0x0223d524
+
+src/Unclassified/ov031/ReadSharedSignedByteAtOffset22.cpp:
+    complete
+    .text start:0x02222e0c end:0x02222e20
+
+src/Unclassified/ov031/GetSharedObjectRegionAtOffset1024.cpp:
+    complete
+    .text start:0x02235c70 end:0x02235c84
+
+src/Unclassified/ov031/HasSharedObjectPointer.cpp:
+    complete
+    .text start:0x02237eb0 end:0x02237ecc
+
+src/Unclassified/ov031/SetSharedStateAndManageStateNineAlarm.cpp:
+    complete
+    .text start:0x0220da1c end:0x0220dab4
+
+src/Unclassified/ov031/TrimTrailingZeroHalfwords.cpp:
+    complete
+    .text start:0x0220bb24 end:0x0220bb4c
+
+src/Unclassified/ov031/StoreIndirectStateWord.cpp:
+    complete
+    .text start:0x022103dc end:0x022103f8
+
+src/Unclassified/ov031/SelectStateWordByPriorityMask.cpp:
+    complete
+    .text start:0x022133f8 end:0x02213450
+
+src/Unclassified/ov031/SetPendingByteIfInvalid.cpp:
+    complete
+    .text start:0x02222e20 end:0x02222e40
+
+src/Unclassified/ov031/SetStateByteAt1E.cpp:
+    complete
+    .text start:0x0223521c end:0x02235234
+
+src/Unclassified/ov031/InitializeSha1FiveWordDigestState.cpp:
+    complete
+    .text start:0x0220b8a0 end:0x0220b8f4
+
+src/Unclassified/ov031/DecodePackedGlobalIdentifierFields.cpp:
+    complete
+    .text start:0x0221ae00 end:0x0221aed8
+
+src/Unclassified/ov031/IsGlobalControlAbsentOrByte19Clear.cpp:
+    complete
+    .text start:0x02222e54 end:0x02222e80
+
+src/Unclassified/ov031/ClearGlobalControlByte18.cpp:
+    complete
+    .text start:0x02222e80 end:0x02222e98
+
+src/Unclassified/ov031/MarkPrimaryOrSecondaryBufferReady.cpp:
+    complete
+    .text start:0x0223caec end:0x0223cb10
+
+src/Unclassified/ov031/TestControlMaskUnlessHardwareFlagSet.cpp:
+    complete
+    .text start:0x0223d394 end:0x0223d3d4
+
+src/Unclassified/ov031/SetTransferModeAndResetStatus.cpp:
+    complete
+    .text start:0x02245528 end:0x02245548
+
+src/Unclassified/ov031/CheckValueEqualsThree.cpp:
+    complete
+    .text start:0x02208aa0 end:0x02208ab0
+
+src/Unclassified/ov031/SetObjectFlagBitZero.cpp:
+    complete
+    .text start:0x02211754 end:0x02211764
+
+src/Unclassified/ov031/OV031_GetConstant12D0.cpp:
+    complete
+    .text start:0x02210044 end:0x02210050
+
+src/Unclassified/ov031/WriteTwoHalfwords.cpp:
+    complete
+    .text start:0x0223cb10 end:0x0223cb1c
+
+src/Unclassified/ov031/ReadPrimaryOrFallbackPointerAt64.cpp:
+    complete
+    .text start:0x02205194 end:0x022051A8
+
+src/Unclassified/ov031/InvertLower16Bits.cpp:
+    complete
+    .text start:0x02200668 end:0x02200684
+
+src/Unclassified/ov031/StoreValueAtIndirectOffsetA0C.cpp:
+    complete
+    .text start:0x02210314 end:0x0221032C
+
+src/Unclassified/ov031/ReadGlobalHalfwordValue.cpp:
+    complete
+    .text start:0x0223911c end:0x02239130
+
+src/Unclassified/ov031/IsWordField0CAtMostUnsignedValue.cpp:
+    complete
+    .text start:0x022407e4 end:0x022407f8
+
+src/Unclassified/ov031/SleepOrCycleCurrentContextFromSharedState.cpp:
+    complete
+    .text start:0x02200264 end:0x0220028c
+
+src/Unclassified/ov031/SendMessageToOverlayQueueIfArgumentPresent.cpp:
+    complete
+    .text start:0x02205174 end:0x02205194
+
+src/Unclassified/ov031/SetGlobalWordAtOffset28.cpp:
+    complete
+    .text start:0x0220f0e4 end:0x0220f104
+
+src/Unclassified/ov031/IsByteWithinObservedRange.cpp:
+    complete
+    .text start:0x0221b258 end:0x0221b284
+
+src/Unclassified/ov031/SetSharedByteAtOffset16.cpp:
+    complete
+    .text start:0x02222e40 end:0x02222e54
+
+src/Unclassified/ov031/UnlinkPointerPair.cpp:
+    complete
+    .text start:0x0223d8a0 end:0x0223d8d8
+
+src/Unclassified/ov031/PointerPairHasNonSentinelValues.cpp:
+    complete
+    .text start:0x02201b94 end:0x02201bb4
+
+src/Unclassified/ov031/AlignAddressToWord.cpp:
+    complete
+    .text start:0x022070bc end:0x022070c8
+
+src/Unclassified/ov031/func_ov031_0220028c.cpp:
+    complete
+    .text start:0x0220028c end:0x02200290
+
+src/Unclassified/ov031/func_ov031_02228384.cpp:
+    complete
+    .text start:0x02228384 end:0x02228388
+
+src/Unclassified/ov031/func_ov031_02228768.cpp:
+    complete
+    .text start:0x02228768 end:0x0222876c
+
+src/Unclassified/ov031/func_ov031_02228ae0.cpp:
+    complete
+    .text start:0x02228ae0 end:0x02228ae4
+
+src/Unclassified/ov031/func_ov031_02228f50.cpp:
+    complete
+    .text start:0x02228f50 end:0x02228f54
+
+src/Unclassified/ov031/func_ov031_02229480.cpp:
+    complete
+    .text start:0x02229480 end:0x02229484
+
+src/Unclassified/ov031/func_ov031_022298a0.cpp:
+    complete
+    .text start:0x022298a0 end:0x022298a4
+
+src/Unclassified/ov031/func_ov031_022298a4.cpp:
+    complete
+    .text start:0x022298a4 end:0x022298a8
+
+src/Unclassified/ov031/func_ov031_02229b30.cpp:
+    complete
+    .text start:0x02229b30 end:0x02229b34
+
+src/Unclassified/ov031/func_ov031_02229d50.cpp:
+    complete
+    .text start:0x02229d50 end:0x02229d54
+
+src/Unclassified/ov031/func_ov031_02229fe4.cpp:
+    complete
+    .text start:0x02229fe4 end:0x02229fe8
+
+src/Unclassified/ov031/func_ov031_0222a284.cpp:
+    complete
+    .text start:0x0222a284 end:0x0222a288
+
+src/Unclassified/ov031/func_ov031_0222a53c.cpp:
+    complete
+    .text start:0x0222a53c end:0x0222a540
+
+src/Unclassified/ov031/func_ov031_0222a900.cpp:
+    complete
+    .text start:0x0222a900 end:0x0222a904
+
+src/Unclassified/ov031/func_ov031_0222a904.cpp:
+    complete
+    .text start:0x0222a904 end:0x0222a908
+
+src/Unclassified/ov031/func_ov031_0222ac58.cpp:
+    complete
+    .text start:0x0222ac58 end:0x0222ac5c
+
+src/Unclassified/ov031/func_ov031_0222b1a0.cpp:
+    complete
+    .text start:0x0222b1a0 end:0x0222b1a4
+
+src/Unclassified/ov031/func_ov031_0222b560.cpp:
+    complete
+    .text start:0x0222b560 end:0x0222b564
+
+src/Unclassified/ov031/func_ov031_0222d090.cpp:
+    complete
+    .text start:0x0222d090 end:0x0222d094
+
+src/Unclassified/ov031/func_ov031_0222de04.cpp:
+    complete
+    .text start:0x0222de04 end:0x0222de08
+
+src/Unclassified/ov031/func_ov031_0222e8c4.cpp:
+    complete
+    .text start:0x0222e8c4 end:0x0222e8c8
+
+src/Unclassified/ov031/func_ov031_02231080.cpp:
+    complete
+    .text start:0x02231080 end:0x02231084
+
+src/Unclassified/ov031/func_ov031_02231084.cpp:
+    complete
+    .text start:0x02231084 end:0x02231088
+
+src/Unclassified/ov031/func_ov031_022312dc.cpp:
+    complete
+    .text start:0x022312dc end:0x022312e0
+
+src/Unclassified/ov031/func_ov031_022316f4.cpp:
+    complete
+    .text start:0x022316f4 end:0x022316f8
+
+src/Unclassified/ov031/func_ov031_02231aac.cpp:
+    complete
+    .text start:0x02231aac end:0x02231ab0
+
+src/Unclassified/ov031/func_ov031_02231dc8.cpp:
+    complete
+    .text start:0x02231dc8 end:0x02231dcc
+
+src/Unclassified/ov031/func_ov031_02232350.cpp:
+    complete
+    .text start:0x02232350 end:0x02232354
+
+src/Unclassified/ov031/func_ov031_0223294c.cpp:
+    complete
+    .text start:0x0223294c end:0x02232950
+
+src/Unclassified/ov031/func_ov031_022336a8.cpp:
+    complete
+    .text start:0x022336a8 end:0x022336ac
+
+src/Unclassified/ov031/func_ov031_02233c88.cpp:
+    complete
+    .text start:0x02233c88 end:0x02233c8c
+
+src/Unclassified/ov031/func_ov031_02233c8c.cpp:
+    complete
+    .text start:0x02233c8c end:0x02233c90
+
+src/Unclassified/ov031/func_ov031_02233c90.cpp:
+    complete
+    .text start:0x02233c90 end:0x02233c94
+
+src/Unclassified/ov031/func_ov031_02233f50.cpp:
+    complete
+    .text start:0x02233f50 end:0x02233f54
+
+src/Unclassified/ov031/func_ov031_0223429c.cpp:
+    complete
+    .text start:0x0223429c end:0x022342a0
+
+src/Unclassified/ov031/func_ov031_022342a0.cpp:
+    complete
+    .text start:0x022342a0 end:0x022342a4
+
+src/Unclassified/ov031/func_ov031_0223443c.cpp:
+    complete
+    .text start:0x0223443c end:0x02234440
+
+src/Unclassified/ov031/func_ov031_0223471c.cpp:
+    complete
+    .text start:0x0223471c end:0x02234720
+
+src/Unclassified/ov031/func_ov031_02234adc.cpp:
+    complete
+    .text start:0x02234adc end:0x02234ae0
+
+src/Unclassified/ov031/func_ov031_0223fa08.cpp:
+    complete
+    .text start:0x0223fa08 end:0x0223fa0c
+
+src/Unclassified/ov031/func_ov031_0223fa5c.cpp:
+    complete
+    .text start:0x0223fa5c end:0x0223fa60
+
+src/Unclassified/ov031/func_ov031_0224030c.cpp:
+    complete
+    .text start:0x0224030c end:0x02240310
+
+src/Unclassified/ov031/func_ov031_02200290.cpp:
+    complete
+    .text start:0x02200290 end:0x02200298
+
+src/Unclassified/ov031/func_ov031_0223b614.cpp:
+    complete
+    .text start:0x0223b614 end:0x0223b61c
+
+src/Unclassified/ov031/func_ov031_02243008.cpp:
+    complete
+    .text start:0x02243008 end:0x02243010
+
+src/Unclassified/ov031/func_ov031_02243010.cpp:
+    complete
+    .text start:0x02243010 end:0x02243018
+
+src/Unclassified/ov031/SetStateWithTransitionCallbacks.cpp:
+    complete
+    .text start:0x02239368 end:0x022393e4
+
+src/System/ov031/Overlay_SetSharedFlag.cpp:
+    complete
+    .text start:0x0220eb88 end:0x0220ec04
+
+src/System/ov031/System_WaitForPendingResult.cpp:
+    complete
+    .text start:0x02203500 end:0x0220357c
+
+src/System/ov031/System_SynchronizeIpcModeWithHardwareFlag.cpp:
+    complete
+    .text start:0x0223d704 end:0x0223d780
+
+src/Unclassified/ov031/StoreAndValidateModeFlags.cpp:
+    complete
+    .text start:0x022270ac end:0x02227128
+
+src/Util/ov031/Util_ReadLinkedBufferByte.cpp:
+    complete
+    .text start:0x0224046c end:0x022404e8
+
+src/Unclassified/ov031/func_ov031_02207428.cpp:
+    complete
+    .text start:0x02207428 end:0x02207434
+
+src/Unclassified/ov031/func_ov031_02207434.cpp:
+    complete
+    .text start:0x02207434 end:0x02207440
+
+src/Unclassified/ov031/func_ov031_022125bc.cpp:
+    complete
+    .text start:0x022125bc end:0x022125c8
+
+src/Unclassified/ov031/func_ov031_022077c0.cpp:
+    complete
+    .text start:0x022077c0 end:0x022077cc
+
+src/Unclassified/ov031/func_ov031_02212784.cpp:
+    complete
+    .text start:0x02212784 end:0x02212790
+
+src/Unclassified/ov031/func_ov031_0220f3f4.cpp:
+    complete
+    .text start:0x0220f3f4 end:0x0220f400
+
+src/Unclassified/ov031/func_ov031_02215fcc.cpp:
+    complete
+    .text start:0x02215fcc end:0x02215fd8
+
+src/Unclassified/ov031/func_ov031_02218798.cpp:
+    complete
+    .text start:0x02218798 end:0x022187a4
+
+src/Unclassified/ov031/func_ov031_0221d06c.cpp:
+    complete
+    .text start:0x0221d06c end:0x0221d078
+
+src/Unclassified/ov031/func_ov031_0221b9a4.cpp:
+    complete
+    .text start:0x0221b9a4 end:0x0221b9b0
+
+src/Unclassified/ov031/func_ov031_0221f994.cpp:
+    complete
+    .text start:0x0221f994 end:0x0221f9a0
+
+src/Unclassified/ov031/func_ov031_0221fa88.cpp:
+    complete
+    .text start:0x0221fa88 end:0x0221fa94
+
+src/Memory/ov031/func_ov031_0221e52c.cpp:
+    complete
+    .text start:0x0221e52c end:0x0221e538
+
+src/Unclassified/ov031/func_ov031_022201cc.cpp:
+    complete
+    .text start:0x022201cc end:0x022201d8
+
+src/Unclassified/ov031/func_ov031_02226fd8.cpp:
+    complete
+    .text start:0x02226fd8 end:0x02226fe4
+
+src/Unclassified/ov031/func_ov031_02227874.cpp:
+    complete
+    .text start:0x02227874 end:0x02227880
+
+src/Unclassified/ov031/func_ov031_02227cd8.cpp:
+    complete
+    .text start:0x02227cd8 end:0x02227ce4
+
+src/Resource/ov031/Resource_CompleteTwoLoadsAndExecuteScript.cpp:
+    complete
+    .text start:0x02243714 end:0x02243850
+
+src/Unclassified/ov031/func_ov031_02236900.cpp:
+    complete
+    .text start:0x02236900 end:0x0223690c
+
+src/Unclassified/ov031/func_ov031_022351f8.cpp:
+    complete
+    .text start:0x022351f8 end:0x02235204
+
+src/Util/ov031/func_ov031_0223fb48.cpp:
+    complete
+    .text start:0x0223fb48 end:0x0223fb54
+
+src/Unclassified/ov031/func_ov031_0223fb98.cpp:
+    complete
+    .text start:0x0223fb98 end:0x0223fba4
+
+src/Unclassified/ov031/func_ov031_0223e2e0.cpp:
+    complete
+    .text start:0x0223e2e0 end:0x0223e2ec
+
+src/Memory/ov031/Ov031_CompareUnsignedBytesForCount.cpp:
+    complete
+    .text start:0x0223fb54 end:0x0223fb60
+
+src/Unclassified/ov031/func_ov031_0223e42c.cpp:
+    complete
+    .text start:0x0223e42c end:0x0223e438
+
+src/Unclassified/ov031/func_ov031_0224130c.cpp:
+    complete
+    .text start:0x0224130c end:0x02241318
+
+src/Unclassified/ov031/func_ov031_02243708.cpp:
+    complete
+    .text start:0x02243708 end:0x02243714
+
+src/Util/ov031/Ov031_CountBytesUntilTerminator.cpp:
+    complete
+    .text start:0x022415a8 end:0x022415b4
+
+src/Unclassified/ov031/func_ov031_0223fb8c.cpp:
+    complete
+    .text start:0x0223fb8c end:0x0223fb98
+
+src/Unclassified/ov031/func_ov031_02241534.cpp:
+    complete
+    .text start:0x02241534 end:0x02241540
+
+src/Unclassified/ov031/HandleStateValueMessage.cpp:
+    complete
+    .text start:0x0220ff78 end:0x0220fff8
+
+src/Util/ov031/Util_ParsePackedDate.cpp:
+    complete
+    .text start:0x02207e90 end:0x02207f10
+
+src/Graphics/ov031/Graphics_SetObjectModeAndPalette.cpp:
+    complete
+    .text start:0x0223bb58 end:0x0223bbd8
+
+src/Unclassified/ov031/func_ov031_02205eac.cpp:
+    complete
+    .text start:0x02205eac end:0x02205ebc
+
+src/Unclassified/ov031/func_ov031_02200524.cpp:
+    complete
+    .text start:0x02200524 end:0x02200534
+
+src/Unclassified/ov031/func_ov031_02207ce0.cpp:
+    complete
+    .text start:0x02207ce0 end:0x02207cf0
+
+src/Unclassified/ov031/func_ov031_02207cd0.cpp:
+    complete
+    .text start:0x02207cd0 end:0x02207ce0
+
+src/Unclassified/ov031/func_ov031_0220528c.cpp:
+    complete
+    .text start:0x0220528c end:0x0220529c
+
+src/Unclassified/ov031/StoreNextLinkAndSetOwner.cpp:
+    complete
+    .text start:0x022070e0 end:0x022070f0
+
+src/Unclassified/ov031/func_ov031_0220527c.cpp:
+    complete
+    .text start:0x0220527c end:0x0220528c
+
+src/Unclassified/ov031/func_ov031_022135ac.cpp:
+    complete
+    .text start:0x022135ac end:0x022135bc
+
+src/GameState/ov031/Ov031_SetCurrentObject.cpp:
+    complete
+    .text start:0x022167a8 end:0x022167b8
+
+src/Unclassified/ov031/func_ov031_022157e8.cpp:
+    complete
+    .text start:0x022157e8 end:0x022157f8
+
+src/Unclassified/ov031/func_ov031_0221e798.cpp:
+    complete
+    .text start:0x0221e798 end:0x0221e7a8
+
+src/Unclassified/ov031/func_ov031_0221e470.cpp:
+    complete
+    .text start:0x0221e470 end:0x0221e480
+
+src/Unclassified/ov031/func_ov031_0221c49c.cpp:
+    complete
+    .text start:0x0221c49c end:0x0221c4ac
+
+src/Unclassified/ov031/GetOv031Global02249B54.cpp:
+    complete
+    .text start:0x022167b8 end:0x022167c8
+
+src/Memory/ov031/System_Copy8WithReversedPointers.cpp:
+    complete
+    .text start:0x0221e51c end:0x0221e52c
+
+src/Unclassified/ov031/func_ov031_02211b54.cpp:
+    complete
+    .text start:0x02211b54 end:0x02211b64
+
+src/Unclassified/ov031/func_ov031_02226fc8.cpp:
+    complete
+    .text start:0x02226fc8 end:0x02226fd8
+
+src/Unclassified/ov031/func_ov031_0221c4ac.cpp:
+    complete
+    .text start:0x0221c4ac end:0x0221c4bc
+
+src/Math/ov031/Math_InitializeDivisionAndInverse.cpp:
+    complete
+    .text start:0x02229890 end:0x022298a0
+
+src/Unclassified/ov031/func_ov031_02233e3c.cpp:
+    complete
+    .text start:0x02233e3c end:0x02233e4c
+
+src/Unclassified/ov031/func_ov031_02230ef0.cpp:
+    complete
+    .text start:0x02230ef0 end:0x02230f00
+
+src/Unclassified/ov031/func_ov031_022228b0.cpp:
+    complete
+    .text start:0x022228b0 end:0x022228c0
+
+src/Unclassified/ov031/func_ov031_0223d908.cpp:
+    complete
+    .text start:0x0223d908 end:0x0223d918
+
+src/Unclassified/ov031/func_ov031_0222ea14.cpp:
+    complete
+    .text start:0x0222ea14 end:0x0222ea24
+
+src/Unclassified/ov031/func_ov031_02236474.cpp:
+    complete
+    .text start:0x02236474 end:0x02236484
+
+src/Unclassified/ov031/func_ov031_02227cc8.cpp:
+    complete
+    .text start:0x02227cc8 end:0x02227cd8
+
+src/Unclassified/ov031/func_ov031_022413b8.cpp:
+    complete
+    .text start:0x022413b8 end:0x022413c8
+
+src/Unclassified/ov031/func_ov031_0223ab5c.cpp:
+    complete
+    .text start:0x0223ab5c end:0x0223ab6c
+
+src/Unclassified/ov031/func_ov031_0224586c.cpp:
+    complete
+    .text start:0x0224586c end:0x0224587c
+
+src/Unclassified/ov031/func_ov031_0223d918.cpp:
+    complete
+    .text start:0x0223d918 end:0x0223d928
+
+src/Network/ov031/Network_CompleteTaskWithZero.cpp:
+    complete
+    .text start:0x0223b604 end:0x0223b614
+
+src/Unclassified/ov031/func_ov031_0223dffc.cpp:
+    complete
+    .text start:0x0223dffc end:0x0223e00c
+
+src/Unclassified/ov031/func_ov031_0224598c.cpp:
+    complete
+    .text start:0x0224598c end:0x0224599c
+
+src/Network/ov031/Network_ParseTcpMaximumSegmentSize.cpp:
+    complete
+    .text start:0x02201e70 end:0x02201ef4
+
+src/Graphics/ov031/Graphics_ClearVramOamAndPalettes.cpp:
+    complete
+    .text start:0x0223df4c end:0x0223dfd0
+
+src/Graphics/ov031/Graphics_UpdateBackgroundVerticalScroll.cpp:
+    complete
+    .text start:0x02230778 end:0x022307fc
+
+src/Memory/ov031/Memory_FillRemainingBytes.cpp:
+    complete
+    .text start:0x02204168 end:0x0220419c
+
+src/Util/ov031/FindByteSequence.cpp:
+    complete
+    .text start:0x02242f84 end:0x02243008
+
+src/Unclassified/ov031/func_ov031_0220ef9c.cpp:
+    complete
+    .text start:0x0220ef9c end:0x0220efd0
+
+src/Unclassified/ov031/func_ov031_0220321c.cpp:
+    complete
+    .text start:0x0220321c end:0x02203250
+
+src/System/ov031/func_ov031_02228b78.cpp:
+    complete
+    .text start:0x02228b78 end:0x02228bac
+
+src/System/ov031/func_ov031_02229bc8.cpp:
+    complete
+    .text start:0x02229bc8 end:0x02229bfc
+
+src/Math/ov031/Math_AddCarryToHalfwords.cpp:
+    complete
+    .text start:0x0220be04 end:0x0220be38
+
+src/Network/ov031/CRC32_ComputeThreeWordHeaderChecksum.cpp:
+    complete
+    .text start:0x02211720 end:0x02211754
+
+src/Util/ov031/Util_AreFirstTenBytesPrintable.cpp:
+    complete
+    .text start:0x02216710 end:0x02216744
+
+src/System/ov031/func_ov031_0222eec4.cpp:
+    complete
+    .text start:0x0222eec4 end:0x0222eef8
+
+src/Unclassified/ov031/func_ov031_02233c40.cpp:
+    complete
+    .text start:0x02233c40 end:0x02233c74
+
+src/System/ov031/System_IncrementMainLoopCallbackCounter.cpp:
+    complete
+    .text start:0x02231b5c end:0x02231b90
+
+src/Util/ov031/func_ov031_0223ff7c.cpp:
+    complete
+    .text start:0x0223ff7c end:0x0223ffb0
+
+src/Memory/ov031/func_ov031_022434b4.cpp:
+    complete
+    .text start:0x022434b4 end:0x022434e8
+
+src/Unclassified/ov031/Unclassified_IncrementCounterAndSetCallbackAt120.cpp:
+    complete
+    .text start:0x0222a328 end:0x0222a35c
+
+src/Unclassified/ov031/Overlay_InstallCallbackAfterCounterThreshold.cpp:
+    complete
+    .text start:0x022344ec end:0x02234520
+
+src/GameState/ov031/GameState_SetPriorityMaskBit.cpp:
+    complete
+    .text start:0x02214ac8 end:0x02214afc
+
+src/Unclassified/ov031/func_ov031_02200790.cpp:
+    complete
+    .text start:0x02200790 end:0x022007a4
+
+src/Unclassified/ov031/func_ov031_02231a9c.cpp:
+    complete
+    .text start:0x02231a9c end:0x02231aac
+
+src/Unclassified/ov031/func_ov031_02201f84.cpp:
+    complete
+    .text start:0x02201f84 end:0x02201f98
+
+src/Resource/ov031/func_ov031_02243450.cpp:
+    complete
+    .text start:0x02243450 end:0x02243484
+
+src/Unclassified/ov031/func_ov031_02201f98.cpp:
+    complete
+    .text start:0x02201f98 end:0x02201fac
+
+src/Unclassified/ov031/Ov031_TestLowBitAt20.cpp:
+    complete
+    .text start:0x02211644 end:0x02211658
+
+src/Unclassified/ov031/func_ov031_0220f2cc.cpp:
+    complete
+    .text start:0x0220f2cc end:0x0220f2e0
+
+src/Unclassified/ov031/func_ov031_02203164.cpp:
+    complete
+    .text start:0x02203164 end:0x02203178
+
+src/Math/ov031/func_ov031_0222a274.cpp:
+    complete
+    .text start:0x0222a274 end:0x0222a284
+
+src/System/ov031/Ov031_AdvanceCallbackDelay.cpp:
+    complete
+    .text start:0x0222b610 end:0x0222b644
+
+src/Unclassified/ov031/func_ov031_0223442c.cpp:
+    complete
+    .text start:0x0223442c end:0x0223443c
+
+src/GameState/ov031/Ov031_SetGlobalPair.cpp:
+    complete
+    .text start:0x02211b40 end:0x02211b54
+
+src/Unclassified/ov031/SetOv031GlobalField8To2.cpp:
+    complete
+    .text start:0x02216744 end:0x02216758
+
+src/Unclassified/ov031/func_ov031_0221170c.cpp:
+    complete
+    .text start:0x0221170c end:0x02211720
+
+src/Unclassified/ov031/func_ov031_022134f0.cpp:
+    complete
+    .text start:0x022134f0 end:0x02213504
+
+src/Unclassified/ov031/func_ov031_02215ccc.cpp:
+    complete
+    .text start:0x02215ccc end:0x02215ce0
+
+src/Unclassified/ov031/func_ov031_02216794.cpp:
+    complete
+    .text start:0x02216794 end:0x022167a8
+
+src/Unclassified/ov031/func_ov031_02216780.cpp:
+    complete
+    .text start:0x02216780 end:0x02216794
+
+src/GameState/ov031/Ov031_SetGlobalFieldToFour.cpp:
+    complete
+    .text start:0x02216758 end:0x0221676c
+
+src/Unclassified/ov031/SetOv031GlobalField8To7.cpp:
+    complete
+    .text start:0x0221676c end:0x02216780
+
+src/Unclassified/ov031/func_ov031_0222b550.cpp:
+    complete
+    .text start:0x0222b550 end:0x0222b560
+
+src/GameState/ov031/CheckCurrentContextStatus.cpp:
+    complete
+    .text start:0x022375cc end:0x02237600
+
+src/GameState/ov031/GameState_IsCallbackStateReady.cpp:
+    complete
+    .text start:0x022358b4 end:0x022358e8
+
+src/Memory/ov031/AppendAllocatedStringPair.cpp:
+    complete
+    .text start:0x02218a38 end:0x02218b8c
+
+src/Unclassified/ov031/func_ov031_02217f9c.cpp:
+    complete
+    .text start:0x02217f9c end:0x02217fb0
+
+src/Util/ov031/func_ov031_0221e650.cpp:
+    complete
+    .text start:0x0221e650 end:0x0221e664
+
+src/Unclassified/ov031/func_ov031_0221e7a8.cpp:
+    complete
+    .text start:0x0221e7a8 end:0x0221e7bc
+
+src/Unclassified/ov031/func_ov031_02222adc.cpp:
+    complete
+    .text start:0x02222adc end:0x02222af0
+
+src/Unclassified/ov031/func_ov031_02223358.cpp:
+    complete
+    .text start:0x02223358 end:0x0222336c
+
+src/Unclassified/ov031/InvokeOptionalCallbackAtGlobalOffset4.cpp:
+    complete
+    .text start:0x0221ecb4 end:0x0221ecc8
+
+src/Network/ov031/Network_SendOverlayQueueMessage.cpp:
+    complete
+    .text start:0x0221e7bc end:0x0221e7d0
+
+src/Unclassified/ov031/func_ov031_02223fa0.cpp:
+    complete
+    .text start:0x02223fa0 end:0x02223fb4
+
+src/Unclassified/ov031/func_ov031_02225c4c.cpp:
+    complete
+    .text start:0x02225c4c end:0x02225c60
+
+src/Unclassified/ov031/func_ov031_02223fb4.cpp:
+    complete
+    .text start:0x02223fb4 end:0x02223fc8
+
+src/Unclassified/ov031/func_ov031_02223984.cpp:
+    complete
+    .text start:0x02223984 end:0x02223998
+
+src/GameState/ov031/Ov031_SetCurrentObjectByte66.cpp:
+    complete
+    .text start:0x02225c38 end:0x02225c4c
+
+src/Unclassified/ov031/func_ov031_0222758c.cpp:
+    complete
+    .text start:0x0222758c end:0x022275a0
+
+src/Unclassified/ov031/func_ov031_02225c60.cpp:
+    complete
+    .text start:0x02225c60 end:0x02225c74
+
+src/Unclassified/ov031/GetByteAtOffset60FromGlobalPointer.cpp:
+    complete
+    .text start:0x02225c24 end:0x02225c38
+
+src/Unclassified/ov031/func_ov031_0222aa88.cpp:
+    complete
+    .text start:0x0222aa88 end:0x0222aa9c
+
+src/Unclassified/ov031/func_ov031_02233c74.cpp:
+    complete
+    .text start:0x02233c74 end:0x02233c88
+
+src/Unclassified/ov031/func_ov031_022351d0.cpp:
+    complete
+    .text start:0x022351d0 end:0x022351e4
+
+src/Unclassified/ov031/func_ov031_02223fc8.cpp:
+    complete
+    .text start:0x02223fc8 end:0x02223fdc
+
+src/Unclassified/ov031/func_ov031_0222761c.cpp:
+    complete
+    .text start:0x0222761c end:0x02227630
+
+src/Unclassified/ov031/Ov031_ForwardSecondArgWith20.cpp:
+    complete
+    .text start:0x02233e28 end:0x02233e3c
+
+src/Unclassified/ov031/func_ov031_02239108.cpp:
+    complete
+    .text start:0x02239108 end:0x0223911c
+
+src/Unclassified/ov031/GetByteAtOffset1DFromGlobalPointer.cpp:
+    complete
+    .text start:0x022351e4 end:0x022351f8
+
+src/Unclassified/ov031/func_ov031_02235c84.cpp:
+    complete
+    .text start:0x02235c84 end:0x02235c98
+
+src/Unclassified/ov031/func_ov031_02235c98.cpp:
+    complete
+    .text start:0x02235c98 end:0x02235cac
+
+src/Unclassified/ov031/func_ov031_02239bd4.cpp:
+    complete
+    .text start:0x02239bd4 end:0x02239be8
+
+src/Memory/ov031/Memory_FreeSharedAllocationAndClearFlag.cpp:
+    complete
+    .text start:0x02235c5c end:0x02235c70
+
+src/Network/ov031/Network_ParseUrl.cpp:
+    complete
+    .text start:0x022188e4 end:0x02218a38
+
+src/Unclassified/ov031/func_ov031_0223a274.cpp:
+    complete
+    .text start:0x0223a274 end:0x0223a288
+
+src/GameState/ov031/Ov031_GetGlobalObjectField40.cpp:
+    complete
+    .text start:0x02239be8 end:0x02239bfc
+
+src/Unclassified/ov031/func_ov031_02239bc0.cpp:
+    complete
+    .text start:0x02239bc0 end:0x02239bd4
+
+src/Network/ov031/func_ov031_0223fad4.cpp:
+    complete
+    .text start:0x0223fad4 end:0x0223fae8
+
+src/Unclassified/ov031/func_ov031_0223ca40.cpp:
+    complete
+    .text start:0x0223ca40 end:0x0223ca54
+
+src/Unclassified/ov031/func_ov031_0223fa20.cpp:
+    complete
+    .text start:0x0223fa20 end:0x0223fa34
+
+src/Memory/ov031/Memory_ZeroBytes.cpp:
+    complete
+    .text start:0x0223fb60 end:0x0223fb74
+
+src/Math/ov031/Math_SquareHalfwordInteger.cpp:
+    complete
+    .text start:0x0220bf5c end:0x0220c090
+
+src/System/ov031/System_LockSharedMutex.cpp:
+    complete
+    .text start:0x0223fa0c end:0x0223fa20
+
+src/Unclassified/ov031/func_ov031_02243404.cpp:
+    complete
+    .text start:0x02243404 end:0x02243418
+
+src/Memory/ov031/FreeGlobalSharedAllocationAndClearFlag.cpp:
+    complete
+    .text start:0x0223c040 end:0x0223c054
+
+src/Unclassified/ov031/func_ov031_022402e0.cpp:
+    complete
+    .text start:0x022402e0 end:0x022402f4
+
+src/Network/ov031/Network_ResetAndSeedCommandState.cpp:
+    complete
+    .text start:0x0223a698 end:0x0223a718
+
+src/Network/ov031/func_ov031_02240324.cpp:
+    complete
+    .text start:0x02240324 end:0x02240338
+
+src/System/ov031/System_LockGlobalMutex.cpp:
+    complete
+    .text start:0x02240310 end:0x02240324
+
+src/GameState/ov031/Ov031_SetGlobalField30ToOne.cpp:
+    complete
+    .text start:0x02243418 end:0x0224342c
+
+src/Unclassified/ov031/func_ov031_022415b4.cpp:
+    complete
+    .text start:0x022415b4 end:0x022415c8
+
+src/Unclassified/ov031/Unclassified_ResetAndInvokeStateCallback.cpp:
+    complete
+    .text start:0x0220aa30 end:0x0220aa68
+
+src/Unclassified/ov031/func_ov031_02245858.cpp:
+    complete
+    .text start:0x02245858 end:0x0224586c
+
+src/System/ov031/System_SetProcessorContextPriorities.cpp:
+    complete
+    .text start:0x0220057c end:0x022005b4
+
+src/System/ov031/System_SetCommandFlagAndValidate.cpp:
+    complete
+    .text start:0x02216178 end:0x022161b0
+
+src/System/ov031/Ov031_DecrementBlockedContextCount.cpp:
+    complete
+    .text start:0x0220f330 end:0x0220f368
+
+src/System/ov031/func_ov031_02229fac.cpp:
+    complete
+    .text start:0x02229fac end:0x02229fe4
+
+src/Util/ov031/UpdatePendingByteFromInput.cpp:
+    complete
+    .text start:0x0222a504 end:0x0222a53c
+
+src/Unclassified/ov031/Overlay_UpdatePendingByteFromInputMasks.cpp:
+    complete
+    .text start:0x02228730 end:0x02228768
+
+src/System/ov031/TouchInput_WaitForIPCOperationFourAndFreeSharedAllocation.cpp:
+    complete
+    .text start:0x0223d06c end:0x0223d0a4
+
+src/System/ov031/WaitForPendingFlagWithTimeout.cpp:
+    complete
+    .text start:0x02203424 end:0x022034ac
+
+src/System/ov031/System_UpdatePendingInputState.cpp:
+    complete
+    .text start:0x022346e4 end:0x0223471c
+
+src/Graphics/ov031/Graphics_UploadDirtyBgCharacterData.cpp:
+    complete
+    .text start:0x0223c6d8 end:0x0223c760
+
+src/Util/ov031/Util_ParseFourThreeByteNumbers.cpp:
+    complete
+    .text start:0x022366d8 end:0x02236760
+
+src/Util/ov031/Util_IsActiveCoordinateInsideRectangle.cpp:
+    complete
+    .text start:0x0223d524 end:0x0223d5ac
+
+src/System/ov031/System_IsActiveInputPointWithinRectangle.cpp:
+    complete
+    .text start:0x0223d414 end:0x0223d49c
+
+src/System/ov031/System_IsTouchInsideRectangle.cpp:
+    complete
+    .text start:0x0223d5ac end:0x0223d634
+
+src/System/ov031/System_StartOverlay31ContextWhenInactive.cpp:
+    complete
+    .text start:0x02219238 end:0x022192c0
+
+src/Memory/ov031/ReleaseAndClearPairedPointers.cpp:
+    complete
+    .text start:0x02218f18 end:0x02218fa0
+
+src/Memory/ov031/func_ov031_0223cfb4.cpp:
+    complete
+    .text start:0x0223cfb4 end:0x0223cff0
+
+src/System/ov031/System_SendWirelessRequest13AndApplyResult.cpp:
+    complete
+    .text start:0x022398e8 end:0x02239924
+
+src/System/ov031/Overlay_InitializeCallbackWhenContextByteZero.cpp:
+    complete
+    .text start:0x022342d8 end:0x02234314
+
+src/Unclassified/ov031/func_ov031_02203270.cpp:
+    complete
+    .text start:0x02203270 end:0x02203288
+
+src/Unclassified/ov031/SetGlobalOffset8Bit1.cpp:
+    complete
+    .text start:0x02205000 end:0x02205018
+
+src/Unclassified/ov031/func_ov031_0220ab94.cpp:
+    complete
+    .text start:0x0220ab94 end:0x0220abac
+
+src/GameState/ov031/IncrementGlobalCounterAndNotifyAtEight.cpp:
+    complete
+    .text start:0x022384bc end:0x022384f8
+
+src/Graphics/ov031/Graphics_ResolveIndexedFontGlyph.cpp:
+    complete
+    .text start:0x0223c898 end:0x0223c8d4
+
+src/Memory/ov031/func_ov031_0220abac.cpp:
+    complete
+    .text start:0x0220abac end:0x0220abc4
+
+src/Unclassified/ov031/func_ov031_02203178.cpp:
+    complete
+    .text start:0x02203178 end:0x02203190
+
+src/Util/ov031/Util_InvokeObjectCallbacks.cpp:
+    complete
+    .text start:0x02241720 end:0x0224175c
+
+src/Unclassified/ov031/StoreValueAtGlobalPointerOffset30IfPresent.cpp:
+    complete
+    .text start:0x022101ac end:0x022101c4
+
+src/System/ov031/func_ov031_0223d7f4.cpp:
+    complete
+    .text start:0x0223d7f4 end:0x0223d830
+
+src/Unclassified/ov031/func_ov031_02212790.cpp:
+    complete
+    .text start:0x02212790 end:0x022127a8
+
+src/Unclassified/ov031/func_ov031_02211c38.cpp:
+    complete
+    .text start:0x02211c38 end:0x02211c50
+
+src/Unclassified/ov031/func_ov031_02211b28.cpp:
+    complete
+    .text start:0x02211b28 end:0x02211b40
+
+src/Network/ov031/Network_DecodeCustomBase64.cpp:
+    complete
+    .text start:0x0221ac6c end:0x0221add4
+
+src/Unclassified/ov031/Overlay_WaitForStatusToLeaveMinusTwentySix.cpp:
+    complete
+    .text start:0x022413c8 end:0x02241404
+
+src/Unclassified/ov031/func_ov031_022127a8.cpp:
+    complete
+    .text start:0x022127a8 end:0x022127c0
+
+src/Unclassified/ov031/GetWordAtGlobalPointerOffset1004.cpp:
+    complete
+    .text start:0x02219220 end:0x02219238
+
+src/Unclassified/ov031/func_ov031_0221cfc4.cpp:
+    complete
+    .text start:0x0221cfc4 end:0x0221cfdc
+
+src/Memory/ov031/func_ov031_0221b140.cpp:
+    complete
+    .text start:0x0221b140 end:0x0221b158
+
+src/Graphics/ov031/Graphics_SetWindowPlaneMask.cpp:
+    complete
+    .text start:0x0223cd30 end:0x0223ce9c
+
+src/System/ov031/System_DispatchOverlayQueueEvent.cpp:
+    complete
+    .text start:0x02245e5c end:0x02245fa8
+
+src/GameState/ov031/Ov031_SetGlobalObjectField1E298.cpp:
+    complete
+    .text start:0x0222785c end:0x02227874
+
+src/Unclassified/ov031/func_ov031_022276b4.cpp:
+    complete
+    .text start:0x022276b4 end:0x022276cc
+
+src/Unclassified/ov031/func_ov031_022236d0.cpp:
+    complete
+    .text start:0x022236d0 end:0x022236e8
+
+src/Unclassified/ov031/func_ov031_0221e458.cpp:
+    complete
+    .text start:0x0221e458 end:0x0221e470
+
+src/GameState/ov031/Ov031_GetGlobalObjectAt1E280.cpp:
+    complete
+    .text start:0x02227880 end:0x02227898
+
+src/Unclassified/ov031/func_ov031_02234f34.cpp:
+    complete
+    .text start:0x02234f34 end:0x02234f4c
+
+src/Unclassified/ov031/func_ov031_022376e4.cpp:
+    complete
+    .text start:0x022376e4 end:0x022376fc
+
+src/GameState/ov031/Ov031_SetGlobalObjectByteA90To12.cpp:
+    complete
+    .text start:0x0223aff8 end:0x0223b010
+
+src/Unclassified/ov031/func_ov031_02235204.cpp:
+    complete
+    .text start:0x02235204 end:0x0223521c
+
+src/Unclassified/ov031/func_ov031_0223cb1c.cpp:
+    complete
+    .text start:0x0223cb1c end:0x0223cb34
+
+src/GameState/ov031/Ov031_GetGlobalElementAddress.cpp:
+    complete
+    .text start:0x0223daa4 end:0x0223dabc
+
+src/Unclassified/ov031/func_ov031_0223b30c.cpp:
+    complete
+    .text start:0x0223b30c end:0x0223b324
+
+src/Unclassified/ov031/func_ov031_0223607c.cpp:
+    complete
+    .text start:0x0223607c end:0x02236094
+
+src/Unclassified/ov031/func_ov031_0223e330.cpp:
+    complete
+    .text start:0x0223e330 end:0x0223e348
+
+src/System/ov031/func_ov031_0223f9f0.cpp:
+    complete
+    .text start:0x0223f9f0 end:0x0223fa08
+
+src/Unclassified/ov031/func_ov031_02227558.cpp:
+    complete
+    .text start:0x02227558 end:0x02227570
+
+src/Memory/ov031/Memory_Copy8.cpp:
+    complete
+    .text start:0x0223fb74 end:0x0223fb8c
+
+src/System/ov031/System_InitializeOverlayMutexAndReturnOne.cpp:
+    complete
+    .text start:0x022402f4 end:0x0224030c
+
+src/System/ov031/func_ov031_0220ef5c.cpp:
+    complete
+    .text start:0x0220ef5c end:0x0220ef9c
+
+src/GameState/ov031/GameState_InvokeHandlerOncePerMask.cpp:
+    complete
+    .text start:0x02213230 end:0x02213270
+
+src/Unclassified/ov031/func_ov031_022006f0.cpp:
+    complete
+    .text start:0x022006f0 end:0x02200730
+
+src/System/ov031/System_SubmitOperationWithStateCleanup.cpp:
+    complete
+    .text start:0x02216070 end:0x022160b0
+
+src/Unclassified/ov031/Unclassified_InvokeRecordCleanupAndClear.cpp:
+    complete
+    .text start:0x022187fc end:0x0221883c
+
+src/Resource/ov031/Resource_ReadSharedPointerUnderMutex.cpp:
+    complete
+    .text start:0x022191e0 end:0x02219220
+
+src/GameState/ov031/Ov031_GetStatusCode.cpp:
+    complete
+    .text start:0x022275a0 end:0x022275e0
+
+src/Memory/ov031/func_ov031_0223ce9c.cpp:
+    complete
+    .text start:0x0223ce9c end:0x0223cedc
+
+src/Memory/ov031/Memory_CopyBytesToDestination.cpp:
+    complete
+    .text start:0x022415c8 end:0x022415e0
+
+src/Unclassified/ov031/Unclassified_ResetStateAndSetFlags.cpp:
+    complete
+    .text start:0x0220fed8 end:0x0220ff18
+
+src/Graphics/ov031/Graphics_DispatchCurrentFourByteValues.cpp:
+    complete
+    .text start:0x02235f70 end:0x02235fb0
+
+src/Unclassified/ov031/func_ov031_02200754.cpp:
+    complete
+    .text start:0x02200754 end:0x02200790
+
+src/System/ov031/func_ov031_02235f30.cpp:
+    complete
+    .text start:0x02235f30 end:0x02235f70
+
+src/Unclassified/ov031/Unclassified_HasRequestedStateFlags.cpp:
+    complete
+    .text start:0x0223d3d4 end:0x0223d414
+
+src/Graphics/ov031/Graphics_UpdateIndexedSpriteTileFields.cpp:
+    complete
+    .text start:0x0222c5d4 end:0x0222c660
+
+src/Network/ov031/Network_IsLocalOrAcceptedAddress.cpp:
+    complete
+    .text start:0x022007a4 end:0x02200824
+
+src/Network/ov031/Network_ExpandWirelessScanRecord.cpp:
+    complete
+    .text start:0x0221e6e8 end:0x0221e774
+
+src/Network/ov031/Network_UpdateAddressCache.cpp:
+    complete
+    .text start:0x02200e38 end:0x02200f74
+
+src/Math/ov031/func_ov031_0220b148.cpp:
+    complete
+    .text start:0x0220b148 end:0x0220b18c
+
+src/Unclassified/ov031/Object_InitializeFlagSelectedState.cpp:
+    complete
+    .text start:0x02243518 end:0x02243690
+
+src/System/ov031/func_ov031_0221a1d4.cpp:
+    complete
+    .text start:0x0221a1d4 end:0x0221a218
+
+src/Unclassified/ov031/Unclassified_MapTypeToNegativeCode.cpp:
+    complete
+    .text start:0x022143a8 end:0x022143ec
+
+src/Unclassified/ov031/Overlay_CopyTwoStringsAndCheckLength.cpp:
+    complete
+    .text start:0x0221d310 end:0x0221d354
+
+src/System/ov031/Overlay_ClearSharedFlagAndSetCallback.cpp:
+    complete
+    .text start:0x0222e3a4 end:0x0222e3e8
+
+src/System/ov031/System_SetSharedWordUnderMutex.cpp:
+    complete
+    .text start:0x02217598 end:0x022175dc
+
+src/System/ov031/func_ov031_0222d6dc.cpp:
+    complete
+    .text start:0x0222d6dc end:0x0222d720
+
+src/Unclassified/ov031/Unclassified_FindOffsetWithinFourValues.cpp:
+    complete
+    .text start:0x022305a4 end:0x022305e8
+
+src/System/ov031/System_AwaitAndDispatchDeferredCallback.cpp:
+    complete
+    .text start:0x022128b8 end:0x022128fc
+
+src/Util/ov031/Util_StoreWordsMostSignificantByteFirst.cpp:
+    complete
+    .text start:0x0220b18c end:0x0220b1d0
+
+src/Unclassified/ov031/func_ov031_02236038.cpp:
+    complete
+    .text start:0x02236038 end:0x0223607c
+
+src/Memory/ov031/func_ov031_0223b07c.cpp:
+    complete
+    .text start:0x0223b07c end:0x0223b0c0
+
+src/GameState/ov031/StoreValueAtNestedGlobalOffset38IfPresent.cpp:
+    complete
+    .text start:0x02203288 end:0x022032a4
+
+src/System/ov031/GetPendingOverlayDataIfReady.cpp:
+    complete
+    .text start:0x0220f040 end:0x0220f084
+
+src/Unclassified/ov031/Unclassified_InvokeAndClearPendingCallbacks.cpp:
+    complete
+    .text start:0x0223e348 end:0x0223e38c
+
+src/Unclassified/ov031/func_ov031_02205018.cpp:
+    complete
+    .text start:0x02205018 end:0x02205030
+
+src/Memory/ov031/Memory_ZeroBlock170.cpp:
+    complete
+    .text start:0x0220ab78 end:0x0220ab94
+
+src/Unclassified/ov031/func_ov031_02216698.cpp:
+    complete
+    .text start:0x02216698 end:0x022166b4
+
+src/Unclassified/ov031/func_ov031_022143f4.cpp:
+    complete
+    .text start:0x022143f4 end:0x02214410
+
+src/System/ov031/System_MarkGlobalContextReadyAndSwitch.cpp:
+    complete
+    .text start:0x022101c4 end:0x022101e0
+
+src/Network/ov031/Network_DispatchCombinedBufferAndWait.cpp:
+    complete
+    .text start:0x0220f104 end:0x0220f28c
+
+src/Unclassified/ov031/func_ov031_02227570.cpp:
+    complete
+    .text start:0x02227570 end:0x0222758c
+
+src/Util/ov031/Util_RemoveHeadFromCircularList.cpp:
+    complete
+    .text start:0x0223ff38 end:0x0223ff7c
+
+src/Unclassified/ov031/Unclassified_RunRegisteredCallbacksAndCleanup.cpp:
+    complete
+    .text start:0x0223e868 end:0x0223e8ac
+
+src/GameState/ov031/Ov031_DecodeModeToFlag.cpp:
+    complete
+    .text start:0x022140cc end:0x022140e8
+
+src/System/ov031/Time_GetScaledCurrentTimestamp.cpp:
+    complete
+    .text start:0x02222870 end:0x0222288c
+
+src/Network/ov031/Network_EncodeSixBitAlphabet.cpp:
+    complete
+    .text start:0x0221aae4 end:0x0221ac6c
+
+src/Unclassified/ov031/func_ov031_02227840.cpp:
+    complete
+    .text start:0x02227840 end:0x0222785c
+
+src/System/ov031/System_SwitchGlobalProcessorContext.cpp:
+    complete
+    .text start:0x0220f4a0 end:0x0220f4bc
+
+src/Util/ov031/Util_ConvertHexAsciiToValue.cpp:
+    complete
+    .text start:0x02236760 end:0x0223677c
+
+src/System/ov031/func_ov031_0222a4bc.cpp:
+    complete
+    .text start:0x0222a4bc end:0x0222a4f0
+
+src/Unclassified/ov031/func_ov031_02235e90.cpp:
+    complete
+    .text start:0x02235e90 end:0x02235eac
+
+src/Network/ov031/ConsumeBufferBytesAndNotify.cpp:
+    complete
+    .text start:0x022035e0 end:0x02203670
+
+src/Unclassified/ov031/func_ov031_02235e74.cpp:
+    complete
+    .text start:0x02235e74 end:0x02235e90
+
+src/Memory/ov031/Memory_FreeSharedAllocation.cpp:
+    complete
+    .text start:0x0223bf2c end:0x0223bf48
+
+src/Util/ov031/Util_SetFieldsIfFirstWordZero.cpp:
+    complete
+    .text start:0x022400e8 end:0x02240104
+
+src/Memory/ov031/Memory_FreeSharedAllocationFromFirstArgument.cpp:
+    complete
+    .text start:0x0223d884 end:0x0223d8a0
+
+src/Network/ov031/func_ov031_022403f4.cpp:
+    complete
+    .text start:0x022403f4 end:0x02240410
+
+src/Unclassified/ov031/func_ov031_022403d8.cpp:
+    complete
+    .text start:0x022403d8 end:0x022403f4
+
+src/Unclassified/ov031/func_ov031_02241518.cpp:
+    complete
+    .text start:0x02241518 end:0x02241534
+
+src/System/ov031/Overlay_FillThreeGlobalWords.cpp:
+    complete
+    .text start:0x02222aa4 end:0x02222adc
+
+src/Util/ov031/Util_FindNextEnabledBitModuloThirteen.cpp:
+    complete
+    .text start:0x0220d8f4 end:0x0220d984
+
+src/Util/ov031/Util_EncodePacked43BitValue.cpp:
+    complete
+    .text start:0x0221be64 end:0x0221bfe8
+
+src/Unclassified/ov031/Object_CopyGlobalRecordAndNormalizeCode.cpp:
+    complete
+    .text start:0x02216b00 end:0x02216b90
+
+src/Unclassified/ov031/func_ov031_02222af0.cpp:
+    complete
+    .text start:0x02222af0 end:0x02222b0c
+
+src/Util/ov031/MarkEntriesAndCountChangedValues.cpp:
+    complete
+    .text start:0x02214854 end:0x022148e4
+
+src/Resource/ov031/Resource_LoadRecognizedRecordPayload.cpp:
+    complete
+    .text start:0x02245750 end:0x022457e0
+
+src/Network/ov031/Network_EncodeFormByte.cpp:
+    complete
+    .text start:0x02242bc4 end:0x02242c54
+
+src/System/ov031/Overlay_InvokeCallbackWhenProgressComplete.cpp:
+    complete
+    .text start:0x022050c4 end:0x0220510c
+
+src/Unclassified/ov031/func_ov031_02207074.cpp:
+    complete
+    .text start:0x02207074 end:0x022070bc
+
+src/Util/ov031/Util_CopyBytesToHalfwordsAndTerminate.cpp:
+    complete
+    .text start:0x0223dd60 end:0x0223dda8
+
+src/Network/ov031/Crypto_EncryptAESBlockWithRoundKeys.cpp:
+    complete
+    .text start:0x0222170c end:0x02221ac8
+
+src/System/ov031/func_ov031_0223fd9c.cpp:
+    complete
+    .text start:0x0223fd9c end:0x0223fde4
+
+src/Graphics/ov031/Graphics_FlushAndLoadOAM.cpp:
+    complete
+    .text start:0x0223d9c4 end:0x0223da0c
+
+src/Graphics/ov031/Graphics_TrySetSharedProcessingFlag.cpp:
+    complete
+    .text start:0x0223fa60 end:0x0223faa8
+
+src/Network/ov031/Network_DecryptRijndaelBlock.cpp:
+    complete
+    .text start:0x02221ac8 end:0x02221e84
+
+src/Network/ov031/Network_AllocateOverlayQueueRecords.cpp:
+    complete
+    .text start:0x02205030 end:0x022050c4
+
+src/Memory/ov031/Memory_CopyReadyCachedRecordByKey.cpp:
+    complete
+    .text start:0x02207a10 end:0x02207aa4
+
+src/Unclassified/ov031/TestIndexedSharedStateCondition.cpp:
+    complete
+    .text start:0x0222fd9c end:0x0222fe30
+
+src/Util/ov031/Util_TestSelectedThreeDigitValueAtLeast.cpp:
+    complete
+    .text start:0x0222dd70 end:0x0222de04
+
+src/System/ov031/TouchInput_UpdateHeldPressedReleasedAndRepeat.cpp:
+    complete
+    .text start:0x0223d1b8 end:0x0223d354
+
+src/System/ov031/System_ReadGlobalValueUnderMutex.cpp:
+    complete
+    .text start:0x02216ab4 end:0x02216b00
+
+src/Network/ov031/Network_RequestStateThreeThenTen.cpp:
+    complete
+    .text start:0x0223a060 end:0x0223a0ac
+
+src/Util/ov031/Buffer_FindBigEndianValueByStride.cpp:
+    complete
+    .text start:0x022089f4 end:0x02208a40
+
+src/Util/ov031/Unclassified_AllocateAndCopyString.cpp:
+    complete
+    .text start:0x0223e674 end:0x0223e6c0
+
+src/Util/ov031/Util_UpdateModeDependentFixedPointValue.cpp:
+    complete
+    .text start:0x02245548 end:0x022456f0
+
+src/System/ov031/System_SendMessageWithOverlayFallback.cpp:
+    complete
+    .text start:0x022051a8 end:0x022051f4
+
+src/Unclassified/ov031/func_ov031_022051f4.cpp:
+    complete
+    .text start:0x022051f4 end:0x0220520c
+
+src/Unclassified/ov031/func_ov031_02203250.cpp:
+    complete
+    .text start:0x02203250 end:0x02203270
+
+src/Unclassified/ov031/func_ov031_0220781c.cpp:
+    complete
+    .text start:0x0220781c end:0x0220783c
+
+src/System/ov031/func_ov031_022004d4.cpp:
+    complete
+    .text start:0x022004d4 end:0x02200524
+
+src/Unclassified/ov031/func_ov031_022119b0.cpp:
+    complete
+    .text start:0x022119b0 end:0x022119d0
+
+src/Network/ov031/Network_ClearFlagAndStoreHeaderChecksum.cpp:
+    complete
+    .text start:0x02211658 end:0x02211678
+
+src/Unclassified/ov031/func_ov031_0220d8d4.cpp:
+    complete
+    .text start:0x0220d8d4 end:0x0220d8f4
+
+src/Unclassified/ov031/func_ov031_02211acc.cpp:
+    complete
+    .text start:0x02211acc end:0x02211aec
+
+src/Memory/ov031/CopyAndConsumeTwoBufferSpans.cpp:
+    complete
+    .text start:0x02206758 end:0x022067f0
+
+src/Unclassified/ov031/func_ov031_02228960.cpp:
+    complete
+    .text start:0x02228960 end:0x02228980
+
+src/Unclassified/ov031/func_ov031_0222708c.cpp:
+    complete
+    .text start:0x0222708c end:0x022270ac
+
+src/GameState/ov031/Ov031_IsGlobalModeTwoOrThree.cpp:
+    complete
+    .text start:0x022113c0 end:0x02211410
+
+src/System/ov031/System_UpdatePriorityContextState.cpp:
+    complete
+    .text start:0x02203398 end:0x022033e8
+
+src/Util/ov031/Util_InitializeCrcOperationContext.cpp:
+    complete
+    .text start:0x02215fd8 end:0x02216070
+
+src/System/ov031/System_ClearPendingByteIfInputMask1Held.cpp:
+    complete
+    .text start:0x02228ac0 end:0x02228ae0
+
+src/Unclassified/ov031/func_ov031_022277e4.cpp:
+    complete
+    .text start:0x022277e4 end:0x02227804
+
+src/Unclassified/ov031/func_ov031_02229b10.cpp:
+    complete
+    .text start:0x02229b10 end:0x02229b30
+
+src/Memory/ov031/Memory_AllocateAndInitializeGlobalRecord.cpp:
+    complete
+    .text start:0x0221a434 end:0x0221a4cc
+
+src/Unclassified/ov031/Unclassified_SetPendingByteZeroWhenMask2Held.cpp:
+    complete
+    .text start:0x02228f30 end:0x02228f50
+
+src/Memory/ov031/Memory_ReserveBufferedCapacity.cpp:
+    complete
+    .text start:0x0220a66c end:0x0220a6bc
+
+src/Unclassified/ov031/BeginModeThreeRequestFromSharedState.cpp:
+    complete
+    .text start:0x02239724 end:0x022397bc
+
+src/Unclassified/ov031/func_ov031_022075a4.cpp:
+    complete
+    .text start:0x022075a4 end:0x022075f4
+
+src/Unclassified/ov031/Unclassified_SetPendingByteZeroWhenMask1Held.cpp:
+    complete
+    .text start:0x0222e8a4 end:0x0222e8c4
+
+src/GameState/ov031/SetCurrentObjectFromCategory.cpp:
+    complete
+    .text start:0x02211c50 end:0x02211ca0
+
+src/Unclassified/ov031/func_ov031_02229d30.cpp:
+    complete
+    .text start:0x02229d30 end:0x02229d50
+
+src/GameState/ov031/GameState_RefreshSharedObjectOnModeSix.cpp:
+    complete
+    .text start:0x02239a24 end:0x02239a74
+
+src/Unclassified/ov031/func_ov031_0222da30.cpp:
+    complete
+    .text start:0x0222da30 end:0x0222da50
+
+src/System/ov031/System_InstallFallbackCallbackIfNoSharedObject.cpp:
+    complete
+    .text start:0x0222b3b4 end:0x0222b3d4
+
+src/System/ov031/func_ov031_0223a0ac.cpp:
+    complete
+    .text start:0x0223a0ac end:0x0223a0fc
+
+src/Unclassified/ov031/func_ov031_02231518.cpp:
+    complete
+    .text start:0x02231518 end:0x02231538
+
+src/Network/ov031/Overlay_RunOperationAndUpdateState.cpp:
+    complete
+    .text start:0x0223a47c end:0x0223a4cc
+
+src/System/ov031/RegisterMainLoopCallbackUnlessSentinel.cpp:
+    complete
+    .text start:0x0222cea0 end:0x0222cec0
+
+src/Unclassified/ov031/func_ov031_02231968.cpp:
+    complete
+    .text start:0x02231968 end:0x02231988
+
+src/System/ov031/System_IsHardwareStatusBit15Set.cpp:
+    complete
+    .text start:0x0222ae94 end:0x0222aeb4
+
+src/Unclassified/ov031/func_ov031_02232004.cpp:
+    complete
+    .text start:0x02232004 end:0x02232024
+
+src/Memory/ov031/Memory_ProcessBufferedRequest.cpp:
+    complete
+    .text start:0x02203670 end:0x022036a8
+
+src/System/ov031/System_SetMainLoopCallbackWhenNoSharedObject.cpp:
+    complete
+    .text start:0x02230ed0 end:0x02230ef0
+
+src/System/ov031/func_ov031_0222b168.cpp:
+    complete
+    .text start:0x0222b168 end:0x0222b1a0
+
+src/System/ov031/System_IsFlag15At027FFFA8Set.cpp:
+    complete
+    .text start:0x0222aa9c end:0x0222aabc
+
+src/Memory/ov031/Memory_PopBufferedRequest.cpp:
+    complete
+    .text start:0x02205ebc end:0x02205ef8
+
+src/Unclassified/ov031/func_ov031_022324e8.cpp:
+    complete
+    .text start:0x022324e8 end:0x02232508
+
+src/System/ov031/System_SetAlternateMainLoopCallbackWhenNoSharedObject.cpp:
+    complete
+    .text start:0x02234dc4 end:0x02234de4
+
+src/Util/ov031/ClearPendingByteWhenSecondaryReleased.cpp:
+    complete
+    .text start:0x0222ac20 end:0x0222ac58
+
+src/Unclassified/ov031/func_ov031_02235ecc.cpp:
+    complete
+    .text start:0x02235ecc end:0x02235eec
+
+src/Resource/ov031/Script_UpdateRecentSixByteKeyHistory.cpp:
+    complete
+    .text start:0x02243144 end:0x02243300
+
+src/System/ov031/ReadHighBitOfHalfwordAt027FFFA8.cpp:
+    complete
+    .text start:0x02231b90 end:0x02231bb0
+
+src/Unclassified/ov031/func_ov031_02231120.cpp:
+    complete
+    .text start:0x02231120 end:0x02231140
+
+src/Util/ov031/Util_ParseGlobalFourThreeByteNumbers.cpp:
+    complete
+    .text start:0x02235eac end:0x02235ecc
+
+src/Unclassified/ov031/func_ov031_0223689c.cpp:
+    complete
+    .text start:0x0223689c end:0x022368bc
+
+src/Unclassified/ov031/func_ov031_02236f68.cpp:
+    complete
+    .text start:0x02236f68 end:0x02236f88
+
+src/GameState/ov031/DispatchGlobalPointerOffset94WithZero.cpp:
+    complete
+    .text start:0x022368e0 end:0x02236900
+
+src/Util/ov031/ClearPendingByteWhenConditionFalse.cpp:
+    complete
+    .text start:0x02231d90 end:0x02231dc8
+
+src/System/ov031/func_ov031_022312a4.cpp:
+    complete
+    .text start:0x022312a4 end:0x022312dc
+
+src/Unclassified/ov031/func_ov031_02239e48.cpp:
+    complete
+    .text start:0x02239e48 end:0x02239e68
+
+src/System/ov031/System_HaltIfField2Equals8.cpp:
+    complete
+    .text start:0x0223a040 end:0x0223a060
+
+src/Util/ov031/Util_ParseFourThreeByteNumbersIntoGlobalBuffer.cpp:
+    complete
+    .text start:0x02235eec end:0x02235f0c
+
+src/Unclassified/ov031/func_ov031_0223e2c0.cpp:
+    complete
+    .text start:0x0223e2c0 end:0x0223e2e0
+
+src/GameState/ov031/Ov031_ForwardGlobalIndexedWord.cpp:
+    complete
+    .text start:0x0223da38 end:0x0223da58
+
+src/System/ov031/System_InstallDeferredCallback.cpp:
+    complete
+    .text start:0x02232810 end:0x02232844
+
+src/System/ov031/func_ov031_0223c2d0.cpp:
+    complete
+    .text start:0x0223c2d0 end:0x0223c308
+
+src/Graphics/ov031/LoadAndSelectMainBG1Data.cpp:
+    complete
+    .text start:0x02223a24 end:0x02223a64
+
+src/System/ov031/PeekAndClearQueuedRecordFields.cpp:
+    complete
+    .text start:0x0220f68c end:0x0220f6e0
+
+src/System/ov031/System_WaitForBlockedListHead.cpp:
+    complete
+    .text start:0x022034ac end:0x02203500
+
+src/Memory/ov031/Overlay_ClearSharedBufferWithInterruptsDisabled.cpp:
+    complete
+    .text start:0x0220eadc end:0x0220eb30
+
+src/Graphics/ov031/Overlay_LoadPendingBG2ScreenData.cpp:
+    complete
+    .text start:0x02234fa4 end:0x02234ff8
+
+src/Util/ov031/String_HasInteriorPeriodWithinLengthLimit.cpp:
+    complete
+    .text start:0x02210f24 end:0x02210f78
+
+src/Network/ov031/Network_UpdateGlobalFlagsAtomically.cpp:
+    complete
+    .text start:0x0220d570 end:0x0220d60c
+
+src/Unclassified/ov031/CopyReadyIndexedByteRecord.cpp:
+    complete
+    .text start:0x022161b0 end:0x0221624c
+
+src/Math/ov031/Math_AddHalfwordArrays.cpp:
+    complete
+    .text start:0x0220bb7c end:0x0220bc18
+
+src/Network/ov031/Network_ClassifyTimedRecordStatus.cpp:
+    complete
+    .text start:0x022379f0 end:0x02237b2c
+
+src/Network/ov031/FindNextSharedMaskBitAndDispatch.cpp:
+    complete
+    .text start:0x02239cd4 end:0x02239d70
+
+src/Network/ov031/Network_SubmitWirelessOperationsAndWaitForStateTwo.cpp:
+    complete
+    .text start:0x022358e8 end:0x02235984
+
+src/Network/ov031/System_SendOverlayWakeMessage.cpp:
+    complete
+    .text start:0x02245938 end:0x0224598c
+
+src/Network/ov031/Network_ConfigureExtendedScanParameters.cpp:
+    complete
+    .text start:0x0220d73c end:0x0220d8d4
+
+src/System/ov031/System_ResetStateAndInitializeDefaults.cpp:
+    complete
+    .text start:0x02217f44 end:0x02217f9c
+
+src/Network/ov031/Network_RequestExtendedScan.cpp:
+    complete
+    .text start:0x0220cdf4 end:0x0220cf6c
+
+src/Memory/ov031/Memory_TransformMD5Block.cpp:
+    complete
+    .text start:0x0220abc4 end:0x0220afe0
+
+src/System/ov031/System_ReadOverlayValueWithIRQsDisabled.cpp:
+    complete
+    .text start:0x0220eb30 end:0x0220eb88
+
+src/System/ov031/System_ClearSharedPointerWhenWord2260IsOne.cpp:
+    complete
+    .text start:0x0220ca88 end:0x0220cae0
+
+src/Util/ov031/Util_HasMatchingStringSuffix.cpp:
+    complete
+    .text start:0x0223b744 end:0x0223b79c
+
+src/Util/ov031/Util_Base64CharacterToIndex.cpp:
+    complete
+    .text start:0x0223e3d4 end:0x0223e42c
+
+src/Network/ov031/Network_DrainOverlayQueueAndNotifyCancellation.cpp:
+    complete
+    .text start:0x02206b68 end:0x02206c08
+
+src/Network/ov031/Network_RestoreMatchingCachedConnection.cpp:
+    complete
+    .text start:0x02207aa4 end:0x02207b44
+
+src/Memory/ov031/UnlinkAndNotifyOverlayOwner.cpp:
+    complete
+    .text start:0x0223dcf4 end:0x0223dd34
+
+src/System/ov031/System_ChangeContextPriorityForIndex.cpp:
+    complete
+    .text start:0x02207d3c end:0x02207d60
+
+src/Unclassified/ov031/Unclassified_FreeArgumentAndUpdateGlobalOwner.cpp:
+    complete
+    .text start:0x0223b710 end:0x0223b744
+
+src/Network/ov031/Network_UpdateWirelessScanEntryCache.cpp:
+    complete
+    .text start:0x02235a44 end:0x02235c18
+
+src/Util/ov031/QueueOwnedObjectInEightSlotRing.cpp:
+    complete
+    .text start:0x0224175c end:0x022417fc
+
+src/System/ov031/System_InitializeOverlay31QueuedContext.cpp:
+    complete
+    .text start:0x0220f400 end:0x0220f4a0
+
+src/Util/ov031/MatchesEightBytesAgainstGlobalRecord.cpp:
+    complete
+    .text start:0x022157c4 end:0x022157e8
+
+src/Network/ov031/Network_UnlinkNodeAndReleaseRecords.cpp:
+    complete
+    .text start:0x0223ba20 end:0x0223baa0
+
+src/Util/ov031/Util_TestSelectedStringAgainstEligibleRecords.cpp:
+    complete
+    .text start:0x022135f4 end:0x02213694
+
+src/System/ov031/Overlay_RemoveIndexedPointerPair.cpp:
+    complete
+    .text start:0x0223e2ec end:0x0223e330
+
+src/GameState/ov031/GameState_SetSelectedStateWordFields.cpp:
+    complete
+    .text start:0x022134cc end:0x022134f0
+
+src/Network/ov031/Overlay_CopyBlocksToGlobalTable.cpp:
+    complete
+    .text start:0x02234f4c end:0x02234fa4
+
+src/Graphics/ov031/Graphics_UploadAndNotifyBackgroundData.cpp:
+    complete
+    .text start:0x022373fc end:0x02237448
+
+src/Util/ov031/Util_IncrementBigEndian64.cpp:
+    complete
+    .text start:0x022093d0 end:0x022093f4
+
+src/Memory/ov031/Memory_AllocateZeroedArray.cpp:
+    complete
+    .text start:0x0222288c end:0x022228b0
+
+src/Unclassified/ov031/Object_InitializeGlobalComponents.cpp:
+    complete
+    .text start:0x02223f6c end:0x02223fa0
+
+src/Memory/ov031/Overlay_ClearFourSharedObjects.cpp:
+    complete
+    .text start:0x022238cc end:0x0222390c
+
+src/System/ov031/System_InstallCallbackUnlessSharedValueMinusTwo.cpp:
+    complete
+    .text start:0x0222a86c end:0x0222a890
+
+src/System/ov031/System_SetMainLoopCallbackUnlessByteIsMinusTwo.cpp:
+    complete
+    .text start:0x0222abe8 end:0x0222ac0c
+
+src/System/ov031/System_SetMainLoopCallbackIfContextByte9IsZero.cpp:
+    complete
+    .text start:0x0222a848 end:0x0222a86c
+
+src/System/ov031/System_InstallCallbackIfScreenZeroContextByteIsClear.cpp:
+    complete
+    .text start:0x0222b52c end:0x0222b550
+
+src/Network/ov031/Network_AppendValidatedFrameToRing.cpp:
+    complete
+    .text start:0x022008ac end:0x02200aa0
+
+src/System/ov031/System_InstallAlternateCallbackIfScreenZeroContextByteIsClear.cpp:
+    complete
+    .text start:0x02233cbc end:0x02233ce0
+
+src/System/ov031/System_InstallCallback0223442CIfScreenContextClear.cpp:
+    complete
+    .text start:0x02234408 end:0x0223442c
+
+src/System/ov031/System_HandleHeldInputMaskBit2.cpp:
+    complete
+    .text start:0x0223232c end:0x02232350
+
+src/Math/ov031/Math_AddGlobalValueDividedBy29.cpp:
+    complete
+    .text start:0x022305e8 end:0x0223060c
+
+src/System/ov031/System_ClearControlAndRegisterMainLoopWhenNoSharedObject.cpp:
+    complete
+    .text start:0x02233154 end:0x02233178
+
+src/GameState/ov031/System_ResolveGlobalGroupEntry.cpp:
+    complete
+    .text start:0x02236878 end:0x0223689c
+
+src/System/ov031/System_SetStateFromHalfword2.cpp:
+    complete
+    .text start:0x02239b10 end:0x02239b34
+
+src/System/ov031/System_ApplySharedStateOrTransitionFallback.cpp:
+    complete
+    .text start:0x02239a00 end:0x02239a24
+
+src/Memory/ov031/Memory_RemoveGlobalHPXEAllocator.cpp:
+    complete
+    .text start:0x0223cedc end:0x0223cf00
+
+src/System/ov031/Overlay_ProcessPendingFlag.cpp:
+    complete
+    .text start:0x02223440 end:0x02223478
+
+src/Unclassified/ov031/System_ForwardGlobalVariadicArgument.cpp:
+    complete
+    .text start:0x0223ea60 end:0x0223ea84
+
+src/System/ov031/System_InitializeCallbackAfterSharedByteChecks.cpp:
+    complete
+    .text start:0x02234ae0 end:0x02234b2c
+
+src/System/ov031/System_InstallCallbackWhenContextReady.cpp:
+    complete
+    .text start:0x02229dd8 end:0x02229e28
+
+src/System/ov031/Overlay_SelectCallbackFromSharedByte.cpp:
+    complete
+    .text start:0x02234720 end:0x02234770
+
+src/System/ov031/System_MarkStateReadyAndAwaitContext.cpp:
+    complete
+    .text start:0x02217e70 end:0x02217ecc
+
+src/System/ov031/System_SelectMainLoopFromContextState.cpp:
+    complete
+    .text start:0x0222a964 end:0x0222a9c0
+
+src/System/ov031/Overlay_InitializeMainCallbackWhenBothContextsClear.cpp:
+    complete
+    .text start:0x022310c4 end:0x02231120
+
+src/Network/ov031/Network_TransitionMainLoopFromSelectedMode.cpp:
+    complete
+    .text start:0x02233784 end:0x022338b4
+
+src/System/ov031/System_RunInputStateHelpers.cpp:
+    complete
+    .text start:0x02229f98 end:0x02229fac
+
+src/System/ov031/Ov031_TemporarilySwitchProcessorContext.cpp:
+    complete
+    .text start:0x02210618 end:0x02210674
+
+src/System/ov031/System_InitializeModeCallbacks.cpp:
+    complete
+    .text start:0x0222ae38 end:0x0222ae94
+
+src/Graphics/ov031/Graphics_UpdateTouchSelectionFromThreeButtonGroups.cpp:
+    complete
+    .text start:0x02225f2c end:0x02226108
+
+src/System/ov031/System_UnlockAndSwitchReadyContext.cpp:
+    complete
+    .text start:0x0220f558 end:0x0220f5b4
+
+src/Graphics/ov031/Input_UpdateSelectionFromRectangleGroups.cpp:
+    complete
+    .text start:0x022242ec end:0x022244d4
+
+src/System/ov031/System_UpdateContextWhenActive.cpp:
+    complete
+    .text start:0x0221a854 end:0x0221a89c
+
+src/Graphics/ov031/Graphics_AdvanceBrightnessFade.cpp:
+    complete
+    .text start:0x02238588 end:0x022385e4
+
+src/Network/ov031/System_MarkSharedContextReady.cpp:
+    complete
+    .text start:0x02200aa0 end:0x02200af8
+
+src/System/ov031/System_StopSharedWorkerAndAwaitContext.cpp:
+    complete
+    .text start:0x022169a0 end:0x02216a2c
+
+src/Network/ov031/Network_RoundAmountToTransferUnit.cpp:
+    complete
+    .text start:0x022066b4 end:0x02206758
+
+src/Network/ov031/Network_RequestSharedStateSeven.cpp:
+    complete
+    .text start:0x0220cf6c end:0x0220d010
+
+src/Network/ov031/Network_AppendCommandCFTransferChunk.cpp:
+    complete
+    .text start:0x0220f770 end:0x0220f814
+
+src/Unclassified/ov031/System_DispatchOneOfTwoHandlers.cpp:
+    complete
+    .text start:0x0220cdd4 end:0x0220cdf4
+
+src/Network/ov031/Network_StartConfiguredWirelessRequest.cpp:
+    complete
+    .text start:0x0220d010 end:0x0220d214
+
+src/System/ov031/System_DispatchWithIndexedTableFlag.cpp:
+    complete
+    .text start:0x022151b0 end:0x022151d4
+
+src/Network/ov031/Ov031_AdvanceConnectionState.cpp:
+    complete
+    .text start:0x0221f11c end:0x0221f158
+
+src/Util/ov031/Util_CopyReadyContextRecords.cpp:
+    complete
+    .text start:0x0221624c end:0x022162f0
+
+src/System/ov031/ReceiveGlobalQueueValueWithFlags.cpp:
+    complete
+    .text start:0x0220510c end:0x02205134
+
+src/Util/ov031/Util_StoreValueAndAlignedAddress.cpp:
+    complete
+    .text start:0x02205620 end:0x02205648
+
+src/Math/ov031/Math_SumAlignedHeaderFields.cpp:
+    complete
+    .text start:0x022054fc end:0x02205524
+
+src/System/ov031/System_ResetGlobalPairUnlessStateNine.cpp:
+    complete
+    .text start:0x02211820 end:0x02211848
+
+src/Unclassified/ov031/Unclassified_CopyStringAndNormalizeMarker.cpp:
+    complete
+    .text start:0x02223478 end:0x022234d8
+
+src/Memory/ov031/Memory_ComputeAlignedRecordStorageSize.cpp:
+    complete
+    .text start:0x0220547c end:0x022054fc
+
+src/Unclassified/ov031/Unclassified_CopyGlobalWordsToOptionalOutputs.cpp:
+    complete
+    .text start:0x022274e4 end:0x0222750c
+
+src/System/ov031/ClearControlAndRegisterCallbackUnlessValueMinusTwo.cpp:
+    complete
+    .text start:0x0222821c end:0x02228244
+
+src/Unclassified/ov031/Util_InitializeMD5Context.cpp:
+    complete
+    .text start:0x02221e84 end:0x02221eac
+
+src/Network/ov031/Network_DispatchSharedWirelessStateOperation.cpp:
+    complete
+    .text start:0x0220d330 end:0x0220d540
+
+src/Unclassified/ov031/Unclassified_EnsureD6RecordState.cpp:
+    complete
+    .text start:0x0220fff8 end:0x02210044
+
+src/System/ov031/Overlay_ProcessPendingStatusCallbacks.cpp:
+    complete
+    .text start:0x022417fc end:0x0224185c
+
+src/System/ov031/System_CallSharedObjectCallbackUnderMutex.cpp:
+    complete
+    .text start:0x0221f9d0 end:0x0221f9f8
+
+src/System/ov031/InitializeAndRegisterCallbackWhenSharedByteZero.cpp:
+    complete
+    .text start:0x02228ae4 end:0x02228b0c
+
+src/System/ov031/System_InstallMainLoopCallbackUnlessSharedByteIsMinus2.cpp:
+    complete
+    .text start:0x02228ef4 end:0x02228f1c
+
+src/System/ov031/System_StartReadyGlobalContexts.cpp:
+    complete
+    .text start:0x022111e0 end:0x0221126c
+
+src/System/ov031/System_SetCallbackWhenSharedByte22NotMinusTwo.cpp:
+    complete
+    .text start:0x02228a84 end:0x02228aac
+
+src/System/ov031/SetPendingInputAndInvokeHandler.cpp:
+    complete
+    .text start:0x02211440 end:0x02211484
+
+src/System/ov031/System_InstallAlternateMainLoopCallbackUnlessSharedByteIsMinus2.cpp:
+    complete
+    .text start:0x02229cf4 end:0x02229d1c
+
+src/Network/ov031/Network_BuildAndSendArpReply.cpp:
+    complete
+    .text start:0x022017c4 end:0x0220186c
+
+src/System/ov031/System_InstallThirdMainLoopCallbackUnlessSharedByteIsMinus2.cpp:
+    complete
+    .text start:0x0222bb1c end:0x0222bb44
+
+src/Unclassified/ov031/Object_SetIndexedOrAllEntryModeFlags.cpp:
+    complete
+    .text start:0x0223bab4 end:0x0223bb58
+
+src/System/ov031/System_SetCallbackWhenSharedByte22IsZero.cpp:
+    complete
+    .text start:0x02229b34 end:0x02229b5c
+
+src/System/ov031/System_ClearAndRegisterCallbackUnlessSharedByteMinusTwo.cpp:
+    complete
+    .text start:0x0222e868 end:0x0222e890
+
+src/System/ov031/RegisterCallbackWhenSharedObjectAbsent.cpp:
+    complete
+    .text start:0x02231058 end:0x02231080
+
+src/System/ov031/System_InstallFourthMainLoopCallbackUnlessSharedByteIsMinus2.cpp:
+    complete
+    .text start:0x0223125c end:0x02231284
+
+src/Network/ov031/Network_SelectUnusedEphemeralPort.cpp:
+    complete
+    .text start:0x02203078 end:0x02203120
+
+src/Memory/ov031/GrowBufferAndPreserveCursor.cpp:
+    complete
+    .text start:0x0221883c end:0x022188e4
+
+src/GameState/ov031/GameState_DecrementGlobalBrightnessAndNotifyAtMinusTwelve.cpp:
+    complete
+    .text start:0x02237ecc end:0x02237f2c
+
+src/System/ov031/System_ClearAndRegisterSecondCallbackUnlessSharedByteMinusTwo.cpp:
+    complete
+    .text start:0x022321c4 end:0x022321ec
+
+src/System/ov031/ClearControlAndRegisterCallback33510UnlessValueMinusTwo.cpp:
+    complete
+    .text start:0x022334e8 end:0x02233510
+
+src/System/ov031/System_ClearControlAndInstallCallbackUnlessSentinel.cpp:
+    complete
+    .text start:0x022346a8 end:0x022346d0
+
+src/System/ov031/System_SetState10Or0FromHalfword2.cpp:
+    complete
+    .text start:0x02239b98 end:0x02239bc0
+
+src/Graphics/ov031/Graphics_ConfigureDisplayPlanesAndSelectLoopCallback.cpp:
+    complete
+    .text start:0x0222a61c end:0x0222a6c4
+
+src/System/ov031/InitializeOverlayMutexAndClearMetadata.cpp:
+    complete
+    .text start:0x0223fa34 end:0x0223fa5c
+
+src/Graphics/ov031/Graphics_FinishDisplayTransitionAndSelectCallback.cpp:
+    complete
+    .text start:0x02228444 end:0x022284ec
+
+src/System/ov031/System_RunCallbackAndAwaitContextCompletion.cpp:
+    complete
+    .text start:0x022403b0 end:0x022403d8
+
+src/System/ov031/System_RegisterCallbackWithGlobalValue.cpp:
+    complete
+    .text start:0x0223e8ac end:0x0223e8d4
+
+src/Util/ov031/AppendStringToOwnerBuffer.cpp:
+    complete
+    .text start:0x02218710 end:0x02218798
+
+src/Memory/ov031/Memory_FreeIndexedGlobalPointerAndClear.cpp:
+    complete
+    .text start:0x0223bd88 end:0x0223bdb0
+
+src/Network/ov031/Network_FindEnabledAddressValue.cpp:
+    complete
+    .text start:0x02239284 end:0x0223932c
+
+src/Network/ov031/Network_ExchangeSharedWirelessPacketAndRecordStatus.cpp:
+    complete
+    .text start:0x0223a2b0 end:0x0223a358
+
+src/System/ov031/System_ExpandSharedEntriesAndSetHeaderFlags.cpp:
+    complete
+    .text start:0x02223b60 end:0x02223c08
+
+src/Network/ov031/Network_QueueRingBufferSend.cpp:
+    complete
+    .text start:0x02206410 end:0x02206584
+
+src/System/ov031/Calendar_GetEpochAdjustedTimestamp.cpp:
+    complete
+    .text start:0x02207c98 end:0x02207cd0
+
+src/System/ov031/System_UpdateTwoSlotPacketExchange.cpp:
+    complete
+    .text start:0x0223b0c0 end:0x0223b228
+
+src/Unclassified/ov031/Unclassified_InitializeSharedRecordIfEmpty.cpp:
+    complete
+    .text start:0x02211bd4 end:0x02211c38
+
+src/Resource/ov031/Ov031_AccumulateHalfwordsThenCopyRemainder.cpp:
+    complete
+    .text start:0x0220bc18 end:0x0220bc7c
+
+src/Network/ov031/Network_SetTimeOffsetFromHttpDate.cpp:
+    complete
+    .text start:0x0221a218 end:0x0221a434
+
+src/GameState/ov031/GameState_ClearMaskBitAndInvokeHandler.cpp:
+    complete
+    .text start:0x02213270 end:0x022132d4
+
+src/System/ov031/Overlay_InitializeCallbackAfterContextChecks.cpp:
+    complete
+    .text start:0x0222a2c4 end:0x0222a328
+
+src/GameState/ov031/GameState_InvokeMaskHandlersEightAndSixteen.cpp:
+    complete
+    .text start:0x022135bc end:0x022135f4
+
+src/Unclassified/ov031/ClearMainBackgroundCharacterDataForOwner.cpp:
+    complete
+    .text start:0x0223c760 end:0x0223c7c4
+
+src/Network/ov031/Overlay_HandleCardReadCommand.cpp:
+    complete
+    .text start:0x0223b560 end:0x0223b5c4
+
+src/Resource/ov031/Ov031_InvertThenAccumulateHalfwords.cpp:
+    complete
+    .text start:0x0220bc7c end:0x0220bcbc
+
+src/Math/ov031/Math_MultiplyHalfwordArraysTruncated.cpp:
+    complete
+    .text start:0x0220be38 end:0x0220bee4
+
+src/Graphics/ov031/Graphics_DrawFixedWidthCenteredText.cpp:
+    complete
+    .text start:0x0223c8d4 end:0x0223c980
+
+src/Graphics/ov031/Graphics_DrawIpv4AddressRow.cpp:
+    complete
+    .text start:0x02230088 end:0x02230120
+
+src/System/ov031/System_WaitForOrRegisterSharedContext.cpp:
+    complete
+    .text start:0x02206f3c end:0x02206fa4
+
+src/Graphics/ov031/SetDisplayRegisterLowBits.cpp:
+    complete
+    .text start:0x02229c1c end:0x02229c84
+
+src/Util/ov031/String_ScoreAlphanumericAndSpaces.cpp:
+    complete
+    .text start:0x02242b5c end:0x02242bc4
+
+src/Util/ov031/Util_ByteSwapSharedValue.cpp:
+    complete
+    .text start:0x02207500 end:0x02207538
+
+src/System/ov031/Ov031_FinalizePendingContextTransition.cpp:
+    complete
+    .text start:0x02219178 end:0x022191e0
+
+src/Unclassified/ov031/Unclassified_SetRecordByte8To10AndClearWord44.cpp:
+    complete
+    .text start:0x02203190 end:0x022031bc
+
+src/Util/ov031/Util_CompareThreeHalfwords.cpp:
+    complete
+    .text start:0x02200824 end:0x02200850
+
+src/Unclassified/ov031/Unclassified_DispatchPointerThroughGlobalCallback.cpp:
+    complete
+    .text start:0x02207620 end:0x0220764c
+
+src/Util/ov031/Util_CompareSixBytes.cpp:
+    complete
+    .text start:0x0220f368 end:0x0220f394
+
+src/Unclassified/ov031/Ov031_ForwardWithByteSwappedHalfword.cpp:
+    complete
+    .text start:0x02207204 end:0x02207230
+
+src/System/ov031/System_IsGlobalStateHalfwordFourEqualSix.cpp:
+    complete
+    .text start:0x02212248 end:0x02212274
+
+src/Unclassified/ov031/Util_IsHeaderMagicAndValueValid.cpp:
+    complete
+    .text start:0x022115a4 end:0x022115d0
+
+src/Util/ov031/FindLinkFieldForNode.cpp:
+    complete
+    .text start:0x0220713c end:0x02207168
+
+src/Util/ov031/UnlinkNodeFromChain.cpp:
+    complete
+    .text start:0x02207120 end:0x0220713c
+
+src/Graphics/ov031/Graphics_ClearIndexedBufferAndSetTerminalByte.cpp:
+    complete
+    .text start:0x0221be38 end:0x0221be64
+
+src/Network/ov031/Network_ValidateHeaderChecksum.cpp:
+    complete
+    .text start:0x0221156c end:0x022115a4
+
+src/Unclassified/ov031/Unclassified_GetGlobalPointerField2CWhenField30Zero.cpp:
+    complete
+    .text start:0x022112e4 end:0x02211310
+
+src/GameState/ov031/System_UpdateObjectAndGlobalContext.cpp:
+    complete
+    .text start:0x02227688 end:0x022276b4
+
+src/Unclassified/ov031/Util_GetIndexedAddressAndSetHalfword.cpp:
+    complete
+    .text start:0x022276cc end:0x022276f8
+
+src/System/ov031/System_SetGlobalValueAndNotifyOnChange.cpp:
+    complete
+    .text start:0x0221d384 end:0x0221d3b0
+
+src/System/ov031/System_InstallCallbackIfSharedByteIsZero.cpp:
+    complete
+    .text start:0x022312e0 end:0x0223130c
+
+src/System/ov031/System_InitializeAndSetMainLoopCallbackIfSharedByteZero.cpp:
+    complete
+    .text start:0x02231dcc end:0x02231df8
+
+src/System/ov031/System_StartSequenceWhenSharedByteZero.cpp:
+    complete
+    .text start:0x0222ac5c end:0x0222ac88
+
+src/Unclassified/ov031/Unclassified_DispatchGlobalIndexedByteToHandler.cpp:
+    complete
+    .text start:0x02229748 end:0x02229774
+
+src/Graphics/ov031/Graphics_CopySixteenHalfwordsToEdgeColorRegisters.cpp:
+    complete
+    .text start:0x02235034 end:0x02235060
+
+src/Unclassified/ov031/Unclassified_IsGlobalObjectMissingOrByte18Zero.cpp:
+    complete
+    .text start:0x02237388 end:0x022373b4
+
+src/System/ov031/System_RunThreeInitializationHelpers.cpp:
+    complete
+    .text start:0x0222ac0c end:0x0222ac20
+
+src/Resource/ov031/Resource_ExpandPackedTableToAllocatedBuffer.cpp:
+    complete
+    .text start:0x0223be44 end:0x0223be70
+
+src/System/ov031/System_IsResolvedValueEqualToExpected.cpp:
+    complete
+    .text start:0x0223f740 end:0x0223f76c
+
+src/Unclassified/ov031/Unclassified_CountNonzeroBytePrefix.cpp:
+    complete
+    .text start:0x0223dd34 end:0x0223dd60
+
+src/Graphics/ov031/Graphics_TransitionDisplayAndSelectStoredWordCallback.cpp:
+    complete
+    .text start:0x02233fac end:0x02234050
+
+src/System/ov031/System_SelectSharedStateAndInstallCallback.cpp:
+    complete
+    .text start:0x02229484 end:0x02229528
+
+src/Network/ov031/System_SendOperation18IfCommandValueIsNot15.cpp:
+    complete
+    .text start:0x0223dfd0 end:0x0223dffc
+
+src/Graphics/ov031/Graphics_DrawTwoLineLabelWithSpaceGlyph.cpp:
+    complete
+    .text start:0x0222ff34 end:0x02230088
+
+src/System/ov031/System_DispatchSelectedSharedCallback.cpp:
+    complete
+    .text start:0x0222d474 end:0x0222d524
+
+src/Graphics/ov031/Graphics_DrawSharedRegionFieldByMode.cpp:
+    complete
+    .text start:0x0222faac end:0x0222fc48
+
+src/System/ov031/System_InitializeDisplaySequence.cpp:
+    complete
+    .text start:0x02228fec end:0x0222905c
+
+src/System/ov031/MainLoop_InitializeWhenContextReady.cpp:
+    complete
+    .text start:0x0222b5a0 end:0x0222b610
+
+src/Unclassified/ov031/PollAndSelectMainLoopCallback.cpp:
+    complete
+    .text start:0x02234050 end:0x022340c0
+
+src/Graphics/ov031/Graphics_InitializePairedSpriteEntryArrays.cpp:
+    complete
+    .text start:0x0222b918 end:0x0222ba8c
+
+src/Graphics/ov031/Ov031_ConfigureDisplayAfterContextReady.cpp:
+    complete
+    .text start:0x0223447c end:0x022344ec
+
+src/Graphics/ov031/Text_DrawSplitAsciiRow.cpp:
+    complete
+    .text start:0x0222c45c end:0x0222c5d4
+
+src/GameState/ov031/ForwardGlobalPrimaryPointerAndSecondArgument.cpp:
+    complete
+    .text start:0x0220529c end:0x022052b4
+
+src/World/ov031/CreateAndSwitchProcessorContext.cpp:
+    complete
+    .text start:0x02205648 end:0x022056bc
+
+src/System/ov031/System_CancelAndRestartStateNineAlarm.cpp:
+    complete
+    .text start:0x0220dab4 end:0x0220db28
+
+src/Unclassified/ov031/Overlay_ConfigureTransitionCallbackFromState.cpp:
+    complete
+    .text start:0x02227fb0 end:0x02228024
+
+src/System/ov031/System_InitializeAndStartGuardedProcessorContext.cpp:
+    complete
+    .text start:0x022168ec end:0x022169a0
+
+src/System/ov031/Ov031_InstallVBlankInterrupt.cpp:
+    complete
+    .text start:0x0223d780 end:0x0223d7f4
+
+src/Memory/ov031/Memory_ReleaseContextBuffersAndReset.cpp:
+    complete
+    .text start:0x022183b4 end:0x02218468
+
+src/Network/ov031/Network_MatchByteSwappedPacketIdentifiers.cpp:
+    complete
+    .text start:0x02201d58 end:0x02201e0c
+
+src/Unclassified/ov031/DispatchSharedStateCallbackOrResetFlags.cpp:
+    complete
+    .text start:0x0222e0f8 end:0x0222e1ac
+
+src/Network/ov031/Network_DecodeHexadecimalPairs.cpp:
+    complete
+    .text start:0x022208b4 end:0x02220968
+
+src/Network/ov031/Network_AccumulateBigEndianChecksum.cpp:
+    complete
+    .text start:0x022005b4 end:0x02200668
+
+src/System/ov031/System_HandleType12Message.cpp:
+    complete
+    .text start:0x0220f28c end:0x0220f2cc
+
+src/Graphics/ov031/Graphics_SaveVramMappingsAndClearDisplayMemory.cpp:
+    complete
+    .text start:0x0223dda8 end:0x0223de5c
+
+src/Graphics/ov031/Graphics_TransitionFromIdleDisplayContexts.cpp:
+    complete
+    .text start:0x0222e960 end:0x0222ea14
+
+src/Math/ov031/InvertLower16BitsOfComputedValue.cpp:
+    complete
+    .text start:0x02200684 end:0x022006a0
+
+src/System/ov031/Ov031_ReadSharedEntryValue.cpp:
+    complete
+    .text start:0x0220edb4 end:0x0220ede4
+
+src/Util/ov031/AllocateCircularListNodeAndReturnId.cpp:
+    complete
+    .text start:0x02240104 end:0x022401b8
+
+src/System/ov031/System_CheckCombinedFieldValue.cpp:
+    complete
+    .text start:0x022006a0 end:0x022006f0
+
+src/Unclassified/ov031/Unclassified_AdvanceEncodedByteCursor.cpp:
+    complete
+    .text start:0x02204878 end:0x022048a8
+
+src/Unclassified/ov031/DispatchPendingOverlayCallback.cpp:
+    complete
+    .text start:0x02216a2c end:0x02216a84
+
+src/System/ov031/AwaitProcessorContextIfFlagSet.cpp:
+    complete
+    .text start:0x02216a84 end:0x02216ab4
+
+src/System/ov031/System_SetGlobalControlByteAndReturnHalfword.cpp:
+    complete
+    .text start:0x0221b8b4 end:0x0221b8e4
+
+src/Network/ov031/Network_ActivateContextUnderMutex.cpp:
+    complete
+    .text start:0x02240ee8 end:0x02240f74
+
+src/System/ov031/ResolveIndexUnderOptionalMutex.cpp:
+    complete
+    .text start:0x0221f9a0 end:0x0221f9d0
+
+src/System/ov031/System_InitializeCallbackStateAndInstallMainLoopCallback.cpp:
+    complete
+    .text start:0x0222b420 end:0x0222b450
+
+src/System/ov031/Overlay_SetMainLoopCallbackWhenContextByteZero.cpp:
+    complete
+    .text start:0x0222a244 end:0x0222a274
+
+src/System/ov031/Overlay_InitializeCallbacksWhenContextByteZero.cpp:
+    complete
+    .text start:0x02229860 end:0x02229890
+
+src/System/ov031/System_InstallCallbackIfContextByteClear.cpp:
+    complete
+    .text start:0x0222de24 end:0x0222de54
+
+src/Graphics/ov031/Graphics_CopyPaletteToBackgroundPaletteAndApplyMode.cpp:
+    complete
+    .text start:0x0223508c end:0x022350bc
+
+src/Network/ov031/Network_SubmitCallbackAndUpdateState.cpp:
+    complete
+    .text start:0x02239b34 end:0x02239b64
+
+src/Network/ov031/Wireless_SubmitOpcode16AndUpdateSharedState.cpp:
+    complete
+    .text start:0x02239954 end:0x02239984
+
+src/Memory/ov031/Memory_FreeSafeAllocatorPointer.cpp:
+    complete
+    .text start:0x022434e8 end:0x02243518
+
+src/Network/ov031/System_SubmitOpcodeSixteenAndApplyResult.cpp:
+    complete
+    .text start:0x02239a74 end:0x02239aa4
+
+src/Unclassified/ov031/Object_InvokeByteIndexedCallbackFromField2C.cpp:
+    complete
+    .text start:0x02243690 end:0x022436c0
+
+src/Math/ov031/Unclassified_InitializeArithmeticHelpers.cpp:
+    complete
+    .text start:0x0220db28 end:0x0220db38
+
+src/Unclassified/ov031/Context_IsValidParameterForActiveState.cpp:
+    complete
+    .text start:0x02211484 end:0x022114fc
+
+src/System/ov031/System_ActivateGlobalObjectIfReady.cpp:
+    complete
+    .text start:0x0223b010 end:0x0223b040
+
+src/System/ov031/System_TransitionSharedObjectAndInvokeCallback.cpp:
+    complete
+    .text start:0x02239984 end:0x022399d8
+
+src/System/ov031/System_ValidateGlobalSlotOrFallbackTransition.cpp:
+    complete
+    .text start:0x02239ad8 end:0x02239b10
+
+src/Math/ov031/Math_InitializeDivisionAndInverseSupport.cpp:
+    complete
+    .text start:0x0223d0a4 end:0x0223d0b4
+
+src/Graphics/ov031/Ov031_SetDisplayPlaneAndCallback.cpp:
+    complete
+    .text start:0x0222982c end:0x02229860
+
+src/Unclassified/ov031/Graphics_InitializeMainDisplayAndCallback.cpp:
+    complete
+    .text start:0x02229a74 end:0x02229aa8
+
+src/System/ov031/System_ConfigureDisplayPlaneAndCallback.cpp:
+    complete
+    .text start:0x0222a814 end:0x0222a848
+
+src/System/ov031/System_ConfigureDisplayAndRegisterMainLoop.cpp:
+    complete
+    .text start:0x0222a210 end:0x0222a244
+
+src/Unclassified/ov031/Overlay_ConfigurePlane15AndScheduleCallback.cpp:
+    complete
+    .text start:0x02229c84 end:0x02229cb8
+
+src/Unclassified/ov031/OV031_InitializeDisplayTask.cpp:
+    complete
+    .text start:0x0222b4f8 end:0x0222b52c
+
+src/Unclassified/ov031/Graphics_InitializeSecondaryMainDisplayCallback.cpp:
+    complete
+    .text start:0x02231a44 end:0x02231a78
+
+src/Graphics/ov031/Ov031_SetDisplayPlaneAndNextCallback.cpp:
+    complete
+    .text start:0x02231614 end:0x02231648
+
+src/Unclassified/ov031/Unclassified_ProcessObjectByteD0DAndReturn16.cpp:
+    complete
+    .text start:0x022154e4 end:0x022154f8
+
+src/System/ov031/System_ConfigureDisplayAndRegisterMainLoopB.cpp:
+    complete
+    .text start:0x022343d4 end:0x02234408
+
+src/System/ov031/System_ConfigureDisplayPlaneAndCallbackTwo.cpp:
+    complete
+    .text start:0x02234a08 end:0x02234a3c
+
+src/Unclassified/ov031/InitializeDisplayPlaneTransition.cpp:
+    complete
+    .text start:0x02233ee8 end:0x02233f1c
+
+src/World/ov031/InitializeOverlayDisplay.cpp:
+    complete
+    .text start:0x0222ab88 end:0x0222abbc
+
+src/Unclassified/ov031/Overlay_ConfigureDisplayPlanesAndCallback.cpp:
+    complete
+    .text start:0x022311fc end:0x02231230
+
+src/Unclassified/ov031/Unclassified_RunThreeAdjacentHelpers.cpp:
+    complete
+    .text start:0x02229378 end:0x0222938c
+
+src/System/ov031/Ov031_AdvanceContextFromFive.cpp:
+    complete
+    .text start:0x0223a760 end:0x0223a794
+
+src/Graphics/ov031/Graphics_ConfigureDisplayPlanesForPrimaryContextMode.cpp:
+    complete
+    .text start:0x02228858 end:0x02228910
+
+src/Graphics/ov031/Graphics_PrepareDisplayAndSelectLoopCallback.cpp:
+    complete
+    .text start:0x0222a0bc end:0x0222a174
+
+src/Unclassified/ov031/Overlay_EnsureSingletonObject1E60.cpp:
+    complete
+    .text start:0x02235780 end:0x022357b4
+
+src/Unclassified/ov031/UpdateContextTransitionFromPendingState.cpp:
+    complete
+    .text start:0x02239aa4 end:0x02239ad8
+
+src/Graphics/ov031/Graphics_TransitionIdleContextsToMainLoop.cpp:
+    complete
+    .text start:0x022347f4 end:0x022348ac
+
+src/Unclassified/ov031/Unclassified_InvokeHelperWithZeroFifthArgument.cpp:
+    complete
+    .text start:0x0223e218 end:0x0223e22c
+
+src/Unclassified/ov031/OV031_InitializeIndexedFourByteRecord.cpp:
+    complete
+    .text start:0x0223beb8 end:0x0223beec
+
+src/System/ov031/System_SetModeSixAndRefresh.cpp:
+    complete
+    .text start:0x02238da0 end:0x02238db4
+
+src/System/ov031/Overlay_UpdatePendingInputState.cpp:
+    complete
+    .text start:0x0222871c end:0x02228730
+
+src/Network/ov031/Network_SetSelectedWirelessNameAndKey.cpp:
+    complete
+    .text start:0x0221314c end:0x02213204
+
+src/Util/ov031/StoreByteAndCallWithPointer.cpp:
+    complete
+    .text start:0x0221e5a0 end:0x0221e5b0
+
+src/Util/ov031/Util_Update64ByteBlockHash.cpp:
+    complete
+    .text start:0x0220b028 end:0x0220b0e0
+
+src/Network/ov031/Network_SetEncodedKey.cpp:
+    complete
+    .text start:0x02235cdc end:0x02235e74
+
+src/System/ov031/System_QueueTimedCallbackForSharedRecord.cpp:
+    complete
+    .text start:0x0223c278 end:0x0223c2d0
+
+src/World/ov031/CreateSharedDisplayResource.cpp:
+    complete
+    .text start:0x02237e58 end:0x02237e9c
+
+src/Unclassified/ov031/InitializeSteppedOverlayValues.cpp:
+    complete
+    .text start:0x0223beec end:0x0223bf2c
+
+src/Unclassified/ov031/OV031_InitializeGlobalCallback.cpp:
+    complete
+    .text start:0x02236e60 end:0x02236ea0
+
+src/System/ov031/System_UpdateSharedStateBranch.cpp:
+    complete
+    .text start:0x0222ca64 end:0x0222cad8
+
+src/System/ov031/System_InitializeMode8MainLoopCallback.cpp:
+    complete
+    .text start:0x0222d094 end:0x0222d0b0
+
+src/Util/ov031/Util_HandleChangedContextSelection.cpp:
+    complete
+    .text start:0x0222cad8 end:0x0222cb5c
+
+src/Unclassified/ov031/Overlay_IsGeneratedRecordPrefixExpected.cpp:
+    complete
+    .text start:0x02215718 end:0x02215750
+
+src/System/ov031/System_InitializeSharedCallbackSequence.cpp:
+    complete
+    .text start:0x0222ac88 end:0x0222acc0
+
+src/System/ov031/System_ConfigureSharedByteAndCallback.cpp:
+    complete
+    .text start:0x022287d4 end:0x022287f4
+
+src/System/ov031/System_SetSharedContextAndCallback.cpp:
+    complete
+    .text start:0x02228f7c end:0x02228f9c
+
+src/Unclassified/ov031/InitializeCallbackIfSharedStatusIsZero.cpp:
+    complete
+    .text start:0x02234260 end:0x0223429c
+
+src/System/ov031/System_ResetSharedByteAndInstallMode8Callback.cpp:
+    complete
+    .text start:0x0222a038 end:0x0222a058
+
+src/System/ov031/System_SetSharedContextAndInstallSecondCallback.cpp:
+    complete
+    .text start:0x0222e8f0 end:0x0222e910
+
+src/System/ov031/SetSharedByteAndScheduleCallback.cpp:
+    complete
+    .text start:0x02229528 end:0x02229548
+
+src/Unclassified/ov031/System_TransitionFromSharedContextState.cpp:
+    complete
+    .text start:0x02228910 end:0x02228960
+
+src/Unclassified/ov031/AdvanceInterruptProtectedState.cpp:
+    complete
+    .text start:0x0221f158 end:0x0221f190
+
+src/System/ov031/Overlay_InitializeSharedByteAndCallback.cpp:
+    complete
+    .text start:0x02229b5c end:0x02229b7c
+
+src/System/ov031/System_ConfigureSharedByteAndAlternateCallback.cpp:
+    complete
+    .text start:0x0223130c end:0x0223132c
+
+src/Unclassified/ov031/Overlay_ConfigureModeFromSharedSignedByte.cpp:
+    complete
+    .text start:0x0222a890 end:0x0222a900
+
+src/System/ov031/System_SetSharedContextAndInstallThirdCallback.cpp:
+    complete
+    .text start:0x02232380 end:0x022323a0
+
+src/System/ov031/System_SetSharedByteAndInstallMode8Callback.cpp:
+    complete
+    .text start:0x02231df8 end:0x02231e18
+
+src/System/ov031/System_SetStateAndCallbackFromMode.cpp:
+    complete
+    .text start:0x0222f68c end:0x0222f6ac
+
+src/System/ov031/SetSharedByteAndScheduleCallback33720.cpp:
+    complete
+    .text start:0x02233700 end:0x02233720
+
+src/World/ov031/ConfigureSecondContextDisplay.cpp:
+    complete
+    .text start:0x02232a84 end:0x02232ac0
+
+src/Unclassified/ov031/UpdateContextAndEnterStateNine.cpp:
+    complete
+    .text start:0x02239518 end:0x02239550
+
+src/Util/ov031/Util_ClassifyEnabledRecordByPriorityState.cpp:
+    complete
+    .text start:0x02213800 end:0x02213894
+
+src/Unclassified/ov031/Input_SetPendingForHeldMaskOrValidatedEvent.cpp:
+    complete
+    .text start:0x02234aa4 end:0x02234adc
+
+src/System/ov031/System_DispatchSharedByteStateAndInstallCallback.cpp:
+    complete
+    .text start:0x0222d418 end:0x0222d474
+
+src/System/ov031/Overlay_InstallCallbackWhenSharedByteZero.cpp:
+    complete
+    .text start:0x0222b388 end:0x0222b3b4
+
+src/System/ov031/System_InstallModeCallbackWhenStateIsZero.cpp:
+    complete
+    .text start:0x0222d6b0 end:0x0222d6dc
+
+src/System/ov031/System_InstallCallbackWhenSharedByte1BZero.cpp:
+    complete
+    .text start:0x0223193c end:0x02231968
+
+src/System/ov031/System_InstallCallbackWhenSharedByte1BIsZero.cpp:
+    complete
+    .text start:0x0222e378 end:0x0222e3a4
+
+src/Unclassified/ov031/System_UpdatePendingStateForMaskTwo.cpp:
+    complete
+    .text start:0x022316bc end:0x022316f4
+
+src/System/ov031/InitializeCallbackWhenSharedByte1BIsZero.cpp:
+    complete
+    .text start:0x02231fd8 end:0x02232004
+
+src/System/ov031/System_InstallCallback02231518WhenSharedByte1BZero.cpp:
+    complete
+    .text start:0x022314ec end:0x02231518
+
+src/System/ov031/System_InstallSecondModeCallbackWhenStateIsZero.cpp:
+    complete
+    .text start:0x02234d98 end:0x02234dc4
+
+src/System/ov031/System_SelectTransitionCallbackBySharedMode.cpp:
+    complete
+    .text start:0x02234de4 end:0x02234e40
+
+src/System/ov031/Ov031_IsObjectTokenCurrent.cpp:
+    complete
+    .text start:0x02211608 end:0x02211644
+
+src/Unclassified/ov031/CallFunctionAtOffset1E0AndReturnThird.cpp:
+    complete
+    .text start:0x022093f4 end:0x0220940c
+
+src/Unclassified/ov031/System_ValidateAndApplyContextPair.cpp:
+    complete
+    .text start:0x0220376c end:0x022037a8
+
+src/System/ov031/System_ActivateGlobalControlForObject.cpp:
+    complete
+    .text start:0x02227804 end:0x02227840
+
+src/System/ov031/System_AdvanceSharedRegionIndex.cpp:
+    complete
+    .text start:0x02223a0c end:0x02223a24
+
+src/Util/ov031/Util_FindLengthMatchedStringResult.cpp:
+    complete
+    .text start:0x02213894 end:0x02213910
+
+src/System/ov031/System_ConvertSharedRegionByteToIndexPlusFive.cpp:
+    complete
+    .text start:0x022239f4 end:0x02223a0c
+
+src/Unclassified/ov031/System_InstallContextCallbackWhenIdle.cpp:
+    complete
+    .text start:0x022281e0 end:0x0222821c
+
+src/Unclassified/ov031/OV031_WaitForGlobalQueueToDrain.cpp:
+    complete
+    .text start:0x02206c08 end:0x02206c44
+
+src/System/ov031/System_StartModeTwoIfBothContextsClear.cpp:
+    complete
+    .text start:0x02228eb8 end:0x02228ef4
+
+src/System/ov031/System_ConfigureDisplayPlanesAndCallback.cpp:
+    complete
+    .text start:0x02227ce4 end:0x02227d20
+
+src/World/ov031/ConfigureDualContextEffects.cpp:
+    complete
+    .text start:0x02227f74 end:0x02227fb0
+
+src/Unclassified/ov031/System_InstallContextCallbackWhenIdleAlternate.cpp:
+    complete
+    .text start:0x02229314 end:0x02229350
+
+src/Unclassified/ov031/Overlay_SelectModeAndCallbackWhenContextsClear.cpp:
+    complete
+    .text start:0x022286b8 end:0x022286f4
+
+src/Unclassified/ov031/OV031_StartCallbackWhenContextsClear.cpp:
+    complete
+    .text start:0x0222b010 end:0x0222b04c
+
+src/Unclassified/ov031/System_InstallContextCallbackWhenIdleThird.cpp:
+    complete
+    .text start:0x0222bae0 end:0x0222bb1c
+
+src/System/ov031/System_ConfigureTwoDisplayModes.cpp:
+    complete
+    .text start:0x0222b564 end:0x0222b5a0
+
+src/System/ov031/System_InitializeSecondContextDisplay.cpp:
+    complete
+    .text start:0x02229d9c end:0x02229dd8
+
+src/Unclassified/ov031/Overlay_StartContextModeThree.cpp:
+    complete
+    .text start:0x0222a480 end:0x0222a4bc
+
+src/Unclassified/ov031/Overlay_ConfigureTwoModeThreePlanesAndCallback.cpp:
+    complete
+    .text start:0x02231088 end:0x022310c4
+
+src/System/ov031/System_InstallCallbackWhenBothContextBytesClear.cpp:
+    complete
+    .text start:0x0222e82c end:0x0222e868
+
+src/Graphics/ov031/Ov031_InstallCallbackWhenContextsIdle.cpp:
+    complete
+    .text start:0x02232188 end:0x022321c4
+
+src/Unclassified/ov031/System_InstallContextCallbackWhenIdleFourth.cpp:
+    complete
+    .text start:0x022334ac end:0x022334e8
+
+src/World/ov031/ConfigureThirdContextEffects.cpp:
+    complete
+    .text start:0x02231ab0 end:0x02231aec
+
+src/System/ov031/System_InitializeCallbackWhenBothContextsClear.cpp:
+    complete
+    .text start:0x0223466c end:0x022346a8
+
+src/Unclassified/ov031/OV031_ResetIndexedContext.cpp:
+    complete
+    .text start:0x02236484 end:0x022364c0
+
+src/System/ov031/System_RunDeferredCallback.cpp:
+    complete
+    .text start:0x0223fde4 end:0x0223fe20
+
+src/System/ov031/System_CompareWordToGlobalResult.cpp:
+    complete
+    .text start:0x0220ff18 end:0x0220ff34
+
+src/Unclassified/ov031/Overlay_StoreLoadedObjectByDescriptorIndex.cpp:
+    complete
+    .text start:0x0223b040 end:0x0223b07c
+
+src/Unclassified/ov031/System_CopyContextLabelIfFits.cpp:
+    complete
+    .text start:0x02218ed8 end:0x02218f18
+
+src/Unclassified/ov031/System_LoadResourceAndInvokeCallback.cpp:
+    complete
+    .text start:0x022234d8 end:0x02223518
+
+src/Memory/ov031/System_AllocateAndStoreGlobalBuffer.cpp:
+    complete
+    .text start:0x022236e8 end:0x02223708
+
+src/System/ov031/ProcessContextWithDefaultOptions.cpp:
+    complete
+    .text start:0x0220728c end:0x022072ac
+
+src/System/ov031/Overlay_InitializeAndInstallCallback.cpp:
+    complete
+    .text start:0x02229bfc end:0x02229c1c
+
+src/System/ov031/System_Sleep10TicksAndRunAdjacentHelpers.cpp:
+    complete
+    .text start:0x02231d70 end:0x02231d90
+
+src/System/ov031/System_SleepAndRunContextSteps.cpp:
+    complete
+    .text start:0x02231284 end:0x022312a4
+
+src/System/ov031/System_InitializeDualMutexWorkerContext.cpp:
+    complete
+    .text start:0x02217db4 end:0x02217e70
+
+src/Unclassified/ov031/Overlay_LoadMainBG2AndEnableDisplayPlanes.cpp:
+    complete
+    .text start:0x02234118 end:0x02234184
+
+src/Graphics/ov031/Graphics_LoadMainBG2AndSetDisplayModes.cpp:
+    complete
+    .text start:0x02233e7c end:0x02233ee8
+
+src/Unclassified/ov031/Graphics_LoadMainBG2ScreenDataAndSetDisplayBits.cpp:
+    complete
+    .text start:0x0222a1a4 end:0x0222a210
+
+src/Util/ov031/MoveNodeToSharedListTail.cpp:
+    complete
+    .text start:0x0220eea0 end:0x0220ef5c
+
+src/System/ov031/System_QuerySharedStateWithSnapshot.cpp:
+    complete
+    .text start:0x02227bc8 end:0x02227c84
+
+src/System/ov031/SeedRandomStateFromLowEntropy.cpp:
+    complete
+    .text start:0x02241318 end:0x02241338
+
+src/Graphics/ov031/Graphics_LoadBG2AndSetFiveBackgroundPriorities.cpp:
+    complete
+    .text start:0x022285e4 end:0x02228664
+
+src/Network/ov031/Network_SendTwoBuffersWithTimeout.cpp:
+    complete
+    .text start:0x022037a8 end:0x022039b0
+
+src/Unclassified/ov031/ProcessorContext_SetScaledSharedOffsetIfValid.cpp:
+    complete
+    .text start:0x0221afb4 end:0x0221aff8
+
+src/Graphics/ov031/Graphics_LoadMainBG2AndSetBackgroundPriorities.cpp:
+    complete
+    .text start:0x02228be0 end:0x02228c60
+
+src/Unclassified/ov031/Object_FindLengthMatchedStringEntry.cpp:
+    complete
+    .text start:0x02213910 end:0x022139a0
+
+src/Graphics/ov031/Graphics_LoadMultiBackgroundScreenAndSetPriorities.cpp:
+    complete
+    .text start:0x022289a4 end:0x02228a24
+
+src/Graphics/ov031/Graphics_LoadBG2AndSetFiveBackgroundPriorities_Ov0310222A398.cpp:
+    complete
+    .text start:0x0222a398 end:0x0222a418
+
+src/Graphics/ov031/Graphics_LoadMainBG2ScreenAndSetFiveBackgroundPriorities.cpp:
+    complete
+    .text start:0x022297ac end:0x0222982c
+
+src/Graphics/ov031/Graphics_LoadAlternateMainBG2AndSetPriorities.cpp:
+    complete
+    .text start:0x0222a794 end:0x0222a814
+
+src/System/ov031/System_ResetDisplayObjectsAndSelectMainLoop.cpp:
+    complete
+    .text start:0x02232b44 end:0x02232ce8
+
+src/Graphics/ov031/Graphics_LoadXb4MultiScreenAndSetPriorities.cpp:
+    complete
+    .text start:0x0223117c end:0x022311fc
+
+src/Unclassified/ov031/UpdateNestedOverlayPointerIfAvailable.cpp:
+    complete
+    .text start:0x0220f728 end:0x0220f770
+
+src/Graphics/ov031/Graphics_LoadBG2AndSetFiveBackgroundPriorities_Ov03102231594.cpp:
+    complete
+    .text start:0x02231594 end:0x02231614
+
+src/Graphics/ov031/Graphics_LoadMainBG2ResourceBdb4AndSetPriorities.cpp:
+    complete
+    .text start:0x02234354 end:0x022343d4
+
+src/System/ov031/System_IsSharedSequenceReady.cpp:
+    complete
+    .text start:0x022142ec end:0x02214334
+
+src/Graphics/ov031/Graphics_LoadMainBG2DataAndSetBackgroundPriorities.cpp:
+    complete
+    .text start:0x0222e404 end:0x0222e484
+
+src/Graphics/ov031/Graphics_InitializeBG2ScreenLoaderAndPriorities.cpp:
+    complete
+    .text start:0x02229e70 end:0x02229ef0
+
+src/Graphics/ov031/Graphics_LoadScreenData0224BBF8AndSetBackgroundPriorities.cpp:
+    complete
+    .text start:0x022319c4 end:0x02231a44
+
+src/System/ov031/System_InitializeAndInstallMainLoopCallback.cpp:
+    complete
+    .text start:0x0222e3e8 end:0x0222e404
+
+src/Graphics/ov031/Graphics_LoadMainBG2ScreenAndSetPriorities.cpp:
+    complete
+    .text start:0x0222ab08 end:0x0222ab88
+
+src/Graphics/ov031/Graphics_LoadThreeBGAssetsAndSetPriorities.cpp:
+    complete
+    .text start:0x0222af14 end:0x0222afbc
+
+src/Unclassified/ov031/ConfigureIndexedOverlayResource.cpp:
+    complete
+    .text start:0x022373b4 end:0x022373fc
+
+src/Graphics/ov031/Graphics_LoadStepThreeBackgroundAssets.cpp:
+    complete
+    .text start:0x02230f20 end:0x02230fb4
+
+src/Graphics/ov031/Graphics_ConfigureDisplayBrightness.cpp:
+    complete
+    .text start:0x0223bff8 end:0x0223c040
+
+src/Graphics/ov031/Graphics_LoadMainBG2ResourcesAndSetPriorities.cpp:
+    complete
+    .text start:0x0223208c end:0x02232134
+
+src/Unclassified/ov031/Unclassified_InvokeHelperWithTwoZerosAndForwardedSixthArgument.cpp:
+    complete
+    .text start:0x022072ac end:0x022072d0
+
+src/Graphics/ov031/Graphics_LoadMainBG2CharacterPaletteAndScreen.cpp:
+    complete
+    .text start:0x02231c0c end:0x02231cb4
+
+src/System/ov031/Ov031_InitializeTransitionSequence.cpp:
+    complete
+    .text start:0x02231988 end:0x022319c4
+
+src/Unclassified/ov031/CallWithTwoZeroArguments.cpp:
+    complete
+    .text start:0x02207380 end:0x022073a4
+
+src/Graphics/ov031/Graphics_InitializeBG2ResourceLoadersAndPriorities.cpp:
+    complete
+    .text start:0x02233a8c end:0x02233b34
+
+src/Memory/ov031/Memory_AllocateZeroedBlock.cpp:
+    complete
+    .text start:0x0223cf4c end:0x0223cf70
+
+src/System/ov031/System_ValidateThenFreeSharedGlobalAllocation.cpp:
+    complete
+    .text start:0x02227ba4 end:0x02227bc8
+
+src/Graphics/ov031/Graphics_LoadThreeBGAssetsAndSetPriorities_Ov03102234960.cpp:
+    complete
+    .text start:0x02234960 end:0x02234a08
+
+src/Graphics/ov031/Graphics_LoadMainObjectPaletteAndBG2Resources.cpp:
+    complete
+    .text start:0x0222cd14 end:0x0222cdd0
+
+src/Graphics/ov031/Graphics_LoadMainBG2AssetsAndSetPriorities.cpp:
+    complete
+    .text start:0x02234570 end:0x02234618
+
+src/Memory/ov031/System_InitializeGlobalQueue.cpp:
+    complete
+    .text start:0x0223d858 end:0x0223d884
+
+src/Unclassified/ov031/OV031_TranslateOperationError.cpp:
+    complete
+    .text start:0x022414cc end:0x02241518
+
+src/System/ov031/InitializeOverlayStateAndScheduleCallback.cpp:
+    complete
+    .text start:0x02230f00 end:0x02230f20
+
+src/Unclassified/ov031/Overlay_MapOperationResultForFallbackState.cpp:
+    complete
+    .text start:0x02241480 end:0x022414cc
+
+src/Graphics/ov031/Graphics_UpdateFivePairedSpriteRows.cpp:
+    complete
+    .text start:0x0222c660 end:0x0222c71c
+
+src/System/ov031/System_AdjustObjectParameters.cpp:
+    complete
+    .text start:0x022407f8 end:0x02240820
+
+src/Unclassified/ov031/System_CopyContextAndRegisterCallback.cpp:
+    complete
+    .text start:0x02234ea8 end:0x02234f08
+
+src/System/ov031/Input_InitializeCalibratedTouchSampling.cpp:
+    complete
+    .text start:0x0223cff0 end:0x0223d06c
+
+src/Resource/ov031/Resource_InitializeTwoBuffersAndCallbackTask.cpp:
+    complete
+    .text start:0x0223d928 end:0x0223d9c4
+
+src/Graphics/ov031/Graphics_LoadMainObjectAndBG2AssetsAndSetPriorities.cpp:
+    complete
+    .text start:0x0222d894 end:0x0222d950
+
+src/System/ov031/System_RunWithIRQDisabledAndRestoreSharedPair.cpp:
+    complete
+    .text start:0x02206ebc end:0x02206f08
+
+src/System/ov031/System_ConfigureModeAndInstallCallback.cpp:
+    complete
+    .text start:0x022298a8 end:0x022298d0
+
+src/Network/ov031/Network_ValidateAndCompareByteRange.cpp:
+    complete
+    .text start:0x0221b7fc end:0x0221b848
+
+src/Unclassified/ov031/CreateIndexedRecordAndCallbackState.cpp:
+    complete
+    .text start:0x02223a64 end:0x02223b1c
+
+src/System/ov031/System_InvokeWithGlobalBuffer.cpp:
+    complete
+    .text start:0x0221e2bc end:0x0221e2e4
+
+src/System/ov031/Overlay_ConfigureAndInstallCallback.cpp:
+    complete
+    .text start:0x02233c94 end:0x02233cbc
+
+src/System/ov031/System_ProcessDecodedGlobalIdentifierForObject.cpp:
+    complete
+    .text start:0x022175dc end:0x02217604
+
+src/Unclassified/ov031/Unclassified_InvokeGlobalCallbackOnObjectField30.cpp:
+    complete
+    .text start:0x02240df4 end:0x02240e1c
+
+src/System/ov031/Overlay_InitializePairedResourcesAndRegisterCallback.cpp:
+    complete
+    .text start:0x02228b2c end:0x02228b78
+
+src/Graphics/ov031/Ov031_ConfigureThirdDisplayContext.cpp:
+    complete
+    .text start:0x02229b7c end:0x02229bc8
+
+src/GameState/ov031/GameState_PrepareRecordAndClassifyFlag.cpp:
+    complete
+    .text start:0x022436e0 end:0x02243708
+
+src/Unclassified/ov031/Unclassified_ProcessObjectAndInvokeGlobalCallback.cpp:
+    complete
+    .text start:0x0223edb4 end:0x0223ede0
+
+src/Graphics/ov031/Graphics_UpdateFiveVisibleEntriesInTwoPasses.cpp:
+    complete
+    .text start:0x0222c3b4 end:0x0222c45c
+
+src/Unclassified/ov031/Overlay_UpdateSharedSignedStateIfChanged.cpp:
+    complete
+    .text start:0x022264c8 end:0x02226514
+
+src/Network/ov031/Network_ReadBytesUntilCRLF.cpp:
+    complete
+    .text start:0x02241694 end:0x02241720
+
+src/System/ov031/System_InitializeSharedQueueAndStartProcessorContext.cpp:
+    complete
+    .text start:0x0224587c end:0x02245938
+
+src/Unclassified/ov031/Object_BufferBytesAndFlushFullBlocks.cpp:
+    complete
+    .text start:0x022415e0 end:0x02241694
+
+src/Unclassified/ov031/System_AdvanceSetupAndInstallCallback.cpp:
+    complete
+    .text start:0x0222b3d4 end:0x0222b420
+
+src/System/ov031/System_StoreAsyncResultAndHandleNegativeStatus.cpp:
+    complete
+    .text start:0x0223f188 end:0x0223f1e8
+
+src/Filesystem/ov031/Filesystem_InitializeOverlayArchiveHandle.cpp:
+    complete
+    .text start:0x0223b324 end:0x0223b4d4
+
+src/Unclassified/ov031/GlobalState7_CallObjectOrReturnMinus56.cpp:
+    complete
+    .text start:0x0221032c end:0x02210358
+
+src/Unclassified/ov031/Overlay_StartTransitionSequence.cpp:
+    complete
+    .text start:0x0222e910 end:0x0222e960
+
+src/System/ov031/System_SelectStateWithFallback.cpp:
+    complete
+    .text start:0x0221544c end:0x02215478
+
+src/System/ov031/System_InitializeActionWhenBothContextsClear.cpp:
+    complete
+    .text start:0x02231008 end:0x02231058
+
+src/Network/ov031/Network_FormatUnsignedDecimal.cpp:
+    complete
+    .text start:0x02242dd4 end:0x02242e90
+
+src/Unclassified/ov031/Overlay_TransitionForSharedState.cpp:
+    complete
+    .text start:0x02228388 end:0x022283d8
+
+src/System/ov031/System_InstallCallbackWhenScreenZeroIsClear.cpp:
+    complete
+    .text start:0x02228a58 end:0x02228a84
+
+src/Unclassified/ov031/Unclassified_TestGlobalRecordField400.cpp:
+    complete
+    .text start:0x0221aff8 end:0x0221b024
+
+src/Unclassified/ov031/Overlay_SetDisplayPlanesAndContinue.cpp:
+    complete
+    .text start:0x0222818c end:0x022281e0
+
+src/Graphics/ov031/Input_UpdateHeldRectangleSelectionAndRepeat.cpp:
+    complete
+    .text start:0x022262d8 end:0x022264c8
+
+src/System/ov031/System_ConfigureDualDisplayPlanes.cpp:
+    complete
+    .text start:0x02229ef0 end:0x02229f44
+
+src/System/ov031/System_InstallCallbackWhenSelectedContextByte9Zero.cpp:
+    complete
+    .text start:0x02229f44 end:0x02229f70
+
+src/System/ov031/System_ConfigureDisplayBothEngines.cpp:
+    complete
+    .text start:0x0222ba8c end:0x0222bae0
+
+src/Unclassified/ov031/Overlay_ConfigureDisplayModeTwoAndCallback.cpp:
+    complete
+    .text start:0x0222afbc end:0x0222b010
+
+src/Unclassified/ov031/InitializeTwoDisplayPlaneSets.cpp:
+    complete
+    .text start:0x0222d950 end:0x0222d9a4
+
+src/World/ov031/ConfigureSecondViewPlanes.cpp:
+    complete
+    .text start:0x022292c0 end:0x02229314
+
+src/System/ov031/System_InstallAlternateCallbackWhenSelectedContextByte9Zero.cpp:
+    complete
+    .text start:0x02234a3c end:0x02234a68
+
+src/System/ov031/System_ConfigureDisplayPlanesMask14.cpp:
+    complete
+    .text start:0x02230fb4 end:0x02231008
+
+src/Unclassified/ov031/OV031_InitializeDualScreenCallback.cpp:
+    complete
+    .text start:0x02232134 end:0x02232188
+
+src/System/ov031/Overlay_InstallCallbackWhenContextByteZero.cpp:
+    complete
+    .text start:0x02231230 end:0x0223125c
+
+src/Graphics/ov031/System_ConfigureTwoDisplayLayersAndCallback.cpp:
+    complete
+    .text start:0x02233458 end:0x022334ac
+
+src/Unclassified/ov031/InitializeDisplayPlanes14.cpp:
+    complete
+    .text start:0x02234184 end:0x022341d8
+
+src/Unclassified/ov031/Overlay_TransitionSharedStateAndCallback.cpp:
+    complete
+    .text start:0x022336ac end:0x02233700
+
+src/System/ov031/InitializeContextCallbackWhenByte9IsZero.cpp:
+    complete
+    .text start:0x02231648 end:0x02231674
+
+src/System/ov031/InitializeOverlaySelectionState.cpp:
+    complete
+    .text start:0x02233510 end:0x02233524
+
+src/Unclassified/ov031/Overlay_InitializeContextAndReadFlag.cpp:
+    complete
+    .text start:0x02211db0 end:0x02211e08
+
+src/Unclassified/ov031/IsObjectResultSevenThenSix.cpp:
+    complete
+    .text start:0x0220a444 end:0x0220a474
+
+src/Unclassified/ov031/Unclassified_ValidateAndCopyRecordData.cpp:
+    complete
+    .text start:0x0221db18 end:0x0221db48
+
+src/System/ov031/System_UpdateStateFromGlobalByte.cpp:
+    complete
+    .text start:0x022247bc end:0x022247ec
+
+src/System/ov031/System_GetCurrentStatusClass9Or11.cpp:
+    complete
+    .text start:0x022154f8 end:0x02215528
+
+src/Network/ov031/Network_WaitForRingRecordAndReturnPayload.cpp:
+    complete
+    .text start:0x02200af8 end:0x02200bb8
+
+src/Resource/ov031/Overlay_TryGetInterruptSafeEntry.cpp:
+    complete
+    .text start:0x0220ec04 end:0x0220ec5c
+
+src/System/ov031/InitializeObjectRandomState.cpp:
+    complete
+    .text start:0x022115d8 end:0x02211608
+
+src/System/ov031/System_ProcessMatchingGlobalRecord.cpp:
+    complete
+    .text start:0x02238db4 end:0x02238de4
+
+src/Unclassified/ov031/Unclassified_SetGlobalIndexAndDerivedOffset.cpp:
+    complete
+    .text start:0x02230984 end:0x022309b4
+
+src/System/ov031/System_ConvertInputAndStoreResultByIndex.cpp:
+    complete
+    .text start:0x0223bd58 end:0x0223bd88
+
+src/System/ov031/System_RunNextThreeInitializationHelpers.cpp:
+    complete
+    .text start:0x02232844 end:0x02232858
+
+src/World/ov031/ConfigureThirdContextFromSharedState.cpp:
+    complete
+    .text start:0x0222a908 end:0x0222a964
+
+src/Math/ov031/Math_InitializePairWithScaledSum.cpp:
+    complete
+    .text start:0x0221e54c end:0x0221e5a0
+
+src/System/ov031/System_RunContextStartupSequence.cpp:
+    complete
+    .text start:0x0222b36c end:0x0222b388
+
+src/Unclassified/ov031/ProcessorContext_ReleasePendingCalls.cpp:
+    complete
+    .text start:0x022166b4 end:0x02216710
+
+src/Resource/ov031/Resource_AllocateAndInitializeTwoStateBlocks.cpp:
+    complete
+    .text start:0x0223dabc end:0x0223db7c
+
+src/System/ov031/System_GetPrimaryObjectOrInitializeFallback.cpp:
+    complete
+    .text start:0x0221188c end:0x022118a8
+
+src/System/ov031/UpdateSharedRequestStateUnderMutex.cpp:
+    complete
+    .text start:0x022079ac end:0x02207a10
+
+src/Unclassified/ov031/Unclassified_UseFallbackHelperWhenPrimaryIsZero.cpp:
+    complete
+    .text start:0x02212c18 end:0x02212c3c
+
+src/Unclassified/ov031/CallFallbackWhenPrecheckNegative.cpp:
+    complete
+    .text start:0x022436c0 end:0x022436e0
+
+src/System/ov031/InitializeOverlayInputHandlers.cpp:
+    complete
+    .text start:0x02225f14 end:0x02225f2c
+
+src/System/ov031/System_InitializeContextAndCallback.cpp:
+    complete
+    .text start:0x02228980 end:0x022289a4
+
+src/Resource/ov031/Script_CopyUpToEightNameMatchedRecords.cpp:
+    complete
+    .text start:0x02243348 end:0x022433d0
+
+src/System/ov031/System_CreateCopyAndFinalizeResource.cpp:
+    complete
+    .text start:0x02223998 end:0x022239f4
+
+src/System/ov031/System_DecodeAndApplyInputRecord.cpp:
+    complete
+    .text start:0x02215750 end:0x02215778
+
+src/System/ov031/System_BuildAndCopyThreeContextRecords.cpp:
+    complete
+    .text start:0x02208ef0 end:0x02208f50
+
+src/Graphics/ov031/Graphics_CreateBG0CanvasForScreen.cpp:
+    complete
+    .text start:0x0223c560 end:0x0223c6d8
+
+src/System/ov031/System_ResetAndStartResourceSequence.cpp:
+    complete
+    .text start:0x02234314 end:0x02234354
+
+src/System/ov031/System_UpdateActiveInputRegionAndRepeatCounter.cpp:
+    complete
+    .text start:0x0222481c end:0x02224a20
+
+src/Unclassified/ov031/Unclassified_RunFourAdjacentHelpers.cpp:
+    complete
+    .text start:0x022242d4 end:0x022242ec
+
+src/Unclassified/ov031/Overlay_DecrementSharedTimersAndDispatch.cpp:
+    complete
+    .text start:0x02230cd8 end:0x02230d2c
+
+src/GameState/ov031/UpdateOverlaySelectionState.cpp:
+    complete
+    .text start:0x0222bb44 end:0x0222bb58
+
+src/Graphics/ov031/System_ConfigureDisplayModeFromGlobalState.cpp:
+    complete
+    .text start:0x022287f4 end:0x02228858
+
+src/World/ov031/ConfigureThirdContextAfterTransition.cpp:
+    complete
+    .text start:0x0222a5b8 end:0x0222a61c
+
+src/Unclassified/ov031/Graphics_InitializeContextPlanesAndCallback.cpp:
+    complete
+    .text start:0x0222b22c end:0x0222b290
+
+src/Graphics/ov031/System_ConfigureSecondaryDisplayMode.cpp:
+    complete
+    .text start:0x02233720 end:0x02233784
+
+src/System/ov031/Overlay_InitializeConditionalLayerAndRegisterCallback.cpp:
+    complete
+    .text start:0x02231744 end:0x022317a8
+
+src/System/ov031/System_ConfigureConditionalDualScreenPlanes.cpp:
+    complete
+    .text start:0x0222a418 end:0x0222a480
+
+src/System/ov031/System_RegisterPostSleepCallback.cpp:
+    complete
+    .text start:0x02207168 end:0x02207180
+
+src/Network/ov031/IsOverlayTaskAvailable.cpp:
+    complete
+    .text start:0x02211848 end:0x02211864
+
+src/System/ov031/System_IsGlobalTaskAvailable.cpp:
+    complete
+    .text start:0x02223fdc end:0x02223ff8
+
+src/System/ov031/System_AppendCallbackToGlobalList.cpp:
+    complete
+    .text start:0x02207108 end:0x02207120
+
+src/Unclassified/ov031/System_TransitionSharedByte22State.cpp:
+    complete
+    .text start:0x0222876c end:0x022287d4
+
+src/System/ov031/System_IsTaskAvailable.cpp:
+    complete
+    .text start:0x02225c74 end:0x02225c90
+
+src/Unclassified/ov031/OV031_ValidateEnabledResourceBits.cpp:
+    complete
+    .text start:0x02238c40 end:0x02238ca8
+
+src/Unclassified/ov031/System_ValidateContextAndRunFallback.cpp:
+    complete
+    .text start:0x02212c84 end:0x02212cbc
+
+src/Unclassified/ov031/Object_InitializeB0Records.cpp:
+    complete
+    .text start:0x02212c3c end:0x02212c84
+
+src/System/ov031/System_RequireContextReadyOrHalt.cpp:
+    complete
+    .text start:0x022387f4 end:0x0223883c
+
+src/Unclassified/ov031/System_MapOptionalObjectStateToMode.cpp:
+    complete
+    .text start:0x02212fb8 end:0x02213024
+
+src/Unclassified/ov031/OV031_RegisterIPCHandlerAndWait.cpp:
+    complete
+    .text start:0x0221b848 end:0x0221b8b4
+
+src/Unclassified/ov031/System_InitializeContextTaskAndSleep.cpp:
+    complete
+    .text start:0x02227b38 end:0x02227ba4
+
+src/Unclassified/ov031/Overlay_ConfigureDisplayWhenSharedWordIsClear.cpp:
+    complete
+    .text start:0x02233bd4 end:0x02233c40
+
+src/Unclassified/ov031/System_StartContextTaskWhenBothIdle.cpp:
+    complete
+    .text start:0x02231d08 end:0x02231d48
+
+src/Unclassified/ov031/Overlay_AdvancePrioritySelectedState.cpp:
+    complete
+    .text start:0x02215478 end:0x022154e4
+
+src/System/ov031/Overlay_ConfigureTransitionAndRegisterLoop.cpp:
+    complete
+    .text start:0x02234b4c end:0x02234bb8
+
+src/Unclassified/ov031/Overlay_UnblockContextsWhenInactive.cpp:
+    complete
+    .text start:0x022101e0 end:0x02210250
+
+src/System/ov031/Ov031_SelectValueFromObjectLowBits.cpp:
+    complete
+    .text start:0x022140b0 end:0x022140cc
+
+src/Network/ov031/Crypto_HashInputWithStaticSeed.cpp:
+    complete
+    .text start:0x02209e28 end:0x02209e98
+
+src/Unclassified/ov031/OV031_ProcessBlockedContextCommand.cpp:
+    complete
+    .text start:0x0220efd0 end:0x0220f040
+
+src/Network/ov031/Crypto_PollEntropySeedAndWait.cpp:
+    complete
+    .text start:0x02217ecc end:0x02217f44
+
+src/Network/ov031/Protocol_InitializeSWCARecord.cpp:
+    complete
+    .text start:0x022114fc end:0x0221156c
+
+src/Unclassified/ov031/Overlay_InitializeModeThreeWhenContextClear.cpp:
+    complete
+    .text start:0x0223132c end:0x022313a0
+
+src/System/ov031/System_ReadHardwareStatusBit15Flag.cpp:
+    complete
+    .text start:0x022348ac end:0x022348cc
+
+src/Unclassified/ov031/Overlay_ContinueModeThreeIfStateClear.cpp:
+    complete
+    .text start:0x02231e18 end:0x02231e8c
+
+src/Graphics/ov031/Graphics_SubmitIndexedConfiguredBuffer.cpp:
+    complete
+    .text start:0x022235a0 end:0x02223614
+
+src/System/ov031/System_InitializeYSSDRequestAndWait.cpp:
+    complete
+    .text start:0x0220fd78 end:0x0220fdec
+
+src/Unclassified/ov031/Overlay_InitializeAndScheduleResponse.cpp:
+    complete
+    .text start:0x0222a35c end:0x0222a398
+
+src/Graphics/ov031/System_InitializeMenuAndScheduleCallback.cpp:
+    complete
+    .text start:0x02229774 end:0x022297ac
+
+src/Unclassified/ov031/OV031_InitializeFinalCallback.cpp:
+    complete
+    .text start:0x0222859c end:0x022285e4
+
+src/System/ov031/Overlay_InitializeStartupSceneAndRegisterCallback.cpp:
+    complete
+    .text start:0x02229e28 end:0x02229e70
+
+src/System/ov031/System_HandleSpecificContextEvent.cpp:
+    complete
+    .text start:0x0220dbc8 end:0x0220dc40
+
+src/Unclassified/ov031/OV031_InitializeModeThirtyEightCallback.cpp:
+    complete
+    .text start:0x02228bac end:0x02228be0
+
+src/Unclassified/ov031/DispatchOverlayObjectCallbacks.cpp:
+    complete
+    .text start:0x02240e70 end:0x02240ee8
+
+src/Memory/ov031/FreeAndClearTwoGlobalObjects.cpp:
+    complete
+    .text start:0x0221cfdc end:0x0221d008
+
+src/System/ov031/Ov031_UpdateModeFromStatus.cpp:
+    complete
+    .text start:0x02220ed4 end:0x02220f0c
+
+src/Unclassified/ov031/System_UpdateMappedContextUnderMutex.cpp:
+    complete
+    .text start:0x02210250 end:0x022102c8
+
+src/System/ov031/System_RegisterPendingWorkIfIdle.cpp:
+    complete
+    .text start:0x02204dbc end:0x02204df8
+
+src/Memory/ov031/Memory_CopyWordsAsBytes.cpp:
+    complete
+    .text start:0x022227c0 end:0x022227ec
+
+src/System/ov031/System_SelectStateHandlerByOptionalByte.cpp:
+    complete
+    .text start:0x02213c9c end:0x02213ce0
+
+src/Graphics/ov031/System_InitializeMenuWithResetAndCallback.cpp:
+    complete
+    .text start:0x0222aabc end:0x0222ab08
+
+src/Unclassified/ov031/MD5_ComputeDigestSegment13.cpp:
+    complete
+    .text start:0x022158fc end:0x02215948
+
+src/Unclassified/ov031/OV031_InitializeContextDigestState.cpp:
+    complete
+    .text start:0x0220a540 end:0x0220a594
+
+src/System/ov031/System_ReleaseSharedObjectIfInactive.cpp:
+    complete
+    .text start:0x02226f18 end:0x02226f68
+
+src/Unclassified/ov031/OV031_BuildSharedRecordViews.cpp:
+    complete
+    .text start:0x02227630 end:0x02227688
+
+src/System/ov031/Overlay_TryProcessFourPendingEntries.cpp:
+    complete
+    .text start:0x022046b8 end:0x02204710
+
+src/Unclassified/ov031/Overlay_ConfigurePriorityStates.cpp:
+    complete
+    .text start:0x02215358 end:0x022153bc
+
+src/Unclassified/ov031/UpdateContextFromStateOrGlobalObject.cpp:
+    complete
+    .text start:0x02239448 end:0x022394b4
+
+src/Unclassified/ov031/Object_RunObjectSetupSequenceAndSetState.cpp:
+    complete
+    .text start:0x0220911c end:0x02209158
+
+src/Unclassified/ov031/Overlay_FormatHardwareAddressAsTwelveBytes.cpp:
+    complete
+    .text start:0x0223fae8 end:0x0223fb48
+
+src/Util/ov031/System_XorBufferWithObjectByte.cpp:
+    complete
+    .text start:0x0221e250 end:0x0221e27c
+
+src/System/ov031/System_CompareEncodedSequenceProgression.cpp:
+    complete
+    .text start:0x0221d7e0 end:0x0221d82c
+
+src/World/ov031/UpdatePackedEffectValue.cpp:
+    complete
+    .text start:0x02225ea0 end:0x02225f14
+
+src/Unclassified/ov031/Object_DispatchFallbackWhenValidationReturnsTwo.cpp:
+    complete
+    .text start:0x02211d54 end:0x02211db0
+
+src/Unclassified/ov031/Overlay_DeriveNextResultFromPackedMode.cpp:
+    complete
+    .text start:0x02215150 end:0x022151b0
+
+src/System/ov031/Ov031_InitializeMapTransition.cpp:
+    complete
+    .text start:0x02231bb0 end:0x02231c0c
+
+src/Unclassified/ov031/System_ConfigureAndSubmitContextData.cpp:
+    complete
+    .text start:0x0221dedc end:0x0221df48
+
+src/System/ov031/Ov031_InitializeSecondaryTransition.cpp:
+    complete
+    .text start:0x02232508 end:0x02232568
+
+src/Unclassified/ov031/OV031_ProcessSharedStringRequest.cpp:
+    complete
+    .text start:0x0221126c end:0x022112e4
+
+src/Resource/ov031/Resource_InitializeAndMeasurePayload.cpp:
+    complete
+    .text start:0x022203f0 end:0x02220418
+
+src/Util/ov031/CompareHalfwordArraysFromEnd.cpp:
+    complete
+    .text start:0x0220bdcc end:0x0220be04
+
+src/Unclassified/ov031/Resource_PopSharedRingQueue.cpp:
+    complete
+    .text start:0x0221fa20 end:0x0221fa58
+
+src/Unclassified/ov031/ConfigureOverlayCoordinateTransform.cpp:
+    complete
+    .text start:0x02234ff8 end:0x02235034
+
+src/System/ov031/System_ResetSharedOverlayObjectFields.cpp:
+    complete
+    .text start:0x0223932c end:0x02239368
+
+src/Network/ov031/Network_ClearStateWhenOptionalWordIsZero.cpp:
+    complete
+    .text start:0x0222ee34 end:0x0222ee70
+
+src/Unclassified/ov031/Cartridge_LoadWithObjectOffsetAndCompletion.cpp:
+    complete
+    .text start:0x0223b5c4 end:0x0223b604
+
+src/Graphics/ov031/Graphics_DispatchFourValuesAt4C4.cpp:
+    complete
+    .text start:0x02235fb0 end:0x02235ff4
+
+src/System/ov031/Overlay_SetGlobalValueOrFallback.cpp:
+    complete
+    .text start:0x022110f0 end:0x02211138
+
+src/Unclassified/ov031/ProcessorContext_UpdatePriorityFromSharedValue.cpp:
+    complete
+    .text start:0x02207cf0 end:0x02207d3c
+
+src/Unclassified/ov031/ConvertWordAndWriteByteReversed.cpp:
+    complete
+    .text start:0x022077cc end:0x0220781c
+
+src/System/ov031/System_ReadHardwareStatusRegisterBit15.cpp:
+    complete
+    .text start:0x02231538 end:0x02231558
+
+src/Resource/ov031/StoreReadySharedValue.cpp:
+    complete
+    .text start:0x0220fe44 end:0x0220fea0

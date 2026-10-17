@@ -14,7 +14,8 @@ struct UnknownResetRecord
     unsigned char padding_1e[2];
 };
 
-extern "C" void func_0201f9b8(UnknownResetRecord* state)
+// Original: arm9/main @ 0x0201F9B8; symbol: func_0201f9b8; size: 0x30.
+extern "C" void ResetFourIndicesAndFiveRecordFields(UnknownResetRecord* state)
 {
     state->unknown_00 = -1;
     state->unknown_04 = -1;

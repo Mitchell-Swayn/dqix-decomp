@@ -1,0 +1,5 @@
+#include <globaldefs.h>
+#pragma optimize_for_size off
+extern "C" char data_02108760[];extern "C" void Text_ProcessBufferedHalfwordCodesAndResetCounters(void*);extern "C" void DispatchStoredHalfwordIndexWithTwoArguments(void*,int,int);extern "C" void ResetOrInitializeStateAndTextBuffers(void*,int,int);extern "C" void TextLayout_ResetBuffersAndLoadedLineEntries(void*);
+// Original: arm9/main @ 0x020679D4; symbol: func_020679d4; size: 0xC8.
+extern "C" ARM void DispatchDisplayModeTransition(char* p,int mode){if(mode!=-2){switch(mode){case 0:{Text_ProcessBufferedHalfwordCodesAndResetCounters(p);DispatchStoredHalfwordIndexWithTwoArguments(data_02108760,1,0);ResetOrInitializeStateAndTextBuffers(p,0xff16,*(int*)(p+88));TextLayout_ResetBuffersAndLoadedLineEntries(p+144);p[0x19cd]=1;*(int*)(p+64)=0;return;}case 1:DispatchStoredHalfwordIndexWithTwoArguments(data_02108760,1,0);break;default:return;}}*(int*)(p+0x954)=1;Text_ProcessBufferedHalfwordCodesAndResetCounters(p);ResetOrInitializeStateAndTextBuffers(p,0xff17,*(int*)(p+88));TextLayout_ResetBuffersAndLoadedLineEntries(p+144);p[0x19cd]=1;*(int*)(p+64)=0;}

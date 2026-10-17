@@ -1,12 +1,13 @@
 #include "System/RuntimeUnwindTable.h"
 #pragma optimize_for_size off
-extern "C" const unsigned char* func_0200f2bc(const unsigned char* cursor)
+// Original: arm9/main @ 0x0200F2BC; symbol: func_0200f2bc; size: 0x30.
+extern "C" const unsigned char* RuntimeUnwindHeader_SkipEncodedHeader(const unsigned char* cursor)
 {
     unsigned char flags = cursor[0];
     unsigned int ignored;
     cursor += 2;
-    cursor = func_0200d9e4(cursor, &ignored);
+    cursor = RuntimeUnwind_ReadCompactUnsignedInteger(cursor, &ignored);
     if (flags & 0x40)
-        cursor = func_0200d9e4(cursor, &ignored);
+        cursor = RuntimeUnwind_ReadCompactUnsignedInteger(cursor, &ignored);
     return cursor;
 }

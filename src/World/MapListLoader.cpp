@@ -69,9 +69,12 @@ extern "C"
 {
 }
 
+// Original: arm9/main @ 0x0201C1B8; symbol: _Z24MapList_Opcode_64_UnusedPN6Script9ParameterEi; size: 0x8.
 int MapList_Opcode_64_Unused(Script::Parameter* params, int numParams) { return 1; }
+// Original: arm9/main @ 0x0201C1C0; symbol: _Z24MapList_Opcode_65_UnusedPN6Script9ParameterEi; size: 0x8.
 int MapList_Opcode_65_Unused(Script::Parameter* params, int numParams) { return 1; }
 
+// Original: arm9/main @ 0x0201C1C8; symbol: _Z24MapList_Opcode_66_UnusedPN6Script9ParameterEi; size: 0x30.
 int MapList_Opcode_66_Unused(Script::Parameter* params, int numParams)
 {
     data_020fdc14.groupingInfo->AllocateB(params[0].ToInt());
@@ -80,6 +83,7 @@ int MapList_Opcode_66_Unused(Script::Parameter* params, int numParams)
 }
 
 // doesn't match
+// Original: arm9/main @ 0x0201C1F8; symbol: _Z24MapList_Opcode_67_UnusedPN6Script9ParameterEi; size: 0x1AC.
 int MapList_Opcode_67_Unused(Script::Parameter* params, int numParams)
 {
     ZoneGroupingList::EntryB entry;
@@ -122,6 +126,7 @@ int MapList_Opcode_67_Unused(Script::Parameter* params, int numParams)
     return 1;
 }
 
+// Original: arm9/main @ 0x0201C3A4; symbol: _Z24MapList_Opcode_68_UnusedPN6Script9ParameterEi; size: 0x4C.
 int MapList_Opcode_68_Unused(Script::Parameter* params, int numParams)
 {
     const char* name = params[0].ToString();
@@ -132,12 +137,14 @@ int MapList_Opcode_68_Unused(Script::Parameter* params, int numParams)
     return 1;
 }
 
+// Original: arm9/main @ 0x0201C3F0; symbol: _Z24MapList_Opcode_69_UnusedPN6Script9ParameterEi; size: 0x24.
 int MapList_Opcode_69_Unused(Script::Parameter* params, int numParams)
 {
     data_020fdc14.groupingInfo->AllocateA(params[0].ToInt());
     return 1;
 }
 
+// Original: arm9/main @ 0x0201C414; symbol: _ZN16ZoneGroupingList9AllocateAEi; size: 0x30.
 void ZoneGroupingList::AllocateA(int count)
 {
     pEntriesA = (EntryA*)allocator->Allocate(count * sizeof(EntryA));
@@ -148,6 +155,7 @@ void ZoneGroupingList::AllocateA(int count)
     }
 }
 
+// Original: arm9/main @ 0x0201C444; symbol: _ZN16ZoneGroupingList9AllocateBEi; size: 0x2C.
 void ZoneGroupingList::AllocateB(int count)
 {
     pEntriesB = (EntryB*)allocator->Allocate(count * sizeof(EntryB));
@@ -155,6 +163,7 @@ void ZoneGroupingList::AllocateB(int count)
         capacityB = count;
 }
 
+// Original: arm9/main @ 0x0201C470; symbol: _ZN16ZoneGroupingList7InsertAEPKNS_6EntryAE; size: 0x64.
 void ZoneGroupingList::InsertA(const EntryA* source)
 {
     if (pEntriesA != NULL)
@@ -171,6 +180,7 @@ void ZoneGroupingList::InsertA(const EntryA* source)
 }
 
 
+// Original: arm9/main @ 0x0201C4D4; symbol: _ZN16ZoneGroupingList7InsertBEPKNS_6EntryBE; size: 0x120.
 void ZoneGroupingList::InsertB(const EntryB* source)
 {
     if (pEntriesA != NULL && countA < capacityA)
@@ -201,8 +211,10 @@ void ZoneGroupingList::InsertB(const EntryB* source)
     unk_10++;
 }
 
+// Original: arm9/main @ 0x0201C5F4; symbol: _Z17MapList_Opcode_66PN6Script9ParameterEi; size: 0x8.
 int MapList_Opcode_66(Script::Parameter* params, int numParams) { return 1; }
 
+// Original: arm9/main @ 0x0201C5FC; symbol: _Z17MapList_Opcode_67PN6Script9ParameterEi; size: 0x118.
 int MapList_Opcode_67(Script::Parameter* params, int numParams)
 {
     if (data_020ef2bc != (params++)->ToInt())
@@ -233,9 +245,12 @@ int MapList_Opcode_67(Script::Parameter* params, int numParams)
     return 1;
 }
 
+// Original: arm9/main @ 0x0201C714; symbol: _Z17MapList_Opcode_68PN6Script9ParameterEi; size: 0x8.
 int MapList_Opcode_68(Script::Parameter* params, int numParams) { return 1; }
+// Original: arm9/main @ 0x0201C71C; symbol: _Z17MapList_Opcode_69PN6Script9ParameterEi; size: 0x8.
 int MapList_Opcode_69(Script::Parameter* params, int numParams) { return 1; }
 
+// Original: arm9/main @ 0x0201C724; symbol: _Z29LoadZoneInfoFromMapListScriptiP11MapListInfoPKvj; size: 0x78.
 void LoadZoneInfoFromMapListScript(int zoneID, MapListInfo* outInfo, const void* script, unsigned int length)
 {
     data_020fdc14.output = outInfo;

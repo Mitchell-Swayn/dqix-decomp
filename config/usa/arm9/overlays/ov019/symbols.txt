@@ -10,3 +10,6 @@ data_ov019_0218c2d4 kind:data(any) addr:0x0218c2d4
 data_ov019_0218c2d8 kind:data(any) addr:0x0218c2d8
 data_ov019_0218c2ed kind:data(any) addr:0x0218c2ed
 data_ov019_0218c2fe kind:data(any) addr:0x0218c2fe
+
+data_ov019_0218c290 kind:data(any) addr:0x0218c290
+data_ov019_0218c2ac kind:data(any) addr:0x0218c2ac

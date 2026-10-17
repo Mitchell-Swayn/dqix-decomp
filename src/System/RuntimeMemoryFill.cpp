@@ -1,7 +1,8 @@
 #pragma optimize_for_size off
 
 // Aligned word stores handle full blocks; byte stores handle the edges.
-extern "C" void func_02001b2c(void* destination, int value, unsigned int count)
+// Original: arm9/main @ 0x02001B2C; symbol: func_02001b2c; size: 0xB0.
+extern "C" void Runtime_FillMemoryBytes(void* destination, int value, unsigned int count)
 {
     unsigned char* dest = (unsigned char*)destination;
     unsigned int word = (unsigned char)value;

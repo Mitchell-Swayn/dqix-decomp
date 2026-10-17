@@ -4,22 +4,22 @@
 #include <globaldefs.h>
 
 #if defined(jpn)
-#define func_020c39a0 func_020c546c
-#define func_020c39c8 func_020c5494
-#define func_020daf90 func_020dc998
-#define func_020db9cc func_020dd3d4
+#define Graphics_WriteSignedBrightnessMagnitudeAndMode func_020c546c
+#define Graphics_DecodeSignedBrightness func_020c5494
+#define ReadGlobalAt0214E4C8 func_020dc998
+#define UpdateConditionalDisplayTransition func_020dd3d4
 #endif
 
 // Temporary internal wrappers
 extern "C"
 {
     // write brightness to master register
-    void func_020c39a0(volatile unsigned short *reg, int brightness);
+    void Graphics_WriteSignedBrightnessMagnitudeAndMode(volatile unsigned short *reg, int brightness);
     // get brightness from master register
-    int func_020c39c8(volatile unsigned short *reg);
+    int Graphics_DecodeSignedBrightness(volatile unsigned short *reg);
 
-    void *func_020daf90();
-    int func_020db9cc(void *unk, int screen, int brightness, unsigned int duration);
+    void *ReadGlobalAt0214E4C8();
+    int UpdateConditionalDisplayTransition(void *unk, int screen, int brightness, unsigned int duration);
 }
 #define REG_MASTER_BRIGHT ((volatile unsigned short *) 0x0400006C)
 #define REG_MASTER_BRIGHT_SUB ((volatile unsigned short *) 0x0400106C)
@@ -29,6 +29,7 @@ static inline int IsTransitioningMain(GameResources* res) { return res->mainBrig
 static inline int IsTransitioningSub(GameResources* res) { return res->subBrightnessTimeRemaining > 0; }
 
 // usa: func_0203aee0
+// Original: arm9/main @ 0x0203AEE0; symbol: _Z25InitializeBrightnessStateP13GameResources; size: 0x64.
 void InitializeBrightnessState(GameResources* resources)
 {
     resources->brightnessFlags_0 = 0;
@@ -45,14 +46,16 @@ void InitializeBrightnessState(GameResources* resources)
 
     resources->allowBrightnessApply = true;
 
-    resources->mainBrightness = (float) func_020c39c8(REG_MASTER_BRIGHT);
-    resources->subBrightness = (float) func_020c39c8(REG_MASTER_BRIGHT_SUB);
+    resources->mainBrightness = (float) Graphics_DecodeSignedBrightness(REG_MASTER_BRIGHT);
+    resources->subBrightness = (float) Graphics_DecodeSignedBrightness(REG_MASTER_BRIGHT_SUB);
 }
 
 // usa: func_0203af44
+// Original: arm9/main @ 0x0203AF44; symbol: _Z4StubP13GameResources; size: 0x4.
 void Stub(GameResources*) {}
 
 // usa: func_0203af48
+// Original: arm9/main @ 0x0203AF48; symbol: _Z27UpdateBrightnessTransitionsP13GameResources; size: 0x138.
 void UpdateBrightnessTransitions(GameResources* resources)
 {
     int delta = GameState::GetInstance()->GetEffectiveDeltaTime();
@@ -83,6 +86,7 @@ void UpdateBrightnessTransitions(GameResources* resources)
 }
 
 // usa: func_0203b080
+// Original: arm9/main @ 0x0203B080; symbol: _Z15ApplyBrightnessP13GameResources; size: 0x78.
 void ApplyBrightness(GameResources* resources)
 {
     if (resources->allowBrightnessApply == 0) return;
@@ -90,17 +94,18 @@ void ApplyBrightness(GameResources* resources)
     resources->allowBrightnessApply = 0;
 
     if (resources->mainBrightnessDirty)
-        func_020c39a0(REG_MASTER_BRIGHT, (int) resources->mainBrightness);
+        Graphics_WriteSignedBrightnessMagnitudeAndMode(REG_MASTER_BRIGHT, (int) resources->mainBrightness);
 
     resources->mainBrightnessDirty = false;
 
     if (resources->subBrightnessDirty)
-        func_020c39a0(REG_MASTER_BRIGHT_SUB, (int) resources->subBrightness);
+        Graphics_WriteSignedBrightnessMagnitudeAndMode(REG_MASTER_BRIGHT_SUB, (int) resources->subBrightness);
 
     resources->subBrightnessDirty = false;
 }
 
 // usa: func_0203b0f8
+// Original: arm9/main @ 0x0203B0F8; symbol: _Z24UpdateAndApplyBrightnessP13GameResources; size: 0x18.
 void UpdateAndApplyBrightness(GameResources* resources)
 {
     UpdateBrightnessTransitions(resources);
@@ -108,14 +113,15 @@ void UpdateAndApplyBrightness(GameResources* resources)
 }
 
 // usa: func_0203b110
+// Original: arm9/main @ 0x0203B110; symbol: _Z17SetMainBrightnessP13GameResourcesii; size: 0x8C.
 void SetMainBrightness(GameResources* resources, int brightness, int duration)
 {
     if (resources->mainBrightnessLocked)
         return;
 
-    void *unk = func_020daf90();
+    void *unk = ReadGlobalAt0214E4C8();
 
-    if (func_020db9cc(unk, 0, brightness, duration) == 0)
+    if (UpdateConditionalDisplayTransition(unk, 0, brightness, duration) == 0)
         return;
 
     if (duration == 0)
@@ -133,14 +139,15 @@ void SetMainBrightness(GameResources* resources, int brightness, int duration)
 }
 
 // usa: func_0203b19c
+// Original: arm9/main @ 0x0203B19C; symbol: _Z16SetSubBrightnessP13GameResourcesii; size: 0x8C.
 void SetSubBrightness(GameResources* resources, int brightness, int duration)
 {
     if (resources->subBrightnessLocked)
         return;
 
-    void *unk = func_020daf90();
+    void *unk = ReadGlobalAt0214E4C8();
 
-    if (func_020db9cc(unk, 1, brightness, duration) == 0)
+    if (UpdateConditionalDisplayTransition(unk, 1, brightness, duration) == 0)
         return;
 
     if (duration == 0)
@@ -158,6 +165,7 @@ void SetSubBrightness(GameResources* resources, int brightness, int duration)
 }
 
 // usa: func_0203b228
+// Original: arm9/main @ 0x0203B228; symbol: _Z13SetBrightnessP13GameResourcesii; size: 0x28.
 void SetBrightness(GameResources* resources, int brightness, int duration)
 {
     SetMainBrightness(resources, brightness, duration);
@@ -165,6 +173,7 @@ void SetBrightness(GameResources* resources, int brightness, int duration)
 }
 
 // usa: func_0203b250
+// Original: arm9/main @ 0x0203B250; symbol: _Z24SetAndLockMainBrightnessP13GameResourcesii; size: 0x18.
 void SetAndLockMainBrightness(GameResources* resources, int brightness, int duration)
 {
     SetMainBrightness(resources, brightness, duration);
@@ -172,6 +181,7 @@ void SetAndLockMainBrightness(GameResources* resources, int brightness, int dura
 }
 
 // usa: func_0203b268
+// Original: arm9/main @ 0x0203B268; symbol: _Z23SetAndLockSubBrightnessP13GameResourcesii; size: 0x18.
 void SetAndLockSubBrightness(GameResources* resources, int brightness, int duration)
 {
     SetSubBrightness(resources, brightness, duration);
@@ -179,6 +189,7 @@ void SetAndLockSubBrightness(GameResources* resources, int brightness, int durat
 }
 
 // usa: func_0203b280
+// Original: arm9/main @ 0x0203B280; symbol: _Z20SetAndLockBrightnessP13GameResourcesii; size: 0x38.
 void SetAndLockBrightness(GameResources* resources, int brightness, int duration)
 {
     SetMainBrightness(resources, brightness, duration);
@@ -189,6 +200,7 @@ void SetAndLockBrightness(GameResources* resources, int brightness, int duration
 }
 
 // usa: func_0203b2b8
+// Original: arm9/main @ 0x0203B2B8; symbol: _Z26UnlockAndSetMainBrightnessP13GameResourcesii; size: 0x14.
 void UnlockAndSetMainBrightness(GameResources* resources, int brightness, int duration)
 {
     resources->mainBrightnessLocked = false;
@@ -196,6 +208,7 @@ void UnlockAndSetMainBrightness(GameResources* resources, int brightness, int du
 }
 
 // usa: func_0203b2cc
+// Original: arm9/main @ 0x0203B2CC; symbol: _Z25UnlockAndSetSubBrightnessP13GameResourcesii; size: 0x14.
 void UnlockAndSetSubBrightness(GameResources* resources, int brightness, int duration)
 {
     resources->subBrightnessLocked = false;
@@ -203,6 +216,7 @@ void UnlockAndSetSubBrightness(GameResources* resources, int brightness, int dur
 }
 
 // usa: func_0203b2e0
+// Original: arm9/main @ 0x0203B2E0; symbol: _Z22UnlockAndSetBrightnessP13GameResourcesii; size: 0x38.
 void UnlockAndSetBrightness(GameResources* resources, int brightness, int duration)
 {
     resources->mainBrightnessLocked = false;
@@ -213,15 +227,16 @@ void UnlockAndSetBrightness(GameResources* resources, int brightness, int durati
 }
 
 // usa: func_0203b318
+// Original: arm9/main @ 0x0203B318; symbol: _Z31SetMainBrightnessWithDurationMsP13GameResourcesij; size: 0x80.
 void SetMainBrightnessWithDurationMs(GameResources* resources, int brightness, unsigned int durationMs)
 {
     if (resources->mainBrightnessLocked)
         return;
 
-    void *unk = func_020daf90();
+    void *unk = ReadGlobalAt0214E4C8();
     unsigned int numFrames = (durationMs * 3) / 100;
 
-    if (func_020db9cc(unk, 0, brightness, numFrames) == 0)
+    if (UpdateConditionalDisplayTransition(unk, 0, brightness, numFrames) == 0)
         return;
 
     if (durationMs != 0)
@@ -239,24 +254,28 @@ void SetMainBrightnessWithDurationMs(GameResources* resources, int brightness, u
 }
 
 // usa: func_0203b398
+// Original: arm9/main @ 0x0203B398; symbol: _Z32IsMainBrightnessTransitionActiveP13GameResources; size: 0x14.
 int IsMainBrightnessTransitionActive(GameResources* resources)
 {
     return resources->mainBrightnessTimeRemaining > 0;
 }
 
 // usa: func_0203b3ac
+// Original: arm9/main @ 0x0203B3AC; symbol: _Z31IsSubBrightnessTransitionActiveP13GameResources; size: 0x14.
 int IsSubBrightnessTransitionActive(GameResources* resources)
 {
     return resources->subBrightnessTimeRemaining > 0;
 }
 
 // usa: func_0203b3c0
+// Original: arm9/main @ 0x0203B3C0; symbol: _Z28IsBrightnessTransitionActiveP13GameResources; size: 0x40.
 int IsBrightnessTransitionActive(GameResources* resources)
 {
     return IsTransitioningMain(resources) || IsTransitioningSub(resources);
 }
 
 // usa: func_0203b400
+// Original: arm9/main @ 0x0203B400; symbol: _Z32GetMainBrightnessTransitionStateP13GameResources; size: 0x38.
 int GetMainBrightnessTransitionState(GameResources* resources)
 {
     if (!IsTransitioningMain(resources))
@@ -273,6 +292,7 @@ int GetMainBrightnessTransitionState(GameResources* resources)
 }
 
 // usa: func_0203b438
+// Original: arm9/main @ 0x0203B438; symbol: _Z31GetSubBrightnessTransitionStateP13GameResources; size: 0x38.
 int GetSubBrightnessTransitionState(GameResources* resources)
 {
     if (!IsTransitioningSub(resources))
@@ -289,6 +309,7 @@ int GetSubBrightnessTransitionState(GameResources* resources)
 }
 
 // usa: func_0203b470
+// Original: arm9/main @ 0x0203B470; symbol: _Z29GetBrightnessTransitionStatesP13GameResources; size: 0x28.
 unsigned short GetBrightnessTransitionStates(GameResources* resources)
 {
     int mainState = GetMainBrightnessTransitionState(resources);

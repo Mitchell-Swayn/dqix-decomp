@@ -5,19 +5,20 @@
 #pragma optimize_for_size off
 
 #if defined(jpn)
-#define func_020ca390 func_020cbe5c
+#define MIi_CpuClear16 func_020cbe5c
 #define data_020f1c78 data_020f1de4
 #endif
 
 extern "C"
 {
     // memset
-    void func_020ca390(int, void*, unsigned);
+    void MIi_CpuClear16(int, void*, unsigned);
 }
 
 // processing callback for M.AT animations
 extern void (*data_020f1c78)(void* data, AnimationData* anim, int arg);
 
+// Original: arm9/main @ 0x020B9278; symbol: _Z24SampleScalarFromMATTrackP17NSBXXAnimationMATjjj; size: 0x100.
 fix32_t SampleScalarFromMATTrack(NSBXXAnimationMAT* mat, unsigned int metadata, unsigned int offset, unsigned int frame)
 {
     unsigned int lowWeightIdx;
@@ -131,6 +132,7 @@ compute_average:
     return (sampleA + sampleB) >> 1;
 }
 
+// Original: arm9/main @ 0x020B9378; symbol: _Z24SampleSinCosFromMATTrackP17NSBXXAnimationMATjjj; size: 0x10C.
 uint32_t SampleSinCosFromMATTrack(NSBXXAnimationMAT* mat, unsigned int metadata, unsigned int offset, unsigned int frame)
 {
     unsigned int highWeightIdx;
@@ -229,6 +231,7 @@ compute_average:
     return (uint16_t)avgSine | (avgCosine << 16);
 }
 
+// Original: arm9/main @ 0x020B9484; symbol: _Z32CalculateTextureTransformFromMATP17NSBXXAnimationMATtjP18MaterialRenderData; size: 0x100.
 void CalculateTextureTransformFromMAT(NSBXXAnimationMAT* mat, unsigned short arg, unsigned int frame, MaterialRenderData* renderData)
 {
     NSBXXAnimationMAT::Track* track = mat->tracks_.GetEntryByIndex_notVolatile<NSBXXAnimationMAT::Track>(arg);
@@ -278,6 +281,7 @@ void CalculateTextureTransformFromMAT(NSBXXAnimationMAT* mat, unsigned short arg
     renderData->flags_ = renderFlags;
 }
 
+// Original: arm9/main @ 0x020B9584; symbol: _Z31InitializeModelAnimationFromMATP13AnimationDataPvP18NSBXXInternalModel; size: 0xD4.
 void InitializeModelAnimationFromMAT(AnimationData* anim, void* pvMAT, NSBXXInternalModel* model)
 {
     unsigned int track;
@@ -289,7 +293,7 @@ void InitializeModelAnimationFromMAT(AnimationData* anim, void* pvMAT, NSBXXInte
     anim->callback_ = data_020f1c78;
 
     anim->numEntries_ = model->numMaterials_;
-    func_020ca390(0, &anim->entries_[0], anim->numEntries_ * 2);
+    MIi_CpuClear16(0, &anim->entries_[0], anim->numEntries_ * 2);
 
     NSBXXAnimationMAT* mat = (NSBXXAnimationMAT*)pvMAT;
     
@@ -305,7 +309,7 @@ void InitializeModelAnimationFromMAT(AnimationData* anim, void* pvMAT, NSBXXInte
             if (materials == NULL)
                 idx = -1;
             else
-                idx = NSBXXNameList_SearchIndex(&materials->materialOffsetList_, str);
+                idx = NNS_G3dGetResDictIdxByName(&materials->materialOffsetList_, str);
 
             if (idx >= 0)
             {
@@ -317,6 +321,7 @@ void InitializeModelAnimationFromMAT(AnimationData* anim, void* pvMAT, NSBXXInte
     }
 }
 
+// Original: arm9/main @ 0x020B9658; symbol: _Z30MATAnimationProcessingCallbackPvP13AnimationDatai; size: 0x44.
 void MATAnimationProcessingCallback(void* data, AnimationData* anim, int arg)
 {
     MaterialRenderData* renderData = (MaterialRenderData*)data;

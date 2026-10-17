@@ -1,0 +1,4 @@
+// ARM control flow, field widths and constants reviewed.
+struct Mode{unsigned int low:23;unsigned int mode:3;unsigned int high:6;};struct Nibble{unsigned char low:4;unsigned char high:4;};struct Field{unsigned short low:9;unsigned short mode:3;unsigned short high:4;};struct Low{unsigned int flag:1;unsigned int rest:31;};struct Bit5{unsigned int low:5;unsigned int flag:1;unsigned int rest:26;};extern "C" unsigned int data_021117ec[];extern "C" void* data_020fe9a4[];extern "C" void* memset(void*,int,unsigned int);extern "C" void* memcpy(void*,const void*,unsigned int);void CleanInvalidateCacheRange(void*,unsigned int);
+// Original: arm9/main @ 0x020E2D2C; symbol: func_020e2d2c; size: 0x20.
+extern "C" void SetRectangleBoundsFromOriginAndSize(int* p,int x,int y,int width,int height){p[5]=x;p[6]=y;p[7]=x+width;p[8]=y+height;}

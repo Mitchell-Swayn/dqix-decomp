@@ -1,0 +1,8 @@
+#include <globaldefs.h>
+ARM
+#include <GameState/GameState.h>
+#include <System/Timing.h>
+extern "C" void GameState_CopyB0ByteStateBufferToOutput(void*),GameState_Copy176BytesAtOffset7540(void*),TimeRecord_AddHoursClampedTo9999(void*,unsigned short),func_020ac644(void*,unsigned char),func_020ac6b8(void*,unsigned char),GameState_ReadElapsedTimeComponents(void*,unsigned short*,unsigned char*,unsigned char*),GameState_ComputeElapsedHoursMinutesSeconds(void*,unsigned short*,unsigned char*,unsigned char*);
+struct Config{unsigned flags;unsigned char a[100];unsigned other;unsigned char b[68];};
+// Original: arm9/main @ 0x020AC4F8; symbol: func_020ac4f8; size: 0x11C.
+extern "C" void GameState_CopyElapsedTimeIntoTwoConfigurationRecords(int both){unsigned char b,a;unsigned short id;Config config;GameState* state=GameState::GetInstance();GameState_CopyB0ByteStateBufferToOutput(&config);id=0;b=0;a=0;void* secondary=&config.other;GameState_ReadElapsedTimeComponents(state,&id,&b,&a);TimeRecord_AddHoursClampedTo9999(&config,id);func_020ac644(&config,b);func_020ac6b8(&config,a);TimeRecord_AddHoursClampedTo9999(secondary,id);func_020ac644(secondary,b);func_020ac6b8(secondary,a);*(unsigned long long*)((unsigned char*)state+0x3e8)=GetCurrentTimestamp();if(both){GameState_ComputeElapsedHoursMinutesSeconds(state,&id,&b,&a);void* first=config.a;TimeRecord_AddHoursClampedTo9999(first,id);func_020ac644(first,b);func_020ac6b8(first,a);TimeRecord_AddHoursClampedTo9999((unsigned char*)secondary+4,id);func_020ac644((unsigned char*)secondary+4,b);func_020ac6b8((unsigned char*)secondary+4,a);*(unsigned long long*)((unsigned char*)state+0x3f0)=GetCurrentTimestamp();}GameState_Copy176BytesAtOffset7540(&config);}

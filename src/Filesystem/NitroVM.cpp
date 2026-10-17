@@ -16,6 +16,7 @@ typedef int(*FixedCommand)(NitroVM*);
 #define NITROFS_ID_INVALID 0x10000
 extern unsigned char data_020f2288[]; // ":/"
 
+// Original: arm9/main @ 0x020CB034; symbol: _Z28NitroVM_UnlinkAndStoreResultP7NitroVMi; size: 0x5C.
 extern "C" void NitroVM_UnlinkAndStoreResult(NitroVM* vm, int result)
 {
     int priorIRQState = DisableIRQInterrupts();
@@ -45,6 +46,7 @@ extern "C" void NitroVM_UnlinkAndStoreResult(NitroVM* vm, int result)
     SetIRQInterruptState(priorIRQState);
 }
 
+// Original: arm9/main @ 0x020CB090; symbol: _Z22NitroVM_ExecuteCommandP7NitroVMi; size: 0x190.
 extern "C" int NitroVM_ExecuteCommand(NitroVM* vm, int opcode)
 {
     int result;
@@ -128,6 +130,7 @@ extern "C" int NitroVM_ExecuteCommand(NitroVM* vm, int opcode)
     return result;
 }
 
+// Original: arm9/main @ 0x020CB220; symbol: _Z22CaseInsensitiveStrncmpPKhS0_j; size: 0x50.
 extern "C" int CaseInsensitiveStrncmp(const unsigned char* first,
     const unsigned char* second, unsigned int len)
 {
@@ -155,6 +158,7 @@ extern "C" int CaseInsensitiveStrncmp(const unsigned char* first,
     return 0;
 }
 
+// Original: arm9/main @ 0x020CB270; symbol: _Z23Nitro_ReadMetadataBytesP17FSReadDescriptionPvj; size: 0xC0.
 int Nitro_ReadMetadataBytes(FSReadDescription* readDesc, void* dst, unsigned int len)
 {
     NitroHandle* nitroHandle = readDesc->nitroHandle;
@@ -192,6 +196,7 @@ int Nitro_ReadMetadataBytes(FSReadDescription* readDesc, void* dst, unsigned int
 // base_b_high holds the id of the first file in the directory
 // base_c holds an offset to the relevant FNT subtable (in particular, you're
 // ready to iteratively run command 3 to get data about each contained file/subdir)
+// Original: arm9/main @ 0x020CB330; symbol: _Z32NitroVM_LoadDirectoryDataByIndexP7NitroVMj; size: 0x34.
 int NitroVM_LoadDirectoryDataByIndex(NitroVM* vm, unsigned int dirIndex)
 {
     vm->flags |= (1 << NITROVM_FLAG_SYNCHRONOUS);
@@ -202,6 +207,7 @@ int NitroVM_LoadDirectoryDataByIndex(NitroVM* vm, unsigned int dirIndex)
     return NitroVM_ExecuteCommand(vm, NITROVM_OPCODE_GET_DIRECTORY_DATA);
 }
 
+// Original: arm9/main @ 0x020CB364; symbol: _Z27NitroVM_DefaultCommand_ReadP7NitroVM; size: 0x2C.
 int NitroVM_DefaultCommand_Read(NitroVM* vm)
 {
     unsigned int oldCursor = vm->fileInfo.cursorPos;
@@ -213,6 +219,7 @@ int NitroVM_DefaultCommand_Read(NitroVM* vm)
     return nitroHandle->readProc(nitroHandle, dst, oldCursor, length);
 }
 
+// Original: arm9/main @ 0x020CB390; symbol: _Z28NitroVM_DefaultCommand_WriteP7NitroVM; size: 0x2C.
 int NitroVM_DefaultCommand_Write(NitroVM* vm)
 {
     unsigned int oldOffset = vm->fileInfo.cursorPos;
@@ -231,6 +238,7 @@ struct FNTMainTableEntry
     unsigned short numDirectoriesOrParentID; // first (root) entry holds num directories, rest hold parent ID
 };
 
+// Original: arm9/main @ 0x020CB3BC; symbol: _Z39NitroVM_DefaultCommand_GetDirectoryDataP7NitroVM; size: 0x98.
 int NitroVM_DefaultCommand_GetDirectoryData(NitroVM* vm)
 {
     NitroHandle* nitroHandle = vm->linkedHandle;
@@ -258,6 +266,7 @@ int NitroVM_DefaultCommand_GetDirectoryData(NitroVM* vm)
     return result;
 }
 
+// Original: arm9/main @ 0x020CB454; symbol: _Z49NitroVM_DefaultCommand_GetFileOrDirectoryNameDataP7NitroVM; size: 0x12C.
 int NitroVM_DefaultCommand_GetFileOrDirectoryNameData(NitroVM* vm)
 {
     FileDataStore* pStorage = vm->args_GetFileOrDirectoryNameData.output;
@@ -313,6 +322,7 @@ int NitroVM_DefaultCommand_GetFileOrDirectoryNameData(NitroVM* vm)
     return result;
 }
 
+// Original: arm9/main @ 0x020CB580; symbol: _Z47NitroVM_DefaultCommand_GetFileOrDirectoryByNameP7NitroVM; size: 0x1E4.
 int NitroVM_DefaultCommand_GetFileOrDirectoryByName(NitroVM* vm)
 {
     FileDataStore storage;
@@ -422,6 +432,7 @@ int NitroVM_DefaultCommand_GetFileOrDirectoryByName(NitroVM* vm)
     return NITRO_RESULT_SUCCESS;
 }
 
+// Original: arm9/main @ 0x020CB764; symbol: _Z30NitroVM_DefaultCommand_GetPathP7NitroVM; size: 0x3AC.
 int NitroVM_DefaultCommand_GetPath(NitroVM* vm)
 {
     FileDataStore storage;
@@ -574,10 +585,10 @@ int NitroVM_DefaultCommand_GetPath(NitroVM* vm)
         else
             signatureLength = 3;
     
-        VectorizedInvertedMemcpy(&nitroHandle->signature, writeDst, signatureLength);
+        MI_CpuCopy8(&nitroHandle->signature, writeDst, signatureLength);
         signatureLength = uselessZero + signatureLength;
         // copy ":/"
-        VectorizedInvertedMemcpy(data_020f2288, writeDst + signatureLength, 2);
+        MI_CpuCopy8(data_020f2288, writeDst + signatureLength, 2);
     }
 
     NitroVM_LoadDirectoryDataByIndex(&tempVM, targetDirID);
@@ -595,7 +606,7 @@ int NitroVM_DefaultCommand_GetPath(NitroVM* vm)
         }
         // The copied string is null-terminated, and we want to also copy the null terminator
         int copySize = storage.stringLength + 1;
-        VectorizedInvertedMemcpy(storage.name, writeDst + backWriteLocation - copySize, copySize);
+        MI_CpuCopy8(storage.name, writeDst + backWriteLocation - copySize, copySize);
         backWriteLocation -= copySize;
     }
     else
@@ -623,7 +634,7 @@ int NitroVM_DefaultCommand_GetPath(NitroVM* vm)
                     if (storage.dir.dirID != targetDirID) continue;
                     
                     unsigned int tokenLength = storage.stringLength;
-                    VectorizedInvertedMemcpy(storage.name,
+                    MI_CpuCopy8(storage.name,
                         writeDst + backWriteLocation - tokenLength, tokenLength);
                     backWriteLocation -= tokenLength;
                     break;
@@ -636,6 +647,7 @@ int NitroVM_DefaultCommand_GetPath(NitroVM* vm)
     return NITRO_RESULT_SUCCESS;
 }
 
+// Original: arm9/main @ 0x020CBB10; symbol: _Z34NitroVM_DefaultCommand_GetFATEntryP7NitroVM; size: 0x80.
 int NitroVM_DefaultCommand_GetFATEntry(NitroVM* vm)
 {
     unsigned int offsets[2]; // [0] = start, [1] = end
@@ -664,6 +676,7 @@ int NitroVM_DefaultCommand_GetFATEntry(NitroVM* vm)
     return NitroVM_ExecuteCommand(vm, NITROVM_OPCODE_SET_FILE_POINTERS);
 }
 
+// Original: arm9/main @ 0x020CBB90; symbol: _Z38NitroVM_DefaultCommand_SetFilePointersP7NitroVM; size: 0x28.
 int NitroVM_DefaultCommand_SetFilePointers(NitroVM* vm)
 {
     vm->fileInfo.startOffset = vm->args_SetFilePointers.startOffset;
@@ -673,11 +686,13 @@ int NitroVM_DefaultCommand_SetFilePointers(NitroVM* vm)
     return NITRO_RESULT_SUCCESS;
 }
 
+// Original: arm9/main @ 0x020CBBB8; symbol: _Z26NitroVM_DefaultCommand_NopP7NitroVM; size: 0x8.
 int NitroVM_DefaultCommand_Nop(NitroVM* vm)
 {
     return NITRO_RESULT_SUCCESS;
 }
 
+// Original: arm9/main @ 0x020CBBC0; symbol: _Z24Nitro_CalculateSignaturePKci; size: 0x58.
 unsigned int Nitro_CalculateSignature(const char* str, int len)
 {
     unsigned int signature = 0;
@@ -710,24 +725,28 @@ unsigned int Nitro_CalculateSignature(const char* str, int len)
     return signature;
 }
 
+// Original: arm9/main @ 0x020CBC18; symbol: _Z20DefaultNitroReadProcP11NitroHandlePvjj; size: 0x1C.
 int DefaultNitroReadProc(NitroHandle* handle, void* dst, unsigned int offset, unsigned int len)
 {
-    VectorizedInvertedMemcpy((const unsigned char*)handle->pFileImage + offset, dst, len);
+    MI_CpuCopy8((const unsigned char*)handle->pFileImage + offset, dst, len);
     return NITRO_RESULT_SUCCESS;
 }
 
+// Original: arm9/main @ 0x020CBC34; symbol: _Z21DefaultNitroWriteProcP11NitroHandlePKvjj; size: 0x20.
 int DefaultNitroWriteProc(NitroHandle* handle, const void* src, unsigned int offset, unsigned int len)
 {
-    VectorizedInvertedMemcpy(src, (unsigned char*)handle->pFileImage + offset, len);
+    MI_CpuCopy8(src, (unsigned char*)handle->pFileImage + offset, len);
     return NITRO_RESULT_SUCCESS;
 }
 
+// Original: arm9/main @ 0x020CBC54; symbol: _Z28MemoryMappedMetadataReadProcP11NitroHandlePvjj; size: 0x18.
 int MemoryMappedMetadataReadProc(NitroHandle* handle, void* dst, unsigned int offset, unsigned int len)
 {
-    VectorizedInvertedMemcpy((void*)offset, dst, len);
+    MI_CpuCopy8((void*)offset, dst, len);
     return NITRO_RESULT_SUCCESS;
 }
 
+// Original: arm9/main @ 0x020CBC6C; symbol: _Z31NitroHandle_AdvanceCommandQueueP11NitroHandle; size: 0x214.
 NitroVM* NitroHandle_AdvanceCommandQueue(NitroHandle* handle)
 {
     int oldState = DisableIRQInterrupts();
@@ -803,6 +822,7 @@ NitroVM* NitroHandle_AdvanceCommandQueue(NitroHandle* handle)
     return NULL;
 }
 
+// Original: arm9/main @ 0x020CBE80; symbol: _Z39NitroVM_ProcessReadyCommandQueueEntriesP7NitroVM; size: 0x94.
 void NitroVM_ProcessReadyCommandQueueEntries(NitroVM* queueHead)
 {
     NitroVM* vm = queueHead;
@@ -830,6 +850,7 @@ void NitroVM_ProcessReadyCommandQueueEntries(NitroVM* queueHead)
     }
 }
 
+// Original: arm9/main @ 0x020CBF14; symbol: _Z24NitroVM_ExecuteAndUnlinkP7NitroVM; size: 0x44.
 CBool NitroVM_ExecuteAndUnlink(NitroVM* vm)
 {
     int result = NitroVM_ExecuteCommand(vm, vm->pendingCommand);
@@ -842,6 +863,7 @@ CBool NitroVM_ExecuteAndUnlink(NitroVM* vm)
     return vm->storedResult == NITRO_RESULT_SUCCESS;
 }
 
+// Original: arm9/main @ 0x020CBF58; symbol: _Z20NitroVM_QueueCommandP7NitroVMi; size: 0x1A4.
 CBool NitroVM_QueueCommand(NitroVM* vm, int opcode)
 {
     NitroHandle* handle = vm->linkedHandle;

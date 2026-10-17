@@ -2,6 +2,7 @@
 #pragma dont_inline on
 extern void ARM7_SetPowerLedPattern(int);
 extern void ARM7_SetPowerLedMode(int);
+// Original: arm7/wram @ 0x0380653C; symbol: ARM7_DisableWirelessPower.
 void ARM7_DisableWirelessPower(void)
 {
  *(volatile unsigned short*)0x04000304 &= ~2;

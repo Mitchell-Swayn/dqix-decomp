@@ -1,5 +1,6 @@
 #include "Graphics/NSBXX/JACInternal.h"
 
+// Original: arm9/main @ 0x020B7BA0; symbol: _Z36CalculateBoneMatrixRenderDataFromJACP17NSBXXAnimationJACiiP20BoneMatrixRenderData; size: 0x3B4.
 void CalculateBoneMatrixRenderDataFromJAC(NSBXXAnimationJAC* jac, int arg, fix32_t time, BoneMatrixRenderData* bmrd)
 {
     NSBXXAnimationJAC::Track* track = (NSBXXAnimationJAC::Track*)((intptr_t)jac + jac->trackOffsets_[arg]);

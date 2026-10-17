@@ -10,6 +10,7 @@ extern void (*ARM7_SoundQueueFailureHandler)(const char*);
 extern const char ARM7_SoundQueueFailureMessage[];
 extern int ARM7_SendMessage(MessageQueue*,void*,int);
 void ARM7_SoundWorkerAlarmCallback(void*);
+// Original: arm7/wram @ 0x037FF67C; symbol: ARM7_SoundWorkerAlarmCallback.
 void ARM7_SoundWorkerAlarmCallback(void *argument)
 {
  if(!ARM7_SendMessage(&ARM7_SoundWorkerQueue,(void*)1,0))ARM7_SoundQueueFailureHandler(ARM7_SoundQueueFailureMessage);

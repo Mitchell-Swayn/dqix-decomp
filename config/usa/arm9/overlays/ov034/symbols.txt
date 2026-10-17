@@ -3,8 +3,10 @@ func_ov034_022a21a8 kind:function(arm,size=0x810) addr:0x022a21a8
 func_ov034_022a29b8 kind:function(arm,size=0x2c) addr:0x022a29b8
 func_ov034_022a29e4 kind:function(arm,size=0x20) addr:0x022a29e4
 __sinit_ov034_022a2a04 kind:function(arm,size=0x2c) addr:0x022a2a04
-.p__sinit_ov034_022a2a04 kind:data(word) addr:0x022a2a30
-data_ov034_022a2a48 kind:data(any) addr:0x022a2a48
-data_ov034_022a2a54 kind:data(any) addr:0x022a2a54
-data_ov034_022a2a60 kind:bss addr:0x022a2a60
-data_ov034_022a2a6c kind:bss addr:0x022a2a6c
+initializer kind:data(word) addr:0x022a2a30 local
+ov34Dispatch kind:data(byte[12]) addr:0x022a2a40
+ov34BaseDispatch kind:data(byte[12]) addr:0x022a2a4c
+destructorNode kind:bss addr:0x022a2a60 local
+loaderStorage kind:bss addr:0x022a2a6c local
+
+data_ov034_022a2a34 kind:data(word) addr:0x022a2a34

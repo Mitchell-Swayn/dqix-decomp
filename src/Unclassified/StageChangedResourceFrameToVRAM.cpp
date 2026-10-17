@@ -1,0 +1,5 @@
+#include <globaldefs.h>
+ARM
+extern "C" char* Object_GetValidSixtyByteEntry(unsigned,int);extern "C" char* GetTwentyByteEntryByBoundedIndex(void*,unsigned);extern "C" char* Object_GetBoundedTwentyByteRecord(void*,unsigned);extern "C" void _Z26CancelVRAMStagingOperationi(int);extern "C" unsigned short _Z17StageMemoryToVRAM13VRAMSubregionPKvjjbb(int,const void*,unsigned,unsigned,bool,bool);
+// Original: arm9/main @ 0x0203F370; symbol: func_0203f370; size: 0xC0.
+extern "C" void StageChangedResourceFrameToVRAM(unsigned* p){if(p[13]==p[18]&&p[12]==p[17])return;char* block=Object_GetValidSixtyByteEntry(p[0],*(short*)(p+10));if(!block)return;char* entry=GetTwentyByteEntryByBoundedIndex(block+16,p[12]);if(!entry)return;char* src=Object_GetBoundedTwentyByteRecord(block+16,(*(unsigned**)(entry+16))[p[13]]);if(!src||!*(int*)(src+8)||!*(unsigned short*)(src+4))return;_Z26CancelVRAMStagingOperationi(*(short*)(p+22));*(unsigned short*)(p+22)=_Z17StageMemoryToVRAM13VRAMSubregionPKvjjbb(1,*(void**)(src+16),p[19],*(unsigned*)(src+12),false,false);p[17]=p[12];p[18]=p[13];}

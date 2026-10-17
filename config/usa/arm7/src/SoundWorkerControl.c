@@ -46,6 +46,7 @@ extern void ARM7_CancelAlarm(Alarm*);
 extern int ARM7_SendMessage(MessageQueue*,void*,int);
 extern void ARM7_SoundWorkerMain(void*);
 void ARM7_SoundWorkerAlarmCallback(void*);
+// Original: arm7/wram @ 0x037FF588; symbol: ARM7_InitializeSoundWorker.
 void ARM7_InitializeSoundWorker(unsigned int priority)
 {
  if(ARM7_SoundWorkerInitialized)return;
@@ -54,15 +55,18 @@ void ARM7_InitializeSoundWorker(unsigned int priority)
  ARM7_CreateThread(&ARM7_SoundWorkerThread,(unsigned int)ARM7_SoundWorkerMain,0,(unsigned int)ARM7_SoundWorkerStackTop,0x400,priority);
  ARM7_MarkThreadReady(&ARM7_SoundWorkerThread);
 }
+// Original: arm7/wram @ 0x037FF5F4; symbol: ARM7_StartSoundWorkerAlarm.
 void ARM7_StartSoundWorkerAlarm(void)
 {
  Tick now=ARM7_GetCurrentTimestamp();
  ARM7_SetInterval(&ARM7_SoundWorkerAlarm,now+0x10000,0xaa8,ARM7_SoundWorkerAlarmCallback,0);
 }
+// Original: arm7/wram @ 0x037FF644; symbol: ARM7_StopSoundWorkerAlarm.
 void ARM7_StopSoundWorkerAlarm(void)
 {
  ARM7_CancelAlarm(&ARM7_SoundWorkerAlarm);
 }
+// Original: arm7/wram @ 0x037FF658; symbol: ARM7_NotifySoundWorker.
 void ARM7_NotifySoundWorker(void)
 {
  ARM7_SendMessage(&ARM7_SoundWorkerQueue,(void*)2,0);

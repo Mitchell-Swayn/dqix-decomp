@@ -1,0 +1,5 @@
+#include <globaldefs.h>
+#include "Filesystem/BackgroundLoader.h"
+struct Owner {char pad[0x779];bool success;char pad2[0x23e];unsigned char active,state;bool complete;char pad3[0x71];int task;};extern "C" char data_020ef6d7[];extern "C" int LoadZoneChestEntriesFromArchive(Owner*,void*,unsigned);
+// Original: arm9/main @ 0x02026694; symbol: func_02026694; size: 0xEC.
+extern "C" void BackgroundLoader_AdvanceActiveFileTask(Owner* p) {if(!p->active)return;BackgroundLoader* loader=BackgroundLoader::GetInstance();if(p->state==0){loader->RemoveTask(p->task);loader->AddFence();p->task=loader->QueueLoadFile(data_020ef6d7,0);++p->state;}else if(p->state==1 && loader->GetTaskStatus(p->task)){void* data=0;unsigned length=0;loader->GetLoadedFileByID(p->task,&data,&length);int loaded=LoadZoneChestEntriesFromArchive(p,data,length);p->complete=loaded ? (p->success=true) : true;loader->RemoveTask(p->task);p->task=-1;p->active=0;++p->state;} }

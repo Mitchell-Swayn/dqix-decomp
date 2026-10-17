@@ -12,6 +12,7 @@ extern int ARM7_DisableIRQInterrupts(void);
 extern int ARM7_SetIRQInterruptState(int);
 extern ProcessorContext *ARM7_InsertThreadGlobal(ProcessorContext*);
 extern void ARM7_SwitchThread(void);
+// Original: arm7/wram @ 0x037FC7CC; symbol: ARM7_SetThreadPriority.
 int ARM7_SetThreadPriority(ProcessorContext *thread,unsigned int priority)
 {
  ProcessorContext *current=ARM7_ThreadGlobals.first;
