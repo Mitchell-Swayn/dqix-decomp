@@ -275,3 +275,7 @@ src/Menu/Equipment/EquipmentMenu_InitializeItemDisplayBindings.cpp:
 src/Menu/Equipment/EquipmentMenu_ApproachCursorCoordinate.cpp:
     complete
     .text start:0x021538fc end:0x02153954
+
+src/Menu/Equipment/ov005/EquipmentMenu_InitializeController.cpp:
+    complete
+    .text start:0x02153ba4 end:0x02154198
