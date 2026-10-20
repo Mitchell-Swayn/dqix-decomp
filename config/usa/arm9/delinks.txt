@@ -20133,3 +20133,7 @@ src/Camera/Camera_ApplyPlaneWeightedFollowBlend.cpp:
 src/Actor/LinkedFieldActor_UpdateTrailingPoints.cpp:
     complete
     .text start:0x020adda4 end:0x020adfa8
+
+src/Resource/ResourceStringTable_CopyEntriesForKeys.cpp:
+    complete
+    .text start:0x020e0028 end:0x020e0280
