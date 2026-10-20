@@ -16,3 +16,4 @@ PlaceCombatantAtFirstUnusedGridIndex
 UpdateAllocationOverlayFrame
 UpdatePairedObjectsAndDispatchState
 MB_DisconnectChild
+BootScreen_Setup
