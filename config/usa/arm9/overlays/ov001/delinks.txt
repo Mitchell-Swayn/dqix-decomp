@@ -2044,3 +2044,7 @@ src/Event/Cutscenes/Event_ResolveCharacterArchiveMember.cpp:
 src/Event/Cutscenes/ov001/Camera_ScriptRestoreSavedSceneCamera.cpp:
     complete
     .text start:0x0215f930 end:0x0215f968
+
+src/Event/Cutscenes/ov001/Script_FindTextTableEntry.cpp:
+    complete
+    .text start:0x02153884 end:0x021538c8
