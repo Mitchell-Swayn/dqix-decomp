@@ -8196,3 +8196,7 @@ src/Online/Services/ov031/OnlineError_IsSet.cpp:
 src/Online/Services/ov031/DlcDownload_GetBase64EncodedLength.cpp:
     complete
     .text start:0x0223e438 end:0x0223e454
+
+src/Online/Content/ov031/OnlineTransfer_RequestLocalWirelessStop.cpp:
+    complete
+    .text start:0x022456f0 end:0x02245710
