@@ -3271,3 +3271,7 @@ src/Menu/CharacterPreview/ov023/CharacterPreview_CreateModelAndAnimationAllocato
 src/Menu/RecordsFramework/ov023/MenuLayerRecord_ApplyContainerLayerPayloads.cpp:
     complete
     .text start:0x021f7b98 end:0x021f7c68
+
+src/Menu/ItemDetails/ov023/ItemDetail_AllocateDisplayResources.cpp:
+    complete
+    .text start:0x021dbfd0 end:0x021dc134
