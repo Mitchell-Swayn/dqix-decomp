@@ -3040,3 +3040,7 @@ src/Town/Inn/ov003/Inn_AllocateServiceMenuResources.cpp:
 src/Town/Shops/ov003/Shop_RefreshPartyItemQuantities.cpp:
     complete
     .text start:0x02176f94 end:0x02177208
+
+src/Town/SharedServices/ov003/Town_ConfirmDefaultDestinationTravel.cpp:
+    complete
+    .text start:0x0217d53c end:0x0217d6ac
