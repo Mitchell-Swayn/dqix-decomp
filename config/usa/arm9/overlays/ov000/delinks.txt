@@ -2840,3 +2840,7 @@ src/Combat/BattleMenu/ov000/BattleMenu_InitializeMemberCommandFromActor.cpp:
 src/Combat/BattleMenu/ov000/BattleMenu_AppendPartyCommandOptions.cpp:
     complete
     .text start:0x0217737c end:0x02177454
+
+src/Combat/Turns/ov000/Combat_FindEligibleEnemyWithLeastHomeX.cpp:
+    complete
+    .text start:0x0215cda0 end:0x0215ce80
