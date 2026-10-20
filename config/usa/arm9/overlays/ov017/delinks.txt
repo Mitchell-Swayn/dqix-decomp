@@ -4660,3 +4660,7 @@ src/Field/Events/ov017/Network_QueuePartyMemberZoneArrival.cpp:
 src/Field/Multiplayer/ov017/Combat_QueueMemberActionSelectionRecord.cpp:
     complete
     .text start:0x021c6814 end:0x021c68e8
+
+src/Field/Scene/ov017/FieldMonster_AllocateUnusedRecordIdentifier.cpp:
+    complete
+    .text start:0x021a1944 end:0x021a1a20
