@@ -3251,3 +3251,7 @@ src/Menu/RecordsFramework/Menu_SelectEnabledCatalogueEntryBySecondaryRank.cpp:
 src/GameState/Statistics/ov023/Script_ReadStatisticsLow9BitValueAtA0.cpp:
     complete
     .text start:0x021eacd8 end:0x021ead0c
+
+src/Menu/Panels/ov023/Menu_BeginRequestedPartyPreviewClose.cpp:
+    complete
+    .text start:0x021e4e3c end:0x021e4e8c
