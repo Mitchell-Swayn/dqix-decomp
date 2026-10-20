@@ -20085,3 +20085,7 @@ src/World/WorldMap_ReallocateTaggedMarkerCoordinates.cpp:
 src/UI/TextLayout_AlignSelectorToDisplayRectangle.cpp:
     complete
     .text start:0x0206b7b0 end:0x0206b804
+
+src/GameState/Inventory/Inventory_RemoveItemCountAndCompact.cpp:
+    complete
+    .text start:0x020a0a08 end:0x020a0a60
