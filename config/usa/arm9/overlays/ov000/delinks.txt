@@ -2864,3 +2864,11 @@ src/Combat/Scene/ov000/BattleScene_CloneMonsterIntoCombatantSlot.cpp:
 src/Combat/BattleMenu/ov000/BattleMenu_ConfigureGlobalCommandSelection.cpp:
     complete
     .text start:0x0217c638 end:0x0217c908
+
+src/Combat/BattleMenu/BattleMenu_ResolveActionTargetSelectionState.cpp:
+    complete
+    .text start:0x02171210 end:0x02171458
+
+src/Combat/BattleMenu/BattleMenu_UpdateCarriedItemDescriptionWindow.cpp:
+    complete
+    .text start:0x0217964c end:0x0217979c
