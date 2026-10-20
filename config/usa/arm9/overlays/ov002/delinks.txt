@@ -767,3 +767,7 @@ src/Menu/Party/ov002/PartyMenu_FormatActionTargetStatus.cpp:
 src/Menu/Party/ov002/PartyMenu_ConfigureSelectionForCurrentScreen.cpp:
     complete
     .text start:0x02161cf0 end:0x021622ec
+
+src/Menu/Party/ov002/PartyMenu_ApplyHpRecoveryAndRemovePoison.cpp:
+    complete
+    .text start:0x02154020 end:0x02154230
