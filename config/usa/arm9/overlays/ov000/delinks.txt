@@ -2852,3 +2852,7 @@ src/Combat/BattleMenu/ov000/BattleMenu_RestoreSubDisplayResources.cpp:
 src/Combat/BattleMenu/ov000/BattleMenu_ResetPanelsToFirstEligibleMember.cpp:
     complete
     .text start:0x02174c14 end:0x02174d08
+
+src/Combat/Turns/ov000/Combat_CollectMonsterTargetsInGroup.cpp:
+    complete
+    .text start:0x02153e78 end:0x02153f98
