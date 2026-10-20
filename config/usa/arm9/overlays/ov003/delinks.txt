@@ -3004,3 +3004,7 @@ src/Town/TagMode/TagMode_IsPeerIdentityCached.cpp:
 src/Town/Inn/Inn_ShowPartyListPageCounter.cpp:
     complete
     .text start:0x0215f5e8 end:0x0215f650
+
+src/Town/Church/ov003/Church_DecrementDialogDelay.cpp:
+    complete
+    .text start:0x0215c300 end:0x0215c32c
