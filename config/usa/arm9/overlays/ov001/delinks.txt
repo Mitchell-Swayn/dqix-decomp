@@ -2060,3 +2060,7 @@ src/Event/Cutscenes/ov001/Script_DetachBoundObject.cpp:
 src/Event/Motion/ov001/Script_SetIndexedActorVisibility.cpp:
     complete
     .text start:0x0215c730 end:0x0215c788
+
+src/Event/Cutscenes/ov001/Script_LoadAndInitializeEventBytecode.cpp:
+    complete
+    .text start:0x0215f1fc end:0x0215f2e8
