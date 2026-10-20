@@ -3247,3 +3247,7 @@ src/Menu/RecordsFramework/Menu_SelectEnabledCatalogueEntryByPrimaryRank.cpp:
 src/Menu/RecordsFramework/Menu_SelectEnabledCatalogueEntryBySecondaryRank.cpp:
     complete
     .text start:0x021e170c end:0x021e1814
+
+src/GameState/Statistics/ov023/Script_ReadStatisticsLow9BitValueAtA0.cpp:
+    complete
+    .text start:0x021eacd8 end:0x021ead0c
