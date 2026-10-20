@@ -3259,3 +3259,7 @@ src/Menu/Panels/ov023/Menu_BeginRequestedPartyPreviewClose.cpp:
 src/Menu/Panels/ov023/Menu_AllocateLinkedRecordsFromScript.cpp:
     complete
     .text start:0x021e1194 end:0x021e11ec
+
+src/Menu/Panels/ov023/Script_SetStatisticsFlag.cpp:
+    complete
+    .text start:0x021e92f0 end:0x021e934c
