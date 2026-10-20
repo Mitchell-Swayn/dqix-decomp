@@ -15,3 +15,4 @@ Text_RebuildSelectedEightGlyphCanvas
 PlaceCombatantAtFirstUnusedGridIndex
 UpdateAllocationOverlayFrame
 UpdatePairedObjectsAndDispatchState
+MB_DisconnectChild

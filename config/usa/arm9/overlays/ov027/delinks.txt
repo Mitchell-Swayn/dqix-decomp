@@ -299,3 +299,7 @@ src/Online/DownloadPlay/MBi_CommParentSendDLFileInfo.cpp:
 src/Online/DownloadPlay/ov027/MBi_IsTaskBusy.cpp:
     complete
     .text start:0x021dd3e0 end:0x021dd3f8
+
+src/Online/DownloadPlay/ov027/MB_DisconnectChild.cpp:
+    complete
+    .text start:0x021dcd5c end:0x021dcee8
