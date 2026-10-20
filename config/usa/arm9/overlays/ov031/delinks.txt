@@ -8208,3 +8208,7 @@ src/Online/Sockets/ov031/Network_GetSocketSendBufferFreeBytes.cpp:
 src/Online/Security/ov031/WirelessSetup_ResetEventQueue.cpp:
     complete
     .text start:0x0221f9f8 end:0x0221fa20
+
+src/Online/Security/ov031/WirelessSetup_EnqueueEvent.cpp:
+    complete
+    .text start:0x0221fa58 end:0x0221fa88
