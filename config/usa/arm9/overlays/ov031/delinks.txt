@@ -8192,3 +8192,7 @@ src/Online/Settings/ov031/WfcUtility_CopyNetworkTaskResult.cpp:
 src/Online/Services/ov031/OnlineError_IsSet.cpp:
     complete
     .text start:0x02211aec end:0x02211b08
+
+src/Online/Services/ov031/DlcDownload_GetBase64EncodedLength.cpp:
+    complete
+    .text start:0x0223e438 end:0x0223e454
