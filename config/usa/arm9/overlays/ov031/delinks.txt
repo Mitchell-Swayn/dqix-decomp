@@ -8248,3 +8248,7 @@ src/Online/Settings/ov031/WfcUtility_PopPointerRingBack.cpp:
 src/Online/Sockets/ov031/Network_ConnectSocketAddress.cpp:
     complete
     .text start:0x02207230 end:0x0220728c
+
+src/Online/Services/ov031/Http_LocateHeaderBufferCursor.cpp:
+    complete
+    .text start:0x02240410 end:0x0224046c
