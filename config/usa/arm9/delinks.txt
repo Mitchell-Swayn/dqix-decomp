@@ -20145,3 +20145,7 @@ src/Actor/ResourceTracks_AdvanceThreeVectorTrackGroups.cpp:
 src/Resource/MD5_CompressBufferedBlock.cpp:
     complete
     .text start:0x020c04e8 end:0x020c089c
+
+src/Actor/GameObject_ReviveAndRestoreHP.cpp:
+    complete
+    .text start:0x02048150 end:0x02048228
