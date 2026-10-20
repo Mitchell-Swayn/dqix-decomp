@@ -4636,3 +4636,7 @@ src/Field/Events/ov017/Script_TestValuePairNonzero.cpp:
 src/Field/Screens/ov017/ItemTrade_TickIncomingOfferTimeout.cpp:
     complete
     .text start:0x021a85e8 end:0x021a8614
+
+src/Field/Screens/ov017/World_ApplyClientBoundaryZoneTier.cpp:
+    complete
+    .text start:0x021d3e7c end:0x021d3eb4
