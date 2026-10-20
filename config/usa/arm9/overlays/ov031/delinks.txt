@@ -8304,3 +8304,7 @@ src/Online/Security/ov031/WirelessSetup_AssociateWithChosenAccessPoint.cpp:
 src/Online/Content/ov031/OnlineTransfer_CleanUpSession.cpp:
     complete
     .text start:0x022439d8 end:0x02243b34
+
+src/Online/Sockets/ov031/Network_BuildDhcpMessageHeaderAndOptions.cpp:
+    complete
+    .text start:0x02203fdc end:0x02204168
