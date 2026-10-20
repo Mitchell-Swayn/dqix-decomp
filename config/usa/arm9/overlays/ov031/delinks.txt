@@ -8260,3 +8260,7 @@ src/Online/WifiConnection/ov031/Network_GetDcfPeerGameInfo.cpp:
 src/Online/Services/ov031/Http_CompareAsciiPrefixIgnoringCase.cpp:
     complete
     .text start:0x02241540 end:0x022415a8
+
+src/Online/Services/ov031/WirelessConnection_CheckDisconnectError.cpp:
+    complete
+    .text start:0x022123d4 end:0x0221244c
