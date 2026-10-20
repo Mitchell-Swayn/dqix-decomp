@@ -1812,3 +1812,7 @@ src/Menu/SharedServices/FieldMenu_InstallTransitionCallbacks.cpp:
 src/Menu/Status/ProfileMenu_RemoveSelectedSavedProfile.cpp:
     complete
     .text start:0x0216950c end:0x021695fc
+
+src/Menu/SharedServices/ov004/Menu_RebuildCatalogueFilteredList.cpp:
+    complete
+    .text start:0x0215482c end:0x02154984
