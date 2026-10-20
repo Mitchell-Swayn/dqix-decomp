@@ -20069,3 +20069,7 @@ src/Save/SaveData_RestoreZoneSnapshot.cpp:
 src/Actor/GameObject_StartActionResourceSequence.cpp:
     complete
     .text start:0x02052f44 end:0x0205308c
+
+src/System/OSi_ReferSymbol.cpp:
+    complete
+    .text start:0x02000b9c end:0x02000ba0
