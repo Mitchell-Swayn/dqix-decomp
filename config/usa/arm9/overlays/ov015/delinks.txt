@@ -839,3 +839,7 @@ src/Debug/ModelViewer/CharacterViewer_GetNormalizedAnimationTime.cpp:
 src/Debug/ModelViewer/CharacterViewer_DrawSingleModelAndCollectPolygonCounts.cpp:
     complete
     .text start:0x0218edcc end:0x0218ee38
+
+src/Debug/ModelViewer/ov015/CharacterViewer_LoadScenePreset.cpp:
+    complete
+    .text start:0x02191c70 end:0x02191ea4
