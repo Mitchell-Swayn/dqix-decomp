@@ -8252,3 +8252,7 @@ src/Online/Sockets/ov031/Network_ConnectSocketAddress.cpp:
 src/Online/Services/ov031/Http_LocateHeaderBufferCursor.cpp:
     complete
     .text start:0x02240410 end:0x0224046c
+
+src/Online/WifiConnection/ov031/Network_GetDcfPeerGameInfo.cpp:
+    complete
+    .text start:0x0220f084 end:0x0220f0e4
