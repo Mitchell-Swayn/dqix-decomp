@@ -4640,3 +4640,7 @@ src/Field/Screens/ov017/ItemTrade_TickIncomingOfferTimeout.cpp:
 src/Field/Screens/ov017/World_ApplyClientBoundaryZoneTier.cpp:
     complete
     .text start:0x021d3e7c end:0x021d3eb4
+
+src/Field/Multiplayer/ov017/Field_QueueMemberProfileRequest.cpp:
+    complete
+    .text start:0x021d1014 end:0x021d1078
