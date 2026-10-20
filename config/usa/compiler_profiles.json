@@ -12398,6 +12398,49 @@
         "include"
       ],
       "origin": "swarm profile O4p; exact bytes and relocations verified"
+    },
+    "src/Field/Scene/ov017/Field_ResetGroupResponseTracking.cpp": {
+      "version": "2.0/sp2",
+      "executable": "tools/mwccarm/2.0/sp2/mwccarm.exe",
+      "executable_sha256": "3d97f6ed0a43d131173fc3b15cd3442f38d85fc6059b3fa709139be70fe8532e",
+      "source": "src/Field/Scene/ov017/Field_ResetGroupResponseTracking.cpp",
+      "flags": [
+        "-O2,p",
+        "-enum",
+        "int",
+        "-char",
+        "signed",
+        "-str",
+        "noreuse",
+        "-proc",
+        "arm946e",
+        "-gccext,on",
+        "-fp",
+        "soft",
+        "-inline",
+        "noauto",
+        "-lang=c++",
+        "-Cpp_exceptions",
+        "off",
+        "-RTTI",
+        "off",
+        "-interworking",
+        "-w",
+        "off",
+        "-sym",
+        "on",
+        "-gccinc",
+        "-nolink",
+        "-msgstyle",
+        "gcc",
+        "-str",
+        "pool,reuse",
+        "-d",
+        "usa",
+        "-i",
+        "include"
+      ],
+      "origin": "swarm profile sp2-O2p; exact bytes and relocations verified"
     }
   }
 }
