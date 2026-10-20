@@ -3255,3 +3255,7 @@ src/GameState/Statistics/ov023/Script_ReadStatisticsLow9BitValueAtA0.cpp:
 src/Menu/Panels/ov023/Menu_BeginRequestedPartyPreviewClose.cpp:
     complete
     .text start:0x021e4e3c end:0x021e4e8c
+
+src/Menu/Panels/ov023/Menu_AllocateLinkedRecordsFromScript.cpp:
+    complete
+    .text start:0x021e1194 end:0x021e11ec
