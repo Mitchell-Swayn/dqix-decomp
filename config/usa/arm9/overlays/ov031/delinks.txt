@@ -8264,3 +8264,7 @@ src/Online/Services/ov031/Http_CompareAsciiPrefixIgnoringCase.cpp:
 src/Online/Services/ov031/WirelessConnection_CheckDisconnectError.cpp:
     complete
     .text start:0x022123d4 end:0x0221244c
+
+src/Online/Settings/ov031/WfcUtility_NormalizeIpv4EditorLeadingZeros.cpp:
+    complete
+    .text start:0x0222e1ac end:0x0222e224
