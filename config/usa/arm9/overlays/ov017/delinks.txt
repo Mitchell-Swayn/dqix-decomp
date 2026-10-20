@@ -4652,3 +4652,7 @@ src/Field/Multiplayer/ov017/Field_QueueMonsterHideRequest.cpp:
 src/Field/Events/ov017/FieldBattle_TryLoadScriptedMonsterFormation.cpp:
     complete
     .text start:0x021b8abc end:0x021b8b34
+
+src/Field/Events/ov017/Network_QueuePartyMemberZoneArrival.cpp:
+    complete
+    .text start:0x021c4854 end:0x021c48f0
