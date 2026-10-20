@@ -3267,3 +3267,7 @@ src/Menu/Panels/ov023/Script_SetStatisticsFlag.cpp:
 src/Menu/CharacterPreview/ov023/CharacterPreview_CreateModelAndAnimationAllocators.cpp:
     complete
     .text start:0x021e4f64 end:0x021e4fd8
+
+src/Menu/RecordsFramework/ov023/MenuLayerRecord_ApplyContainerLayerPayloads.cpp:
+    complete
+    .text start:0x021f7b98 end:0x021f7c68
