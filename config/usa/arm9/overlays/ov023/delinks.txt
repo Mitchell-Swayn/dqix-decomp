@@ -3279,3 +3279,7 @@ src/Menu/ItemDetails/ov023/ItemDetail_AllocateDisplayResources.cpp:
 src/Menu/Panels/ov023/Menu_UploadSharedTextCanvas.cpp:
     complete
     .text start:0x021ddc98 end:0x021dde00
+
+src/Menu/ItemDetails/ItemDetail_RenderPendingItemName.cpp:
+    complete
+    .text start:0x021dde00 end:0x021ddf5c
