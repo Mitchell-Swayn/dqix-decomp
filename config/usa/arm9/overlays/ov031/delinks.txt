@@ -8300,3 +8300,7 @@ src/Online/Sockets/ov031/Network_BroadcastArpRequest.cpp:
 src/Online/Security/ov031/WirelessSetup_AssociateWithChosenAccessPoint.cpp:
     complete
     .text start:0x0221fb90 end:0x0221fcb4
+
+src/Online/Content/ov031/OnlineTransfer_CleanUpSession.cpp:
+    complete
+    .text start:0x022439d8 end:0x02243b34
