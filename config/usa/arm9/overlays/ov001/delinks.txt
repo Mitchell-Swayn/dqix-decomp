@@ -2056,3 +2056,7 @@ src/Event/Cutscenes/ov001/Script_TransitionMainBrightnessFromParameters.cpp:
 src/Event/Cutscenes/ov001/Script_DetachBoundObject.cpp:
     complete
     .text start:0x0215cdf8 end:0x0215ce4c
+
+src/Event/Motion/ov001/Script_SetIndexedActorVisibility.cpp:
+    complete
+    .text start:0x0215c730 end:0x0215c788
