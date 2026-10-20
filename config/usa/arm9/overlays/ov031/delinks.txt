@@ -8284,3 +8284,7 @@ src/Online/Sockets/ov031/Network_LookupDestinationMacAddress.cpp:
 src/Online/Settings/ov031/WfcUtility_UpdateProfileSelectionAppearance.cpp:
     complete
     .text start:0x02233178 end:0x02233248
+
+src/Online/Settings/ov031/WfcUtility_SelectConnectionProfileForEditing.cpp:
+    complete
+    .text start:0x02236094 end:0x02236174
