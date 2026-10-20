@@ -2832,3 +2832,7 @@ src/Combat/Scene/ov000/BattleScene_RefreshCombatantGridDestinations.cpp:
 src/Combat/BattleMenu/ov000/BattleMenu_ApplyMemberCommandSelection.cpp:
     complete
     .text start:0x02174428 end:0x021744f4
+
+src/Combat/BattleMenu/ov000/BattleMenu_InitializeMemberCommandFromActor.cpp:
+    complete
+    .text start:0x02171138 end:0x02171210
