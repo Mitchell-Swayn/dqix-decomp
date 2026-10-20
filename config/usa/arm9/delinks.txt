@@ -20137,3 +20137,7 @@ src/Actor/LinkedFieldActor_UpdateTrailingPoints.cpp:
 src/Resource/ResourceStringTable_CopyEntriesForKeys.cpp:
     complete
     .text start:0x020e0028 end:0x020e0280
+
+src/Actor/ResourceTracks_AdvanceThreeVectorTrackGroups.cpp:
+    complete
+    .text start:0x020559cc end:0x02055c30
