@@ -8224,3 +8224,7 @@ src/Online/Sockets/ov031/Network_IsSocketHandleInvalid.cpp:
 src/Online/WifiConnection/ov031/Multiboot_GetConnectedChildRecord.cpp:
     complete
     .text start:0x02239250 end:0x02239284
+
+src/Online/Settings/ov031/WfcUtility_CreateBottomButtonsForDisplayMode.cpp:
+    complete
+    .text start:0x02223568 end:0x022235a0
