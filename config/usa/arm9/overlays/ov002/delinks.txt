@@ -763,3 +763,7 @@ src/Menu/Party/PartyMenu_FormatSelectedActionMpCost.cpp:
 src/Menu/Party/ov002/PartyMenu_FormatActionTargetStatus.cpp:
     complete
     .text start:0x0215d214 end:0x0215d654
+
+src/Menu/Party/ov002/PartyMenu_ConfigureSelectionForCurrentScreen.cpp:
+    complete
+    .text start:0x02161cf0 end:0x021622ec
