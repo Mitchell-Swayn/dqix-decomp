@@ -8296,3 +8296,7 @@ src/Online/WifiConnection/ov031/Wireless_AdvanceDownloadPeerHandshake.cpp:
 src/Online/Sockets/ov031/Network_BroadcastArpRequest.cpp:
     complete
     .text start:0x02200ccc end:0x02200dc8
+
+src/Online/Security/ov031/WirelessSetup_AssociateWithChosenAccessPoint.cpp:
+    complete
+    .text start:0x0221fb90 end:0x0221fcb4
