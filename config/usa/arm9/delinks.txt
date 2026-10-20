@@ -20093,3 +20093,7 @@ src/GameState/Inventory/Inventory_RemoveItemCountAndCompact.cpp:
 src/World/Graphics_DrawColoredRotatedBoxFromBasePosition.cpp:
     complete
     .text start:0x0208b5b4 end:0x0208b610
+
+src/Menu/Bestiary/Bestiary_ReplaceMonsterRecordsAndCountNewDiscoveries.cpp:
+    complete
+    .text start:0x020abe84 end:0x020abf38
