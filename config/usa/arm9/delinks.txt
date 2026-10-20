@@ -20097,3 +20097,7 @@ src/World/Graphics_DrawColoredRotatedBoxFromBasePosition.cpp:
 src/Menu/Bestiary/Bestiary_ReplaceMonsterRecordsAndCountNewDiscoveries.cpp:
     complete
     .text start:0x020abe84 end:0x020abf38
+
+src/Filesystem/FileCache_RestoreRomTablesIfSpaceAvailable.cpp:
+    complete
+    .text start:0x020a0c0c end:0x020a0cc4

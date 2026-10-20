@@ -12914,6 +12914,49 @@
         "include"
       ],
       "origin": "swarm profile O4p; exact bytes and relocations verified"
+    },
+    "src/Filesystem/FileCache_RestoreRomTablesIfSpaceAvailable.cpp": {
+      "version": "1.2/sp2p3",
+      "executable": "tools/mwccarm/1.2/sp2p3/mwccarm.exe",
+      "executable_sha256": "a0db9f5dd49ceb619dbc64993660b39f96cca10821a698a9859824e2d4ae2a81",
+      "source": "src/Filesystem/FileCache_RestoreRomTablesIfSpaceAvailable.cpp",
+      "flags": [
+        "-O4,p",
+        "-enum",
+        "int",
+        "-char",
+        "signed",
+        "-str",
+        "noreuse",
+        "-proc",
+        "arm946e",
+        "-gccext,on",
+        "-fp",
+        "soft",
+        "-inline",
+        "noauto",
+        "-lang=c++",
+        "-Cpp_exceptions",
+        "off",
+        "-RTTI",
+        "off",
+        "-nointerworking",
+        "-w",
+        "off",
+        "-sym",
+        "on",
+        "-gccinc",
+        "-nolink",
+        "-msgstyle",
+        "gcc",
+        "-str",
+        "pool,reuse",
+        "-d",
+        "usa",
+        "-i",
+        "include"
+      ],
+      "origin": "swarm profile 1.2-O4p-noiw; exact bytes and relocations verified"
     }
   }
 }
