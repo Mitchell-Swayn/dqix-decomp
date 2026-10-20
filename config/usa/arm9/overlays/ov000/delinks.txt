@@ -2848,3 +2848,7 @@ src/Combat/Turns/ov000/Combat_FindEligibleEnemyWithLeastHomeX.cpp:
 src/Combat/BattleMenu/ov000/BattleMenu_RestoreSubDisplayResources.cpp:
     complete
     .text start:0x02172850 end:0x02172944
+
+src/Combat/BattleMenu/ov000/BattleMenu_ResetPanelsToFirstEligibleMember.cpp:
+    complete
+    .text start:0x02174c14 end:0x02174d08
