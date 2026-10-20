@@ -2820,3 +2820,7 @@ src/Combat/BattleMenu/ov000/BattleMenu_RefreshMemberCommandLabels.cpp:
 src/Combat/Scene/ov000/BattleScene_RemovePartyAnimationReload.cpp:
     complete
     .text start:0x0216867c end:0x02168720
+
+src/Combat/BattleMenu/ov000/BattleMenu_RefreshUncontrolledMemberLabel.cpp:
+    complete
+    .text start:0x02170ffc end:0x021710ac
