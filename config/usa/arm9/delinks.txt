@@ -20073,3 +20073,7 @@ src/Actor/GameObject_StartActionResourceSequence.cpp:
 src/System/OSi_ReferSymbol.cpp:
     complete
     .text start:0x02000b9c end:0x02000ba0
+
+src/Resource/NNS_SndArcStrmGetTimeLength.cpp:
+    complete
+    .text start:0x020becd4 end:0x020bed10
