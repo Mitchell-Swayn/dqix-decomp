@@ -3012,3 +3012,7 @@ src/Town/Church/ov003/Church_DecrementDialogDelay.cpp:
 src/Town/SharedServices/ov003/TextEntry_InitializeControlRecord.cpp:
     complete
     .text start:0x0215e498 end:0x0215e4c8
+
+src/Town/SharedServices/ov003/TextEntry_GetControlAtGridCoordinates.cpp:
+    complete
+    .text start:0x0215e9a4 end:0x0215e9ec
