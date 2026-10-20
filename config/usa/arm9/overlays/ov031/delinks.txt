@@ -8288,3 +8288,7 @@ src/Online/Settings/ov031/WfcUtility_UpdateProfileSelectionAppearance.cpp:
 src/Online/Settings/ov031/WfcUtility_SelectConnectionProfileForEditing.cpp:
     complete
     .text start:0x02236094 end:0x02236174
+
+src/Online/WifiConnection/ov031/Wireless_AdvanceDownloadPeerHandshake.cpp:
+    complete
+    .text start:0x0223b228 end:0x0223b30c
