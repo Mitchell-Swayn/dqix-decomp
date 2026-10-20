@@ -4656,3 +4656,7 @@ src/Field/Events/ov017/FieldBattle_TryLoadScriptedMonsterFormation.cpp:
 src/Field/Events/ov017/Network_QueuePartyMemberZoneArrival.cpp:
     complete
     .text start:0x021c4854 end:0x021c48f0
+
+src/Field/Multiplayer/ov017/Combat_QueueMemberActionSelectionRecord.cpp:
+    complete
+    .text start:0x021c6814 end:0x021c68e8
