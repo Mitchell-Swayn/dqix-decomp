@@ -2812,3 +2812,7 @@ src/Combat/Commands/ov000/CombatScript_CollectCommandGroupsByActionKey.cpp:
 src/Combat/Turns/ov000/BattleHud_AdvanceSelectedSlotPulse.cpp:
     complete
     .text start:0x02170460 end:0x021704d8
+
+src/Combat/BattleMenu/ov000/BattleMenu_RefreshMemberCommandLabels.cpp:
+    complete
+    .text start:0x0217457c end:0x02174614
