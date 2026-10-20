@@ -4644,3 +4644,7 @@ src/Field/Screens/ov017/World_ApplyClientBoundaryZoneTier.cpp:
 src/Field/Multiplayer/ov017/Field_QueueMemberProfileRequest.cpp:
     complete
     .text start:0x021d1014 end:0x021d1078
+
+src/Field/Multiplayer/ov017/Field_QueueMonsterHideRequest.cpp:
+    complete
+    .text start:0x021c9544 end:0x021c95b4
