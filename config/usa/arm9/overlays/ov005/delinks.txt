@@ -279,3 +279,11 @@ src/Menu/Equipment/EquipmentMenu_ApproachCursorCoordinate.cpp:
 src/Menu/Equipment/ov005/EquipmentMenu_InitializeController.cpp:
     complete
     .text start:0x02153ba4 end:0x02154198
+
+src/Menu/Equipment/EquipmentMenu_DrawEquippedItemNames.cpp:
+    complete
+    .text start:0x0215b0a0 end:0x0215b2bc
+
+src/Menu/Equipment/EquipmentMenu_CacheEquippedItemNames.cpp:
+    complete
+    .text start:0x0215ae7c end:0x0215b0a0
