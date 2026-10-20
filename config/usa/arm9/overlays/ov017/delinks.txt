@@ -4664,3 +4664,7 @@ src/Field/Multiplayer/ov017/Combat_QueueMemberActionSelectionRecord.cpp:
 src/Field/Scene/ov017/FieldMonster_AllocateUnusedRecordIdentifier.cpp:
     complete
     .text start:0x021a1944 end:0x021a1a20
+
+src/Field/Scene/ov017/Field_SelectBetterInteractionCandidate.cpp:
+    complete
+    .text start:0x0219b33c end:0x0219b43c
