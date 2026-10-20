@@ -2804,3 +2804,7 @@ src/Combat/Turns/ov000/Combat_CollectLinkedRecordSideCombatants.cpp:
 src/Combat/Turns/ov000/Combat_PopulateResultWithCurrentHealthAndMagic.cpp:
     complete
     .text start:0x0215cd44 end:0x0215cd80
+
+src/Combat/Commands/ov000/CombatScript_CollectCommandGroupsByActionKey.cpp:
+    complete
+    .text start:0x02169aa4 end:0x02169b04
