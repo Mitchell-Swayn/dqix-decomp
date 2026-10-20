@@ -8244,3 +8244,7 @@ src/Online/Services/ov031/HttpResponse_FindFieldValue.cpp:
 src/Online/Settings/ov031/WfcUtility_PopPointerRingBack.cpp:
     complete
     .text start:0x0223bfa0 end:0x0223bff8
+
+src/Online/Sockets/ov031/Network_ConnectSocketAddress.cpp:
+    complete
+    .text start:0x02207230 end:0x0220728c
