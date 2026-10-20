@@ -1820,3 +1820,7 @@ src/Menu/SharedServices/ov004/Menu_RebuildCatalogueFilteredList.cpp:
 src/Menu/SharedServices/ov004/Menu_GetInventorySlotOnCurrentPage.cpp:
     complete
     .text start:0x021570a4 end:0x021570f0
+
+src/Menu/TreasureMaps/ov004/TreasureMapMenu_FindHighlightedMapPosition.cpp:
+    complete
+    .text start:0x021635d0 end:0x021636b0
