@@ -20141,3 +20141,7 @@ src/Resource/ResourceStringTable_CopyEntriesForKeys.cpp:
 src/Actor/ResourceTracks_AdvanceThreeVectorTrackGroups.cpp:
     complete
     .text start:0x020559cc end:0x02055c30
+
+src/Resource/MD5_CompressBufferedBlock.cpp:
+    complete
+    .text start:0x020c04e8 end:0x020c089c
