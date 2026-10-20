@@ -4628,3 +4628,7 @@ src/Field/Multiplayer/Field_QueueSessionTransitionTask.cpp:
 src/Field/Scene/ov017/Field_ResetGroupResponseTracking.cpp:
     complete
     .text start:0x0218b664 end:0x0218b688
+
+src/Field/Events/ov017/Script_TestValuePairNonzero.cpp:
+    complete
+    .text start:0x021d49ac end:0x021d49d0
