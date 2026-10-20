@@ -4672,3 +4672,11 @@ src/Field/Scene/ov017/Field_SelectBetterInteractionCandidate.cpp:
 src/Field/Multiplayer/ov017/PartySync_QueueCurrentVocationProgress.cpp:
     complete
     .text start:0x021cc730 end:0x021cc830
+
+src/Field/Scene/Field_DrawMarkedObjectsAndSceneCommands.cpp:
+    complete
+    .text start:0x02195ecc end:0x02196048
+
+src/Field/Events/FieldBattle_CancelPendingParticipation.cpp:
+    complete
+    .text start:0x021b86f8 end:0x021b88d0
