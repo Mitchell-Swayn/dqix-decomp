@@ -2860,3 +2860,7 @@ src/Combat/Turns/ov000/Combat_CollectMonsterTargetsInGroup.cpp:
 src/Combat/Scene/ov000/BattleScene_CloneMonsterIntoCombatantSlot.cpp:
     complete
     .text start:0x02166540 end:0x02166784
+
+src/Combat/BattleMenu/ov000/BattleMenu_ConfigureGlobalCommandSelection.cpp:
+    complete
+    .text start:0x0217c638 end:0x0217c908
