@@ -2828,3 +2828,7 @@ src/Combat/BattleMenu/ov000/BattleMenu_RefreshUncontrolledMemberLabel.cpp:
 src/Combat/Scene/ov000/BattleScene_RefreshCombatantGridDestinations.cpp:
     complete
     .text start:0x02168144 end:0x021681f8
+
+src/Combat/BattleMenu/ov000/BattleMenu_ApplyMemberCommandSelection.cpp:
+    complete
+    .text start:0x02174428 end:0x021744f4
