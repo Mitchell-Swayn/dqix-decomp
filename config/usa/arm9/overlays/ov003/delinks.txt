@@ -3016,3 +3016,7 @@ src/Town/SharedServices/ov003/TextEntry_InitializeControlRecord.cpp:
 src/Town/SharedServices/ov003/TextEntry_GetControlAtGridCoordinates.cpp:
     complete
     .text start:0x0215e9a4 end:0x0215e9ec
+
+src/Town/Inn/ov003/Inn_CopyDiscoveredPartyListEntry.cpp:
+    complete
+    .text start:0x0215f650 end:0x0215f698
