@@ -759,3 +759,7 @@ src/Menu/Party/PartyMenu_ApplyStatIncreaseItemToTargets.cpp:
 src/Menu/Party/PartyMenu_FormatSelectedActionMpCost.cpp:
     complete
     .text start:0x0215f084 end:0x0215f170
+
+src/Menu/Party/ov002/PartyMenu_FormatActionTargetStatus.cpp:
+    complete
+    .text start:0x0215d214 end:0x0215d654
