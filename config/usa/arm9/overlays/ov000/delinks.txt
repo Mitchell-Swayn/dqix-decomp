@@ -2808,3 +2808,7 @@ src/Combat/Turns/ov000/Combat_PopulateResultWithCurrentHealthAndMagic.cpp:
 src/Combat/Commands/ov000/CombatScript_CollectCommandGroupsByActionKey.cpp:
     complete
     .text start:0x02169aa4 end:0x02169b04
+
+src/Combat/Turns/ov000/BattleHud_AdvanceSelectedSlotPulse.cpp:
+    complete
+    .text start:0x02170460 end:0x021704d8
