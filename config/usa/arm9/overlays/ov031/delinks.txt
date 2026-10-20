@@ -8268,3 +8268,7 @@ src/Online/Services/ov031/WirelessConnection_CheckDisconnectError.cpp:
 src/Online/Settings/ov031/WfcUtility_NormalizeIpv4EditorLeadingZeros.cpp:
     complete
     .text start:0x0222e1ac end:0x0222e224
+
+src/Online/Content/ov031/OnlineTransfer_DeriveIdentityAndGameCrc.cpp:
+    complete
+    .text start:0x022457e0 end:0x02245858
