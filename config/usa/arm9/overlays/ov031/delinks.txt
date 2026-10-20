@@ -8228,3 +8228,7 @@ src/Online/WifiConnection/ov031/Multiboot_GetConnectedChildRecord.cpp:
 src/Online/Settings/ov031/WfcUtility_CreateBottomButtonsForDisplayMode.cpp:
     complete
     .text start:0x02223568 end:0x022235a0
+
+src/Online/Settings/ov031/WfcUtility_ConfigureSecondaryControlsForDisplayMode.cpp:
+    complete
+    .text start:0x02223518 end:0x02223568
