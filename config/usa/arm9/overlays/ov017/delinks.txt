@@ -4648,3 +4648,7 @@ src/Field/Multiplayer/ov017/Field_QueueMemberProfileRequest.cpp:
 src/Field/Multiplayer/ov017/Field_QueueMonsterHideRequest.cpp:
     complete
     .text start:0x021c9544 end:0x021c95b4
+
+src/Field/Events/ov017/FieldBattle_TryLoadScriptedMonsterFormation.cpp:
+    complete
+    .text start:0x021b8abc end:0x021b8b34
