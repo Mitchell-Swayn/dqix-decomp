@@ -2856,3 +2856,7 @@ src/Combat/BattleMenu/ov000/BattleMenu_ResetPanelsToFirstEligibleMember.cpp:
 src/Combat/Turns/ov000/Combat_CollectMonsterTargetsInGroup.cpp:
     complete
     .text start:0x02153e78 end:0x02153f98
+
+src/Combat/Scene/ov000/BattleScene_CloneMonsterIntoCombatantSlot.cpp:
+    complete
+    .text start:0x02166540 end:0x02166784
