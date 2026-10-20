@@ -20153,3 +20153,11 @@ src/Actor/GameObject_ReviveAndRestoreHP.cpp:
 src/Resource/NNS_SndStrmSetup.cpp:
     complete
     .text start:0x020bc9d0 end:0x020bcb70
+
+src/Resource/NNSi_SndArcLoadBank.cpp:
+    complete
+    .text start:0x020bded0 end:0x020be010
+
+src/UI/SceneCommand_UpdateDisplayOverlay.cpp:
+    complete
+    .text start:0x020dac94 end:0x020dae08
