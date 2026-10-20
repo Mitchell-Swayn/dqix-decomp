@@ -20121,3 +20121,7 @@ src/Network/Network_ResetConnectionManager.cpp:
 src/Actor/GameObject_CompactAndStartGridPath.cpp:
     complete
     .text start:0x02048e2c end:0x02048f64
+
+src/UI/TextCanvas_FillRegionRectangle4Bpp.cpp:
+    complete
+    .text start:0x0205b734 end:0x0205b890
