@@ -20113,3 +20113,7 @@ src/Graphics/TextCanvas_DrawSelectionMarker.cpp:
 src/Graphics/FX_SinFx64c_internal.cpp:
     complete
     .text start:0x020c30ac end:0x020c3194
+
+src/Network/Network_ResetConnectionManager.cpp:
+    complete
+    .text start:0x0202aec0 end:0x0202aff4
