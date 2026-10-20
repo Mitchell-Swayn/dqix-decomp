@@ -3275,3 +3275,7 @@ src/Menu/RecordsFramework/ov023/MenuLayerRecord_ApplyContainerLayerPayloads.cpp:
 src/Menu/ItemDetails/ov023/ItemDetail_AllocateDisplayResources.cpp:
     complete
     .text start:0x021dbfd0 end:0x021dc134
+
+src/Menu/Panels/ov023/Menu_UploadSharedTextCanvas.cpp:
+    complete
+    .text start:0x021ddc98 end:0x021dde00
