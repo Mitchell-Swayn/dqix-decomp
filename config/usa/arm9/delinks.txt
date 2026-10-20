@@ -20125,3 +20125,7 @@ src/Actor/GameObject_CompactAndStartGridPath.cpp:
 src/UI/TextCanvas_FillRegionRectangle4Bpp.cpp:
     complete
     .text start:0x0205b734 end:0x0205b890
+
+src/Camera/Camera_ApplyPlaneWeightedFollowBlend.cpp:
+    complete
+    .text start:0x020a299c end:0x020a2b38
