@@ -8256,3 +8256,7 @@ src/Online/Services/ov031/Http_LocateHeaderBufferCursor.cpp:
 src/Online/WifiConnection/ov031/Network_GetDcfPeerGameInfo.cpp:
     complete
     .text start:0x0220f084 end:0x0220f0e4
+
+src/Online/Services/ov031/Http_CompareAsciiPrefixIgnoringCase.cpp:
+    complete
+    .text start:0x02241540 end:0x022415a8
