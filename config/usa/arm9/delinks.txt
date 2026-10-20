@@ -20081,3 +20081,7 @@ src/Resource/NNS_SndArcStrmGetTimeLength.cpp:
 src/World/WorldMap_ReallocateTaggedMarkerCoordinates.cpp:
     complete
     .text start:0x02027b10 end:0x02027b5c
+
+src/UI/TextLayout_AlignSelectorToDisplayRectangle.cpp:
+    complete
+    .text start:0x0206b7b0 end:0x0206b804
