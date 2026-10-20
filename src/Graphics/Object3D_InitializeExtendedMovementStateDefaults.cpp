@@ -1,0 +1,4 @@
+#include <globaldefs.h>
+extern "C" void Object_InitializeAnimationControlDefaults(void*);extern "C" void _ZN8Object3D11DisableFlagEi(void*,int);
+// Original: arm9/main @ 0x02076A8C; symbol: func_02076a8c; size: 0xCC.
+extern "C" ARM void Object3D_InitializeExtendedMovementStateDefaults(char* p){Object_InitializeAnimationControlDefaults(p);*(unsigned short*)p|=32;*(short*)(p+0xb4)=0x1c2;*(int*)(p+0x130)=1;*(int*)(p+0x134)=1;p[0x138]=1;p[0x139]=2;p[0x13a]=1;p[0x13b]=3;p[0x13c]=1;*(int*)(p+0x140)=30;*(int*)(p+0x144)=5;*(int*)(p+0x148)=0x1000;*(int*)(p+0x14c)=0;*(int*)(p+0x150)=0;*(int*)(p+0x154)=0;*(short*)(p+0x164)=0;*(short*)(p+0x166)=0;*(short*)(p+0x168)=0;p[0x17d]=0;*(int*)(p+0x170)=0;*(short*)(p+0x174)=0;*(short*)(p+0x176)=0;p[0x17a]=0;p[0x17b]=0;p[0x17c]=0;*(int*)(p+0x180)=0;*(int*)(p+0x184)=0;*(short*)(p+0x16a)=0;p[0x17e]=0;*(int*)(p+0x158)=0;*(int*)(p+0x15c)=0;*(int*)(p+0x160)=0;_ZN8Object3D11DisableFlagEi(p,128);}

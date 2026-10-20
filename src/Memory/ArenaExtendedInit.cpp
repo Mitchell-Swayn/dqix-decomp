@@ -3,11 +3,12 @@
 
 extern "C"
 {
-    void func_020c8a2c(unsigned int region);
-    void func_020c8a34(unsigned int region);
+    void OS_SetProtectionRegion1(unsigned int region);
+    void OS_SetProtectionRegion2(unsigned int region);
 }
 
 // USA: 0x020c84b4
+// Original: arm9/main @ 0x020C84B4; symbol: _Z23InitializeExtendedArenav; size: 0x6C.
 void InitializeExtendedArena()
 {
     SetArenaHigh(2, GetInitialArenaHigh(2));
@@ -16,6 +17,6 @@ void InitializeExtendedArena()
         (GetConsoleType() & 3) != 1)
         return;
     // MPU region descriptors for normal RAM and its reserved upper region.
-    func_020c8a2c(0x0200002b);
-    func_020c8a34(0x023e0021);
+    OS_SetProtectionRegion1(0x0200002b);
+    OS_SetProtectionRegion2(0x023e0021);
 }

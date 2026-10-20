@@ -1,3 +1,10 @@
     .ctor       start:0x02200160 end:0x02200164 kind:rodata align:4
     .bss        start:0x02200180 end:0x022a2180 kind:bss align:32
 
+src/Data/ConstructorTerminator.cpp:
+    complete
+    .ctor start:0x02200160 end:0x02200164
+
+src/Sound/Music/BgmArchiveOverlayArena.cpp:
+    complete
+    .bss start:0x02200180 end:0x022a2180

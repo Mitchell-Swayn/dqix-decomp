@@ -1,0 +1,14 @@
+#include <globaldefs.h>
+#include <System/Matrix.h>
+ARM
+#include <std_library_functions.h>
+
+// Original data: arm9/ov001 @ 0x2165880; symbol: data_ov001_02165880.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/ov001.md.
+extern "C" float Script_ReadParameterAsFloat(void*);extern "C" void* EventGetObjectSession_UnknownRoleZeroInitializedStorage[];extern "C" void CutsceneCamera_QueueTargetPosition(void*,Vector3fix);
+// Original: arm9/ov001 @ 0x0215D234; symbol: QueueTaggedThreeFixedScriptComponents; size: 0x98.
+// Scales three script floats by4096 and appends a tagged three-word queue record.
+extern "C" int QueueTaggedThreeFixedScriptComponents(char* parameters){Vector3fix value;memset(&value,0,12);value.x=(int)(4096.0f*Script_ReadParameterAsFloat(parameters));value.y=(int)(4096.0f*Script_ReadParameterAsFloat(parameters+8));value.z=(int)(4096.0f*Script_ReadParameterAsFloat(parameters+16));CutsceneCamera_QueueTargetPosition(EventGetObjectSession_UnknownRoleZeroInitializedStorage[9],value);return 1;}

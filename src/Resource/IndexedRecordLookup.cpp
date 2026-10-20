@@ -8,7 +8,8 @@ struct IndexedRecordTable
     const uint8_t* records;
 };
 
-extern "C" int func_020283fc(const IndexedRecordTable* table, int value)
+// Original: arm9/main @ 0x020283FC; symbol: func_020283fc; size: 0x34.
+extern "C" int IndexedRecordTable_FindRecordIndexByValue(const IndexedRecordTable* table, int value)
 {
     for (int i = 0; i < table->count; ++i)
     {

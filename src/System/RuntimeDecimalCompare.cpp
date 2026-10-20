@@ -3,7 +3,8 @@
 #pragma optimize_for_size off
 
 // Compare discarded digits to half; an exact tie rounds to an even last digit.
-extern "C" int func_020095b0(RuntimeDecimal* decimal, int index)
+// Original: arm9/main @ 0x020095B0; symbol: func_020095b0; size: 0x6C.
+extern "C" int Runtime_CompareDiscardedDecimalDigitsToHalf(RuntimeDecimal* decimal, int index)
 {
     const unsigned char* current = decimal->digits + index;
     if (*current > 5)

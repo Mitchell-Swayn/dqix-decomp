@@ -1,0 +1,57 @@
+// Full keyboard key origins; 47 keys, four-byte stride. Input_UpdateSelectionFromRectangleGroups passes entries to hitbox construction.
+// Negative navigation values are special fallback destinations handled by the consumer.
+struct KeyboardKeyOrigin { unsigned short x; unsigned short y; };
+// Original data: arm9/ov031 @ 0x2248a0c; symbol: data_ov031_02248a0c.
+// Full keyboard key origins; 47 keys, four-byte stride. Input_UpdateSelectionFromRectangleGroups passes entries to hitbox construction. Negative navigation values are special fallback destinations handled by the consumer.
+// Initial values: hex 0400510016005100280051003a0051004c0051005e005100700051008200510094005100a6005100b8005100ca00510020006700320067004400670056006700 ...; full span in module reference.
+// Observed span: 188 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/ov031.md.
+extern "C" const KeyboardKeyOrigin WfcKeyboardLayoutRow_FullKeyboardKeyOrigins[47] = {
+    { 4, 81 },
+    { 22, 81 },
+    { 40, 81 },
+    { 58, 81 },
+    { 76, 81 },
+    { 94, 81 },
+    { 112, 81 },
+    { 130, 81 },
+    { 148, 81 },
+    { 166, 81 },
+    { 184, 81 },
+    { 202, 81 },
+    { 32, 103 },
+    { 50, 103 },
+    { 68, 103 },
+    { 86, 103 },
+    { 104, 103 },
+    { 122, 103 },
+    { 140, 103 },
+    { 158, 103 },
+    { 176, 103 },
+    { 194, 103 },
+    { 212, 103 },
+    { 230, 103 },
+    { 37, 125 },
+    { 55, 125 },
+    { 73, 125 },
+    { 91, 125 },
+    { 109, 125 },
+    { 127, 125 },
+    { 145, 125 },
+    { 163, 125 },
+    { 181, 125 },
+    { 199, 125 },
+    { 217, 125 },
+    { 235, 125 },
+    { 45, 147 },
+    { 63, 147 },
+    { 81, 147 },
+    { 99, 147 },
+    { 117, 147 },
+    { 135, 147 },
+    { 153, 147 },
+    { 171, 147 },
+    { 189, 147 },
+    { 207, 147 },
+    { 225, 147 },
+};

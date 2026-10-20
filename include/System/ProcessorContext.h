@@ -105,14 +105,34 @@ struct Struct_021112e0
 };
 
 #if defined(jpn)
-#define data_021112e0 data_02110f80
-#define data_02111304 data_02110fa4
+#define OSInitThread_UnknownRoleZeroInitializedStorage data_02110f80
+#define OSInitThread_UnknownRoleZeroInitializedStorage_Variant2 data_02110fa4
 #endif
 
-extern Struct_021112e0 data_021112e0;
-extern Struct_02111304 data_02111304;
-extern ProcessorContext data_02111314;
-extern ProcessorContext data_021113d4;
+// Original data: arm9/main @ 0x21112e0; symbol: data_021112e0.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 12 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern Struct_021112e0 OSInitThread_UnknownRoleZeroInitializedStorage;
+// Original data: arm9/main @ 0x2111304; symbol: data_02111304.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern Struct_02111304 OSInitThread_UnknownRoleZeroInitializedStorage_Variant2;
+// Original data: arm9/main @ 0x2111314; symbol: data_02111314.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 192 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern ProcessorContext OSInitThread_UnknownRoleZeroInitializedStorage_Variant4;
+// Original data: arm9/main @ 0x21113d4; symbol: data_021113d4.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 392 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern ProcessorContext OSInitThread_UnknownRoleZeroInitializedStorage_Variant5;
 
 Mutex* PopFrontMutexFromList(MutexList* list);
 
@@ -171,6 +191,6 @@ void SetContextEndProc(ProcessorContext* context, ProcessorContext::ExitRoutine 
 void InitializeContextRegisters(ProcessorContext* context, unsigned int startAddress, unsigned int stackBottom);
 
 // low level asm stuff, probably not going in decomp
-extern "C" int SaveContext(ProcessorContext* context);
-extern "C" void RestoreContext(ProcessorContext* context);
+extern "C" int OS_SaveContext(ProcessorContext* context);
+extern "C" void OS_LoadContext(ProcessorContext* context);
 

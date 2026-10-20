@@ -1,11 +1,11 @@
 #include "World/WorldPlacementPaths.h"
 #include "World/WorldPlacementSource.h"
 
-extern "C" int func_0208e444(Script::Parameter*, int);
+extern "C" int WorldPlacement_ReadSelectedShortValueTable(Script::Parameter*, int);
 
 Script::OpcodeLookupEntry gSpecialPlacementOpcodes[3] = {
     {102, WorldPlacementSource::ReadSpecialRecord},
-    {104, func_0208e444},
+    {104, WorldPlacement_ReadSelectedShortValueTable},
     {0, 0}
 };
 Script::OpcodeLookupEntry gFieldPlacementOpcodes[5] = {

@@ -1,3 +1,5 @@
+// Original locations for overloaded or compiler-generated definitions in this unit:
+// Original: arm9/main @ 0x020C9188; symbol: _Z30Timer1OverflowInterruptRoutinei; size: 0x10. (Timer1OverflowInterruptRoutine(int))
 #include "System/Timing.h"
 #include "System/Interrupts.h"
 #include "System/DTCM.h"
@@ -20,62 +22,67 @@
 #pragma dont_inline on
 
 #if defined(jpn)
-#define func_020c9be0 func_020cb6ac
+#define DisableInterruptsAndHaltForever func_020cb6ac
 #endif
 
 extern "C"
 {
     // something like abort() (never returns)
-    void func_020c9be0();
+    void DisableInterruptsAndHaltForever();
 }
 
+// Original: arm9/main @ 0x020C8C50; symbol: _Z30MarkAlarmInitializationFlagBiti; size: 0x1C.
 void MarkAlarmInitializationFlagBit(int bit)
 {
-    data_02111634 |= (1 << bit);
+    MarkAlarmInitializationFlagBit_UnknownRoleZeroInitializedStorage |= (1 << bit);
 }
 
+// Original: arm9/main @ 0x020C8C6C; symbol: _Z20Initialize64BitTimerv; size: 0x78.
 void Initialize64BitTimer()
 {
-    if (data_02111638.isInitialized)
+    if (OS_TimerState.isInitialized)
         return;
 
-    data_02111638.isInitialized = true;
+    OS_TimerState.isInitialized = true;
     MarkAlarmInitializationFlagBit(0);
-    data_02111638.numTimerOverflows = 0;
+    OS_TimerState.numTimerOverflows = 0;
     TIMER_N_CONTROL(0) = 0;
     TIMER_N_COUNTER(0) = 0;
     TIMER_N_CONTROL(0) = TIMER_CONTROL_FLAGS_START | TIMER_CONTROL_FLAGS_ENABLE_IRQ_ON_OVERFLOW | TIMER_CONTROL_FLAGS_PRESCALE_64X;
 
     SetInterruptHandler(IRQ_MASK_TIMER_0_OVERFLOW, &On16BitTimerOverflow);
     EnableSpecificInterrupts(IRQ_MASK_TIMER_0_OVERFLOW);
-    data_02111638.reloadTimerOnNextInterrupt = false;
+    OS_TimerState.reloadTimerOnNextInterrupt = false;
 }
 
+// Original: arm9/main @ 0x020C8CE4; symbol: _Z23Is64BitTimerInitializedv; size: 0x10.
 int Is64BitTimerInitialized()
 {
-    return data_02111638.isInitialized;
+    return OS_TimerState.isInitialized;
 }
 
+// Original: arm9/main @ 0x020C8CF4; symbol: _Z20On16BitTimerOverflowi; size: 0x68.
 void On16BitTimerOverflow(int)
 {
-    data_02111638.numTimerOverflows++;
-    if (data_02111638.reloadTimerOnNextInterrupt)
+    OS_TimerState.numTimerOverflows++;
+    if (OS_TimerState.reloadTimerOnNextInterrupt)
     {
         TIMER_N_CONTROL(0) = 0;
         TIMER_N_COUNTER(0) = 0;
         TIMER_N_CONTROL(0) = TIMER_CONTROL_FLAGS_START | TIMER_CONTROL_FLAGS_ENABLE_IRQ_ON_OVERFLOW | TIMER_CONTROL_FLAGS_PRESCALE_64X;
         
-        data_02111638.reloadTimerOnNextInterrupt = false;
+        OS_TimerState.reloadTimerOnNextInterrupt = false;
     }
     SetTimerOverflowCallback(0, &On16BitTimerOverflow, 0);
 }
 
+// Original: arm9/main @ 0x020C8D5C; symbol: _Z19GetCurrentTimestampv; size: 0xA0.
 uint64_t GetCurrentTimestamp()
 {
     int priorState = DisableIRQInterrupts();
     volatile unsigned short lowBits = TIMER_N_COUNTER(0);
 
-    volatile uint64_t highBits = data_02111638.numTimerOverflows & 0xffffffffffff;
+    volatile uint64_t highBits = OS_TimerState.numTimerOverflows & 0xffffffffffff;
     if ((INTERRUPT_REQUEST_FLAGS & IRQ_MASK_TIMER_0_OVERFLOW) && !(lowBits & 0x8000))
         highBits++;
 
@@ -83,11 +90,13 @@ uint64_t GetCurrentTimestamp()
     return (highBits << 16) | lowBits;
 }
 
+// Original: arm9/main @ 0x020C8DFC; symbol: _Z24GetMain16BitTimerCounterv; size: 0x10.
 unsigned short GetMain16BitTimerCounter()
 {
     return TIMER_N_COUNTER(0);
 }
 
+// Original: arm9/main @ 0x020C8E0C; symbol: _Z20MarkNextAlarmToSoundP5Alarm; size: 0x8C.
 void MarkNextAlarmToSound(Alarm *timing)
 {
     uint64_t now = GetCurrentTimestamp();
@@ -109,29 +118,33 @@ void MarkNextAlarmToSound(Alarm *timing)
     EnableSpecificInterrupts(IRQ_MASK_TIMER_1_OVERFLOW);
 }
 
+// Original: arm9/main @ 0x020C8E98; symbol: _Z25InitializeActiveAlarmListv; size: 0x40.
 void InitializeActiveAlarmList()
 {
-    if (data_02111648.isInitialized)
+    if (CancelAlarm_UnknownRoleZeroInitializedStorage.isInitialized)
         return;
 
-    data_02111648.isInitialized = true;
+    CancelAlarm_UnknownRoleZeroInitializedStorage.isInitialized = true;
     MarkAlarmInitializationFlagBit(1);
-    data_02111648.pFirstAlarm = NULL;
-    data_02111648.pLastAlarm = NULL;
+    CancelAlarm_UnknownRoleZeroInitializedStorage.pFirstAlarm = NULL;
+    CancelAlarm_UnknownRoleZeroInitializedStorage.pLastAlarm = NULL;
     DisableSpecificInterrupts(IRQ_MASK_TIMER_1_OVERFLOW);
 }
 
+// Original: arm9/main @ 0x020C8ED8; symbol: _Z22IsAlarmListInitializedv; size: 0x10.
 int IsAlarmListInitialized()
 {
-    return data_02111648.isInitialized;
+    return CancelAlarm_UnknownRoleZeroInitializedStorage.isInitialized;
 }
 
+// Original: arm9/main @ 0x020C8EE8; symbol: _Z19ZeroInitializeAlarmP5Alarm; size: 0x10.
 void ZeroInitializeAlarm(Alarm* alarm)
 {
     alarm->completionProc = NULL;
     alarm->unknown_8 = 0;
 }
 
+// Original: arm9/main @ 0x020C8EF8; symbol: _Z13RegisterAlarmP5Alarmy; size: 0x12C.
 void RegisterAlarm(Alarm* alarm, uint64_t ringTime)
 {
     if (alarm->alarmIntervalLength != 0)
@@ -146,7 +159,7 @@ void RegisterAlarm(Alarm* alarm, uint64_t ringTime)
     }
     alarm->alarmTime = ringTime;
 
-    Alarm* loopAlarm = data_02111648.pFirstAlarm;
+    Alarm* loopAlarm = CancelAlarm_UnknownRoleZeroInitializedStorage.pFirstAlarm;
     if (loopAlarm != NULL)
     {
         do
@@ -163,7 +176,7 @@ void RegisterAlarm(Alarm* alarm, uint64_t ringTime)
                 }
                 else
                 {
-                    data_02111648.pFirstAlarm = alarm;
+                    CancelAlarm_UnknownRoleZeroInitializedStorage.pFirstAlarm = alarm;
                     MarkNextAlarmToSound(alarm);
                 }
                 return;
@@ -174,8 +187,8 @@ void RegisterAlarm(Alarm* alarm, uint64_t ringTime)
 
     // If we get here, this alarm is to go at the end of the list
     alarm->pNext = NULL;
-    Alarm* prevAlarm = data_02111648.pLastAlarm;
-    data_02111648.pLastAlarm = alarm;
+    Alarm* prevAlarm = CancelAlarm_UnknownRoleZeroInitializedStorage.pLastAlarm;
+    CancelAlarm_UnknownRoleZeroInitializedStorage.pLastAlarm = alarm;
     alarm->pPrev = prevAlarm;
     if (prevAlarm != NULL)
     {
@@ -183,17 +196,18 @@ void RegisterAlarm(Alarm* alarm, uint64_t ringTime)
     }
     else
     {
-        data_02111648.pLastAlarm = alarm;
-        data_02111648.pFirstAlarm = alarm;
+        CancelAlarm_UnknownRoleZeroInitializedStorage.pLastAlarm = alarm;
+        CancelAlarm_UnknownRoleZeroInitializedStorage.pFirstAlarm = alarm;
         MarkNextAlarmToSound(alarm);
     }
 }
 
+// Original: arm9/main @ 0x020C9024; symbol: _Z10SetTimeoutP5AlarmyPFvPP16ProcessorContextES3_; size: 0x6C.
 void SetTimeout(Alarm* alarm, uint64_t numTicks,
     Alarm::PFNCompletion callback, ProcessorContext** ppContext)
 {
     if (alarm == NULL || alarm->completionProc != NULL)
-        func_020c9be0();
+        DisableInterruptsAndHaltForever();
 
     int priorState = DisableIRQInterrupts();
     alarm->alarmIntervalLength = 0;
@@ -205,11 +219,12 @@ void SetTimeout(Alarm* alarm, uint64_t numTicks,
     SetIRQInterruptState(priorState);
 }
 
+// Original: arm9/main @ 0x020C9090; symbol: _Z11SetIntervalP5AlarmyyPFvPP16ProcessorContextES3_; size: 0x70.
 void SetInterval(Alarm *alarm, uint64_t residue, uint64_t interval,
     Alarm::PFNCompletion callback, ProcessorContext **ppContext)
 {
     if (alarm == NULL || alarm->completionProc != NULL)
-        func_020c9be0();
+        DisableInterruptsAndHaltForever();
 
     int priorState = DisableIRQInterrupts();
     alarm->alarmIntervalLength = interval;
@@ -221,6 +236,7 @@ void SetInterval(Alarm *alarm, uint64_t residue, uint64_t interval,
     SetIRQInterruptState(priorState);
 }
 
+// Original: arm9/main @ 0x020C9100; symbol: _Z11CancelAlarmP5Alarm; size: 0x88.
 void CancelAlarm(Alarm *alarm)
 {
     int priorState = DisableIRQInterrupts();
@@ -237,14 +253,14 @@ void CancelAlarm(Alarm *alarm)
     else
     {
         DECLARE_ASM_NOP();
-        data_02111648.pLastAlarm = alarm->pPrev;
+        CancelAlarm_UnknownRoleZeroInitializedStorage.pLastAlarm = alarm->pPrev;
     }
 
     if (alarm->pPrev != NULL)
         alarm->pPrev->pNext = nextAlarm;
     else // this is the first alarm
     {
-        data_02111648.pFirstAlarm = nextAlarm;
+        CancelAlarm_UnknownRoleZeroInitializedStorage.pFirstAlarm = nextAlarm;
         if (nextAlarm != NULL)
             MarkNextAlarmToSound(nextAlarm);
     }
@@ -269,6 +285,7 @@ void Timer1OverflowInterruptRoutine(int)
 }
 #endif
 
+// Original: arm9/main @ 0x020C9198; symbol: _Z20HandleTimer1Overflowv; size: 0xF0.
 void HandleTimer1Overflow()
 {
     TIMER_N_CONTROL(1) = 0;
@@ -276,7 +293,7 @@ void HandleTimer1Overflow()
     DTCM_DATA_INTERRUPTS_FIRED |= IRQ_MASK_TIMER_1_OVERFLOW;
     uint64_t now = GetCurrentTimestamp();
 
-    Alarm* firstAlarm = data_02111648.pFirstAlarm;
+    Alarm* firstAlarm = CancelAlarm_UnknownRoleZeroInitializedStorage.pFirstAlarm;
     if (firstAlarm == NULL)
         return;
 
@@ -287,9 +304,9 @@ void HandleTimer1Overflow()
     else
     {
         Alarm* next = firstAlarm->pNext;
-        data_02111648.pFirstAlarm = next;
+        CancelAlarm_UnknownRoleZeroInitializedStorage.pFirstAlarm = next;
         if (next == NULL)
-            data_02111648.pLastAlarm = NULL;
+            CancelAlarm_UnknownRoleZeroInitializedStorage.pLastAlarm = NULL;
         else
             next->pPrev = NULL;
 
@@ -305,7 +322,7 @@ void HandleTimer1Overflow()
             RegisterAlarm(firstAlarm, 0);
         }
 
-        if (data_02111648.pFirstAlarm != NULL)
-            MarkNextAlarmToSound(data_02111648.pFirstAlarm);
+        if (CancelAlarm_UnknownRoleZeroInitializedStorage.pFirstAlarm != NULL)
+            MarkNextAlarmToSound(CancelAlarm_UnknownRoleZeroInitializedStorage.pFirstAlarm);
     }
 }

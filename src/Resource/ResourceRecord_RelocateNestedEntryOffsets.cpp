@@ -1,0 +1,4 @@
+#include <globaldefs.h>
+struct Header { unsigned short count,reserved;unsigned offset,unused,optional,unknown,extra; };extern "C" unsigned Graphics_GetCellBankOAMArrayHead(Header *);extern "C" unsigned *NNS_G2dGetCellDataByIdx(Header *,unsigned);extern "C" void ResourceRecord_InitializeEmbeddedOffset8State(void *);
+// Original: arm9/main @ 0x020B0108; symbol: func_020b0108; size: 0x9C.
+extern "C" void ResourceRecord_RelocateNestedEntryOffsets(Header *p) { p->offset+=(unsigned)p;unsigned base=Graphics_GetCellBankOAMArrayHead(p);unsigned short i=0;if(i<p->count)do { unsigned *entry=NNS_G2dGetCellDataByIdx(p,i);entry[1]+=base;++i; }while(i<p->count);if(p->optional){unsigned address=p->optional+(unsigned)p;p->optional=address;((unsigned *)address)[1]+=address;p->optional=address;}if(!p->extra)return;p->extra+=(unsigned)p;ResourceRecord_InitializeEmbeddedOffset8State((void *)p->extra); }

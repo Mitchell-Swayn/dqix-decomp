@@ -2,9 +2,20 @@
 
 #pragma optimize_for_size off
 
-extern "C" const int16_t data_020ed450[];
-extern "C" const int16_t data_020ed554[];
+// Original data: arm9/main @ 0x20ed450; symbol: data_020ed450.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 00002000400060008000a000c000e000000120013f015f017f019f01be01de01fd011d023c025c027b029a02b902d802f70216033503540372039103af03cd03 ...; full span in module reference.
+// Observed span: 260 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" const int16_t Fix32Atan2_UnknownRoleInitializedBytes[];
+// Original data: arm9/main @ 0x20ed554; symbol: data_020ed554.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 00005100a300f40046019701e9013a028b02dc022d037e03cf0320047004c10411056105b10501065106a006ef063e078d07dc072a087808c60814096109ae09 ...; full span in module reference.
+// Observed span: 260 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" const int16_t Fix32Atan2Rescaled_UnknownRoleInitializedBytes[];
 
+// Original: arm9/main @ 0x020C338C; symbol: fix32_Atan2; size: 0x1B8.
 fix32_t fix32_Atan2(fix32_t y, fix32_t x)
 {
     fix32_t numerator;
@@ -76,10 +87,11 @@ fix32_t fix32_Atan2(fix32_t y, fix32_t x)
     }
     if (x == 0) return 0;
     if (add)
-        return (int16_t)(base + data_020ed450[fix32_Divide(numerator, x) >> 5]);
-    return (int16_t)(base - data_020ed450[fix32_Divide(numerator, x) >> 5]);
+        return (int16_t)(base + Fix32Atan2_UnknownRoleInitializedBytes[fix32_Divide(numerator, x) >> 5]);
+    return (int16_t)(base - Fix32Atan2_UnknownRoleInitializedBytes[fix32_Divide(numerator, x) >> 5]);
 }
 
+// Original: arm9/main @ 0x020C3544; symbol: fix32_Atan2_Rescaled; size: 0x1A8.
 fix32_t fix32_Atan2_Rescaled(fix32_t y, fix32_t x)
 {
     fix32_t numerator;
@@ -151,6 +163,6 @@ fix32_t fix32_Atan2_Rescaled(fix32_t y, fix32_t x)
     }
     if (x == 0) return 0;
     if (add)
-        return (uint16_t)(base + data_020ed554[fix32_Divide(numerator, x) >> 5]);
-    return (uint16_t)(base - data_020ed554[fix32_Divide(numerator, x) >> 5]);
+        return (uint16_t)(base + Fix32Atan2Rescaled_UnknownRoleInitializedBytes[fix32_Divide(numerator, x) >> 5]);
+    return (uint16_t)(base - Fix32Atan2Rescaled_UnknownRoleInitializedBytes[fix32_Divide(numerator, x) >> 5]);
 }

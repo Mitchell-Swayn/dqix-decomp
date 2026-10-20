@@ -26,6 +26,7 @@
 
 // USA: func_02090444
 // JPN: func_02090d64
+// Original: arm9/main @ 0x02090444; symbol: _ZN17FloorMapGenerator9CalculateEii; size: 0x1C8.
 void FloorMapGenerator::Calculate(int floor, int unused)
 {
     if (seed < 0 || pFloorMap == NULL)
@@ -75,6 +76,7 @@ void FloorMapGenerator::Calculate(int floor, int unused)
 
 // USA: 0209060c
 // JPN: 02090f2c
+// Original: arm9/main @ 0x0209060C; symbol: _ZN17FloorMapGenerator8RoutineFERNS_13PartitionRectE; size: 0x160.
 void FloorMapGenerator::RoutineF(PartitionRect& part)
 {
     if (partitionRectCount >= 15)
@@ -117,6 +119,7 @@ void FloorMapGenerator::RoutineF(PartitionRect& part)
 
 // USA: func_0209076c
 // JPN: func_0209108c
+// Original: arm9/main @ 0x0209076C; symbol: _ZN17FloorMapGenerator8RoutineEERNS_13PartitionRectES1_RNS_12BoundaryRectE; size: 0xF4.
 bool FloorMapGenerator::RoutineE(PartitionRect& oldpart, PartitionRect& newpart, BoundaryRect& boundary)
 {
     if (oldpart.bounds.right - oldpart.bounds.left + 1 < 7)
@@ -157,6 +160,7 @@ bool FloorMapGenerator::RoutineE(PartitionRect& oldpart, PartitionRect& newpart,
 
 // USA: func_02090860
 // JPN: func_02091180
+// Original: arm9/main @ 0x02090860; symbol: _ZNK17FloorMapGenerator14BasicRectangle9GetHeightEv; size: 0x14.
 int FloorMapGenerator::BasicRectangle::GetHeight() const
 {
     return bottom - top + 1;
@@ -164,6 +168,7 @@ int FloorMapGenerator::BasicRectangle::GetHeight() const
 
 // USA: func_02090874
 // JPN: func_02091194
+// Original: arm9/main @ 0x02090874; symbol: _ZN17FloorMapGenerator8RoutineAERNS_13PartitionRectES1_RNS_12BoundaryRectE; size: 0xF8.
 bool FloorMapGenerator::RoutineA(PartitionRect& oldpart, PartitionRect& newpart, BoundaryRect& boundary)
 {
     if (oldpart.bounds.GetHeight() < 7)
@@ -202,6 +207,7 @@ bool FloorMapGenerator::RoutineA(PartitionRect& oldpart, PartitionRect& newpart,
 
 // USA: func_0209096c
 // JPN: func_0209128c
+// Original: arm9/main @ 0x0209096C; symbol: _ZN17FloorMapGenerator8RoutineCERNS_13PartitionRectERNS_4RoomE; size: 0x220.
 bool FloorMapGenerator::RoutineC(PartitionRect& part, Room& room)
 {
     if (part.bounds.right - part.bounds.left + 1 < 3 ||
@@ -264,6 +270,7 @@ bool FloorMapGenerator::RoutineC(PartitionRect& part, Room& room)
 
 // USA: func_02090b8c
 // JPN: func_020914ac
+// Original: arm9/main @ 0x02090B8C; symbol: _ZN17FloorMapGenerator11ReshapeRoomERKNS_13PartitionRectE; size: 0x8BC.
 void FloorMapGenerator::ReshapeRoom(const PartitionRect& part)
 {
     const Room& room = *(part.pRoom);
@@ -455,6 +462,7 @@ void FloorMapGenerator::ReshapeRoom(const PartitionRect& part)
 
 // USA: func_02091448
 // JPN: func_02091d68
+// Original: arm9/main @ 0x02091448; symbol: _ZN17FloorMapGenerator8RoutineGERKNS_12BoundaryRectE; size: 0x1E4.
 bool FloorMapGenerator::RoutineG(const BoundaryRect& boundary)
 {
     if (boundary.cutType == CutType_Horizontal)
@@ -489,6 +497,7 @@ bool FloorMapGenerator::RoutineG(const BoundaryRect& boundary)
 
 // USA: func_0209162c
 // JPN: func_02091f4c
+// Original: arm9/main @ 0x0209162C; symbol: _ZN17FloorMapGenerator8RoutineHERK15GrottoTilePointS2_RKNS_12BoundaryRectEb; size: 0x594.
 bool FloorMapGenerator::RoutineH(const GrottoTilePoint& p1, const GrottoTilePoint& p2,
     const BoundaryRect& boundary, bool extend)
 {
@@ -632,6 +641,7 @@ bool FloorMapGenerator::RoutineH(const GrottoTilePoint& p1, const GrottoTilePoin
 
 // USA: func_02091bc0
 // JPN: func_020924e0
+// Original: arm9/main @ 0x02091BC0; symbol: _ZN17FloorMapGenerator8RoutineJEv; size: 0x510.
 bool FloorMapGenerator::RoutineJ()
 {    
     int upRoomIdx;
@@ -693,22 +703,22 @@ bool FloorMapGenerator::RoutineJ()
             if (tileS != 1 && tileS != 3)
             {
                 map->fpUpStairRotation = 0;
-                Mat3x3_WriteIdentity(&map->unknown1);
+                MTX_Identity33_(&map->unknown1);
             }
             else if (tileE != 1 && tileE != 3)
             {
                 map->fpUpStairRotation = 0x1921;
-                Mat3x3_WriteRotationY(&map->unknown1, 0x1000, 0);
+                MTX_RotY33_(&map->unknown1, 0x1000, 0);
             }
             else if (tileW != 1 && tileW != 3)
             {
                 map->fpUpStairRotation = 0x3243;
-                Mat3x3_WriteRotationY(&map->unknown1, 0, -0x1000);
+                MTX_RotY33_(&map->unknown1, 0, -0x1000);
             }
             else if (tileN != 1 && tileN != 3)
             {
                 map->fpUpStairRotation = 0x4b65;
-                Mat3x3_WriteRotationY(&map->unknown1, -0x1000, 0);
+                MTX_RotY33_(&map->unknown1, -0x1000, 0);
             }
             map->upStairWorldX = (int)((float)posX * 8.0f * 4096.0f);
             map->upStairWorldY = 0;
@@ -772,7 +782,7 @@ bool FloorMapGenerator::RoutineJ()
     {
         FloorMap* map = pFloorMap;
         map->fpDownStairRotation = 0;
-        Mat3x3_WriteIdentity(&map->unknown2);
+        MTX_Identity33_(&map->unknown2);
         map->downStairWorldX = (int)((float)posX * 8.0f * 4096.0f);
         map->downStairWorldY = 0;
         map->downStairWorldZ = (int)((float)posY * 8.0f * 4096.0f);
@@ -788,6 +798,7 @@ bool FloorMapGenerator::RoutineJ()
 
 // USA: func_020920d0
 // JPN: func_020929f0
+// Original: arm9/main @ 0x020920D0; symbol: _ZN17FloorMapGenerator4Room8CopyFromERKS0_; size: 0x94.
 ARM FloorMapGenerator::Room& FloorMapGenerator::Room::CopyFrom(const Room& other)
 {
     // Pretty sure these were all calls to memcpy that got inlined. If the exact
@@ -820,6 +831,7 @@ ARM FloorMapGenerator::Room& FloorMapGenerator::Room::CopyFrom(const Room& other
 
 // USA: func_02092164
 // JPN: func_02092a84
+// Original: arm9/main @ 0x02092164; symbol: _ZN17FloorMapGenerator8RoutineKEv; size: 0x198.
 ARM bool FloorMapGenerator::RoutineK()
 {
     // This function technically has UB and reads these values uninitialized
@@ -892,6 +904,7 @@ ARM bool FloorMapGenerator::RoutineK()
 
 // USA: func_020922fc
 // JPN: func_02092c1c
+// Original: arm9/main @ 0x020922FC; symbol: _ZN17FloorMapGenerator8RoutineDERNS_4RoomE; size: 0x2BC.
 ARM void FloorMapGenerator::RoutineD(Room& room)
 {
     if (room.bounds.left == 0 || room.bounds.top == 0 ||
@@ -979,6 +992,7 @@ ARM void FloorMapGenerator::RoutineD(Room& room)
 
 // USA: func_020925b8
 // JPN: func_02092ed8
+// Original: arm9/main @ 0x020925B8; symbol: _ZN17FloorMapGenerator10InitializeEv; size: 0x5C.
 ARM void FloorMapGenerator::Initialize()
 {
     seed = -1;
@@ -995,6 +1009,7 @@ ARM void FloorMapGenerator::Initialize()
 
 // USA: func_02092614
 // JPN: func_02092f34
+// Original: arm9/main @ 0x02092614; symbol: _ZNK17FloorMapGenerator9RandRangeEii; size: 0x30.
 ARM int FloorMapGenerator::RandRange(int minimum, int maximum) const
 {
     if (minimum == maximum)

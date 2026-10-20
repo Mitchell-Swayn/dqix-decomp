@@ -1,3 +1,10 @@
+// Original locations for overloaded or compiler-generated definitions in this unit:
+// Original: arm9/main @ 0x02036294; symbol: _ZN8Object3D39LoadType0AnimationPackageFromBCFGScriptEPKcP13SafeAllocator; size: 0x50. (Object3D::LoadType0AnimationPackageFromBCFGScript(char const*, SafeAllocator*))
+// Original: arm9/main @ 0x020363B4; symbol: _ZN8Object3D39LoadType0AnimationPackageFromBCFGScriptEP13SafeAllocatorPKvj; size: 0x5C. (Object3D::LoadType0AnimationPackageFromBCFGScript(SafeAllocator*, void const*, unsigned int))
+// Original: arm9/main @ 0x020374C4; symbol: _ZN8Object3D8SetScaleEPK8Vector3i; size: 0x1C. (Object3D::SetScale(Vector3i const*))
+// Original: arm9/main @ 0x020374E0; symbol: _ZN8Object3D8SetScaleEiii; size: 0x10. (Object3D::SetScale(int, int, int))
+// Original: arm9/main @ 0x02037858; symbol: _ZN8Object3D6AttachEPS_s; size: 0x38. (Object3D::Attach(Object3D*, short))
+// Original: arm9/main @ 0x02037890; symbol: _ZN8Object3D6AttachEPS_PKc; size: 0x4C. (Object3D::Attach(Object3D*, char const*))
 #include "World/Object3D.h"
 #include "Graphics/NSBXX/RenderConfig.h"
 #include "System/Graphics.h"
@@ -12,20 +19,20 @@
 #include "Graphics/VRAMStaging.h"
 
 #if defined(jpn)
-#define func_020100bc func_0200ff18
-#define func_02016d8c func_02016b2c
-#define func_0202ed74 func_0202e8e4
+#define GameState_ReadUnknownB0 func_0200ff18
+#define RenderConfig_CopyTransformAndClearFlagsA4 func_02016b2c
+#define Camera_GetInverseViewRotation func_0202e8e4
 #define func_02030e2c func_02030964
 #define func_02030e88 func_020309c0
-#define func_020311f0 func_02030d28
-#define func_02031234 func_02030d6c
-#define func_02031278 func_02030db0
-#define func_0203ac40 func_0203a698
-#define func_020ca528 func_020cbff4
-#define func_020d8524 func_020d9e88
-#define func_020d1d1c func_020d37e8
+#define Graphics_SubmitNonzeroXRotation func_02030d28
+#define BuildAndDispatchYRotationMatrixWhenAngleNonzero func_02030d6c
+#define Graphics_ApplyNonzeroZRotation func_02030db0
+#define ResourceHandle_StartOrDeferSequenceArchiveEntry func_0203a698
+#define MI_Copy36B func_020cbff4
+#define CopyRangeCleanCacheAndReturnLength func_020d9e88
+#define Checksum_UpdateOnesComplement16 func_020d37e8
 
-#define data_02108760 data_021086a4
+#define Main_UnknownRoleZeroInitializedStorage data_021086a4
 #endif
 
 ModelRenderContext* GetModel3DContext(Model3D* model);
@@ -37,27 +44,27 @@ void CreateRotationZ(Matrix3x3* out, fix32_t s, fix32_t c);
 
 extern "C"
 {
-    void* func_020100bc(GameState*);
+    void* GameState_ReadUnknownB0(GameState*);
     // update world matrix rotation
-    void func_02016d8c(const Matrix3x3* rotation);
+    void RenderConfig_CopyTransformAndClearFlagsA4(const Matrix3x3* rotation);
 
-    const Matrix3x3* func_0202ed74(void*);
+    const Matrix3x3* Camera_GetInverseViewRotation(void*);
 
-    void func_020311f0(fix32_t); // send x-rotation to fifo
-    void func_02031234(fix32_t); // send y-rotation to fifo
-    void func_02031278(fix32_t); // send z-rotation to fifo
+    void Graphics_SubmitNonzeroXRotation(fix32_t); // send x-rotation to fifo
+    void BuildAndDispatchYRotationMatrixWhenAngleNonzero(fix32_t); // send y-rotation to fifo
+    void Graphics_ApplyNonzeroZRotation(fix32_t); // send z-rotation to fifo
 
     // based on testing, this is responsible for playing sound effects
-    void func_0203ac40(void*, int, int, int);
+    void ResourceHandle_StartOrDeferSequenceArchiveEntry(void*, int, int, int);
 
     // copy 3x3 matrix
-    void func_020ca528(const void*, void*);
+    void MI_Copy36B(const void*, void*);
 
     // compute a checksum for a string
-    void func_020d1d1c(unsigned short* out, const void* data, unsigned int length);
+    void Checksum_UpdateOnesComplement16(unsigned short* out, const void* data, unsigned int length);
 
     // memcpy and flush cache
-    unsigned int func_020d8524(void*, const void*, unsigned);
+    unsigned int CopyRangeCleanCacheAndReturnLength(void*, const void*, unsigned);
 }
 
 // if set, drawing doesn't take place. Also does something with
@@ -140,8 +147,14 @@ struct Struct_02104b18
     Matrix4x3 boneMatrixWithView;
 } boneTracking;
 
-extern char data_02108760[];
+// Original data: arm9/main @ 0x2108760; symbol: data_02108760.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 208 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern char Main_UnknownRoleZeroInitializedStorage[];
 
+// Original: arm9/main @ 0x02034BC4; symbol: _ZN8Object3D10InitializeEv; size: 0x140.
 void Object3D::Initialize()
 {
     unknown_0_ = 1;
@@ -196,6 +209,7 @@ void Object3D::Initialize()
     drawSuccessful_ = false;
 }
 
+// Original: arm9/main @ 0x02034D04; symbol: _ZN8Object3D14AnimationBlend5ClearEv; size: 0x1C.
 void Object3D::AnimationBlend::Clear()
 {
     source = NULL;
@@ -205,6 +219,7 @@ void Object3D::AnimationBlend::Clear()
     blendTimeRemaining = 0;
 }
 
+// Original: arm9/main @ 0x02034D20; symbol: _ZN8Object3D14AdvanceEffectsEv; size: 0x118.
 void Object3D::AdvanceEffects()
 {
     if (flags_ & (1 << OBJECT3D_FLAG_5))
@@ -248,6 +263,7 @@ void Object3D::AdvanceEffects()
     AdvanceAnimations();
 }
 
+// Original: arm9/main @ 0x02034E38; symbol: _ZN8Object3D17AdvanceAnimationsEv; size: 0x58.
 void Object3D::AdvanceAnimations()
 {
     (void)GameState::GetInstance()->GetTickCount();
@@ -256,6 +272,7 @@ void Object3D::AdvanceAnimations()
     (this->*object3DsData.advanceProcs[activeAnimationPackage_->animationType])();
 }
 
+// Original: arm9/main @ 0x02034E90; symbol: _ZN8Object3D20AdvanceAnimations_v0Ev; size: 0x2E8.
 void Object3D::AdvanceAnimations_v0()
 {
     fix16_t deltaTime = GameState::GetInstance()->GetAnimationDeltaTime();
@@ -337,18 +354,19 @@ void Object3D::AdvanceAnimations_v0()
         if (loopEntry->triggerTime == 0)
         {
             if (unknown_40_bit_1_ || (animationReachedEnd_ && !(animationFlags_ & OBJECT_ANIMATION_DONT_LOOP)))
-                func_0203ac40(data_02108760, unknown_7a_, loopEntry->maybeSoundEffect, 0);
+                ResourceHandle_StartOrDeferSequenceArchiveEntry(Main_UnknownRoleZeroInitializedStorage, unknown_7a_, loopEntry->maybeSoundEffect, 0);
         }
         else if (loopEntry->triggerTime == 1.0) // why use a double?!
         {
             if (animationEnded_)
-                func_0203ac40(data_02108760, unknown_7a_, loopEntry->maybeSoundEffect, 0);
+                ResourceHandle_StartOrDeferSequenceArchiveEntry(Main_UnknownRoleZeroInitializedStorage, unknown_7a_, loopEntry->maybeSoundEffect, 0);
         }  
         else if (prevFrameNormalizedAnimationTime_ < loopEntry->triggerTime && loopEntry->triggerTime <= normalizedAnimationTime_)
-            func_0203ac40(data_02108760, unknown_7a_, loopEntry->maybeSoundEffect, 0);
+            ResourceHandle_StartOrDeferSequenceArchiveEntry(Main_UnknownRoleZeroInitializedStorage, unknown_7a_, loopEntry->maybeSoundEffect, 0);
     }
 }
 
+// Original: arm9/main @ 0x02035178; symbol: _ZN8Object3D20AdvanceAnimations_v1Ev; size: 0x3CC.
 void Object3D::AdvanceAnimations_v1()
 {
     GameState* gameState = GameState::GetInstance();
@@ -449,25 +467,27 @@ void Object3D::AdvanceAnimations_v1()
             if (loopEntry->triggerTime == 0)
             {
                 if (unknown_40_bit_1_ || (animationReachedEnd_ && !(animationFlags_ & OBJECT_ANIMATION_DONT_LOOP)))
-                    func_0203ac40(data_02108760, unknown_7a_, loopEntry->maybeSoundEffect, 0);
+                    ResourceHandle_StartOrDeferSequenceArchiveEntry(Main_UnknownRoleZeroInitializedStorage, unknown_7a_, loopEntry->maybeSoundEffect, 0);
             }
             else if (loopEntry->triggerTime == 1.0) // why use a double?!
             {
                 if (animationEnded_)
-                    func_0203ac40(data_02108760, unknown_7a_, loopEntry->maybeSoundEffect, 0);
+                    ResourceHandle_StartOrDeferSequenceArchiveEntry(Main_UnknownRoleZeroInitializedStorage, unknown_7a_, loopEntry->maybeSoundEffect, 0);
             }  
             else if (prevFrameNormalizedAnimationTime_ < loopEntry->triggerTime && loopEntry->triggerTime <= normalizedAnimationTime_)
-                func_0203ac40(data_02108760, unknown_7a_, loopEntry->maybeSoundEffect, 0);
+                ResourceHandle_StartOrDeferSequenceArchiveEntry(Main_UnknownRoleZeroInitializedStorage, unknown_7a_, loopEntry->maybeSoundEffect, 0);
         }
     }
 }
 
+// Original: arm9/main @ 0x02035544; symbol: _Z27GetAnimationFrameCountFix32P13AnimationData; size: 0x10.
 fix32_t GetAnimationFrameCountFix32(AnimationData* data)
 {
     // bit ugly but we have to go into the raw data for this
     return *(uint16_t*)((intptr_t)data->pRawData_ + 4) << 12;
 }
 
+// Original: arm9/main @ 0x02035554; symbol: _ZN8Object3D15ApplyAnimationsEPS_; size: 0x19C.
 void Object3D::ApplyAnimations(Object3D* otherObj)
 {
     Model3D* model = pModel_;
@@ -517,6 +537,7 @@ void Object3D::ApplyAnimations(Object3D* otherObj)
     }
 }
 
+// Original: arm9/main @ 0x020356F0; symbol: _ZN8Object3D13ApplyTexturesEv; size: 0x38.
 void Object3D::ApplyTextures()
 {
     if ((flags_ & (1 << OBJECT3D_FLAG_3)) && pModel_ != NULL)
@@ -528,27 +549,31 @@ void Object3D::ApplyTextures()
     }
 }
 
+// Original: arm9/main @ 0x02035728; symbol: _Z15CreateRotationXP9Matrix3x3ii; size: 0xC.
 void CreateRotationX(Matrix3x3* out, fix32_t s, fix32_t c)
 {
-    Mat3x3_WriteRotationX(out, s, c);
+    MTX_RotX33_(out, s, c);
 }
 
+// Original: arm9/main @ 0x02035734; symbol: _Z15CreateRotationYP9Matrix3x3ii; size: 0xC.
 void CreateRotationY(Matrix3x3* out, fix32_t s, fix32_t c)
 {
-    Mat3x3_WriteRotationY(out, s, c);
+    MTX_RotY33_(out, s, c);
 }
 
+// Original: arm9/main @ 0x02035740; symbol: _Z15CreateRotationZP9Matrix3x3ii; size: 0xC.
 void CreateRotationZ(Matrix3x3* out, fix32_t s, fix32_t c)
 {
-    Mat3x3_WriteRotationZ(out, s, c);
+    MTX_RotZ33_(out, s, c);
 }
 
+// Original: arm9/main @ 0x0203574C; symbol: _ZN8Object3D25PopulateRenderConfigWorldEv; size: 0x27C.
 void Object3D::PopulateRenderConfigWorld()
 {
     if (pPrevChild_ ? 1 : 0)
     {
         Matrix3x3 worldRotation;
-        func_020ca528(&data_0210a010.objectRotationPosition, &worldRotation);
+        MI_Copy36B(&RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.objectRotationPosition, &worldRotation);
         Matrix3x3 axisRotation;
         fix32_t rotationComponents[3];
         rotationComponents[0] = rotation_.z;
@@ -573,17 +598,17 @@ void Object3D::PopulateRenderConfigWorld()
                 Mat3x3_Multiply(&worldRotation, &axisRotation, &worldRotation);
             }
         }
-        func_02016d8c(&worldRotation);
+        RenderConfig_CopyTransformAndClearFlagsA4(&worldRotation);
         Vector3fix multipliedScale;
         Vector3fix ownScale;
         ownScale.x = scale_[0];
         ownScale.y = scale_[1];
         ownScale.z = scale_[2];
-        Vector3fixMultiply(&data_0210a010.objectScale, &ownScale, &multipliedScale);
+        Vector3fixMultiply(&RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.objectScale, &ownScale, &multipliedScale);
         RenderConfig::SetObjectScale(&multipliedScale);
         Vector3fix multipliedPosition;
         Vector3fixMultiply(&position_, &multipliedScale, &multipliedPosition);
-        Vector3fix_Add(&data_0210a010.objectRotationPosition.translation, &multipliedPosition, &multipliedPosition);
+        Vector3fix_Add(&RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.objectRotationPosition.translation, &multipliedPosition, &multipliedPosition);
         RenderConfig::SetObjectPosition(&multipliedPosition);
     }
     else
@@ -591,15 +616,15 @@ void Object3D::PopulateRenderConfigWorld()
         RenderConfig::SetObjectPosition(&position_);
         if (flags_ & (1 << OBJECT3D_FLAG_19))
         {
-            const Matrix3x3* rotation = func_0202ed74(func_020100bc(GameState::GetInstance()));
-            func_020ca528(rotation, &data_0210a010.objectRotationPosition.rotation);
-            data_0210a010.flags &= ~((1 << RENDER_CONFIG_FLAG_WORLDVIEW_CACHE_VALID) | (1 << RENDER_CONFIG_FLAG_5) | (1 << RENDER_CONFIG_FLAG_2));
+            const Matrix3x3* rotation = Camera_GetInverseViewRotation(GameState_ReadUnknownB0(GameState::GetInstance()));
+            MI_Copy36B(rotation, &RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.objectRotationPosition.rotation);
+            RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.flags &= ~((1 << RENDER_CONFIG_FLAG_WORLDVIEW_CACHE_VALID) | (1 << RENDER_CONFIG_FLAG_5) | (1 << RENDER_CONFIG_FLAG_2));
         }
         else
         {
             Matrix3x3 axisRotation;
             Matrix3x3 totalRotation;
-            Mat3x3_WriteIdentity(&totalRotation);
+            MTX_Identity33_(&totalRotation);
             fix32_t rotationComponents[3];
             rotationComponents[0] = rotation_.z;
             rotationComponents[1] = rotation_.y;
@@ -623,7 +648,7 @@ void Object3D::PopulateRenderConfigWorld()
                     Mat3x3_Multiply(&totalRotation, &axisRotation, &totalRotation);
                 }
             }
-            func_02016d8c(&totalRotation);
+            RenderConfig_CopyTransformAndClearFlagsA4(&totalRotation);
         }
         Vector3fix scaling;
         scaling.x = scale_[0];
@@ -633,6 +658,7 @@ void Object3D::PopulateRenderConfigWorld()
     }
 }
 
+// Original: arm9/main @ 0x020359C8; symbol: _ZN8Object3D23IsVisibleAndAdjustFlagsEv; size: 0x64.
 bool Object3D::IsVisibleAndAdjustFlags()
 {
     if (pModel_ == NULL)
@@ -658,6 +684,7 @@ bool Object3D::IsVisibleAndAdjustFlags()
     return true;
 }
 
+// Original: arm9/main @ 0x02035A2C; symbol: _ZN8Object3D4DrawEb; size: 0x214.
 bool Object3D::Draw(bool applyClipping)
 {
     drawSuccessful_ = false;
@@ -730,6 +757,7 @@ bool Object3D::Draw(bool applyClipping)
     return success;
 }
 
+// Original: arm9/main @ 0x02035C40; symbol: _ZN8Object3D10DrawSimpleEb; size: 0x104.
 bool Object3D::DrawSimple(bool applyClipping)
 {
     drawSuccessful_ = false;
@@ -766,6 +794,7 @@ bool Object3D::DrawSimple(bool applyClipping)
     return success;
 }
 
+// Original: arm9/main @ 0x02035D44; symbol: _ZN8Object3D11DrawSimple2Eb; size: 0x74.
 bool Object3D::DrawSimple2(bool applyClipping)
 {
     if (!IsVisibleAndAdjustFlags())
@@ -783,6 +812,7 @@ bool Object3D::DrawSimple2(bool applyClipping)
     return pModel_->Draw(applyClipping);
 }
 
+// Original: arm9/main @ 0x02035DB8; symbol: _ZN8Object3D20DrawMeshWithMaterialEbiii; size: 0x64.
 bool Object3D::DrawMeshWithMaterial(bool applyClipping, int material, int mesh, int bind)
 {
     if (!IsVisibleAndAdjustFlags())
@@ -797,6 +827,7 @@ bool Object3D::DrawMeshWithMaterial(bool applyClipping, int material, int mesh, 
     return pModel_->DrawMeshWithMaterial(applyClipping, material, mesh, bind);
 }
 
+// Original: arm9/main @ 0x02035E1C; symbol: _ZN8Object3D26DrawMeshWithMaterialSimpleEbiii; size: 0x58.
 bool Object3D::DrawMeshWithMaterialSimple(bool applyClipping, int material, int mesh, int bind)
 {
     if (!IsVisibleAndAdjustFlags())
@@ -809,6 +840,7 @@ bool Object3D::DrawMeshWithMaterialSimple(bool applyClipping, int material, int 
     return pModel_->DrawMeshWithMaterial(applyClipping, material, mesh, bind);
 }
 
+// Original: arm9/main @ 0x02035E74; symbol: _ZN8Object3D11DrawSimple3Eb; size: 0x9C.
 bool Object3D::DrawSimple3(bool applyClipping)
 {
     if (pModel_ == NULL)
@@ -834,7 +866,8 @@ bool Object3D::DrawSimple3(bool applyClipping)
     return pModel_->Draw(applyClipping);
 }
 
-void Object3D::MaybeUpdateBonePositions()
+// Original: arm9/main @ 0x02035F10; symbol: _ZN8Object3D24MaybeUpdateBonePositionsEv; size: 0xD0.
+void Object3D::UpdateTrackedBoneMatrices()
 {
     if (pModel_ == NULL)
         return;
@@ -848,8 +881,8 @@ void Object3D::MaybeUpdateBonePositions()
     fix32_t sine = fix32sin(rotation_.y);
 
     Matrix3x3 rotationMatrix;
-    Mat3x3_WriteRotationY(&rotationMatrix, sine, cosine);
-    func_02016d8c(&rotationMatrix);
+    MTX_RotY33_(&rotationMatrix, sine, cosine);
+    RenderConfig_CopyTransformAndClearFlagsA4(&rotationMatrix);
     Vector3fix scale = { 0x1000, 0x1000, 0x1000 };
     RenderConfig::SetObjectScale(&scale);
     RenderConfig::SubmitToFifo();
@@ -859,6 +892,7 @@ void Object3D::MaybeUpdateBonePositions()
     boneTracking.boneMatrixList = NULL;
 }
 
+// Original: arm9/main @ 0x02035FE0; symbol: _ZN8Object3D19SendTransformToFifoEv; size: 0x20.
 void Object3D::SendTransformToFifo()
 {
     SendTranslationToFifo();
@@ -866,6 +900,7 @@ void Object3D::SendTransformToFifo()
     SendScalingToFifo();
 }
 
+// Original: arm9/main @ 0x02036000; symbol: _ZN8Object3D21SendTranslationToFifoEv; size: 0x24.
 void Object3D::SendTranslationToFifo()
 {
     fix32_t z = position_.z;
@@ -876,16 +911,18 @@ void Object3D::SendTranslationToFifo()
     GXFIFO_MATRIX_TRANSLATE = z;
 }
 
+// Original: arm9/main @ 0x02036024; symbol: _ZN8Object3D18SendRotationToFifoEv; size: 0x3C.
 void Object3D::SendRotationToFifo()
 {
     if (rotation_.z != 0)
-        func_02031278(rotation_.z);
+        Graphics_ApplyNonzeroZRotation(rotation_.z);
     if (rotation_.y != 0)
-        func_02031234(rotation_.y);
+        BuildAndDispatchYRotationMatrixWhenAngleNonzero(rotation_.y);
     if (rotation_.x != 0)
-        func_020311f0(rotation_.x);
+        Graphics_SubmitNonzeroXRotation(rotation_.x);
 }
 
+// Original: arm9/main @ 0x02036060; symbol: _ZN8Object3D17SendScalingToFifoEv; size: 0x24.
 void Object3D::SendScalingToFifo()
 {
     fix32_t z = scale_[2];
@@ -896,6 +933,7 @@ void Object3D::SendScalingToFifo()
     GXFIFO_MATRIX_SCALE = z;
 }
 
+// Original: arm9/main @ 0x02036084; symbol: _ZN8Object3D20SetModelFromFileCopyEP13SafeAllocatorPKvjN7Model3D18TextureStagingModeE; size: 0x50.
 void Object3D::SetModelFromFileCopy(SafeAllocator* alloc, const void* modelFile,
     unsigned int modelLength, Model3D::TextureStagingMode stagingMode)
 {
@@ -907,6 +945,7 @@ void Object3D::SetModelFromFileCopy(SafeAllocator* alloc, const void* modelFile,
     pModel_->CopyAndProcessRawFile(&alloc->allocUnion, modelFile, modelLength, stagingMode);
 }
 
+// Original: arm9/main @ 0x020360D4; symbol: _ZN8Object3D16SetModelFromFileEP13SafeAllocatorPvjN7Model3D18TextureStagingModeE; size: 0x4C.
 bool Object3D::SetModelFromFile(SafeAllocator* alloc, void* modelFile,
     unsigned int modelLength, Model3D::TextureStagingMode stagingMode)
 {
@@ -918,19 +957,20 @@ bool Object3D::SetModelFromFile(SafeAllocator* alloc, void* modelFile,
     return true;
 }
 
+// Original: arm9/main @ 0x02036120; symbol: _ZN8Object3D26LoadType0AnimationFromFileEiPKcP13SafeAllocator; size: 0x84.
 void Object3D::LoadType0AnimationFromFile(int slot, const char* filename, SafeAllocator* alloc) 
 {
     if (filename != NULL)
     {
         BackgroundLoader::AddLockGlobal();
         unsigned int length;
-        if (LoadFileIntoMemory(filename, data_0211e33c, &length))
+        if (LoadFileIntoMemory(filename, Main_UnknownRoleZeroInitializedStorage_Variant6, &length))
         {
             unsigned int lengthAgain = length;
             void* allocation = alloc->Allocate(lengthAgain);
             if (allocation != NULL)
             {
-                memcpy(allocation, data_0211e33c, lengthAgain);
+                memcpy(allocation, Main_UnknownRoleZeroInitializedStorage_Variant6, lengthAgain);
                 LoadType0AnimationFromPersistentMemory(slot, alloc, allocation, lengthAgain);
             }
         }
@@ -938,6 +978,7 @@ void Object3D::LoadType0AnimationFromFile(int slot, const char* filename, SafeAl
     }
 }
 
+// Original: arm9/main @ 0x020361A4; symbol: _ZN8Object3D34LoadType0AnimationFromFileInMemoryEiP13SafeAllocatorPKvj; size: 0x5C.
 void Object3D::LoadType0AnimationFromFileInMemory(int slot, SafeAllocator* alloc, const void* data, unsigned int len)
 {
     void* copy = alloc->Allocate(len);
@@ -948,6 +989,7 @@ void Object3D::LoadType0AnimationFromFileInMemory(int slot, SafeAllocator* alloc
     }
 }
 
+// Original: arm9/main @ 0x02036200; symbol: _ZN8Object3D38LoadType0AnimationFromPersistentMemoryEiP13SafeAllocatorPvj; size: 0x94.
 void Object3D::LoadType0AnimationFromPersistentMemory(int slot, SafeAllocator* alloc, void* rawData, unsigned int len)
 {
     if (pModel_ == NULL || alloc == NULL || rawData == NULL)
@@ -972,12 +1014,13 @@ void Object3D::LoadType0AnimationPackageFromBCFGScript(const char *filename, Saf
 {
     BackgroundLoader::AddLockGlobal();
     unsigned int length;
-    const void* data = LoadFileIntoMemory(filename, data_0211e33c, &length);
+    const void* data = LoadFileIntoMemory(filename, Main_UnknownRoleZeroInitializedStorage_Variant6, &length);
     if (data != NULL)
         LoadType0AnimationPackageFromBCFGScript(alloc, data, length);
     BackgroundLoader::RemoveLockGlobal();
 }
 
+// Original: arm9/main @ 0x020362E4; symbol: _ZN8Object3D27CreateType0AnimationPackageEP13SafeAllocator; size: 0x9C.
 AnimationPackage* Object3D::CreateType0AnimationPackage(SafeAllocator* alloc)
 {
     AnimationPackage* package = (AnimationPackage*)alloc->Allocate(sizeof(AnimationPackage));
@@ -998,6 +1041,7 @@ AnimationPackage* Object3D::CreateType0AnimationPackage(SafeAllocator* alloc)
     return package;
 }
 
+// Original: arm9/main @ 0x02036380; symbol: _ZN16AnimationPackage5ResetEv; size: 0x34.
 void AnimationPackage::Reset()
 {
     animationType = 0;
@@ -1021,6 +1065,7 @@ void Object3D::LoadType0AnimationPackageFromBCFGScript(SafeAllocator *alloc, con
     package->bcfgData.LoadFromScript(alloc, script, len);
 }
 
+// Original: arm9/main @ 0x02036410; symbol: _ZN8Object3D18LoadFromCHRArchiveEP21ObjectArchiveLoadInfo; size: 0x2C.
 bool Object3D::LoadFromCHRArchive(ObjectArchiveLoadInfo* loadInfo)
 {
     LockResourceMutex();
@@ -1029,6 +1074,7 @@ bool Object3D::LoadFromCHRArchive(ObjectArchiveLoadInfo* loadInfo)
     return success;
 }
 
+// Original: arm9/main @ 0x0203643C; symbol: _ZN8Object3D26InternalLoadFromCHRArchiveEP21ObjectArchiveLoadInfo; size: 0x3C8.
 bool Object3D::InternalLoadFromCHRArchive(ObjectArchiveLoadInfo* loadInfo)
 {
     if (loadInfo->fileData == NULL)
@@ -1063,7 +1109,7 @@ bool Object3D::InternalLoadFromCHRArchive(ObjectArchiveLoadInfo* loadInfo)
                     narc.Destroy();
                     return false;
                 }
-                func_020d8524(allocation, fileBytes, allocSize);
+                CopyRangeCleanCacheAndReturnLength(allocation, fileBytes, allocSize);
                 fileBytes = allocation;
             }
             // the pointer is either allocated by us or we're promised it'll stick 
@@ -1122,7 +1168,7 @@ bool Object3D::InternalLoadFromCHRArchive(ObjectArchiveLoadInfo* loadInfo)
                     narc.Destroy();
                     return false;
                 }
-                func_020d8524(allocation, fileBytes, fileLength);
+                CopyRangeCleanCacheAndReturnLength(allocation, fileBytes, fileLength);
                 fileBytes = allocation;
             }
             Animation3D* anim3D = &animPackage->pAnim3Ds->data[fileType];
@@ -1156,6 +1202,7 @@ bool Object3D::InternalLoadFromCHRArchive(ObjectArchiveLoadInfo* loadInfo)
     return true;
 }
 
+// Original: arm9/main @ 0x02036804; symbol: _ZN8Object3D25LoadFromCCHROrCMOTArchiveEP21ObjectArchiveLoadInfoPFiPN4BCFG15AnimationRecordEE; size: 0x584.
 bool Object3D::LoadFromCCHROrCMOTArchive(ObjectArchiveLoadInfo *loadInfo, int (*animCallback)(BCFG::AnimationRecord*))
 {
     SafeAllocator* allocator = loadInfo->allocator;
@@ -1234,7 +1281,7 @@ bool Object3D::LoadFromCCHROrCMOTArchive(ObjectArchiveLoadInfo *loadInfo, int (*
             int reducedNameLength = strlen(filename) - 5;            
             entry->length = reducedNameLength;
             unsigned short invChecksum = 0;
-            func_020d1d1c(&invChecksum, filename + 5, reducedNameLength);
+            Checksum_UpdateOnesComplement16(&invChecksum, filename + 5, reducedNameLength);
             entry->checksum = ~invChecksum;
             NitroVM_FinishRead(&machine);
         }
@@ -1279,7 +1326,7 @@ bool Object3D::LoadFromCCHROrCMOTArchive(ObjectArchiveLoadInfo *loadInfo, int (*
                 {
                     nameLength = strlen(candidateName);
                     unsigned short invChecksum = 0;
-                    func_020d1d1c(&invChecksum, candidateName, nameLength);
+                    Checksum_UpdateOnesComplement16(&invChecksum, candidateName, nameLength);
                     unsigned int checksum = ~invChecksum;
                     foundInLookup_inner = false;
                     for (int k = 0; k < lookup.numEntries; k++)
@@ -1357,6 +1404,7 @@ bool Object3D::LoadFromCCHROrCMOTArchive(ObjectArchiveLoadInfo *loadInfo, int (*
     return true;
 }
 
+// Original: arm9/main @ 0x02036D88; symbol: _ZN8Object3D14ShallowCloneToEPS_; size: 0x98.
 void Object3D::ShallowCloneTo(Object3D *out)
 {
     out->unknown_2_ = unknown_2_;
@@ -1374,13 +1422,15 @@ void Object3D::ShallowCloneTo(Object3D *out)
     out->loadedAnimationPackageList_ = loadedAnimationPackageList_;
 }
 
+// Original: arm9/main @ 0x02036E20; symbol: _ZN8Object3D32ShallowCloneModelAndAnimationsToEPS_; size: 0x14.
 void Object3D::ShallowCloneModelAndAnimationsTo(Object3D *out)
 {
     out->pModel_ = pModel_;
     out->loadedAnimationPackageList_ = loadedAnimationPackageList_;
 }
 
-bool Object3D::MaybeSetRegularAnimation(const char *animName, int flags)
+// Original: arm9/main @ 0x02036E34; symbol: _ZN8Object3D24MaybeSetRegularAnimationEPKci; size: 0x26C.
+bool Object3D::SetAnimationByName(const char *animName, int flags)
 {
     if (pModel_ == NULL || animName == NULL || (flags_ & (1 << OBJECT3D_FLAG_22)) || animName[0] == '\0')
         return false;
@@ -1479,7 +1529,8 @@ bool Object3D::MaybeSetRegularAnimation(const char *animName, int flags)
     return true;
 }
 
-bool Object3D::MaybeSetBCFGAnimation(int index, int flags)
+// Original: arm9/main @ 0x020370A0; symbol: _ZN8Object3D21MaybeSetBCFGAnimationEii; size: 0x98.
+bool Object3D::SetBCFGAnimationByIndex(int index, int flags)
 {
     if (loadedAnimationPackageList_ == NULL)
         return false;
@@ -1510,6 +1561,7 @@ bool Object3D::MaybeSetBCFGAnimation(int index, int flags)
     return true;
 }
 
+// Original: arm9/main @ 0x02037138; symbol: _ZN8Object3D20StopCurrentAnimationEv; size: 0x38.
 void Object3D::StopCurrentAnimation()
 {
     if (pModel_ != NULL)
@@ -1521,10 +1573,14 @@ void Object3D::StopCurrentAnimation()
     priorAnimationBlend_.Clear();
 }
 
+// Original: arm9/main @ 0x02037170; symbol: _ZNK8Object3D19HasAnimationStoppedEv; size: 0x10.
 int Object3D::HasAnimationStopped() const { return animationEnded_; }
+// Original: arm9/main @ 0x02037180; symbol: _ZNK8Object3D22HasAnimationReachedEndEv; size: 0x10.
 int Object3D::HasAnimationReachedEnd() const { return animationReachedEnd_; }
+// Original: arm9/main @ 0x02037190; symbol: _ZNK8Object3D15GetOffset40Bit1Ev; size: 0x10.
 int Object3D::GetOffset40Bit1() const { return unknown_40_bit_1_; }
 
+// Original: arm9/main @ 0x020371A0; symbol: _ZN8Object3D23SetCurrentAnimationTimeEi; size: 0x10.
 void Object3D::SetCurrentAnimationTime(fix32_t time)
 {
     // extra assignment prevents other functions from inlining calls to this
@@ -1533,11 +1589,13 @@ void Object3D::SetCurrentAnimationTime(fix32_t time)
     animationTime_ = newTime;
 }
 
+// Original: arm9/main @ 0x020371B0; symbol: _ZNK8Object3D23GetCurrentAnimationTimeEv; size: 0x8.
 fix32_t Object3D::GetCurrentAnimationTime() const
 {
     return animationTime_;
 }
 
+// Original: arm9/main @ 0x020371B8; symbol: _ZN8Object3D26SetNormalizedAnimationTimeEi; size: 0x100.
 void Object3D::SetNormalizedAnimationTime(fix32_t normTime)
 {
     if (activeAnimationPackage_ == NULL)
@@ -1581,15 +1639,19 @@ void Object3D::SetNormalizedAnimationTime(fix32_t normTime)
     }
 }
 
+// Original: arm9/main @ 0x020372B8; symbol: _ZN8Object3D24TransitionInheritedAlphaEii; size: 0x58.
 void Object3D::TransitionInheritedAlpha(int alpha, int duration)
 {
     alphaTransition_.current = 65535.0f * (inheritedAlpha_ / 31.0f);
     alphaTransition_.ConfigureTween(alpha, duration);
 }
 
+// Original: arm9/main @ 0x02037310; symbol: _ZN8Object3D9SetFlag16Ev; size: 0x10.
 void Object3D::SetFlag16() { flags_ |= (1 << OBJECT3D_FLAG_16); }
+// Original: arm9/main @ 0x02037320; symbol: _ZN8Object3D11ClearFlag16Ev; size: 0x10.
 void Object3D::ClearFlag16() { flags_ &= ~(1 << OBJECT3D_FLAG_16); }
 
+// Original: arm9/main @ 0x02037330; symbol: _ZN8Object3D7DestroyEv; size: 0x34.
 void Object3D::Destroy()
 {
     Detach();
@@ -1600,6 +1662,7 @@ void Object3D::Destroy()
     loadedAnimationPackageList_ = NULL;
 }
 
+// Original: arm9/main @ 0x02037364; symbol: _ZN8Object3D26RemoveAnimationPackageByIDEi; size: 0x68.
 void Object3D::RemoveAnimationPackageByID(int id)
 {
     if (loadedAnimationPackageList_ == NULL)
@@ -1623,27 +1686,32 @@ void Object3D::RemoveAnimationPackageByID(int id)
     }
 }
 
+// Original: arm9/main @ 0x020373CC; symbol: _ZN8Object3D26RemoveAllAnimationPackagesEv; size: 0x18.
 void Object3D::RemoveAllAnimationPackages()
 {
     StopCurrentAnimation();
     loadedAnimationPackageList_ = NULL;
 }
 
+// Original: arm9/main @ 0x020373E4; symbol: _ZNK8Object3D9IsVisibleEv; size: 0x14.
 bool Object3D::IsVisible() const
 {
     return !(flags_ & (1 << OBJECT3D_FLAG_HIDDEN));
 }
 
+// Original: arm9/main @ 0x020373F8; symbol: _ZN8Object3D11MakeVisibleEv; size: 0x10.
 void Object3D::MakeVisible()
 {
     flags_ &= ~(1 << OBJECT3D_FLAG_HIDDEN);
 }
 
+// Original: arm9/main @ 0x02037408; symbol: _ZN8Object3D10MakeHiddenEv; size: 0x10.
 void Object3D::MakeHidden()
 {
     flags_ |= (1 << OBJECT3D_FLAG_HIDDEN);
 }
 
+// Original: arm9/main @ 0x02037418; symbol: _ZN8Object3D17SetInheritedAlphaEi; size: 0x4C.
 void Object3D::SetInheritedAlpha(int alpha)
 {
     inheritedAlpha_ = alpha;
@@ -1654,21 +1722,25 @@ void Object3D::SetInheritedAlpha(int alpha)
     }
 }
 
+// Original: arm9/main @ 0x02037464; symbol: _ZNK8Object3D17GetInheritedAlphaEv; size: 0x10.
 int Object3D::GetInheritedAlpha() const
 {
     return inheritedAlpha_;
 }
 
+// Original: arm9/main @ 0x02037474; symbol: _ZNK8Object3D11GetOwnAlphaEv; size: 0x10.
 int Object3D::GetOwnAlpha() const
 {
     return ownAlpha_;
 }
 
+// Original: arm9/main @ 0x02037484; symbol: _ZNK8Object3D16GetCombinedAlphaEv; size: 0x2C.
 int Object3D::GetCombinedAlpha() const
 {
     return (inheritedAlpha_ * ownAlpha_) / 31;
 }
 
+// Original: arm9/main @ 0x020374B0; symbol: _ZN8Object3D25GetCurrentAnimationConfigEv; size: 0x14.
 BCFG *Object3D::GetCurrentAnimationConfig()
 {
     if (activeAnimationPackage_ != NULL)
@@ -1690,24 +1762,28 @@ void Object3D::SetScale(fix32_t x, fix32_t y, fix32_t z)
     scale_[2] = z;
 }
 
+// Original: arm9/main @ 0x020374F0; symbol: _ZNK8Object3D8GetScaleEv; size: 0x38.
 Vector3fix Object3D::GetScale() const
 {
     Vector3fix ret = { scale_[0], scale_[1], scale_[2] };
     return ret;
 }
 
+// Original: arm9/main @ 0x02037528; symbol: _ZN8Object3D15SetDiffuseColorEj; size: 0x18.
 void Object3D::SetDiffuseColor(unsigned int bgrCol)
 {
     if (pModel_ != NULL)
         pModel_->SetMaterialDiffuseColor(bgrCol);
 }
 
+// Original: arm9/main @ 0x02037540; symbol: _ZN8Object3D27UseRenderConfigDiffuseColorEv; size: 0x18.
 void Object3D::UseRenderConfigDiffuseColor()
 {
     if (pModel_ != NULL)
         pModel_->ApplyRenderConfigMaterialDiffuseColor();
 }
 
+// Original: arm9/main @ 0x02037558; symbol: _ZN8Object3D24GetLoadedAnimationRecordEPKc; size: 0x74.
 BCFG::AnimationRecord* Object3D::GetLoadedAnimationRecord(const char* targetName)
 {
     for (AnimationPackage* package = loadedAnimationPackageList_; package != NULL; package = package->pNext)
@@ -1727,6 +1803,7 @@ BCFG::AnimationRecord* Object3D::GetLoadedAnimationRecord(const char* targetName
     return NULL;
 }
 
+// Original: arm9/main @ 0x020375CC; symbol: _ZN8Object3D26GetAnimationPackageByIndexEi; size: 0x24.
 AnimationPackage* Object3D::GetAnimationPackageByIndex(int idx)
 {
     AnimationPackage* package = loadedAnimationPackageList_;
@@ -1740,13 +1817,20 @@ AnimationPackage* Object3D::GetAnimationPackageByIndex(int idx)
     return package;
 }
 
+// Original: arm9/main @ 0x020375F0; symbol: _ZN8Object3D10SetField06Et; size: 0x8.
 void Object3D::SetField06(unsigned short value) { unknown_6_ = value; }
+// Original: arm9/main @ 0x020375F8; symbol: _ZNK8Object3D10GetField06Ev; size: 0x8.
 unsigned short Object3D::GetField06() const { return unknown_6_; }
+// Original: arm9/main @ 0x02037600; symbol: _ZN8Object3D10SetField78Et; size: 0x8.
 void Object3D::SetField78(unsigned short value) { unknown_78_ = value; }
+// Original: arm9/main @ 0x02037608; symbol: _ZNK8Object3D10GetField78Ev; size: 0x8.
 unsigned short Object3D::GetField78() const { return unknown_78_; }
+// Original: arm9/main @ 0x02037610; symbol: _ZN8Object3D10SetField7aEt; size: 0x8.
 void Object3D::SetField7a(unsigned short value) { unknown_7a_ = value; }
+// Original: arm9/main @ 0x02037618; symbol: _ZNK8Object3D10GetField7aEv; size: 0x8.
 unsigned short Object3D::GetField7a() const { return unknown_7a_; }
 
+// Original: arm9/main @ 0x02037620; symbol: _ZN8Object3D25SetAnimationPlaybackSpeedEsi; size: 0x20.
 void Object3D::SetAnimationPlaybackSpeed(fix16_t speed, int transitionTime)
 {
     if (transitionTime == 0)
@@ -1762,6 +1846,7 @@ void Object3D::SetAnimationPlaybackSpeed(fix16_t speed, int transitionTime)
     }
 }
 
+// Original: arm9/main @ 0x02037640; symbol: _ZN8Object3D16StageTextureDataEv; size: 0x34.
 void Object3D::StageTextureData()
 {
     if (pModel_ == NULL)
@@ -1774,6 +1859,7 @@ void Object3D::StageTextureData()
     }
 }
 
+// Original: arm9/main @ 0x02037674; symbol: _ZN8Object3D21ComputeShadowPositionEv; size: 0xEC.
 void Object3D::ComputeShadowPosition()
 {    
     if (pModel_ == NULL)
@@ -1800,7 +1886,7 @@ void Object3D::ComputeShadowPosition()
         if (GetModelBonePositionAndDirectionMatrices(context, NULL, NULL, shadowBoneIndex_))
         {
             Matrix4x3 boneWorldTransform;
-            Mat4x3_WriteIdentity(&boneWorldTransform);
+            MTX_Identity43_(&boneWorldTransform);
             const Matrix4x3* inverseView = RenderConfig::GetInverseViewMatrix();
             // fix this cast later
             GetCurrentPositionAndDirectionMatrices(&boneWorldTransform, NULL);
@@ -1815,6 +1901,7 @@ void Object3D::ComputeShadowPosition()
     }
 }
 
+// Original: arm9/main @ 0x02037760; symbol: _Z17GetModel3DContextP7Model3D; size: 0x14.
 ModelRenderContext* GetModel3DContext(Model3D* model)
 {
     if (!model->unknown_flags_a8_0_)
@@ -1822,7 +1909,8 @@ ModelRenderContext* GetModel3DContext(Model3D* model)
     return &model->renderContext_;
 }
 
-Vector3fix Object3D::MaybeGetShadowSource() const
+// Original: arm9/main @ 0x02037774; symbol: _ZNK8Object3D20MaybeGetShadowSourceEv; size: 0x40.
+Vector3fix Object3D::GetShadowSourcePosition() const
 {
     Vector3fix ret = position_;
     ret.x = maybeShadowPosition_.x;
@@ -1830,22 +1918,29 @@ Vector3fix Object3D::MaybeGetShadowSource() const
     return ret;
 }
 
+// Original: arm9/main @ 0x020377B4; symbol: _ZN8Object3D9SetHeightEi; size: 0x8.
 void Object3D::SetHeight(fix32_t height) { height_ = height; }
+// Original: arm9/main @ 0x020377BC; symbol: _ZNK8Object3D9GetHeightEv; size: 0x8.
 fix32_t Object3D::GetHeight() const { return height_; }
+// Original: arm9/main @ 0x020377C4; symbol: _ZN8Object3D9SetRadiusEi; size: 0x8.
 void Object3D::SetRadius(fix32_t radius) { radius_ = radius; }
+// Original: arm9/main @ 0x020377CC; symbol: _ZNK8Object3D9GetRadiusEv; size: 0x8.
 fix32_t Object3D::GetRadius() const { return radius_; }
 
+// Original: arm9/main @ 0x020377D4; symbol: _ZNK8Object3D25IsTransitioningAnimationsEv; size: 0x14.
 bool Object3D::IsTransitioningAnimations() const
 {
     return priorAnimationBlend_.blendTimeRemaining != 0;
 }
 
+// Original: arm9/main @ 0x020377E8; symbol: _ZN8Object3D23SkipAnimationTransitionEv; size: 0x1C.
 void Object3D::SkipAnimationTransition()
 {
     priorAnimationBlend_.Clear();
     priorAnimationBlend_.blendTimeRemaining = 0;
 }
 
+// Original: arm9/main @ 0x02037804; symbol: _Z26AnimationPackageListInsertPP16AnimationPackageS0_; size: 0x3C.
 void AnimationPackageListInsert(AnimationPackage** pListStart, AnimationPackage* entry)
 {
     if (*pListStart == NULL)
@@ -1863,6 +1958,7 @@ void AnimationPackageListInsert(AnimationPackage** pListStart, AnimationPackage*
     }
 }
 
+// Original: arm9/main @ 0x02037840; symbol: _ZN8Object3D18ClearChildListDataEv; size: 0x18.
 void Object3D::ClearChildListData() 
 {
     pPrevChild_ = NULL;
@@ -1898,6 +1994,7 @@ void Object3D::Attach(Object3D *parent, const char *boneName)
     Attach(parent, attachmentBoneIndex_);
 }
 
+// Original: arm9/main @ 0x020378DC; symbol: _ZN8Object3D6DetachEv; size: 0x58.
 void Object3D::Detach()
 {
     if (pPrevChild_ != NULL)
@@ -1920,6 +2017,7 @@ void Object3D::Detach()
     }
 }
 
+// Original: arm9/main @ 0x02037934; symbol: _ZN8Object3D12DrawChildrenEPS_; size: 0x11C.
 void Object3D::DrawChildren(Object3D *topLevelObject)
 {
     if (pNextChild_ == NULL)
@@ -1960,36 +2058,50 @@ void Object3D::DrawChildren(Object3D *topLevelObject)
     }
 }
 
+// Original: arm9/main @ 0x02037A50; symbol: _ZNK8Object3D7IsChildEv; size: 0x14.
 bool Object3D::IsChild() const
 {
     return pPrevChild_ != NULL;
 }
 
+// Original: arm9/main @ 0x02037A64; symbol: _ZNK8Object3D8IsParentEv; size: 0x24.
 bool Object3D::IsParent() const
 {
     return pNextChild_ != NULL && pPrevChild_ == NULL;
 }
 
+// Original: arm9/main @ 0x02037A88; symbol: _ZNK8Object3D7GetFlagEi; size: 0xC.
 int Object3D::GetFlag(int mask) const { return flags_ & mask; }
+// Original: arm9/main @ 0x02037A94; symbol: _ZN8Object3D10EnableFlagEi; size: 0x10.
 void Object3D::EnableFlag(int mask) { flags_ |= mask; }
+// Original: arm9/main @ 0x02037AA4; symbol: _ZN8Object3D11DisableFlagEi; size: 0x14.
 void Object3D::DisableFlag(int mask) { flags_ &= ~mask; }
+// Original: arm9/main @ 0x02037AB8; symbol: _ZNK8Object3D8GetFlagsEv; size: 0x8.
 int Object3D::GetFlags() const { return flags_; }
 
+// Original: arm9/main @ 0x02037AC0; symbol: _ZN8Object3D17SetNoTextureTimerEi; size: 0x8.
 void Object3D::SetNoTextureTimer(int timer) { noTextureTimer_ = timer; }
 
+// Original: arm9/main @ 0x02037AC8; symbol: _ZN8Object3D23SetTexturePaletteOffsetEj; size: 0x8.
 void Object3D::SetTexturePaletteOffset(unsigned int offset) { alternativeTexturePaletteOffset_ = offset; }
+// Original: arm9/main @ 0x02037AD0; symbol: _ZNK8Object3D23GetTexturePaletteOffsetEv; size: 0x8.
 unsigned int Object3D::GetTexturePaletteOffset() const { return alternativeTexturePaletteOffset_; }
 
+// Original: arm9/main @ 0x02037AD8; symbol: _ZN8Object3D19SetAlphaScaleFactorEi; size: 0x8.
 void Object3D::SetAlphaScaleFactor(fix32_t value) { alphaScaleFactor_ = value; }
+// Original: arm9/main @ 0x02037AE0; symbol: _ZNK8Object3D19GetAlphaScaleFactorEv; size: 0x8.
 fix32_t Object3D::GetAlphaScaleFactor() const { return alphaScaleFactor_; }
 
+// Original: arm9/main @ 0x02037AE8; symbol: _ZN8Object3D10SetField9eEh; size: 0x8.
 void Object3D::SetField9e(unsigned char value) { unknown_9e_ = value; }
+// Original: arm9/main @ 0x02037AF0; symbol: _ZNK8Object3D10GetField9eEv; size: 0x8.
 unsigned char Object3D::GetField9e() const { return unknown_9e_; }
 
+// Original: arm9/main @ 0x02037AF8; symbol: _ZN8Object3D9TrackBoneEPNS_17TrackedBoneMatrixE; size: 0x4C.
 void Object3D::TrackBone(TrackedBoneMatrix *trackingEntry)
 {
     trackingEntry->pNext = NULL;
-    Mat4x3_WriteIdentity(&trackingEntry->matrix);
+    MTX_Identity43_(&trackingEntry->matrix);
     if (trackedBoneMatrixList_ != NULL)
     {
         TrackedBoneMatrix* listEnd = trackedBoneMatrixList_;
@@ -2001,6 +2113,7 @@ void Object3D::TrackBone(TrackedBoneMatrix *trackingEntry)
         trackedBoneMatrixList_ = trackingEntry;
 }
 
+// Original: arm9/main @ 0x02037B44; symbol: _ZN8Object3D18UntrackBoneByIndexEi; size: 0x44.
 void Object3D::UntrackBoneByIndex(int idx)
 {
     TrackedBoneMatrix* loopEntry = trackedBoneMatrixList_;
@@ -2018,8 +2131,10 @@ void Object3D::UntrackBoneByIndex(int idx)
     }
 }
 
+// Original: arm9/main @ 0x02037B88; symbol: _ZN8Object3D15UntrackAllBonesEv; size: 0xC.
 void Object3D::UntrackAllBones() { trackedBoneMatrixList_ = NULL; }
 
+// Original: arm9/main @ 0x02037B94; symbol: _ZN8Object3D20GetTrackedBoneMatrixEi; size: 0x28.
 Object3D::TrackedBoneMatrix* Object3D::GetTrackedBoneMatrix(int idx)
 {
     for (TrackedBoneMatrix* loopEntry = trackedBoneMatrixList_; loopEntry != NULL; loopEntry = loopEntry->pNext)
@@ -2032,6 +2147,7 @@ Object3D::TrackedBoneMatrix* Object3D::GetTrackedBoneMatrix(int idx)
 
 void BoneTrackingRenderCommandHook(RenderCommandHandler*);
 
+// Original: arm9/main @ 0x02037BBC; symbol: _ZN8Object3D18EnableBoneTrackingEv; size: 0x3C.
 void Object3D::EnableBoneTracking()
 {
     if (pModel_ == NULL)
@@ -2043,6 +2159,7 @@ void Object3D::EnableBoneTracking()
     SetModelRenderContextRenderCommandHook(context, &BoneTrackingRenderCommandHook, 0, 6, 3);
 }
 
+// Original: arm9/main @ 0x02037BF8; symbol: _Z29BoneTrackingRenderCommandHookP20RenderCommandHandler; size: 0x88.
 void BoneTrackingRenderCommandHook(RenderCommandHandler* handler)
 {
     for (Object3D::TrackedBoneMatrix* tracker = boneTracking.boneMatrixList;
@@ -2057,6 +2174,7 @@ void BoneTrackingRenderCommandHook(RenderCommandHandler* handler)
     }
 }
 
+// Original: arm9/main @ 0x02037C80; symbol: _ZNK8Object3D15GetPointInFrontEi; size: 0x90.
 Vector3fix Object3D::GetPointInFront(fix32_t distance) const
 {
     Vector3fix ownPos = position_;

@@ -3,3 +3,30 @@
     .data       start:0x02184a80 end:0x02184ac0 kind:data align:32
     .bss        start:0x02184ac0 end:0x02184ac0 kind:bss align:32
 
+src/Data/Pitfall_AdvancePlacementSequence_PathDataBinStrPitGp2.cpp:
+    complete
+    .data start:0x02184a80 end:0x02184a95
+
+src/Data/Pitfall_AdvancePlacementSequence_MarkupStrPitLGBin.cpp:
+    complete
+    .data start:0x02184a95 end:0x02184aa6
+
+src/Data/Pitfall_AdvancePlacementSequence_PathDataEffectAnaChr.cpp:
+    complete
+    .data start:0x02184aa6 end:0x02184ac0
+
+src/Data/PitConstructorTerminator.cpp:
+    complete
+    .ctor start:0x02184a6c end:0x02184a70
+
+src/Field/Pitfalls/Pitfall_ResetPlacementSequence.cpp:
+    complete
+    .text start:0x021842a0 end:0x021842d8
+
+src/Field/Pitfalls/Pitfall_AdvancePlacementSequence.cpp:
+    complete
+    .text start:0x02184354 end:0x02184a6c
+
+src/Field/Pitfalls/Pitfall_ReleasePlacementSequence.cpp:
+    complete
+    .text start:0x021842d8 end:0x02184354

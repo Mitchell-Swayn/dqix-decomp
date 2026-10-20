@@ -4,6 +4,7 @@
 
 // USA: func_02092644
 // JPN: func_02092f64
+// Original: arm9/main @ 0x02092644; symbol: _ZN8FloorMap10InitializeEii; size: 0x38.
 ARM bool FloorMap::Initialize(int w, int h)
 {
     if (w < 8 || h < 8)
@@ -19,6 +20,7 @@ ARM bool FloorMap::Initialize(int w, int h)
 
 // USA: func_0209267c
 // JPN: func_02092f9c
+// Original: arm9/main @ 0x0209267C; symbol: _ZN8FloorMap11InitBuffersEv; size: 0x3C.
 ARM void FloorMap::InitBuffers()
 {
     if (pMapData != 0)
@@ -34,6 +36,7 @@ ARM void FloorMap::InitBuffers()
 
 // USA: func_020926b8
 // JPN: func_02092fd8
+// Original: arm9/main @ 0x020926B8; symbol: _ZN8FloorMap20ComputeAdjacencyDataEv; size: 0xC4.
 ARM bool FloorMap::ComputeAdjacencyData()
 {
     for (int y = 1; y < 15; y++)
@@ -62,6 +65,7 @@ ARM bool FloorMap::ComputeAdjacencyData()
 
 // USA: func_0209277c
 // JPN: func_0209309c
+// Original: arm9/main @ 0x0209277C; symbol: _ZN8FloorMap31ComputeSingleAdjacencyDataPointEiiPh; size: 0x1A0.
 ARM void FloorMap::ComputeSingleAdjacencyDataPoint(int x, int y, unsigned char* outData)
 {
     unsigned char thisTile = *(pMapData + TILE_OFFSET(x, y));
@@ -143,6 +147,7 @@ ARM void FloorMap::ComputeSingleAdjacencyDataPoint(int x, int y, unsigned char* 
 
 // USA: func_0209291c
 // JPN: func_0209323c
+// Original: arm9/main @ 0x0209291C; symbol: _ZN8FloorMap9WriteTileEiih; size: 0x18.
 ARM void FloorMap::WriteTile(int x, int y, unsigned char value)
 {
     if (x >= 0 && y >= 0)
@@ -151,6 +156,7 @@ ARM void FloorMap::WriteTile(int x, int y, unsigned char value)
 
 // USA: func_02092934
 // JPN: func_02093254
+// Original: arm9/main @ 0x02092934; symbol: _ZNK8FloorMap7GetTileEii; size: 0x1C.
 ARM int FloorMap::GetTile(int x, int y) const
 {
     if (x < 0 || y < 0)
@@ -160,6 +166,7 @@ ARM int FloorMap::GetTile(int x, int y) const
 
 // USA: func_02092950
 // USA: func_02093270
+// Original: arm9/main @ 0x02092950; symbol: _ZN8FloorMap14WriteRectangleEiiiih; size: 0x64.
 ARM void FloorMap::WriteRectangle(int left, int top, int width, int height, unsigned char value)
 {
     if (left < 0 || top < 0 || width < 1 || height < 1)
@@ -176,6 +183,7 @@ ARM void FloorMap::WriteRectangle(int left, int top, int width, int height, unsi
 
 // USA: func_020929b4
 // JPN: func_020932d4
+// Original: arm9/main @ 0x020929B4; symbol: _ZNK8FloorMap16GetAdjacencyBitsEii; size: 0x30.
 ARM int FloorMap::GetAdjacencyBits(int x, int y) const
 {
     if (x < 0 || y < 0)
@@ -189,6 +197,7 @@ ARM int FloorMap::GetAdjacencyBits(int x, int y) const
 
 // USA: func_020929e4
 // JPN: func_02093304
+// Original: arm9/main @ 0x020929E4; symbol: _ZN8FloorMap15AllocateBuffersEP13SafeAllocator; size: 0x48.
 ARM void FloorMap::AllocateBuffers(SafeAllocator* allocator)
 {
     if (pMapData == 0)
@@ -200,6 +209,7 @@ ARM void FloorMap::AllocateBuffers(SafeAllocator* allocator)
 
 // USA: func_02092a2c
 // JPN: func_0209334c
+// Original: arm9/main @ 0x02092A2C; symbol: _ZN8FloorMap5ClearEv; size: 0x3C.
 ARM void FloorMap::Clear()
 {
     width = 0;
@@ -217,6 +227,7 @@ ARM void FloorMap::Clear()
 
 // USA: func_02092a68
 // JPN: func_02093388
+// Original: arm9/main @ 0x02092A68; symbol: _ZN8FloorMap6Clear2Ev; size: 0xC.
 ARM void FloorMap::Clear2()
 {
     Clear();

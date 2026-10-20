@@ -1,0 +1,7 @@
+#include <globaldefs.h>
+#pragma optimize_for_size off
+#include <GameState/GameState.h>
+struct State { char pad[0x5ccc]; unsigned flags; };
+extern "C" char* GameObject_GetLinkedIndexedState(); extern "C" char* ZonePalette_GetColorTable(); extern "C" void _Z25CleanInvalidateCacheRangePKvj(const void*,unsigned); extern "C" void LoadToMainBGStandardPalette(const void*,unsigned,unsigned); extern "C" void LoadToMainObjStandardPalette(const void*,unsigned,unsigned); extern "C" void LoadToSubBGStandardPalette(const void*,unsigned,unsigned); extern "C" void LoadToSubObjStandardPalette(const void*,unsigned,unsigned);
+// Original: arm9/main @ 0x020DC70C; symbol: func_020dc70c; size: 0xDC.
+extern "C" ARM void Graphics_LoadPartyZonePaletteToSelectedBank(int party,int entry,int sub,int object,unsigned short bank,unsigned short color,unsigned length) { if(!GameState::GetInstance()->GetPartyMemberByIndex(party))return; char* zone=GameObject_GetLinkedIndexedState(); if(!zone)return; unsigned first=bank,second=color; unsigned char index=zone[0x56a]; int base=first*16; int offset=(base+second)*2; if(length+offset>512)return; char* palette=ZonePalette_GetColorTable()+index*32+entry*2; _Z25CleanInvalidateCacheRangePKvj(palette,length); if(!sub) { if(object)LoadToMainObjStandardPalette(palette,offset,length); else LoadToMainBGStandardPalette(palette,offset,length); } else { if(object)LoadToSubObjStandardPalette(palette,offset,length); else LoadToSubBGStandardPalette(palette,offset,length); } State* state=(State*)GameState::GetInstance(); state->flags &=~2; }

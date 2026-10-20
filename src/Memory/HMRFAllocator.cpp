@@ -2,7 +2,7 @@
 #include "std_library_functions.h"
 
 #ifdef jpn
-#define func_020ca3ec func_020cbeb8
+#define MIi_CpuClear32 func_020cbeb8
 #endif
 
 extern "C"
@@ -11,11 +11,12 @@ extern "C"
     // 4-byte alignment (it writes ints).
     // Notably, if dst is not 4-byte aligned it might write before the start,
     // and if len is not a multiple of 4 it might write a bit past the end.
-    void func_020ca3ec(int value, void* dst, unsigned int len);
+    void MIi_CpuClear32(int value, void* dst, unsigned int len);
 }
 
 // USA: func_020af838
 // JPN: func_020b1304
+// Original: arm9/main @ 0x020AF838; symbol: _ZN13HMRFAllocator14CreateInRegionEPvS0_t; size: 0x48.
 HMRFAllocator* HMRFAllocator::CreateInRegion(void* start, void* end, unsigned short clearFlags)
 {
     HMRFAllocator* alloc = (HMRFAllocator*)start;
@@ -30,6 +31,7 @@ HMRFAllocator* HMRFAllocator::CreateInRegion(void* start, void* end, unsigned sh
 
 // USA: func_020af880
 // JPN: func_020b134c
+// Original: arm9/main @ 0x020AF880; symbol: _ZN13HMRFAllocator5Block15AllocateForwardEjj; size: 0x5C.
 void* HMRFAllocator::Block::AllocateForward(unsigned int len, unsigned int align)
 {
     unsigned int pieceTrueStart = startAddress;
@@ -46,7 +48,7 @@ void* HMRFAllocator::Block::AllocateForward(unsigned int len, unsigned int align
     // rounded down, potentially overwriting data from the previous allocation
     // https://developer.arm.com/documentation/dui0379/g/Using-the-Assembler/Address-alignment
     if (clearFlags & 1)
-        func_020ca3ec(0, (void*)pieceTrueStart, clearLength);
+        MIi_CpuClear32(0, (void*)pieceTrueStart, clearLength);
     
     this->startAddress = pieceEnd;
     return (void*)pieceEffStart;    
@@ -54,6 +56,7 @@ void* HMRFAllocator::Block::AllocateForward(unsigned int len, unsigned int align
 
 // USA: func_020af8dc
 // JPN: func_020b13a8
+// Original: arm9/main @ 0x020AF8DC; symbol: _ZN13HMRFAllocator5Block16AllocateBackwardEjj; size: 0x58.
 void* HMRFAllocator::Block::AllocateBackward(unsigned int len, unsigned int align)
 {
     unsigned int pieceStart = (this->endAddress - len) & ~(align - 1);
@@ -66,7 +69,7 @@ void* HMRFAllocator::Block::AllocateBackward(unsigned int len, unsigned int alig
     // This one should be fine *provided* that the end address starts out being
     // 4-byte aligned and align >= 4 in all calls.
     if (clearFlags & 1)
-        func_020ca3ec(0, (void*)pieceStart, clearLength);
+        MIi_CpuClear32(0, (void*)pieceStart, clearLength);
     
     this->endAddress = pieceStart;
     return (void*)pieceStart;
@@ -74,6 +77,7 @@ void* HMRFAllocator::Block::AllocateBackward(unsigned int len, unsigned int alig
 
 // USA: func_020af934
 // JPN: func_020b1400
+// Original: arm9/main @ 0x020AF934; symbol: _ZN13HMRFAllocator9FreeFrontEv; size: 0x14.
 void HMRFAllocator::FreeFront()
 {
     block.startAddress = (unsigned int)header.allocBegin;
@@ -84,6 +88,7 @@ void HMRFAllocator::FreeFront()
 
 // USA: func_020af948
 // JPN: func_020b1414
+// Original: arm9/main @ 0x020AF948; symbol: _ZN13HMRFAllocator8FreeBackEv; size: 0x2C.
 void HMRFAllocator::FreeBack()
 {
     SavedState* state = newestState;
@@ -101,6 +106,7 @@ void HMRFAllocator::FreeBack()
 
 // USA: func_020af974
 // JPN: func_020b1440
+// Original: arm9/main @ 0x020AF974; symbol: _ZN13HMRFAllocator16CreateAtLocationEPvjt; size: 0x38.
 HMRFAllocator* HMRFAllocator::CreateAtLocation(void* where, unsigned int size, unsigned short clearFlags)
 {
     unsigned int end = (size + (unsigned int)where) & ~3;
@@ -116,6 +122,7 @@ HMRFAllocator* HMRFAllocator::CreateAtLocation(void* where, unsigned int size, u
 
 // USA: func_020af9ac
 // JPN: func_020b1478
+// Original: arm9/main @ 0x020AF9AC; symbol: _ZN13HMRFAllocator14RemoveFromTreeEv; size: 0xC.
 void HMRFAllocator::RemoveFromTree()
 {
     AllocatorTree::Remove(&header);
@@ -123,6 +130,7 @@ void HMRFAllocator::RemoveFromTree()
 
 // USA: func_020af9b8
 // JPN: func_020b1484
+// Original: arm9/main @ 0x020AF9B8; symbol: _ZN13HMRFAllocator8AllocateEji; size: 0x34.
 void* HMRFAllocator::Allocate(unsigned int len, int alignAndDir)
 {
     if (len == 0)
@@ -137,6 +145,7 @@ void* HMRFAllocator::Allocate(unsigned int len, int alignAndDir)
 
 // USA: func_020af9ec
 // JPN: func_020b14b8
+// Original: arm9/main @ 0x020AF9EC; symbol: _ZN13HMRFAllocator4FreeEi; size: 0x2C.
 void HMRFAllocator::Free(int flags)
 {
     if (flags & 1)
@@ -148,6 +157,7 @@ void HMRFAllocator::Free(int flags)
 
 // USA: func_020afa18
 // JPN: func_020b14e4
+// Original: arm9/main @ 0x020AFA18; symbol: _ZN13HMRFAllocator24GetMaxPossibleAllocationEi; size: 0x38.
 unsigned int HMRFAllocator::GetMaxPossibleAllocation(int alignAndDir)
 {
     unsigned int align = abs(alignAndDir);
@@ -166,6 +176,7 @@ unsigned int HMRFAllocator::GetMaxPossibleAllocation(int alignAndDir)
 
 // USA: func_020afa50
 // JPN: func_020b151c
+// Original: arm9/main @ 0x020AFA50; symbol: _ZN13HMRFAllocator16SaveCurrentStateEi; size: 0x50.
 bool HMRFAllocator::SaveCurrentState(int id)
 {
     unsigned int currentFront = block.startAddress;
@@ -184,6 +195,7 @@ bool HMRFAllocator::SaveCurrentState(int id)
 
 // USA: func_020afaa0
 // JPN: func_020b156c
+// Original: arm9/main @ 0x020AFAA0; symbol: _ZN13HMRFAllocator12RestoreStateEi; size: 0x50.
 bool HMRFAllocator::RestoreState(int id)
 {
     SavedState* loopState = newestState;

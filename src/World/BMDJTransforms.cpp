@@ -1,21 +1,28 @@
 #include "World/BMDJ.h"
 
-extern const Vector3i data_020e6dfc = { 0x1000, 0x1000, 0x1000 };
+// Original data: arm9/main @ 0x20e6dfc; symbol: data_020e6dfc.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 001000000010000000100000.
+// Observed span: 12 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const Vector3i InitializeBMDJTransforms_UnknownRoleInitializedBytes = { 0x1000, 0x1000, 0x1000 };
 
+// Original: arm9/main @ 0x0201310C; symbol: _Z24InitializeBMDJTransformsPN17Zone3D_BMDJStruct13InstanceEntryE; size: 0x4C.
 void InitializeBMDJTransforms(Zone3D_BMDJStruct::InstanceEntry* instance)
 {
     Vector3i position = { 0, 0, 0 };
-    Vector3i scale = data_020e6dfc;
+    Vector3i scale = InitializeBMDJTransforms_UnknownRoleInitializedBytes;
     int angle = 0;
     ApplyBMDJTransforms(instance, &position, &angle, &scale);
 }
 
+// Original: arm9/main @ 0x02013158; symbol: _Z19ApplyBMDJTransformsPN17Zone3D_BMDJStruct13InstanceEntryEPK8Vector3iPKiS4_; size: 0x228.
 void ApplyBMDJTransforms(Zone3D_BMDJStruct::InstanceEntry* instance, const Vector3i* parentPosition, const int* parentAngle, const Vector3i* parentScale)
 {
     Matrix3x3 rotation;
     fix32_t cosine = fix32cos(*parentAngle);
     fix32_t sine = fix32sin(*parentAngle);
-    Mat3x3_WriteRotationY(&rotation, sine, cosine);
+    MTX_RotY33_(&rotation, sine, cosine);
     if (instance->definition)
     {
         Vector3i position;

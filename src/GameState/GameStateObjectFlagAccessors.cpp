@@ -2,7 +2,8 @@
 
 // These filters test observed object flag bits. Their higher-level meanings
 // are not established, so retain address-based function names and raw masks.
-extern "C" GameObject* func_0200fea4(GameState* state, int index)
+// Original: arm9/main @ 0x0200FEA4; symbol: func_0200fea4; size: 0x3C.
+extern "C" GameObject* GameState_FindIndexedObjectWithFlag400(GameState* state, int index)
 {
     if (index < 0)
         return NULL;
@@ -16,7 +17,8 @@ extern "C" GameObject* func_0200fea4(GameState* state, int index)
     return object;
 }
 
-extern "C" GameObject* func_0200fee0(GameState* state, int index)
+// Original: arm9/main @ 0x0200FEE0; symbol: func_0200fee0; size: 0x3C.
+extern "C" GameObject* GameState_GetObjectWithFlag200ByIndex(GameState* state, int index)
 {
     if (index < 0)
         return NULL;
@@ -30,7 +32,8 @@ extern "C" GameObject* func_0200fee0(GameState* state, int index)
     return object;
 }
 
-extern "C" GameObject* func_0200ff1c(GameState* state, int index)
+// Original: arm9/main @ 0x0200FF1C; symbol: func_0200ff1c; size: 0x3C.
+extern "C" GameObject* GameState_GetObjectWithFlag100(GameState* state, int index)
 {
     if (index < 0)
         return NULL;
@@ -44,7 +47,8 @@ extern "C" GameObject* func_0200ff1c(GameState* state, int index)
     return object;
 }
 
-extern "C" GameObject* func_0200ff58(GameState* state, int index)
+// Original: arm9/main @ 0x0200FF58; symbol: func_0200ff58; size: 0x3C.
+extern "C" GameObject* GameState_FindIndexedObjectWithFlag1000(GameState* state, int index)
 {
     if (index < 0)
         return NULL;

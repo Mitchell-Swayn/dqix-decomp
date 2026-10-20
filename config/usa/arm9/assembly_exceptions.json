@@ -8,7 +8,7 @@
       "approval_scope": "Only MRS/MSR processor-status access in these seven routines; all masks and returns remain C. No approval for matching coercion elsewhere.",
       "reason": "Portable C cannot read or write CPSR. Source assembly contains only the twelve MRS/MSR instructions required to implement interrupt masks and processor-mode queries.",
       "original_assembly_authorship": "unknown",
-      "source_sha256": "9cfccf04c9fcc8703bc4f95c41d051e5a1497762079ad314b48591e48d59a9d6",
+      "source_sha256": "46cecb39563c73d3f276f9d081a000711bde8eaf9c3efc364d07103c30789a72",
       "module_path": "build/usa/build/arm9.bin",
       "module_base": "0x02000000",
       "start": "0x020c96e8",
@@ -55,6 +55,50 @@
           "symbol": "_Z16GetProcessorModev",
           "start": "0x020c9760",
           "end": "0x20c976c"
+        }
+      ]
+    },
+    {
+      "unit": "src/Graphics/Graphics_ComputePartitionedTileIndex",
+      "source": "src/Graphics/Graphics_ComputePartitionedTileIndex.cpp",
+      "review_status": "Reviewed by coordinating agents on 2026-10-15",
+      "approval_scope": "Only the two CLZ hardware primitives; all index/partition control flow and arithmetic remain C. Mixed source unit, not pure C.",
+      "reason": "The pinned CodeWarrior compiler exposes no matching CLZ intrinsic; these two CLZ instructions implement floor-log2 and are explicitly retained as necessary hardware primitives.",
+      "original_assembly_authorship": "unknown",
+      "source_sha256": "c217fbbf39c744605da3efd9c4e6d8732212e5642f420036d50561a931462bc3",
+      "module_path": "build/usa/build/arm9.bin",
+      "module_base": "0x02000000",
+      "start": "0x20b10b4",
+      "end": "0x20b11ac",
+      "original_bytes_sha256": "295759015821fc0a06620a34e9aee9e30d1e936e6833480dc5287bf12f7c25f0",
+      "source_evidence": "Original USA ARM9 instruction inspection and source-local hardware primitive comments; byte exact linked source unit.",
+      "verification": "Full ROM/module/symbol/layout checks accepted c-batch03-18; audit validates whole unit source/range hashes and exact function match.",
+      "reviewed_assembly_routine_bytes": 248,
+      "inline_assembly_instruction_bytes": 8,
+      "c_instruction_credit": 0,
+      "generated_c_instruction_bytes": 240,
+      "mixed_functions": 1,
+      "pure_c_functions": 0,
+      "instruction_ranges": [
+        {
+          "start": "0x020b116c",
+          "end": "0x020b1170",
+          "instruction": "clzlt r6,r6",
+          "word": "0xb16f6f16"
+        },
+        {
+          "start": "0x020b1180",
+          "end": "0x020b1184",
+          "instruction": "clzlt r7,r7",
+          "word": "0xb16f7f17"
+        }
+      ],
+      "note": "Whole-unit audit conservatively excludes this mixed248B unit from pure-C totals; 240B are generated C and8B are inline CLZ. The accepted binary report/receipt remain unchanged.",
+      "routines": [
+        {
+          "symbol": "Graphics_ComputePartitionedTileIndex",
+          "start": "0x20b10b4",
+          "end": "0x20b11ac"
         }
       ]
     }

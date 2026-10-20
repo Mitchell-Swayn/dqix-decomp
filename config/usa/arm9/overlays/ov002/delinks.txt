@@ -4,3 +4,758 @@
     .data       start:0x0216ccc0 end:0x0216d3a0 kind:data align:32
     .bss        start:0x0216d3a0 end:0x0216d3c0 kind:bss align:32
 
+src/Data/PartyMenu_LoadAndInitializeDisplay_PathDataAniObjTmGp2.cpp:
+    complete
+    .data start:0x0216ced4 end:0x0216cee8
+
+src/Data/PartyMenu_LoadAndInitializeDisplay_MarkupObjTmLGPac.cpp:
+    complete
+    .data start:0x0216cee8 end:0x0216cef8
+
+src/Data/PartyMenu_LoadAndInitializeDisplay_PathDataBinMenuStrTmGp2.cpp:
+    complete
+    .data start:0x0216cef8 end:0x0216cf11
+
+src/Data/PartyMenu_LoadAndInitializeDisplay_MarkupStrTmLGNat.cpp:
+    complete
+    .data start:0x0216cf11 end:0x0216cf21
+
+src/Data/Resource_QueueThreeFilesAndInitializeRecords_PathDataPrmSpelltableBin.cpp:
+    complete
+    .data start:0x0216cf21 end:0x0216cf39
+
+src/Data/Resource_QueueThreeFilesAndInitializeRecords_PathDataPrmSkilltableBin.cpp:
+    complete
+    .data start:0x0216cf39 end:0x0216cf51
+
+src/Data/PartyMenu_ExecuteSelectedSpellOrSkill_PathDataPrmLevelDBin.cpp:
+    complete
+    .data start:0x0216cf51 end:0x0216cf66
+
+src/Data/PartyMenu_ExecuteSelectedSpellOrSkill_PathDataScenarioTreasureNsarc.cpp:
+    complete
+    .data start:0x0216cf66 end:0x0216cf83
+
+src/Data/PartyMenu_RebuildItemSortCatalog_PathDataPrmItemsortGp2.cpp:
+    complete
+    .data start:0x0216cf83 end:0x0216cf99
+
+src/Data/PartyMenu_RebuildItemSortCatalog_MarkupItemsortLGBin.cpp:
+    complete
+    .data start:0x0216cf99 end:0x0216cfac
+
+src/Data/PartyMenuOpenBagIndicatorPanel_TextSPACE.cpp:
+    complete
+    .data start:0x0216d26c end:0x0216d26e
+
+src/Data/TextAppendSixResourceOptions_TextCodePoint10.cpp:
+    complete
+    .data start:0x0216d26e end:0x0216d270
+
+src/Data/PartyMenu_AppendSelectedOwnerItems_FormatXR138DXR.cpp:
+    complete
+    .data start:0x0216d270 end:0x0216d280
+
+src/Data/PartyMenu_FormatActionTargetStatus_TextXY.cpp:
+    complete
+    .data start:0x0216d280 end:0x0216d285
+
+src/Data/PartyMenuFormatActionTargetStatus_TextD.cpp:
+    complete
+    .data start:0x0216d285 end:0x0216d288
+
+src/Data/PartyMenu_AppendItemTransferDestinationSlots_Text.cpp:
+    complete
+    .data start:0x0216d288 end:0x0216d2a1
+
+src/Data/PartyMenu_FormatPartySummaryPanel_FormatTcD.cpp:
+    complete
+    .data start:0x0216d2a1 end:0x0216d2a8
+
+src/Data/Graphics_FormatPagedByteKeyEntries_FormatDD.cpp:
+    complete
+    .data start:0x0216d2a8 end:0x0216d2ae
+
+src/Data/Graphics_FormatPartyMemberStatusText_FormatSD.cpp:
+    complete
+    .data start:0x0216d2ae end:0x0216d2b3
+
+src/Data/Text_AppendPagedLookupGrid_MarkupX116.cpp:
+    complete
+    .data start:0x0216d2b4 end:0x0216d2bc
+
+src/Data/PartyMenu_FormatActionResultMessage_PathDataPrmItemnameGp2.cpp:
+    complete
+    .data start:0x0216d2bc end:0x0216d2d2
+
+src/Data/PartyMenu_FormatActionResultMessage_MarkupItemnameLGNat.cpp:
+    complete
+    .data start:0x0216d2d2 end:0x0216d2e4
+
+src/Data/PartyMenu_FormatActionResultMessage_MarkupADD.cpp:
+    complete
+    .data start:0x0216d2e4 end:0x0216d2ea
+
+src/Data/PartyMenu_FormatActionResultMessage_MarkupPADWAITADD.cpp:
+    complete
+    .data start:0x0216d2ea end:0x0216d2fc
+
+src/Data/UtilInitializeFormattedTextRecord_TextS.cpp:
+    complete
+    .data start:0x0216d2fc end:0x0216d300
+
+src/Data/PartyMenu_CommitSkillPointAllocation_PathDataPrmSklArtGp2.cpp:
+    complete
+    .data start:0x0216d300 end:0x0216d315
+
+src/Data/PartyMenu_CommitSkillPointAllocation_MarkupSklArtLGNat.cpp:
+    complete
+    .data start:0x0216d315 end:0x0216d326
+
+src/Data/PartyMenu_BuildEarnedTitleNotificationRecords_PathDataBinTtlnameDGp2.cpp:
+    complete
+    .data start:0x0216d326 end:0x0216d33d
+
+src/Data/PartyMenu_BuildEarnedTitleNotificationRecords_FormatTtlnameDLGNat.cpp:
+    complete
+    .data start:0x0216d33d end:0x0216d350
+
+src/Data/PartyMenu_UpdateSkillAllocationAndUnlockNotifications_PathDataPrmSkilltableBin.cpp:
+    complete
+    .data start:0x0216d350 end:0x0216d368
+
+src/Data/PartyMenu_UpdateSkillAllocationAndUnlockNotifications_PathDataScenarioTitleSklStb.cpp:
+    complete
+    .data start:0x0216d368 end:0x0216d384
+
+src/Data/PartyMenuUpdateController_MenuStateUpdateHandlers.cpp:
+    complete
+    .data start:0x0216cd74 end:0x0216ced4
+
+src/Data/PartyMenuRebuildPanelTextById_MenuStateContentBuilders.cpp:
+    complete
+    .data start:0x0216cfac end:0x0216d10c
+
+src/Data/PartyMenuRefreshChangedSelectionText_MenuStateContentBuilders.cpp:
+    complete
+    .data start:0x0216d10c end:0x0216d26c
+
+src/Data/PartyMenuConfigurePanelLayout_MenuGridLayoutByStateID.cpp:
+    complete
+    .rodata start:0x0216cb48 end:0x0216cc83
+
+src/Data/PartyMenu_DispatchActionEffects_ItemPropertyDispatchRecords.cpp:
+    complete
+    .data start:0x0216ccc0 end:0x0216ccc4
+
+src/Data/PartyMenu_DispatchActionEffects_ItemPropertyDispatchRecords_Copy2.cpp:
+    complete
+    .data start:0x0216ccc4 end:0x0216cce4
+
+src/Data/PartyMenu_DispatchActionEffects_ItemPropertyDispatchRecords_Copy3.cpp:
+    complete
+    .data start:0x0216cce4 end:0x0216cce8
+
+src/Data/PartyMenu_DispatchActionEffects_ItemPropertyDispatchRecords_Copy4.cpp:
+    complete
+    .data start:0x0216cce8 end:0x0216cd74
+
+src/Data/PartyMenuAssignMappedCommandSlot_MenuLogicalSlotToStorageSlotMapping.cpp:
+    complete
+    .rodata start:0x0216c9c0 end:0x0216c9dc
+
+src/Data/TextAppendSixResourceOptions_TextFieldDisplayOrder.cpp:
+    complete
+    .rodata start:0x0216ca58 end:0x0216ca70
+
+src/Data/TextBuildSevenMappedOptionsAndFinalRow_MenuLogicalSlotToStorageSlotMapping.cpp:
+    complete
+    .rodata start:0x0216ca88 end:0x0216caa4
+
+src/Data/TextBuildSevenMappedOptionsAndFinalRow_TextPlacementParametersForEightMenuFields.cpp:
+    complete
+    .rodata start:0x0216caa4 end:0x0216cac4
+
+src/Data/TextAppendPartyMemberSelectionList_TextFormattingParametersIndexedByItemCount.cpp:
+    complete
+    .rodata start:0x0216ca1c end:0x0216ca30
+
+src/Data/GraphicsFormatPartyMemberStatusText_TextFormattingParametersByElementCount.cpp:
+    complete
+    .rodata start:0x0216ca30 end:0x0216ca44
+
+src/Data/TextAppendPartyMemberSelectionList_TextPlacementParametersByItemCount.cpp:
+    complete
+    .rodata start:0x0216ca44 end:0x0216ca58
+
+src/Data/TextAppendPartyMemberSelectionList_PairsOfTextStyleParameters.cpp:
+    complete
+    .rodata start:0x0216ca70 end:0x0216ca88
+
+src/Data/TextAppendSixResourceOptions_MessageIDsForSixOrderedTextFields.cpp:
+    complete
+    .rodata start:0x0216ca04 end:0x0216ca10
+
+src/Data/PartyMenu_UpdateSaveAndQuit_PathDataAniPenTmPac.cpp:
+    complete
+    .data start:0x0216d384 end:0x0216d3a0
+
+src/Data/PartyMenuDispatchActionEffects_LazyInitializationGuardsForItemPropertyDispatchTables.cpp:
+    complete
+    .bss start:0x0216d3a0 end:0x0216d3a8
+
+src/Data/PartyMenuUpdateController_LazyInitializationGuardForMenuStateUpdateDispatch.cpp:
+    complete
+    .bss start:0x0216d3a8 end:0x0216d3ac
+
+src/Data/PartyMenuRebuildPanelTextById_LazyInitializationGuardsForMenuContentBuilderDispatch.cpp:
+    complete
+    .bss start:0x0216d3b0 end:0x0216d3b8
+
+src/Data/PartyMenuInitializeController_MenuConditionFlag.cpp:
+    complete
+    .bss start:0x0216d3ac end:0x0216d3ad
+
+src/Data/PartyMenu_RebuildPanelTextById_StateRebuildTransitionRecords.cpp:
+    complete
+    .rodata start:0x0216cae8 end:0x0216caec
+
+src/Data/PartyMenu_RebuildPanelTextById_StateRebuildTransitionRecords_Copy2.cpp:
+    complete
+    .rodata start:0x0216caec end:0x0216cb18
+
+src/Data/PartyMenu_RefreshChangedSelectionText_StateRebuildTransitionRecords.cpp:
+    complete
+    .rodata start:0x0216cb18 end:0x0216cb1c
+
+src/Data/PartyMenu_RefreshChangedSelectionText_StateRebuildTransitionRecords_Copy2.cpp:
+    complete
+    .rodata start:0x0216cb1c end:0x0216cb48
+
+src/Data/SharedData_Overlay2HasNoConstructors.cpp:
+    complete
+    .ctor start:0x0216ccac end:0x0216ccb0
+
+src/Menu/Party/PartyMenu_ClearActionDispatcher.cpp:
+    complete
+    .text start:0x021536e0 end:0x021536ec
+
+src/Menu/Party/PartyMenu_ClearTargetActionResult.cpp:
+    complete
+    .text start:0x02153e90 end:0x02153ea4
+
+src/Menu/Party/PartyMenu_ReadCanvasBounds.cpp:
+    complete
+    .text start:0x02157030 end:0x0215707c
+
+src/Menu/Party/PartyMenu_TestMemberDeathFlag.cpp:
+    complete
+    .text start:0x0216364c end:0x02163664
+
+src/Menu/Party/PartyMenu_IgnoreReservedScreenUpdate.cpp:
+    complete
+    .text start:0x02164744 end:0x02164748
+
+src/Menu/Party/PartyMenu_RejectUnsupportedActionEffect.cpp:
+    complete
+    .text start:0x021548b8 end:0x021548c4
+
+src/Menu/Party/PartyMenu_ReadSoundVolumeOptions.cpp:
+    complete
+    .text start:0x0215b234 end:0x0215b268
+
+src/Menu/Party/Combat_AddCappedValue.cpp:
+    complete
+    .text start:0x021548c4 end:0x02154944
+
+src/Menu/Party/Graphics_FormatPartyMemberStatusText.cpp:
+    complete
+    .text start:0x0215fcc0 end:0x02160004
+
+src/Menu/Party/PartyMenu_SetEntryModeOptions.cpp:
+    complete
+    .text start:0x021556ec end:0x021556fc
+
+src/Menu/Party/GameState_AddClampedRecordValue.cpp:
+    complete
+    .text start:0x02154944 end:0x021549c8
+
+src/Menu/Party/Text_AppendSixResourceOptions.cpp:
+    complete
+    .text start:0x0215c178 end:0x0215c2c8
+
+src/Menu/Party/PartyMenu_HasTargetActionBlocker.cpp:
+    complete
+    .text start:0x02154b94 end:0x02154bcc
+
+src/Menu/Party/Memory_InitializeFlagAndSentinels.cpp:
+    complete
+    .text start:0x0215a920 end:0x0215a938
+
+src/Menu/Party/PartyMenu_AdvanceOrderedCommandIndex.cpp:
+    complete
+    .text start:0x0215a9b4 end:0x0215a9cc
+
+src/Menu/Party/Util_UpdateBit3.cpp:
+    complete
+    .text start:0x0216574c end:0x02165764
+
+src/Menu/Party/Util_SetRecordProgressFlags.cpp:
+    complete
+    .text start:0x0215b918 end:0x0215b9a4
+
+src/Menu/Party/GetInventoryItemByID.cpp:
+    complete
+    .text start:0x0215707c end:0x02157108
+
+src/Menu/Party/PartyMenu_PollActionOwnershipRequest.cpp:
+    complete
+    .text start:0x0215b7d0 end:0x0215b814
+
+src/Menu/Party/PartyMenu_SetTitleNotificationHeading.cpp:
+    complete
+    .text start:0x02168d10 end:0x02168d54
+
+src/Menu/Party/Graphics_ResetFirstResourceEntryWhenFlagEight.cpp:
+    complete
+    .text start:0x0215b0a8 end:0x0215b138
+
+src/Menu/Party/Graphics_FormatPagedByteKeyEntries.cpp:
+    complete
+    .text start:0x0215f224 end:0x0215f3a0
+
+src/Menu/Party/GameState_CopySevenIndexedBytes.cpp:
+    complete
+    .text start:0x0215aa5c end:0x0215aaa4
+
+src/Menu/Party/Graphics_SelectObjectRatioColor.cpp:
+    complete
+    .text start:0x02159774 end:0x02159900
+
+src/Menu/Party/Ov002_CopySevenIndexedStateBytes.cpp:
+    complete
+    .text start:0x0215aa14 end:0x0215aa5c
+
+src/Menu/Party/Graphics_AppendPartyMemberListText.cpp:
+    complete
+    .text start:0x0215c72c end:0x0215c8a4
+
+src/Menu/Party/Graphics_FormatColoredMemberList.cpp:
+    complete
+    .text start:0x0215d72c end:0x0215d864
+
+src/Menu/Party/Text_BuildPagedPrimaryRecordNameList.cpp:
+    complete
+    .text start:0x0215d950 end:0x0215dae0
+
+src/Menu/Party/Graphics_AppendTwoCenteredIndexedTextLines.cpp:
+    complete
+    .text start:0x021601e0 end:0x02160274
+
+src/Menu/Party/Graphics_AppendCenteredFormattedText.cpp:
+    complete
+    .text start:0x0215b8c8 end:0x0215b918
+
+src/Menu/Party/Text_AppendCursorTagWithOptionalFormattedArguments.cpp:
+    complete
+    .text start:0x02160190 end:0x021601e0
+
+src/Menu/Party/GameState_ClearFlagAfterLookup.cpp:
+    complete
+    .text start:0x02156178 end:0x021561b0
+
+src/Menu/Party/Ov002_InitializeCurrentAndResourceRecords.cpp:
+    complete
+    .text start:0x0215a8cc end:0x0215a920
+
+src/Menu/Party/Resource_CopySignedHalfwordsToSharedObject.cpp:
+    complete
+    .text start:0x0215a878 end:0x0215a8cc
+
+src/Menu/Party/Graphics_AdvanceDisplayTransition.cpp:
+    complete
+    .text start:0x021561b0 end:0x0215624c
+
+src/Menu/Party/Util_UpdateConditionalProgressCounter.cpp:
+    complete
+    .text start:0x0216885c end:0x021688f8
+
+src/Menu/Party/GameState_ReadIndexedSignedByte.cpp:
+    complete
+    .text start:0x0215a9f0 end:0x0215aa14
+
+src/Menu/Party/Text_AppendPagedLookupGrid.cpp:
+    complete
+    .text start:0x02160aa0 end:0x02160c68
+
+src/Menu/Party/Graphics_FormatSelectedDescriptorOutput.cpp:
+    complete
+    .text start:0x0215eec0 end:0x0215ef60
+
+src/Menu/Party/GameState_BuildOutputWordListFromIndexedData.cpp:
+    complete
+    .text start:0x02157424 end:0x02157480
+
+src/Menu/Party/GameState_CheckConnectionIndexListStatus.cpp:
+    complete
+    .text start:0x02161920 end:0x0216197c
+
+src/Menu/Party/Text_AppendAvailablePartyMemberList.cpp:
+    complete
+    .text start:0x0215e250 end:0x0215e44c
+
+src/Menu/Party/Graphics_AppendIndexedPartyAndExtraText.cpp:
+    complete
+    .text start:0x0215db8c end:0x0215dd0c
+
+src/Menu/Party/Graphics_AllocateWindowBuffersAndControls.cpp:
+    complete
+    .text start:0x02154d40 end:0x02154f4c
+
+src/Menu/Party/Text_BuildSevenMappedOptionsAndFinalRow.cpp:
+    complete
+    .text start:0x021607cc end:0x021609d4
+
+src/Menu/Party/Resource_ProcessThreeCompletedBackgroundTasks.cpp:
+    complete
+    .text start:0x02156c7c end:0x02156e90
+
+src/Menu/Party/GameState_ApplyPartyFlagInEligibleZone.cpp:
+    complete
+    .text start:0x02154824 end:0x021548b8
+
+src/Menu/Party/Util_InitializeFormattedTextRecord.cpp:
+    complete
+    .text start:0x02168ca8 end:0x02168d10
+
+src/Menu/Party/Text_AppendTwoIndexedFragmentsWithSeparator.cpp:
+    complete
+    .text start:0x021610c4 end:0x02161174
+
+src/Menu/Party/Graphics_AppendTwoSequentialTextFragments.cpp:
+    complete
+    .text start:0x0215dd0c end:0x0215ddbc
+
+src/Menu/Party/PartyMenu_RequestActionOwnershipIfRequired.cpp:
+    complete
+    .text start:0x0215b720 end:0x0215b7d0
+
+src/Menu/Party/GameState_CountRecordsForCategory.cpp:
+    complete
+    .text start:0x02157108 end:0x02157174
+
+src/Menu/Party/GameState_ResetNestedAllocatorState.cpp:
+    complete
+    .text start:0x0215b428 end:0x0215b458
+
+src/Menu/Party/Resource_QueueThreeFilesAndInitializeRecords.cpp:
+    complete
+    .text start:0x02156bc8 end:0x02156c7c
+
+src/Menu/Party/Graphics_AppendCursorAndResourceTextFragments.cpp:
+    complete
+    .text start:0x0216186c end:0x02161920
+
+src/Menu/Party/GameState_PopulateFourPartySummaryRecords.cpp:
+    complete
+    .text start:0x0215b814 end:0x0215b8c8
+
+src/Menu/Party/Text_FormatCharacterCommandFeedback.cpp:
+    complete
+    .text start:0x0215a0a4 end:0x0215a658
+
+src/Menu/Party/Graphics_UpdatePartyMemberPaletteColor.cpp:
+    complete
+    .text start:0x02161a8c end:0x02161b48
+
+src/Menu/Party/PartyMenu_UnwindPanelsToState.cpp:
+    complete
+    .text start:0x02156ff0 end:0x02157030
+
+src/Menu/Party/GameState_BuildEnabledResolvedRecordList.cpp:
+    complete
+    .text start:0x02157174 end:0x021573f8
+
+src/Menu/Party/Resource_UpdateStateForIndexedMode.cpp:
+    complete
+    .text start:0x0216c28c end:0x0216c2d8
+
+src/Menu/Party/PartyMenu_GetSelectableMemberIndex.cpp:
+    complete
+    .text start:0x021574d4 end:0x02157500
+
+src/Menu/Party/Resource_ResetSelectionCanvasAndAllocators.cpp:
+    complete
+    .text start:0x021682c0 end:0x02168354
+
+src/Menu/Party/Text_AppendPartyMemberSelectionList.cpp:
+    complete
+    .text start:0x0215f8b8 end:0x0215fb54
+
+src/Menu/Party/Ov002_InitializeSelectionFlags.cpp:
+    complete
+    .text start:0x0215b6c0 end:0x0215b720
+
+src/Menu/Party/PartyMenu_AppendSelectedMiscellaneousCommandHelp.cpp:
+    complete
+    .text start:0x0215f644 end:0x0215f6a4
+
+src/Menu/Party/Graphics_PositionAndSubmitSpriteCell.cpp:
+    complete
+    .text start:0x02154bcc end:0x02154c30
+
+src/Menu/Party/PartyMenu_RefreshStatusDependentPanels.cpp:
+    complete
+    .text start:0x0215b648 end:0x0215b6c0
+
+src/Menu/Party/BothObjectFieldsAreSentinels.cpp:
+    complete
+    .text start:0x02168c00 end:0x02168c38
+
+src/Menu/Party/GetInventoryRecordSlot.cpp:
+    complete
+    .text start:0x02157500 end:0x0215753c
+
+src/Menu/Party/PartyMenu_AssignMappedCommandSlot.cpp:
+    complete
+    .text start:0x0215a9cc end:0x0215a9f0
+
+src/Menu/Party/Graphics_GetIndexedPartyAndExtraTextValue.cpp:
+    complete
+    .text start:0x021573f8 end:0x02157424
+
+src/Menu/Party/PartyMenu_ApplySelectedItemCommandAndChooseMessage.cpp:
+    complete
+    .text start:0x0215753c end:0x021575d4
+
+src/Menu/Party/AppendMenuCursorAndCurrentPageEntries.cpp:
+    complete
+    .text start:0x0215ec4c end:0x0215ece4
+
+src/Menu/Party/RebuildSevenMappedMenuOptions.cpp:
+    complete
+    .text start:0x02160734 end:0x021607cc
+
+src/Menu/Party/PartyMenu_ApplySoundVolumeOptions.cpp:
+    complete
+    .text start:0x0215b268 end:0x0215b2c8
+
+src/Menu/Party/GameState_HasFlaggedObjectValue.cpp:
+    complete
+    .text start:0x02154a34 end:0x02154a6c
+
+src/Menu/Party/RebuildPartyOptionTextAndSelectMode11.cpp:
+    complete
+    .text start:0x0215dae0 end:0x0215db8c
+
+src/Menu/Party/PartyMenu_OpenInventoryCategoryPanel.cpp:
+    complete
+    .text start:0x0215c474 end:0x0215c52c
+
+src/Menu/Party/PartyMenu_BuildFieldActionDescriptionPanel.cpp:
+    complete
+    .text start:0x0215ee04 end:0x0215eec0
+
+src/Menu/Party/Graphics_RenderCachedOrFormattedPagedText.cpp:
+    complete
+    .text start:0x02161174 end:0x02161234
+
+src/Menu/Party/PartyMenu_RemoveSelectedInventoryItem.cpp:
+    complete
+    .text start:0x0215a7b4 end:0x0215a878
+
+src/Menu/Party/PartyMenu_BuildFieldActionMemberSelection.cpp:
+    complete
+    .text start:0x0215e900 end:0x0215e9c4
+
+src/Menu/Party/PartyMenu_IsCancelRequested.cpp:
+    complete
+    .text start:0x02161b48 end:0x02161b98
+
+src/Menu/Party/PartyMenu_RequestCloseIfIdle.cpp:
+    complete
+    .text start:0x02155024 end:0x0215505c
+
+src/Menu/Party/PartyMenu_HasLoadedSpellAndSkillTables.cpp:
+    complete
+    .text start:0x0215edc8 end:0x0215ee04
+
+src/Menu/Party/PartyMenu_TestCanvasRefreshFlag.cpp:
+    complete
+    .text start:0x0216197c end:0x021619b4
+
+src/Menu/Party/PartyMenu_BuildActionShortcutChoiceGrid.cpp:
+    complete
+    .text start:0x021609d4 end:0x02160aa0
+
+src/Menu/Party/PartyMenu_OpenBagIndicatorPanel.cpp:
+    complete
+    .text start:0x0215c028 end:0x0215c0f8
+
+src/Menu/Party/PartyMenu_OpenItemCommandPanel.cpp:
+    complete
+    .text start:0x0215ccc4 end:0x0215cd98
+
+src/Menu/Party/PartyMenu_BuildItemSelectionConfirmation.cpp:
+    complete
+    .text start:0x02161798 end:0x0216186c
+
+src/Menu/Party/PartyMenu_CollectActiveMembersAndRefreshStatus.cpp:
+    complete
+    .text start:0x02154f4c end:0x02155024
+
+src/Menu/Party/PartyMenu_OpenRecipientAndInventoryPanels.cpp:
+    complete
+    .text start:0x0215d654 end:0x0215d72c
+
+src/Menu/Party/PartyMenu_LoadMemberVocationFontPalette.cpp:
+    complete
+    .text start:0x021619b4 end:0x02161a8c
+
+src/Menu/Party/PartyMenu_OpenGoldPanel.cpp:
+    complete
+    .text start:0x0215bf34 end:0x0215c028
+
+src/Menu/Party/PartyMenu_UpdateActionConfirmation.cpp:
+    complete
+    .text start:0x0216a300 end:0x0216acf0
+
+src/Menu/Party/PartyMenu_BuildAvailableConnectionActions.cpp:
+    complete
+    .text start:0x02156080 end:0x02156178
+
+src/Menu/Party/Text_AppendCursorPageHeaderAndFourIndexedFragments.cpp:
+    complete
+    .text start:0x0215cd98 end:0x0215ce94
+
+src/Menu/Party/PartyMenu_DrawBagSortIndicators.cpp:
+    complete
+    .text start:0x0215b138 end:0x0215b234
+
+src/Menu/Party/PartyMenu_BuildActionConfirmationText.cpp:
+    complete
+    .text start:0x02160fb4 end:0x021610c4
+
+src/Menu/Party/PartyMenu_RefreshPartyStatusSnapshots.cpp:
+    complete
+    .text start:0x02154c30 end:0x02154d40
+
+src/Menu/Party/PartyMenu_OpenItemOwnerAndListPanels.cpp:
+    complete
+    .text start:0x0215c614 end:0x0215c72c
+
+src/Menu/Party/GameState_TestMatchingOrCompatibleObjectIdentifiers.cpp:
+    complete
+    .text start:0x02154a6c end:0x02154b94
+
+src/Menu/Party/Graphics_RefreshTwoBoundTextRecordsAndClearAttribute.cpp:
+    complete
+    .text start:0x02160068 end:0x02160190
+
+src/Menu/Party/Overlay_InitializeSelectionBufferAndRefreshRecords.cpp:
+    complete
+    .text start:0x0215ef60 end:0x0215f084
+
+src/Menu/Party/PartyMenu_ConfigurePanelLayout.cpp:
+    complete
+    .text start:0x0215be00 end:0x0215bf34
+
+src/Menu/Party/PartyMenu_AppendMiscellaneousCommandList.cpp:
+    complete
+    .text start:0x0215f4e8 end:0x0215f644
+
+src/Menu/Party/Graphics_UpdateFourByFourSelectionGrid.cpp:
+    complete
+    .text start:0x0215ad70 end:0x0215af64
+
+src/Menu/Party/PartyMenu_ApplyHpRecoveryToTargets.cpp:
+    complete
+    .text start:0x02153ccc end:0x02153e90
+
+src/Menu/Party/PartyMenu_ApplyMpRecoveryToTargets.cpp:
+    complete
+    .text start:0x021544f4 end:0x021546c8
+
+src/Menu/Party/PartyMenu_InitializeActionResults.cpp:
+    complete
+    .text start:0x02157ce0 end:0x02157d40
+
+src/Menu/Party/PartyMenu_OpenRootCommandPanel.cpp:
+    complete
+    .text start:0x0215c0f8 end:0x0215c178
+
+src/Menu/Party/PartyMenu_RebuildRootPanels.cpp:
+    complete
+    .text start:0x0215a938 end:0x0215a9b4
+
+src/Menu/Party/PartyMenu_BuildAvailablePartyMemberList.cpp:
+    complete
+    .text start:0x0215e1d0 end:0x0215e250
+
+src/Menu/Party/PartyMenu_ComputeRandomizedRecoveryAmount.cpp:
+    complete
+    .text start:0x021538e4 end:0x02153be0
+
+src/Menu/Party/PartyMenu_AdvanceActionWaitTimer.cpp:
+    complete
+    .text start:0x0216c628 end:0x0216c654
+
+src/Menu/Party/PartyMenu_CopySelectableMemberIndices.cpp:
+    complete
+    .text start:0x02157480 end:0x021574d4
+
+src/Menu/Party/PartyMenu_LoadSelectedPaletteSwatch.cpp:
+    complete
+    .text start:0x0215af64 end:0x0215afb8
+
+src/Menu/Party/PartyMenu_DispatchSelectedItemScript.cpp:
+    complete
+    .text start:0x021575d4 end:0x02157634
+
+src/Menu/Party/PartyMenu_ClearTargetStatusMask.cpp:
+    complete
+    .text start:0x021549c8 end:0x02154a34
+
+src/Menu/Party/PartyMenu_OpenSelectableMemberPanel.cpp:
+    complete
+    .text start:0x0215c2c8 end:0x0215c348
+
+src/Menu/Party/PartyMenu_BuildTacticsChoiceList.cpp:
+    complete
+    .text start:0x0215fb54 end:0x0215fbd4
+
+src/Menu/Party/PartyMenu_OpenRecipientInventoryPreview.cpp:
+    complete
+    .text start:0x0215ddbc end:0x0215de9c
+
+src/Menu/Party/PartyMenu_BuildSoundVolumeSettings.cpp:
+    complete
+    .text start:0x02160c68 end:0x02160ce8
+
+src/Menu/Party/PartyMenu_InitializeTitleNotificationRecord.cpp:
+    complete
+    .text start:0x02168c38 end:0x02168ca8
+
+src/Menu/Party/PartyMenu_AppendFieldActionNamesInRange.cpp:
+    complete
+    .text start:0x0215ece4 end:0x0215edc8
+
+src/Menu/Party/PartyMenu_PositionCommandSlotSprites.cpp:
+    complete
+    .text start:0x0215aaa4 end:0x0215ab60
+
+src/Menu/Party/PartyMenu_AppendInventoryCategoryOptions.cpp:
+    complete
+    .text start:0x0215c52c end:0x0215c614
+
+src/Menu/Party/PartyMenu_ComputeRevivalSuccessRate.cpp:
+    complete
+    .text start:0x02153be0 end:0x02153ccc
+
+src/Menu/Party/PartyMenu_ApplyStatIncreaseItemToTargets.cpp:
+    complete
+    .text start:0x021546c8 end:0x02154824
+
+src/Menu/Party/PartyMenu_FormatSelectedActionMpCost.cpp:
+    complete
+    .text start:0x0215f084 end:0x0215f170

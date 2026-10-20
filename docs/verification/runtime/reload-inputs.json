@@ -1,0 +1,30 @@
+[
+  {
+    "start": 1201,
+    "end": 1206,
+    "buttons": [
+      "start"
+    ]
+  },
+  {
+    "start": 1801,
+    "end": 1806,
+    "buttons": [
+      "a"
+    ]
+  },
+  {
+    "start": 2101,
+    "end": 2106,
+    "buttons": [
+      "a"
+    ]
+  },
+  {
+    "start": 2401,
+    "end": 2406,
+    "buttons": [
+      "a"
+    ]
+  }
+]

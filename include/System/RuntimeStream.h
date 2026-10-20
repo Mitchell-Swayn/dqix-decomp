@@ -29,12 +29,17 @@ struct RuntimeStream {
     unsigned int reserved44;
     void* context;
 };
-extern RuntimeStream data_020eebe0[3];
-extern "C" int func_0200173c();
-extern "C" void func_020017bc(char*, unsigned int*);
-extern "C" void func_020017c0(RuntimeStream*);
-extern "C" int func_020017f0(RuntimeStream*, unsigned int*);
-extern "C" int func_02001878(RuntimeStream*);
+// Original data: arm9/main @ 0x20eebe0; symbol: data_020eebe0.
+// Contains original relocated procedure references. Record fields, dispatch contract and exclusive ownership may remain unresolved.
+// Initial values: hex 0000000024010000000000000000000000000000000000000000000090320f020001000090320f020000000000000000000000000000000000000000ccd80002 ...; full span in module reference.
+// Observed span: 76 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern RuntimeStream RuntimeFlushAllOpenStreams_UnknownRoleProcedureReferenceRecords[3];
+extern "C" int Runtime_FlushAllOpenStreams();
+extern "C" void RuntimeStreamBuffers_IgnoreBufferRelease(char*, unsigned int*);
+extern "C" void Runtime_ResetAlignedStreamBuffer(RuntimeStream*);
+extern "C" int Runtime_FlushBufferedStreamOutput(RuntimeStream*, unsigned int*);
+extern "C" int RuntimeStreamBuffers_FlushStreamOrAllStreams(RuntimeStream*);
 
 typedef char RuntimeStreamSizeCheck[sizeof(RuntimeStream) == 0x4c ? 1 : -1];
 

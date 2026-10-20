@@ -1,0 +1,5 @@
+#include <globaldefs.h>
+#include <std_library_functions.h>
+struct Entry{unsigned words[3],flags;char gap[10];unsigned short category:9,kind:3,upper:4;char tail[36];};struct Owner{char pad[0x5c60];Entry entries[16];char gap[0x8e07-0x6060];unsigned char count;};struct State{unsigned reserved;Owner*owner;char pad[0x90];int count;Entry entries[16];int scratchCount;Entry scratch[16];};
+// Original: arm9/main @ 0x0209F24C; symbol: func_0209f24c; size: 0x118.
+extern "C" ARM void ScriptQueryContext_FilterByFlaggedPackedKind(State*p,int filter,unsigned kind){if(!filter){p->count=0;unsigned count=p->owner->count;for(int i=0;i<(int)count;i++){Entry*e=p->owner->entries+i;if(e&&(e->flags&128)&&e->kind==kind){int slot=p->count++;memcpy(p->entries+slot,e,64);}}return;}unsigned clear=0;p->scratchCount=clear;memset(p->scratch,clear,1024);for(int i=0;i<p->count;i++){Entry*e=p->entries+i;if((e->flags&128)&&e->kind==kind){int slot=p->scratchCount++;memcpy(p->scratch+slot,e,64);}}p->count=p->scratchCount;memcpy(p->entries,p->scratch,1024);}

@@ -5,19 +5,25 @@
 #pragma optimize_for_size off
 
 #if defined(jpn)
-#define func_020ca390 func_020cbe5c
-#define data_020f1c80 data_020f1dec
+#define MIi_CpuClear16 func_020cbe5c
+#define InitializeModelAnimationFromMAM_UnknownRoleProcedureReferenceRecords data_020f1dec
 #endif
 
 extern "C"
 {
     // memset
-    void func_020ca390(int, void*, unsigned);
+    void MIi_CpuClear16(int, void*, unsigned);
 }
 
 // processing callback for M.AM animations
-extern void (*data_020f1c80)(void* data, AnimationData* anim, int arg);
+// Original data: arm9/main @ 0x20f1c80; symbol: data_020f1c80.
+// Contains original relocated procedure references. Record fields, dispatch contract and exclusive ownership may remain unresolved.
+// Initial values: hex 88910b02.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern void (*InitializeModelAnimationFromMAM_UnknownRoleProcedureReferenceRecords)(void* data, AnimationData* anim, int arg);
 
+// Original: arm9/main @ 0x020B8E60; symbol: _Z29GetColorFromMaterialAnimationP17NSBXXAnimationMAMjj; size: 0x168.
 unsigned short GetColorFromMaterialAnimation(NSBXXAnimationMAM* mam, unsigned int trackEntry, unsigned int frame)
 {
     if (trackEntry & 0x20000000)
@@ -99,6 +105,7 @@ unsigned short GetColorFromMaterialAnimation(NSBXXAnimationMAM* mam, unsigned in
         (((a & 0x3e0) + (b & 0x3e0)) >> 1) & 0x3e0;
 }
 
+// Original: arm9/main @ 0x020B8FC8; symbol: _Z29GetAlphaFromMaterialAnimationP17NSBXXAnimationMAMjj; size: 0xEC.
 unsigned short GetAlphaFromMaterialAnimation(NSBXXAnimationMAM* mam, unsigned int trackEntry, unsigned int frame)
 {
     if (trackEntry & 0x20000000)
@@ -161,6 +168,7 @@ unsigned short GetAlphaFromMaterialAnimation(NSBXXAnimationMAM* mam, unsigned in
     }
 }
 
+// Original: arm9/main @ 0x020B90B4; symbol: _Z31InitializeModelAnimationFromMAMP13AnimationDataPvP18NSBXXInternalModel; size: 0xD4.
 void InitializeModelAnimationFromMAM(AnimationData* anim, void* pvMAM, NSBXXInternalModel* model)
 {   
     unsigned int track;
@@ -169,10 +177,10 @@ void InitializeModelAnimationFromMAM(AnimationData* anim, void* pvMAM, NSBXXInte
         materials = (NSBXXModelMaterialData*)((intptr_t)model + model->materialsOffset_);
     else
         materials = NULL;
-    anim->callback_ = data_020f1c80;
+    anim->callback_ = InitializeModelAnimationFromMAM_UnknownRoleProcedureReferenceRecords;
 
     anim->numEntries_ = model->numMaterials_;
-    func_020ca390(0, &anim->entries_[0], anim->numEntries_ * 2);
+    MIi_CpuClear16(0, &anim->entries_[0], anim->numEntries_ * 2);
 
     NSBXXAnimationMAM* mam = (NSBXXAnimationMAM*)pvMAM;
     
@@ -188,7 +196,7 @@ void InitializeModelAnimationFromMAM(AnimationData* anim, void* pvMAM, NSBXXInte
             if (materials == NULL)
                 idx = -1;
             else
-                idx = NSBXXNameList_SearchIndex(&materials->materialOffsetList_, str);
+                idx = NNS_G3dGetResDictIdxByName(&materials->materialOffsetList_, str);
 
             if (idx >= 0)
             {
@@ -200,6 +208,7 @@ void InitializeModelAnimationFromMAM(AnimationData* anim, void* pvMAM, NSBXXInte
     }
 }
 
+// Original: arm9/main @ 0x020B9188; symbol: _Z30MAMAnimationProcessingCallbackPvP13AnimationDatai; size: 0xF0.
 void MAMAnimationProcessingCallback(void* data, AnimationData* anim, int arg)
 {
     MaterialRenderData* renderData = (MaterialRenderData*)data;

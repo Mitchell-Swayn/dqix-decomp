@@ -1,6 +1,7 @@
 #include "World/WorldScriptArrayList.h"
 
-extern "C" WorldScriptArrayEntry* func_0208d994(
+// Original: arm9/main @ 0x0208D994; symbol: func_0208d994; size: 0x54.
+extern "C" WorldScriptArrayEntry* WorldScriptArray_FindEntryByKey(
     WorldScriptArrayList* list, int key)
 {
     if (key < 0) return 0;

@@ -1,0 +1,5 @@
+#include <globaldefs.h>
+ARM
+struct Vec {int x,y,z;};extern "C" void Vector3fix_Subtract(const void*,const void*,void*);extern "C" int Vector3fix_Length(const void*);extern "C" int fix32_Divide(int,int);extern "C" void _Z24Vector3fixMultiplyScalarPK8Vector3iiPS_(const void*,int,void*);extern "C" void Vector3fix_Add(const void*,const void*,void*);extern "C" void* _ZN8Vector3iaSERKS_(void*,const void*);extern "C" void Object3D_ApplyPendingNamedOrIndexedAnimation(void*);
+// Original: arm9/main @ 0x020412F4; symbol: func_020412f4; size: 0x84.
+extern "C" void Object3D_AdvancePositionTowardTargetAndFinish(char* p){Vec delta,result;Vector3fix_Subtract(p+180,p+68,&delta);int length=Vector3fix_Length(&delta);int max=*(int*)(p+200);if(max<length){int scale=fix32_Divide(max,length);_Z24Vector3fixMultiplyScalarPK8Vector3iiPS_(&delta,scale,&delta);Vector3fix_Add(p+68,&delta,&result);_ZN8Vector3iaSERKS_(p+68,&result);}else{_ZN8Vector3iaSERKS_(p+68,p+180);Object3D_ApplyPendingNamedOrIndexedAnimation(p);}}

@@ -1,6 +1,7 @@
 #include "System/RuntimeUnwindTable.h"
 #pragma optimize_for_size off
-extern "C" const RuntimeUnwindRange* func_0200da70(const RuntimeUnwindRange* table, int count, unsigned int address)
+// Original: arm9/main @ 0x0200DA70; symbol: func_0200da70; size: 0x64.
+extern "C" const RuntimeUnwindRange* Runtime_FindUnwindRangeForAddress(const RuntimeUnwindRange* table, int count, unsigned int address)
 {
     int first = 0;
     int last = count - 1;
@@ -13,27 +14,28 @@ extern "C" const RuntimeUnwindRange* func_0200da70(const RuntimeUnwindRange* tab
     } while (first <= last);
     return 0;
 }
-extern "C" void func_0200dad4(unsigned int address, RuntimeUnwindTable* state)
+// Original: arm9/main @ 0x0200DAD4; symbol: func_0200dad4; size: 0x108.
+extern "C" void Runtime_FindUnwindDescriptorForAddress(unsigned int address, RuntimeUnwindTable* state)
 {
     state->descriptor = 0;
     state->action = 0;
-    if (!func_0200f29c(state, address))
+    if (!RuntimeUnwind_InitializeEmptyRange(state, address))
         return;
-    const RuntimeUnwindRange* range = func_0200da70(state->begin, state->end - state->begin, address);
+    const RuntimeUnwindRange* range = Runtime_FindUnwindRangeForAddress(state->begin, state->end - state->begin, address);
     if (!range)
         return;
     state->descriptor = range->sizeAndInline & 1 ? (const unsigned char*)&range->descriptor : range->descriptor;
     state->address = range->address;
     unsigned int relative = address - range->address;
-    const unsigned char* cursor = func_0200f2bc(state->descriptor);
+    const unsigned char* cursor = RuntimeUnwindHeader_SkipEncodedHeader(state->descriptor);
     unsigned int total = 0;
     unsigned int delta, length, offset;
     for (;;) {
-        cursor = func_0200d9e4(cursor, &delta);
+        cursor = RuntimeUnwind_ReadCompactUnsignedInteger(cursor, &delta);
         if (delta == 0)
             return;
-        cursor = func_0200d9e4(cursor, &length);
-        cursor = func_0200d9e4(cursor, &offset);
+        cursor = RuntimeUnwind_ReadCompactUnsignedInteger(cursor, &length);
+        cursor = RuntimeUnwind_ReadCompactUnsignedInteger(cursor, &offset);
         unsigned int start = total + delta;
         if (relative < start)
             return;
@@ -43,7 +45,8 @@ extern "C" void func_0200dad4(unsigned int address, RuntimeUnwindTable* state)
     }
     state->action = state->descriptor + offset;
 }
-extern "C" unsigned char func_0200dbdc(const RuntimeUnwindTable* state)
+// Original: arm9/main @ 0x0200DBDC; symbol: func_0200dbdc; size: 0x1C.
+extern "C" unsigned char RuntimeUnwindTable_ReadActionOpcode(const RuntimeUnwindTable* state)
 {
     return state->action ? *state->action & 0x1f : 0;
 }

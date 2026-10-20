@@ -1,0 +1,6 @@
+// Original data: arm9/ov031 @ 0x224c13c; symbol: data_ov031_0224c13c.
+// NUL-terminated ASCII text: "DWCi_MOV_MBP_STATE_REBOOTING". The role name describes the literal content; consumer context does not establish exclusive ownership.
+// Observed values: "DWCi_MOV_MBP_STATE_REBOOTING".
+// Span: 32 bytes to next configured symbol; logical object size may differ.
+// Wi-Fi utility text constant; trailing zero bytes preserve the original storage extent.
+extern "C" char ProgramData_TextDWCiMOVMBPSTATEREBOOTING[32] = "DWCi_MOV_MBP_STATE_REBOOTING";

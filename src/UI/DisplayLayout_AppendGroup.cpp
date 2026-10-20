@@ -1,0 +1,4 @@
+// Reviewed original ARM field widths and source behavior; float initialization is a real 1.0 constant.
+extern "C" {int strcmp(const char*,const char*);void* memset(void*,int,unsigned);void func_02030b0c(void*);}
+// Original: arm9/main @ 0x0207F018; symbol: func_0207f018; size: 0x94.
+extern "C" void DisplayLayout_AppendGroup(char* p,char* in){if(!in)return;short i=*(short*)(p+4);if(*(short*)(p+6)<=i)return;char* q=*(char**)p+i*24;*(int*)q=*(int*)in;*(int*)(q+4)=*(int*)(in+4);*(short*)(q+8)=*(short*)(in+8);*(short*)(q+10)=*(short*)(in+10);*(short*)(q+12)=*(short*)(in+12);*(short*)(q+14)=*(short*)(in+14);*(short*)(q+16)=*(short*)(in+16);((unsigned char*)q)[18]=((unsigned char*)in)[18];((unsigned char*)q)[19]=((unsigned char*)in)[19];((unsigned char*)q)[20]=((unsigned char*)in)[20];((unsigned char*)q)[21]=((unsigned char*)in)[21];++*(short*)(p+4);}

@@ -4,6 +4,7 @@
 
 // USA: func_0209033c
 // JPN: func_02090c5c
+// Original: arm9/main @ 0x0209033C; symbol: _ZN17ActiveGrottoClass5ClearEv; size: 0x58.
 void ActiveGrottoClass::Clear()
 {
     pGenerator_ = NULL;
@@ -24,6 +25,7 @@ void ActiveGrottoClass::Clear()
 
 // USA: func_02090394
 // JPN: func_02090cb4
+// Original: arm9/main @ 0x02090394; symbol: _ZN17ActiveGrottoClass14ClearGeneratorEb; size: 0x20.
 void ActiveGrottoClass::ClearGenerator(bool keepFloormap)
 {
     pGenerator_ = NULL;
@@ -33,12 +35,14 @@ void ActiveGrottoClass::ClearGenerator(bool keepFloormap)
 
 // USA: func_020903b4
 // JPN: func_02090cd4
+// Original: arm9/main @ 0x020903B4; symbol: _ZNK17ActiveGrottoClass14BlankFunction2Ev; size: 0x4.
 void ActiveGrottoClass::BlankFunction2() const
 {
 }
 
 // USA: func_020903b8
 // JPN: func_02090cd8
+// Original: arm9/main @ 0x020903B8; symbol: _ZN17ActiveGrottoClass17AllocateGeneratorEP13SafeAllocatorb; size: 0x48.
 void ActiveGrottoClass::AllocateGenerator(SafeAllocator* allocator, bool skipAllocMapBuffers)
 {
     if (pGenerator_ == NULL)
@@ -53,6 +57,7 @@ void ActiveGrottoClass::AllocateGenerator(SafeAllocator* allocator, bool skipAll
 
 // USA: func_02090400
 // JPN: func_02090d20
+// Original: arm9/main @ 0x02090400; symbol: _ZNK17ActiveGrottoClass24GetMapDimensionFromRangeEiii; size: 0x44.
 int ActiveGrottoClass::GetMapDimensionFromRange(int minimum, int maximum, int floor) const
 {
     (void)GetActiveGrottoSeed();

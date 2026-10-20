@@ -1,0 +1,10 @@
+#include "globaldefs.h"
+#include "std_library_functions.h"
+// Original: arm9/ov031 @ 0x02210780; symbol: PollSharedRequestUntilTerminalState.
+// Original data: arm9/ov031 @ 0x224e588; symbol: data_ov031_0224e588.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 8 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/ov031.md.
+extern volatile int*YssdClientRunWorker_UnknownRoleZeroInitializedStorage;extern "C" void YssdClient_SetWorkerPhase(int),System_StoreStateAndUnblockContexts(unsigned),NasAuth_StopAndWait(),_Z19SleepCurrentContextj(unsigned);extern "C" int NasAuth_AllocateWorkspaceAndStart(),System_ConsumePendingOverlayResult();
+extern "C" ARM void YssdClient_Authenticate(){if(YssdClientRunWorker_UnknownRoleZeroInitializedStorage[1]==1&&YssdClientRunWorker_UnknownRoleZeroInitializedStorage[13]==3){YssdClient_SetWorkerPhase(3);return;}if(!NasAuth_AllocateWorkspaceAndStart())return;while(YssdClientRunWorker_UnknownRoleZeroInitializedStorage[13]!=3&&YssdClientRunWorker_UnknownRoleZeroInitializedStorage[13]!=5&&YssdClientRunWorker_UnknownRoleZeroInitializedStorage[13]!=4){YssdClientRunWorker_UnknownRoleZeroInitializedStorage[13]=System_ConsumePendingOverlayResult();switch(YssdClientRunWorker_UnknownRoleZeroInitializedStorage[13]){case 1:case 2:_Z19SleepCurrentContextj(100);if(YssdClientRunWorker_UnknownRoleZeroInitializedStorage[1]==2)NasAuth_StopAndWait();break;case 0:case 3:case 4:case 5:if(YssdClientRunWorker_UnknownRoleZeroInitializedStorage[13]==3&&YssdClientRunWorker_UnknownRoleZeroInitializedStorage[1]==1)YssdClient_SetWorkerPhase(3);else{System_StoreStateAndUnblockContexts(1);(void)YssdClientRunWorker_UnknownRoleZeroInitializedStorage[13];}break;}}}

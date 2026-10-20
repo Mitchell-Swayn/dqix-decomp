@@ -14,21 +14,22 @@ typedef char GameStateIdentityRecordsOffsetCheck[
 typedef char GameStateNativeIdentityStateSizeCheck[
     sizeof(GameState) == 0x7ff4 ? 1 : -1];
 
-extern "C" int func_020cf1a8(unsigned int* values);
-extern "C" void func_020c99ac(unsigned char* bytes);
+extern "C" int RTC_GetTime(unsigned int* values);
+extern "C" void System_ReadHardwareMacAddress(unsigned char* bytes);
 
-extern "C" char data_020ef0ca[]; // "CreateNativeID"; string-pool ownership pending
+extern "C" char GameState_GenerateNativeIdentityFromClockAndHardware_TextCreateNativeID[]; // "CreateNativeID"; string-pool ownership pending
 
-extern "C" void func_020120f0(GameState* state)
+// Original: arm9/main @ 0x020120F0; symbol: func_020120f0; size: 0x110.
+extern "C" void GameState_GenerateNativeIdentityFromClockAndHardware(GameState* state)
 {
     Random random;
     unsigned int clock[3];
     uint64_t seeds[6];
     unsigned char hardware[6];
-    CreateRandom(&random, data_020ef0ca, 0);
+    CreateRandom(&random, GameState_GenerateNativeIdentityFromClockAndHardware_TextCreateNativeID, 0);
     // The release ignores the clock read's status before using its output.
-    func_020cf1a8(clock);
-    func_020c99ac(hardware);
+    RTC_GetTime(clock);
+    System_ReadHardwareMacAddress(hardware);
     seeds[0] = clock[0];
     seeds[1] = clock[1];
     seeds[2] = clock[2];

@@ -2,6 +2,7 @@
 #include "Resource/GameResources.h"
 #include "std_library_functions.h"
 
+// Original: arm9/main @ 0x0208E4BC; symbol: _ZN20WorldPlacementSource5ResetEv; size: 0x3C.
 void WorldPlacementSource::Reset()
 {
     memset(mapPrefix, 0, sizeof(mapPrefix));
@@ -12,9 +13,10 @@ void WorldPlacementSource::Reset()
     randomValues = 0;
 }
 
+// Original: arm9/main @ 0x0208E4F8; symbol: _ZN20WorldPlacementSource15ClearPlacementsEv; size: 0x28.
 void WorldPlacementSource::ClearPlacements()
 {
-    func_ov017_0218b5b0()->allocator_array_1a0[0].Reset();
+    GameResources_GetInstance()->allocator_array_1a0[0].Reset();
     head = 0;
     count = 0;
     randomValues = 0;

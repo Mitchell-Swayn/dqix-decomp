@@ -8,23 +8,24 @@
 #pragma optimize_for_size off
 
 #if defined(jpn)
-#define func_020c9bf0 func_020cb6bc
-#define func_020c9be0 func_020cb6ac
-#define func_020ca3ec func_020cbeb8
+#define OS_Halt func_020cb6bc
+#define DisableInterruptsAndHaltForever func_020cb6ac
+#define MIi_CpuClear32 func_020cbeb8
 #endif
 
 extern "C"
 {
     // wait for an interrupt
-    void func_020c9bf0();
+    void OS_Halt();
 
     // something like abort()
-    void func_020c9be0();
+    void DisableInterruptsAndHaltForever();
 
     // memset with silly signature and assuming alignment
-    void func_020ca3ec(int value, void* dst, unsigned len);
+    void MIi_CpuClear32(int value, void* dst, unsigned len);
 }
 
+// Original: arm9/main @ 0x020C75B4; symbol: _Z24PopulateProcessorContextP16ProcessorContextjjjjj; size: 0xFC.
 void PopulateProcessorContext(ProcessorContext *context, unsigned int startAddress,
     unsigned int userdata, unsigned int stackBottom,
     unsigned int stackSize, unsigned int priority)
@@ -49,7 +50,7 @@ void PopulateProcessorContext(ProcessorContext *context, unsigned int startAddre
     // when the function at startAddress returns, go here
     context->userModeRegisters[14] = (unsigned int)&ContextExecutionReturnProc;
 
-    func_020ca3ec(0, (void*)(stackBottom - stackSize + 4), stackSize - 8);
+    MIi_CpuClear32(0, (void*)(stackBottom - stackSize + 4), stackSize - 8);
     context->blockingMutex = NULL;
     context->lockedMutexes.pFirst = NULL;
     context->lockedMutexes.pLast = NULL;
@@ -58,29 +59,31 @@ void PopulateProcessorContext(ProcessorContext *context, unsigned int startAddre
     context->containerBlockedQueue = NULL;
     context->pNextBlocked = NULL;
     context->pPrevBlocked = NULL;
-    func_020ca3ec(0, &context->unknown_A4, 12);
+    MIi_CpuClear32(0, &context->unknown_A4, 12);
     context->sleepAlarm = NULL;
 
     SetIRQInterruptState(priorState);
 }
 
+// Original: arm9/main @ 0x020C76B0; symbol: _Z26ContextExecutionReturnProcv; size: 0x20.
 void ContextExecutionReturnProc()
 {
     DisableIRQInterrupts();
-    ExitContext(data_021112e0.substruct_24.activeContext, 0);
+    ExitContext(OSInitThread_UnknownRoleZeroInitializedStorage.substruct_24.activeContext, 0);
 }
 
+// Original: arm9/main @ 0x020C76D0; symbol: _Z11ExitContextP16ProcessorContexti; size: 0x5C.
 void ExitContext(ProcessorContext *context, int exitCode)
 {
-    if (data_021112e0.unknown_1C != 0)
+    if (OSInitThread_UnknownRoleZeroInitializedStorage.unknown_1C != 0)
     {
         // context will resume execution with pc at ExitCurrentContext invocation
         // and with IRQ interrupts disabled.
-        InitializeContextRegisters(context, (unsigned int)&ExitCurrentContext, data_021112e0.unknown_1C);
+        InitializeContextRegisters(context, (unsigned int)&ExitCurrentContext, OSInitThread_UnknownRoleZeroInitializedStorage.unknown_1C);
         context->userModeRegisters[0] = exitCode;
         context->programStatusRegister |= (1 << 7); // disable IRQ interrupts here
         context->blockState = 1;
-        RestoreContext(context);
+        OS_LoadContext(context);
     }
     else
     {
@@ -88,9 +91,10 @@ void ExitContext(ProcessorContext *context, int exitCode)
     }
 }
 
+// Original: arm9/main @ 0x020C772C; symbol: _Z18ExitCurrentContexti; size: 0x38.
 void ExitCurrentContext(int code)
 {
-    ProcessorContext* context = *data_021112e0.ppActiveContext;
+    ProcessorContext* context = *OSInitThread_UnknownRoleZeroInitializedStorage.ppActiveContext;
     ProcessorContext::ExitRoutine proc = context->exitProc;
     if (proc != NULL)
     {
@@ -101,9 +105,10 @@ void ExitCurrentContext(int code)
     ShutdownCurrentContext();
 }
 
+// Original: arm9/main @ 0x020C7764; symbol: _Z22ShutdownCurrentContextv; size: 0x5C.
 void ShutdownCurrentContext()
 {
-    ProcessorContext* context = *data_021112e0.ppActiveContext;
+    ProcessorContext* context = *OSInitThread_UnknownRoleZeroInitializedStorage.ppActiveContext;
     AddContextSwitchLock();
     UnlockAllMutexesLockedByContext(context);
     if (context->containerBlockedQueue != NULL)
@@ -114,14 +119,15 @@ void ShutdownCurrentContext()
     UnblockContexts(&context->contextsAwaitingThisCompletion);
     RemoveContextSwitchLock();
     SwitchContextUninterrupted();
-    func_020c9be0();
+    DisableInterruptsAndHaltForever();
 }
 
+// Original: arm9/main @ 0x020C77C0; symbol: _Z15ShutdownContextP16ProcessorContext; size: 0x7C.
 void ShutdownContext(ProcessorContext* context)
 {
     int priorState = DisableIRQInterrupts();
 
-    if (data_021112e0.substruct_24.activeContext == context)
+    if (OSInitThread_UnknownRoleZeroInitializedStorage.substruct_24.activeContext == context)
         ShutdownCurrentContext(); // function call will not return
 
     AddContextSwitchLock();

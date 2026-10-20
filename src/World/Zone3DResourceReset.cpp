@@ -1,6 +1,7 @@
 #include "World/Zone3D.h"
 
 
+// Original: arm9/main @ 0x02013750; symbol: _ZN6Zone3D18ResetZoneResourcesEb; size: 0xEC.
 void Zone3D::ResetZoneResources(bool destroyAllocators)
 {
     textureImageMemory_ = 0;

@@ -1,6 +1,7 @@
 #include "World/WorldScriptRecordNode.h"
 
-extern "C" WorldScriptRecordNode* func_0208e06c(
+// Original: arm9/main @ 0x0208E06C; symbol: func_0208e06c; size: 0x3C.
+extern "C" WorldScriptRecordNode* WorldScriptRecordList_FindNodeByNonnegativeKey(
     WorldScriptRecordNode** head, int key)
 {
     if (key < 0) return 0;

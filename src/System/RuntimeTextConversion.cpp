@@ -1,15 +1,17 @@
 #pragma optimize_for_size off
 
-extern "C" int func_020059cc(const char*, char**, int);
+extern "C" int Runtime_ParseSignedStringInteger(const char*, char**, int);
 
 // Decimal integer conversion without an end-pointer result.
-extern "C" int func_02005a94(const char* text)
+// Original: arm9/main @ 0x02005A94; symbol: func_02005a94; size: 0x14.
+extern "C" int Runtime_ParseStringAsBaseTenInteger(const char* text)
 {
-    return func_020059cc(text, 0, 10);
+    return Runtime_ParseSignedStringInteger(text, 0, 10);
 }
 
 // This runtime uses two-byte wide characters.
-extern "C" unsigned int func_02005aa8(const unsigned short* text)
+// Original: arm9/main @ 0x02005AA8; symbol: func_02005aa8; size: 0x1C.
+extern "C" unsigned int RuntimeTextConversion_CountWideCharacters(const unsigned short* text)
 {
     unsigned int length = -1;
     do {

@@ -1,0 +1,3 @@
+#include <World/Object3D.h>
+// Original: arm9/main @ 0x02048588; symbol: func_02048588; size: 0x8C.
+extern "C" void Object3D_ShallowCloneAndRebindExtendedFields(Object3D *source,Object3D *destination) { unsigned char *src=(unsigned char *)source,*dst=(unsigned char *)destination; source->ShallowCloneTo(destination); *(int*)(dst+0x148)=*(int*)(src+0xb0); *(int*)(dst+0x144)=*(int*)(src+0xac); if(*(int**)(dst+0x13c)) **(int**)(dst+0x13c)=*(int*)(src+0xb4); *(unsigned char**)(dst+0x134)=*(unsigned char**)(src+0xb0)+44; if(source->GetFlags()&0x20000000)destination->EnableFlag(0x20000000); if(((*(unsigned int **)(src+0xb0))[4]<<4)>>31)dst[0xc2]&=~16;else dst[0xc2]|=16; *(short*)(dst+0x18e)=*(short*)(*(unsigned char**)(src+0xac)+18); }

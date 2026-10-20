@@ -5,16 +5,19 @@
 
 #pragma optimize_for_size off
 
+// Original: arm9/main @ 0x020B2E3C; symbol: NSBXX_Tex_GetBlock1Length; size: 0x14.
 int NSBXX_Tex_GetBlock1Length(NSBXXTex* tex)
 {
     return (tex != NULL) ? tex->block1NumEightBytes_ << 3 : 0;
 }
 
+// Original: arm9/main @ 0x020B2E50; symbol: NSBXX_Tex_GetBlock2Length; size: 0x14.
 int NSBXX_Tex_GetBlock2Length(NSBXXTex* tex)
 {
     return (tex != NULL) ? tex->block2NumEightBytes_ << 3 : 0;
 }
 
+// Original: arm9/main @ 0x020B2E64; symbol: NSBXX_Tex_WriteImageVRAMOffsets; size: 0x14.
 void NSBXX_Tex_WriteImageVRAMOffsets(NSBXXTex* tex, int block1, int block2_3)
 {
     if (block1 != 0)
@@ -23,6 +26,7 @@ void NSBXX_Tex_WriteImageVRAMOffsets(NSBXXTex* tex, int block1, int block2_3)
         tex->block2Or3VRAMLoadOffset_ = block2_3;
 }
 
+// Original: arm9/main @ 0x020B2E78; symbol: NSBXX_Tex_LoadImageToVRAM; size: 0xB8.
 void NSBXX_Tex_LoadImageToVRAM(NSBXXTex* tex, bool needsMapping)
 {
     if (needsMapping)
@@ -61,16 +65,19 @@ void NSBXX_Tex_LoadImageToVRAM(NSBXXTex* tex, bool needsMapping)
         MemoryUnmapTextureImage();
 }
 
+// Original: arm9/main @ 0x020B2F30; symbol: NSBXX_Tex_GetBlock4Length; size: 0x14.
 int NSBXX_Tex_GetBlock4Length(NSBXXTex* tex)
 {
     return (tex != NULL) ? tex->block4NumEightBytes_ << 3 : 0;
 }
 
+// Original: arm9/main @ 0x020B2F44; symbol: NSBXX_Tex_WritePaletteVRAMOffset; size: 0x8.
 void NSBXX_Tex_WritePaletteVRAMOffset(NSBXXTex* tex, int offset)
 {
     tex->block4VRAMLoadOffset_ = offset;
 }
 
+// Original: arm9/main @ 0x020B2F4C; symbol: NSBXX_Tex_LoadPaletteToVRAM; size: 0x50.
 void NSBXX_Tex_LoadPaletteToVRAM(NSBXXTex* tex, bool needsMapping)
 {
     if (needsMapping)
@@ -85,6 +92,7 @@ void NSBXX_Tex_LoadPaletteToVRAM(NSBXXTex* tex, bool needsMapping)
         MemoryUnmapTexturePalette();
 }
 
+// Original: arm9/main @ 0x020B2F9C; symbol: AttachTextureImageToModelMaterials; size: 0x130.
 extern "C" void AttachTextureImageToModelMaterials(
     NSBXXModelMaterialData* materialData, NSBXXMaterialPairing* pairing,
     NSBXXTex* tex0, NSBXXTexTexture* texture)
@@ -127,6 +135,7 @@ extern "C" void AttachTextureImageToModelMaterials(
     pairing->flags_ |= 1;
 }
 
+// Original: arm9/main @ 0x020B30CC; symbol: DetachTextureImageFromModelMaterials; size: 0xB8.
 extern "C" void DetachTextureImageFromModelMaterials(NSBXXModelMaterialData* materialData, NSBXXMaterialPairing* pairing)
 {
     uint8_t* indexArray = (uint8_t*)materialData + pairing->offsetToIndexArray_;
@@ -146,6 +155,7 @@ extern "C" void DetachTextureImageFromModelMaterials(NSBXXModelMaterialData* mat
     pairing->flags_ &= ~1;
 }
 
+// Original: arm9/main @ 0x020B3184; symbol: NSBXX_AttachTextureImageToModel; size: 0x100.
 extern "C" bool NSBXX_AttachTextureImageToModel(NSBXXInternalModel* model, NSBXXTex* tex0)
 {
     NSBXXNameList* imagePairingsList;
@@ -188,6 +198,7 @@ extern "C" bool NSBXX_AttachTextureImageToModel(NSBXXInternalModel* model, NSBXX
     return success;
 }
 
+// Original: arm9/main @ 0x020B3284; symbol: NSBXX_DetachTextureImageFromModel; size: 0x8C.
 extern "C" void NSBXX_DetachTextureImageFromModel(NSBXXInternalModel* model)
 {
     NSBXXNameList* pairingList;
@@ -217,6 +228,7 @@ extern "C" void NSBXX_DetachTextureImageFromModel(NSBXXInternalModel* model)
 }
 
 // not a match
+// Original: arm9/main @ 0x020B3310; symbol: AttachTexturePaletteToModelMaterials; size: 0xE0.
 extern "C" void AttachTexturePaletteToModelMaterials(
     NSBXXModelMaterialData* materialData, NSBXXMaterialPairing* pairing,
     NSBXXTex* tex0, NSBXXTexPalette* palette)
@@ -249,6 +261,7 @@ extern "C" void AttachTexturePaletteToModelMaterials(
     pairing->flags_ |= 1;
 }
 
+// Original: arm9/main @ 0x020B33F0; symbol: NSBXX_AttachTexturePaletteToModel; size: 0x108.
 bool NSBXX_AttachTexturePaletteToModel(NSBXXInternalModel* model, NSBXXTex* tex0)
 {
     NSBXXNameList* palettePairingsList;
@@ -295,6 +308,7 @@ bool NSBXX_AttachTexturePaletteToModel(NSBXXInternalModel* model, NSBXXTex* tex0
     return success;
 }
 
+// Original: arm9/main @ 0x020B34F8; symbol: NSBXX_DetachTexturePaletteFromModel; size: 0x84.
 extern "C" void NSBXX_DetachTexturePaletteFromModel(NSBXXInternalModel* model)
 {
     NSBXXNameList* pairingList;
@@ -323,6 +337,7 @@ extern "C" void NSBXX_DetachTexturePaletteFromModel(NSBXXInternalModel* model)
     }
 }
 
+// Original: arm9/main @ 0x020B357C; symbol: NSBXX_LinkTEX0ToMDL0; size: 0xB0.
 extern "C" int NSBXX_LinkTEX0ToMDL0(NSBXXMdl* mdl0, NSBXXTex* tex0)
 {
     unsigned int modelCounter;
@@ -341,6 +356,7 @@ extern "C" int NSBXX_LinkTEX0ToMDL0(NSBXXMdl* mdl0, NSBXXTex* tex0)
     return success;
 }
 
+// Original: arm9/main @ 0x020B362C; symbol: NSBXX_UnlinkTEX0FromMDL0; size: 0x94.
 extern "C" void NSBXX_UnlinkTEX0FromMDL0(NSBXXMdl* mdl0)
 {
     unsigned int modelCounter = 0;

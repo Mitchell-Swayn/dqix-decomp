@@ -1,0 +1,6 @@
+#include <globaldefs.h>
+#include <World/Object3D.h>
+extern "C" void Object3D_InitializeExtendedMovementStateDefaults(Object3D*);extern "C" int GameObject_GetWallContactGeometry(Object3D*);extern "C" void* Object_GetGlobalSixteenEntryDisplayState();
+struct Effect {char pad[44];Vector3fix position;char gap[12];Vector3fix scale;};extern "C" void Object_InitializeRenderValuesAndUnitScales(Effect*);extern "C" void ObjectPool_SpawnFromTemplateKey(void*,int,Effect*);
+// Original: arm9/main @ 0x02078398; symbol: func_02078398; size: 0xEC.
+extern "C" void Object3D_HideOrFadeAtTargetAndSpawnEffect(Object3D* p){Effect effect;if(!p->GetInheritedAlpha()){Object3D_InitializeExtendedMovementStateDefaults(p);p->MakeHidden();}else if(p->GetInheritedAlpha()==31){int moving=GameObject_GetWallContactGeometry(p);Vector3fix plane=p->position_;plane.y=0;if(Vector3fix_Distance(&plane,(Vector3fix*)((char*)p+344))<8192||moving){*(short*)((char*)p+178)=0;p->TransitionInheritedAlpha(0,125);if(*(short*)((char*)p+376)>0){void* context=Object_GetGlobalSixteenEntryDisplayState();Object_InitializeRenderValuesAndUnitScales(&effect);effect.position=p->position_;effect.scale=p->GetScale();ObjectPool_SpawnFromTemplateKey(context,*(short*)((char*)p+376),&effect);}}}}

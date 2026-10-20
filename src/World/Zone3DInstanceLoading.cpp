@@ -6,9 +6,10 @@ struct ZoneLightingOverride
     char unknown_0[5];
     unsigned char timeOfDay;
 };
-extern "C" bool func_ov017_021b8b54(void*);
-extern "C" ZoneLightingOverride* func_ov017_021b8478(void*);
+extern "C" bool FieldBattle_IsSceneActive(void*);
+extern "C" ZoneLightingOverride* FieldBattle_GetEncounterRequest(void*);
 
+// Original: arm9/main @ 0x020177D4; symbol: _ZN6Zone3D18BuildBMDJInstancesEP17Zone3D_BMDJStructP13SafeAllocator; size: 0x2C0.
 void Zone3D::BuildBMDJInstances(Zone3D_BMDJStruct* group, SafeAllocator* allocator)
 {
     GameState::GetInstance();
@@ -47,9 +48,9 @@ void Zone3D::BuildBMDJInstances(Zone3D_BMDJStruct* group, SafeAllocator* allocat
             AppendBMDJSibling(instances, instance);
     }
     int timeOfDay = lighting->timeOfDayIndex_;
-    void* overrideContext = func_ov017_0218b5b0()->unknown_ptr_3718;
-    if (overrideContext && func_ov017_021b8b54(overrideContext))
-        timeOfDay = func_ov017_021b8478(overrideContext)->timeOfDay;
+    void* overrideContext = GameResources_GetInstance()->unknown_ptr_3718;
+    if (overrideContext && FieldBattle_IsSceneActive(overrideContext))
+        timeOfDay = FieldBattle_GetEncounterRequest(overrideContext)->timeOfDay;
     for (int i = 0; i < count; ++i)
     {
         Zone3D_BMDJStruct::StructSize20* definition = group->scriptData_.GetStruct20(i);

@@ -1,14 +1,15 @@
 #pragma optimize_for_size off
 
-extern "C" double func_02008848(double);
-extern "C" double func_02008f3c(double);
+extern "C" double Runtime_ComputeDoubleArctangent(double);
+extern "C" double Runtime_ComputeDoubleAbsoluteValue(double);
 
 // atan2 reduction for the pinned little-endian binary64 runtime ABI.
 // Preserve signed-zero quadrants, NaN propagation and compensated pi reduction.
 // The word casts are pinned-MWCC type punning, not portable C++ aliasing.
 // Actual union copies and memcpy word views change the matching instructions;
 // see docs/workflow/sol61-runtime-math.md for the compiler evidence.
-extern "C" double func_02005ac4(double y, double x)
+// Original: arm9/main @ 0x02005AC4; symbol: func_02005ac4; size: 0x3DC.
+extern "C" double Runtime_ComputeDoubleArctangent2(double y, double x)
 {
     int hx, hy, iy, lx, ix, ly;
     hx = ((int*)&x)[1];
@@ -21,7 +22,7 @@ extern "C" double func_02005ac4(double y, double x)
         (iy | (((unsigned int)ly | (0u - ly)) >> 31)) > 0x7ff00000)
         return x + y;
     if ((((unsigned int)hx - 0x3ff00000u) | lx) == 0)
-        return func_02008848(y);
+        return Runtime_ComputeDoubleArctangent(y);
     int quadrant = ((hy >> 31) & 1) | ((hx >> 30) & 2);
     if ((iy | ly) == 0) {
         switch (quadrant) {
@@ -70,7 +71,7 @@ extern "C" double func_02005ac4(double y, double x)
     else if (hx < 0 && exponentDifference < -60)
         angle = 0.0;
     else
-        angle = func_02008848(func_02008f3c(y / x));
+        angle = Runtime_ComputeDoubleArctangent(Runtime_ComputeDoubleAbsoluteValue(y / x));
     switch (quadrant) {
     case 0:
         return angle;

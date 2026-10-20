@@ -1,0 +1,5 @@
+#include <globaldefs.h>
+#include <Filesystem/BackgroundLoader.h>
+extern "C" char* Graphics_GetBackgroundResourceOwner();extern "C" void Graphics_GetGlobalOamTransferState();extern "C" char* Graphics_GetSubOamStagingBuffer();extern "C" void Graphics_DispatchEnabledResourceFileEntries(void*,void*,unsigned,unsigned);extern "C" void Graphics_SetCellAffineMode(void*,void*,int,int);
+// Original: arm9/main @ 0x02020AEC; symbol: func_02020aec; size: 0xAC.
+extern "C" void ConsumeLoadedTaskAndInitializeEmbeddedResources(char* self,int* task,unsigned argument) {BackgroundLoader* loader=BackgroundLoader::GetInstance();void* data=0;unsigned size=0;loader->GetLoadedFileByID(*task,&data,&size);char* config=Graphics_GetBackgroundResourceOwner();*(unsigned*)(config+0x508)=0x2000;Graphics_GetGlobalOamTransferState();char* pointer=Graphics_GetSubOamStagingBuffer()+0x2c0;*(char**)Graphics_GetBackgroundResourceOwner()=pointer;Graphics_DispatchEnabledResourceFileEntries(self+0x94,data,size,argument);BackgroundLoader::GetInstance()->RemoveTask(*task);*task=-1;Graphics_SetCellAffineMode(self+0x94,self+0x250,1,1);Graphics_SetCellAffineMode(self+0x94,self+0x2a0,1,1);}

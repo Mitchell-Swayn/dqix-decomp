@@ -1,0 +1,11 @@
+#include <globaldefs.h>
+ARM
+#define B(p,o) (*(unsigned char*)((char*)(p)+(o)))
+#define S(p,o) (*(signed char*)((char*)(p)+(o)))
+#define H(p,o) (*(short*)((char*)(p)+(o)))
+#define U(p,o) (*(unsigned short*)((char*)(p)+(o)))
+#define W(p,o) (*(unsigned*)((char*)(p)+(o)))
+#define P(p,o) (*(char**)((char*)(p)+(o)))
+struct GameState;struct GameResources;struct Object3D;extern "C" void* _ZN9GameState11GetInstanceEv();extern "C" void* Zone3D_GetMainInstance();extern "C" void* Network_GetConnectionManager();extern "C" bool Network_IsParentOrOffline(unsigned*);struct IntegerParameterView;extern "C" int Script_ReadParameterAsInteger(IntegerParameterView*);extern "C" void* _ZN12ZoneFeatures14GetTypeEntriesEi(void*,int);extern "C" void _ZN6Zone3D20ActivateType2FeatureEPN12ZoneFeatures13Opcode6aEntryEbbi(void*,void*,bool,bool,int);extern "C" char* _ZN6Zone3D21FindType2BMDJInstanceEPN12ZoneFeatures13Opcode6aEntryE(void*,void*);struct Feature{char pad[44];unsigned char a,b;unsigned short low:4;unsigned short flags:12;char rest[64];Feature* next;};
+// Original: arm9/ov001 @ 0x0215FD4C; symbol: World_ActivateMatchingTypeTwoFeaturesWithModeSeven; size: 0x104.
+extern "C" int World_ActivateMatchingTypeTwoFeaturesWithModeSeven(char* parameter,int count){int a=Script_ReadParameterAsInteger((IntegerParameterView*)parameter);IntegerParameterView* second=(IntegerParameterView*)(parameter+8);parameter+=16;int b=Script_ReadParameterAsInteger(second);int play=1,force=1;if(count>2){play=Script_ReadParameterAsInteger((IntegerParameterView*)parameter);parameter+=8;}if(count>3)force=Script_ReadParameterAsInteger((IntegerParameterView*)parameter);char* zone=(char*)Zone3D_GetMainInstance();Feature* feature=(Feature*)_ZN12ZoneFeatures14GetTypeEntriesEi(zone+108,2);for(;feature;feature=feature->next){unsigned flags=feature->flags;if((flags&1)||feature->a!=a||feature->b!=b)continue;feature->flags=(unsigned short)(flags|896);/* Canonical bool callee retained; original script caller forwards raw integer arguments without normalizing. */((void(*)(void*,void*,int,int,int))_ZN6Zone3D20ActivateType2FeatureEPN12ZoneFeatures13Opcode6aEntryEbbi)(zone,feature,play,force,0);char* instance=_ZN6Zone3D21FindType2BMDJInstanceEPN12ZoneFeatures13Opcode6aEntryE(zone,feature);U(instance,2)|=64;}return 1;}

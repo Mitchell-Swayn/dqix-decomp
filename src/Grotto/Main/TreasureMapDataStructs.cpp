@@ -6,26 +6,27 @@
 #include "Resource/GameResources.h"
 
 #ifdef jpn
-#define func_020a1df8 func_020a3b70
+#define OverlayLoader_PushPrimarySelection func_020a3b70
 #define func_020a57e4 func_020a7588
 #define func_020a5b1c func_020a78c0
-#define func_020a1e54 func_020a3bcc
+#define OverlayLoader_PopPrimarySelectionAndOptionallyRestoreOverlay func_020a3bcc
 #endif
 
 extern "C"
 {
     // some relation to loading overlays
-    void func_020a1df8(unsigned int);
-    void func_020a1e54(int);
+    void OverlayLoader_PushPrimarySelection(unsigned int);
+    void OverlayLoader_PopPrimarySelectionAndOptionallyRestoreOverlay(int);
 }
 
 #define TMAPLANGDATA_READ(offset, into, len) \
-    (VectorizedInvertedMemcpy(GameState::GetInstance()->GetTreasureMapLanguageData() + (offset), (into), (len)), offset += (len))
+    (MI_CpuCopy8(GameState::GetInstance()->GetTreasureMapLanguageData() + (offset), (into), (len)), offset += (len))
 
+// Original: arm9/main @ 0x020A3A34; symbol: _Z29ExportDetailedTreasureMapDataPK19TreasureMapMetadataP23DetailedTreasureMapDatabPKh; size: 0x334.
 bool ExportDetailedTreasureMapData(const TreasureMapMetadata* from,
     DetailedTreasureMapData* to, bool computeLegacyStats, const unsigned char* legacyStatsData)
 {
-    GameResources* resources = func_ov017_0218b5b0();
+    GameResources* resources = GameResources_GetInstance();
 
     if (from == NULL || to == NULL)
         return false;
@@ -49,8 +50,8 @@ bool ExportDetailedTreasureMapData(const TreasureMapMetadata* from,
     VectorizedMemset(to->discoveredBy_, 0, 12);
     VectorizedMemset(to->clearedBy_, 0, 12);
 
-    VectorizedInvertedMemcpy(from->DiscoveredBy, to->discoveredBy_, 10);
-    VectorizedInvertedMemcpy(from->ClearedBy, to->clearedBy_, 10);
+    MI_CpuCopy8(from->DiscoveredBy, to->discoveredBy_, 10);
+    MI_CpuCopy8(from->ClearedBy, to->clearedBy_, 10);
 
     if (GameState::GetInstance()->GetTreasureMapLanguageData() == NULL)
         return false;
@@ -90,10 +91,10 @@ bool ExportDetailedTreasureMapData(const TreasureMapMetadata* from,
         to->legacy_.Populate(from->QualityOrLegacyBossID, from->LegacyBossLevel, from->SeedOrMinTurns);
     }
 
-    func_020a1df8(4);
+    OverlayLoader_PushPrimarySelection(4);
     to->LoadLegacyBossStats(computeLegacyStats, legacyStatsData);
     to->LoadTreasures();
-    func_020a1e54(1);
+    OverlayLoader_PopPrimarySelectionAndOptionallyRestoreOverlay(1);
 
     for (int i = 0; i < 3; i++)
         to->discoveredTreasures_[i] = false;
@@ -114,6 +115,7 @@ bool ExportDetailedTreasureMapData(const TreasureMapMetadata* from,
     return true;
 }
 
+// Original: arm9/main @ 0x020A3D68; symbol: _Z25ExportTreasureMapMetadataPK23DetailedTreasureMapDataP19TreasureMapMetadata; size: 0x158.
 bool ExportTreasureMapMetadata(const DetailedTreasureMapData* from, TreasureMapMetadata* to)
 {
     if (from == NULL || to == NULL)
@@ -137,8 +139,8 @@ bool ExportTreasureMapMetadata(const DetailedTreasureMapData* from, TreasureMapM
     else
         return false;
 
-    VectorizedInvertedMemcpy(from->discoveredBy_, to->DiscoveredBy, 10);
-    VectorizedInvertedMemcpy(from->clearedBy_, to->ClearedBy, 10);
+    MI_CpuCopy8(from->discoveredBy_, to->DiscoveredBy, 10);
+    MI_CpuCopy8(from->clearedBy_, to->ClearedBy, 10);
     to->Location = from->mapLocation_;
 
     if (from->discoveredTreasures_[0])
@@ -166,6 +168,7 @@ bool ExportTreasureMapMetadata(const DetailedTreasureMapData* from, TreasureMapM
 
 // USA: func_020a3ec0
 // JPN: func_020a5bfc
+// Original: arm9/main @ 0x020A3EC0; symbol: _Z18RandATRangeModularjj; size: 0x24.
 unsigned int RandATRangeModular(unsigned int minimum, unsigned int maximum)
 {
     return minimum + ((unsigned int)rand() % (maximum - minimum + 1));

@@ -4,3 +4,3246 @@
     .data       start:0x021fda60 end:0x021ff9e0 kind:data align:32
     .bss        start:0x021ff9e0 end:0x021fff40 kind:bss align:32
 
+src/Data/ItemDetail_DispatchDisplayState_TextLia.cpp:
+    complete
+    .data start:0x021fda60 end:0x021fda65
+
+src/Data/ProgramData_TextBncg.cpp:
+    complete
+    .data start:0x021fda65 end:0x021fda6b
+
+src/Data/ProgramData_TextBncl.cpp:
+    complete
+    .data start:0x021fda6b end:0x021fda71
+
+src/Data/ProgramData_TextBnsc.cpp:
+    complete
+    .data start:0x021fda71 end:0x021fda78
+
+src/Data/Menu_DrawRightAlignedDecimalValue_Format1F.cpp:
+    complete
+    .data start:0x021fdb28 end:0x021fdb2d
+
+src/Data/ItemDetail_RenderQuantityRows_MarkupX.cpp:
+    complete
+    .data start:0x021fdb2d end:0x021fdb31
+
+src/Data/ItemDetail_RenderQuantityRows_Format2D.cpp:
+    complete
+    .data start:0x021fdb31 end:0x021fdb35
+
+src/Data/ItemDetail_RenderQuantityRows_Format3D.cpp:
+    complete
+    .data start:0x021fdb35 end:0x021fdb39
+
+src/Data/ItemDetailRenderQuantityRows_TextLEFTPARENTHESIS.cpp:
+    complete
+    .data start:0x021fdb39 end:0x021fdb3b
+
+src/Data/ItemDetailRenderQuantityRows_TextD.cpp:
+    complete
+    .data start:0x021fdb3b end:0x021fdb3e
+
+src/Data/ItemDetailRenderQuantityRows_TextRIGHTPARENTHESIS.cpp:
+    complete
+    .data start:0x021fdb3e end:0x021fdb40
+
+src/Data/ItemDetail_QueueQuantityModeArchive_PathDataAniOiijGp2.cpp:
+    complete
+    .data start:0x021fdb40 end:0x021fdb52
+
+src/Data/ItemDetail_QueueQuantityModeArchive_MarkupOiijLGPac.cpp:
+    complete
+    .data start:0x021fdb52 end:0x021fdb60
+
+src/Data/ItemDetail_QueueQuantityModeArchive_PathDataAniOiirGp2.cpp:
+    complete
+    .data start:0x021fdb60 end:0x021fdb72
+
+src/Data/ItemDetail_QueueQuantityModeArchive_MarkupOiirLGPac.cpp:
+    complete
+    .data start:0x021fdb72 end:0x021fdb80
+
+src/Data/ItemDetail_AdvanceDisplayInitialization_PathDataBinMenuStrIiGp2.cpp:
+    complete
+    .data start:0x021fdb80 end:0x021fdb99
+
+src/Data/ItemDetail_AdvanceDisplayInitialization_MarkupStrIiLGNat.cpp:
+    complete
+    .data start:0x021fdb99 end:0x021fdba9
+
+src/Data/ItemDetail_QueueCategoryBackground_PathDataAniBgIidcPac.cpp:
+    complete
+    .data start:0x021fdba9 end:0x021fdbbe
+
+src/Data/ItemDetail_QueueCategoryBackground_PathDataAniBgIilistPac.cpp:
+    complete
+    .data start:0x021fdbbe end:0x021fdbd5
+
+src/Data/ItemDetail_QueueCategoryBackground_PathDataAniBglii2DGp2.cpp:
+    complete
+    .data start:0x021fdbd5 end:0x021fdbeb
+
+src/Data/ItemDetail_QueueCategoryBackground_FormatBglii2DLGPac.cpp:
+    complete
+    .data start:0x021fdbeb end:0x021fdbfd
+
+src/Data/ItemDetail_QueueCategoryBackground_PathDataAniBgii2DGp2.cpp:
+    complete
+    .data start:0x021fdbfd end:0x021fdc12
+
+src/Data/ItemDetail_QueueCategoryBackground_FormatBgii2DLGPac.cpp:
+    complete
+    .data start:0x021fdc12 end:0x021fdc23
+
+src/Data/ItemDetail_QueueItemSprite_PathDataAniAlQuSpr.cpp:
+    complete
+    .data start:0x021fdc23 end:0x021fdc36
+
+src/Data/ItemDetail_QueueItemSprite_PathDataAniDC03DSpr.cpp:
+    complete
+    .data start:0x021fdc36 end:0x021fdc4c
+
+src/Data/ItemDetail_QueueCategoryLayout_PathDataAniLayIieLia.cpp:
+    complete
+    .data start:0x021fdc4c end:0x021fdc61
+
+src/Data/ItemDetail_QueueCategoryLayout_PathDataAniLayIiuLia.cpp:
+    complete
+    .data start:0x021fdc61 end:0x021fdc78
+
+src/Data/LoadRelativeLayoutRecords_TextNDS.cpp:
+    complete
+    .data start:0x021fdc90 end:0x021fdc94
+
+src/Data/Menu_AdvancePartyPreviewInitialization_PathDataAniClmmGp2.cpp:
+    complete
+    .data start:0x021fdca4 end:0x021fdcb6
+
+src/Data/Menu_AdvancePartyPreviewInitialization_MarkupClmmLGPac.cpp:
+    complete
+    .data start:0x021fdcb6 end:0x021fdcc4
+
+src/Data/Menu_AdvancePartyPreviewInitialization_PathDataAniLayMmLia.cpp:
+    complete
+    .data start:0x021fdcc4 end:0x021fdcd8
+
+src/Data/Menu_CachePartyPreviewSummaryText_FormatTcD.cpp:
+    complete
+    .data start:0x021fdcd8 end:0x021fdce0
+
+src/Data/CharacterPreview_ConsumeLoadedModelsAndAnimations_TextStandCm.cpp:
+    complete
+    .data start:0x021fdce0 end:0x021fdce9
+
+src/Data/CharacterPreview_ConsumeLoadedModelsAndAnimations_TextStand.cpp:
+    complete
+    .data start:0x021fdce9 end:0x021fdcef
+
+src/Data/Graphics_DrawObjectWithBoneAttachments_TextHead.cpp:
+    complete
+    .data start:0x021fdcef end:0x021fdcf4
+
+src/Data/Graphics_DrawObjectWithBoneAttachments_TextArm2R.cpp:
+    complete
+    .data start:0x021fdcf4 end:0x021fdcfa
+
+src/Data/Graphics_DrawObjectWithBoneAttachments_TextArm2L.cpp:
+    complete
+    .data start:0x021fdcfa end:0x021fdd00
+
+src/Data/Graphics_DrawObjectWithBoneAttachments_TextWeaponR.cpp:
+    complete
+    .data start:0x021fdd00 end:0x021fdd08
+
+src/Data/Graphics_DrawObjectWithBoneAttachments_TextWeaponL.cpp:
+    complete
+    .data start:0x021fdd08 end:0x021fdd10
+
+src/Data/Graphics_DrawObjectWithBoneAttachments_TextChest.cpp:
+    complete
+    .data start:0x021fdd10 end:0x021fdd16
+
+src/Data/CharacterPreview_QueueAppearanceModelsAndAnimations_TextNsbtx.cpp:
+    complete
+    .data start:0x021fdd16 end:0x021fdd1c
+
+src/Data/CharacterPreview_QueueAppearanceModelsAndAnimations_FormatDC03DSS.cpp:
+    complete
+    .data start:0x021fdd1c end:0x021fdd2a
+
+src/Data/CharacterPreview_QueueAppearanceModelsAndAnimations_PathDataPackLv5CharaPdGp2.cpp:
+    complete
+    .data start:0x021fdd2a end:0x021fdd45
+
+src/Data/CharacterPreview_QueueAppearanceModelsAndAnimations_FormatMd02D02DCNsbca.cpp:
+    complete
+    .data start:0x021fdd45 end:0x021fdd58
+
+src/Data/CharacterPreview_QueueAppearanceModelsAndAnimations_FormatMd02D02DCBcfg.cpp:
+    complete
+    .data start:0x021fdd58 end:0x021fdd6c
+
+src/Data/TextAppendGlyphGrid_TextASTERISK.cpp:
+    complete
+    .data start:0x021fdd6c end:0x021fdd6e
+
+src/Data/Menu_AdvanceSecondaryPanelResourceInitialization_PathDataBinMenuStrSliGp2.cpp:
+    complete
+    .data start:0x021fdd6e end:0x021fdd88
+
+src/Data/Menu_AdvanceSecondaryPanelResourceInitialization_MarkupStrSliLGNat.cpp:
+    complete
+    .data start:0x021fdd88 end:0x021fdd99
+
+src/Data/Menu_AdvanceSecondaryPanelResourceInitialization_PathDataAniBgSlime3Pac.cpp:
+    complete
+    .data start:0x021fdd99 end:0x021fddb0
+
+src/Data/Resource_SetupTextAndLocalizedNumericFields_TextX.cpp:
+    complete
+    .data start:0x021fddb0 end:0x021fddb4
+
+src/Data/ResourceSetupTextAndLocalizedNumericFields_TextD.cpp:
+    complete
+    .data start:0x021fddb4 end:0x021fddb8
+
+src/Data/Menu_AdvanceQueuedRecordPanelInitialization_PathDataBinMenuStrTgGp2.cpp:
+    complete
+    .data start:0x021fe108 end:0x021fe121
+
+src/Data/Menu_AdvanceQueuedRecordPanelInitialization_MarkupStrTgLGNat.cpp:
+    complete
+    .data start:0x021fe121 end:0x021fe131
+
+src/Data/Menu_AdvanceQueuedRecordPanelInitialization_PathDataAniBgTmPac.cpp:
+    complete
+    .data start:0x021fe131 end:0x021fe144
+
+src/Data/FilesystemFormatInlinePathRecord_TextS.cpp:
+    complete
+    .data start:0x021fe144 end:0x021fe148
+
+src/Data/BattleResults_UpdateLossAnnouncement_PathDataBinStrBresGp2.cpp:
+    complete
+    .data start:0x021fe1d8 end:0x021fe1ee
+
+src/Data/BattleResults_UpdateLossAnnouncement_MarkupStrBresLGBin.cpp:
+    complete
+    .data start:0x021fe1ee end:0x021fe200
+
+src/Data/BattleResults_UpdateLearnedSkillsAndNotices_PathDataPrmSkilltableBin.cpp:
+    complete
+    .data start:0x021fe200 end:0x021fe218
+
+src/Data/BattleResults_LoadMessageGrowthAndLootResources_PathDataPrmSpelltableBin.cpp:
+    complete
+    .data start:0x021fe218 end:0x021fe230
+
+src/Data/BattleResults_UpdateVictoryAnnouncement_PathDataPrmMonDataGp2.cpp:
+    complete
+    .data start:0x021fe230 end:0x021fe246
+
+src/Data/BattleResults_UpdateVictoryAnnouncement_MarkupMonDataLGNat.cpp:
+    complete
+    .data start:0x021fe246 end:0x021fe258
+
+src/Data/BattleResults_UpdateLegacyBossLevelChoice_TextStand.cpp:
+    complete
+    .data start:0x021fe258 end:0x021fe25e
+
+src/Data/BattleResults_UpdateLearnedSkillsAndNotices_PathDataPrmSklArtGp2.cpp:
+    complete
+    .data start:0x021fe25e end:0x021fe273
+
+src/Data/BattleResults_UpdateLearnedSkillsAndNotices_MarkupSklArtLGNat.cpp:
+    complete
+    .data start:0x021fe273 end:0x021fe284
+
+src/Data/BattleResults_UpdateLearnedSkillsAndNotices_PathDataScenarioTitleSklStb.cpp:
+    complete
+    .data start:0x021fe284 end:0x021fe2a0
+
+src/Data/BattleResults_UpdateAccoladeNotices_PathDataBinTtlnameDGp2.cpp:
+    complete
+    .data start:0x021fe2a0 end:0x021fe2b7
+
+src/Data/BattleResults_UpdateAccoladeNotices_FormatTtlnameDLGNat.cpp:
+    complete
+    .data start:0x021fe2b7 end:0x021fe2ca
+
+src/Data/BattleResults_UpdateQuestScripts_PathDataScenarioBtlQmesGp2.cpp:
+    complete
+    .data start:0x021fe2ca end:0x021fe2e5
+
+src/Data/BattleResults_UpdateQuestScripts_MarkupBtlQmesLGBin.cpp:
+    complete
+    .data start:0x021fe2e5 end:0x021fe2f7
+
+src/Data/BattleResults_UpdateQuestScripts_PathDataScenarioQuestBtlDStb.cpp:
+    complete
+    .data start:0x021fe2f7 end:0x021fe316
+
+src/Data/BattleResults_UpdateAccoladeNotices_PathDataScenarioTitleBtlStb.cpp:
+    complete
+    .data start:0x021fe316 end:0x021fe334
+
+src/Data/ProgramData_PathDataBinExpadjNat.cpp:
+    complete
+    .data start:0x021fe338 end:0x021fe34c
+
+src/Data/OnlineContent_DispatchDownloadedParts_TextInfo.cpp:
+    complete
+    .data start:0x021fe3ac end:0x021fe3b1
+
+src/Data/OnlineContent_DispatchDownloadedParts_TextMes.cpp:
+    complete
+    .data start:0x021fe3b1 end:0x021fe3b5
+
+src/Data/OnlineContent_DispatchDownloadedParts_TextSell.cpp:
+    complete
+    .data start:0x021fe3b5 end:0x021fe3ba
+
+src/Data/OnlineContent_DispatchDownloadedParts_TextAuction.cpp:
+    complete
+    .data start:0x021fe3ba end:0x021fe3c2
+
+src/Data/OnlineContent_DispatchDownloadedParts_TextQuest.cpp:
+    complete
+    .data start:0x021fe3c2 end:0x021fe3c8
+
+src/Data/OnlineContent_DecryptInfoPayload_TextXENLONPROJECTKEY.cpp:
+    complete
+    .data start:0x021fe3c8 end:0x021fe3e4
+
+src/Data/Ov023_LoadAssetForNegativeField_PathDataS.cpp:
+    complete
+    .data start:0x021fe4e0 end:0x021fe4f0
+
+src/Data/Filesystem_QueueNamedFileOrArchiveLoad_PathDataS.cpp:
+    complete
+    .data start:0x021fe5ec end:0x021fe5f4
+
+src/Data/Resource_LoadNamedVariableBlocks_TextBnsc.cpp:
+    complete
+    .data start:0x021fe5f4 end:0x021fe604
+
+src/Data/Filesystem_QueueFormattedBackgroundResource_PathData.cpp:
+    complete
+    .data start:0x021feb30 end:0x021feb40
+
+src/Data/Filesystem_QueuePendingFileOrArchiveLoad_PathDataS.cpp:
+    complete
+    .data start:0x021fec3c end:0x021fec44
+
+src/Data/Graphics_LoadNamedResourcesAndStageSharedState_TextNCER.cpp:
+    complete
+    .data start:0x021fec44 end:0x021fec49
+
+src/Data/Graphics_LoadNamedResourcesAndStageSharedState_TextNCGR.cpp:
+    complete
+    .data start:0x021fec49 end:0x021fec4e
+
+src/Data/Graphics_LoadNamedResourcesAndStageSharedState_TextNCLR.cpp:
+    complete
+    .data start:0x021fec4e end:0x021fec53
+
+src/Data/Graphics_LoadNamedResourcesAndStageSharedState_TextNANR.cpp:
+    complete
+    .data start:0x021fec53 end:0x021fec60
+
+src/Data/QueueDescriptorResourcePathWhenTaskMissing_PathDataS.cpp:
+    complete
+    .data start:0x021fef64 end:0x021fef74
+
+src/Data/Filesystem_QueueBackgroundLoadWhenStatusNegative_PathDataPrmItemsortGp2.cpp:
+    complete
+    .data start:0x021ff480 end:0x021ff496
+
+src/Data/Filesystem_QueueBackgroundLoadWhenStatusNegative_MarkupItemsortLGBin.cpp:
+    complete
+    .data start:0x021ff496 end:0x021ff4b0
+
+src/Data/MenuModel_QueueResourceLoadWhenIdle_PathDataS.cpp:
+    complete
+    .data start:0x021ff7b4 end:0x021ff7c4
+
+src/Menu/RecordsFramework/MenuRecordList_SetBackgroundTaskId.cpp:
+    complete
+    .text start:0x021f6bb0 end:0x021f6bb8
+
+src/Menu/RecordsFramework/MenuRecordList_GetBackgroundTaskId.cpp:
+    complete
+    .text start:0x021f6bb8 end:0x021f6bc0
+
+src/Menu/RecordsFramework/MenuRecord_GetType.cpp:
+    complete
+    .text start:0x021f6f10 end:0x021f6f18
+
+src/Menu/RecordsFramework/MenuLayerRecord_GetLayerTransferState.cpp:
+    complete
+    .text start:0x021f79e4 end:0x021f79ec
+
+src/Menu/RecordsFramework/Menu_SetSelectedGridRow.cpp:
+    complete
+    .text start:0x021f9ba8 end:0x021f9bb0
+
+src/Menu/RecordsFramework/Menu_GetSelectedGridRow.cpp:
+    complete
+    .text start:0x021f9bb0 end:0x021f9bb8
+
+src/Menu/RecordsFramework/Menu_GetRecordMessageTable.cpp:
+    complete
+    .text start:0x021fa598 end:0x021fa5a0
+
+src/Menu/RecordsFramework/Menu_GetRecordSpriteResource.cpp:
+    complete
+    .text start:0x021fad18 end:0x021fad20
+
+src/Menu/RecordsFramework/MenuTextCanvas_SetLabelPalettePair.cpp:
+    complete
+    .text start:0x021f8960 end:0x021f8970
+
+src/Menu/Panels/Menu_BindSharedTextCanvas.cpp:
+    complete
+    .text start:0x021ddc34 end:0x021ddc98
+
+src/Menu/Panels/Menu_ClearCatalogueSelection.cpp:
+    complete
+    .text start:0x021e1518 end:0x021e1564
+
+src/Menu/Panels/Menu_ResetLayout.cpp:
+    complete
+    .text start:0x021e20c0 end:0x021e20f0
+
+src/Combat/Results/BattleResults_ResetPhaseProgress.cpp:
+    complete
+    .text start:0x021eefac end:0x021eefd0
+
+src/Menu/RecordsFramework/MenuRecordList_AppendKeyedRecord.cpp:
+    complete
+    .text start:0x021f67ac end:0x021f67ec
+
+src/Menu/RecordsFramework/Menu_GetSelectedGridIndex.cpp:
+    complete
+    .text start:0x021f9bc8 end:0x021f9bdc
+
+src/Menu/Panels/Object3D_ReadRotationVector.cpp:
+    complete
+    .text start:0x021e613c end:0x021e6150
+
+src/Menu/RecordsFramework/MenuRecord_ResetHeader.cpp:
+    complete
+    .text start:0x021f6ed8 end:0x021f6f08
+
+src/Menu/Panels/Menu_IsConfirmOrCanvasActionPressed.cpp:
+    complete
+    .text start:0x021e6de4 end:0x021e6e20
+
+src/Menu/Panels/Script_ResolveCharacterFromSignedSelector.cpp:
+    complete
+    .text start:0x021e8f28 end:0x021e8fe8
+
+src/Combat/Results/BattleResults_IsMessageDismissedOrInactive.cpp:
+    complete
+    .text start:0x021f4fc8 end:0x021f50fc
+
+src/Menu/Panels/Menu_RemoveStoredBackgroundTask.cpp:
+    complete
+    .text start:0x021db2e4 end:0x021db314
+
+src/Menu/Panels/MenuLayout_FindGroupByKey.cpp:
+    complete
+    .text start:0x021db4e4 end:0x021db544
+
+src/Menu/RecordsFramework/Menu_WriteGridEntry.cpp:
+    complete
+    .text start:0x021f9b30 end:0x021f9b6c
+
+src/Menu/Panels/Menu_ConfigurePairedSelectionGridsForActiveCanvas.cpp:
+    complete
+    .text start:0x021e6e60 end:0x021e709c
+
+src/Menu/RecordsFramework/Menu_GetSpriteCellByIndexOrNull.cpp:
+    complete
+    .text start:0x021fa854 end:0x021fa87c
+
+src/Menu/Panels/Menu_ResetCatalogue.cpp:
+    complete
+    .text start:0x021e1318 end:0x021e1330
+
+src/Menu/RecordsFramework/Menu_GetSelectedGridColumn.cpp:
+    complete
+    .text start:0x021f9bc0 end:0x021f9bc8
+
+src/Menu/RecordsFramework/MenuRecord_GetKey.cpp:
+    complete
+    .text start:0x021f6f08 end:0x021f6f10
+
+src/Menu/RecordsFramework/Menu_SetSpriteCellIndex.cpp:
+    complete
+    .text start:0x021fb27c end:0x021fb284
+
+src/Menu/RecordsFramework/Menu_SetGridNavigationWrapEnabled.cpp:
+	complete
+	.text start:0x021f9da0 end:0x021f9da8
+
+src/Menu/CharacterPreview/CharacterPreview_SetStandingAnimationMode.cpp:
+    complete
+    .text start:0x021e6150 end:0x021e6158
+
+src/Menu/Panels/Menu_SetCharacterPreviewResourceCatalogue.cpp:
+    complete
+    .text start:0x021e6198 end:0x021e61a0
+
+src/Menu/RecordsFramework/MenuRecord_GetNext.cpp:
+    complete
+    .text start:0x021f6f18 end:0x021f6f20
+
+src/Menu/RecordsFramework/MenuZoneRenderRecord_GetRenderPart.cpp:
+    complete
+    .text start:0x021f7318 end:0x021f7320
+
+src/Menu/Panels/ZoneRecord_ResetCompactAttributeTable.cpp:
+    complete
+    .text start:0x021dad78 end:0x021dad8c
+
+src/Menu/CharacterPreview/CharacterPreview_InvalidateComponentId.cpp:
+    complete
+    .text start:0x021e6158 end:0x021e616c
+
+src/Combat/Results/PartyGrowthPanel_SetMemberOrder.cpp:
+    complete
+    .text start:0x021d9988 end:0x021d99a4
+
+src/Menu/Panels/TimeRecord_ClearDuration.cpp:
+    complete
+    .text start:0x021e71a0 end:0x021e71b4
+
+src/Menu/Panels/CharacterState_GetCurrentVocationExperienceFromActor.cpp:
+    complete
+    .text start:0x021eea98 end:0x021eeaac
+
+src/Menu/RecordsFramework/MenuZoneRenderRecord_MarkLoadComplete.cpp:
+    complete
+    .text start:0x021f7320 end:0x021f732c
+
+src/Menu/Panels/Menu_IgnoreEquipmentChangeNotification.cpp:
+    complete
+    .text start:0x021e4e1c end:0x021e4e20
+
+src/Menu/Panels/Menu_GetCharacterPreviewBaseModel.cpp:
+    complete
+    .text start:0x021e6194 end:0x021e6198
+
+src/Menu/RecordsFramework/MenuRecord_IgnorePositiveDrawOffset.cpp:
+    complete
+    .text start:0x021f66f0 end:0x021f66f4
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreNegativeDrawOffset.cpp:
+    complete
+    .text start:0x021f6728 end:0x021f672c
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreScreenBufferClear.cpp:
+    complete
+    .text start:0x021f6984 end:0x021f6988
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreDestinationCacheClean.cpp:
+    complete
+    .text start:0x021f6988 end:0x021f698c
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreSecondaryPass.cpp:
+    complete
+    .text start:0x021f69b8 end:0x021f69bc
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreDrawPass.cpp:
+    complete
+    .text start:0x021f69e8 end:0x021f69ec
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreBackgroundLoadRefresh.cpp:
+    complete
+    .text start:0x021f6a18 end:0x021f6a1c
+
+src/Menu/RecordsFramework/MenuZoneRenderRecord_IgnoreSecondaryPass.cpp:
+    complete
+    .text start:0x021f7130 end:0x021f7134
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreNumericValueChange.cpp:
+    complete
+    .text start:0x021f7344 end:0x021f7348
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreDisplayModeChange.cpp:
+    complete
+    .text start:0x021f7350 end:0x021f7354
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreUnknownVirtualCallbackAtD4.cpp:
+    complete
+    .text start:0x021f7354 end:0x021f7358
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreUnknownVirtualCallbackAtD0.cpp:
+    complete
+    .text start:0x021f7358 end:0x021f735c
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreAuxiliaryVectorChange.cpp:
+    complete
+    .text start:0x021f7388 end:0x021f738c
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreUnknownVirtualCallbackAtC4.cpp:
+    complete
+    .text start:0x021f738c end:0x021f7390
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreTouchRepeatCallback.cpp:
+    complete
+    .text start:0x021f73a8 end:0x021f73ac
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreTouchCallbacks.cpp:
+    complete
+    .text start:0x021f73ac end:0x021f73b0
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreTouchPressCallback.cpp:
+    complete
+    .text start:0x021f73b0 end:0x021f73b4
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreRButtonCallback.cpp:
+    complete
+    .text start:0x021f73bc end:0x021f73c0
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreLButtonCallback.cpp:
+    complete
+    .text start:0x021f73c8 end:0x021f73cc
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreLeftCallback.cpp:
+    complete
+    .text start:0x021f73d4 end:0x021f73d8
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreRightCallback.cpp:
+    complete
+    .text start:0x021f73e0 end:0x021f73e4
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreXCallback.cpp:
+    complete
+    .text start:0x021f73ec end:0x021f73f0
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreYCallback.cpp:
+    complete
+    .text start:0x021f73f8 end:0x021f73fc
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreDownCallback.cpp:
+    complete
+    .text start:0x021f7404 end:0x021f7408
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreUpCallback.cpp:
+    complete
+    .text start:0x021f7410 end:0x021f7414
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreSelectCallback.cpp:
+    complete
+    .text start:0x021f741c end:0x021f7420
+
+src/Menu/RecordsFramework/MenuRecord_IgnorePageChangedCallback.cpp:
+    complete
+    .text start:0x021f7428 end:0x021f742c
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreSelectionChangedCallback.cpp:
+    complete
+    .text start:0x021f7434 end:0x021f7438
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreYStateRoute.cpp:
+    complete
+    .text start:0x021f7440 end:0x021f7444
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreXStateRoute.cpp:
+    complete
+    .text start:0x021f744c end:0x021f7450
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreXConfirmationMode.cpp:
+    complete
+    .text start:0x021f7458 end:0x021f745c
+
+src/Menu/RecordsFramework/MenuCanvasRecord_IgnoreConfirmCallback.cpp:
+    complete
+    .text start:0x021f7d90 end:0x021f7d94
+
+src/Menu/RecordsFramework/MenuCanvasRecord_IgnoreConfirmStateRoute.cpp:
+    complete
+    .text start:0x021f7d9c end:0x021f7da0
+
+src/Menu/RecordsFramework/MenuTextCanvas_IgnoreSecondaryPass.cpp:
+    complete
+    .text start:0x021f8190 end:0x021f8194
+
+src/Menu/RecordsFramework/MenuTextCanvas_IgnoreDrawPass.cpp:
+    complete
+    .text start:0x021f8194 end:0x021f8198
+
+src/Menu/RecordsFramework/MenuTextLabel_IgnoreResourceReset.cpp:
+    complete
+    .text start:0x021f8ae8 end:0x021f8aec
+
+src/Menu/RecordsFramework/MenuTextLabel_IgnoreFrameUpdate.cpp:
+    complete
+    .text start:0x021f8cf0 end:0x021f8cf4
+
+src/Menu/RecordsFramework/MenuRecord_IgnoreUnsupportedPosition.cpp:
+    complete
+    .text start:0x021f9b18 end:0x021f9b1c
+
+src/Menu/RecordsFramework/Menu_KeepMotionQueueOnRelease.cpp:
+    complete
+    .text start:0x021fa038 end:0x021fa03c
+
+src/Menu/RecordsFramework/MenuSpriteRecord_IgnoreSecondaryPass.cpp:
+    complete
+    .text start:0x021faa58 end:0x021faa5c
+
+src/Menu/RecordsFramework/MenuSpriteRecord_IgnoreDrawPass.cpp:
+    complete
+    .text start:0x021faa5c end:0x021faa60
+
+src/Menu/RecordsFramework/MenuFlagQuery_IgnoreCleanup.cpp:
+    complete
+    .text start:0x021fbaac end:0x021fbab0
+
+src/Menu/RecordsFramework/MenuNumber_IgnoreCleanup.cpp:
+    complete
+    .text start:0x021fbc20 end:0x021fbc24
+
+src/Menu/RecordsFramework/MenuNumber_IgnoreSpriteParameterChange.cpp:
+    complete
+    .text start:0x021fbcf8 end:0x021fbcfc
+
+src/Menu/RecordsFramework/MenuNumber_IgnoreUpdate.cpp:
+    complete
+    .text start:0x021fbcfc end:0x021fbd00
+
+src/Menu/RecordsFramework/MenuFill_IgnoreCleanup.cpp:
+    complete
+    .text start:0x021fc46c end:0x021fc470
+
+src/Menu/RecordsFramework/MenuFill_IgnoreUpdate.cpp:
+    complete
+    .text start:0x021fc514 end:0x021fc518
+
+src/Menu/RecordsFramework/MenuModel_IgnoreCleanup.cpp:
+    complete
+    .text start:0x021fd008 end:0x021fd00c
+
+src/Menu/RecordsFramework/MenuDisplayCommand_IgnoreCleanup.cpp:
+    complete
+    .text start:0x021fd234 end:0x021fd238
+
+src/Menu/RecordsFramework/MenuHitRegion_IgnoreCleanup.cpp:
+    complete
+    .text start:0x021fd390 end:0x021fd394
+
+src/Menu/RecordsFramework/MenuHitRegion_IgnoreUpdate.cpp:
+    complete
+    .text start:0x021fd50c end:0x021fd510
+
+src/Menu/Panels/Script_HandleOpcode64.cpp:
+    complete
+    .text start:0x021f55a8 end:0x021f55b0
+
+src/Menu/Panels/Script_HandleOpcode65.cpp:
+    complete
+    .text start:0x021f55b0 end:0x021f55b8
+
+src/Menu/Panels/Script_HandleOpcode6E.cpp:
+    complete
+    .text start:0x021f5b94 end:0x021f5b9c
+
+src/Menu/RecordsFramework/MenuRecord_ReturnNotEligibleForSelection.cpp:
+    complete
+    .text start:0x021f6ab8 end:0x021f6ac0
+
+src/Menu/RecordsFramework/MenuRecord_ReturnNoSelectionCallback.cpp:
+    complete
+    .text start:0x021f6ac0 end:0x021f6ac8
+
+src/Menu/RecordsFramework/MenuRecord_ReturnInactiveForGroupDispatch.cpp:
+    complete
+    .text start:0x021f6ba8 end:0x021f6bb0
+
+src/Menu/RecordsFramework/MenuRecord_GetDefaultLinkedData.cpp:
+    complete
+    .text start:0x021f732c end:0x021f7334
+
+src/Menu/RecordsFramework/MenuRecord_GetDefaultZoneState.cpp:
+    complete
+    .text start:0x021f7334 end:0x021f733c
+
+src/Menu/RecordsFramework/MenuRecord_GetDefaultNumericValue.cpp:
+    complete
+    .text start:0x021f733c end:0x021f7344
+
+src/Menu/RecordsFramework/MenuRecord_GetDefaultTextColor.cpp:
+    complete
+    .text start:0x021f7348 end:0x021f7350
+
+src/Menu/RecordsFramework/MenuRecord_ReturnZeroForUnknownVirtualQueryAtC0.cpp:
+    complete
+    .text start:0x021f7390 end:0x021f7398
+
+src/Menu/RecordsFramework/MenuRecord_ReturnZeroForUnknownVirtualQueryAtBC.cpp:
+    complete
+    .text start:0x021f7398 end:0x021f73a0
+
+src/Menu/RecordsFramework/MenuRecord_GetDefaultTouchRepeatCallback.cpp:
+    complete
+    .text start:0x021f73a0 end:0x021f73a8
+
+src/Menu/RecordsFramework/MenuRecord_GetDefaultRButtonCallback.cpp:
+    complete
+    .text start:0x021f73b4 end:0x021f73bc
+
+src/Menu/RecordsFramework/MenuRecord_GetDefaultLButtonCallback.cpp:
+    complete
+    .text start:0x021f73c0 end:0x021f73c8
+
+src/Menu/RecordsFramework/MenuRecord_GetDefaultLeftCallback.cpp:
+    complete
+    .text start:0x021f73cc end:0x021f73d4
+
+src/Menu/RecordsFramework/MenuRecord_GetDefaultRightCallback.cpp:
+    complete
+    .text start:0x021f73d8 end:0x021f73e0
+
+src/Menu/RecordsFramework/MenuRecord_GetDefaultXCallback.cpp:
+    complete
+    .text start:0x021f73e4 end:0x021f73ec
+
+src/Menu/RecordsFramework/MenuRecord_GetDefaultYCallback.cpp:
+    complete
+    .text start:0x021f73f0 end:0x021f73f8
+
+src/Menu/RecordsFramework/MenuRecord_GetDefaultDownCallback.cpp:
+    complete
+    .text start:0x021f73fc end:0x021f7404
+
+src/Menu/RecordsFramework/MenuRecord_GetDefaultUpCallback.cpp:
+    complete
+    .text start:0x021f7408 end:0x021f7410
+
+src/Menu/RecordsFramework/MenuRecord_GetDefaultSelectCallback.cpp:
+    complete
+    .text start:0x021f7414 end:0x021f741c
+
+src/Menu/RecordsFramework/MenuRecord_GetDefaultPageChangedCallback.cpp:
+    complete
+    .text start:0x021f7420 end:0x021f7428
+
+src/Menu/RecordsFramework/MenuRecord_GetDefaultSelectionChangedCallback.cpp:
+    complete
+    .text start:0x021f742c end:0x021f7434
+
+src/Menu/RecordsFramework/MenuRecord_GetDefaultYStateRoute.cpp:
+    complete
+    .text start:0x021f7438 end:0x021f7440
+
+src/Menu/RecordsFramework/MenuRecord_GetDefaultXStateRoute.cpp:
+    complete
+    .text start:0x021f7444 end:0x021f744c
+
+src/Menu/RecordsFramework/MenuRecord_IsXConfirmationEnabled.cpp:
+    complete
+    .text start:0x021f7450 end:0x021f7458
+
+src/Menu/RecordsFramework/MenuCanvasRecord_GetDefaultConfirmCallback.cpp:
+    complete
+    .text start:0x021f7d88 end:0x021f7d90
+
+src/Menu/RecordsFramework/MenuCanvasRecord_GetDefaultConfirmStateRoute.cpp:
+    complete
+    .text start:0x021f7d94 end:0x021f7d9c
+
+src/Menu/RecordsFramework/Menu_EnterFlagQueryRecordWaitPhase.cpp:
+    complete
+    .text start:0x021fbb30 end:0x021fbb38
+
+src/Menu/RecordsFramework/Menu_CompleteFlagQueryRecordWaitPhase.cpp:
+    complete
+    .text start:0x021fbb38 end:0x021fbb40
+
+src/Menu/RecordsFramework/MenuNumber_GetUnsupportedSpriteParameter.cpp:
+    complete
+    .text start:0x021fbcf0 end:0x021fbcf8
+
+src/Menu/Panels/TextCanvas_InitializeState.cpp:
+    complete
+    .text start:0x021eb138 end:0x021eb26c
+
+src/Menu/Panels/Menu_InitializeCatalogue.cpp:
+    complete
+    .text start:0x021e1330 end:0x021e133c
+
+src/Menu/RecordsFramework/GameState_EnableGlobalFlag64_Forwarder.cpp:
+    complete
+    .text start:0x021fbb58 end:0x021fbb64
+
+src/Menu/Panels/Graphics_ClearInactiveResourceState.cpp:
+    complete
+    .text start:0x021d8c60 end:0x021d8c94
+
+src/Menu/Panels/Menu_SetPartyPreviewMemberList.cpp:
+    complete
+    .text start:0x021e31b0 end:0x021e31e4
+
+src/Menu/Panels/Script_AppendHalfwordWhenElement0Available.cpp:
+    complete
+    .text start:0x021e915c end:0x021e9190
+
+src/Menu/Panels/Grotto_CopyStateAndSetTypeThreeValue.cpp:
+    complete
+    .text start:0x021e98dc end:0x021e9910
+
+src/Menu/Panels/GameState_SetNestedTypeThreeValueFromSnapshot.cpp:
+    complete
+    .text start:0x021e9910 end:0x021e9944
+
+src/Menu/Panels/Script_TryAppendHalfwordParameter.cpp:
+    complete
+    .text start:0x021e9244 end:0x021e9278
+
+src/Menu/ItemDetails/ItemDetail_GetCategoryBackgroundVariant.cpp:
+    complete
+    .text start:0x021dcb70 end:0x021dcba4
+
+src/Menu/Panels/Grotto_CopyStateAndSetPercent.cpp:
+    complete
+    .text start:0x021e99dc end:0x021e9a10
+
+src/Menu/Panels/GameState_SetNestedTypeThreePercentage.cpp:
+    complete
+    .text start:0x021e9a10 end:0x021e9a44
+
+src/Menu/Panels/Grotto_SetNestedTypeThreePercentFromGameState.cpp:
+    complete
+    .text start:0x021e99a8 end:0x021e99dc
+
+src/Combat/Results/BattleResults_ComputeParticipationScaledGold.cpp:
+    complete
+    .text start:0x021f44d0 end:0x021f454c
+
+src/Menu/Panels/GameState_SetNestedTypeThreeIndex.cpp:
+    complete
+    .text start:0x021e9b7c end:0x021e9bb0
+
+src/Menu/Panels/Grotto_SetNestedTypeThreeFieldFromGameState.cpp:
+    complete
+    .text start:0x021e9bb0 end:0x021e9be4
+
+src/Menu/Panels/GameState_WriteCopiedBufferFieldToNestedWord_ScaledRecordPercent.cpp:
+    complete
+    .text start:0x021e9a44 end:0x021e9a78
+
+src/Menu/Panels/Grotto_SetTypeThreeSecondWordFromGameState.cpp:
+    complete
+    .text start:0x021e9974 end:0x021e99a8
+
+src/Menu/Panels/Grotto_SetTypeThreeSecondWordFromStateWord.cpp:
+    complete
+    .text start:0x021e9d94 end:0x021e9dc8
+
+src/Menu/Panels/GameState_WriteCopiedBufferFieldToNestedWord_38.cpp:
+    complete
+    .text start:0x021e9d60 end:0x021e9d94
+
+src/Menu/Panels/Grotto_SetTypeThreeSecondWordFromStateBits.cpp:
+    complete
+    .text start:0x021e9dfc end:0x021e9e30
+
+src/Menu/Panels/Grotto_SetTypeThreeSecondWordFromStateHalfword.cpp:
+    complete
+    .text start:0x021e9e64 end:0x021e9e98
+
+src/Menu/Panels/GameState_WriteCopiedBufferFieldToNestedWord_28.cpp:
+    complete
+    .text start:0x021e9e30 end:0x021e9e64
+
+src/Menu/Panels/Grotto_SetTypeThreeSecondWordFromStateWord40.cpp:
+    complete
+    .text start:0x021e9e98 end:0x021e9ecc
+
+src/Menu/Panels/Script_ReadAlchemyOperationCount.cpp:
+    complete
+    .text start:0x021e9ecc end:0x021e9f00
+
+src/Menu/Panels/Grotto_SetTypeThreeSecondWordFromStateHalfword24.cpp:
+    complete
+    .text start:0x021e9f30 end:0x021e9f64
+
+src/Menu/Panels/GameState_WriteCopiedBufferFieldToNestedWord_70.cpp:
+    complete
+    .text start:0x021ea0b4 end:0x021ea0e8
+
+src/Menu/Panels/Grotto_CopyDetailedMapKind.cpp:
+    complete
+    .text start:0x021e9cf8 end:0x021e9d2c
+
+src/Menu/Panels/Grotto_CopyDetailedMapIndex.cpp:
+    complete
+    .text start:0x021ea17c end:0x021ea1b0
+
+src/Menu/Panels/Grotto_CopyDetailedMapLevel.cpp:
+    complete
+    .text start:0x021ea1e0 end:0x021ea214
+
+src/Menu/Panels/Grotto_CopyMapField.cpp:
+    complete
+    .text start:0x021ea214 end:0x021ea248
+
+src/GameState/Statistics/Script_ReadCompactPartyWipeCount.cpp:
+    complete
+    .text start:0x021ea278 end:0x021ea2ac
+
+src/Menu/Panels/GameState_WriteCountOfSecondaryObjectsWithZeroField4.cpp:
+    complete
+    .text start:0x021ea3ec end:0x021ea46c
+
+src/Menu/Panels/Graphics_DrawObjectWithBoneAttachments.cpp:
+    complete
+    .text start:0x021e5628 end:0x021e5974
+
+src/Menu/Panels/Script_InitializeOpcodeHandlers.cpp:
+    complete
+    .text start:0x021eb000 end:0x021eb080
+
+src/Menu/RecordsFramework/DispatchIndexedMemberAndUpdateState.cpp:
+    complete
+    .text start:0x021f7550 end:0x021f75d0
+
+src/Menu/RecordsFramework/MenuZoneRenderRecord_UpdateLoadState.cpp:
+    complete
+    .text start:0x021f6f90 end:0x021f7010
+
+src/Menu/RecordsFramework/System_DispatchStateHandlerAndStoreResult.cpp:
+    complete
+    .text start:0x021fa87c end:0x021fa8fc
+
+src/Menu/RecordsFramework/MenuSprite_DispatchLoadAndDrawState.cpp:
+    complete
+    .text start:0x021fb680 end:0x021fb700
+
+src/Menu/RecordsFramework/MenuZone_DispatchResourceLoadState.cpp:
+    complete
+    .text start:0x021fbe70 end:0x021fbef0
+
+src/Menu/RecordsFramework/MenuModel_DispatchResourceLoadState.cpp:
+    complete
+    .text start:0x021fce38 end:0x021fceb8
+
+src/Menu/ScriptBindings/MenuScript_DispatchResourceExecutionState.cpp:
+    complete
+    .text start:0x021fc238 end:0x021fc2b8
+
+src/Menu/RecordsFramework/Util_DispatchStateHandler.cpp:
+    complete
+    .text start:0x021fbab0 end:0x021fbb30
+
+src/Menu/RecordsFramework/MenuDisplayCommand_DispatchRequestState.cpp:
+    complete
+    .text start:0x021fd238 end:0x021fd2b8
+
+src/Online/Content/OnlineContent_SetMarketReferenceTable.cpp:
+    complete
+    .text start:0x021f5598 end:0x021f55a8
+
+src/Combat/Results/ExperienceAdjustment_GetThresholdSectionSize.cpp:
+    complete
+    .text start:0x021f5524 end:0x021f5534
+
+src/Menu/RecordsFramework/MenuTextCanvas_ResetLayoutAndDisplayFlags.cpp:
+    complete
+    .text start:0x021f8120 end:0x021f8130
+
+src/Menu/RecordsFramework/Menu_SetSpriteCellTouchCallbacks.cpp:
+    complete
+    .text start:0x021fb23c end:0x021fb24c
+
+src/Menu/RecordsFramework/Menu_ResetRecordMessageTable.cpp:
+    complete
+    .text start:0x021fa588 end:0x021fa598
+
+src/Menu/RecordsFramework/MenuNumberLabel_GetTextStyle.cpp:
+    complete
+    .text start:0x021f86e4 end:0x021f86f4
+
+src/Menu/RecordsFramework/MenuBackground_SelectStateRecord.cpp:
+    complete
+    .text start:0x021fbdcc end:0x021fbddc
+
+src/Menu/RecordsFramework/MenuBackground_DestroyAndResetResources.cpp:
+    complete
+    .text start:0x021fbdbc end:0x021fbdcc
+
+src/Menu/RecordsFramework/MenuBackground_AdvanceLoadingAndUpdateMainPlane.cpp:
+    complete
+    .text start:0x021fbdac end:0x021fbdbc
+
+src/Menu/RecordsFramework/MenuTextCanvas_ResetTilemapResources.cpp:
+    complete
+    .text start:0x021f8130 end:0x021f8140
+
+src/Menu/RecordsFramework/MenuBackground_CancelPendingLoads.cpp:
+    complete
+    .text start:0x021fbddc end:0x021fbdec
+
+src/Menu/RecordsFramework/Grotto_ComputeGrottoAndContextDependentStateFlagsWithZero.cpp:
+    complete
+    .text start:0x021fbb48 end:0x021fbb58
+
+src/Menu/RecordsFramework/ZoneContainer_ResetIfFlag0.cpp:
+    complete
+    .text start:0x021f6f80 end:0x021f6f90
+
+src/Menu/RecordsFramework/Ov023_InitializeEmbeddedObject3D.cpp:
+    complete
+    .text start:0x021fce28 end:0x021fce38
+
+src/Menu/ScriptBindings/MenuScript_ResetExecutionContext.cpp:
+    complete
+    .text start:0x021fc228 end:0x021fc238
+
+src/Menu/Panels/Grotto_SetNestedSecondWordFromByteState.cpp:
+    complete
+    .text start:0x021ea310 end:0x021ea344
+
+src/Menu/Panels/CopyTypeThreeSecondWordFromGameState.cpp:
+    complete
+    .text start:0x021ea2dc end:0x021ea310
+
+src/GameState/Statistics/Script_ReadCompactExperienceEarned.cpp:
+    complete
+    .text start:0x021ea378 end:0x021ea3ac
+
+src/GameState/Statistics/Script_ReadStatisticsLow17BitValueAt98.cpp:
+    complete
+    .text start:0x021eaba0 end:0x021eabd4
+
+src/GameState/Statistics/Script_ReadQuestMenuSuccessCount.cpp:
+    complete
+    .text start:0x021ea884 end:0x021ea8b8
+
+src/GameState/Statistics/Script_ReadStatisticsLow17BitValueAt9C.cpp:
+    complete
+    .text start:0x021eac3c end:0x021eac70
+
+src/Menu/Panels/Grotto_SetNestedWordFromPackedByteState.cpp:
+    complete
+    .text start:0x021eac08 end:0x021eac3c
+
+src/Menu/Panels/Script_SetPackedStateFields.cpp:
+    complete
+    .text start:0x021f57c4 end:0x021f5848
+
+src/Menu/Panels/GameState_UpdateRecordTextBuffers.cpp:
+    complete
+    .text start:0x021e66ac end:0x021e67f4
+
+src/Menu/Panels/GameState_WriteCopiedBufferFieldToNestedWord_9CBits.cpp:
+    complete
+    .text start:0x021eac70 end:0x021eaca4
+
+src/Menu/Panels/GameState_WriteCopiedBufferFieldToNestedWord_98Bits.cpp:
+    complete
+    .text start:0x021eabd4 end:0x021eac08
+
+src/Menu/Panels/GameState_WriteCopiedBufferFieldToNestedWord_A0Bits.cpp:
+    complete
+    .text start:0x021ead40 end:0x021ead74
+
+src/Menu/Panels/CopyTypeThreeSecondWordFromGameStateBits24.cpp:
+    complete
+    .text start:0x021eaca4 end:0x021eacd8
+
+src/Menu/Panels/GameState_WriteCopiedBufferFieldToNestedWord_A4Bits.cpp:
+    complete
+    .text start:0x021ead74 end:0x021eada8
+
+src/Menu/Panels/ConfigureDisp3DControl.cpp:
+    complete
+    .text start:0x021ec420 end:0x021ec454
+
+src/Menu/RecordsFramework/Graphics_SetTransferCallbackIndicesFromFixedPoint.cpp:
+    complete
+    .text start:0x021f7d14 end:0x021f7d48
+
+src/Menu/RecordsFramework/Item_InitializeWithIdAndKind.cpp:
+    complete
+    .text start:0x021fc1f4 end:0x021fc228
+
+src/Menu/Panels/GameState_WriteCopiedBufferFieldToNestedWord_A8.cpp:
+    complete
+    .text start:0x021eada8 end:0x021eaddc
+
+src/Menu/ItemDetails/ItemDetail_CopyReferenceLabel.cpp:
+    complete
+    .text start:0x021dbb20 end:0x021dbb34
+
+src/Menu/Panels/Menu_RequestPartyPreviewClose.cpp:
+    complete
+    .text start:0x021e338c end:0x021e33a0
+
+src/Menu/Panels/Menu_SetPartyPreviewPhase.cpp:
+    complete
+    .text start:0x021e33a0 end:0x021e33b4
+
+src/Menu/Panels/Menu_SetQueuedPanelRecords.cpp:
+    complete
+    .text start:0x021eb564 end:0x021eb578
+
+src/Menu/RecordsFramework/MenuSelectionGrid_ResetEntryTableAndDimensions.cpp:
+    complete
+    .text start:0x021f9b1c end:0x021f9b30
+
+src/Menu/RecordsFramework/Menu_ResetMotionQueueEntry.cpp:
+    complete
+    .text start:0x021f9eb4 end:0x021f9ec8
+
+src/Menu/RecordsFramework/Menu_SetSpriteCellFixedPosition.cpp:
+    complete
+    .text start:0x021fb1c8 end:0x021fb1dc
+
+src/Menu/RecordsFramework/MenuSprite_SetDrawPosition.cpp:
+    complete
+    .text start:0x021fb878 end:0x021fb88c
+
+src/Menu/RecordsFramework/Menu_IsSpriteCellTouchPressed.cpp:
+    complete
+    .text start:0x021fb28c end:0x021fb2a0
+
+src/Menu/RecordsFramework/MenuBackground_SetComparisonPartyIndexAndRefresh.cpp:
+    complete
+    .text start:0x021fbdf4 end:0x021fbe08
+
+src/Menu/RecordsFramework/MenuHitRegion_DiscardVirtualAttributeQuery.cpp:
+    complete
+    .text start:0x021fd4f8 end:0x021fd50c
+
+src/Menu/Panels/CharacterState_ReadDisplayedVocationCounter.cpp:
+    complete
+    .text start:0x021e4250 end:0x021e4264
+
+src/Menu/RecordsFramework/Filesystem_QueueFormattedBackgroundResource.cpp:
+    complete
+    .text start:0x021fa370 end:0x021fa4c8
+
+src/Menu/Panels/Grotto_SetNestedWordFromClampedState.cpp:
+    complete
+    .text start:0x021e9f9c end:0x021e9fd4
+
+src/Menu/Panels/UpdateTypeThreeFromConnectionState.cpp:
+    complete
+    .text start:0x021ea920 end:0x021ea958
+
+src/Menu/Panels/SetNestedWordToRoundedGlobalValue.cpp:
+    complete
+    .text start:0x021ea978 end:0x021ea9b0
+
+src/Menu/Panels/SetNestedSecondWordFromStateBuffer.cpp:
+    complete
+    .text start:0x021e9f64 end:0x021e9f9c
+
+src/Menu/Panels/BackgroundLoader_RemoveTaskAndResetLoadState.cpp:
+    complete
+    .text start:0x021f5410 end:0x021f5448
+
+src/Menu/RecordsFramework/MenuRecordList_LocateByKey.cpp:
+    complete
+    .text start:0x021f6880 end:0x021f68b8
+
+src/Menu/Panels/Menu_DrawEquipmentPositionMarker.cpp:
+    complete
+    .text start:0x021e32cc end:0x021e3304
+
+src/Menu/Panels/Graphics_AreBothIndicesUnset.cpp:
+    complete
+    .text start:0x021f21f4 end:0x021f222c
+
+src/Menu/RecordsFramework/Graphics_SetBoundedEntryAndUpdate.cpp:
+    complete
+    .text start:0x021f7c68 end:0x021f7ca0
+
+src/Menu/RecordsFramework/Ov023_FindRangeStart.cpp:
+    complete
+    .text start:0x021f6dd8 end:0x021f6e10
+
+src/Menu/Panels/Text_AppendGlyphGrid.cpp:
+    complete
+    .text start:0x021e8cdc end:0x021e8e34
+
+src/Menu/Panels/Resource_ResetAndPositionFirstEntry.cpp:
+    complete
+    .text start:0x021e3304 end:0x021e338c
+
+src/Menu/Panels/GameState_ConfigureAndProcessFirstIndexedStage.cpp:
+    complete
+    .text start:0x021e8604 end:0x021e868c
+
+src/Menu/Panels/CountSelectedObjectsWithNestedKindsTwoThreeTen.cpp:
+    complete
+    .text start:0x021ea51c end:0x021ea5a4
+
+src/Menu/Panels/TileGrid_ResolveByKey.cpp:
+    complete
+    .text start:0x021f6524 end:0x021f6558
+
+src/Menu/RecordsFramework/MenuRecord_SetNegativeDrawOffsetByKey.cpp:
+    complete
+    .text start:0x021f66f4 end:0x021f6728
+
+src/Menu/RecordsFramework/InvokeEntryHandlerForStateKey.cpp:
+    complete
+    .text start:0x021f66bc end:0x021f66f0
+
+src/Menu/RecordsFramework/Util_InsertNodeByAscendingKey.cpp:
+    complete
+    .text start:0x021f6d14 end:0x021f6d9c
+
+src/Menu/RecordsFramework/World_LoadZoneRenderPartWithSavedVram.cpp:
+    complete
+    .text start:0x021f7290 end:0x021f7318
+
+src/Menu/Panels/Menu_ResetTimedPointEffects.cpp:
+    complete
+    .text start:0x021db0d4 end:0x021db110
+
+src/Menu/Panels/GameState_WriteStateWordsToNestedParameters.cpp:
+    complete
+    .text start:0x021e9208 end:0x021e9244
+
+src/Menu/Panels/Graphics_IsSelectedBrightnessTransitionActive.cpp:
+    complete
+    .text start:0x021ddbf8 end:0x021ddc34
+
+src/Menu/Panels/Script_WriteSelectedCharacterFieldToParameter.cpp:
+    complete
+    .text start:0x021e9864 end:0x021e98a0
+
+src/Menu/Panels/Graphics_ClearMainBG1Screen.cpp:
+    complete
+    .text start:0x021dcd78 end:0x021dcd90
+
+src/Menu/Panels/Resource_ResetTablesAndCachePartyIndices.cpp:
+    complete
+    .text start:0x021e2dd8 end:0x021e2f38
+
+src/Menu/RecordsFramework/MenuHitRegion_GetBounds.cpp:
+    complete
+    .text start:0x021fd420 end:0x021fd45c
+
+src/Menu/RecordsFramework/MenuModel_TickEffectsAndPreservePhase.cpp:
+    complete
+    .text start:0x021fcfd0 end:0x021fcfe8
+
+src/Menu/Panels/Grotto_SetNestedWordsFromStateBuffer.cpp:
+    complete
+    .text start:0x021eab28 end:0x021eab64
+
+src/Menu/Panels/MotionRecord_SetDisplayMode.cpp:
+    complete
+    .text start:0x021f6444 end:0x021f645c
+
+src/Menu/RecordsFramework/UnlinkNodeFromDoublyLinkedList.cpp:
+    complete
+    .text start:0x021f6d9c end:0x021f6dd8
+
+src/Menu/Panels/Resource_StoreStringForMatchingSupportedLanguage.cpp:
+    complete
+    .text start:0x021f5788 end:0x021f57c4
+
+src/Menu/RecordsFramework/Menu_SetSpriteCellTouchRectangle.cpp:
+    complete
+    .text start:0x021fb25c end:0x021fb274
+
+src/Menu/Panels/GameState_SetCharacterTypeThreeFieldFromSelector.cpp:
+    complete
+    .text start:0x021e98a0 end:0x021e98dc
+
+src/Menu/RecordsFramework/Ov023_FindUnusedRecord.cpp:
+    complete
+    .text start:0x021fa03c end:0x021fa078
+
+src/Menu/Panels/NumericRecord_SetDisplayMode.cpp:
+    complete
+    .text start:0x021f650c end:0x021f6524
+
+src/Menu/Panels/GameState_WriteCopiedBufferFieldsToNestedWords_94.cpp:
+    complete
+    .text start:0x021eab64 end:0x021eaba0
+
+src/Menu/Panels/Grotto_InitializeNestedValueFromGameState.cpp:
+    complete
+    .text start:0x021ea3ac end:0x021ea3ec
+
+src/Menu/Panels/Grotto_SetNestedSumFromScriptParameter.cpp:
+    complete
+    .text start:0x021eaae8 end:0x021eab28
+
+src/Menu/Panels/Graphics_InitializeSubBgPriorities.cpp:
+    complete
+    .text start:0x021d8ea0 end:0x021d8f2c
+
+src/Menu/Panels/Graphics_SetMainOrSubBrightness.cpp:
+    complete
+    .text start:0x021ddbb8 end:0x021ddbf8
+
+src/Menu/RecordsFramework/DisplayContext_CancelAndIgnoreCommand.cpp:
+    complete
+    .text start:0x021fd2b8 end:0x021fd2f8
+
+src/Menu/Panels/AdvanceFadeOutAndResetOwnerPhase.cpp:
+    complete
+    .text start:0x021e3f34 end:0x021e3fc0
+
+src/Menu/Panels/GameState_StoreQualifyingPartyObjectCount.cpp:
+    complete
+    .text start:0x021ea5a4 end:0x021ea630
+
+src/Menu/Panels/GameState_WriteListedObjectZeroValueCount.cpp:
+    complete
+    .text start:0x021ea630 end:0x021ea6bc
+
+src/Menu/Panels/Util_ClassifyCoordinateInRecordRegions.cpp:
+    complete
+    .text start:0x021e63bc end:0x021e6448
+
+src/Menu/RecordsFramework/Graphics_IsSelectedCoordinateInsideObjectBounds.cpp:
+    complete
+    .text start:0x021fd46c end:0x021fd4f8
+
+src/Menu/Panels/Script_SumCharacterPackedRecordStats.cpp:
+    complete
+    .text start:0x021e96a8 end:0x021e9818
+
+src/Menu/Panels/Graphics_InitializeTenModelsAndAllocators.cpp:
+    complete
+    .text start:0x021e4e8c end:0x021e4f18
+
+src/Menu/Panels/FindLinkedNodeIndexByHalfword8.cpp:
+    complete
+    .text start:0x021e1da4 end:0x021e1de8
+
+src/Menu/Panels/Menu_SetDateControlCanvasAttributes.cpp:
+    complete
+    .text start:0x021e6378 end:0x021e63bc
+
+src/Menu/RecordsFramework/MenuNumber_SetPositionFromFixedPoint.cpp:
+    complete
+    .text start:0x021fbc24 end:0x021fbc68
+
+src/Menu/Panels/Util_FormatUnsignedValueAtObjectOffsetC.cpp:
+    complete
+    .text start:0x021f2304 end:0x021f2348
+
+src/Menu/RecordsFramework/MenuZone_InitializeResourceRecord.cpp:
+    complete
+    .text start:0x021fbe08 end:0x021fbe4c
+
+src/Menu/RecordsFramework/Math_ConvertFixedPointPairToHalfwords.cpp:
+    complete
+    .text start:0x021fb498 end:0x021fb4dc
+
+src/Menu/Panels/Resource_SetupTextAndLocalizedNumericFields.cpp:
+    complete
+    .text start:0x021e83c8 end:0x021e853c
+
+src/Menu/RecordsFramework/Unclassified_ConvertFixedCoordinatesToWhole.cpp:
+    complete
+    .text start:0x021f8aec end:0x021f8b30
+
+src/Menu/RecordsFramework/MenuFill_SetPositionFromFixedPoint.cpp:
+    complete
+    .text start:0x021fc470 end:0x021fc4b4
+
+src/Menu/RecordsFramework/Resource_ConvertDimensions.cpp:
+    complete
+    .text start:0x021fd394 end:0x021fd3d8
+
+src/Menu/Panels/Object3D_CopyRotationVector.cpp:
+    complete
+    .text start:0x021e60c4 end:0x021e60e0
+
+src/Menu/Panels/Menu_ResetSecondaryPanelResourceTransfers.cpp:
+    complete
+    .text start:0x021e76a8 end:0x021e76c4
+
+src/Menu/Panels/Menu_AppendOptionalPanelText.cpp:
+    complete
+    .text start:0x021e8cc0 end:0x021e8cdc
+
+src/Menu/Panels/Memory_CopyThreeWords.cpp:
+    complete
+    .text start:0x021edf38 end:0x021edf54
+
+src/Menu/RecordsFramework/MenuTextLabel_SetCursorOffset.cpp:
+    complete
+    .text start:0x021f8cd4 end:0x021f8cf0
+
+src/Menu/RecordsFramework/MenuModel_SetPosition.cpp:
+    complete
+    .text start:0x021fd00c end:0x021fd028
+
+src/Menu/RecordsFramework/MenuZoneRenderRecord_SetPosition.cpp:
+    complete
+    .text start:0x021f7158 end:0x021f7174
+
+src/Menu/CharacterPreview/CharacterPreview_SetBodyRotation.cpp:
+    complete
+    .text start:0x021e6088 end:0x021e60c4
+
+src/Menu/RecordsFramework/MenuLayerRecord_BeginTaggedResourceReload.cpp:
+    complete
+    .text start:0x021f79ec end:0x021f7a08
+
+src/Menu/RecordsFramework/MenuNumber_SetAuxiliaryVector.cpp:
+    complete
+    .text start:0x021fbcd4 end:0x021fbcf0
+
+src/Menu/Panels/RefreshOwnerRecordsTwelveAndThirteen.cpp:
+    complete
+    .text start:0x021e81f4 end:0x021e8270
+
+src/Menu/Panels/Menu_GetActiveCharacterPreviewObject.cpp:
+    complete
+    .text start:0x021e4e20 end:0x021e4e3c
+
+src/Menu/Panels/Calendar_UpdateBirthDateAdjustmentFlags.cpp:
+    complete
+    .text start:0x021e61f4 end:0x021e6378
+
+src/Menu/Panels/Graphics_BlitFourMaskedEightPixelTiles.cpp:
+    complete
+    .text start:0x021e2030 end:0x021e20c0
+
+src/Menu/Panels/AccumulateLinkedRecordOffsets.cpp:
+    complete
+    .text start:0x021e2acc end:0x021e2b5c
+
+src/Menu/CharacterPreview/CharacterPreview_RotateActiveModelLeft.cpp:
+    complete
+    .text start:0x021fccec end:0x021fcd70
+
+src/Menu/RecordsFramework/Graphics_InitializeObjectVectorRecord.cpp:
+    complete
+    .text start:0x021fa078 end:0x021fa108
+
+src/Menu/Panels/Graphics_LoadIndexedSubBG1Screen.cpp:
+    complete
+    .text start:0x021e7b34 end:0x021e7bc4
+
+src/Menu/Panels/Graphics_ApplyLinkedRecordPositionAndConsumeOffsets.cpp:
+    complete
+    .text start:0x021db45c end:0x021db4e4
+
+src/Menu/Panels/Filesystem_QueueOwnerFilesInGP2.cpp:
+    complete
+    .text start:0x021e0a48 end:0x021e0a90
+
+src/Menu/Panels/Graphics_ResetOwnedResourceBundle.cpp:
+    complete
+    .text start:0x021d8b6c end:0x021d8bb4
+
+src/Menu/Panels/Script_CountBaseAndUnlockedMappedEntries.cpp:
+    complete
+    .text start:0x021e9b00 end:0x021e9b48
+
+src/Menu/RecordsFramework/World_UpdateAcceleratingMotionToTarget.cpp:
+    complete
+    .text start:0x021fa108 end:0x021fa298
+
+src/Menu/Panels/Filesystem_QueueFixedGP2LoadAndClearState.cpp:
+    complete
+    .text start:0x021e0b54 end:0x021e0b9c
+
+src/Menu/Panels/Graphics_SaveAndReserveTenModelPaletteRanges.cpp:
+    complete
+    .text start:0x021e4fd8 end:0x021e5020
+
+src/Menu/Panels/FindEntryBySignedId.cpp:
+    complete
+    .text start:0x021db08c end:0x021db0d4
+
+src/Menu/Panels/Filesystem_ClearAndQueueInitialGP2.cpp:
+    complete
+    .text start:0x021e07f8 end:0x021e0840
+
+src/Menu/Panels/Graphics_OffsetSelectedVectorAngle.cpp:
+    complete
+    .text start:0x021fcc68 end:0x021fccec
+
+src/Menu/Panels/Filesystem_QueueBackgroundPair.cpp:
+    complete
+    .text start:0x021e0c38 end:0x021e0c80
+
+src/Menu/Panels/Filesystem_RemoveStoredTasksAndResetLoadFlags.cpp:
+    complete
+    .text start:0x021dcdf4 end:0x021dce88
+
+src/Menu/Panels/Menu_DispatchSecondaryPanelCharacterView.cpp:
+    complete
+    .text start:0x021e7bc4 end:0x021e7c58
+
+src/Menu/Panels/Script_ReadMainZoneLeadingHalfword.cpp:
+    complete
+    .text start:0x021ea958 end:0x021ea978
+
+src/Menu/Panels/System_DispatchSelectedHandlerWithValidatedValue.cpp:
+    complete
+    .text start:0x021e7c58 end:0x021e7cec
+
+src/Combat/Results/PartyGrowthPanel_ResetActiveWindowTransfers.cpp:
+    complete
+    .text start:0x021d8c94 end:0x021d8cb4
+
+src/Menu/Panels/ScriptQueryContext_IsExecutionIdle.cpp:
+    complete
+    .text start:0x021f3a8c end:0x021f3aac
+
+src/Menu/Panels/MenuLayout_SetGroupPositionOffsets.cpp:
+    complete
+    .text start:0x021db544 end:0x021db564
+
+src/Menu/Panels/Graphics_UpdateSelectedResourcePositions.cpp:
+    complete
+    .text start:0x021da9b4 end:0x021dab5c
+
+src/Menu/RecordsFramework/MenuLayerRecord_ClearScreenBufferUnlessSuppressed.cpp:
+    complete
+    .text start:0x021f7864 end:0x021f7884
+
+src/Menu/RecordsFramework/MenuTileGrid_SetCoordinatesByKey.cpp:
+    complete
+    .text start:0x021f65b4 end:0x021f65d4
+
+src/Menu/RecordsFramework/Graphics_DrawEmbeddedObjectUnlessFlagged.cpp:
+    complete
+    .text start:0x021fcfe8 end:0x021fd008
+
+src/Menu/Panels/Util_UpdateRandomPointTimers.cpp:
+    complete
+    .text start:0x021db110 end:0x021db2b8
+
+src/Menu/RecordsFramework/Graphics_CleanConfiguredDestinationCacheIfFlagClear.cpp:
+    complete
+    .text start:0x021f7884 end:0x021f78a4
+
+src/Menu/Panels/MenuNotice_SetFinalEntryProgressGate.cpp:
+    complete
+    .text start:0x021f2348 end:0x021f2368
+
+src/Menu/RecordsFramework/ReadDisplayContextThenReturnTwoOrStoredWord.cpp:
+    complete
+    .text start:0x021fd2f8 end:0x021fd318
+
+src/Menu/Panels/GameState_SetNestedWordFromCharacterByte.cpp:
+    complete
+    .text start:0x021e9818 end:0x021e9864
+
+src/Menu/Panels/System_DispatchStoredIndexWhenMaskOrStateMatches.cpp:
+    complete
+    .text start:0x021ed014 end:0x021ed064
+
+src/Menu/Panels/Resource_ScriptSetPackedThreeFieldRecord.cpp:
+    complete
+    .text start:0x021f55e8 end:0x021f5680
+
+src/Menu/ItemDetails/ItemDetail_DispatchDisplayState.cpp:
+    complete
+    .text start:0x021dc488 end:0x021dc520
+
+src/Menu/Panels/GameState_HasEnabledConnectionIndex.cpp:
+    complete
+    .text start:0x021f4438 end:0x021f44d0
+
+src/Menu/RecordsFramework/MenuBackground_UpdateResourceStateAndMarkReady.cpp:
+    complete
+    .text start:0x021fbd90 end:0x021fbdac
+
+src/Menu/RecordsFramework/Filesystem_QueueBackgroundLoadWhenStatusNegative.cpp:
+    complete
+    .text start:0x021fc2b8 end:0x021fc30c
+
+src/Combat/Results/BattleResults_SetRosterTrackingContext.cpp:
+    complete
+    .text start:0x021f50fc end:0x021f5150
+
+src/Menu/RecordsFramework/MenuDisplayCommand_InitializeRecord.cpp:
+    complete
+    .text start:0x021fd1e0 end:0x021fd234
+
+src/Menu/Panels/Unclassified_AccumulateBytesModuloConstant.cpp:
+    complete
+    .text start:0x021f6324 end:0x021f6378
+
+src/Menu/Panels/ResetFlaggedSelectedResourceEntry.cpp:
+    complete
+    .text start:0x021ecf78 end:0x021ed014
+
+src/Menu/RecordsFramework/Util_SelectFirstEligibleLinkedNode.cpp:
+    complete
+    .text start:0x021f6a1c end:0x021f6ab8
+
+src/Menu/Panels/GameState_AdvanceDateToNextTwoHourBoundary.cpp:
+    complete
+    .text start:0x021f6158 end:0x021f6324
+
+src/Menu/Panels/Filesystem_CancelStoredBackgroundTasks.cpp:
+    complete
+    .text start:0x021dca88 end:0x021dcae0
+
+src/Menu/Panels/Script_SetRecordRandomThresholdResult.cpp:
+    complete
+    .text start:0x021f5848 end:0x021f5a1c
+
+src/Menu/ItemDetails/ItemDetail_ClearQuantityRows.cpp:
+    complete
+    .text start:0x021dce88 end:0x021dceac
+
+src/Menu/Panels/SetOutputFieldFromGameStateIndexList.cpp:
+    complete
+    .text start:0x021e9a78 end:0x021e9a9c
+
+src/Menu/RecordsFramework/Util_AdvanceLinkedPointer.cpp:
+    complete
+    .text start:0x021f68b8 end:0x021f68dc
+
+src/Menu/RecordsFramework/DestroyNestedSafeAllocatorIfSignedAllocatorPresent.cpp:
+    complete
+    .text start:0x021fbe4c end:0x021fbe70
+
+src/Menu/Panels/Script_ReadSelectedCharacterPackedAttribute.cpp:
+    complete
+    .text start:0x021e94cc end:0x021e96a8
+
+src/Menu/RecordsFramework/Memory_Clear22BytesAndSetTwoSentinels.cpp:
+    complete
+    .text start:0x021f6788 end:0x021f67ac
+
+src/Menu/RecordsFramework/Ov023_SetIndexedHalfwordBit.cpp:
+    complete
+    .text start:0x021f6e10 end:0x021f6e34
+
+src/Menu/Panels/Graphics_ClearAndDispatchOffsetRecord.cpp:
+    complete
+    .text start:0x021ecdfc end:0x021ece9c
+
+src/Menu/Panels/TestCopiedFlagFieldBit.cpp:
+    complete
+    .text start:0x021ed6cc end:0x021ed724
+
+src/Menu/RecordsFramework/MenuRecordList_ResetInputGroup.cpp:
+    complete
+    .text start:0x021f6eb8 end:0x021f6ed8
+
+src/Menu/Panels/Menu_ConfigureSecondaryPanelCanvasLayout.cpp:
+    complete
+    .text start:0x021e7cec end:0x021e7d8c
+
+src/Menu/Panels/Graphics_KeepAttributeBits25To31.cpp:
+    complete
+    .text start:0x021ed7e0 end:0x021ed804
+
+src/Menu/Panels/Ov023_InitializeFourEmbeddedFields.cpp:
+    complete
+    .text start:0x021e60e0 end:0x021e613c
+
+src/Menu/RecordsFramework/OV023_FindTypeSixFromTypeEight.cpp:
+    complete
+    .text start:0x021f9cb8 end:0x021f9d14
+
+src/Menu/RecordsFramework/Math_ConvertVectorToScaledHalfwordPair.cpp:
+    complete
+    .text start:0x021f8198 end:0x021f81f4
+
+src/Menu/RecordsFramework/Ov023_QueueAssetWhenHandleInvalid.cpp:
+    complete
+    .text start:0x021fbef0 end:0x021fbf4c
+
+src/Menu/Panels/NumericRecord_SetValueAndDisplayModeByKey.cpp:
+    complete
+    .text start:0x021f64a8 end:0x021f6504
+
+src/Menu/Panels/Graphics_ConfigureFixedGeometryState.cpp:
+    complete
+    .text start:0x021dacd4 end:0x021dad78
+
+src/Menu/Panels/World_LinkKeyedRecordsAndSetEnabledFlags.cpp:
+    complete
+    .text start:0x021e1474 end:0x021e1518
+
+src/Menu/RecordsFramework/Graphics_GetDescriptorOffsetPosition.cpp:
+    complete
+    .text start:0x021f8b78 end:0x021f8c1c
+
+src/Menu/Panels/Graphics_AdvanceTimedFade.cpp:
+    complete
+    .text start:0x021dac40 end:0x021dacd4
+
+src/Menu/Panels/InitializeTenEntryHalfwordSentinels.cpp:
+    complete
+    .text start:0x021e616c end:0x021e6194
+
+src/Menu/ItemDetails/ItemDetail_SetQuantityRow.cpp:
+    complete
+    .text start:0x021dceac end:0x021dced4
+
+src/Menu/Panels/InitializeThreeStateBytesOnce.cpp:
+    complete
+    .text start:0x021eb414 end:0x021eb43c
+
+src/Menu/Panels/Filesystem_ResetBackgroundLoaderState.cpp:
+    complete
+    .text start:0x021f52a0 end:0x021f52c8
+
+src/Menu/Panels/Ov023_SetObjectFlagAndGlobalValue.cpp:
+    complete
+    .text start:0x021dbfa8 end:0x021dbfd0
+
+src/Menu/RecordsFramework/Memory_CopyIntoIndexedRecord.cpp:
+    complete
+    .text start:0x021f6e90 end:0x021f6eb8
+
+src/Menu/RecordsFramework/MenuRecordList_ReleaseTransferSlot.cpp:
+    complete
+    .text start:0x021f6e34 end:0x021f6e5c
+
+src/Menu/Panels/GameState_SetCharacterByteSumFromSelector.cpp:
+    complete
+    .text start:0x021ea6bc end:0x021ea71c
+
+src/Menu/RecordsFramework/GameState_DispatchPendingTableSelection.cpp:
+    complete
+    .text start:0x021fb818 end:0x021fb878
+
+src/Menu/RecordsFramework/Resource_CollectBufferedRecordValues.cpp:
+    complete
+    .text start:0x021fa7d4 end:0x021fa854
+
+src/Menu/Panels/GameState_SetTypeThreeFieldFromCharacterFlag.cpp:
+    complete
+    .text start:0x021ea71c end:0x021ea77c
+
+src/Menu/RecordsFramework/MenuLayerRecord_DetachTextCanvasesAndResetResources.cpp:
+    complete
+    .text start:0x021f7984 end:0x021f79e4
+
+src/Menu/Panels/Menu_SetLayoutCellDimensions.cpp:
+    complete
+    .text start:0x021e2cc8 end:0x021e2ce8
+
+src/Menu/Panels/SetReturnedEntryHalfwordsFromArguments.cpp:
+    complete
+    .text start:0x021e2ca8 end:0x021e2cc8
+
+src/Menu/Panels/Menu_ConfigureLayoutCellRendering.cpp:
+    complete
+    .text start:0x021e24b0 end:0x021e2550
+
+src/Menu/CharacterCreation/CharacterCreation_RefreshAppearanceSummary.cpp:
+    complete
+    .text start:0x021d9a6c end:0x021d9c7c
+
+src/Menu/RecordsFramework/Filesystem_QueuePendingFileOrArchiveLoad.cpp:
+    complete
+    .text start:0x021fa8fc end:0x021fa9a4
+
+src/Menu/Panels/Script_TestCharacterIndexedHalfwordPairs.cpp:
+    complete
+    .text start:0x021e9424 end:0x021e94cc
+
+src/Menu/Panels/Graphics_UpdatePanelCollapseTransition.cpp:
+    complete
+    .text start:0x021ecbe8 end:0x021ecdfc
+
+src/Menu/Panels/Resource_InitializeSharedRecordState.cpp:
+    complete
+    .text start:0x021dc134 end:0x021dc354
+
+src/Menu/Panels/Resource_DestroyAndResetSharedRecordState.cpp:
+    complete
+    .text start:0x021dc354 end:0x021dc488
+
+src/Menu/Panels/Graphics_UpdateMainBackgroundScreens.cpp:
+    complete
+    .text start:0x021dcd90 end:0x021dcdf4
+
+src/Menu/RecordsFramework/MenuFill_InitializeRectangleRecord.cpp:
+    complete
+    .text start:0x021fc408 end:0x021fc46c
+
+src/Menu/Panels/Graphics_UpdateSelectionAndDispatchPhase.cpp:
+    complete
+    .text start:0x021d8bb4 end:0x021d8c60
+
+src/Menu/CharacterPreview/CharacterPreview_ResolveComponentIdsWithDefaults.cpp:
+    complete
+    .text start:0x021e5fdc end:0x021e6088
+
+src/Menu/RecordsFramework/World_PollZoneRenderPartLoad.cpp:
+    complete
+    .text start:0x021f707c end:0x021f7128
+
+src/Menu/RecordsFramework/Graphics_LoadNamedResourcesAndStageSharedState.cpp:
+    complete
+    .text start:0x021fab48 end:0x021fad18
+
+src/Menu/Panels/Resource_QueueGP2LoadAndSelectNextState.cpp:
+    complete
+    .text start:0x021e05e4 end:0x021e0690
+
+src/Menu/RecordsFramework/Resource_PollLoadedFileAndAdvanceState.cpp:
+    complete
+    .text start:0x021fa9a4 end:0x021faa50
+
+src/Menu/Panels/Graphics_GetSelectedBackgroundScreenBase.cpp:
+    complete
+    .text start:0x021db2b8 end:0x021db2e4
+
+src/Menu/Panels/System_UpdateDisplayControlFields.cpp:
+    complete
+    .text start:0x021ec3c8 end:0x021ec3f4
+
+src/Menu/Panels/System_UpdateDisplayControlBits.cpp:
+    complete
+    .text start:0x021ec3f4 end:0x021ec420
+
+src/Menu/Panels/Graphics_ConfigureBackground2Control.cpp:
+    complete
+    .text start:0x021ec454 end:0x021ec480
+
+src/Menu/RecordsFramework/GameState_AppendValueAndSetNodeFlags.cpp:
+    complete
+    .text start:0x021f65d4 end:0x021f6600
+
+src/Menu/Panels/Graphics_ResetObjectDisplayFlags.cpp:
+    complete
+    .text start:0x021ecbbc end:0x021ecbe8
+
+src/Menu/RecordsFramework/Memory_ClearThreeWordRecord.cpp:
+    complete
+    .text start:0x021f735c end:0x021f7388
+
+src/Menu/RecordsFramework/Menu_InitializeFlagQueryRecord.cpp:
+    complete
+    .text start:0x021fba80 end:0x021fbaac
+
+src/Menu/RecordsFramework/MenuRecordList_InvokeFinalPass.cpp:
+    complete
+    .text start:0x021f69ec end:0x021f6a18
+
+src/Menu/Panels/Filesystem_FormatInlinePathRecord.cpp:
+    complete
+    .text start:0x021f229c end:0x021f2304
+
+src/Menu/Panels/Resource_InitializeAllocatorSet.cpp:
+    complete
+    .text start:0x021e71b4 end:0x021e7220
+
+src/Menu/RecordsFramework/MenuModel_QueueResourceLoadWhenIdle.cpp:
+    complete
+    .text start:0x021fceb8 end:0x021fcf24
+
+src/Menu/RecordsFramework/Ov023_LoadAssetForNegativeField.cpp:
+    complete
+    .text start:0x021f7010 end:0x021f707c
+
+src/Menu/Panels/Graphics_UpdateCountdownAndDrawAttachedObject.cpp:
+    complete
+    .text start:0x021e3084 end:0x021e3134
+
+src/Menu/Panels/Script_CountListedObjectsInSelectedStates.cpp:
+    complete
+    .text start:0x021ea46c end:0x021ea51c
+
+src/Menu/RecordsFramework/Menu_InitializeMotionQueue.cpp:
+    complete
+    .text start:0x021f9ec8 end:0x021f9f78
+
+src/Menu/Panels/Grotto_WriteTypeTwoStateBits.cpp:
+    complete
+    .text start:0x021eaf50 end:0x021eb000
+
+src/Menu/Panels/Grotto_WriteActiveTypeOneStateValue.cpp:
+    complete
+    .text start:0x021eaea0 end:0x021eaf50
+
+src/Menu/Panels/Graphics_TransitionIndexedObjectAlpha.cpp:
+    complete
+    .text start:0x021ed988 end:0x021ed9f8
+
+src/Menu/RecordsFramework/MenuHitRegion_InitializeRectangle.cpp:
+    complete
+    .text start:0x021fd320 end:0x021fd390
+
+src/Combat/Results/PartyGrowthPanel_ResetDisplay.cpp:
+    complete
+    .text start:0x021d8af8 end:0x021d8b6c
+
+src/Menu/Panels/SetObjectNestedWordFromCopiedStateTopByte.cpp:
+    complete
+    .text start:0x021e9944 end:0x021e9974
+
+src/Menu/Panels/Script_ExecuteConfiguredBuffer.cpp:
+    complete
+    .text start:0x021e133c end:0x021e13b0
+
+src/Menu/Panels/GameState_SetTotalProtagonistRecordValue.cpp:
+    complete
+    .text start:0x021ea7e0 end:0x021ea854
+
+src/Menu/Panels/Menu_AppendPresentSelectionMessage.cpp:
+    complete
+    .text start:0x021e8ef8 end:0x021e8f28
+
+src/Menu/Panels/Graphics_SetBackgroundStateAndClearTilemap.cpp:
+    complete
+    .text start:0x021dcba4 end:0x021dcc58
+
+src/Menu/Panels/SetObjectNestedWordFromCopiedStateMiddleByte.cpp:
+    complete
+    .text start:0x021ea0e8 end:0x021ea118
+
+src/Menu/Panels/GameState_CopyAndSetNestedWordForTypeThree.cpp:
+    complete
+    .text start:0x021ea1b0 end:0x021ea1e0
+
+src/GameState/Statistics/Script_ReadCompactTrackedActionCount.cpp:
+    complete
+    .text start:0x021ea248 end:0x021ea278
+
+src/Menu/Panels/Grotto_SetTypeThreeValueFromCopiedGameStateBuffer.cpp:
+    complete
+    .text start:0x021ea854 end:0x021ea884
+
+src/Menu/Panels/Graphics_SelectBackgroundStateRecord.cpp:
+    complete
+    .text start:0x021dcae0 end:0x021dcb70
+
+src/Combat/Results/ExperienceAdjustment_ResetLoad.cpp:
+    complete
+    .text start:0x021f52c8 end:0x021f52f8
+
+src/GameState/Statistics/Script_ReadPartyTalkCount.cpp:
+    complete
+    .text start:0x021ea8b8 end:0x021ea8e8
+
+src/Menu/Panels/Script_StoreParameterIntToConfiguredHalfword.cpp:
+    complete
+    .text start:0x021f55b8 end:0x021f55e8
+
+src/Menu/Panels/GameState_CopyAndSetTopFieldForTypeThree.cpp:
+    complete
+    .text start:0x021eaddc end:0x021eae0c
+
+src/Menu/Panels/Resource_AdvanceMemberTaskStateMachine.cpp:
+    complete
+    .text start:0x021dfb4c end:0x021dfc90
+
+src/Menu/Panels/Graphics_InitializeSubDisplayStateAndRecordGrid.cpp:
+    complete
+    .text start:0x021d8a40 end:0x021d8af8
+
+src/Menu/Panels/GameState_ReadPartyDerivedFloatValues.cpp:
+    complete
+    .text start:0x021dbc58 end:0x021dbd10
+
+src/Menu/Panels/Resource_GenerateAndLoadThreeHandlerRecords.cpp:
+    complete
+    .text start:0x021e7eb0 end:0x021e7f68
+
+src/Menu/Panels/Memory_InitializeFourNestedAllocatorsAndBuffers.cpp:
+    complete
+    .text start:0x021eb080 end:0x021eb138
+
+src/Menu/RecordsFramework/Filesystem_QueueNamedFileOrArchiveLoad.cpp:
+    complete
+    .text start:0x021f75d0 end:0x021f7688
+
+src/GameState/Statistics/Script_ReadStatisticsFlag.cpp:
+    complete
+    .text start:0x021e9278 end:0x021e92f0
+
+src/Menu/Panels/TileGrid_FindSelectedChildRecord.cpp:
+    complete
+    .text start:0x021f6590 end:0x021f65b4
+
+src/Menu/RecordsFramework/MenuTextCanvas_RedrawByKey.cpp:
+    complete
+    .text start:0x021f6680 end:0x021f66bc
+
+src/Menu/Panels/GameState_MergeIdsAndIncrementPackedCounter.cpp:
+    complete
+    .text start:0x021ed724 end:0x021ed7e0
+
+src/Menu/Panels/Menu_TestCancelKeyOrCanvasTouchKindTwo.cpp:
+    complete
+    .text start:0x021e6e20 end:0x021e6e60
+
+src/Combat/Results/ExperienceAdjustment_GetLevelBiasForReward.cpp:
+    complete
+    .text start:0x021f5578 end:0x021f5598
+
+src/Menu/Panels/Script_SetPackedNibbleFlagsAndSharedMarker.cpp:
+    complete
+    .text start:0x021f5a1c end:0x021f5ad8
+
+src/Menu/RecordsFramework/InitializeTypeFifteenPackedRecord.cpp:
+    complete
+    .text start:0x021fbb64 end:0x021fbc20
+
+src/Menu/Panels/Menu_RefreshCharacterSummaryCanvas.cpp:
+    complete
+    .text start:0x021e7fe4 end:0x021e802c
+
+src/Combat/Results/ExperienceAdjustment_BeginLoad.cpp:
+    complete
+    .text start:0x021f52f8 end:0x021f5340
+
+src/Menu/RecordsFramework/Resource_PollAndBuildSelectedZoneData.cpp:
+    complete
+    .text start:0x021fbf4c end:0x021fc1e4
+
+src/Menu/Panels/GameState_CalculateWeightedPartyValue.cpp:
+    complete
+    .text start:0x021f4098 end:0x021f4438
+
+src/Menu/Panels/Ov023_ResetDisplayInstances.cpp:
+    complete
+    .text start:0x021fc6cc end:0x021fc71c
+
+src/Menu/Panels/Text_FormatCharacterPackedSummary.cpp:
+    complete
+    .text start:0x021e868c end:0x021e8cc0
+
+src/Menu/RecordsFramework/MenuTextCanvas_SetPageIndexAndCountByKey.cpp:
+    complete
+    .text start:0x021f6630 end:0x021f6680
+
+src/Menu/Panels/Menu_BuildCatalogueByPrimaryRank.cpp:
+    complete
+    .text start:0x021e1b0c end:0x021e1b5c
+
+src/Menu/Panels/Menu_UpdatePartyPreviewEquipmentWindow.cpp:
+    complete
+    .text start:0x021e3184 end:0x021e31b0
+
+src/Menu/Panels/Menu_BuildEnabledCatalogueBySecondaryRank.cpp:
+    complete
+    .text start:0x021e15b4 end:0x021e1604
+
+src/Menu/Panels/Resource_BuildLinkedNodeChain.cpp:
+    complete
+    .text start:0x021e1b5c end:0x021e1bac
+
+src/Menu/Panels/GameState_MarkRequestedScriptFlags.cpp:
+    complete
+    .text start:0x021f5ad8 end:0x021f5b94
+
+src/Menu/RecordsFramework/Object3D_InitializeParameterizedRecord.cpp:
+    complete
+    .text start:0x021fcdd4 end:0x021fce28
+
+src/Menu/Panels/Graphics_ConfigureSubBackgroundsForModeOne.cpp:
+    complete
+    .text start:0x021dcc58 end:0x021dcd18
+
+src/Menu/Panels/Resource_BuildLinkedNodeChainWithExtraArgument.cpp:
+    complete
+    .text start:0x021e1870 end:0x021e18cc
+
+src/Menu/RecordsFramework/Graphics_LoadEmbeddedCHRObjectWithAllocators.cpp:
+    complete
+    .text start:0x021fd120 end:0x021fd1e0
+
+src/Menu/Panels/Menu_BuildAlternateCatalogueByPrimaryRank.cpp:
+    complete
+    .text start:0x021e1814 end:0x021e1870
+
+src/Menu/Panels/Object_ConvertMappedKeyToTwoHalfwords.cpp:
+    complete
+    .text start:0x021e2bdc end:0x021e2c38
+
+src/Menu/RecordsFramework/Menu_InitializeMessageTableResource.cpp:
+    complete
+    .text start:0x021fa298 end:0x021fa2f4
+
+src/Menu/RecordsFramework/PollLoadedFileAndAdvanceRecordState.cpp:
+    complete
+    .text start:0x021fcf24 end:0x021fcfd0
+
+src/Menu/RecordsFramework/MenuZoneRenderRecord_Initialize.cpp:
+    complete
+    .text start:0x021f6f20 end:0x021f6f80
+
+src/Menu/Panels/Menu_AllocateCatalogueEntries.cpp:
+    complete
+    .text start:0x021e13b0 end:0x021e1410
+
+src/Menu/RecordsFramework/Menu_ReleaseSpriteTrackOamSlot.cpp:
+    complete
+    .text start:0x021fb364 end:0x021fb3c8
+
+src/Menu/Panels/Resource_ResetOwnerCacheWhenFlagged.cpp:
+    complete
+    .text start:0x021ed44c end:0x021ed4b8
+
+src/Menu/Panels/Resource_ResetActiveOwnerState.cpp:
+    complete
+    .text start:0x021eb4f4 end:0x021eb564
+
+src/Menu/Panels/Object_SetTwoFixedPointRecordPositions.cpp:
+    complete
+    .text start:0x021e31e4 end:0x021e3258
+
+src/Combat/Results/PartyGrowthPanel_OpenCenteredWindow.cpp:
+    complete
+    .text start:0x021d921c end:0x021d9290
+
+src/Menu/Panels/Resource_ConfigureTwoFixedPointRecords.cpp:
+    complete
+    .text start:0x021e3258 end:0x021e32cc
+
+src/Menu/RecordsFramework/Menu_InitializeSpriteResourceRecord.cpp:
+    complete
+    .text start:0x021fa760 end:0x021fa7d4
+
+src/Menu/RecordsFramework/Object_UpdateAndDrawPresentRecord.cpp:
+    complete
+    .text start:0x021f8140 end:0x021f8190
+
+src/Menu/Panels/Menu_DispatchPartyPreviewPhase.cpp:
+    complete
+    .text start:0x021e3030 end:0x021e3084
+
+src/Menu/Panels/Menu_DrawPartyPreviewPanel.cpp:
+    complete
+    .text start:0x021e3134 end:0x021e3184
+
+src/Menu/Panels/Grotto_SetNestedSecondWordFromCopiedState.cpp:
+    complete
+    .text start:0x021ea118 end:0x021ea14c
+
+src/Menu/Panels/MotionRecord_GetSelectionParameterByKey.cpp:
+    complete
+    .text start:0x021f6378 end:0x021f63ac
+
+src/Menu/Panels/Ov023_SetNestedWordFromConnectionState.cpp:
+    complete
+    .text start:0x021ea8e8 end:0x021ea920
+
+src/Combat/Results/PartyGrowthPanel_FindMemberRecord.cpp:
+    complete
+    .text start:0x021d994c end:0x021d9988
+
+src/Combat/Results/BattleResults_AreAllRosterMembersDead.cpp:
+    complete
+    .text start:0x021ed92c end:0x021ed988
+
+src/Menu/Panels/Menu_SetLayoutCellType.cpp:
+    complete
+    .text start:0x021e29b8 end:0x021e29d0
+
+src/Menu/Panels/Menu_DrawDateControlAuxiliarySprite.cpp:
+    complete
+    .text start:0x021e6a14 end:0x021e6a90
+
+src/Menu/Panels/Menu_ShowCharacterSummaryCanvas.cpp:
+    complete
+    .text start:0x021e7f68 end:0x021e7fe4
+
+src/Menu/Panels/Menu_UpdateQueuedRecordPanel.cpp:
+    complete
+    .text start:0x021eb43c end:0x021eb4b8
+
+src/Menu/Panels/Menu_GetLayoutCellScreenCoordinates.cpp:
+    complete
+    .text start:0x021e2b5c end:0x021e2bdc
+
+src/Online/Content/OnlineContent_DecryptInfoPayload.cpp:
+    complete
+    .text start:0x021f5cd8 end:0x021f5d58
+
+src/Menu/Panels/Script_ReadProgressMessageId.cpp:
+    complete
+    .text start:0x021e934c end:0x021e9370
+
+src/Menu/Panels/GameState_CopyIndexListWordF6CToNestedSecondWord.cpp:
+    complete
+    .text start:0x021ea9dc end:0x021eaa00
+
+src/Menu/RecordsFramework/MenuZoneRenderRecord_DrawIfVisible.cpp:
+    complete
+    .text start:0x021f7134 end:0x021f7158
+
+src/Menu/RecordsFramework/Memory_ZeroBufferUsingElementCountAndStride.cpp:
+    complete
+    .text start:0x021f9c0c end:0x021f9c30
+
+src/Menu/Panels/SubmitMode14IndexedFixedPosition.cpp:
+    complete
+    .text start:0x021e6b04 end:0x021e6b8c
+
+src/Menu/Panels/Menu_DrawPartyPreviewCloseButton.cpp:
+    complete
+    .text start:0x021e43f0 end:0x021e447c
+
+src/Menu/Panels/Graphics_RefreshTransfersAndSubmitSelectedFortyByteRecord.cpp:
+    complete
+    .text start:0x021e761c end:0x021e76a8
+
+src/Menu/RecordsFramework/Resource_SelectMatchingTypeEightLinkedRecord.cpp:
+    complete
+    .text start:0x021f88b8 end:0x021f8944
+
+src/Menu/RecordsFramework/Resource_SelectPreviousNonzeroGridEntry.cpp:
+    complete
+    .text start:0x021f9d14 end:0x021f9da0
+
+src/Menu/Panels/TextLayout_StoreIndexedFontEntryInResolvedRecord.cpp:
+    complete
+    .text start:0x021e2550 end:0x021e257c
+
+src/Menu/Panels/Grotto_SetNestedWordFromGlobalObjectBit4.cpp:
+    complete
+    .text start:0x021ea9b0 end:0x021ea9dc
+
+src/GameState/Statistics/Script_ReadStatisticsWordAtAC.cpp:
+    complete
+    .text start:0x021eae0c end:0x021eae38
+
+src/Menu/Panels/Graphics_ConfigureSubBackgroundTwoTextLayout.cpp:
+    complete
+    .text start:0x021ec39c end:0x021ec3c8
+
+src/Menu/RecordsFramework/MenuRecordList_HasPendingLoads.cpp:
+    complete
+    .text start:0x021f6bc0 end:0x021f6bec
+
+src/Menu/ItemDetails/ItemDetail_UpdateDisplay.cpp:
+    complete
+    .text start:0x021dd974 end:0x021dda04
+
+src/Menu/Panels/TileGrid_GetSelectedCellHandleByKey.cpp:
+    complete
+    .text start:0x021f6558 end:0x021f6590
+
+src/Menu/RecordsFramework/ConfigureListFromContextFields.cpp:
+    complete
+    .text start:0x021fb640 end:0x021fb680
+
+src/Menu/RecordsFramework/MenuBackground_InitializeWithAllocatorAndFlags.cpp:
+    complete
+    .text start:0x021fbd00 end:0x021fbd90
+
+src/Menu/ItemDetails/ItemDetail_AppendReferenceLabelCanvas.cpp:
+    complete
+    .text start:0x021e0eb8 end:0x021e0f44
+
+src/GameState/Statistics/Script_ReadVocationChangeCount.cpp:
+    complete
+    .text start:0x021e9f00 end:0x021e9f30
+
+src/GameState/Statistics/Script_ReadCompactQualifiedPartyOutcomeCount.cpp:
+    complete
+    .text start:0x021ea14c end:0x021ea17c
+
+src/GameState/Statistics/Script_ReadCompactAlchemyCount.cpp:
+    complete
+    .text start:0x021ea2ac end:0x021ea2dc
+
+src/Menu/RecordsFramework/Menu_ReleaseSpriteCellOamSlots.cpp:
+    complete
+    .text start:0x021fae88 end:0x021faed0
+
+src/Menu/CharacterPreview/CharacterPreview_ResetModelsAndReleaseAllocators.cpp:
+    complete
+    .text start:0x021e4f18 end:0x021e4f64
+
+src/Menu/Panels/Menu_BuildEnabledCatalogueByPrimaryRank.cpp:
+    complete
+    .text start:0x021e1564 end:0x021e15b4
+
+src/Menu/Panels/UpdateDisplayPlaneStateFromObjectMode.cpp:
+    complete
+    .text start:0x021dcd18 end:0x021dcd78
+
+src/Menu/RecordsFramework/Object_InvokeUpdateOnLinkedNodes.cpp:
+    complete
+    .text start:0x021f69bc end:0x021f69e8
+
+src/Menu/RecordsFramework/GameState_ClearMaskFromKeyedEntry.cpp:
+    complete
+    .text start:0x021f6600 end:0x021f6630
+
+src/Menu/Panels/Menu_ResolveFirstLayoutCellForGroup.cpp:
+    complete
+    .text start:0x021e2418 end:0x021e2450
+
+src/Menu/Panels/Menu_DrawPartyPreviewMemberSwitchButton.cpp:
+    complete
+    .text start:0x021e4358 end:0x021e43f0
+
+src/Menu/ItemDetails/ItemDetail_ResetAndAllocateDisplay.cpp:
+    complete
+    .text start:0x021dc9e8 end:0x021dca88
+
+src/Menu/Panels/Menu_DrawRightAlignedDecimalValue.cpp:
+    complete
+    .text start:0x021db3c0 end:0x021db45c
+
+src/Menu/ItemDetails/ItemDetail_ConsumeSecondaryReferenceGroup.cpp:
+    complete
+    .text start:0x021e0b9c end:0x021e0c38
+
+src/Menu/Panels/Menu_HandlePartyPreviewCloseInput.cpp:
+    complete
+    .text start:0x021e3e98 end:0x021e3f34
+
+src/Menu/Panels/Menu_FindLayoutCellByKey.cpp:
+    complete
+    .text start:0x021e2450 end:0x021e24b0
+
+src/Menu/RecordsFramework/Resource_InitializeRecordHeaderAndThreeEntries.cpp:
+    complete
+    .text start:0x021f672c end:0x021f6788
+
+src/Menu/RecordsFramework/MenuRecordList_InvokeSecondaryPass.cpp:
+    complete
+    .text start:0x021f698c end:0x021f69b8
+
+src/Menu/RecordsFramework/Filesystem_FindNarcEntriesBySubstringOrExtension.cpp:
+    complete
+    .text start:0x021fad20 end:0x021fad84
+
+src/Menu/RecordsFramework/Math_StoreSignedQuotientAndRemainder.cpp:
+    complete
+    .text start:0x021f9bdc end:0x021f9c0c
+
+src/Menu/Panels/Graphics_CleanupActiveObjectResourceBlock.cpp:
+    complete
+    .text start:0x021eb4b8 end:0x021eb4f4
+
+src/Combat/Results/PartyGrowthPanel_SetStatComparison.cpp:
+    complete
+    .text start:0x021d8e4c end:0x021d8ea0
+
+src/Menu/Panels/Script_ReadCharacterSelectedClassProgress.cpp:
+    complete
+    .text start:0x021e9370 end:0x021e93e0
+
+src/Menu/RecordsFramework/MenuRecordList_RunUpdatePassesAndDispatchSelection.cpp:
+    complete
+    .text start:0x021f68dc end:0x021f6984
+
+src/Menu/ItemDetails/ItemDetail_CollectEnabledReferenceIds.cpp:
+    complete
+    .text start:0x021db314 end:0x021db3c0
+
+src/Menu/RecordsFramework/MenuSprite_PollLoadAndReleaseTask.cpp:
+    complete
+    .text start:0x021fb76c end:0x021fb818
+
+src/Menu/RecordsFramework/MenuSprite_AllocateTileRangeAndLoadAnimation.cpp:
+    complete
+    .text start:0x021fb9c4 end:0x021fba70
+
+src/Menu/CharacterPreview/CharacterPreview_LoadPartyMemberIntoInactiveBank.cpp:
+    complete
+    .text start:0x021fc71c end:0x021fc7c8
+
+src/Menu/RecordsFramework/MenuTextLabel_SetRenderedWidth.cpp:
+    complete
+    .text start:0x021f8c48 end:0x021f8c50
+
+src/Menu/RecordsFramework/MenuTextLabel_GetRenderedWidth.cpp:
+    complete
+    .text start:0x021f8c50 end:0x021f8c58
+
+src/Menu/RecordsFramework/MenuTextLabel_SetRenderedHeight.cpp:
+    complete
+    .text start:0x021f8c58 end:0x021f8c60
+
+src/Menu/RecordsFramework/MenuTextLabel_GetRenderedHeight.cpp:
+    complete
+    .text start:0x021f8c60 end:0x021f8c68
+
+src/Menu/RecordsFramework/MenuTextLabel_SetConfirmStateRoute.cpp:
+    complete
+    .text start:0x021f8c68 end:0x021f8c70
+
+src/Menu/RecordsFramework/MenuTextLabel_GetConfirmStateRoute.cpp:
+    complete
+    .text start:0x021f8c70 end:0x021f8c78
+
+src/Menu/RecordsFramework/MenuTextLabel_SetConfirmCallback.cpp:
+    complete
+    .text start:0x021f8c78 end:0x021f8c80
+
+src/Menu/RecordsFramework/MenuTextLabel_GetConfirmCallback.cpp:
+    complete
+    .text start:0x021f8c80 end:0x021f8c88
+
+src/Menu/RecordsFramework/MenuTextLabel_SetSelectionChangedCallback.cpp:
+    complete
+    .text start:0x021f8c88 end:0x021f8c90
+
+src/Menu/RecordsFramework/MenuTextLabel_GetSelectionChangedCallback.cpp:
+    complete
+    .text start:0x021f8c90 end:0x021f8c98
+
+src/Menu/RecordsFramework/MenuTextLabel_SetXCallback.cpp:
+    complete
+    .text start:0x021f8c98 end:0x021f8ca0
+
+src/Menu/RecordsFramework/MenuTextLabel_GetXCallback.cpp:
+    complete
+    .text start:0x021f8ca0 end:0x021f8ca8
+
+src/Menu/RecordsFramework/MenuLayerRecord_AttachNamedPayloadFromOwnerTask.cpp:
+    complete
+    .text start:0x021f7a08 end:0x021f7aac
+
+src/Menu/RecordsFramework/Menu_BindNamedCompletedMessageTablePayload.cpp:
+    complete
+    .text start:0x021fa5a0 end:0x021fa644
+
+src/Menu/RecordsFramework/Menu_SetGridDownCallback.cpp:
+    complete
+    .text start:0x021f9c80 end:0x021f9c88
+
+src/Menu/RecordsFramework/Menu_SetGridYButtonCallback.cpp:
+    complete
+    .text start:0x021f9c88 end:0x021f9c90
+
+src/Menu/RecordsFramework/Menu_SetGridXButtonCallback.cpp:
+    complete
+    .text start:0x021f9c90 end:0x021f9c98
+
+src/Menu/RecordsFramework/Menu_SetGridRightCallback.cpp:
+    complete
+    .text start:0x021f9c98 end:0x021f9ca0
+
+src/Menu/RecordsFramework/Menu_SetGridLeftCallback.cpp:
+    complete
+    .text start:0x021f9ca0 end:0x021f9ca8
+
+src/Menu/RecordsFramework/Menu_SetGridLButtonCallback.cpp:
+    complete
+    .text start:0x021f9ca8 end:0x021f9cb0
+
+src/Menu/RecordsFramework/Menu_SetGridRButtonCallback.cpp:
+    complete
+    .text start:0x021f9cb0 end:0x021f9cb8
+
+src/Menu/RecordsFramework/Menu_GetMessageTableLoadState.cpp:
+    complete
+    .text start:0x021fa580 end:0x021fa588
+
+src/Menu/RecordsFramework/Menu_GetSpriteResourceLoadState.cpp:
+    complete
+    .text start:0x021faa50 end:0x021faa58
+
+src/Menu/RecordsFramework/Menu_SetSpriteCellParameterAt26.cpp:
+    complete
+    .text start:0x021fb21c end:0x021fb224
+
+src/Menu/RecordsFramework/Menu_GetSpriteCellParameterAt26.cpp:
+    complete
+    .text start:0x021fb224 end:0x021fb22c
+
+src/Menu/RecordsFramework/Menu_SetSpriteCellTouchPressCallback.cpp:
+    complete
+    .text start:0x021fb22c end:0x021fb234
+
+src/Menu/RecordsFramework/Menu_GetGridRowCount.cpp:
+    complete
+    .text start:0x021f9ba0 end:0x021f9ba8
+
+src/Menu/RecordsFramework/Menu_SetSelectedGridColumn.cpp:
+    complete
+    .text start:0x021f9bb8 end:0x021f9bc0
+
+src/Menu/RecordsFramework/Menu_SetGridXButtonConfirms.cpp:
+    complete
+    .text start:0x021f9c30 end:0x021f9c38
+
+src/Menu/RecordsFramework/Menu_SetGridXButtonState.cpp:
+    complete
+    .text start:0x021f9c38 end:0x021f9c40
+
+src/Menu/RecordsFramework/Menu_SetGridYButtonState.cpp:
+    complete
+    .text start:0x021f9c40 end:0x021f9c48
+
+src/Menu/RecordsFramework/Menu_SetGridConfirmCallback.cpp:
+    complete
+    .text start:0x021f9c48 end:0x021f9c50
+
+src/Menu/RecordsFramework/Menu_SetGridConfirmState.cpp:
+    complete
+    .text start:0x021f9c50 end:0x021f9c58
+
+src/Menu/RecordsFramework/Menu_SetGridCancelState.cpp:
+    complete
+    .text start:0x021f9c58 end:0x021f9c60
+
+src/Menu/RecordsFramework/Menu_SetGridCancelCallback.cpp:
+    complete
+    .text start:0x021f9c60 end:0x021f9c68
+
+src/Menu/RecordsFramework/Menu_SetGridPageChangeCallback.cpp:
+    complete
+    .text start:0x021f9c68 end:0x021f9c70
+
+src/Menu/RecordsFramework/Menu_SetGridSelectButtonCallback.cpp:
+    complete
+    .text start:0x021f9c70 end:0x021f9c78
+
+src/Menu/RecordsFramework/Menu_SetGridUpCallback.cpp:
+    complete
+    .text start:0x021f9c78 end:0x021f9c80
+
+src/Menu/ItemDetails/ItemDetail_SetBatchQuantity.cpp:
+    complete
+    .text start:0x021dced4 end:0x021dcedc
+
+src/Menu/Panels/NumericRecord_SetValue.cpp:
+    complete
+    .text start:0x021f6504 end:0x021f650c
+
+src/Menu/RecordsFramework/MenuZoneRenderRecord_GetLoadState.cpp:
+    complete
+    .text start:0x021f7128 end:0x021f7130
+
+src/Menu/RecordsFramework/MenuZoneRenderRecord_SetUnknownParameterAtA8.cpp:
+    complete
+    .text start:0x021f7188 end:0x021f7190
+
+src/Menu/RecordsFramework/MenuZoneRenderRecord_GetUnknownParameterAtA8.cpp:
+    complete
+    .text start:0x021f7190 end:0x021f7198
+
+src/Menu/RecordsFramework/MenuZoneRenderRecord_SetUnknownParameterAtAA.cpp:
+    complete
+    .text start:0x021f7198 end:0x021f71a0
+
+src/Menu/RecordsFramework/MenuZoneRenderRecord_GetUnknownParameterAtAA.cpp:
+    complete
+    .text start:0x021f71a0 end:0x021f71a8
+
+src/Menu/RecordsFramework/MenuNumberLabel_GetValue.cpp:
+    complete
+    .text start:0x021f86dc end:0x021f86e4
+
+src/Menu/RecordsFramework/MenuRectangleRecord_GetFillColor.cpp:
+    complete
+    .text start:0x021f86f4 end:0x021f86fc
+
+src/Menu/RecordsFramework/Menu_GetSpriteCellTouchPressCallback.cpp:
+    complete
+    .text start:0x021fb234 end:0x021fb23c
+
+src/Menu/RecordsFramework/MenuSprite_SetPositiveDrawOffsetEnabled.cpp:
+    complete
+    .text start:0x021fba78 end:0x021fba80
+
+src/Menu/RecordsFramework/Menu_SetSpriteCellTouchRepeatCallback.cpp:
+    complete
+    .text start:0x021fb24c end:0x021fb254
+
+src/Menu/Panels/Vector3_SetComponents.cpp:
+    complete
+    .text start:0x021f00f4 end:0x021f00fc
+
+src/Menu/RecordsFramework/Menu_GetFlagQueryRecordPhase.cpp:
+    complete
+    .text start:0x021fbb40 end:0x021fbb48
+
+src/Menu/RecordsFramework/Menu_GetSpriteCellTouchRepeatCallback.cpp:
+    complete
+    .text start:0x021fb254 end:0x021fb25c
+
+src/Menu/RecordsFramework/MenuNumber_SetRenderedWidth.cpp:
+    complete
+    .text start:0x021fbcb0 end:0x021fbcb8
+
+src/Menu/RecordsFramework/Menu_SetSpriteCellPaletteOverride.cpp:
+    complete
+    .text start:0x021fb274 end:0x021fb27c
+
+src/Menu/RecordsFramework/MenuNumber_SetRenderedHeight.cpp:
+    complete
+    .text start:0x021fbcb8 end:0x021fbcc0
+
+src/Menu/RecordsFramework/Menu_SetSpriteCellPriorityOverride.cpp:
+    complete
+    .text start:0x021fb284 end:0x021fb28c
+
+src/Menu/RecordsFramework/MenuBackground_GetResourceState.cpp:
+    complete
+    .text start:0x021fbdec end:0x021fbdf4
+
+src/Menu/RecordsFramework/Menu_RequestSpriteCellLeftDrawNudge.cpp:
+    complete
+    .text start:0x021fb2a0 end:0x021fb2a8
+
+src/Menu/RecordsFramework/MenuZone_GetLoadPhase.cpp:
+    complete
+    .text start:0x021fc1e4 end:0x021fc1ec
+
+src/Menu/RecordsFramework/Menu_RequestSpriteCellRightDrawNudge.cpp:
+    complete
+    .text start:0x021fb2a8 end:0x021fb2b0
+
+src/Menu/RecordsFramework/MenuZone_GetZoneState.cpp:
+    complete
+    .text start:0x021fc1ec end:0x021fc1f4
+
+src/Menu/RecordsFramework/Menu_SetSpriteTrackParameterAt26.cpp:
+    complete
+    .text start:0x021fb524 end:0x021fb52c
+
+src/Menu/ScriptBindings/MenuScript_GetExecutionPhase.cpp:
+    complete
+    .text start:0x021fc3f8 end:0x021fc400
+
+src/Menu/RecordsFramework/Menu_GetSpriteTrackParameterAt26.cpp:
+    complete
+    .text start:0x021fb52c end:0x021fb534
+
+src/Menu/ScriptBindings/MenuScript_GetExecutionContext.cpp:
+    complete
+    .text start:0x021fc400 end:0x021fc408
+
+src/Menu/RecordsFramework/MenuSprite_SetUnknownParameterAtA4.cpp:
+    complete
+    .text start:0x021fb8cc end:0x021fb8d4
+
+src/Menu/RecordsFramework/MenuFill_GetWidth.cpp:
+    complete
+    .text start:0x021fc4fc end:0x021fc504
+
+src/Menu/RecordsFramework/MenuSprite_GetUnknownParameterAtA4.cpp:
+    complete
+    .text start:0x021fb8d4 end:0x021fb8dc
+
+src/Menu/RecordsFramework/MenuFill_GetHeight.cpp:
+    complete
+    .text start:0x021fc504 end:0x021fc50c
+
+src/Menu/RecordsFramework/MenuSprite_SetNegativeDrawOffsetEnabled.cpp:
+    complete
+    .text start:0x021fba70 end:0x021fba78
+
+src/Menu/RecordsFramework/MenuFill_SetUnknownRenderParameterAt2E.cpp:
+    complete
+    .text start:0x021fc50c end:0x021fc514
+
+src/Menu/RecordsFramework/MenuDisplayCommand_GetRequestPhase.cpp:
+    complete
+    .text start:0x021fd318 end:0x021fd320
+
+src/Menu/RecordsFramework/MenuHitRegion_SetUnknownAttributeAt2A.cpp:
+    complete
+    .text start:0x021fd45c end:0x021fd464
+
+src/Menu/RecordsFramework/MenuHitRegion_GetUnknownAttributeAt2A.cpp:
+    complete
+    .text start:0x021fd464 end:0x021fd46c
+
+src/Menu/RecordsFramework/Menu_InitializeSpriteTrackRecord.cpp:
+    complete
+    .text start:0x021fb2b0 end:0x021fb364
+
+src/Menu/CharacterCreation/CharacterCreation_OpenAppearanceChoiceWindow.cpp:
+    complete
+    .text start:0x021d9c7c end:0x021d9d34
+
+src/Menu/RecordsFramework/Menu_PollAndConsumeMessageTableLoad.cpp:
+    complete
+    .text start:0x021fa4c8 end:0x021fa580
+
+src/Combat/Results/PartyGrowthPanel_SetExperienceAwards.cpp:
+    complete
+    .text start:0x021d8ddc end:0x021d8e4c
+
+src/Menu/CharacterCreation/CharacterCreation_OpenNamePreviewWindow.cpp:
+    complete
+    .text start:0x021d9da4 end:0x021d9e60
+
+src/Menu/Panels/Graphics_RenderOrAppendSharedCanvasText.cpp:
+    complete
+    .text start:0x021dd344 end:0x021dd404
+
+src/Menu/Panels/MenuNotice_CreateTitleCanvas.cpp:
+    complete
+    .text start:0x021ed194 end:0x021ed254
+
+src/GameState/Statistics/Script_ReadStealAttemptCount.cpp:
+    complete
+    .text start:0x021e9cc4 end:0x021e9cf8
+
+src/GameState/Statistics/Script_ReadStatisticsLowByteAtA4.cpp:
+    complete
+    .text start:0x021ead0c end:0x021ead40
+
+src/Menu/Panels/GameState_CopyStateAndSetLow24BitsAt8.cpp:
+    complete
+    .text start:0x021e9dc8 end:0x021e9dfc
+
+src/Menu/Panels/Script_ReadCharacterAppearanceFlag.cpp:
+    complete
+    .text start:0x021e93e0 end:0x021e9424
+
+src/Menu/Panels/ConsumeTextResourceTaskAndAdvanceCanvas.cpp:
+    complete
+    .text start:0x021e0a90 end:0x021e0b54
+
+src/Menu/Panels/RestoreSubGraphicsBanksAndDestroyAllocators.cpp:
+    complete
+    .text start:0x021e7340 end:0x021e7404
+
+src/Menu/Panels/Menu_AppendCenteredLocalPartyName.cpp:
+    complete
+    .text start:0x021e8e34 end:0x021e8ef8
+
+src/Menu/Panels/Menu_FormatPairedIndexListCounters.cpp:
+    complete
+    .text start:0x021e853c end:0x021e8604
+
+src/Menu/CharacterCreation/CharacterCreation_OpenAppearanceSummaryWindow.cpp:
+    complete
+    .text start:0x021d99a4 end:0x021d9a6c
+
+src/Menu/ItemDetails/ItemDetail_DrawQuantityModeIcon.cpp:
+    complete
+    .text start:0x021dd404 end:0x021dd4cc
+
+src/Menu/Panels/MenuNotice_CreateCompletionCanvas.cpp:
+    complete
+    .text start:0x021ed600 end:0x021ed6cc
+
+src/Combat/Results/ExperienceAdjustment_AdvanceLoad.cpp:
+    complete
+    .text start:0x021f5340 end:0x021f5410
+
+src/Menu/ItemDetails/ItemDetail_QueueQuantityModeArchive.cpp:
+    complete
+    .text start:0x021dd4cc end:0x021dd59c
+
+src/Menu/Panels/Graphics_ApplyPendingObjectAnimationTransition.cpp:
+    complete
+    .text start:0x021e456c end:0x021e463c
+
+src/Menu/RecordsFramework/Menu_StartAndSubmitSpriteTrack.cpp:
+    complete
+    .text start:0x021fb3c8 end:0x021fb498
+
+src/Menu/ItemDetails/ItemDetail_ParseCategoryReferenceId.cpp:
+    complete
+    .text start:0x021db564 end:0x021db634
+
+src/Menu/ItemDetails/ItemDetail_QueueCategoryLayout.cpp:
+    complete
+    .text start:0x021e0414 end:0x021e04e8
+
+src/Menu/Panels/Graphics_ConsumeReadyBackgroundResourceBlocks.cpp:
+    complete
+    .text start:0x021ddae4 end:0x021ddbb8
+
+src/Combat/Results/BattleResults_ApplyExperienceAndGold.cpp:
+    complete
+    .text start:0x021f5150 end:0x021f5228
+
+src/Menu/Panels/Menu_AdvanceQueuedPanelHorizontalSlide.cpp:
+    complete
+    .text start:0x021ece9c end:0x021ecf78
+
+src/Menu/Panels/Menu_DrawSelectedCanvasAnimatedMarker.cpp:
+    complete
+    .text start:0x021e67f4 end:0x021e68cc
+
+src/Menu/Panels/Text_AppendTwoIndexedRecordRows.cpp:
+    complete
+    .text start:0x021da100 end:0x021da1dc
+
+src/Combat/Results/ExperienceAdjustment_CopyTableSections.cpp:
+    complete
+    .text start:0x021f5448 end:0x021f5524
+
+src/Combat/Results/BattleResults_FinishAndRestoreBattleScene.cpp:
+    complete
+    .text start:0x021f3fbc end:0x021f4098
+
+src/Menu/RecordsFramework/Graphics_ConsumeWidgetBackgroundTaskAndRefresh.cpp:
+    complete
+    .text start:0x021f78a4 end:0x021f7984
+
+src/Menu/RecordsFramework/Graphics_AdvanceWrappedWidgetPositionAndApplyColor.cpp:
+    complete
+    .text start:0x021f7784 end:0x021f7864
+
+src/Menu/RecordsFramework/System_DispatchFirstInactiveRecordGroup.cpp:
+    complete
+    .text start:0x021f6ac8 end:0x021f6ba8
+
+src/Menu/Panels/Menu_AdvancePartyPreviewInitialization.cpp:
+    complete
+    .text start:0x021e33b4 end:0x021e3d3c
+
+src/Menu/Panels/Grotto_AdvanceResourceInitializationPhase.cpp:
+    complete
+    .text start:0x021dda04 end:0x021ddae4
+
+src/Menu/RecordsFramework/Menu_StageCompletedNamedSpriteResource.cpp:
+    complete
+    .text start:0x021faa60 end:0x021fab48
+
+src/Menu/RecordsFramework/MenuSprite_InitializeFromCompletedNamedResource.cpp:
+    complete
+    .text start:0x021fb8dc end:0x021fb9c4
+
+src/Menu/Panels/Grotto_SetTotalValueAcrossTenPartyMetrics.cpp:
+    complete
+    .text start:0x021eaa00 end:0x021eaae8
+
+src/Menu/Panels/Graphics_AdvanceBrightnessTransitionAndUpdateOwner.cpp:
+    complete
+    .text start:0x021e3db0 end:0x021e3e98
+
+src/Menu/Panels/Graphics_SubmitTwoMappedCursorPositions.cpp:
+    complete
+    .text start:0x021e4264 end:0x021e4358
+
+src/Menu/RecordsFramework/MenuLayerRecord_InitializeAndAllocateScreenBuffer.cpp:
+    complete
+    .text start:0x021f745c end:0x021f7550
+
+src/Menu/RecordsFramework/MenuTextLabel_InitializeSelectableTextRecord.cpp:
+    complete
+    .text start:0x021f89f4 end:0x021f8ae8
+
+src/Menu/RecordsFramework/World_LoadZoneResourceAfterBackgroundTask.cpp:
+    complete
+    .text start:0x021f71a8 end:0x021f7290
+
+src/Menu/Panels/Graphics_ReleaseOverlayTasksAllocatorsAndSharedState.cpp:
+    complete
+    .text start:0x021e2f38 end:0x021e3030
+
+src/Menu/Panels/MenuNotice_CreateDescriptionCanvas.cpp:
+    complete
+    .text start:0x021ed354 end:0x021ed44c
+
+src/Menu/RecordsFramework/Resource_LoadNamedVariableBlocks.cpp:
+    complete
+    .text start:0x021f7aac end:0x021f7b98
+
+src/Menu/Panels/Menu_HitTestEnabledLayoutGroups.cpp:
+    complete
+    .text start:0x021e29d0 end:0x021e2acc
+
+src/Menu/ItemDetails/ItemDetail_ConsumeCategoryLayout.cpp:
+    complete
+    .text start:0x021e04e8 end:0x021e05e4
+
+src/Menu/RecordsFramework/MenuLayerRecord_PollResourceLoadAndConsumeTask.cpp:
+    complete
+    .text start:0x021f7688 end:0x021f7784
+
+src/Menu/Panels/BackgroundLoader_CompleteFileIntoState.cpp:
+    complete
+    .text start:0x021e0328 end:0x021e0414
+
+src/Menu/Panels/DrawIndexedGridCellAndLabel.cpp:
+    complete
+    .text start:0x021e709c end:0x021e71a0
+
+src/Menu/RecordsFramework/Menu_InitializeSpriteCellRecord.cpp:
+    complete
+    .text start:0x021fad84 end:0x021fae88
+
+src/Menu/RecordsFramework/Menu_InitializeTilePayloadAndReserveOam.cpp:
+    complete
+    .text start:0x021fb534 end:0x021fb640
+
+src/Menu/Panels/Graphics_AdvanceFadeAndEnableSelectionState.cpp:
+    complete
+    .text start:0x021ecaa4 end:0x021ecbbc
+
+src/Menu/Panels/Graphics_CopyContextTextForProtagonistAndSpecialMode.cpp:
+    complete
+    .text start:0x021e6594 end:0x021e66ac
+
+src/Menu/RecordsFramework/Script_InstallValidatedPackedTableOrExecuteCharacterVariant.cpp:
+    complete
+    .text start:0x021fa644 end:0x021fa760
+
+src/Menu/Panels/Graphics_InitializeSecondaryDisplayResourceContext.cpp:
+    complete
+    .text start:0x021e7220 end:0x021e7340
+
+src/Menu/ItemDetails/ItemDetail_DecodeEquipmentStatModifiers.cpp:
+    complete
+    .text start:0x021dbb34 end:0x021dbc58
+
+src/Combat/Results/PartyGrowthPanel_CopyWindowConfiguration.cpp:
+    complete
+    .text start:0x021d8cb4 end:0x021d8ddc
+
+src/Menu/RecordsFramework/MenuSelectionGrid_InitializeAndAllocateEntryTable.cpp:
+    complete
+    .text start:0x021f8cf4 end:0x021f8e1c
+
+src/Menu/Panels/Text_BuildMonsterNameDescriptor.cpp:
+    complete
+    .text start:0x021ed804 end:0x021ed92c
+
+src/Menu/Panels/Text_RebuildSelectedEightGlyphCanvas.cpp:
+    complete
+    .text start:0x021d9e60 end:0x021d9f88
+
+src/Menu/Panels/RefreshGridLabelBackground.cpp:
+    complete
+    .text start:0x021e8270 end:0x021e83c8
+
+src/Menu/Panels/LoadRelativeLayoutRecords.cpp:
+    complete
+    .text start:0x021e20f0 end:0x021e23d0
+
+src/Menu/Panels/ZoneRecord_BuildCompactAttributeTable.cpp:
+    complete
+    .text start:0x021dad8c end:0x021db08c
+
+src/Menu/Panels/RefreshFlaggedDescriptionRecord.cpp:
+    complete
+    .text start:0x021d9d34 end:0x021d9da4
+
+src/Combat/Results/BattleResults_FindPartySnapshotByMember.cpp:
+    complete
+    .text start:0x021f0360 end:0x021f03a0
+
+src/Menu/RecordsFramework/Graphics_ReadFixedPointDescriptorCoordinates.cpp:
+    complete
+    .text start:0x021f7d48 end:0x021f7d88
+
+src/Menu/RecordsFramework/Graphics_ReadDescriptorXZVector.cpp:
+    complete
+    .text start:0x021fb1dc end:0x021fb21c
+
+src/Menu/RecordsFramework/Graphics_ReadExtendedDescriptorXZVector.cpp:
+    complete
+    .text start:0x021fb88c end:0x021fb8cc
+
+src/Menu/RecordsFramework/Graphics_ReadUnsignedFixedPointDescriptorCoordinates.cpp:
+    complete
+    .text start:0x021f8b30 end:0x021f8b78
+
+src/Menu/RecordsFramework/Graphics_ReadUnsignedFixedPointDescriptorXZ.cpp:
+    complete
+    .text start:0x021fb4dc end:0x021fb524
+
+src/Menu/RecordsFramework/MenuNumber_GetFixedPointPosition.cpp:
+    complete
+    .text start:0x021fbc68 end:0x021fbcb0
+
+src/Menu/RecordsFramework/MenuFill_GetFixedPointPosition.cpp:
+    complete
+    .text start:0x021fc4b4 end:0x021fc4fc
+
+src/Menu/RecordsFramework/MenuHitRegion_GetFixedPointPosition.cpp:
+    complete
+    .text start:0x021fd3d8 end:0x021fd420
+
+src/Menu/Panels/Menu_ResetCatalogueEntry.cpp:
+    complete
+    .text start:0x021e12cc end:0x021e1318
+
+src/Menu/Panels/ReadTypeFourDescriptorKeyValue.cpp:
+    complete
+    .text start:0x021f63ac end:0x021f63f8
+
+src/Menu/RecordsFramework/MenuTextCanvas_GetFixedPointFrameOrigin.cpp:
+    complete
+    .text start:0x021f81f4 end:0x021f8240
+
+src/Menu/Panels/Graphics_SetSubDisplayPlaneMode.cpp:
+    complete
+    .text start:0x021f1818 end:0x021f1868
+
+src/Menu/RecordsFramework/UnlinkDescriptorAndNotifyOwner.cpp:
+    complete
+    .text start:0x021f67ec end:0x021f6844
+
+src/Menu/RecordsFramework/RemoveDescriptorsMatchingHalfwordKey.cpp:
+    complete
+    .text start:0x021f6844 end:0x021f6880
+
+src/Menu/Panels/AppendSixteenByteRecordWithinCapacity.cpp:
+    complete
+    .text start:0x021e1410 end:0x021e1474
+
+src/Menu/Panels/Graphics_DrawSelectedModelWithResourceAttachments.cpp:
+    complete
+    .text start:0x021fcd70 end:0x021fcdd4
+
+src/Menu/Panels/FindGroupContainingSignedHalfword.cpp:
+    complete
+    .text start:0x021e27f8 end:0x021e2868
+
+src/Menu/Panels/TestEnabledRecordTraversal.cpp:
+    complete
+    .text start:0x021e2c38 end:0x021e2ca8
+
+src/Menu/Panels/ResetPackedFieldsAndEmbeddedBuffers.cpp:
+    complete
+    .text start:0x021f222c end:0x021f229c
+
+src/Menu/Panels/Graphics_AdvanceTaskAndToggleMainPlaneZero.cpp:
+    complete
+    .text start:0x021dfad8 end:0x021dfb4c
+
+src/Menu/Panels/Menu_ClearLayoutGroupFlags.cpp:
+    complete
+    .text start:0x021e3d3c end:0x021e3db0
+
+src/Menu/RecordsFramework/MenuTextLabel_GetCursorOffset.cpp:
+    complete
+    .text start:0x021f8cc0 end:0x021f8cd4
+
+src/Menu/RecordsFramework/MenuZoneRenderRecord_GetPosition.cpp:
+    complete
+    .text start:0x021f7174 end:0x021f7188
+
+src/Menu/RecordsFramework/MenuNumber_GetAuxiliaryVector.cpp:
+    complete
+    .text start:0x021fbcc0 end:0x021fbcd4
+
+src/Menu/RecordsFramework/MenuModel_GetPosition.cpp:
+    complete
+    .text start:0x021fd028 end:0x021fd03c
+
+src/Menu/RecordsFramework/Graphics_IsDescriptorLowFlagSet.cpp:
+    complete
+    .text start:0x021f8ca8 end:0x021f8cc0
+
+src/Menu/RecordsFramework/Graphics_SetDescriptorNibbleAndOptionallyRefresh.cpp:
+    complete
+    .text start:0x021f8944 end:0x021f8960
+
+src/Menu/RecordsFramework/Graphics_MakeZeroDescriptorVector.cpp:
+    complete
+    .text start:0x021f8c1c end:0x021f8c48
+
+src/Menu/RecordsFramework/Graphics_ReadDescriptorModeOrOverride.cpp:
+    complete
+    .text start:0x021f86b8 end:0x021f86dc
+
+src/Menu/Panels/FindPackedThresholdEntry.cpp:
+    complete
+    .text start:0x021f5534 end:0x021f5578
+
+src/Menu/Panels/Script_ReadStateNineBitValue.cpp:
+    complete
+    .text start:0x021e9b48 end:0x021e9b7c
+
+src/Menu/Panels/Script_ReadStateTwentyFourBitValue.cpp:
+    complete
+    .text start:0x021e9d2c end:0x021e9d60
+
+src/GameState/Statistics/Script_ReadCompactMonsterDefeatCount.cpp:
+    complete
+    .text start:0x021ea344 end:0x021ea378
+
+src/Menu/Panels/Script_WriteProtagonistNestedValuePresence.cpp:
+    complete
+    .text start:0x021ea77c end:0x021ea7e0
+
+src/Menu/Panels/Script_ReadBoundedIdRecordValue.cpp:
+    complete
+    .text start:0x021eae38 end:0x021eaea0
+
+src/Menu/Panels/Script_WriteTransformedStatePair.cpp:
+    complete
+    .text start:0x021e9be4 end:0x021e9c54
+
+src/Menu/Panels/Script_WriteTransformedSecondStatePair.cpp:
+    complete
+    .text start:0x021e9c54 end:0x021e9cc4
+
+src/Menu/Panels/Graphics_AdvancePanelLoadingState.cpp:
+    complete
+    .text start:0x021d90d0 end:0x021d921c
+
+src/Menu/Panels/Menu_HitTestLinkedLayoutGroups.cpp:
+    complete
+    .text start:0x021e2868 end:0x021e29b8
+
+src/Menu/RecordsFramework/DrawConfiguredRecordTilemapBorder.cpp:
+    complete
+    .text start:0x021f86fc end:0x021f88b8
+
+src/Menu/Panels/InitializePresentSelectionTextPanels.cpp:
+    complete
+    .text start:0x021e802c end:0x021e81f4
+
+src/Menu/Panels/SkillAllocation_HasUncappedActiveVocationSkillLine.cpp:
+    complete
+    .text start:0x021f5228 end:0x021f52a0
+
+src/Menu/Panels/Menu_UploadPartyVocationIconTiles.cpp:
+    complete
+    .text start:0x021e2ce8 end:0x021e2dd8
+
+src/Menu/RecordsFramework/QueueDescriptorResourcePathWhenTaskMissing.cpp:
+    complete
+    .text start:0x021fb700 end:0x021fb76c
+
+src/Menu/Panels/Script_WriteSelectedGameFlagToOutput.cpp:
+    complete
+    .text start:0x021e9190 end:0x021e9208
+
+src/Menu/Panels/MenuRecordList_FindFreeTransferSlot.cpp:
+    complete
+    .text start:0x021f6e5c end:0x021f6e90
+
+src/Menu/Panels/MotionRecord_SetContentParameterAndRefreshByKey.cpp:
+    complete
+    .text start:0x021f63f8 end:0x021f6444
+
+src/Menu/Panels/MotionRecord_SetSelectionParameterAndRefreshByKey.cpp:
+    complete
+    .text start:0x021f645c end:0x021f64a8
+
+src/Menu/Panels/Menu_ReadGridEntryOrZero.cpp:
+    complete
+    .text start:0x021f9b6c end:0x021f9ba0
+
+src/Menu/Panels/Graphics_ConfigureSubBackgroundOneTextLayout.cpp:
+    complete
+    .text start:0x021ec368 end:0x021ec39c
+
+src/Menu/Panels/Menu_SetLayoutCellContentAndStyle.cpp:
+    complete
+    .text start:0x021e23d0 end:0x021e2418
+
+src/Menu/Panels/Menu_CountEnabledCatalogueEntriesByCategory.cpp:
+    complete
+    .text start:0x021e1de8 end:0x021e1f0c
+
+src/Menu/Panels/Menu_CountEnabledAlternateCatalogueEntriesByCategory.cpp:
+    complete
+    .text start:0x021e1f0c end:0x021e2030
+
+src/Menu/CharacterPreview/Menu_CancelCharacterPreviewLoads.cpp:
+    complete
+    .text start:0x021e61a0 end:0x021e61f4
+
+src/Menu/RecordsFramework/Menu_SelectEnabledCatalogueEntryByPrimaryRank.cpp:
+    complete
+    .text start:0x021e1604 end:0x021e170c
+
+src/Menu/RecordsFramework/Menu_SelectEnabledCatalogueEntryBySecondaryRank.cpp:
+    complete
+    .text start:0x021e170c end:0x021e1814

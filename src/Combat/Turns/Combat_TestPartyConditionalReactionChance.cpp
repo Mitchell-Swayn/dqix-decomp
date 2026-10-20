@@ -1,0 +1,9 @@
+#include "globaldefs.h"
+// Original: arm9/ov000 @ 0x02156558; symbol: TestCombatantConditionalFieldOrRandomFlag.
+// Original data: arm9/ov000 @ 0x2182ab8; symbol: data_ov000_02182ab8.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 00204080204040102020404020.
+// Observed span: 13 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/ov000.md.
+extern "C" int Combat_ClassifySpecialEncounterSpecies(void*),Combat_TestCombatantBlockingFlags(void*,int,int),Combat_HasFixedReactionChanceStatus(void*),CharacterState_GetLearnedSkillMask(void*,int),_Z13NextRandomMaxP6Randomi(void*,int);extern "C" void* _ZN9GameState11GetInstanceEv();extern "C" unsigned char* GameState_GetObjectWithFlag100(void*,int);extern unsigned char CombatTestPartyConditionalReactionChance_UnknownRoleInitializedBytes[];
+extern "C" ARM int Combat_TestPartyConditionalReactionChance(unsigned char *self,int slot){if(Combat_ClassifySpecialEncounterSpecies(self))return 0;void *state=_ZN9GameState11GetInstanceEv();int valid=slot>=0&&slot<=3;if(!valid)return 0;if(Combat_TestCombatantBlockingFlags(self,slot,0))return 0;unsigned char *object=GameState_GetObjectWithFlag100(state,slot);if(!object)return 0;if(Combat_HasFixedReactionChanceStatus(object)){int value=*(short*)(self+0x8e6e);if(value>=50&&value<75)return 1;return 0;}if(CharacterState_GetLearnedSkillMask(*(unsigned char**)(object+0x150),54)==0){int result=0;return result;}int selected=_Z13NextRandomMaxP6Randomi(self,CombatTestPartyConditionalReactionChance_UnknownRoleInitializedBytes[*(unsigned*)(*(unsigned char**)(object+0x150)+0x950)])==1;return selected;}

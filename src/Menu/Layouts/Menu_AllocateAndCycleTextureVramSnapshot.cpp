@@ -1,0 +1,27 @@
+#include <globaldefs.h>
+extern "C" int Menu_ReadScriptArgumentAsInteger(void*);
+extern "C" void* Resource_GetSharedLoadState();
+extern "C" void* Menu_GetDisplayRecordRegistry(void*);
+extern "C" void* MenuRecordList_LocateByKey(void*,unsigned);
+extern "C" unsigned MenuRecord_GetType(void*);
+extern "C" void* GameResources_GetInstance();
+extern "C" void Menu_SetActiveSelectionGrid(void*,unsigned);
+extern "C" void Menu_SetGridCancelState(void*,unsigned);
+extern "C" void Menu_SetGridCancelCallback(void*,unsigned);
+extern "C" void Menu_SetSpriteCellPaletteOverride(void*,int);
+extern "C" void Menu_SetSpriteCellPriorityOverride(void*,int);
+extern "C" void Menu_SetGridNavigationWrapEnabled(void*,unsigned);
+extern "C" void Graphics_SetDescriptorNibbleAndOptionallyRefresh(void*,void*,unsigned,unsigned);
+extern "C" void _Z13SetBrightnessP13GameResourcesii(void*,int,int);
+extern "C" void _Z17SetMainBrightnessP13GameResourcesii(void*,int,int);
+extern "C" void _Z16SetSubBrightnessP13GameResourcesii(void*,int,int);
+extern "C" void* Menu_FindSessionArenaById(void*,unsigned);
+extern "C" unsigned Menu_AllocateTemporaryBufferFromArena(void*,unsigned,unsigned);
+extern "C" unsigned Menu_AllocateCanvasPixelBufferFromArena(void*,unsigned,unsigned);
+extern "C" void RemoveDescriptorsMatchingHalfwordKey(void*,unsigned);
+extern "C" void _ZN13SafeAllocator5ResetEv(void*);
+extern "C" void* _ZN13SafeAllocator8AllocateEj(void*,unsigned);
+extern "C" void Graphics_RestoreTextureImageAndPaletteVRAMState(void*);
+extern "C" void Object_InvokeSaveTextureImageVRAMState(void*);
+// Original: arm9/ov011 @ 0x02184FB0; symbol: func_ov011_02184fb0; size: 0x68.
+extern "C" unsigned Menu_AllocateAndCycleTextureVramSnapshot(void* self) { unsigned id=Menu_ReadScriptArgumentAsInteger(self); Menu_ReadScriptArgumentAsInteger((char*)self+8); Menu_ReadScriptArgumentAsInteger((char*)self+16); void* node=Menu_FindSessionArenaById(Resource_GetSharedLoadState(),id); if(!node) return 0; void* item=_ZN13SafeAllocator8AllocateEj((char*)node+4,0x7c); if(!item) return 0; Graphics_RestoreTextureImageAndPaletteVRAMState((char*)item+4); Object_InvokeSaveTextureImageVRAMState((char*)item+4); return 1; }

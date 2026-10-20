@@ -1,8 +1,8 @@
 #include "Resource/ResourceMutex.h"
 
 #ifdef jpn
-#define func_020c745c func_020c8f28
-#define func_020c75a4 func_020c9070
+#define OS_InitThread func_020c8f28
+#define ProcessorContext_IsPrimaryContextInitialized func_020c9070
 #endif
 
 struct ResourceMutex
@@ -20,15 +20,16 @@ static ResourceMutex s_resourceMutex;
 extern "C"
 {
     // set up the main context
-    void func_020c745c();
+    void OS_InitThread();
     // check if the main context has been set up
-    bool func_020c75a4();
+    bool ProcessorContext_IsPrimaryContextInitialized();
 }
 
+// Original: arm9/main @ 0x020D96B0; symbol: _Z23InitializeResourceMutexv; size: 0x44.
 void InitializeResourceMutex()
 {
-    if (!func_020c75a4())
-        func_020c745c();
+    if (!ProcessorContext_IsPrimaryContextInitialized())
+        OS_InitThread();
 
     ZeroInitializeMutex(&s_resourceMutex.mutex_);
     s_resourceMutex.lockPrerequisiteB_ = true;
@@ -37,6 +38,7 @@ void InitializeResourceMutex()
     s_resourceMutex.lockCount_ = 0;
 }
 
+// Original: arm9/main @ 0x020D96F4; symbol: _Z27SetResourceMutexOperationalb; size: 0x18.
 bool SetResourceMutexOperational(bool to)
 {
     bool oldStatus = s_resourceMutex.lockPrerequisiteA_;
@@ -44,6 +46,7 @@ bool SetResourceMutexOperational(bool to)
     return oldStatus;
 }
 
+// Original: arm9/main @ 0x020D970C; symbol: _Z17LockResourceMutexv; size: 0x40.
 void LockResourceMutex()
 {
     if (s_resourceMutex.lockPrerequisiteB_ && s_resourceMutex.lockPrerequisiteA_)
@@ -53,6 +56,7 @@ void LockResourceMutex()
     }
 }
 
+// Original: arm9/main @ 0x020D974C; symbol: _Z19UnlockResourceMutexv; size: 0x3C.
 void UnlockResourceMutex()
 {
     if (s_resourceMutex.lockPrerequisiteB_ && s_resourceMutex.lockPrerequisiteA_)
@@ -62,6 +66,7 @@ void UnlockResourceMutex()
     }
 }
 
+// Original: arm9/main @ 0x020D9788; symbol: _Z29SleepIfResourceMutexNotLockedj; size: 0x20.
 void SleepIfResourceMutexNotLocked(unsigned int milliseconds)
 {
     if (s_resourceMutex.lockCount_ == 0)

@@ -1,0 +1,3 @@
+extern "C" { struct Node { Node* next; }; struct Owner { unsigned char pre[0xb8]; Node* head; Node* selected; }; short BestiaryScreen_CountFilteredMonsters(Owner*); short BestiaryScreen_GetCurrentPageIndex(Owner*); Node* BestiaryScreen_FindPageFirstEntry(Owner*,int);
+// Original: arm9/ov014 @ 0x021872DC; symbol: func_ov014_021872dc; size: 0x64.
+ void BestiaryScreen_ChangePageWithWrap(Owner* p,int delta) { short pages=(BestiaryScreen_CountFilteredMonsters(p)+15)/16; short page=BestiaryScreen_GetCurrentPageIndex(p); page=page+delta; if(page<0)page=pages+page;if(pages<=page)page-=pages;p->selected=BestiaryScreen_FindPageFirstEntry(p,page); } }

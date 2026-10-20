@@ -6,31 +6,32 @@
 #include <globaldefs.h>
 
 #ifdef jpn
-    #define func_020323c4 func_02031efc
+    #define Random_SelectScaledInclusiveIntegerRange func_02031efc
 
-    #define func_02012fe4 func_02012dac
+    #define Zone3D_GetMainInstance func_02012dac
 
-    #define func_020a3720 func_020a5498
-    #define func_020a395c func_020a5698
+    #define TreasureMap_LoadLanguageDataAndOffsets func_020a5498
+    #define GameState_FreeTreasureMapLanguageBuffersAndRestoreCache func_020a5698
     #define func_020a3a34 func_020a5770
 #endif
 
 extern "C"
 {
     // RandRange but it's implemented by double arithmetic
-    int func_020323c4(int minimum, int maximum);
+    int Random_SelectScaledInclusiveIntegerRange(int minimum, int maximum);
 
     // Returns the 'zone struct' (still need to figure out what this contains)
-    void* func_02012fe4();
+    void* Zone3D_GetMainInstance();
 
     // Not sure exactly what these do but it involves loading/unloading
     // data/tmap/tdata.gp2
-    void func_020a3720();
-    void func_020a395c();
+    void TreasureMap_LoadLanguageDataAndOffsets();
+    void GameState_FreeTreasureMapLanguageBuffersAndRestoreCache();
 }
 
 // USA: func_0209fe68
 // JPN: func_02090780
+// Original: arm9/main @ 0x0208FE68; symbol: _ZN17ActiveGrottoClass17CalculateFloorMapEiiiP8FloorMap; size: 0x68.
 bool ActiveGrottoClass::CalculateFloorMap(int floor, int width, int height, FloorMap* pFloorMap)
 {
     if (pFloorMap == NULL)
@@ -47,6 +48,7 @@ bool ActiveGrottoClass::CalculateFloorMap(int floor, int width, int height, Floo
 
 // USA: func_0208fed0
 // USA: func_020907e8
+// Original: arm9/main @ 0x0208FED0; symbol: _ZN17ActiveGrottoClass27CalculateAndStoreFloorWidthEi; size: 0x8C.
 int ActiveGrottoClass::CalculateAndStoreFloorWidth(int floor)
 {
     if (floor >= 0 && floor <= 4)
@@ -63,6 +65,7 @@ int ActiveGrottoClass::CalculateAndStoreFloorWidth(int floor)
 
 // USA: func_0208ff5c
 // JPN: func_02090874
+// Original: arm9/main @ 0x0208FF5C; symbol: _ZN17ActiveGrottoClass28CalculateAndStoreFloorHeightEi; size: 0x8C.
 int ActiveGrottoClass::CalculateAndStoreFloorHeight(int floor)
 {
     if (floor >= 0 && floor <= 4)
@@ -79,6 +82,7 @@ int ActiveGrottoClass::CalculateAndStoreFloorHeight(int floor)
 
 // USA: func_0208ffe8
 // JPN: func_02090900
+// Original: arm9/main @ 0x0208FFE8; symbol: _ZNK17ActiveGrottoClass19GetFloorMonsterRankEi; size: 0x30.
 int ActiveGrottoClass::GetFloorMonsterRank(int floor) const
 {
     GrottoStruct* grotto = GameState::GetInstance()->GetGrottoStruct();
@@ -90,6 +94,7 @@ int ActiveGrottoClass::GetFloorMonsterRank(int floor) const
 
 // USA: func_02090018
 // JPN: func_02090930
+// Original: arm9/main @ 0x02090018; symbol: _ZN17ActiveGrottoClass18RandomizeChestRankEi; size: 0x140.
 int ActiveGrottoClass::RandomizeChestRank(int floor)
 {
     int monsterRank = GetFloorMonsterRank(floor);
@@ -99,40 +104,40 @@ int ActiveGrottoClass::RandomizeChestRank(int floor)
     case 0:
         break;
     case 1:
-        chestRank = func_020323c4(1, 2);
+        chestRank = Random_SelectScaledInclusiveIntegerRange(1, 2);
         break;
     case 2:
-        chestRank = func_020323c4(1, 2);
+        chestRank = Random_SelectScaledInclusiveIntegerRange(1, 2);
         break;
     case 3:
-        chestRank = func_020323c4(1, 3);
+        chestRank = Random_SelectScaledInclusiveIntegerRange(1, 3);
         break;
     case 4:
-        chestRank = func_020323c4(1, 4);
+        chestRank = Random_SelectScaledInclusiveIntegerRange(1, 4);
         break;
     case 5:
-        chestRank = func_020323c4(2, 5);
+        chestRank = Random_SelectScaledInclusiveIntegerRange(2, 5);
         break;
     case 6:
-        chestRank = func_020323c4(2, 6);
+        chestRank = Random_SelectScaledInclusiveIntegerRange(2, 6);
         break;
     case 7:
-        chestRank = func_020323c4(3, 7);
+        chestRank = Random_SelectScaledInclusiveIntegerRange(3, 7);
         break;
     case 8:
-        chestRank = func_020323c4(3, 8);
+        chestRank = Random_SelectScaledInclusiveIntegerRange(3, 8);
         break;
     case 9:
-        chestRank = func_020323c4(4, 9);
+        chestRank = Random_SelectScaledInclusiveIntegerRange(4, 9);
         break;
     case 10:
-        chestRank = func_020323c4(5, 9);
+        chestRank = Random_SelectScaledInclusiveIntegerRange(5, 9);
         break;
     case 11:
-        chestRank = func_020323c4(1, 10);
+        chestRank = Random_SelectScaledInclusiveIntegerRange(1, 10);
         break;
     case 12:
-        chestRank = func_020323c4(4, 10);
+        chestRank = Random_SelectScaledInclusiveIntegerRange(4, 10);
         break;
     }
     return chestRank;
@@ -140,6 +145,7 @@ int ActiveGrottoClass::RandomizeChestRank(int floor)
 
 // USA: func_02090158
 // JPN: func_02090a70
+// Original: arm9/main @ 0x02090158; symbol: _ZNK17ActiveGrottoClass22GetActiveGrottoEnvironEv; size: 0x28.
 int ActiveGrottoClass::GetActiveGrottoEnviron() const
 {
     GrottoStruct* grotto = GameState::GetInstance()->GetGrottoStruct();
@@ -152,10 +158,11 @@ int ActiveGrottoClass::GetActiveGrottoEnviron() const
 
 // USA: func_02090180
 // JPN: func_02090a98
+// Original: arm9/main @ 0x02090180; symbol: _ZNK17ActiveGrottoClass13GetFloorCountEv; size: 0x7C.
 int ActiveGrottoClass::GetFloorCount() const
 {
     GrottoStruct* grotto = GameState::GetInstance()->GetGrottoStruct();
-    void* zone = func_02012fe4();
+    void* zone = Zone3D_GetMainInstance();
     if (!IsGrottoZone(*(unsigned short*)zone))
         return 0;
 
@@ -164,10 +171,10 @@ int ActiveGrottoClass::GetFloorCount() const
 
     if (overallMapData_.discoveryState_ == DiscoveryState_Invalid)
     {
-        func_020a3720();
+        TreasureMap_LoadLanguageDataAndOffsets();
         DetailedTreasureMapData data;
         ExportDetailedTreasureMapData(&grotto->activeMapData, &data, 1, 0);
-        func_020a395c();
+        GameState_FreeTreasureMapLanguageBuffersAndRestoreCache();
         return data.regular_.floorCount_;
     }
 
@@ -176,6 +183,7 @@ int ActiveGrottoClass::GetFloorCount() const
 
 // USA: func_020901fc
 // JPN: func_02090b14
+// Original: arm9/main @ 0x020901FC; symbol: _ZNK17ActiveGrottoClass12GetPopupNameEv; size: 0x6C.
 const char* ActiveGrottoClass::GetPopupName() const
 {
     GrottoStruct* grotto = GameState::GetInstance()->GetGrottoStruct();
@@ -189,10 +197,10 @@ const char* ActiveGrottoClass::GetPopupName() const
 
     // Returning a temporary, could something go wrong here?
     // Would have to call another function after this which uses the stack.
-    func_020a3720();
+    TreasureMap_LoadLanguageDataAndOffsets();
     DetailedTreasureMapData data;
     ExportDetailedTreasureMapData(&grotto->activeMapData, &data, 1, 0);
-    func_020a395c();
+    GameState_FreeTreasureMapLanguageBuffersAndRestoreCache();
 
     if (data.mapType_ == TreasureMapType_Legacy)
         return data.legacy_.popupName_;
@@ -202,6 +210,7 @@ const char* ActiveGrottoClass::GetPopupName() const
 
 // USA: func_02090268
 // JPN: func_02090b88
+// Original: arm9/main @ 0x02090268; symbol: _ZNK17ActiveGrottoClass19GetActiveGrottoSeedEv; size: 0x28.
 unsigned short ActiveGrottoClass::GetActiveGrottoSeed() const
 {
     GrottoStruct* grottoData = GameState::GetInstance()->GetGrottoStruct();
@@ -214,6 +223,7 @@ unsigned short ActiveGrottoClass::GetActiveGrottoSeed() const
 
 // USA: func_02090290
 // JPN: func_02090bb0
+// Original: arm9/main @ 0x02090290; symbol: _ZN17ActiveGrottoClass15GetDetailedDataEv; size: 0x4.
 DetailedTreasureMapData* ActiveGrottoClass::GetDetailedData()
 {
     return &overallMapData_;

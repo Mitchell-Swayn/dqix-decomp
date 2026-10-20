@@ -10,38 +10,45 @@
 #pragma optimize_for_size off
 
 #if defined(jpn)
-#define func_020ca458 func_020cbf24
-#define func_020c9be0 func_020cb6ac
+#define MIi_CpuClearFast func_020cbf24
+#define DisableInterruptsAndHaltForever func_020cb6ac
 
-#define data_02111860 data_02111500
+#define IsCardReadManagerInitialized_UnknownRoleZeroInitializedStorage data_02111500
 #endif
 
 extern "C"
 {
     // memset but tries to do 32 bytes at a time
-    void func_020ca458(int value, void* dst, unsigned len);
+    void MIi_CpuClearFast(int value, void* dst, unsigned len);
 
     // abort() or fatal error or similar
-    void func_020c9be0();
+    void DisableInterruptsAndHaltForever();
 }
 // is card read manager initialized
-extern int data_02111860;
+// Original data: arm9/main @ 0x2111860; symbol: data_02111860.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 32 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern int IsCardReadManagerInitialized_UnknownRoleZeroInitializedStorage;
 
 void MarkCardReadManagerInitialized(int to);
 
+// Original: arm9/main @ 0x020CFCBC; symbol: _Z21SendTaskToReadContextPFvP15CardReadManagerE; size: 0x3C.
 void SendTaskToReadContext(CardReadManager::ReadProc task)
 {
-    CardReadManager* readManager = (CardReadManager*)&data_021118e0;
-    ChangeContextPriority(&readManager->cartridgeReadContext, data_021118e0.contextPriority_108);
+    CardReadManager* readManager = (CardReadManager*)&TryReadViaDMA_UnknownRoleZeroInitializedStorage;
+    ChangeContextPriority(&readManager->cartridgeReadContext, TryReadViaDMA_UnknownRoleZeroInitializedStorage.contextPriority_108);
     readManager->currentTaskExecutionContext = &readManager->cartridgeReadContext;
     readManager->cartridgeReadProc = task;
     readManager->flags |= (1 << READ_MANAGER_FLAG_CONTEXT_HAS_TASK_PENDING);
     MarkContextReadyAndSwitch(&readManager->cartridgeReadContext);
 }
 
+// Original: arm9/main @ 0x020CFCF8; symbol: _Z19LockCardReadManagerti; size: 0x84.
 void LockCardReadManager(unsigned short ownerID, int taskType)
 {
-    CardReadManager* manager = &data_021118e0;
+    CardReadManager* manager = &TryReadViaDMA_UnknownRoleZeroInitializedStorage;
     volatile CardReadManager* volMan = manager;
     // here we access owner & multiplicity via volatile, but 
     // owner & taskType works too.
@@ -49,7 +56,7 @@ void LockCardReadManager(unsigned short ownerID, int taskType)
     if (volMan->lock.owner == ownerID)
     {
         if (manager->lock.taskType != taskType)
-            func_020c9be0();
+            DisableInterruptsAndHaltForever();
     }
     else
     {
@@ -64,19 +71,20 @@ void LockCardReadManager(unsigned short ownerID, int taskType)
     SetIRQInterruptState(priorState);
 }
 
+// Original: arm9/main @ 0x020CFD7C; symbol: _Z21UnlockCardReadManagerti; size: 0x8C.
 void UnlockCardReadManager(unsigned short ownerID, int taskType)
 {
-    CardReadManager* manager = &data_021118e0;
+    CardReadManager* manager = &TryReadViaDMA_UnknownRoleZeroInitializedStorage;
     volatile CardReadManager* volMan = manager;
     int priorState = DisableIRQInterrupts();
     if (volMan->lock.owner != ownerID || volMan->lock.multiplicity == 0)
     {
-        func_020c9be0();
+        DisableInterruptsAndHaltForever();
     }
     else
     {
         if (manager->lock.taskType != taskType)
-            func_020c9be0();
+            DisableInterruptsAndHaltForever();
         int multiplicity = volMan->lock.multiplicity;
         multiplicity--;
         volMan->lock.multiplicity = multiplicity;
@@ -92,24 +100,25 @@ void UnlockCardReadManager(unsigned short ownerID, int taskType)
     SetIRQInterruptState(priorState);
 }
 
+// Original: arm9/main @ 0x020CFE08; symbol: _Z25InitializeCardReadManagerv; size: 0x110.
 void InitializeCardReadManager()
 {
-    CardReadManager* manager = &data_021118e0;
+    CardReadManager* manager = &TryReadViaDMA_UnknownRoleZeroInitializedStorage;
     volatile CardReadManager* volatileManager = manager;
 
     // two of these need to be volatile and definitely owner
     volatileManager->lock.owner = -3;
     volatileManager->lock.multiplicity = 0;
     manager->lock.taskType = 0;
-    manager->pSharedData = &data_02111880;
+    manager->pSharedData = &InitializeCardReadManager_UnknownRoleZeroInitializedStorage;
     
-    func_020ca458(0, &data_02111880, sizeof(Arm7CardReadData));
-    CleanInvalidateCacheRange(&data_02111880, sizeof(Arm7CardReadData));
+    MIi_CpuClearFast(0, &InitializeCardReadManager_UnknownRoleZeroInitializedStorage, sizeof(Arm7CardReadData));
+    CleanInvalidateCacheRange(&InitializeCardReadManager_UnknownRoleZeroInitializedStorage, sizeof(Arm7CardReadData));
     manager->instructionCacheCleanThreshold = 0xffffffff;
     manager->dataCacheCleanThreshold = 0xffffffff;
     
     if (!IsDownloadPlay())
-        VectorizedInvertedMemcpy((void*)BIOS_ADDR_CARTRIDGE_HEADER, (void*)0x027ffa80, 0x160);
+        MI_CpuCopy8((void*)BIOS_ADDR_CARTRIDGE_HEADER, (void*)0x027ffa80, 0x160);
     
     manager->contextPriority_108 = 4;
     manager->lock.waitingContexts.last = 0;
@@ -117,7 +126,7 @@ void InitializeCardReadManager()
     manager->ongoingReadBlock.last = 0;
     manager->ongoingReadBlock.first = 0;
 
-    PopulateProcessorContext(&manager->cartridgeReadContext, (unsigned int)&CartridgeReadContextLoop, 0, (unsigned int)(&data_021118e0 + 1), 0x400, manager->contextPriority_108);
+    PopulateProcessorContext(&manager->cartridgeReadContext, (unsigned int)&CartridgeReadContextLoop, 0, (unsigned int)(&TryReadViaDMA_UnknownRoleZeroInitializedStorage + 1), 0x400, manager->contextPriority_108);
     MarkContextReadyAndSwitch(&manager->cartridgeReadContext);
     SetArm9IPCCommandHandler(11, &IPCCommand11Proc);
 
@@ -129,25 +138,29 @@ void InitializeCardReadManager()
     MarkCardReadManagerInitialized(true);    
 }
 
+// Original: arm9/main @ 0x020CFF18; symbol: _Z28IsCardReadManagerInitializedv; size: 0x10.
 int IsCardReadManagerInitialized()
 {
-    return data_02111860;
+    return IsCardReadManagerInitialized_UnknownRoleZeroInitializedStorage;
 }
 
+// Original: arm9/main @ 0x020CFF28; symbol: _Z32VerifyCardReadManagerInitializedv; size: 0x18.
 void VerifyCardReadManagerInitialized()
 {
     if (!IsCardReadManagerInitialized())
-        func_020c9be0();
+        DisableInterruptsAndHaltForever();
 }
 
+// Original: arm9/main @ 0x020CFF40; symbol: _Z30MarkCardReadManagerInitializedi; size: 0x10.
 void MarkCardReadManagerInitialized(int to)
 {
-    data_02111860 = to;
+    IsCardReadManagerInitialized_UnknownRoleZeroInitializedStorage = to;
 }
 
+// Original: arm9/main @ 0x020CFF50; symbol: _Z24AwaitCardReadManagerIdlev; size: 0x4C.
 bool AwaitCardReadManagerIdle()
 {
-    CardReadManager* manager = &data_021118e0;
+    CardReadManager* manager = &TryReadViaDMA_UnknownRoleZeroInitializedStorage;
     int priorState = DisableIRQInterrupts();
     while (manager->flags & (1 << READ_MANAGER_FLAG_HARDWARE_READ_IN_PROGRESS))
         BlockCurrentContext(&manager->ongoingReadBlock);
@@ -155,14 +168,16 @@ bool AwaitCardReadManagerIdle()
     return manager->pSharedData->unknown_0 == 0;
 }
 
+// Original: arm9/main @ 0x020CFF9C; symbol: _Z21IsCardReadManagerIdlev; size: 0x1C.
 bool IsCardReadManagerIdle()
 {
-    CardReadManager* manager = &data_021118e0;
+    CardReadManager* manager = &TryReadViaDMA_UnknownRoleZeroInitializedStorage;
     return !(manager->flags & (1 << READ_MANAGER_FLAG_HARDWARE_READ_IN_PROGRESS));
 }
 
+// Original: arm9/main @ 0x020CFFB8; symbol: _Z30GetCardReadManagerSharedStatusv; size: 0x14.
 int GetCardReadManagerSharedStatus()
 {
-    CardReadManager* manager = &data_021118e0;
+    CardReadManager* manager = &TryReadViaDMA_UnknownRoleZeroInitializedStorage;
     return manager->pSharedData->unknown_0;
 }

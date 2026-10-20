@@ -1,0 +1,10 @@
+#include "globaldefs.h"
+#include "std_library_functions.h"
+// Original data: arm9/ov031 @ 0x224e588; symbol: data_ov031_0224e588.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 8 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/ov031.md.
+extern int* YssdClientRunWorker_UnknownRoleZeroInitializedStorage;extern "C" void YssdClient_SetWorkerPhase(int),System_StoreStateAndUnblockContexts(unsigned),NasServiceLookup_RequestStop(),_Z19SleepCurrentContextj(unsigned);extern "C" int System_TryInitializeNamedRecord(const char*,void*);extern "C" unsigned NasServiceLookup_PollAndRelease();
+// Original: arm9/ov031 @ 0x0221087C; symbol: func_ov031_0221087c; size: 0x10C.
+extern "C" ARM void YssdClient_LookupService(){if(YssdClientRunWorker_UnknownRoleZeroInitializedStorage[1]==1&&YssdClientRunWorker_UnknownRoleZeroInitializedStorage[16]==3){YssdClient_SetWorkerPhase(4);return;}if(!System_TryInitializeNamedRecord((char*)YssdClientRunWorker_UnknownRoleZeroInitializedStorage+0x38,(char*)YssdClientRunWorker_UnknownRoleZeroInitializedStorage+0x44))return;while(((volatile int*)YssdClientRunWorker_UnknownRoleZeroInitializedStorage)[16]!=3&&((volatile int*)YssdClientRunWorker_UnknownRoleZeroInitializedStorage)[16]!=5&&((volatile int*)YssdClientRunWorker_UnknownRoleZeroInitializedStorage)[16]!=4){YssdClientRunWorker_UnknownRoleZeroInitializedStorage[16]=NasServiceLookup_PollAndRelease();switch(YssdClientRunWorker_UnknownRoleZeroInitializedStorage[16]){case 1:case 2:_Z19SleepCurrentContextj(100);if(YssdClientRunWorker_UnknownRoleZeroInitializedStorage[1]==2)NasServiceLookup_RequestStop();break;case 0:case 3:case 4:case 5:if(((volatile int*)YssdClientRunWorker_UnknownRoleZeroInitializedStorage)[16]==3&&YssdClientRunWorker_UnknownRoleZeroInitializedStorage[1]==1)YssdClient_SetWorkerPhase(4);else{System_StoreStateAndUnblockContexts(1);(void)*(volatile int*)(YssdClientRunWorker_UnknownRoleZeroInitializedStorage+16);}break;}}}

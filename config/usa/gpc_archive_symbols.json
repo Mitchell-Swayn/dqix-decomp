@@ -1,0 +1,1104 @@
+{
+  "schema_version": 1,
+  "subsystem": "Filesystem/GPC",
+  "functions": [
+    {
+      "function_id": "arm9/main:020d8fcc",
+      "address": "0x020d8fcc",
+      "name": "Filesystem_GetGPCInnerFileDataByEntry",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d9010",
+      "address": "0x020d9010",
+      "name": "_ZN7GPCFile16GetMainDataStartEv",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d901c",
+      "address": "0x020d901c",
+      "name": "_ZN7GPCFile12GetFileByCRCEj",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d90d0",
+      "address": "0x020d90d0",
+      "name": "Filesystem_GetGPCInnerFileDataByName",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d9100",
+      "address": "0x020d9100",
+      "name": "Filesystem_GetGPCInnerFileDataByCRC",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d9164",
+      "address": "0x020d9164",
+      "name": "_Z18ZeroInitGPCPointerPP7GPCFile",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d9170",
+      "address": "0x020d9170",
+      "name": "_Z21ZeroDestroyGPCPointerPP7GPCFile",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d917c",
+      "address": "0x020d917c",
+      "name": "Filesystem_IsGPCPairReadable",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d91a8",
+      "address": "0x020d91a8",
+      "name": "_Z12ResetGPCPairPP7GPCFileR15ExtendedNitroVM",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d91dc",
+      "address": "0x020d91dc",
+      "name": "_Z42LoadAndDecompressGPCHeaderAndInnerFileInfoPP7GPCFileR15ExtendedNitroVMPKcPvRjjbPb",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d9354",
+      "address": "0x020d9354",
+      "name": "_Z21GetGPCInnerFileLengthR15ExtendedNitroVMRKN7GPCFile6HeaderEPKNS1_9FileEntryE",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d93d8",
+      "address": "0x020d93d8",
+      "name": "_Z27GetGPCInnerFileLengthByNameRKP7GPCFileR15ExtendedNitroVMPKc",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d9400",
+      "address": "0x020d9400",
+      "name": "_Z26GetGPCInnerFileLengthByCRCRKP7GPCFileR15ExtendedNitroVMj",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d9458",
+      "address": "0x020d9458",
+      "name": "_Z21DecompressFileFromGPCR15ExtendedNitroVMPvRjjRKN7GPCFile6HeaderEPKNS3_9FileEntryE",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d9538",
+      "address": "0x020d9538",
+      "name": "_Z27DecompressFileFromGPCByNameRKP7GPCFileR15ExtendedNitroVMPvRjjPKc",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d9580",
+      "address": "0x020d9580",
+      "name": "_Z26DecompressFileFromGPCByCRCRKP7GPCFileR15ExtendedNitroVMPvRjjj",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d95f8",
+      "address": "0x020d95f8",
+      "name": "_ZN11GPCReadPair14ZeroInitializeEv",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d960c",
+      "address": "0x020d960c",
+      "name": "_ZN11GPCReadPair21ZeroInitializeMachineEv",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d961c",
+      "address": "0x020d961c",
+      "name": "_ZN11GPCReadPair5ResetEv",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d962c",
+      "address": "0x020d962c",
+      "name": "_Z16CopyGPCSignaturePjS_",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d9638",
+      "address": "0x020d9638",
+      "name": "_Z19SetGPCSignatureGPC0Pj",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d9654",
+      "address": "0x020d9654",
+      "name": "_Z26CopyGPCSignatureFromStringPjPKc",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d9678",
+      "address": "0x020d9678",
+      "name": "_Z19SetGPCSignatureGPC1Pj",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020d9694",
+      "address": "0x020d9694",
+      "name": "_Z19SetGPCSignatureGPC2Pj",
+      "source": "src/Filesystem/GPC/GPC.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    },
+    {
+      "function_id": "arm9/main:020e6710",
+      "address": "0x020e6710",
+      "name": "__sinit_020e6710",
+      "source": "src/Filesystem/GPC/GPCStartup.cpp",
+      "review": "retained-established-api-or-initializer",
+      "evidence": "Complete GPC lookup/read/decompression or startup body reviewed against GPCFile/Header/FileEntry and GPCImplementationData layouts; no uncertain gameplay attribution."
+    }
+  ],
+  "relationships": [
+    {
+      "caller": "arm9/main:020d9100",
+      "callee": "arm9/main:020d8fcc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d901c",
+      "callee": "arm9/main:020d9010",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9100",
+      "callee": "arm9/main:020d901c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9400",
+      "callee": "arm9/main:020d901c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9580",
+      "callee": "arm9/main:020d901c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d90d0",
+      "callee": "arm9/itcm:01ff860c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d90d0",
+      "callee": "arm9/main:020d9100",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020daa58",
+      "callee": "arm9/main:020d90d0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:021688dc",
+      "callee": "arm9/main:020d9164",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov001:0215ca4c",
+      "callee": "arm9/main:020d9164",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov009:02185634",
+      "callee": "arm9/main:020d9164",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021a28a8",
+      "callee": "arm9/main:020d9164",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov025:021e771c",
+      "callee": "arm9/main:020d9164",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov026:021dc440",
+      "callee": "arm9/main:020d9164",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov033:022a21a8",
+      "callee": "arm9/main:020d9164",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov034:022a21a8",
+      "callee": "arm9/main:020d9164",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:0203d028",
+      "callee": "arm9/main:020d9164",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020421c4",
+      "callee": "arm9/main:020d9164",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:0207568c",
+      "callee": "arm9/main:020d9164",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02079a3c",
+      "callee": "arm9/main:020d9164",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:02164fac",
+      "callee": "arm9/main:020d9170",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:02165490",
+      "callee": "arm9/main:020d9170",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:021688dc",
+      "callee": "arm9/main:020d9170",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov001:0215ca4c",
+      "callee": "arm9/main:020d9170",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov009:02185634",
+      "callee": "arm9/main:020d9170",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov015:0218c538",
+      "callee": "arm9/main:020d9170",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov015:0218c920",
+      "callee": "arm9/main:020d9170",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov015:0218cc24",
+      "callee": "arm9/main:020d9170",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov015:0218d50c",
+      "callee": "arm9/main:020d9170",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov015:0218dbec",
+      "callee": "arm9/main:020d9170",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021a28a8",
+      "callee": "arm9/main:020d9170",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov025:021e771c",
+      "callee": "arm9/main:020d9170",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov026:021dc440",
+      "callee": "arm9/main:020d9170",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov033:022a21a8",
+      "callee": "arm9/main:020d9170",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov034:022a21a8",
+      "callee": "arm9/main:020d9170",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:0203d028",
+      "callee": "arm9/main:020d9170",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020421c4",
+      "callee": "arm9/main:020d9170",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:0207568c",
+      "callee": "arm9/main:020d9170",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02079900",
+      "callee": "arm9/main:020d9170",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02079cf8",
+      "callee": "arm9/main:020d9170",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d917c",
+      "callee": "arm9/main:020d8a68",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov033:022a21a8",
+      "callee": "arm9/main:020d917c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov034:022a21a8",
+      "callee": "arm9/main:020d917c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d91a8",
+      "callee": "arm9/main:020d8a68",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d91a8",
+      "callee": "arm9/main:020d8b4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov033:022a21a8",
+      "callee": "arm9/main:020d91a8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov034:022a21a8",
+      "callee": "arm9/main:020d91a8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d91dc",
+      "callee": "arm9/main:020d91a8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d91dc",
+      "callee": "arm9/main:02075090",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d91dc",
+      "callee": "arm9/main:020d84f8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d91dc",
+      "callee": "arm9/main:020d8524",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d91dc",
+      "callee": "arm9/main:020d8b94",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d91dc",
+      "callee": "arm9/main:020d8c78",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d91dc",
+      "callee": "arm9/main:020d8ee4",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:02164fac",
+      "callee": "arm9/main:020d91dc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:02166008",
+      "callee": "arm9/main:020d91dc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:021688dc",
+      "callee": "arm9/main:020d91dc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov001:0215ca4c",
+      "callee": "arm9/main:020d91dc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov009:02185634",
+      "callee": "arm9/main:020d91dc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov015:0218c538",
+      "callee": "arm9/main:020d91dc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov015:0218c920",
+      "callee": "arm9/main:020d91dc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov015:0218cc24",
+      "callee": "arm9/main:020d91dc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov015:0218d50c",
+      "callee": "arm9/main:020d91dc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov015:0218dbec",
+      "callee": "arm9/main:020d91dc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021a28a8",
+      "callee": "arm9/main:020d91dc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov026:021dc440",
+      "callee": "arm9/main:020d91dc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov033:022a21a8",
+      "callee": "arm9/main:020d91dc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov034:022a21a8",
+      "callee": "arm9/main:020d91dc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:0203d028",
+      "callee": "arm9/main:020d91dc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020421c4",
+      "callee": "arm9/main:020d91dc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:0207568c",
+      "callee": "arm9/main:020d91dc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02079900",
+      "callee": "arm9/main:020d91dc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02079cf8",
+      "callee": "arm9/main:020d91dc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9354",
+      "callee": "arm9/main:020d8714",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9354",
+      "callee": "arm9/main:020d8ae8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9354",
+      "callee": "arm9/main:020d8c78",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9400",
+      "callee": "arm9/main:020d9354",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d93d8",
+      "callee": "arm9/itcm:01ff860c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d93d8",
+      "callee": "arm9/main:020d9400",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov033:022a21a8",
+      "callee": "arm9/main:020d93d8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov034:022a21a8",
+      "callee": "arm9/main:020d93d8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9400",
+      "callee": "arm9/main:020d8a68",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9458",
+      "callee": "arm9/main:020d8ae8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9458",
+      "callee": "arm9/main:020d8c78",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9458",
+      "callee": "arm9/main:020d8ee4",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9580",
+      "callee": "arm9/main:020d9458",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9538",
+      "callee": "arm9/itcm:01ff860c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9538",
+      "callee": "arm9/main:020d9580",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:02164fac",
+      "callee": "arm9/main:020d9538",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:02166070",
+      "callee": "arm9/main:020d9538",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:021688dc",
+      "callee": "arm9/main:020d9538",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov001:0215ca4c",
+      "callee": "arm9/main:020d9538",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov009:02185634",
+      "callee": "arm9/main:020d9538",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov015:0218c538",
+      "callee": "arm9/main:020d9538",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov015:0218c920",
+      "callee": "arm9/main:020d9538",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov015:0218cc24",
+      "callee": "arm9/main:020d9538",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov015:0218d50c",
+      "callee": "arm9/main:020d9538",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov015:0218dbec",
+      "callee": "arm9/main:020d9538",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021a28a8",
+      "callee": "arm9/main:020d9538",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov026:021dc440",
+      "callee": "arm9/main:020d9538",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov033:022a21a8",
+      "callee": "arm9/main:020d9538",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov034:022a21a8",
+      "callee": "arm9/main:020d9538",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:0203d028",
+      "callee": "arm9/main:020d9538",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020421c4",
+      "callee": "arm9/main:020d9538",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:0207568c",
+      "callee": "arm9/main:020d9538",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02079900",
+      "callee": "arm9/main:020d9538",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02079cf8",
+      "callee": "arm9/main:020d9538",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9580",
+      "callee": "arm9/main:020d8a68",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:02166008",
+      "callee": "arm9/main:020d95f8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:021688dc",
+      "callee": "arm9/main:020d960c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov001:0215ca4c",
+      "callee": "arm9/main:020d960c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov009:02185634",
+      "callee": "arm9/main:020d960c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021a28a8",
+      "callee": "arm9/main:020d960c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov025:021e771c",
+      "callee": "arm9/main:020d960c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov026:021dc440",
+      "callee": "arm9/main:020d960c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:0203d028",
+      "callee": "arm9/main:020d960c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020421c4",
+      "callee": "arm9/main:020d960c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:0207568c",
+      "callee": "arm9/main:020d960c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02079a3c",
+      "callee": "arm9/main:020d960c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:02164fac",
+      "callee": "arm9/main:020d961c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:02165490",
+      "callee": "arm9/main:020d961c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:02166070",
+      "callee": "arm9/main:020d961c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:0216638c",
+      "callee": "arm9/main:020d961c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:021688dc",
+      "callee": "arm9/main:020d961c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov001:0215ca4c",
+      "callee": "arm9/main:020d961c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov009:02185634",
+      "callee": "arm9/main:020d961c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov015:0218c538",
+      "callee": "arm9/main:020d961c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov015:0218c920",
+      "callee": "arm9/main:020d961c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov015:0218cc24",
+      "callee": "arm9/main:020d961c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov015:0218d50c",
+      "callee": "arm9/main:020d961c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov015:0218dbec",
+      "callee": "arm9/main:020d961c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021a28a8",
+      "callee": "arm9/main:020d961c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov025:021e771c",
+      "callee": "arm9/main:020d961c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov026:021dc440",
+      "callee": "arm9/main:020d961c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:0203d028",
+      "callee": "arm9/main:020d961c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020421c4",
+      "callee": "arm9/main:020d961c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:0207568c",
+      "callee": "arm9/main:020d961c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02079900",
+      "callee": "arm9/main:020d961c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02079cf8",
+      "callee": "arm9/main:020d961c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020e6710",
+      "callee": "arm9/main:020d962c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9638",
+      "callee": "arm9/main:020d9654",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020e6710",
+      "callee": "arm9/main:020d9638",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9678",
+      "callee": "arm9/main:020d9654",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9694",
+      "callee": "arm9/main:020d9654",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020e6710",
+      "callee": "arm9/main:020d9678",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020e6710",
+      "callee": "arm9/main:020d9694",
+      "kind": "call",
+      "ambiguous": false
+    }
+  ],
+  "units": {
+    "src/Filesystem/GPC.cpp": "src/Filesystem/GPC/GPC.cpp",
+    "src/Filesystem/GPCStartup.cpp": "src/Filesystem/GPC/GPCStartup.cpp",
+    "src/Filesystem/GPCData.cpp": "src/Filesystem/GPC/GPCData.cpp"
+  },
+  "data_unit": "src/Filesystem/GPC/GPCData.cpp",
+  "data_owner": "GPCStaticData gpcData",
+  "public_headers": [
+    "include/Filesystem/GPC.h",
+    "include/Filesystem/GPCImplementation.h"
+  ],
+  "boundary": [
+    "Owns archive metadata, CRC lookup, file lengths, archive decompression adapters and runtime signature initialization.",
+    "ExtendedNitroVM, string CRC, memory/cache support and native decompression algorithms remain dependencies.",
+    "BackgroundLoader owns queue scheduling and scratch-arena lifetime; GPC routines do not own the queue."
+  ],
+  "limitations": [
+    "Original GPCStaticData declaration boundaries are unknown; accepted layout carrier and exact initialized bytes are preserved.",
+    "GetFileByCRC missing-entry behavior remains the original implementation; no semantics or bounds fixes under naming scope."
+  ]
+}

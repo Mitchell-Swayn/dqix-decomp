@@ -2,6 +2,7 @@
 
 extern const short gSpecialSerializedRecordKeys[2] = { 22125, 22126 };
 
+// Original: arm9/main @ 0x020DE574; symbol: _Z31RelocateSerializedRecordPayloadPN13ZoneState27544DataEPv; size: 0x3C.
 bool RelocateSerializedRecordPayload(ZoneState2754::Data* state, void* rawRecord)
 {
     ZoneSerializedRecord* record = (ZoneSerializedRecord*)rawRecord;
@@ -15,6 +16,7 @@ bool RelocateSerializedRecordPayload(ZoneState2754::Data* state, void* rawRecord
     return true;
 }
 
+// Original: arm9/main @ 0x020DE5B0; symbol: _ZN13ZoneState27544Data28RelocateSecondaryRecordLinksEv; size: 0x4C.
 bool ZoneState2754::Data::RelocateSecondaryRecordLinks()
 {
     ZoneSerializedRecord* secondary;
@@ -33,6 +35,7 @@ bool ZoneState2754::Data::RelocateSecondaryRecordLinks()
     return true;
 }
 
+// Original: arm9/main @ 0x020DE5FC; symbol: _ZN13ZoneState27544Data23ApplySpecialRecordFlagsEv; size: 0x54.
 bool ZoneState2754::Data::ApplySpecialRecordFlags()
 {
     const short* key = gSpecialSerializedRecordKeys;

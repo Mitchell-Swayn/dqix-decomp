@@ -11,12 +11,12 @@ bool ProcessMaterialAnimationsOnBoundMaterial(MaterialRenderData*, AnimationData
 
 // Declaration order preserves MWCC data placement: the first eight definitions
 // are emitted in reverse order; the final definition follows them.
-bool (*data_020f1c88)(BoneMatrixRenderData*, AnimationData*, unsigned int) = ProcessJointAnimationsOnBoneMatrix;
-bool (*data_020f1c84)(int*, AnimationData*, unsigned int) = ProcessVisibilityAnimations;
-void (*data_020f1c80)(void*, AnimationData*, int) = MAMAnimationProcessingCallback;
-void (*data_020f1c7c)(void*, AnimationData*, int) = MPTAnimationProcessingCallback;
-void (*data_020f1c78)(void*, AnimationData*, int) = MATAnimationProcessingCallback;
-void (*data_020f1c74)(void*, AnimationData*, int) = JACAnimationProcessingCallback;
-void (*data_020f1c70)(void*, AnimationData*, int) = VAVAnimationProcessingCallback;
-unsigned int data_020f1c6c = 5;
-bool (*data_020f1c8c)(MaterialRenderData*, AnimationData*, unsigned int) = ProcessMaterialAnimationsOnBoundMaterial;
+bool (*PopulateModelRenderContext_UnknownRoleProcedureReferenceRecords_Variant2)(BoneMatrixRenderData*, AnimationData*, unsigned int) = ProcessJointAnimationsOnBoneMatrix;
+bool (*PopulateModelRenderContext_UnknownRoleProcedureReferenceRecords)(int*, AnimationData*, unsigned int) = ProcessVisibilityAnimations;
+void (*InitializeModelAnimationFromMAM_UnknownRoleProcedureReferenceRecords)(void*, AnimationData*, int) = MAMAnimationProcessingCallback;
+void (*InitializeModelAnimationFromMPT_UnknownRoleProcedureReferenceRecords)(void*, AnimationData*, int) = MPTAnimationProcessingCallback;
+void (*InitializeModelAnimationFromMAT_UnknownRoleProcedureReferenceRecords)(void*, AnimationData*, int) = MATAnimationProcessingCallback;
+void (*InitializeModelAnimationFromJAC_UnknownRoleProcedureReferenceRecords)(void*, AnimationData*, int) = JACAnimationProcessingCallback;
+void (*InitializeModelAnimationFromVAV_UnknownRoleProcedureReferenceRecords)(void*, AnimationData*, int) = VAVAnimationProcessingCallback;
+unsigned int InitializeModelAnimation_UnknownRoleInitializedBytes = 5;
+bool (*PopulateModelRenderContext_UnknownRoleProcedureReferenceRecords_Variant3)(MaterialRenderData*, AnimationData*, unsigned int) = ProcessMaterialAnimationsOnBoundMaterial;

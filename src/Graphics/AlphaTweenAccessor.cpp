@@ -7,7 +7,8 @@ struct AlphaTweenStorageView
     const unsigned char* storage_13c;
 };
 
-extern "C" float func_02049fec(const AlphaTweenStorageView* owner)
+// Original: arm9/main @ 0x02049FEC; symbol: func_02049fec; size: 0x20.
+extern "C" float ReadIndirectAlphaTweenTargetOrZero(const AlphaTweenStorageView* owner)
 {
     const unsigned char* storage = owner->storage_13c;
     if (storage == NULL)

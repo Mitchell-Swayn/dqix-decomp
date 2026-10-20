@@ -1,6 +1,7 @@
 #include <globaldefs.h>
 #include "GameState/GameState.h"
 
+// Original: arm9/main @ 0x0200FD70; symbol: _ZN9GameState20GetGameObjectByIndexEi; size: 0x20.
 GameObject* GameState::GetGameObjectByIndex(int idx)
 {
     if (idx < 0)
@@ -10,6 +11,7 @@ GameObject* GameState::GetGameObjectByIndex(int idx)
     return objects_[idx];
 }
 
+// Original: arm9/main @ 0x0200FD90; symbol: _ZN9GameState31GetMaybeWanderingMonsterByIndexEi; size: 0x3C.
 GameObject* GameState::GetMaybeWanderingMonsterByIndex(int idx)
 {
     if (idx < 0)
@@ -23,11 +25,13 @@ GameObject* GameState::GetMaybeWanderingMonsterByIndex(int idx)
     return objects_[idx];
 }
 
+// Original: arm9/main @ 0x0200FDCC; symbol: _ZN9GameState14GetProtagonistEv; size: 0x10.
 GameObject* GameState::GetProtagonist()
 {
     return GetGameObjectByIndex(protagonistObjectIndex_);
 }
 
+// Original: arm9/main @ 0x0200FDDC; symbol: _ZN9GameState20GetUnknownGameObjectEv; size: 0x14.
 GameObject* GameState::GetUnknownGameObject()
 {
 #if defined(usa)
@@ -37,6 +41,7 @@ GameObject* GameState::GetUnknownGameObject()
 #endif
 }
 
+// Original: arm9/main @ 0x0200FDF0; symbol: _ZN9GameState21GetPartyMemberByIndexEi; size: 0x3C.
 GameObject* GameState::GetPartyMemberByIndex(int idx)
 {
     if (idx < 0)
@@ -50,6 +55,7 @@ GameObject* GameState::GetPartyMemberByIndex(int idx)
     return objects_[idx];
 }
 
+// Original: arm9/main @ 0x0200FE2C; symbol: _ZN9GameState27GetMaybeFieldMonsterByIndexEi; size: 0x3C.
 GameObject* GameState::GetMaybeFieldMonsterByIndex(int idx)
 {
     if (idx < 0)
@@ -63,6 +69,7 @@ GameObject* GameState::GetMaybeFieldMonsterByIndex(int idx)
     return objects_[idx];
 }
 
+// Original: arm9/main @ 0x0200FE68; symbol: _ZN9GameState19GetCombatantByIndexEi; size: 0x3C.
 GameObject* GameState::GetCombatantByIndex(int idx)
 {
     if (idx < 0)

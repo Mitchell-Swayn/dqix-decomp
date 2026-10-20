@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "source_rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+  "payload_sha1": "a662d5c6a78e990244299926cf6862ce910a475d",
+  "coverage_note": "Only the listed confirmed scopes are partitioned. Byte-class totals are inventory evidence only: never add them to source-coverage counters. Reconstructed source units may overlap these ranges without duplicating payload bytes; all other ARM7 bytes remain unclassified by this file. Exact BIOS-call stubs remain independent range facts, not source reconstruction.",
+  "scopes": [
+    {
+      "name": "startup",
+      "autoload": null,
+      "payload_offset": "0x0",
+      "runtime_address": "0x02380000",
+      "size": "0x21c",
+      "totals": {
+        "instruction": 452,
+        "literal_pool": 64,
+        "initialized_data": 24
+      },
+      "ranges": [
+        {
+          "payload_offset": "0x0",
+          "size": "0xe4",
+          "classification": "instruction",
+          "evidence": "Header entry; calls 0x02380118 and 0x0238018c; returns control with bx r1."
+        },
+        {
+          "payload_offset": "0xe4",
+          "size": "0x34",
+          "classification": "literal_pool",
+          "evidence": "Thirteen PC-relative ldr references from the entry routine."
+        },
+        {
+          "payload_offset": "0x118",
+          "size": "0x6c",
+          "classification": "instruction",
+          "evidence": "Called copy/zero-fill routine; branches over embedded literal and returns at 0x02380188."
+        },
+        {
+          "payload_offset": "0x184",
+          "size": "0x4",
+          "classification": "literal_pool",
+          "evidence": "PC-relative ldr at 0x02380118 points to parameter block."
+        },
+        {
+          "payload_offset": "0x188",
+          "size": "0x4",
+          "classification": "instruction",
+          "evidence": "bx lr return from copy/zero-fill routine."
+        },
+        {
+          "payload_offset": "0x18c",
+          "size": "0x70",
+          "classification": "instruction",
+          "evidence": "Called startup hardware check; loops remain internal and bx lr at 0x023801f8."
+        },
+        {
+          "payload_offset": "0x1fc",
+          "size": "0x8",
+          "classification": "literal_pool",
+          "evidence": "PC-relative ldr references at 0x02380190 and 0x023801f0."
+        },
+        {
+          "payload_offset": "0x204",
+          "size": "0x18",
+          "classification": "initialized_data",
+          "evidence": "Six aligned startup/autoload parameter words validated by arm7_build.py."
+        }
+      ]
+    },
+    {
+      "name": "wram_entry_and_veneers",
+      "autoload": "wram",
+      "payload_offset": "0x21c",
+      "runtime_address": "0x037f8000",
+      "size": "0x4b8",
+      "totals": {
+        "instruction": 1160,
+        "literal_pool": 48,
+        "initialized_data": 0
+      },
+      "ranges": [
+        {
+          "payload_offset": "0x21c",
+          "size": "0x478",
+          "classification": "instruction",
+          "evidence": "Startup tail bx targets 0x037f8000; CFG from that address reaches all 286 ARM instructions and ends in a loop at 0x037f8474 -> 0x037f8450."
+        },
+        {
+          "payload_offset": "0x694",
+          "size": "0x28",
+          "classification": "literal_pool",
+          "evidence": "All ten words are referenced by PC-relative ldr instructions in the entry routine."
+        },
+        {
+          "payload_offset": "0x6bc",
+          "size": "0x8",
+          "classification": "instruction",
+          "evidence": "Called veneer at 0x037f84a0: ldr ip,[pc]; bx ip."
+        },
+        {
+          "payload_offset": "0x6c4",
+          "size": "0x4",
+          "classification": "literal_pool",
+          "evidence": "Word at 0x037f84a8 is loaded by veneer at 0x037f84a0."
+        },
+        {
+          "payload_offset": "0x6c8",
+          "size": "0x8",
+          "classification": "instruction",
+          "evidence": "Called veneer at 0x037f84ac: ldr ip,[pc]; bx ip."
+        },
+        {
+          "payload_offset": "0x6d0",
+          "size": "0x4",
+          "classification": "literal_pool",
+          "evidence": "Word at 0x037f84b4 is loaded by veneer at 0x037f84ac."
+        }
+      ]
+    },
+    {
+      "name": "wram_startup_vblank_callback",
+      "autoload": "wram",
+      "payload_offset": "0x70c",
+      "runtime_address": "0x037f84f0",
+      "size": "0x24",
+      "totals": {
+        "instruction": 32,
+        "literal_pool": 4,
+        "initialized_data": 0
+      },
+      "ranges": [
+        {
+          "payload_offset": "0x70c",
+          "size": "0x20",
+          "classification": "instruction",
+          "evidence": "Startup passes literal 0x037f8498 as callback to 0x037fb7f0 with mask 1; registration stores it at 0x03808e9c, and VBlank dispatch calls through that address. Both callback paths return at 0x037f850c before the literal."
+        },
+        {
+          "payload_offset": "0x72c",
+          "size": "0x4",
+          "classification": "literal_pool",
+          "evidence": "PC-relative ldr at 0x037f84f4 references word 0x0380b76c at 0x037f8510."
+        }
+      ]
+    },
+    {
+      "name": "wram_startup_interrupt_registration",
+      "autoload": "wram",
+      "payload_offset": "0x3a0c",
+      "runtime_address": "0x037fb7f0",
+      "size": "0x9c",
+      "totals": {
+        "instruction": 144,
+        "literal_pool": 12,
+        "initialized_data": 0
+      },
+      "ranges": [
+        {
+          "payload_offset": "0x3a0c",
+          "size": "0x90",
+          "classification": "instruction",
+          "evidence": "Called directly by confirmed startup at 0x037f83f0. All branch destinations and the 25-iteration loop stay within the function; bx lr at 0x037fb87c returns before the pool. Exact C reconstruction independently matches the full unit."
+        },
+        {
+          "payload_offset": "0x3a9c",
+          "size": "0xc",
+          "classification": "literal_pool",
+          "evidence": "PC-relative ldr instructions at 0x037fb7f4, 0x037fb800 and 0x037fb804 reference the three words at 0x037fb880, 0x037fb884 and 0x037fb888."
+        }
+      ]
+    },
+    {
+      "name": "wram_bios_swi_6_stub",
+      "autoload": "wram",
+      "payload_offset": "0xc0da",
+      "runtime_address": "0x03803ebe",
+      "size": "0x4",
+      "totals": {
+        "instruction": 4,
+        "literal_pool": 0,
+        "initialized_data": 0
+      },
+      "ranges": [
+        {
+          "payload_offset": "0xc0da",
+          "size": "0x4",
+          "classification": "instruction",
+          "evidence": "Veneer at 0x037f84ac loads 0x03803ebf (Thumb target 0x03803ebe); exact Thumb body is svc #6; bx lr."
+        }
+      ]
+    },
+    {
+      "name": "wram_bios_swi_14_stub",
+      "autoload": "wram",
+      "payload_offset": "0xc10c",
+      "runtime_address": "0x03803ef0",
+      "size": "0x4",
+      "totals": {
+        "instruction": 4,
+        "literal_pool": 0,
+        "initialized_data": 0
+      },
+      "ranges": [
+        {
+          "payload_offset": "0xc10c",
+          "size": "0x4",
+          "classification": "instruction",
+          "evidence": "Veneer at 0x037f84a0 loads 0x03803ef1 (Thumb target 0x03803ef0); exact Thumb body is svc #14; bx lr."
+        }
+      ]
+    }
+  ]
+}

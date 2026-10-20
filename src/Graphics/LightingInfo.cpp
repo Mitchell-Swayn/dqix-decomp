@@ -1,3 +1,5 @@
+// Original locations for overloaded or compiler-generated definitions in this unit:
+// Original: arm9/main @ 0x020E61AC; symbol: __sinit_LightingInfo.cpp; size: 0x88. (__sinit_LightingInfo.cpp)
 #include "Graphics/LightingInfo.h"
 #include "Resource/Script.h"
 
@@ -14,6 +16,7 @@ DECLARE_SUM_ARRAY(s_dayThresholds, s_eveningLength, s_dayLength, s_morningLength
 
 static LightingInfo* s_scriptCurrentLightingInfo;
 
+// Original: arm9/main @ 0x0207B2CC; symbol: _Z38LightingScript_DeclareAdvancedLightingPN6Script9ParameterEi; size: 0x38.
 static int LightingScript_DeclareAdvancedLighting(Script::Parameter* params, int numParams)
 {
     if (numParams > 0)
@@ -22,9 +25,11 @@ static int LightingScript_DeclareAdvancedLighting(Script::Parameter* params, int
     return 1;
 }
 
+// Original: arm9/main @ 0x0207B304; symbol: _Z18LightingScript_NopPN6Script9ParameterEi; size: 0x8.
 static int LightingScript_Nop(Script::Parameter* params, int numParams) { return 1; }
 
 // Never used
+// Original: arm9/main @ 0x0207B30C; symbol: _Z52LightingScript_CreateAdvancedLightingEntry_AlternatePN6Script9ParameterEi; size: 0x1B4.
 static int LightingScript_CreateAdvancedLightingEntry_Alternate(Script::Parameter* params, int numParams)
 {
     int index = (params++)->ToInt();
@@ -67,6 +72,7 @@ static int LightingScript_CreateAdvancedLightingEntry_Alternate(Script::Paramete
     return 1;
 }
 
+// Original: arm9/main @ 0x0207B4C0; symbol: _Z35LightingScript_DeclareBasicLightingPN6Script9ParameterEi; size: 0x34.
 static int LightingScript_DeclareBasicLighting(Script::Parameter* params, int numParams)
 {
     if (numParams > 0)
@@ -75,6 +81,7 @@ static int LightingScript_DeclareBasicLighting(Script::Parameter* params, int nu
     return 1;
 }
 
+// Original: arm9/main @ 0x0207B4F4; symbol: _Z39LightingScript_CreateBasicLightingEntryPN6Script9ParameterEi; size: 0x144.
 static int LightingScript_CreateBasicLightingEntry(Script::Parameter* params, int numParams)
 {
     int index = (params++)->ToInt();
@@ -108,6 +115,7 @@ static int LightingScript_CreateBasicLightingEntry(Script::Parameter* params, in
     return 1;
 }
 
+// Original: arm9/main @ 0x0207B638; symbol: _Z29LightingScript_CreateFogEntryPN6Script9ParameterEi; size: 0x144.
 static int LightingScript_CreateFogEntry(Script::Parameter* params, int numParams)
 {
     int index = (params++)->ToInt();
@@ -143,6 +151,7 @@ static int LightingScript_CreateFogEntry(Script::Parameter* params, int numParam
     return 1;
 }
 
+// Original: arm9/main @ 0x0207B77C; symbol: _Z42LightingScript_CreateAdvancedLightingEntryPN6Script9ParameterEi; size: 0x1AC.
 static int LightingScript_CreateAdvancedLightingEntry(Script::Parameter* params, int numParams)
 {
     int index = (params++)->ToInt();
@@ -191,6 +200,7 @@ static Script::OpcodeLookupEntry s_lightingOpcodes[] = {
     { 0, NULL }
 };
 
+// Original: arm9/main @ 0x0207B928; symbol: _Z21ExecuteLightingScriptPKvjP12LightingInfoP13SafeAllocator; size: 0x64.
 void ExecuteLightingScript(const void* script, unsigned int length, LightingInfo* manager, SafeAllocator* alloc)
 {
     if (length == 0)
@@ -204,6 +214,7 @@ void ExecuteLightingScript(const void* script, unsigned int length, LightingInfo
     s_scriptCurrentLightingInfo = NULL;
 }
 
+// Original: arm9/main @ 0x0207B98C; symbol: _ZN12LightingInfo10InitializeEv; size: 0x40.
 void LightingInfo::Initialize()
 {
     maybeMode_ = 0;
@@ -213,6 +224,7 @@ void LightingInfo::Initialize()
     memset(&fogList, 0, sizeof(fogList));
 }
 
+// Original: arm9/main @ 0x0207B9CC; symbol: _ZN12LightingInfo5ResetEv; size: 0x40.
 void LightingInfo::Reset()
 {
     maybeMode_ = 0;
@@ -222,6 +234,7 @@ void LightingInfo::Reset()
     memset(&fogList, 0, sizeof(fogList));
 }
 
+// Original: arm9/main @ 0x0207BA0C; symbol: _ZN12LightingInfo14LoadFromScriptEPKvjP13SafeAllocator; size: 0x1C.
 void LightingInfo::LoadFromScript(const void* script, unsigned int length, SafeAllocator* alloc)
 {
     ExecuteLightingScript(script, length, this, alloc);

@@ -4,3 +4,298 @@
     .data       start:0x0218b220 end:0x0218b320 kind:data align:32
     .bss        start:0x0218b320 end:0x0218b320 kind:bss align:32
 
+src/Menu/TagProfile/ProfileTextFilter_ContainsCharacterInSet.cpp:
+    complete
+    .text start:0x021859f4 end:0x02185a24
+
+src/Menu/TagProfile/ProfileTextFilter_ContainsByteSequence.cpp:
+    complete
+    .text start:0x02185634 end:0x02185684
+
+src/Data/ProfileEditor_UpdateOpening_PathDataBinTtlnameDGp2.cpp:
+    complete
+    .data start:0x0218b224 end:0x0218b23b
+
+src/Data/ProfileEditor_UpdateOpening_FormatTtlnameDLGNat.cpp:
+    complete
+    .data start:0x0218b23b end:0x0218b24e
+
+src/Data/ProfileEditor_UpdateOpening_PathDataBinProfstrGp2.cpp:
+    complete
+    .data start:0x0218b24e end:0x0218b263
+
+src/Data/ProfileEditor_UpdateOpening_MarkupProfstrLGBin.cpp:
+    complete
+    .data start:0x0218b263 end:0x0218b274
+
+src/Data/ProfileEditor_UpdateOpening_PathDataBinProfsenGp2.cpp:
+    complete
+    .data start:0x0218b274 end:0x0218b289
+
+src/Data/ProfileEditor_UpdateOpening_MarkupProfsenLGBin.cpp:
+    complete
+    .data start:0x0218b289 end:0x0218b29a
+
+src/Data/ProfileEditor_UpdateOpening_PathDataAniBgTmPac.cpp:
+    complete
+    .data start:0x0218b29a end:0x0218b2ad
+
+src/Data/ProfileEditor_UpdateOpening_PathDataAniObjProGp2.cpp:
+    complete
+    .data start:0x0218b2ad end:0x0218b2c2
+
+src/Data/ProfileEditor_UpdateOpening_MarkupObjProLGPac.cpp:
+    complete
+    .data start:0x0218b2c2 end:0x0218b2d3
+
+src/Data/ProfileEditor_UpdateOpening_PathDataAniObjProYPac.cpp:
+    complete
+    .data start:0x0218b2d3 end:0x0218b2ea
+
+src/Data/UpdateProfileTextEditor_PathDataBinKeyboardPrBin.cpp:
+    complete
+    .data start:0x0218b2ea end:0x0218b303
+
+src/Data/UpdateProfileTextEditor_Text1.cpp:
+    complete
+    .data start:0x0218b303 end:0x0218b305
+
+src/Data/Graphics_AppendCenteredSummaryText_FormatDSD.cpp:
+    complete
+    .data start:0x0218b305 end:0x0218b310
+
+src/Data/ProfileEditorAppendUnlockedTitleChoices_TextSPACE.cpp:
+    complete
+    .data start:0x0218b310 end:0x0218b312
+
+src/Menu/TagProfile/ProfileTextFilter_CopyUppercaseAscii.cpp:
+    complete
+    .text start:0x021855f0 end:0x02185634
+
+src/Menu/TagProfile/ProfileEditor_ResetComponentTransfers.cpp:
+    complete
+    .text start:0x02185ab8 end:0x02185af0
+
+src/Menu/TagProfile/Graphics_UpdateCharacterSelectionDisplay.cpp:
+    complete
+    .text start:0x02185a24 end:0x02185ab8
+
+src/Menu/TagProfile/ProfileEditor_UpdatePageIndicator.cpp:
+    complete
+    .text start:0x021842a0 end:0x0218432c
+
+src/Menu/TagProfile/Graphics_BuildProfileRecordPage.cpp:
+    complete
+    .text start:0x021898bc end:0x02189934
+
+src/Menu/TagProfile/Graphics_BuildEightIndexedRecordPage.cpp:
+    complete
+    .text start:0x02189c44 end:0x02189cbc
+
+src/Menu/TagProfile/Graphics_BuildProfileValuePairPage.cpp:
+    complete
+    .text start:0x02189f38 end:0x02189fb0
+
+src/Menu/TagProfile/Graphics_BuildProfileCountAndValuePage.cpp:
+    complete
+    .text start:0x0218a438 end:0x0218a4b0
+
+src/Menu/TagProfile/Graphics_BuildProfileSummaryPage.cpp:
+    complete
+    .text start:0x0218943c end:0x021894b4
+
+src/Menu/TagProfile/ProfileEditor_BuildPreviewModePage.cpp:
+    complete
+    .text start:0x0218a974 end:0x0218a9ec
+
+src/Menu/TagProfile/Graphics_BuildProfileEntryChoicePage.cpp:
+    complete
+    .text start:0x0218aabc end:0x0218ab34
+
+src/Menu/TagProfile/Graphics_BuildProfileRangeValuesPage.cpp:
+    complete
+    .text start:0x02189a78 end:0x02189af4
+
+src/Menu/TagProfile/Graphics_BuildIndexedProfileRecordValuesPage.cpp:
+    complete
+    .text start:0x0218a574 end:0x0218a5f0
+
+src/Menu/TagProfile/Graphics_BuildIndexedProfileValuePage.cpp:
+    complete
+    .text start:0x02189d68 end:0x02189dfc
+
+src/Menu/TagProfile/ProfileEditor_FindCurrentTitleIndex.cpp:
+    complete
+    .text start:0x02184384 end:0x021843d4
+
+src/Menu/TagProfile/Text_AppendTwoRecordValuesWithCursorStyle.cpp:
+    complete
+    .text start:0x02189fb0 end:0x0218a054
+
+src/Menu/TagProfile/Text_AppendRecordPairWithConditionalMarker.cpp:
+    complete
+    .text start:0x0218a4b0 end:0x0218a574
+
+src/Menu/TagProfile/Text_AppendFormattedRecordValueAndCenteredCaption.cpp:
+    complete
+    .text start:0x0218a1f4 end:0x0218a2b8
+
+src/Menu/TagProfile/Text_AppendByteRecordValueAndCenteredCaption.cpp:
+    complete
+    .text start:0x0218a374 end:0x0218a438
+
+src/Menu/TagProfile/Text_AppendIndexedRecordValueAndCenteredCaption.cpp:
+    complete
+    .text start:0x0218a2b8 end:0x0218a374
+
+src/Menu/TagProfile/Graphics_BuildProfileRecordListPage.cpp:
+    complete
+    .text start:0x0218a7a0 end:0x0218a844
+
+src/Menu/TagProfile/ProfileTextFilter_InitializeGlyphLookup.cpp:
+    complete
+    .text start:0x021845f8 end:0x02184654
+
+src/Menu/TagProfile/ProfileEditor_AppendPhraseCategoryChoices.cpp:
+    complete
+    .text start:0x02189934 end:0x02189a78
+
+src/Menu/TagProfile/Graphics_ConfigureProfilePageLayout.cpp:
+    complete
+    .text start:0x021893b4 end:0x0218943c
+
+src/Menu/TagProfile/Util_MatchBytePattern.cpp:
+    complete
+    .text start:0x02185684 end:0x021859f4
+
+src/Menu/TagProfile/Resource_ExecuteLoadedScriptAndStoreFirstValue.cpp:
+    complete
+    .text start:0x02185e18 end:0x02185ea8
+
+src/Menu/TagProfile/Graphics_AppendCenteredSummaryText.cpp:
+    complete
+    .text start:0x021894b4 end:0x021898bc
+
+src/Menu/TagProfile/Filesystem_ConsumeLoadedFileTask.cpp:
+    complete
+    .text start:0x02185ea8 end:0x02185f04
+
+src/Menu/TagProfile/ProfileEditor_AppendEightPhraseChoices.cpp:
+    complete
+    .text start:0x02189cbc end:0x02189d68
+
+src/Menu/TagProfile/Memory_InitializeScreenPoolsAndBuffers.cpp:
+    complete
+    .text start:0x02184884 end:0x02184acc
+
+src/Menu/TagProfile/Graphics_LoadThreeCanvasLayersAndThirteenRecords.cpp:
+    complete
+    .text start:0x02185f74 end:0x021861e0
+
+src/Menu/TagProfile/Graphics_UpdateSixChoiceMenuState.cpp:
+    complete
+    .text start:0x02186a7c end:0x02186c1c
+
+src/Menu/TagProfile/BackgroundLoader_LoadTaskIntoAllocatorAndRemove.cpp:
+    complete
+    .text start:0x02185f04 end:0x02185f74
+
+src/Menu/TagProfile/ProfileEditor_UpdateClosing.cpp:
+    complete
+    .text start:0x02189264 end:0x0218930c
+
+src/Menu/TagProfile/ProfileEditor_ReturnToParentPage.cpp:
+    complete
+    .text start:0x0218930c end:0x021893b4
+
+src/Menu/TagProfile/ProfileEditor_RefreshPreview.cpp:
+    complete
+    .text start:0x0218adac end:0x0218ae74
+
+src/Menu/TagProfile/ProfileEditor_DestroyScreenResources.cpp:
+    complete
+    .text start:0x02185af0 end:0x02185bf0
+
+src/Menu/TagProfile/ProfileEditor_LoadPreviewSpriteResources.cpp:
+    complete
+    .text start:0x021862fc end:0x021863fc
+
+src/Menu/TagProfile/ProfileEditor_GeneratePreviewText.cpp:
+    complete
+    .text start:0x0218ae74 end:0x0218af74
+
+src/Menu/TagProfile/ProfileEditor_RefreshPageText.cpp:
+    complete
+    .text start:0x02185bf0 end:0x02185cf8
+
+src/Menu/TagProfile/Graphics_InitializeNineteenRecordsAndConsumeLoadedResource.cpp:
+    complete
+    .text start:0x021861e0 end:0x021862fc
+
+src/Menu/TagProfile/ProfileEditor_UpdateTitleSourceSelection.cpp:
+    complete
+    .text start:0x021884f4 end:0x02188640
+
+src/Menu/TagProfile/ProfileEditor_UpdatePreviewModeSelection.cpp:
+    complete
+    .text start:0x02188aec end:0x02188cd0
+
+src/Menu/TagProfile/ProfileEditor_InitializeScreen.cpp:
+    complete
+    .text start:0x021843d4 end:0x021845f8
+
+src/Menu/TagProfile/UpdateBirthDateYearControls.cpp:
+    complete
+    .text start:0x02187608 end:0x02187adc
+
+src/Menu/TagProfile/UpdateBirthDateMonthControls.cpp:
+    complete
+    .text start:0x02187adc end:0x02187fe4
+
+src/Menu/TagProfile/ProfileEditor_UpdateEightChoicePhraseSelection.cpp:
+    complete
+    .text start:0x02186fd8 end:0x02187158
+
+src/Menu/TagProfile/ConfigureProfileTextEntries.cpp:
+    complete
+    .text start:0x0218a054 end:0x0218a1f4
+
+src/Menu/TagProfile/UpdateBirthDateDayControls.cpp:
+    complete
+    .text start:0x02187fe4 end:0x021884f4
+
+src/Menu/TagProfile/ProfileEditor_UpdateUnlockedTitleSelection.cpp:
+    complete
+    .text start:0x02188924 end:0x02188aec
+
+src/Menu/TagProfile/UpdateProfileHighBitDialog.cpp:
+    complete
+    .text start:0x02187320 end:0x02187608
+
+src/Menu/TagProfile/ProfileEditor_UpdateExtendedPhraseSelection.cpp:
+    complete
+    .text start:0x02186e38 end:0x02186fd8
+
+src/Menu/TagProfile/ProfileEditor_UpdateUnlockedPhraseSelection.cpp:
+    complete
+    .text start:0x02187158 end:0x02187320
+
+src/Menu/TagProfile/UpdateProfileTextEditor.cpp:
+    complete
+    .text start:0x02188cd0 end:0x02189264
+
+src/Menu/TagProfile/Text_AppendEightMappedRecordValues.cpp:
+    complete
+    .text start:0x0218a9ec end:0x0218aabc
+
+src/Menu/TagProfile/ReadModeRangeOffset.cpp:
+    complete
+    .text start:0x0218432c end:0x02184384
+
+src/Menu/TagProfile/ResolveCountedRecordOffsets.cpp:
+    complete
+    .text start:0x0218558c end:0x021855f0
+
+src/Menu/TagProfile/ProfileEditor_UpdatePresetTitleSelection.cpp:
+    complete
+    .text start:0x02188640 end:0x02188924

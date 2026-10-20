@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "symbols": [
+    {
+      "name": "Data_UnknownRole2",
+      "address": "022a29e8",
+      "size": 4,
+      "section": ".ctor",
+      "source": "src/Data/Ov33ConstructorTerminator.cpp",
+      "source_sha256": "4ae3da3344e6a4359b975d11f3ae2851592e45359c40785cee6b83b79e2f94de",
+      "original_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "reason": "Retain the null sentinel ending the overlay constructor list."
+    }
+  ]
+}

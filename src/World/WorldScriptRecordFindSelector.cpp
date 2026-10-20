@@ -1,6 +1,7 @@
 #include "World/WorldScriptRecordNode.h"
 
-extern "C" WorldScriptRecordNode* func_0208e024(
+// Original: arm9/main @ 0x0208E024; symbol: func_0208e024; size: 0x48.
+extern "C" WorldScriptRecordNode* WorldScriptRecordNode_FindNthSelectorMatch(
     WorldScriptRecordNode** head, int selector, int occurrence)
 {
     WorldScriptRecordNode* node = *head;

@@ -1,0 +1,4 @@
+#include <globaldefs.h>
+struct Glyph {int unknown;signed char width;signed char advance:6;unsigned char flags:2;};extern "C" Glyph* TextLookup_FindMatchingByteKeyEntry(const char*,unsigned);extern "C" int TextLookup_FindGlyphIndexByText(const char*,unsigned);
+// Original: arm9/main @ 0x020426BC; symbol: func_020426bc; size: 0xA8.
+extern "C" int Text_EncodeGlyphIndices(const char* text,unsigned char* output,unsigned font) {if(!output)return 0;if(!text){if(output)*output=0;return 0;}int count=0;while(true){signed char c=*text;if(!c){*output=0;break;}int advance=1;unsigned char encoded=0;Glyph* glyph=TextLookup_FindMatchingByteKeyEntry(text,font);if(glyph)advance=glyph->advance;if(c==32)encoded=255;int id=TextLookup_FindGlyphIndexByText(text,font);if(id>0)encoded=id;*output++=encoded;text+=advance;++count;}return count;}

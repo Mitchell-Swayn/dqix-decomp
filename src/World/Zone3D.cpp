@@ -11,14 +11,14 @@
 #include "World/ZonePredicates.h"
 
 #if defined(jpn)
-#define func_02011584 func_020112f4
-#define func_02053c6c func_02054fe4
+#define GameState_GetFieldAddress468 func_020112f4
+#define GameObject_GetLinkedIndexedState func_02054fe4
 #define func_0207a5b8 func_0207b3f0
 #define func_0207b9cc func_0207c804
-#define func_0207df50 func_0207ecd0
-#define func_0208a9b4 func_0208b2a8
+#define TextureVRAM_SnapshotAllocationBounds func_0207ecd0
+#define PartyProgress_GetInstance func_0208b2a8
 #define func_02094d00 func_02096950
-#define func_02099950 func_0209b684
+#define ZoneTable_FindEntryById func_0209b684
 #define func_020de848 func_020e01c4
 
 
@@ -26,38 +26,39 @@
 
 extern "C"
 {
-    void* func_02011584(GameState*);
+    void* GameState_GetFieldAddress468(GameState*);
 
-    void* func_02053c6c(void*);
-    void func_0205e104(const char*, SafeAllocator*, const void*, unsigned int);
+    void* GameObject_GetLinkedIndexedState(void*);
+    void Script_InitializeAndExecuteOwnerContextCode(const char*, SafeAllocator*, const void*, unsigned int);
 
     // Texture functions
-    void* func_0207df50(void*);
-    void func_0207df90(void*);
-    void func_0207dfac(void*);
+    void* TextureVRAM_SnapshotAllocationBounds(void*);
+    void Graphics_RestoreTextureImageAndPaletteVRAMState(void*);
+    void Object_InvokeSaveTextureImageVRAMState(void*);
 
-    void* func_0208a9b4();
-    Zone3D_StructPtr_8* func_02099950(void*, unsigned short id);
+    void* PartyProgress_GetInstance();
+    Zone3D_StructPtr_8* ZoneTable_FindEntryById(void*, unsigned short id);
 
-    void func_020c9be0(); // abort() or similar
+    void DisableInterruptsAndHaltForever(); // abort() or similar
 
 
 }
 
 
+// Original: arm9/main @ 0x0201383C; symbol: _ZN6Zone3D10SwitchZoneEt; size: 0x318.
 void Zone3D::SwitchZone(unsigned short newID)
 {
     GameState* gameState = GameState::GetInstance();
     BackgroundLoader* loader = BackgroundLoader::GetInstance();
 
-    void* uVar3 = func_02011584(gameState);
-    (void)func_ov017_0218b5b0();
+    void* uVar3 = GameState_GetFieldAddress468(gameState);
+    (void)GameResources_GetInstance();
     GameObject* iVar4 = gameState->GetUnknownGameObject();
 
     pAllocator_68_ = pAllocator_4c_;
     pAllocator_68_->Reset();
 
-    func_0207df50(unknown_ptr_50_);
+    TextureVRAM_SnapshotAllocationBounds(unknown_ptr_50_);
     ResetZoneResources(true);
 
     previousZoneID_ = currentZoneID_;
@@ -102,20 +103,20 @@ void Zone3D::SwitchZone(unsigned short newID)
     lighting_.Reset();
     state_2754_.Reset();
 
-    pUnknownStruct_8_ = func_02099950(uVar3, newID);
+    pUnknownStruct_8_ = ZoneTable_FindEntryById(uVar3, newID);
     unknown_4_ = pUnknownStruct_8_->unknown_2_;
     if (pUnknownStruct_8_->unknown_c_low_ == 0)
     {
         GameObject* iVar5 = gameState->GetProtagonist();
         if (iVar5 != NULL)
         {
-            void* iVar6 = func_02053c6c(iVar5);
+            void* iVar6 = GameObject_GetLinkedIndexedState(iVar5);
             if (iVar6 != NULL)
                 *(unsigned short*)((int)iVar6 + 0x566) = pUnknownStruct_8_->unknown_0_;
         }
     }
 
-    *(bool*)((int)func_0208a9b4() + 0x9c) = pUnknownStruct_8_->unknown_c_high_ != 0;
+    *(bool*)((int)PartyProgress_GetInstance() + 0x9c) = pUnknownStruct_8_->unknown_c_high_ != 0;
     state_2724_.Reset();
 
     grottoTileMapData_420_ = NULL;
@@ -157,6 +158,7 @@ void Zone3D::SwitchZone(unsigned short newID)
     mapListLoadHandle_ = loader->QueueLoadFile(gZone3DPaths.mapList, NULL);
 }
 
+// Original: arm9/main @ 0x02013B54; symbol: _ZN8Vector3iaSERKS_; size: 0x1C.
 Vector3i& Vector3i::operator=(const Vector3i& other)
 {
     x = other.x;

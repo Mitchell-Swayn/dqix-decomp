@@ -1,0 +1,10 @@
+#include <globaldefs.h>
+// Original data: arm9/main @ 0x20fdc4c; symbol: data_020fdc4c.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 20 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" int _ZNK6Script9Parameter5ToIntEv(const void*);extern "C" float _ZNK6Script9Parameter7ToFloatEv(const void*);struct Global{int a,b;unsigned allocator;int d;char* object;};extern "C" Global PartyStatusRefreshMemberRatioPaletteColors_UnknownRoleZeroInitializedStorage;
+extern "C" char* _ZN13SafeAllocator8AllocateEj(unsigned,unsigned);struct Entry{unsigned char active,serial,count,pad;unsigned short* data;int x,y;Entry* next;};
+// Original: arm9/main @ 0x0201F728; symbol: func_0201f728; size: 0x11C.
+extern "C" ARM int Script_AllocateLinkedCoordinateAndHalfwordEntry(char* p,int count){if(count<3)return 0;Entry* entry=(Entry*)_ZN13SafeAllocator8AllocateEj(PartyStatusRefreshMemberRatioPaletteColors_UnknownRoleZeroInitializedStorage.allocator,20);if(!entry)return 0;entry->active=1;entry->count=count-2;entry->data=(unsigned short*)_ZN13SafeAllocator8AllocateEj(PartyStatusRefreshMemberRatioPaletteColors_UnknownRoleZeroInitializedStorage.allocator,entry->count*2);if(!entry->data)return 0;entry->x=(int)(4096.0f*_ZNK6Script9Parameter7ToFloatEv(p));char* current=p+16;entry->y=(int)(4096.0f*_ZNK6Script9Parameter7ToFloatEv(p+8));for(int i=0;i<entry->count;++i){unsigned short v=_ZNK6Script9Parameter5ToIntEv(current);current+=8;entry->data[i]=v;}Entry* previous=*(Entry**)(PartyStatusRefreshMemberRatioPaletteColors_UnknownRoleZeroInitializedStorage.object+0x754);entry->serial=previous?previous->serial+1:1;entry->next=*(Entry**)(PartyStatusRefreshMemberRatioPaletteColors_UnknownRoleZeroInitializedStorage.object+0x754);*(Entry**)(PartyStatusRefreshMemberRatioPaletteColors_UnknownRoleZeroInitializedStorage.object+0x754)=entry;return 1;}

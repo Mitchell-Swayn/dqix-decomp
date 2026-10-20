@@ -9,6 +9,7 @@ inline int64_t SquareComponent(fix32_t value)
     return (int64_t)value * value;
 }
 
+// Original: arm9/main @ 0x020C3030; symbol: Vector3fix_Distance; size: 0x7C.
 fix32_t Vector3fix_Distance(const Vector3fix* a, const Vector3fix* b)
 {
     fix32_t x = a->x - b->x;

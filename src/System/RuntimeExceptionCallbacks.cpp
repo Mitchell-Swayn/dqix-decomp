@@ -1,6 +1,6 @@
 #include "System/RuntimeExceptionCallbacks.h"
 
-extern "C" void func_0200efa0();
-extern "C" void func_0200efac();
+extern "C" void Runtime_AbortThroughExitHandler();
+extern "C" void Runtime_InvokeObservedExceptionCallback();
 
-RuntimeExceptionCallbacks data_020ef070 = {func_0200efa0, func_0200efac};
+RuntimeExceptionCallbacks RuntimeExceptionHandlerInvokeObservedCallback_UnknownRoleProcedureReferenceRecords = {Runtime_AbortThroughExitHandler, Runtime_InvokeObservedExceptionCallback};

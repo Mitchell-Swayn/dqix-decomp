@@ -1,0 +1,10 @@
+#include "globaldefs.h"
+#include "std_library_functions.h"
+// Original: arm9/main @ 0x0202b900; symbol: WaitForNetworkIdleAndSelectMatchingSixByteEntry.
+// Original data: arm9/main @ 0x20feffc; symbol: data_020feffc.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 4168 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+struct Record{unsigned char pad[4],key[6];};extern unsigned char NetworkConnectToDiscoveredPeerByIndex_UnknownRoleZeroInitializedStorage[];extern "C" unsigned Network_GetConnectionState();extern "C" int Network_RequestPeerDiscoveryStop(),RuntimeMemory_CompareByteRanges(const void*,const void*,unsigned),Network_ConfigureStateFromMode(unsigned,const void*);extern "C" void _Z19SleepCurrentContextj(unsigned);extern "C" void* _ZN9GameState11GetInstanceEv();extern "C" unsigned long long _Z19GetCurrentTimestampv();
+extern "C" ARM int Network_ConnectToDiscoveredPeerByMacAddress(unsigned char*self,const void*key){int count=0;while(Network_GetConnectionState()==2){Network_RequestPeerDiscoveryStop();if(++count>5000)return -1;_Z19SleepCurrentContextj(1);}count=0;while(Network_GetConnectionState()!=1){if(++count>5000)return -1;_Z19SleepCurrentContextj(1);}int selected;int total=*(int*)(self+12);selected=-1;for(int i=0;i<total;i++){int offset=i*192;if(!RuntimeMemory_CompareByteRanges(key,((Record*)(self+16+offset))->key,6)){Network_ConfigureStateFromMode(5,NetworkConnectToDiscoveredPeerByIndex_UnknownRoleZeroInitializedStorage+offset);*(unsigned*)self=6;unsigned char*state=(unsigned char*)_ZN9GameState11GetInstanceEv();*(unsigned long long*)(state+0x3f0)=_Z19GetCurrentTimestampv();selected=i;break;}}return selected;}

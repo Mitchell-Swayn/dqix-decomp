@@ -1,0 +1,11 @@
+#include <globaldefs.h>
+THUMB
+// Original data: arm9/ov031 @ 0x224f620; symbol: data_ov031_0224f620.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 40 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/ov031.md.
+extern "C" {int _Z20DisableIRQInterruptsv();int _Z20SetIRQInterruptStatei(int);void MI_CpuCopy8(const void*,void*,unsigned);void VectorizedMemset(void*,int,unsigned);void MIi_CpuCopy32(const void*,void*,unsigned);int Network_StopQueueSessionWirelessOperation();int Network_StartConfiguredWirelessRequest(const char*,const unsigned char*,int);extern unsigned Ov031AdvanceConnectionState_UnknownRoleZeroInitializedStorage[];}
+// Original: arm9/ov031 @ 0x0221F1E8; symbol: StageWirelessRequestWithEightyByteOptions; size: 0x84.
+// Stages config and optional options atomically, advances accepted requests to state8.
+extern "C" int StageWirelessRequestWithEightyByteOptions(const void* config,const void* options,int mode) {int irq=_Z20DisableIRQInterruptsv();Ov031AdvanceConnectionState_UnknownRoleZeroInitializedStorage[3]=mode;if(options)MI_CpuCopy8(options,(void*)Ov031AdvanceConnectionState_UnknownRoleZeroInitializedStorage[9],80);else VectorizedMemset((void*)Ov031AdvanceConnectionState_UnknownRoleZeroInitializedStorage[9],0,80);MIi_CpuCopy32(config,(void*)Ov031AdvanceConnectionState_UnknownRoleZeroInitializedStorage[8],0xc0);if(Network_StopQueueSessionWirelessOperation()==1){Ov031AdvanceConnectionState_UnknownRoleZeroInitializedStorage[6]=8;_Z20SetIRQInterruptStatei(irq);return 1;}if(Ov031AdvanceConnectionState_UnknownRoleZeroInitializedStorage[6]==3 && Network_StartConfiguredWirelessRequest((const char*)Ov031AdvanceConnectionState_UnknownRoleZeroInitializedStorage[8],(const unsigned char*)Ov031AdvanceConnectionState_UnknownRoleZeroInitializedStorage[9],Ov031AdvanceConnectionState_UnknownRoleZeroInitializedStorage[3])==3){Ov031AdvanceConnectionState_UnknownRoleZeroInitializedStorage[6]=8;_Z20SetIRQInterruptStatei(irq);return 1;}_Z20SetIRQInterruptStatei(irq);return 0;}

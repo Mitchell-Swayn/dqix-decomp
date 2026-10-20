@@ -9,32 +9,37 @@ typedef char GameStateIdentityByteOffsetCheck[
 typedef char GameStateIdentityStatusStateSizeCheck[
     sizeof(GameState) == 0x7ff4 ? 1 : -1];
 
-extern "C" GameStateIndexedRecord* func_020108f0(GameState* state, int index);
+extern "C" GameStateIndexedRecord* GameState_FindCharacterStateByObjectIndex(GameState* state, int index);
 
-extern "C" unsigned int func_02011ff0(GameState* state, int index)
+// Original: arm9/main @ 0x02011FF0; symbol: func_02011ff0; size: 0x20.
+extern "C" unsigned int GameState_ReadIndexedRecordLowNibble(GameState* state, int index)
 {
-    GameStateIndexedRecord* record = func_020108f0(state, index);
+    GameStateIndexedRecord* record = GameState_FindCharacterStateByObjectIndex(state, index);
     if (record != NULL)
         return record->lowNibble_56b_;
     return 0;
 }
 
-extern "C" void func_02012010(GameState* state, unsigned int value)
+// Original: arm9/main @ 0x02012010; symbol: func_02012010; size: 0xC.
+extern "C" void GameState_SetUnknown7f6c(GameState* state, unsigned int value)
 {
     state->unknown_7f6c_ = value;
 }
 
-extern "C" unsigned int func_0201201c(GameState* state)
+// Original: arm9/main @ 0x0201201C; symbol: func_0201201c; size: 0xC.
+extern "C" unsigned int GameState_GetStartupDispatchMode(GameState* state)
 {
     return state->unknown_7f6c_;
 }
 
-extern "C" void func_02012028(GameState* state, unsigned char value)
+// Original: arm9/main @ 0x02012028; symbol: func_02012028; size: 0xC.
+extern "C" void GameState_WriteUnknownF70(GameState* state, unsigned char value)
 {
     state->unknown_7f70_ = value;
 }
 
-extern "C" unsigned int func_02012034(GameState* state)
+// Original: arm9/main @ 0x02012034; symbol: func_02012034; size: 0xC.
+extern "C" unsigned int GameState_ReadUnknown7f70(GameState* state)
 {
     return state->unknown_7f70_;
 }

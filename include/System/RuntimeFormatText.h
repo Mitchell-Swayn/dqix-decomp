@@ -14,5 +14,5 @@ struct RuntimeFormatText {
     char emptyNarrow[4];
 };
 
-extern RuntimeFormatText data_020eeef0;
+extern RuntimeFormatText Runtime_FloatingPointSpellings;
 typedef char RuntimeFormatTextSizeCheck[sizeof(RuntimeFormatText) == 64 ? 1 : -1];

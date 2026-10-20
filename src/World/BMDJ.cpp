@@ -3,27 +3,40 @@
 #include "Filesystem/BackgroundLoader.h"
 #include "Filesystem/FileIO.h"
 
-extern Script::OpcodeLookupEntry data_020ef418[];
+// Original data: arm9/main @ 0x20ef418; symbol: data_020ef418.
+// Contains original relocated procedure references. Record fields, dispatch contract and exclusive ownership may remain unresolved.
+// Initial values: hex 6a000000c4eb01026b000000f8eb01026c00000000ec01026d000000c0ed01026e000000e8ed01026f000000f0ed010270000000f0ef010272000000d4ec0102 ...; full span in module reference.
+// Observed span: 72 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern Script::OpcodeLookupEntry Zone3DBMDJStructScriptDataLoad_UnknownRoleProcedureReferenceRecords[];
 
 struct Struct_020fdc40
 {
     Zone3D_BMDJStruct::StructSizeC* structC;
     SafeAllocator* allocator;
     Zone3D_BMDJStruct::ScriptData* instance;
-} extern data_020fdc40;
+// Original data: arm9/main @ 0x20fdc40; symbol: data_020fdc40.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 12 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+} extern BMDJOpcode6A_UnknownRoleZeroInitializedStorage;
 
+// Original: arm9/main @ 0x0201EBC4; symbol: _Z14BMDJ_Opcode_6aPN6Script9ParameterEi; size: 0x34.
 int BMDJ_Opcode_6a(Script::Parameter* params, int numParams)
 {
     int count = params[0].ToInt();
-    Zone3D_BMDJStruct::ScriptData* instance = data_020fdc40.instance;
-    instance->ptr_0 = (Zone3D_BMDJStruct::StructSizeC*)data_020fdc40.allocator->Allocate(count * sizeof(Zone3D_BMDJStruct::StructSizeC));
+    Zone3D_BMDJStruct::ScriptData* instance = BMDJOpcode6A_UnknownRoleZeroInitializedStorage.instance;
+    instance->ptr_0 = (Zone3D_BMDJStruct::StructSizeC*)BMDJOpcode6A_UnknownRoleZeroInitializedStorage.allocator->Allocate(count * sizeof(Zone3D_BMDJStruct::StructSizeC));
     instance->capacity_8 = count;
     return 1;
 }
 
 // Original opcode is a successful no-op (0x0201ebf8).
+// Original: arm9/main @ 0x0201EBF8; symbol: _Z14BMDJ_Opcode_6bPN6Script9ParameterEi; size: 0x8.
 int BMDJ_Opcode_6b(Script::Parameter* params, int numParams) { return 1; }
 
+// Original: arm9/main @ 0x0201EC00; symbol: _Z14BMDJ_Opcode_6cPN6Script9ParameterEi; size: 0xD4.
 int BMDJ_Opcode_6c(Script::Parameter* params, int numParams)
 {
     Zone3D_BMDJStruct::StructSizeC entry;
@@ -31,7 +44,7 @@ int BMDJ_Opcode_6c(Script::Parameter* params, int numParams)
     const char* name = (params++)->ToString();
     if (name == NULL)
         return 0;
-    entry.name = (char*)data_020fdc40.allocator->Allocate(strlen(name) + 1);
+    entry.name = (char*)BMDJOpcode6A_UnknownRoleZeroInitializedStorage.allocator->Allocate(strlen(name) + 1);
     strcpy(entry.name, name);
     entry.unk_2 = 0;
     if (numParams >= 3)
@@ -50,24 +63,25 @@ int BMDJ_Opcode_6c(Script::Parameter* params, int numParams)
 
     // MWCC scheduling quirk: the one-past pointer expression preserves the
     // original context load before the zero-link store, without extra code.
-    Struct_020fdc40* context = &data_020fdc40;
+    Struct_020fdc40* context = &BMDJOpcode6A_UnknownRoleZeroInitializedStorage;
     context++;
     (context - 1)->instance->InsertStructC(entry);
-    data_020fdc40.structC = data_020fdc40.instance->GetStructCByID(entry.maybeID);
+    BMDJOpcode6A_UnknownRoleZeroInitializedStorage.structC = BMDJOpcode6A_UnknownRoleZeroInitializedStorage.instance->GetStructCByID(entry.maybeID);
     return 1;
 }
 
+// Original: arm9/main @ 0x0201ECD4; symbol: _Z14BMDJ_Opcode_72PN6Script9ParameterEi; size: 0xEC.
 int BMDJ_Opcode_72(Script::Parameter* params, int numParams)
 {
-    if (data_020fdc40.structC == NULL)
+    if (BMDJOpcode6A_UnknownRoleZeroInitializedStorage.structC == NULL)
         return 0;
 
-    Zone3D_BMDJStruct::StructSizeC* newEntry = (Zone3D_BMDJStruct::StructSizeC*)data_020fdc40.allocator->Allocate(sizeof(Zone3D_BMDJStruct::StructSizeC));
+    Zone3D_BMDJStruct::StructSizeC* newEntry = (Zone3D_BMDJStruct::StructSizeC*)BMDJOpcode6A_UnknownRoleZeroInitializedStorage.allocator->Allocate(sizeof(Zone3D_BMDJStruct::StructSizeC));
     newEntry->maybeID = (params++)->ToInt();
     const char* name = (params++)->ToString();
     if (name == NULL)
         return 0;
-    newEntry->name = (char*)data_020fdc40.allocator->Allocate(strlen(name) + 1);
+    newEntry->name = (char*)BMDJOpcode6A_UnknownRoleZeroInitializedStorage.allocator->Allocate(strlen(name) + 1);
     strcpy(newEntry->name, name);
     newEntry->unk_2 = 0;
     if (numParams >= 3)
@@ -80,7 +94,7 @@ int BMDJ_Opcode_72(Script::Parameter* params, int numParams)
         newEntry->unk_3 = (params++)->ToInt();
     newEntry->pNext = NULL;
 
-    Zone3D_BMDJStruct::StructSizeC* listEnd = data_020fdc40.structC;
+    Zone3D_BMDJStruct::StructSizeC* listEnd = BMDJOpcode6A_UnknownRoleZeroInitializedStorage.structC;
     while (listEnd->pNext != NULL)
         listEnd = listEnd->pNext;
 
@@ -88,15 +102,18 @@ int BMDJ_Opcode_72(Script::Parameter* params, int numParams)
     return 1;
 }
 
+// Original: arm9/main @ 0x0201EDC0; symbol: _Z14BMDJ_Opcode_6dPN6Script9ParameterEi; size: 0x28.
 int BMDJ_Opcode_6d(Script::Parameter* params, int numParams)
 {
-    data_020fdc40.instance->AllocateStruct20Array(params[0].ToInt(), data_020fdc40.allocator);
+    BMDJOpcode6A_UnknownRoleZeroInitializedStorage.instance->AllocateStruct20Array(params[0].ToInt(), BMDJOpcode6A_UnknownRoleZeroInitializedStorage.allocator);
     return 1;
 }
 
 // Original opcode is a successful no-op (0x0201ede8).
+// Original: arm9/main @ 0x0201EDE8; symbol: _Z14BMDJ_Opcode_6ePN6Script9ParameterEi; size: 0x8.
 int BMDJ_Opcode_6e(Script::Parameter* params, int numParams) { return 1; }
 
+// Original: arm9/main @ 0x0201EDF0; symbol: _Z14BMDJ_Opcode_6fPN6Script9ParameterEi; size: 0x200.
 int BMDJ_Opcode_6f(Script::Parameter* params, int numParams)
 {
     int id = (params++)->ToInt();
@@ -157,21 +174,23 @@ int BMDJ_Opcode_6f(Script::Parameter* params, int numParams)
     entry.unk_1c = (fix32_t)(4096.0f * scaleY);
     entry.unk_1e = (fix32_t)(4096.0f * scaleZ);
 
-    Zone3D_BMDJStruct::ScriptData* instance = data_020fdc40.instance;
+    Zone3D_BMDJStruct::ScriptData* instance = BMDJOpcode6A_UnknownRoleZeroInitializedStorage.instance;
     instance++; // silly hack for matching assembly
     entry.flags_6 = flags;
     (instance - 1)->InsertStruct20(entry);
     return 1;
 }
 
+// Original: arm9/main @ 0x0201EFF0; symbol: _Z14BMDJ_Opcode_70PN6Script9ParameterEi; size: 0x2C.
 int BMDJ_Opcode_70(Script::Parameter* params, int numParams)
 {
     const char* name = params[0].ToString();
     if (name != NULL)
-        data_020fdc40.instance->StoreString(name, data_020fdc40.allocator);
+        BMDJOpcode6A_UnknownRoleZeroInitializedStorage.instance->StoreString(name, BMDJOpcode6A_UnknownRoleZeroInitializedStorage.allocator);
     return 1;
 }
 
+// Original: arm9/main @ 0x0201F01C; symbol: _ZN17Zone3D_BMDJStruct10ScriptData5ResetEv; size: 0x24.
 void Zone3D_BMDJStruct::ScriptData::Reset()
 {
     ptr_0 = NULL;
@@ -183,6 +202,7 @@ void Zone3D_BMDJStruct::ScriptData::Reset()
     stringCount_38 = 0;
 }
 
+// Original: arm9/main @ 0x0201F040; symbol: _ZN17Zone3D_BMDJStruct10ScriptData4LoadEP13SafeAllocatorPKvj; size: 0xB0.
 void Zone3D_BMDJStruct::ScriptData::Load(SafeAllocator *alloc, const void *script, unsigned int length)
 {
     bool externalFile = false;
@@ -191,27 +211,28 @@ void Zone3D_BMDJStruct::ScriptData::Load(SafeAllocator *alloc, const void *scrip
     {
         BackgroundLoader::AddLockGlobal();
         externalFile = true;
-        script = LoadFileIntoMemory(NULL, data_0211e33c, &localLength);
+        script = LoadFileIntoMemory(NULL, Main_UnknownRoleZeroInitializedStorage_Variant6, &localLength);
     }
     if (script != NULL)
     {
-        data_020fdc40.allocator = alloc;
-        data_020fdc40.instance = this;
+        BMDJOpcode6A_UnknownRoleZeroInitializedStorage.allocator = alloc;
+        BMDJOpcode6A_UnknownRoleZeroInitializedStorage.instance = this;
 
         Script runner;
         runner.Initialize();
-        runner.SetOpcodeLookup(data_020ef418);
+        runner.SetOpcodeLookup(Zone3DBMDJStructScriptDataLoad_UnknownRoleProcedureReferenceRecords);
         runner.Load(script, localLength);
         runner.Execute();
 
-        data_020fdc40.instance = NULL;
-        data_020fdc40.allocator = NULL;
+        BMDJOpcode6A_UnknownRoleZeroInitializedStorage.instance = NULL;
+        BMDJOpcode6A_UnknownRoleZeroInitializedStorage.allocator = NULL;
     }
 
     if (externalFile)
         BackgroundLoader::RemoveLockGlobal();
 }
 
+// Original: arm9/main @ 0x0201F0F0; symbol: _ZN17Zone3D_BMDJStruct10ScriptData13InsertStructCERKNS_11StructSizeCE; size: 0x54.
 void Zone3D_BMDJStruct::ScriptData::InsertStructC(const StructSizeC& source)
 {
     if (capacity_8 <= counter_4)
@@ -224,6 +245,7 @@ void Zone3D_BMDJStruct::ScriptData::InsertStructC(const StructSizeC& source)
     dest.pNext = source.pNext;
 }
 
+// Original: arm9/main @ 0x0201F144; symbol: _ZN17Zone3D_BMDJStruct10ScriptData10GetStructCEi; size: 0x2C.
 Zone3D_BMDJStruct::StructSizeC* Zone3D_BMDJStruct::ScriptData::GetStructC(int idx)
 {
     if (idx < 0 || capacity_8 <= idx) // bug? should be size and not capacity
@@ -231,6 +253,7 @@ Zone3D_BMDJStruct::StructSizeC* Zone3D_BMDJStruct::ScriptData::GetStructC(int id
     return &ptr_0[idx];
 }
 
+// Original: arm9/main @ 0x0201F170; symbol: _ZN17Zone3D_BMDJStruct10ScriptData14GetStructCByIDEi; size: 0x40.
 Zone3D_BMDJStruct::StructSizeC* Zone3D_BMDJStruct::ScriptData::GetStructCByID(int id)
 {
     for (int i = 0; i < counter_4; i++)
@@ -241,6 +264,7 @@ Zone3D_BMDJStruct::StructSizeC* Zone3D_BMDJStruct::ScriptData::GetStructCByID(in
     return NULL;
 }
 
+// Original: arm9/main @ 0x0201F1B0; symbol: _ZNK17Zone3D_BMDJStruct10ScriptData15FindStructCByIDEi; size: 0x40.
 int Zone3D_BMDJStruct::ScriptData::FindStructCByID(int id) const
 {
     for (int i = 0; i < counter_4; i++)
@@ -251,12 +275,14 @@ int Zone3D_BMDJStruct::ScriptData::FindStructCByID(int id) const
     return -1;
 }
 
+// Original: arm9/main @ 0x0201F1F0; symbol: _ZN17Zone3D_BMDJStruct10ScriptData21AllocateStruct20ArrayEiP13SafeAllocator; size: 0x24.
 void Zone3D_BMDJStruct::ScriptData::AllocateStruct20Array(int count, SafeAllocator* alloc)
 {
     ptr_c = (StructSize20*)alloc->Allocate(count * sizeof(StructSize20));
     capacity_14 = count;
 }
 
+// Original: arm9/main @ 0x0201F214; symbol: _ZN17Zone3D_BMDJStruct10ScriptData14InsertStruct20ERKNS_12StructSize20E; size: 0x90.
 void Zone3D_BMDJStruct::ScriptData::InsertStruct20(const StructSize20& source)
 {
     if (capacity_14 <= counter_10)
@@ -275,6 +301,7 @@ void Zone3D_BMDJStruct::ScriptData::InsertStruct20(const StructSize20& source)
     dest.unk_1e = (unsigned short)source.unk_1e;
 }
 
+// Original: arm9/main @ 0x0201F2A4; symbol: _ZN17Zone3D_BMDJStruct10ScriptData11GetStruct20Ei; size: 0x28.
 Zone3D_BMDJStruct::StructSize20* Zone3D_BMDJStruct::ScriptData::GetStruct20(int idx)
 {
     if (idx < 0 || counter_10 <= idx)
@@ -282,6 +309,7 @@ Zone3D_BMDJStruct::StructSize20* Zone3D_BMDJStruct::ScriptData::GetStruct20(int 
     return &ptr_c[idx];
 }
 
+// Original: arm9/main @ 0x0201F2CC; symbol: _ZN17Zone3D_BMDJStruct10ScriptData15GetStruct20ByIDEi; size: 0x3C.
 Zone3D_BMDJStruct::StructSize20* Zone3D_BMDJStruct::ScriptData::GetStruct20ByID(int id)
 {
     for (int i = 0; i < counter_10; i++)
@@ -292,6 +320,7 @@ Zone3D_BMDJStruct::StructSize20* Zone3D_BMDJStruct::ScriptData::GetStruct20ByID(
     return NULL;
 }
 
+// Original: arm9/main @ 0x0201F308; symbol: _ZN17Zone3D_BMDJStruct10ScriptData11StoreStringEPKcP13SafeAllocator; size: 0x60.
 void Zone3D_BMDJStruct::ScriptData::StoreString(const char* str, SafeAllocator* alloc)
 {
     char* copy = (char*)alloc->Allocate(strlen(str) + 1);
@@ -302,14 +331,15 @@ void Zone3D_BMDJStruct::ScriptData::StoreString(const char* str, SafeAllocator* 
     stringCount_38++;
 }
 
+// Original: arm9/main @ 0x0201F368; symbol: _ZNK17Zone3D_BMDJStruct10ScriptData9GetStringEi; size: 0x28.
 const char* Zone3D_BMDJStruct::ScriptData::GetString(int idx) const
 {
     if (idx < 0 || stringCount_38 <= idx)
         return NULL;
     return strings_18[idx];
 }
-Struct_020fdc40 data_020fdc40;
-Script::OpcodeLookupEntry data_020ef418[] = {
+Struct_020fdc40 BMDJOpcode6A_UnknownRoleZeroInitializedStorage;
+Script::OpcodeLookupEntry Zone3DBMDJStructScriptDataLoad_UnknownRoleProcedureReferenceRecords[] = {
     { 0x6a, BMDJ_Opcode_6a },
     { 0x6b, BMDJ_Opcode_6b },
     { 0x6c, BMDJ_Opcode_6c },

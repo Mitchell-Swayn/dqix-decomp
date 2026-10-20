@@ -4,3 +4,134 @@
     .data       start:0x021de840 end:0x021def00 kind:data align:32
     .bss        start:0x021def00 end:0x021def20 kind:bss align:32
 
+src/Combat/SpecialEffects/BattleScene_SetCameraPresetVectorComponents.cpp:
+    complete
+    .text start:0x021d8b98 end:0x021d8ba0
+
+src/Combat/SpecialEffects/BattleScene_HasRecoverableAilmentWithTimer5C.cpp:
+    complete
+    .text start:0x021dce1c end:0x021dce34
+
+src/Combat/SpecialEffects/BattleScene_IsCombatantExcludedFromEncounterSelection.cpp:
+    complete
+    .text start:0x021dd3c4 end:0x021dd3dc
+
+src/Combat/SpecialEffects/BattleScene_FormatBattleStringInSharedBuffer.cpp:
+    complete
+    .text start:0x021d8a78 end:0x021d8aac
+
+src/Combat/SpecialEffects/BattleScene_IsPartyCommandSynchronizationReady.cpp:
+    complete
+    .text start:0x021d8a40 end:0x021d8a78
+
+src/Combat/SpecialEffects/BattleScene_ProcessPendingPartyRemoval.cpp:
+    complete
+    .text start:0x021ddd84 end:0x021dddcc
+
+src/Combat/SpecialEffects/BattleScene_FindPartyCommandEntry.cpp:
+    complete
+    .text start:0x021dae60 end:0x021daec8
+
+src/Combat/SpecialEffects/BattleScene_AdmitPendingPartyMembersWhenQueuesReady.cpp:
+    complete
+    .text start:0x021dbe44 end:0x021dbf04
+
+src/Combat/SpecialEffects/BattleScene_SelectEncounterCameraPreset.cpp:
+    complete
+    .text start:0x021d8aac end:0x021d8b98
+
+src/Combat/SpecialEffects/BattleScene_RemovePartyMemberAndRepairOwnership.cpp:
+    complete
+    .text start:0x021dbd1c end:0x021dbe44
+
+src/Combat/SpecialEffects/BattleScene_ResetCommandSelectionAndRestoreFlags.cpp:
+    complete
+    .text start:0x021dbf04 end:0x021dc040
+
+src/Combat/SpecialEffects/BattleScene_ReleasePartyStagingActorsAndRestoreCamera.cpp:
+    complete
+    .text start:0x021dbba8 end:0x021dbd1c
+
+src/Combat/SpecialEffects/BattleScene_AdvanceEncounterTextEffect.cpp:
+    complete
+    .text start:0x021db3d8 end:0x021db5a4
+
+src/Data/CameraChoices.cpp:
+    complete
+    .data start:0x021de87c end:0x021dedbc
+
+src/Data/BattleScene_UpdateCommandSelectionPhase_PathDataPrmSkilltableBin.cpp:
+    complete
+    .data start:0x021dedbc end:0x021dedd4
+
+src/Data/BattleScene_UpdateCommandSelectionPhase_PathDataPrmSpelltableBin.cpp:
+    complete
+    .data start:0x021dedd4 end:0x021dedec
+
+src/Data/BattleScene_AdvanceEncounterTextEffect_PathDataEffectEv999991210Chr.cpp:
+    complete
+    .data start:0x021dedf0 end:0x021dee0c
+
+src/Data/BattleScene_AdvanceCombinedVocationActionSequence_PathDataEffectEb0091Chr.cpp:
+    complete
+    .data start:0x021dee0c end:0x021dee23
+
+src/Data/BattleScene_AdvanceCombinedVocationActionSequence_PathDataEffectEx3000Chr.cpp:
+    complete
+    .data start:0x021dee23 end:0x021dee3a
+
+src/Data/BattleScene_AdvanceCombinedVocationActionSequence_PathDataCharaSubS264LGChr.cpp:
+    complete
+    .data start:0x021dee3a end:0x021dee57
+
+src/Data/UpdatePartyTrackedBonePlacement_FormatCD.cpp:
+    complete
+    .data start:0x021dee57 end:0x021dee5c
+
+src/Data/BattleScene_LoadPartyStagingCameraAndAnimations_PathDataPackLv5CharaMpGp2.cpp:
+    complete
+    .data start:0x021dee5c end:0x021dee77
+
+src/Data/BattleScene_LoadPartyStagingCameraAndAnimations_TextMp0200ScChr.cpp:
+    complete
+    .data start:0x021dee77 end:0x021dee84
+
+src/Data/BattleScene_LoadPartyStagingCameraAndAnimations_TextEye.cpp:
+    complete
+    .data start:0x021dee84 end:0x021dee88
+
+src/Data/BattleScene_LoadPartyStagingCameraAndAnimations_TextLookat.cpp:
+    complete
+    .data start:0x021dee88 end:0x021dee8f
+
+src/Data/BattleScene_LoadPartyStagingCameraAndAnimations_TextMp0200SpChr.cpp:
+    complete
+    .data start:0x021dee8f end:0x021dee9c
+
+src/Data/BattleScene_LoadPartyStagingCameraAndAnimations_PathDataCharaSubS017SChr.cpp:
+    complete
+    .data start:0x021dee9c end:0x021deeb5
+
+src/Data/BattleScene_LoadPartyStagingCameraAndAnimations_FormatSsChr.cpp:
+    complete
+    .data start:0x021deeb5 end:0x021deebd
+
+src/Data/BattleScene_ShowEncounterIntroductionMessage_MarkupAUTO30.cpp:
+    complete
+    .data start:0x021deebd end:0x021deec7
+
+src/Data/BattleScene_ShowEncounterIntroductionMessage_MarkupTIME30CLOSE.cpp:
+    complete
+    .data start:0x021deec7 end:0x021deed8
+
+src/Data/BattleScene_ShowEncounterIntroductionMessage_MarkupTIME45CLOSE.cpp:
+    complete
+    .data start:0x021deed8 end:0x021def00
+
+src/Combat/SpecialEffects/UpdatePartyTrackedBonePlacement.cpp:
+    complete
+    .text start:0x021dc040 end:0x021dc440
+
+src/Combat/Presentation/BattleScene_FaceMonstersTowardCameraAndStaggerAnimations.cpp:
+    complete
+    .text start:0x021daec8 end:0x021db090

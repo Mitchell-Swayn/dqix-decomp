@@ -3,3 +3,26 @@
     .ctor       start:0x0218bbd4 end:0x0218bbd8 kind:rodata align:4
     .bss        start:0x0218bbe0 end:0x0218bbe0 kind:bss align:32
 
+src/Menu/CharacterCreation/CharacterCreation_InitializeStandaloneScene.cpp:
+    complete
+    .text start:0x0218b5a0 end:0x0218b5c4
+
+src/Menu/CharacterCreation/CharacterCreation_ReleaseStandaloneScene.cpp:
+    complete
+    .text start:0x0218b5c4 end:0x0218b5fc
+
+src/Menu/CharacterCreation/CharacterCreation_UpdateStandaloneScene.cpp:
+    complete
+    .text start:0x0218baf8 end:0x0218bb30
+
+src/Menu/CharacterCreation/World_RenderStageGeometryFrame.cpp:
+    complete
+    .text start:0x0218bb30 end:0x0218bbc4
+
+src/Data/Ov021EdgeColors.cpp:
+    complete
+    .rodata start:0x218bbc4 end:0x218bbd4
+
+src/Data/Ov021ConstructorTerminator.cpp:
+    complete
+    .ctor start:0x218bbd4 end:0x218bbd8

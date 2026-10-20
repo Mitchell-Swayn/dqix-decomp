@@ -1,10 +1,11 @@
 #include "World/Zone3D.h"
 
-extern "C" void* func_0205ec34();
+extern "C" void* GameState_GetSerializedProgressState();
 
+// Original: arm9/main @ 0x02018C74; symbol: _ZN6Zone3D21ApplyType2FeatureMaskEj; size: 0xB4.
 void Zone3D::ApplyType2FeatureMask(unsigned int mask)
 {
-    func_0205ec34();
+    GameState_GetSerializedProgressState();
     for (int i = 0; i < 16; ++i)
     {
         if (mask & (1 << i))

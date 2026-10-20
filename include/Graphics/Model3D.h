@@ -52,7 +52,7 @@ public:
 
     void Clear();
 
-    void Func0207e2e0();
+    void CancelVramStagingAndClear();
     void LoadFromFile(const char* path, AllocatorUnion* alloc, TextureStagingMode stagingMode);
 
     void CopyAndProcessRawFile(AllocatorUnion* alloc, const void* data, unsigned int len, TextureStagingMode stagingMode);

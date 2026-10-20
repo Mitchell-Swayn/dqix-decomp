@@ -1,0 +1,4 @@
+#include <std_library_functions.h>
+extern "C" void ZoneSerializedRecord_Reset(void*);extern "C" char *CharacterState_GetEquipmentNameBuffer(void*,int);struct Slot{void *data;char *text;int rest[6];};
+// Original: arm9/main @ 0x02083738; symbol: func_02083738; size: 0xFC.
+extern "C" void CharacterState_ClearEquipmentByKind(unsigned char *self,int kind){int slot=-1,id=-1;switch(kind){case 0:slot=8;id=7;break;case 1:slot=9;id=8;break;case 4:slot=7;id=6;break;case 2:slot=0;id=0;break;case 5:slot=5;id=4;break;case 3:slot=1;id=1;break;case 6:slot=6;id=5;break;case 7:slot=10;id=9;break;}if(slot<0||id<0)return;Slot *entry=(Slot*)(self+0x194+slot*32);void *data=entry->data;char *text=entry->text;*(short*)(self+0x488+id*2)=-1;memset(data,0,32);*text=0;ZoneSerializedRecord_Reset(entry);entry->data=self+0x6f0+slot*32;entry->text=CharacterState_GetEquipmentNameBuffer(self,slot);}

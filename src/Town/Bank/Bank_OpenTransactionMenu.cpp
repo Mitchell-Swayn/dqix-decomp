@@ -1,0 +1,6 @@
+#include "globaldefs.h"
+#include "std_library_functions.h"
+
+// Original: arm9/ov003 @ 0x0216997c; symbol: SizePromptFromThreeTextWidthsAndInitializeLayout.
+extern "C" void Window_BindNextCanvasResourceByFormatAndLayer(char*,unsigned,unsigned),Graphics_AppendThreeIndexedTextFragments(unsigned char*,char*,int),Window_PushTextCanvas(void*,void*,int,int,int,int,int,int);extern "C" int TextLayout_ComputeWidthWithGlyphSpacing(const char*,int);extern "C" void*ResourceStringTable_GetTextByKey(void*,void*);
+extern "C" ARM void Bank_OpenTransactionMenu(unsigned char*self){Window_BindNextCanvasResourceByFormatAndLayer((char*)self+0xe4,0,2);short maximum=0;for(int i=0;i<3;i++){short width=TextLayout_ComputeWidthWithGlyphSpacing((char*)ResourceStringTable_GetTextByKey(self+0x64,(void*)(int)(short)i),0);if(maximum<width)maximum=width;}short tiles=(maximum+24)>>3;*(short*)(self+0x184)=tiles;*(short*)(self+0x186)=6;*(short*)(self+0x188)=31-tiles;*(short*)(self+0x18a)=2;*(short*)(self+0x18c)=12;*(short*)(self+0x18e)=8;*(short*)(self+0x190)=10;*(short*)(self+0x192)=14;self[0x195]=1;self[0x199]=1;self[0x4ed]=0;memset(*(void**)(self+0x7c),0,0x960);Graphics_AppendThreeIndexedTextFragments(self,*(char**)(self+0x7c),0);Window_PushTextCanvas(self+0xe4,*(void**)(self+0x7c),0,1,0,1,0,0);}

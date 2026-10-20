@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "source_revision": "137a03140c215851f20b1a8d8dc998726fc08d7c",
+  "started_utc": "2026-10-02T14:13:42.915703+00:00",
+  "python": "3.11.15 (main, Jun 23 2026, 15:20:37) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "win32",
+  "input_rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+  "arm7_bios_sha1": null,
+  "tools": {
+    "dsd.exe": "9e59b7d05707352f44a9fecf2e655cd61c946040cfee9115cc0f5c251edc1c10",
+    "objdiff-cli.exe": "67f8ebeffd997f5fd8d78d0ca17b801fcb879f6eb604f42a4adcf9a9d6c20ec7",
+    "tools/mwccarm/2.0/sp2p2/ELFIO.dll": "25c6e63e127cc6461fee88eb08c189a09ed698ed7e86e7e76831914ca8eec4d2",
+    "tools/mwccarm/2.0/sp2p2/lmgr8c.dll": "9fe9d8939383ffec02752b86f7b18b8005426bac021c9066e64a5c220ed863b0",
+    "tools/mwccarm/2.0/sp2p2/MSL_All-DLL80_x86.dll": "11a6d47c8d076eb6eee9a21573e49d371886a5d4ac00ee3619ff0b0e25c45af1",
+    "tools/mwccarm/2.0/sp2p2/mwasmarm.exe": "f68e9567fc966c03e1cd6b1f5b0aa85db9a239996ee1824960b45192beaca6e2",
+    "tools/mwccarm/2.0/sp2p2/mwccarm.exe": "b1da5a2f191d1cdea3fd078cedc9c504de46609642ae8e44c015014cef5419a7",
+    "tools/mwccarm/2.0/sp2p2/mwldarm.exe": "a41aea5f282041e16dcd6c3570328009cb1eefb32b0cd05f60a8fdb365aec47c",
+    "ninja": "a7f084e8ee37bff0872aa8bd3d17cc19632d2a37734f6c242dd3dee22d77c0b4"
+  },
+  "commands": [
+    [
+      "git",
+      "archive",
+      "--format=zip",
+      "--output",
+      "C:\\Users\\swayn\\Projects\\DQIX-Decomp\\build\\verification\\137a03140c21-ig6ivcct\\source.zip",
+      "137a03140c215851f20b1a8d8dc998726fc08d7c"
+    ],
+    [
+      "C:\\Users\\swayn\\Projects\\DQIX-Decomp\\.venv\\Scripts\\python.exe",
+      "tools/configure.py",
+      "usa"
+    ],
+    [
+      "C:\\Users\\swayn\\Projects\\DQIX-Decomp\\.venv\\Scripts\\ninja.exe",
+      "rom",
+      "check",
+      "report"
+    ],
+    [
+      "C:\\Users\\swayn\\Projects\\DQIX-Decomp\\.venv\\Scripts\\ninja.exe",
+      "sha1"
+    ]
+  ],
+  "clean_source_archive": true,
+  "fresh_extraction": true,
+  "fresh_objects": true,
+  "module_and_symbol_checks": "passed",
+  "whole_rom_sha1": "passed",
+  "runtime_tests": "not_run",
+  "arm9_report_measures": {
+    "fuzzy_match_percent": 7.4131994,
+    "total_code": "2959478",
+    "matched_code": "218668",
+    "matched_code_percent": 7.388736,
+    "total_data": "1602476",
+    "matched_data": "66724",
+    "matched_data_percent": 4.1638064,
+    "total_functions": 14790,
+    "matched_functions": 1645,
+    "matched_functions_percent": 11.12238,
+    "complete_code": "219368",
+    "complete_code_percent": 7.4123883,
+    "complete_data": "71004",
+    "complete_data_percent": 4.430893,
+    "total_units": 574,
+    "complete_units": 389
+  },
+  "arm7_source_measures": {
+    "source_code_bytes": 25172,
+    "source_literal_pool_bytes": 1756,
+    "source_data_bytes": 1332,
+    "source_functions": 276,
+    "source_bss_bytes": 4904,
+    "reviewed_assembly_bytes": 120,
+    "reviewed_assembly_functions": 6,
+    "binary_fallback_bytes": 139496,
+    "source_symbol_checks_passed": true
+  },
+  "built_rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+  "secure_area_checksum_method": "verified_original_header_metadata",
+  "result": "passed",
+  "finished_utc": "2026-10-02T14:14:25.302459+00:00"
+}

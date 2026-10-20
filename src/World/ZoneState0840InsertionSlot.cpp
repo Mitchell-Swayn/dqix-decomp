@@ -1,5 +1,6 @@
 #include "World/Zone3DEmbeddedState.h"
 
+// Original: arm9/main @ 0x02098A84; symbol: _ZN13ZoneState084025PrepareEntryInsertionSlotEv; size: 0x3B8.
 int ZoneState0840::PrepareEntryInsertionSlot()
 {
     if (!unknown_1b38) return 0;

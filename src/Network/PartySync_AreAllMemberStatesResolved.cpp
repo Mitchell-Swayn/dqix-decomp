@@ -1,0 +1,4 @@
+// Original assembly and callee argument/return behavior reviewed.
+extern "C" {int Network_GetAssociationId();int Network_FindWirelessSlotByMemberId(void*,int);char* DisplayLayout_FindPartById(void*,int);void* SystemState_GetGlobalFlags();void SystemState_SetFlags(void*,unsigned);char* LinkedList_FindNodeByUnsignedKey(void*,int);void* Network_GetConnectionManager();int Network_IsSessionActive(void*);char* PartySync_FindEntryByKey(void*,int);void* MessageTextTable_FindTextById(void*,int);}struct Nibbles{unsigned char low:4;unsigned char high:4;};
+// Original: arm9/main @ 0x0207D978; symbol: func_0207d978; size: 0x44.
+extern "C" int PartySync_AreAllMemberStatesResolved(char* p,int key){char* q=PartySync_FindEntryByKey(p,key);if(!q)return 0;for(int i=0;i<4;++i)if(*((signed char*)q+i+8)<0)return 0;return 1;}

@@ -1,0 +1,63 @@
+// Keyboard cursor origin table, preserved as split symbols. ConfigureSpriteFromSelectedSignedMode
+// reads x from 0x2248ac8 + key*4 and y from 0x2248aca + key*4.
+struct CursorOrigin { unsigned short x, y; };
+struct CursorOriginTail { unsigned short firstY; CursorOrigin remaining[52]; };
+// Original data: arm9/ov031 @ 0x2248aca; symbol: data_ov031_02248aca.
+// Keyboard cursor origin table, preserved as split symbols. ConfigureSpriteFromSelectedSignedMode reads x from 0x2248ac8 + key*4 and y from 0x2248aca + key*4.
+// Initial values: hex 4f0014004f0026004f0038004f004a004f005c004f006e004f0080004f0092004f00a4004f00b6004f00c8004f001e0065003000650042006500540065006600 ...; full span in module reference.
+// Observed span: 210 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/ov031.md.
+extern "C" const CursorOriginTail WfcKeyboardUpdateSelectionCursor_KeyboardCursorOriginTablePreservedAsSplitSymbols_Variant2 = { 79, {
+    { 20, 79 },
+    { 38, 79 },
+    { 56, 79 },
+    { 74, 79 },
+    { 92, 79 },
+    { 110, 79 },
+    { 128, 79 },
+    { 146, 79 },
+    { 164, 79 },
+    { 182, 79 },
+    { 200, 79 },
+    { 30, 101 },
+    { 48, 101 },
+    { 66, 101 },
+    { 84, 101 },
+    { 102, 101 },
+    { 120, 101 },
+    { 138, 101 },
+    { 156, 101 },
+    { 174, 101 },
+    { 192, 101 },
+    { 210, 101 },
+    { 228, 101 },
+    { 35, 123 },
+    { 53, 123 },
+    { 71, 123 },
+    { 89, 123 },
+    { 107, 123 },
+    { 125, 123 },
+    { 143, 123 },
+    { 161, 123 },
+    { 179, 123 },
+    { 197, 123 },
+    { 215, 123 },
+    { 233, 123 },
+    { 43, 145 },
+    { 61, 145 },
+    { 79, 145 },
+    { 97, 145 },
+    { 115, 145 },
+    { 133, 145 },
+    { 151, 145 },
+    { 169, 145 },
+    { 187, 145 },
+    { 205, 145 },
+    { 223, 145 },
+    { 2, 101 },
+    { 2, 123 },
+    { 2, 145 },
+    { 218, 79 },
+    { 2, 168 },
+    { 130, 168 },
+} };

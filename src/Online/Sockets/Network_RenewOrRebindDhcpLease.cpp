@@ -1,0 +1,10 @@
+#include "globaldefs.h"
+#include "std_library_functions.h"
+// Original: arm9/ov031 @ 0x02204710; symbol: PollTransferStateAndAdjustRetryWindow.
+// Original data: arm9/ov031 @ 0x224c980; symbol: data_ov031_0224c980.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 20 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/ov031.md.
+extern volatile unsigned NetworkQueryDnsRecord_UnknownRoleZeroInitializedStorage[];extern "C" void Network_InitializeCurrentThreadSocket(),Network_DeactivateCurrentThreadSocket(),Network_EnableUdpSocketMode(),Resource_UpdateSelectedRecordModesFromEnableState(int,unsigned short,unsigned);extern "C" unsigned Network_SendDhcpRequest(int);extern "C" int Network_WaitForDhcpReplyAndApplyOptions(unsigned,int);
+extern "C" ARM int Network_RenewOrRebindDhcpLease(unsigned *out,int mode){Network_InitializeCurrentThreadSocket();Network_EnableUdpSocketMode();if(mode==1)Resource_UpdateSelectedRecordModesFromEnableState(68,67,NetworkQueryDnsRecord_UnknownRoleZeroInitializedStorage[8]);else Resource_UpdateSelectedRecordModesFromEnableState(68,67,-1);int result;int i=0;do{result=Network_WaitForDhcpReplyAndApplyOptions(Network_SendDhcpRequest(mode),i);if(result)break;i++;}while(i<4);Network_DeactivateCurrentThreadSocket();if(result==2){*out=NetworkQueryDnsRecord_UnknownRoleZeroInitializedStorage[19]>>1;NetworkQueryDnsRecord_UnknownRoleZeroInitializedStorage[14]=(NetworkQueryDnsRecord_UnknownRoleZeroInitializedStorage[19]*3)>>3;return 1;}unsigned window=NetworkQueryDnsRecord_UnknownRoleZeroInitializedStorage[14]>>1;NetworkQueryDnsRecord_UnknownRoleZeroInitializedStorage[14]=window;*out=window;switch(mode){case 1:if(window<60){*out=1;NetworkQueryDnsRecord_UnknownRoleZeroInitializedStorage[14]=NetworkQueryDnsRecord_UnknownRoleZeroInitializedStorage[19]>>3;}break;case 2:if(window<60)*out=1;break;}return 0;}

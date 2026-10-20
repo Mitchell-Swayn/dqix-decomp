@@ -112,7 +112,7 @@ struct BackgroundLoader
     // usa: func_0202f894
     void Populate(void* scratchSpace, unsigned int scratchSize, int relativePrio);
     // usa: func_0202f920
-    void MaybeWaitIdle();
+    void PauseQueueAndWaitForInFlightWork();
     // usa: func_0202f984
     void AddLock();
     // usa: func_0202f9b4
@@ -156,9 +156,9 @@ struct BackgroundLoader
     int GetLoadedFileInArchive(const char* archive, const char* innerFile, void** outPtr, unsigned int* outLength);
 
     // usa: func_02030090
-    void MaybeReset();
+    void ResetQueuedTasksAndScratchUsage();
     // usa: func_02030110
-    void MaybeFreeAllocations();
+    void ReleaseCompletedBuffersAndRequeueTasks();
     // usa: func_020301c8
     void RemoveTask(int taskID);
 

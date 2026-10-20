@@ -22,7 +22,7 @@
   "units": [
     {
       "name": "ArenaHeapCheck",
-      "source": "src/ARM7/ArenaHeapCheck.c",
+      "source": "config/usa/arm7/src/ArenaHeapCheck.c",
       "autoload": "wram",
       "runtime_address": 58708892,
       "payload_offset": 21944,
@@ -55,7 +55,7 @@
     },
     {
       "name": "ArenaHeapDiagnostics",
-      "source": "src/ARM7/ArenaHeapDiagnostics.c",
+      "source": "config/usa/arm7/src/ArenaHeapDiagnostics.c",
       "autoload": "wram",
       "runtime_address": 58755264,
       "payload_offset": 68316,
@@ -71,7 +71,7 @@
     },
     {
       "name": "DmaControl",
-      "source": "src/ARM7/DmaControl.c",
+      "source": "config/usa/arm7/src/DmaControl.c",
       "autoload": "wram",
       "runtime_address": 58713344,
       "payload_offset": 26396,
@@ -90,7 +90,7 @@
     },
     {
       "name": "IPC",
-      "source": "src/ARM7/IPC.c",
+      "source": "config/usa/arm7/src/IPC.c",
       "autoload": "wram",
       "runtime_address": 58714412,
       "payload_offset": 27464,
@@ -127,7 +127,7 @@
     },
     {
       "name": "CycleDelay",
-      "source": "src/ARM7/CycleDelay.c",
+      "source": "config/usa/arm7/src/CycleDelay.c",
       "autoload": "wram",
       "runtime_address": 58713032,
       "payload_offset": 26084,
@@ -144,7 +144,7 @@
     },
     {
       "name": "MessageQueue",
-      "source": "src/ARM7/MessageQueue.c",
+      "source": "config/usa/arm7/src/MessageQueue.c",
       "autoload": "wram",
       "runtime_address": 58706652,
       "payload_offset": 19704,
@@ -168,7 +168,7 @@
     },
     {
       "name": "Mutex",
-      "source": "src/ARM7/Mutex.c",
+      "source": "config/usa/arm7/src/Mutex.c",
       "autoload": "wram",
       "runtime_address": 58707104,
       "payload_offset": 20156,
@@ -195,7 +195,7 @@
     },
     {
       "name": "ThreadLists",
-      "source": "src/ARM7/ThreadLists.c",
+      "source": "config/usa/arm7/src/ThreadLists.c",
       "autoload": "wram",
       "runtime_address": 58704120,
       "payload_offset": 17172,
@@ -216,7 +216,7 @@
     },
     {
       "name": "ThreadWait",
-      "source": "src/ARM7/ThreadWait.c",
+      "source": "config/usa/arm7/src/ThreadWait.c",
       "autoload": "wram",
       "runtime_address": 58705564,
       "payload_offset": 18616,
@@ -240,7 +240,7 @@
     },
     {
       "name": "ThreadSwitch",
-      "source": "src/ARM7/ThreadSwitch.c",
+      "source": "config/usa/arm7/src/ThreadSwitch.c",
       "autoload": "wram",
       "runtime_address": 58704540,
       "payload_offset": 17592,
@@ -268,7 +268,7 @@
     },
     {
       "name": "Alarms",
-      "source": "src/ARM7/Alarms.c",
+      "source": "config/usa/arm7/src/Alarms.c",
       "autoload": "wram",
       "runtime_address": 58710172,
       "payload_offset": 23224,
@@ -310,7 +310,7 @@
     },
     {
       "name": "AlarmHandler",
-      "source": "src/ARM7/AlarmHandler.c",
+      "source": "config/usa/arm7/src/AlarmHandler.c",
       "autoload": "wram",
       "runtime_address": 58711136,
       "payload_offset": 24188,
@@ -331,7 +331,7 @@
     },
     {
       "name": "VerticalAlarms",
-      "source": "src/ARM7/VerticalAlarms.c",
+      "source": "config/usa/arm7/src/VerticalAlarms.c",
       "autoload": "wram",
       "runtime_address": 58711380,
       "payload_offset": 24432,
@@ -360,7 +360,7 @@
     },
     {
       "name": "VerticalAlarmCancel",
-      "source": "src/ARM7/VerticalAlarmCancel.c",
+      "source": "config/usa/arm7/src/VerticalAlarmCancel.c",
       "autoload": "wram",
       "runtime_address": 58712140,
       "payload_offset": 25192,
@@ -385,7 +385,7 @@
     },
     {
       "name": "VerticalFrame",
-      "source": "src/ARM7/VerticalFrame.c",
+      "source": "config/usa/arm7/src/VerticalFrame.c",
       "autoload": "wram",
       "runtime_address": 58712844,
       "payload_offset": 25896,
@@ -404,7 +404,7 @@
     },
     {
       "name": "VerticalAlarmSetup",
-      "source": "src/ARM7/VerticalAlarmSetup.c",
+      "source": "config/usa/arm7/src/VerticalAlarmSetup.c",
       "autoload": "wram",
       "runtime_address": 58711712,
       "payload_offset": 24764,
@@ -432,7 +432,7 @@
     },
     {
       "name": "InterruptRegistration",
-      "source": "src/ARM7/InterruptRegistration.c",
+      "source": "config/usa/arm7/src/InterruptRegistration.c",
       "autoload": "wram",
       "runtime_address": 58701808,
       "payload_offset": 14860,
@@ -451,7 +451,7 @@
     },
     {
       "name": "Interrupts",
-      "source": "src/ARM7/Interrupts.c",
+      "source": "config/usa/arm7/src/Interrupts.c",
       "autoload": "wram",
       "runtime_address": 58701964,
       "payload_offset": 15016,
@@ -478,7 +478,7 @@
     },
     {
       "name": "Timing",
-      "source": "src/ARM7/Timing.c",
+      "source": "config/usa/arm7/src/Timing.c",
       "autoload": "wram",
       "runtime_address": 58709736,
       "payload_offset": 22788,
@@ -511,7 +511,7 @@
     },
     {
       "name": "CpuStatus",
-      "source": "src/ARM7/CpuStatus.c",
+      "source": "config/usa/arm7/src/CpuStatus.c",
       "autoload": "wram",
       "runtime_address": 58712912,
       "payload_offset": 25964,
@@ -533,7 +533,7 @@
     },
     {
       "name": "ArenaHeap",
-      "source": "src/ARM7/ArenaHeap.c",
+      "source": "config/usa/arm7/src/ArenaHeap.c",
       "autoload": "wram",
       "runtime_address": 58707924,
       "payload_offset": 20976,
@@ -564,7 +564,7 @@
     },
     {
       "name": "ArenaBounds",
-      "source": "src/ARM7/ArenaBounds.c",
+      "source": "config/usa/arm7/src/ArenaBounds.c",
       "autoload": "wram",
       "runtime_address": 58707592,
       "payload_offset": 20644,
@@ -589,7 +589,7 @@
     },
     {
       "name": "BootFlags",
-      "source": "src/ARM7/BootFlags.c",
+      "source": "config/usa/arm7/src/BootFlags.c",
       "autoload": "wram",
       "runtime_address": 58688696,
       "payload_offset": 1748,
@@ -604,7 +604,7 @@
     },
     {
       "name": "BitCount",
-      "source": "src/ARM7/BitCount.c",
+      "source": "config/usa/arm7/src/BitCount.c",
       "autoload": "wram",
       "runtime_address": 58736424,
       "payload_offset": 49476,
@@ -619,7 +619,7 @@
     },
     {
       "name": "ThreadCreate",
-      "source": "src/ARM7/ThreadCreate.c",
+      "source": "config/usa/arm7/src/ThreadCreate.c",
       "autoload": "wram",
       "runtime_address": 58704992,
       "payload_offset": 18044,
@@ -642,7 +642,7 @@
     },
     {
       "name": "ThreadExit",
-      "source": "src/ARM7/ThreadExit.c",
+      "source": "config/usa/arm7/src/ThreadExit.c",
       "autoload": "wram",
       "runtime_address": 58705256,
       "payload_offset": 18308,
@@ -674,7 +674,7 @@
     },
     {
       "name": "ThreadPriority",
-      "source": "src/ARM7/ThreadPriority.c",
+      "source": "config/usa/arm7/src/ThreadPriority.c",
       "autoload": "wram",
       "runtime_address": 58705868,
       "payload_offset": 18920,
@@ -696,7 +696,7 @@
     },
     {
       "name": "ThreadCallbacks",
-      "source": "src/ARM7/ThreadCallbacks.c",
+      "source": "config/usa/arm7/src/ThreadCallbacks.c",
       "autoload": "wram",
       "runtime_address": 58706200,
       "payload_offset": 19252,
@@ -717,7 +717,7 @@
     },
     {
       "name": "ThreadSwitchUnlock",
-      "source": "src/ARM7/ThreadSwitchUnlock.c",
+      "source": "config/usa/arm7/src/ThreadSwitchUnlock.c",
       "autoload": "wram",
       "runtime_address": 58706332,
       "payload_offset": 19384,
@@ -736,7 +736,7 @@
     },
     {
       "name": "InterruptDispatch",
-      "source": "src/ARM7/InterruptDispatch.c",
+      "source": "config/usa/arm7/src/InterruptDispatch.c",
       "autoload": "wram",
       "runtime_address": 58701424,
       "payload_offset": 14476,
@@ -755,7 +755,7 @@
     },
     {
       "name": "InterruptVectors",
-      "source": "src/ARM7/InterruptVectors.c",
+      "source": "config/usa/arm7/src/InterruptVectors.c",
       "autoload": "wram",
       "runtime_address": 58701564,
       "payload_offset": 14616,
@@ -779,7 +779,7 @@
     },
     {
       "name": "InterruptResponseIDs",
-      "source": "src/ARM7/InterruptResponseIDs.c",
+      "source": "config/usa/arm7/src/InterruptResponseIDs.c",
       "autoload": "wram",
       "runtime_address": 58755100,
       "payload_offset": 68152,
@@ -795,7 +795,7 @@
     },
     {
       "name": "VBlankDispatch",
-      "source": "src/ARM7/VBlankDispatch.c",
+      "source": "config/usa/arm7/src/VBlankDispatch.c",
       "autoload": "wram",
       "runtime_address": 58701692,
       "payload_offset": 14744,
@@ -819,7 +819,7 @@
     },
     {
       "name": "InterruptWaiters",
-      "source": "src/ARM7/InterruptWaiters.c",
+      "source": "config/usa/arm7/src/InterruptWaiters.c",
       "autoload": "wram",
       "runtime_address": 58701772,
       "payload_offset": 14824,
@@ -841,7 +841,7 @@
     },
     {
       "name": "EmptyInterruptHandler",
-      "source": "src/ARM7/EmptyInterruptHandler.c",
+      "source": "config/usa/arm7/src/EmptyInterruptHandler.c",
       "autoload": "wram",
       "runtime_address": 58701420,
       "payload_offset": 14472,
@@ -856,7 +856,7 @@
     },
     {
       "name": "BusLocks",
-      "source": "src/ARM7/BusLocks.c",
+      "source": "config/usa/arm7/src/BusLocks.c",
       "autoload": "wram",
       "runtime_address": 58702416,
       "payload_offset": 15468,
@@ -886,7 +886,7 @@
     },
     {
       "name": "BusTryAcquire",
-      "source": "src/ARM7/BusTryAcquire.c",
+      "source": "config/usa/arm7/src/BusTryAcquire.c",
       "autoload": "wram",
       "runtime_address": 58702832,
       "payload_offset": 15884,
@@ -906,7 +906,7 @@
     },
     {
       "name": "BusNDS",
-      "source": "src/ARM7/BusNDS.c",
+      "source": "config/usa/arm7/src/BusNDS.c",
       "autoload": "wram",
       "runtime_address": 58702904,
       "payload_offset": 15956,
@@ -927,7 +927,7 @@
     },
     {
       "name": "BusLockOwner",
-      "source": "src/ARM7/BusLockOwner.c",
+      "source": "config/usa/arm7/src/BusLockOwner.c",
       "autoload": "wram",
       "runtime_address": 58702976,
       "payload_offset": 16028,
@@ -942,7 +942,7 @@
     },
     {
       "name": "SharedBootFlag",
-      "source": "src/ARM7/SharedBootFlag.c",
+      "source": "config/usa/arm7/src/SharedBootFlag.c",
       "autoload": "wram",
       "runtime_address": 58706624,
       "payload_offset": 19676,
@@ -957,7 +957,7 @@
     },
     {
       "name": "GPIOControl",
-      "source": "src/ARM7/GPIOControl.c",
+      "source": "config/usa/arm7/src/GPIOControl.c",
       "autoload": "wram",
       "runtime_address": 58715160,
       "payload_offset": 28212,
@@ -972,7 +972,7 @@
     },
     {
       "name": "GPIOControlMode",
-      "source": "src/ARM7/GPIOControlMode.c",
+      "source": "config/usa/arm7/src/GPIOControlMode.c",
       "autoload": "wram",
       "runtime_address": 58715192,
       "payload_offset": 28244,
@@ -989,7 +989,7 @@
     },
     {
       "name": "InputPolling",
-      "source": "src/ARM7/InputPolling.c",
+      "source": "config/usa/arm7/src/InputPolling.c",
       "autoload": "wram",
       "runtime_address": 58715216,
       "payload_offset": 28268,
@@ -1019,7 +1019,7 @@
     },
     {
       "name": "SoundMaster",
-      "source": "src/ARM7/SoundMaster.c",
+      "source": "config/usa/arm7/src/SoundMaster.c",
       "autoload": "wram",
       "runtime_address": 58715436,
       "payload_offset": 28488,
@@ -1048,7 +1048,7 @@
     },
     {
       "name": "SoundChannelStop",
-      "source": "src/ARM7/SoundChannelStop.c",
+      "source": "config/usa/arm7/src/SoundChannelStop.c",
       "autoload": "wram",
       "runtime_address": 58716336,
       "payload_offset": 29388,
@@ -1063,7 +1063,7 @@
     },
     {
       "name": "SoundChannelConfig",
-      "source": "src/ARM7/SoundChannelConfig.c",
+      "source": "config/usa/arm7/src/SoundChannelConfig.c",
       "autoload": "wram",
       "runtime_address": 58715796,
       "payload_offset": 28848,
@@ -1086,7 +1086,7 @@
     },
     {
       "name": "SoundChannelParameters",
-      "source": "src/ARM7/SoundChannelParameters.c",
+      "source": "config/usa/arm7/src/SoundChannelParameters.c",
       "autoload": "wram",
       "runtime_address": 58716376,
       "payload_offset": 29428,
@@ -1112,7 +1112,7 @@
     },
     {
       "name": "SoundVolumeAdjustment",
-      "source": "src/ARM7/SoundVolumeAdjustment.c",
+      "source": "config/usa/arm7/src/SoundVolumeAdjustment.c",
       "autoload": "wram",
       "runtime_address": 58716784,
       "payload_offset": 29836,
@@ -1135,7 +1135,7 @@
     },
     {
       "name": "SoundMath",
-      "source": "src/ARM7/SoundMath.c",
+      "source": "config/usa/arm7/src/SoundMath.c",
       "autoload": "wram",
       "runtime_address": 58717288,
       "payload_offset": 30340,
@@ -1157,7 +1157,7 @@
     },
     {
       "name": "SoundSineTable",
-      "source": "src/ARM7/SoundSineTable.c",
+      "source": "config/usa/arm7/src/SoundSineTable.c",
       "autoload": "wram",
       "runtime_address": 58753704,
       "payload_offset": 66756,
@@ -1173,7 +1173,7 @@
     },
     {
       "name": "SoundWorkerControl",
-      "source": "src/ARM7/SoundWorkerControl.c",
+      "source": "config/usa/arm7/src/SoundWorkerControl.c",
       "autoload": "wram",
       "runtime_address": 58717576,
       "payload_offset": 30628,
@@ -1213,7 +1213,7 @@
     },
     {
       "name": "SoundWorkerAlarmCallback",
-      "source": "src/ARM7/SoundWorkerAlarmCallback.c",
+      "source": "config/usa/arm7/src/SoundWorkerAlarmCallback.c",
       "autoload": "wram",
       "runtime_address": 58717820,
       "payload_offset": 30872,
@@ -1233,7 +1233,7 @@
     },
     {
       "name": "SoundPeriod",
-      "source": "src/ARM7/SoundPeriod.c",
+      "source": "config/usa/arm7/src/SoundPeriod.c",
       "autoload": "wram",
       "runtime_address": 58716988,
       "payload_offset": 30040,
@@ -1251,7 +1251,7 @@
     },
     {
       "name": "SoundWorkerMain",
-      "source": "src/ARM7/SoundWorkerMain.c",
+      "source": "config/usa/arm7/src/SoundWorkerMain.c",
       "autoload": "wram",
       "runtime_address": 58717888,
       "payload_offset": 30940,
@@ -1288,7 +1288,7 @@
     },
     {
       "name": "SoundCaptureStatus",
-      "source": "src/ARM7/SoundCaptureStatus.c",
+      "source": "config/usa/arm7/src/SoundCaptureStatus.c",
       "autoload": "wram",
       "runtime_address": 58718212,
       "payload_offset": 31264,
@@ -1303,7 +1303,7 @@
     },
     {
       "name": "SoundVoiceInit",
-      "source": "src/ARM7/SoundVoiceInit.c",
+      "source": "config/usa/arm7/src/SoundVoiceInit.c",
       "autoload": "wram",
       "runtime_address": 58718236,
       "payload_offset": 31288,
@@ -1327,7 +1327,7 @@
     },
     {
       "name": "SoundVoiceApply",
-      "source": "src/ARM7/SoundVoiceApply.c",
+      "source": "config/usa/arm7/src/SoundVoiceApply.c",
       "autoload": "wram",
       "runtime_address": 58718328,
       "payload_offset": 31380,
@@ -1351,7 +1351,7 @@
     },
     {
       "name": "SoundVoiceSetup",
-      "source": "src/ARM7/SoundVoiceSetup.c",
+      "source": "config/usa/arm7/src/SoundVoiceSetup.c",
       "autoload": "wram",
       "runtime_address": 58719768,
       "payload_offset": 32820,
@@ -1370,7 +1370,7 @@
     },
     {
       "name": "SoundEnvelope",
-      "source": "src/ARM7/SoundEnvelope.c",
+      "source": "config/usa/arm7/src/SoundEnvelope.c",
       "autoload": "wram",
       "runtime_address": 58719972,
       "payload_offset": 33024,
@@ -1395,7 +1395,7 @@
     },
     {
       "name": "SoundEnvelopeSetup",
-      "source": "src/ARM7/SoundEnvelopeSetup.c",
+      "source": "config/usa/arm7/src/SoundEnvelopeSetup.c",
       "autoload": "wram",
       "runtime_address": 58721564,
       "payload_offset": 34616,
@@ -1413,7 +1413,7 @@
     },
     {
       "name": "SoundModulation",
-      "source": "src/ARM7/SoundModulation.c",
+      "source": "config/usa/arm7/src/SoundModulation.c",
       "autoload": "wram",
       "runtime_address": 58721352,
       "payload_offset": 34404,
@@ -1432,7 +1432,7 @@
     },
     {
       "name": "SoundVoiceCallback",
-      "source": "src/ARM7/SoundVoiceCallback.c",
+      "source": "config/usa/arm7/src/SoundVoiceCallback.c",
       "autoload": "wram",
       "runtime_address": 58720724,
       "payload_offset": 33776,
@@ -1447,7 +1447,7 @@
     },
     {
       "name": "SoundReservations",
-      "source": "src/ARM7/SoundReservations.c",
+      "source": "config/usa/arm7/src/SoundReservations.c",
       "autoload": "wram",
       "runtime_address": 58721144,
       "payload_offset": 34196,
@@ -1468,7 +1468,7 @@
     },
     {
       "name": "SoundReserve",
-      "source": "src/ARM7/SoundReserve.c",
+      "source": "config/usa/arm7/src/SoundReserve.c",
       "autoload": "wram",
       "runtime_address": 58720744,
       "payload_offset": 33796,
@@ -1489,7 +1489,7 @@
     },
     {
       "name": "SoundSequenceInit",
-      "source": "src/ARM7/SoundSequenceInit.c",
+      "source": "config/usa/arm7/src/SoundSequenceInit.c",
       "autoload": "wram",
       "runtime_address": 58721704,
       "payload_offset": 34756,
@@ -1507,7 +1507,7 @@
     },
     {
       "name": "SoundTrackRead",
-      "source": "src/ARM7/SoundTrackRead.c",
+      "source": "config/usa/arm7/src/SoundTrackRead.c",
       "autoload": "wram",
       "runtime_address": 58722632,
       "payload_offset": 35684,
@@ -1526,7 +1526,7 @@
     },
     {
       "name": "SoundReadCache",
-      "source": "src/ARM7/SoundReadCache.c",
+      "source": "config/usa/arm7/src/SoundReadCache.c",
       "autoload": "wram",
       "runtime_address": 58723900,
       "payload_offset": 36952,
@@ -1545,7 +1545,7 @@
     },
     {
       "name": "SoundSequenceStart",
-      "source": "src/ARM7/SoundSequenceStart.c",
+      "source": "config/usa/arm7/src/SoundSequenceStart.c",
       "autoload": "wram",
       "runtime_address": 58722728,
       "payload_offset": 35780,
@@ -1564,7 +1564,7 @@
     },
     {
       "name": "SoundSequenceParameters",
-      "source": "src/ARM7/SoundSequenceParameters.c",
+      "source": "config/usa/arm7/src/SoundSequenceParameters.c",
       "autoload": "wram",
       "runtime_address": 58723676,
       "payload_offset": 36728,
@@ -1583,7 +1583,7 @@
     },
     {
       "name": "SoundTrackVoices",
-      "source": "src/ARM7/SoundTrackVoices.c",
+      "source": "config/usa/arm7/src/SoundTrackVoices.c",
       "autoload": "wram",
       "runtime_address": 58724488,
       "payload_offset": 37540,
@@ -1611,7 +1611,7 @@
     },
     {
       "name": "SoundSequenceStop",
-      "source": "src/ARM7/SoundSequenceStop.c",
+      "source": "config/usa/arm7/src/SoundSequenceStop.c",
       "autoload": "wram",
       "runtime_address": 58722808,
       "payload_offset": 35860,
@@ -1634,7 +1634,7 @@
     },
     {
       "name": "SoundSequenceRanges",
-      "source": "src/ARM7/SoundSequenceRanges.c",
+      "source": "config/usa/arm7/src/SoundSequenceRanges.c",
       "autoload": "wram",
       "runtime_address": 58723444,
       "payload_offset": 36496,
@@ -1654,7 +1654,7 @@
     },
     {
       "name": "SoundTrackAllocation",
-      "source": "src/ARM7/SoundTrackAllocation.c",
+      "source": "config/usa/arm7/src/SoundTrackAllocation.c",
       "autoload": "wram",
       "runtime_address": 58728284,
       "payload_offset": 41336,
@@ -1674,7 +1674,7 @@
     },
     {
       "name": "SoundTrackMask",
-      "source": "src/ARM7/SoundTrackMask.c",
+      "source": "config/usa/arm7/src/SoundTrackMask.c",
       "autoload": "wram",
       "runtime_address": 58723224,
       "payload_offset": 36276,
@@ -1694,7 +1694,7 @@
     },
     {
       "name": "SoundTrackInit",
-      "source": "src/ARM7/SoundTrackInit.c",
+      "source": "config/usa/arm7/src/SoundTrackInit.c",
       "autoload": "wram",
       "runtime_address": 58724264,
       "payload_offset": 37316,
@@ -1711,7 +1711,7 @@
     },
     {
       "name": "SoundSequenceAdvance",
-      "source": "src/ARM7/SoundSequenceAdvance.c",
+      "source": "config/usa/arm7/src/SoundSequenceAdvance.c",
       "autoload": "wram",
       "runtime_address": 58723020,
       "payload_offset": 36072,
@@ -1736,7 +1736,7 @@
     },
     {
       "name": "SoundSequenceVariable",
-      "source": "src/ARM7/SoundSequenceVariable.c",
+      "source": "config/usa/arm7/src/SoundSequenceVariable.c",
       "autoload": "wram",
       "runtime_address": 58728216,
       "payload_offset": 41268,
@@ -1753,7 +1753,7 @@
     },
     {
       "name": "SoundSharedStatus",
-      "source": "src/ARM7/SoundSharedStatus.c",
+      "source": "config/usa/arm7/src/SoundSharedStatus.c",
       "autoload": "wram",
       "runtime_address": 58729256,
       "payload_offset": 42308,
@@ -1774,7 +1774,7 @@
     },
     {
       "name": "SoundAlarms",
-      "source": "src/ARM7/SoundAlarms.c",
+      "source": "config/usa/arm7/src/SoundAlarms.c",
       "autoload": "wram",
       "runtime_address": 58729512,
       "payload_offset": 42564,
@@ -1800,7 +1800,7 @@
     },
     {
       "name": "SoundCommandInit",
-      "source": "src/ARM7/SoundCommandInit.c",
+      "source": "config/usa/arm7/src/SoundCommandInit.c",
       "autoload": "wram",
       "runtime_address": 58729904,
       "payload_offset": 42956,
@@ -1829,7 +1829,7 @@
     },
     {
       "name": "SoundCommandCallback",
-      "source": "src/ARM7/SoundCommandCallback.c",
+      "source": "config/usa/arm7/src/SoundCommandCallback.c",
       "autoload": "wram",
       "runtime_address": 58731684,
       "payload_offset": 44736,
@@ -1850,7 +1850,7 @@
     },
     {
       "name": "SoundBankAccess",
-      "source": "src/ARM7/SoundBankAccess.c",
+      "source": "config/usa/arm7/src/SoundBankAccess.c",
       "autoload": "wram",
       "runtime_address": 58717812,
       "payload_offset": 30864,
@@ -1866,7 +1866,7 @@
     },
     {
       "name": "SoundWaveLookup",
-      "source": "src/ARM7/SoundWaveLookup.c",
+      "source": "config/usa/arm7/src/SoundWaveLookup.c",
       "autoload": "wram",
       "runtime_address": 58728864,
       "payload_offset": 41916,
@@ -1884,7 +1884,7 @@
     },
     {
       "name": "SoundInstrumentStart",
-      "source": "src/ARM7/SoundInstrumentStart.c",
+      "source": "config/usa/arm7/src/SoundInstrumentStart.c",
       "autoload": "wram",
       "runtime_address": 58728928,
       "payload_offset": 41980,
@@ -1908,7 +1908,7 @@
     },
     {
       "name": "SoundAttenuationTable",
-      "source": "src/ARM7/SoundAttenuationTable.c",
+      "source": "config/usa/arm7/src/SoundAttenuationTable.c",
       "autoload": "wram",
       "runtime_address": 58753740,
       "payload_offset": 66792,
@@ -1924,7 +1924,7 @@
     },
     {
       "name": "SoundAttackTable",
-      "source": "src/ARM7/SoundAttackTable.c",
+      "source": "config/usa/arm7/src/SoundAttackTable.c",
       "autoload": "wram",
       "runtime_address": 58754272,
       "payload_offset": 67324,
@@ -1940,7 +1940,7 @@
     },
     {
       "name": "ResetControl",
-      "source": "src/ARM7/ResetControl.c",
+      "source": "config/usa/arm7/src/ResetControl.c",
       "autoload": "wram",
       "runtime_address": 58713056,
       "payload_offset": 26108,
@@ -1976,7 +1976,7 @@
     },
     {
       "name": "BackupTransfer",
-      "source": "src/ARM7/BackupTransfer.c",
+      "source": "config/usa/arm7/src/BackupTransfer.c",
       "autoload": "wram",
       "runtime_address": 58732344,
       "payload_offset": 45396,
@@ -1996,7 +1996,7 @@
     },
     {
       "name": "BackupWait",
-      "source": "src/ARM7/BackupWait.c",
+      "source": "config/usa/arm7/src/BackupWait.c",
       "autoload": "wram",
       "runtime_address": 58732036,
       "payload_offset": 45088,
@@ -2015,7 +2015,7 @@
     },
     {
       "name": "BackupStatus",
-      "source": "src/ARM7/BackupStatus.c",
+      "source": "config/usa/arm7/src/BackupStatus.c",
       "autoload": "wram",
       "runtime_address": 58732200,
       "payload_offset": 45252,
@@ -2039,7 +2039,7 @@
     },
     {
       "name": "BackupWriteEnable",
-      "source": "src/ARM7/BackupWriteEnable.c",
+      "source": "config/usa/arm7/src/BackupWriteEnable.c",
       "autoload": "wram",
       "runtime_address": 58732720,
       "payload_offset": 45772,
@@ -2059,7 +2059,7 @@
     },
     {
       "name": "BackupIO",
-      "source": "src/ARM7/BackupIO.c",
+      "source": "config/usa/arm7/src/BackupIO.c",
       "autoload": "wram",
       "runtime_address": 58733020,
       "payload_offset": 46072,
@@ -2086,7 +2086,7 @@
     },
     {
       "name": "BackupErase",
-      "source": "src/ARM7/BackupErase.c",
+      "source": "config/usa/arm7/src/BackupErase.c",
       "autoload": "wram",
       "runtime_address": 58733496,
       "payload_offset": 46548,
@@ -2115,7 +2115,7 @@
     },
     {
       "name": "BackupAddress",
-      "source": "src/ARM7/BackupAddress.c",
+      "source": "config/usa/arm7/src/BackupAddress.c",
       "autoload": "wram",
       "runtime_address": 58732772,
       "payload_offset": 45824,
@@ -2134,7 +2134,7 @@
     },
     {
       "name": "BackupStatusInit",
-      "source": "src/ARM7/BackupStatusInit.c",
+      "source": "config/usa/arm7/src/BackupStatusInit.c",
       "autoload": "wram",
       "runtime_address": 58732932,
       "payload_offset": 45984,
@@ -2154,7 +2154,7 @@
     },
     {
       "name": "BackupStatusWrite",
-      "source": "src/ARM7/BackupStatusWrite.c",
+      "source": "config/usa/arm7/src/BackupStatusWrite.c",
       "autoload": "wram",
       "runtime_address": 58734044,
       "payload_offset": 47096,
@@ -2177,7 +2177,7 @@
     },
     {
       "name": "CardCommand",
-      "source": "src/ARM7/CardCommand.c",
+      "source": "config/usa/arm7/src/CardCommand.c",
       "autoload": "wram",
       "runtime_address": 58734196,
       "payload_offset": 47248,
@@ -2192,7 +2192,7 @@
     },
     {
       "name": "CardIdentity",
-      "source": "src/ARM7/CardIdentity.c",
+      "source": "config/usa/arm7/src/CardIdentity.c",
       "autoload": "wram",
       "runtime_address": 58734408,
       "payload_offset": 47460,
@@ -2216,7 +2216,7 @@
     },
     {
       "name": "CardOperationBegin",
-      "source": "src/ARM7/CardOperationBegin.c",
+      "source": "config/usa/arm7/src/CardOperationBegin.c",
       "autoload": "wram",
       "runtime_address": 58734572,
       "payload_offset": 47624,
@@ -2235,7 +2235,7 @@
     },
     {
       "name": "CardIpcCallback",
-      "source": "src/ARM7/CardIpcCallback.c",
+      "source": "config/usa/arm7/src/CardIpcCallback.c",
       "autoload": "wram",
       "runtime_address": 58734764,
       "payload_offset": 47816,
@@ -2253,7 +2253,7 @@
     },
     {
       "name": "CardRemovalInit",
-      "source": "src/ARM7/CardRemovalInit.c",
+      "source": "config/usa/arm7/src/CardRemovalInit.c",
       "autoload": "wram",
       "runtime_address": 58735556,
       "payload_offset": 48608,
@@ -2274,7 +2274,7 @@
     },
     {
       "name": "CardRemovalCheck",
-      "source": "src/ARM7/CardRemovalCheck.c",
+      "source": "config/usa/arm7/src/CardRemovalCheck.c",
       "autoload": "wram",
       "runtime_address": 58735764,
       "payload_offset": 48816,
@@ -2298,7 +2298,7 @@
     },
     {
       "name": "CardRemovalCallback",
-      "source": "src/ARM7/CardRemovalCallback.c",
+      "source": "config/usa/arm7/src/CardRemovalCallback.c",
       "autoload": "wram",
       "runtime_address": 58735644,
       "payload_offset": 48696,
@@ -2324,7 +2324,7 @@
     },
     {
       "name": "Terminate",
-      "source": "src/ARM7/Terminate.c",
+      "source": "config/usa/arm7/src/Terminate.c",
       "autoload": "wram",
       "runtime_address": 58713320,
       "payload_offset": 26372,
@@ -2343,7 +2343,7 @@
     },
     {
       "name": "WirelessPowerOff",
-      "source": "src/ARM7/WirelessPowerOff.c",
+      "source": "config/usa/arm7/src/WirelessPowerOff.c",
       "autoload": "wram",
       "runtime_address": 58746172,
       "payload_offset": 59224,
@@ -2361,7 +2361,7 @@
     },
     {
       "name": "PowerRegisters",
-      "source": "src/ARM7/PowerRegisters.c",
+      "source": "config/usa/arm7/src/PowerRegisters.c",
       "autoload": "wram",
       "runtime_address": 58744364,
       "payload_offset": 57416,
@@ -2380,7 +2380,7 @@
     },
     {
       "name": "PowerLedMode",
-      "source": "src/ARM7/PowerLedMode.c",
+      "source": "config/usa/arm7/src/PowerLedMode.c",
       "autoload": "wram",
       "runtime_address": 58745216,
       "payload_offset": 58268,
@@ -2402,7 +2402,7 @@
     },
     {
       "name": "PowerLedPattern",
-      "source": "src/ARM7/PowerLedPattern.c",
+      "source": "config/usa/arm7/src/PowerLedPattern.c",
       "autoload": "wram",
       "runtime_address": 58746060,
       "payload_offset": 59112,
@@ -2420,7 +2420,7 @@
     },
     {
       "name": "PowerMessages",
-      "source": "src/ARM7/PowerMessages.c",
+      "source": "config/usa/arm7/src/PowerMessages.c",
       "autoload": "wram",
       "runtime_address": 58744236,
       "payload_offset": 57288,
@@ -2438,7 +2438,7 @@
     },
     {
       "name": "PowerCommands",
-      "source": "src/ARM7/PowerCommands.c",
+      "source": "config/usa/arm7/src/PowerCommands.c",
       "autoload": "wram",
       "runtime_address": 58744684,
       "payload_offset": 57736,
@@ -2462,7 +2462,7 @@
     },
     {
       "name": "SpiService",
-      "source": "src/ARM7/SpiService.c",
+      "source": "config/usa/arm7/src/SpiService.c",
       "autoload": "wram",
       "runtime_address": 58740000,
       "payload_offset": 53052,
@@ -2483,7 +2483,7 @@
     },
     {
       "name": "SpiQueuePeek",
-      "source": "src/ARM7/SpiQueuePeek.c",
+      "source": "config/usa/arm7/src/SpiQueuePeek.c",
       "autoload": "wram",
       "runtime_address": 58740336,
       "payload_offset": 53388,
@@ -2501,7 +2501,7 @@
     },
     {
       "name": "SpiWorker",
-      "source": "src/ARM7/SpiWorker.c",
+      "source": "config/usa/arm7/src/SpiWorker.c",
       "autoload": "wram",
       "runtime_address": 58740368,
       "payload_offset": 53420,
@@ -2523,7 +2523,7 @@
     },
     {
       "name": "PowerStateInit",
-      "source": "src/ARM7/PowerStateInit.c",
+      "source": "config/usa/arm7/src/PowerStateInit.c",
       "autoload": "wram",
       "runtime_address": 58743504,
       "payload_offset": 56556,
@@ -2540,7 +2540,7 @@
     },
     {
       "name": "PowerTask",
-      "source": "src/ARM7/PowerTask.c",
+      "source": "config/usa/arm7/src/PowerTask.c",
       "autoload": "wram",
       "runtime_address": 58743884,
       "payload_offset": 56936,
@@ -2567,7 +2567,7 @@
     },
     {
       "name": "PowerLedUpdate",
-      "source": "src/ARM7/PowerLedUpdate.c",
+      "source": "config/usa/arm7/src/PowerLedUpdate.c",
       "autoload": "wram",
       "runtime_address": 58745772,
       "payload_offset": 58824,
@@ -2589,7 +2589,7 @@
     },
     {
       "name": "PowerLedPatterns",
-      "source": "src/ARM7/PowerLedPatterns.c",
+      "source": "config/usa/arm7/src/PowerLedPatterns.c",
       "autoload": "wram",
       "runtime_address": 58756464,
       "payload_offset": 69516,
@@ -2605,7 +2605,7 @@
     },
     {
       "name": "SpiReply",
-      "source": "src/ARM7/SpiReply.c",
+      "source": "config/usa/arm7/src/SpiReply.c",
       "autoload": "wram",
       "runtime_address": 58739804,
       "payload_offset": 52856,
@@ -2622,7 +2622,7 @@
     },
     {
       "name": "SpiIpcCallback",
-      "source": "src/ARM7/SpiIpcCallback.c",
+      "source": "config/usa/arm7/src/SpiIpcCallback.c",
       "autoload": "wram",
       "runtime_address": 58740476,
       "payload_offset": 53528,
@@ -2642,7 +2642,7 @@
     },
     {
       "name": "TouchSpiClock",
-      "source": "src/ARM7/TouchSpiClock.c",
+      "source": "config/usa/arm7/src/TouchSpiClock.c",
       "autoload": "wram",
       "runtime_address": 58740816,
       "payload_offset": 53868,
@@ -2657,7 +2657,7 @@
     },
     {
       "name": "TouchCommandClock",
-      "source": "src/ARM7/TouchCommandClock.c",
+      "source": "config/usa/arm7/src/TouchCommandClock.c",
       "autoload": "wram",
       "runtime_address": 58742444,
       "payload_offset": 55496,
@@ -2672,7 +2672,7 @@
     },
     {
       "name": "PowerVBlankCallback",
-      "source": "src/ARM7/PowerVBlankCallback.c",
+      "source": "config/usa/arm7/src/PowerVBlankCallback.c",
       "autoload": "wram",
       "runtime_address": 58688752,
       "payload_offset": 1804,
@@ -2690,7 +2690,7 @@
     },
     {
       "name": "TouchControllerStatus",
-      "source": "src/ARM7/TouchControllerStatus.c",
+      "source": "config/usa/arm7/src/TouchControllerStatus.c",
       "autoload": "wram",
       "runtime_address": 58742200,
       "payload_offset": 55252,
@@ -2709,7 +2709,7 @@
     },
     {
       "name": "PowerSleep",
-      "source": "src/ARM7/PowerSleep.c",
+      "source": "config/usa/arm7/src/PowerSleep.c",
       "autoload": "wram",
       "runtime_address": 58745340,
       "payload_offset": 58392,
@@ -2744,7 +2744,7 @@
     },
     {
       "name": "PowerIpcReceive",
-      "source": "src/ARM7/PowerIpcReceive.c",
+      "source": "config/usa/arm7/src/PowerIpcReceive.c",
       "autoload": "wram",
       "runtime_address": 58743564,
       "payload_offset": 56616,
@@ -2765,7 +2765,7 @@
     },
     {
       "name": "SpiInitialize",
-      "source": "src/ARM7/SpiInitialize.c",
+      "source": "config/usa/arm7/src/SpiInitialize.c",
       "autoload": "wram",
       "runtime_address": 58739336,
       "payload_offset": 52388,
@@ -2801,7 +2801,7 @@
     },
     {
       "name": "SpiServiceToken",
-      "source": "src/ARM7/SpiServiceToken.c",
+      "source": "config/usa/arm7/src/SpiServiceToken.c",
       "autoload": "wram",
       "runtime_address": 58739616,
       "payload_offset": 52668,
@@ -2824,7 +2824,7 @@
     },
     {
       "name": "TouchInitialize",
-      "source": "src/ARM7/TouchInitialize.c",
+      "source": "config/usa/arm7/src/TouchInitialize.c",
       "autoload": "wram",
       "runtime_address": 58740580,
       "payload_offset": 53632,
@@ -2854,7 +2854,7 @@
     },
     {
       "name": "TouchIpcReceive",
-      "source": "src/ARM7/TouchIpcReceive.c",
+      "source": "config/usa/arm7/src/TouchIpcReceive.c",
       "autoload": "wram",
       "runtime_address": 58740852,
       "payload_offset": 53904,
@@ -2870,6 +2870,2385 @@
         "ARM7_TouchRequest": 58766996,
         "ARM7_EnqueueSpiTask": 58740112,
         "ARM7_SendSpiReply": 58739804
+      }
+    },
+    {
+      "name": "ArenaInitialize",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b03/ArenaInitialize.c",
+      "autoload": "wram",
+      "runtime_address": 58707532,
+      "payload_offset": 20584,
+      "size": 60,
+      "code_bytes": 56,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_InitializeArenas",
+      "symbols": {
+        "ARM7_InitializeArenas": 58707532
+      },
+      "externals": {
+        "ARM7_ArenasInitialized": 58757416,
+        "ARM7_InitializeArena": 58707592
+      }
+    },
+    {
+      "name": "MicrophoneInitialize",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b05/MicrophoneInitialize.c",
+      "autoload": "wram",
+      "runtime_address": 58746384,
+      "payload_offset": 59436,
+      "size": 72,
+      "code_bytes": 60,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_InitializeMicrophoneState",
+      "symbols": {
+        "ARM7_InitializeMicrophoneState": 58746384
+      },
+      "externals": {
+        "ARM7_MicrophoneState": 58772248,
+        "ARM7_MicrophoneCommands": 58772248
+      }
+    },
+    {
+      "name": "MicrophoneTimer",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b05/MicrophoneTimer.c",
+      "autoload": "wram",
+      "runtime_address": 58747168,
+      "payload_offset": 60220,
+      "size": 164,
+      "code_bytes": 160,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_SetMicrophoneTimerPeriod",
+      "symbols": {
+        "ARM7_SetMicrophoneTimerPeriod": 58747168
+      },
+      "externals": {
+        "ARM7_MicrophoneTimerState": 58772248
+      }
+    },
+    {
+      "name": "SpiEnqueue",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b06/SpiEnqueue.c",
+      "autoload": "wram",
+      "runtime_address": 58740112,
+      "payload_offset": 53164,
+      "size": 224,
+      "code_bytes": 204,
+      "literal_pool_bytes": 20,
+      "entry": "ARM7_EnqueueSpiTask",
+      "symbols": {
+        "ARM7_EnqueueSpiTask": 58740112
+      },
+      "externals": {
+        "ARM7_SpiServiceState": 58765808,
+        "ARM7_SpiTaskTypes": 58766592,
+        "ARM7_SpiTaskCommands": 58766596,
+        "ARM7_SpiTaskQueue": 58766496,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_SendMessage": 58706692,
+        "ARM7_SpiArgumentBase": 58765812
+      }
+    },
+    {
+      "name": "RuntimeInitialize",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b07/RuntimeInitialize.c",
+      "autoload": "wram",
+      "runtime_address": 58707484,
+      "payload_offset": 20536,
+      "size": 48,
+      "code_bytes": 48,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_InitializeRuntimeServices",
+      "symbols": {
+        "ARM7_InitializeRuntimeServices": 58707484
+      },
+      "externals": {
+        "ARM7_InitializeArenas": 58707532,
+        "ARM7_StartIPC": 58714412,
+        "ARM7_InitializeBusLocks": 58702284,
+        "ARM7_InitializeInterruptWaiters": 58701772,
+        "ARM7_Initialize64BitTimer": 58709764,
+        "ARM7_InitializeActiveAlarmList": 58710312,
+        "ARM7_InitializeThreads": 58704752,
+        "ARM7_InitializeReset": 58713056,
+        "ARM7_InitializeCommunicationServices": 58750520
+      }
+    },
+    {
+      "name": "GBABusHooks",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b07/GBABusHooks.c",
+      "autoload": "wram",
+      "runtime_address": 58702896,
+      "payload_offset": 15948,
+      "size": 8,
+      "code_bytes": 8,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_MarkGBABusAcquired",
+      "symbols": {
+        "ARM7_MarkGBABusAcquired": 58702896,
+        "ARM7_MarkGBABusReleased": 58702900
+      },
+      "externals": {}
+    },
+    {
+      "name": "NDSBusHooks",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b07/NDSBusHooks.c",
+      "autoload": "wram",
+      "runtime_address": 58702968,
+      "payload_offset": 16020,
+      "size": 8,
+      "code_bytes": 8,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_MarkNDSBusAcquired",
+      "symbols": {
+        "ARM7_MarkNDSBusAcquired": 58702968,
+        "ARM7_MarkNDSBusReleased": 58702972
+      },
+      "externals": {}
+    },
+    {
+      "name": "GBALifecycleHooks",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b07/GBALifecycleHooks.c",
+      "autoload": "wram",
+      "runtime_address": 58736412,
+      "payload_offset": 49464,
+      "size": 12,
+      "code_bytes": 12,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_BeforeReleaseGBABus",
+      "symbols": {
+        "ARM7_BeforeReleaseGBABus": 58736412,
+        "ARM7_AfterAcquireGBABus": 58736416,
+        "ARM7_InitializeBusLockHardware": 58736420
+      },
+      "externals": {}
+    },
+    {
+      "name": "CartridgeStateInitialize",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b08/CartridgeStateInitialize.c",
+      "autoload": "wram",
+      "runtime_address": 58749768,
+      "payload_offset": 62820,
+      "size": 60,
+      "code_bytes": 48,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_InitializeCartridgeLockState",
+      "symbols": {
+        "ARM7_InitializeCartridgeLockState": 58749768
+      },
+      "externals": {
+        "ARM7_BiosCpuSet": 58749828,
+        "ARM7_CartridgeBootWord": 58772348,
+        "ARM7_AllocateLockOwner": 58702984,
+        "ARM7_CartridgeLockState": 58772344
+      }
+    },
+    {
+      "name": "CartridgeBusControlSave",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b08/CartridgeBusControlSave.c",
+      "autoload": "wram",
+      "runtime_address": 58750212,
+      "payload_offset": 63264,
+      "size": 68,
+      "code_bytes": 64,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_SaveCartridgeBusControl",
+      "symbols": {
+        "ARM7_SaveCartridgeBusControl": 58750212
+      },
+      "externals": {
+        "ARM7_SetCartridgeWaitControl": 58750280,
+        "ARM7_SetCartridgeClockControl": 58750308
+      }
+    },
+    {
+      "name": "CartridgeWaitControl",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b08/CartridgeWaitControl.c",
+      "autoload": "wram",
+      "runtime_address": 58750280,
+      "payload_offset": 63332,
+      "size": 28,
+      "code_bytes": 24,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_SetCartridgeWaitControl",
+      "symbols": {
+        "ARM7_SetCartridgeWaitControl": 58750280
+      },
+      "externals": {}
+    },
+    {
+      "name": "CartridgeClockControl",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b08/CartridgeClockControl.c",
+      "autoload": "wram",
+      "runtime_address": 58750308,
+      "payload_offset": 63360,
+      "size": 28,
+      "code_bytes": 24,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_SetCartridgeClockControl",
+      "symbols": {
+        "ARM7_SetCartridgeClockControl": 58750308
+      },
+      "externals": {}
+    },
+    {
+      "name": "CartridgeBusTryLock",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b08/CartridgeBusTryLock.c",
+      "autoload": "wram",
+      "runtime_address": 58750336,
+      "payload_offset": 63388,
+      "size": 80,
+      "code_bytes": 76,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_TryProtectedCartridgeBus",
+      "symbols": {
+        "ARM7_TryProtectedCartridgeBus": 58750336
+      },
+      "externals": {
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_GetBusLockOwner": 58702976,
+        "ARM7_TryAcquireGBABus": 58702832
+      }
+    },
+    {
+      "name": "CartridgeBusRelease",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b08/CartridgeBusRelease.c",
+      "autoload": "wram",
+      "runtime_address": 58750416,
+      "payload_offset": 63468,
+      "size": 40,
+      "code_bytes": 40,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_ReleaseProtectedCartridgeBus",
+      "symbols": {
+        "ARM7_ReleaseProtectedCartridgeBus": 58750416
+      },
+      "externals": {
+        "ARM7_ReleaseGBABus": 58702820,
+        "ARM7_SetIRQInterruptState": 58712952
+      }
+    },
+    {
+      "name": "CartridgeIpcSend",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b08/CartridgeIpcSend.c",
+      "autoload": "wram",
+      "runtime_address": 58750456,
+      "payload_offset": 63508,
+      "size": 64,
+      "code_bytes": 64,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_SendCartridgeIpcCommand",
+      "symbols": {
+        "ARM7_SendCartridgeIpcCommand": 58750456
+      },
+      "externals": {
+        "ARM7_BusLockWait": 58702404,
+        "ARM7_SendIpcCommand": 58714784
+      }
+    },
+    {
+      "name": "CartridgeBootReceive",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b08/CartridgeBootReceive.c",
+      "autoload": "wram",
+      "runtime_address": 58751052,
+      "payload_offset": 64104,
+      "size": 68,
+      "code_bytes": 56,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_CartridgeBootReceive",
+      "symbols": {
+        "ARM7_CartridgeBootReceive": 58751052
+      },
+      "externals": {
+        "ARM7_CartridgeServiceState": 58772352,
+        "ARM7_CartridgeSourceFile": 58756616,
+        "ARM7_CartridgeInvalidCommand": 58756628,
+        "ARM7_Panic": 58703664
+      }
+    },
+    {
+      "name": "CartridgeShutdownReceive",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b08/CartridgeShutdownReceive.c",
+      "autoload": "wram",
+      "runtime_address": 58751120,
+      "payload_offset": 64172,
+      "size": 76,
+      "code_bytes": 64,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_CartridgeShutdownReceive",
+      "symbols": {
+        "ARM7_CartridgeShutdownReceive": 58751120
+      },
+      "externals": {
+        "ARM7_TerminationCleanup": 58751212,
+        "ARM7_ResetInterruptDispatch": 58715544,
+        "ARM7_DisableWirelessPower": 58746172,
+        "ARM7_Terminate": 58713320,
+        "ARM7_CartridgeSourceFile": 58756616,
+        "ARM7_CartridgeInvalidCommand": 58756628,
+        "ARM7_Panic": 58703664
+      }
+    },
+    {
+      "name": "CartridgeRemovedStatus",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b08/CartridgeRemovedStatus.c",
+      "autoload": "wram",
+      "runtime_address": 58749840,
+      "payload_offset": 62892,
+      "size": 80,
+      "code_bytes": 72,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_IsCartridgeRemoved",
+      "symbols": {
+        "ARM7_IsCartridgeRemoved": 58749840
+      },
+      "externals": {
+        "ARM7_SharedCartridgeMetadata": 41942064,
+        "ARM7_CheckCartridgeRemoval": 58749920
+      }
+    },
+    {
+      "name": "WirelessSampleFill",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b09/WirelessSampleFill.c",
+      "autoload": "mainram",
+      "runtime_address": 41813348,
+      "payload_offset": 71092,
+      "size": 56,
+      "code_bytes": 48,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_WirelessSampleFill",
+      "symbols": {
+        "ARM7_WirelessSampleFill": 41813348
+      },
+      "externals": {
+        "ARM7_WirelessRoot": 41910108,
+        "ARM7_WirelessState": 41914204
+      }
+    },
+    {
+      "name": "WirelessSampleAverage",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b09/WirelessSampleAverage.c",
+      "autoload": "mainram",
+      "runtime_address": 41813404,
+      "payload_offset": 71148,
+      "size": 60,
+      "code_bytes": 52,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_WirelessSampleAverage",
+      "symbols": {
+        "ARM7_WirelessSampleAverage": 41813404
+      },
+      "externals": {
+        "ARM7_WirelessRoot": 41910108,
+        "ARM7_WirelessSignalClassify": 41813464
+      }
+    },
+    {
+      "name": "WirelessSignalClassify",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b09/WirelessSignalClassify.c",
+      "autoload": "mainram",
+      "runtime_address": 41813464,
+      "payload_offset": 71208,
+      "size": 104,
+      "code_bytes": 100,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WirelessSignalClassify",
+      "symbols": {
+        "ARM7_WirelessSignalClassify": 41813464
+      },
+      "externals": {
+        "ARM7_WirelessState": 41914204
+      }
+    },
+    {
+      "name": "WirelessReceiveSlotAcquire",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b09/WirelessReceiveSlotAcquire.c",
+      "autoload": "mainram",
+      "runtime_address": 41813760,
+      "payload_offset": 71504,
+      "size": 108,
+      "code_bytes": 104,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WirelessReceiveSlotAcquire",
+      "symbols": {
+        "ARM7_WirelessReceiveSlotAcquire": 41813760
+      },
+      "externals": {
+        "ARM7_WirelessState": 41914204,
+        "ARM7_DisableInterrupts": 58712932,
+        "ARM7_RestoreInterrupts": 58712952
+      }
+    },
+    {
+      "name": "WirelessBufferLimitsClear",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b09/WirelessBufferLimitsClear.c",
+      "autoload": "mainram",
+      "runtime_address": 41813868,
+      "payload_offset": 71612,
+      "size": 52,
+      "code_bytes": 48,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WirelessBufferLimitsClear",
+      "symbols": {
+        "ARM7_WirelessBufferLimitsClear": 41813868
+      },
+      "externals": {
+        "ARM7_WirelessState": 41914204
+      }
+    },
+    {
+      "name": "WirelessBufferLimitSetA",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b09/WirelessBufferLimitSetA.c",
+      "autoload": "mainram",
+      "runtime_address": 41813920,
+      "payload_offset": 71664,
+      "size": 80,
+      "code_bytes": 76,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WirelessBufferLimitSetA",
+      "symbols": {
+        "ARM7_WirelessBufferLimitSetA": 41813920
+      },
+      "externals": {
+        "ARM7_WirelessState": 41914204
+      }
+    },
+    {
+      "name": "WirelessBufferLimitSetB",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b09/WirelessBufferLimitSetB.c",
+      "autoload": "mainram",
+      "runtime_address": 41814000,
+      "payload_offset": 71744,
+      "size": 80,
+      "code_bytes": 76,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WirelessBufferLimitSetB",
+      "symbols": {
+        "ARM7_WirelessBufferLimitSetB": 41814000
+      },
+      "externals": {
+        "ARM7_WirelessState": 41914204
+      }
+    },
+    {
+      "name": "WirelessBufferPositionSetA",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b09/WirelessBufferPositionSetA.c",
+      "autoload": "mainram",
+      "runtime_address": 41814080,
+      "payload_offset": 71824,
+      "size": 44,
+      "code_bytes": 40,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WirelessBufferPositionSetA",
+      "symbols": {
+        "ARM7_WirelessBufferPositionSetA": 41814080
+      },
+      "externals": {
+        "ARM7_WirelessState": 41914204
+      }
+    },
+    {
+      "name": "WirelessBufferPositionSetB",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b09/WirelessBufferPositionSetB.c",
+      "autoload": "mainram",
+      "runtime_address": 41814124,
+      "payload_offset": 71868,
+      "size": 44,
+      "code_bytes": 40,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WirelessBufferPositionSetB",
+      "symbols": {
+        "ARM7_WirelessBufferPositionSetB": 41814124
+      },
+      "externals": {
+        "ARM7_WirelessState": 41914204
+      }
+    },
+    {
+      "name": "WirelessCommand104",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b10/WirelessCommand104.c",
+      "autoload": "mainram",
+      "runtime_address": 41821272,
+      "payload_offset": 79016,
+      "size": 88,
+      "code_bytes": 88,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_WirelessCommand104",
+      "symbols": {
+        "ARM7_WirelessCommand104": 41821272
+      },
+      "externals": {
+        "ARM7_SubmitWirelessPacket": 41812428
+      }
+    },
+    {
+      "name": "WirelessCommand200",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b10/WirelessCommand200.c",
+      "autoload": "mainram",
+      "runtime_address": 41821360,
+      "payload_offset": 79104,
+      "size": 84,
+      "code_bytes": 84,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_WirelessCommand200",
+      "symbols": {
+        "ARM7_WirelessCommand200": 41821360
+      },
+      "externals": {
+        "ARM7_SubmitWirelessPacket": 41812428
+      }
+    },
+    {
+      "name": "WirelessCommand207",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b10/WirelessCommand207.c",
+      "autoload": "mainram",
+      "runtime_address": 41821444,
+      "payload_offset": 79188,
+      "size": 92,
+      "code_bytes": 88,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WirelessCommand207",
+      "symbols": {
+        "ARM7_WirelessCommand207": 41821444
+      },
+      "externals": {
+        "ARM7_SubmitWirelessPacket": 41812428
+      }
+    },
+    {
+      "name": "WirelessCommand20B",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b10/WirelessCommand20B.c",
+      "autoload": "mainram",
+      "runtime_address": 41821536,
+      "payload_offset": 79280,
+      "size": 92,
+      "code_bytes": 88,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WirelessCommand20B",
+      "symbols": {
+        "ARM7_WirelessCommand20B": 41821536
+      },
+      "externals": {
+        "ARM7_SubmitWirelessPacket": 41812428
+      }
+    },
+    {
+      "name": "WirelessCommand20D",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b10/WirelessCommand20D.c",
+      "autoload": "mainram",
+      "runtime_address": 41821628,
+      "payload_offset": 79372,
+      "size": 116,
+      "code_bytes": 112,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WirelessCommand20D",
+      "symbols": {
+        "ARM7_WirelessCommand20D": 41821628
+      },
+      "externals": {
+        "ARM7_SubmitWirelessPacket": 41812428,
+        "ARM7_CopyBytes": 58713620
+      }
+    },
+    {
+      "name": "WirelessCommand20E",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b10/WirelessCommand20E.c",
+      "autoload": "mainram",
+      "runtime_address": 41821744,
+      "payload_offset": 79488,
+      "size": 92,
+      "code_bytes": 88,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WirelessCommand20E",
+      "symbols": {
+        "ARM7_WirelessCommand20E": 41821744
+      },
+      "externals": {
+        "ARM7_SubmitWirelessPacket": 41812428
+      }
+    },
+    {
+      "name": "WirelessCommand212",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b10/WirelessCommand212.c",
+      "autoload": "mainram",
+      "runtime_address": 41821940,
+      "payload_offset": 79684,
+      "size": 92,
+      "code_bytes": 88,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WirelessCommand212",
+      "symbols": {
+        "ARM7_WirelessCommand212": 41821940
+      },
+      "externals": {
+        "ARM7_SubmitWirelessPacket": 41812428
+      }
+    },
+    {
+      "name": "WirelessCommand215",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b10/WirelessCommand215.c",
+      "autoload": "mainram",
+      "runtime_address": 41822032,
+      "payload_offset": 79776,
+      "size": 92,
+      "code_bytes": 88,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WirelessCommand215",
+      "symbols": {
+        "ARM7_WirelessCommand215": 41822032
+      },
+      "externals": {
+        "ARM7_SubmitWirelessPacket": 41812428
+      }
+    },
+    {
+      "name": "WirelessCommand216",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b10/WirelessCommand216.c",
+      "autoload": "mainram",
+      "runtime_address": 41822124,
+      "payload_offset": 79868,
+      "size": 92,
+      "code_bytes": 88,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WirelessCommand216",
+      "symbols": {
+        "ARM7_WirelessCommand216": 41822124
+      },
+      "externals": {
+        "ARM7_SubmitWirelessPacket": 41812428
+      }
+    },
+    {
+      "name": "WirelessCommand242",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b10/WirelessCommand242.c",
+      "autoload": "mainram",
+      "runtime_address": 41822216,
+      "payload_offset": 79960,
+      "size": 92,
+      "code_bytes": 88,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WirelessCommand242",
+      "symbols": {
+        "ARM7_WirelessCommand242": 41822216
+      },
+      "externals": {
+        "ARM7_SubmitWirelessPacket": 41812428
+      }
+    },
+    {
+      "name": "WirelessCommand281",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b10/WirelessCommand281.c",
+      "autoload": "mainram",
+      "runtime_address": 41822440,
+      "payload_offset": 80184,
+      "size": 24,
+      "code_bytes": 16,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_WirelessCommand281",
+      "symbols": {
+        "ARM7_WirelessCommand281": 41822440
+      },
+      "externals": {
+        "ARM7_WirelessCommandNoPayload": 41822804
+      }
+    },
+    {
+      "name": "WirelessCommand283",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b10/WirelessCommand283.c",
+      "autoload": "mainram",
+      "runtime_address": 41822464,
+      "payload_offset": 80208,
+      "size": 24,
+      "code_bytes": 16,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_WirelessCommand283",
+      "symbols": {
+        "ARM7_WirelessCommand283": 41822464
+      },
+      "externals": {
+        "ARM7_WirelessCommandNoPayload": 41822804
+      }
+    },
+    {
+      "name": "WirelessCommand284",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b10/WirelessCommand284.c",
+      "autoload": "mainram",
+      "runtime_address": 41822488,
+      "payload_offset": 80232,
+      "size": 20,
+      "code_bytes": 16,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WirelessCommand284",
+      "symbols": {
+        "ARM7_WirelessCommand284": 41822488
+      },
+      "externals": {
+        "ARM7_WirelessCommandNoPayload": 41822804
+      }
+    },
+    {
+      "name": "WirelessCommand301",
+      "source": "config/usa/arm7/src/Completion20261008/c18/b10/WirelessCommand301.c",
+      "autoload": "mainram",
+      "runtime_address": 41822508,
+      "payload_offset": 80252,
+      "size": 24,
+      "code_bytes": 16,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_WirelessCommand301",
+      "symbols": {
+        "ARM7_WirelessCommand301": 41822508
+      },
+      "externals": {
+        "ARM7_WirelessCommandNoPayload": 41822804
+      }
+    },
+    {
+      "name": "WramTaskQueueMessage_m09",
+      "source": "config/usa/arm7/src/ModuleRun20261008/m09/wram/b01/TaskQueueMessage.c",
+      "autoload": "wram",
+      "runtime_address": 58689276,
+      "payload_offset": 2328,
+      "size": 116,
+      "code_bytes": 108,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_WaitTaskMessage",
+      "symbols": {
+        "ARM7_WaitTaskMessage": 58689276,
+        "ARM7_ConsumeTaskMessage": 58689336
+      },
+      "externals": {
+        "ARM7_TaskState": 58785780,
+        "ARM7_AppendScheduledTask": 58689392,
+        "ARM7_ScheduleTask": 58688972,
+        "ARM7_ReceiveMessage": 58706832
+      }
+    },
+    {
+      "name": "WirelessCommand302_n20",
+      "source": "config/usa/arm7/src/Rest20261008/n20/b01/WirelessCommand302.c",
+      "autoload": "mainram",
+      "runtime_address": 41822532,
+      "payload_offset": 80276,
+      "size": 24,
+      "code_bytes": 16,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_WirelessCommand302",
+      "symbols": {
+        "ARM7_WirelessCommand302": 41822532
+      },
+      "externals": {
+        "ARM7_WirelessCommandNoPayload": 41822804
+      }
+    },
+    {
+      "name": "WirelessCommand303_n20",
+      "source": "config/usa/arm7/src/Rest20261008/n20/b01/WirelessCommand303.c",
+      "autoload": "mainram",
+      "runtime_address": 41822556,
+      "payload_offset": 80300,
+      "size": 24,
+      "code_bytes": 16,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_WirelessCommand303",
+      "symbols": {
+        "ARM7_WirelessCommand303": 41822556
+      },
+      "externals": {
+        "ARM7_WirelessCommandNoPayload": 41822804
+      }
+    },
+    {
+      "name": "WirelessCommand304_n20",
+      "source": "config/usa/arm7/src/Rest20261008/n20/b01/WirelessCommand304.c",
+      "autoload": "mainram",
+      "runtime_address": 41822580,
+      "payload_offset": 80324,
+      "size": 20,
+      "code_bytes": 16,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WirelessCommand304",
+      "symbols": {
+        "ARM7_WirelessCommand304": 41822580
+      },
+      "externals": {
+        "ARM7_WirelessCommandNoPayload": 41822804
+      }
+    },
+    {
+      "name": "WirelessCommand305_n20",
+      "source": "config/usa/arm7/src/Rest20261008/n20/b01/WirelessCommand305.c",
+      "autoload": "mainram",
+      "runtime_address": 41822600,
+      "payload_offset": 80344,
+      "size": 24,
+      "code_bytes": 16,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_WirelessCommand305",
+      "symbols": {
+        "ARM7_WirelessCommand305": 41822600
+      },
+      "externals": {
+        "ARM7_WirelessCommandNoPayload": 41822804
+      }
+    },
+    {
+      "name": "WirelessCommand306_n20",
+      "source": "config/usa/arm7/src/Rest20261008/n20/b01/WirelessCommand306.c",
+      "autoload": "mainram",
+      "runtime_address": 41822624,
+      "payload_offset": 80368,
+      "size": 24,
+      "code_bytes": 16,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_WirelessCommand306",
+      "symbols": {
+        "ARM7_WirelessCommand306": 41822624
+      },
+      "externals": {
+        "ARM7_WirelessCommandNoPayload": 41822804
+      }
+    },
+    {
+      "name": "WirelessCommand307_n20",
+      "source": "config/usa/arm7/src/Rest20261008/n20/b01/WirelessCommand307.c",
+      "autoload": "mainram",
+      "runtime_address": 41822648,
+      "payload_offset": 80392,
+      "size": 24,
+      "code_bytes": 16,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_WirelessCommand307",
+      "symbols": {
+        "ARM7_WirelessCommand307": 41822648
+      },
+      "externals": {
+        "ARM7_WirelessCommandNoPayload": 41822804
+      }
+    },
+    {
+      "name": "WirelessCommand308_n20",
+      "source": "config/usa/arm7/src/Rest20261008/n20/b01/WirelessCommand308.c",
+      "autoload": "mainram",
+      "runtime_address": 41822672,
+      "payload_offset": 80416,
+      "size": 20,
+      "code_bytes": 16,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WirelessCommand308",
+      "symbols": {
+        "ARM7_WirelessCommand308": 41822672
+      },
+      "externals": {
+        "ARM7_WirelessCommandNoPayload": 41822804
+      }
+    },
+    {
+      "name": "WirelessCommandNoPayload_n20",
+      "source": "config/usa/arm7/src/Rest20261008/n20/b02/WirelessCommandNoPayload.c",
+      "autoload": "mainram",
+      "runtime_address": 41822804,
+      "payload_offset": 80548,
+      "size": 72,
+      "code_bytes": 72,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_WirelessCommandNoPayload",
+      "symbols": {
+        "ARM7_WirelessCommandNoPayload": 41822804
+      },
+      "externals": {
+        "ARM7_SubmitWirelessPacket": 41812428
+      }
+    },
+    {
+      "name": "WirelessEntropy",
+      "source": "config/usa/arm7/src/WirelessEntropy.c",
+      "autoload": "mainram",
+      "runtime_address": 41826576,
+      "payload_offset": 84320,
+      "size": 28,
+      "code_bytes": 24,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_MixWirelessEntropy",
+      "symbols": {
+        "ARM7_MixWirelessEntropy": 41826576
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessEntropyRing",
+      "source": "config/usa/arm7/src/WirelessEntropyRing.c",
+      "autoload": "mainram",
+      "runtime_address": 41813280,
+      "payload_offset": 71024,
+      "size": 68,
+      "code_bytes": 56,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_RecordWirelessEntropy",
+      "symbols": {
+        "ARM7_RecordWirelessEntropy": 41813280
+      },
+      "externals": {
+        "ARM7_WirelessState": 41914204,
+        "ARM7_WirelessEntropyRing": 41915568
+      }
+    },
+    {
+      "name": "CardOperationComplete",
+      "source": "config/usa/arm7/src/CardOperationComplete.c",
+      "autoload": "wram",
+      "runtime_address": 58734292,
+      "payload_offset": 47344,
+      "size": 116,
+      "code_bytes": 112,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_CompleteCardOperation",
+      "symbols": {
+        "ARM7_CompleteCardOperation": 58734292
+      },
+      "externals": {
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_MarkThreadReady": 58705784,
+        "ARM7_WakeBlockedThreads": 58705648,
+        "ARM7_BackupWorker": 58763648
+      }
+    },
+    {
+      "name": "CardOperationInitialize",
+      "source": "config/usa/arm7/src/CardOperationInitialize.c",
+      "autoload": "wram",
+      "runtime_address": 58734656,
+      "payload_offset": 47708,
+      "size": 108,
+      "code_bytes": 96,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_InitializeCardOperations",
+      "symbols": {
+        "ARM7_InitializeCardOperations": 58734656
+      },
+      "externals": {
+        "ARM7_BackupWorker": 58763648,
+        "ARM7_CardOperationInterface": 58765216,
+        "ARM7_InitializeCardWorker": 58731772,
+        "ARM7_CardNoOp": 58734440,
+        "ARM7_InitializeCardRemoval": 58735556
+      }
+    },
+    {
+      "name": "CardWorkerInitialize",
+      "source": "config/usa/arm7/src/CardWorkerInitialize.c",
+      "autoload": "wram",
+      "runtime_address": 58731772,
+      "payload_offset": 44824,
+      "size": 188,
+      "code_bytes": 164,
+      "literal_pool_bytes": 24,
+      "entry": "ARM7_InitializeCardWorker",
+      "symbols": {
+        "ARM7_InitializeCardWorker": 58731772
+      },
+      "externals": {
+        "ARM7_BackupWorker": 58763648,
+        "ARM7_BackupCommandState": 58765184,
+        "ARM7_CardWorkerMain": 58734992,
+        "ARM7_CreateThread": 58704992,
+        "ARM7_MarkThreadReady": 58705784,
+        "ARM7_SetIpcHandler": 58714668,
+        "ARM7_CardIpcCallback": 58734764,
+        "ARM7_CardBootModeFlag": 58763616
+      }
+    },
+    {
+      "name": "CardWorkerPriority",
+      "source": "config/usa/arm7/src/CardWorkerPriority.c",
+      "autoload": "wram",
+      "runtime_address": 58731960,
+      "payload_offset": 45012,
+      "size": 64,
+      "code_bytes": 60,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_SetCardWorkerPriority",
+      "symbols": {
+        "ARM7_SetCardWorkerPriority": 58731960
+      },
+      "externals": {
+        "ARM7_BackupWorker": 58763648,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_SetThreadPriority": 58705868
+      }
+    },
+    {
+      "name": "CardWorkerMain",
+      "source": "config/usa/arm7/src/CardWorkerMain.c",
+      "autoload": "wram",
+      "runtime_address": 58734992,
+      "payload_offset": 48044,
+      "size": 564,
+      "code_bytes": 560,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_CardWorkerMain",
+      "symbols": {
+        "ARM7_CardWorkerMain": 58734992
+      },
+      "externals": {
+        "ARM7_BackupWorker": 58763648,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_BlockCurrentThread": 58705564,
+        "ARM7_UnblockThreads": 58705648,
+        "ARM7_MarkThreadReady": 58705784,
+        "ARM7_SendIpcCommand": 58714784,
+        "ARM7_InitializeBackupStatus": 58732932,
+        "ARM7_ReadCardId": 58734444,
+        "ARM7_ReadBackup": 58733020,
+        "ARM7_ProgramBackup": 58733312,
+        "ARM7_WriteBackup": 58733128,
+        "ARM7_CompareBackup": 58733496,
+        "ARM7_EraseBackupSectors": 58733640,
+        "ARM7_EraseBackupSubsectors": 58733796,
+        "ARM7_EraseBackupChip": 58733952,
+        "ARM7_ReadBackupStatus": 58732200,
+        "ARM7_WriteBackupStatus": 58734044
+      }
+    },
+    {
+      "name": "WirelessThreadPriorities",
+      "source": "config/usa/arm7/src/WirelessThreadPriorities.c",
+      "autoload": "mainram",
+      "runtime_address": 41813568,
+      "payload_offset": 71312,
+      "size": 192,
+      "code_bytes": 168,
+      "literal_pool_bytes": 24,
+      "entry": "ARM7_ApplyWirelessThreadPrioritiesThreeToFive",
+      "symbols": {
+        "ARM7_ApplyWirelessThreadPrioritiesThreeToFive": 41813568,
+        "ARM7_ApplyWirelessThreadPrioritiesZeroToTwo": 41813664
+      },
+      "externals": {
+        "ARM7_WirelessSchedulingState": 41914204,
+        "ARM7_WirelessServiceThreadA": 58772444,
+        "ARM7_WirelessServiceThreadB": 58772608,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_LockThreadSwitch": 58706276,
+        "ARM7_UnlockThreadSwitch": 58706332,
+        "ARM7_SetThreadPriority": 58705868,
+        "ARM7_GetWirelessDriverThread": 41848520
+      }
+    },
+    {
+      "name": "WirelessDriverThread",
+      "source": "config/usa/arm7/src/WirelessDriverThread.c",
+      "autoload": "mainram",
+      "runtime_address": 41848520,
+      "payload_offset": 106264,
+      "size": 20,
+      "code_bytes": 16,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_GetWirelessDriverThread",
+      "symbols": {
+        "ARM7_GetWirelessDriverThread": 41848520
+      },
+      "externals": {
+        "ARM7_WirelessDriverThreadState": 58785780
+      }
+    },
+    {
+      "name": "WirelessAllocationList",
+      "source": "config/usa/arm7/src/WirelessAllocationList.c",
+      "autoload": "mainram",
+      "runtime_address": 41848680,
+      "payload_offset": 106424,
+      "size": 28,
+      "code_bytes": 28,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_InitializeWirelessAllocationList",
+      "symbols": {
+        "ARM7_InitializeWirelessAllocationList": 41848680
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessAllocationCleanup",
+      "source": "config/usa/arm7/src/WirelessAllocationCleanup.c",
+      "autoload": "mainram",
+      "runtime_address": 41848924,
+      "payload_offset": 106668,
+      "size": 152,
+      "code_bytes": 148,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_ClearWirelessAllocationLists",
+      "symbols": {
+        "ARM7_ClearWirelessAllocationLists": 41848924,
+        "ARM7_ClearWirelessAllocationList": 41849012
+      },
+      "externals": {
+        "ARM7_WirelessAllocationCleanupState": 58785780,
+        "ARM7_FreeWirelessAllocation": 58689852
+      }
+    },
+    {
+      "name": "WirelessDispatchInitialize",
+      "source": "config/usa/arm7/src/WirelessDispatchInitialize.c",
+      "autoload": "mainram",
+      "runtime_address": 41848540,
+      "payload_offset": 106284,
+      "size": 140,
+      "code_bytes": 128,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_InitializeWirelessDispatchQueues",
+      "symbols": {
+        "ARM7_InitializeWirelessDispatchQueues": 41848540
+      },
+      "externals": {
+        "ARM7_WirelessDispatchState": 58785780,
+        "ARM7_WirelessDispatchHandlers": 41907552,
+        "ARM7_EnqueueWirelessDispatchSlot": 58688972
+      }
+    },
+    {
+      "name": "WirelessDispatchEnqueue",
+      "source": "config/usa/arm7/src/WirelessDispatchEnqueue.c",
+      "autoload": "wram",
+      "runtime_address": 58688972,
+      "payload_offset": 2024,
+      "size": 184,
+      "code_bytes": 176,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_EnqueueWirelessDispatchSlot",
+      "symbols": {
+        "ARM7_EnqueueWirelessDispatchSlot": 58688972
+      },
+      "externals": {
+        "ARM7_WirelessDispatchQueueState": 58785780,
+        "ARM7_DisableSpecificInterrupts": 58702172,
+        "ARM7_EnableSpecificInterrupts": 58702116,
+        "ARM7_SendMessage": 58706692
+      }
+    },
+    {
+      "name": "WirelessAllocationLinks",
+      "source": "config/usa/arm7/src/WirelessAllocationLinks.c",
+      "autoload": "wram",
+      "runtime_address": 58689392,
+      "payload_offset": 2444,
+      "size": 304,
+      "code_bytes": 296,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_AppendWirelessAllocation",
+      "symbols": {
+        "ARM7_AppendWirelessAllocation": 58689392,
+        "ARM7_RemoveWirelessAllocation": 58689504
+      },
+      "externals": {
+        "ARM7_DisableSpecificInterrupts": 58702172,
+        "ARM7_EnableSpecificInterrupts": 58702116
+      }
+    },
+    {
+      "name": "WirelessDispatchDequeue",
+      "source": "config/usa/arm7/src/WirelessDispatchDequeue.c",
+      "autoload": "wram",
+      "runtime_address": 58689156,
+      "payload_offset": 2208,
+      "size": 120,
+      "code_bytes": 108,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_DequeueWirelessDispatchSlot",
+      "symbols": {
+        "ARM7_DequeueWirelessDispatchSlot": 58689156
+      },
+      "externals": {
+        "ARM7_WirelessDispatchDequeueState": 58785780,
+        "ARM7_DisableSpecificInterrupts": 58702172,
+        "ARM7_EnableSpecificInterrupts": 58702116
+      }
+    },
+    {
+      "name": "WirelessParameterWrites",
+      "source": "config/usa/arm7/src/WirelessParameterWrites.c",
+      "autoload": "mainram",
+      "runtime_address": 41849300,
+      "payload_offset": 107044,
+      "size": 116,
+      "code_bytes": 100,
+      "literal_pool_bytes": 16,
+      "entry": "ARM7_SetWirelessByteParameterAtOffset32A",
+      "symbols": {
+        "ARM7_SetWirelessByteParameterAtOffset32A": 41849300,
+        "ARM7_SetWirelessMaskedParameterAtOffset32C": 41849352
+      },
+      "externals": {
+        "ARM7_WirelessParameterState": 58785780
+      }
+    },
+    {
+      "name": "WirelessParameterMode",
+      "source": "config/usa/arm7/src/WirelessParameterMode.c",
+      "autoload": "mainram",
+      "runtime_address": 41849544,
+      "payload_offset": 107288,
+      "size": 52,
+      "code_bytes": 48,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_SetWirelessModeParameterAt330",
+      "symbols": {
+        "ARM7_SetWirelessModeParameterAt330": 41849544
+      },
+      "externals": {
+        "ARM7_WirelessModeParameterState": 58785780,
+        "ARM7_RefreshWirelessRegister8140": 41852644
+      }
+    },
+    {
+      "name": "WirelessParameterBoundedMode",
+      "source": "config/usa/arm7/src/WirelessParameterBoundedMode.c",
+      "autoload": "mainram",
+      "runtime_address": 41849756,
+      "payload_offset": 107500,
+      "size": 36,
+      "code_bytes": 32,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_SetWirelessModeParameterAt336",
+      "symbols": {
+        "ARM7_SetWirelessModeParameterAt336": 41849756
+      },
+      "externals": {
+        "ARM7_WirelessBoundedModeState": 58785780
+      }
+    },
+    {
+      "name": "WirelessParameterByteReset",
+      "source": "config/usa/arm7/src/WirelessParameterByteReset.c",
+      "autoload": "mainram",
+      "runtime_address": 41850000,
+      "payload_offset": 107744,
+      "size": 56,
+      "code_bytes": 52,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_SetWirelessByteParameterAndResetCompanion",
+      "symbols": {
+        "ARM7_SetWirelessByteParameterAndResetCompanion": 41850000
+      },
+      "externals": {
+        "ARM7_WirelessByteParameterState": 58785780
+      }
+    },
+    {
+      "name": "WirelessParameterHalfwords",
+      "source": "config/usa/arm7/src/WirelessParameterHalfwords.c",
+      "autoload": "mainram",
+      "runtime_address": 41850232,
+      "payload_offset": 107976,
+      "size": 48,
+      "code_bytes": 44,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_CopyWirelessHalfwordParameters",
+      "symbols": {
+        "ARM7_CopyWirelessHalfwordParameters": 41850232
+      },
+      "externals": {
+        "ARM7_WirelessHalfwordParameterState": 58785780
+      }
+    },
+    {
+      "name": "WirelessParameterKeyBlocks",
+      "source": "config/usa/arm7/src/WirelessParameterKeyBlocks.c",
+      "autoload": "mainram",
+      "runtime_address": 41849792,
+      "payload_offset": 107536,
+      "size": 96,
+      "code_bytes": 80,
+      "literal_pool_bytes": 16,
+      "entry": "ARM7_UploadWirelessTwentyByteParameterBlocks",
+      "symbols": {
+        "ARM7_UploadWirelessTwentyByteParameterBlocks": 41849792
+      },
+      "externals": {
+        "ARM7_CopyHalfwordsToWirelessMemory": 58713620
+      }
+    },
+    {
+      "name": "WirelessParameterInterval",
+      "source": "config/usa/arm7/src/WirelessParameterInterval.c",
+      "autoload": "mainram",
+      "runtime_address": 41850056,
+      "payload_offset": 107800,
+      "size": 176,
+      "code_bytes": 168,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SetWirelessInterval",
+      "symbols": {
+        "ARM7_SetWirelessInterval": 41850056
+      },
+      "externals": {
+        "ARM7_WirelessIntervalState": 58785780,
+        "ARM7_WriteWirelessMemoryByte": 41857084
+      }
+    },
+    {
+      "name": "WirelessParameterFlagBits",
+      "source": "config/usa/arm7/src/WirelessParameterFlagBits.c",
+      "autoload": "mainram",
+      "runtime_address": 41849888,
+      "payload_offset": 107632,
+      "size": 112,
+      "code_bytes": 104,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SetWirelessParameterFlagBitZero",
+      "symbols": {
+        "ARM7_SetWirelessParameterFlagBitZero": 41849888,
+        "ARM7_SetWirelessParameterFlagBitOne": 41849944
+      },
+      "externals": {
+        "ARM7_WirelessFlagParameterState": 58785780
+      }
+    },
+    {
+      "name": "WirelessParameterAddress",
+      "source": "config/usa/arm7/src/WirelessParameterAddress.c",
+      "autoload": "mainram",
+      "runtime_address": 41851012,
+      "payload_offset": 108756,
+      "size": 100,
+      "code_bytes": 88,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_SetWirelessAddressParameter",
+      "symbols": {
+        "ARM7_SetWirelessAddressParameter": 41851012
+      },
+      "externals": {
+        "ARM7_WirelessAddressParameterState": 58785780,
+        "ARM7_CopyWirelessAddressHalfwords": 41853944
+      }
+    },
+    {
+      "name": "WirelessAddressCopy",
+      "source": "config/usa/arm7/src/WirelessAddressCopy.c",
+      "autoload": "mainram",
+      "runtime_address": 41853944,
+      "payload_offset": 111688,
+      "size": 28,
+      "code_bytes": 28,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_CopyWirelessAddressHalfwords",
+      "symbols": {
+        "ARM7_CopyWirelessAddressHalfwords": 41853944
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessMemoryByteAccess",
+      "source": "config/usa/arm7/src/WirelessMemoryByteAccess.c",
+      "autoload": "mainram",
+      "runtime_address": 41857084,
+      "payload_offset": 114828,
+      "size": 72,
+      "code_bytes": 72,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_WriteWirelessMemoryByte",
+      "symbols": {
+        "ARM7_WriteWirelessMemoryByte": 41857084,
+        "ARM7_ReadWirelessMemoryByte": 41857128
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessAllocationMove",
+      "source": "config/usa/arm7/src/WirelessAllocationMove.c",
+      "autoload": "wram",
+      "runtime_address": 58689980,
+      "payload_offset": 3032,
+      "size": 108,
+      "code_bytes": 104,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_MoveWirelessAllocation",
+      "symbols": {
+        "ARM7_MoveWirelessAllocation": 58689980
+      },
+      "externals": {
+        "ARM7_DisableSpecificInterrupts": 58702172,
+        "ARM7_EnableSpecificInterrupts": 58702116,
+        "ARM7_RemoveWirelessAllocation": 58689504,
+        "ARM7_AppendValidatedWirelessAllocation": 58690088
+      }
+    },
+    {
+      "name": "WirelessAllocationAppendValidated",
+      "source": "config/usa/arm7/src/WirelessAllocationAppendValidated.c",
+      "autoload": "wram",
+      "runtime_address": 58690088,
+      "payload_offset": 3140,
+      "size": 148,
+      "code_bytes": 144,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_AppendValidatedWirelessAllocation",
+      "symbols": {
+        "ARM7_AppendValidatedWirelessAllocation": 58690088,
+        "ARM7_GetNextWirelessAllocation": 58690228
+      },
+      "externals": {
+        "ARM7_DisableSpecificInterrupts": 58702172,
+        "ARM7_EnableSpecificInterrupts": 58702116
+      }
+    },
+    {
+      "name": "WirelessParameterUnicastAddress",
+      "source": "config/usa/arm7/src/WirelessParameterUnicastAddress.c",
+      "autoload": "mainram",
+      "runtime_address": 41849204,
+      "payload_offset": 106948,
+      "size": 96,
+      "code_bytes": 88,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SetWirelessUnicastAddress",
+      "symbols": {
+        "ARM7_SetWirelessUnicastAddress": 41849204
+      },
+      "externals": {
+        "ARM7_WirelessUnicastParameterState": 58785780,
+        "ARM7_CopyWirelessAddressHalfwords": 41853944
+      }
+    },
+    {
+      "name": "WirelessParameterEnable",
+      "source": "config/usa/arm7/src/WirelessParameterEnable.c",
+      "autoload": "mainram",
+      "runtime_address": 41850448,
+      "payload_offset": 108192,
+      "size": 36,
+      "code_bytes": 32,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_SetWirelessEnableParameterAt332",
+      "symbols": {
+        "ARM7_SetWirelessEnableParameterAt332": 41850448
+      },
+      "externals": {
+        "ARM7_WirelessEnableParameterState": 58785780
+      }
+    },
+    {
+      "name": "WirelessParameterIndexedPair",
+      "source": "config/usa/arm7/src/WirelessParameterIndexedPair.c",
+      "autoload": "mainram",
+      "runtime_address": 41850484,
+      "payload_offset": 108228,
+      "size": 68,
+      "code_bytes": 68,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_SetWirelessIndexedParameterPair",
+      "symbols": {
+        "ARM7_SetWirelessIndexedParameterPair": 41850484
+      },
+      "externals": {
+        "ARM7_WriteWirelessIndexedRegister": 41855240
+      }
+    },
+    {
+      "name": "WirelessRegisterWrite",
+      "source": "config/usa/arm7/src/WirelessRegisterWrite.c",
+      "autoload": "mainram",
+      "runtime_address": 41855240,
+      "payload_offset": 112984,
+      "size": 48,
+      "code_bytes": 44,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WriteWirelessIndexedRegister",
+      "symbols": {
+        "ARM7_WriteWirelessIndexedRegister": 41855240
+      },
+      "externals": {
+        "ARM7_WaitWirelessIndexedRegisterReady": 58700884
+      }
+    },
+    {
+      "name": "WirelessRegisterWait",
+      "source": "config/usa/arm7/src/WirelessRegisterWait.c",
+      "autoload": "wram",
+      "runtime_address": 58700884,
+      "payload_offset": 13936,
+      "size": 52,
+      "code_bytes": 48,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WaitWirelessIndexedRegisterReady",
+      "symbols": {
+        "ARM7_WaitWirelessIndexedRegisterReady": 58700884
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessParameterHardwareHalfword",
+      "source": "config/usa/arm7/src/WirelessParameterHardwareHalfword.c",
+      "autoload": "mainram",
+      "runtime_address": 41852876,
+      "payload_offset": 110620,
+      "size": 64,
+      "code_bytes": 52,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_SetWirelessHardwareValueAndHalfParameter",
+      "symbols": {
+        "ARM7_SetWirelessHardwareValueAndHalfParameter": 41852876,
+        "ARM7_SetWirelessHardwareHalfwordAt8040": 41852920
+      },
+      "externals": {
+        "ARM7_WirelessHalfValueState": 58785780
+      }
+    },
+    {
+      "name": "WirelessParameterHighFlags",
+      "source": "config/usa/arm7/src/WirelessParameterHighFlags.c",
+      "autoload": "mainram",
+      "runtime_address": 41850868,
+      "payload_offset": 108612,
+      "size": 144,
+      "code_bytes": 132,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_SetWirelessParameterFlagBitSix",
+      "symbols": {
+        "ARM7_SetWirelessParameterFlagBitSix": 41850868,
+        "ARM7_SetWirelessParameterFlagBitSeven": 41850932
+      },
+      "externals": {
+        "ARM7_WirelessControlFlagState": 58785780
+      }
+    },
+    {
+      "name": "WirelessSettingsRead",
+      "source": "config/usa/arm7/src/WirelessSettingsRead.c",
+      "autoload": "mainram",
+      "runtime_address": 41898280,
+      "payload_offset": 156024,
+      "size": 96,
+      "code_bytes": 92,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_ReadWirelessSettingsBytes",
+      "symbols": {
+        "ARM7_ReadWirelessSettingsBytes": 41898280
+      },
+      "externals": {
+        "ARM7_WirelessSettingsState": 58785780,
+        "ARM7_ReadWirelessMemoryByte": 41857128,
+        "ARM7_WriteWirelessMemoryByte": 41857084
+      }
+    },
+    {
+      "name": "WirelessRandomSeed",
+      "source": "config/usa/arm7/src/WirelessRandomSeed.c",
+      "autoload": "mainram",
+      "runtime_address": 41857156,
+      "payload_offset": 114900,
+      "size": 52,
+      "code_bytes": 44,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SetWirelessRandomState",
+      "symbols": {
+        "ARM7_SetWirelessRandomState": 41857156
+      },
+      "externals": {
+        "ARM7_WirelessRandomSeedState": 58785780
+      }
+    },
+    {
+      "name": "WirelessDefaultParameterMasks",
+      "source": "config/usa/arm7/src/WirelessDefaultParameterMasks.c",
+      "autoload": "mainram",
+      "runtime_address": 41907648,
+      "payload_offset": 165392,
+      "size": 36,
+      "code_bytes": 0,
+      "literal_pool_bytes": 0,
+      "data_bytes": 36,
+      "entry": "ARM7_WirelessDefaultParameterMasks",
+      "symbols": {
+        "ARM7_WirelessDefaultParameterMasks": 41907648,
+        "ARM7_WirelessDefaultHalfwordParameters": 41907652
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessDefaultParameterBlocks",
+      "source": "config/usa/arm7/src/WirelessDefaultParameterBlocks.c",
+      "autoload": "mainram",
+      "runtime_address": 41907748,
+      "payload_offset": 165492,
+      "size": 80,
+      "code_bytes": 0,
+      "literal_pool_bytes": 0,
+      "data_bytes": 80,
+      "entry": "ARM7_WirelessDefaultParameterBlocks",
+      "symbols": {
+        "ARM7_WirelessDefaultParameterBlocks": 41907748
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessParameterMasks",
+      "source": "config/usa/arm7/src/WirelessParameterMasks.c",
+      "autoload": "mainram",
+      "runtime_address": 41852580,
+      "payload_offset": 110324,
+      "size": 64,
+      "code_bytes": 60,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_SetWirelessCombinedParameterMasks",
+      "symbols": {
+        "ARM7_SetWirelessCombinedParameterMasks": 41852580
+      },
+      "externals": {
+        "ARM7_WirelessMaskParameterState": 58785780,
+        "ARM7_RefreshWirelessRegister8140": 41852644
+      }
+    },
+    {
+      "name": "WirelessParameterTiming",
+      "source": "config/usa/arm7/src/WirelessParameterTiming.c",
+      "autoload": "mainram",
+      "runtime_address": 41852644,
+      "payload_offset": 110388,
+      "size": 128,
+      "code_bytes": 116,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_RefreshWirelessRegister8140",
+      "symbols": {
+        "ARM7_RefreshWirelessRegister8140": 41852644
+      },
+      "externals": {
+        "ARM7_ReadWirelessSettingsBytes": 41898280,
+        "ARM7_GetWirelessModeTimingValue": 41855120
+      }
+    },
+    {
+      "name": "WirelessModeTiming",
+      "source": "config/usa/arm7/src/WirelessModeTiming.c",
+      "autoload": "mainram",
+      "runtime_address": 41855120,
+      "payload_offset": 112864,
+      "size": 76,
+      "code_bytes": 72,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_GetWirelessModeTimingValue",
+      "symbols": {
+        "ARM7_GetWirelessModeTimingValue": 41855120
+      },
+      "externals": {
+        "ARM7_WirelessModeTimingState": 58785780
+      }
+    },
+    {
+      "name": "WirelessParameterNonzeroBytes",
+      "source": "config/usa/arm7/src/WirelessParameterNonzeroBytes.c",
+      "autoload": "mainram",
+      "runtime_address": 41851472,
+      "payload_offset": 109216,
+      "size": 120,
+      "code_bytes": 108,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_SetWirelessNonzeroByteAndClearHardwareCompanion",
+      "symbols": {
+        "ARM7_SetWirelessNonzeroByteAndClearHardwareCompanion": 41851472,
+        "ARM7_SetWirelessNonzeroByteParameterAt3B4": 41851540
+      },
+      "externals": {
+        "ARM7_WirelessNonzeroByteState": 58785780
+      }
+    },
+    {
+      "name": "WirelessNvSettingsRead",
+      "source": "config/usa/arm7/src/WirelessNvSettingsRead.c",
+      "autoload": "mainram",
+      "runtime_address": 41898376,
+      "payload_offset": 156120,
+      "size": 80,
+      "code_bytes": 76,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_ReadWirelessNvSettingsBytes",
+      "symbols": {
+        "ARM7_ReadWirelessNvSettingsBytes": 41898376
+      },
+      "externals": {
+        "ARM7_WirelessNvSettingsState": 58785780,
+        "ARM7_AcquireSpiServiceToken": 58739616,
+        "ARM7_ReleaseSpiServiceToken": 58739708,
+        "ARM7_WaitWirelessNvStatusReady": 41898216,
+        "ARM7_ReadWirelessNvByteRange": 41900240
+      }
+    },
+    {
+      "name": "WirelessSerialRegisterWait",
+      "source": "config/usa/arm7/src/WirelessSerialRegisterWait.c",
+      "autoload": "wram",
+      "runtime_address": 58700936,
+      "payload_offset": 13988,
+      "size": 52,
+      "code_bytes": 48,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WaitWirelessSerialRegisterReady",
+      "symbols": {
+        "ARM7_WaitWirelessSerialRegisterReady": 58700936
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessSerialRegisterWrite",
+      "source": "config/usa/arm7/src/WirelessSerialRegisterWrite.c",
+      "autoload": "mainram",
+      "runtime_address": 41855288,
+      "payload_offset": 113032,
+      "size": 32,
+      "code_bytes": 24,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_WriteWirelessSerialWord",
+      "symbols": {
+        "ARM7_WriteWirelessSerialWord": 41855288
+      },
+      "externals": {
+        "ARM7_WaitWirelessSerialRegisterReady": 58700936
+      }
+    },
+    {
+      "name": "WirelessNvStatusRead",
+      "source": "config/usa/arm7/src/WirelessNvStatusRead.c",
+      "autoload": "mainram",
+      "runtime_address": 41900128,
+      "payload_offset": 157872,
+      "size": 112,
+      "code_bytes": 104,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_ReadWirelessNvStatusByte",
+      "symbols": {
+        "ARM7_ReadWirelessNvStatusByte": 41900128
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessNvCommandFF",
+      "source": "config/usa/arm7/src/WirelessNvCommandFF.c",
+      "autoload": "mainram",
+      "runtime_address": 41901980,
+      "payload_offset": 159724,
+      "size": 64,
+      "code_bytes": 56,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SendWirelessNvCommandFF",
+      "symbols": {
+        "ARM7_SendWirelessNvCommandFF": 41901980
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessNvByteRange",
+      "source": "config/usa/arm7/src/WirelessNvByteRange.c",
+      "autoload": "mainram",
+      "runtime_address": 41900240,
+      "payload_offset": 157984,
+      "size": 260,
+      "code_bytes": 252,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_ReadWirelessNvByteRange",
+      "symbols": {
+        "ARM7_ReadWirelessNvByteRange": 41900240
+      },
+      "externals": {
+        "ARM7_TransferWirelessNvDummyByte": 41900500
+      }
+    },
+    {
+      "name": "WirelessNvDummyTransfer",
+      "source": "config/usa/arm7/src/WirelessNvDummyTransfer.c",
+      "autoload": "mainram",
+      "runtime_address": 41900500,
+      "payload_offset": 158244,
+      "size": 36,
+      "code_bytes": 32,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_TransferWirelessNvDummyByte",
+      "symbols": {
+        "ARM7_TransferWirelessNvDummyByte": 41900500
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessNvCommand04",
+      "source": "config/usa/arm7/src/WirelessNvCommand04.c",
+      "autoload": "mainram",
+      "runtime_address": 41900064,
+      "payload_offset": 157808,
+      "size": 64,
+      "code_bytes": 56,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SendWirelessNvCommand04",
+      "symbols": {
+        "ARM7_SendWirelessNvCommand04": 41900064
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessNvCommandB9",
+      "source": "config/usa/arm7/src/WirelessNvCommandB9.c",
+      "autoload": "mainram",
+      "runtime_address": 41901632,
+      "payload_offset": 159376,
+      "size": 64,
+      "code_bytes": 56,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SendWirelessNvCommandB9",
+      "symbols": {
+        "ARM7_SendWirelessNvCommandB9": 41901632
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessNvCommandAB",
+      "source": "config/usa/arm7/src/WirelessNvCommandAB.c",
+      "autoload": "mainram",
+      "runtime_address": 41901696,
+      "payload_offset": 159440,
+      "size": 64,
+      "code_bytes": 56,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SendWirelessNvCommandAB",
+      "symbols": {
+        "ARM7_SendWirelessNvCommandAB": 41901696
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessNvCommandC7",
+      "source": "config/usa/arm7/src/WirelessNvCommandC7.c",
+      "autoload": "mainram",
+      "runtime_address": 41901760,
+      "payload_offset": 159504,
+      "size": 64,
+      "code_bytes": 56,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SendWirelessNvCommandC7",
+      "symbols": {
+        "ARM7_SendWirelessNvCommandC7": 41901760
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessNvIdentification",
+      "source": "config/usa/arm7/src/WirelessNvIdentification.c",
+      "autoload": "mainram",
+      "runtime_address": 41901824,
+      "payload_offset": 159568,
+      "size": 156,
+      "code_bytes": 148,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_ReadWirelessNvIdentificationBytes",
+      "symbols": {
+        "ARM7_ReadWirelessNvIdentificationBytes": 41901824
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessNvFastRead",
+      "source": "config/usa/arm7/src/WirelessNvFastRead.c",
+      "autoload": "mainram",
+      "runtime_address": 41900536,
+      "payload_offset": 158280,
+      "size": 288,
+      "code_bytes": 280,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_FastReadWirelessNvByteRange",
+      "symbols": {
+        "ARM7_FastReadWirelessNvByteRange": 41900536
+      },
+      "externals": {
+        "ARM7_TransferWirelessNvDummyByte": 41900500
+      }
+    },
+    {
+      "name": "WirelessNvByteTransfer",
+      "source": "config/usa/arm7/src/WirelessNvByteTransfer.c",
+      "autoload": "mainram",
+      "runtime_address": 41900028,
+      "payload_offset": 157772,
+      "size": 36,
+      "code_bytes": 32,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_TransferWirelessNvByte",
+      "symbols": {
+        "ARM7_TransferWirelessNvByte": 41900028
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessNvPageWrite",
+      "source": "config/usa/arm7/src/WirelessNvPageWrite.c",
+      "autoload": "mainram",
+      "runtime_address": 41900824,
+      "payload_offset": 158568,
+      "size": 268,
+      "code_bytes": 260,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_WriteWirelessNvPage",
+      "symbols": {
+        "ARM7_WriteWirelessNvPage": 41900824
+      },
+      "externals": {
+        "ARM7_TransferWirelessNvByte": 41900028
+      }
+    },
+    {
+      "name": "WirelessNvPageProgram",
+      "source": "config/usa/arm7/src/WirelessNvPageProgram.c",
+      "autoload": "mainram",
+      "runtime_address": 41901092,
+      "payload_offset": 158836,
+      "size": 268,
+      "code_bytes": 260,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_ProgramWirelessNvPage",
+      "symbols": {
+        "ARM7_ProgramWirelessNvPage": 41901092
+      },
+      "externals": {
+        "ARM7_TransferWirelessNvByte": 41900028
+      }
+    },
+    {
+      "name": "WirelessNvAddressCommandDB",
+      "source": "config/usa/arm7/src/WirelessNvAddressCommandDB.c",
+      "autoload": "mainram",
+      "runtime_address": 41901360,
+      "payload_offset": 159104,
+      "size": 136,
+      "code_bytes": 128,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SendWirelessNvAddressCommandDB",
+      "symbols": {
+        "ARM7_SendWirelessNvAddressCommandDB": 41901360
+      },
+      "externals": {
+        "ARM7_TransferWirelessNvByte": 41900028
+      }
+    },
+    {
+      "name": "WirelessNvAddressCommandD8",
+      "source": "config/usa/arm7/src/WirelessNvAddressCommandD8.c",
+      "autoload": "mainram",
+      "runtime_address": 41901496,
+      "payload_offset": 159240,
+      "size": 136,
+      "code_bytes": 128,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SendWirelessNvAddressCommandD8",
+      "symbols": {
+        "ARM7_SendWirelessNvAddressCommandD8": 41901496
+      },
+      "externals": {
+        "ARM7_TransferWirelessNvByte": 41900028
+      }
+    },
+    {
+      "name": "WirelessNvCommand06",
+      "source": "config/usa/arm7/src/WirelessNvCommand06.c",
+      "autoload": "mainram",
+      "runtime_address": 41899964,
+      "payload_offset": 157708,
+      "size": 64,
+      "code_bytes": 56,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SendWirelessNvCommand06",
+      "symbols": {
+        "ARM7_SendWirelessNvCommand06": 41899964
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessNvStatusPredicates",
+      "source": "config/usa/arm7/src/WirelessNvStatusPredicates.c",
+      "autoload": "mainram",
+      "runtime_address": 41899880,
+      "payload_offset": 157624,
+      "size": 84,
+      "code_bytes": 84,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_IsWirelessNvReady",
+      "symbols": {
+        "ARM7_IsWirelessNvReady": 41899880,
+        "ARM7_IsWirelessNvWriteEnabledAndReady": 41899916
+      },
+      "externals": {
+        "ARM7_ReadWirelessNvStatusByte": 41900128
+      }
+    },
+    {
+      "name": "WirelessNvCommandBuffer",
+      "source": "config/usa/arm7/src/WirelessNvCommandBuffer.c",
+      "autoload": "mainram",
+      "runtime_address": 41898692,
+      "payload_offset": 156436,
+      "size": 40,
+      "code_bytes": 36,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_ClearWirelessNvCommandHalfwords",
+      "symbols": {
+        "ARM7_ClearWirelessNvCommandHalfwords": 41898692
+      },
+      "externals": {},
+      "bss": {
+        "runtime_address": 41915628,
+        "size": 32,
+        "symbols": {
+          "ARM7_WirelessNvCommandHalfwords": 41915628
+        }
+      }
+    },
+    {
+      "name": "WirelessParameterSecondaryMode",
+      "source": "config/usa/arm7/src/WirelessParameterSecondaryMode.c",
+      "autoload": "mainram",
+      "runtime_address": 41852772,
+      "payload_offset": 110516,
+      "size": 104,
+      "code_bytes": 96,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SetWirelessSecondaryMode",
+      "symbols": {
+        "ARM7_SetWirelessSecondaryMode": 41852772
+      },
+      "externals": {
+        "ARM7_WirelessSecondaryModeState": 58785780,
+        "ARM7_SetWirelessInterval": 41850056
+      }
+    },
+    {
+      "name": "WirelessParameterBitTwo",
+      "source": "config/usa/arm7/src/WirelessParameterBitTwo.c",
+      "autoload": "mainram",
+      "runtime_address": 41850280,
+      "payload_offset": 108024,
+      "size": 168,
+      "code_bytes": 160,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SetWirelessParameterFlagBitTwo",
+      "symbols": {
+        "ARM7_SetWirelessParameterFlagBitTwo": 41850280
+      },
+      "externals": {
+        "ARM7_WirelessBitTwoState": 58785780,
+        "ARM7_RefreshWirelessRegister8140": 41852644
+      }
+    },
+    {
+      "name": "WirelessParameterWorkingMode",
+      "source": "config/usa/arm7/src/WirelessParameterWorkingMode.c",
+      "autoload": "mainram",
+      "runtime_address": 41849596,
+      "payload_offset": 107340,
+      "size": 160,
+      "code_bytes": 148,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_SetWirelessWorkingModeParameter",
+      "symbols": {
+        "ARM7_SetWirelessWorkingModeParameter": 41849596
+      },
+      "externals": {
+        "ARM7_WirelessWorkingModeState": 58785780
+      }
+    },
+    {
+      "name": "WirelessInterruptSetup",
+      "source": "config/usa/arm7/src/WirelessInterruptSetup.c",
+      "autoload": "mainram",
+      "runtime_address": 41860052,
+      "payload_offset": 117796,
+      "size": 68,
+      "code_bytes": 64,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_EnableWirelessInterrupt",
+      "symbols": {
+        "ARM7_EnableWirelessInterrupt": 41860052,
+        "ARM7_DisableWirelessInterrupt": 41860088
+      },
+      "externals": {
+        "ARM7_SetInterruptHandler": 58701808,
+        "ARM7_EnableSpecificInterrupts": 58702116,
+        "ARM7_DisableSpecificInterrupts": 58702172,
+        "ARM7_HandleWirelessInterrupt": 58692368
+      }
+    },
+    {
+      "name": "WirelessInterruptDispatch",
+      "source": "config/usa/arm7/src/WirelessInterruptDispatch.c",
+      "autoload": "wram",
+      "runtime_address": 58692368,
+      "payload_offset": 5420,
+      "size": 212,
+      "code_bytes": 204,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_HandleWirelessInterrupt",
+      "symbols": {
+        "ARM7_HandleWirelessInterrupt": 58692368
+      },
+      "externals": {
+        "ARM7_HandleWirelessSource0080": 58696272,
+        "ARM7_HandleWirelessSource0040": 58696540,
+        "ARM7_HandleWirelessCounterInterrupt": 58692580,
+        "ARM7_HandleWirelessSource4000": 58692720,
+        "ARM7_HandleWirelessSource2000": 58693396,
+        "ARM7_HandleWirelessSource0800": 41859912,
+        "ARM7_HandleWirelessSource0008": 58693552,
+        "ARM7_HandleWirelessSource0004": 58693824,
+        "ARM7_HandleWirelessSource0001": 58694820,
+        "ARM7_HandleWirelessSources0030": 58693504,
+        "ARM7_HandleWirelessSource0002": 58694204,
+        "ARM7_HandleWirelessSource1000": 58696032
+      }
+    },
+    {
+      "name": "WirelessInterruptCounter",
+      "source": "config/usa/arm7/src/WirelessInterruptCounter.c",
+      "autoload": "wram",
+      "runtime_address": 58692580,
+      "payload_offset": 5632,
+      "size": 140,
+      "code_bytes": 132,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_HandleWirelessCounterInterrupt",
+      "symbols": {
+        "ARM7_HandleWirelessCounterInterrupt": 58692580
+      },
+      "externals": {
+        "ARM7_EnqueueWirelessDispatchSlot": 58688972
+      }
+    },
+    {
+      "name": "WirelessInterruptSource0800",
+      "source": "config/usa/arm7/src/WirelessInterruptSource0800.c",
+      "autoload": "mainram",
+      "runtime_address": 41859912,
+      "payload_offset": 117656,
+      "size": 20,
+      "code_bytes": 16,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_HandleWirelessSource0800",
+      "symbols": {
+        "ARM7_HandleWirelessSource0800": 41859912
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessInterruptSource2000",
+      "source": "config/usa/arm7/src/WirelessInterruptSource2000.c",
+      "autoload": "wram",
+      "runtime_address": 58693396,
+      "payload_offset": 6448,
+      "size": 108,
+      "code_bytes": 100,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_HandleWirelessSource2000",
+      "symbols": {
+        "ARM7_HandleWirelessSource2000": 58693396
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessInterruptSources0030",
+      "source": "config/usa/arm7/src/WirelessInterruptSources0030.c",
+      "autoload": "wram",
+      "runtime_address": 58693504,
+      "payload_offset": 6556,
+      "size": 48,
+      "code_bytes": 40,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_HandleWirelessSources0030",
+      "symbols": {
+        "ARM7_HandleWirelessSources0030": 58693504
+      },
+      "externals": {
+        "ARM7_AccumulateWirelessStatistics": 41854148
+      }
+    },
+    {
+      "name": "WirelessStatistics",
+      "source": "config/usa/arm7/src/WirelessStatistics.c",
+      "autoload": "mainram",
+      "runtime_address": 41854148,
+      "payload_offset": 111892,
+      "size": 504,
+      "code_bytes": 496,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_AccumulateWirelessStatistics",
+      "symbols": {
+        "ARM7_AccumulateWirelessStatistics": 41854148
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessInterruptSource0008",
+      "source": "config/usa/arm7/src/WirelessInterruptSource0008.c",
+      "autoload": "wram",
+      "runtime_address": 58693552,
+      "payload_offset": 6604,
+      "size": 272,
+      "code_bytes": 260,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_HandleWirelessSource0008",
+      "symbols": {
+        "ARM7_HandleWirelessSource0008": 58693552
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessInterruptSource1000",
+      "source": "config/usa/arm7/src/WirelessInterruptSource1000.c",
+      "autoload": "wram",
+      "runtime_address": 58696032,
+      "payload_offset": 9084,
+      "size": 240,
+      "code_bytes": 228,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_HandleWirelessSource1000",
+      "symbols": {
+        "ARM7_HandleWirelessSource1000": 58696032
+      },
+      "externals": {
+        "ARM7_EnqueueWirelessDispatchSlot": 58688972,
+        "ARM7_ScheduleWirelessDelay": 41856628,
+        "ARM7_OnWirelessDelay": 58697364
+      }
+    },
+    {
+      "name": "WirelessDelayCallback",
+      "source": "config/usa/arm7/src/WirelessDelayCallback.c",
+      "autoload": "wram",
+      "runtime_address": 58697364,
+      "payload_offset": 10416,
+      "size": 104,
+      "code_bytes": 96,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_OnWirelessDelay",
+      "symbols": {
+        "ARM7_OnWirelessDelay": 58697364
+      },
+      "externals": {
+        "ARM7_DisableSpecificInterrupts": 58702172,
+        "ARM7_EnableSpecificInterrupts": 58702116,
+        "ARM7_HandleWirelessSource1000": 58696032
+      }
+    },
+    {
+      "name": "WirelessInterruptSource0004",
+      "source": "config/usa/arm7/src/WirelessInterruptSource0004.c",
+      "autoload": "wram",
+      "runtime_address": 58693824,
+      "payload_offset": 6876,
+      "size": 380,
+      "code_bytes": 352,
+      "literal_pool_bytes": 28,
+      "entry": "ARM7_HandleWirelessSource0004",
+      "symbols": {
+        "ARM7_HandleWirelessSource0004": 58693824
+      },
+      "externals": {
+        "ARM7_RefreshWirelessReceiveState": 41857672
+      }
+    },
+    {
+      "name": "WirelessDelayCancel",
+      "source": "config/usa/arm7/src/WirelessDelayCancel.c",
+      "autoload": "mainram",
+      "runtime_address": 41856760,
+      "payload_offset": 114504,
+      "size": 32,
+      "code_bytes": 24,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_CancelWirelessDelay",
+      "symbols": {
+        "ARM7_CancelWirelessDelay": 41856760
+      },
+      "externals": {
+        "ARM7_CancelAlarm": 58710984
+      }
+    },
+    {
+      "name": "WirelessStatusFlags",
+      "source": "config/usa/arm7/src/WirelessStatusFlags.c",
+      "autoload": "mainram",
+      "runtime_address": 41857924,
+      "payload_offset": 115668,
+      "size": 68,
+      "code_bytes": 64,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_QueueWirelessStatusFlags",
+      "symbols": {
+        "ARM7_QueueWirelessStatusFlags": 41857924
+      },
+      "externals": {
+        "ARM7_DisableSpecificInterrupts": 58702172,
+        "ARM7_EnableSpecificInterrupts": 58702116,
+        "ARM7_EnqueueWirelessDispatchSlot": 58688972
+      }
+    },
+    {
+      "name": "WirelessParameterControlFlags",
+      "source": "config/usa/arm7/src/WirelessParameterControlFlags.c",
+      "autoload": "mainram",
+      "runtime_address": 41850552,
+      "payload_offset": 108296,
+      "size": 104,
+      "code_bytes": 96,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SetWirelessParameterFlagBitThree",
+      "symbols": {
+        "ARM7_SetWirelessParameterFlagBitThree": 41850552
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessParameterFlagPolicy",
+      "source": "config/usa/arm7/src/WirelessParameterFlagPolicy.c",
+      "autoload": "mainram",
+      "runtime_address": 41850656,
+      "payload_offset": 108400,
+      "size": 212,
+      "code_bytes": 204,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SetWirelessParameterFlagPolicy",
+      "symbols": {
+        "ARM7_SetWirelessParameterFlagPolicy": 41850656
+      },
+      "externals": {}
+    },
+    {
+      "name": "WirelessParameterScale",
+      "source": "config/usa/arm7/src/WirelessParameterScale.c",
+      "autoload": "mainram",
+      "runtime_address": 41853256,
+      "payload_offset": 111000,
+      "size": 100,
+      "code_bytes": 92,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SetWirelessScaledParameter",
+      "symbols": {
+        "ARM7_SetWirelessScaledParameter": 41853256
+      },
+      "externals": {
+        "ARM7_UnsignedDivide": 58753220
+      }
+    },
+    {
+      "name": "WirelessParameterPeriod",
+      "source": "config/usa/arm7/src/WirelessParameterPeriod.c",
+      "autoload": "mainram",
+      "runtime_address": 41851384,
+      "payload_offset": 109128,
+      "size": 88,
+      "code_bytes": 80,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SetWirelessBoundedPeriod",
+      "symbols": {
+        "ARM7_SetWirelessBoundedPeriod": 41851384
+      },
+      "externals": {
+        "ARM7_SetWirelessScaledParameter": 41853256
       }
     }
   ]

@@ -1,0 +1,5 @@
+#include <globaldefs.h>
+ARM
+extern "C" void Text_ExpandAlternatingMarkupBuffers(void*,unsigned);extern "C" void Graphics_ConfigureMainDisplayAndBackgroundControls(void*);extern "C" void Graphics_StageClearedVRAMBuffer(void*);
+// Original: arm9/main @ 0x02044F3C; symbol: func_02044f3c; size: 0xD0.
+extern "C" void TextWindow_ReplaceMessageAndResetRenderMode(unsigned char* object,unsigned arg,int mode){object[0x19bd]=1;Text_ExpandAlternatingMarkupBuffers(object,arg);if(!object[0x19cc] && mode==1){object[0x19ae]=0;object[0x19af]=0;object[0x19cd]=1;*(unsigned*)(object+0x40)=0;Graphics_ConfigureMainDisplayAndBackgroundControls(object+0x1000);}object[0x19cc]=0;object[0x19ce]=0;if(mode==1)object[0x19cc]=1;else if(mode==1)object[0x19ce]=1;if(object[0x19cc]){object[0x19cc]=1;object[0x19ae]=0;object[0x19af]=0;object[0x19cd]=1;*(unsigned*)(object+0x40)=0;}if(object[0x19ce]){*(unsigned*)(object+0x44)=0;Graphics_StageClearedVRAMBuffer(*(void**)(object+0x1e28));}((signed char*)object)[0x30]=-1;((signed char*)object)[0x31]=-1;}

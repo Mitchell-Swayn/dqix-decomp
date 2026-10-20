@@ -2,6 +2,7 @@
 
 #pragma optimize_for_size off
 
+// Original: arm9/main @ 0x02003FF0; symbol: strncpy; size: 0x50.
 char* strncpy(char* dst, const char* src, unsigned int count)
 {
     char* current = dst;
@@ -20,6 +21,7 @@ char* strncpy(char* dst, const char* src, unsigned int count)
     return dst;
 }
 
+// Original: arm9/main @ 0x02004040; symbol: strcat; size: 0x30.
 char* strcat(char* dst, const char* src)
 {
     char* current = dst;

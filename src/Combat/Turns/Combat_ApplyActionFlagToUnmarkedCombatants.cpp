@@ -1,0 +1,6 @@
+#include <globaldefs.h>
+ARM
+struct Bits {unsigned low:28;unsigned flag:1;unsigned high:3;};extern "C" {void* ActionData_GetGlobalTables();void* _ZN9GameState11GetInstanceEv();void* _ZN9GameState19GetCombatantByIndexEi(void*,int);int Combat_HasPartyOnlyRetargetingStatus(void*);char* ActionData_FindDefinitionInPrimaryOrSecondaryTable(void*,int);void Combat_ChargeActionMpAndPrepareActorState(void*,int,void*);}
+// Original: arm9/ov000 @ 0x0215F110; symbol: ProcessUnflaggedCombatantsWithTransformedBit28; size: 0x9c.
+// Processes unflagged combatant entries whose transformed record word8 has bit28.
+extern "C" void Combat_ApplyActionFlagToUnmarkedCombatants(char* self){void* global=ActionData_GetGlobalTables();for(int i=0;i<*(int*)(self+0x8e7c);++i){char* entry=*(char**)(self+0x8e78)+40*i;int index=*(short*)(*(char**)(entry+16)+32);void* state=_ZN9GameState11GetInstanceEv();void* combatant=_ZN9GameState19GetCombatantByIndexEi(state,index);if(!combatant)return;if(!Combat_HasPartyOnlyRetargetingStatus(combatant)){char* transformed=ActionData_FindDefinitionInPrimaryOrSecondaryTable(global,*(short*)entry);if(transformed && ((Bits*)(transformed+8))->flag)Combat_ChargeActionMpAndPrepareActorState(self,*(short*)(*(char**)(entry+16)+32),entry);}}}

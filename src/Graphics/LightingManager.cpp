@@ -1,3 +1,6 @@
+// Original locations for overloaded or compiler-generated definitions in this unit:
+// Original: arm9/main @ 0x0205111C; symbol: _ZN15LightingManager13Light3DConfigaSERKS0_; size: 0x34. (LightingManager::Light3DConfig::operator=(LightingManager::Light3DConfig const&))
+// Original: arm9/main @ 0x020E5D98; symbol: __sinit_LightingManager.cpp; size: 0x94. (__sinit_LightingManager.cpp)
 #include "Graphics/LightingManager.h"
 #include "World/Zone3D.h"
 #include "System/Memory.h"
@@ -6,20 +9,20 @@
 #include "Resource/GameResources.h"
 
 #if defined(jpn)
-#define func_020100bc func_0200ff18
-#define func_0202ec84 func_0202e7f4
-#define func_0205ec34 func_0205ff20
-#define func_0206dfb0 func_0206f104
-#define func_0207ba28 func_0207c860
-#define func_020c54a4 func_020c6f70
-#define func_020c555c func_020c7028
-#define func_020c5574 func_020c7040
+#define GameState_ReadUnknownB0 func_0200ff18
+#define Graphics_ConvertCopiedWorldVectorToScreenCoordinates func_0202e7f4
+#define GameState_GetSerializedProgressState func_0205ff20
+#define BitArray_ReadNonnegativeIndexMask func_0206f104
+#define ReadIndexedTripleIntoThreeOutputs func_0207c860
+#define Graphics_WriteHalfwordRegister35CAndDisplayControl func_020c6f70
+#define Graphics_CopySixteenBytesToEdgeColorRegisters func_020c7028
+#define Geometry_SetEdgeColorTable func_020c7040
 
-#define func_ov000_02160fd4 func_ov000_02162740
+#define BattleScene_GetMaskedFlags func_ov000_02162740
 
-#define func_ov017_021901ac func_ov017_02190d90
-#define func_ov017_021b8468 func_ov017_021b8978
-#define func_ov017_021b8478 func_ov017_021b8988
+#define Graphics_CreateRelatedObjectBoneAndMaterialArrays func_ov017_02190d90
+#define FieldBattle_GetScene func_ov017_021b8978
+#define FieldBattle_GetEncounterRequest func_ov017_021b8988
 #endif
 
 struct FifoCommandInfo
@@ -75,34 +78,36 @@ static LightingManager s_lightingManager;
 extern "C"
 {
     // camera data?
-    void* func_020100bc(GameState*);
+    void* GameState_ReadUnknownB0(GameState*);
 
-    void func_0202ec84(void*, const Vector3fix*, int*, int*);
+    void Graphics_ConvertCopiedWorldVectorToScreenCoordinates(void*, const Vector3fix*, int*, int*);
 
-    bool func_0206dfb0(void*, void*, int);
+    bool BitArray_ReadNonnegativeIndexMask(void*, void*, int);
 
-    char* func_0205ec34(); 
+    char* GameState_GetSerializedProgressState();
 
-    void func_0207ba28(LightingInfo*, int, float*, float*, float*);
+    void ReadIndexedTripleIntoThreeOutputs(LightingInfo*, int, float*, float*, float*);
 
-    void func_020c54a4(int, int, int, int);
+    void Graphics_WriteHalfwordRegister35CAndDisplayControl(int, int, int, int);
     // set edge colors
-    void func_020c555c(unsigned short*);
+    void Graphics_CopySixteenBytesToEdgeColorRegisters(unsigned short*);
     // set fog table
-    void func_020c5574(void*);
+    void Geometry_SetEdgeColorTable(void*);
 
     // do bitmask of something
-    int func_ov000_02160fd4(void*, int);
+    int BattleScene_GetMaskedFlags(void*, int);
 
-    void* func_ov017_021b8468(void*);
-    void func_ov017_021901ac(GameResources*);
-    void* func_ov017_021b8478(void*);
+    void* FieldBattle_GetScene(void*);
+    void Graphics_CreateRelatedObjectBoneAndMaterialArrays(GameResources*);
+    void* FieldBattle_GetEncounterRequest(void*);
 }
 
 void SetVector3fixComponents(Vector3fix*, fix32_t, fix32_t, fix32_t);
 
+// Original: arm9/main @ 0x02050454; symbol: _ZN15LightingManager11GetInstanceEv; size: 0xC.
 LightingManager* LightingManager::GetInstance() { return &s_lightingManager; }
 
+// Original: arm9/main @ 0x02050460; symbol: _Z16GetDayThresholdsPfS_S_S_S_; size: 0x44.
 void GetDayThresholds(float *outNightToMorning, float *outMorningToDay,
     float *outDayToEvening, float *outEveningToNight, float *outTransitionTime)
 {
@@ -113,6 +118,7 @@ void GetDayThresholds(float *outNightToMorning, float *outMorningToDay,
     *outTransitionTime = s_dayTransitionLength;
 }
 
+// Original: arm9/main @ 0x020504A4; symbol: _ZN15LightingManager16AdvancedLighting18FillMissingEntriesEv; size: 0x238.
 void LightingManager::AdvancedLighting::FillMissingEntries()
 {
     // First pass: handle light 0 and colors
@@ -190,6 +196,7 @@ void LightingManager::AdvancedLighting::FillMissingEntries()
     }
 }
 
+// Original: arm9/main @ 0x020506DC; symbol: _ZN15LightingManager13BasicLighting18FillMissingEntriesEv; size: 0x154.
 void LightingManager::BasicLighting::FillMissingEntries()
 {
     for (int index = 0; index < 4; index++)
@@ -240,6 +247,7 @@ void LightingManager::BasicLighting::FillMissingEntries()
     }
 }
 
+// Original: arm9/main @ 0x02050830; symbol: _ZN15LightingManager7FogList18FillMissingEntriesEv; size: 0x110.
 void LightingManager::FogList::FillMissingEntries()
 {
     for (int index = 0; index < 4; index++)
@@ -274,6 +282,7 @@ void LightingManager::FogList::FillMissingEntries()
     }
 }
 
+// Original: arm9/main @ 0x02050940; symbol: _ZN15LightingManager18GetFifoCommandDataEiPi; size: 0x30.
 bool LightingManager::GetFifoCommandData(int opcode, int* outNumArgs)
 {
     int high = opcode >> 4; // 0 to 7
@@ -282,6 +291,7 @@ bool LightingManager::GetFifoCommandData(int opcode, int* outNumArgs)
     return s_commandColorInfo[high][low].hasColor;
 }
 
+// Original: arm9/main @ 0x02050970; symbol: _ZN15LightingManager36ColorTransformTintBrightnessContrastEj; size: 0x2B0.
 unsigned short LightingManager::ColorTransformTintBrightnessContrast(unsigned int inColor)
 {
     (void)GameState::GetInstance();
@@ -379,6 +389,7 @@ unsigned short LightingManager::ColorTransformTintBrightnessContrast(unsigned in
     return (endRed | (endGreen << 5) | (endBlue << 10));
 }
 
+// Original: arm9/main @ 0x02050C20; symbol: _ZN15LightingManager32GetCurrentAdvancedLightingValuesEPtS0_S0_S0_S0_S0_S0_PNS_13Light3DConfigES2_; size: 0x4FC.
 void LightingManager::GetCurrentAdvancedLightingValues(unsigned short *outMaybeAmbient,
     unsigned short *outBGColor, unsigned short *outBGSecondColor, unsigned short *outArg4,
     unsigned short *outSpriteDiffuse, unsigned short *outModelDiffuse, unsigned short *outEdgeColor,
@@ -426,13 +437,13 @@ void LightingManager::GetCurrentAdvancedLightingValues(unsigned short *outMaybeA
             lerpFactor /= s_dayTransitionLength;
         }
 
-        void* ov17thing = func_ov017_0218b5b0()->unknown_ptr_3718;
+        void* ov17thing = GameResources_GetInstance()->unknown_ptr_3718;
         if (ov17thing != NULL)
         {
-            void* ov0thing = func_ov017_021b8468(ov17thing);
-            if (ov0thing != NULL && func_ov000_02160fd4(ov0thing, 1 << 9))
+            void* ov0thing = FieldBattle_GetScene(ov17thing);
+            if (ov0thing != NULL && BattleScene_GetMaskedFlags(ov0thing, 1 << 9))
             {
-                unsigned char* overrideData = (unsigned char*)func_ov017_021b8478(ov17thing);
+                unsigned char* overrideData = (unsigned char*)FieldBattle_GetEncounterRequest(ov17thing);
                 currentTimeType = overrideData[5];
                 lerpFactor = 0.0f;
                 nextTimeType = currentTimeType + 1;
@@ -513,6 +524,7 @@ void LightingManager::GetCurrentAdvancedLightingValues(unsigned short *outMaybeA
     }
 }
 
+// Original: arm9/main @ 0x02051150; symbol: _ZN15LightingManager17InterpolateColorsEiif; size: 0xF4.
 unsigned short LightingManager::InterpolateColors(int col0, int col1, float lerpFactor)
 {
     int red0 = col0 & 0x1f;
@@ -530,6 +542,7 @@ unsigned short LightingManager::InterpolateColors(int col0, int col1, float lerp
     return redLerp | (greenLerp << 5) | (blueLerp << 10);
 }
 
+// Original: arm9/main @ 0x02051244; symbol: _ZN15LightingManager14ComputeFogInfoEPNS_7FogInfoE; size: 0x338.
 void LightingManager::ComputeFogInfo(FogInfo *outFog)
 {
     Zone3D* zone = pZone_;
@@ -605,6 +618,7 @@ void LightingManager::ComputeFogInfo(FogInfo *outFog)
     }
 }
 
+// Original: arm9/main @ 0x0205157C; symbol: _ZN15LightingManager10InitializeEv; size: 0x10C.
 void LightingManager::Initialize()
 {
     VectorizedMemset(this, 0, sizeof(LightingManager));
@@ -636,12 +650,14 @@ void LightingManager::Initialize()
     lightRGBScaleTransitionTimer_ = 0;
 }
 
+// Original: arm9/main @ 0x02051688; symbol: _ZN15LightingManager7SetZoneEP6Zone3D; size: 0x8.
 void LightingManager::SetZone(Zone3D *zone) { pZone_ = zone; }
 
+// Original: arm9/main @ 0x02051690; symbol: _ZN15LightingManager36ModelTransformTintBrightnessContrastEP18NSBXXInternalModel; size: 0x354.
 void LightingManager::ModelTransformTintBrightnessContrast(NSBXXInternalModel *model)
 {
     GameState* gameState = GameState::GetInstance();
-    (void)func_ov017_0218b5b0();
+    (void)GameResources_GetInstance();
     
     if (pZone_ == NULL)
         return;
@@ -655,13 +671,13 @@ void LightingManager::ModelTransformTintBrightnessContrast(NSBXXInternalModel *m
     int totalNumOperands;
     readPos = (uintptr_t)lightingInfo; // cursed dont look
     
-    char* struct0205ec34 = func_0205ec34();
+    char* struct0205ec34 = GameState_GetSerializedProgressState();
 
     if (((LightingInfo*)readPos)->maybeMode_ != 1)
         return;
 
     int index;
-    if (zone->currentZoneID_ == 6401 && func_0206dfb0(struct0205ec34, struct0205ec34 + 0x8c, 0x2a))
+    if (zone->currentZoneID_ == 6401 && BitArray_ReadNonnegativeIndexMask(struct0205ec34, struct0205ec34 + 0x8c, 0x2a))
         index = 4;
     else
     {
@@ -690,7 +706,7 @@ void LightingManager::ModelTransformTintBrightnessContrast(NSBXXInternalModel *m
     NSBXXNameList* meshList = model->GetMeshListSafe();
     
     lightingInfo->basic_.FillMissingEntries();
-    func_0207ba28(lightingInfo, index, &redMix_2c_, &greenMix_30_, &blueMix_34_);
+    ReadIndexedTripleIntoThreeOutputs(lightingInfo, index, &redMix_2c_, &greenMix_30_, &blueMix_34_);
     mixBrightness_ = lightingInfo->basic_.unk_70[index];
     mixContrast_ = lightingInfo->basic_.unk_54[index];
     mixContrast_ *= (mixContrast_ * mixContrast_);
@@ -700,7 +716,7 @@ void LightingManager::ModelTransformTintBrightnessContrast(NSBXXInternalModel *m
     modelDiffuseColor_ = lightingInfo->basic_.modelDiffuseColor[index];
     edgeColor_ = lightingInfo->basic_.edgeColor[index];
     RenderConfig::SetDiffuseAmbientColors(modelDiffuseColor_, 0, false);
-    func_ov017_021901ac(func_ov017_0218b5b0());
+    Graphics_CreateRelatedObjectBoneAndMaterialArrays(GameResources_GetInstance());
     tint_4a_ = modelDiffuseColor_;
 
     
@@ -757,6 +773,7 @@ void LightingManager::ModelTransformTintBrightnessContrast(NSBXXInternalModel *m
     }
 }
 
+// Original: arm9/main @ 0x020519E4; symbol: _ZN15LightingManager17ProcessZoneChangeEP6Zone3D; size: 0x344.
 void LightingManager::ProcessZoneChange(Zone3D *newZone)
 {
     pZone_ = newZone;
@@ -765,15 +782,15 @@ void LightingManager::ProcessZoneChange(Zone3D *newZone)
     int index;
     LightingInfo* info = &zone->lighting_;    
     gameState = GameState::GetInstance();
-    func_ov017_0218b5b0();
-    char* struct0205ec34 = func_0205ec34();
+    GameResources_GetInstance();
+    char* struct0205ec34 = GameState_GetSerializedProgressState();
 
     if (info->maybeMode_ == 2)
     {
         info->advanced_.FillMissingEntries();
         info->fogList.FillMissingEntries();
         RenderConfig::SetDiffuseAmbientColors(modelDiffuseColor_, 0, false);
-        func_ov017_021901ac(func_ov017_0218b5b0());
+        Graphics_CreateRelatedObjectBoneAndMaterialArrays(GameResources_GetInstance());
         tint_4a_ = modelDiffuseColor_;
     }
     else if (info->maybeMode_ == 1)
@@ -781,7 +798,7 @@ void LightingManager::ProcessZoneChange(Zone3D *newZone)
         info->basic_.FillMissingEntries();
         
         // 6401 = id of front of starflight express
-        if (zone->currentZoneID_ == 6401 && func_0206dfb0(struct0205ec34, struct0205ec34 + 0x8c, 0x2a))
+        if (zone->currentZoneID_ == 6401 && BitArray_ReadNonnegativeIndexMask(struct0205ec34, struct0205ec34 + 0x8c, 0x2a))
         {
             index = 4;
         }
@@ -815,21 +832,21 @@ void LightingManager::ProcessZoneChange(Zone3D *newZone)
         spriteDiffuseColor_ = info->basic_.spriteDiffuseColor[index];
         modelDiffuseColor_ = info->basic_.modelDiffuseColor[index];
         edgeColor_ = info->basic_.edgeColor[index];
-        func_020c54a4(true, fog->type, fog->depthShift, fog->offset);
+        Graphics_WriteHalfwordRegister35CAndDisplayControl(true, fog->type, fog->depthShift, fog->offset);
         GX_FOG_COLOR = fog->color | (fog->alpha << 16);
-        func_020c5574(fog->densityTable);
+        Geometry_SetEdgeColorTable(fog->densityTable);
         unsigned short edgeColors[8] = {
             edgeColor_, edgeColor_, edgeColor_, edgeColor_,
             edgeColor_, edgeColor_, edgeColor_, edgeColor_
         };
-        func_020c555c(edgeColors);
+        Graphics_CopySixteenBytesToEdgeColorRegisters(edgeColors);
         RenderConfig::SetDiffuseAmbientColors(modelDiffuseColor_, 0, false);
-        func_ov017_021901ac(func_ov017_0218b5b0());
+        Graphics_CreateRelatedObjectBoneAndMaterialArrays(GameResources_GetInstance());
         tint_4a_ = modelDiffuseColor_;
     }
     else // lighting mode is not 1 or 2
     {
-        func_020c54a4(0, 0, 1, 0x5800);
+        Graphics_WriteHalfwordRegister35CAndDisplayControl(0, 0, 1, 0x5800);
         maybePotBarrelDiffuseColor_ = 0x7fff;
         spriteDiffuseColor_ = 0x7fff;
         modelDiffuseColor_ = 0x7fff;
@@ -838,9 +855,9 @@ void LightingManager::ProcessZoneChange(Zone3D *newZone)
             edgeColor_, edgeColor_, edgeColor_, edgeColor_,
             edgeColor_, edgeColor_, edgeColor_, edgeColor_
         };
-        func_020c555c(edgeColors);
+        Graphics_CopySixteenBytesToEdgeColorRegisters(edgeColors);
         RenderConfig::SetDiffuseAmbientColors(modelDiffuseColor_, 0, false);
-        func_ov017_021901ac(func_ov017_0218b5b0());
+        Graphics_CreateRelatedObjectBoneAndMaterialArrays(GameResources_GetInstance());
         tint_4a_ = modelDiffuseColor_;
     }
     RenderConfig::SetLightVector(0, 0, 0, 0);
@@ -853,13 +870,14 @@ void LightingManager::ProcessZoneChange(Zone3D *newZone)
     RenderConfig::SetLightColor(3, 0);
 }
 
+// Original: arm9/main @ 0x02051D28; symbol: _ZN15LightingManager25RecomputeAdvancedLightingEv; size: 0x514.
 void LightingManager::RecomputeAdvancedLighting()
 {
     Zone3D* zone = pZone_;
     if (zone == NULL)
         return;
     GameState* gameState = GameState::GetInstance();
-    (void)func_ov017_0218b5b0();
+    (void)GameResources_GetInstance();
     if (zone->lighting_.maybeMode_ == 1 || zone->lighting_.maybeMode_ != 2)
         return;
 
@@ -954,12 +972,13 @@ void LightingManager::RecomputeAdvancedLighting()
     ComputeFogInfo(&fogInfo_);
     if (fogEnabled_)
     {
-        func_020c54a4(true, fogInfo_.type, fogInfo_.depthShift, fogInfo_.offset);
+        Graphics_WriteHalfwordRegister35CAndDisplayControl(true, fogInfo_.type, fogInfo_.depthShift, fogInfo_.offset);
         GX_FOG_COLOR = (fogInfo_.color) | (fogInfo_.alpha << 16);
-        func_020c5574(fogInfo_.densityTable);
+        Geometry_SetEdgeColorTable(fogInfo_.densityTable);
     }
 }
 
+// Original: arm9/main @ 0x0205223C; symbol: _Z23SetVector3fixComponentsP8Vector3iiii; size: 0x8.
 void SetVector3fixComponents(Vector3fix* vec, fix32_t x, fix32_t y, fix32_t z)
 {
     vec->x = x;
@@ -967,12 +986,13 @@ void SetVector3fixComponents(Vector3fix* vec, fix32_t x, fix32_t y, fix32_t z)
     vec->z = z;
 }
 
+// Original: arm9/main @ 0x02052244; symbol: _ZN15LightingManager20SubmitToRenderConfigEv; size: 0xF4.
 void LightingManager::SubmitToRenderConfig()
 {
     Zone3D* zone = pZone_;
     if (zone == NULL)
         return;
-    (void)func_ov017_0218b5b0();
+    (void)GameResources_GetInstance();
     RenderConfig::SetDiffuseAmbientColors(modelDiffuseColor_, 0, false);
     if (zone->lighting_.maybeMode_ == 2)
     {
@@ -984,18 +1004,20 @@ void LightingManager::SubmitToRenderConfig()
             edgeColor_, edgeColor_, edgeColor_, edgeColor_,
             edgeColor_, edgeColor_, edgeColor_, edgeColor_
         };
-        func_020c555c(edgeColors);
+        Graphics_CopySixteenBytesToEdgeColorRegisters(edgeColors);
     }
 }
 
+// Original: arm9/main @ 0x02052338; symbol: _ZN15LightingManager24ApplyAmbientColorToModelEP18NSBXXInternalModel; size: 0x18.
 void LightingManager::ApplyAmbientColorToModel(NSBXXInternalModel* model)
 {
     NSBXX_Model_SetAmbientReflectionColor(model, ambientColor_);
 }
 
+// Original: arm9/main @ 0x02052350; symbol: _ZN15LightingManager27MaybeComputeHorizonPositionEv; size: 0xC0.
 void LightingManager::MaybeComputeHorizonPosition()
 {
-    void* maybeCameraData = func_020100bc(GameState::GetInstance());
+    void* maybeCameraData = GameState_ReadUnknownB0(GameState::GetInstance());
     Vector3fix* maybeCameraTarget = (Vector3fix*)((char*)maybeCameraData + 0x12c);
     Vector3fix* maybeCameraEye = (Vector3fix*)((char*)maybeCameraData + 0x120);
 
@@ -1007,7 +1029,7 @@ void LightingManager::MaybeComputeHorizonPosition()
     Vector3fixMultiplyScalar(&cameraRay, 2048 << 12, &cameraRay);
     int pixelX, pixelY;
     // convert world coordinates to pixel value
-    func_0202ec84(maybeCameraData, &cameraRay, &pixelX, &pixelY);
+    Graphics_ConvertCopiedWorldVectorToScreenCoordinates(maybeCameraData, &cameraRay, &pixelX, &pixelY);
     if (pixelY < 192 && pixelY > 0)
     {
         gradientCenterNorm_ = fix32_Divide(pixelY << 12, 191 << 12);
@@ -1026,6 +1048,7 @@ void LightingManager::MaybeComputeHorizonPosition()
     }
 }
 
+// Original: arm9/main @ 0x02052410; symbol: _ZN15LightingManager22DrawBackgroundGradientEv; size: 0x474.
 void LightingManager::DrawBackgroundGradient()
 {
     if (pZone_ == NULL)
@@ -1040,7 +1063,7 @@ void LightingManager::DrawBackgroundGradient()
     unsigned short outerColor;
     unsigned short innerColor;
     LightingInfo* lightingInfo = &pZone_->lighting_;
-    GameResources* resources = func_ov017_0218b5b0();
+    GameResources* resources = GameResources_GetInstance();
     if (lightingInfo->maybeMode_ == 1)
     {
         int index = timeOfDayIndex_;
@@ -1058,10 +1081,10 @@ void LightingManager::DrawBackgroundGradient()
         void* ov17inner = resources->unknown_ptr_3718;
         if (ov17inner != NULL)
         {
-            void* ov0thing = func_ov017_021b8468(ov17inner);
-            if (ov0thing != NULL && func_ov000_02160fd4(ov0thing, 1 << 9))
+            void* ov0thing = FieldBattle_GetScene(ov17inner);
+            if (ov0thing != NULL && BattleScene_GetMaskedFlags(ov0thing, 1 << 9))
             {
-                unsigned char* overrideData = (unsigned char*)func_ov017_021b8478(ov17inner);
+                unsigned char* overrideData = (unsigned char*)FieldBattle_GetEncounterRequest(ov17inner);
                 int index = overrideData[5];
                 outerColor = lightingInfo->advanced_.backgroundColor[index];
                 innerColor = lightingInfo->advanced_.backgroundSecondColor[index];
@@ -1162,6 +1185,7 @@ void LightingManager::DrawBackgroundGradient()
     GXFIFO_MATRIX_POP = 1;
 }
 
+// Original: arm9/main @ 0x02052884; symbol: _ZN15LightingManager9BeginFadeEst; size: 0x40.
 void LightingManager::BeginFade(fix16_t targetBrightness, unsigned short length)
 {
     if (length == 0 || targetBrightness == lightRGBScale_)
@@ -1181,6 +1205,7 @@ void LightingManager::BeginFade(fix16_t targetBrightness, unsigned short length)
     }
 }
 
+// Original: arm9/main @ 0x020528C4; symbol: _Z18ConvertToTimeOfDayf; size: 0x80.
 TimeOfDay ConvertToTimeOfDay(float time)
 {
     if (time < 0.0f || s_dayThresholds[4] < time)
@@ -1195,6 +1220,7 @@ TimeOfDay ConvertToTimeOfDay(float time)
     return TimeOfDay_Night;
 }
 
+// Original: arm9/main @ 0x02052944; symbol: _ZN15LightingManagerC1Ev; size: 0x14.
 LightingManager::LightingManager()
 {
     Initialize();

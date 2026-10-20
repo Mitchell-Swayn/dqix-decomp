@@ -10,12 +10,13 @@ struct FirmwareUserInfo {
 typedef char GameStateLanguageOffsetCheck[
     offsetof(GameState, language_) == 5 ? 1 : -1];
 
-extern "C" void func_020c99c8(FirmwareUserInfo* info);
+extern "C" void OS_GetOwnerInfo(FirmwareUserInfo* info);
 
-extern "C" unsigned int func_0200fb08(GameState* state)
+// Original: arm9/main @ 0x0200FB08; symbol: func_0200fb08; size: 0x38.
+extern "C" unsigned int GameState_ReadSupportedFirmwareLanguage(GameState* state)
 {
     FirmwareUserInfo info;
-    func_020c99c8(&info);
+    OS_GetOwnerInfo(&info);
     state->language_ = info.language_;
     if (state->language_ != 2 && state->language_ != 5)
         state->language_ = 1;

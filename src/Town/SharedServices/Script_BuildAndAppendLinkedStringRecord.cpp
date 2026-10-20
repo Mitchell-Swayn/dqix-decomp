@@ -1,0 +1,13 @@
+#include <globaldefs.h>
+ARM
+#pragma optimization_level 4
+// Original data: arm9/ov003 @ 0x2180cb8; symbol: data_ov003_02180cb8.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 8 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/ov003.md.
+extern "C" void TextEntry_InitializeControlRecord(void*); extern "C" int _ZNK6Script9Parameter5ToIntEv(const void*); extern "C" const char* _ZNK6Script9Parameter8ToStringEv(const void*); extern "C" char* _ZN13SafeAllocator8AllocateEj(unsigned,unsigned); extern "C" unsigned String_CountBytesUntilTerminator(const signed char*); extern "C" int sprintf(char*,const char*,...); extern "C" void Util_AppendTwentyByteRecordIfSpace(void*,const void*); extern "C" unsigned ScriptExecuteBufferWithLookup_UnknownRoleZeroInitializedStorage[];
+struct Params { short secondInt; short thirdInt; char* first; char* second; unsigned char flagA; unsigned char flagB; unsigned char flagC; short firstInt; };
+// Original: arm9/ov003 @ 0x0215E510; symbol: Script_BuildAndAppendLinkedStringRecord; size: 0xEC.
+// Builds a script parameter record, copies two nonempty parameter strings into allocator-owned buffers, and appends the record.
+extern "C" int Script_BuildAndAppendLinkedStringRecord(void* parameter){ unsigned char record[0x14]; TextEntry_InitializeControlRecord(record); *(short*)(record+0x10)=_ZNK6Script9Parameter5ToIntEv(parameter); *(short*)record=_ZNK6Script9Parameter5ToIntEv((char*)parameter+8); *(short*)(record+2)=_ZNK6Script9Parameter5ToIntEv((char*)parameter+0x10); const char* text=_ZNK6Script9Parameter8ToStringEv((char*)parameter+0x18); if(text){unsigned count=String_CountBytesUntilTerminator((const signed char*)text);if(count){char* copy=_ZN13SafeAllocator8AllocateEj(ScriptExecuteBufferWithLookup_UnknownRoleZeroInitializedStorage[0],count+1);*(char**)(record+4)=copy;sprintf(copy,text);}} text=_ZNK6Script9Parameter8ToStringEv((char*)parameter+0x20); if(text){unsigned count=String_CountBytesUntilTerminator((const signed char*)text);if(count){char* copy=_ZN13SafeAllocator8AllocateEj(ScriptExecuteBufferWithLookup_UnknownRoleZeroInitializedStorage[0],count+1);*(char**)(record+8)=copy;sprintf(copy,text);}} record[0xc]=_ZNK6Script9Parameter5ToIntEv((char*)parameter+0x28);record[0xd]=_ZNK6Script9Parameter5ToIntEv((char*)parameter+0x30);record[0xe]=_ZNK6Script9Parameter5ToIntEv((char*)parameter+0x38);Util_AppendTwentyByteRecordIfSpace((void*)ScriptExecuteBufferWithLookup_UnknownRoleZeroInitializedStorage[1],record);return 1;}

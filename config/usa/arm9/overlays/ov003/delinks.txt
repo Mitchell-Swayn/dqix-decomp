@@ -5,3 +5,3002 @@
     .data       start:0x0217fc80 end:0x02180ca0 kind:data align:32
     .bss        start:0x02180ca0 end:0x02180d40 kind:bss align:32
 
+src/Data/Alltrades_AdvanceVocationStatPreview_PathDataPrmLevelDBin.cpp:
+    complete
+    .data start:0x0217fca0 end:0x0217fcb5
+
+src/Data/Alltrades_AdvanceVocationStatPreview_PathDataAniBgdsGp2.cpp:
+    complete
+    .data start:0x0217fcb5 end:0x0217fcc7
+
+src/Data/Alltrades_AdvanceVocationStatPreview_MarkupBgdsLGPac.cpp:
+    complete
+    .data start:0x0217fcc7 end:0x0217fcd5
+
+src/Data/Alltrades_AdvanceVocationStatPreview_FormatSSS.cpp:
+    complete
+    .data start:0x0217fcd5 end:0x0217fcde
+
+src/Data/UtilClearAndAppendFormattedValue_TextS.cpp:
+    complete
+    .data start:0x0217fce0 end:0x0217fce4
+
+src/Data/Alltrades_AdvanceVocationMenuLoading_PathDataBinMenuStrDamGp2.cpp:
+    complete
+    .data start:0x0217fce4 end:0x0217fcfe
+
+src/Data/Alltrades_AdvanceVocationMenuLoading_MarkupStrDamLGNat.cpp:
+    complete
+    .data start:0x0217fcfe end:0x0217fd0f
+
+src/Data/Alltrades_AdvanceVocationMenuLoading_PathDataAniObjTmGp2.cpp:
+    complete
+    .data start:0x0217fd0f end:0x0217fd23
+
+src/Data/Alltrades_AdvanceVocationMenuLoading_MarkupObjTmLGPac.cpp:
+    complete
+    .data start:0x0217fd23 end:0x0217fd33
+
+src/Data/Alltrades_AdvanceVocationMenuLoading_PathDataAniBgTmPac.cpp:
+    complete
+    .data start:0x0217fd33 end:0x0217fd46
+
+src/Data/Alltrades_AdvanceVocationMenuLoading_PathDataBinMenuBmDamaGp2.cpp:
+    complete
+    .data start:0x0217fd46 end:0x0217fd60
+
+src/Data/Alltrades_AdvanceVocationMenuLoading_TextBmDama.cpp:
+    complete
+    .data start:0x0217fd60 end:0x0217fd68
+
+src/Data/Alltrades_AdvanceVocationMenuLoading_PathDataAniLayDamaGp2.cpp:
+    complete
+    .data start:0x0217fd68 end:0x0217fd7e
+
+src/Data/Alltrades_AdvanceVocationMenuLoading_MarkupLayDamaLGLia.cpp:
+    complete
+    .data start:0x0217fd7e end:0x0217fd90
+
+src/Data/Alltrades_AdvanceVocationMenuLoading_PathDataBinMenuStrDajGp2.cpp:
+    complete
+    .data start:0x0217fd90 end:0x0217fdaa
+
+src/Data/Alltrades_AdvanceVocationMenuLoading_MarkupStrDajLGNat.cpp:
+    complete
+    .data start:0x0217fdaa end:0x0217fdbb
+
+src/Data/Alltrades_AdvanceRevocation_PathDataPrmLevelDBin.cpp:
+    complete
+    .data start:0x0217fdbb end:0x0217fdd0
+
+src/Data/Alltrades_AdvanceRevocation_PathDataBinTtlnameDGp2.cpp:
+    complete
+    .data start:0x0217fdd0 end:0x0217fde7
+
+src/Data/Alltrades_AdvanceRevocation_FormatTtlnameDLGNat.cpp:
+    complete
+    .data start:0x0217fde7 end:0x0217fdfa
+
+src/Data/Alltrades_AdvanceTransformationEffectLoading_PathDataEffectEv999991800Chr.cpp:
+    complete
+    .data start:0x0217fdfa end:0x0217fe16
+
+src/Data/AlltradesStartTransformationEffect_Text0.cpp:
+    complete
+    .data start:0x0217fe16 end:0x0217fe18
+
+src/Data/Church_FormatMemberExperienceAdvice_PathDataPrmLevelDBin.cpp:
+    complete
+    .data start:0x0217fe18 end:0x0217fe2d
+
+src/Data/Church_AdvanceServiceMenuLoading_PathDataScenarioStrChDGp2.cpp:
+    complete
+    .data start:0x0217fe2d end:0x0217fe48
+
+src/Data/Church_AdvanceServiceMenuLoading_FormatStrChDLGNat.cpp:
+    complete
+    .data start:0x0217fe48 end:0x0217fe5a
+
+src/Data/Church_AdvanceServiceMenuLoading_PathDataAniPenPac.cpp:
+    complete
+    .data start:0x0217fe5a end:0x0217fe6b
+
+src/Data/Church_AdvanceServiceMenuLoading_PathDataAniBgTmPac.cpp:
+    complete
+    .data start:0x0217fe6b end:0x0217fe7e
+
+src/Data/Inn_AdvanceStayResourceLoading_PathDataBinMenuStrRkiGp2.cpp:
+    complete
+    .data start:0x0217febc end:0x0217fed6
+
+src/Data/Inn_AdvanceStayResourceLoading_MarkupStrRkiLGNat.cpp:
+    complete
+    .data start:0x0217fed6 end:0x0217fee7
+
+src/Data/Inn_AdvanceStayResourceLoading_PathDataScenarioStrInDGp2.cpp:
+    complete
+    .data start:0x0217fee7 end:0x0217ff02
+
+src/Data/Inn_AdvanceStayResourceLoading_FormatStrInDLGNat.cpp:
+    complete
+    .data start:0x0217ff02 end:0x0217ff14
+
+src/Data/Inn_AdvanceStayResourceLoading_PathDataAniBgTmPac.cpp:
+    complete
+    .data start:0x0217ff14 end:0x0217ff27
+
+src/Data/Inn_AdvanceStayResourceLoading_PathDataAniObjRikkaPac.cpp:
+    complete
+    .data start:0x0217ff27 end:0x0217ff3e
+
+src/Data/Tavern_AdvancePartyMenuResourceLoading_PathDataBinMenuStrLavGp2.cpp:
+    complete
+    .data start:0x0217fff0 end:0x0218000a
+
+src/Data/Tavern_AdvancePartyMenuResourceLoading_MarkupStrLavLGNat.cpp:
+    complete
+    .data start:0x0218000a end:0x0218001b
+
+src/Data/Tavern_AdvancePartyMenuResourceLoading_PathDataBinMenuStrLuiGp2.cpp:
+    complete
+    .data start:0x0218001b end:0x02180035
+
+src/Data/Tavern_AdvancePartyMenuResourceLoading_MarkupStrLuiLGNat.cpp:
+    complete
+    .data start:0x02180035 end:0x02180046
+
+src/Data/Tavern_AdvancePartyMenuResourceLoading_PathDataAniBgLidGp2.cpp:
+    complete
+    .data start:0x02180046 end:0x0218005a
+
+src/Data/Tavern_AdvancePartyMenuResourceLoading_MarkupBgLidLGPac.cpp:
+    complete
+    .data start:0x0218005a end:0x0218006a
+
+src/Data/Tavern_AdvancePartyMenuResourceLoading_PathDataBinMenuBmLuiGp2.cpp:
+    complete
+    .data start:0x0218006a end:0x02180083
+
+src/Data/Tavern_AdvancePartyMenuResourceLoading_TextBmLui.cpp:
+    complete
+    .data start:0x02180083 end:0x0218008a
+
+src/Data/Tavern_AdvancePartyMenuResourceLoading_PathDataAniObjLuida2Pac.cpp:
+    complete
+    .data start:0x0218008a end:0x021800a4
+
+src/Data/PollSubCanvasAndTextResourceInitialization_PathDataAniBgSlime3Pac.cpp:
+    complete
+    .data start:0x021800a4 end:0x021800bb
+
+src/Data/PollSubCanvasAndTextResourceInitialization_PathDataBinMenuBmTuyoGp2.cpp:
+    complete
+    .data start:0x021800bb end:0x021800d5
+
+src/Data/PollSubCanvasAndTextResourceInitialization_TextBmTuyo.cpp:
+    complete
+    .data start:0x021800d5 end:0x021800e0
+
+src/Data/Bank_AdvanceDialogResourceLoading_PathDataBinMenuStrBankGp2.cpp:
+    complete
+    .data start:0x021800e0 end:0x021800fb
+
+src/Data/Bank_AdvanceDialogResourceLoading_MarkupStrBankLGNat.cpp:
+    complete
+    .data start:0x021800fb end:0x0218010d
+
+src/Data/Bank_AdvanceDialogResourceLoading_PathDataAniBgTmPac.cpp:
+    complete
+    .data start:0x0218010d end:0x02180120
+
+src/Data/Bank_AdvanceDialogResourceLoading_PathDataAniCellInstPac.cpp:
+    complete
+    .data start:0x02180120 end:0x02180137
+
+src/Data/Graphics_AppendFlagAndSignedValueStatusPage_MarkupBlktriangle.cpp:
+    complete
+    .data start:0x02180137 end:0x02180145
+
+src/Data/Graphics_AppendFlagAndSignedValueStatusPage_MarkupInvblktriangle.cpp:
+    complete
+    .data start:0x02180145 end:0x02180156
+
+src/Data/GraphicsAppendFlagAndSignedValueStatusPage_TextD.cpp:
+    complete
+    .data start:0x02180156 end:0x02180159
+
+src/Data/GraphicsAppendFlagAndSignedValueStatusPage_Text0.cpp:
+    complete
+    .data start:0x02180159 end:0x0218015c
+
+src/Data/ProgramData_MarkupStrRkmLGNat.cpp:
+    complete
+    .data start:0x0218015c end:0x0218016d
+
+src/Data/ProgramData_PathDataAniBgTmPac.cpp:
+    complete
+    .data start:0x0218016d end:0x02180180
+
+src/Data/ProgramData_PathDataAniObjRikkaPac.cpp:
+    complete
+    .data start:0x02180180 end:0x02180198
+
+src/Data/Inn_AdvanceServiceMenuResourceLoading_PathDataBinMenuStrRkmGp2.cpp:
+    complete
+    .data start:0x02180198 end:0x021801b2
+
+src/Data/Inn_AdvanceGreetingAndNotificationMessages_MarkupPADWAITADD.cpp:
+    complete
+    .data start:0x021801b2 end:0x021801c2
+
+src/Data/Inn_AdvanceGreetingAndNotificationMessages_MarkupPAGE.cpp:
+    complete
+    .data start:0x021801c2 end:0x021801c9
+
+src/Data/Inn_AdvanceGuestListPanel_PathDataAniObjRikkaPac.cpp:
+    complete
+    .data start:0x021801c9 end:0x021801e0
+
+src/Data/Inn_AdvanceGuestAndTreasureMapExchange_PathDataCharaSubS205Chr.cpp:
+    complete
+    .data start:0x021801e0 end:0x021801f8
+
+src/Data/Inn_AdvanceGuestAndTreasureMapExchange_TextGet.cpp:
+    complete
+    .data start:0x021801f8 end:0x021801fc
+
+src/Data/Inn_AdvanceGuestAndTreasureMapExchange_FormatSD.cpp:
+    complete
+    .data start:0x021801fc end:0x02180201
+
+src/Data/Inn_AdvanceGuestAndTreasureMapExchange_FormatSS.cpp:
+    complete
+    .data start:0x02180201 end:0x02180208
+
+src/Data/AdvanceTwoCanvasAndLayoutResourceLoads_PathDataAniBgTmPac.cpp:
+    complete
+    .data start:0x02180222 end:0x02180235
+
+src/Data/AdvanceTwoCanvasAndLayoutResourceLoads_PathDataAniObjGlPac.cpp:
+    complete
+    .data start:0x02180235 end:0x02180249
+
+src/Data/AdvanceTwoCanvasAndLayoutResourceLoads_PathDataAniLayGlistLia.cpp:
+    complete
+    .data start:0x02180249 end:0x02180260
+
+src/Data/AdvanceTwoCanvasAndLayoutResourceLoads_PathDataBinMenuStrGlmGp2.cpp:
+    complete
+    .data start:0x02180260 end:0x0218027a
+
+src/Data/AdvanceTwoCanvasAndLayoutResourceLoads_MarkupStrGlmLGNat.cpp:
+    complete
+    .data start:0x0218027a end:0x0218028b
+
+src/Data/GuestList_LoadAndRenderPage_PathDataAniGlGp2.cpp:
+    complete
+    .data start:0x0218028b end:0x0218029b
+
+src/Data/GuestList_LoadAndRenderPage_MarkupGlLGPac.cpp:
+    complete
+    .data start:0x0218029b end:0x021802a7
+
+src/Data/GuestList_LoadAndRenderPage_FormatPLTT14S.cpp:
+    complete
+    .data start:0x021802a7 end:0x021802b3
+
+src/Data/GuestListLoadAndRenderPage_TextS.cpp:
+    complete
+    .data start:0x021802b3 end:0x021802b6
+
+src/Data/GuestListLoadAndRenderPage_TextD.cpp:
+    complete
+    .data start:0x021802b6 end:0x021802b9
+
+src/Data/SharedData_TextHYPHENMINUS.cpp:
+    complete
+    .data start:0x021802c0 end:0x021802c2
+
+src/Data/SharedData_TextEXCLAMATIONMARK.cpp:
+    complete
+    .data start:0x021802c2 end:0x021802c4
+
+src/Data/SharedData_TextO.cpp:
+    complete
+    .data start:0x021802c4 end:0x021802c6
+
+src/Data/SharedData_TextU.cpp:
+    complete
+    .data start:0x021802c6 end:0x021802c8
+
+src/Data/SharedData_TextN.cpp:
+    complete
+    .data start:0x021802c8 end:0x021802ca
+
+src/Data/SharedData_TextI.cpp:
+    complete
+    .data start:0x021802ca end:0x021802cc
+
+src/Data/SharedData_TextV.cpp:
+    complete
+    .data start:0x021802cc end:0x021802ce
+
+src/Data/SharedData_TextQUESTIONMARK.cpp:
+    complete
+    .data start:0x021802ce end:0x021802d0
+
+src/Data/SharedData_TextE.cpp:
+    complete
+    .data start:0x021802d0 end:0x021802d2
+
+src/Data/SharedData_TextA.cpp:
+    complete
+    .data start:0x021802d2 end:0x021802d4
+
+src/Data/SharedData_TextFULLSTOP.cpp:
+    complete
+    .data start:0x021802d4 end:0x021802d6
+
+src/Data/SharedData_TextHIRAGANALETTERPE.cpp:
+    complete
+    .data start:0x021802d6 end:0x021802d9
+
+src/Data/SharedData_TextHIRAGANALETTERI.cpp:
+    complete
+    .data start:0x021802d9 end:0x021802dc
+
+src/Data/SharedData_TextKATAKANALETTERU.cpp:
+    complete
+    .data start:0x021802dc end:0x021802df
+
+src/Data/SharedData_TextKATAKANALETTERA.cpp:
+    complete
+    .data start:0x021802df end:0x021802e2
+
+src/Data/SharedData_TextKATAKANALETTERI.cpp:
+    complete
+    .data start:0x021802e2 end:0x021802e5
+
+src/Data/SharedData_TextHIRAGANALETTERU.cpp:
+    complete
+    .data start:0x021802e5 end:0x021802e8
+
+src/Data/SharedData_TextHIRAGANALETTERE.cpp:
+    complete
+    .data start:0x021802e8 end:0x021802eb
+
+src/Data/SharedData_TextDu.cpp:
+    complete
+    .data start:0x021802eb end:0x021802ee
+
+src/Data/SharedData_TextGe.cpp:
+    complete
+    .data start:0x021802ee end:0x021802f1
+
+src/Data/SharedData_TextKATAKANALETTERDE.cpp:
+    complete
+    .data start:0x021802f1 end:0x021802f4
+
+src/Data/SharedData_TextKATAKANALETTERVU.cpp:
+    complete
+    .data start:0x021802f4 end:0x021802f7
+
+src/Data/SharedData_TextPo.cpp:
+    complete
+    .data start:0x021802f7 end:0x021802fa
+
+src/Data/SharedData_TextKATAKANALETTERPO.cpp:
+    complete
+    .data start:0x021802fa end:0x021802fd
+
+src/Data/SharedData_TextHIRAGANALETTERPO.cpp:
+    complete
+    .data start:0x021802fd end:0x02180300
+
+src/Data/SharedData_TextPe.cpp:
+    complete
+    .data start:0x02180300 end:0x02180303
+
+src/Data/SharedData_TextKATAKANALETTERPE.cpp:
+    complete
+    .data start:0x02180303 end:0x02180306
+
+src/Data/SharedData_TextHIRAGANALETTERZE.cpp:
+    complete
+    .data start:0x02180306 end:0x02180309
+
+src/Data/SharedData_TextPu.cpp:
+    complete
+    .data start:0x02180309 end:0x0218030c
+
+src/Data/SharedData_TextHIRAGANALETTERO.cpp:
+    complete
+    .data start:0x0218030c end:0x0218030f
+
+src/Data/SharedData_TextDo.cpp:
+    complete
+    .data start:0x0218030f end:0x02180312
+
+src/Data/SharedData_TextHIRAGANALETTERHA.cpp:
+    complete
+    .data start:0x02180312 end:0x02180315
+
+src/Data/SharedData_TextHa.cpp:
+    complete
+    .data start:0x02180315 end:0x02180318
+
+src/Data/SharedData_TextHIRAGANALETTERPA.cpp:
+    complete
+    .data start:0x02180318 end:0x0218031b
+
+src/Data/SharedData_TextKATAKANALETTERPA.cpp:
+    complete
+    .data start:0x0218031b end:0x0218031e
+
+src/Data/SharedData_TextKATAKANALETTERO.cpp:
+    complete
+    .data start:0x0218031e end:0x02180321
+
+src/Data/SharedData_TextPa.cpp:
+    complete
+    .data start:0x02180321 end:0x02180324
+
+src/Data/SharedData_TextKATAKANALETTERBI.cpp:
+    complete
+    .data start:0x02180324 end:0x02180327
+
+src/Data/SharedData_TextKATAKANALETTERDO.cpp:
+    complete
+    .data start:0x02180327 end:0x0218032a
+
+src/Data/SharedData_TextHIRAGANALETTERDO.cpp:
+    complete
+    .data start:0x0218032a end:0x0218032d
+
+src/Data/SharedData_TextDe.cpp:
+    complete
+    .data start:0x0218032d end:0x02180330
+
+src/Data/SharedData_TextKATAKANALETTERN.cpp:
+    complete
+    .data start:0x02180330 end:0x02180333
+
+src/Data/SharedData_TextHIRAGANALETTERDE.cpp:
+    complete
+    .data start:0x02180333 end:0x02180336
+
+src/Data/SharedData_TextKATAKANALETTERGU.cpp:
+    complete
+    .data start:0x02180336 end:0x02180339
+
+src/Data/SharedData_TextKATAKANALETTERDU.cpp:
+    complete
+    .data start:0x02180339 end:0x0218033c
+
+src/Data/SharedData_TextHIRAGANALETTERDU.cpp:
+    complete
+    .data start:0x0218033c end:0x0218033f
+
+src/Data/SharedData_TextDi.cpp:
+    complete
+    .data start:0x0218033f end:0x02180342
+
+src/Data/SharedData_TextKATAKANALETTERDI.cpp:
+    complete
+    .data start:0x02180342 end:0x02180345
+
+src/Data/SharedData_TextHIRAGANALETTERDI.cpp:
+    complete
+    .data start:0x02180345 end:0x02180348
+
+src/Data/SharedData_TextDa.cpp:
+    complete
+    .data start:0x02180348 end:0x0218034b
+
+src/Data/SharedData_TextKATAKANALETTERDA.cpp:
+    complete
+    .data start:0x0218034b end:0x0218034e
+
+src/Data/SharedData_TextHIRAGANALETTERDA.cpp:
+    complete
+    .data start:0x0218034e end:0x02180351
+
+src/Data/SharedData_TextZo.cpp:
+    complete
+    .data start:0x02180351 end:0x02180354
+
+src/Data/SharedData_TextKATAKANALETTERZO.cpp:
+    complete
+    .data start:0x02180354 end:0x02180357
+
+src/Data/SharedData_TextHIRAGANALETTERZO.cpp:
+    complete
+    .data start:0x02180357 end:0x0218035a
+
+src/Data/SharedData_TextZe.cpp:
+    complete
+    .data start:0x0218035a end:0x0218035d
+
+src/Data/SharedData_TextKATAKANALETTERZE.cpp:
+    complete
+    .data start:0x0218035d end:0x02180360
+
+src/Data/SharedData_TextKATAKANALETTERWO.cpp:
+    complete
+    .data start:0x02180360 end:0x02180363
+
+src/Data/SharedData_TextZu.cpp:
+    complete
+    .data start:0x02180363 end:0x02180366
+
+src/Data/SharedData_TextKATAKANALETTERZU.cpp:
+    complete
+    .data start:0x02180366 end:0x02180369
+
+src/Data/SharedData_TextHIRAGANALETTERZU.cpp:
+    complete
+    .data start:0x02180369 end:0x0218036c
+
+src/Data/SharedData_TextHIRAGANALETTERBO.cpp:
+    complete
+    .data start:0x0218036c end:0x0218036f
+
+src/Data/SharedData_TextHIRAGANALETTERPI.cpp:
+    complete
+    .data start:0x0218036f end:0x02180372
+
+src/Data/SharedData_TextHIRAGANALETTERA.cpp:
+    complete
+    .data start:0x02180372 end:0x02180375
+
+src/Data/SharedData_TextKATAKANALETTERBO.cpp:
+    complete
+    .data start:0x02180375 end:0x02180378
+
+src/Data/SharedData_TextBo.cpp:
+    complete
+    .data start:0x02180378 end:0x0218037b
+
+src/Data/SharedData_TextKATAKANALETTERPI.cpp:
+    complete
+    .data start:0x0218037b end:0x0218037e
+
+src/Data/SharedData_TextHIRAGANALETTERZA.cpp:
+    complete
+    .data start:0x0218037e end:0x02180381
+
+src/Data/SharedData_TextNu.cpp:
+    complete
+    .data start:0x02180381 end:0x02180384
+
+src/Data/SharedData_TextHIRAGANALETTERNA.cpp:
+    complete
+    .data start:0x02180384 end:0x02180387
+
+src/Data/SharedData_TextBe.cpp:
+    complete
+    .data start:0x02180387 end:0x0218038a
+
+src/Data/SharedData_TextKATAKANALETTERBE.cpp:
+    complete
+    .data start:0x0218038a end:0x0218038d
+
+src/Data/SharedData_TextHIRAGANALETTERBE.cpp:
+    complete
+    .data start:0x0218038d end:0x02180390
+
+src/Data/SharedData_TextBu.cpp:
+    complete
+    .data start:0x02180390 end:0x02180393
+
+src/Data/SharedData_TextKATAKANALETTERBU.cpp:
+    complete
+    .data start:0x02180393 end:0x02180396
+
+src/Data/SharedData_TextHIRAGANALETTERBU.cpp:
+    complete
+    .data start:0x02180396 end:0x02180399
+
+src/Data/SharedData_TextBi.cpp:
+    complete
+    .data start:0x02180399 end:0x0218039c
+
+src/Data/SharedData_TextTo.cpp:
+    complete
+    .data start:0x0218039c end:0x0218039f
+
+src/Data/SharedData_TextHIRAGANALETTERBI.cpp:
+    complete
+    .data start:0x0218039f end:0x021803a2
+
+src/Data/SharedData_TextBa.cpp:
+    complete
+    .data start:0x021803a2 end:0x021803a5
+
+src/Data/SharedData_TextKATAKANALETTERBA.cpp:
+    complete
+    .data start:0x021803a5 end:0x021803a8
+
+src/Data/SharedData_TextHIRAGANALETTERBA.cpp:
+    complete
+    .data start:0x021803a8 end:0x021803ab
+
+src/Data/SharedData_TextGo.cpp:
+    complete
+    .data start:0x021803ab end:0x021803ae
+
+src/Data/SharedData_TextKATAKANALETTERGO.cpp:
+    complete
+    .data start:0x021803ae end:0x021803b1
+
+src/Data/SharedData_TextHIRAGANALETTERGO.cpp:
+    complete
+    .data start:0x021803b1 end:0x021803b4
+
+src/Data/SharedData_TextHIRAGANALETTERN.cpp:
+    complete
+    .data start:0x021803b4 end:0x021803b7
+
+src/Data/SharedData_TextKATAKANALETTERGE.cpp:
+    complete
+    .data start:0x021803b7 end:0x021803ba
+
+src/Data/SharedData_TextHIRAGANALETTERGE.cpp:
+    complete
+    .data start:0x021803ba end:0x021803bd
+
+src/Data/SharedData_TextGu.cpp:
+    complete
+    .data start:0x021803bd end:0x021803c0
+
+src/Data/SharedData_TextYu.cpp:
+    complete
+    .data start:0x021803c0 end:0x021803c3
+
+src/Data/SharedData_TextHIRAGANALETTERGU.cpp:
+    complete
+    .data start:0x021803c3 end:0x021803c6
+
+src/Data/SharedData_TextGi.cpp:
+    complete
+    .data start:0x021803c6 end:0x021803c9
+
+src/Data/SharedData_TextKATAKANALETTERGI.cpp:
+    complete
+    .data start:0x021803c9 end:0x021803cc
+
+src/Data/SharedData_TextHIRAGANALETTERGI.cpp:
+    complete
+    .data start:0x021803cc end:0x021803cf
+
+src/Data/SharedData_TextGa.cpp:
+    complete
+    .data start:0x021803cf end:0x021803d2
+
+src/Data/SharedData_TextKATAKANALETTERGA.cpp:
+    complete
+    .data start:0x021803d2 end:0x021803d5
+
+src/Data/SharedData_TextHIRAGANALETTERGA.cpp:
+    complete
+    .data start:0x021803d5 end:0x021803d8
+
+src/Data/SharedData_TextKATAKANALETTERSI.cpp:
+    complete
+    .data start:0x021803d8 end:0x021803db
+
+src/Data/SharedData_TextHIRAGANALETTERSA.cpp:
+    complete
+    .data start:0x021803de end:0x021803e1
+
+src/Data/SharedData_TextHIRAGANALETTERME.cpp:
+    complete
+    .data start:0x021803e7 end:0x021803ea
+
+src/Data/SharedData_TextMi.cpp:
+    complete
+    .data start:0x021803ed end:0x021803f0
+
+src/Data/SharedData_TextKATAKANAHIRAGANAPROLONGEDSOUNDMARK.cpp:
+    complete
+    .data start:0x021803f0 end:0x021803f3
+
+src/Data/SharedData_TextKATAKANALETTERSMALLO.cpp:
+    complete
+    .data start:0x021803f3 end:0x021803f6
+
+src/Data/SharedData_TextHIRAGANALETTERSMALLO.cpp:
+    complete
+    .data start:0x021803f6 end:0x021803f9
+
+src/Data/SharedData_TextKATAKANALETTERSMALLE.cpp:
+    complete
+    .data start:0x021803f9 end:0x021803fc
+
+src/Data/SharedData_TextHIRAGANALETTERSMALLE.cpp:
+    complete
+    .data start:0x021803fc end:0x021803ff
+
+src/Data/SharedData_TextKATAKANALETTERSMALLU.cpp:
+    complete
+    .data start:0x021803ff end:0x02180402
+
+src/Data/SharedData_TextHIRAGANALETTERSMALLU.cpp:
+    complete
+    .data start:0x02180402 end:0x02180405
+
+src/Data/SharedData_TextKATAKANALETTERSMALLI.cpp:
+    complete
+    .data start:0x02180405 end:0x02180408
+
+src/Data/SharedData_TextHIRAGANALETTERSMALLI.cpp:
+    complete
+    .data start:0x02180408 end:0x0218040b
+
+src/Data/SharedData_TextKATAKANALETTERSMALLA.cpp:
+    complete
+    .data start:0x0218040b end:0x0218040e
+
+src/Data/SharedData_TextHIRAGANALETTERSMALLA.cpp:
+    complete
+    .data start:0x0218040e end:0x02180411
+
+src/Data/SharedData_TextWo.cpp:
+    complete
+    .data start:0x02180411 end:0x02180414
+
+src/Data/SharedData_TextHIRAGANALETTERHE.cpp:
+    complete
+    .data start:0x02180414 end:0x02180417
+
+src/Data/SharedData_TextHIRAGANALETTERWO.cpp:
+    complete
+    .data start:0x02180417 end:0x0218041a
+
+src/Data/SharedData_TextKATAKANALETTERSMALLTU.cpp:
+    complete
+    .data start:0x0218041a end:0x0218041d
+
+src/Data/SharedData_TextHIRAGANALETTERSMALLTU.cpp:
+    complete
+    .data start:0x0218041d end:0x02180420
+
+src/Data/SharedData_TextKATAKANALETTERSMALLYO.cpp:
+    complete
+    .data start:0x02180420 end:0x02180423
+
+src/Data/SharedData_TextHIRAGANALETTERSMALLYO.cpp:
+    complete
+    .data start:0x02180423 end:0x02180426
+
+src/Data/SharedData_TextKATAKANALETTERSMALLYU.cpp:
+    complete
+    .data start:0x02180426 end:0x02180429
+
+src/Data/SharedData_TextHIRAGANALETTERSMALLYU.cpp:
+    complete
+    .data start:0x02180429 end:0x0218042c
+
+src/Data/SharedData_TextKATAKANALETTERZA.cpp:
+    complete
+    .data start:0x0218042c end:0x0218042f
+
+src/Data/SharedData_TextPi.cpp:
+    complete
+    .data start:0x0218042f end:0x02180432
+
+src/Data/SharedData_TextHIRAGANALETTERNE.cpp:
+    complete
+    .data start:0x02180432 end:0x02180435
+
+src/Data/SharedData_TextKATAKANALETTERNE.cpp:
+    complete
+    .data start:0x02180435 end:0x02180438
+
+src/Data/SharedData_TextZa.cpp:
+    complete
+    .data start:0x02180438 end:0x0218043b
+
+src/Data/SharedData_TextNe.cpp:
+    complete
+    .data start:0x0218043b end:0x0218043e
+
+src/Data/SharedData_TextHIRAGANALETTERNO.cpp:
+    complete
+    .data start:0x0218043e end:0x02180441
+
+src/Data/SharedData_TextHIRAGANALETTERZI.cpp:
+    complete
+    .data start:0x02180441 end:0x02180444
+
+src/Data/SharedData_TextHIRAGANALETTERPU.cpp:
+    complete
+    .data start:0x02180444 end:0x02180447
+
+src/Data/SharedData_TextKATAKANALETTERNU.cpp:
+    complete
+    .data start:0x02180447 end:0x0218044a
+
+src/Data/SharedData_TextHIRAGANALETTERNU.cpp:
+    complete
+    .data start:0x0218044a end:0x0218044d
+
+src/Data/SharedData_TextNi.cpp:
+    complete
+    .data start:0x0218044d end:0x02180450
+
+src/Data/SharedData_TextKATAKANALETTERNI.cpp:
+    complete
+    .data start:0x02180450 end:0x02180453
+
+src/Data/SharedData_TextHIRAGANALETTERNI.cpp:
+    complete
+    .data start:0x02180453 end:0x02180456
+
+src/Data/SharedData_TextNa.cpp:
+    complete
+    .data start:0x02180456 end:0x02180459
+
+src/Data/SharedData_TextKATAKANALETTERNA.cpp:
+    complete
+    .data start:0x02180459 end:0x0218045c
+
+src/Data/SharedData_TextKATAKANALETTERNO.cpp:
+    complete
+    .data start:0x0218045c end:0x0218045f
+
+src/Data/SharedData_TextRo.cpp:
+    complete
+    .data start:0x0218045f end:0x02180462
+
+src/Data/SharedData_TextKATAKANALETTERRO.cpp:
+    complete
+    .data start:0x02180462 end:0x02180465
+
+src/Data/SharedData_TextHIRAGANALETTERRO.cpp:
+    complete
+    .data start:0x02180465 end:0x02180468
+
+src/Data/SharedData_TextRe.cpp:
+    complete
+    .data start:0x02180468 end:0x0218046b
+
+src/Data/SharedData_TextKATAKANALETTERRE.cpp:
+    complete
+    .data start:0x0218046b end:0x0218046e
+
+src/Data/SharedData_TextHIRAGANALETTERRE.cpp:
+    complete
+    .data start:0x0218046e end:0x02180471
+
+src/Data/SharedData_TextRu.cpp:
+    complete
+    .data start:0x02180471 end:0x02180474
+
+src/Data/SharedData_TextKATAKANALETTERRU.cpp:
+    complete
+    .data start:0x02180474 end:0x02180477
+
+src/Data/SharedData_TextHIRAGANALETTERRU.cpp:
+    complete
+    .data start:0x02180477 end:0x0218047a
+
+src/Data/SharedData_TextRi.cpp:
+    complete
+    .data start:0x0218047a end:0x0218047d
+
+src/Data/SharedData_TextKATAKANALETTERRI.cpp:
+    complete
+    .data start:0x0218047d end:0x02180480
+
+src/Data/SharedData_TextHIRAGANALETTERRI.cpp:
+    complete
+    .data start:0x02180480 end:0x02180483
+
+src/Data/SharedData_TextRa.cpp:
+    complete
+    .data start:0x02180483 end:0x02180486
+
+src/Data/SharedData_TextKATAKANALETTERRA.cpp:
+    complete
+    .data start:0x02180486 end:0x02180489
+
+src/Data/SharedData_TextHIRAGANALETTERRA.cpp:
+    complete
+    .data start:0x02180489 end:0x0218048c
+
+src/Data/SharedData_TextNo.cpp:
+    complete
+    .data start:0x0218048c end:0x0218048f
+
+src/Data/SharedData_TextKATAKANALETTERTO.cpp:
+    complete
+    .data start:0x0218048f end:0x02180492
+
+src/Data/SharedData_TextHIRAGANALETTERTO.cpp:
+    complete
+    .data start:0x02180492 end:0x02180495
+
+src/Data/SharedData_TextTe.cpp:
+    complete
+    .data start:0x02180495 end:0x02180498
+
+src/Data/SharedData_TextKATAKANALETTERTE.cpp:
+    complete
+    .data start:0x02180498 end:0x0218049b
+
+src/Data/SharedData_TextHIRAGANALETTERTE.cpp:
+    complete
+    .data start:0x0218049b end:0x0218049e
+
+src/Data/SharedData_TextTu.cpp:
+    complete
+    .data start:0x0218049e end:0x021804a1
+
+src/Data/SharedData_TextKATAKANALETTERTU.cpp:
+    complete
+    .data start:0x021804a1 end:0x021804a4
+
+src/Data/SharedData_TextHIRAGANALETTERTU.cpp:
+    complete
+    .data start:0x021804a4 end:0x021804a7
+
+src/Data/SharedData_TextTi.cpp:
+    complete
+    .data start:0x021804a7 end:0x021804aa
+
+src/Data/SharedData_TextKATAKANALETTERTI.cpp:
+    complete
+    .data start:0x021804aa end:0x021804ad
+
+src/Data/SharedData_TextHIRAGANALETTERTI.cpp:
+    complete
+    .data start:0x021804ad end:0x021804b0
+
+src/Data/SharedData_TextTa.cpp:
+    complete
+    .data start:0x021804b0 end:0x021804b3
+
+src/Data/SharedData_TextKATAKANALETTERTA.cpp:
+    complete
+    .data start:0x021804b3 end:0x021804b6
+
+src/Data/SharedData_TextHIRAGANALETTERTA.cpp:
+    complete
+    .data start:0x021804b6 end:0x021804b9
+
+src/Data/SharedData_TextKATAKANALETTERZI.cpp:
+    complete
+    .data start:0x021804b9 end:0x021804bc
+
+src/Data/SharedData_TextHIRAGANALETTERSMALLYA.cpp:
+    complete
+    .data start:0x021804bc end:0x021804bf
+
+src/Data/SharedData_TextKATAKANALETTERSMALLYA.cpp:
+    complete
+    .data start:0x021804bf end:0x021804c2
+
+src/Data/SharedData_TextWa.cpp:
+    complete
+    .data start:0x021804c2 end:0x021804c5
+
+src/Data/SharedData_TextKATAKANALETTERWA.cpp:
+    complete
+    .data start:0x021804c5 end:0x021804c8
+
+src/Data/SharedData_TextHIRAGANALETTERWA.cpp:
+    complete
+    .data start:0x021804c8 end:0x021804cb
+
+src/Data/SharedData_TextYo.cpp:
+    complete
+    .data start:0x021804cb end:0x021804ce
+
+src/Data/SharedData_TextKATAKANALETTERYO.cpp:
+    complete
+    .data start:0x021804ce end:0x021804d1
+
+src/Data/SharedData_TextHIRAGANALETTERYO.cpp:
+    complete
+    .data start:0x021804d1 end:0x021804d4
+
+src/Data/SharedData_TextZi.cpp:
+    complete
+    .data start:0x021804d4 end:0x021804d7
+
+src/Data/SharedData_TextKATAKANALETTERYU.cpp:
+    complete
+    .data start:0x021804d7 end:0x021804da
+
+src/Data/SharedData_TextHIRAGANALETTERYU.cpp:
+    complete
+    .data start:0x021804da end:0x021804dd
+
+src/Data/SharedData_TextYa.cpp:
+    complete
+    .data start:0x021804dd end:0x021804e0
+
+src/Data/SharedData_TextKATAKANALETTERYA.cpp:
+    complete
+    .data start:0x021804e0 end:0x021804e3
+
+src/Data/SharedData_TextHIRAGANALETTERYA.cpp:
+    complete
+    .data start:0x021804e3 end:0x021804e6
+
+src/Data/SharedData_TextSo.cpp:
+    complete
+    .data start:0x021804e6 end:0x021804e9
+
+src/Data/SharedData_TextKATAKANALETTERSO.cpp:
+    complete
+    .data start:0x021804e9 end:0x021804ec
+
+src/Data/SharedData_TextHIRAGANALETTERSO.cpp:
+    complete
+    .data start:0x021804ec end:0x021804ef
+
+src/Data/SharedData_TextSe.cpp:
+    complete
+    .data start:0x021804ef end:0x021804f2
+
+src/Data/SharedData_TextKATAKANALETTERSE.cpp:
+    complete
+    .data start:0x021804f2 end:0x021804f5
+
+src/Data/SharedData_TextHIRAGANALETTERSE.cpp:
+    complete
+    .data start:0x021804f5 end:0x021804f8
+
+src/Data/SharedData_TextSu.cpp:
+    complete
+    .data start:0x021804f8 end:0x021804fb
+
+src/Data/SharedData_TextKATAKANALETTERSU.cpp:
+    complete
+    .data start:0x021804fb end:0x021804fe
+
+src/Data/SharedData_TextHIRAGANALETTERSU.cpp:
+    complete
+    .data start:0x021804fe end:0x02180501
+
+src/Data/SharedData_TextSi.cpp:
+    complete
+    .data start:0x02180501 end:0x02180504
+
+src/Data/SharedData_TextKATAKANALETTERPU.cpp:
+    complete
+    .data start:0x02180504 end:0x02180507
+
+src/Data/SharedData_TextHIRAGANALETTERSI.cpp:
+    complete
+    .data start:0x02180507 end:0x0218050a
+
+src/Data/SharedData_TextSa.cpp:
+    complete
+    .data start:0x0218050a end:0x0218050d
+
+src/Data/SharedData_TextKATAKANALETTERSA.cpp:
+    complete
+    .data start:0x0218050d end:0x02180510
+
+src/Data/SharedData_TextKATAKANALETTERE.cpp:
+    complete
+    .data start:0x02180510 end:0x02180513
+
+src/Data/SharedData_TextMo.cpp:
+    complete
+    .data start:0x02180513 end:0x02180516
+
+src/Data/SharedData_TextKATAKANALETTERMO.cpp:
+    complete
+    .data start:0x02180516 end:0x02180519
+
+src/Data/SharedData_TextHIRAGANALETTERMO.cpp:
+    complete
+    .data start:0x02180519 end:0x0218051c
+
+src/Data/SharedData_TextMe.cpp:
+    complete
+    .data start:0x0218051c end:0x0218051f
+
+src/Data/SharedData_TextKATAKANALETTERME.cpp:
+    complete
+    .data start:0x0218051f end:0x02180522
+
+src/Data/SharedData_TextKATAKANALETTERHA.cpp:
+    complete
+    .data start:0x02180522 end:0x02180525
+
+src/Data/SharedData_TextMu.cpp:
+    complete
+    .data start:0x02180525 end:0x02180528
+
+src/Data/SharedData_TextKATAKANALETTERMU.cpp:
+    complete
+    .data start:0x02180528 end:0x0218052b
+
+src/Data/SharedData_TextHIRAGANALETTERMU.cpp:
+    complete
+    .data start:0x0218052b end:0x0218052e
+
+src/Data/SharedData_TextHIRAGANALETTERHI.cpp:
+    complete
+    .data start:0x0218052e end:0x02180531
+
+src/Data/SharedData_TextKATAKANALETTERMI.cpp:
+    complete
+    .data start:0x02180531 end:0x02180534
+
+src/Data/SharedData_TextHIRAGANALETTERMI.cpp:
+    complete
+    .data start:0x02180534 end:0x02180537
+
+src/Data/SharedData_TextMa.cpp:
+    complete
+    .data start:0x02180537 end:0x0218053a
+
+src/Data/SharedData_TextKATAKANALETTERMA.cpp:
+    complete
+    .data start:0x0218053a end:0x0218053d
+
+src/Data/SharedData_TextHIRAGANALETTERMA.cpp:
+    complete
+    .data start:0x0218053d end:0x02180540
+
+src/Data/SharedData_TextKo.cpp:
+    complete
+    .data start:0x02180540 end:0x02180543
+
+src/Data/SharedData_TextKATAKANALETTERKO.cpp:
+    complete
+    .data start:0x02180543 end:0x02180546
+
+src/Data/SharedData_TextHIRAGANALETTERKO.cpp:
+    complete
+    .data start:0x02180546 end:0x02180549
+
+src/Data/SharedData_TextKe.cpp:
+    complete
+    .data start:0x02180549 end:0x0218054c
+
+src/Data/SharedData_TextKATAKANALETTERKE.cpp:
+    complete
+    .data start:0x0218054c end:0x0218054f
+
+src/Data/SharedData_TextHIRAGANALETTERKE.cpp:
+    complete
+    .data start:0x0218054f end:0x02180552
+
+src/Data/SharedData_TextKu.cpp:
+    complete
+    .data start:0x02180552 end:0x02180555
+
+src/Data/SharedData_TextKATAKANALETTERKU.cpp:
+    complete
+    .data start:0x02180555 end:0x02180558
+
+src/Data/SharedData_TextHIRAGANALETTERKU.cpp:
+    complete
+    .data start:0x02180558 end:0x0218055b
+
+src/Data/SharedData_TextKi.cpp:
+    complete
+    .data start:0x0218055b end:0x0218055e
+
+src/Data/SharedData_TextKATAKANALETTERKI.cpp:
+    complete
+    .data start:0x0218055e end:0x02180561
+
+src/Data/SharedData_TextHIRAGANALETTERKI.cpp:
+    complete
+    .data start:0x02180561 end:0x02180564
+
+src/Data/SharedData_TextKa.cpp:
+    complete
+    .data start:0x02180564 end:0x02180567
+
+src/Data/SharedData_TextKATAKANALETTERKA.cpp:
+    complete
+    .data start:0x02180567 end:0x0218056a
+
+src/Data/SharedData_TextHIRAGANALETTERKA.cpp:
+    complete
+    .data start:0x0218056a end:0x0218056d
+
+src/Data/SharedData_TextHo.cpp:
+    complete
+    .data start:0x0218056d end:0x02180570
+
+src/Data/SharedData_TextKATAKANALETTERHO.cpp:
+    complete
+    .data start:0x02180570 end:0x02180573
+
+src/Data/SharedData_TextHIRAGANALETTERHO.cpp:
+    complete
+    .data start:0x02180573 end:0x02180576
+
+src/Data/SharedData_TextHe.cpp:
+    complete
+    .data start:0x02180576 end:0x02180579
+
+src/Data/SharedData_TextKATAKANALETTERHE.cpp:
+    complete
+    .data start:0x02180579 end:0x0218057c
+
+src/Data/SharedData_TextKATAKANALETTERHI.cpp:
+    complete
+    .data start:0x0218057c end:0x0218057f
+
+src/Data/SharedData_TextHu.cpp:
+    complete
+    .data start:0x0218057f end:0x02180582
+
+src/Data/SharedData_TextKATAKANALETTERHU.cpp:
+    complete
+    .data start:0x02180582 end:0x02180585
+
+src/Data/SharedData_TextHIRAGANALETTERHU.cpp:
+    complete
+    .data start:0x02180585 end:0x02180588
+
+src/Data/SharedData_TextHi.cpp:
+    complete
+    .data start:0x02180588 end:0x0218058b
+
+src/Data/SharedData_TextHIRAGANALETTEREHIRAGANALETTERIHIRAGANALETTERGO.cpp:
+    complete
+    .data start:0x0218058b end:0x02180592
+
+src/Data/SharedData_TextKATAKANALETTERDOKATAKANALETTERIKATAKANALETTERTUHIRAGANALETTERGO.cpp:
+    complete
+    .data start:0x02180592 end:0x0218059b
+
+src/Data/SharedData_TextKATAKANALETTERHUKATAKANALETTERRAKATAKANALETTERNKATAKANALETTERSUHIRAGANALETTERGO.cpp:
+    complete
+    .data start:0x0218059b end:0x021805a6
+
+src/Data/SharedData_TextKATAKANALETTERIKATAKANALETTERTAKATAKANALETTERRIKATAKANALETTERAHIRAGANALETTERGO.cpp:
+    complete
+    .data start:0x021805a6 end:0x021805b1
+
+src/Data/SharedData_TextKATAKANALETTERSUKATAKANALETTERPEKATAKANALETTERIKATAKANALETTERNHIRAGANALETTERGO.cpp:
+    complete
+    .data start:0x021805b1 end:0x021805bc
+
+src/Data/ProgramData_TextHalloIchKommeAusJapanFreutMich.cpp:
+    complete
+    .data start:0x021805f8 end:0x02180624
+
+src/Data/ProgramData_MarkupHelloI1MFromJapanNiceToMeetYou.cpp:
+    complete
+    .data start:0x02180624 end:0x02180656
+
+src/Data/ProgramData_TextCiaoVengoDalGiapponePiacereDiConoscerti.cpp:
+    complete
+    .data start:0x02180656 end:0x0218068b
+
+src/Data/ProgramData_MarkupSalutJeViensDuJaponQuelleJoieDeTeRencontrer.cpp:
+    complete
+    .data start:0x0218068b end:0x021806c8
+
+src/Data/ProgramData_MarkupHolaSoyDeJapONMiraQueEstALejos.cpp:
+    complete
+    .data start:0x021806c8 end:0x0218070c
+
+src/Data/SharedData_TextKATAKANALETTERHAKATAKANALETTERROKATAKANAHIRAGANAPROLONGEDSOUNDMARKFULLWIDTHEXCLAMATIONMARKWHITESTARHIRAGA.cpp:
+    complete
+    .data start:0x0218076c end:0x021807e0
+
+src/Data/SharedData_TextKATAKANALETTERBOKATAKANALETTERNKATAKANALETTERZIKATAKANALETTERSMALLYUKATAKANAHIRAGANAPROLONGEDSOUNDMARKKAT.cpp:
+    complete
+    .data start:0x021807e0 end:0x02180854
+
+src/Data/SharedData_TextKATAKANALETTERGUKATAKANAHIRAGANAPROLONGEDSOUNDMARKKATAKANALETTERTEKATAKANALETTERNKATAKANALETTERTAKATAKANA.cpp:
+    complete
+    .data start:0x02180854 end:0x021808c8
+
+src/Data/SharedData_TextKATAKANALETTERTIKATAKANALETTERSMALLYAKATAKANALETTEROFULLWIDTHEXCLAMATIONMARKWHITESTARKATAKANALETTERIKATAK.cpp:
+    complete
+    .data start:0x021808c8 end:0x0218093c
+
+src/Data/SharedData_TextKATAKANALETTEROKATAKANAHIRAGANAPROLONGEDSOUNDMARKKATAKANALETTERRAFULLWIDTHEXCLAMATIONMARKWHITESTARKATAKAN.cpp:
+    complete
+    .data start:0x0218093c end:0x021809b0
+
+src/Data/TagMode_LoadGuestReceptionScreen_PathDataAniObjPmGp2.cpp:
+    complete
+    .data start:0x021809b0 end:0x021809c4
+
+src/Data/TagMode_LoadGuestReceptionScreen_MarkupObjPmLGPac.cpp:
+    complete
+    .data start:0x021809c4 end:0x021809d4
+
+src/Data/TagMode_LoadGuestReceptionScreen_PathDataAniCombGp2.cpp:
+    complete
+    .data start:0x021809d4 end:0x021809e6
+
+src/Data/TagMode_LoadGuestReceptionScreen_MarkupCombLGPac.cpp:
+    complete
+    .data start:0x021809e6 end:0x021809f4
+
+src/Data/TagMode_LoadGuestReceptionScreen_Format4D.cpp:
+    complete
+    .data start:0x021809f4 end:0x021809f8
+
+src/Data/TagMode_LoadGuestReceptionScreen_PathDataBinProfstrGp2.cpp:
+    complete
+    .data start:0x021809f8 end:0x02180a0d
+
+src/Data/TagMode_LoadGuestReceptionScreen_MarkupProfstrLGBin.cpp:
+    complete
+    .data start:0x02180a0d end:0x02180a1e
+
+src/Data/TagMode_LoadGuestReceptionScreen_PathDataBinMenuStrFmsGp2.cpp:
+    complete
+    .data start:0x02180a1e end:0x02180a38
+
+src/Data/TagMode_LoadGuestReceptionScreen_MarkupStrFmsLGBin.cpp:
+    complete
+    .data start:0x02180a38 end:0x02180a49
+
+src/Data/TagModeUpdateGuestReceptionScreen_TextS.cpp:
+    complete
+    .data start:0x02180a49 end:0x02180a4c
+
+src/Data/TagMode_UpdateGuestReceptionScreen_PathDataBinTtlnameDGp2.cpp:
+    complete
+    .data start:0x02180a4c end:0x02180a63
+
+src/Data/TagMode_UpdateGuestReceptionScreen_FormatTtlnameDLGNat.cpp:
+    complete
+    .data start:0x02180a63 end:0x02180a76
+
+src/Data/TagMode_LoadAndScrollArrivalNotice_PathDataAniComNamePac.cpp:
+    complete
+    .data start:0x02180a76 end:0x02180a8c
+
+src/Data/Shop_AdvanceInterfaceLoading_PathDataBinMenuShopdata1Bin.cpp:
+    complete
+    .data start:0x02180af4 end:0x02180b10
+
+src/Data/Shop_AdvanceInterfaceLoading_PathDataBinMenuStrS02DGp2.cpp:
+    complete
+    .data start:0x02180b10 end:0x02180b2c
+
+src/Data/Shop_AdvanceInterfaceLoading_FormatStrS02DLGNat.cpp:
+    complete
+    .data start:0x02180b2c end:0x02180b3f
+
+src/Data/Shop_AdvanceInterfaceLoading_PathDataAniBgShop2Pac.cpp:
+    complete
+    .data start:0x02180b3f end:0x02180b55
+
+src/Data/Shop_AdvanceInterfaceLoading_PathDataBinMenuBmShopGp2.cpp:
+    complete
+    .data start:0x02180b55 end:0x02180b6f
+
+src/Data/Shop_AdvanceInterfaceLoading_TextBmShop.cpp:
+    complete
+    .data start:0x02180b6f end:0x02180b77
+
+src/Data/Shop_AdvanceInterfaceLoading_PathDataAniObjShopGp2.cpp:
+    complete
+    .data start:0x02180b77 end:0x02180b8d
+
+src/Data/Shop_AdvanceInterfaceLoading_MarkupObjShopLGPac.cpp:
+    complete
+    .data start:0x02180b8d end:0x02180b9f
+
+src/Data/Shop_AdvanceTransactionMessage_PathDataPrmItemnameGp2.cpp:
+    complete
+    .data start:0x02180b9f end:0x02180bb5
+
+src/Data/Shop_AdvanceTransactionMessage_MarkupItemnameLGNat.cpp:
+    complete
+    .data start:0x02180bb5 end:0x02180bc8
+
+src/Data/Filesystem_ExecuteScriptAfterBackgroundLoad_PathDataMenuRbEventBin.cpp:
+    complete
+    .data start:0x02180bd8 end:0x02180bef
+
+src/Data/Town_AdvanceModelPreviewLoading_PathDataPackLv5EnemyGp2.cpp:
+    complete
+    .data start:0x02180bef end:0x02180c07
+
+src/Data/Town_AdvanceModelPreviewLoading_PathDataMenuRbEv00Pac.cpp:
+    complete
+    .data start:0x02180c07 end:0x02180c1d
+
+src/Data/Town_LoadPreviewModel_TextCchr.cpp:
+    complete
+    .data start:0x02180c1d end:0x02180c23
+
+src/Data/Town_LoadPreviewModel_TextStand.cpp:
+    complete
+    .data start:0x02180c23 end:0x02180c2c
+
+src/Data/Town_AdvanceDestinationMenuLoading_PathDataAniObjRikkaPac.cpp:
+    complete
+    .data start:0x02180c2c end:0x02180c43
+
+src/Data/Town_AdvanceDestinationMenuLoading_PathDataAniBgTmPac.cpp:
+    complete
+    .data start:0x02180c43 end:0x02180c56
+
+src/Data/Town_AdvanceDestinationMenuLoading_PathDataBinMenuStrEvGp2.cpp:
+    complete
+    .data start:0x02180c56 end:0x02180c6f
+
+src/Data/Town_AdvanceDestinationMenuLoading_MarkupStrEvLGNat.cpp:
+    complete
+    .data start:0x02180c6f end:0x02180c7f
+
+src/Town/Shops/Shop_TestSelectionConfirmation.cpp:
+    complete
+    .text start:0x021765b4 end:0x021766e8
+
+src/Town/Tavern/Tavern_OpenConfirmationOptions.cpp:
+    complete
+    .text start:0x021612c0 end:0x02161344
+
+src/Town/Vocations/Alltrades_AllocateVocationPreviewArena.cpp:
+    complete
+    .text start:0x021536e0 end:0x0215376c
+
+src/Town/Shops/Shop_TestSelectionCancellation.cpp:
+    complete
+    .text start:0x021766e8 end:0x02176798
+
+src/Town/Tavern/Tavern_SetPartyMenuFlags.cpp:
+    complete
+    .text start:0x02166164 end:0x02166184
+
+src/Town/SharedServices/TextEntry_InitializeControlAndGridTables.cpp:
+    complete
+    .text start:0x0215E6D8 end:0x0215E6F8
+
+src/Town/Vocations/Alltrades_CancelVocationPreviewLoads.cpp:
+    complete
+    .text start:0x02153874 end:0x021538e0
+
+src/Town/Vocations/Alltrades_GetSelectedVocation.cpp:
+    complete
+    .text start:0x02156034 end:0x02156054
+
+src/Town/Vocations/Alltrades_ResetTransformationEffectLoading.cpp:
+    complete
+    .text start:0x0215873c end:0x02158754
+
+src/Town/Vocations/Alltrades_StartTransformationEffect.cpp:
+    complete
+    .text start:0x02158a50 end:0x02158a84
+
+src/Town/Tavern/Tavern_GetStoredCharacterByIndex.cpp:
+    complete
+    .text start:0x02160bd0 end:0x02160bf8
+
+src/Town/Shops/Shop_ResetStockAndPricingConfiguration.cpp:
+    complete
+    .text start:0x02174408 end:0x02174454
+
+src/Town/Shops/Shop_GetSaleQuantityWithinGoldLimit.cpp:
+    complete
+    .text start:0x02179e18 end:0x02179e44
+
+src/Town/SharedServices/TextEntry_FindControlByAction.cpp:
+    complete
+    .text start:0x0215f4a4 end:0x0215f4e4
+
+src/Town/Inn/Inn_RequestStayDialogClose.cpp:
+    complete
+    .text start:0x0215caa4 end:0x0215cab0
+
+src/Town/Shops/Shop_ReadQuantityArrowTouch.cpp:
+    complete
+    .text start:0x02178218 end:0x021782a0
+
+src/Town/SharedServices/CharacterStatus_IgnoreDisplayModeOne.cpp:
+    complete
+    .text start:0x02167b30 end:0x02167b34
+
+src/Town/Guests/TagMode_IgnoreExchangeStateCallback.cpp:
+    complete
+    .text start:0x02171d74 end:0x02171d78
+
+src/Town/Guests/TagMode_IgnoreNoticeStateCallback.cpp:
+    complete
+    .text start:0x02173b48 end:0x02173b4c
+
+src/Town/SharedServices/CharacterStatus_IgnoreDisplayModeFive.cpp:
+    complete
+    .text start:0x02167ca4 end:0x02167ca8
+
+src/Town/Guests/TagMode_IgnoreReceptionStateCallback.cpp:
+    complete
+    .text start:0x021733cc end:0x021733d0
+
+src/Town/SharedServices/Town_DrawFacilityModelPreview.cpp:
+    complete
+    .text start:0x0217bdb4 end:0x0217bdb8
+
+src/Town/SharedServices/Town_RefreshFacilityPreviewTransfers.cpp:
+    complete
+    .text start:0x02173f04 end:0x02173f08
+
+src/Town/SharedServices/CharacterStatus_IgnoreDisplayModeThree.cpp:
+    complete
+    .text start:0x02167c9c end:0x02167ca0
+
+src/Town/SharedServices/CharacterStatus_IgnoreDisplayModeFour.cpp:
+    complete
+    .text start:0x02167ca0 end:0x02167ca4
+
+src/Town/SharedServices/TextEntry_RequestConfirmation.cpp:
+    complete
+    .text start:0x0215ef2c end:0x0215ef34
+
+src/Town/SharedServices/TextEntry_RequestRandomName.cpp:
+    complete
+    .text start:0x0215ef4c end:0x0215ef54
+
+src/Town/SharedServices/Town_MarkPartySynchronizationAcknowledged.cpp:
+    complete
+    .text start:0x02167240 end:0x0216724c
+
+src/Town/Vocations/Alltrades_UpdateVocationStatPreviewCallback.cpp:
+    complete
+    .text start:0x02154450 end:0x0215445c
+
+src/Town/SharedServices/Graphics_DrawProtagonistWithTemporaryHeightAndCameraDisplacement.cpp:
+    complete
+    .text start:0x021600b8 end:0x02160134
+
+src/Town/SharedServices/CountNonNullEntries12.cpp:
+    complete
+    .text start:0x0215570c end:0x02155740
+
+src/Town/SharedServices/Memory_AllocateNestedPoolsAndWindowControls.cpp:
+    complete
+    .text start:0x02158a84 end:0x02158bb8
+
+src/Town/SharedServices/Network_ClassifyConnectionByProtagonistIndex.cpp:
+    complete
+    .text start:0x02160b50 end:0x02160b84
+
+src/Town/Tavern/Tavern_DrawPartySelectionCursor.cpp:
+    complete
+    .text start:0x0216039c end:0x021604d0
+
+src/Town/SharedServices/ResetThreeSentinelWordsAndTrailingValue.cpp:
+    complete
+    .text start:0x0216fb6c end:0x0216fba0
+
+src/Town/Shops/Shop_RefreshPendingDisplayPart.cpp:
+    complete
+    .text start:0x0217451c end:0x02174550
+
+src/Town/SharedServices/Graphics_ResetEnabledTransfersAndWindow.cpp:
+    complete
+    .text start:0x02174890 end:0x021748c4
+
+src/Town/Shops/Shop_GetAdjustedItemPrice.cpp:
+    complete
+    .text start:0x02175898 end:0x021758cc
+
+src/Town/SharedServices/Window_UpdateEntryIfBitSet.cpp:
+    complete
+    .text start:0x02176098 end:0x021760cc
+
+src/Town/SharedServices/Town_InitializeQueuedFacilityRecord.cpp:
+    complete
+    .text start:0x0217ef24 end:0x0217ef58
+
+src/Town/SharedServices/Filesystem_ExecuteScriptAfterBackgroundLoad.cpp:
+    complete
+    .text start:0x0217be40 end:0x0217bf78
+
+src/Town/SharedServices/Graphics_CleanupTransferState.cpp:
+    complete
+    .text start:0x02167548 end:0x0216757c
+
+src/Town/Inn/Inn_SelectPartyVitalRatioTextColor.cpp:
+    complete
+    .text start:0x0215f56c end:0x0215f5e8
+
+src/Town/SharedServices/UpdateDisplayCommandState.cpp:
+    complete
+    .text start:0x0217dc94 end:0x0217dd10
+
+src/Town/SharedServices/System_DispatchTwoIndexedMemberHandlers.cpp:
+    complete
+    .text start:0x021727c8 end:0x021728fc
+
+src/Town/SharedServices/Graphics_FindContainingRectangle.cpp:
+    complete
+    .text start:0x02169674 end:0x021696f4
+
+src/Town/SharedServices/Graphics_InitializeObjectAndTwoCanvasTransfers.cpp:
+    complete
+    .text start:0x0217bcb8 end:0x0217bd38
+
+src/Town/SharedServices/Grid_ConfigureSelectionFromColumnLimits.cpp:
+    complete
+    .text start:0x021696f4 end:0x0216982c
+
+src/Town/SharedServices/Graphics_UpdateSelectedRecordMarker.cpp:
+    complete
+    .text start:0x0215c32c end:0x0215c464
+
+src/Town/SharedServices/Graphics_ConfigureEightIndexedDisplayRecords.cpp:
+    complete
+    .text start:0x02177410 end:0x02177550
+
+src/Town/SharedServices/Graphics_ResetOwnerResourcesAndDestroyAllocators.cpp:
+    complete
+    .text start:0x02158d4c end:0x02158e94
+
+src/Town/Bank/Bank_RequestDialogShutdown.cpp:
+    complete
+    .text start:0x021685cc end:0x021685dc
+
+src/Town/Church/Church_RequestServiceMenuCancellation.cpp:
+    complete
+    .text start:0x02159240 end:0x02159250
+
+src/Town/SharedServices/Town_InvokeFacilityPreviewDraw.cpp:
+    complete
+    .text start:0x02173ef4 end:0x02173f04
+
+src/Town/Inn/Inn_InitializeStayChoiceSelections.cpp:
+    complete
+    .text start:0x0215dd3c end:0x0215ddc0
+
+src/Town/Vocations/Alltrades_IsVocationPreviewReady.cpp:
+    complete
+    .text start:0x021538e0 end:0x021538f4
+
+src/Town/Inn/Inn_SetPricePerGuestAndComputeTotal.cpp:
+    complete
+    .text start:0x0215ca90 end:0x0215caa4
+
+src/Town/SharedServices/KeyRepeater_GetHeldKeyMask.cpp:
+    complete
+    .text start:0x0217b200 end:0x0217b214
+
+src/Town/SharedServices/UpdateObjectRatioDisplayParts.cpp:
+    complete
+    .text start:0x02158334 end:0x02158480
+
+src/Town/SharedServices/Text_RefreshSixEntryPage.cpp:
+    complete
+    .text start:0x0217dfb4 end:0x0217e100
+
+src/Town/SharedServices/AdvanceFlaggedDisplayCommandState.cpp:
+    complete
+    .text start:0x0216d84c end:0x0216d8d4
+
+src/Town/SharedServices/Graphics_AdvanceDisplayCommandFlag1000.cpp:
+    complete
+    .text start:0x02160ec4 end:0x02160f4c
+
+src/Town/SharedServices/DispatchNonnegativeMemberStateAndReadStatus.cpp:
+    complete
+    .text start:0x0217bdb8 end:0x0217be40
+
+src/Town/SharedServices/Graphics_ReleaseBackgroundState.cpp:
+    complete
+    .text start:0x0215fb94 end:0x0215fce8
+
+src/Town/Vocations/Alltrades_InitializeRevocationRewardMessage.cpp:
+    complete
+    .text start:0x021580a0 end:0x021580d8
+
+src/Town/SharedServices/Resource_AllocateFourTextBuffers.cpp:
+    complete
+    .text start:0x021602bc end:0x02160344
+
+src/Town/SharedServices/Graphics_UpdateBufferedRecordMarkerPosition.cpp:
+    complete
+    .text start:0x0215e2a8 end:0x0215e3fc
+
+src/Town/SharedServices/InitializeSafeAllocatorObject.cpp:
+    complete
+    .text start:0x0217e334 end:0x0217e36c
+
+src/Town/SharedServices/UpdatePartyVisibilityAndBrightnessTransition.cpp:
+    complete
+    .text start:0x02165730 end:0x02165888
+
+src/Town/SharedServices/TextEntry_SelectControlByNameAndResetInput.cpp:
+    complete
+    .text start:0x0215f41c end:0x0215f4a4
+
+src/Town/SharedServices/TextEntry_FindControlByIdentifier.cpp:
+    complete
+    .text start:0x0215e824 end:0x0215e85c
+
+src/Town/SharedServices/GameState_CreateAndAppendIndexedObject.cpp:
+    complete
+    .text start:0x0217e300 end:0x0217e334
+
+src/Town/SharedServices/GameState_ClampSelectedListEntry.cpp:
+    complete
+    .text start:0x02179ff0 end:0x0217a14c
+
+src/Town/SharedServices/GameState_FindFirstEightByteRecordWithMaskBits.cpp:
+    complete
+    .text start:0x0215e8f4 end:0x0215e930
+
+src/Town/SharedServices/TextEntry_SelectPrimaryLayout.cpp:
+    complete
+    .text start:0x0215ee88 end:0x0215eea0
+
+src/Town/SharedServices/TextEntry_SelectExtendedLayout.cpp:
+    complete
+    .text start:0x0215ef34 end:0x0215ef4c
+
+src/Town/Vocations/Alltrades_ResetIdleVocationPreviewSubphase.cpp:
+    complete
+    .text start:0x0215385c end:0x02153874
+
+src/Town/SharedServices/TextEntry_SelectSecondaryLayout.cpp:
+    complete
+    .text start:0x0215eea0 end:0x0215eeb8
+
+src/Town/SharedServices/Ov003_UpdateNestedStateIfPresent.cpp:
+    complete
+    .text start:0x0217eec4 end:0x0217eedc
+
+src/Town/SharedServices/Resource_InitializeLinkedCoordinateAndHalfwordEntry.cpp:
+    complete
+    .text start:0x0215e85c end:0x0215e898
+
+src/Town/Vocations/Alltrades_IsMemberDead.cpp:
+    complete
+    .text start:0x02155fc0 end:0x02155ffc
+
+src/Town/SharedServices/Town_DrawModalOverlayAttachments.cpp:
+    complete
+    .text start:0x0217eedc end:0x0217eef4
+
+src/Town/SharedServices/TextEntry_SelectControlByActionIfPresent.cpp:
+    complete
+    .text start:0x0215f4e4 end:0x0215f4fc
+
+src/Town/SharedServices/Town_RefreshModalOverlayResources.cpp:
+    complete
+    .text start:0x0217eef4 end:0x0217ef0c
+
+src/Town/SharedServices/GameState_GetRemainingKeyValue.cpp:
+    complete
+    .text start:0x021784bc end:0x02178548
+
+src/Town/SharedServices/Graphics_ResetDisplaySelectionAndLinkedOwner.cpp:
+    complete
+    .text start:0x02176468 end:0x021764f4
+
+src/Town/SharedServices/Graphics_ConfigureSelectedPartModes.cpp:
+    complete
+    .text start:0x0217818c end:0x02178218
+
+src/Town/SharedServices/Resource_UpdateSixColumnSelection.cpp:
+    complete
+    .text start:0x02178548 end:0x021785d4
+
+src/Town/SharedServices/Graphics_ResetInterfaceBuffersAndState.cpp:
+    complete
+    .text start:0x02173d40 end:0x02173ea8
+
+src/Town/SharedServices/Script_CreateLinkedCoordinateHalfwordEntries.cpp:
+    complete
+    .text start:0x0215e750 end:0x0215e790
+
+src/Town/SharedServices/Memory_InitializeThreeNestedAllocators.cpp:
+    complete
+    .text start:0x0217bd38 end:0x0217bdb4
+
+src/Town/SharedServices/Util_ClearAndAppendFormattedValue.cpp:
+    complete
+    .text start:0x02158140 end:0x02158184
+
+src/Town/Bank/Bank_AdjustHeldGoldWithLimit.cpp:
+    complete
+    .text start:0x02169938 end:0x0216997c
+
+src/Town/SharedServices/GameState_CountPositiveSignedByteQuantitiesForGlobalElement.cpp:
+    complete
+    .text start:0x02175f90 end:0x02175fd4
+
+src/Town/SharedServices/TryAddAmountWith9999999Cap.cpp:
+    complete
+    .text start:0x0215b580 end:0x0215b5c4
+
+src/Town/SharedServices/Graphics_UpdateSubDisplayFadeOut.cpp:
+    complete
+    .text start:0x0215445c end:0x021544ec
+
+src/Town/SharedServices/GameState_SetDisplayPartEnabledBitAndConfigure.cpp:
+    complete
+    .text start:0x02166f80 end:0x02166fc4
+
+src/Town/SharedServices/TextEntry_ClearNavigationGrid.cpp:
+    complete
+    .text start:0x0215e4c8 end:0x0215e4e4
+
+src/Town/SharedServices/ResetIndexedEntryResourcesIfEnabled.cpp:
+    complete
+    .text start:0x021685a8 end:0x021685c4
+
+src/Town/SharedServices/Graphics_AdvanceDisplayCommandFlag40.cpp:
+    complete
+    .text start:0x021749f0 end:0x02174a80
+
+src/Town/Bank/Bank_ResetDigitTouchRepeat.cpp:
+    complete
+    .text start:0x02169658 end:0x02169674
+
+src/Town/SharedServices/Graphics_SetMainEngineOnUpperScreen.cpp:
+    complete
+    .text start:0x0217eea8 end:0x0217eec4
+
+src/Town/SharedServices/Graphics_InitializeGeometryRegisters.cpp:
+    complete
+    .text start:0x0215c270 end:0x0215c300
+
+src/Town/SharedServices/ResetResourcesForOwnedObjectIfPresent.cpp:
+    complete
+    .text start:0x0217e598 end:0x0217e5b0
+
+src/Town/SharedServices/GameState_FilterListedObjectsWithPositiveHalfword.cpp:
+    complete
+    .text start:0x0215e1ec end:0x0215e27c
+
+src/Town/SharedServices/Graphics_SetSelectedScreenPowerState.cpp:
+    complete
+    .text start:0x0217c2a0 end:0x0217c2bc
+
+src/Town/SharedServices/Text_SetupCenteredSelectedPartLabel.cpp:
+    complete
+    .text start:0x02167e28 end:0x02167fa4
+
+src/Town/SharedServices/GameState_PartyMemberHasMatchingIndexedEntry.cpp:
+    complete
+    .text start:0x02155f40 end:0x02155f88
+
+src/Town/Church/Church_AppendTwoMessageFragments.cpp:
+    complete
+    .text start:0x02159290 end:0x021592d8
+
+src/Town/SharedServices/InitializeBufferHeaderAndStatusBytes.cpp:
+    complete
+    .text start:0x0215efb8 end:0x0215f000
+
+src/Town/Inn/Inn_IsStayChoiceConfirmed.cpp:
+    complete
+    .text start:0x0215dcb8 end:0x0215dd00
+
+src/Town/SharedServices/System_TestCombinedReadyFlags.cpp:
+    complete
+    .text start:0x0216950c end:0x02169554
+
+src/Town/SharedServices/Graphics_InitializeCanvasAndSelectionController.cpp:
+    complete
+    .text start:0x02158bb8 end:0x02158d4c
+
+src/Town/Shops/Shop_RefreshSellableItemList.cpp:
+    complete
+    .text start:0x02177dd4 end:0x0217818c
+
+src/Town/SharedServices/Script_SetSelectedResourceNamesAndFixedValues.cpp:
+    complete
+    .text start:0x0217bb1c end:0x0217bcb8
+
+src/Town/SharedServices/TextEntry_ToggleAlternateGlyphSelection.cpp:
+    complete
+    .text start:0x0215ee68 end:0x0215ee88
+
+src/Town/SharedServices/ResetCountedTransferEntriesIfEnabledAndPresent.cpp:
+    complete
+    .text start:0x0216757c end:0x0216759c
+
+src/Town/SharedServices/Util_AppendTwentyByteRecordIfSpace.cpp:
+    complete
+    .text start:0x0215e790 end:0x0215e824
+
+src/Town/SharedServices/Graphics_ConfigureScaledDisplayPart.cpp:
+    complete
+    .text start:0x0217726c end:0x02177300
+
+src/Town/SharedServices/GameState_CountValidObjectsNotInIndexList.cpp:
+    complete
+    .text start:0x02160b84 end:0x02160bd0
+
+src/Town/SharedServices/Graphics_DrawAndUpdateEmbeddedObject.cpp:
+    complete
+    .text start:0x0216d5f0 end:0x0216d63c
+
+src/Town/Guests/GuestList_GetSubmenuMarkerPosition.cpp:
+    complete
+    .text start:0x0217063c end:0x02170688
+
+src/Town/SharedServices/Memory_InitializeTypeEighteenAllocatorState.cpp:
+    complete
+    .text start:0x0217e630 end:0x0217e67c
+
+src/Town/SharedServices/Overlay_DestroyObjectAndFree.cpp:
+    complete
+    .text start:0x0217e36c end:0x0217e3b8
+
+src/Town/SharedServices/CharacterStatus_SetDisplayedStatistics.cpp:
+    complete
+    .text start:0x02168088 end:0x021680d4
+
+src/Town/SharedServices/GameState_InitializeStatusAfterDispatch.cpp:
+    complete
+    .text start:0x02173490 end:0x021734dc
+
+src/Town/SharedServices/Graphics_DrawAndUpdateEmbeddedObjectFromFieldC.cpp:
+    complete
+    .text start:0x0217f230 end:0x0217f248
+
+src/Town/SharedServices/Graphics_AdvanceDisplayTransitionRequest.cpp:
+    complete
+    .text start:0x0215dc20 end:0x0215dcb8
+
+src/Town/SharedServices/Graphics_UpdatePartyEffectAndDraw.cpp:
+    complete
+    .text start:0x02154f80 end:0x02154fd0
+
+src/Town/SharedServices/Memory_AllocateThreeSizedPools.cpp:
+    complete
+    .text start:0x0216724c end:0x021672e4
+
+src/Town/SharedServices/Resource_FormatAndLoadSelectionRecord.cpp:
+    complete
+    .text start:0x0216dc58 end:0x0216dcf0
+
+src/Town/SharedServices/Graphics_InitializeSelectedDisplayPartAndLinkedOwner.cpp:
+    complete
+    .text start:0x02155580 end:0x02155618
+
+src/Town/SharedServices/Town_InitializeDestinationMenu.cpp:
+    complete
+    .text start:0x0217daf0 end:0x0217db88
+
+src/Town/SharedServices/Graphics_InitializeBackgroundCanvasAndDayState.cpp:
+    complete
+    .text start:0x0215c650 end:0x0215c800
+
+src/Town/SharedServices/Text_InsertSelectedGlyphWithinLengthAndWidthLimits.cpp:
+    complete
+    .text start:0x0215ec90 end:0x0215ee44
+
+src/Town/Bank/Bank_UpdateDialogSelection.cpp:
+    complete
+    .text start:0x021694b8 end:0x0216950c
+
+src/Town/SharedServices/Graphics_AdvanceSubBrightnessTransition.cpp:
+    complete
+    .text start:0x02173af4 end:0x02173b48
+
+src/Town/Shops/Shop_RefreshGoldDisplay.cpp:
+    complete
+    .text start:0x02176798 end:0x021767ec
+
+src/Town/SharedServices/Ov003_SetObjectStateWhenMaskOrGlobalFlag.cpp:
+    complete
+    .text start:0x0217c74c end:0x0217c7a0
+
+src/Town/SharedServices/GameState_InitializeAndAppendIndexedObject.cpp:
+    complete
+    .text start:0x0217e5dc end:0x0217e630
+
+src/Town/SharedServices/GameState_AddCappedRecordValue.cpp:
+    complete
+    .text start:0x02175d78 end:0x02175df4
+
+src/Town/SharedServices/Graphics_UpdateSubBackgroundPaletteLoad.cpp:
+    complete
+    .text start:0x021735c4 end:0x02173788
+
+src/Town/SharedServices/Script_ExecuteBufferWithLookup.cpp:
+    complete
+    .text start:0x0215e6f8 end:0x0215e750
+
+src/Town/SharedServices/TextEntry_TogglePrimaryLayouts.cpp:
+    complete
+    .text start:0x0215ee44 end:0x0215ee68
+
+src/Town/SharedServices/ClearGlobalFlagByteWhenObjectMaskUnset.cpp:
+    complete
+    .text start:0x02160b2c end:0x02160b50
+
+src/Town/SharedServices/Ov003_ProcessFixedRegionInChunks.cpp:
+    complete
+    .text start:0x02172518 end:0x02172570
+
+src/Town/SharedServices/Graphics_InitializeMainBackgroundWindowState.cpp:
+    complete
+    .text start:0x0215f9c0 end:0x0215fb94
+
+src/Town/SharedServices/Graphics_AppendFlagAndSignedValueStatusPage.cpp:
+    complete
+    .text start:0x02169d10 end:0x02169eec
+
+src/Town/SharedServices/Graphics_LoadCanvasResourceBlocks.cpp:
+    complete
+    .text start:0x0217cb3c end:0x0217cd24
+
+src/Town/SharedServices/UpdateHandlerModeState.cpp:
+    complete
+    .text start:0x02173788 end:0x021737e4
+
+src/Town/SharedServices/Ov003_AppendEightByteRecord.cpp:
+    complete
+    .text start:0x0215e898 end:0x0215e8f4
+
+src/Town/SharedServices/SpriteResources_GetCellByIndex.cpp:
+    complete
+    .text start:0x02173bb0 end:0x02173bd8
+
+src/Town/SharedServices/Math_GetSignedTablePairByIndex.cpp:
+    complete
+    .text start:0x0215ec68 end:0x0215ec90
+
+src/Town/SharedServices/Graphics_UpdateSixEntryPageDisplay.cpp:
+    complete
+    .text start:0x021767ec end:0x021769ec
+
+src/Town/Guests/GuestList_FindTouchRegionById.cpp:
+    complete
+    .text start:0x0216f414 end:0x0216f474
+
+src/Town/SharedServices/Ov003_AdvanceDisplayContextRequest.cpp:
+    complete
+    .text start:0x02159464 end:0x021594c4
+
+src/Town/SharedServices/GameState_StorePartyGroupTableHalfword.cpp:
+    complete
+    .text start:0x0217a220 end:0x0217a280
+
+src/Town/Tavern/Tavern_FindStoredCharacterBySlotId.cpp:
+    complete
+    .text start:0x02160bf8 end:0x02160c58
+
+src/Town/SharedServices/Graphics_AppendTwoIndexedLabelsWithCursor.cpp:
+    complete
+    .text start:0x0215be70 end:0x0215bf18
+
+src/Town/SharedServices/World_PartitionAndSortKindNineAndTenEntries.cpp:
+    complete
+    .text start:0x02170688 end:0x02170898
+
+src/Town/SharedServices/Object_InitializeSelectedPartNine.cpp:
+    complete
+    .text start:0x02177208 end:0x0217726c
+
+src/Town/SharedServices/Graphics_AppendThreeIndexedTextFragments.cpp:
+    complete
+    .text start:0x02169a84 end:0x02169b30
+
+src/Town/SharedServices/GameState_ResetSelectedRecordIfPresent.cpp:
+    complete
+    .text start:0x0216ff90 end:0x0216ffbc
+
+src/Town/SharedServices/GameState_MarkOverlayRecordReadyForType3.cpp:
+    complete
+    .text start:0x0216d7ec end:0x0216d818
+
+src/Town/SharedServices/Graphics_ConfigureConditionalDisplayEntry.cpp:
+    complete
+    .text start:0x0215c464 end:0x0215c510
+
+src/Town/SharedServices/Util_AreFirstSixBytesZero.cpp:
+    complete
+    .text start:0x02171df0 end:0x02171e1c
+
+src/Town/SharedServices/Resource_InitializeLinkedCoordinateAndHalfwordEntryFromParameter.cpp:
+    complete
+    .text start:0x0215e5fc end:0x0215e628
+
+src/Town/SharedServices/Resource_FindLinkedSerializedRecordOrFallback.cpp:
+    complete
+    .text start:0x02179cfc end:0x02179da8
+
+src/Town/SharedServices/GameState_InitializeResourcesThenMarkOverlayRecord.cpp:
+    complete
+    .text start:0x0217f194 end:0x0217f1b8
+
+src/Town/SharedServices/Resource_ChangeIndexedLoadSelection.cpp:
+    complete
+    .text start:0x021538f4 end:0x021539a0
+
+src/Town/Inn/Inn_DecrementRestSequenceDelay.cpp:
+    complete
+    .text start:0x0215e27c end:0x0215e2a8
+
+src/Town/SharedServices/Util_TouchSixByteKeyInFiftyEntryCache.cpp:
+    complete
+    .text start:0x02171e1c end:0x02171f80
+
+src/Town/Guests/TagMode_RemoveCacheEntriesForMissingGuests.cpp:
+    complete
+    .text start:0x02171f80 end:0x02171fe8
+
+src/Town/SharedServices/Graphics_UpdateTwoChoiceDisplaySelection.cpp:
+    complete
+    .text start:0x0217a280 end:0x0217a4ac
+
+src/Town/SharedServices/GameState_CopyLanguageMappedBytes.cpp:
+    complete
+    .text start:0x02173f08 end:0x02173f70
+
+src/Town/SharedServices/Util_CopyAndFormatEmbeddedTextFields.cpp:
+    complete
+    .text start:0x021580d8 end:0x02158140
+
+src/Town/SharedServices/Network_SynchronizeDiscoveredPeerNames.cpp:
+    complete
+    .text start:0x0215f698 end:0x0215f8cc
+
+src/Town/SharedServices/Input_TestNewKeyOrOutsideTextureRectangle.cpp:
+    complete
+    .text start:0x02155208 end:0x021552b8
+
+src/Town/SharedServices/Graphics_AppendCursorAndIndexedTextList.cpp:
+    complete
+    .text start:0x0215e13c end:0x0215e1ec
+
+src/Town/SharedServices/Network_ProcessConnectionAndDispatchObjectState.cpp:
+    complete
+    .text start:0x021714a0 end:0x02171550
+
+src/Town/SharedServices/Graphics_InitializeFormattedStateValue.cpp:
+    complete
+    .text start:0x0215de6c end:0x0215df1c
+
+src/Town/Church/Church_DrawServiceMenu.cpp:
+    complete
+    .text start:0x02159100 end:0x0215916c
+
+src/Town/SharedServices/Graphics_AdvanceTimedOwnerState.cpp:
+    complete
+    .text start:0x021716f8 end:0x02171764
+
+src/Town/SharedServices/Network_AdvanceConnectionSelectionTimeout.cpp:
+    complete
+    .text start:0x02171af0 end:0x02171ba0
+
+src/Town/Inn/Inn_ReleaseServiceMenuGraphics.cpp:
+    complete
+    .text start:0x0216d77c end:0x0216d7ec
+
+src/Town/Inn/Inn_ResetServiceMenuAndSharedText.cpp:
+    complete
+    .text start:0x0216d818 end:0x0216d84c
+
+src/Town/SharedServices/GameState_CheckObjectCapacity.cpp:
+    complete
+    .text start:0x02179da8 end:0x02179e18
+
+src/Town/SharedServices/Graphics_UpdateDisplaySelectionState.cpp:
+    complete
+    .text start:0x021786bc end:0x02178910
+
+src/Town/Shops/Shop_CancelItemDetailLoads.cpp:
+    complete
+    .text start:0x021749c0 end:0x021749f0
+
+src/Town/SharedServices/Text_AppendIndexedRecordList.cpp:
+    complete
+    .text start:0x0215b6f0 end:0x0215b7a4
+
+src/Town/SharedServices/Graphics_FormatAndReloadReadyTextRecord.cpp:
+    complete
+    .text start:0x0216a974 end:0x0216aa28
+
+src/Town/SharedServices/Graphics_AdvanceSubBackgroundScroll.cpp:
+    complete
+    .text start:0x02167494 end:0x02167548
+
+src/Town/SharedServices/TextEntry_FindControlGridCoordinates.cpp:
+    complete
+    .text start:0x0215e930 end:0x0215e9a4
+
+src/Town/SharedServices/DisplayContext_ProcessPendingCommand.cpp:
+    complete
+    .text start:0x021685dc end:0x02168654
+
+src/Town/SharedServices/Graphics_AdvanceAlphaFadeByFour.cpp:
+    complete
+    .text start:0x0216fba0 end:0x0216fc58
+
+src/Town/SharedServices/Network_AdvanceMemberSelectionTimeout.cpp:
+    complete
+    .text start:0x02171640 end:0x021716f8
+
+src/Town/SharedServices/Graphics_FinalizeDisplayStateAndRestoreControls.cpp:
+    complete
+    .text start:0x0217db88 end:0x0217dc40
+
+src/Town/SharedServices/Graphics_FillModelTexturePalette.cpp:
+    complete
+    .text start:0x0217ca84 end:0x0217cb3c
+
+src/Town/SharedServices/RunObjectActionAndSetByteOne.cpp:
+    complete
+    .text start:0x0217ef0c end:0x0217ef24
+
+src/Town/SharedServices/Graphics_ResetEnabledTransfersAndRefreshWidget.cpp:
+    complete
+    .text start:0x02160240 end:0x021602bc
+
+src/Town/Bank/Bank_DrawSceneDialog.cpp:
+    complete
+    .text start:0x0217e580 end:0x0217e598
+
+src/Town/Inn/Inn_TransferServiceSceneGraphics.cpp:
+    complete
+    .text start:0x0217f248 end:0x0217f260
+
+src/Town/SharedServices/Graphics_ConfigureSubBackgroundPrioritiesOnce.cpp:
+    complete
+    .text start:0x02173508 end:0x021735c4
+
+src/Town/SharedServices/Graphics_ConfigureTwoSelectionsFromMode.cpp:
+    complete
+    .text start:0x0215b3bc end:0x0215b478
+
+src/Town/Inn/Inn_IsStayChoiceCancelled.cpp:
+    complete
+    .text start:0x0215dd00 end:0x0215dd3c
+
+src/Town/SharedServices/Graphics_DrawAvailableTextureGeometryLabels.cpp:
+    complete
+    .text start:0x0216052c end:0x02160678
+
+src/Town/SharedServices/GameState_CountSelectedAvailableQuantities.cpp:
+    complete
+    .text start:0x02179f34 end:0x02179ff0
+
+src/Town/Shops/Shop_SubmitInterfaceSpriteAtPosition.cpp:
+    complete
+    .text start:0x0217585c end:0x02175898
+
+src/Town/SharedServices/Graphics_UpdateTwoIndexedPartPositions.cpp:
+    complete
+    .text start:0x0217545c end:0x02175504
+
+src/Town/Guests/GuestList_AttachZoneGuestsAndInitialize.cpp:
+    complete
+    .text start:0x021700bc end:0x021700dc
+
+src/Town/Inn/Inn_StartStayDialogMessage.cpp:
+    complete
+    .text start:0x0215cab0 end:0x0215caf0
+
+src/Town/SharedServices/Graphics_DrawPageRecordKindIcons.cpp:
+    complete
+    .text start:0x02175504 end:0x0217577c
+
+src/Town/Bank/Bank_IsCancelRequested.cpp:
+    complete
+    .text start:0x02169554 end:0x02169594
+
+src/Town/Tavern/Tavern_UpdateStoredCharacterPreview.cpp:
+    complete
+    .text start:0x02161438 end:0x02161480
+
+src/Town/SharedServices/Ov003_RefreshVisibleResourceWindows.cpp:
+    complete
+    .text start:0x02154fd0 end:0x0215501c
+
+src/Town/SharedServices/Graphics_LoadSubBackgroundResourceAfterFade.cpp:
+    complete
+    .text start:0x021541b0 end:0x02154450
+
+src/Town/Guests/TagMode_BeginPostExchangeResourceTask.cpp:
+    complete
+    .text start:0x02171cac end:0x02171cf8
+
+src/Town/SharedServices/Resource_ResetIndexedEntriesWhenEnabled.cpp:
+    complete
+    .text start:0x0215ca68 end:0x0215ca90
+
+src/Town/Bank/Bank_AbortSceneAndReleaseDialog.cpp:
+    complete
+    .text start:0x0217e5b0 end:0x0217e5dc
+
+src/Town/SharedServices/Ov003_CancelPendingBackgroundTask.cpp:
+    complete
+    .text start:0x0216adbc end:0x0216ae0c
+
+src/Town/SharedServices/System_ResetConnectionResourceFlags.cpp:
+    complete
+    .text start:0x02170d38 end:0x02170d88
+
+src/Town/SharedServices/Resource_InitializeOwnerRecordState.cpp:
+    complete
+    .text start:0x0217dd10 end:0x0217dd60
+
+src/Town/SharedServices/Graphics_UpdateFourPartsInSelectedGroup.cpp:
+    complete
+    .text start:0x02160794 end:0x02160854
+
+src/Town/SharedServices/UpdateReadyLookupCoordinatesAndResourceEntries.cpp:
+    complete
+    .text start:0x0215501c end:0x021550dc
+
+src/Town/SharedServices/Owner_AdvanceTimeoutAndResetSelectionState.cpp:
+    complete
+    .text start:0x0217d9d8 end:0x0217da48
+
+src/Town/SharedServices/Graphics_CleanupRecordResourcesAndClearMainBG1.cpp:
+    complete
+    .text start:0x021700dc end:0x0217019c
+
+src/Town/SharedServices/Ov003_ConfigureIndexedRecord.cpp:
+    complete
+    .text start:0x0216dee4 end:0x0216df38
+
+src/Town/SharedServices/World_FadeOutAndRepopulateZoneEntries.cpp:
+    complete
+    .text start:0x021733d0 end:0x02173490
+
+src/Town/SharedServices/Graphics_ProcessSelectionConfirmationAndReset.cpp:
+    complete
+    .text start:0x021764f4 end:0x021765b4
+
+src/Town/SharedServices/Graphics_ConfigureDisplayPartFromPartySum.cpp:
+    complete
+    .text start:0x02176ed4 end:0x02176f94
+
+src/Town/SharedServices/Ov003_ConfigureVisibleRecord.cpp:
+    complete
+    .text start:0x021702e4 end:0x0217033c
+
+src/Town/Tavern/Tavern_IsCombinedRosterAtCapacity.cpp:
+    complete
+    .text start:0x021614e8 end:0x02161544
+
+src/Town/SharedServices/Ov003_CompleteSelectionInitialization.cpp:
+    complete
+    .text start:0x0217f1b8 end:0x0217f218
+
+src/Town/Guests/GuestList_AdvanceMessagesAndTransfers.cpp:
+    complete
+    .text start:0x02170280 end:0x021702e4
+
+src/Town/Guests/TagMode_DrawCancelButton.cpp:
+    complete
+    .text start:0x02173b4c end:0x02173bb0
+
+src/Town/SharedServices/GameState_AdjustClampedByteFromInputFlags.cpp:
+    complete
+    .text start:0x0216664c end:0x021666c4
+
+src/Town/SharedServices/Object_ClearAndResetOptionalResourceHandle.cpp:
+    complete
+    .text start:0x0217da48 end:0x0217daa4
+
+src/Town/Bank/Bank_DrawDialogAndAmountControls.cpp:
+    complete
+    .text start:0x02168560 end:0x021685a8
+
+src/Town/SharedServices/GameState_PartyMemberFieldDiffersFrom99.cpp:
+    complete
+    .text start:0x02155ffc end:0x02156034
+
+src/Town/Vocations/Alltrades_IsMemberCursedOrMissing.cpp:
+    complete
+    .text start:0x02155f88 end:0x02155fc0
+
+src/Town/SharedServices/Owner_DispatchAndClearPendingFlag.cpp:
+    complete
+    .text start:0x02174988 end:0x021749c0
+
+src/Town/Tavern/Tavern_StoreActiveMemberAndReturnCarriedItems.cpp:
+    complete
+    .text start:0x02166f40 end:0x02166f80
+
+src/Town/SharedServices/Resource_UpdateLinkedEntryAndBeginState.cpp:
+    complete
+    .text start:0x02171cf8 end:0x02171d74
+
+src/Town/SharedServices/Graphics_ReleaseSelectionResourcesAndClearMainBG.cpp:
+    complete
+    .text start:0x0217f118 end:0x0217f194
+
+src/Town/SharedServices/Graphics_RefreshActivePageTransfersAndParts.cpp:
+    complete
+    .text start:0x0217480c end:0x02174890
+
+src/Town/SharedServices/Graphics_UpdateActiveTransfersAndEnabledWindow.cpp:
+    complete
+    .text start:0x02159078 end:0x02159100
+
+src/Town/Inn/Inn_DrawServiceScene.cpp:
+    complete
+    .text start:0x0217f218 end:0x0217f230
+
+src/Town/Inn/Inn_ReleaseServiceScene.cpp:
+    complete
+    .text start:0x0217f260 end:0x0217f278
+
+src/Town/Vocations/Alltrades_GetVocationEquipmentRecord.cpp:
+    complete
+    .text start:0x02155e14 end:0x02155e38
+
+src/Town/Bank/Bank_ClearTouchRectangleSet.cpp:
+    complete
+    .text start:0x0216a85c end:0x0216a880
+
+src/Town/SharedServices/Resource_DispatchTypeNineItemToGameResources.cpp:
+    complete
+    .text start:0x02172570 end:0x021725a4
+
+src/Town/Tavern/Tavern_FadeOutPartyPreviewAndReleaseResources.cpp:
+    complete
+    .text start:0x02160e34 end:0x02160ec4
+
+src/Town/Church/Church_IsSelectionCancelled.cpp:
+    complete
+    .text start:0x0215b370 end:0x0215b3bc
+
+src/Town/Inn/Inn_DrawStayDialogCanvases.cpp:
+    complete
+    .text start:0x0215ca1c end:0x0215ca68
+
+src/Town/SharedServices/Town_RenderDestinationMenuText.cpp:
+    complete
+    .text start:0x0217daa4 end:0x0217daf0
+
+src/Town/Church/Church_RefreshPartyStatusWindow.cpp:
+    complete
+    .text start:0x0215be20 end:0x0215be70
+
+src/Town/SharedServices/System_ClearConditionalOverlayFieldAndDestroyAllocator.cpp:
+    complete
+    .text start:0x0217e67c end:0x0217e6b0
+
+src/Town/Vocations/Alltrades_DrawVocationMenu.cpp:
+    complete
+    .text start:0x02154eec end:0x02154f80
+
+src/Town/Church/Church_AdvanceExitAndRestoreFieldParty.cpp:
+    complete
+    .text start:0x0215af00 end:0x0215af9c
+
+src/Town/Inn/Inn_FinishStayDialogWhenTransitionsIdle.cpp:
+    complete
+    .text start:0x0215e3fc end:0x0215e498
+
+src/Town/Tavern/Tavern_UpdateDismissalListPage.cpp:
+    complete
+    .text start:0x02166184 end:0x02166220
+
+src/Town/Tavern/Tavern_SubmitMenuSpriteAtPosition.cpp:
+    complete
+    .text start:0x021604f4 end:0x0216052c
+
+src/Town/SharedServices/World_DispatchObjectByResourceFlags.cpp:
+    complete
+    .text start:0x02160cc0 end:0x02160cf8
+
+src/Town/Guests/TagMode_IsCancelButtonTouched.cpp:
+    complete
+    .text start:0x021734dc end:0x02173508
+
+src/Town/Tavern/Tavern_RecruitSelectedStoredCharacter.cpp:
+    complete
+    .text start:0x021669f0 end:0x02166a90
+
+src/Town/SharedServices/Town_DrawFacilityNavigationAndStateIcons.cpp:
+    complete
+    .text start:0x02173ea8 end:0x02173ef4
+
+src/Town/SharedServices/GameState_ResetLoadResourcesAndOwnerSelection.cpp:
+    complete
+    .text start:0x0217dc40 end:0x0217dc94
+
+src/Town/SharedServices/Filesystem_CancelLoadAndResetTaskStateWhenUnneeded.cpp:
+    complete
+    .text start:0x0215c510 end:0x0215c568
+
+src/Town/Guests/GuestList_GetActionRowMarkerPosition.cpp:
+    complete
+    .text start:0x021705d4 end:0x0217063c
+
+src/Town/SharedServices/Resource_ConfigureIndexedObjectEffectRecord.cpp:
+    complete
+    .text start:0x02173bd8 end:0x02173c40
+
+src/Town/SharedServices/Graphics_ResetFlaggedObjectResource.cpp:
+    complete
+    .text start:0x0216720c end:0x02167240
+
+src/Town/SharedServices/Graphics_EncodeTextToGlyphSequences.cpp:
+    complete
+    .text start:0x0215eeb8 end:0x0215ef2c
+
+src/Town/Tavern/Tavern_DrawPartyMenuOverlays.cpp:
+    complete
+    .text start:0x021604d0 end:0x021604f4
+
+src/Town/Bank/Bank_ApplyTransactionMenuChoice.cpp:
+    complete
+    .text start:0x02168cc8 end:0x02168d3c
+
+src/Town/SharedServices/Script_CreateLinkedCoordinateEntriesFromParameter.cpp:
+    complete
+    .text start:0x0215e4e4 end:0x0215e510
+
+src/Town/Church/Church_IsSelectionConfirmed.cpp:
+    complete
+    .text start:0x0215b328 end:0x0215b370
+
+src/Town/Church/Church_GetSavedMainDisplayLayerMask.cpp:
+    complete
+    .text start:0x0215916c end:0x02159174
+
+src/Town/Church/Church_SetExitMode.cpp:
+    complete
+    .text start:0x02159174 end:0x0215917c
+
+src/Town/Bank/Bank_GetSavedMainDisplayLayers.cpp:
+    complete
+    .text start:0x021685c4 end:0x021685cc
+
+src/Town/Inn/Inn_GetServiceSceneController.cpp:
+    complete
+    .text start:0x0217f278 end:0x0217f280
+
+src/Town/Guests/GuestList_InitializeCapturedBackground.cpp:
+    complete
+    .text start:0x0216e200 end:0x0216e2a4
+
+src/Town/SharedServices/InitializeFormattedMenuStateAndBindText.cpp:
+    complete
+    .text start:0x0215ddc0 end:0x0215de6c
+
+src/Town/SharedServices/BeginDisplayResetAndClearLinkedOwner.cpp:
+    complete
+    .text start:0x02174550 end:0x021745fc
+
+src/Town/SharedServices/Graphics_RefreshResourcesForSignedModePair.cpp:
+    complete
+    .text start:0x0216d53c end:0x0216d5f0
+
+src/Town/SharedServices/Graphics_UpdateSelectedEntryPositionAndVisibility.cpp:
+    complete
+    .text start:0x0217033c end:0x021703f0
+
+src/Town/SharedServices/Resource_FormatFourBuffersFromTable.cpp:
+    complete
+    .text start:0x02160344 end:0x0216039c
+
+src/Town/Inn/Inn_ShowServiceMessage.cpp:
+    complete
+    .text start:0x0216d8d4 end:0x0216d990
+
+src/Town/Tavern/Tavern_IsPartyMenuCancelled.cpp:
+    complete
+    .text start:0x02160a68 end:0x02160b2c
+
+src/Town/Church/Church_BuildAvailableServiceList.cpp:
+    complete
+    .text start:0x0215917c end:0x02159240
+
+src/Town/Church/Church_CreatePartyStatusWindow.cpp:
+    complete
+    .text start:0x0215b8a0 end:0x0215b964
+
+src/Town/Tavern/Tavern_UpdateRecruitmentListPage.cpp:
+    complete
+    .text start:0x02165bd8 end:0x02165c9c
+
+src/Town/Shops/Shop_DrawItemSelectionCursor.cpp:
+    complete
+    .text start:0x02175fd4 end:0x02176098
+
+src/Town/Shops/Shop_LoadSelectedItemDetailsOnce.cpp:
+    complete
+    .text start:0x021748c4 end:0x02174988
+
+src/Town/SharedServices/Graphics_AdvanceMainAlphaBlendToCompletion.cpp:
+    complete
+    .text start:0x0216ef14 end:0x0216efdc
+
+src/Town/Shops/Shop_ReleaseInterfaceResources.cpp:
+    complete
+    .text start:0x02174454 end:0x0217451c
+
+src/Town/SharedServices/Resource_BuildActiveRecordPagePointers.cpp:
+    complete
+    .text start:0x02170898 end:0x02170960
+
+src/Town/SharedServices/Graphics_PositionSelectedRecordResourceEntries.cpp:
+    complete
+    .text start:0x0216acf0 end:0x0216adbc
+
+src/Town/SharedServices/System_UpdateSelectionAndBackgroundLoadSequence.cpp:
+    complete
+    .text start:0x02159d0c end:0x0215a5b4
+
+src/Town/Church/Church_SetWindowEmphasisAndRefreshText.cpp:
+    complete
+    .text start:0x0215c01c end:0x0215c0ec
+
+src/Town/SharedServices/Resource_AllocateThirteenRecordsAndThreeNestedArenas.cpp:
+    complete
+    .text start:0x021726f8 end:0x021727c8
+
+src/Town/SharedServices/Resource_LinkIndexedObjectStateAndNotifyConnection.cpp:
+    complete
+    .text start:0x02163d7c end:0x02163e4c
+
+src/Town/SharedServices/CharacterStatus_RefreshChangedDisplayMode.cpp:
+    complete
+    .text start:0x02167a5c end:0x02167b30
+
+src/Town/Bank/Bank_OpenTransferAmountWindow.cpp:
+    complete
+    .text start:0x02169c3c end:0x02169d10
+
+src/Town/SharedServices/Town_UpdateDestinationMenu.cpp:
+    complete
+    .text start:0x0217ce3c end:0x0217cf10
+
+src/Town/Bank/Bank_AdvanceDepositOrWithdrawal.cpp:
+    complete
+    .text start:0x02168d3c end:0x02169430
+
+src/Town/Inn/Inn_DrawServiceMenuAndActivePanel.cpp:
+    complete
+    .text start:0x0216d468 end:0x0216d53c
+
+src/Town/Shops/Shop_UpdateSalePageAndDetails.cpp:
+    complete
+    .text start:0x0217a14c end:0x0217a220
+
+src/Town/Church/Church_AdvanceGreetingAndCreateServiceWindows.cpp:
+    complete
+    .text start:0x02159b20 end:0x02159c04
+
+src/Town/Guests/GuestList_RefreshWindowAndRowIcons.cpp:
+    complete
+    .text start:0x0217019c end:0x02170280
+
+src/Town/Vocations/Alltrades_PollConfirmationPrompt.cpp:
+    complete
+    .text start:0x02155618 end:0x0215570c
+
+src/Town/Church/Church_AdvanceOptionalMessageAndServiceJingle.cpp:
+    complete
+    .text start:0x0215b0e8 end:0x0215b1dc
+
+src/Town/SharedServices/Memory_InitializeEightPresentationAllocators.cpp:
+    complete
+    .text start:0x0215f8cc end:0x0215f9c0
+
+src/Town/Tavern/Tavern_PollConfirmationOptions.cpp:
+    complete
+    .text start:0x02161344 end:0x02161438
+
+src/Town/Tavern/Tavern_ReturnEquipmentAndDismissStoredCharacter.cpp:
+    complete
+    .text start:0x021668fc end:0x021669f0
+
+src/Town/Bank/Bank_AllocateDialogArenasAndSpriteState.cpp:
+    complete
+    .text start:0x021680d4 end:0x021681c8
+
+src/Town/Church/Church_AdvancePaidMemberTreatment.cpp:
+    complete
+    .text start:0x0215a740 end:0x0215af00
+
+src/Town/Bank/Bank_DrawLocalizedAmountActionSprites.cpp:
+    complete
+    .text start:0x0216a880 end:0x0216a974
+
+src/Town/SharedServices/Text_AppendTwoLabelsAndReturnEvenTileWidth.cpp:
+    complete
+    .text start:0x0216df38 end:0x0216e02c
+
+src/Town/Guests/GuestList_AllocateCanvasAndSelectionBuffers.cpp:
+    complete
+    .text start:0x0216e02c end:0x0216e124
+
+src/Town/Inn/Inn_UpdateStayDialog.cpp:
+    complete
+    .text start:0x0215c924 end:0x0215ca1c
+
+src/Town/SharedServices/Memory_InitializeFiveAllocatorRegions.cpp:
+    complete
+    .text start:0x0215c568 end:0x0215c650
+
+src/Town/Vocations/Alltrades_AdvanceVocationMenuLoading.cpp:
+    complete
+    .text start:0x021560e4 end:0x02156ad4
+
+src/Town/SharedServices/Script_BuildAndAppendLinkedStringRecord.cpp:
+    complete
+    .text start:0x0215e510 end:0x0215e5fc
+
+src/Town/SharedServices/UpdateSelectionControllerState.cpp:
+    complete
+    .text start:0x0215bd34 end:0x0215be20
+
+src/Town/Guests/TagMode_DecodeGuestNameTokenPairs.cpp:
+    complete
+    .text start:0x02170a7c end:0x02170b74
+
+src/Town/Tavern/Tavern_AdvancePartyMenuResourceLoading.cpp:
+    complete
+    .text start:0x021615bc end:0x0216201c
+
+src/Town/Church/Church_PollServiceOption.cpp:
+    complete
+    .text start:0x0215b7a4 end:0x0215b8a0
+
+src/Town/SharedServices/System_UpdateSelectedResourceList.cpp:
+    complete
+    .text start:0x0216ddfc end:0x0216dee4
+
+src/Town/Shops/Shop_ReadQuantityConfirmationTouch.cpp:
+    complete
+    .text start:0x021782a0 end:0x0217839c
+
+src/Town/SharedServices/Graphics_InitializeTripleAllocatorPresentationState.cpp:
+    complete
+    .text start:0x02173c40 end:0x02173d40
+
+src/Town/Guests/GuestList_InitializePresentation.cpp:
+    complete
+    .text start:0x0216ffbc end:0x021700bc
+
+src/Town/Guests/GuestList_UpdateActionSelectionMarkers.cpp:
+    complete
+    .text start:0x021704e8 end:0x021705d4
+
+src/Town/Church/Church_PollYesNoPrompt.cpp:
+    complete
+    .text start:0x0215bf18 end:0x0215c01c
+
+src/Town/Church/Church_AdvanceServiceSelection.cpp:
+    complete
+    .text start:0x02159c04 end:0x02159d0c
+
+src/Town/Church/Church_CreateGoldWindow.cpp:
+    complete
+    .text start:0x0215b478 end:0x0215b580
+
+src/Town/Bank/Bank_OpenTransactionMenu.cpp:
+    complete
+    .text start:0x0216997c end:0x02169a84
+
+src/Town/Vocations/Alltrades_ApplyRevocation.cpp:
+    complete
+    .text start:0x02155e38 end:0x02155f40
+
+src/Town/Bank/Bank_PollTransactionMenuSelection.cpp:
+    complete
+    .text start:0x02169b30 end:0x02169c3c
+
+src/Town/Guests/TagMode_PollClientGuestExchange.cpp:
+    complete
+    .text start:0x02171ba0 end:0x02171cac
+
+src/Town/SharedServices/Graphics_ResetActiveResourceDisplayState.cpp:
+    complete
+    .text start:0x02160134 end:0x02160240
+
+src/Town/Inn/Inn_DrawAnimatedServiceMenuCursor.cpp:
+    complete
+    .text start:0x0216dcf0 end:0x0216ddfc
+
+src/Town/Bank/Bank_OpenHeldGoldWindow.cpp:
+    complete
+    .text start:0x0216982c end:0x02169938
+
+src/Town/SharedServices/Town_LoadPreviewModel.cpp:
+    complete
+    .text start:0x0217c974 end:0x0217ca84
+
+src/Town/Shops/Shop_RefreshPurchaseRecipientNames.cpp:
+    complete
+    .text start:0x02177300 end:0x02177410
+
+src/Town/Tavern/Tavern_StoreSelectedActiveMember.cpp:
+    complete
+    .text start:0x02163e4c end:0x02163f60
+
+src/Town/Bank/Bank_ReleaseDialogResources.cpp:
+    complete
+    .text start:0x02168324 end:0x02168438
+
+src/Town/SharedServices/Graphics_EnterCapturedDisplayMenuMode.cpp:
+    complete
+    .text start:0x021728fc end:0x02172a14
+
+src/Town/SharedServices/Town_AllocateDestinationMenuResources.cpp:
+    complete
+    .text start:0x0217cd24 end:0x0217ce3c
+
+src/Town/Shops/Shop_RefreshSaleOwnerNames.cpp:
+    complete
+    .text start:0x02177820 end:0x02177938
+
+src/Town/SharedServices/Text_ConfigureAndCenterTwoLabelReadyRecord.cpp:
+    complete
+    .text start:0x0216fe74 end:0x0216ff90
+
+src/Town/SharedServices/Text_InitializeOptionalPartyNameDescriptorsAndMessage.cpp:
+    complete
+    .text start:0x02170960 end:0x02170a7c
+
+src/Town/Vocations/Alltrades_AdvanceRewardPanelShutdown.cpp:
+    complete
+    .text start:0x02158214 end:0x02158334
+
+src/Town/Shops/Shop_HasEquipmentIncompatibleWithSelectedMode.cpp:
+    complete
+    .text start:0x0217839c end:0x021784bc
+
+src/Town/Inn/Inn_AdvanceStayFarewell.cpp:
+    complete
+    .text start:0x0215da0c end:0x0215db2c
+
+src/Town/Inn/Inn_ReleaseStayDialogResources.cpp:
+    complete
+    .text start:0x0215c800 end:0x0215c924
+
+src/Town/SharedServices/CharacterStatus_RestoreSubDisplayAndReleaseResources.cpp:
+    complete
+    .text start:0x02167370 end:0x02167494
+
+src/Town/SharedServices/GameState_UpdateTransferDialogStateAndDispatchInput.cpp:
+    complete
+    .text start:0x02168438 end:0x02168560
+
+src/Town/Vocations/Alltrades_PollSelectionConfirmation.cpp:
+    complete
+    .text start:0x021550dc end:0x02155208
+
+src/Town/Shops/Shop_RemoveSoldItemFromOwner.cpp:
+    complete
+    .text start:0x02175df4 end:0x02175f20
+
+src/Town/Church/Church_CreateServiceOptionWindow.cpp:
+    complete
+    .text start:0x0215b5c4 end:0x0215b6f0
+
+src/Town/Tavern/Tavern_ConfirmDepartureAndResetGrotto.cpp:
+    complete
+    .text start:0x0216512c end:0x02165278
+
+src/Town/Inn/Inn_UpdateServiceMenuState.cpp:
+    complete
+    .text start:0x0216af14 end:0x0216b07c
+
+src/Town/Inn/Inn_AdvanceNestedGuestPanel.cpp:
+    complete
+    .text start:0x0216bb70 end:0x0216bcfc
+
+src/Town/Vocations/Alltrades_AdvanceServiceSelection.cpp:
+    complete
+    .text start:0x02156ad4 end:0x02156d40
+
+src/Town/Vocations/Alltrades_PopulateVocationLevelsAndRevocationCounts.cpp:
+    complete
+    .text start:0x02158480 end:0x0215873c
+
+src/Town/Vocations/Alltrades_AdvanceVocationChangeMemberSelection.cpp:
+    complete
+    .text start:0x02156d40 end:0x0215704c
+
+src/Town/SharedServices/AdvanceTwoCanvasAndLayoutResourceLoads.cpp:
+    complete
+    .text start:0x0216e2a4 end:0x0216e714
+
+src/Town/SharedServices/AdvancePreviewCaptureAndBrightnessSequence.cpp:
+    complete
+    .text start:0x0217c2bc end:0x0217c74c
+
+src/Town/SharedServices/PollSubCanvasAndTextResourceInitialization.cpp:
+    complete
+    .text start:0x0216759c end:0x02167a5c
+
+src/Town/SharedServices/PollSubScreenPoolAndCanvasTransition.cpp:
+    complete
+    .text start:0x02160cf8 end:0x02160e34
+
+src/Town/SharedServices/InitializePresentationAndTransferControlDefaults.cpp:
+    complete
+    .text start:0x0216d63c end:0x0216d77c
+
+src/Town/SharedServices/CancelDisplayTasksClearBuffersAndDestroyAllocators.cpp:
+    complete
+    .text start:0x021549a8 end:0x02154af4
+
+src/Town/SharedServices/InitializeTransferDialogAndSaveBackgroundState.cpp:
+    complete
+    .text start:0x021681c8 end:0x02168324
+
+src/Town/SharedServices/AdvanceProtagonistTransferPrompt.cpp:
+    complete
+    .text start:0x02168b50 end:0x02168cc8
+
+src/Town/SharedServices/Graphics_AdvanceMatchingPairSetupAndInputState.cpp:
+    complete
+    .text start:0x0217b214 end:0x0217b430
+
+src/Town/SharedServices/AdvanceBrightnessAndOwnerMessageState.cpp:
+    complete
+    .text start:0x0215af9c end:0x0215b0e8
+
+src/Town/Inn/Inn_OpenLocalizedServiceMenu.cpp:
+    complete
+    .text start:0x0216da90 end:0x0216dc58
+
+src/Town/SharedServices/Graphics_AllocateDisplayResourcesAndInitializeCanvases.cpp:
+    complete
+    .text start:0x021544ec end:0x02154720
+
+src/Town/SharedServices/BackgroundLoader_AdvanceCancellationAndFinishState.cpp:
+    complete
+    .text start:0x02158184 end:0x02158214
+
+src/Town/SharedServices/Graphics_ResetCanvasAndCaptureSubBackgroundState.cpp:
+    complete
+    .text start:0x0215376c end:0x021537d4
+
+src/Town/SharedServices/AdvanceDisplaySelectionToStateFortyThreeOrTen.cpp:
+    complete
+    .text start:0x02163f60 end:0x02163fd4
+
+src/Town/SharedServices/GameState_UpdateSelectionMessageTransition.cpp:
+    complete
+    .text start:0x0216d3f0 end:0x0216d468
+
+src/Town/Shops/Shop_DeductPurchaseGold.cpp:
+    complete
+    .text start:0x02175924 end:0x0217599c
+
+src/Town/Shops/Shop_UpdatePurchasePageAndComparisons.cpp:
+    complete
+    .text start:0x021785d4 end:0x021786bc
+
+src/Town/Shops/Shop_SelectSaleOwnerAndResetPaging.cpp:
+    complete
+    .text start:0x02179e44 end:0x02179f34
+
+src/Town/Shops/Shop_DrawQuantityAdjustmentSprites.cpp:
+    complete
+    .text start:0x0217577c end:0x0217585c
+
+src/Town/Shops/Shop_GetSelectedGroupedInventoryItem.cpp:
+    complete
+    .text start:0x02175f20 end:0x02175f90
+
+src/Town/Shops/Shop_ReadEquipmentStatComparison.cpp:
+    complete
+    .text start:0x021753a0 end:0x0217545c
+
+src/Town/Vocations/Alltrades_RestoreMemberHealthAndMagicAfterVocationChange.cpp:
+    complete
+    .text start:0x02155740 end:0x0215582c
+
+src/Town/Tavern/Tavern_CountLivingPartyMembersExceptSelected.cpp:
+    complete
+    .text start:0x02161544 end:0x021615bc
+
+src/Town/TagMode/TagMode_IsPeerIdentityCached.cpp:
+    complete
+    .text start:0x02171d78 end:0x02171df0
+
+src/Town/Inn/Inn_ShowPartyListPageCounter.cpp:
+    complete
+    .text start:0x0215f5e8 end:0x0215f650

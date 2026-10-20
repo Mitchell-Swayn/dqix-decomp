@@ -4,3 +4,274 @@
     .data       start:0x0215cd00 end:0x0215ce20 kind:data align:32
     .bss        start:0x0215ce20 end:0x0215ce20 kind:bss align:32
 
+src/Menu/Equipment/FieldAppearance_SetMemberRefreshRequest.cpp:
+    complete
+    .text start:0x021583fc end:0x0215840c
+
+src/Menu/Equipment/EquipmentMenu_GetCategoryLinkedEquipmentIndex.cpp:
+    complete
+    .text start:0x0215a918 end:0x0215a930
+
+src/Menu/Equipment/EquipmentMenu_GetCategoryEquipmentRecordIndex.cpp:
+    complete
+    .text start:0x0215a930 end:0x0215a948
+
+src/Menu/Equipment/EquipmentMenu_GetCategoryInventoryType.cpp:
+    complete
+    .text start:0x0215a948 end:0x0215a960
+
+src/Menu/Equipment/EquipmentMenu_SetCursorTargetOrigin.cpp:
+    complete
+    .text start:0x02154d18 end:0x02154d34
+
+src/Menu/Equipment/EquipmentMenu_SetCursorCurrentOrigin.cpp:
+    complete
+    .text start:0x02154d34 end:0x02154d50
+
+src/Menu/Equipment/EquipmentMenu_CopyRenderPartPosition.cpp:
+    complete
+    .text start:0x02157174 end:0x02157190
+
+src/Menu/Equipment/EquipmentMenu_SetCursorTargetOppositeCorner.cpp:
+    complete
+    .text start:0x02154d50 end:0x02154d7c
+
+src/Menu/Equipment/EquipmentMenu_SetCursorCurrentOppositeCorner.cpp:
+    complete
+    .text start:0x02154d7c end:0x02154da8
+
+src/Menu/Equipment/EquipmentMenu_ResetItemDisplayResource.cpp:
+    complete
+    .text start:0x02155d38 end:0x02155d6c
+
+src/Menu/Equipment/EquipmentMenu_IsConfirmPressed.cpp:
+    complete
+    .text start:0x02157190 end:0x021571d0
+
+src/Menu/Equipment/EquipmentMenu_ResetCursorRectangle.cpp:
+    complete
+    .text start:0x021536e0 end:0x02153728
+
+src/Menu/Equipment/EquipmentMenu_HitTestInventoryGrid.cpp:
+    complete
+    .text start:0x02155670 end:0x021556e4
+
+src/Menu/Equipment/EquipmentMenu_UpdateActionMenuFromFrameTime.cpp:
+    complete
+    .text start:0x0215c034 end:0x0215c058
+
+src/Menu/Equipment/EquipmentMenu_RequestEquippedItemRefresh.cpp:
+    complete
+    .text start:0x021551d4 end:0x021551fc
+
+src/Menu/Equipment/EquipmentMenu_AnimateCursorRectangle.cpp:
+    complete
+    .text start:0x02153728 end:0x021537bc
+
+src/Data/IndexMap_0215cd18.cpp:
+    complete
+    .data start:0x0215cd18 end:0x0215cd20
+
+src/Data/IndexMap_0215cd20.cpp:
+    complete
+    .data start:0x0215cd20 end:0x0215cd28
+
+src/Data/IndexMap_0215cd28.cpp:
+    complete
+    .data start:0x0215cd28 end:0x0215cd30
+
+src/Menu/Equipment/EquipmentMenu_RefreshInventoryPage.cpp:
+    complete
+    .text start:0x021555c0 end:0x02155670
+
+src/Menu/Equipment/GameState_CopySelectedSubrecordValues.cpp:
+    complete
+    .text start:0x02155544 end:0x021555c0
+
+src/Menu/Equipment/Grid_ConfigureSelectionForDisplayMode.cpp:
+    complete
+    .text start:0x021571d0 end:0x0215730c
+
+src/Menu/Equipment/Text_FormatIndexedListAndCenterLayout.cpp:
+    complete
+    .text start:0x02159a30 end:0x02159b74
+
+src/Menu/Equipment/Graphics_ReserveAndSnapshotPaletteBlocks.cpp:
+    complete
+    .text start:0x02153b20 end:0x02153ba4
+
+src/Menu/Equipment/EquipmentMenu_PollTemporaryMusic.cpp:
+    complete
+    .text start:0x0215cb4c end:0x0215cbd4
+
+src/Menu/Equipment/GameState_RemoveEntriesMissingObjectFlag.cpp:
+    complete
+    .text start:0x0215840c end:0x02158560
+
+src/Menu/Equipment/GameState_IsObjectAssociatedWithProtagonistWhenConnected.cpp:
+    complete
+    .text start:0x02157ae8 end:0x02157b74
+
+src/Menu/Equipment/SwitchIndexedStateAndSavePreviousPhase.cpp:
+    complete
+    .text start:0x02158560 end:0x021585fc
+
+src/Menu/Equipment/Memory_CreateNestedAllocatorGroup.cpp:
+    complete
+    .text start:0x02153954 end:0x02153b20
+
+src/Menu/Equipment/Graphics_InitializeWindowEntryArrays.cpp:
+    complete
+    .text start:0x02159c24 end:0x02159c88
+
+src/Menu/Equipment/Graphics_ClampAndSnapScreenTarget.cpp:
+    complete
+    .text start:0x02156e1c end:0x02156ecc
+
+src/Menu/Equipment/Graphics_RefreshOwnerPaletteAndCoordinates.cpp:
+    complete
+    .text start:0x02159b74 end:0x02159c24
+
+src/Menu/Equipment/GameState_TriggerModeThreeResourceUpdate.cpp:
+    complete
+    .text start:0x0215a37c end:0x0215a3bc
+
+src/Menu/Equipment/Grid_ChangeDisplayModeAndTransitionFlags.cpp:
+    complete
+    .text start:0x0215792c end:0x021579ec
+
+src/Menu/Equipment/GameState_ResetModeAndSetResourceFlags.cpp:
+    complete
+    .text start:0x02159208 end:0x02159274
+
+src/Menu/Equipment/Grid_ResetSelectionAndActivateDisplay.cpp:
+    complete
+    .text start:0x02159850 end:0x02159904
+
+src/Menu/Equipment/EquipmentMenu_UpdateBrowsingInputAndCharacter.cpp:
+    complete
+    .text start:0x0215bed4 end:0x0215bf58
+
+src/Menu/Equipment/EquipmentMenu_AdvanceEquipmentChangeAction.cpp:
+    complete
+    .text start:0x0215916c end:0x02159208
+
+src/Menu/Equipment/World_SetRecordStateAndDispatchMode.cpp:
+    complete
+    .text start:0x021551fc end:0x02155258
+
+src/Menu/Equipment/Graphics_AdjustTwoRecordPositionsForPendingFlags.cpp:
+    complete
+    .text start:0x0215a2c8 end:0x0215a37c
+
+src/Menu/Equipment/EquipmentMenu_AdvanceInventoryPage.cpp:
+    complete
+    .text start:0x021585fc end:0x021586c4
+
+src/Menu/Equipment/EquipmentMenu_UpdateReadyDisplayResources.cpp:
+    complete
+    .text start:0x02155108 end:0x021551d4
+
+src/Menu/Equipment/EquipmentMenu_DrawCategoryTabHighlight.cpp:
+    complete
+    .text start:0x0215a720 end:0x0215a7ec
+
+src/Menu/Equipment/EquipmentMenu_CacheQuantityDigitGlyphs.cpp:
+    complete
+    .text start:0x0215a960 end:0x0215aa44
+
+src/Menu/Equipment/EquipmentMenu_SetCursorForDisplayMode.cpp:
+    complete
+    .text start:0x021579ec end:0x02157ae8
+
+src/Menu/Equipment/EquipmentMenu_PositionActionCursor.cpp:
+    complete
+    .text start:0x0215a7ec end:0x0215a918
+
+src/Menu/Equipment/EquipmentMenu_HandleCategoryAndPageTouch.cpp:
+    complete
+    .text start:0x02156658 end:0x021567ac
+
+src/Menu/Equipment/UpdateFourRectangleCorners.cpp:
+    complete
+    .text start:0x021537bc end:0x021538fc
+
+src/Menu/Equipment/ConfigureSelectedRecordTextPanel.cpp:
+    complete
+    .text start:0x021589f4 end:0x02158b3c
+
+src/Menu/Equipment/AdvanceSelectedRecordTextPanel.cpp:
+    complete
+    .text start:0x02158878 end:0x021589f4
+
+src/Menu/Equipment/DrawTwoDecimalDigitGlyphs.cpp:
+    complete
+    .text start:0x02155258 end:0x021553b4
+
+src/Menu/Equipment/ReleaseIndexedMenuGraphicsAndAllocators.cpp:
+    complete
+    .text start:0x02154198 end:0x0215436c
+
+src/Menu/Equipment/EquipmentMenu_AdvanceActionChoice.cpp:
+    complete
+    .text start:0x02158f80 end:0x0215916c
+
+src/Menu/Equipment/DrawCurrentAndTotalPhaseNumbers.cpp:
+    complete
+    .text start:0x0215aa44 end:0x0215acc0
+
+src/Menu/Equipment/HandleHeaderCursorCancelAndSelection.cpp:
+    complete
+    .text start:0x0215742c end:0x0215751c
+
+src/Menu/Equipment/EquipmentMenu_UpdateActionMenu.cpp:
+    complete
+    .text start:0x02158e04 end:0x02158ed0
+
+src/Menu/Equipment/UpdateIndexedMenuDirectionalInput.cpp:
+    complete
+    .text start:0x0215730c end:0x0215742c
+
+src/Menu/Equipment/EquipmentMenu_SelectTouchedInventoryItem.cpp:
+    complete
+    .text start:0x021567ac end:0x0215690c
+
+src/Menu/Equipment/EquipmentMenu_HandleEquippedItemInput.cpp:
+    complete
+    .text start:0x0215751c end:0x0215771c
+
+src/Menu/Equipment/EquipmentMenu_HandleInventoryItemInput.cpp:
+    complete
+    .text start:0x0215771c end:0x0215792c
+
+src/Menu/Equipment/FinishDraggedGridRowAndSwapEntries.cpp:
+    complete
+    .text start:0x02156ecc end:0x02157174
+
+src/Menu/Equipment/EquipmentMenu_DrawSharedMenuButton.cpp:
+    complete
+    .text start:0x0215a3bc end:0x0215a418
+
+src/Menu/Equipment/EquipmentMenu_PickProjectedEquipmentSlot.cpp:
+    complete
+    .text start:0x021586c4 end:0x02158878
+
+src/Menu/Equipment/EquipmentMenu_RebuildCompactItemAttributes.cpp:
+    complete
+    .text start:0x02154da8 end:0x02154de8
+
+src/Menu/Equipment/EquipmentMenu_UpdateBrowsingInput.cpp:
+    complete
+    .text start:0x0215be60 end:0x0215bed4
+
+src/Menu/Equipment/EquipmentMenu_UpdateItemInputAndRestrictions.cpp:
+    complete
+    .text start:0x0215bf58 end:0x0215c034
+
+src/Menu/Equipment/EquipmentMenu_InitializeItemDisplayBindings.cpp:
+    complete
+    .text start:0x02155424 end:0x02155544
+
+src/Menu/Equipment/EquipmentMenu_ApproachCursorCoordinate.cpp:
+    complete
+    .text start:0x021538fc end:0x02153954

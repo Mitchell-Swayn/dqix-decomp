@@ -14,6 +14,7 @@ namespace AllocatorTree
 
 // USA: func_020aeec8
 // JPN: func_020b0994
+// Original: arm9/main @ 0x020AEEC8; symbol: _ZN19SignedAllocatorList10InitializeEt; size: 0x18.
 void SignedAllocatorList::Initialize(unsigned short sigLength)
 {
     pFirst = NULL;
@@ -24,6 +25,7 @@ void SignedAllocatorList::Initialize(unsigned short sigLength)
 
 // USA: func_020aeee0
 // JPN: func_020b09ac
+// Original: arm9/main @ 0x020AEEE0; symbol: _ZN19SignedAllocatorList18DoInitialInsertionEP21SignedAllocatorHeader; size: 0x2C.
 void SignedAllocatorList::DoInitialInsertion(SignedAllocatorHeader* what)
 {
     SignedAllocatorHeader** whatPtrs = (SignedAllocatorHeader**)((char*)what + signatureLength);
@@ -38,6 +40,7 @@ void SignedAllocatorList::DoInitialInsertion(SignedAllocatorHeader* what)
 
 // USA: func_020aef0c
 // JPN: func_020b09d8
+// Original: arm9/main @ 0x020AEF0C; symbol: _ZN19SignedAllocatorList11InsertAtEndEP21SignedAllocatorHeader; size: 0x54.
 void SignedAllocatorList::InsertAtEnd(SignedAllocatorHeader* what)
 {
     if (pFirst == NULL)
@@ -55,6 +58,7 @@ void SignedAllocatorList::InsertAtEnd(SignedAllocatorHeader* what)
 
 // USA: func_020aef60
 // JPN: func_020b0a2c
+// Original: arm9/main @ 0x020AEF60; symbol: _ZN19SignedAllocatorList13InsertAtStartEP21SignedAllocatorHeader; size: 0x50.
 void SignedAllocatorList::InsertAtStart(SignedAllocatorHeader* what)
 {
     if (pFirst == NULL)
@@ -73,6 +77,7 @@ void SignedAllocatorList::InsertAtStart(SignedAllocatorHeader* what)
 
 // USA: func_020aefb0
 // JPN: func_020b0a7c
+// Original: arm9/main @ 0x020AEFB0; symbol: _ZN19SignedAllocatorList12InsertBeforeEP21SignedAllocatorHeaderS1_; size: 0x64.
 void SignedAllocatorList::InsertBefore(SignedAllocatorHeader* where, SignedAllocatorHeader* what)
 {
     if (where == NULL)
@@ -95,6 +100,7 @@ void SignedAllocatorList::InsertBefore(SignedAllocatorHeader* where, SignedAlloc
 
 // USA: func_020af014
 // JPN: func_020b0ae0
+// Original: arm9/main @ 0x020AF014; symbol: _ZN19SignedAllocatorList6RemoveEP21SignedAllocatorHeader; size: 0x60.
 void SignedAllocatorList::Remove(SignedAllocatorHeader* what)
 {
     SignedAllocatorHeader** prevAndNext = (SignedAllocatorHeader**)((char*)what + signatureLength);
@@ -116,6 +122,7 @@ void SignedAllocatorList::Remove(SignedAllocatorHeader* what)
 
 // USA: func_020af074
 // JPN: func_020b0b40
+// Original: arm9/main @ 0x020AF074; symbol: _ZN19SignedAllocatorList12ElementAfterEP21SignedAllocatorHeader; size: 0x18.
 SignedAllocatorHeader* SignedAllocatorList::ElementAfter(SignedAllocatorHeader* what)
 {
     if (what == NULL)
@@ -126,6 +133,7 @@ SignedAllocatorHeader* SignedAllocatorList::ElementAfter(SignedAllocatorHeader* 
 
 // USA: func_020af08c
 // JPN: func_020b0b58
+// Original: arm9/main @ 0x020AF08C; symbol: _ZN19SignedAllocatorList13ElementBeforeEP21SignedAllocatorHeader; size: 0x14.
 SignedAllocatorHeader* SignedAllocatorList::ElementBefore(SignedAllocatorHeader* what)
 {
     if (what == NULL)
@@ -136,6 +144,7 @@ SignedAllocatorHeader* SignedAllocatorList::ElementBefore(SignedAllocatorHeader*
 
 // USA: func_020af0a0
 // JPN: func_020b0b6c
+// Original: arm9/main @ 0x020AF0A0; symbol: _ZN19SignedAllocatorList13GetNthElementEj; size: 0x48.
 SignedAllocatorHeader* SignedAllocatorList::GetNthElement(unsigned int n)
 {
     unsigned int loopIdx = 0;
@@ -157,6 +166,7 @@ SignedAllocatorHeader* SignedAllocatorList::GetNthElement(unsigned int n)
 
 // USA: func_020af0e8
 // JPN: func_020b0bb4
+// Original: arm9/main @ 0x020AF0E8; symbol: _ZN13AllocatorTree9GetParentEP19SignedAllocatorListP21SignedAllocatorHeader; size: 0x68.
 SignedAllocatorHeader* AllocatorTree::GetParent(SignedAllocatorList* searchList, SignedAllocatorHeader* alloc)
 {
     // Loop through the list to find which element is an ancestor
@@ -188,6 +198,7 @@ SignedAllocatorHeader* AllocatorTree::GetParent(SignedAllocatorList* searchList,
 
 // USA: func_020af150
 // JPN: func_020b0c1c
+// Original: arm9/main @ 0x020AF150; symbol: _ZN13AllocatorTree26GetListContainingAllocatorEP21SignedAllocatorHeader; size: 0x28.
 SignedAllocatorList* AllocatorTree::GetListContainingAllocator(SignedAllocatorHeader* alloc)
 {
     SignedAllocatorList* list = &topLevel;
@@ -199,6 +210,7 @@ SignedAllocatorList* AllocatorTree::GetListContainingAllocator(SignedAllocatorHe
 
 // USA: func_020af178
 // JPN: func_020b0c44
+// Original: arm9/main @ 0x020AF178; symbol: _ZN13AllocatorTree26InsertNewAndPopulateHeaderEP21SignedAllocatorHeaderjPvS2_t; size: 0x7C.
 void AllocatorTree::InsertNewAndPopulateHeader(SignedAllocatorHeader* allocator,
     unsigned int sig, void* allocBegin, void* allocEnd, unsigned short clearFlags)
 {
@@ -224,6 +236,7 @@ void AllocatorTree::InsertNewAndPopulateHeader(SignedAllocatorHeader* allocator,
 
 // USA: func_020af1f4
 // JPN: func_020b0cc0
+// Original: arm9/main @ 0x020AF1F4; symbol: _ZN13AllocatorTree6RemoveEP21SignedAllocatorHeader; size: 0x18.
 void AllocatorTree::Remove(SignedAllocatorHeader* alloc)
 {
     SignedAllocatorList* containList = GetListContainingAllocator(alloc);

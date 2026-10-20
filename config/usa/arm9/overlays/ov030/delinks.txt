@@ -2,3 +2,38 @@
     .ctor       start:0x021d9c5c end:0x021d9c60 kind:rodata align:4
     .bss        start:0x021d9c60 end:0x021d9c60 kind:bss align:32
 
+src/System/Startup/GameResources_ConstructEquipmentRefreshNode.cpp:
+    complete
+    .text start:0x021d9250 end:0x021d9264
+
+src/System/Startup/GameResources_DestructEquipmentRefreshNode.cpp:
+    complete
+    .text start:0x021d9264 end:0x021d9278
+
+src/System/Startup/GameResources_ConstructZoneEncounterLoadNode.cpp:
+    complete
+    .text start:0x021d9278 end:0x021d928c
+
+src/System/Startup/GameResources_DestructZoneEncounterLoadNode.cpp:
+    complete
+    .text start:0x021d928c end:0x021d92a0
+
+src/System/Startup/GameResources_ConstructSaveDataSendNode.cpp:
+    complete
+    .text start:0x021d92a0 end:0x021d92b4
+
+src/System/Startup/GameResources_DestructSaveDataSendNode.cpp:
+    complete
+    .text start:0x021d92b4 end:0x021d92c8
+
+src/System/Startup/GameResources_ConstructActorLevelChangeNode.cpp:
+    complete
+    .text start:0x021d92c8 end:0x021d92dc
+
+src/System/Startup/GameResources_DestructActorLevelChangeNode.cpp:
+    complete
+    .text start:0x021d92dc end:0x021d92f0
+
+src/System/Startup/GameResources_ReleaseContextAndCommandArena.cpp:
+    complete
+    .text start:0x021d92f0 end:0x021d9340

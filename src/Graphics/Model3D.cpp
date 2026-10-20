@@ -10,21 +10,22 @@
 #include <globaldefs.h>
 
 #if defined(jpn)
-#define data_020f1ee8 data_020f2054
-#define data_020f1eec data_020f2058
-#define data_020f1ef0 data_020f205c
-#define data_020f1ef4 data_020f2060
+#define InitializeTextureImageVRAM_UnknownRoleProcedureReferenceRecords data_020f2054
+#define InitializeTextureImageVRAM_UnknownRoleProcedureReferenceRecords_Variant2 data_020f2058
+#define InitializeTexturePaletteVRAM_UnknownRoleProcedureReferenceRecords data_020f205c
+#define InitializeTexturePaletteVRAM_UnknownRoleProcedureReferenceRecords_Variant2 data_020f2060
 
-#define func_020c56b0 func_020c717c
+#define Graphics_ReadGeometryStatusUnlessBusy func_020c717c
 #endif
 
 #include "Graphics/VRAMAllocations.h"
 
 extern "C"
 {
-    int func_020c56b0(int*);
+    int Graphics_ReadGeometryStatusUnlessBusy(int*);
 }
 
+// Original: arm9/main @ 0x0207E264; symbol: _ZN7Model3D5ClearEv; size: 0x7C.
 void Model3D::Clear()
 {
     unknown_flags_a8_0_ = false;
@@ -45,20 +46,22 @@ void Model3D::Clear()
     memset(&xMax_, 0, 6 * sizeof(fix32_t)); 
 }
 
-void Model3D::Func0207e2e0()
+// Original: arm9/main @ 0x0207E2E0; symbol: _ZN7Model3D12Func0207e2e0Ev; size: 0x24.
+void Model3D::CancelVramStagingAndClear()
 {
     CancelVRAMStagingOperation(paletteStagingTaskID_);
     CancelVRAMStagingOperation(imageStagingTaskID_);
     this->Clear();
 }
 
+// Original: arm9/main @ 0x0207E304; symbol: _ZN7Model3D12LoadFromFileEPKcP14AllocatorUnionNS_18TextureStagingModeE; size: 0x74.
 void Model3D::LoadFromFile(const char* path, AllocatorUnion* alloc, TextureStagingMode stagingMode)
 {
     if (alloc == NULL)
         return;
     BackgroundLoader::AddLockGlobal();
     unsigned int length;
-    void* scratchData = LoadFileIntoMemory(path, &data_0211e33c, &length);
+    void* scratchData = LoadFileIntoMemory(path, &Main_UnknownRoleZeroInitializedStorage_Variant6, &length);
     if (scratchData == NULL)
     {
         unknown_flags_a8_0_ = false;
@@ -71,6 +74,7 @@ void Model3D::LoadFromFile(const char* path, AllocatorUnion* alloc, TextureStagi
     BackgroundLoader::RemoveLockGlobal();
 }
 
+// Original: arm9/main @ 0x0207E378; symbol: _ZN7Model3D21CopyAndProcessRawFileEP14AllocatorUnionPKvjNS_18TextureStagingModeE; size: 0x38.
 void Model3D::CopyAndProcessRawFile(AllocatorUnion* alloc, const void* data,
     unsigned int length, TextureStagingMode stagingMode)
 {
@@ -82,6 +86,7 @@ void Model3D::CopyAndProcessRawFile(AllocatorUnion* alloc, const void* data,
     ProcessRawFile(stagingMode);
 }
 
+// Original: arm9/main @ 0x0207E3B0; symbol: _ZN7Model3D20SetAndProcessRawFileEPvjNS_18TextureStagingModeE; size: 0x30.
 void Model3D::SetAndProcessRawFile(void* data, unsigned int length, TextureStagingMode stagingMode)
 {
     rawBMD_ = data;
@@ -90,6 +95,7 @@ void Model3D::SetAndProcessRawFile(void* data, unsigned int length, TextureStagi
     ProcessRawFile(stagingMode);
 }
 
+// Original: arm9/main @ 0x0207E3E0; symbol: _ZN7Model3D11CopyRawFileEP14AllocatorUnionPKvj; size: 0x48.
 void Model3D::CopyRawFile(AllocatorUnion* alloc, const void* data, unsigned int length)
 {
     rawBMD_ = alloc->Allocate(length);
@@ -104,17 +110,20 @@ void Model3D::CopyRawFile(AllocatorUnion* alloc, const void* data, unsigned int 
     }
 }
 
+// Original: arm9/main @ 0x0207E428; symbol: _ZN7Model3D10SetRawFileEPvj; size: 0xC.
 void Model3D::SetRawFile(void* data, unsigned int length)
 {
     rawBMD_ = data;
     rawBMDFileSize_ = length;
 }
 
+// Original: arm9/main @ 0x0207E434; symbol: _ZN7Model3D17ClearRawFileCacheEv; size: 0x18.
 void Model3D::ClearRawFileCache()
 {
     CleanInvalidateCacheRange(rawBMD_, rawBMDFileSize_);
 }
 
+// Original: arm9/main @ 0x0207E44C; symbol: _ZN7Model3D14ProcessRawFileENS_18TextureStagingModeE; size: 0x430.
 void Model3D::ProcessRawFile(TextureStagingMode stagingMode)
 {
     bool block4Succeeded, block23Succeeded, block1Succeeded;
@@ -148,7 +157,7 @@ void Model3D::ProcessRawFile(TextureStagingMode stagingMode)
 
             if (block1Len != 0)
             {
-                block1Alloc = data_020f1ee8(block1Len, 0, 0);
+                block1Alloc = InitializeTextureImageVRAM_UnknownRoleProcedureReferenceRecords(block1Len, 0, 0);
                 if (block1Alloc == 0)
                     block1Succeeded = false;
             }
@@ -157,7 +166,7 @@ void Model3D::ProcessRawFile(TextureStagingMode stagingMode)
 
             if (block2Len != 0)
             {
-                block2Alloc = data_020f1ee8(block2Len, 1, 0);
+                block2Alloc = InitializeTextureImageVRAM_UnknownRoleProcedureReferenceRecords(block2Len, 1, 0);
                 if (block2Alloc == 0)
                     block23Succeeded = false;
             }
@@ -166,7 +175,7 @@ void Model3D::ProcessRawFile(TextureStagingMode stagingMode)
             
             if (block4Len != 0)
             {
-                block4Alloc = data_020f1ef0(block4Len, tex0->maybeBlock23Flags_20_ & 0x8000, 0);
+                block4Alloc = InitializeTexturePaletteVRAM_UnknownRoleProcedureReferenceRecords(block4Len, tex0->maybeBlock23Flags_20_ & 0x8000, 0);
                 if (block4Alloc == 0)
                     block4Succeeded = false;
             }
@@ -176,11 +185,11 @@ void Model3D::ProcessRawFile(TextureStagingMode stagingMode)
             if (!block1Succeeded || !block23Succeeded || !block4Succeeded)
             {
                 if (block4Succeeded)
-                    data_020f1ef4(block4Alloc);
+                    InitializeTexturePaletteVRAM_UnknownRoleProcedureReferenceRecords_Variant2(block4Alloc);
                 if (block23Succeeded)
-                    data_020f1eec(block2Alloc);
+                    InitializeTextureImageVRAM_UnknownRoleProcedureReferenceRecords_Variant2(block2Alloc);
                 if (block1Succeeded)
-                    data_020f1eec(block1Alloc);
+                    InitializeTextureImageVRAM_UnknownRoleProcedureReferenceRecords_Variant2(block1Alloc);
                 break; // from switch statement
             }
             else
@@ -276,6 +285,7 @@ found_a_model:
     unknown_flags_a8_0_ = true;
 }
 
+// Original: arm9/main @ 0x0207E87C; symbol: _ZN7Model3D4DrawEb; size: 0xA8.
 bool Model3D::Draw(bool applyClipping)
 {
     if (!unknown_flags_a8_0_)
@@ -301,6 +311,7 @@ bool Model3D::Draw(bool applyClipping)
     return true;
 }
 
+// Original: arm9/main @ 0x0207E924; symbol: _ZN7Model3D20DrawMeshWithMaterialEbjji; size: 0x58.
 bool Model3D::DrawMeshWithMaterial(bool applyClipping, unsigned int material, unsigned int mesh, int bind)
 {
     if (!unknown_flags_a8_0_)
@@ -313,6 +324,7 @@ bool Model3D::DrawMeshWithMaterial(bool applyClipping, unsigned int material, un
     return true;
 }
 
+// Original: arm9/main @ 0x0207E97C; symbol: _ZN7Model3D11TestVisibleEv; size: 0xBC.
 int Model3D::TestVisible()
 {
     GXFIFO_MATRIX_PUSH = 0;
@@ -355,11 +367,12 @@ int Model3D::TestVisible()
     GXFIFO_TEST_BOX = boxparams.u32s.c;
 
     int result;
-    while (func_020c56b0(&result) != 0) {}
+    while (Graphics_ReadGeometryStatusUnlessBusy(&result) != 0) {}
     GXFIFO_MATRIX_POP = 1;
     return result;
 }
 
+// Original: arm9/main @ 0x0207EA38; symbol: _ZN7Model3D12GetBoneIndexEPKc; size: 0x54.
 int Model3D::GetBoneIndex(const char *boneName)
 {
     if (rawInternalModel_ == NULL)
@@ -368,9 +381,10 @@ int Model3D::GetBoneIndex(const char *boneName)
     char zeroPaddedName[16];
     memset(zeroPaddedName, 0, sizeof(zeroPaddedName));
     strcpy(zeroPaddedName, boneName);
-    return NSBXXNameList_SearchIndex(&rawInternalModel_->boneList_, zeroPaddedName);
+    return NNS_G3dGetResDictIdxByName(&rawInternalModel_->boneList_, zeroPaddedName);
 }
 
+// Original: arm9/main @ 0x0207EA8C; symbol: _ZN7Model3D22ApplyTexturesFromModelEPS_; size: 0x38.
 void Model3D::ApplyTexturesFromModel(Model3D* otherModel)
 {
     if (!unknown_flags_a8_0_ || otherModel == NULL)
@@ -382,6 +396,7 @@ void Model3D::ApplyTexturesFromModel(Model3D* otherModel)
     NSBXX_LinkTEX0ToMDL0(mdl0, tex0);
 }
 
+// Original: arm9/main @ 0x0207EAC4; symbol: _ZN7Model3D7GetMDL0Ev; size: 0x1C.
 NSBXXMdl* Model3D::GetMDL0()
 {
     if (rawBMD_ == NULL)
@@ -389,6 +404,7 @@ NSBXXMdl* Model3D::GetMDL0()
     return (NSBXXMdl*)NSBXX_GetFirstSubfile((NSBXXContainer*)rawBMD_);
 }
 
+// Original: arm9/main @ 0x0207EAE0; symbol: _ZN7Model3D14RemoveTexturesEv; size: 0x18.
 void Model3D::RemoveTextures()
 {
     NSBXXMdl* mdl0 = GetMDL0();
@@ -397,6 +413,7 @@ void Model3D::RemoveTextures()
     NSBXX_UnlinkTEX0FromMDL0(mdl0);
 }
 
+// Original: arm9/main @ 0x0207EAF8; symbol: _ZN7Model3D33CreateBoneMatrixAndMaterialArraysEP13SafeAllocatori; size: 0xA4.
 void Model3D::CreateBoneMatrixAndMaterialArrays(SafeAllocator *alloc, int args)
 {
     if (alloc != NULL)
@@ -419,6 +436,7 @@ void Model3D::CreateBoneMatrixAndMaterialArrays(SafeAllocator *alloc, int args)
     }
 }
 
+// Original: arm9/main @ 0x0207EB9C; symbol: _ZN7Model3D39StoreBoneMatrixAndMaterialArrayPointersEv; size: 0x28.
 void Model3D::StoreBoneMatrixAndMaterialArrayPointers()
 {
     if (pBoneMatrixRenderData_ != NULL)
@@ -428,6 +446,7 @@ void Model3D::StoreBoneMatrixAndMaterialArrayPointers()
     unknown_flags_a8_1_ = true;
 }
 
+// Original: arm9/main @ 0x0207EBC4; symbol: _ZN7Model3D8SetAlphaEi; size: 0x24.
 void Model3D::SetAlpha(int alpha)
 {
     if (rawInternalModel_ != NULL)
@@ -437,8 +456,10 @@ void Model3D::SetAlpha(int alpha)
     }
 }
 
+// Original: arm9/main @ 0x0207EBE8; symbol: _ZNK7Model3D8GetAlphaEv; size: 0x8.
 int Model3D::GetAlpha() const { return alpha_; }
 
+// Original: arm9/main @ 0x0207EBF0; symbol: _ZN7Model3D12AddAnimationEP11Animation3D; size: 0x38.
 void Model3D::AddAnimation(Animation3D* anim)
 {
     if (anim == NULL || anim->GetBasicAnimationData() == NULL)
@@ -447,6 +468,7 @@ void Model3D::AddAnimation(Animation3D* anim)
     AddAnimationsToModelRenderContext(&renderContext_, anim->GetBasicAnimationData());
 }
 
+// Original: arm9/main @ 0x0207EC28; symbol: _ZN7Model3D16RemoveAnimationsEv; size: 0x54.
 void Model3D::RemoveAnimations()
 {
     while (renderContext_.materialAnimations_ != NULL)
@@ -459,44 +481,52 @@ void Model3D::RemoveAnimations()
         RemoveAnimationFromModelRenderContext(&renderContext_, renderContext_.visibilityAnimations_);
 }
 
+// Original: arm9/main @ 0x0207EC7C; symbol: _ZN7Model3D23SetBoneMatrixRenderDataEP20BoneMatrixRenderData; size: 0x8.
 void Model3D::SetBoneMatrixRenderData(BoneMatrixRenderData* data)
 {
     pBoneMatrixRenderData_ = data;
 }
 
+// Original: arm9/main @ 0x0207EC84; symbol: _ZN7Model3D23GetBoneMatrixRenderDataEv; size: 0x8.
 BoneMatrixRenderData* Model3D::GetBoneMatrixRenderData()
 {
     return pBoneMatrixRenderData_;
 }
 
+// Original: arm9/main @ 0x0207EC8C; symbol: _ZN7Model3D37ApplyRenderConfigMaterialDiffuseColorEv; size: 0x20.
 void Model3D::ApplyRenderConfigMaterialDiffuseColor()
 {
     if (rawInternalModel_ != NULL)
         NSBXX_Model_SetAllMaterialFlags(rawInternalModel_, false, 1 << 6);
 }
 
+// Original: arm9/main @ 0x0207ECAC; symbol: _ZN7Model3D23SetMaterialDiffuseColorEj; size: 0x18.
 void Model3D::SetMaterialDiffuseColor(unsigned int rgb)
 {
     if (rawInternalModel_ != NULL)
         NSBXX_Model_SetDiffuseReflectionColor(rawInternalModel_, rgb);
 }
 
+// Original: arm9/main @ 0x0207ECC4; symbol: _ZN7Model3D7GetTEX0Ev; size: 0x8.
 NSBXXTex* Model3D::GetTEX0()
 {
     return rawTEX_;
 }
 
+// Original: arm9/main @ 0x0207ECCC; symbol: _ZN7Model3D7SetTEX0EP8NSBXXTex; size: 0x8.
 void Model3D::SetTEX0(NSBXXTex* tex)
 {
     rawTEX_ = tex;
 }
 
+// Original: arm9/main @ 0x0207ECD4; symbol: _ZN7Model3D21RestageTexturePaletteEv; size: 0x24.
 void Model3D::RestageTexturePalette()
 {
     CancelVRAMStagingOperation(paletteStagingTaskID_);
     paletteStagingTaskID_ = StageTexFilePaletteData(rawTEX_, false);
 }
 
+// Original: arm9/main @ 0x0207ECF8; symbol: _ZN7Model3D19RestageTextureImageEv; size: 0x24.
 void Model3D::RestageTextureImage()
 {
     CancelVRAMStagingOperation(imageStagingTaskID_);

@@ -1,0 +1,105 @@
+--- a/objdiff-core/src/arch/arm.rs
++++ b/objdiff-core/src/arch/arm.rs
+@@ -89,9 +89,86 @@
+                     .filter_map(|s| DisasmMode::from_symbol(&s))
+                     .collect();
+                 mapping_symbols.sort_unstable_by_key(|x| x.address);
++                if let Some(first) = mapping_symbols.first() {
++                    // ELF OBJECT data may precede the first explicit code mapping.
++                    // Infer only an exact leading object extent, never a code mode
++                    // from a later mapping or an untyped gap.
++                    let start = s.address() as u32;
++                    let end = first.address;
++                    let object_prefix = file.symbols().any(|symbol| {
++                        symbol.kind() == SymbolKind::Data
++                            && symbol.section_index() == Some(index)
++                            && leading_object_extent(start, end, symbol.address(), symbol.size())
++                    });
++                    if object_prefix {
++                        mapping_symbols.insert(0, DisasmMode { address: start, mapping: ParseMode::Data });
++                    }
++                }
+                 (s.index(), mapping_symbols)
+             })
+             .collect()
++    }
++}
++
++fn leading_object_extent(start: u32, first_mapping: u32, address: u64, size: u64) -> bool {
++    start < first_mapping && address == start as u64 && address.checked_add(size) == Some(first_mapping as u64)
++}
++
++// A mapping describes bytes at and after its address, never earlier bytes.
++// Retain the existing ARM fallback until the first mapping is reached.
++fn mapping_start(mapping_symbols: &[DisasmMode], start_addr: u32) -> (ParseMode, usize) {
++    match mapping_symbols.binary_search_by_key(&start_addr, |x| x.address) {
++        Ok(idx) => (mapping_symbols[idx].mapping, idx + 1),
++        Err(0) => (ParseMode::Arm, 0),
++        Err(idx) => (mapping_symbols[idx - 1].mapping, idx),
++    }
++}
++
++#[cfg(test)]
++mod mapping_start_tests {
++    use super::*;
++
++    #[test]
++    fn empty_and_before_first_mapping_use_arm_without_skipping_the_first_map() {
++        assert!(matches!(mapping_start(&[], 0), (ParseMode::Arm, 0)));
++        let at_zero = [DisasmMode { address: 0, mapping: ParseMode::Thumb }];
++        assert!(matches!(mapping_start(&at_zero, 0), (ParseMode::Thumb, 1)));
++        let mappings = [DisasmMode { address: 4, mapping: ParseMode::Thumb }];
++        assert!(matches!(mapping_start(&mappings, 0), (ParseMode::Arm, 0)));
++        assert!(matches!(mapping_start(&mappings, 2), (ParseMode::Arm, 0)));
++    }
++
++    #[test]
++    fn exact_leading_object_prefix_is_data_and_stops_at_the_real_code_mapping() {
++        assert!(leading_object_extent(0, 252, 0, 252));
++        assert!(!leading_object_extent(0, 252, 4, 248));
++        assert!(!leading_object_extent(0, 252, 0, 248));
++        assert!(!leading_object_extent(0, 252, 0, 256));
++        assert!(!leading_object_extent(0, 0, 0, 252));
++        assert!(!leading_object_extent(0, 252, u64::MAX, 1));
++        let mappings = [
++            DisasmMode { address: 0, mapping: ParseMode::Data },
++            DisasmMode { address: 252, mapping: ParseMode::Arm },
++        ];
++        assert!(matches!(mapping_start(&mappings, 0), (ParseMode::Data, 1)));
++        assert!(matches!(mapping_start(&mappings, 248), (ParseMode::Data, 1)));
++        assert!(matches!(mapping_start(&mappings, 252), (ParseMode::Arm, 2)));
++        assert!(matches!(mapping_start(&mappings, 256), (ParseMode::Arm, 2)));
++    }
++
++    #[test]
++    fn exact_between_and_after_mappings_keep_existing_modes_and_boundaries() {
++        let mappings = [
++            DisasmMode { address: 4, mapping: ParseMode::Thumb },
++            DisasmMode { address: 8, mapping: ParseMode::Data },
++            DisasmMode { address: 12, mapping: ParseMode::Arm },
++        ];
++        assert!(matches!(mapping_start(&mappings, 4), (ParseMode::Thumb, 1)));
++        assert!(matches!(mapping_start(&mappings, 6), (ParseMode::Thumb, 1)));
++        assert!(matches!(mapping_start(&mappings, 8), (ParseMode::Data, 2)));
++        assert!(matches!(mapping_start(&mappings, 10), (ParseMode::Data, 2)));
++        assert!(matches!(mapping_start(&mappings, 12), (ParseMode::Arm, 3)));
++        assert!(matches!(mapping_start(&mappings, 16), (ParseMode::Arm, 3)));
+     }
+ }
+ 
+@@ -124,13 +201,10 @@
+             .get(&SectionIndex(section_index))
+             .map(|x| if x.is_empty() { &fallback_mappings } else { x.as_slice() })
+             .unwrap_or(&fallback_mappings);
+-        let first_mapping_idx = mapping_symbols
+-            .binary_search_by_key(&start_addr, |x| x.address)
+-            .unwrap_or_else(|idx| idx - 1);
+-        let first_mapping = mapping_symbols[first_mapping_idx].mapping;
++        let (first_mapping, next_mapping_idx) = mapping_start(mapping_symbols, start_addr);
+ 
+         let mut mappings_iter =
+-            mapping_symbols.iter().skip(first_mapping_idx + 1).take_while(|x| x.address < end_addr);
++            mapping_symbols.iter().skip(next_mapping_idx).take_while(|x| x.address < end_addr);
+         let mut next_mapping = mappings_iter.next();
+ 
+         let ins_count = code.len() / first_mapping.instruction_size(start_addr);

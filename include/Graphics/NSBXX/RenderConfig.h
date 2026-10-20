@@ -130,7 +130,12 @@ struct RenderConfig
 #define RENDER_CONFIG_FLAG_WORLDVIEW_CACHE_VALID 7
 
 #if defined(jpn)
-#define data_0210a010 data_02109cc8
+#define RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage data_02109cc8
 #endif
 
-extern RenderConfig data_0210a010;
+// Original data: arm9/main @ 0x210a010; symbol: data_0210a010.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 612 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern RenderConfig RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage;

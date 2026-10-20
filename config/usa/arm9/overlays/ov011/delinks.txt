@@ -4,3 +4,730 @@
     .data       start:0x021889a0 end:0x02188b80 kind:data align:32
     .bss        start:0x02188b80 end:0x02188b80 kind:bss align:32
 
+src/Menu/Layouts/Menu_ConfigureTextCanvasRectangleFromArguments.cpp:
+    complete
+    .text start:0x02185418 end:0x02185504
+
+src/Menu/Layouts/Menu_CreateContainerRenderFromArguments.cpp:
+    complete
+    .text start:0x02185020 end:0x02185110
+
+src/Menu/Layouts/Menu_CreateSpriteResourceFromArguments.cpp:
+    complete
+    .text start:0x02185be8 end:0x02185ce0
+
+src/Menu/Layouts/Menu_CreateNamedMessageTableDescriptor.cpp:
+    complete
+    .text start:0x02188560 end:0x02188658
+
+src/Menu/Layouts/Menu_CreateTextCanvasFromArguments.cpp:
+    complete
+    .text start:0x02185318 end:0x02185418
+
+src/Menu/Layouts/Menu_CreateModeAndValueDescriptor.cpp:
+    complete
+    .text start:0x02188184 end:0x02188284
+
+src/Menu/Layouts/Menu_CreateCanvasResourceFromArguments.cpp:
+    complete
+    .text start:0x02185214 end:0x02185318
+
+src/Menu/Layouts/Menu_UpdateSb2ScriptExecution.cpp:
+    complete
+    .text start:0x021848a8 end:0x021849ac
+
+src/Menu/Layouts/Menu_CreatePairedValueFlagDescriptor.cpp:
+    complete
+    .text start:0x02186548 end:0x02186650
+
+src/Menu/Layouts/Menu_QueuePositionTransitionFromArguments.cpp:
+    complete
+    .text start:0x02186018 end:0x02186124
+
+src/Menu/Layouts/Menu_CreateSixParameterDescriptor.cpp:
+    complete
+    .text start:0x021871b8 end:0x021872c8
+
+src/Menu/Layouts/Menu_GetCanvasPixelBuffer.cpp:
+    complete
+    .text start:0x021844ec end:0x021844f4
+
+src/Menu/Layouts/Menu_GetSharedDataBuffer.cpp:
+    complete
+    .text start:0x02184540 end:0x02184548
+
+src/Menu/Layouts/Menu_GetSharedDataBufferSize.cpp:
+    complete
+    .text start:0x02184548 end:0x02184550
+
+src/Menu/Layouts/Menu_QueueScriptEntry.cpp:
+    complete
+    .text start:0x021848a0 end:0x021848a8
+
+src/Menu/Layouts/Menu_GetDisplayRecordRegistry.cpp:
+    complete
+    .text start:0x021849c8 end:0x021849d0
+
+src/Menu/Layouts/Menu_SetBackgroundLoadTicket.cpp:
+    complete
+    .text start:0x021849d0 end:0x021849d8
+
+src/Menu/Layouts/Menu_GetBackgroundLoadTicket.cpp:
+    complete
+    .text start:0x021849d8 end:0x021849e0
+
+src/Menu/Layouts/Menu_IsSelectionRefreshRequested.cpp:
+    complete
+    .text start:0x02184bd8 end:0x02184be0
+
+src/Menu/Layouts/Menu_SetDisconnectCleanupCallback.cpp:
+    complete
+    .text start:0x02184c28 end:0x02184c30
+
+src/Menu/Layouts/Menu_ReturnScriptCommandSuccess.cpp:
+    complete
+    .text start:0x02185018 end:0x02185020
+
+src/Menu/Layouts/Menu_SetSharedDataBufferAndSize.cpp:
+    complete
+    .text start:0x02184534 end:0x02184540
+
+src/Menu/Layouts/Menu_GetCompletedFieldCleanupPhaseMask.cpp:
+    complete
+    .text start:0x021849bc end:0x021849c8
+
+src/Menu/Layouts/Menu_GetActiveSelectionGridId.cpp:
+    complete
+    .text start:0x02184a00 end:0x02184a0c
+
+src/Menu/Layouts/Menu_SetReferencedDisplayRecordId.cpp:
+    complete
+    .text start:0x02184a0c end:0x02184a18
+
+src/Menu/Layouts/ReadStateHalfword1B2.cpp:
+    complete
+    .text start:0x02184a18 end:0x02184a24
+
+src/Menu/Layouts/Menu_SetCallbackTableAndCount.cpp:
+    complete
+    .text start:0x02184a24 end:0x02184a30
+
+src/Menu/Layouts/Menu_RequestSelectionRefresh.cpp:
+    complete
+    .text start:0x02184ad8 end:0x02184ae4
+
+src/Menu/Layouts/Menu_ClearSelectionRefreshRequest.cpp:
+    complete
+    .text start:0x02184bcc end:0x02184bd8
+
+src/Menu/Layouts/Menu_MarkFieldCleanupPhasesCompleted.cpp:
+    complete
+    .text start:0x021849ac end:0x021849bc
+
+src/Menu/Layouts/Menu_GetCallbackTableAndCount.cpp:
+    complete
+    .text start:0x02184a30 end:0x02184a40
+
+src/Menu/Layouts/Menu_SetChoiceResultCallbacks.cpp:
+    complete
+    .text start:0x02184be0 end:0x02184bf0
+
+src/Menu/Layouts/Menu_SetChoiceResultScriptEntries.cpp:
+    complete
+    .text start:0x02184bf0 end:0x02184c00
+
+src/Menu/Layouts/Graphics_CaptureMainBackgroundVramBanks.cpp:
+    complete
+    .text start:0x02184c00 end:0x02184c14
+
+src/Menu/Layouts/Graphics_CaptureSubBackgroundVramBanks.cpp:
+    complete
+    .text start:0x02184c14 end:0x02184c28
+
+src/Menu/Layouts/Menu_WriteScriptIntegerReference.cpp:
+    complete
+    .text start:0x02184c68 end:0x02184c7c
+
+src/Menu/Layouts/Graphics_RouteMainDisplayToTopScreen.cpp:
+    complete
+    .text start:0x02187f38 end:0x02187f4c
+
+src/Menu/Layouts/Graphics_RouteMainDisplayToBottomScreen.cpp:
+    complete
+    .text start:0x02187f68 end:0x02187f7c
+
+src/Menu/Layouts/Menu_ResetVramSnapshotRecordHeader.cpp:
+    complete
+    .text start:0x02184374 end:0x0218438c
+
+src/Menu/Layouts/Graphics_SetSubBackgroundThreePriority.cpp:
+    complete
+    .text start:0x02186360 end:0x0218637c
+
+src/Menu/Layouts/Graphics_SetSubBackgroundTwoPriority.cpp:
+    complete
+    .text start:0x0218637c end:0x02186398
+
+src/Menu/Layouts/Graphics_SetSubBackgroundOnePriority.cpp:
+    complete
+    .text start:0x02186398 end:0x021863b4
+
+src/Menu/Layouts/Graphics_SetSubBackgroundZeroPriority.cpp:
+    complete
+    .text start:0x021863b4 end:0x021863d0
+
+src/Menu/Layouts/Graphics_WriteBackgroundThreeControlLowBits.cpp:
+    complete
+    .text start:0x021863d0 end:0x021863ec
+
+src/Menu/Layouts/Graphics_SetMainBackgroundTwoPriority.cpp:
+    complete
+    .text start:0x021863ec end:0x02186408
+
+src/Menu/Layouts/Graphics_SetMainBackgroundOnePriority.cpp:
+    complete
+    .text start:0x02186408 end:0x02186424
+
+src/Menu/Layouts/Graphics_SetMainBackgroundZeroPriority.cpp:
+    complete
+    .text start:0x02186424 end:0x02186440
+
+src/Menu/Layouts/Graphics_SetMainDisplayTopScreenRouting.cpp:
+    complete
+    .text start:0x02187f4c end:0x02187f68
+
+src/Menu/Layouts/Menu_SetActiveSelectionGrid.cpp:
+    complete
+    .text start:0x021849e0 end:0x02184a00
+
+src/Menu/Layouts/Graphics_WriteDisplayRegister0400100EControlFields.cpp:
+    complete
+    .text start:0x02186124 end:0x02186150
+
+src/Menu/Layouts/Graphics_WriteSubBackgroundTwoControlFields.cpp:
+    complete
+    .text start:0x02186150 end:0x0218617c
+
+src/Menu/Layouts/Graphics_WriteDisplayRegister0400000EControlFields.cpp:
+    complete
+    .text start:0x021861e4 end:0x02186210
+
+src/Menu/Layouts/Graphics_WriteDisplayRegister0400000CControlFields.cpp:
+    complete
+    .text start:0x02186210 end:0x0218623c
+
+src/Menu/Layouts/Graphics_WriteDisplayRegister0400100AControlFields.cpp:
+    complete
+    .text start:0x0218617c end:0x021861b0
+
+src/Menu/Layouts/Graphics_WriteDisplayRegister04001008ControlFields.cpp:
+    complete
+    .text start:0x021861b0 end:0x021861e4
+
+src/Menu/Layouts/Graphics_ConfigureMainBackgroundOneControl.cpp:
+    complete
+    .text start:0x0218623c end:0x02186270
+
+src/Menu/Layouts/Graphics_ConfigureMainBackgroundZeroControl.cpp:
+    complete
+    .text start:0x02186270 end:0x021862a4
+
+src/Menu/Layouts/Menu_EnableSharedControlFlagAt1CC.cpp:
+    complete
+    .text start:0x02186d78 end:0x02186d90
+
+src/Menu/Layouts/Menu_ClearCurrentSelectionAndMarkChanged.cpp:
+    complete
+    .text start:0x02187e08 end:0x02187e20
+
+src/Menu/Layouts/MapCurrentMainBackgroundVramBanks.cpp:
+    complete
+    .text start:0x021880d8 end:0x021880f0
+
+src/Menu/Layouts/MapCurrentSubBackgroundVramBanks.cpp:
+    complete
+    .text start:0x021880f0 end:0x02188108
+
+src/Menu/Layouts/Menu_ReadScriptArgumentAsInteger.cpp:
+    complete
+    .text start:0x02184c30 end:0x02184c4c
+
+src/Menu/Layouts/Menu_ReadScriptArgumentAsFloat.cpp:
+    complete
+    .text start:0x02184c4c end:0x02184c68
+
+src/Menu/Layouts/Menu_ResetContainerRenderRecordParts.cpp:
+    complete
+    .text start:0x0218513c end:0x0218515c
+
+src/Menu/Layouts/Menu_ResetSharedMessageWindow.cpp:
+    complete
+    .text start:0x02187460 end:0x02187480
+
+src/Menu/Layouts/Menu_WriteMessageActiveFlagToScriptOutput.cpp:
+    complete
+    .text start:0x021874b0 end:0x021874d0
+
+src/Menu/Layouts/Menu_WriteBrightnessTransitionStatusToScriptOutput.cpp:
+    complete
+    .text start:0x02186e30 end:0x02186e54
+
+src/Menu/Layouts/Menu_ResetIndexedDescriptorArgumentPacket.cpp:
+    complete
+    .text start:0x02188384 end:0x021883a8
+
+src/Menu/Layouts/Menu_WriteMessageChoiceResultToScriptOutput.cpp:
+    complete
+    .text start:0x021884ac end:0x021884d0
+
+src/Menu/Layouts/Menu_TestDisplayActivityIntoScriptReference.cpp:
+    complete
+    .text start:0x021851ec end:0x02185214
+
+src/Menu/Layouts/Menu_WriteMessageProcessingStatusToScriptOutput.cpp:
+    complete
+    .text start:0x02187480 end:0x021874b0
+
+src/Menu/Layouts/Menu_RemoveDataFileLoadTask.cpp:
+    complete
+    .text start:0x021855cc end:0x02185600
+
+src/Menu/Layouts/Menu_SetChoiceResultIndexedCallbacks.cpp:
+    complete
+    .text start:0x0218753c end:0x02187570
+
+src/Menu/Layouts/Menu_SetChoiceResultScriptDispatchIndices.cpp:
+    complete
+    .text start:0x02187f04 end:0x02187f38
+
+src/Menu/Layouts/Menu_TestDataFileLoadPendingIntoScriptReference.cpp:
+    complete
+    .text start:0x02185600 end:0x0218563c
+
+src/Menu/Layouts/Menu_SetValidatedDisplayRecordReferenceFromArguments.cpp:
+    complete
+    .text start:0x02185948 end:0x0218598c
+
+src/Menu/Layouts/Menu_ResetTextCanvasLayoutFromArguments.cpp:
+    complete
+    .text start:0x02185504 end:0x0218554c
+
+src/Menu/Layouts/Menu_ClearTileGridDescriptorCells.cpp:
+    complete
+    .text start:0x02186c70 end:0x02186cb8
+
+src/Menu/Layouts/Menu_AppendNestedArena.cpp:
+    complete
+    .text start:0x02184354 end:0x02184374
+
+src/Menu/Layouts/Menu_InitializeArenaNode.cpp:
+    complete
+    .text start:0x021842a0 end:0x021842c8
+
+src/Menu/Layouts/Menu_FindVramSnapshotById.cpp:
+    complete
+    .text start:0x0218466c end:0x02184694
+
+src/Menu/Layouts/Menu_InitializeRootArenaFromBuffer.cpp:
+    complete
+    .text start:0x021845c8 end:0x021845f4
+
+src/Menu/Layouts/Menu_InitializeVramSnapshotList.cpp:
+    complete
+    .text start:0x02184640 end:0x0218466c
+
+src/Menu/Layouts/Menu_AppendArenaToForwardChain.cpp:
+    complete
+    .text start:0x02184324 end:0x02184354
+
+src/Menu/Layouts/Menu_DestroyArenaTreeAndOwnedDisplayRecords.cpp:
+    complete
+    .text start:0x02184604 end:0x02184640
+
+src/Menu/Layouts/Menu_AllocateTemporaryBufferFromArena.cpp:
+    complete
+    .text start:0x021844f4 end:0x02184534
+
+src/Menu/Layouts/Menu_StartIndexedCallback.cpp:
+    complete
+    .text start:0x02184a40 end:0x02184a84
+
+src/Menu/Layouts/Menu_AllocateCanvasPixelBufferFromArena.cpp:
+    complete
+    .text start:0x021844a4 end:0x021844ec
+
+src/Menu/Layouts/Menu_UpdateActiveOrFallbackCallback.cpp:
+    complete
+    .text start:0x02184a84 end:0x02184ad8
+
+src/Menu/Layouts/Menu_FindArenaNodeById.cpp:
+    complete
+    .text start:0x021842c8 end:0x02184324
+
+src/Menu/Layouts/Menu_SetMessageWindowActionType.cpp:
+    complete
+    .text start:0x02188014 end:0x02188030
+
+src/Menu/Layouts/Menu_InvokePositiveIndexedCallback.cpp:
+    complete
+    .text start:0x02186808 end:0x02186834
+
+src/Menu/Layouts/Menu_SetTextContextControlFlagAt19CA.cpp:
+    complete
+    .text start:0x02188158 end:0x02188184
+
+src/Menu/Layouts/Menu_WriteMessageTerminalStatusToScriptOutput.cpp:
+    complete
+    .text start:0x02188534 end:0x02188560
+
+src/Menu/Layouts/Menu_ApplyDescriptorContextDisplayState.cpp:
+    complete
+    .text start:0x02186790 end:0x021867cc
+
+src/Menu/Layouts/Menu_EnableDescriptorContextGlobalFlag.cpp:
+    complete
+    .text start:0x021867cc end:0x02186808
+
+src/Menu/Layouts/Menu_DispatchDescriptorControlFlagAtVtable24.cpp:
+    complete
+    .text start:0x021883a8 end:0x021883e8
+
+src/Menu/Layouts/Menu_AddDescriptorFlagMask.cpp:
+    complete
+    .text start:0x021872c8 end:0x02187310
+
+src/Menu/Layouts/Menu_RemoveDescriptorFlagMask.cpp:
+    complete
+    .text start:0x02187310 end:0x0218735c
+
+src/Menu/Layouts/Menu_DispatchOptionalDescriptorPropertyAtVtableA4.cpp:
+    complete
+    .text start:0x02187604 end:0x02187650
+
+src/Menu/Layouts/Menu_DispatchOptionalDescriptorPropertyAtVtableB0.cpp:
+    complete
+    .text start:0x02188460 end:0x021884ac
+
+src/Menu/Layouts/Menu_InvokeDisplayRecordMethod15FromArguments.cpp:
+    complete
+    .text start:0x02185ac0 end:0x02185b10
+
+src/Menu/ScriptBindings/MenuScript_SetRecordConfirmCallback.cpp:
+    complete
+    .text start:0x02186834 end:0x02186884
+
+src/Menu/ScriptBindings/MenuScript_SetRecordSelectionChangedCallback.cpp:
+    complete
+    .text start:0x02186d90 end:0x02186de0
+
+src/Menu/ScriptBindings/MenuScript_SetRecordPageChangedCallback.cpp:
+    complete
+    .text start:0x02186de0 end:0x02186e30
+
+src/Menu/ScriptBindings/MenuScript_SetRecordXCallback.cpp:
+    complete
+    .text start:0x02188108 end:0x02188158
+
+src/Menu/ScriptBindings/MenuScript_SetRecordTouchPressCallback.cpp:
+    complete
+    .text start:0x02188284 end:0x021882d4
+
+src/Menu/ScriptBindings/MenuScript_SetRecordYStateRoute.cpp:
+    complete
+    .text start:0x021883e8 end:0x02188438
+
+src/Menu/Layouts/Menu_SetDescriptorFlagMaskFour.cpp:
+    complete
+    .text start:0x02186eb4 end:0x02186f08
+
+src/Menu/Layouts/Menu_SetDescriptorFlagMaskOne.cpp:
+    complete
+    .text start:0x02186f74 end:0x02186fc8
+
+src/Menu/ScriptBindings/MenuScript_SetGridSelectCallback.cpp:
+    complete
+    .text start:0x02187154 end:0x021871b8
+
+src/Menu/ScriptBindings/MenuScript_SetGridYCallback.cpp:
+    complete
+    .text start:0x02187650 end:0x021876b4
+
+src/Menu/ScriptBindings/MenuScript_SetRecordUpAndDownCallbacks.cpp:
+    complete
+    .text start:0x021874d0 end:0x0218753c
+
+src/Menu/ScriptBindings/MenuScript_SetRecordRightAndLeftCallbacks.cpp:
+    complete
+    .text start:0x021876b4 end:0x02187720
+
+src/Menu/ScriptBindings/MenuScript_SetRecordShoulderButtonCallbacks.cpp:
+    complete
+    .text start:0x02187c6c end:0x02187cd8
+
+src/Menu/ScriptBindings/MenuScript_SetRecordTouchCallbacks.cpp:
+    complete
+    .text start:0x02187cd8 end:0x02187d44
+
+src/Menu/Layouts/Menu_InvokeDisplayRecordMethod49FromArguments.cpp:
+    complete
+    .text start:0x02185fa8 end:0x02186018
+
+src/Menu/Layouts/Menu_InitializeContainerRenderRecord.cpp:
+    complete
+    .text start:0x02185110 end:0x0218513c
+
+src/Menu/Layouts/Menu_ConstructSpriteResourceRecord.cpp:
+    complete
+    .text start:0x02185ce0 end:0x02185d04
+
+src/Menu/Layouts/Menu_WriteTemporaryBgmStatusToScriptOutput.cpp:
+    complete
+    .text start:0x02188438 end:0x02188460
+
+src/Menu/Layouts/Menu_SetBrightnessFromScriptArguments.cpp:
+    complete
+    .text start:0x02184c7c end:0x02184cc0
+
+src/Menu/Layouts/Graphics_SetMainBrightnessFromTaggedArguments.cpp:
+    complete
+    .text start:0x02187854 end:0x02187898
+
+src/Menu/Layouts/Graphics_SetSubBrightnessFromTaggedArguments.cpp:
+    complete
+    .text start:0x02187898 end:0x021878dc
+
+src/Menu/Layouts/Menu_RemoveArenaDescriptorsAndResetAllocator.cpp:
+    complete
+    .text start:0x02186c28 end:0x02186c70
+
+src/Menu/Layouts/Menu_AllocateArenaTemporaryBuffer.cpp:
+    complete
+    .text start:0x021878dc end:0x0218792c
+
+src/Menu/Layouts/Menu_ActivateSelectionGridFromArguments.cpp:
+    complete
+    .text start:0x021858f4 end:0x02185948
+
+src/Menu/ScriptBindings/MenuScript_SetGridCancelState.cpp:
+    complete
+    .text start:0x02186cb8 end:0x02186d18
+
+src/Menu/ScriptBindings/MenuScript_SetGridCancelCallback.cpp:
+    complete
+    .text start:0x02186d18 end:0x02186d78
+
+src/Menu/ScriptBindings/MenuScript_SetGridCancelCallbackReturningZero.cpp:
+    complete
+    .text start:0x02186e54 end:0x02186eb4
+
+src/Menu/ScriptBindings/MenuScript_SetSpriteCellPaletteOverride.cpp:
+    complete
+    .text start:0x02187c0c end:0x02187c6c
+
+src/Menu/ScriptBindings/MenuScript_SetSpriteCellPriorityOverride.cpp:
+    complete
+    .text start:0x02187da8 end:0x02187e08
+
+src/Menu/Layouts/Menu_AllocateArenaTilePayload.cpp:
+    complete
+    .text start:0x02186fc8 end:0x0218702c
+
+src/Menu/ScriptBindings/MenuScript_SetGridNavigationWrapEnabled.cpp:
+    complete
+    .text start:0x02187d44 end:0x02187da8
+
+src/Menu/Layouts/Menu_AllocateAndCycleTextureVramSnapshot.cpp:
+    complete
+    .text start:0x02184fb0 end:0x02185018
+
+src/Menu/Layouts/Menu_RefreshLayoutDescriptorSelection.cpp:
+    complete
+    .text start:0x0218735c end:0x021873c4
+
+src/Menu/Layouts/MapIndexedSubBackgroundVramBankConfiguration.cpp:
+    complete
+    .text start:0x02188090 end:0x021880d8
+
+src/Menu/Layouts/Graphics_WriteDisplayControlBits8To12ForScreen.cpp:
+    complete
+    .text start:0x02185720 end:0x0218577c
+
+src/Menu/Layouts/MapIndexedMainBackgroundVramBankConfiguration.cpp:
+    complete
+    .text start:0x02188030 end:0x02188090
+
+src/Menu/Layouts/Menu_SetBackgroundPrioritiesFromTaggedArguments.cpp:
+    complete
+    .text start:0x02186440 end:0x021864b0
+
+src/Menu/Layouts/Menu_SetDisplayRecordPositionFromArguments.cpp:
+    complete
+    .text start:0x0218515c end:0x021851ec
+
+src/Menu/Layouts/Menu_SetDescriptorFixedPointXYVector.cpp:
+    complete
+    .text start:0x02186650 end:0x021866e0
+
+src/Menu/ScriptBindings/MenuScript_SetSpriteCellTouchRectangle.cpp:
+    complete
+    .text start:0x02187570 end:0x02187604
+
+src/Menu/Layouts/Menu_ConfigureScreenAlphaBlendFromTaggedArguments.cpp:
+    complete
+    .text start:0x021864b0 end:0x02186548
+
+src/Menu/Layouts/Menu_SetSelectionGridCellFromArguments.cpp:
+    complete
+    .text start:0x02185848 end:0x021858f4
+
+src/Menu/Layouts/Menu_ConfigureBackgroundControlFromArguments.cpp:
+    complete
+    .text start:0x021862a4 end:0x02186360
+
+src/Menu/Layouts/Menu_SetMotionDescriptorPackedEnableBit.cpp:
+    complete
+    .text start:0x02188884 end:0x021888ec
+
+src/Menu/Layouts/Menu_TestAdvanceInputAndPlayConfirmationSound.cpp:
+    complete
+    .text start:0x021884d0 end:0x02188534
+
+src/Menu/Layouts/Menu_RebindCanvasDescriptorResourcePointer.cpp:
+    complete
+    .text start:0x02186f08 end:0x02186f74
+
+src/Menu/Layouts/Menu_AllocateSb2InterpreterBuffersAndInstallOpcodes.cpp:
+    complete
+    .text start:0x02184550 end:0x021845c8
+
+src/Menu/Layouts/Menu_SetMotionDescriptorPackedValueAndParameter.cpp:
+    complete
+    .text start:0x0218702c end:0x021870a4
+
+src/Menu/Layouts/Menu_QueueDataFileLoadFromArguments.cpp:
+    complete
+    .text start:0x0218554c end:0x021855cc
+
+src/Menu/Layouts/Menu_WriteTransitionRequestModeToScriptOutput.cpp:
+    complete
+    .text start:0x02187f7c end:0x02188014
+
+src/Menu/Layouts/Menu_StartMessageFromTextTableDescriptor.cpp:
+    complete
+    .text start:0x021873c4 end:0x02187460
+
+src/Menu/Layouts/Menu_UpdateCanvasSessionAndDisconnectFade.cpp:
+    complete
+    .text start:0x02184694 end:0x02184740
+
+src/Menu/Layouts/Menu_CreateContextFlagDescriptor.cpp:
+    complete
+    .text start:0x021866e0 end:0x02186790
+
+src/Menu/Layouts/Menu_CreateZeroedPairStateDescriptor.cpp:
+    complete
+    .text start:0x021870a4 end:0x02187154
+
+src/Menu/Layouts/Menu_SetIndexedDescriptorArgumentPacket.cpp:
+    complete
+    .text start:0x021882d4 end:0x02188384
+
+src/Menu/Layouts/Menu_CreateSelectionGridFromArguments.cpp:
+    complete
+    .text start:0x0218577c end:0x02185848
+
+src/Menu/Layouts/Menu_CreateIndexedResourceFromArguments.cpp:
+    complete
+    .text start:0x02185d04 end:0x02185dd4
+
+src/Menu/Layouts/Menu_CreateReservedResourceSlotFromArguments.cpp:
+    complete
+    .text start:0x02185dd4 end:0x02185ea4
+
+src/Menu/Layouts/Menu_CreatePositionTransitionPoolFromArguments.cpp:
+    complete
+    .text start:0x02185b10 end:0x02185be8
+
+src/Menu/Layouts/Menu_CreateParameterizedObject3DDescriptor.cpp:
+    complete
+    .text start:0x02187b30 end:0x02187c0c
+
+src/Menu/Layouts/Menu_CreateNamedPayloadFromArguments.cpp:
+    complete
+    .text start:0x0218563c end:0x02185720
+
+src/Menu/Layouts/Menu_DispatchCompletedChoiceActions.cpp:
+    complete
+    .text start:0x02184ae4 end:0x02184bcc
+
+src/Menu/Layouts/Menu_CreateUnboundBackgroundCanvas.cpp:
+    complete
+    .text start:0x0218792c end:0x02187a14
+
+src/Menu/Layouts/Menu_CreateArenaFromGameResourcePool.cpp:
+    complete
+    .text start:0x02184de4 end:0x02184ed0
+
+src/Menu/Layouts/Menu_GetRootArena.cpp:
+    complete
+    .text start:0x021845f4 end:0x021845f8
+
+src/Menu/Layouts/Menu_CreateNamedSpriteResourceDescriptor.cpp:
+    complete
+    .text start:0x02188774 end:0x02188884
+
+src/Menu/Layouts/Menu_InitializeCanvasSessionAndCaptureDisplayState.cpp:
+    complete
+    .text start:0x0218438c end:0x021844a4
+
+src/Menu/Layouts/Menu_CloneRenderContainerSharedResources.cpp:
+    complete
+    .text start:0x02187a14 end:0x02187b30
+
+src/Menu/Layouts/Menu_CreateNamedBackgroundCanvas.cpp:
+    complete
+    .text start:0x02188658 end:0x02188774
+
+src/Menu/Layouts/Menu_CreateQuestMessagePanelDescriptor.cpp:
+    complete
+    .text start:0x02187e20 end:0x02187f04
+
+src/Menu/Layouts/Menu_ReleaseFieldResourcesForCleanupPhase.cpp:
+    complete
+    .text start:0x02184cc0 end:0x02184de4
+
+src/Menu/Layouts/Menu_CreateMotionFromArguments.cpp:
+    complete
+    .text start:0x0218598c end:0x02185ac0
+
+src/Menu/Layouts/Menu_CreatePackedPositionDescriptor.cpp:
+    complete
+    .text start:0x02186884 end:0x021869b8
+
+src/Menu/Layouts/Menu_FindSessionArenaById.cpp:
+    complete
+    .text start:0x021845f8 end:0x02184604
+
+src/Menu/Layouts/Graphics_ResetOverlayBackgroundState.cpp:
+    complete
+    .text start:0x02184770 end:0x021848a0
+
+src/Menu/Layouts/Menu_InvokeDisplayRecordSecondVirtualPass.cpp:
+    complete
+    .text start:0x02184740 end:0x02184750
+
+src/Menu/Layouts/Menu_InvokeDisplayObjectsFifthVirtualPass.cpp:
+    complete
+    .text start:0x02184760 end:0x02184770
+
+src/Menu/Layouts/Menu_UpdateDisplayRecordList.cpp:
+    complete
+    .text start:0x02184750 end:0x02184760
+
+src/Menu/Layouts/Menu_InstallSb2OpcodeHandlerTable.cpp:
+    complete
+    .text start:0x021888ec end:0x02188904
+
+src/Menu/Layouts/Menu_CreateRenderPartFromArguments.cpp:
+    complete
+    .text start:0x02185ea4 end:0x02185fa8

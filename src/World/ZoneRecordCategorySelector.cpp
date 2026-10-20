@@ -1,5 +1,6 @@
 #include "World/Zone3DEmbeddedState.h"
 
+// Original: arm9/main @ 0x020DE3F4; symbol: _Z27SelectRecordCategoryMatcherijiiPaS_S_PPFbP20ZoneSerializedRecordiiiE; size: 0x130.
 void SelectRecordCategoryMatcher(int alternate, unsigned int kind, int first, int second,
     signed char* minimum, signed char* maximum, signed char* subtype, ZoneRecordMatchFunction* output)
 {

@@ -1,7 +1,8 @@
 #pragma optimize_for_size off
 
 // Binary64 word access follows the pinned little-endian ARM runtime ABI.
-extern "C" double func_0200911c(double value, int* exponent)
+// Original: arm9/main @ 0x0200911C; symbol: func_0200911c; size: 0xBC.
+extern "C" double RuntimeFrexp_DecomposeDoubleExponent(double value, int* exponent)
 {
     int high = ((int*)&value)[1];
     int low = ((int*)&value)[0];

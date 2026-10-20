@@ -9,10 +9,15 @@ struct Random {
 };
 
 #ifdef jpn
-#define data_02108ddc data_02108d20
+#define GetBTRandom_UnknownRoleZeroInitializedStorage data_02108d20
 #endif
 
-extern struct Random data_02108ddc;
+// Original data: arm9/main @ 0x2108ddc; symbol: data_02108ddc.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 32 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern struct Random GetBTRandom_UnknownRoleZeroInitializedStorage;
 
 /* get instance of the global "BT" ("Hoimi table") random */
 struct Random* GetBTRandom(void);

@@ -1,0 +1,26 @@
+#include <globaldefs.h>
+ARM
+struct ScriptParameter;
+extern "C" char *_ZN13SafeAllocator8AllocateEj(void *allocator, unsigned int size);
+extern "C" int _ZNK6Script9Parameter5ToIntEv(const ScriptParameter *parameter);
+extern "C" void Overlay_EnqueueLinkedNode(void *record);
+// Original data: arm9/ov000 @ 0x2184264; symbol: data_ov000_02184264.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 12 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/ov000.md.
+extern "C" unsigned char CreateScriptOpcode7CEntry_UnknownRoleZeroInitializedStorage[];
+// Original: arm9/ov000 @ 0x0216BA14; symbol: func_ov000_0216ba14; size: 0x54.
+extern "C" int CombatScript_TryQueueOpcode44Integer(const ScriptParameter *parameter) {
+    void *allocator = *(void **)(CreateScriptOpcode7CEntry_UnknownRoleZeroInitializedStorage + 8);
+    unsigned char *record = (unsigned char *)_ZN13SafeAllocator8AllocateEj(allocator, 0xC);
+    if (record == 0) {
+        return 0;
+    }
+    *(unsigned int *)record = 0;
+    *(unsigned int *)(record + 4) = 0;
+    *(unsigned int *)record = 0x44;
+    *(int *)(record + 8) = _ZNK6Script9Parameter5ToIntEv(parameter);
+    Overlay_EnqueueLinkedNode(record);
+    return 1;
+}

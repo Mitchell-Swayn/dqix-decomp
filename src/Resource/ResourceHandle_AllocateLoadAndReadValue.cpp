@@ -1,0 +1,5 @@
+#include <globaldefs.h>
+struct Owner{void*handle;char state[156];unsigned value;};
+extern "C" {void FinalizeOwnerAndRemoveFromAllocatorTree(void*);void ResourceHandle_InitializeArchiveAndPlaybackState(Owner*);void*ResourceAllocator_CreateAlignedHeapRegion(unsigned,unsigned);int CreateFileAccessorAndPrepareNitroVM(void*,const void*,void*,unsigned);int NNS_SndArcPlayerSetup(void*);void NNS_SndArcStrmInit(unsigned,void*);unsigned NNS_SndHeapSaveState(void*);}
+// Original: arm9/main @ 0x0203A974; symbol: func_0203a974; size: 0x94.
+extern "C" ARM void ResourceHandle_AllocateLoadAndReadValue(Owner*p,const void*file,unsigned size,unsigned align,int flag){if(align<=1)return;if(p->handle){if(p->handle)FinalizeOwnerAndRemoveFromAllocatorTree(p->handle);ResourceHandle_InitializeArchiveAndPlaybackState(p);}p->handle=ResourceAllocator_CreateAlignedHeapRegion(size,align);CreateFileAccessorAndPrepareNitroVM(p->state,file,p->handle,0);if(!NNS_SndArcPlayerSetup(p->handle))return;if(flag)NNS_SndArcStrmInit(0,p->handle);p->value=NNS_SndHeapSaveState(p->handle);}

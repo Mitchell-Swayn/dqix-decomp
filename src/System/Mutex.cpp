@@ -9,6 +9,7 @@ extern "C"
 void AddMutexToContextLockedList(ProcessorContext* context, Mutex* mutex);
 void RemoveMutexFromContextLockedList(ProcessorContext* context, Mutex* mutex);
 
+// Original: arm9/main @ 0x020C805C; symbol: _Z19ZeroInitializeMutexP5Mutex; size: 0x18.
 void ZeroInitializeMutex(Mutex* mutex)
 {
     mutex->waitingContexts_.first = mutex->waitingContexts_.last = NULL;
@@ -16,10 +17,11 @@ void ZeroInitializeMutex(Mutex* mutex)
     mutex->ownerRefcount_ = 0;
 }
 
+// Original: arm9/main @ 0x020C8074; symbol: _Z9LockMutexP5Mutex; size: 0x84.
 void LockMutex(Mutex* mutex)
 {
     int priorState = DisableIRQInterrupts();
-    ProcessorContext* thisContext = data_02111304.activeContext;
+    ProcessorContext* thisContext = OSInitThread_UnknownRoleZeroInitializedStorage_Variant2.activeContext;
     while (true)
     {
         if (mutex->ownedContext_ == NULL)
@@ -44,10 +46,11 @@ void LockMutex(Mutex* mutex)
     SetIRQInterruptState(priorState);
 }
 
+// Original: arm9/main @ 0x020C80F8; symbol: _Z11UnlockMutexP5Mutex; size: 0x5C.
 void UnlockMutex(Mutex* mutex)
 {
     int priorState = DisableIRQInterrupts();
-    ProcessorContext* thisContext = data_02111304.activeContext;
+    ProcessorContext* thisContext = OSInitThread_UnknownRoleZeroInitializedStorage_Variant2.activeContext;
     if (mutex->ownedContext_ == thisContext)
     {
         mutex->ownerRefcount_--;
@@ -61,6 +64,7 @@ void UnlockMutex(Mutex* mutex)
     SetIRQInterruptState(priorState);
 }
 
+// Original: arm9/main @ 0x020C8154; symbol: _Z31UnlockAllMutexesLockedByContextP16ProcessorContext; size: 0x3C.
 void UnlockAllMutexesLockedByContext(ProcessorContext *context)
 {
     if (context->lockedMutexes.pFirst != NULL)
@@ -75,10 +79,11 @@ void UnlockAllMutexesLockedByContext(ProcessorContext *context)
     }
 }
 
+// Original: arm9/main @ 0x020C8190; symbol: _Z12TryLockMutexP5Mutex; size: 0x74.
 bool TryLockMutex(Mutex* mutex)
 {
     int priorState = DisableIRQInterrupts();
-    ProcessorContext* thisContext = data_02111304.activeContext;
+    ProcessorContext* thisContext = OSInitThread_UnknownRoleZeroInitializedStorage_Variant2.activeContext;
     bool success;
     if (mutex->ownedContext_ == NULL)
     {
@@ -101,6 +106,7 @@ bool TryLockMutex(Mutex* mutex)
 
 // usa: func_020c8204
 // can be made static later
+// Original: arm9/main @ 0x020C8204; symbol: _Z27AddMutexToContextLockedListP16ProcessorContextP5Mutex; size: 0x24.
 void AddMutexToContextLockedList(ProcessorContext* context, Mutex* mutex)
 {
     Mutex* oldLast = context->lockedMutexes.pLast;
@@ -117,6 +123,7 @@ void AddMutexToContextLockedList(ProcessorContext* context, Mutex* mutex)
 
 // usa: func_020c8228
 // can be made static later
+// Original: arm9/main @ 0x020C8228; symbol: _Z32RemoveMutexFromContextLockedListP16ProcessorContextP5Mutex; size: 0x24.
 void RemoveMutexFromContextLockedList(ProcessorContext* context, Mutex* mutex)
 {
     Mutex* after = mutex->pNext_;

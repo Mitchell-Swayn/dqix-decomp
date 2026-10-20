@@ -1,7 +1,7 @@
 #include "Graphics/NSBXX/RenderCommands_Common.h"
 
 // Nine pivot forms map the four stored values to 3x3 matrix positions.
-const PivotMatrixPositions data_020e9284[9] = {
+const PivotMatrixPositions GetMatrixFromIndex_UnknownRoleInitializedBytes[9] = {
     {4, 5, 7, 8},
     {3, 5, 6, 8},
     {3, 4, 6, 7},
@@ -12,4 +12,4 @@ const PivotMatrixPositions data_020e9284[9] = {
     {0, 2, 3, 5},
     {0, 1, 3, 4},
 };
-typedef char PivotMatrixPositionsSizeCheck[sizeof(data_020e9284) == 36 ? 1 : -1];
+typedef char PivotMatrixPositionsSizeCheck[sizeof(GetMatrixFromIndex_UnknownRoleInitializedBytes) == 36 ? 1 : -1];

@@ -1,0 +1,11 @@
+#include <globaldefs.h>
+THUMB
+// Original data: arm9/ov031 @ 0x224f670; symbol: data_ov031_0224f670.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 80 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/ov031.md.
+extern "C" {int _Z20DisableIRQInterruptsv();int _Z20SetIRQInterruptStatei(int);void MI_CpuCopy8(const void*,void*,unsigned);void VectorizedMemset(void*,int,unsigned);void MIi_CpuCopy32(const void*,void*,unsigned);int Network_StopManagedSessionWirelessOperation();int Network_StartConfiguredWirelessRequest(const char*,const unsigned char*,int);extern unsigned WirelessSetupRunConfigurationExchange_UnknownRoleZeroInitializedStorage[];}
+// Original: arm9/ov031 @ 0x0221F854; symbol: StageWirelessRequestWithNinetySixByteOptions; size: 0x84.
+// Stages config and optional options atomically, advances accepted requests to state8.
+extern "C" int StageWirelessRequestWithNinetySixByteOptions(const void* config,const void* options,int mode) {int irq=_Z20DisableIRQInterruptsv();WirelessSetupRunConfigurationExchange_UnknownRoleZeroInitializedStorage[22]=mode;if(options)MI_CpuCopy8(options,(void*)WirelessSetupRunConfigurationExchange_UnknownRoleZeroInitializedStorage[10],96);else VectorizedMemset((void*)WirelessSetupRunConfigurationExchange_UnknownRoleZeroInitializedStorage[10],0,96);MIi_CpuCopy32(config,(void*)WirelessSetupRunConfigurationExchange_UnknownRoleZeroInitializedStorage[19],0xc0);if(Network_StopManagedSessionWirelessOperation()==1){WirelessSetupRunConfigurationExchange_UnknownRoleZeroInitializedStorage[11]=8;_Z20SetIRQInterruptStatei(irq);return 1;}if(WirelessSetupRunConfigurationExchange_UnknownRoleZeroInitializedStorage[11]==3 && Network_StartConfiguredWirelessRequest((const char*)WirelessSetupRunConfigurationExchange_UnknownRoleZeroInitializedStorage[19],(const unsigned char*)WirelessSetupRunConfigurationExchange_UnknownRoleZeroInitializedStorage[10],WirelessSetupRunConfigurationExchange_UnknownRoleZeroInitializedStorage[22])==3){WirelessSetupRunConfigurationExchange_UnknownRoleZeroInitializedStorage[11]=8;_Z20SetIRQInterruptStatei(irq);return 1;}_Z20SetIRQInterruptStatei(irq);return 0;}

@@ -4,13 +4,14 @@
 
 extern "C"
 {
-    int func_0200fb9c(GameState*);
-    bool func_020115a8(GameState*);
-    int func_0201201c(GameState*);
+    int GameState_ReadByteAtOffset4(GameState*);
+    bool GameState_GetPendingFieldReloadMode(GameState*);
+    int GameState_GetStartupDispatchMode(GameState*);
 }
 
 // Numeric mode tests and the unidentified state fields preserve the original
 // initialization conditions; their gameplay purposes remain unresolved.
+// Original: arm9/main @ 0x020134E0; symbol: _ZN6Zone3D15InitializeStateEv; size: 0x238.
 void Zone3D::InitializeState()
 {
     GameState* game = GameState::GetInstance();
@@ -70,15 +71,15 @@ void Zone3D::InitializeState()
     transitionParameter3_ = 0;
     unknown_274c_ = 1;
     unknown_2750_ = 1;
-    if (func_0200fb9c(game) != 5)
+    if (GameState_ReadByteAtOffset4(game) != 5)
     {
         unknown_27d8_ = 0;
         unknown_27da_ = 0;
     }
     unknown_281d_ = 0;
     unknown_281e_ = 0;
-    if (func_020115a8(game)) return;
-    if (func_0201201c(game) == 5 || func_0200fb9c(game) == 4 || func_0200fb9c(game) == 2)
+    if (GameState_GetPendingFieldReloadMode(game)) return;
+    if (GameState_GetStartupDispatchMode(game) == 5 || GameState_ReadByteAtOffset4(game) == 4 || GameState_ReadByteAtOffset4(game) == 2)
     {
         state_840_.Reset();
         unknown_27b4_ = 2;
@@ -95,6 +96,7 @@ void Zone3D::InitializeState()
     }
 }
 
+// Original: arm9/main @ 0x02013718; symbol: _ZN6Zone3D19InitializeResourcesEP13SafeAllocatorPv; size: 0x38.
 void Zone3D::InitializeResources(SafeAllocator* allocator, void* context)
 {
     InitializeState();

@@ -1,0 +1,8 @@
+// Original data: arm9/main @ 0x20f00a3; symbol: data_020f00a3.
+// NUL-terminated ASCII text: "TIME=". The role name describes the literal content; consumer context does not establish exclusive ownership.
+// Observed values: "TIME=".
+// Span: 6 bytes to next configured symbol; logical object size may differ.
+// UI text-control format or marker; release case and termination retained.
+extern "C" {
+__declspec(align(1)) char TextMarkup_EncodeNewlinesAndTimedWaits_TextTIME[6] = "TIME=";
+}

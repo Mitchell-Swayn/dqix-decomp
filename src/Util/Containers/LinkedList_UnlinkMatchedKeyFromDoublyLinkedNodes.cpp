@@ -1,0 +1,4 @@
+// Original assembly and callee argument/return behavior reviewed.
+extern "C" {int Network_GetAssociationId();int Network_FindWirelessSlotByMemberId(void*,int);char* DisplayLayout_FindPartById(void*,int);void* SystemState_GetGlobalFlags();void SystemState_SetFlags(void*,unsigned);char* LinkedList_FindNodeByUnsignedKey(void*,int);void* Network_GetConnectionManager();int Network_IsSessionActive(void*);char* PartySync_FindEntryByKey(void*,int);void* MessageTextTable_FindTextById(void*,int);}struct Nibbles{unsigned char low:4;unsigned char high:4;};
+// Original: arm9/main @ 0x0206DD68; symbol: func_0206dd68; size: 0x3C.
+extern "C" void LinkedList_UnlinkMatchedKeyFromDoublyLinkedNodes(char** p,int key){char* q=LinkedList_FindNodeByUnsignedKey(p,key);if(!q)return;char* prev=*(char**)(q+0x64);char* next=*(char**)(q+0x68);if(prev)*(char**)(prev+0x68)=next;else *p=next;next=*(char**)(q+0x68);if(next)*(char**)(next+0x64)=*(char**)(q+0x64);}

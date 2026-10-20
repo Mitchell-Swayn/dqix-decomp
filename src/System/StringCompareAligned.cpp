@@ -2,6 +2,7 @@
 
 #pragma optimize_for_size off
 
+// Original: arm9/main @ 0x02004070; symbol: strcmp; size: 0x114.
 int strcmp(const char* lhs, const char* rhs)
 {
     const unsigned char* left = (const unsigned char*)lhs;

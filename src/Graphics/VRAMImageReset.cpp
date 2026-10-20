@@ -4,15 +4,16 @@
 #include "Graphics/VRAMImagePool.h"
 
 
+// Original: arm9/main @ 0x020BB514; symbol: _Z21ResetTextureImageVRAMv; size: 0x74.
 void ResetTextureImageVRAM()
 {
     int index;
     Struct_020f1f14* pool;
-    int activePools = data_0210cf84.bankCount;
+    int activePools = ResetTextureImageVRAM_UnknownRoleZeroInitializedStorage.bankCount;
     if ((unsigned int)activePools > 1)
         ++activePools;
     index = 0;
-    pool = data_020f1f14;
+    pool = ResetTextureImageVRAM_UnknownRoleInitializedBytes;
     do
     {
         if (index < activePools)

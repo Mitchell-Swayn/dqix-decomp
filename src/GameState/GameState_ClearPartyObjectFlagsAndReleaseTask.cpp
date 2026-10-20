@@ -1,0 +1,7 @@
+#include <globaldefs.h>
+ARM
+#include <GameState/GameState.h>
+#include <Filesystem/BackgroundLoader.h>
+extern "C" void* DisplayContext_GetGlobalInstance();extern "C" void BackgroundLoader_CancelEightTasksAndResetState(void*);extern "C" void GameObject_RequestMovementInputEnable(void*);extern "C" void* SystemState_GetGlobalFlags();extern "C" void SystemState_ClearFlags(void*,unsigned);extern "C" void GameState_GetFieldOrbitCamera(GameState*);extern "C" void Camera_EnableOrbitInput();extern "C" void StoreModeTimestampAndDisableTwoInputOwners(int);struct SmallFlags{unsigned char flags:2,rest:6;};
+// Original: arm9/main @ 0x020E455C; symbol: func_020e455c; size: 0xD0.
+extern "C" void GameState_ClearPartyObjectFlagsAndReleaseTask(unsigned char* object){GameState* state=GameState::GetInstance();BackgroundLoader_CancelEightTasksAndResetState(DisplayContext_GetGlobalInstance());GameObject* unknown=state->GetUnknownGameObject();if(unknown)GameObject_RequestMovementInputEnable(unknown);SystemState_ClearFlags(SystemState_GetGlobalFlags(),2);for(int i=0;i<4;i++){GameObject* member=state->GetPartyMemberByIndex(i);if(member){member->obj3D_.DisableFlag(0x1000000);((SmallFlags*)((unsigned char*)member+0xc1))->flags&=~2;}}if(*(short*)(object+12)>=0){BackgroundLoader* loader=BackgroundLoader::GetInstance();loader->RemoveTask(*(short*)(object+12));*(short*)(object+12)=-1;}GameState_GetFieldOrbitCamera(state);Camera_EnableOrbitInput();StoreModeTimestampAndDisableTwoInputOwners(1000);object[1]=1;}

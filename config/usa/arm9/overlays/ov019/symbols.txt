@@ -1,12 +1,15 @@
-func_ov019_0218b5a0 kind:function(arm,size=0x4) addr:0x0218b5a0
-func_ov019_0218b5a4 kind:function(arm,size=0x4) addr:0x0218b5a4
-func_ov019_0218b5a8 kind:function(arm,size=0xbd0) addr:0x0218b5a8
-func_ov019_0218c178 kind:function(arm,size=0xc8) addr:0x0218c178
-func_ov019_0218c240 kind:function(arm,size=0x50) addr:0x0218c240
-data_ov019_0218c294 kind:data(any) addr:0x0218c294
-data_ov019_0218c2a0 kind:data(any) addr:0x0218c2a0
-data_ov019_0218c2c0 kind:data(any) addr:0x0218c2c0
-data_ov019_0218c2d4 kind:data(any) addr:0x0218c2d4
-data_ov019_0218c2d8 kind:data(any) addr:0x0218c2d8
-data_ov019_0218c2ed kind:data(any) addr:0x0218c2ed
-data_ov019_0218c2fe kind:data(any) addr:0x0218c2fe
+ErrorScreen_ConstructContext kind:function(arm,size=0x4) addr:0x0218b5a0
+ErrorScreen_DestroyContext kind:function(arm,size=0x4) addr:0x0218b5a4
+ErrorScreen_RunScene kind:function(arm,size=0xbd0) addr:0x0218b5a8
+ErrorScreen_UpdatePenPromptAnimation kind:function(arm,size=0xc8) addr:0x0218c178
+ErrorScreen_ConsumeAcknowledgementInput kind:function(arm,size=0x50) addr:0x0218c240
+ErrorScreenRunScene_CameraVectorsCopiedIntoSetupLocalsByOriginalInstructions kind:data(any) addr:0x0218c294
+ErrorScreenRunScene_CameraVectorsCopiedIntoSetupLocalsByOriginalInstructions_Variant2 kind:data(any) addr:0x0218c2a0
+ErrorScreen_RunScene_PathDataBinIconNsarc kind:data(any) addr:0x0218c2c0
+ErrorScreen_RunScene_TextARC kind:data(any) addr:0x0218c2d4
+ErrorScreen_RunScene_PathDataBinStrErrGp2 kind:data(any) addr:0x0218c2d8
+ErrorScreen_RunScene_MarkupStrErrLGNat kind:data(any) addr:0x0218c2ed
+ErrorScreen_RunScene_PathDataAniPenPac kind:data(any) addr:0x0218c2fe
+
+Data_UnknownRole kind:data(any) addr:0x0218c290
+SharedData_NullConstructorListTerminatorNotACallableRoutine kind:data(any) addr:0x0218c2ac

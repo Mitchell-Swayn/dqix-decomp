@@ -4,3 +4,198 @@
     .data       start:0x02187e00 end:0x02187ee0 kind:data align:32
     .bss        start:0x02187ee0 end:0x02187ee0 kind:bss align:32
 
+src/Menu/SkillAllocation/Graphics_InitializeTextCanvasPanel.cpp:
+    complete
+    .text start:0x02184360 end:0x021846a0
+
+src/Menu/SkillAllocation/Graphics_FormatFiveRowSelectionText.cpp:
+    complete
+    .text start:0x02185424 end:0x02185774
+
+src/Menu/SkillAllocation/Resource_SetLoadSelection.cpp:
+    complete
+    .text start:0x0218782c end:0x021878b0
+
+src/Menu/SkillAllocation/Memory_InitializeOptionalParentAndNestedAllocator.cpp:
+    complete
+    .text start:0x02184cf0 end:0x02184d80
+
+src/Menu/SkillAllocation/Graphics_AppendModeSelectedSizeTaggedText.cpp:
+    complete
+    .text start:0x02185900 end:0x02185990
+
+src/Menu/SkillAllocation/Graphics_FormatFiveRowSelectionTextAndRefreshOwner.cpp:
+    complete
+    .text start:0x02186bd4 end:0x02186c1c
+
+src/Menu/SkillAllocation/SkillAllocation_SetTextRecordTransitionFlag.cpp:
+    complete
+    .text start:0x02186c64 end:0x02186cac
+
+src/Menu/SkillAllocation/SkillAllocation_HitTestAdjustmentTouchRegion.cpp:
+    complete
+    .text start:0x021842a0 end:0x02184338
+
+src/Menu/SkillAllocation/ComputeIndexedEntryAddressAtStride40.cpp:
+    complete
+    .text start:0x02184338 end:0x02184360
+
+src/Menu/SkillAllocation/CopyFiveIndexedValuesToObject.cpp:
+    complete
+    .text start:0x02184c8c end:0x02184cf0
+
+src/Menu/SkillAllocation/Graphics_InitializeCanvasAndDisplaySnapshot.cpp:
+    complete
+    .text start:0x02186eec end:0x02186fa0
+
+src/Menu/SkillAllocation/SafeAllocator_CreateFiveTypedRecords.cpp:
+    complete
+    .text start:0x02186e74 end:0x02186eec
+
+src/Menu/SkillAllocation/SkillAllocation_RefreshDisplayResources.cpp:
+    complete
+    .text start:0x02184a58 end:0x02184aec
+
+src/Menu/SkillAllocation/SkillAllocation_HandleMainScreenNoticeInput.cpp:
+    complete
+    .text start:0x021864f0 end:0x02186590
+
+src/Menu/SkillAllocation/SkillDetails_SubmitRewardMarkerSprites.cpp:
+    complete
+    .text start:0x02187784 end:0x0218782c
+
+src/Menu/SkillAllocation/Resource_ClearAndInitializeOwnerBufferFromRecordThree.cpp:
+    complete
+    .text start:0x02186c1c end:0x02186c64
+
+src/Menu/SkillAllocation/SkillAllocation_HandleSubScreenNoticeInput.cpp:
+    complete
+    .text start:0x0218678c end:0x0218683c
+
+src/Menu/SkillAllocation/SkillAllocation_ShowMainScreenPrompt.cpp:
+    complete
+    .text start:0x02185774 end:0x02185828
+
+src/Menu/SkillAllocation/SkillAllocation_InitializeSubScreenPromptPanel.cpp:
+    complete
+    .text start:0x02185828 end:0x02185900
+
+src/Menu/SkillAllocation/InitializeMatchingSelectionOverlay.cpp:
+    complete
+    .text start:0x02185310 end:0x02185424
+
+src/Menu/SkillAllocation/Graphics_ReleaseDisplayStateAndFiveAllocators.cpp:
+    complete
+    .text start:0x02186fa0 end:0x021870c0
+
+src/Menu/SkillAllocation/AppendCenteredHeadingAndSevenValues.cpp:
+    complete
+    .text start:0x02185e40 end:0x02186160
+
+src/Menu/SkillAllocation/RefreshHeadingAndUploadFontTiles.cpp:
+    complete
+    .text start:0x02185cc0 end:0x02185e40
+
+src/Menu/SkillAllocation/AdvanceHeadingResourceInitialization.cpp:
+    complete
+    .text start:0x02184d80 end:0x02185310
+
+src/Menu/SkillAllocation/AdvanceTenEntryResourceLoading.cpp:
+    complete
+    .text start:0x021878b0 end:0x02187a58
+
+src/Menu/SkillAllocation/AdvanceConfirmationSelection.cpp:
+    complete
+    .text start:0x02186590 end:0x0218678c
+
+src/Menu/SkillAllocation/DrawSortedSelectorEntries.cpp:
+    complete
+    .text start:0x02187a58 end:0x02187d88
+
+src/Menu/SkillAllocation/UpdateFiveValueAllocationInput.cpp:
+    complete
+    .text start:0x02186160 end:0x021864f0
+
+src/Menu/SkillAllocation/UpdateTwoChoiceAllocationConfirmation.cpp:
+    complete
+    .text start:0x0218683c end:0x02186bd4
+
+src/Menu/SkillAllocation/InitializeTwoChoiceConfirmationLayout.cpp:
+    complete
+    .text start:0x02185aac end:0x02185be0
+
+src/Menu/SkillAllocation/AppendTwoChoiceLabels.cpp:
+    complete
+    .text start:0x02185be0 end:0x02185cc0
+
+src/Menu/SkillAllocation/PositionSelectedRecordMarker.cpp:
+    complete
+    .text start:0x02186cac end:0x02186db4
+
+src/Menu/SkillAllocation/InitializeRightAlignedTwoChoicePanel.cpp:
+    complete
+    .text start:0x02185990 end:0x02185aac
+
+src/Menu/SkillAllocation/SubmitReadyRecordOffsetPosition.cpp:
+    complete
+    .text start:0x02186db4 end:0x02186e74
+
+src/Menu/SkillAllocation/RefreshFlaggedCanvasAndSubmitCoordinates.cpp:
+    complete
+    .text start:0x021870c0 end:0x021870f0
+
+src/Menu/SkillAllocation/ResetActiveAllocationTextResources.cpp:
+    complete
+    .text start:0x02184aec end:0x02184b4c
+
+src/Menu/SkillAllocation/SkillDetails_AdvanceResourceInitialization.cpp:
+    complete
+    .text start:0x021870f0 end:0x02187784
+
+src/Menu/SkillAllocation/UpdateAllocationOverlayFrame.cpp:
+    complete
+    .text start:0x021847c4 end:0x02184a58
+
+src/Menu/SkillAllocation/Graphics_DestroyModeDependentPanelAndTwoAllocators.cpp:
+    complete
+    .text start:0x021846a0 end:0x021847c4
+
+src/Menu/SkillAllocation/ResourceLiterals/AdvanceHeadingResourceInitialization_PathDataBinMenuStrSuGp2.cpp:
+    complete
+    .data start:0x02187e00 end:0x02187e19
+
+src/Menu/SkillAllocation/ResourceLiterals/AdvanceHeadingResourceInitialization_MarkupStrSuLGNat.cpp:
+    complete
+    .data start:0x02187e19 end:0x02187e29
+
+src/Menu/SkillAllocation/ResourceLiterals/AdvanceHeadingResourceInitialization_PathDataAniBgTmPac.cpp:
+    complete
+    .data start:0x02187e29 end:0x02187e3c
+
+src/Menu/SkillAllocation/ResourceLiterals/AppendCenteredHeadingAndSevenValues_FormatSD.cpp:
+    complete
+    .data start:0x02187e3f end:0x02187e44
+
+src/Menu/SkillAllocation/ResourceLiterals/SkillDetails_AdvanceResourceInitialization_PathDataAniObjSklupIPac.cpp:
+    complete
+    .data start:0x02187e48 end:0x02187e61
+
+src/Menu/SkillAllocation/ResourceLiterals/SkillDetails_AdvanceResourceInitialization_PathDataBinStrSklcGp2.cpp:
+    complete
+    .data start:0x02187e61 end:0x02187e77
+
+src/Menu/SkillAllocation/ResourceLiterals/SkillDetails_AdvanceResourceInitialization_MarkupStrSklcLGBin.cpp:
+    complete
+    .data start:0x02187e77 end:0x02187e89
+
+src/Menu/SkillAllocation/ResourceLiterals/SkillDetails_AdvanceResourceInitialization_PathDataPrmSklnameGp2.cpp:
+    complete
+    .data start:0x02187e89 end:0x02187e9e
+
+src/Menu/SkillAllocation/ResourceLiterals/SkillDetails_AdvanceResourceInitialization_MarkupSklnameLGBin.cpp:
+    complete
+    .data start:0x02187e9e end:0x02187eaf
+
+src/Menu/SkillAllocation/ResourceLiterals/AdvanceTenEntryResourceLoading_PathDataAniBgSknPac.cpp:
+    complete
+    .data start:0x02187eaf end:0x02187ec3

@@ -12,15 +12,15 @@
 #include "World/ZonePredicates.h"
 
 #if defined(jpn)
-#define func_02011584 func_020112f4
+#define GameState_GetFieldAddress468 func_020112f4
 #define func_02013750 func_02013518
-#define func_02053c6c func_02054fe4
+#define GameObject_GetLinkedIndexedState func_02054fe4
 #define func_0207a5b8 func_0207b3f0
 #define func_0207b9cc func_0207c804
-#define func_0207df50 func_0207ecd0
-#define func_0208a9b4 func_0208b2a8
+#define TextureVRAM_SnapshotAllocationBounds func_0207ecd0
+#define PartyProgress_GetInstance func_0208b2a8
 #define func_02094d00 func_02096950
-#define func_02099950 func_0209b684
+#define ZoneTable_FindEntryById func_0209b684
 #define func_020de848 func_020e01c4
 
 
@@ -28,21 +28,21 @@
 
 extern "C"
 {
-    void* func_02011584(GameState*);
+    void* GameState_GetFieldAddress468(GameState*);
 
-    void* func_02053c6c(void*);
-    void func_0205e104(const char*, SafeAllocator*, const void*, unsigned int);
+    void* GameObject_GetLinkedIndexedState(void*);
+    void Script_InitializeAndExecuteOwnerContextCode(const char*, SafeAllocator*, const void*, unsigned int);
 
     // Texture functions
-    void* func_0207df50(void*);
-    void func_0207df90(void*);
-    void func_0207dfac(void*);
+    void* TextureVRAM_SnapshotAllocationBounds(void*);
+    void Graphics_RestoreTextureImageAndPaletteVRAMState(void*);
+    void Object_InvokeSaveTextureImageVRAMState(void*);
 
-    void* func_0208a9b4();
+    void* PartyProgress_GetInstance();
     void func_02094d00(void*);
-    Zone3D_StructPtr_8* func_02099950(void*, unsigned short id);
+    Zone3D_StructPtr_8* ZoneTable_FindEntryById(void*, unsigned short id);
 
-    void func_020c9be0(); // abort() or similar
+    void DisableInterruptsAndHaltForever(); // abort() or similar
     void func_020de848(void*);
 
     void func_02013750(Zone3D*, bool);
@@ -50,6 +50,7 @@ extern "C"
 }
 
 
+// Original: arm9/main @ 0x02014B04; symbol: _ZN6Zone3D17QueueLoadATS_AMBLEv; size: 0x100.
 void Zone3D::QueueLoadATS_AMBL()
 {
     if (isInMainGrottoFloor_23b8_)
@@ -77,6 +78,7 @@ void Zone3D::QueueLoadATS_AMBL()
     }
 }
 
+// Original: arm9/main @ 0x02014C04; symbol: _ZN6Zone3D14UnpackATS_AMBLEv; size: 0x114.
 bool Zone3D::UnpackATS_AMBL()
 {
     if (atsAMBLLoadHandle_ < 0)
@@ -118,6 +120,7 @@ bool Zone3D::UnpackATS_AMBL()
     return true;
 }
 
+// Original: arm9/main @ 0x02014D18; symbol: _Z18BuildArcMemberPathPKcS0_Pc; size: 0x68.
 void BuildArcMemberPath(const char* stem, const char* extension, char* path)
 {
     sprintf(path, gZone3DPaths.archiveMember, stem);

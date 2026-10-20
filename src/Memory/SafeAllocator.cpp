@@ -6,6 +6,7 @@ unsigned int safeAllocatorLiveCount = 0;
 
 // USA: func_0203246c
 // JPN: func_02031fa4
+// Original: arm9/main @ 0x0203246C; symbol: _ZN13SafeAllocator12GetLiveCountEv; size: 0x10.
 unsigned int SafeAllocator::GetLiveCount()
 {
     return safeAllocatorLiveCount;
@@ -13,6 +14,7 @@ unsigned int SafeAllocator::GetLiveCount()
 
 // USA: func_0203247c
 // JPN: func_02031fb4
+// Original: arm9/main @ 0x0203247C; symbol: _ZN13SafeAllocator21ResetAllocatorPointerEv; size: 0xC.
 void SafeAllocator::ResetAllocatorPointer()
 {
     pSignedAlloc = NULL;
@@ -20,6 +22,7 @@ void SafeAllocator::ResetAllocatorPointer()
 
 // USA: func_02032488
 // JPN: func_02031fc0
+// Original: arm9/main @ 0x02032488; symbol: _ZN13SafeAllocator11CreateTypeBEPvji; size: 0x68.
 void SafeAllocator::CreateTypeB(void* bufferStart, unsigned int bufferSize, int alignAndDir)
 {
     LockResourceMutex();
@@ -36,6 +39,7 @@ void SafeAllocator::CreateTypeB(void* bufferStart, unsigned int bufferSize, int 
 
 // USA: func_020324f0
 // JPN: func_02032028
+// Original: arm9/main @ 0x020324F0; symbol: _ZN13SafeAllocator11CreateTypeAEPvj; size: 0x54.
 void SafeAllocator::CreateTypeA(void* bufferStart, unsigned int bufferSize)
 {
     LockResourceMutex();
@@ -50,6 +54,7 @@ void SafeAllocator::CreateTypeA(void* bufferStart, unsigned int bufferSize)
 
 // USA: func_02032544
 // JPN: func_0203207c
+// Original: arm9/main @ 0x02032544; symbol: _ZN13SafeAllocator8AllocateEj; size: 0x40.
 void* SafeAllocator::Allocate(unsigned int len)
 {
     if (pSignedAlloc == NULL)
@@ -64,6 +69,7 @@ void* SafeAllocator::Allocate(unsigned int len)
 
 // USA: func_02032584
 // JPN: func_020320bc
+// Original: arm9/main @ 0x02032584; symbol: _ZN13SafeAllocator16AllocateReversedEj; size: 0x94.
 void* SafeAllocator::AllocateReversed(unsigned int len)
 {
     if (pSignedAlloc == NULL)
@@ -91,6 +97,7 @@ void* SafeAllocator::AllocateReversed(unsigned int len)
 
 // USA: func_02032618
 // JPN: func_02032150
+// Original: arm9/main @ 0x02032618; symbol: _ZN13SafeAllocator4FreeEPv; size: 0x70.
 void SafeAllocator::Free(void* data)
 {
     if (pSignedAlloc == NULL)
@@ -115,6 +122,7 @@ void SafeAllocator::Free(void* data)
 
 // USA: func_02032688
 // JPN: func_020321c0
+// Original: arm9/main @ 0x02032688; symbol: _ZN13SafeAllocator5ResetEv; size: 0xA8.
 void SafeAllocator::Reset()
 {
     if (pSignedAlloc == NULL)
@@ -144,6 +152,7 @@ void SafeAllocator::Reset()
 
 // USA: func_02032730
 // JPN: func_02032268
+// Original: arm9/main @ 0x02032730; symbol: _ZN13SafeAllocator7DestroyEv; size: 0x90.
 void SafeAllocator::Destroy()
 {
     if (pSignedAlloc == NULL)
@@ -176,6 +185,7 @@ void SafeAllocator::Destroy()
 
 // USA: func_020327c0
 // JPN: func_020322f8
+// Original: arm9/main @ 0x020327C0; symbol: _ZNK13SafeAllocator7GetSizeEv; size: 0x34.
 unsigned int SafeAllocator::GetSize() const
 {
     if (pSignedAlloc == NULL)
@@ -189,6 +199,7 @@ unsigned int SafeAllocator::GetSize() const
 
 // USA: func_020327f4
 // JPN: func_0203232c
+// Original: arm9/main @ 0x020327F4; symbol: _ZNK13SafeAllocator24GetMaxPossibleAllocationEv; size: 0x80.
 unsigned int SafeAllocator::GetMaxPossibleAllocation() const
 {
     if (pSignedAlloc == NULL)
@@ -215,6 +226,7 @@ unsigned int SafeAllocator::GetMaxPossibleAllocation() const
 
 // USA: func_02032874
 // JPN: func_020323ac
+// Original: arm9/main @ 0x02032874; symbol: _ZNK13SafeAllocator30GetSizeWithLargestBlockRemovedEv; size: 0x40.
 unsigned int SafeAllocator::GetSizeWithLargestBlockRemoved() const
 {
     if (pSignedAlloc == NULL)
@@ -228,6 +240,7 @@ unsigned int SafeAllocator::GetSizeWithLargestBlockRemoved() const
 
 // USA: func_020328b4
 // JPN: func_020323ec
+// Original: arm9/main @ 0x020328B4; symbol: _ZNK13SafeAllocator18GetSignedAllocatorEv; size: 0x8.
 SignedAllocatorHeader* SafeAllocator::GetSignedAllocator() const
 {
     return pSignedAlloc;

@@ -8,32 +8,33 @@
 #include "std_library_functions.h"
 
 extern "C" {
-    void func_020120d4(GameState*, unsigned char);
-    void func_0208ec04(WorldObjectInstanceList*);
+    void GameState_SelectPlacementVariantAndInvalidateSource(GameState*, unsigned char);
+    void WorldPlacement_ResetFlaggedAvailablePersistentStates(WorldObjectInstanceList*);
     int rand();
 }
 
-extern "C" void func_0208ea10(WorldObjectInstanceList* list)
+// Original: arm9/main @ 0x0208EA10; symbol: func_0208ea10; size: 0x1F4.
+extern "C" void ResetPlacementListOrLoadPlacementResources(WorldObjectInstanceList* list)
 {
     GameState* game = GameState::GetInstance();
     if (game->unknownPlacementByte_5cda_ == 8)
     {
         list->Reset();
-        func_020120d4(game, (unsigned char)(rand() % 8));
+        GameState_SelectPlacementVariantAndInvalidateSource(game, (unsigned char)(rand() % 8));
     }
     else
     {
-        func_0208ec04(list);
+        WorldPlacement_ResetFlaggedAvailablePersistentStates(list);
         return;
     }
     BackgroundLoader::AddLockGlobal();
     char path[64] = {0};
     unsigned int size = 0;
-    if (LoadFileIntoMemory(data_020f1330, data_0211e33c, &size))
+    if (LoadFileIntoMemory(ResetPlacementListOrLoadPlacementResources_PathDataScenarioFlditemPac, Main_UnknownRoleZeroInitializedStorage_Variant6, &size))
     {
         unsigned int length;
         const void* file;
-        if (GetFileInNarc(data_0211e33c, data_020f134a, &file, &length, 0))
+        if (GetFileInNarc(Main_UnknownRoleZeroInitializedStorage_Variant6, ResetPlacementListOrLoadPlacementResources_TextFldbiasBin, &file, &length, 0))
         {
             Script script;
             script.Initialize();
@@ -44,9 +45,9 @@ extern "C" void func_0208ea10(WorldObjectInstanceList* list)
         }
         for (int i = 1; i <= 63; ++i)
         {
-            sprintf(path, data_020f1356, i);
+            sprintf(path, ResetPlacementListOrLoadPlacementResources_FormatF02DflditemBin, i);
             size = 0;
-            if (GetFileInNarc(data_0211e33c, path, &file, &length, 0))
+            if (GetFileInNarc(Main_UnknownRoleZeroInitializedStorage_Variant6, path, &file, &length, 0))
             {
                 Script script;
                 script.Initialize();

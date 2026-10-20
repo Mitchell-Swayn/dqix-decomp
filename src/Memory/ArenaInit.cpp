@@ -3,6 +3,7 @@
 ArenaInitializationState g_arenaInitializationState;
 
 // USA: 0x020c83b0
+// Original: arm9/main @ 0x020C83B0; symbol: _Z16InitializeArenasv; size: 0x104.
 void InitializeArenas()
 {
     if (g_arenaInitializationState.initialized != 0)

@@ -1,0 +1,2176 @@
+{
+  "schema_version": 1,
+  "module": "cartridge_arm7",
+  "processor": "ARM7TDMI",
+  "payload_sha1": "a662d5c6a78e990244299926cf6862ce910a475d",
+  "payload_bytes": 167876,
+  "source_code_bytes": 13512,
+  "source_literal_pool_bytes": 1056,
+  "source_data_bytes": 913,
+  "source_functions": 166,
+  "binary_fallback_bytes": 152275,
+  "reviewed_assembly_bytes": 120,
+  "reviewed_assembly_functions": 6,
+  "source_bss_bytes": 3444,
+  "total_bss_bytes": 22744,
+  "unreconstructed_bss_bytes": 19300,
+  "code_data_partition": "only reconstructed units classified; remainder unknown",
+  "function_count": null,
+  "module_check_passed": true,
+  "source_symbol_checks_passed": true,
+  "cc_flags": [
+    "-O2",
+    "-proc",
+    "arm7tdmi",
+    "-fp",
+    "soft",
+    "-interworking",
+    "-enum",
+    "int",
+    "-char",
+    "signed",
+    "-inline",
+    "noauto",
+    "-lang=c",
+    "-Cpp_exceptions",
+    "off",
+    "-sym",
+    "on",
+    "-gccinc",
+    "-nolink",
+    "-MD"
+  ],
+  "include_paths": [
+    "include"
+  ],
+  "dependency_provenance": "MWCC -MD transitive inputs; SHA-1 of each source/header",
+  "compiler_sha1": "9a95a7959b22d68b4cec9d62ff5ac9397fa340ab",
+  "linker_sha1": "671021df48ba8d2df4dca4c823fde4798ff923e5",
+  "autoloads": [
+    {
+      "name": "wram",
+      "payload_offset": 540,
+      "runtime_address": 58687488,
+      "size": 69172,
+      "bss_size": 16240
+    },
+    {
+      "name": "mainram",
+      "payload_offset": 69712,
+      "runtime_address": 41811968,
+      "size": 98140,
+      "bss_size": 6504
+    }
+  ],
+  "units": [
+    {
+      "name": "ArenaHeapCheck",
+      "source": "config/usa/arm7/src/ArenaHeapCheck.c",
+      "autoload": "wram",
+      "runtime_address": 58708892,
+      "payload_offset": 21944,
+      "size": 844,
+      "code_bytes": 716,
+      "literal_pool_bytes": 128,
+      "entry": "ARM7_CheckArenaHeap",
+      "symbols": {
+        "ARM7_CheckArenaHeap": 58708892
+      },
+      "externals": {
+        "ARM7_HeapCheckMessage0": 58755264,
+        "ARM7_HeapCheckMessage1": 58755312,
+        "ARM7_HeapCheckMessage2": 58755380,
+        "ARM7_HeapCheckMessage3": 58755424,
+        "ARM7_HeapCheckMessage4": 58755508,
+        "ARM7_HeapCheckMessage5": 58755592,
+        "ARM7_HeapCheckMessage6": 58755652,
+        "ARM7_HeapCheckMessage7": 58755728,
+        "ARM7_HeapCheckMessage8": 58755784,
+        "ARM7_HeapCheckMessage9": 58755848,
+        "ARM7_HeapCheckMessage10": 58755908,
+        "ARM7_HeapCheckMessage16": 58755980,
+        "ARM7_HeapCheckMessage18": 58756080,
+        "ARM7_g_arenaHeapInfo": 58757420,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_HeapWarning": 58703288
+      },
+      "source_sha1": "ab0a25f648398892d31fc8a11d47e49ec0c9cecd",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/ArenaHeapCheck.c",
+          "sha1": "ab0a25f648398892d31fc8a11d47e49ec0c9cecd"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "6e4e5b54e949296526a9a6222aeee303287df5bc",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "ArenaHeapDiagnostics",
+      "source": "config/usa/arm7/src/ArenaHeapDiagnostics.c",
+      "autoload": "wram",
+      "runtime_address": 58755264,
+      "payload_offset": 68316,
+      "size": 864,
+      "code_bytes": 0,
+      "literal_pool_bytes": 0,
+      "data_bytes": 864,
+      "entry": "ARM7_HeapDiagnostics",
+      "symbols": {
+        "ARM7_HeapDiagnostics": 58755264
+      },
+      "externals": {},
+      "source_sha1": "fe014a606a7132e235de4adcdee3b3dda189964a",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/ArenaHeapDiagnostics.c",
+          "sha1": "fe014a606a7132e235de4adcdee3b3dda189964a"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "66877341d938e110002ec51b2d6b4db517168749",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "DmaControl",
+      "source": "config/usa/arm7/src/DmaControl.c",
+      "autoload": "wram",
+      "runtime_address": 58713344,
+      "payload_offset": 26396,
+      "size": 236,
+      "code_bytes": 228,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_AwaitDmaCompletion",
+      "symbols": {
+        "ARM7_AwaitDmaCompletion": 58713344,
+        "ARM7_ResetDmaChannel": 58713452
+      },
+      "externals": {
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952
+      },
+      "source_sha1": "51be1dd72b1d728c04bde00616fe24b35b2edd95",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/DmaControl.c",
+          "sha1": "51be1dd72b1d728c04bde00616fe24b35b2edd95"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "d875ffcb308c5b6d02d1456d536544487aaeedea",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "IPC",
+      "source": "config/usa/arm7/src/IPC.c",
+      "autoload": "wram",
+      "runtime_address": 58714412,
+      "payload_offset": 27464,
+      "size": 748,
+      "code_bytes": 692,
+      "literal_pool_bytes": 56,
+      "entry": "ARM7_StartIPC",
+      "symbols": {
+        "ARM7_StartIPC": 58714412,
+        "ARM7_InitializeIPC": 58714424,
+        "ARM7_SetIpcHandler": 58714668,
+        "ARM7_IsIpcHandlerRegistered": 58714748,
+        "ARM7_SendIpcCommand": 58714784,
+        "ARM7_SendIpcWord": 58714840,
+        "ARM7_HandleIPCReceive": 58714936
+      },
+      "externals": {
+        "ARM7_SharedSystem": 41942016,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_AcknowledgeSpecificInterrupts": 58702232,
+        "ARM7_EnableSpecificInterrupts": 58702116,
+        "ARM7_SetInterruptHandler": 58701808,
+        "ARM7_GetIpcBootMode": 58706616,
+        "ARM7_WaitCycles": 58713032
+      },
+      "bss": {
+        "runtime_address": 58757512,
+        "size": 132,
+        "symbols": {
+          "ARM7_IPCState": 58757512
+        }
+      },
+      "source_sha1": "dca66498bb747240e116a6d05fcfd1588faa5e65",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/IPC.c",
+          "sha1": "dca66498bb747240e116a6d05fcfd1588faa5e65"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "b35cb045706ae708663218072ca68d0f8e4b1fd2",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "CycleDelay",
+      "source": "config/usa/arm7/src/CycleDelay.c",
+      "autoload": "wram",
+      "runtime_address": 58713032,
+      "payload_offset": 26084,
+      "size": 24,
+      "code_bytes": 20,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_WaitCycles",
+      "symbols": {
+        "ARM7_WaitCycles": 58713032
+      },
+      "externals": {
+        "ARM7_BiosDelay": 58736293
+      },
+      "source_sha1": "8c092f24c1650eeba3b6f10b47a656b403981062",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/CycleDelay.c",
+          "sha1": "8c092f24c1650eeba3b6f10b47a656b403981062"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "26108da2c186aea8f6a09f5549dbdd19332f65ba",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "MessageQueue",
+      "source": "config/usa/arm7/src/MessageQueue.c",
+      "autoload": "wram",
+      "runtime_address": 58706652,
+      "payload_offset": 19704,
+      "size": 452,
+      "code_bytes": 452,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_InitializeMessageQueue",
+      "symbols": {
+        "ARM7_InitializeMessageQueue": 58706652,
+        "ARM7_SendMessage": 58706692,
+        "ARM7_ReceiveMessage": 58706832,
+        "ARM7_PeekMessage": 58706988
+      },
+      "externals": {
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_BlockCurrentThread": 58705564,
+        "ARM7_UnblockThreads": 58705648,
+        "_s32_div_f": 58752696
+      },
+      "source_sha1": "0042249d5f64146970c294ec96c8da9a6a9fdb33",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/MessageQueue.c",
+          "sha1": "0042249d5f64146970c294ec96c8da9a6a9fdb33"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "4b239c35dbc1a8b2e82c50d0adf80204c09d7f13",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "Mutex",
+      "source": "config/usa/arm7/src/Mutex.c",
+      "autoload": "wram",
+      "runtime_address": 58707104,
+      "payload_offset": 20156,
+      "size": 380,
+      "code_bytes": 372,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_ZeroInitializeMutex",
+      "symbols": {
+        "ARM7_ZeroInitializeMutex": 58707104,
+        "ARM7_LockMutex": 58707128,
+        "ARM7_UnlockMutex": 58707260,
+        "ARM7_UnlockAllMutexesLockedByContext": 58707356,
+        "ARM7_AddMutexToContextLockedList": 58707412,
+        "ARM7_RemoveMutexFromContextLockedList": 58707448
+      },
+      "externals": {
+        "ARM7_ThreadSystem": 58757072,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_BlockCurrentThread": 58705564,
+        "ARM7_UnblockThreads": 58705648,
+        "ARM7_PopFrontMutexFromList": 58704328
+      },
+      "source_sha1": "0a1fc29160c3eb58ac5b557d14878e2c277105f5",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/Mutex.c",
+          "sha1": "0a1fc29160c3eb58ac5b557d14878e2c277105f5"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "d81bf907e33bd6ff4c8fd9b6fe67fbf875514c3c",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "ThreadLists",
+      "source": "config/usa/arm7/src/ThreadLists.c",
+      "autoload": "wram",
+      "runtime_address": 58704120,
+      "payload_offset": 17172,
+      "size": 420,
+      "code_bytes": 412,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_InsertBlockedThread",
+      "symbols": {
+        "ARM7_InsertBlockedThread": 58704120,
+        "ARM7_RemoveBlockedThread": 58704240,
+        "ARM7_PopFrontMutexFromList": 58704328,
+        "ARM7_InsertThreadGlobal": 58704376,
+        "ARM7_RemoveThreadGlobal": 58704472
+      },
+      "externals": {
+        "ARM7_ThreadGlobals": 58757036
+      },
+      "source_sha1": "3aaf8a5f005a9eb7fd7a7fff8f94408e8c72f283",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/ThreadLists.c",
+          "sha1": "3aaf8a5f005a9eb7fd7a7fff8f94408e8c72f283"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "bd44b7548b65dcb966049bc42e4b46d355a876c7",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "ThreadWait",
+      "source": "config/usa/arm7/src/ThreadWait.c",
+      "autoload": "wram",
+      "runtime_address": 58705564,
+      "payload_offset": 18616,
+      "size": 304,
+      "code_bytes": 296,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_BlockCurrentThread",
+      "symbols": {
+        "ARM7_BlockCurrentThread": 58705564,
+        "ARM7_UnblockThreads": 58705648,
+        "ARM7_MarkThreadReady": 58705784,
+        "ARM7_GetFirstReadyThread": 58705828
+      },
+      "externals": {
+        "ARM7_ThreadGlobals": 58757036,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_InsertBlockedThread": 58704120,
+        "ARM7_SwitchThread": 58704540
+      },
+      "source_sha1": "5515b6d1321e3407d05ff52e1173a9dba2a8871c",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/ThreadWait.c",
+          "sha1": "5515b6d1321e3407d05ff52e1173a9dba2a8871c"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "74881df0319c27112ba495e92a85a59bd22ffc51",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "ThreadSwitch",
+      "source": "config/usa/arm7/src/ThreadSwitch.c",
+      "autoload": "wram",
+      "runtime_address": 58704540,
+      "payload_offset": 17592,
+      "size": 212,
+      "code_bytes": 204,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SwitchThread",
+      "symbols": {
+        "ARM7_SwitchThread": 58704540
+      },
+      "externals": {
+        "ARM7_ThreadSystem": 58757072,
+        "ARM7_GetProcessorMode": 58713020,
+        "ARM7_GetFirstReadyThread": 58705828,
+        "ARM7_SaveThreadContext": 58706520,
+        "ARM7_RestoreThreadContext": 58706572
+      },
+      "bss": {
+        "runtime_address": 58757036,
+        "size": 380,
+        "symbols": {
+          "ARM7_ThreadGlobals": 58757036
+        }
+      },
+      "source_sha1": "899ba6019ce9b0070054a9e37dad13936b6ce0ec",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/ThreadSwitch.c",
+          "sha1": "899ba6019ce9b0070054a9e37dad13936b6ce0ec"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "a2de0efb9f3cec3cea3d91fd4e5f56429e477081",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "Alarms",
+      "source": "config/usa/arm7/src/Alarms.c",
+      "autoload": "wram",
+      "runtime_address": 58710172,
+      "payload_offset": 23224,
+      "size": 948,
+      "code_bytes": 896,
+      "literal_pool_bytes": 52,
+      "entry": "ARM7_MarkNextAlarmToSound",
+      "symbols": {
+        "ARM7_MarkNextAlarmToSound": 58710172,
+        "ARM7_InitializeActiveAlarmList": 58710312,
+        "ARM7_IsAlarmListInitialized": 58710380,
+        "ARM7_ZeroInitializeAlarm": 58710396,
+        "ARM7_RegisterAlarm": 58710412,
+        "ARM7_SetTimeout": 58710712,
+        "ARM7_SetInterval": 58710844,
+        "ARM7_CancelAlarm": 58710984
+      },
+      "externals": {
+        "ARM7_GetCurrentTimestamp": 58710008,
+        "ARM7_SetTimerOverflowCallback": 58701964,
+        "ARM7_Timer1OverflowInterruptRoutine": 58711120,
+        "ARM7_EnableSpecificInterrupts": 58702116,
+        "ARM7_DisableSpecificInterrupts": 58702172,
+        "ARM7_MarkAlarmInitializationFlagBit": 58709736,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_Panic": 58703664,
+        "ARM7_AlarmSourceFile": 58756128,
+        "ARM7_AlarmAllocationError": 58756140,
+        "_ll_udiv": 58752624
+      },
+      "bss": {
+        "runtime_address": 58757476,
+        "size": 12,
+        "symbols": {
+          "ARM7_ActiveAlarmList": 58757476
+        }
+      },
+      "source_sha1": "53c03d83a75f52e27f5e3a8e39b7ed4fafb61a17",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/Alarms.c",
+          "sha1": "53c03d83a75f52e27f5e3a8e39b7ed4fafb61a17"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "30fcd650740bf83528bc1bc0ffbd67df5419d599",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "AlarmHandler",
+      "source": "config/usa/arm7/src/AlarmHandler.c",
+      "autoload": "wram",
+      "runtime_address": 58711136,
+      "payload_offset": 24188,
+      "size": 244,
+      "code_bytes": 232,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_HandleTimer1Overflow",
+      "symbols": {
+        "ARM7_HandleTimer1Overflow": 58711136
+      },
+      "externals": {
+        "ARM7_ActiveAlarmList": 58757476,
+        "ARM7_GetCurrentTimestamp": 58710008,
+        "ARM7_DisableSpecificInterrupts": 58702172,
+        "ARM7_MarkNextAlarmToSound": 58710172,
+        "ARM7_RegisterAlarm": 58710412
+      },
+      "source_sha1": "9c8bb1f20acb1bda174933df28472ad29ff0e622",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/AlarmHandler.c",
+          "sha1": "9c8bb1f20acb1bda174933df28472ad29ff0e622"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "f26403369f49d5dbf0072d1695b26d632d785e74",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "VerticalAlarms",
+      "source": "config/usa/arm7/src/VerticalAlarms.c",
+      "autoload": "wram",
+      "runtime_address": 58711380,
+      "payload_offset": 24432,
+      "size": 332,
+      "code_bytes": 316,
+      "literal_pool_bytes": 16,
+      "entry": "ARM7_InitializeVerticalAlarms",
+      "symbols": {
+        "ARM7_InitializeVerticalAlarms": 58711380,
+        "ARM7_IsVerticalAlarmInitialized": 58711456,
+        "ARM7_InsertVerticalAlarm": 58711472,
+        "ARM7_RemoveVerticalAlarm": 58711636,
+        "ARM7_ZeroInitializeVerticalAlarm": 58711692
+      },
+      "externals": {
+        "ARM7_DisableSpecificInterrupts": 58702172,
+        "ARM7_ArmVerticalAlarm": 58712048
+      },
+      "bss": {
+        "runtime_address": 58757488,
+        "size": 20,
+        "symbols": {
+          "ARM7_VerticalAlarmState": 58757488
+        }
+      },
+      "source_sha1": "230d64b8d4e6df7649ab85a65b54c9ffc91e1114",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/VerticalAlarms.c",
+          "sha1": "230d64b8d4e6df7649ab85a65b54c9ffc91e1114"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "39aa1e1491920f5bfc383eade04ca3454880b4fd",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "VerticalAlarmCancel",
+      "source": "config/usa/arm7/src/VerticalAlarmCancel.c",
+      "autoload": "wram",
+      "runtime_address": 58712140,
+      "payload_offset": 25192,
+      "size": 272,
+      "code_bytes": 248,
+      "literal_pool_bytes": 24,
+      "entry": "ARM7_SetVerticalAlarmTag",
+      "symbols": {
+        "ARM7_SetVerticalAlarmTag": 58712140,
+        "ARM7_CancelVerticalAlarm": 58712200,
+        "ARM7_CancelVerticalAlarmsByTag": 58712276
+      },
+      "externals": {
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_Panic": 58703664,
+        "ARM7_VerticalAlarmFile": 58756172,
+        "ARM7_VerticalTagError": 58756216,
+        "ARM7_VerticalAlarmState": 58757488,
+        "ARM7_RemoveVerticalAlarm": 58711636
+      },
+      "source_sha1": "1988f069ff94daed85269e1516a20263ea4d2653",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/VerticalAlarmCancel.c",
+          "sha1": "1988f069ff94daed85269e1516a20263ea4d2653"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "2964845587eae88c5a4fd1022d86f325b8d2d791",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "VerticalFrame",
+      "source": "config/usa/arm7/src/VerticalFrame.c",
+      "autoload": "wram",
+      "runtime_address": 58712844,
+      "payload_offset": 25896,
+      "size": 68,
+      "code_bytes": 64,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_UpdateVerticalFrame",
+      "symbols": {
+        "ARM7_UpdateVerticalFrame": 58712844
+      },
+      "externals": {
+        "ARM7_VerticalAlarmState": 58757488,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952
+      },
+      "source_sha1": "8bed8865690a8284cff5ed7a4c4aded43436ee62",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/VerticalFrame.c",
+          "sha1": "8bed8865690a8284cff5ed7a4c4aded43436ee62"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "4abdc4041127f0afaa829eea202984f1167d73f2",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "VerticalAlarmSetup",
+      "source": "config/usa/arm7/src/VerticalAlarmSetup.c",
+      "autoload": "wram",
+      "runtime_address": 58711712,
+      "payload_offset": 24764,
+      "size": 428,
+      "code_bytes": 388,
+      "literal_pool_bytes": 40,
+      "entry": "ARM7_SetVerticalTimeout",
+      "symbols": {
+        "ARM7_SetVerticalTimeout": 58711712,
+        "ARM7_SetVerticalInterval": 58711880,
+        "ARM7_ArmVerticalAlarm": 58712048
+      },
+      "externals": {
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_UpdateVerticalFrame": 58712844,
+        "ARM7_Panic": 58703664,
+        "ARM7_VerticalAlarmFile": 58756172,
+        "ARM7_VerticalAlarmError": 58756184,
+        "ARM7_InsertVerticalAlarm": 58711472,
+        "ARM7_SetInterruptHandler": 58701808,
+        "ARM7_VerticalAlarmInterrupt": 58712412,
+        "ARM7_EnableSpecificInterrupts": 58702116
+      },
+      "source_sha1": "6e50a5b60fb2b01d14d819b8c036f8e696cbe909",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/VerticalAlarmSetup.c",
+          "sha1": "6e50a5b60fb2b01d14d819b8c036f8e696cbe909"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "74991802a2834794bcbd01143ef79a6472995bbe",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "Interrupts",
+      "source": "config/usa/arm7/src/Interrupts.c",
+      "autoload": "wram",
+      "runtime_address": 58701964,
+      "payload_offset": 15016,
+      "size": 320,
+      "code_bytes": 288,
+      "literal_pool_bytes": 32,
+      "entry": "ARM7_SetTimerOverflowCallback",
+      "symbols": {
+        "ARM7_SetTimerOverflowCallback": 58701964,
+        "ARM7_SetSpecificInterruptsEnabled": 58702040,
+        "ARM7_DisableInterruptMaster": 58702092,
+        "ARM7_EnableSpecificInterrupts": 58702116,
+        "ARM7_DisableSpecificInterrupts": 58702172,
+        "ARM7_AcknowledgeSpecificInterrupts": 58702232
+      },
+      "externals": {},
+      "bss": {
+        "runtime_address": 58756668,
+        "size": 96,
+        "symbols": {
+          "ARM7_InterruptResponses": 58756668
+        }
+      },
+      "source_sha1": "806e195b7314b5b836c5306bda88e852dc3e8d8d",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/Interrupts.c",
+          "sha1": "806e195b7314b5b836c5306bda88e852dc3e8d8d"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "42a471ce59d811f32529ff07525fab5f78730ea9",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "Timing",
+      "source": "config/usa/arm7/src/Timing.c",
+      "autoload": "wram",
+      "runtime_address": 58709736,
+      "payload_offset": 22788,
+      "size": 436,
+      "code_bytes": 388,
+      "literal_pool_bytes": 48,
+      "entry": "ARM7_Initialize64BitTimer",
+      "symbols": {
+        "ARM7_MarkAlarmInitializationFlagBit": 58709736,
+        "ARM7_Initialize64BitTimer": 58709764,
+        "ARM7_Is64BitTimerInitialized": 58709888,
+        "ARM7_On16BitTimerOverflow": 58709904,
+        "ARM7_GetCurrentTimestamp": 58710008
+      },
+      "externals": {
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_SetInterruptHandler": 58701808,
+        "ARM7_EnableSpecificInterrupts": 58702116,
+        "ARM7_SetTimerOverflowCallback": 58701964
+      },
+      "bss": {
+        "runtime_address": 58757456,
+        "size": 20,
+        "symbols": {
+          "ARM7_TimerInitFlags": 58757456,
+          "ARM7_TimerState": 58757460
+        }
+      },
+      "source_sha1": "bb7f49cd1b043c54aba4571e621de0d9be595432",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/Timing.c",
+          "sha1": "bb7f49cd1b043c54aba4571e621de0d9be595432"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "38cb582835b7a3c13f68aa8550dfb90f4ca490ed",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "CpuStatus",
+      "source": "config/usa/arm7/src/CpuStatus.c",
+      "autoload": "wram",
+      "runtime_address": 58712912,
+      "payload_offset": 25964,
+      "size": 120,
+      "code_bytes": 0,
+      "literal_pool_bytes": 0,
+      "reviewed_assembly_bytes": 120,
+      "assembly_exception": "config/usa/arm7/assembly_exceptions.json",
+      "entry": "ARM7_EnableIRQInterrupts",
+      "symbols": {
+        "ARM7_EnableIRQInterrupts": 58712912,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_DisableIRQAndFIQInterrupts": 58712976,
+        "ARM7_SetIRQAndFIQInterruptState": 58712996,
+        "ARM7_GetProcessorMode": 58713020
+      },
+      "externals": {},
+      "source_sha1": "7422db077b5a950bc5a8b1312fa15f67a660ed74",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/CpuStatus.c",
+          "sha1": "7422db077b5a950bc5a8b1312fa15f67a660ed74"
+        }
+      ],
+      "assembly_exception_sha1": "cf255667a368b6224f36ae899ac62107062fa340",
+      "linked_sha1": "300888c48027359f1677777aab5c3474d0ec9931",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "ArenaHeap",
+      "source": "config/usa/arm7/src/ArenaHeap.c",
+      "autoload": "wram",
+      "runtime_address": 58707924,
+      "payload_offset": 20976,
+      "size": 968,
+      "code_bytes": 948,
+      "literal_pool_bytes": 20,
+      "entry": "ARM7_RemoveArenaHeapBlock",
+      "symbols": {
+        "ARM7_RemoveArenaHeapBlock": 58707924,
+        "ARM7_InsertFreeArenaHeapBlock": 58707964,
+        "ARM7_AllocateArenaHeap": 58708132,
+        "ARM7_FreeArenaHeap": 58708404,
+        "ARM7_SetCurrentHeap": 58708512,
+        "ARM7_InitializeHeapArena": 58708564,
+        "ARM7_CreateHeap": 58708732
+      },
+      "externals": {
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952
+      },
+      "bss": {
+        "runtime_address": 58757420,
+        "size": 36,
+        "symbols": {
+          "ARM7_g_arenaHeapInfo": 58757420
+        }
+      },
+      "source_sha1": "929210a76a473ea444547c64e20aa7c0545f3f97",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/ArenaHeap.c",
+          "sha1": "929210a76a473ea444547c64e20aa7c0545f3f97"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "3b3cf1422573157732c78a1a3e065826b0fe855d",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "ArenaBounds",
+      "source": "config/usa/arm7/src/ArenaBounds.c",
+      "autoload": "wram",
+      "runtime_address": 58707592,
+      "payload_offset": 20644,
+      "size": 332,
+      "code_bytes": 304,
+      "literal_pool_bytes": 28,
+      "entry": "ARM7_InitializeArena",
+      "symbols": {
+        "ARM7_InitializeArena": 58707592,
+        "ARM7_GetArenaHigh": 58707652,
+        "ARM7_GetArenaLow": 58707672,
+        "ARM7_GetInitialArenaHigh": 58707692,
+        "ARM7_GetInitialArenaLow": 58707816,
+        "ARM7_SetArenaLow": 58707904
+      },
+      "externals": {
+        "ARM7_IrqStackSize": 1024,
+        "ARM7_SystemStackSize": 1024,
+        "ARM7_WramBssEnd": 58772900,
+        "ARM7_MainRamBssEnd": 41916612
+      },
+      "source_sha1": "a90643eae8cd4dbc835934bcbcebf5678702d29c",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/ArenaBounds.c",
+          "sha1": "a90643eae8cd4dbc835934bcbcebf5678702d29c"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "a71f330b91113284a9fdeec194f988e67d35ba17",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "BootFlags",
+      "source": "config/usa/arm7/src/BootFlags.c",
+      "autoload": "wram",
+      "runtime_address": 58688696,
+      "payload_offset": 1748,
+      "size": 56,
+      "code_bytes": 52,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_GetBootByteFlags",
+      "symbols": {
+        "ARM7_GetBootByteFlags": 58688696
+      },
+      "externals": {},
+      "source_sha1": "49f19e629bd04d1e82f4bb6b2861d7b86e882fe8",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/BootFlags.c",
+          "sha1": "49f19e629bd04d1e82f4bb6b2861d7b86e882fe8"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "b09aaa49cadae2f3f52908b549b4ddee3dd48263",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "BitCount",
+      "source": "config/usa/arm7/src/BitCount.c",
+      "autoload": "wram",
+      "runtime_address": 58736424,
+      "payload_offset": 49476,
+      "size": 68,
+      "code_bytes": 56,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_CountSetBits",
+      "symbols": {
+        "ARM7_CountSetBits": 58736424
+      },
+      "externals": {},
+      "source_sha1": "04984a3ebac2d85ad1617ec721a00352b8343ec4",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/BitCount.c",
+          "sha1": "04984a3ebac2d85ad1617ec721a00352b8343ec4"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "88e50a378de465174dfc644ef47b9145951e482b",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "ThreadCreate",
+      "source": "config/usa/arm7/src/ThreadCreate.c",
+      "autoload": "wram",
+      "runtime_address": 58704992,
+      "payload_offset": 18044,
+      "size": 264,
+      "code_bytes": 248,
+      "literal_pool_bytes": 16,
+      "entry": "ARM7_CreateThread",
+      "symbols": {
+        "ARM7_CreateThread": 58704992
+      },
+      "externals": {
+        "ARM7_ThreadGlobals": 58757036,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_InsertThreadGlobal": 58704376,
+        "ARM7_InitializeThreadRegisters": 58706388,
+        "ARM7_ThreadReturn": 58705256,
+        "ARM7_FillWords": 58713672
+      },
+      "source_sha1": "3311ba803dc3066274d9d7844002c45e6078c9dc",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/ThreadCreate.c",
+          "sha1": "3311ba803dc3066274d9d7844002c45e6078c9dc"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "ed899aaab742f1dfccc8829cdf2cdfac8d0409a6",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "ThreadExit",
+      "source": "config/usa/arm7/src/ThreadExit.c",
+      "autoload": "wram",
+      "runtime_address": 58705256,
+      "payload_offset": 18308,
+      "size": 308,
+      "code_bytes": 288,
+      "literal_pool_bytes": 20,
+      "entry": "ARM7_ThreadReturn",
+      "symbols": {
+        "ARM7_ThreadReturn": 58705256,
+        "ARM7_ExitThread": 58705292,
+        "ARM7_RunThreadExitCallback": 58705388,
+        "ARM7_DestroyCurrentThread": 58705452
+      },
+      "externals": {
+        "ARM7_ThreadGlobals": 58757036,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_InitializeThreadRegisters": 58706388,
+        "ARM7_RestoreThreadContext": 58706572,
+        "ARM7_LockThreadSwitch": 58706276,
+        "ARM7_UnlockThreadSwitch": 58706332,
+        "ARM7_RemoveBlockedThread": 58704240,
+        "ARM7_RemoveThreadGlobal": 58704472,
+        "ARM7_UnblockThreads": 58705648,
+        "ARM7_SwitchThread": 58704540,
+        "ARM7_Terminate": 58713320,
+        "ARM7_UnlockAllMutexesLockedByContext": 58707356
+      },
+      "source_sha1": "fc45cf822421642d90ac1c3901e6f2a8b1ede3b0",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/ThreadExit.c",
+          "sha1": "fc45cf822421642d90ac1c3901e6f2a8b1ede3b0"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "0ac3553460fba6c87b3338eb651c2bc6f0fb4368",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "ThreadPriority",
+      "source": "config/usa/arm7/src/ThreadPriority.c",
+      "autoload": "wram",
+      "runtime_address": 58705868,
+      "payload_offset": 18920,
+      "size": 168,
+      "code_bytes": 160,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SetThreadPriority",
+      "symbols": {
+        "ARM7_SetThreadPriority": 58705868
+      },
+      "externals": {
+        "ARM7_ThreadGlobals": 58757036,
+        "ARM7_IdleThread": 58757088,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_InsertThreadGlobal": 58704376,
+        "ARM7_SwitchThread": 58704540
+      },
+      "source_sha1": "40ac8e24843ba3efa54c844e287936f46a5082e6",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/ThreadPriority.c",
+          "sha1": "40ac8e24843ba3efa54c844e287936f46a5082e6"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "1835447c0b6b7e6da3d255723b81056d24f32f5c",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "ThreadCallbacks",
+      "source": "config/usa/arm7/src/ThreadCallbacks.c",
+      "autoload": "wram",
+      "runtime_address": 58706200,
+      "payload_offset": 19252,
+      "size": 76,
+      "code_bytes": 68,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_WakeSleepingThread",
+      "symbols": {
+        "ARM7_WakeSleepingThread": 58706200,
+        "ARM7_SetThreadSwitchCallback": 58706232
+      },
+      "externals": {
+        "ARM7_ThreadGlobals": 58757036,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_MarkThreadReady": 58705784
+      },
+      "source_sha1": "49398ce534b85ee94ca005096ed82aed565b5ae8",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/ThreadCallbacks.c",
+          "sha1": "49398ce534b85ee94ca005096ed82aed565b5ae8"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "2e130fc50ac4cc66e57c36066fcfa5d826051e34",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "ThreadSwitchUnlock",
+      "source": "config/usa/arm7/src/ThreadSwitchUnlock.c",
+      "autoload": "wram",
+      "runtime_address": 58706332,
+      "payload_offset": 19384,
+      "size": 56,
+      "code_bytes": 52,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_UnlockThreadSwitch",
+      "symbols": {
+        "ARM7_UnlockThreadSwitch": 58706332
+      },
+      "externals": {
+        "ARM7_ThreadGlobals": 58757036,
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952
+      },
+      "source_sha1": "fefe2f6f855b28d1b1e7e7125424b09071c54e8d",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/ThreadSwitchUnlock.c",
+          "sha1": "fefe2f6f855b28d1b1e7e7125424b09071c54e8d"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "de9eb28a9989051a3f603bb55fd00738ea3b64f2",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "InterruptDispatch",
+      "source": "config/usa/arm7/src/InterruptDispatch.c",
+      "autoload": "wram",
+      "runtime_address": 58701424,
+      "payload_offset": 14476,
+      "size": 140,
+      "code_bytes": 120,
+      "literal_pool_bytes": 20,
+      "entry": "ARM7_DispatchInterruptResponse",
+      "symbols": {
+        "ARM7_DispatchInterruptResponse": 58701424
+      },
+      "externals": {
+        "ARM7_InterruptResponses": 58756668,
+        "ARM7_InterruptResponseIDs": 58755100,
+        "ARM7_DisableSpecificInterrupts": 58702172
+      },
+      "source_sha1": "bbfa099cf81067f788d2dccdccb303e8e6b13e2a",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/InterruptDispatch.c",
+          "sha1": "bbfa099cf81067f788d2dccdccb303e8e6b13e2a"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "15e0903eff62434677eb5322409fb2390ba44ef6",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "InterruptVectors",
+      "source": "config/usa/arm7/src/InterruptVectors.c",
+      "autoload": "wram",
+      "runtime_address": 58701564,
+      "payload_offset": 14616,
+      "size": 128,
+      "code_bytes": 96,
+      "literal_pool_bytes": 32,
+      "entry": "ARM7_DMA0InterruptHandler",
+      "symbols": {
+        "ARM7_DMA0InterruptHandler": 58701564,
+        "ARM7_DMA1InterruptHandler": 58701580,
+        "ARM7_DMA2InterruptHandler": 58701596,
+        "ARM7_DMA3InterruptHandler": 58701612,
+        "ARM7_Timer0OverflowInterruptHandler": 58701628,
+        "ARM7_Timer1OverflowInterruptHandler": 58701644,
+        "ARM7_Timer2OverflowInterruptHandler": 58701660,
+        "ARM7_Timer3OverflowInterruptHandler": 58701676
+      },
+      "externals": {
+        "ARM7_DispatchInterruptResponse": 58701424
+      },
+      "source_sha1": "5ba94916e77083ac26597928db71c8a41992b0c7",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/InterruptVectors.c",
+          "sha1": "5ba94916e77083ac26597928db71c8a41992b0c7"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "0832eca22bb0bfd1d7eaaa5ed7879160a44035f3",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "InterruptResponseIDs",
+      "source": "config/usa/arm7/src/InterruptResponseIDs.c",
+      "autoload": "wram",
+      "runtime_address": 58755100,
+      "payload_offset": 68152,
+      "size": 16,
+      "code_bytes": 0,
+      "literal_pool_bytes": 0,
+      "data_bytes": 16,
+      "entry": "ARM7_InterruptResponseIDs",
+      "symbols": {
+        "ARM7_InterruptResponseIDs": 58755100
+      },
+      "externals": {},
+      "source_sha1": "c94690fc6c46ee68ce33052871e17aa3da3c4bf3",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/InterruptResponseIDs.c",
+          "sha1": "c94690fc6c46ee68ce33052871e17aa3da3c4bf3"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "7c370c8d90b3986ae2b4644be78417929752c6f7",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "VBlankDispatch",
+      "source": "config/usa/arm7/src/VBlankDispatch.c",
+      "autoload": "wram",
+      "runtime_address": 58701692,
+      "payload_offset": 14744,
+      "size": 80,
+      "code_bytes": 68,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_VBlankInterruptHandler",
+      "symbols": {
+        "ARM7_VBlankInterruptHandler": 58701692
+      },
+      "externals": {
+        "ARM7_InterruptResponses": 58756668
+      },
+      "bss": {
+        "runtime_address": 58756764,
+        "size": 12,
+        "symbols": {
+          "ARM7_VBlankResponse": 58756764
+        }
+      },
+      "source_sha1": "fc9ae709c1a932686e188209e2408cca2290f403",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/VBlankDispatch.c",
+          "sha1": "fc9ae709c1a932686e188209e2408cca2290f403"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "d21dc262ca8efc82958103f69e23c2e447589573",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "InterruptWaiters",
+      "source": "config/usa/arm7/src/InterruptWaiters.c",
+      "autoload": "wram",
+      "runtime_address": 58701772,
+      "payload_offset": 14824,
+      "size": 36,
+      "code_bytes": 28,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_InitializeInterruptWaiters",
+      "symbols": {
+        "ARM7_InitializeInterruptWaiters": 58701772
+      },
+      "externals": {},
+      "bss": {
+        "runtime_address": 58756660,
+        "size": 8,
+        "symbols": {
+          "ARM7_InterruptWaiters": 58756660
+        }
+      },
+      "source_sha1": "abe5415cfacfaaaa9c17b0252c2f8847b88ac525",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/InterruptWaiters.c",
+          "sha1": "abe5415cfacfaaaa9c17b0252c2f8847b88ac525"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "38fe091f92acb0a6276910ebc2660ca147d37a1b",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "EmptyInterruptHandler",
+      "source": "config/usa/arm7/src/EmptyInterruptHandler.c",
+      "autoload": "wram",
+      "runtime_address": 58701420,
+      "payload_offset": 14472,
+      "size": 4,
+      "code_bytes": 4,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_EmptyInterruptHandler",
+      "symbols": {
+        "ARM7_EmptyInterruptHandler": 58701420
+      },
+      "externals": {},
+      "source_sha1": "89a6010b4d86f533d03b0fbdc6737929e4bef31f",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/EmptyInterruptHandler.c",
+          "sha1": "89a6010b4d86f533d03b0fbdc6737929e4bef31f"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "b0deda033b59922db52bb4773db26323b86c06e9",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "BusLocks",
+      "source": "config/usa/arm7/src/BusLocks.c",
+      "autoload": "wram",
+      "runtime_address": 58702416,
+      "payload_offset": 15468,
+      "size": 404,
+      "code_bytes": 388,
+      "literal_pool_bytes": 16,
+      "entry": "ARM7_UnlockBus",
+      "symbols": {
+        "ARM7_UnlockBus": 58702416,
+        "ARM7_TryLockBus": 58702540,
+        "ARM7_AcquireGBABus": 58702656,
+        "ARM7_InternalReleaseGBABus": 58702760
+      },
+      "externals": {
+        "ARM7_DisableIRQInterrupts": 58712932,
+        "ARM7_SetIRQInterruptState": 58712952,
+        "ARM7_DisableIRQAndFIQInterrupts": 58712976,
+        "ARM7_SetIRQAndFIQInterruptState": 58712996,
+        "ARM7_AtomicSwap": 58714404,
+        "ARM7_BusLockWait": 58702404,
+        "ARM7_TestSharedBootFlag4": 58706624,
+        "ARM7_BeforeReleaseGBABus": 58736412,
+        "ARM7_AfterAcquireGBABus": 58736416,
+        "ARM7_MarkGBABusAcquired": 58702896,
+        "ARM7_MarkGBABusReleased": 58702900
+      },
+      "source_sha1": "433fc3fb37725827994855004b3a2cd5c75ad093",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/BusLocks.c",
+          "sha1": "433fc3fb37725827994855004b3a2cd5c75ad093"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "c70dc8fb37845b386a6ff279722fdc75224218df",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "BusTryAcquire",
+      "source": "config/usa/arm7/src/BusTryAcquire.c",
+      "autoload": "wram",
+      "runtime_address": 58702832,
+      "payload_offset": 15884,
+      "size": 64,
+      "code_bytes": 56,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_TryAcquireGBABus",
+      "symbols": {
+        "ARM7_TryAcquireGBABus": 58702832
+      },
+      "externals": {
+        "ARM7_TryLockBus": 58702540,
+        "ARM7_TestSharedBootFlag4": 58706624,
+        "ARM7_AfterAcquireGBABus": 58736416,
+        "ARM7_MarkGBABusAcquired": 58702896
+      },
+      "source_sha1": "a9169a47eeabea0bc85e8954dc034d9ac307c7d7",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/BusTryAcquire.c",
+          "sha1": "a9169a47eeabea0bc85e8954dc034d9ac307c7d7"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "7575419e7e097f4079b9fd1b74c86fb5c674a554",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "BusNDS",
+      "source": "config/usa/arm7/src/BusNDS.c",
+      "autoload": "wram",
+      "runtime_address": 58702904,
+      "payload_offset": 15956,
+      "size": 64,
+      "code_bytes": 40,
+      "literal_pool_bytes": 24,
+      "entry": "ARM7_ReleaseNDSBus",
+      "symbols": {
+        "ARM7_ReleaseNDSBus": 58702904,
+        "ARM7_TryAcquireNDSBus": 58702936
+      },
+      "externals": {
+        "ARM7_TryLockBus": 58702540,
+        "ARM7_UnlockBus": 58702416,
+        "ARM7_MarkNDSBusAcquired": 58702968,
+        "ARM7_MarkNDSBusReleased": 58702972
+      },
+      "source_sha1": "319888687e1d5b0c2996edcf6b035a5757d82157",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/BusNDS.c",
+          "sha1": "319888687e1d5b0c2996edcf6b035a5757d82157"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "304ff8c7a1b33a077123e887d0f0c2cce05e3596",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "BusLockOwner",
+      "source": "config/usa/arm7/src/BusLockOwner.c",
+      "autoload": "wram",
+      "runtime_address": 58702976,
+      "payload_offset": 16028,
+      "size": 8,
+      "code_bytes": 8,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_GetBusLockOwner",
+      "symbols": {
+        "ARM7_GetBusLockOwner": 58702976
+      },
+      "externals": {},
+      "source_sha1": "c97ca0412bcb4c40ba3154e555c9ac6c58de695b",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/BusLockOwner.c",
+          "sha1": "c97ca0412bcb4c40ba3154e555c9ac6c58de695b"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "af5d960c95e27918d8aad0d0ee35ee45c94ba9fb",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SharedBootFlag",
+      "source": "config/usa/arm7/src/SharedBootFlag.c",
+      "autoload": "wram",
+      "runtime_address": 58706624,
+      "payload_offset": 19676,
+      "size": 28,
+      "code_bytes": 24,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_TestSharedBootFlag4",
+      "symbols": {
+        "ARM7_TestSharedBootFlag4": 58706624
+      },
+      "externals": {},
+      "source_sha1": "2b2d258c85727278e5e2ada5535da3a07592f6ae",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SharedBootFlag.c",
+          "sha1": "2b2d258c85727278e5e2ada5535da3a07592f6ae"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "4a35d42df459b6b78ef13327dae1a553f8c6c692",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "GPIOControl",
+      "source": "config/usa/arm7/src/GPIOControl.c",
+      "autoload": "wram",
+      "runtime_address": 58715160,
+      "payload_offset": 28212,
+      "size": 32,
+      "code_bytes": 28,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_UpdateGPIOControl",
+      "symbols": {
+        "ARM7_UpdateGPIOControl": 58715160
+      },
+      "externals": {},
+      "source_sha1": "9dbd4893c92c78c562d029a0b2832d19ce72f947",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/GPIOControl.c",
+          "sha1": "9dbd4893c92c78c562d029a0b2832d19ce72f947"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "df14e7f70fb9d5394398a3974bbbbb8167b30982",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "GPIOControlMode",
+      "source": "config/usa/arm7/src/GPIOControlMode.c",
+      "autoload": "wram",
+      "runtime_address": 58715192,
+      "payload_offset": 28244,
+      "size": 24,
+      "code_bytes": 20,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_SetGPIOControlMode",
+      "symbols": {
+        "ARM7_SetGPIOControlMode": 58715192
+      },
+      "externals": {
+        "ARM7_UpdateGPIOControl": 58715160
+      },
+      "source_sha1": "a4ac6caf5456cf4efafed6d547242e1fea61fdad",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/GPIOControlMode.c",
+          "sha1": "a4ac6caf5456cf4efafed6d547242e1fea61fdad"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "8a8d60294eac4b1d939ad397f55e05a034cc965a",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "InputPolling",
+      "source": "config/usa/arm7/src/InputPolling.c",
+      "autoload": "wram",
+      "runtime_address": 58715216,
+      "payload_offset": 28268,
+      "size": 220,
+      "code_bytes": 196,
+      "literal_pool_bytes": 24,
+      "entry": "ARM7_InitializeInputPolling",
+      "symbols": {
+        "ARM7_InitializeInputPolling": 58715216,
+        "ARM7_PollSharedInput": 58715372
+      },
+      "externals": {
+        "ARM7_Is64BitTimerInitialized": 58709888,
+        "ARM7_IsAlarmListInitialized": 58710380,
+        "ARM7_ZeroInitializeAlarm": 58710396,
+        "ARM7_GetCurrentTimestamp": 58710008,
+        "ARM7_SetInterval": 58710844,
+        "ARM7_SetGPIOControlMode": 58715192
+      },
+      "bss": {
+        "runtime_address": 58757644,
+        "size": 48,
+        "symbols": {
+          "ARM7_InputPollingState": 58757644
+        }
+      },
+      "source_sha1": "fe6191eee685d85017eb2d9b9437525b286f0d12",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/InputPolling.c",
+          "sha1": "fe6191eee685d85017eb2d9b9437525b286f0d12"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "b012ef1076767b6769fc81f11cc1841d74fbb7aa",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SoundMaster",
+      "source": "config/usa/arm7/src/SoundMaster.c",
+      "autoload": "wram",
+      "runtime_address": 58715436,
+      "payload_offset": 28488,
+      "size": 360,
+      "code_bytes": 312,
+      "literal_pool_bytes": 48,
+      "entry": "ARM7_EnableSoundMaster",
+      "symbols": {
+        "ARM7_EnableSoundMaster": 58715436,
+        "ARM7_ResetSoundChannels": 58715460,
+        "ARM7_PowerOffSound": 58715544,
+        "ARM7_RampSoundBiasDown": 58715620,
+        "ARM7_PowerOnSound": 58715632,
+        "ARM7_RampSoundBiasUp": 58715712,
+        "ARM7_SetSoundMasterVolume": 58715724,
+        "ARM7_SetSoundOutputRouting": 58715740
+      },
+      "externals": {
+        "ARM7_StopSoundChannel": 58716336,
+        "ARM7_WaitCycles": 58713032,
+        "ARM7_SoundPowerOffHook": 58744640,
+        "ARM7_SoundPowerOnHook": 58744604,
+        "ARM7_BiosSoundBiasDown": 58736339,
+        "ARM7_BiosSoundBiasUp": 58736331
+      },
+      "source_sha1": "52e69988031e9321c9856d8750688a1a2f7d6746",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SoundMaster.c",
+          "sha1": "52e69988031e9321c9856d8750688a1a2f7d6746"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "d0c41ead378185b43650d13456e776d64e249096",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SoundChannelStop",
+      "source": "config/usa/arm7/src/SoundChannelStop.c",
+      "autoload": "wram",
+      "runtime_address": 58716336,
+      "payload_offset": 29388,
+      "size": 40,
+      "code_bytes": 40,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_StopSoundChannel",
+      "symbols": {
+        "ARM7_StopSoundChannel": 58716336
+      },
+      "externals": {},
+      "source_sha1": "42daca94aa33aafe21d58d6dfd3fb5a7211ee40c",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SoundChannelStop.c",
+          "sha1": "42daca94aa33aafe21d58d6dfd3fb5a7211ee40c"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "780f0053318869457248dbeebdd9e1a3cecc19b1",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SoundChannelConfig",
+      "source": "config/usa/arm7/src/SoundChannelConfig.c",
+      "autoload": "wram",
+      "runtime_address": 58715796,
+      "payload_offset": 28848,
+      "size": 540,
+      "code_bytes": 480,
+      "literal_pool_bytes": 60,
+      "entry": "ARM7_ConfigurePCMChannel",
+      "symbols": {
+        "ARM7_ConfigurePCMChannel": 58715796,
+        "ARM7_ConfigurePSGChannel": 58716000,
+        "ARM7_ConfigureNoiseChannel": 58716172
+      },
+      "externals": {
+        "ARM7_SoundPanOverride": 58756248,
+        "ARM7_SoundVolumeAdjustment": 58757692,
+        "ARM7_RequestedSoundPan": 58757696,
+        "ARM7_RequestedSoundVolume": 58757712,
+        "ARM7_AdjustSoundVolume": 58716880
+      },
+      "source_sha1": "e0a2eada957221f1303fce5391e05c289ecf9e3f",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SoundChannelConfig.c",
+          "sha1": "e0a2eada957221f1303fce5391e05c289ecf9e3f"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "922de978b10a04ce726329e56fc29d1e544b70de",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SoundChannelParameters",
+      "source": "config/usa/arm7/src/SoundChannelParameters.c",
+      "autoload": "wram",
+      "runtime_address": 58716376,
+      "payload_offset": 29428,
+      "size": 408,
+      "code_bytes": 368,
+      "literal_pool_bytes": 40,
+      "entry": "ARM7_SetSoundChannelVolume",
+      "symbols": {
+        "ARM7_SetSoundChannelVolume": 58716376,
+        "ARM7_SetSoundChannelPeriod": 58716496,
+        "ARM7_SetSoundChannelPan": 58716520,
+        "ARM7_IsSoundChannelActive": 58716640,
+        "ARM7_SetSoundPanOverride": 58716668,
+        "ARM7_GetSoundChannelControl": 58716768
+      },
+      "externals": {
+        "ARM7_SoundPanOverride": 58756248,
+        "ARM7_SoundVolumeAdjustment": 58757692,
+        "ARM7_RequestedSoundPan": 58757696,
+        "ARM7_RequestedSoundVolume": 58757712,
+        "ARM7_AdjustSoundVolume": 58716880
+      },
+      "source_sha1": "e12b551f74e884dabc71f1d8613356ba5271a4e8",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SoundChannelParameters.c",
+          "sha1": "e12b551f74e884dabc71f1d8613356ba5271a4e8"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "4b935390729fa8f795dd158ba7545e23864c7d07",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SoundVolumeAdjustment",
+      "source": "config/usa/arm7/src/SoundVolumeAdjustment.c",
+      "autoload": "wram",
+      "runtime_address": 58716784,
+      "payload_offset": 29836,
+      "size": 204,
+      "code_bytes": 184,
+      "literal_pool_bytes": 20,
+      "entry": "ARM7_SetSoundVolumeAdjustment",
+      "symbols": {
+        "ARM7_SetSoundVolumeAdjustment": 58716784,
+        "ARM7_AdjustSoundVolume": 58716880
+      },
+      "externals": {},
+      "bss": {
+        "runtime_address": 58757692,
+        "size": 36,
+        "symbols": {
+          "ARM7_SoundChannelState": 58757692
+        }
+      },
+      "source_sha1": "05c507c48b6f25483ef6a2bf8e5396e759f119f1",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SoundVolumeAdjustment.c",
+          "sha1": "05c507c48b6f25483ef6a2bf8e5396e759f119f1"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "e693172d5791205668f2a7900e17d16db6f54068",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SoundMath",
+      "source": "config/usa/arm7/src/SoundMath.c",
+      "autoload": "wram",
+      "runtime_address": 58717288,
+      "payload_offset": 30340,
+      "size": 288,
+      "code_bytes": 264,
+      "literal_pool_bytes": 24,
+      "entry": "ARM7_ConvertSoundAttenuation",
+      "symbols": {
+        "ARM7_ConvertSoundAttenuation": 58717288,
+        "ARM7_GetSoundVolumeTable": 58717404,
+        "ARM7_GetSoundSine": 58717416,
+        "ARM7_NextSoundRandom": 58717524
+      },
+      "externals": {
+        "ARM7_BiosVolumeTable": 58736409,
+        "ARM7_SoundSineTable": 58753704,
+        "ARM7_SoundRandomState": 58756252
+      },
+      "source_sha1": "5e43a801309e016690a56882051ecba04a3db5fe",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SoundMath.c",
+          "sha1": "5e43a801309e016690a56882051ecba04a3db5fe"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "bd50b19341f7262706b2eebf3c8624dfe2f616b2",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SoundSineTable",
+      "source": "config/usa/arm7/src/SoundSineTable.c",
+      "autoload": "wram",
+      "runtime_address": 58753704,
+      "payload_offset": 66756,
+      "size": 33,
+      "code_bytes": 0,
+      "literal_pool_bytes": 0,
+      "data_bytes": 33,
+      "entry": "ARM7_SoundSineTable",
+      "symbols": {
+        "ARM7_SoundSineTable": 58753704
+      },
+      "externals": {},
+      "source_sha1": "312497a5d89f6e2d498bac7234d106bf5813481e",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SoundSineTable.c",
+          "sha1": "312497a5d89f6e2d498bac7234d106bf5813481e"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "debdfd696df4a42e0fbc8265912845c763003041",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SoundWorkerControl",
+      "source": "config/usa/arm7/src/SoundWorkerControl.c",
+      "autoload": "wram",
+      "runtime_address": 58717576,
+      "payload_offset": 30628,
+      "size": 236,
+      "code_bytes": 192,
+      "literal_pool_bytes": 44,
+      "entry": "ARM7_InitializeSoundWorker",
+      "symbols": {
+        "ARM7_InitializeSoundWorker": 58717576,
+        "ARM7_StartSoundWorkerAlarm": 58717684,
+        "ARM7_StopSoundWorkerAlarm": 58717764,
+        "ARM7_NotifySoundWorker": 58717784
+      },
+      "externals": {
+        "ARM7_SoundWorkerInitialized": 58757728,
+        "ARM7_SoundWorkerThread": 58757840,
+        "ARM7_SoundWorkerStackTop": 58759028,
+        "ARM7_SoundWorkerAlarm": 58757796,
+        "ARM7_SoundWorkerQueue": 58757764,
+        "ARM7_InitializeSoundWorkerPlatform": 58729904,
+        "ARM7_CreateThread": 58704992,
+        "ARM7_MarkThreadReady": 58705784,
+        "ARM7_GetCurrentTimestamp": 58710008,
+        "ARM7_SetInterval": 58710844,
+        "ARM7_CancelAlarm": 58710984,
+        "ARM7_SendMessage": 58706692,
+        "ARM7_SoundWorkerMain": 58717888,
+        "ARM7_SoundWorkerAlarmCallback": 58717820
+      },
+      "bss": {
+        "runtime_address": 58757728,
+        "size": 1300,
+        "symbols": {
+          "ARM7_SoundWorkerState": 58757728
+        }
+      },
+      "source_sha1": "a526d5d0ca114a185d2c9958618fd602e2a11bc8",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SoundWorkerControl.c",
+          "sha1": "a526d5d0ca114a185d2c9958618fd602e2a11bc8"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "86c2e9fa9044122d85b31407c7dc93dc785d3d4b",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SoundWorkerAlarmCallback",
+      "source": "config/usa/arm7/src/SoundWorkerAlarmCallback.c",
+      "autoload": "wram",
+      "runtime_address": 58717820,
+      "payload_offset": 30872,
+      "size": 68,
+      "code_bytes": 56,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_SoundWorkerAlarmCallback",
+      "symbols": {
+        "ARM7_SoundWorkerAlarmCallback": 58717820
+      },
+      "externals": {
+        "ARM7_SoundWorkerQueue": 58757764,
+        "ARM7_SoundQueueFailureHandler": 58755224,
+        "ARM7_SoundQueueFailureMessage": 58756256,
+        "ARM7_SendMessage": 58706692
+      },
+      "source_sha1": "cee74a61b9fadf2df7a365eec044771730fc3db1",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SoundWorkerAlarmCallback.c",
+          "sha1": "cee74a61b9fadf2df7a365eec044771730fc3db1"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "2c8285205869d2c0d021be7d549c362ae12af2b0",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SoundPeriod",
+      "source": "config/usa/arm7/src/SoundPeriod.c",
+      "autoload": "wram",
+      "runtime_address": 58716988,
+      "payload_offset": 30040,
+      "size": 300,
+      "code_bytes": 292,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_ConvertSoundPeriod",
+      "symbols": {
+        "ARM7_ConvertSoundPeriod": 58716988,
+        "ARM7_GetSoundPitchTable": 58717276
+      },
+      "externals": {
+        "ARM7_BiosPitchTable": 58736405
+      },
+      "source_sha1": "a5ab1e0e37d6ebc22716da86fd81fdf201ae7cce",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SoundPeriod.c",
+          "sha1": "a5ab1e0e37d6ebc22716da86fd81fdf201ae7cce"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "8c6a88718bceeb2187ae134b7dca33db85238639",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SoundWorkerMain",
+      "source": "config/usa/arm7/src/SoundWorkerMain.c",
+      "autoload": "wram",
+      "runtime_address": 58717888,
+      "payload_offset": 30940,
+      "size": 244,
+      "code_bytes": 224,
+      "literal_pool_bytes": 20,
+      "entry": "ARM7_SoundWorkerMain",
+      "symbols": {
+        "ARM7_SoundWorkerMain": 58717888
+      },
+      "externals": {
+        "ARM7_SoundWorkerQueue": 58757764,
+        "ARM7_SoundWorkerMessages": 58757732,
+        "ARM7_SoundWorkerAlarm": 58757796,
+        "ARM7_InitializeMessageQueue": 58706652,
+        "ARM7_ZeroInitializeAlarm": 58710396,
+        "ARM7_InitializeSoundChannels": 58718236,
+        "ARM7_SoundWorkerInitializeA": 58721704,
+        "ARM7_SoundWorkerInitializeB": 58729468,
+        "ARM7_EnableSoundMaster": 58715436,
+        "ARM7_SetSoundOutputRouting": 58715740,
+        "ARM7_SetSoundMasterVolume": 58715724,
+        "ARM7_GetCurrentTimestamp": 58710008,
+        "ARM7_SetInterval": 58710844,
+        "ARM7_SoundWorkerAlarmCallback": 58717820,
+        "ARM7_ReceiveMessage": 58706832,
+        "ARM7_ApplySoundChannelUpdates": 58718328,
+        "ARM7_SoundWorkerUpdateA": 58729972,
+        "ARM7_SoundWorkerUpdateB": 58721804,
+        "ARM7_SoundWorkerUpdateChannels": 58718820,
+        "ARM7_SoundWorkerUpdateC": 58729316,
+        "ARM7_NextSoundRandom": 58717524
+      },
+      "source_sha1": "3cbddda4fb073efcce6cac1eddd6bdf032e16410",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SoundWorkerMain.c",
+          "sha1": "3cbddda4fb073efcce6cac1eddd6bdf032e16410"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "8f66608db0f1cb71afd36e25b485dce57f2e26fd",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SoundCaptureStatus",
+      "source": "config/usa/arm7/src/SoundCaptureStatus.c",
+      "autoload": "wram",
+      "runtime_address": 58718212,
+      "payload_offset": 31264,
+      "size": 24,
+      "code_bytes": 24,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_IsSoundCaptureActive",
+      "symbols": {
+        "ARM7_IsSoundCaptureActive": 58718212
+      },
+      "externals": {},
+      "source_sha1": "49b17b1149dfe675599f6bb176620d4a77fedd2a",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SoundCaptureStatus.c",
+          "sha1": "49b17b1149dfe675599f6bb176620d4a77fedd2a"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "0d81eda19cf11ea890eede4a5692290196f8985c",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SoundVoiceInit",
+      "source": "config/usa/arm7/src/SoundVoiceInit.c",
+      "autoload": "wram",
+      "runtime_address": 58718236,
+      "payload_offset": 31288,
+      "size": 92,
+      "code_bytes": 84,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_InitializeSoundChannels",
+      "symbols": {
+        "ARM7_InitializeSoundChannels": 58718236
+      },
+      "externals": {
+        "ARM7_SoundChannelReservations": 58759028
+      },
+      "bss": {
+        "runtime_address": 58759068,
+        "size": 1344,
+        "symbols": {
+          "ARM7_SoundVoices": 58759068
+        }
+      },
+      "source_sha1": "5c130b3feb03f2f3791d8dea39ab52ca84f42677",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SoundVoiceInit.c",
+          "sha1": "5c130b3feb03f2f3791d8dea39ab52ca84f42677"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "632bbc908b23e5af1a1d22442dd2fedccf400fff",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SoundVoiceApply",
+      "source": "config/usa/arm7/src/SoundVoiceApply.c",
+      "autoload": "wram",
+      "runtime_address": 58718328,
+      "payload_offset": 31380,
+      "size": 492,
+      "code_bytes": 488,
+      "literal_pool_bytes": 4,
+      "entry": "ARM7_ApplySoundChannelUpdates",
+      "symbols": {
+        "ARM7_ApplySoundChannelUpdates": 58718328
+      },
+      "externals": {
+        "ARM7_SoundVoices": 58759068,
+        "ARM7_StopSoundChannel": 58716336,
+        "ARM7_ConfigurePCMChannel": 58715796,
+        "ARM7_ConfigurePSGChannel": 58716000,
+        "ARM7_ConfigureNoiseChannel": 58716172,
+        "ARM7_SetSoundChannelPeriod": 58716496,
+        "ARM7_SetSoundChannelVolume": 58716376,
+        "ARM7_SetSoundChannelPan": 58716520
+      },
+      "source_sha1": "d58bd0ef38f42b0198298a69a526424be2ab2567",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SoundVoiceApply.c",
+          "sha1": "d58bd0ef38f42b0198298a69a526424be2ab2567"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "503ec2a865713d256b68d776eb58b3db13652913",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SoundVoiceSetup",
+      "source": "config/usa/arm7/src/SoundVoiceSetup.c",
+      "autoload": "wram",
+      "runtime_address": 58719768,
+      "payload_offset": 32820,
+      "size": 204,
+      "code_bytes": 196,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_SetSoundVoicePCM",
+      "symbols": {
+        "ARM7_SetSoundVoicePCM": 58719768,
+        "ARM7_SetSoundVoicePSG": 58719828,
+        "ARM7_SetSoundVoiceNoise": 58719904
+      },
+      "externals": {
+        "ARM7_StartSoundVoice": 58721648
+      },
+      "source_sha1": "db0eb0489dd65ac90efd8b6e238977223cb493cc",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SoundVoiceSetup.c",
+          "sha1": "db0eb0489dd65ac90efd8b6e238977223cb493cc"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "6db7aaec0cb7efcc42d87e63f142c166c1fb4fb3",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SoundEnvelope",
+      "source": "config/usa/arm7/src/SoundEnvelope.c",
+      "autoload": "wram",
+      "runtime_address": 58719972,
+      "payload_offset": 33024,
+      "size": 292,
+      "code_bytes": 284,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_UpdateSoundEnvelope",
+      "symbols": {
+        "ARM7_UpdateSoundEnvelope": 58719972,
+        "ARM7_SetSoundVoiceAttack": 58720140,
+        "ARM7_SetSoundVoiceDecay": 58720172,
+        "ARM7_SetSoundVoiceSustain": 58720200,
+        "ARM7_SetSoundVoiceRelease": 58720208,
+        "ARM7_BeginSoundVoiceRelease": 58720236,
+        "ARM7_IsSoundVoiceActive": 58720248
+      },
+      "externals": {
+        "ARM7_SoundAttenuationTable": 58753740,
+        "ARM7_SoundAttackTable": 58754272,
+        "ARM7_ConvertEnvelopeFallRate": 58721564
+      },
+      "source_sha1": "a82f0a8c666b325207d58154d239ae818021f484",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SoundEnvelope.c",
+          "sha1": "a82f0a8c666b325207d58154d239ae818021f484"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "24bf2b5f0764d49a28b04765afd8ebee64d001f4",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SoundEnvelopeSetup",
+      "source": "config/usa/arm7/src/SoundEnvelopeSetup.c",
+      "autoload": "wram",
+      "runtime_address": 58721564,
+      "payload_offset": 34616,
+      "size": 140,
+      "code_bytes": 132,
+      "literal_pool_bytes": 8,
+      "entry": "ARM7_ConvertEnvelopeFallRate",
+      "symbols": {
+        "ARM7_ConvertEnvelopeFallRate": 58721564,
+        "ARM7_StartSoundVoice": 58721648
+      },
+      "externals": {
+        "_s32_div_f": 58752696
+      },
+      "source_sha1": "4a822d784e0b83151c9f76e836784fc21bc3b855",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SoundEnvelopeSetup.c",
+          "sha1": "4a822d784e0b83151c9f76e836784fc21bc3b855"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "83790dec0010c4c7a42a3bce11da6eea96ef7614",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SoundModulation",
+      "source": "config/usa/arm7/src/SoundModulation.c",
+      "autoload": "wram",
+      "runtime_address": 58721352,
+      "payload_offset": 34404,
+      "size": 212,
+      "code_bytes": 212,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_InitializeSoundModulation",
+      "symbols": {
+        "ARM7_InitializeSoundModulation": 58721352,
+        "ARM7_UpdateSoundModulation": 58721388,
+        "ARM7_ReadSoundModulation": 58721484
+      },
+      "externals": {
+        "ARM7_SoundSine": 58717416
+      },
+      "source_sha1": "e05a8a2c7d3d3d741ef42661976912bff3e3ef20",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SoundModulation.c",
+          "sha1": "e05a8a2c7d3d3d741ef42661976912bff3e3ef20"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "73ab32a5e9c6a05a44e76d72dcb19450fdcb7afe",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SoundVoiceCallback",
+      "source": "config/usa/arm7/src/SoundVoiceCallback.c",
+      "autoload": "wram",
+      "runtime_address": 58720724,
+      "payload_offset": 33776,
+      "size": 20,
+      "code_bytes": 20,
+      "literal_pool_bytes": 0,
+      "entry": "ARM7_ClearSoundVoiceCallback",
+      "symbols": {
+        "ARM7_ClearSoundVoiceCallback": 58720724
+      },
+      "externals": {},
+      "source_sha1": "cbf7f46b31fbc8501574a353173f70ec4c7cb119",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SoundVoiceCallback.c",
+          "sha1": "cbf7f46b31fbc8501574a353173f70ec4c7cb119"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "03669775a2830002c08c782ff629a3d1ea54f343",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    },
+    {
+      "name": "SoundReservations",
+      "source": "config/usa/arm7/src/SoundReservations.c",
+      "autoload": "wram",
+      "runtime_address": 58721144,
+      "payload_offset": 34196,
+      "size": 208,
+      "code_bytes": 196,
+      "literal_pool_bytes": 12,
+      "entry": "ARM7_ReleaseSoundChannelReservations",
+      "symbols": {
+        "ARM7_ReleaseSoundChannelReservations": 58721144,
+        "ARM7_GetSoundChannelReservations": 58721200,
+        "ARM7_StopSoundVoicesInRange": 58721228
+      },
+      "externals": {
+        "ARM7_SoundChannelReservations": 58759028,
+        "ARM7_SoundVoices": 58759068,
+        "ARM7_StopSoundChannel": 58716336
+      },
+      "source_sha1": "e0112ffd54eb2961053ffbdcc1c4980b76651d53",
+      "dependencies": [
+        {
+          "path": "config/usa/arm7/src/SoundReservations.c",
+          "sha1": "e0112ffd54eb2961053ffbdcc1c4980b76651d53"
+        }
+      ],
+      "assembly_exception_sha1": null,
+      "linked_sha1": "0d9e80811eb89b851b705ef8b1826546787b4c18",
+      "module_check_passed": true,
+      "symbol_check_passed": true
+    }
+  ]
+}

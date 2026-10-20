@@ -1,3 +1,6 @@
+// Original locations for overloaded or compiler-generated definitions in this unit:
+// Original: arm9/main @ 0x020A51B0; symbol: _ZN23DetailedTreasureMapData14RegularMapData19GenerateNameBuffersEv; size: 0x320. (DetailedTreasureMapData::RegularMapData::GenerateNameBuffers())
+// Original: arm9/main @ 0x020A54D0; symbol: _ZN23DetailedTreasureMapData14RegularMapData17GeneratePopupNameEv; size: 0x314. (DetailedTreasureMapData::RegularMapData::GeneratePopupName())
 #include "Grotto/Main/TreasureMapDataStructs.h"
 #include "GameState/GameState.h"
 #include "Grotto/Main/GrottoStruct.h"
@@ -9,39 +12,39 @@
 #include <asmhacks.h>
 
 #ifdef jpn
-#define func_020a1df8 func_020a3b70
-#define func_020a1e54 func_020a3bcc
+#define OverlayLoader_PushPrimarySelection func_020a3b70
+#define OverlayLoader_PopPrimarySelectionAndOptionallyRestoreOverlay func_020a3bcc
 
 #define func_02075098 func_02076224
 #define func_02075248 func_02076378
 
-#define data_020f1ae4 data_020f1c5c
-#define data_020f1af8 data_020f1c70
-#define data_0211e33c data_0211fb64
+#define ProgramData_PathDataTmapParamPac data_020f1c5c
+#define ProgramData_FormatPDDat data_020f1c70
+#define Main_UnknownRoleZeroInitializedStorage_Variant6 data_0211fb64
 #endif
 
 extern "C"
 {
-    void func_020a1df8(unsigned int);
-    void func_020a1e54(unsigned int);
+    void OverlayLoader_PushPrimarySelection(unsigned int);
+    void OverlayLoader_PopPrimarySelectionAndOptionallyRestoreOverlay(unsigned int);
 
     // copies character name into the buffer? (not used in jpn version)
-    void func_020426bc(void*, char* buffer, int);
+    void Text_EncodeGlyphIndices(void*, char* buffer, int);
 
     // Based on where it's called, this is probably returning a language-
     // dependent string for "Lv. " (at least, if called with 1011 as arg).
     // Not used in jpn version
-    const char* func_020e51cc(int);
+    const char* Text_LookupStandardString(int);
 
     // seems to get the game language. In the USA version, if it would
     // return a value other than 2 or 5, it returns 1, which seems to reflect
     // lack of support for German & Italian.
     // not used in jpn version
-    int func_0200fb08(GameState*);
+    int GameState_ReadSupportedFirmwareLanguage(GameState*);
 }
 
 #define BINARY_READ_AND_ADVANCE(buffer, offset, dst, len) \
-    (VectorizedInvertedMemcpy((buffer) + (offset), (dst), (len)), offset += (len))
+    (MI_CpuCopy8((buffer) + (offset), (dst), (len)), offset += (len))
 
 #define TMAPLANGDATA_READ(offset, into, len) \
     BINARY_READ_AND_ADVANCE(GameState::GetInstance()->GetTreasureMapLanguageData(), offset, into, len)
@@ -113,6 +116,7 @@ void RemoveFurigana(const char* src, char* dst)
 
 // USA: func_020a3ee4
 // JPN: func_020a5cfc
+// Original: arm9/main @ 0x020A3EE4; symbol: _Z21IsMonsterIDLegacyBosst; size: 0x70.
 bool IsMonsterIDLegacyBoss(unsigned short id)
 {
     // v1 form of Dragonlord (500) through Mortamor (508)
@@ -162,6 +166,7 @@ const MapTypeEntry treasureMapItemIDs[] = {
 
 // USA: func_020a3f54
 // JPN: func_020a5d6c
+// Original: arm9/main @ 0x020A3F54; symbol: _Z28GetTreasureMapTypeFromItemIDtPh; size: 0x84.
 bool GetTreasureMapTypeFromItemID(unsigned short itemID, unsigned char* out)
 {
     if (out == NULL)
@@ -202,13 +207,14 @@ bool GetTreasureMapTypeFromItemID(unsigned short itemID, unsigned char* out)
     return false;
 }
 
+// Original: arm9/main @ 0x020A3FD8; symbol: _ZN23DetailedTreasureMapData14RegularMapData8PopulateEth; size: 0xE8.
 void DetailedTreasureMapData::RegularMapData::Populate(unsigned short newseed, unsigned char newquality)
 {
     VectorizedMemset(this, 0, sizeof(RegularMapData));
     seed_ = newseed;
     srand(seed_);
     quality_ = newquality;
-    func_020a1df8(4);
+    OverlayLoader_PushPrimarySelection(4);
 
     GenerateUnknownData();
     GenerateEnviron();
@@ -232,9 +238,10 @@ void DetailedTreasureMapData::RegularMapData::Populate(unsigned short newseed, u
     GenerateNameBuffers();
     GeneratePopupName();
     
-    func_020a1e54(1);
+    OverlayLoader_PopPrimarySelectionAndOptionallyRestoreOverlay(1);
 }
 
+// Original: arm9/main @ 0x020A40C0; symbol: _ZNK23DetailedTreasureMapData17LegacyBossMapData26MaybeGetCurrentAlternateIDEv; size: 0x28.
 unsigned short DetailedTreasureMapData::LegacyBossMapData::MaybeGetCurrentAlternateID() const
 {
     int idx = stats_.alternateVersion;
@@ -243,13 +250,16 @@ unsigned short DetailedTreasureMapData::LegacyBossMapData::MaybeGetCurrentAltern
     return 0;
 }
 
+// Original: arm9/main @ 0x020A40E8; symbol: _ZN23DetailedTreasureMapData5ClearEv; size: 0x14.
 void DetailedTreasureMapData::Clear()
 {
     VectorizedMemset(this, 0, sizeof(DetailedTreasureMapData));
 }
 
+// Original: arm9/main @ 0x020A40FC; symbol: _ZNK23DetailedTreasureMapData13BlankFunctionEv; size: 0x4.
 void DetailedTreasureMapData::BlankFunction() const {}
 
+// Original: arm9/main @ 0x020A4100; symbol: _ZN23DetailedTreasureMapData25UpdateFollowingCompletionEbt; size: 0x120.
 bool DetailedTreasureMapData::UpdateFollowingCompletion(bool levelledUp, unsigned short numTurns)
 {
     if (mapType_ != TreasureMapType_Legacy)
@@ -261,7 +271,7 @@ bool DetailedTreasureMapData::UpdateFollowingCompletion(bool levelledUp, unsigne
     // custom text encoding (e.g. lowercase a is 0x2A vs ascii 0x61)
     void* playerRelatedPtr = *(void**)((intptr_t)GameState::GetInstance()->GetProtagonist() + 0x134);
     char asciiName[10] = { 0 };
-    func_020426bc(playerRelatedPtr, asciiName, 1);
+    Text_EncodeGlyphIndices(playerRelatedPtr, asciiName, 1);
 #else
     // 0200fc28 is the address in the japanese version
     char* asciiName = *(char**)((intptr_t)GameState::GetInstance()->GetProtagonist() + 0x134);
@@ -270,7 +280,7 @@ bool DetailedTreasureMapData::UpdateFollowingCompletion(bool levelledUp, unsigne
     discoveryState_ = DiscoveryState_Cleared;
 
     VectorizedMemset(clearedBy_, 0, 12);
-    VectorizedInvertedMemcpy(asciiName, clearedBy_, 10);
+    MI_CpuCopy8(asciiName, clearedBy_, 10);
 
     if (levelledUp && legacy_.stats_.newDropListAtNextLevel)
     {
@@ -302,6 +312,7 @@ bool DetailedTreasureMapData::UpdateFollowingCompletion(bool levelledUp, unsigne
     return false;
 }
 
+// Original: arm9/main @ 0x020A4220; symbol: _ZNK23DetailedTreasureMapData8GetLevelEv; size: 0x24.
 unsigned int DetailedTreasureMapData::GetLevel() const
 {
     unsigned int ret = 1;
@@ -312,6 +323,7 @@ unsigned int DetailedTreasureMapData::GetLevel() const
     return ret;
 }
 
+// Original: arm9/main @ 0x020A4244; symbol: _ZN12GrottoStruct30LoadActiveMetadataFromDetailedEP23DetailedTreasureMapData; size: 0x18.
 void GrottoStruct::LoadActiveMetadataFromDetailed(DetailedTreasureMapData* from)
 {
     ExportTreasureMapMetadata(from, &activeMapData);
@@ -319,10 +331,20 @@ void GrottoStruct::LoadActiveMetadataFromDetailed(DetailedTreasureMapData* from)
 
 #if defined(usa)
 
-extern const char data_020f1ac0[]; // "%s"
-extern const char data_020f1ac3[]; // ""
-extern const char data_020f1ac4[]; // "%s%d"
-extern const char data_020f1ac9[]; // "%s %s"
+// Original data: arm9/main @ 0x20f1ac0; symbol: data_020f1ac0.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 257300.
+// Observed span: 3 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const char DetailedTreasureMapDataLegacyBossMapDataPopulate_UnknownRoleInitializedBytes[]; // "%s"
+// Original data: arm9/main @ 0x20f1ac3; symbol: data_020f1ac3.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 00.
+// Observed span: 1 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const char DetailedTreasureMapDataLegacyBossMapDataPopulate_UnknownRoleInitializedBytes_Variant2[]; // ""
+extern const char ProgramData_FormatSD[]; // "%s%d"
+extern const char ProgramData_FormatSS[]; // "%s %s"
 
 #elif defined(jpn)
 
@@ -337,6 +359,7 @@ extern const char data_020f1c36[]; // "%s Lv %d no [ma/ma]"
 #endif
 
 // USA: func_020a425c
+// Original: arm9/main @ 0x020A425C; symbol: _ZN23DetailedTreasureMapData17LegacyBossMapData8PopulateEhht; size: 0x2C0.
 void DetailedTreasureMapData::LegacyBossMapData::Populate(
     unsigned char newBossID, unsigned char newLevel, unsigned short newMinTurns)
 {
@@ -357,7 +380,7 @@ void DetailedTreasureMapData::LegacyBossMapData::Populate(
     unsigned short readUnknown = 0; // seems to precede every string and always = 8
     unsigned short readStringLen = 0;
 
-    TreasureMapLanguageDataOffsets* langData = func_ov017_0218b5b0()->pTMapLanguageOffsets;
+    TreasureMapLanguageDataOffsets* langData = GameResources_GetInstance()->pTMapLanguageOffsets;
     unsigned char* dataPtr = GameState::GetInstance()->GetTreasureMapLanguageData();
 
     int readOffset = langData->legacyBossData;
@@ -380,7 +403,7 @@ void DetailedTreasureMapData::LegacyBossMapData::Populate(
             bossMonsterID_ = readMonsterID;
             for (int j = 0; j < 3; j++)
                 alternateVersionIDs_[j] = readAlternates[j];
-            VectorizedInvertedMemcpy(dataPtr + readOffset, bossName_, readStringLen);
+            MI_CpuCopy8(dataPtr + readOffset, bossName_, readStringLen);
             bossName_[readStringLen] = '\0';
 #if defined(jpn)
             break;
@@ -397,7 +420,7 @@ void DetailedTreasureMapData::LegacyBossMapData::Populate(
 
         if (newBossID == readBossID)
         {
-            VectorizedInvertedMemcpy(dataPtr + readOffset, mapNameNoLevel_, readStringLen);
+            MI_CpuCopy8(dataPtr + readOffset, mapNameNoLevel_, readStringLen);
             mapNameNoLevel_[readStringLen] = '\0';
             break;
         }
@@ -412,11 +435,11 @@ void DetailedTreasureMapData::LegacyBossMapData::Populate(
     minTurns_ = newMinTurns;
 
 #if defined(usa)
-    sprintf(mapNameNoLevel_v2_, data_020f1ac0, mapNameNoLevel_);
-    strcpy(seeminglyEmptyBuffer_, data_020f1ac3);
-    sprintf(mapLevelString_, data_020f1ac4, func_020e51cc(1011), level_);
-    sprintf(topScreenName_, data_020f1ac9, mapNameNoLevel_, mapLevelString_);
-    sprintf(popupName_, data_020f1ac9, bossName_, mapLevelString_);
+    sprintf(mapNameNoLevel_v2_, DetailedTreasureMapDataLegacyBossMapDataPopulate_UnknownRoleInitializedBytes, mapNameNoLevel_);
+    strcpy(seeminglyEmptyBuffer_, DetailedTreasureMapDataLegacyBossMapDataPopulate_UnknownRoleInitializedBytes_Variant2);
+    sprintf(mapLevelString_, ProgramData_FormatSD, Text_LookupStandardString(1011), level_);
+    sprintf(topScreenName_, ProgramData_FormatSS, mapNameNoLevel_, mapLevelString_);
+    sprintf(popupName_, ProgramData_FormatSS, bossName_, mapLevelString_);
 #elif defined(jpn)
     char bossNameUndecorated[256];
 
@@ -433,11 +456,12 @@ void DetailedTreasureMapData::LegacyBossMapData::Populate(
 
 // USA: func_020a451c
 // JPN: func_020a62c8
+// Original: arm9/main @ 0x020A451C; symbol: _ZN23DetailedTreasureMapData17LegacyBossMapData19WriteMapLevelStringEv; size: 0x30.
 void DetailedTreasureMapData::LegacyBossMapData::WriteMapLevelString()
 {
 #if defined(usa)
-    const char* lvlPrefix = func_020e51cc(1011);
-    sprintf(mapLevelString_, data_020f1ac4, lvlPrefix, level_);
+    const char* lvlPrefix = Text_LookupStandardString(1011);
+    sprintf(mapLevelString_, ProgramData_FormatSD, lvlPrefix, level_);
 #elif defined(jpn)
     sprintf(mapLevelString_, data_020f1c27, level_);
 #endif
@@ -445,6 +469,7 @@ void DetailedTreasureMapData::LegacyBossMapData::WriteMapLevelString()
 
 // USA: func_020a454c
 // JPN: func_020a62e4
+// Original: arm9/main @ 0x020A454C; symbol: _ZN23DetailedTreasureMapData17LegacyBossMapData17CanUseLevelUpMoveEt; size: 0x54.
 bool DetailedTreasureMapData::LegacyBossMapData::CanUseLevelUpMove(unsigned short id)
 {
     for (int i = 0; i < stats_.numLevelUpMoves; i++)
@@ -460,6 +485,7 @@ bool DetailedTreasureMapData::LegacyBossMapData::CanUseLevelUpMove(unsigned shor
 
 // USA: func_020a45a0
 // JPN: func_020a6338
+// Original: arm9/main @ 0x020A45A0; symbol: _ZN23DetailedTreasureMapData17LegacyBossMapData14GetLearnedMoveEhi; size: 0x78.
 unsigned short DetailedTreasureMapData::LegacyBossMapData::GetLearnedMove(unsigned char atLevel, int filter)
 {
     for (int i = 0; i < stats_.numLevelUpMoves; i++)
@@ -488,6 +514,7 @@ unsigned short DetailedTreasureMapData::LegacyBossMapData::GetLearnedMove(unsign
 
 // USA: func_020a4618
 // JPN: func_020a63b0
+// Original: arm9/main @ 0x020A4618; symbol: _ZN23DetailedTreasureMapData14RegularMapData19GenerateUnknownDataEv; size: 0x120.
 void DetailedTreasureMapData::RegularMapData::GenerateUnknownData()
 {
     if (GameState::GetInstance()->GetTreasureMapLanguageData() == NULL)
@@ -501,7 +528,7 @@ void DetailedTreasureMapData::RegularMapData::GenerateUnknownData()
     unknown_66_ = 1;
     unknown_4f_ = 0;
 
-    int readOffset = func_ov017_0218b5b0()->pTMapLanguageOffsets->unknown_18;
+    int readOffset = GameResources_GetInstance()->pTMapLanguageOffsets->unknown_18;
 
     TMAPLANGDATA_READ(readOffset, &numValues, 2); // numValues = 12
     for (unsigned short i = 0; i < numValues; i++)
@@ -524,6 +551,7 @@ void DetailedTreasureMapData::RegularMapData::GenerateUnknownData()
 
 // USA: func_020a4738
 // JPN: func_020a64d0
+// Original: arm9/main @ 0x020A4738; symbol: _ZN23DetailedTreasureMapData14RegularMapData15GenerateEnvironEv; size: 0xEC.
 void DetailedTreasureMapData::RegularMapData::GenerateEnviron()
 {
     if (GameState::GetInstance()->GetTreasureMapLanguageData() == NULL)
@@ -533,7 +561,7 @@ void DetailedTreasureMapData::RegularMapData::GenerateEnviron()
     unsigned char readEnviron = 0;
     unsigned char readChance = 0;
 
-    int readOffset = func_ov017_0218b5b0()->pTMapLanguageOffsets->environs;
+    int readOffset = GameResources_GetInstance()->pTMapLanguageOffsets->environs;
 
     unsigned char percentile = 0;
 
@@ -557,6 +585,7 @@ void DetailedTreasureMapData::RegularMapData::GenerateEnviron()
 
 // USA: func_020a4824
 // JPN: func_020a65bc
+// Original: arm9/main @ 0x020A4824; symbol: _ZN23DetailedTreasureMapData14RegularMapData18GenerateFloorCountEv; size: 0x138.
 void DetailedTreasureMapData::RegularMapData::GenerateFloorCount()
 {
     if (GameState::GetInstance()->GetTreasureMapLanguageData() == NULL)
@@ -568,7 +597,7 @@ void DetailedTreasureMapData::RegularMapData::GenerateFloorCount()
     unsigned char readMinFloors = 0;
     unsigned char readMaxFloors = 0;
 
-    int readOffset = func_ov017_0218b5b0()->pTMapLanguageOffsets->floorRangesByQuality;
+    int readOffset = GameResources_GetInstance()->pTMapLanguageOffsets->floorRangesByQuality;
 
     TMAPLANGDATA_READ(readOffset, &numEntries, 2);
     for (unsigned short i = 0; i < numEntries; i++)
@@ -588,6 +617,7 @@ void DetailedTreasureMapData::RegularMapData::GenerateFloorCount()
 
 // USA: func_020a495c
 // JPN: func_020a66f4
+// Original: arm9/main @ 0x020A495C; symbol: _ZN23DetailedTreasureMapData14RegularMapData19GenerateMonsterRankEv; size: 0x138.
 void DetailedTreasureMapData::RegularMapData::GenerateMonsterRank()
 {
     if (GameState::GetInstance()->GetTreasureMapLanguageData() == NULL)
@@ -599,7 +629,7 @@ void DetailedTreasureMapData::RegularMapData::GenerateMonsterRank()
     unsigned char readMinRank = 0;
     unsigned char readMaxRank = 0;
 
-    int readOffset = func_ov017_0218b5b0()->pTMapLanguageOffsets->startingMonsterRanksByQuality;
+    int readOffset = GameResources_GetInstance()->pTMapLanguageOffsets->startingMonsterRanksByQuality;
 
     TMAPLANGDATA_READ(readOffset, &numEntries, 2);
     for (unsigned short i = 0; i < numEntries; i++)
@@ -618,6 +648,7 @@ void DetailedTreasureMapData::RegularMapData::GenerateMonsterRank()
 }
 
 // JPN: func_020a682c
+// Original: arm9/main @ 0x020A4A94; symbol: _ZN23DetailedTreasureMapData14RegularMapData12GenerateBossEv; size: 0x274.
 void DetailedTreasureMapData::RegularMapData::GenerateBoss()
 {
     if (GameState::GetInstance()->GetTreasureMapLanguageData() == NULL)
@@ -629,7 +660,7 @@ void DetailedTreasureMapData::RegularMapData::GenerateBoss()
     unsigned char readMinBoss = 0;
     unsigned char readMaxBoss = 0;
 
-    TreasureMapLanguageDataOffsets* offsets = func_ov017_0218b5b0()->pTMapLanguageOffsets;
+    TreasureMapLanguageDataOffsets* offsets = GameResources_GetInstance()->pTMapLanguageOffsets;
     int readOffset = offsets->bossRangesByQuality;
 
     TMAPLANGDATA_READ(readOffset, &numEntries, 2);
@@ -682,13 +713,14 @@ void DetailedTreasureMapData::RegularMapData::GenerateBoss()
 
 // USA: func_020a4d08
 // JPN: func_020a6aa0
+// Original: arm9/main @ 0x020A4D08; symbol: _ZN23DetailedTreasureMapData14RegularMapData24GenerateUnusedChestRanksEv; size: 0x100.
 void DetailedTreasureMapData::RegularMapData::GenerateUnusedChestRanks()
 {
     if (GameState::GetInstance()->GetTreasureMapLanguageData() == NULL)
         return;
 
     unsigned short numEntries = 0;
-    int readOffset = func_ov017_0218b5b0()->pTMapLanguageOffsets->seeminglyChestRanksByMonsterRank;
+    int readOffset = GameResources_GetInstance()->pTMapLanguageOffsets->seeminglyChestRanksByMonsterRank;
 
     TMAPLANGDATA_READ(readOffset, &numEntries, 2);
 
@@ -711,6 +743,7 @@ void DetailedTreasureMapData::RegularMapData::GenerateUnusedChestRanks()
 
 // USA: func_020a4e08
 // JPN: func_020a5ba0
+// Original: arm9/main @ 0x020A4E08; symbol: _ZN23DetailedTreasureMapData14RegularMapData14GeneratePrefixEv; size: 0x138.
 void DetailedTreasureMapData::RegularMapData::GeneratePrefix()
 {
     if (GameState::GetInstance()->GetTreasureMapLanguageData() == NULL)
@@ -722,7 +755,7 @@ void DetailedTreasureMapData::RegularMapData::GeneratePrefix()
     unsigned char readMinPrefixIdx = 0;
     unsigned char readMaxPrefixIdx = 0;
 
-    int readOffset = func_ov017_0218b5b0()->pTMapLanguageOffsets->prefixRangesByMonsterRank;
+    int readOffset = GameResources_GetInstance()->pTMapLanguageOffsets->prefixRangesByMonsterRank;
 
     TMAPLANGDATA_READ(readOffset, &numEntries, 2);
     for (unsigned short i = 0; i < numEntries; i++)
@@ -743,6 +776,7 @@ void DetailedTreasureMapData::RegularMapData::GeneratePrefix()
 
 // USA: func_020a4f40
 // JPN: func_020a6cd8
+// Original: arm9/main @ 0x020A4F40; symbol: _ZN23DetailedTreasureMapData14RegularMapData14GenerateSuffixEv; size: 0x138.
 void DetailedTreasureMapData::RegularMapData::GenerateSuffix()
 {
     if (GameState::GetInstance()->GetTreasureMapLanguageData() == NULL)
@@ -754,7 +788,7 @@ void DetailedTreasureMapData::RegularMapData::GenerateSuffix()
     unsigned char readMinSuffixIdx = 0;
     unsigned char readMaxSuffixIdx = 0;
 
-    int readOffset = func_ov017_0218b5b0()->pTMapLanguageOffsets->suffixRangesByBoss;
+    int readOffset = GameResources_GetInstance()->pTMapLanguageOffsets->suffixRangesByBoss;
 
     TMAPLANGDATA_READ(readOffset, &numEntries, 2);
     for (unsigned short i = 0; i < numEntries; i++)
@@ -775,6 +809,7 @@ void DetailedTreasureMapData::RegularMapData::GenerateSuffix()
 
 // USA: func_020a5078
 // JPN: func_020a6e10
+// Original: arm9/main @ 0x020A5078; symbol: _ZN23DetailedTreasureMapData14RegularMapData18GenerateLocaleRankEv; size: 0x138.
 void DetailedTreasureMapData::RegularMapData::GenerateLocaleRank()
 {
     if (GameState::GetInstance()->GetTreasureMapLanguageData() == NULL)
@@ -786,7 +821,7 @@ void DetailedTreasureMapData::RegularMapData::GenerateLocaleRank()
     unsigned char readMinLocaleRank = 0;
     unsigned char readMaxLocaleRank = 0;
 
-    int readOffset = func_ov017_0218b5b0()->pTMapLanguageOffsets->localeRankRangesByFloorCount;
+    int readOffset = GameResources_GetInstance()->pTMapLanguageOffsets->localeRankRangesByFloorCount;
 
     TMAPLANGDATA_READ(readOffset, &numEntries, 2);
     for (unsigned short i = 0; i < numEntries; i++)
@@ -807,11 +842,21 @@ void DetailedTreasureMapData::RegularMapData::GenerateLocaleRank()
 
 #if defined(usa)
 
-extern char data_020f1ad0[]; // "%s%d"
-extern char data_020f1ad5[]; // "%s %s"
+extern char ProgramData_FormatSD_Copy2[]; // "%s%d"
+extern char ProgramData_FormatSS_Copy2[]; // "%s %s"
 
-extern const unsigned char data_020e9074[]; // { 4, 13, 11 }
-extern const unsigned char data_020e9077[]; // { 4, 13, 11 }
+// Original data: arm9/main @ 0x20e9074; symbol: data_020e9074.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 040d0b.
+// Observed span: 3 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const unsigned char DetailedTreasureMapDataRegularMapDataGenerateNameBuffers_UnknownRoleInitializedBytes[]; // { 4, 13, 11 }
+// Original data: arm9/main @ 0x20e9077; symbol: data_020e9077.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 040d0b0000.
+// Observed span: 5 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const unsigned char DetailedTreasureMapDataRegularMapDataGeneratePopupName_UnknownRoleInitializedBytes[]; // { 4, 13, 11 }
 
 // USA: func_020a51b0
 void DetailedTreasureMapData::RegularMapData::GenerateNameBuffers()
@@ -835,11 +880,11 @@ void DetailedTreasureMapData::RegularMapData::GenerateNameBuffers()
     int readOffset;
     
     unsigned char* langData = GameState::GetInstance()->GetTreasureMapLanguageData();
-    int* offsetArray = (int*)(func_ov017_0218b5b0()->pTMapLanguageOffsets);   
+    int* offsetArray = (int*)(GameResources_GetInstance()->pTMapLanguageOffsets);
 
     // choose the order of the words based on the language
     unsigned char partOrder[3]; 
-    switch (func_0200fb08(GameState::GetInstance()))
+    switch (GameState_ReadSupportedFirmwareLanguage(GameState::GetInstance()))
     {
     // English & German
     // e.g. Granite (0) Tunnel (2) of Woe (1)
@@ -876,7 +921,7 @@ void DetailedTreasureMapData::RegularMapData::GenerateNameBuffers()
     for (int i = 0; i < 3; i++)
     {
         int currentNamePart = partOrder[i];
-        int ptrListIndex = data_020e9074[currentNamePart];
+        int ptrListIndex = DetailedTreasureMapDataRegularMapDataGenerateNameBuffers_UnknownRoleInitializedBytes[currentNamePart];
         
         readOffset = offsetArray[ptrListIndex];
         
@@ -894,7 +939,7 @@ void DetailedTreasureMapData::RegularMapData::GenerateNameBuffers()
                     TMAPLANGDATA_READ(readOffset, &stringLength, 2);
                     if (environ_ == loopEnviron && nameIdx == readIndex)
                     {
-                        VectorizedInvertedMemcpy(langData + readOffset, tempBuffer, stringLength);
+                        MI_CpuCopy8(langData + readOffset, tempBuffer, stringLength);
                         tempBuffer[stringLength] = '\0';
                         strcat(nameNoLevel_, tempBuffer);
                         entryLoop = numEntries; // hack to escape the j-level loop
@@ -910,7 +955,7 @@ void DetailedTreasureMapData::RegularMapData::GenerateNameBuffers()
                 TMAPLANGDATA_READ(readOffset, &stringLength, 2);
                 if (nameIdx == readIndex)
                 {
-                    VectorizedInvertedMemcpy(langData + readOffset, tempBuffer, stringLength);
+                    MI_CpuCopy8(langData + readOffset, tempBuffer, stringLength);
                     tempBuffer[stringLength] = '\0';
                     strcat(nameNoLevel_, tempBuffer);
                     break;
@@ -920,11 +965,11 @@ void DetailedTreasureMapData::RegularMapData::GenerateNameBuffers()
         }
     }
 
-    sprintf(levelString_, data_020f1ad0, func_020e51cc(1011), level_);
-    sprintf(topScreenName_, data_020f1ad5, nameNoLevel_, levelString_);
+    sprintf(levelString_, ProgramData_FormatSD_Copy2, Text_LookupStandardString(1011), level_);
+    sprintf(topScreenName_, ProgramData_FormatSS_Copy2, nameNoLevel_, levelString_);
 }
 
-extern char data_020f1adb[]; // "%s%d"
+extern char ProgramData_FormatSD_Copy3[]; // "%s%d"
 
 // USA: func_020a54d0
 void DetailedTreasureMapData::RegularMapData::GeneratePopupName()
@@ -948,11 +993,11 @@ void DetailedTreasureMapData::RegularMapData::GeneratePopupName()
     int readOffset;
     
     unsigned char* langData = GameState::GetInstance()->GetTreasureMapLanguageData();
-    int* offsetArray = (int*)(func_ov017_0218b5b0()->pTMapLanguageOffsets);   
+    int* offsetArray = (int*)(GameResources_GetInstance()->pTMapLanguageOffsets);
 
     // choose the order of the words based on the language
     unsigned char partOrder[3]; 
-    switch (func_0200fb08(GameState::GetInstance()))
+    switch (GameState_ReadSupportedFirmwareLanguage(GameState::GetInstance()))
     {
     // English & German
     // e.g. Granite (0) Tunnel (2) of Woe (1)
@@ -989,7 +1034,7 @@ void DetailedTreasureMapData::RegularMapData::GeneratePopupName()
     for (int i = 0; i < 3; i++)
     {
         int currentNamePart = partOrder[i];
-        int ptrListIndex = data_020e9077[currentNamePart];
+        int ptrListIndex = DetailedTreasureMapDataRegularMapDataGeneratePopupName_UnknownRoleInitializedBytes[currentNamePart];
         
         readOffset = offsetArray[ptrListIndex];
         
@@ -1007,7 +1052,7 @@ void DetailedTreasureMapData::RegularMapData::GeneratePopupName()
                     TMAPLANGDATA_READ(readOffset, &stringLength, 2);
                     if (environ_ == loopEnviron && nameIdx == readIndex)
                     {
-                        VectorizedInvertedMemcpy(langData + readOffset, tempBuffer, stringLength);
+                        MI_CpuCopy8(langData + readOffset, tempBuffer, stringLength);
                         tempBuffer[stringLength] = '\0';
                         strcat(popupName_, tempBuffer);
                         entryLoop = numEntries; // hack to escape the j-level loop
@@ -1023,7 +1068,7 @@ void DetailedTreasureMapData::RegularMapData::GeneratePopupName()
                 TMAPLANGDATA_READ(readOffset, &stringLength, 2);
                 if (nameIdx == readIndex)
                 {
-                    VectorizedInvertedMemcpy(langData + readOffset, tempBuffer, stringLength);
+                    MI_CpuCopy8(langData + readOffset, tempBuffer, stringLength);
                     tempBuffer[stringLength] = '\0';
                     strcat(popupName_, tempBuffer);
                     break;
@@ -1033,7 +1078,7 @@ void DetailedTreasureMapData::RegularMapData::GeneratePopupName()
         }
     }
 
-    sprintf(tempBuffer, data_020f1adb, func_020e51cc(1011), level_);
+    sprintf(tempBuffer, ProgramData_FormatSD_Copy3, Text_LookupStandardString(1011), level_);
     strcat(popupName_, tempBuffer);
 }
 
@@ -1064,7 +1109,7 @@ void DetailedTreasureMapData::RegularMapData::GenerateNameBuffers()
     char tempBuffer[256];
     
     unsigned char* langData = GameState::GetInstance()->GetTreasureMapLanguageData();
-    TreasureMapLanguageDataOffsets* offsetArray = func_ov017_0218b5b0()->pTMapLanguageOffsets;
+    TreasureMapLanguageDataOffsets* offsetArray = GameResources_GetInstance()->pTMapLanguageOffsets;
     
     readOffset = offsetArray->prefixNames;
     TMAPLANGDATA_READ(readOffset, &numEntries, 2);
@@ -1075,7 +1120,7 @@ void DetailedTreasureMapData::RegularMapData::GenerateNameBuffers()
         TMAPLANGDATA_READ(readOffset, &stringLength, 2);
         if (prefix_ == readIndex)
         {
-            VectorizedInvertedMemcpy(langData + readOffset, tempBuffer, stringLength);
+            MI_CpuCopy8(langData + readOffset, tempBuffer, stringLength);
             tempBuffer[stringLength] = '\0';
             strcat(nameNoLevel_, tempBuffer);
             strcpy(prefixString_, tempBuffer);
@@ -1093,7 +1138,7 @@ void DetailedTreasureMapData::RegularMapData::GenerateNameBuffers()
         TMAPLANGDATA_READ(readOffset, &stringLength, 2);
         if (suffix_ == readIndex)
         {
-            VectorizedInvertedMemcpy(langData + readOffset, tempBuffer, stringLength);
+            MI_CpuCopy8(langData + readOffset, tempBuffer, stringLength);
             tempBuffer[stringLength] = '\0';
             strcat(nameNoLevel_, tempBuffer);
             strcpy(suffixString_, tempBuffer);
@@ -1131,7 +1176,7 @@ void DetailedTreasureMapData::RegularMapData::GeneratePopupName()
     char tempBuffer[64];
     
     unsigned char* langData = GameState::GetInstance()->GetTreasureMapLanguageData();
-    TreasureMapLanguageDataOffsets* offsetArray = func_ov017_0218b5b0()->pTMapLanguageOffsets;
+    TreasureMapLanguageDataOffsets* offsetArray = GameResources_GetInstance()->pTMapLanguageOffsets;
 
     readOffset = offsetArray->prefixNames;
     TMAPLANGDATA_READ(readOffset, &numEntries, 2);
@@ -1142,7 +1187,7 @@ void DetailedTreasureMapData::RegularMapData::GeneratePopupName()
         TMAPLANGDATA_READ(readOffset, &stringLength, 2);
         if (prefix_ == readIndex)
         {
-            VectorizedInvertedMemcpy(langData + readOffset, tempBuffer, stringLength);
+            MI_CpuCopy8(langData + readOffset, tempBuffer, stringLength);
             tempBuffer[stringLength] = '\0';
             strcat(popupName_, tempBuffer);
             strcpy(prefixString_, tempBuffer);
@@ -1160,7 +1205,7 @@ void DetailedTreasureMapData::RegularMapData::GeneratePopupName()
         TMAPLANGDATA_READ(readOffset, &stringLength, 2);
         if (suffix_ == readIndex)
         {
-            VectorizedInvertedMemcpy(langData + readOffset, tempBuffer, stringLength);
+            MI_CpuCopy8(langData + readOffset, tempBuffer, stringLength);
             tempBuffer[stringLength] = '\0';
             strcat(popupName_, tempBuffer);
             strcpy(suffixString_, tempBuffer);
@@ -1180,7 +1225,7 @@ void DetailedTreasureMapData::RegularMapData::GeneratePopupName()
             TMAPLANGDATA_READ(readOffset, &stringLength, 2);
             if (environ_ == loopEnviron && localeRank_ == readIndex)
             {
-                VectorizedInvertedMemcpy(langData + readOffset, tempBuffer, stringLength);
+                MI_CpuCopy8(langData + readOffset, tempBuffer, stringLength);
                 tempBuffer[stringLength] = '\0';
                 strcat(popupName_, tempBuffer);
                 strcpy(localeString_, tempBuffer);
@@ -1197,11 +1242,17 @@ void DetailedTreasureMapData::RegularMapData::GeneratePopupName()
 
 #endif
 
-extern char data_020f1ae4[];
-extern char data_020f1af8[];
+extern char ProgramData_PathDataTmapParamPac[];
+extern char ProgramData_FormatPDDat[];
 
-extern unsigned char data_0211e33c[];
+// Original data: arm9/main @ 0x211e33c; symbol: data_0211e33c.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 7889 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern unsigned char Main_UnknownRoleZeroInitializedStorage_Variant6[];
 
+// Original: arm9/main @ 0x020A57E4; symbol: _ZN23DetailedTreasureMapData19LoadLegacyBossStatsEbPKh; size: 0x338.
 void DetailedTreasureMapData::LoadLegacyBossStats(bool compute, const unsigned char* providedArchive)
 {
     if (mapType_ != TreasureMapType_Legacy)
@@ -1216,13 +1267,13 @@ void DetailedTreasureMapData::LoadLegacyBossStats(bool compute, const unsigned c
     
     BackgroundLoader::AddLockGlobal();
     unsigned int archiveSize = 0;
-    const unsigned char* usedArchive = data_0211e33c;
+    const unsigned char* usedArchive = Main_UnknownRoleZeroInitializedStorage_Variant6;
     
     if (providedArchive)
         usedArchive = providedArchive;
     else
     {
-        if (!LoadFileIntoMemory(data_020f1ae4, const_cast<unsigned char*>(usedArchive), &archiveSize))
+        if (!LoadFileIntoMemory(ProgramData_PathDataTmapParamPac, const_cast<unsigned char*>(usedArchive), &archiveSize))
         {
             BackgroundLoader::RemoveLockGlobal();
             return;
@@ -1230,7 +1281,7 @@ void DetailedTreasureMapData::LoadLegacyBossStats(bool compute, const unsigned c
     }
 
     char innerFileName[256];
-    sprintf(innerFileName, data_020f1af8, legacy_.bossMonsterID_);
+    sprintf(innerFileName, ProgramData_FormatPDDat, legacy_.bossMonsterID_);
     const unsigned char* innerFileData;
     unsigned int innerFileSize;
     if (!GetFileInNarc(usedArchive, innerFileName, reinterpret_cast<const void**>(&innerFileData), &innerFileSize, 0))
@@ -1294,12 +1345,13 @@ void DetailedTreasureMapData::LoadLegacyBossStats(bool compute, const unsigned c
     }
 }
 
+// Original: arm9/main @ 0x020A5B1C; symbol: _ZN23DetailedTreasureMapData13LoadTreasuresEv; size: 0x19C.
 void DetailedTreasureMapData::LoadTreasures()
 {
     if (GameState::GetInstance()->GetTreasureMapLanguageData() == NULL)
         return;
 
-    TreasureMapLanguageDataOffsets* offsets = func_ov017_0218b5b0()->pTMapLanguageOffsets;
+    TreasureMapLanguageDataOffsets* offsets = GameResources_GetInstance()->pTMapLanguageOffsets;
     unsigned int offset;
     bool foundBoss = false;
 

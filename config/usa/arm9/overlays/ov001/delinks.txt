@@ -5,3 +5,2038 @@
     .data       start:0x02164b80 end:0x02165800 kind:data align:32
     .bss        start:0x02165800 end:0x02166d20 kind:bss align:32
 
+src/Event/Cutscenes/Script_ClearTextTable.cpp:
+    complete
+    .text start:0x021537a0 end:0x021537b0
+
+src/Event/Cutscenes/Event_LoadFileIntoSharedScratch.cpp:
+    complete
+    .text start:0x0215a750 end:0x0215a79c
+
+src/Event/Cutscenes/Event_GetObjectSession.cpp:
+    complete
+    .text start:0x0215ab20 end:0x0215ab54
+
+src/Event/Cutscenes/Script_ResolveEventObjectIndex.cpp:
+    complete
+    .text start:0x0215ad2c end:0x0215ad3c
+
+src/Event/Cutscenes/Script_CountTextTableEntry.cpp:
+    complete
+    .text start:0x021536e0 end:0x021536fc
+
+src/Event/Cutscenes/Event_ResetObjectBinding.cpp:
+    complete
+    .text start:0x0215acb4 end:0x0215acd4
+
+src/Event/Cutscenes/Graphics_SetSubBG3ControlFields.cpp:
+    complete
+    .text start:0x021628d4 end:0x02162900
+
+src/Event/Motion/CutsceneCamera_FindUnusedCommandRecord.cpp:
+    complete
+    .text start:0x02158d8c end:0x02158dcc
+
+src/Event/Motion/Event_FindUnusedMotionCommand.cpp:
+    complete
+    .text start:0x02159eb0 end:0x02159ef0
+
+src/Event/Cutscenes/SetBackgroundControlFields.cpp:
+    complete
+    .text start:0x02162678 end:0x021626a4
+
+src/Event/Motion/CutsceneCamera_YieldCommandList.cpp:
+    complete
+    .text start:0x02157bf4 end:0x02157bfc
+
+src/Event/Motion/CutsceneActor_CompleteAnimationContinuationCommand.cpp:
+    complete
+    .text start:0x02159b2c end:0x02159b34
+
+src/Event/Motion/CutsceneActor_CompleteImmediateAnimationContinuationCommand.cpp:
+    complete
+    .text start:0x02159b54 end:0x02159b5c
+
+src/Event/Motion/CutsceneActor_YieldCommandList.cpp:
+    complete
+    .text start:0x02159cf4 end:0x02159cfc
+
+src/Event/Cutscenes/Script_Opcode201ReturnSuccess.cpp:
+    complete
+    .text start:0x0215f304 end:0x0215f30c
+
+src/Event/Cutscenes/Script_Opcode203ReturnSuccess.cpp:
+    complete
+    .text start:0x0215f30c end:0x0215f314
+
+src/Event/Cutscenes/Event_IgnoreOpcode517.cpp:
+    complete
+    .text start:0x0215f314 end:0x0215f31c
+
+src/Event/Cutscenes/Event_IgnoreOpcode518.cpp:
+    complete
+    .text start:0x0215f31c end:0x0215f324
+
+src/Event/Motion/Script_AcknowledgeNoOpCommand.cpp:
+    complete
+    .text start:0x021634e0 end:0x021634e8
+
+src/Event/Cutscenes/Event_IgnoreOpcode704.cpp:
+    complete
+    .text start:0x021634e8 end:0x021634f0
+
+src/Event/Cutscenes/Event_IgnoreOpcode705.cpp:
+    complete
+    .text start:0x021634f0 end:0x021634f8
+
+src/Event/Cutscenes/Event_IgnoreOpcode706.cpp:
+    complete
+    .text start:0x021634f8 end:0x02163500
+
+src/Event/Cutscenes/Event_IgnoreOpcode707.cpp:
+    complete
+    .text start:0x02163500 end:0x02163508
+
+src/Event/Cutscenes/Event_IgnoreOpcode708.cpp:
+    complete
+    .text start:0x02163508 end:0x02163510
+
+src/Event/Cutscenes/Event_IgnoreOpcode709.cpp:
+    complete
+    .text start:0x02163510 end:0x02163518
+
+src/Event/Cutscenes/Event_IgnoreOpcode716.cpp:
+    complete
+    .text start:0x02163724 end:0x0216372c
+
+src/Event/Cutscenes/Event_IgnoreOpcode717.cpp:
+    complete
+    .text start:0x0216372c end:0x02163734
+
+src/Event/Cutscenes/Event_IgnoreOpcode718.cpp:
+    complete
+    .text start:0x02163734 end:0x0216373c
+
+src/Event/Cutscenes/Event_IgnoreOpcode719.cpp:
+    complete
+    .text start:0x0216373c end:0x02163744
+
+src/Event/Cutscenes/Event_IgnoreOpcode724.cpp:
+    complete
+    .text start:0x02163764 end:0x0216376c
+
+src/Event/Cutscenes/Event_IgnoreOpcode722.cpp:
+    complete
+    .text start:0x02163968 end:0x02163970
+
+src/Event/Motion/CutsceneCamera_ClearFollowActor.cpp:
+    complete
+    .text start:0x02159290 end:0x0215929c
+
+src/Event/Cutscenes/Event_ResetSceneSessions.cpp:
+    complete
+    .text start:0x021538c8 end:0x021538d4
+
+src/Event/Motion/AdvanceFixedPointValueOverDuration.cpp:
+    complete
+    .text start:0x021598f0 end:0x0215996c
+
+src/Event/Cutscenes/Graphics_ScriptClearSelectedBG3TilesAndScreen.cpp:
+    complete
+    .text start:0x02162900 end:0x0216297c
+
+src/Event/Cutscenes/Event_ResetScriptResourceState.cpp:
+    complete
+    .text start:0x0215a79c end:0x0215a818
+
+src/Event/Cutscenes/LightingManager_ScriptBeginBrightnessFade.cpp:
+    complete
+    .text start:0x02164004 end:0x02164080
+
+src/Event/Cutscenes/Grotto_SetNestedSecondWordFromScriptParameter.cpp:
+    complete
+    .text start:0x0215ae84 end:0x0215aeb8
+
+src/Event/Cutscenes/Event_GetPhaseOrForcedCompletion.cpp:
+    complete
+    .text start:0x0215647c end:0x021564b0
+
+src/Event/Cutscenes/Graphics_SetSubBG1Control.cpp:
+    complete
+    .text start:0x0215e78c end:0x0215e7c0
+
+src/Event/Cutscenes/Script_SetPersistentMessageFrame.cpp:
+    complete
+    .text start:0x0215e97c end:0x0215e9b0
+
+src/Event/Cutscenes/Event_ScriptSetUnknownSceneControlValueAt11A.cpp:
+    complete
+    .text start:0x0215f9dc end:0x0215fa10
+
+src/Event/Cutscenes/Event_ScriptSetUnknownResourceFlagAt5A4FromZero.cpp:
+    complete
+    .text start:0x02160904 end:0x02160938
+
+src/Event/Cutscenes/GameState_SetDayTimerRunningFromScriptParameter.cpp:
+    complete
+    .text start:0x02164080 end:0x021640b4
+
+src/Event/Cutscenes/ActorPool_ScriptSetUnknownPoolFlagFromZero.cpp:
+    complete
+    .text start:0x0216184c end:0x02161880
+
+src/Event/Cutscenes/Zone3D_ScriptSetUnknownSceneFlagAt105FromZero.cpp:
+    complete
+    .text start:0x02161988 end:0x021619bc
+
+src/Event/Motion/Script_SetSceneBooleanAtFE.cpp:
+    complete
+    .text start:0x021630f4 end:0x02163128
+
+src/Event/Cutscenes/Event_BindActorPoolReference.cpp:
+    complete
+    .text start:0x021641e0 end:0x02164214
+
+src/Event/Cutscenes/Graphics_SetSubBg0Control.cpp:
+    complete
+    .text start:0x0215e758 end:0x0215e78c
+
+src/Event/Cutscenes/Filesystem_QueuePendingLoadsInBatchesOfFive.cpp:
+    complete
+    .text start:0x02154c64 end:0x02154da0
+
+src/Event/Cutscenes/FieldTransition_ScriptRequestZoneAndPosition.cpp:
+    complete
+    .text start:0x02161f80 end:0x021620bc
+
+src/Event/Cutscenes/Resource_CompletePendingStateAndClearFlags.cpp:
+    complete
+    .text start:0x02156b20 end:0x02156ba0
+
+src/Event/Cutscenes/Event_BindIndexedActorPoolReference.cpp:
+    complete
+    .text start:0x02164248 end:0x0216427c
+
+src/Event/Cutscenes/Event_InitializeScriptOpcodeHandlerTable.cpp:
+    complete
+    .text start:0x02164114 end:0x02164194
+
+src/Event/Motion/Script_TestPendingSceneQueueKind.cpp:
+    complete
+    .text start:0x02162f8c end:0x02163008
+
+src/Event/Cutscenes/Script_CreateLinkedBoneTrackingObject.cpp:
+    complete
+    .text start:0x02160768 end:0x0216089c
+
+src/Event/Motion/Graphics_UpdateWrappedAngleInterpolation.cpp:
+    complete
+    .text start:0x021594cc end:0x02159804
+
+src/Event/Cutscenes/Lighting_ApplyTintToModelTree.cpp:
+    complete
+    .text start:0x021601f8 end:0x02160338
+
+src/Event/Motion/CutsceneCamera_ApplyOrbitAngleCommand.cpp:
+    complete
+    .text start:0x02158008 end:0x02158018
+
+src/Event/Motion/CutsceneActor_ApplyHeadingPathDurationCommand.cpp:
+    complete
+    .text start:0x0215941c end:0x0215942c
+
+src/Event/Motion/CutsceneCamera_ApplyPairedPathDurationCommand.cpp:
+    complete
+    .text start:0x02158338 end:0x02158348
+
+src/Event/Motion/CutsceneCamera_ApplyOrbitDistanceCommand.cpp:
+    complete
+    .text start:0x02158028 end:0x02158038
+
+src/Event/Motion/CutsceneActor_ApplyRadiusCommand.cpp:
+    complete
+    .text start:0x021598e0 end:0x021598f0
+
+src/Event/Cutscenes/Event_SetAllocatorSlot.cpp:
+    complete
+    .text start:0x0215aaa8 end:0x0215aab8
+
+src/Event/Cutscenes/Event_GetPrimaryAllocator.cpp:
+    complete
+    .text start:0x0215aab8 end:0x0215aac8
+
+src/Event/Motion/CutsceneCamera_ApplyOrbitHeightCommand.cpp:
+    complete
+    .text start:0x02158018 end:0x02158028
+
+src/Event/Cutscenes/Script_SetResourceFlagFromParameters.cpp:
+    complete
+    .text start:0x0215ee2c end:0x0215eeb0
+
+src/Event/Motion/CubicPath_ActivateHeadingTrackWhenPopulated.cpp:
+    complete
+    .text start:0x02157acc end:0x02157ae0
+
+src/Event/Cutscenes/Resource_GetFlag42E2.cpp:
+    complete
+    .text start:0x02156858 end:0x0215686c
+
+src/Event/Cutscenes/Script_LoadHiddenCHRObject.cpp:
+    complete
+    .text start:0x0215ce4c end:0x0215cf98
+
+src/Event/Cutscenes/Util_FindEmptySlotInTable16.cpp:
+    complete
+    .text start:0x0215a818 end:0x0215a850
+
+src/Event/Cutscenes/Script_LoadType0AnimationsForObjects.cpp:
+    complete
+    .text start:0x0215f060 end:0x0215f1b0
+
+src/Event/Cutscenes/Event_ScriptSetSceneResourcePath.cpp:
+    complete
+    .text start:0x021613d0 end:0x02161408
+
+src/Event/Cutscenes/GameState_SetNestedStateFromProtagonistFlag.cpp:
+    complete
+    .text start:0x02161d54 end:0x02161d8c
+
+src/Event/Cutscenes/Protection_AddThreeToScriptCheckCounter.cpp:
+    complete
+    .text start:0x02162320 end:0x02162338
+
+src/Event/Cutscenes/System_InitializeObjectHandleTable.cpp:
+    complete
+    .text start:0x021637d4 end:0x021637ec
+
+src/Event/Cutscenes/Filesystem_InvokeStoredObjectAndReturnOne.cpp:
+    complete
+    .text start:0x02163848 end:0x02163860
+
+src/Event/Motion/Resource_SetFlagMask800FromParameter.cpp:
+    complete
+    .text start:0x02163128 end:0x02163164
+
+src/Event/Motion/Resource_SetScriptControlledFlag.cpp:
+    complete
+    .text start:0x021632a8 end:0x021632e4
+
+src/Event/Cutscenes/Script_SetGlobalIntegerAndFlag.cpp:
+    complete
+    .text start:0x0215e4b4 end:0x0215e4f0
+
+src/Event/Motion/GameState_SetUnknown265FromParameter.cpp:
+    complete
+    .text start:0x02163248 end:0x02163284
+
+src/Event/Cutscenes/Resource_CopyAndClearNestedHalfword.cpp:
+    complete
+    .text start:0x02162210 end:0x0216224c
+
+src/Sound/Music/Bgm_ScriptReadTemporarySequenceActive.cpp:
+    complete
+    .text start:0x0216376c end:0x021637a8
+
+src/Event/Cutscenes/ApplyCurrentResourceStateAndReturnOne.cpp:
+    complete
+    .text start:0x02163994 end:0x021639ac
+
+src/Event/Cutscenes/Script_EnableRepeatingMessageShake.cpp:
+    complete
+    .text start:0x0215e920 end:0x0215e938
+
+src/Event/Cutscenes/Protection_AddTwoToScriptCheckCounter.cpp:
+    complete
+    .text start:0x02162308 end:0x02162320
+
+src/Event/Cutscenes/GameState_BlockIncomingSceneRequests.cpp:
+    complete
+    .text start:0x0215b040 end:0x0215b058
+
+src/Event/Cutscenes/Protection_AddOneToScriptCheckCounter.cpp:
+    complete
+    .text start:0x021622f0 end:0x02162308
+
+src/Event/Cutscenes/GameState_SetScriptFloatAndFixedValues.cpp:
+    complete
+    .text start:0x02161e00 end:0x02161e8c
+
+src/Event/Cutscenes/Script_RestoreTextureVRAMState.cpp:
+    complete
+    .text start:0x0215eab0 end:0x0215eb3c
+
+src/Event/Cutscenes/Script_WriteResourceStatusOutputs.cpp:
+    complete
+    .text start:0x02160a7c end:0x02160b08
+
+src/Event/Cutscenes/FieldTransition_ScriptRequestReturnToSavedGrottoPosition.cpp:
+    complete
+    .text start:0x021620bc end:0x02162148
+
+src/Event/Motion/Pool_AppendFreeNode.cpp:
+    complete
+    .text start:0x02159f14 end:0x02159f54
+
+src/Event/Motion/Queue_AllocateAndAppendNode.cpp:
+    complete
+    .text start:0x02158e4c end:0x02158e8c
+
+src/Event/Motion/Memory_AppendFreeNodeToPool.cpp:
+    complete
+    .text start:0x02159fd4 end:0x0215a014
+
+src/Event/Motion/Pool_AppendAllocatedNode.cpp:
+    complete
+    .text start:0x02159f54 end:0x02159f94
+
+src/Event/Motion/Queue_AppendNodeFromFreeList.cpp:
+    complete
+    .text start:0x02158e0c end:0x02158e4c
+
+src/Event/Motion/Pool_AllocateAndLinkNode.cpp:
+    complete
+    .text start:0x02159f94 end:0x02159fd4
+
+src/Event/Motion/Memory_AppendFreePoolNode.cpp:
+    complete
+    .text start:0x0215a014 end:0x0215a054
+
+src/Event/Motion/Pool_AllocateAndAppendNode.cpp:
+    complete
+    .text start:0x0215a054 end:0x0215a094
+
+src/Event/Motion/Queue_AppendNode.cpp:
+    complete
+    .text start:0x02158dcc end:0x02158e0c
+
+src/Event/Cutscenes/Ov001_UpdateNestedWordWhenFlagSet.cpp:
+    complete
+    .text start:0x021626a4 end:0x021626e4
+
+src/Event/Motion/Event_QueueHeadingPathReset.cpp:
+    complete
+    .text start:0x0215a3c0 end:0x0215a3d8
+
+src/Event/Motion/Pool_InitializeNodeFromThreeValues.cpp:
+    complete
+    .text start:0x0215a330 end:0x0215a364
+
+src/Event/Motion/Event_QueueAnimationCompletionWait.cpp:
+    complete
+    .text start:0x0215a5d8 end:0x0215a5f0
+
+src/Event/Motion/Queue_AppendType6Node.cpp:
+    complete
+    .text start:0x02159044 end:0x0215905c
+
+src/Event/Motion/Queue_AppendType9Node.cpp:
+    complete
+    .text start:0x021590c4 end:0x021590dc
+
+src/Event/Motion/UpdateTypeThreeFromResourceFlag.cpp:
+    complete
+    .text start:0x02163164 end:0x021631a4
+
+src/Event/Motion/Event_QueueObjectAnimationStop.cpp:
+    complete
+    .text start:0x0215a5f0 end:0x0215a608
+
+src/Event/Motion/Event_QueueObjectRotation.cpp:
+    complete
+    .text start:0x0215a44c end:0x0215a480
+
+src/Event/Motion/Pool_InitializeConfiguredNode.cpp:
+    complete
+    .text start:0x02159004 end:0x02159044
+
+src/Event/Motion/CutsceneCamera_QueueTimedTargetPosition.cpp:
+    complete
+    .text start:0x02158fc4 end:0x02159004
+
+src/Event/Motion/Util_StoreTaggedTriple.cpp:
+    complete
+    .text start:0x0215a3f8 end:0x0215a42c
+
+src/Event/Motion/Object_UpdateAlternatingDisplacement.cpp:
+    complete
+    .text start:0x02158654 end:0x021587c4
+
+src/Event/Cutscenes/Graphics_ResetSharedSceneState.cpp:
+    complete
+    .text start:0x02154da0 end:0x02154de4
+
+src/Event/Cutscenes/UpdateTypeThreeFromResourceValue.cpp:
+    complete
+    .text start:0x02161a1c end:0x02161a60
+
+src/Event/Cutscenes/UpdateGlobalStateFlagBit0FromParameter.cpp:
+    complete
+    .text start:0x0215aef0 end:0x0215af34
+
+src/Sound/Effects/SoundSfx_ScriptStopIndexedSequence.cpp:
+    complete
+    .text start:0x02163a18 end:0x02163a5c
+
+src/Event/Motion/Event_QueueAnimationAfterCurrentStops.cpp:
+    complete
+    .text start:0x0215a594 end:0x0215a5d8
+
+src/Event/Motion/CubicPath_ReadCurrentPosition.cpp:
+    complete
+    .text start:0x02157570 end:0x0215758c
+
+src/Event/Motion/Memory_CreateNamedRecord.cpp:
+    complete
+    .text start:0x0215a550 end:0x0215a594
+
+src/Event/Motion/Protection_InvokeCallbackAndReturnCartridgeScriptToken.cpp:
+    complete
+    .text start:0x0215a6fc end:0x0215a718
+
+src/Event/Cutscenes/Protection_InvokeCallbackAndReturnConfigurationScriptToken.cpp:
+    complete
+    .text start:0x0215a718 end:0x0215a734
+
+src/Event/Cutscenes/GameState_AllowIncomingSceneRequests.cpp:
+    complete
+    .text start:0x0215b058 end:0x0215b074
+
+src/Event/Motion/GameState_SetRecordRGBColorScaleAndEnabledState.cpp:
+    complete
+    .text start:0x02159804 end:0x02159820
+
+src/Event/Cutscenes/Protection_InvokeCallbackAndReturnConstantScriptToken.cpp:
+    complete
+    .text start:0x0215a734 end:0x0215a750
+
+src/Event/Cutscenes/Script_HideMessageContinuePrompt.cpp:
+    complete
+    .text start:0x0215e960 end:0x0215e97c
+
+src/Event/Cutscenes/System_SetRegisterBit15.cpp:
+    complete
+    .text start:0x0215b598 end:0x0215b5b4
+
+src/Event/Cutscenes/Resource_ClearGameResourcesWord3630.cpp:
+    complete
+    .text start:0x0215fef4 end:0x0215ff10
+
+src/Event/Motion/Script_QueueCameraPathPlayback.cpp:
+    complete
+    .text start:0x0215d8b4 end:0x0215d8d0
+
+src/Event/Motion/Script_QueueCameraPathReset.cpp:
+    complete
+    .text start:0x0215d768 end:0x0215d784
+
+src/Event/Cutscenes/Memory_ScriptCreateAllocatorFromMaximumFreeBlock.cpp:
+    complete
+    .text start:0x0215e9b0 end:0x0215ea40
+
+src/Event/Cutscenes/TextWindow_ScriptSetReadyActionType.cpp:
+    complete
+    .text start:0x021608e8 end:0x02160904
+
+src/Event/Cutscenes/System_EnableRegisterBit15AndReturnOne.cpp:
+    complete
+    .text start:0x0215b5b4 end:0x0215b5c8
+
+src/Event/Cutscenes/Script_ClearMotionTrackingTarget.cpp:
+    complete
+    .text start:0x0215e0c0 end:0x0215e0dc
+
+src/Event/Cutscenes/GameState_ScriptSetUnknownProgressControlByteAt490.cpp:
+    complete
+    .text start:0x021609e4 end:0x02160a00
+
+src/Event/Cutscenes/System_ClearRegisterBit15.cpp:
+    complete
+    .text start:0x0215b5c8 end:0x0215b5dc
+
+src/Event/Cutscenes/Script_ToggleDisplayScreenSwap.cpp:
+    complete
+    .text start:0x0215b560 end:0x0215b598
+
+src/Event/Cutscenes/GameObject_ReadLinkedStatusLowNibble.cpp:
+    complete
+    .text start:0x021612ac end:0x021612c8
+
+src/Event/Motion/Ov001_InitializeSessionRecord.cpp:
+    complete
+    .text start:0x02159cfc end:0x02159d44
+
+src/Event/Motion/CutsceneCamera_ApplySelectedOrbitParameters.cpp:
+    complete
+    .text start:0x02158038 end:0x02158080
+
+src/Event/Motion/Queue_AppendType14FixedPointCoordinateRecord.cpp:
+    complete
+    .text start:0x02159168 end:0x021591b0
+
+src/Event/Cutscenes/Memory_ResetAllocatorCache.cpp:
+    complete
+    .text start:0x0215aa14 end:0x0215aa5c
+
+src/Event/Motion/Memory_AppendTwelveByteEntry.cpp:
+    complete
+    .text start:0x02157964 end:0x021579ac
+
+src/Event/Motion/UpdateTypeThreeFromLeaderFlag.cpp:
+    complete
+    .text start:0x02162d68 end:0x02162db0
+
+src/Event/Motion/AllocateAndCopySixWordsToNode.cpp:
+    complete
+    .text start:0x0215907c end:0x021590c4
+
+src/Event/Cutscenes/Resource_ScriptLoadObjectArchive.cpp:
+    complete
+    .text start:0x0215bb3c end:0x0215bcc0
+
+src/Event/Cutscenes/GameState_SetConnectionResult.cpp:
+    complete
+    .text start:0x02160a00 end:0x02160a48
+
+src/Event/Motion/CutsceneCamera_ApplyEyePositionCommand.cpp:
+    complete
+    .text start:0x02157bfc end:0x02157c1c
+
+src/Event/Motion/CutsceneCamera_ApplyTargetPositionCommand.cpp:
+    complete
+    .text start:0x02157c1c end:0x02157c3c
+
+src/Event/Motion/CutsceneCamera_QueuePairedPathDuration.cpp:
+    complete
+    .text start:0x0215905c end:0x0215907c
+
+src/Event/Motion/CutsceneCamera_QueueOrbitAngle.cpp:
+    complete
+    .text start:0x021590dc end:0x021590fc
+
+src/Event/Motion/CutsceneCamera_QueueOrbitHeight.cpp:
+    complete
+    .text start:0x021590fc end:0x0215911c
+
+src/Event/Motion/CutsceneActor_ApplyPositionCommand.cpp:
+    complete
+    .text start:0x0215929c end:0x021592bc
+
+src/Event/Motion/Event_QueueHeadingPathPlayback.cpp:
+    complete
+    .text start:0x0215a42c end:0x0215a44c
+
+src/Event/Motion/Event_QueueObjectAlpha.cpp:
+    complete
+    .text start:0x0215a4c8 end:0x0215a4e8
+
+src/Event/Motion/CutsceneCamera_QueueShakeDelay.cpp:
+    complete
+    .text start:0x021591b0 end:0x021591d0
+
+src/Event/Motion/CutsceneActor_ApplyRotationCommand.cpp:
+    complete
+    .text start:0x021594ac end:0x021594cc
+
+src/Event/Motion/Script_QueueCameraOrbitAngle.cpp:
+    complete
+    .text start:0x0215d560 end:0x0215d598
+
+src/Event/Motion/CutsceneCamera_QueueOrbitDistance.cpp:
+    complete
+    .text start:0x0215911c end:0x0215913c
+
+src/Event/Motion/Event_QueueAlphaDelay.cpp:
+    complete
+    .text start:0x0215a510 end:0x0215a530
+
+src/Event/Motion/Event_QueueHeadingPathDuration.cpp:
+    complete
+    .text start:0x0215a3d8 end:0x0215a3f8
+
+src/Event/Motion/Event_QueueAnimationDelay.cpp:
+    complete
+    .text start:0x0215a530 end:0x0215a550
+
+src/Event/Motion/Event_QueueSequenceArchivePlayback.cpp:
+    complete
+    .text start:0x0215a6bc end:0x0215a6dc
+
+src/Event/Motion/Event_QueueObjectRadius.cpp:
+    complete
+    .text start:0x0215a654 end:0x0215a674
+
+src/Event/Motion/Event_QueueSoundDelay.cpp:
+    complete
+    .text start:0x0215a69c end:0x0215a6bc
+
+src/Event/Motion/Script_QueueObjectAlpha.cpp:
+    complete
+    .text start:0x0215c57c end:0x0215c5b4
+
+src/Event/Motion/Event_QueueSequenceStop.cpp:
+    complete
+    .text start:0x0215a6dc end:0x0215a6fc
+
+src/Event/Motion/GameState_ApplyScriptFixedPointParameter.cpp:
+    complete
+    .text start:0x0215d598 end:0x0215d5d0
+
+src/Event/Cutscenes/Zone3D_ScriptReadPreviousZoneId.cpp:
+    complete
+    .text start:0x0215f324 end:0x0215f344
+
+src/Event/Motion/GameState_ApplyScriptParameterToBoundedRecord.cpp:
+    complete
+    .text start:0x0215c4fc end:0x0215c544
+
+src/Event/Motion/Script_QueueAnimationDelay.cpp:
+    complete
+    .text start:0x0215c544 end:0x0215c57c
+
+src/Event/Cutscenes/Graphics_ClearAndStageBuffersAndResetSelectionState.cpp:
+    complete
+    .text start:0x0215e398 end:0x0215e3b8
+
+src/Event/Cutscenes/Grotto_SetNestedSecondWordFromGlobalValue.cpp:
+    complete
+    .text start:0x021622d0 end:0x021622f0
+
+src/Event/Motion/Resource_SetRecordVectorFromScript.cpp:
+    complete
+    .text start:0x0215c468 end:0x0215c4fc
+
+src/Event/Cutscenes/SetOutputNestedSecondWordFromLightingManager.cpp:
+    complete
+    .text start:0x02161ce8 end:0x02161d08
+
+src/Event/Motion/Script_QueueSequenceArchivePlayback.cpp:
+    complete
+    .text start:0x02163470 end:0x021634a8
+
+src/Event/Cutscenes/DisplayOverlay_ScriptConfigurePrimaryFlags.cpp:
+    complete
+    .text start:0x02162488 end:0x021624a8
+
+src/Event/Motion/Script_ReadCanvasElapsedTime.cpp:
+    complete
+    .text start:0x02163228 end:0x02163248
+
+src/Event/Motion/Script_QueueAlphaDelay.cpp:
+    complete
+    .text start:0x0215c820 end:0x0215c858
+
+src/Event/Motion/Script_QueueSoundDelay.cpp:
+    complete
+    .text start:0x02163438 end:0x02163470
+
+src/Event/Motion/Script_SetBoundedRecordValue.cpp:
+    complete
+    .text start:0x0215c430 end:0x0215c468
+
+src/Event/Motion/Script_SetRecordGroundPosition.cpp:
+    complete
+    .text start:0x0215c900 end:0x0215c994
+
+src/Event/Motion/GameState_WriteGlobalPositionAsFloatValues.cpp:
+    complete
+    .text start:0x0215daa8 end:0x0215db3c
+
+src/Event/Motion/Script_ApplyIntegerParameterToBoundedRecord.cpp:
+    complete
+    .text start:0x021634a8 end:0x021634e0
+
+src/Event/Motion/GameState_WriteUnknownB0VectorAsFloats.cpp:
+    complete
+    .text start:0x0215da14 end:0x0215daa8
+
+src/Event/Motion/GameState_WriteVectorToScriptParameters.cpp:
+    complete
+    .text start:0x0215db3c end:0x0215dbd0
+
+src/Sound/Music/Bgm_ScriptRequestTemporarySequence.cpp:
+    complete
+    .text start:0x02163744 end:0x02163764
+
+src/Event/Motion/Resource_ScaleScriptParameterBy4096AndApply.cpp:
+    complete
+    .text start:0x0215d5d0 end:0x0215d608
+
+src/Event/Cutscenes/Resource_ScriptClearIndexedObject.cpp:
+    complete
+    .text start:0x02160d14 end:0x02160da8
+
+src/Event/Motion/Graphics_HasIndexedSlotAnimationStopped.cpp:
+    complete
+    .text start:0x02164624 end:0x021646b8
+
+src/Event/Cutscenes/Script_SetBrightnessFromIntegerParameter.cpp:
+    complete
+    .text start:0x0215b2cc end:0x0215b318
+
+src/Event/Cutscenes/Memory_DestroyEightSignedAllocators.cpp:
+    complete
+    .text start:0x0215aa5c end:0x0215aaa8
+
+src/Event/Cutscenes/Graphics_SetSubBrightnessFromParameter.cpp:
+    complete
+    .text start:0x0215b408 end:0x0215b454
+
+src/Event/Cutscenes/Script_SetMainBrightness.cpp:
+    complete
+    .text start:0x0215b4c0 end:0x0215b50c
+
+src/Event/Cutscenes/Script_SetOrClearResourceMask.cpp:
+    complete
+    .text start:0x0215f1b0 end:0x0215f1fc
+
+src/Event/Motion/Script_TestRemappedProgressFlag.cpp:
+    complete
+    .text start:0x021633ec end:0x02163438
+
+src/Event/Cutscenes/Event_BindGameObjectReference.cpp:
+    complete
+    .text start:0x02164194 end:0x021641e0
+
+src/Event/Cutscenes/Script_StartMessageShake.cpp:
+    complete
+    .text start:0x0215e900 end:0x0215e920
+
+src/Event/Cutscenes/Event_BindIndexedGameObjectReference.cpp:
+    complete
+    .text start:0x02164214 end:0x02164248
+
+src/Event/Motion/Script_StoreScaledFloatInBoundedRecord.cpp:
+    complete
+    .text start:0x0215c858 end:0x0215c8a4
+
+src/Event/Motion/Pool_AllocateTypedCoordinateRecord.cpp:
+    complete
+    .text start:0x0215a608 end:0x0215a654
+
+src/Event/Cutscenes/Script_SetIndexedObjectOrSlotPayload.cpp:
+    complete
+    .text start:0x0215bdd0 end:0x0215bf34
+
+src/Event/Motion/Resource_ParseScriptVectorAndSetRecord.cpp:
+    complete
+    .text start:0x0215bfd4 end:0x0215c06c
+
+src/Event/Motion/Script_QueueObjectRotation.cpp:
+    complete
+    .text start:0x0215c138 end:0x0215c1d0
+
+src/Event/Cutscenes/Graphics_SetScriptObjectPairVisibility.cpp:
+    complete
+    .text start:0x021605d4 end:0x0216066c
+
+src/Event/Motion/Resource_DispatchIndexedRecordWithOptionalScale.cpp:
+    complete
+    .text start:0x0215c298 end:0x0215c330
+
+src/Event/Cutscenes/Ov001_ClearThirtyTwoEntryFlags.cpp:
+    complete
+    .text start:0x02161880 end:0x021618d0
+
+src/Event/Motion/Script_TestSerializedProgressBit.cpp:
+    complete
+    .text start:0x021632e4 end:0x02163334
+
+src/Event/Cutscenes/Resource_SetMatchingEntryFlagFromScriptParameter.cpp:
+    complete
+    .text start:0x02161db0 end:0x02161e00
+
+src/Event/Motion/Script_QueueAnimationAfterCurrentStops.cpp:
+    complete
+    .text start:0x0215c788 end:0x0215c820
+
+src/Event/Cutscenes/Script_LoadResourceFileToMainBackground.cpp:
+    complete
+    .text start:0x021624cc end:0x02162678
+
+src/Event/Motion/Math_AdvanceCubicTrack.cpp:
+    complete
+    .text start:0x021573c0 end:0x02157570
+
+src/Event/Cutscenes/GenerateRandomIntegerFromParameterRangeAndStoreType3Output.cpp:
+    complete
+    .text start:0x0215afec end:0x0215b040
+
+src/Event/Cutscenes/Resource_ScriptSetIndexedObject.cpp:
+    complete
+    .text start:0x02160c78 end:0x02160d14
+
+src/Event/Motion/UpdateAlternatingVectorOffsets.cpp:
+    complete
+    .text start:0x02158494 end:0x02158654
+
+src/Event/Motion/Math_AdvanceTimedFloatInterpolation.cpp:
+    complete
+    .text start:0x02159820 end:0x021598bc
+
+src/Event/Motion/GameState_SetRadiusForActiveEntry.cpp:
+    complete
+    .text start:0x021649d4 end:0x02164a28
+
+src/Event/Cutscenes/Script_SetSelectedResourceObjectVisibility.cpp:
+    complete
+    .text start:0x02162174 end:0x02162210
+
+src/Event/Motion/Graphics_StopIndexedObjectAnimation.cpp:
+    complete
+    .text start:0x021646b8 end:0x02164754
+
+src/Sound/Music/Bgm_ScriptSetPlaybackVolumeWithOptionalFade.cpp:
+    complete
+    .text start:0x021636d0 end:0x02163724
+
+src/Event/Motion/CutsceneActor_StopAnimationCommand.cpp:
+    complete
+    .text start:0x02159b34 end:0x02159b54
+
+src/Event/Cutscenes/Script_RemoveAnimationPackageAndRestoreAnimation.cpp:
+    complete
+    .text start:0x0215bcc0 end:0x0215bd5c
+
+src/Event/Motion/GameState_AdvanceBoundedCounter.cpp:
+    complete
+    .text start:0x02158470 end:0x02158494
+
+src/Event/Motion/CutsceneActor_AdvanceAuxiliaryCommandDelay.cpp:
+    complete
+    .text start:0x0215996c end:0x02159990
+
+src/Event/Motion/CutsceneActor_AdvanceAlphaCommandDelay.cpp:
+    complete
+    .text start:0x021598bc end:0x021598e0
+
+src/Event/Motion/Resource_DispatchGlobalPairAndReturnZero.cpp:
+    complete
+    .text start:0x021599b8 end:0x021599dc
+
+src/Event/Motion/Event_ReleaseMotionCommandAndGetNext.cpp:
+    complete
+    .text start:0x02159ef0 end:0x02159f14
+
+src/Event/Motion/GameState_ProcessScriptSelectedRecord.cpp:
+    complete
+    .text start:0x0215c3e8 end:0x0215c40c
+
+src/Event/Motion/Script_QueueHeadingPathReset.cpp:
+    complete
+    .text start:0x0215c40c end:0x0215c430
+
+src/Event/Cutscenes/GameState_InitializeFourWordStateAtIndex.cpp:
+    complete
+    .text start:0x0215acd4 end:0x0215acf8
+
+src/Event/Motion/CutsceneActor_AdvanceRotationCommandDelay.cpp:
+    complete
+    .text start:0x021599dc end:0x02159a00
+
+src/Event/Motion/Script_QueueObjectAnimationStop.cpp:
+    complete
+    .text start:0x0215c70c end:0x0215c730
+
+src/Event/Motion/Script_QueueCameraShakeDelay.cpp:
+    complete
+    .text start:0x0215d8d0 end:0x0215d8f4
+
+src/Event/Cutscenes/Grotto_SetNestedSecondWordFromGlobalByte.cpp:
+    complete
+    .text start:0x0215e374 end:0x0215e398
+
+src/Event/Motion/GameState_DispatchScriptIntegerToGlobalObject.cpp:
+    complete
+    .text start:0x0215d784 end:0x0215d7a8
+
+src/Event/Cutscenes/Script_DisableUnknownAlternateMessageMode.cpp:
+    complete
+    .text start:0x0215e564 end:0x0215e588
+
+src/Event/Cutscenes/Script_DisableMessageWindowFrame.cpp:
+    complete
+    .text start:0x0215e4f0 end:0x0215e514
+
+src/Event/Cutscenes/Script_WriteProtagonistObjectIndex.cpp:
+    complete
+    .text start:0x0215ef20 end:0x0215ef44
+
+src/Event/Cutscenes/TextWindow_ScriptReadChoiceResult.cpp:
+    complete
+    .text start:0x021609c0 end:0x021609e4
+
+src/Event/Motion/Ov001_InitializeExtendedSessionRecord.cpp:
+    complete
+    .text start:0x02158828 end:0x02158880
+
+src/Sound/Music/Bgm_ScriptStopStreamWithFade.cpp:
+    complete
+    .text start:0x02163540 end:0x02163564
+
+src/Event/Cutscenes/GameState_UpdateObjectConnectionStatus.cpp:
+    complete
+    .text start:0x02161d8c end:0x02161db0
+
+src/Event/Cutscenes/Grotto_SetNestedSecondWordFromFirstObjectIndex.cpp:
+    complete
+    .text start:0x02161d08 end:0x02161d2c
+
+src/Event/Cutscenes/ClearResourceFlagRunCleanupAndPopStack.cpp:
+    complete
+    .text start:0x0216227c end:0x021622a0
+
+src/Event/Cutscenes/BackgroundLoader_RemoveAllQueuedTasks.cpp:
+    complete
+    .text start:0x0215aac8 end:0x0215ab20
+
+src/Event/Motion/Grotto_SetNestedSecondWordToGameStateTickCount.cpp:
+    complete
+    .text start:0x02163284 end:0x021632a8
+
+src/Event/Cutscenes/Resource_ResetOrInitializeFromScriptParameter.cpp:
+    complete
+    .text start:0x02163a5c end:0x02163ab4
+
+src/Event/Cutscenes/GameState_SetOutputToPresentOrFirstIndex.cpp:
+    complete
+    .text start:0x02161930 end:0x02161988
+
+src/Event/Cutscenes/Resource_UpdateStateFromScriptParameter.cpp:
+    complete
+    .text start:0x02163970 end:0x02163994
+
+src/Event/Cutscenes/BackgroundLoader_ClearTasksAndReturnSuccess.cpp:
+    complete
+    .text start:0x0215ef44 end:0x0215ef54
+
+src/Event/Motion/Object_ResetMotionStateAndChildRecords.cpp:
+    complete
+    .text start:0x021588e4 end:0x02158ab8
+
+src/Event/Cutscenes/GameState_InitializeObjectAndSetReadyFlag.cpp:
+    complete
+    .text start:0x0215d134 end:0x0215d168
+
+src/Event/Motion/Graphics_ClearStoppedAnimationAndTestEightSlots.cpp:
+    complete
+    .text start:0x0215a094 end:0x0215a134
+
+src/Event/Cutscenes/GameState_SetNestedFlagForScriptRecord.cpp:
+    complete
+    .text start:0x0215bf58 end:0x0215bf94
+
+src/Event/Motion/Graphics_AdvanceTwoVectorLinearTransition.cpp:
+    complete
+    .text start:0x02157c3c end:0x02157e18
+
+src/Event/Cutscenes/Script_DestroyIndexedGameObjectAndClearEntries.cpp:
+    complete
+    .text start:0x0215b9c4 end:0x0215ba64
+
+src/Event/Cutscenes/Script_StartSceneColorTransition.cpp:
+    complete
+    .text start:0x0215b3ac end:0x0215b408
+
+src/Event/Motion/Grotto_SetNestedIndexedBitResult.cpp:
+    complete
+    .text start:0x02163390 end:0x021633ec
+
+src/Event/Motion/Ov001_SetNestedFlagFromScriptBit.cpp:
+    complete
+    .text start:0x02163334 end:0x02163390
+
+src/Event/Motion/Resource_QueueScriptVectorAndInteger.cpp:
+    complete
+    .text start:0x0215d418 end:0x0215d4bc
+
+src/Event/Motion/Resource_ScriptInitializePoolWithFixedPointVector.cpp:
+    complete
+    .text start:0x0215d4bc end:0x0215d560
+
+src/Event/Cutscenes/Script_AppendIntegerAndOwnedString.cpp:
+    complete
+    .text start:0x021536fc end:0x021537a0
+
+src/Event/Motion/Memory_AppendInitializedPoolNode.cpp:
+    complete
+    .text start:0x0215a364 end:0x0215a3c0
+
+src/Event/Cutscenes/Resource_ApplyScriptParameterState.cpp:
+    complete
+    .text start:0x021637ec end:0x02163848
+
+src/Event/Cutscenes/World_ScriptSetBMDJInstanceFixedPointVector.cpp:
+    complete
+    .text start:0x02163e50 end:0x02163ef4
+
+src/Event/Cutscenes/Script_LoadBackgroundResource.cpp:
+    complete
+    .text start:0x021626e4 end:0x021628d4
+
+src/Event/Cutscenes/Script_SetBMDJInstanceFixedPointVector.cpp:
+    complete
+    .text start:0x02163f60 end:0x02164004
+
+src/Event/Motion/Graphics_SetIndexedSlotThreeValues.cpp:
+    complete
+    .text start:0x0216427c end:0x02164320
+
+src/Event/Motion/CutsceneActor_StartSequenceArchiveCommand.cpp:
+    complete
+    .text start:0x02159990 end:0x021599b8
+
+src/Event/Cutscenes/Graphics_PositionIndexedObjectFromScript.cpp:
+    complete
+    .text start:0x0215fe50 end:0x0215fef4
+
+src/Event/Motion/Memory_AllocateAndInitializePoolNode.cpp:
+    complete
+    .text start:0x0215a4e8 end:0x0215a510
+
+src/Event/Cutscenes/System_SetGlobalTickDurationFromScript.cpp:
+    complete
+    .text start:0x0215b384 end:0x0215b3ac
+
+src/Event/Cutscenes/Script_EnableUnknownMessageStyleFlag40.cpp:
+    complete
+    .text start:0x0215e514 end:0x0215e53c
+
+src/Event/Cutscenes/LightingManager_ScriptClearLightingIndexOverride.cpp:
+    complete
+    .text start:0x021603b0 end:0x021603d8
+
+src/Event/Cutscenes/GameState_WriteScriptIntegerToGlobalByte19AE.cpp:
+    complete
+    .text start:0x0215e938 end:0x0215e960
+
+src/Event/Motion/Script_QueueObjectAlphaInterpolation.cpp:
+    complete
+    .text start:0x0215c5b4 end:0x0215c5fc
+
+src/Event/Cutscenes/Grotto_SetTypeThreeValueFromGameResources.cpp:
+    complete
+    .text start:0x02161a90 end:0x02161ab8
+
+src/Event/Cutscenes/Resource_StartIndexedOperationFromScript.cpp:
+    complete
+    .text start:0x02163518 end:0x02163540
+
+src/Event/Cutscenes/Zone3D_ScriptSetUnknownTransitionOptionAt2750.cpp:
+    complete
+    .text start:0x02161f3c end:0x02161f64
+
+src/Event/Cutscenes/Resource_UpdateModeSelectedSecondaryHandleAndTransition.cpp:
+    complete
+    .text start:0x021636a8 end:0x021636d0
+
+src/Event/Cutscenes/Resource_AllocateOverlayStateBufferAndInitialize.cpp:
+    complete
+    .text start:0x021619bc end:0x02161a1c
+
+src/Event/Cutscenes/Graphics_ResetWindowConfiguration.cpp:
+    complete
+    .text start:0x0215a954 end:0x0215a9b4
+
+src/Event/Motion/AppendPairedTwelveByteRecords.cpp:
+    complete
+    .text start:0x0215758c end:0x021575ec
+
+src/Event/Cutscenes/GameState_SetAngleAndPendingFromScriptParameters.cpp:
+    complete
+    .text start:0x021640b4 end:0x02164114
+
+src/Event/Cutscenes/Script_ComputeAtan2FromFloatParameters.cpp:
+    complete
+    .text start:0x0215af8c end:0x0215afec
+
+src/Event/Cutscenes/Script_AttachIndexedObjects.cpp:
+    complete
+    .text start:0x0215cd50 end:0x0215cdf8
+
+src/Event/Cutscenes/Resource_ScriptInitializePoolFromObjectVectors.cpp:
+    complete
+    .text start:0x0215e14c end:0x0215e1cc
+
+src/Event/Motion/Script_DispatchFixedPointVectorPair.cpp:
+    complete
+    .text start:0x0215d2cc end:0x0215d418
+
+src/Event/Motion/Script_ApplySixFloatVectorParameters.cpp:
+    complete
+    .text start:0x0215dd58 end:0x0215ded8
+
+src/Event/Motion/GameState_CopyAndAccumulateTriple.cpp:
+    complete
+    .text start:0x021587c4 end:0x02158828
+
+src/Event/Cutscenes/World_SetBMDJFlag4ByScriptParameters.cpp:
+    complete
+    .text start:0x02163dec end:0x02163e50
+
+src/Event/Motion/System_QueueAppendFourWordRecord.cpp:
+    complete
+    .text start:0x0215913c end:0x02159168
+
+src/Event/Motion/Graphics_SetIndexedObjectRegularAnimation.cpp:
+    complete
+    .text start:0x02164578 end:0x02164624
+
+src/Event/Cutscenes/Grotto_SetTypeThreeValueFromCurrentObject.cpp:
+    complete
+    .text start:0x0215e3e8 end:0x0215e414
+
+src/Event/Motion/Script_SetSceneOptionAt184.cpp:
+    complete
+    .text start:0x021631a4 end:0x021631d0
+
+src/Event/Motion/Grotto_SetNestedSecondWordFromStateThreshold.cpp:
+    complete
+    .text start:0x02162d3c end:0x02162d68
+
+src/Event/Motion/Grotto_SetNestedSecondWordFromGlobalPredicate.cpp:
+    complete
+    .text start:0x0215d168 end:0x0215d19c
+
+src/Event/Motion/Resource_DispatchThreeFixedPointScriptValues.cpp:
+    complete
+    .text start:0x0215d608 end:0x0215d684
+
+src/Event/Cutscenes/SetObjectCosineOfScriptFloat.cpp:
+    complete
+    .text start:0x0215af60 end:0x0215af8c
+
+src/Event/Cutscenes/Script_AppendFormattedResourceNode.cpp:
+    complete
+    .text start:0x021612c8 end:0x02161374
+
+src/Event/Cutscenes/GameState_DispatchWithScriptValueOrDefault30.cpp:
+    complete
+    .text start:0x0216393c end:0x02163968
+
+src/Event/Cutscenes/Resource_StartKeyOperationFromScriptParameter.cpp:
+    complete
+    .text start:0x021637a8 end:0x021637d4
+
+src/Event/Motion/World_UpdateTimedPositionInterpolation.cpp:
+    complete
+    .text start:0x021592bc end:0x02159408
+
+src/Event/Motion/Graphics_RunRegularAnimationCommand.cpp:
+    complete
+    .text start:0x02159a74 end:0x02159b04
+
+src/Event/Cutscenes/Graphics_ScriptTranslateLinkedRenderPart.cpp:
+    complete
+    .text start:0x02160a48 end:0x02160a7c
+
+src/Event/Cutscenes/Resource_ApplyScriptTargetIfNonnegative.cpp:
+    complete
+    .text start:0x02163640 end:0x021636a8
+
+src/Event/Cutscenes/Event_ScriptQueryLinkedObjectCategoryAndStatus.cpp:
+    complete
+    .text start:0x02161ab8 end:0x02161ce8
+
+src/Event/Cutscenes/Resource_ScriptReadRecordVectorAsFloats.cpp:
+    complete
+    .text start:0x0215ffc0 end:0x02160070
+
+src/Event/Cutscenes/Script_SetLightingDisplayControlEnabled.cpp:
+    complete
+    .text start:0x02161e8c end:0x02161f3c
+
+src/Event/Motion/Util_ReadTypedTableEntryVector.cpp:
+    complete
+    .text start:0x02164418 end:0x021644c8
+
+src/Event/Cutscenes/Event_ScriptReadActorMotionPositionAsFloats.cpp:
+    complete
+    .text start:0x0215ff10 end:0x0215ffc0
+
+src/Event/Motion/Graphics_ReadIndexedRecordPosition.cpp:
+    complete
+    .text start:0x021644c8 end:0x02164578
+
+src/Event/Cutscenes/Resource_HandleScriptIndexWithOptionalSlot.cpp:
+    complete
+    .text start:0x02163564 end:0x021635d0
+
+src/Event/Cutscenes/Resource_AppendScriptAnimationRequest.cpp:
+    complete
+    .text start:0x02160da8 end:0x021612ac
+
+src/Event/Cutscenes/Resource_DispatchScriptIndex.cpp:
+    complete
+    .text start:0x02163860 end:0x021638cc
+
+src/Event/Cutscenes/Script_SetIndexedObjectFlag.cpp:
+    complete
+    .text start:0x0215eeb0 end:0x0215ef20
+
+src/Event/Cutscenes/Script_CleanupIndexedAllocatorAndReadMaximum.cpp:
+    complete
+    .text start:0x0215ea40 end:0x0215eab0
+
+src/Event/Cutscenes/Script_UpdateIndexedResourceHandle.cpp:
+    complete
+    .text start:0x021635d0 end:0x02163640
+
+src/Event/Cutscenes/Resource_TryConfigureIndexedHandleFromScript.cpp:
+    complete
+    .text start:0x021638cc end:0x0216393c
+
+src/Event/Cutscenes/Grotto_SetNestedSecondWordFromGlobalByteIfPresent.cpp:
+    complete
+    .text start:0x0215e3b8 end:0x0215e3e8
+
+src/Event/Cutscenes/SetObjectNestedWordToChildIndexFromScriptParameter.cpp:
+    complete
+    .text start:0x0215fa10 end:0x0215fa40
+
+src/Event/Cutscenes/Resource_FreeIndexedHMRFRecord.cpp:
+    complete
+    .text start:0x02161900 end:0x02161930
+
+src/Event/Motion/ConsumeResourceByteIntoNestedSecondWord.cpp:
+    complete
+    .text start:0x021631d0 end:0x02163200
+
+src/Event/Cutscenes/Zone3D_SwitchZoneFromScriptParameter.cpp:
+    complete
+    .text start:0x021622a0 end:0x021622d0
+
+src/Event/Cutscenes/GameState_ScriptSetPendingFieldReloadMode.cpp:
+    complete
+    .text start:0x021618d0 end:0x02161900
+
+src/Event/Motion/Graphics_SetIndexedRecordScale.cpp:
+    complete
+    .text start:0x02164754 end:0x02164808
+
+src/Event/Cutscenes/Grotto_SetNestedSecondWordFromResolvedField.cpp:
+    complete
+    .text start:0x0215e414 end:0x0215e444
+
+src/Event/Cutscenes/Script_SetBrightnessByMode.cpp:
+    complete
+    .text start:0x0215b074 end:0x0215b2cc
+
+src/Event/Motion/CutsceneActor_StartAnimationCommand.cpp:
+    complete
+    .text start:0x02159a00 end:0x02159a74
+
+src/Event/Cutscenes/Script_TransitionAndLockBothScreensAtZeroBrightness.cpp:
+    complete
+    .text start:0x0215b5dc end:0x0215b5f8
+
+src/Event/Cutscenes/Ov001_UpdateNestedStateFromTaskStatuses.cpp:
+    complete
+    .text start:0x0215edb8 end:0x0215ee2c
+
+src/Event/Cutscenes/GameState_CreateFlaggedRecord.cpp:
+    complete
+    .text start:0x0215b6a0 end:0x0215b6bc
+
+src/Event/Cutscenes/Script_TransitionAndLockMainScreenBrightness.cpp:
+    complete
+    .text start:0x0215b668 end:0x0215b684
+
+src/Event/Cutscenes/Script_UnlockBothScreensAndTransitionBrightnessToZero.cpp:
+    complete
+    .text start:0x0215b684 end:0x0215b6a0
+
+src/Event/Cutscenes/Script_TransitionAndLockSubScreenBrightness.cpp:
+    complete
+    .text start:0x0215b630 end:0x0215b64c
+
+src/Event/Cutscenes/Graphics_LoadScriptSelectedTypeZeroAnimationPackage.cpp:
+    complete
+    .text start:0x0215f344 end:0x0215f3fc
+
+src/Event/Cutscenes/Script_RequestRecordPositionTransition.cpp:
+    complete
+    .text start:0x0215c994 end:0x0215ca4c
+
+src/Event/Motion/Script_ApplyFixedPointVectorToBoundedRecord.cpp:
+    complete
+    .text start:0x0215c330 end:0x0215c3e8
+
+src/Event/Cutscenes/World_ScriptReverseMatchingTypeTwoFeatures.cpp:
+    complete
+    .text start:0x02160b08 end:0x02160bc0
+
+src/Event/Cutscenes/World_ScriptResetMatchingTypeTwoFeatures.cpp:
+    complete
+    .text start:0x02160bc0 end:0x02160c78
+
+src/Event/Cutscenes/Script_InvokeGlobalCommandAndClearStatus.cpp:
+    complete
+    .text start:0x0215acf8 end:0x0215ad2c
+
+src/Event/Motion/CutsceneCamera_ResetPairedOrbitAndTargetPaths.cpp:
+    complete
+    .text start:0x02158324 end:0x02158338
+
+src/Event/Cutscenes/Graphics_ResetScriptSelectedObjectAnimation.cpp:
+    complete
+    .text start:0x0216013c end:0x021601f8
+
+src/Event/Cutscenes/Memory_RunHelperOnGlobalAllocator.cpp:
+    complete
+    .text start:0x0215f2e8 end:0x0215f304
+
+src/Event/Motion/Script_SetBoundedRecordValueFromParameters.cpp:
+    complete
+    .text start:0x0215bf94 end:0x0215bfd4
+
+src/Event/Cutscenes/Overlay_EnsureCurrentItemAndProcess.cpp:
+    complete
+    .text start:0x02153994 end:0x021539d8
+
+src/Event/Cutscenes/Memory_InitializeContextBuffersWhenEnabled.cpp:
+    complete
+    .text start:0x021538d4 end:0x02153948
+
+src/Event/Cutscenes/Graphics_InitializeObjectAndReturnHalfword.cpp:
+    complete
+    .text start:0x02156534 end:0x02156558
+
+src/Event/Cutscenes/Script_AppendQueuedResourceBatch.cpp:
+    complete
+    .text start:0x0215ed74 end:0x0215edb8
+
+src/Event/Cutscenes/Graphics_UpdateOwnerFadeAndSelectNextState.cpp:
+    complete
+    .text start:0x02155d54 end:0x02155dd0
+
+src/Event/Cutscenes/Script_QueueInitialResourceBatch.cpp:
+    complete
+    .text start:0x0215ed2c end:0x0215ed74
+
+src/Event/Cutscenes/Event_ScriptReadActiveSceneRecordValues.cpp:
+    complete
+    .text start:0x0216089c end:0x021608e8
+
+src/Event/Cutscenes/Resource_ClearCurrentStackEntry.cpp:
+    complete
+    .text start:0x02161a60 end:0x02161a90
+
+src/Event/Motion/InitializeSessionRecords.cpp:
+    complete
+    .text start:0x02159d44 end:0x02159d9c
+
+src/Event/Cutscenes/Graphics_InitializeAndCopyDisplayRecords.cpp:
+    complete
+    .text start:0x0215a8dc end:0x0215a954
+
+src/Event/Cutscenes/Resource_AllocateOverlayScriptObjectBuffers.cpp:
+    complete
+    .text start:0x0215a850 end:0x0215a8dc
+
+src/Event/Motion/Graphics_UpdateTimedWrappedAngles.cpp:
+    complete
+    .text start:0x02158080 end:0x02158324
+
+src/Event/Cutscenes/CopySelectedScriptTemplate.cpp:
+    complete
+    .text start:0x0215e444 end:0x0215e4b4
+
+src/Event/Cutscenes/Event_SelectScriptEntryAndRefreshSessions.cpp:
+    complete
+    .text start:0x02153948 end:0x02153994
+
+src/Event/Cutscenes/Event_AdvanceObjectAndMotionSessions.cpp:
+    complete
+    .text start:0x0215a9b4 end:0x0215aa14
+
+src/Event/Cutscenes/Script_SetSineOfParameterAsKindThreeWord.cpp:
+    complete
+    .text start:0x0215af34 end:0x0215af60
+
+src/Event/Motion/CutsceneCamera_QueueTargetPosition.cpp:
+    complete
+    .text start:0x02158f30 end:0x02158f64
+
+src/Event/Motion/System_QueueAndCopyThreeWords.cpp:
+    complete
+    .text start:0x02158efc end:0x02158f30
+
+src/Event/Cutscenes/UpdateNestedSecondWordByGlobalLimit.cpp:
+    complete
+    .text start:0x0215aeb8 end:0x0215aef0
+
+src/Event/Motion/CutsceneCamera_QueueTargetShake.cpp:
+    complete
+    .text start:0x02159210 end:0x02159250
+
+src/Event/Cutscenes/Script_ClearActorBoundObject.cpp:
+    complete
+    .text start:0x0215d0f4 end:0x0215d134
+
+src/Event/Motion/Event_QueueObjectTurn.cpp:
+    complete
+    .text start:0x0215a480 end:0x0215a4c8
+
+src/Event/Cutscenes/Grotto_ApplyScriptValueToIndexedRecord.cpp:
+    complete
+    .text start:0x021639ac end:0x02163a18
+
+src/Event/Motion/CutsceneActor_ResetHeadingPath.cpp:
+    complete
+    .text start:0x02159408 end:0x0215941c
+
+src/Event/Motion/InitializeIndexedThreePartRecords.cpp:
+    complete
+    .text start:0x02156ba0 end:0x02156c14
+
+src/Event/Cutscenes/SetAndLockScreenBrightness.cpp:
+    complete
+    .text start:0x0215b5f8 end:0x0215b614
+
+src/Event/Cutscenes/LockSubBrightnessAtZero.cpp:
+    complete
+    .text start:0x0215b614 end:0x0215b630
+
+src/Event/Cutscenes/LockMainBrightnessAtZero.cpp:
+    complete
+    .text start:0x0215b64c end:0x0215b668
+
+src/Event/Cutscenes/UnlockSubBrightnessAtZero.cpp:
+    complete
+    .text start:0x0215b6bc end:0x0215b6d8
+
+src/Event/Cutscenes/Script_UnlockAndSetSubBrightness.cpp:
+    complete
+    .text start:0x0215b6d8 end:0x0215b6f4
+
+src/Event/Cutscenes/UnlockMainBrightnessAtZero.cpp:
+    complete
+    .text start:0x0215b6f4 end:0x0215b710
+
+src/Event/Cutscenes/GameState_ResetCurrentObjectStateAndAnimation.cpp:
+    complete
+    .text start:0x021609a0 end:0x021609c0
+
+src/Event/Cutscenes/Resource_ApplyResourceOperationWithParametersZeroOneZero.cpp:
+    complete
+    .text start:0x02162468 end:0x02162488
+
+src/Event/Motion/Script_AdvanceStagedSaveAndReportPending.cpp:
+    complete
+    .text start:0x02163070 end:0x021630f4
+
+src/Event/Cutscenes/Script_EnableOutlinedMessageGlyphs.cpp:
+    complete
+    .text start:0x0215e588 end:0x0215e5b0
+
+src/Event/Cutscenes/Zone3D_ScriptSetUnknownTransitionOptionAt274C.cpp:
+    complete
+    .text start:0x02161d2c end:0x02161d54
+
+src/Event/Motion/Script_ReadSceneLeaderFlagSnapshot.cpp:
+    complete
+    .text start:0x02163200 end:0x02163228
+
+src/Event/Cutscenes/Script_SwitchResourceTargetFromRemappedGlobalId.cpp:
+    complete
+    .text start:0x02163aec end:0x02163b14
+
+src/Event/Cutscenes/GameState_CreateAndLinkNamedResourceWhenByte63DCBit0Set.cpp:
+    complete
+    .text start:0x021624a8 end:0x021624cc
+
+src/Event/Motion/CutsceneCamera_InitializeCommandPool.cpp:
+    complete
+    .text start:0x021588bc end:0x021588e4
+
+src/Event/Motion/CutsceneActor_WaitForAnimationStopped.cpp:
+    complete
+    .text start:0x02159b04 end:0x02159b2c
+
+src/Event/Motion/Pool_AppendType16NodeWithTwoValues.cpp:
+    complete
+    .text start:0x0215a674 end:0x0215a69c
+
+src/Event/Cutscenes/Script_EnableShadowedMessageGlyphs.cpp:
+    complete
+    .text start:0x0215e53c end:0x0215e564
+
+src/Event/Cutscenes/GameState_RunGlobalStateUpdateAndClearByte8C.cpp:
+    complete
+    .text start:0x0215e27c end:0x0215e2a4
+
+src/Event/Motion/CutsceneCamera_InitializeCommandSession.cpp:
+    complete
+    .text start:0x02158880 end:0x021588bc
+
+src/Event/Motion/Script_QueueCameraShake.cpp:
+    complete
+    .text start:0x0215d8f4 end:0x0215d984
+
+src/Event/Motion/Script_QueueCameraTargetShake.cpp:
+    complete
+    .text start:0x0215d984 end:0x0215da14
+
+src/Event/Cutscenes/Event_InitializeSceneBrightnessAndTransition.cpp:
+    complete
+    .text start:0x021567c4 end:0x02156858
+
+src/Event/Motion/AllocateAndInitializeGlobalBitArray.cpp:
+    complete
+    .text start:0x02163008 end:0x02163070
+
+src/Event/Cutscenes/OverlayLoader_PushSlotFiveAndSetResourceMask1000.cpp:
+    complete
+    .text start:0x0216224c end:0x0216227c
+
+src/Event/Motion/Grotto_AreNestedEntryFieldsZero.cpp:
+    complete
+    .text start:0x02158ab8 end:0x02158ae4
+
+src/Event/Cutscenes/GameState_SetTimeOfDayFromScriptParameter.cpp:
+    complete
+    .text start:0x02162148 end:0x02162174
+
+src/Event/Motion/QueueThreeFixedScriptComponents.cpp:
+    complete
+    .text start:0x0215d19c end:0x0215d234
+
+src/Event/Motion/QueueTaggedThreeFixedScriptComponents.cpp:
+    complete
+    .text start:0x0215d234 end:0x0215d2cc
+
+src/Event/Cutscenes/QueueIndexedFileAndIncrementPendingCount.cpp:
+    complete
+    .text start:0x0215ec94 end:0x0215ed2c
+
+src/Event/Cutscenes/Resource_RecordZoneBMDJFlagAndSetStateByte8.cpp:
+    complete
+    .text start:0x02163dc8 end:0x02163dec
+
+src/Event/Cutscenes/QueueObjectHalfword4AAfterStateChecks.cpp:
+    complete
+    .text start:0x02154de4 end:0x02154e40
+
+src/Event/Motion/Resource_ResetScriptContextRecordsAndCounters.cpp:
+    complete
+    .text start:0x02157908 end:0x02157964
+
+src/Event/Cutscenes/World_SetBMDJInstanceFixedPointValue.cpp:
+    complete
+    .text start:0x02163ef4 end:0x02163f60
+
+src/Event/Cutscenes/GameState_SetScriptConvertedAngle.cpp:
+    complete
+    .text start:0x0215e0dc end:0x0215e14c
+
+src/Event/Cutscenes/GameState_SetNestedObjectPresenceFlag.cpp:
+    complete
+    .text start:0x02163c28 end:0x02163c60
+
+src/Event/Cutscenes/GameState_SetAngleFromIntegerOrFloatParameter.cpp:
+    complete
+    .text start:0x0215f968 end:0x0215f9dc
+
+src/Event/Cutscenes/GameState_ReplacePackedResourceLow27BitsFromParameters.cpp:
+    complete
+    .text start:0x02161374 end:0x021613d0
+
+src/Event/Motion/Resource_ScriptEnqueueTypeThreeArgumentRecord.cpp:
+    complete
+    .text start:0x02158f64 end:0x02158fc4
+
+src/Event/Motion/CutsceneActor_SetObjectSlot.cpp:
+    complete
+    .text start:0x02159ea8 end:0x02159eb0
+
+src/Event/Cutscenes/ProcessContextOwnershipOrAdvanceScript.cpp:
+    complete
+    .text start:0x02155ca8 end:0x02155d54
+
+src/Event/Cutscenes/Script_SetUnlockedMainBrightness.cpp:
+    complete
+    .text start:0x0215b710 end:0x0215b72c
+
+src/Event/Cutscenes/Script_LoadEventTextTable.cpp:
+    complete
+    .text start:0x0215e1cc end:0x0215e27c
+
+src/Event/Cutscenes/Script_ResetObjectSession.cpp:
+    complete
+    .text start:0x0215bf34 end:0x0215bf58
+
+src/Event/Cutscenes/GameState_SetNestedValueFromInputPredicates.cpp:
+    complete
+    .text start:0x0215ae1c end:0x0215ae84
+
+src/Event/Motion/Script_QueueObjectRadiusInterpolation.cpp:
+    complete
+    .text start:0x0215c8a4 end:0x0215c900
+
+src/Event/Cutscenes/GameState_DestroyCurrentZoneAndResetAllocators.cpp:
+    complete
+    .text start:0x02163c60 end:0x02163ccc
+
+src/Event/Motion/Script_AppendTypedNodeFromScaledVectorParameters.cpp:
+    complete
+    .text start:0x0215c1d0 end:0x0215c298
+
+src/Sound/Music/Bgm_ScriptSetStopBlockedFromZero.cpp:
+    complete
+    .text start:0x02163ab4 end:0x02163aec
+
+src/Event/Cutscenes/ActiveGrottoClass_ScriptSetUnknownControlFlagAt261.cpp:
+    complete
+    .text start:0x02161f64 end:0x02161f80
+
+src/Event/Motion/Graphics_SetIndexedObjectInheritedAlpha.cpp:
+    complete
+    .text start:0x02164908 end:0x021649d4
+
+src/Event/Motion/Script_QueueObjectPositionInterpolation.cpp:
+    complete
+    .text start:0x0215c06c end:0x0215c138
+
+src/Event/Cutscenes/Event_ScriptSetSpritePlaybackRateOrModelRunAnimation.cpp:
+    complete
+    .text start:0x02160070 end:0x0216013c
+
+src/Event/Cutscenes/Script_DisplayEventText.cpp:
+    complete
+    .text start:0x0215e2a4 end:0x0215e374
+
+src/Event/Cutscenes/Script_SetActorBoundObject.cpp:
+    complete
+    .text start:0x0215d08c end:0x0215d0f4
+
+src/Event/Cutscenes/Script_BuildOwnedTextTable.cpp:
+    complete
+    .text start:0x021537b0 end:0x02153884
+
+src/Event/Cutscenes/Script_CloneIndexedObjectWithDefaultScale.cpp:
+    complete
+    .text start:0x0215ba64 end:0x0215bb3c
+
+src/Event/Cutscenes/GameState_CreateScriptObjectFromIndexedTarget.cpp:
+    complete
+    .text start:0x0215f854 end:0x0215f930
+
+src/Event/Cutscenes/Event_CloseMessagePanelAndRequestDisplayTransition.cpp:
+    complete
+    .text start:0x02154e40 end:0x02154f24
+
+src/Event/Motion/Script_QueueCameraOrbitInterpolation.cpp:
+    complete
+    .text start:0x0215d684 end:0x0215d768
+
+src/Event/Motion/Event_SetIndexedObjectRotation.cpp:
+    complete
+    .text start:0x02164320 end:0x02164418
+
+src/Event/Motion/CutsceneCamera_AdvanceTimedTargetPosition.cpp:
+    complete
+    .text start:0x02157e18 end:0x02157f10
+
+src/Event/Motion/CutsceneCamera_AdvanceTimedEyePosition.cpp:
+    complete
+    .text start:0x02157f10 end:0x02158008
+
+src/Event/Cutscenes/ActorPool_ScriptDestroySlotFromEventReference.cpp:
+    complete
+    .text start:0x02161754 end:0x0216184c
+
+src/Event/Motion/Script_QueueCameraTargetTracking.cpp:
+    complete
+    .text start:0x0215dfc4 end:0x0215e0c0
+
+src/Event/Cutscenes/Script_LoadFormattedModelArchiveIntoIndexedObject.cpp:
+    complete
+    .text start:0x0216066c end:0x02160768
+
+src/Event/Motion/Graphics_ReadIndexedObjectScale.cpp:
+    complete
+    .text start:0x02164808 end:0x02164908
+
+src/Event/Cutscenes/Zone3D_ScriptActivateMatchingTypeTwoFeaturesWithoutRecording.cpp:
+    complete
+    .text start:0x0215fa40 end:0x0215fb44
+
+src/Event/Cutscenes/Camera_ScriptCreateBoneTrackingCameraForReferencedObject.cpp:
+    complete
+    .text start:0x02161650 end:0x02161754
+
+src/Event/Cutscenes/World_ActivateMatchingTypeTwoFeaturesWithModeFive.cpp:
+    complete
+    .text start:0x0215fb44 end:0x0215fc48
+
+src/Event/Cutscenes/World_ActivateMatchingTypeTwoFeaturesWithModeSix.cpp:
+    complete
+    .text start:0x0215fc48 end:0x0215fd4c
+
+src/Event/Cutscenes/World_ActivateMatchingTypeTwoFeaturesWithModeSeven.cpp:
+    complete
+    .text start:0x0215fd4c end:0x0215fe50
+
+src/Event/Motion/CutsceneActor_InitializeCommandSession.cpp:
+    complete
+    .text start:0x02159d9c end:0x02159ea8
+
+src/Event/Motion/Script_QueueCameraPathPointPair.cpp:
+    complete
+    .text start:0x0215d7a8 end:0x0215d8b4
+
+src/Event/Cutscenes/Resource_LoadModelAndApplyTexturesToScriptObjects.cpp:
+    complete
+    .text start:0x0215ef54 end:0x0215f060
+
+src/Event/Motion/Script_QueueTurnTowardReferencedRecord.cpp:
+    complete
+    .text start:0x0215c5fc end:0x0215c70c
+
+src/Event/Motion/CubicPath_AdvanceTrackAndUpdateHeading.cpp:
+    complete
+    .text start:0x02157ae0 end:0x02157bf4
+
+src/Event/Cutscenes/ActorPool_ScriptDestroySlotAndClearEventReferences.cpp:
+    complete
+    .text start:0x0215f740 end:0x0215f854
+
+src/Event/Cutscenes/Zone3D_ScriptCreateSecondaryZoneFromIdOrMapName.cpp:
+    complete
+    .text start:0x02163b14 end:0x02163c28
+
+src/Event/Cutscenes/Event_ScriptSetReferencedObjectVisibility.cpp:
+    complete
+    .text start:0x02161408 end:0x02161524
+
+src/Event/Motion/Math_ConfigureCubicTrackToMatchRequestedDuration.cpp:
+    complete
+    .text start:0x021579ac end:0x02157acc
+
+src/Event/Cutscenes/Script_SetObjectFlagFromResourceEntry.cpp:
+    complete
+    .text start:0x02161524 end:0x02161650
+
+src/Event/Motion/InitializePairedRecordGroups.cpp:
+    complete
+    .text start:0x021575ec end:0x02157668
+
+src/Event/Motion/AdvanceSessionCommandLists.cpp:
+    complete
+    .text start:0x0215a134 end:0x0215a330
+
+src/Event/Cutscenes/Graphics_PrepareSubBackgroundAtBrightnessLimit.cpp:
+    complete
+    .text start:0x0215686c end:0x02156b20
+
+src/Event/Motion/AdvanceCubicPathByMinimumDistance.cpp:
+    complete
+    .text start:0x021570b4 end:0x021573c0
+
+src/Event/Motion/BuildTimedCubicPathCoefficients.cpp:
+    complete
+    .text start:0x02156c14 end:0x021570b4
+
+src/Event/Motion/ConfigurePairedCubicTracksForDuration.cpp:
+    complete
+    .text start:0x02157668 end:0x02157890
+
+src/Event/Cutscenes/CompleteSceneGraphicsTransitionWhenReady.cpp:
+    complete
+    .text start:0x021564b0 end:0x02156534
+
+src/Event/Motion/Script_AdvanceObjectScaleTowardTarget.cpp:
+    complete
+    .text start:0x02159bbc end:0x02159cf4
+
+src/Event/Cutscenes/PrepareSceneArchiveLoadsAndTaggedRecords.cpp:
+    complete
+    .text start:0x02154f24 end:0x021552a8
+
+src/Event/Cutscenes/CompleteSceneArchiveLoadsAndInitializeResources.cpp:
+    complete
+    .text start:0x021552a8 end:0x021557e0
+
+src/Event/Cutscenes/Script_ApplyIndexedObjectPlacementVariant.cpp:
+    complete
+    .text start:0x02160938 end:0x021609a0
+
+src/Event/Motion/CutsceneCamera_ReleaseCompletedCommandAndGetNext.cpp:
+    complete
+    .text start:0x02158e8c end:0x02158efc
+
+src/Event/Cutscenes/Event_WaitForSceneLoadsAndActivateScript.cpp:
+    complete
+    .text start:0x02155bb8 end:0x02155ca8
+
+src/Event/Motion/CutsceneActor_ApplyScaleCommand.cpp:
+    complete
+    .text start:0x02159b5c end:0x02159b94
+
+src/Event/Motion/CutsceneCamera_QueueEyeAndTargetShake.cpp:
+    complete
+    .text start:0x021591d0 end:0x02159210
+
+src/Event/Motion/CutsceneCamera_QueueFollowActorWithOffset.cpp:
+    complete
+    .text start:0x02159250 end:0x02159290
+
+src/Event/Motion/CubicPath_AdvancePairedTracksAndReadPositions.cpp:
+    complete
+    .text start:0x02157890 end:0x02157908
+
+src/Event/Cutscenes/ApplyScriptLightingToLinkedModelsUntilComplete.cpp:
+    complete
+    .text start:0x02160338 end:0x021603b0
+
+src/Event/Cutscenes/Lighting_ApplyScriptPresetAndUpdateScene.cpp:
+    complete
+    .text start:0x021603d8 end:0x02160504
+
+src/Event/Cutscenes/UpdateTimeOfDayLightingAndApplyNodeTints.cpp:
+    complete
+    .text start:0x02160504 end:0x021605d4
+
+src/Event/Motion/GameState_AdvancePairedTransitionPositionAndWrap.cpp:
+    complete
+    .text start:0x02158384 end:0x02158470
+
+src/Event/Cutscenes/Event_BindTypedObjectAndInitializeSession.cpp:
+    complete
+    .text start:0x0215ab54 end:0x0215acb4
+
+src/Event/Motion/Script_SaveOrRestoreIndexedCharacterStat.cpp:
+    complete
+    .text start:0x02162db0 end:0x02162f8c
+
+src/Event/Cutscenes/Script_LoadObjectIntoBiasedSlot.cpp:
+    complete
+    .text start:0x0215b72c end:0x0215b9c4
+
+src/Event/Cutscenes/CleanupTypedObjectListsAndResourceFlags.cpp:
+    complete
+    .text start:0x02154974 end:0x02154c64
+
+src/Event/Motion/CutsceneCamera_AdvanceCommandListsAndApplyCamera.cpp:
+    complete
+    .text start:0x02158ae4 end:0x02158d8c
+
+src/Event/Cutscenes/Resource_ApplyScriptBrightnessAndMarkLowMode.cpp:
+    complete
+    .text start:0x0215b318 end:0x0215b384
+
+src/Event/Cutscenes/Script_WriteSelectedObjectAnimationRunning.cpp:
+    complete
+    .text start:0x0215ccdc end:0x0215cd50
+
+src/Event/Cutscenes/Script_SetSubBrightnessAndEnableDisplay.cpp:
+    complete
+    .text start:0x0215b454 end:0x0215b4c0
+
+src/Event/Cutscenes/Script_InitializeSubScreenTextBackgrounds.cpp:
+    complete
+    .text start:0x0215e5b0 end:0x0215e758
+
+src/Event/Cutscenes/Script_SetBoundObjectTextureTint.cpp:
+    complete
+    .text start:0x0215cf98 end:0x0215d08c
+
+src/Event/Cutscenes/ResourceLiterals/CleanupTypedObjectListsAndResourceFlags_TextStand.cpp:
+    complete
+    .data start:0x02164bd1 end:0x02164bd7
+
+src/Event/Cutscenes/ResourceLiterals/PrepareSceneArchiveLoadsAndTaggedRecords_PathDataEventLv5S.cpp:
+    complete
+    .data start:0x02164bef end:0x02164c01
+
+src/Event/Cutscenes/ResourceLiterals/PrepareSceneArchiveLoadsAndTaggedRecords_PathDataEvsptLv5S.cpp:
+    complete
+    .data start:0x02164c01 end:0x02164c13
+
+src/Event/Cutscenes/ResourceLiterals/PrepareSceneArchiveLoadsAndTaggedRecords_PathDataEventS.cpp:
+    complete
+    .data start:0x02164c13 end:0x02164c21
+
+src/Event/Cutscenes/ResourceLiterals/PrepareSceneArchiveLoadsAndTaggedRecords_TextGp2.cpp:
+    complete
+    .data start:0x02164c21 end:0x02164c26
+
+src/Event/Cutscenes/ResourceLiterals/PrepareSceneArchiveLoadsAndTaggedRecords_FormatSStb.cpp:
+    complete
+    .data start:0x02164c26 end:0x02164c2d
+
+src/Event/Cutscenes/ResourceLiterals/PrepareSceneArchiveLoadsAndTaggedRecords_FormatSLGBin.cpp:
+    complete
+    .data start:0x02164c2d end:0x02164c39
+
+src/Event/Cutscenes/ResourceLiterals/PrepareSceneArchiveLoadsAndTaggedRecords_PathDataAniPenPac.cpp:
+    complete
+    .data start:0x02164c39 end:0x02164c4a
+
+src/Event/Cutscenes/ResourceLiterals/Script_LoadObjectIntoBiasedSlot_TextChr.cpp:
+    complete
+    .data start:0x0216574d end:0x02165752
+
+src/Event/Cutscenes/ResourceLiterals/Script_LoadObjectIntoBiasedSlot_TextEnemy.cpp:
+    complete
+    .data start:0x02165752 end:0x02165758
+
+src/Event/Cutscenes/ResourceLiterals/Script_LoadObjectIntoBiasedSlot_TextCharaSub.cpp:
+    complete
+    .data start:0x02165758 end:0x02165762
+
+src/Event/Cutscenes/ResourceLiterals/Script_LoadObjectIntoBiasedSlot_TextNsbmd.cpp:
+    complete
+    .data start:0x02165762 end:0x02165769
+
+src/Event/Cutscenes/ResourceLiterals/Graphics_ResetScriptSelectedObjectAnimation_TextStand.cpp:
+    complete
+    .data start:0x02165769 end:0x0216576f
+
+src/Event/Cutscenes/ResourceLiterals/Script_LoadHiddenCHRObject_PathDataEffectEv999991500Chr.cpp:
+    complete
+    .data start:0x02165775 end:0x02165791
+
+src/Event/Cutscenes/ResourceLiterals/Script_LoadType0AnimationsForObjects_TextNsbca.cpp:
+    complete
+    .data start:0x02165791 end:0x02165798
+
+src/Event/Cutscenes/ResourceLiterals/Script_LoadType0AnimationsForObjects_TextNsbma.cpp:
+    complete
+    .data start:0x02165798 end:0x0216579f
+
+src/Event/Cutscenes/ResourceLiterals/Script_LoadType0AnimationsForObjects_TextNsbtp.cpp:
+    complete
+    .data start:0x0216579f end:0x021657a6
+
+src/Event/Cutscenes/ResourceLiterals/Script_LoadType0AnimationsForObjects_TextNsbta.cpp:
+    complete
+    .data start:0x021657a6 end:0x021657ad
+
+src/Event/Cutscenes/ResourceLiterals/Resource_AppendScriptAnimationRequest_PathDataAniS.cpp:
+    complete
+    .data start:0x021657b2 end:0x021657be
+
+src/Event/Cutscenes/ResourceLiterals/ActorPool_ScriptDestroySlotFromEventReference_FormatSSpr.cpp:
+    complete
+    .data start:0x021657d4 end:0x021657db
+
+src/Event/Cutscenes/ResourceLiterals/Event_ScriptSetSpritePlaybackRateOrModelRunAnimation_TextRun.cpp:
+    complete
+    .data start:0x021657db end:0x021657df
+
+src/Event/Cutscenes/ResourceLiterals/Script_LoadFormattedModelArchiveIntoIndexedObject_PathDataMapSChr.cpp:
+    complete
+    .data start:0x021657df end:0x02165800
+
+src/Event/Cutscenes/Script_SetIndexedObjectVisibility.cpp:
+    complete
+    .text start:0x0215bd5c end:0x0215bdd0
+
+src/Event/Cutscenes/Event_CloseScenePanelAndActivateExitScript.cpp:
+    complete
+    .text start:0x02156108 end:0x021561e0
+
+src/Event/Cutscenes/Event_ResolveCharacterArchiveMember.cpp:
+    complete
+    .text start:0x0215ad3c end:0x0215ae1c

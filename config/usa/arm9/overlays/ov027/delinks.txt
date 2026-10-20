@@ -4,3 +4,294 @@
     .data       start:0x021dd8e0 end:0x021dd920 kind:data align:32
     .bss        start:0x021dd920 end:0x021e3440 kind:bss align:32
 
+src/Online/DownloadPlay/MBi_IsChildAidValid.cpp:
+    complete
+    .text start:0x021d9de8 end:0x021d9e04
+
+src/Online/DownloadPlay/MBi_GetGgid.cpp:
+    complete
+    .text start:0x021dd024 end:0x021dd038
+
+src/Online/DownloadPlay/MBi_GetTgid.cpp:
+    complete
+    .text start:0x021dd038 end:0x021dd04c
+
+src/Online/DownloadPlay/MBi_IsTaskAvailable.cpp:
+    complete
+    .text start:0x021dd3b0 end:0x021dd3cc
+
+src/Online/DownloadPlay/MBi_ResetAfterTaskThreadEnd.cpp:
+    complete
+    .text start:0x021dcc80 end:0x021dcc8c
+
+src/Online/DownloadPlay/MBi_SetScanDwellTime.cpp:
+    complete
+    .text start:0x021dcee8 end:0x021dcef8
+
+src/Online/DownloadPlay/SerializeTaggedHalfwordPair.cpp:
+    complete
+    .text start:0x021dd638 end:0x021dd6bc
+
+src/Online/DownloadPlay/Math_MaxUnsigned.cpp:
+    complete
+    .text start:0x021d9dd8 end:0x021d9de8
+
+src/Online/DownloadPlay/Memory_Clear0x70Bytes.cpp:
+    complete
+    .text start:0x021dd104 end:0x021dd118
+
+src/Online/DownloadPlay/ClearTaskInfo.cpp:
+    complete
+    .text start:0x021dd3cc end:0x021dd3e0
+
+src/Online/DownloadPlay/SetParentPieceBufferAndClear.cpp:
+    complete
+    .text start:0x021dd5d4 end:0x021dd5f4
+
+src/Online/DownloadPlay/MBi_IsStarted.cpp:
+    complete
+    .text start:0x021dd0ac end:0x021dd0cc
+
+src/Online/DownloadPlay/Network_SetParentStartFlagAndInvokeHandler.cpp:
+    complete
+    .text start:0x021dcc24 end:0x021dcc48
+
+src/Online/DownloadPlay/Network_SetParentStateCallback.cpp:
+    complete
+    .text start:0x021d8a40 end:0x021d8a68
+
+src/Online/DownloadPlay/MBi_ClearSendStatus.cpp:
+    complete
+    .text start:0x021dae1c end:0x021dae40
+
+src/Online/DownloadPlay/Network_InitializeSendGameInfoStatus.cpp:
+    complete
+    .text start:0x021dadf0 end:0x021dae1c
+
+src/Online/DownloadPlay/Network_SetChildMPMaxSize.cpp:
+    complete
+    .text start:0x021dd5a4 end:0x021dd5d4
+
+src/Online/DownloadPlay/MBi_InitSendVolatBeacon.cpp:
+    complete
+    .text start:0x021db124 end:0x021db154
+
+src/Online/DownloadPlay/MBi_CountUtf16Units.cpp:
+    complete
+    .text start:0x021dad84 end:0x021dadac
+
+src/Online/DownloadPlay/MBi_CommCallParentError.cpp:
+    complete
+    .text start:0x021d9e04 end:0x021d9e1c
+
+src/Online/DownloadPlay/Network_CalculateOnesComplementChecksum.cpp:
+    complete
+    .text start:0x021dab38 end:0x021dab84
+
+src/Online/DownloadPlay/Network_ProcessBeaconStateUntilPacketReady.cpp:
+    complete
+    .text start:0x021dae40 end:0x021daecc
+
+src/Online/DownloadPlay/SelectParentSendOperation.cpp:
+    complete
+    .text start:0x021d9bdc end:0x021d9d5c
+
+src/Online/DownloadPlay/AdvanceSendBlock.cpp:
+    complete
+    .text start:0x021d9d5c end:0x021d9dd8
+
+src/Online/DownloadPlay/MB_GetSegmentLength.cpp:
+    complete
+    .text start:0x021d9e1c end:0x021d9e9c
+
+src/Online/DownloadPlay/MB_CommGetChildUser.cpp:
+    complete
+    .text start:0x021d8a68 end:0x021d8aec
+
+src/Online/DownloadPlay/MBi_ReadFromCache.cpp:
+    complete
+    .text start:0x021dd180 end:0x021dd218
+
+src/Online/DownloadPlay/MBi_ReadIconInfo.cpp:
+    complete
+    .text start:0x021dac74 end:0x021dad14
+
+src/Online/DownloadPlay/MBi_ReadyBeaconSendStatus.cpp:
+    complete
+    .text start:0x021daecc end:0x021daf6c
+
+src/Online/DownloadPlay/MBi_ReloadCache.cpp:
+    complete
+    .text start:0x021d989c end:0x021d9940
+
+src/Online/DownloadPlay/MBi_IsAbleToRecv.cpp:
+    complete
+    .text start:0x021da988 end:0x021daa34
+
+src/Online/DownloadPlay/GetTransferBlockInfo.cpp:
+    complete
+    .text start:0x021da8d4 end:0x021da988
+
+src/Online/DownloadPlay/IsAbleToLoad.cpp:
+    complete
+    .text start:0x021daa34 end:0x021dab00
+
+src/Online/DownloadPlay/MakeBlockInfoTable.cpp:
+    complete
+    .text start:0x021da808 end:0x021da8d4
+
+src/Online/DownloadPlay/MBi_MakeGameInfo.cpp:
+    complete
+    .text start:0x021dab84 end:0x021dac74
+
+src/Online/DownloadPlay/MBi_TaskThread.cpp:
+    complete
+    .text start:0x021dd218 end:0x021dd330
+
+src/Online/DownloadPlay/MBi_SetTask.cpp:
+    complete
+    .text start:0x021dd3f8 end:0x021dd55c
+
+src/Online/DownloadPlay/MBi_SetSegmentInfo.cpp:
+    complete
+    .text start:0x021da690 end:0x021da808
+
+src/Online/DownloadPlay/ReceiveRequestDataPiece.cpp:
+    complete
+    .text start:0x021dd7d8 end:0x021dd864
+
+src/Online/DownloadPlay/MB_SetParentCommParam.cpp:
+    complete
+    .text start:0x021dc8d4 end:0x021dc96c
+
+src/Online/DownloadPlay/MBi_CommParentRecvData.cpp:
+    complete
+    .text start:0x021d9618 end:0x021d96c4
+
+src/Online/DownloadPlay/MBi_StartCommon.cpp:
+    complete
+    .text start:0x021dc96c end:0x021dca40
+
+src/Online/DownloadPlay/MBi_CheckWmErrcode.cpp:
+    complete
+    .text start:0x021dd0cc end:0x021dd104
+
+src/Online/DownloadPlay/MBi_CallReset.cpp:
+    complete
+    .text start:0x021dcc48 end:0x021dcc80
+
+src/Online/DownloadPlay/MB_AddGameInfo.cpp:
+    complete
+    .text start:0x021dadac end:0x021dadf0
+
+src/Online/DownloadPlay/MBi_EndCommon.cpp:
+    complete
+    .text start:0x021db4e0 end:0x021db524
+
+src/Online/DownloadPlay/MBi_ClearParentPieceBuffer.cpp:
+    complete
+    .text start:0x021dd5f4 end:0x021dd638
+
+src/Online/DownloadPlay/MBi_EndTaskThread.cpp:
+    complete
+    .text start:0x021dd55c end:0x021dd5a4
+
+src/Online/DownloadPlay/MBi_SetMPData.cpp:
+    complete
+    .text start:0x021dcef8 end:0x021dcf44
+
+src/Online/DownloadPlay/MBi_OnInitializeDone.cpp:
+    complete
+    .text start:0x021db490 end:0x021db4e0
+
+src/Online/DownloadPlay/MB_CommIsBootable.cpp:
+    complete
+    .text start:0x021d8aec end:0x021d8b40
+
+src/Online/DownloadPlay/MBi_InitSendFixedBeacon.cpp:
+    complete
+    .text start:0x021daf6c end:0x021dafc0
+
+src/Online/DownloadPlay/IsGetAllRequestData.cpp:
+    complete
+    .text start:0x021dd864 end:0x021dd8b8
+
+src/Online/DownloadPlay/MBi_IsSendEnabled.cpp:
+    complete
+    .text start:0x021db430 end:0x021db490
+
+src/Online/DownloadPlay/MBi_GetBeaconPeriodDispersion.cpp:
+    complete
+    .text start:0x021dc618 end:0x021dc680
+
+src/Online/DownloadPlay/MBi_AttachCacheBuffer.cpp:
+    complete
+    .text start:0x021dd118 end:0x021dd180
+
+src/Online/DownloadPlay/MB_UpdateGameInfoMember.cpp:
+    complete
+    .text start:0x021dad14 end:0x021dad84
+
+src/Online/DownloadPlay/ChangeScanChannel.cpp:
+    complete
+    .text start:0x021db3c0 end:0x021db430
+
+src/Online/DownloadPlay/MBi_IsCommSizeValid.cpp:
+    complete
+    .text start:0x021dc864 end:0x021dc8d4
+
+src/Online/DownloadPlay/MBi_MakeDownloadFileInfo.cpp:
+    complete
+    .text start:0x021da61c end:0x021da690
+
+src/Online/DownloadPlay/MBi_ReadSegmentHeader.cpp:
+    complete
+    .text start:0x021da314 end:0x021da38c
+
+src/Online/DownloadPlay/MBi_BlockHeaderEnd.cpp:
+    complete
+    .text start:0x021dab00 end:0x021dab38
+
+src/Online/DownloadPlay/MBi_CommParentSendMsg.cpp:
+    complete
+    .text start:0x021d96c4 end:0x021d9704
+
+src/Online/DownloadPlay/Network_SetInterruptProtectedPeerStatus.cpp:
+    complete
+    .text start:0x021d8b40 end:0x021d8c20
+
+src/Online/DownloadPlay/MBi_CommChangeParentState.cpp:
+    complete
+    .text start:0x021d8c20 end:0x021d8c6c
+
+src/Online/DownloadPlay/MBi_GetAttribute.cpp:
+    complete
+    .text start:0x021dd04c end:0x021dd0ac
+
+src/Online/DownloadPlay/Network_DispatchAllowedEventCallback.cpp:
+    complete
+    .text start:0x021dbd7c end:0x021dbdec
+
+src/Online/DownloadPlay/MB_End.cpp:
+    complete
+    .text start:0x021dcd20 end:0x021dcd5c
+
+src/Online/DownloadPlay/MBi_CommEnd.cpp:
+    complete
+    .text start:0x021dcc8c end:0x021dcd20
+
+src/Online/DownloadPlay/MBi_SendMP.cpp:
+    complete
+    .text start:0x021dcf44 end:0x021dd024
+
+src/Online/DownloadPlay/Network_DecodeRequestDataPacket.cpp:
+    complete
+    .text start:0x021dd6bc end:0x021dd7d8
+
+src/Online/DownloadPlay/MBi_InitTaskThread.cpp:
+    complete
+    .text start:0x021dd330 end:0x021dd3b0
+
+src/Online/DownloadPlay/MBi_CommParentSendDLFileInfo.cpp:
+    complete
+    .text start:0x021d9704 end:0x021d989c

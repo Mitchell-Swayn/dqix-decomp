@@ -3,9 +3,10 @@
 
 extern "C"
 {
-    void func_02048004(void*, ZoneContainerRenderPart*);
+    void ZoneContainerRenderPart_ShareFrameAndAnimationResources(void*, ZoneContainerRenderPart*);
 }
 
+// Original: arm9/main @ 0x02013B70; symbol: _ZN6Zone3D28CreateContainerRenderEntriesEP13SafeAllocator; size: 0x140.
 void Zone3D::CreateContainerRenderEntries(SafeAllocator* allocator)
 {
     LootableContainerManager* manager = LootableContainerManager::GetMainInstance();
@@ -52,20 +53,22 @@ struct ZoneContainerSavedState
     unsigned short zoneID;
     unsigned short flags;
 };
-extern "C" void* func_02027ca4();
-extern "C" ZoneContainerSavedState* func_02028bd0(void*, unsigned short);
+extern "C" void* ZoneState_GetTrackedZoneCache();
+extern "C" ZoneContainerSavedState* ZoneState_FindTrackedZoneByIdentifier(void*, unsigned short);
 
+// Original: arm9/main @ 0x02013CB0; symbol: _ZN6Zone3D22SetContainerBrokenMaskEj; size: 0x74.
 void Zone3D::SetContainerBrokenMask(unsigned int mask)
 {
     for (int i = 0; i < unknown_476_; ++i)
         if (mask & (1 << i))
             unknown_478_[i].state = -1;
-    ZoneContainerSavedState* state = func_02028bd0(func_02027ca4(), currentZoneID_);
+    ZoneContainerSavedState* state = ZoneState_FindTrackedZoneByIdentifier(ZoneState_GetTrackedZoneCache(), currentZoneID_);
     // Persist the twelve container bits while retaining the low four flags.
     if (state)
         state->flags = (state->flags & 0xffff000f) | ((mask << 20) >> 16);
 }
 
+// Original: arm9/main @ 0x02013D24; symbol: _ZN6Zone3D19BindContainerModelsEv; size: 0xF4.
 void Zone3D::BindContainerModels()
 {
     LootableContainerManager* manager = LootableContainerManager::GetMainInstance();
@@ -76,17 +79,17 @@ void Zone3D::BindContainerModels()
         if (!container) continue;
         if (container->containerType == 1)
         {
-            func_02048004(containerModels_[0], &entry->mainPart);
-            func_02048004(containerModels_[1], &entry->brokenPart);
+            ZoneContainerRenderPart_ShareFrameAndAnimationResources(containerModels_[0], &entry->mainPart);
+            ZoneContainerRenderPart_ShareFrameAndAnimationResources(containerModels_[1], &entry->brokenPart);
             for (int j = 0; j < 4; ++j)
-                func_02048004(containerModels_[2], &entry->fragments[j]);
+                ZoneContainerRenderPart_ShareFrameAndAnimationResources(containerModels_[2], &entry->fragments[j]);
         }
         else if (container->containerType == 2)
         {
-            func_02048004(containerModels_[3], &entry->mainPart);
-            func_02048004(containerModels_[4], &entry->brokenPart);
+            ZoneContainerRenderPart_ShareFrameAndAnimationResources(containerModels_[3], &entry->mainPart);
+            ZoneContainerRenderPart_ShareFrameAndAnimationResources(containerModels_[4], &entry->brokenPart);
             for (int j = 0; j < 4; ++j)
-                func_02048004(containerModels_[5], &entry->fragments[j]);
+                ZoneContainerRenderPart_ShareFrameAndAnimationResources(containerModels_[5], &entry->fragments[j]);
         }
     }
 }

@@ -4,3 +4,838 @@
     .data       start:0x02193fa0 end:0x02194560 kind:data align:32
     .bss        start:0x02194560 end:0x02194600 kind:bss align:32
 
+src/Debug/ModelViewer/CharacterViewer_GetMenuSelectionIndex.cpp:
+    complete
+    .text start:0x02191284 end:0x02191294
+
+src/Debug/ModelViewer/CharacterViewer_SetMenuSelectionIndex.cpp:
+    complete
+    .text start:0x02193150 end:0x02193160
+
+src/Debug/ModelViewer/CharacterViewer_ResetVramReservationSlot.cpp:
+    complete
+    .text start:0x021933ac end:0x021933bc
+
+src/Debug/ModelViewer/CharacterViewer_GetTrackedBoneIndex.cpp:
+    complete
+    .text start:0x0218bc9c end:0x0218bcb0
+
+src/Debug/ModelViewer/CharacterViewer_InitializeMenuSelectionRange.cpp:
+    complete
+    .text start:0x0219313c end:0x02193150
+
+src/Debug/ModelViewer/CharacterViewer_InitializeMenuCatalog.cpp:
+    complete
+    .text start:0x0218b810 end:0x0218b828
+
+src/Debug/ModelViewer/CharacterViewer_PushMenuHistory.cpp:
+    complete
+    .text start:0x021931b4 end:0x021931cc
+
+src/Debug/ModelViewer/CharacterViewer_AppendScenePreset.cpp:
+    complete
+    .text start:0x0218ba1c end:0x0218ba44
+
+src/Debug/ModelViewer/CharacterViewer_GetScenePreset.cpp:
+    complete
+    .text start:0x0218bb14 end:0x0218bb3c
+
+src/Debug/ModelViewer/CharacterViewer_GetMenuCatalogEntry.cpp:
+    complete
+    .text start:0x0218bae8 end:0x0218bb14
+
+src/Debug/ModelViewer/CharacterViewer_PopMenuHistory.cpp:
+    complete
+    .text start:0x021931cc end:0x021931f8
+
+src/Debug/ModelViewer/CharacterViewer_SetPlayerGender.cpp:
+    complete
+    .text start:0x0218ffa8 end:0x0218ffd0
+
+src/Debug/ModelViewer/CharacterViewer_SetPlayerSkinColour.cpp:
+    complete
+    .text start:0x0218ffd0 end:0x0218fff8
+
+src/Debug/ModelViewer/CharacterViewer_SetPlayerHairColour.cpp:
+    complete
+    .text start:0x0218fff8 end:0x02190020
+
+src/Debug/ModelViewer/CharacterViewer_SetModelPartResource.cpp:
+    complete
+    .text start:0x0218ff7c end:0x0218ffa8
+
+src/Debug/ModelViewer/CharacterViewer_SetPlayerBodyScale.cpp:
+    complete
+    .text start:0x0219005c end:0x02190090
+
+src/Debug/ModelViewer/CharacterViewer_FindUnusedPlayerVramReservation.cpp:
+    complete
+    .text start:0x021931f8 end:0x0219322c
+
+src/Debug/ModelViewer/CharacterViewer_FindUnusedDollVramReservation.cpp:
+    complete
+    .text start:0x0219322c end:0x02193260
+
+src/Debug/ModelViewer/CharacterViewer_FindUnusedSingleModelVramReservation.cpp:
+    complete
+    .text start:0x02193260 end:0x02193294
+
+src/Debug/ModelViewer/CharacterViewer_ScriptAllocateMenuEntries.cpp:
+    complete
+    .text start:0x0218b5a0 end:0x0218b5c8
+
+src/Debug/ModelViewer/Resource_AllocateRecordPairsFromScriptCount.cpp:
+    complete
+    .text start:0x0218b6bc end:0x0218b6e4
+
+src/Debug/ModelViewer/Script_InitializeRecordPairStorage.cpp:
+    complete
+    .text start:0x0218b9ac end:0x0218b9d4
+
+src/Debug/ModelViewer/CharacterViewer_AllocateMenuCatalogEntries.cpp:
+    complete
+    .text start:0x0218b978 end:0x0218b9ac
+
+src/Debug/ModelViewer/CharacterViewer_DestroyMenuCatalog.cpp:
+    complete
+    .text start:0x0218b828 end:0x0218b978
+
+src/Debug/ModelViewer/CharacterViewer_ScriptAppendMenuEntry.cpp:
+    complete
+    .text start:0x0218b5c8 end:0x0218b6bc
+
+src/Debug/ModelViewer/CharacterViewer_AppendMenuCatalogEntry.cpp:
+    complete
+    .text start:0x0218b9d4 end:0x0218ba1c
+
+src/Data/Resource_LoadAndExecuteScriptWithOwner_PathDataBinCharaview4Bin.cpp:
+    complete
+    .data start:0x2193fc8 end:0x2193fe0
+
+src/Data/Text_FormatSerializedRecordValue_TextNsbtx.cpp:
+    complete
+    .data start:0x2193fe4 end:0x2193fea
+
+src/Data/Text_FormatSerializedRecordValue_FormatDC03DSSS.cpp:
+    complete
+    .data start:0x2193fea end:0x2193ffa
+
+src/Data/Text_FormatSerializedRecordValue_FormatPC03DSSS.cpp:
+    complete
+    .data start:0x2193ffa end:0x219400a
+
+src/Data/ResourceFormatCharacterViewerResourceName_TextMd.cpp:
+    complete
+    .data start:0x219400a end:0x219400d
+
+src/Data/ResourceFormatCharacterViewerResourceName_TextMp.cpp:
+    complete
+    .data start:0x219400d end:0x2194010
+
+src/Data/ResourceFormatCharacterViewerResourceName_TextWp.cpp:
+    complete
+    .data start:0x2194010 end:0x2194013
+
+src/Data/Resource_FormatCharacterViewerResourceName_FormatS02D02DC.cpp:
+    complete
+    .data start:0x2194013 end:0x2194020
+
+src/Data/CharacterViewer_ReloadPlayerAnimationArchives_PathDataPackLv5CharaMpGp2.cpp:
+    complete
+    .data start:0x2194020 end:0x219403b
+
+src/Data/CharacterViewer_ReloadPlayerAnimationArchives_FormatSChr.cpp:
+    complete
+    .data start:0x219403b end:0x2194042
+
+src/Data/CharacterViewer_ReloadPlayerAnimationArchives_FormatSeChr.cpp:
+    complete
+    .data start:0x2194042 end:0x219404a
+
+src/Data/CharacterViewer_ReloadPlayerAnimationArchives_FormatSmChr.cpp:
+    complete
+    .data start:0x219404a end:0x2194052
+
+src/Data/Graphics_LoadNamedModelAndConfigureBones_PathDataCharaSChr.cpp:
+    complete
+    .data start:0x2194052 end:0x2194064
+
+src/Data/CharacterViewer_ReloadPlayerAnimationArchives_PathDataCharaSCChr.cpp:
+    complete
+    .data start:0x2194064 end:0x2194078
+
+src/Data/Graphics_LoadAnimationArchiveById_PathDataEventLv5SChr.cpp:
+    complete
+    .data start:0x2194078 end:0x219408e
+
+src/Data/Resource_ReloadObjectGroupAnimationFromGPC_TextStand.cpp:
+    complete
+    .data start:0x219408e end:0x2194094
+
+src/Data/CharacterViewer_ReloadDollModelParts_PathDataPackLv5CharaPdGp2.cpp:
+    complete
+    .data start:0x2194094 end:0x21940af
+
+src/Data/Resource_ReloadObjectGroupAnimationFromGPC_FormatSNsbca.cpp:
+    complete
+    .data start:0x21940af end:0x21940b8
+
+src/Data/Resource_ReloadObjectGroupAnimationFromGPC_FormatSBcfg.cpp:
+    complete
+    .data start:0x21940b8 end:0x21940c0
+
+src/Data/CharacterViewer_ReloadPlayerModelParts_PathDataPackLv5CharaPcGp2.cpp:
+    complete
+    .data start:0x21940c0 end:0x21940db
+
+src/Data/CharacterViewer_ReloadPlayerModelParts_TextWaist.cpp:
+    complete
+    .data start:0x21940db end:0x21940e1
+
+src/Data/CharacterViewer_DrawPlayerModelParts_TextArm1R.cpp:
+    complete
+    .data start:0x21940e1 end:0x21940e7
+
+src/Data/CharacterViewer_DrawPlayerModelParts_TextArm1L.cpp:
+    complete
+    .data start:0x21940e7 end:0x21940ed
+
+src/Data/CharacterViewerReloadPlayerModelParts_TextPC.cpp:
+    complete
+    .data start:0x21940ed end:0x21940f0
+
+src/Data/CharacterViewer_ReloadDollModelParts_TextDOLL.cpp:
+    complete
+    .data start:0x21940f0 end:0x21940f5
+
+src/Data/CharacterViewer_LoadMonsterModel_FormatSFMon.cpp:
+    complete
+    .data start:0x21940f5 end:0x21940fe
+
+src/Data/CharacterViewer_LoadMonsterModel_FormatSMon.cpp:
+    complete
+    .data start:0x21940fe end:0x2194105
+
+src/Data/CharacterViewer_LoadMonsterModel_PathDataPackLv5EnemyGp2.cpp:
+    complete
+    .data start:0x2194105 end:0x219411d
+
+src/Data/CharacterViewer_LoadMonsterModel_TextCchr.cpp:
+    complete
+    .data start:0x219411d end:0x2194123
+
+src/Data/CharacterViewer_LoadMonsterModel_TextCmot.cpp:
+    complete
+    .data start:0x2194123 end:0x2194129
+
+src/Data/Graphics_LoadModelArchiveWithSavedTextureState_PathDataCharaSubSChr.cpp:
+    complete
+    .data start:0x2194129 end:0x219413f
+
+src/Data/CharacterViewer_OpenEffectArchive_PathDataEffectSChr.cpp:
+    complete
+    .data start:0x219413f end:0x2194152
+
+src/Data/CharacterViewer_OpenEffectArchive_TextARC.cpp:
+    complete
+    .data start:0x2194152 end:0x2194156
+
+src/Data/CharacterViewer_OpenEffectArchive_TextBeff.cpp:
+    complete
+    .data start:0x2194156 end:0x219415c
+
+src/Data/Graphics_LoadNamedModelAndConfigureBones_TextEye.cpp:
+    complete
+    .data start:0x219415c end:0x2194160
+
+src/Data/Graphics_LoadNamedModelAndConfigureBones_TextLookat.cpp:
+    complete
+    .data start:0x2194160 end:0x2194167
+
+src/Data/Graphics_LoadNamedModelAndConfigureBones_TextPos.cpp:
+    complete
+    .data start:0x2194167 end:0x219416b
+
+src/Data/CharacterViewer_DrawPlayerModelParts_TextHead.cpp:
+    complete
+    .data start:0x219416b end:0x2194170
+
+src/Data/CharacterViewer_DrawPlayerModelParts_TextLeg1L.cpp:
+    complete
+    .data start:0x2194170 end:0x2194176
+
+src/Data/CharacterViewer_DrawPlayerModelParts_TextLeg1R.cpp:
+    complete
+    .data start:0x2194176 end:0x219417c
+
+src/Data/CharacterViewerDrawModelArenaUsage_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH9854FULLWIDTHRIGHTSQUAREBRACKETIDEOGRAPHICS.cpp:
+    complete
+    .data start:0x219417c end:0x2194192
+
+src/Data/CharacterViewerDrawModelArenaUsage_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH9AEAFULLWIDTHRIGHTSQUAREBRACKETIDEOGRAPHICS.cpp:
+    complete
+    .data start:0x2194192 end:0x21941a8
+
+src/Data/CharacterViewerDrawModelArenaUsage_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH515CFULLWIDTHRIGHTSQUAREBRACKETIDEOGRAPHICS.cpp:
+    complete
+    .data start:0x21941a8 end:0x21941be
+
+src/Data/CharacterViewerDrawModelArenaUsage_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH670DFULLWIDTHRIGHTSQUAREBRACKETIDEOGRAPHICS.cpp:
+    complete
+    .data start:0x21941be end:0x21941d4
+
+src/Data/CharacterViewerDrawModelArenaUsage_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH8155FULLWIDTHRIGHTSQUAREBRACKETIDEOGRAPHICS.cpp:
+    complete
+    .data start:0x21941d4 end:0x21941ea
+
+src/Data/CharacterViewerDrawModelArenaUsage_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETKATAKANALETTERZUKATAKANALETTERBOKATAKANALETTERNFULLWIDTHRIGHTS.cpp:
+    complete
+    .data start:0x21941ea end:0x2194200
+
+src/Data/CharacterViewerDrawModelArenaUsage_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH9774FULLWIDTHRIGHTSQUAREBRACKETIDEOGRAPHICS.cpp:
+    complete
+    .data start:0x2194200 end:0x2194216
+
+src/Data/CharacterViewerDrawModelArenaUsage_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH6B66CJKUNIFIEDIDEOGRAPH5668FULLWIDTHRIGHTSQ.cpp:
+    complete
+    .data start:0x2194216 end:0x219422c
+
+src/Data/CharacterViewerDrawModelArenaUsage_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH76FEFULLWIDTHRIGHTSQUAREBRACKETIDEOGRAPHICS.cpp:
+    complete
+    .data start:0x219422c end:0x2194242
+
+src/Data/CharacterViewerDrawModelArenaUsage_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETKATAKANALETTERMEKATAKANALETTERMOKATAKANALETTERRIFULLWIDTHRIGHT.cpp:
+    complete
+    .data start:0x2194242 end:0x2194256
+
+src/Data/Graphics_DrawModelAndAnimationDiagnostics_FormatPFPS2F.cpp:
+    complete
+    .data start:0x2194256 end:0x2194261
+
+src/Data/Graphics_DrawModelAndAnimationDiagnostics_FormatPTD.cpp:
+    complete
+    .data start:0x2194261 end:0x219426a
+
+src/Data/Graphics_DrawModelAndAnimationDiagnostics_FormatPQD.cpp:
+    complete
+    .data start:0x219426a end:0x2194273
+
+src/Data/GraphicsDrawModelAndAnimationDiagnostics_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETPERCENTSIGNLATINSMALLLETTERSFULLWIDTHRIGHTSQUAREBRACKET.cpp:
+    complete
+    .data start:0x2194273 end:0x219427b
+
+src/Data/Graphics_DrawModelAndAnimationDiagnostics_FormatPSTEP02F.cpp:
+    complete
+    .data start:0x219427b end:0x2194288
+
+src/Data/Graphics_DrawModelAndAnimationDiagnostics_FormatPFRAME02F.cpp:
+    complete
+    .data start:0x2194288 end:0x2194295
+
+src/Data/Graphics_DrawModelAndAnimationDiagnostics_FormatPRATE03F.cpp:
+    complete
+    .data start:0x2194295 end:0x21942a2
+
+src/Data/CharacterViewer_RebuildMenu_TextOperation.cpp:
+    complete
+    .data start:0x21942a2 end:0x21942ae
+
+src/Data/Graphics_DrawModeAndAnimationLabels_TextSelectUD.cpp:
+    complete
+    .data start:0x21942ae end:0x21942ba
+
+src/Data/Graphics_DrawModeAndAnimationLabels_TextStepRRL.cpp:
+    complete
+    .data start:0x21942ba end:0x21942c8
+
+src/Data/Graphics_DrawModeAndAnimationLabels_TextNoLoopLA.cpp:
+    complete
+    .data start:0x21942c8 end:0x21942d4
+
+src/Data/Graphics_DrawModeAndAnimationLabels_TextLoopLA.cpp:
+    complete
+    .data start:0x21942d4 end:0x21942e0
+
+src/Data/Graphics_DrawModeAndAnimationLabels_TextPlayRA.cpp:
+    complete
+    .data start:0x21942e0 end:0x21942ec
+
+src/Data/Graphics_DrawModeAndAnimationLabels_TextSceneR.cpp:
+    complete
+    .data start:0x21942ec end:0x21942f6
+
+src/Data/Graphics_DrawModeAndAnimationLabels_TextStopRA.cpp:
+    complete
+    .data start:0x21942f6 end:0x2194302
+
+src/Data/Graphics_DrawModeAndAnimationLabels_TextBattleR.cpp:
+    complete
+    .data start:0x2194302 end:0x219430e
+
+src/Data/Graphics_DrawModeAndAnimationLabels_TextNoBattleR.cpp:
+    complete
+    .data start:0x219430e end:0x219431a
+
+src/Data/Graphics_DrawModeAndAnimationLabels_TextBattleL.cpp:
+    complete
+    .data start:0x219431a end:0x2194324
+
+src/Data/Graphics_DrawModeAndAnimationLabels_TextFieldL.cpp:
+    complete
+    .data start:0x2194324 end:0x219432e
+
+src/Data/UI_ToggleSelectedFlagAndUpdateText_TextAspect.cpp:
+    complete
+    .data start:0x219432e end:0x2194338
+
+src/Data/UI_ToggleSelectedFlagAndUpdateText_TextAspect_Copy2.cpp:
+    complete
+    .data start:0x2194338 end:0x2194342
+
+src/Data/UI_ToggleSelectedFlagAndUpdateText_TextFloor.cpp:
+    complete
+    .data start:0x2194342 end:0x219434b
+
+src/Data/UI_ToggleSelectedFlagAndUpdateText_TextMonsterBox.cpp:
+    complete
+    .data start:0x219434b end:0x219435a
+
+src/Data/UI_ToggleSelectedFlagAndUpdateText_TextMonsterBox_Copy2.cpp:
+    complete
+    .data start:0x219435a end:0x2194369
+
+src/Data/UI_ToggleSelectedFlagAndUpdateText_TextSyncMotion.cpp:
+    complete
+    .data start:0x2194369 end:0x2194378
+
+src/Data/UI_ToggleSelectedFlagAndUpdateText_TextSyncMotion_Copy2.cpp:
+    complete
+    .data start:0x2194378 end:0x2194387
+
+src/Data/UI_ToggleSelectedFlagAndUpdateText_TextViewMemory.cpp:
+    complete
+    .data start:0x2194387 end:0x2194396
+
+src/Data/UI_ToggleSelectedFlagAndUpdateText_TextViewMemory_Copy2.cpp:
+    complete
+    .data start:0x2194396 end:0x21943a5
+
+src/Data/CharacterViewer_RebuildMenu_TextTopMenu.cpp:
+    complete
+    .data start:0x21943a5 end:0x21943b0
+
+src/Data/CharacterViewer_RebuildMenu_TextLoad.cpp:
+    complete
+    .data start:0x21943b0 end:0x21943b7
+
+src/Data/CharacterViewer_RebuildMenu_TextDel.cpp:
+    complete
+    .data start:0x21943b7 end:0x21943bd
+
+src/Data/CharacterViewer_RebuildMenu_TextPlayer.cpp:
+    complete
+    .data start:0x21943bd end:0x21943c6
+
+src/Data/CharacterViewer_RebuildMenu_TextMonster.cpp:
+    complete
+    .data start:0x21943c6 end:0x21943d0
+
+src/Data/CharacterViewer_RebuildMenu_TextEffect.cpp:
+    complete
+    .data start:0x21943d0 end:0x21943d9
+
+src/Data/CharacterViewer_RebuildMenu_TextNPC.cpp:
+    complete
+    .data start:0x21943d9 end:0x21943df
+
+src/Data/CharacterViewer_RebuildMenu_TextMotionCamera.cpp:
+    complete
+    .data start:0x21943df end:0x21943ef
+
+src/Data/CharacterViewer_RebuildMenu_TextGender.cpp:
+    complete
+    .data start:0x21943ef end:0x21943f8
+
+src/Data/CharacterViewer_RebuildMenu_TextFace.cpp:
+    complete
+    .data start:0x21943f8 end:0x21943ff
+
+src/Data/CharacterViewer_RebuildMenu_TextEyeColour.cpp:
+    complete
+    .data start:0x21943ff end:0x219440c
+
+src/Data/CharacterViewer_RebuildMenu_TextSkinColour.cpp:
+    complete
+    .data start:0x219440c end:0x219441a
+
+src/Data/CharacterViewer_RebuildMenu_TextHairstyle.cpp:
+    complete
+    .data start:0x219441a end:0x2194426
+
+src/Data/CharacterViewer_RebuildMenu_TextHairColour.cpp:
+    complete
+    .data start:0x2194426 end:0x2194434
+
+src/Data/CharacterViewerRebuildMenu_TextLEFTSQUAREBRACKETHIRAGANALETTERYOHIRAGANALETTERROHIRAGANALETTERIRIGHTSQUAREBRACKET.cpp:
+    complete
+    .data start:0x2194434 end:0x219443d
+
+src/Data/CharacterViewerRebuildMenu_TextLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH8155RIGHTSQUAREBRACKET.cpp:
+    complete
+    .data start:0x219443d end:0x2194442
+
+src/Data/CharacterViewerRebuildMenu_TextLEFTSQUAREBRACKETKATAKANALETTERZUKATAKANALETTERBOKATAKANALETTERNRIGHTSQUAREBRACKET.cpp:
+    complete
+    .data start:0x2194442 end:0x219444b
+
+src/Data/CharacterViewerRebuildMenu_TextLEFTSQUAREBRACKETHIRAGANALETTERKUHIRAGANALETTERTURIGHTSQUAREBRACKET.cpp:
+    complete
+    .data start:0x219444b end:0x2194452
+
+src/Data/CharacterViewerRebuildMenu_TextLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH6B66CJKUNIFIEDIDEOGRAPH5668RIGHTSQUAREBRACKET.cpp:
+    complete
+    .data start:0x2194452 end:0x2194459
+
+src/Data/CharacterViewerRebuildMenu_TextLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH76FERIGHTSQUAREBRACKET.cpp:
+    complete
+    .data start:0x2194459 end:0x219445e
+
+src/Data/CharacterViewerRebuildMenu_TextLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH515CRIGHTSQUAREBRACKET.cpp:
+    complete
+    .data start:0x219445e end:0x2194463
+
+src/Data/CharacterViewer_RebuildMenu_TextAddMotion.cpp:
+    complete
+    .data start:0x2194463 end:0x2194470
+
+src/Data/CharacterViewer_RebuildMenu_TextEventMotion.cpp:
+    complete
+    .data start:0x2194470 end:0x219447f
+
+src/Data/CharacterViewer_RebuildMenu_TextSkillMotion.cpp:
+    complete
+    .data start:0x219447f end:0x219448e
+
+src/Data/CharacterViewer_RebuildMenu_TextBuild.cpp:
+    complete
+    .data start:0x219448e end:0x2194496
+
+src/Data/CharacterViewer_RebuildMenu_TextEvent.cpp:
+    complete
+    .data start:0x2194496 end:0x219449e
+
+src/Data/CharacterViewer_RebuildMenu_TextVillager.cpp:
+    complete
+    .data start:0x219449e end:0x21944a9
+
+src/Data/CharacterViewer_RebuildMenu_TextNPCMotion.cpp:
+    complete
+    .data start:0x21944a9 end:0x21944b6
+
+src/Data/CharacterViewer_RebuildMenu_TextTrickMotion.cpp:
+    complete
+    .data start:0x21944b6 end:0x21944c5
+
+src/Data/CharacterViewer_RebuildMenu_TextEventCamera.cpp:
+    complete
+    .data start:0x21944c5 end:0x21944d4
+
+src/Data/CharacterViewer_RebuildMenu_TextSkillCamera.cpp:
+    complete
+    .data start:0x21944d4 end:0x21944e3
+
+src/Data/CharacterViewer_RebuildMenu_TextOption.cpp:
+    complete
+    .data start:0x21944e3 end:0x21944ec
+
+src/Data/CharacterViewer_RebuildMenu_TextInfo.cpp:
+    complete
+    .data start:0x21944ec end:0x21944f3
+
+src/Data/CharacterViewer_RebuildMenu_TextMove.cpp:
+    complete
+    .data start:0x21944f3 end:0x21944fa
+
+src/Data/CharacterViewer_RebuildMenu_TextPreset.cpp:
+    complete
+    .data start:0x21944fa end:0x2194503
+
+src/Data/CharacterViewer_RebuildMenu_FormatS.cpp:
+    complete
+    .data start:0x2194503 end:0x2194508
+
+src/Data/CharacterViewerRebuildMenu_TextPERCENTSIGNLATINSMALLLETTERSFULLWIDTHCOLONPERCENTSIGNLATINSMALLLETTERS.cpp:
+    complete
+    .data start:0x2194508 end:0x219450f
+
+src/Data/CharacterViewer_RebuildMenu_TextNoData.cpp:
+    complete
+    .data start:0x219450f end:0x2194517
+
+src/Data/CharacterViewer_RebuildMenu_Text.cpp:
+    complete
+    .data start:0x2194517 end:0x219451b
+
+src/Data/CharacterViewer_RebuildMenu_Text_Copy2.cpp:
+    complete
+    .data start:0x219451b end:0x219451f
+
+src/Data/CharacterViewer_RebuildMenu_TextMotion.cpp:
+    complete
+    .data start:0x219451f end:0x2194528
+
+src/Data/CharacterViewer_Run_Text0123456789FPSTQSIZERAMKBAbcdefghijklmnopqrstuvwxyz.cpp:
+    complete
+    .data start:0x2194528 end:0x2194560
+
+src/Debug/ModelViewer/Resource_FormatCharacterViewerResourceName.cpp:
+    complete
+    .text start:0x0218c274 end:0x0218c3a4
+
+src/Debug/ModelViewer/UI_ToggleSelectedFlagAndUpdateText.cpp:
+    complete
+    .text start:0x02191f04 end:0x02192064
+
+src/Debug/ModelViewer/Resource_SetLinkedEntryState.cpp:
+    complete
+    .text start:0x02190020 end:0x0219005c
+
+src/Debug/ModelViewer/Graphics_CaptureSelectedPositionMatrices.cpp:
+    complete
+    .text start:0x0218bb3c end:0x0218bc9c
+
+src/Debug/ModelViewer/CharacterViewer_InitializeModelInstance.cpp:
+    complete
+    .text start:0x0218eef0 end:0x0218ef7c
+
+src/Debug/ModelViewer/World_AddYawToModeSelectedVectors.cpp:
+    complete
+    .text start:0x0218f5f8 end:0x0218f794
+
+src/Debug/ModelViewer/Ov015_AdvanceEffectsWhenActive.cpp:
+    complete
+    .text start:0x0218e574 end:0x0218e5c0
+
+src/Debug/ModelViewer/Graphics_AdvanceEffectsWhenReady.cpp:
+    complete
+    .text start:0x0218e5c0 end:0x0218e60c
+
+src/Debug/ModelViewer/Graphics_TranslateObjectPositionVariants.cpp:
+    complete
+    .text start:0x0218f44c end:0x0218f5f8
+
+src/Debug/ModelViewer/Resource_MapTypeAndInitializeObject.cpp:
+    complete
+    .text start:0x0218f02c end:0x0218f0c4
+
+src/Debug/ModelViewer/Graphics_ApplyInputToSelectedObjectTransform.cpp:
+    complete
+    .text start:0x02191874 end:0x021919e4
+
+src/Debug/ModelViewer/CharacterViewer_FindMenuEntryByCategory.cpp:
+    complete
+    .text start:0x02193160 end:0x021931b4
+
+src/Debug/ModelViewer/CharacterViewer_UpdateCameraTargetFollowingFromInput.cpp:
+    complete
+    .text start:0x021925a8 end:0x02192600
+
+src/Debug/ModelViewer/Graphics_DrawBoneAttachedObjectParts.cpp:
+    complete
+    .text start:0x0218eb04 end:0x0218ecd8
+
+src/Debug/ModelViewer/Resource_LoadAndExecuteScriptWithOwner.cpp:
+    complete
+    .text start:0x0218ba44 end:0x0218bae8
+
+src/Debug/ModelViewer/Graphics_LoadNamedModelAndConfigureBones.cpp:
+    complete
+    .text start:0x0218e2a4 end:0x0218e498
+
+src/Debug/ModelViewer/Resource_ReloadObjectGroupAnimationFromGPC.cpp:
+    complete
+    .text start:0x0218c920 end:0x0218cb2c
+
+src/Debug/ModelViewer/GameState_ConfigureFlaggedObjectEndpoint.cpp:
+    complete
+    .text start:0x02192544 end:0x021925a8
+
+src/Debug/ModelViewer/Text_FormatSerializedRecordValue.cpp:
+    complete
+    .text start:0x0218c03c end:0x0218c274
+
+src/Debug/ModelViewer/CharacterViewer_InitializeModelForMenuCategory.cpp:
+    complete
+    .text start:0x0218ef7c end:0x0218f02c
+
+src/Debug/ModelViewer/Resource_IsAcceptedObjectType.cpp:
+    complete
+    .text start:0x02190d08 end:0x02190d7c
+
+src/Debug/ModelViewer/Graphics_DrawHandleOrObjectAndCollectCounts.cpp:
+    complete
+    .text start:0x0218ee38 end:0x0218eef0
+
+src/Debug/ModelViewer/UpdateCachedAnimationEntry.cpp:
+    complete
+    .text start:0x021900dc end:0x0219011c
+
+src/Debug/ModelViewer/Object_SetValueOnResolvedLinkedSubrecord.cpp:
+    complete
+    .text start:0x0219011c end:0x0219015c
+
+src/Debug/ModelViewer/AdvanceAnimationForType.cpp:
+    complete
+    .text start:0x02190090 end:0x021900dc
+
+src/Debug/ModelViewer/CharacterViewer_DrawModelByKind.cpp:
+    complete
+    .text start:0x0218f22c end:0x0218f27c
+
+src/Debug/ModelViewer/CharacterViewer_UpdateModelByKind.cpp:
+    complete
+    .text start:0x0218f1c4 end:0x0218f22c
+
+src/Debug/ModelViewer/CharacterViewer_AdvanceDollEffects.cpp:
+    complete
+    .text start:0x0218e4f8 end:0x0218e574
+
+src/Debug/ModelViewer/CharacterViewer_LoadModelByKind.cpp:
+    complete
+    .text start:0x0218f27c end:0x0218f308
+
+src/Debug/ModelViewer/IsObjectActiveForPressedOrReleasedInput.cpp:
+    complete
+    .text start:0x02190c98 end:0x02190d08
+
+src/Debug/ModelViewer/CharacterViewer_DeleteModelByIndex.cpp:
+    complete
+    .text start:0x02191af0 end:0x02191ba0
+
+src/Debug/ModelViewer/CharacterViewer_AdjustSelectedAnimationTime.cpp:
+    complete
+    .text start:0x0219015c end:0x021901c8
+
+src/Debug/ModelViewer/CharacterViewer_FindLoadedAnimation.cpp:
+    complete
+    .text start:0x0218f39c end:0x0218f3c4
+
+src/Debug/ModelViewer/CharacterViewer_SelectModelForAnimationMenu.cpp:
+    complete
+    .text start:0x02191ba0 end:0x02191c70
+
+src/Debug/ModelViewer/CharacterViewer_DrawMenuAndScrollbar.cpp:
+    complete
+    .text start:0x02190428 end:0x0219050c
+
+src/Debug/ModelViewer/CharacterViewer_ConfirmOrDeletePendingModel.cpp:
+    complete
+    .text start:0x02192064 end:0x02192158
+
+src/Debug/ModelViewer/CharacterViewer_DrawMonsterAndBounds.cpp:
+    complete
+    .text start:0x0218ecd8 end:0x0218edcc
+
+src/Debug/ModelViewer/CharacterViewer_DestroyModelInstanceResources.cpp:
+    complete
+    .text start:0x0218f0c4 end:0x0218f1c4
+
+src/Debug/ModelViewer/CharacterViewer_ToggleOperationMenu.cpp:
+    complete
+    .text start:0x02190d7c end:0x02190e88
+
+src/Debug/ModelViewer/CharacterViewer_CreateAndAppendModelInstance.cpp:
+    complete
+    .text start:0x021919e4 end:0x02191af0
+
+src/Debug/ModelViewer/CharacterViewer_InitializeState.cpp:
+    complete
+    .text start:0x02193294 end:0x021933ac
+
+src/Debug/ModelViewer/Graphics_LoadModelArchiveWithSavedTextureState.cpp:
+    complete
+    .text start:0x0218df0c end:0x0218e02c
+
+src/Debug/ModelViewer/CharacterViewer_ScriptAppendScenePreset.cpp:
+    complete
+    .text start:0x0218b6e4 end:0x0218b810
+
+src/Debug/ModelViewer/Memory_DestroyOwnedListsAndArenas.cpp:
+    complete
+    .text start:0x021933bc end:0x021934f8
+
+src/Debug/ModelViewer/Memory_CreateModeSelectedArenas.cpp:
+    complete
+    .text start:0x0218bcb0 end:0x0218c03c
+
+src/Debug/ModelViewer/Graphics_DrawModeAndAnimationLabels.cpp:
+    complete
+    .text start:0x02190acc end:0x02190c2c
+
+src/Debug/ModelViewer/UI_HandleAnimationSelectionInput.cpp:
+    complete
+    .text start:0x02191294 end:0x02191668
+
+src/Debug/ModelViewer/Graphics_DrawModelAndAnimationDiagnostics.cpp:
+    complete
+    .text start:0x0219050c end:0x02190acc
+
+src/Debug/ModelViewer/UI_IsOwnerModeInResourceRange.cpp:
+    complete
+    .text start:0x02190c2c end:0x02190c98
+
+src/Debug/ModelViewer/Graphics_DrawSceneOwnersAndOptionalBox.cpp:
+    complete
+    .text start:0x02190348 end:0x02190428
+
+src/Debug/ModelViewer/Graphics_LoadAnimationArchiveById.cpp:
+    complete
+    .text start:0x0218cb2c end:0x0218cc24
+
+src/Debug/ModelViewer/Graphics_InitializeVramReservationGroups.cpp:
+    complete
+    .text start:0x02192600 end:0x02192700
+
+src/Debug/ModelViewer/Graphics_AdvanceEffectsWithInputGate.cpp:
+    complete
+    .text start:0x0218e498 end:0x0218e4f8
+
+src/Debug/ModelViewer/Graphics_ReadAnimationFixedValue.cpp:
+    complete
+    .text start:0x0218f3c4 end:0x0218f408
+
+src/Debug/ModelViewer/Graphics_AdvanceOwnerHandleOrEffectsWithInputGate.cpp:
+    complete
+    .text start:0x0218e60c end:0x0218e670
+
+src/Debug/ModelViewer/Graphics_DispatchAnimationLoadByMode.cpp:
+    complete
+    .text start:0x0218f308 end:0x0218f344
+
+src/Debug/ModelViewer/Graphics_SelectLinkedHistoryEntryAndResetMode.cpp:
+    complete
+    .text start:0x02191ea4 end:0x02191f04
+
+src/Debug/ModelViewer/Graphics_RenderSceneAndDiagnosticOverlay.cpp:
+    complete
+    .text start:0x021901c8 end:0x02190348
+
+src/Debug/ModelViewer/Graphics_UploadSelectedModelPalette.cpp:
+    complete
+    .text start:0x0218c3a4 end:0x0218c538
+
+src/Debug/ModelViewer/CharacterViewer_GetAnimationPackageList.cpp:
+    complete
+    .text start:0x0218f344 end:0x0218f364
+
+src/Debug/ModelViewer/CharacterViewer_PlayNamedAnimation.cpp:
+    complete
+    .text start:0x0218f364 end:0x0218f39c
+
+src/Debug/ModelViewer/CharacterViewer_GetNormalizedAnimationTime.cpp:
+    complete
+    .text start:0x0218f408 end:0x0218f44c
+
+src/Debug/ModelViewer/CharacterViewer_DrawSingleModelAndCollectPolygonCounts.cpp:
+    complete
+    .text start:0x0218edcc end:0x0218ee38

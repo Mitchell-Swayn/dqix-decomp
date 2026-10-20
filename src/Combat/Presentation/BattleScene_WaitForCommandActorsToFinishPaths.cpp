@@ -1,0 +1,6 @@
+#include <globaldefs.h>
+ARM
+extern "C" {void* _ZN9GameState11GetInstanceEv();void GameState_ReadUnknownB0(void*);void* GameResources_GetInstance();int Combat_CollectEligiblePartyIds(void*,short*,int,int);int Combat_CollectPresentEnemyIndices(void*,short*,int,int);char* BattleScene_ResolveCurrentActionRecord(void*);void* _ZN9GameState19GetCombatantByIndexEi(void*,int);int GameObject_IsFollowingGridPath(void*);void BattleScene_EnterActionPlaybackAfterMovement(void*);}
+// Original: arm9/ov025 @ 0x021DC168; symbol: AdvanceWhenLinkedCombatantsLackComponentFlag10; size: 0xb8.
+// Collects IDs and advances state2 only when all linked combatants lack component flag10.
+extern "C" void BattleScene_WaitForCommandActorsToFinishPaths(char* self){void* state=_ZN9GameState11GetInstanceEv();void* owner=*(void**)(self+0x29c);GameState_ReadUnknownB0(state);GameResources_GetInstance();short ids[12];int n=0;n+=Combat_CollectEligiblePartyIds(owner,ids,12,n);Combat_CollectPresentEnemyIndices(owner,ids+n,12-n,0);if(*(int*)(self+0xeac)==2){char* node=*(char**)(BattleScene_ResolveCurrentActionRecord(self)+16);int ready=1;for(;node;node=*(char**)(node+48)){void* obj=_ZN9GameState19GetCombatantByIndexEi(state,*(unsigned short*)(node+32));if(obj&&GameObject_IsFollowingGridPath(obj)){ready=0;break;}}if(ready)BattleScene_EnterActionPlaybackAfterMovement(self);}}

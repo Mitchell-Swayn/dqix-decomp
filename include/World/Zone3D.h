@@ -27,7 +27,7 @@ struct Zone3D_StructPtr_8
 };
 
 // sizeof == 0x2824, as seen in the dynamic allocation of one
-// of these in func_ov001_02163b14 (usa).
+// of these in Script_CreateZoneResourcesFromNumericOrNamedId (usa).
 // In JPN version, sizeof == 0x2864.
 // Represents a 3D zone such as a town, field or grotto floor,
 // but also a battlefield.

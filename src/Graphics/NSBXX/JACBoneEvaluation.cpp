@@ -1,5 +1,6 @@
 #include "Graphics/NSBXX/JACInternal.h"
 
+// Original: arm9/main @ 0x020B7BA0; symbol: _Z36CalculateBoneMatrixRenderDataFromJACP17NSBXXAnimationJACiiP20BoneMatrixRenderData; size: 0x3B4.
 void CalculateBoneMatrixRenderDataFromJAC(NSBXXAnimationJAC* jac, int arg, fix32_t time, BoneMatrixRenderData* bmrd)
 {
     NSBXXAnimationJAC::Track* track = (NSBXXAnimationJAC::Track*)((intptr_t)jac + jac->trackOffsets_[arg]);
@@ -179,5 +180,5 @@ void CalculateBoneMatrixRenderDataFromJAC(NSBXXAnimationJAC* jac, int arg, fix32
     }
 
     int boneMatrixFlags = (bmrd->flags_ & 1) ? 4 : 0;
-    data_0210a274->boneMatrixRenderDataScalePopulateProc_(bmrd, &scaleData, data_0210a274->instructionPointer_, boneMatrixFlags);
+    ApplyBindPoseScaling_UnknownRoleZeroInitializedStorage->boneMatrixRenderDataScalePopulateProc_(bmrd, &scaleData, ApplyBindPoseScaling_UnknownRoleZeroInitializedStorage->instructionPointer_, boneMatrixFlags);
 }

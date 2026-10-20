@@ -3,10 +3,15 @@
 #include <globaldefs.h>
 
 #if defined(jpn)
-#define data_020ef918 data_020ef808
+#define ScriptGetDataString_UnknownRoleInitializedBytes data_020ef808
 #endif
 
-extern char data_020ef918[]; // holds a blank string
+// Original data: arm9/main @ 0x20ef918; symbol: data_020ef918.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 00000000.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern char ScriptGetDataString_UnknownRoleInitializedBytes[]; // holds a blank string
 
 inline float BitCastIntToFloat(const uint32_t* num)
 {
@@ -14,6 +19,7 @@ inline float BitCastIntToFloat(const uint32_t* num)
     return *reinterpret_cast<const float*>(num);
 }
 
+// Original: arm9/main @ 0x02030634; symbol: _ZN6Script10InitializeEv; size: 0x38.
 bool Script::Initialize()
 {
     numSupportedOpcodes_ = 0;
@@ -30,6 +36,7 @@ bool Script::Initialize()
     return true;
 }
 
+// Original: arm9/main @ 0x0203066C; symbol: _ZN6Script15SetOpcodeLookupEPNS_17OpcodeLookupEntryE; size: 0xC8.
 bool Script::SetOpcodeLookup(OpcodeLookupEntry *lookup)
 {
     bool success;
@@ -79,6 +86,7 @@ bool Script::SetOpcodeLookup(OpcodeLookupEntry *lookup)
     return success;
 }
 
+// Original: arm9/main @ 0x02030734; symbol: _ZN6Script4LoadEPKvj; size: 0x40.
 bool Script::Load(const void *code, unsigned int length)
 {
     pCode_ = code;
@@ -90,6 +98,7 @@ bool Script::Load(const void *code, unsigned int length)
     return true;
 }
 
+// Original: arm9/main @ 0x02030774; symbol: _ZN6Script7ExecuteEv; size: 0x5C.
 bool Script::Execute()
 {
     if (numSupportedOpcodes_ <= 0 || pCode_ == NULL || codeLength_ <= 0)
@@ -102,6 +111,7 @@ bool Script::Execute()
     return false;
 }
 
+// Original: arm9/main @ 0x020307D0; symbol: _ZN6Script24ExecuteSingleInstructionEb; size: 0x200.
 const Script::InstructionPrefix* Script::ExecuteSingleInstruction(bool arg)
 {
     if (pCode_ == NULL || codeLength_ <= 0 || pHeader_ == NULL)
@@ -186,6 +196,7 @@ const Script::InstructionPrefix* Script::ExecuteSingleInstruction(bool arg)
     return nextInstruction_;
 }
 
+// Original: arm9/main @ 0x020309D0; symbol: _ZN6Script26GetInstructionParamsOffsetEPKNS_17InstructionPrefixE; size: 0x54.
 int Script::GetInstructionParamsOffset(const InstructionPrefix* prefix)
 {
     // this is super overengineered because numbers are signed and they
@@ -197,6 +208,7 @@ int Script::GetInstructionParamsOffset(const InstructionPrefix* prefix)
     return totalBytes + padding;
 }
 
+// Original: arm9/main @ 0x02030A24; symbol: _ZN6Script12LookupOpcodeEi; size: 0x60.
 const Script::OpcodeLookupEntry* Script::LookupOpcode(int opcode)
 {
     if (numSupportedOpcodes_ <= 0)
@@ -219,13 +231,14 @@ const Script::OpcodeLookupEntry* Script::LookupOpcode(int opcode)
     return NULL;
 }
 
+// Original: arm9/main @ 0x02030A84; symbol: _ZN6Script13GetDataStringEi; size: 0x88.
 const char* Script::GetDataString(int32_t offset)
 {
     if (pCode_ == NULL || codeLength_ <= 0 || pHeader_ == NULL || dataSection_ == NULL)
         return NULL;
 
     if (offset == -1)
-        return data_020ef918;
+        return ScriptGetDataString_UnknownRoleInitializedBytes;
 
     if (offset == -2 || offset < 0)
         return NULL;
@@ -239,6 +252,7 @@ const char* Script::GetDataString(int32_t offset)
         return (const char*)dataSection_ + offset;
 }
 
+// Original: arm9/main @ 0x02030B0C; symbol: _ZNK6Script9Parameter5ToIntEv; size: 0x38.
 int Script::Parameter::ToInt() const
 {
     switch (type)
@@ -252,6 +266,7 @@ int Script::Parameter::ToInt() const
     }
 }
 
+// Original: arm9/main @ 0x02030B44; symbol: _ZNK6Script9Parameter7ToFloatEv; size: 0x38.
 float Script::Parameter::ToFloat() const
 {
     switch (type)
@@ -264,6 +279,7 @@ float Script::Parameter::ToFloat() const
     return 0.0f;
 }
 
+// Original: arm9/main @ 0x02030B7C; symbol: _ZNK6Script9Parameter8ToStringEv; size: 0x1C.
 const char* Script::Parameter::ToString() const
 {
     switch (type)
@@ -274,6 +290,7 @@ const char* Script::Parameter::ToString() const
     return NULL;
 }
 
+// Original: arm9/main @ 0x02030B98; symbol: _ZN6Script9Parameter9ToVec3fixEP8Vector3i; size: 0x68.
 Script::Parameter* Script::Parameter::ToVec3fix(Vector3fix* out)
 {
     Script::Parameter* params = this;
@@ -283,6 +300,7 @@ Script::Parameter* Script::Parameter::ToVec3fix(Vector3fix* out)
     return &params[3];
 }
 
+// Original: arm9/main @ 0x02030C00; symbol: _ZN6Script9Parameter11ToVec3fix16EP8Vector3s; size: 0x68.
 Script::Parameter* Script::Parameter::ToVec3fix16(Vector3fix16 *out)
 {
     Script::Parameter* params = this;

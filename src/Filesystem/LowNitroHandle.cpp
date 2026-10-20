@@ -9,6 +9,7 @@ int DefaultNitroReadProc(NitroHandle* handle, void* dst, unsigned int offset, un
 int DefaultNitroWriteProc(NitroHandle* handle, const void* src, unsigned int offset, unsigned int len);
 int MemoryMappedMetadataReadProc(NitroHandle* handle, void* dst, unsigned int offset, unsigned int len);
 
+// Original: arm9/main @ 0x020CC0FC; symbol: _Z22NitroHandle_InitializeP11NitroHandle; size: 0x2C.
 void NitroHandle_Initialize(NitroHandle* handle)
 {
     VectorizedMemset(handle, 0, sizeof(NitroHandle));
@@ -18,12 +19,13 @@ void NitroHandle_Initialize(NitroHandle* handle)
     handle->busReleaseBlock.first = NULL;
 }
 
+// Original: arm9/main @ 0x020CC128; symbol: _Z27NitroHandle_FindBySignaturePKci; size: 0x40.
 NitroHandle* NitroHandle_FindBySignature(const char* str, int len)
 {
     unsigned int targetSig = Nitro_CalculateSignature(str, len);
     int oldState = DisableIRQInterrupts();
 
-    NitroHandle* handle = data_02111728.firstHandle;
+    NitroHandle* handle = NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.firstHandle;
 
     while (handle != NULL && handle->signature != targetSig)
     {
@@ -34,25 +36,26 @@ NitroHandle* NitroHandle_FindBySignature(const char* str, int len)
     return handle;
 }
 
+// Original: arm9/main @ 0x020CC168; symbol: _Z27NitroHandle_AddToHandleListP11NitroHandlePKci; size: 0xB4.
 CBool NitroHandle_AddToHandleList(NitroHandle* handle, const char* str, int len)
 {
     CBool result = false;
     int oldState = DisableIRQInterrupts();
     if (NitroHandle_FindBySignature(str, len) == NULL)
     {
-        if (data_02111728.firstHandle == NULL)
+        if (NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.firstHandle == NULL)
         {
-            data_02111728.firstHandle = handle;
-            data_02111728.romFSRoot.handle = handle;
-            data_02111728.romFSRoot.handleSubtableOffset = 0;
-            data_02111728.romFSRoot.firstFileID = 0;
-            data_02111728.romFSRoot.dirID = 0;
+            NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.firstHandle = handle;
+            NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.romFSRoot.handle = handle;
+            NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.romFSRoot.handleSubtableOffset = 0;
+            NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.romFSRoot.firstFileID = 0;
+            NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.romFSRoot.dirID = 0;
         }
         else
         {
             // At the end of this, currentEntry holds the last entry in the list
             // and nextEntry is null (points past the end)
-            NitroHandle* currentEntry = data_02111728.firstHandle;
+            NitroHandle* currentEntry = NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.firstHandle;
             NitroHandle* nextEntry = currentEntry->pNextHandle;
             if (nextEntry != NULL)
             {
@@ -75,6 +78,7 @@ CBool NitroHandle_AddToHandleList(NitroHandle* handle, const char* str, int len)
     return result;
 }
 
+// Original: arm9/main @ 0x020CC21C; symbol: _Z32NitroHandle_RemoveFromHandleListP11NitroHandle; size: 0x84.
 void NitroHandle_RemoveFromHandleList(NitroHandle* handle)
 {
     if (handle->signature == 0)
@@ -93,17 +97,18 @@ void NitroHandle_RemoveFromHandleList(NitroHandle* handle)
     handle->pNextHandle = NULL;
     handle->flags &= ~(1 << NITROHANDLE_FLAG_IS_IN_MAIN_LIST);
 
-    if (data_02111728.romFSRoot.handle == handle)
+    if (NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.romFSRoot.handle == handle)
     {
-        data_02111728.romFSRoot.handle = data_02111728.firstHandle;
-        data_02111728.romFSRoot.handleSubtableOffset = 0;
-        data_02111728.romFSRoot.firstFileID = 0;
-        data_02111728.romFSRoot.dirID = 0;
+        NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.romFSRoot.handle = NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.firstHandle;
+        NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.romFSRoot.handleSubtableOffset = 0;
+        NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.romFSRoot.firstFileID = 0;
+        NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.romFSRoot.dirID = 0;
     }
 
     SetIRQInterruptState(oldState);
 }
 
+// Original: arm9/main @ 0x020CC2A0; symbol: _Z20NitroHandle_PopulateP11NitroHandlePvjjjjPFiS0_S1_jjEPFiS0_PKvjjE; size: 0x70.
 CBool NitroHandle_Populate(NitroHandle* handle, void* image,
         unsigned int fatOffset, unsigned int fatSize,
         unsigned int fntOffset, unsigned int fntSize,
@@ -124,6 +129,7 @@ CBool NitroHandle_Populate(NitroHandle* handle, void* image,
     return true;
 }
 
+// Original: arm9/main @ 0x020CC310; symbol: _Z19NitroHandle_DestroyP11NitroHandle; size: 0xC0.
 CBool NitroHandle_Destroy(NitroHandle* handle)
 {
     int oldState = DisableIRQInterrupts();
@@ -162,6 +168,7 @@ CBool NitroHandle_Destroy(NitroHandle* handle)
     return true;
 }
 
+// Original: arm9/main @ 0x020CC3D0; symbol: _Z26NitroHandle_LoadFileTablesP11NitroHandlePvj; size: 0x124.
 unsigned int NitroHandle_LoadFileTables(NitroHandle* handle, void* into, unsigned int capacity)
 {
     unsigned int neededSpace = (handle->fatSize + handle->nameTableSize + 0x3f) & ~0x1f;
@@ -200,6 +207,7 @@ unsigned int NitroHandle_LoadFileTables(NitroHandle* handle, void* into, unsigne
     return neededSpace;
 }
 
+// Original: arm9/main @ 0x020CC4F4; symbol: _Z29NitroHandle_ReleaseFileTablesP11NitroHandle; size: 0x8C.
 void* NitroHandle_ReleaseFileTables(NitroHandle* handle)
 {
     void* oldPtr = NULL;
@@ -221,6 +229,7 @@ void* NitroHandle_ReleaseFileTables(NitroHandle* handle)
     return oldPtr;
 }
 
+// Original: arm9/main @ 0x020CC580; symbol: _Z17NitroHandle_PauseP11NitroHandle; size: 0x9C.
 CBool NitroHandle_Pause(NitroHandle* handle)
 {
     int oldState = DisableIRQInterrupts();
@@ -246,6 +255,7 @@ CBool NitroHandle_Pause(NitroHandle* handle)
     return changeState;
 }
 
+// Original: arm9/main @ 0x020CC61C; symbol: _Z19NitroHandle_UnpauseP11NitroHandle; size: 0x70.
 CBool NitroHandle_Unpause(NitroHandle* handle)
 {
     NitroVM* machine = NULL;
@@ -264,6 +274,7 @@ CBool NitroHandle_Unpause(NitroHandle* handle)
     return skip;
 }
 
+// Original: arm9/main @ 0x020CC68C; symbol: _Z29NitroHandle_SetOpcodeOverrideP11NitroHandlePFiP7NitroVMiEj; size: 0x20.
 void NitroHandle_SetOpcodeOverride(NitroHandle* handle, NitroHandle::CommandOverride fnOverride, unsigned int mask)
 {
     if (mask == 0)
@@ -275,6 +286,7 @@ void NitroHandle_SetOpcodeOverride(NitroHandle* handle, NitroHandle::CommandOver
     handle->overrideOpcodeFlags = mask;
 }
 
+// Original: arm9/main @ 0x020CC6AC; symbol: _Z28NitroHandle_OnTaskCompletionP11NitroHandlei; size: 0x84.
 void NitroHandle_OnTaskCompletion(NitroHandle* handle, int result)
 {
     if (GET_FLAG_BIT(handle->flags, NITROHANDLE_FLAG_ASYNC_COMMAND_IN_PROGRESS))
@@ -298,14 +310,16 @@ void NitroHandle_OnTaskCompletion(NitroHandle* handle, int result)
     }
 }
 
+// Original: arm9/main @ 0x020CC730; symbol: _Z23InitializeROMFilesystemi; size: 0x28.
 void InitializeROMFilesystem(int dmaChannel)
 {
-    if (data_02111738)
+    if (InitializeROMFilesystem_UnknownRoleZeroInitializedStorage)
         return;
-    data_02111738 = true;
+    InitializeROMFilesystem_UnknownRoleZeroInitializedStorage = true;
     InitializeROMFilesystem_Internal(dmaChannel);
 }
 
+// Original: arm9/main @ 0x020CC758; symbol: _Z18NitroVM_InitializeP7NitroVM; size: 0x28.
 void NitroVM_Initialize(NitroVM* vm)
 {
     vm->links.pPrev = NULL;
@@ -317,6 +331,7 @@ void NitroVM_Initialize(NitroVM* vm)
     vm->flags = 0;
 }
 
+// Original: arm9/main @ 0x020CC780; symbol: _Z29NitroVM_SearchFileOrDirectoryP7NitroVMPKcP17NitroFileAccessorP22NitroDirectoryAccessor; size: 0x144.
 int NitroVM_SearchFileOrDirectory(NitroVM* vm, const char* inPath,
         NitroFileAccessor* outFileData, NitroDirectoryAccessor* outDirData)
 {
@@ -325,7 +340,7 @@ int NitroVM_SearchFileOrDirectory(NitroVM* vm, const char* inPath,
     unsigned char* path = (unsigned char*)inPath;
     if (path[0] == '/' || path[0] == '\\')
     {
-        accessor.handle = data_0211172c.handle;
+        accessor.handle = SetROMFilesystemRoot_UnknownRoleZeroInitializedStorage.handle;
         accessor.dirID = 0;
         accessor.handleSubtableOffset = 0;
         accessor.firstFileID = 0;
@@ -333,7 +348,7 @@ int NitroVM_SearchFileOrDirectory(NitroVM* vm, const char* inPath,
     }
     else
     {
-        accessor = data_0211172c;
+        accessor = SetROMFilesystemRoot_UnknownRoleZeroInitializedStorage;
         int signatureIdx = 0;
         do
         {
@@ -377,6 +392,7 @@ int NitroVM_SearchFileOrDirectory(NitroVM* vm, const char* inPath,
     return NitroVM_QueueCommand(vm, NITROVM_OPCODE_GET_FILE_OR_DIRECTORY_BY_NAME);
 }
 
+// Original: arm9/main @ 0x020CC8C4; symbol: _Z12NitroVM_ReadP7NitroVMPvii; size: 0x7C.
 int NitroVM_Read(NitroVM* vm, void* dst, int capacity, CBool async)
 {
     int srcStart = vm->fileInfo.cursorPos;

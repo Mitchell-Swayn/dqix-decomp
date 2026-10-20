@@ -1,0 +1,10 @@
+#include <globaldefs.h>
+#include <GameState/GameState.h>
+// Original data: arm9/main @ 0x2108ea8; symbol: data_02108ea8.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 48 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" char PartySyncGetSharedRecordTable_UnknownRoleZeroInitializedStorage[];struct Entry{short pad;unsigned short id;signed char mode;unsigned char value;char pad2[2];signed char text[4];};struct Info{char pad[12];unsigned value;};struct Packet{unsigned short key,id;signed char text[4];signed char mode;unsigned char value;short extra;};extern "C" int PartySync_AreAllMemberStatesResolved(void*,unsigned);extern "C" Entry* PartySync_FindEntryByKey(void*,unsigned);extern "C" Info* FieldBattle_GetEncounterRequest(void*);extern "C" void FieldBattle_GetCombatContext(void*);extern "C" void GameState_BeginEnabledPartySelectionTransition(void*,const void*,int,int,unsigned short,int,int,unsigned);extern "C" void Network_QueueEncounterPartySelection(const Packet*);
+// Original: arm9/main @ 0x0207DCF0; symbol: func_0207dcf0; size: 0x100.
+extern "C" ARM void Object_EmitMatchedTextEntryPacket(unsigned key){void* table=PartySyncGetSharedRecordTable_UnknownRoleZeroInitializedStorage;if(PartySync_AreAllMemberStatesResolved(table,key)){Entry* e=PartySync_FindEntryByKey(table,key);if(e){void* owner=*(void**)((char*)GameResources_GetInstance()+0x3718);Info* info=FieldBattle_GetEncounterRequest(owner);FieldBattle_GetCombatContext(owner);if(e->text[0])GameState_BeginEnabledPartySelectionTransition(owner,e->text,e->mode,0,e->id,(signed char)e->value,1,info->value);Packet packet;packet.key=key;packet.mode=e->mode;packet.text[0]=e->text[0];packet.text[1]=e->text[1];packet.text[2]=e->text[2];packet.text[3]=e->text[3];packet.id=e->id;packet.value=(unsigned char)e->value;packet.extra=-1;if(!e->mode)packet.extra=info->value;Network_QueueEncounterPartySelection(&packet);}}}

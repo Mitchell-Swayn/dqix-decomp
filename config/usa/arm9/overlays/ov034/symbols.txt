@@ -1,10 +1,12 @@
-func_ov034_022a2180 kind:function(arm,size=0x28) addr:0x022a2180
-func_ov034_022a21a8 kind:function(arm,size=0x810) addr:0x022a21a8
-func_ov034_022a29b8 kind:function(arm,size=0x2c) addr:0x022a29b8
-func_ov034_022a29e4 kind:function(arm,size=0x20) addr:0x022a29e4
+Filesystem_PopulateStaticOverlayBackgroundLoader kind:function(arm,size=0x28) addr:0x022a2180
+Filesystem_ProcessOverlayBackgroundLoaderTasks kind:function(arm,size=0x810) addr:0x022a21a8
+BackgroundLoader_InitializeStaticDispatchInstance kind:function(arm,size=0x2c) addr:0x022a29b8
+BackgroundLoader_ResetStaticInstanceToBaseDispatch kind:function(arm,size=0x20) addr:0x022a29e4
 __sinit_ov034_022a2a04 kind:function(arm,size=0x2c) addr:0x022a2a04
-.p__sinit_ov034_022a2a04 kind:data(word) addr:0x022a2a30
-data_ov034_022a2a48 kind:data(any) addr:0x022a2a48
-data_ov034_022a2a54 kind:data(any) addr:0x022a2a54
-data_ov034_022a2a60 kind:bss addr:0x022a2a60
-data_ov034_022a2a6c kind:bss addr:0x022a2a6c
+initializer kind:data(word) addr:0x022a2a30 local
+ov34Dispatch kind:data(byte[12]) addr:0x022a2a40
+ov34BaseDispatch kind:data(byte[12]) addr:0x022a2a4c
+destructorNode kind:bss addr:0x022a2a60 local
+loaderStorage kind:bss addr:0x022a2a6c local
+
+SharedData_UnknownRoleInitializedBytes_Variant49 kind:data(word) addr:0x022a2a34

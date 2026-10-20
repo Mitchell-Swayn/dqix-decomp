@@ -1,0 +1,7 @@
+#include <globaldefs.h>
+ARM
+
+// Original: arm9/ov031 @ 0x0220028C; symbol: func_ov031_0220028c; size: 0x4.
+extern "C" void Network_IgnoreAddressConfigurationCallback(void)
+{
+}

@@ -1,5 +1,6 @@
 #include "World/Zone3DEmbeddedState.h"
 
+// Original: arm9/main @ 0x020DED1C; symbol: _ZN13ZoneState27544Data16FindByAttributesEiii; size: 0x88.
 ZoneSerializedRecord* ZoneState2754::Data::FindByAttributes(int group, int first, int second)
 {
     ZoneRecordMatchFunction match = 0;
@@ -12,6 +13,7 @@ ZoneSerializedRecord* ZoneState2754::Data::FindByAttributes(int group, int first
     return 0;
 }
 
+// Original: arm9/main @ 0x020DEDA4; symbol: _ZN13ZoneState27544Data17FindRelatedRecordEiPK20ZoneSerializedRecord; size: 0x2C.
 ZoneSerializedRecord* ZoneState2754::Data::FindRelatedRecord(int group, const ZoneSerializedRecord* record)
 {
     if (!record) return 0;

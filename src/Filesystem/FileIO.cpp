@@ -1,3 +1,15 @@
+// Original data alias: arm9/main @ 0x20f0dc2; symbol: data_020f0dc2.
+// Language placeholder: "<LG>" followed by two zero bytes; aliases gFileIOConfiguration.languageTag.
+// Initial values (hex for initialized storage): 3c4c473e0000.
+// Original data alias: arm9/main @ 0x20f0dbc; symbol: data_020f0dbc.
+// Archive root: "arc:/" followed by NUL; aliases gFileIOConfiguration.archiveRoot.
+// Initial values (hex for initialized storage): 6172633a2f00.
+// Original data alias: arm9/main @ 0x20f0db8; symbol: data_020f0db8.
+// Archive signature: "ARC" followed by NUL; aliases gFileIOConfiguration.archiveSignature.
+// Initial values (hex for initialized storage): 41524300.
+// Original data alias: arm9/main @ 0x20f0da0; symbol: data_020f0da0.
+// Language pointer order: Japanese, English, French, German, Italian, Spanish. Aliases gFileIOConfiguration.languages.
+// Initial values (hex for initialized storage): 7f0d0f027c0d0f02760d0f02700d0f02730d0f02790d0f02.
 #include "Filesystem/FileIO.h"
 #include "Filesystem/FileIOConfiguration.h"
 #include "Filesystem/ExtendedNitroVM.h"
@@ -15,27 +27,29 @@
 #include <asmhacks.h>
 
 #ifdef jpn
+#define FileIO_LanguageNamePointers data_020f0da0
+#define FileIO_LanguageTag data_020f0dc2
 
-#define data_020e692c data_020e71d4
+#define MakeCharUpperCase_UnknownRoleInitializedBytes data_020e71d4
 
-#define data_020f0db8 data_020f0e84
-#define data_020f0dbc data_020f0e88
+#define FileIO_ArchiveSignature data_020f0e84
+#define FileIO_ArchiveRoot data_020f0e88
 #endif
 
 extern "C"
 {
     // some sort of bit test of a struct member at offset 0
-    bool func_02046708(void*, unsigned int);
+    bool SystemState_TestAnyFlags(void*, unsigned int);
     // returns pointer to some unknown struct (at 02114e04)
-    void* func_020d6c00();
+    void* SystemState_GetGlobalFlags();
 
     // get system language?
-    int func_0200fb08(GameState*);
+    int GameState_ReadSupportedFirmwareLanguage(GameState*);
 
     // Looks like a custom implementation of strstr
-    char* func_020d2f88(char* searchString, const char* targetString);
+    char* String_FindFirstSubstring(char* searchString, const char* targetString);
     // Custom implementation of strlen
-    int func_020d2ff0(const char* str);
+    int String_CountBytesUntilTerminator(const char* str);
 
     void LZ77UnCompReadNormalWrite8bit(const void* src, void* dst);
 }
@@ -43,26 +57,32 @@ extern "C"
 int MakeCharUpperCase(char ch);
 
 // character to upper case lookup table
-extern const char data_020e692c[];
+// Original data: arm9/main @ 0x20e692c; symbol: data_020e692c.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f ...; full span in module reference.
+// Observed span: 128 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const char MakeCharUpperCase_UnknownRoleInitializedBytes[];
 
 // USA language order: Japanese, English, French, German, Italian, Spanish.
 #if defined(usa)
-#define data_020f0da0 gFileIOConfiguration.languages
-#define data_020f0db8 gFileIOConfiguration.archiveSignature
-#define data_020f0dbc gFileIOConfiguration.archiveRoot
-#define data_020f0dc2 gFileIOConfiguration.languageTag
+#define FileIO_LanguageNamePointers gFileIOConfiguration.languages
+#define FileIO_ArchiveSignature gFileIOConfiguration.archiveSignature
+#define FileIO_ArchiveRoot gFileIOConfiguration.archiveRoot
+#define FileIO_LanguageTag gFileIOConfiguration.languageTag
 #else
-extern char* data_020f0da0[];
+extern char* FileIO_LanguageNamePointers[];
 
 // "ARC"
-extern char data_020f0db8[];
+extern char FileIO_ArchiveSignature[];
 // "arc:/"
-extern char data_020f0dbc[];
+extern char FileIO_ArchiveRoot[];
 
-extern char data_020f0dc2[]; // "<LG>" (USA only)
+extern char FileIO_LanguageTag[]; // "<LG>" (USA only)
 #endif
 
 // JPN: func_02076224
+// Original: arm9/main @ 0x02075098; symbol: _Z18LoadFileIntoMemoryPKcPvPj; size: 0xE4.
 void* LoadFileIntoMemory(const char* path, void* buffer, unsigned int* outLength)
 {
     if (outLength != NULL)
@@ -72,7 +92,7 @@ void* LoadFileIntoMemory(const char* path, void* buffer, unsigned int* outLength
     GameState* gameState = GameState::GetInstance();
     
     char replacedPath[128] = { 0 };
-    int language = func_0200fb08(gameState);
+    int language = GameState_ReadSupportedFirmwareLanguage(gameState);
     StringReplaceLanguageTag(path, replacedPath, language);
 #elif defined(jpn)
     const char* replacedPath = path;
@@ -80,7 +100,7 @@ void* LoadFileIntoMemory(const char* path, void* buffer, unsigned int* outLength
 
     void* alwaysNull = NULL;
     
-    if (buffer >= data_0211e33c && buffer < &data_0211e33c[0x30000])
+    if (buffer >= Main_UnknownRoleZeroInitializedStorage_Variant6 && buffer < &Main_UnknownRoleZeroInitializedStorage_Variant6[0x30000])
         BackgroundLoader::FreeAllocationsGlobal();
 
     ExtendedNitroVM reader;
@@ -105,6 +125,7 @@ void* LoadFileIntoMemory(const char* path, void* buffer, unsigned int* outLength
     return output;
 }
 
+// Original: arm9/main @ 0x0207517C; symbol: _Z25LoadFileIntoNewAllocationPKcR13SafeAllocatorPj; size: 0xCC.
 void* LoadFileIntoNewAllocation(const char* path, SafeAllocator& alloc, unsigned int* outLength)
 {
 #if defined(usa)
@@ -112,7 +133,7 @@ void* LoadFileIntoNewAllocation(const char* path, SafeAllocator& alloc, unsigned
 
     char replacedPath[128] = { 0 };
 
-    int language = func_0200fb08(gameState);
+    int language = GameState_ReadSupportedFirmwareLanguage(gameState);
     StringReplaceLanguageTag(path, replacedPath, language);
 #elif defined(jpn)
     const char* replacedPath = path;
@@ -143,18 +164,19 @@ void* LoadFileIntoNewAllocation(const char* path, SafeAllocator& alloc, unsigned
     return copyDst;
 }
 
+// Original: arm9/main @ 0x02075248; symbol: _Z13GetFileInNarcPKvPKcPS0_Pjj; size: 0xFC.
 bool GetFileInNarc(const void *narcBuffer, const char *targetFilePath,
     const void **pOutFilePtr, unsigned int *pOutFileSize, unsigned int firstFileIdx)
 {
     bool success = false;
     LockResourceMutex();
     NarcHandle handle;
-    if (handle.Initialize(data_020f0db8, (const unsigned char*)narcBuffer))
+    if (handle.Initialize(FileIO_ArchiveSignature, (const unsigned char*)narcBuffer))
     {
         NitroVM machine;
         NitroVM_Initialize(&machine);
         unsigned int idx = firstFileIdx;
-        unsigned int prefixLength = strlen(data_020f0dbc);
+        unsigned int prefixLength = strlen(FileIO_ArchiveRoot);
         while (PrepareReadFileInNARCByID(&machine, &handle, idx))
         {
             char currentFilePath[80];
@@ -180,13 +202,14 @@ bool GetFileInNarc(const void *narcBuffer, const char *targetFilePath,
     return success;
 }
 
+// Original: arm9/main @ 0x02075344; symbol: _Z23GetFileInNarcPermissivePKvPKcPS0_Pj; size: 0x1A8.
 bool GetFileInNarcPermissive(const void *narcBuffer, const char *targetFilePath,
     const void **pOutFilePtr, unsigned int *pOutFileSize)
 {
     bool success = false;
     LockResourceMutex();
     NarcHandle handle;
-    if (handle.Initialize(data_020f0db8, (const unsigned char*)narcBuffer))
+    if (handle.Initialize(FileIO_ArchiveSignature, (const unsigned char*)narcBuffer))
     {
         NitroVM machine;
         char loopFilePathOutput[80];
@@ -205,7 +228,7 @@ bool GetFileInNarcPermissive(const void *narcBuffer, const char *targetFilePath,
         {
             targetUpperCase[i] = MakeCharUpperCase(targetFilePath[i]);
         }
-        unsigned int prefixLength = strlen(data_020f0dbc);
+        unsigned int prefixLength = strlen(FileIO_ArchiveRoot);
         while (fileSearchMinIdx <= fileSearchMaxIdx)
         {
             int i = 0;
@@ -247,13 +270,15 @@ bool GetFileInNarcPermissive(const void *narcBuffer, const char *targetFilePath,
     return success;
 }
 
+// Original: arm9/main @ 0x020754EC; symbol: _Z17MakeCharUpperCasec; size: 0x20.
 int MakeCharUpperCase(char ch)
 {
     if (ch < 0 || ch >= 0x80)
         return ch;
-    return (unsigned char)data_020e692c[ch];
+    return (unsigned char)MakeCharUpperCase_UnknownRoleInitializedBytes[ch];
 }
 
+// Original: arm9/main @ 0x0207550C; symbol: _Z26FindFilesInNarcBySubstringPKvPKcPS0_Pjj; size: 0xFC.
 unsigned int FindFilesInNarcBySubstring(const void* narcBuffer, const char* substr,
     const void** pOutFilePtrs, unsigned int* pOutFileSizes, unsigned int maxOut)
 {
@@ -265,7 +290,7 @@ unsigned int FindFilesInNarcBySubstring(const void* narcBuffer, const char* subs
     LockResourceMutex();
 
     NarcHandle handle;
-    if (handle.Initialize(data_020f0db8, (const unsigned char*)narcBuffer))
+    if (handle.Initialize(FileIO_ArchiveSignature, (const unsigned char*)narcBuffer))
     {
         NitroVM machine;
         char loopFilename[80];
@@ -304,6 +329,7 @@ unsigned int FindFilesInNarcBySubstring(const void* narcBuffer, const char* subs
     return numFound;
 }
 
+// Original: arm9/main @ 0x02075608; symbol: _Z34DecompressLZ77FileIntoScratchSpaceR13SafeAllocatorPKvRj; size: 0x4C.
 void* DecompressLZ77FileIntoScratchSpace(SafeAllocator& allocator,
     const void* fileData, unsigned int& outDecompressedSize)
 {
@@ -318,6 +344,7 @@ void* DecompressLZ77FileIntoScratchSpace(SafeAllocator& allocator,
     return writeDst;
 }
 
+// Original: arm9/main @ 0x02075654; symbol: _Z36DecompressLZ77FileIntoAllocatedSpaceR13SafeAllocatorPKvRj; size: 0x38.
 void* DecompressLZ77FileIntoAllocatedSpace(SafeAllocator& allocator,
     const void* fileData, unsigned int& outDecompressedSize)
 {

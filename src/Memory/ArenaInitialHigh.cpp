@@ -8,9 +8,15 @@
 // MWCC register allocation.
 extern char SDK_SYS_STACKSIZE[];
 extern char SDK_IRQ_STACKSIZE[];
-extern char data_027e0000[];
+// Original data: arm9/dtcm @ 0x27e0000; symbol: data_027e0000.
+// Contains original relocated procedure references. Record fields, dispatch contract and exclusive ownership may remain unresolved.
+// Initial values: hex c8690c02c8690c02c8690c02946a0c02a46a0c02b46a0c02c46a0c02c8690c02546a0c02646a0c02746a0c02846a0c02c8690c02c8690c02c8690c02c8690c02 ...; full span in module reference.
+// Observed span: 96 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/dtcm.md.
+extern char Entry_UnknownRoleProcedureReferenceRecords[];
 
 // USA: 0x020c8548
+// Original: arm9/main @ 0x020C8548; symbol: _Z19GetInitialArenaHighi; size: 0xE4.
 void* GetInitialArenaHigh(int arenaId)
 {
     switch (arenaId)
@@ -24,11 +30,11 @@ void* GetInitialArenaHigh(int arenaId)
     case 3: return (void*)0x02000000;
     case 4:
     {
-        unsigned int irqStackBottom = (unsigned int)data_027e0000 + 0x3f80 - (unsigned int)SDK_IRQ_STACKSIZE;
+        unsigned int irqStackBottom = (unsigned int)Entry_UnknownRoleProcedureReferenceRecords + 0x3f80 - (unsigned int)SDK_IRQ_STACKSIZE;
         unsigned int systemStackBottom;
         if ((int)SDK_SYS_STACKSIZE == 0)
         {
-            systemStackBottom = (unsigned int)data_027e0000;
+            systemStackBottom = (unsigned int)Entry_UnknownRoleProcedureReferenceRecords;
             if (systemStackBottom < 0x027e0080)
                 systemStackBottom = 0x027e0080;
         }

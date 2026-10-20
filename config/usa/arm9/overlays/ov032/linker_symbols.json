@@ -1,0 +1,50 @@
+{
+  "SharedData_UnknownRoleZeroInitializedStorage_Variant11": {
+    "base": "BgmLoadArchiveIntoLargeOverlayBuffer_UnknownRoleZeroInitializedStorage",
+    "offset": "0x6e",
+    "object": "BgmArchiveOverlayArena.o",
+    "section": ".bss"
+  },
+  "SharedData_UnknownRoleZeroInitializedStorage_Variant12": {
+    "base": "BgmLoadArchiveIntoLargeOverlayBuffer_UnknownRoleZeroInitializedStorage",
+    "offset": "0x10e5c",
+    "object": "BgmArchiveOverlayArena.o",
+    "section": ".bss"
+  },
+  "SharedData_UnknownRoleZeroInitializedStorage_Variant13": {
+    "base": "BgmLoadArchiveIntoLargeOverlayBuffer_UnknownRoleZeroInitializedStorage",
+    "offset": "0x1eea4",
+    "object": "BgmArchiveOverlayArena.o",
+    "section": ".bss"
+  },
+  "SharedData_UnknownRoleZeroInitializedStorage_Variant14": {
+    "base": "BgmLoadArchiveIntoLargeOverlayBuffer_UnknownRoleZeroInitializedStorage",
+    "offset": "0x57000",
+    "object": "BgmArchiveOverlayArena.o",
+    "section": ".bss"
+  },
+  "SharedData_UnknownRoleZeroInitializedStorage_Variant15": {
+    "base": "BgmLoadArchiveIntoLargeOverlayBuffer_UnknownRoleZeroInitializedStorage",
+    "offset": "0x700a7",
+    "object": "BgmArchiveOverlayArena.o",
+    "section": ".bss"
+  },
+  "SharedData_UnknownRoleZeroInitializedStorage_Variant16": {
+    "base": "BgmLoadArchiveIntoLargeOverlayBuffer_UnknownRoleZeroInitializedStorage",
+    "offset": "0x70e5b",
+    "object": "BgmArchiveOverlayArena.o",
+    "section": ".bss"
+  },
+  "SharedData_UnknownRoleZeroInitializedStorage_Variant17": {
+    "base": "BgmLoadArchiveIntoLargeOverlayBuffer_UnknownRoleZeroInitializedStorage",
+    "offset": "0x7eea5",
+    "object": "BgmArchiveOverlayArena.o",
+    "section": ".bss"
+  },
+  "SystemInitializeSharedQueueAndStartProcessorContext_UnknownRoleZeroInitializedStorage_Variant2": {
+    "base": "BgmLoadArchiveIntoLargeOverlayBuffer_UnknownRoleZeroInitializedStorage",
+    "offset": "0x92380",
+    "object": "BgmArchiveOverlayArena.o",
+    "section": ".bss"
+  }
+}

@@ -1,5 +1,6 @@
 #include "World/Zone3DContainers.h"
 
+// Original: arm9/main @ 0x0204719C; symbol: _ZN23ZoneContainerRenderPart5ResetEv; size: 0x94.
 void ZoneContainerRenderPart::Reset()
 {
     unknown_0 = 0;
@@ -20,6 +21,7 @@ void ZoneContainerRenderPart::Reset()
     flag2 = 0;
 }
 
+// Original: arm9/main @ 0x02047230; symbol: _ZN23ZoneContainerRenderPart12ResetIfFlag0Ev; size: 0x1C.
 void ZoneContainerRenderPart::ResetIfFlag0()
 {
     if (flag0) Reset();

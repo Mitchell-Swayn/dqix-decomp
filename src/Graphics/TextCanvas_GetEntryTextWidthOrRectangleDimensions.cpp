@@ -1,0 +1,5 @@
+#include <globaldefs.h>
+ARM
+struct Kind{unsigned char value:4,rest:4;};extern "C" unsigned char* DisplayLayout_FindPartById(void*);extern "C" unsigned TextLookup_SelectFontTableForFont(unsigned);extern "C" void* MessageTextTable_FindTextById(unsigned,int);extern "C" short TextLayout_ComputeWidthWithGlyphSpacing(void*,unsigned);
+// Original: arm9/main @ 0x020808C8; symbol: func_020808c8; size: 0xD8.
+extern "C" void TextCanvas_GetEntryTextWidthOrRectangleDimensions(unsigned char* object,unsigned unused,short* value,short* kind){unsigned char* entry=DisplayLayout_FindPartById(object+4);if(!entry)return;unsigned type=TextLookup_SelectFontTableForFont(((Kind*)(entry+19))->value);switch(entry[18]){case 0:{void* item=MessageTextTable_FindTextById(*(unsigned*)object,*(short*)(entry+14));if(!item)return;*value=TextLayout_ComputeWidthWithGlyphSpacing(item,type);*kind=((Kind*)(entry+19))->value;return;}case 1:*value=*(short*)(entry+10);*kind=*(short*)(entry+12);return;case 4:if(!*(void**)entry)return;*value=TextLayout_ComputeWidthWithGlyphSpacing(*(void**)entry,type);*kind=((Kind*)(entry+19))->value;return;default:*kind=0;*value=0;return;}}

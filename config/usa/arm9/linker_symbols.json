@@ -1,136 +1,196 @@
 {
   "SDK_SYS_STACKSIZE": "0x00000000",
   "SDK_IRQ_STACKSIZE": "0x00000400",
-  "data_020e9a50": {
-    "base": "data_020e9450",
+  "Math_SinCosQ12TableOffset0x600": {
+    "base": "Math_SinCosQ12Table",
     "offset": "0x600",
     "object": "FixedPointSinCosTable.o",
     "section": ".rodata"
   },
-  "data_020ed66a": {
-    "base": "data_020ed668",
+  "MemoryMapTextureImage_UnknownRoleInitializedBytes_Variant2": {
+    "base": "MemoryMapTextureImage_UnknownRoleInitializedBytes",
     "offset": "0x2",
     "object": "VRAMImageMappingTable.o",
     "section": ".rodata"
   },
-  "data_020ed66c": {
-    "base": "data_020ed668",
+  "MemoryMapTextureImage_UnknownRoleInitializedBytes_Variant3": {
+    "base": "MemoryMapTextureImage_UnknownRoleInitializedBytes",
     "offset": "0x4",
     "object": "VRAMImageMappingTable.o",
     "section": ".rodata"
   },
-  "data_020eeef8": {
-    "base": "data_020eeef0",
+  "Runtime_FormatPrintfDecimalDouble_TextINF": {
+    "base": "Runtime_FloatingPointSpellings",
     "offset": "0x8",
     "object": "RuntimeFormatText.o",
     "section": ".data"
   },
-  "data_020eef00": {
-    "base": "data_020eeef0",
+  "Runtime_FormatPrintfDecimalDouble_TextInf_Copy2": {
+    "base": "Runtime_FloatingPointSpellings",
     "offset": "0x10",
     "object": "RuntimeFormatText.o",
     "section": ".data"
   },
-  "data_020eef08": {
-    "base": "data_020eeef0",
+  "Runtime_FormatPrintfDecimalDouble_TextINF_Copy3": {
+    "base": "Runtime_FloatingPointSpellings",
     "offset": "0x18",
     "object": "RuntimeFormatText.o",
     "section": ".data"
   },
-  "data_020eef0c": {
-    "base": "data_020eeef0",
+  "Runtime_FormatPrintfDecimalDouble_TextInf_Copy4": {
+    "base": "Runtime_FloatingPointSpellings",
     "offset": "0x1c",
     "object": "RuntimeFormatText.o",
     "section": ".data"
   },
-  "data_020eef10": {
-    "base": "data_020eeef0",
+  "Runtime_FormatPrintfDecimalDouble_TextNAN": {
+    "base": "Runtime_FloatingPointSpellings",
     "offset": "0x20",
     "object": "RuntimeFormatText.o",
     "section": ".data"
   },
-  "data_020eef18": {
-    "base": "data_020eeef0",
+  "Runtime_FormatPrintfDecimalDouble_TextNan_Copy2": {
+    "base": "Runtime_FloatingPointSpellings",
     "offset": "0x28",
     "object": "RuntimeFormatText.o",
     "section": ".data"
   },
-  "data_020eef20": {
-    "base": "data_020eeef0",
+  "Runtime_FormatPrintfDecimalDouble_TextNAN_Copy3": {
+    "base": "Runtime_FloatingPointSpellings",
     "offset": "0x30",
     "object": "RuntimeFormatText.o",
     "section": ".data"
   },
-  "data_020eef24": {
-    "base": "data_020eeef0",
+  "Runtime_FormatPrintfDecimalDouble_TextNan_Copy4": {
+    "base": "Runtime_FloatingPointSpellings",
     "offset": "0x34",
     "object": "RuntimeFormatText.o",
     "section": ".data"
   },
-  "data_020eef28": {
-    "base": "data_020eeef0",
+  "RuntimeWriteFormattedArgumentsToCallback_UnknownRoleInitializedBytes": {
+    "base": "Runtime_FloatingPointSpellings",
     "offset": "0x38",
     "object": "RuntimeFormatText.o",
     "section": ".data"
   },
-  "data_020eef2c": {
-    "base": "data_020eeef0",
+  "RuntimeWriteFormattedArgumentsToCallback_UnknownRoleInitializedBytes_Variant2": {
+    "base": "Runtime_FloatingPointSpellings",
     "offset": "0x3c",
     "object": "RuntimeFormatText.o",
     "section": ".data"
   },
-  "data_020f1330": {
+  "ResetPlacementListOrLoadPlacementResources_PathDataScenarioFlditemPac": {
     "base": "gWorldPlacementPersistentData",
     "offset": "0x28",
     "object": "WorldPlacementPersistentData.o",
     "section": ".data"
   },
-  "data_020f134a": {
+  "ResetPlacementListOrLoadPlacementResources_TextFldbiasBin": {
     "base": "gWorldPlacementPersistentData",
     "offset": "0x42",
     "object": "WorldPlacementPersistentData.o",
     "section": ".data"
   },
-  "data_020f1356": {
+  "ResetPlacementListOrLoadPlacementResources_FormatF02DflditemBin": {
     "base": "gWorldPlacementPersistentData",
     "offset": "0x4e",
     "object": "WorldPlacementPersistentData.o",
     "section": ".data"
   },
-  "data_020e6acc": {
-    "base": "data_020e6abc",
+  "RuntimePowerEvaluateDoublePower_UnknownRoleInitializedBytes_Variant2": {
+    "base": "RuntimePowerEvaluateDoublePower_UnknownRoleInitializedBytes",
     "offset": "0x10",
     "object": "RuntimeMathTables.o",
     "section": ".rodata"
   },
-  "data_020e6adc": {
-    "base": "data_020e6abc",
+  "RuntimePowerEvaluateDoublePower_UnknownRoleInitializedBytes_Variant3": {
+    "base": "RuntimePowerEvaluateDoublePower_UnknownRoleInitializedBytes",
     "offset": "0x20",
     "object": "RuntimeMathTables.o",
     "section": ".rodata"
   },
-  "data_020e6aec": {
-    "base": "data_020e6abc",
+  "MathReduceDoubleAngleByHalfPi_UnknownRoleInitializedBytes": {
+    "base": "RuntimePowerEvaluateDoublePower_UnknownRoleInitializedBytes",
     "offset": "0x30",
     "object": "RuntimeMathTables.o",
     "section": ".rodata"
   },
-  "data_020e6b6c": {
-    "base": "data_020e6abc",
+  "MathReduceDoubleAngleByHalfPi_UnknownRoleInitializedBytes_Variant2": {
+    "base": "RuntimePowerEvaluateDoublePower_UnknownRoleInitializedBytes",
     "offset": "0xb0",
     "object": "RuntimeMathTables.o",
     "section": ".rodata"
   },
-  "data_020e6c74": {
-    "base": "data_020e6abc",
+  "MathReduceChunkedDoubleAngleByHalfPi_UnknownRoleInitializedBytes": {
+    "base": "RuntimePowerEvaluateDoublePower_UnknownRoleInitializedBytes",
     "offset": "0x1b8",
     "object": "RuntimeMathTables.o",
     "section": ".rodata"
   },
-  "data_020e6c84": {
-    "base": "data_020e6abc",
+  "MathReduceChunkedDoubleAngleByHalfPi_UnknownRoleInitializedBytes_Variant2": {
+    "base": "RuntimePowerEvaluateDoublePower_UnknownRoleInitializedBytes",
     "offset": "0x1c8",
     "object": "RuntimeMathTables.o",
     "section": ".rodata"
+  },
+  "SharedData_UnknownRoleZeroInitializedStorage_Variant21": {
+    "base": "Main_UnknownRoleZeroInitializedStorage_Variant6",
+    "offset": "0x1ed1",
+    "object": "FileScratchArena.o",
+    "section": ".bss"
+  },
+  "StatusMenuBuildLearnedAbilityAndTraitBanks_UnknownRoleZeroInitializedStorage": {
+    "base": "Main_UnknownRoleZeroInitializedStorage_Variant6",
+    "offset": "0x8000",
+    "object": "FileScratchArena.o",
+    "section": ".bss"
+  },
+  "SharedData_UnknownRoleZeroInitializedStorage_Variant22": {
+    "base": "Main_UnknownRoleZeroInitializedStorage_Variant6",
+    "offset": "0x12bc6",
+    "object": "FileScratchArena.o",
+    "section": ".bss"
+  },
+  "SharedData_UnknownRoleZeroInitializedStorage_Variant23": {
+    "base": "Main_UnknownRoleZeroInitializedStorage_Variant6",
+    "offset": "0x21ed8",
+    "object": "FileScratchArena.o",
+    "section": ".bss"
+  },
+  "SharedData_UnknownRoleZeroInitializedStorage_Variant24": {
+    "base": "Main_UnknownRoleZeroInitializedStorage_Variant6",
+    "offset": "0x22dd4",
+    "object": "FileScratchArena.o",
+    "section": ".bss"
+  },
+  "SharedData_UnknownRoleZeroInitializedStorage_Variant18": {
+    "base": "GameStateGetInstance_UnknownRoleZeroInitializedStorage",
+    "offset": "0x1228",
+    "object": "GameStateGlobalStorage.o",
+    "section": ".bss"
+  },
+  "SharedData_UnknownRoleZeroInitializedStorage_Variant19": {
+    "base": "GameStateGetInstance_UnknownRoleZeroInitializedStorage",
+    "offset": "0x1240",
+    "object": "GameStateGlobalStorage.o",
+    "section": ".bss"
+  },
+  "GameStateRevivePartyAndCompleteRecoveryTransition_UnknownRoleZeroInitializedStorage": {
+    "base": "GameStateGetInstance_UnknownRoleZeroInitializedStorage",
+    "offset": "0x5000",
+    "object": "GameStateGlobalStorage.o",
+    "section": ".bss"
+  },
+  "SoundCommandInitializePoolAndSharedStatus_UnknownRoleZeroInitializedStorage_Variant2": {
+    "base": "SoundCommandFlushPendingBatch_UnknownRoleZeroInitializedStorage_Variant2",
+    "offset": "0xd20",
+    "object": "SoundCommandRecordPool.o",
+    "section": ".bss"
+  },
+  "SoundCommandInitializePoolAndSharedStatus_UnknownRoleZeroInitializedStorage_Variant3": {
+    "base": "SoundCommandFlushPendingBatch_UnknownRoleZeroInitializedStorage_Variant2",
+    "offset": "0x17e8",
+    "object": "SoundCommandRecordPool.o",
+    "section": ".bss"
   }
 }

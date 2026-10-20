@@ -7,23 +7,25 @@ struct TexturePaletteVRAMAllocator
     unsigned int freeEnd_;
     unsigned int size;
 };
-TexturePaletteVRAMAllocator data_0210cf88;
+TexturePaletteVRAMAllocator AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage;
 
 #pragma optimize_for_size off
 #pragma dont_inline on
 
+// Original: arm9/main @ 0x020BB780; symbol: _Z28InitializeTexturePaletteVRAMjb; size: 0x4C.
 void InitializeTexturePaletteVRAM(unsigned int size, bool setDefault)
 {
-    data_0210cf88.size = size;
+    AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage.size = size;
     ResetTexturePaletteVRAM();
     if (setDefault)
     {
-        data_020f1ef0 = AllocateTexturePaletteVRAM;
-        data_020f1ef4 = FreeTexturePaletteVRAM;
+        InitializeTexturePaletteVRAM_UnknownRoleProcedureReferenceRecords = AllocateTexturePaletteVRAM;
+        InitializeTexturePaletteVRAM_UnknownRoleProcedureReferenceRecords_Variant2 = FreeTexturePaletteVRAM;
     }
 }
 
 // The explicit branches preserve the original SDK allocator's control flow.
+// Original: arm9/main @ 0x020BB7CC; symbol: AllocateTexturePaletteVRAM; size: 0x13C.
 unsigned int AllocateTexturePaletteVRAM(unsigned int amount, unsigned int eightByteAlign, unsigned int direction)
 {  
     unsigned int chosenPosition = 0;
@@ -44,7 +46,7 @@ unsigned int AllocateTexturePaletteVRAM(unsigned int amount, unsigned int eightB
     
     if (direction == 1)
     {
-        unsigned int start = data_0210cf88.freeStart_;
+        unsigned int start = AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage.freeStart_;
         if (eightByteAlign)
             frontPadding = (8 - (start & 7)) & 7;
         else
@@ -52,7 +54,7 @@ unsigned int AllocateTexturePaletteVRAM(unsigned int amount, unsigned int eightB
         
         totalSpaceNeeded = alignedSize + frontPadding;
         unsigned newFreeStart;
-        if (data_0210cf88.freeEnd_ - start < totalSpaceNeeded)
+        if (AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage.freeEnd_ - start < totalSpaceNeeded)
             goto lab_a4;
         newFreeStart = start + totalSpaceNeeded;
         if (!eightByteAlign)
@@ -64,26 +66,26 @@ unsigned int AllocateTexturePaletteVRAM(unsigned int amount, unsigned int eightB
         }
     lab_88:
         success = true;
-        chosenPosition = data_0210cf88.freeStart_ + frontPadding;
-        data_0210cf88.freeStart_ += totalSpaceNeeded;
+        chosenPosition = AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage.freeStart_ + frontPadding;
+        AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage.freeStart_ += totalSpaceNeeded;
         goto end;
     lab_a4:
         success = false;
     }
     else
     {
-        if (data_0210cf88.freeEnd_ >= alignedSize)
+        if (AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage.freeEnd_ >= alignedSize)
         {
             if (!eightByteAlign)
-                frontPadding = (data_0210cf88.freeEnd_ - alignedSize) & 15;
+                frontPadding = (AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage.freeEnd_ - alignedSize) & 15;
             else
-                frontPadding = (data_0210cf88.freeEnd_ - alignedSize) & 7;
+                frontPadding = (AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage.freeEnd_ - alignedSize) & 7;
 
             int totalSpaceUsed = alignedSize + frontPadding;
 
-            if (data_0210cf88.freeEnd_ - data_0210cf88.freeStart_ >= alignedSize + frontPadding)
+            if (AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage.freeEnd_ - AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage.freeStart_ >= alignedSize + frontPadding)
             {
-                if (eightByteAlign && data_0210cf88.freeEnd_ > 0x10000)
+                if (eightByteAlign && AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage.freeEnd_ > 0x10000)
                 {
                     success = false;
                     goto end;
@@ -91,8 +93,8 @@ unsigned int AllocateTexturePaletteVRAM(unsigned int amount, unsigned int eightB
                 else
                 {
                     success = true;
-                    chosenPosition = *(volatile unsigned int*)&data_0210cf88.freeEnd_ - totalSpaceUsed;
-                    data_0210cf88.freeEnd_ = chosenPosition;
+                    chosenPosition = *(volatile unsigned int*)&AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage.freeEnd_ - totalSpaceUsed;
+                    AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage.freeEnd_ = chosenPosition;
                     goto end;
                 }
             }
@@ -108,22 +110,26 @@ end:
 }
 // Original successful no-op: the frame allocator releases storage via reset
 // or state restoration rather than freeing individual keys.
+// Original: arm9/main @ 0x020BB908; symbol: FreeTexturePaletteVRAM; size: 0x8.
 extern "C" int FreeTexturePaletteVRAM(unsigned int key) { return 0; }
 
+// Original: arm9/main @ 0x020BB910; symbol: _Z27SaveTexturePaletteVRAMStateP23TexturePaletteVRAMState; size: 0x1C.
 void SaveTexturePaletteVRAMState(TexturePaletteVRAMState* state)
 {
-    state->freeStart = data_0210cf88.freeStart_;
-    state->freeEnd = data_0210cf88.freeEnd_;
+    state->freeStart = AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage.freeStart_;
+    state->freeEnd = AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage.freeEnd_;
 }
 
+// Original: arm9/main @ 0x020BB92C; symbol: _Z30RestoreTexturePaletteVRAMStatePK23TexturePaletteVRAMState; size: 0x1C.
 void RestoreTexturePaletteVRAMState(const TexturePaletteVRAMState* state)
 {
-    data_0210cf88.freeStart_ = state->freeStart;
-    data_0210cf88.freeEnd_ = state->freeEnd;
+    AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage.freeStart_ = state->freeStart;
+    AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage.freeEnd_ = state->freeEnd;
 }
 
+// Original: arm9/main @ 0x020BB948; symbol: _Z23ResetTexturePaletteVRAMv; size: 0x1C.
 void ResetTexturePaletteVRAM()
 {
-    data_0210cf88.freeStart_ = 0;
-    data_0210cf88.freeEnd_ = data_0210cf88.size;
+    AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage.freeStart_ = 0;
+    AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage.freeEnd_ = AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage.size;
 }

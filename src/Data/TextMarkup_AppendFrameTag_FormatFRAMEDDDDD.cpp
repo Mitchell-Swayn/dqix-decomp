@@ -1,0 +1,8 @@
+// Original data: arm9/main @ 0x20efee4; symbol: data_020efee4.
+// NUL-terminated ASCII text: "<FRAME=%d,%d,%d,%d,%d>". The role name describes the literal content; consumer context does not establish exclusive ownership.
+// Observed values: "<FRAME=%d,%d,%d,%d,%d>".
+// Span: 23 bytes to next configured symbol; logical object size may differ.
+// UI text-control format or marker; release case and termination retained.
+extern "C" {
+__declspec(align(1)) char TextMarkup_AppendFrameTag_FormatFRAMEDDDDD[23] = "<FRAME=%d,%d,%d,%d,%d>";
+}

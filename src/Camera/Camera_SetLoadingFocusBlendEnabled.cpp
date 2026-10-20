@@ -1,0 +1,16 @@
+#include <globaldefs.h>
+typedef unsigned char undefined1;
+typedef unsigned short undefined2;
+typedef unsigned int undefined4;
+typedef unsigned int uint;
+typedef unsigned short ushort;
+typedef unsigned char byte;
+extern "C" {
+// Original: arm9/main @ 0x020A2CBC; symbol: func_020a2cbc; size: 0x8.
+ARM void Camera_SetLoadingFocusBlendEnabled(int param_1,undefined1 param_2)
+
+{
+  *(undefined1 *)(param_1 + 0x2c5) = param_2;
+  return;
+}
+}

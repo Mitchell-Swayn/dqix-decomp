@@ -1,6 +1,7 @@
 #include "World/Zone3DEmbeddedState.h"
 
 // Tier thresholds are observed; their gameplay effect remains unresolved.
+// Original: arm9/main @ 0x020989CC; symbol: _ZN13ZoneState084020UpdateEntryCountTierEv; size: 0xB8.
 void ZoneState0840::UpdateEntryCountTier()
 {
     if (unknown_1b3c == 6) return;

@@ -1,0 +1,11 @@
+#include <globaldefs.h>
+ARM
+// Original data: arm9/ov031 @ 0x2290cd0; symbol: data_ov031_02290cd0.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 8 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/ov031.md.
+extern "C" unsigned char InitializeBG2SharedSelectionAndCallback_UnknownRoleZeroInitializedStorage;extern "C" void Graphics_InitializeBG2ResourceLoadersAndPriorities();extern "C" void WfcUtility_GetScreenOperationArguments(unsigned*,unsigned*);extern "C" void WfcUtility_ShowFormattedMessagePanel(int,int,int);extern "C" void WfcUtility_ConfigureSecondaryControlsForDisplayMode(int);extern "C" int System_ConvertSharedRegionByteToIndexPlusFive();extern "C" void Graphics_SubmitIndexedConfiguredBuffer(int);extern "C" void WfcUtility_CreateAnimatedStatusSprite(int);extern "C" void Resource_CreateSharedSelectionAndInstallTimedCallback();extern "C" void WfcUtility_CreateWirelessRegionIndicator(int);extern "C" int WfcUtility_PlaySequenceArchiveEntry(unsigned);extern "C" void WfcUtility_SetMainLoopCallback(void(*)());extern "C" void WfcUtility_BeginSettingsHeaderScreenTransition();
+// Original: arm9/ov031 @ 0x02233A00; symbol: InitializeBG2SharedSelectionAndCallback; size: 0x8C.
+// Initializes BG2 loaders, configures shared selection resources and installs the next callback.
+extern "C" void InitializeBG2SharedSelectionAndCallback(){InitializeBG2SharedSelectionAndCallback_UnknownRoleZeroInitializedStorage=0;Graphics_InitializeBG2ResourceLoadersAndPriorities();unsigned shared;WfcUtility_GetScreenOperationArguments(0,&shared);if(!shared)WfcUtility_ShowFormattedMessagePanel(49,-1,0);WfcUtility_ConfigureSecondaryControlsForDisplayMode(2);if(!shared)System_ConvertSharedRegionByteToIndexPlusFive();Graphics_SubmitIndexedConfiguredBuffer(44);WfcUtility_CreateAnimatedStatusSprite(0);Resource_CreateSharedSelectionAndInstallTimedCallback();WfcUtility_CreateWirelessRegionIndicator(0);WfcUtility_PlaySequenceArchiveEntry(12);WfcUtility_SetMainLoopCallback(WfcUtility_BeginSettingsHeaderScreenTransition);}

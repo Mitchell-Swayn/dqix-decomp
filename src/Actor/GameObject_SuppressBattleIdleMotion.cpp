@@ -1,0 +1,5 @@
+#include <globaldefs.h>
+extern "C" {
+// Original: arm9/main @ 0x02048C38; symbol: func_02048c38; size: 0x18.
+void GameObject_SuppressBattleIdleMotion(unsigned int **p){unsigned int *v=p[0x4f];if(v)v[8]|=0x100;}
+}

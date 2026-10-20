@@ -1,3 +1,3 @@
 #include "System/RuntimeFloatConstants.h"
 
-RuntimeBinary32Constant data_020eecc8 = {0x7fffffff};
+RuntimeBinary32Constant RuntimePowerEvaluateDoublePower_UnknownRoleInitializedBytes_Variant4 = {0x7fffffff};

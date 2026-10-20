@@ -2,15 +2,20 @@
 #include "World/BMDJStateNotification.h"
 #include "GameState/GameState.h"
 
-extern "C" void* func_0205ec34();
-extern "C" void func_02064b24(void*, int, int, BMDJStateNotification*);
-extern "C" void func_0205eaa0(void*, int, int);
-extern "C" void func_020397cc(GameObject*, bool);
-extern "C" void func_ov017_021d196c(unsigned short, unsigned short, bool);
-extern "C" void* func_02027ca4();
-extern "C" void* func_02028bd0(void*, unsigned short);
-extern "C" void func_02028c64(void*, int);
-extern char data_02108760[];
+extern "C" void* GameState_GetSerializedProgressState();
+extern "C" void LinkedList_TestPredicateForMatchingGroupId(void*, int, int, BMDJStateNotification*);
+extern "C" void SoundSfx_StartCurrentSequenceArchiveEntry(void*, int, int);
+extern "C" void GameObject_DisableMovementInput(GameObject*, bool);
+extern "C" void Network_QueueZoneTypeTwoFeatureActivation(unsigned short, unsigned short, bool);
+extern "C" void* ZoneState_GetTrackedZoneCache();
+extern "C" void* ZoneState_FindTrackedZoneByIdentifier(void*, unsigned short);
+extern "C" void ZoneState_MarkType2FeatureActivated(void*, int);
+// Original data: arm9/main @ 0x2108760; symbol: data_02108760.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 208 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern char Main_UnknownRoleZeroInitializedStorage[];
 
 struct Type2FeatureSoundTable
 {
@@ -18,6 +23,7 @@ struct Type2FeatureSoundTable
 };
 extern const Type2FeatureSoundTable gType2FeatureSounds = { { 200, 201, 202, 203, 204 } };
 
+// Original: arm9/main @ 0x02018300; symbol: _ZN6Zone3D20ActivateType2FeatureEPN12ZoneFeatures13Opcode6aEntryEbbi; size: 0x44C.
 void Zone3D::ActivateType2Feature(ZoneFeatures::Opcode6aEntry* feature, bool playSound, bool force, int notify)
 {
     Zone3D_BMDJStruct::InstanceEntry* instance = FindType2BMDJInstance(feature);
@@ -26,14 +32,14 @@ void Zone3D::ActivateType2Feature(ZoneFeatures::Opcode6aEntry* feature, bool pla
     if (!force && (feature->unk_2c.type2.unk_2_high & 4)) return;
     if (!force)
     {
-        void* state = func_0205ec34();
+        void* state = GameState_GetSerializedProgressState();
         BMDJStateNotification notification;
         notification.angle = feature->unk_20;
         notification.instanceID = feature->unk_2c.type2.unk_1;
         notification.groupID = feature->unk_2c.type2.unk_0;
         notification.zoneID = currentZoneID_;
-        func_02064b24(state, 0x11, 0x6c, &notification);
-        func_02064b24(state, 3, 0x6c, &notification);
+        LinkedList_TestPredicateForMatchingGroupId(state, 0x11, 0x6c, &notification);
+        LinkedList_TestPredicateForMatchingGroupId(state, 3, 0x6c, &notification);
         if (feature->unk_2c.type2.unk_2_high & 4)
         {
             feature->unk_2c.type2.unk_2_high &= ~4;
@@ -103,19 +109,19 @@ void Zone3D::ActivateType2Feature(ZoneFeatures::Opcode6aEntry* feature, bool pla
     if (playSound)
     {
         Type2FeatureSoundTable sounds = gType2FeatureSounds;
-        func_0205eaa0(data_02108760, sounds.ids[feature->unk_2c.type2.unk_2_low], 0);
+        SoundSfx_StartCurrentSequenceArchiveEntry(Main_UnknownRoleZeroInitializedStorage, sounds.ids[feature->unk_2c.type2.unk_2_low], 0);
     }
     if (force && (feature->unk_2c.type2.unk_2_high & 8))
     {
         GameObject* protagonist = GameState::GetInstance()->GetProtagonist();
         // The short at GameObject+0xb2 has no established semantic name.
         *(short*)&protagonist->unk_ac[6] = 0;
-        func_020397cc(protagonist, true);
+        GameObject_DisableMovementInput(protagonist, true);
         unk_830[0] = 8;
         return;
     }
     int index = GetType2FeatureIndex(feature);
-    if (force && notify) func_ov017_021d196c(currentZoneID_, index, playSound);
-    void* stored = func_02028bd0(func_02027ca4(), currentZoneID_);
-    if (stored && !(feature->unk_2c.type2.unk_2_high & 0x200)) func_02028c64(stored, index);
+    if (force && notify) Network_QueueZoneTypeTwoFeatureActivation(currentZoneID_, index, playSound);
+    void* stored = ZoneState_FindTrackedZoneByIdentifier(ZoneState_GetTrackedZoneCache(), currentZoneID_);
+    if (stored && !(feature->unk_2c.type2.unk_2_high & 0x200)) ZoneState_MarkType2FeatureActivated(stored, index);
 }

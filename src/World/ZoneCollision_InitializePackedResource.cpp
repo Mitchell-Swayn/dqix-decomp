@@ -1,0 +1,5 @@
+#include <globaldefs.h>
+ARM
+struct Header{int kind;unsigned int shift;short first[3],second[3];int pad14[2];int count;unsigned int scale;int offsets[4];int pad34;int extra;};struct State{Header* data;unsigned char* parts[5];int second[3];int first[3];int pad30[6];unsigned int width;};
+// Original: arm9/main @ 0x0204BF44; symbol: func_0204bf44; size: 0xEC.
+extern "C" void ZoneCollision_InitializePackedResource(State* p,int unused,unsigned char* data){p->data=(Header*)data;p->parts[0]=data+((Header*)data)->offsets[0];p->parts[1]=data+p->data->offsets[1];p->parts[2]=data+p->data->offsets[2];p->parts[3]=data+p->data->offsets[3];if(p->data->kind==3)p->parts[4]=data+p->data->extra;p->first[0]=(unsigned int)(int)p->data->first[0]<<p->data->shift;p->first[1]=(unsigned int)(int)p->data->first[1]<<p->data->shift;p->first[2]=(unsigned int)(int)p->data->first[2]<<p->data->shift;p->second[0]=(unsigned int)(int)p->data->second[0]<<p->data->shift;p->second[1]=(unsigned int)(int)p->data->second[1]<<p->data->shift;p->second[2]=(unsigned int)(int)p->data->second[2]<<p->data->shift;unsigned int scale=p->data->scale;p->width=p->data->count*scale+(scale>>1);}

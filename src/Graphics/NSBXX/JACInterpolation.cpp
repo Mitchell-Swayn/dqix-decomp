@@ -1,5 +1,6 @@
 #include "Graphics/NSBXX/JACInternal.h"
 
+// Original: arm9/main @ 0x020B8404; symbol: _Z28CalculateScalingAmountSmoothPiiPN17NSBXXAnimationJAC5Track15ChannelNonConstEPS0_; size: 0x194.
 void CalculateScalingAmountSmooth(fix32_t* out, fix32_t time, NSBXXAnimationJAC::Track::ChannelNonConst* channel, NSBXXAnimationJAC* jac)
 {
     NSBXXAnimationJAC::ScaleSample32* samples = (NSBXXAnimationJAC::ScaleSample32*)((intptr_t)jac + channel->samplesOffset_);
@@ -114,6 +115,7 @@ skip_default_values:
     out[1] = (secondaryLerp0 * preMultiply + ((time * (secondaryLerp1 - secondaryLerp0)) >> 12)) >> rightShift;
 }
 
+// Original: arm9/main @ 0x020B8598; symbol: _Z29CalculateRotationFrameAlignedP9Matrix3x3iPN17NSBXXAnimationJAC5Track15ChannelNonConstEPS1_; size: 0x418.
 void CalculateRotationFrameAligned(Matrix3x3* out, fix32_t time, NSBXXAnimationJAC::Track::ChannelNonConst* channel, NSBXXAnimationJAC* jac)
 {
     unsigned int flags = channel->metadata_;
@@ -258,6 +260,7 @@ calculate_exact_frame:
 }
 }
 
+// Original: arm9/main @ 0x020B89B0; symbol: _Z23CalculateRotationSmoothP9Matrix3x3iPN17NSBXXAnimationJAC5Track15ChannelNonConstEPS1_; size: 0x344.
 void CalculateRotationSmooth(Matrix3x3* out, fix32_t time, NSBXXAnimationJAC::Track::ChannelNonConst* channel, NSBXXAnimationJAC* jac)
 {
     unsigned int basisOffset, pivotOffset;
@@ -374,6 +377,7 @@ skip_default_values:
         CalculateThirdRowByCrossProduct(out);
 }
 
+// Original: arm9/main @ 0x020B8CF4; symbol: _Z18GetMatrixFromIndexP9Matrix3x3iii; size: 0x16C.
 bool GetMatrixFromIndex(Matrix3x3* out, intptr_t pivotList, intptr_t basisList, int index)
 {
     if (index & 0x8000) // pivot matrix
@@ -388,14 +392,14 @@ bool GetMatrixFromIndex(Matrix3x3* out, intptr_t pivotList, intptr_t basisList, 
         int form = pivot->flags & 0xf;
         out->entries[form] = (pivot->flags & 0x10) ? -1 << 12 : 1 << 12;
 
-        out->entries[data_020e9284[form].a] = entryA;
-        out->entries[data_020e9284[form].b] = entryB;
+        out->entries[GetMatrixFromIndex_UnknownRoleInitializedBytes[form].a] = entryA;
+        out->entries[GetMatrixFromIndex_UnknownRoleInitializedBytes[form].b] = entryB;
 
         fix32_t entryC = (pivot->flags & 0x20) ? -entryB : entryB;
-        out->entries[data_020e9284[form].c] = entryC;
+        out->entries[GetMatrixFromIndex_UnknownRoleInitializedBytes[form].c] = entryC;
         
         fix32_t entryD = (pivot->flags & 0x40) ? -entryA : entryA;
-        out->entries[data_020e9284[form].d] = entryD;
+        out->entries[GetMatrixFromIndex_UnknownRoleInitializedBytes[form].d] = entryD;
 
         return false;
     }

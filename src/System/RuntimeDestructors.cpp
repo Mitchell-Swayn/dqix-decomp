@@ -2,14 +2,15 @@
 
 #pragma optimize_for_size off
 #pragma dont_inline on
-extern "C" void func_0200edf4()
+// Original: arm9/main @ 0x0200EDF4; symbol: func_0200edf4; size: 0x44.
+extern "C" void RuntimeDestructors_DestroyRegisteredObjects()
 {
-    RuntimeDestructorNode* node = data_020f33b0;
+    RuntimeDestructorNode* node = RuntimeRunCleanupCallbacksForMemoryRegion_UnknownRoleZeroInitializedStorage;
     if (node) {
         do {
-            data_020f33b0 = node->next;
+            RuntimeRunCleanupCallbacksForMemoryRegion_UnknownRoleZeroInitializedStorage = node->next;
             node->destroy(node->object, -1);
-            node = data_020f33b0;
+            node = RuntimeRunCleanupCallbacksForMemoryRegion_UnknownRoleZeroInitializedStorage;
         } while (node);
     }
 }

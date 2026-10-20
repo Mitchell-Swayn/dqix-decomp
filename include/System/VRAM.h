@@ -13,7 +13,7 @@
 #define VRAM_BANK_I 0x100
 
 #if defined(jpn)
-#define data_02111224 data_02110ec4
+#define InitializeVRAM_UnknownRoleZeroInitializedStorage data_02110ec4
 #endif
 
 struct VRAMBankUsages
@@ -31,7 +31,12 @@ struct VRAMBankUsages
     unsigned short subOBJBanks_; // 38
     unsigned short subBGExtPaletteBanks_; // 3a
     unsigned short subObjExtPaletteBanks_; // 3c
-} extern data_02111224;
+// Original data: arm9/main @ 0x2111224; symbol: data_02111224.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 2 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+} extern InitializeVRAM_UnknownRoleZeroInitializedStorage;
 
 extern "C"
 {

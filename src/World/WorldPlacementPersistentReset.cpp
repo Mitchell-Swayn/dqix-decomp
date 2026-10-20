@@ -1,5 +1,3 @@
-#if defined(usa)
-// This reconstruction uses USA-specific layout; JPN retains its original range.
 #include "World/WorldPlacementSource.h"
 #include "World/WorldObjectInstanceList.h"
 #include "GameState/GameState.h"
@@ -17,7 +15,8 @@ typedef char GameStatePlacementTailOffsetCheck[
 typedef char GameStatePlacementSizeCheck[
     sizeof(GameState) == 0x7ff4 ? 1 : -1];
 
-extern "C" void func_0208ec04(WorldObjectInstanceList*)
+// Original: arm9/main @ 0x0208EC04; symbol: func_0208ec04; size: 0x74.
+extern "C" void WorldPlacement_ResetFlaggedAvailablePersistentStates(WorldObjectInstanceList*)
 {
     GameState* game = GameState::GetInstance();
     WorldPlacementSource::PersistentState* state =
@@ -31,5 +30,3 @@ extern "C" void func_0208ec04(WorldObjectInstanceList*)
         }
     }
 }
-
-#endif // defined(usa)

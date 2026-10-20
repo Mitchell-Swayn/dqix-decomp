@@ -1,4 +1,5 @@
 #include <globaldefs.h>
+// Original: arm9/main @ 0x020747A4; symbol: _Z17CalculateCritRateifffh; size: 0x94.
 ARM float CalculateCritRate(int deftness, float accessoryBonus, float bookBonus, float skillBonus, unsigned char hitCount) {
     float minimumChance = 2.0f;
 

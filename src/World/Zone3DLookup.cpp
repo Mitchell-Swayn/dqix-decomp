@@ -1,5 +1,6 @@
 #include "World/Zone3D.h"
 
+// Original: arm9/main @ 0x0201B600; symbol: _ZN6Zone3D16FindBMDJInstanceEit; size: 0x78.
 Zone3D_BMDJStruct::InstanceEntry* Zone3D::FindBMDJInstance(int groupID, unsigned short instanceID)
 {
     if (unknown_424_) return NULL;
@@ -21,6 +22,7 @@ Zone3D_BMDJStruct::InstanceEntry* Zone3D::FindBMDJInstance(int groupID, unsigned
 // Types 10 and 11 share a position and distance limit. Their gameplay roles
 // remain unresolved. Prefer the nearest entry within its own distance limit;
 // otherwise return the nearest entry considered outside that limit.
+// Original: arm9/main @ 0x0201B678; symbol: _ZN6Zone3D24FindNearestType10FeatureEPK8Vector3i; size: 0xDC.
 ZoneFeatures::Opcode6aEntry* Zone3D::FindNearestType10Feature(const Vector3fix* point)
 {
     ZoneFeatures::Opcode6aEntry* nearest = NULL;
@@ -56,6 +58,7 @@ ZoneFeatures::Opcode6aEntry* Zone3D::FindNearestType10Feature(const Vector3fix* 
     return NULL;
 }
 
+// Original: arm9/main @ 0x0201B754; symbol: _ZN6Zone3D17FindType10FeatureEt; size: 0x38.
 ZoneFeatures::Opcode6aEntry* Zone3D::FindType10Feature(unsigned short id)
 {
     ZoneFeatures::Opcode6aEntry* entry = bFeatures_.GetTypeEntries(10);
@@ -64,6 +67,7 @@ ZoneFeatures::Opcode6aEntry* Zone3D::FindType10Feature(unsigned short id)
     return NULL;
 }
 
+// Original: arm9/main @ 0x0201B78C; symbol: _ZN6Zone3D24FindNearestType11FeatureEPK8Vector3i; size: 0xDC.
 ZoneFeatures::Opcode6aEntry* Zone3D::FindNearestType11Feature(const Vector3fix* point)
 {
     ZoneFeatures::Opcode6aEntry* nearest = NULL;

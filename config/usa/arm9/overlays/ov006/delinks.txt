@@ -4,3 +4,646 @@
     .data       start:0x02160080 end:0x02160380 kind:data align:32
     .bss        start:0x02160380 end:0x021603a0 kind:bss align:32
 
+src/Data/KrakPot_AdvanceSceneResourceLoading_TextRenIn.cpp:
+    complete
+    .data start:0x02160080 end:0x02160087
+
+src/Data/GraphicsUpdateFlaggedAnimationStages_Text0.cpp:
+    complete
+    .data start:0x02160087 end:0x02160089
+
+src/Data/KrakPotStartQueuedAlchemyEffect_Text1.cpp:
+    complete
+    .data start:0x02160089 end:0x0216008b
+
+src/Data/Graphics_UpdateFlaggedAnimationStages_TextRenkin.cpp:
+    complete
+    .data start:0x0216008b end:0x02160092
+
+src/Data/KrakPotStartQueuedAlchemyEffect_Text2.cpp:
+    complete
+    .data start:0x02160092 end:0x02160094
+
+src/Data/GraphicsUpdateFlaggedAnimationStages_Text3.cpp:
+    complete
+    .data start:0x02160094 end:0x02160096
+
+src/Data/Graphics_UpdateFlaggedAnimationStages_TextRenOut.cpp:
+    complete
+    .data start:0x02160096 end:0x0216009e
+
+src/Data/GraphicsUpdateFlaggedAnimationStages_Text4.cpp:
+    complete
+    .data start:0x0216009e end:0x021600a0
+
+src/Data/Graphics_UpdateFlaggedAnimationStages_TextYorokobi.cpp:
+    complete
+    .data start:0x021600a0 end:0x021600a9
+
+src/Data/Graphics_UpdateFlaggedAnimationStages_TextStand.cpp:
+    complete
+    .data start:0x021600a9 end:0x021600af
+
+src/Data/KrakPot_AdvanceSceneResourceLoading_PathDataAniObjRriPac.cpp:
+    complete
+    .data start:0x021600af end:0x021600c4
+
+src/Data/KrakPot_AdvanceSceneResourceLoading_PathDataAniBgTmPac.cpp:
+    complete
+    .data start:0x021600c4 end:0x021600d7
+
+src/Data/KrakPot_AdvanceSceneResourceLoading_PathDataBinMenuBmRriGp2.cpp:
+    complete
+    .data start:0x021600d7 end:0x021600f0
+
+src/Data/KrakPot_AdvanceSceneResourceLoading_TextBmRri.cpp:
+    complete
+    .data start:0x021600f0 end:0x021600f7
+
+src/Data/KrakPot_AdvanceSceneResourceLoading_PathDataAniLayRbLia.cpp:
+    complete
+    .data start:0x021600f7 end:0x0216010b
+
+src/Data/KrakPot_AdvanceSceneResourceLoading_PathDataCharaSubS224CChr.cpp:
+    complete
+    .data start:0x0216010b end:0x02160125
+
+src/Data/KrakPot_AdvanceSceneResourceLoading_PathDataCharaSubS065Chr.cpp:
+    complete
+    .data start:0x02160125 end:0x0216013d
+
+src/Data/KrakPot_AdvanceSceneResourceLoading_PathDataCharaSubS065AChr.cpp:
+    complete
+    .data start:0x0216013d end:0x02160156
+
+src/Data/KrakPot_AdvanceSceneResourceLoading_PathDataEffectEv999992500Chr.cpp:
+    complete
+    .data start:0x02160156 end:0x02160172
+
+src/Data/KrakPot_AdvanceSceneResourceLoading_PathDataCharaSubS065BChr.cpp:
+    complete
+    .data start:0x02160172 end:0x0216018b
+
+src/Data/KrakPot_AdvanceSceneResourceLoading_TextPos1.cpp:
+    complete
+    .data start:0x0216018b end:0x02160190
+
+src/Data/KrakPot_AdvanceSceneResourceLoading_TextPos2.cpp:
+    complete
+    .data start:0x02160190 end:0x02160195
+
+src/Data/KrakPot_AdvanceSceneResourceLoading_TextPos3.cpp:
+    complete
+    .data start:0x02160195 end:0x0216019a
+
+src/Data/KrakPot_AdvanceSceneResourceLoading_PathDataEffectEv209300000Chr.cpp:
+    complete
+    .data start:0x0216019a end:0x021601b6
+
+src/Data/Graphics_PollConditionalCanvasResourceLoad_PathDataAniBgRriTPac.cpp:
+    complete
+    .data start:0x021601b6 end:0x021601cc
+
+src/Data/Graphics_PollConditionalCanvasResourceLoad_PathDataAniBgRriKariPac.cpp:
+    complete
+    .data start:0x021601cc end:0x021601e5
+
+src/Data/KrakPot_QueueResultAndIngredientSprites_PathDataAniDC03DSpr.cpp:
+    complete
+    .data start:0x021601e5 end:0x021601fc
+
+src/Data/KrakPot_AdvanceMenuResourceLoading_PathDataBinMenuStrRenGp2.cpp:
+    complete
+    .data start:0x0216026c end:0x02160286
+
+src/Data/KrakPot_AdvanceMenuResourceLoading_MarkupStrRenLGNat.cpp:
+    complete
+    .data start:0x02160286 end:0x02160297
+
+src/Data/KrakPot_AdvanceMenuResourceLoading_PathDataBinRecipeGp2.cpp:
+    complete
+    .data start:0x02160297 end:0x021602ab
+
+src/Data/KrakPot_AdvanceMenuResourceLoading_MarkupRecipeLGBin.cpp:
+    complete
+    .data start:0x021602ab end:0x021602bb
+
+src/Data/KrakPot_AdvanceMenuResourceLoading_PathDataAniBgKamaelPac.cpp:
+    complete
+    .data start:0x021602bb end:0x021602d2
+
+src/Data/KrakPot_AdvanceMenuResourceLoading_PathDataAniLayRrbGp2.cpp:
+    complete
+    .data start:0x021602d2 end:0x021602e7
+
+src/Data/KrakPot_AdvanceMenuResourceLoading_MarkupLayRrbLGLia.cpp:
+    complete
+    .data start:0x021602e7 end:0x021602f8
+
+src/Data/KrakPot_AdvanceMenuResourceLoading_PathDataAniOrrbGp2.cpp:
+    complete
+    .data start:0x021602f8 end:0x0216030a
+
+src/Data/KrakPot_AdvanceMenuResourceLoading_MarkupOrrbLGPac.cpp:
+    complete
+    .data start:0x0216030a end:0x02160318
+
+src/Data/KrakPot_AdvanceMenuResourceLoading_PathDataPrmItemnameGp2.cpp:
+    complete
+    .data start:0x02160318 end:0x0216032e
+
+src/Data/KrakPot_AdvanceMenuResourceLoading_MarkupItemnameLGNat.cpp:
+    complete
+    .data start:0x0216032e end:0x02160340
+
+src/Data/KrakPot_AdvanceMenuResourceLoading_PathDataBinMenuBmRrbGp2.cpp:
+    complete
+    .data start:0x02160340 end:0x02160359
+
+src/Data/KrakPot_AdvanceMenuResourceLoading_TextBmRrb.cpp:
+    complete
+    .data start:0x02160359 end:0x02160360
+
+src/Data/KrakPot_QueueResultItemSprite_PathDataAniDC03DSpr.cpp:
+    complete
+    .data start:0x02160360 end:0x02160380
+
+src/Town/Alchemy/KrakPot_ResetRecipeInventoryContext.cpp:
+    complete
+    .text start:0x021536e0 end:0x02153730
+
+src/Town/Alchemy/KrakPot_HandleSelectionCancelInput.cpp:
+    complete
+    .text start:0x02158b78 end:0x02158c28
+
+src/Town/Alchemy/KrakPot_RequestExitOnNewInputMask.cpp:
+    complete
+    .text start:0x02158c28 end:0x02158c70
+
+src/Town/Alchemy/KrakPot_HandleSelectionConfirmInput.cpp:
+    complete
+    .text start:0x02158a28 end:0x02158b78
+
+src/Town/Alchemy/KrakPot_QueueAlternateAlchemyEffect.cpp:
+    complete
+    .text start:0x0215728c end:0x0215729c
+
+src/Town/Alchemy/KrakPot_ReadRepeatedInputKey.cpp:
+    complete
+    .text start:0x021599ac end:0x021599c0
+
+src/Town/Alchemy/KrakPot_BindRecipeProgressRecords.cpp:
+    complete
+    .text start:0x02153c60 end:0x02153c6c
+
+src/Town/Alchemy/KrakPot_ReleaseRecipeInventoryContext.cpp:
+    complete
+    .text start:0x02153730 end:0x0215373c
+
+src/Town/Alchemy/GameState_CountAndStoreFlaggedEntries.cpp:
+    complete
+    .text start:0x02154138 end:0x0215426c
+
+src/Town/Alchemy/Graphics_ConfigureSelectedDisplayPartTen.cpp:
+    complete
+    .text start:0x0215f9e8 end:0x0215fa1c
+
+src/Town/Alchemy/Graphics_UpdateFlaggedAnimationStages.cpp:
+    complete
+    .text start:0x02155068 end:0x021553a8
+
+src/Town/Alchemy/Util_DecodeSplitByteSelector.cpp:
+    complete
+    .text start:0x0215745c end:0x0215759c
+
+src/Town/Alchemy/KrakPot_ApplySavedRecipeDiscoveryFlags.cpp:
+    complete
+    .text start:0x02153744 end:0x021537c8
+
+src/Town/Alchemy/KrakPot_SetRecipeDisplayBatchQuantity.cpp:
+    complete
+    .text start:0x021571b8 end:0x021571cc
+
+src/Town/Alchemy/KrakPot_DisableSceneModelAnimation.cpp:
+    complete
+    .text start:0x021553a8 end:0x021553bc
+
+src/Town/Alchemy/Util_DispatchPendingModeOnce.cpp:
+    complete
+    .text start:0x02159f0c end:0x02159f94
+
+src/Town/Alchemy/KrakPot_IsDisplayPartPresentAndFlagFiveClear.cpp:
+    complete
+    .text start:0x02158080 end:0x021580b8
+
+src/Town/Alchemy/Graphics_CaptureMatchingSlotMatrices.cpp:
+    complete
+    .text start:0x0215426c end:0x021542f4
+
+src/Town/Alchemy/GameState_TestFlagOrNewHalfwordMask.cpp:
+    complete
+    .text start:0x02158c70 end:0x02158cac
+
+src/Town/Alchemy/KrakPot_RequestMenuExitOnce.cpp:
+    complete
+    .text start:0x021585ac end:0x021585c4
+
+src/Town/Alchemy/ConfigureSelectedPartsWithFlaggedEntryPercentage.cpp:
+    complete
+    .text start:0x0215fa1c end:0x0215fb7c
+
+src/Town/Alchemy/KrakPot_RefreshRecipeCategoryHeading.cpp:
+    complete
+    .text start:0x0215fb7c end:0x0215fcf0
+
+src/Town/Alchemy/Graphics_ConfigureThreeModeSelectedDisplayEntries.cpp:
+    complete
+    .text start:0x0215f348 end:0x0215f3d8
+
+src/Town/Alchemy/Graphics_InitializeAndActivateRenderRecord.cpp:
+    complete
+    .text start:0x021571fc end:0x0215728c
+
+src/Town/Alchemy/KrakPot_RearmDialogueNotification.cpp:
+    complete
+    .text start:0x02159f94 end:0x02159fb0
+
+src/Town/Alchemy/KrakPot_InitializeAlchemyItemDescriptor.cpp:
+    complete
+    .text start:0x02157c78 end:0x02157cc0
+
+src/Town/Alchemy/KrakPot_HasPendingItemPreviewLoads.cpp:
+    complete
+    .text start:0x021570b4 end:0x021570fc
+
+src/Town/Alchemy/KrakPot_ResetIngredientPagination.cpp:
+    complete
+    .text start:0x0215951c end:0x02159564
+
+src/Town/Alchemy/KrakPot_ReserveSelectedIngredient.cpp:
+    complete
+    .text start:0x02159108 end:0x0215919c
+
+src/Town/Alchemy/Graphics_AdvanceFadeToBlackState.cpp:
+    complete
+    .text start:0x0215f2b4 end:0x0215f348
+
+src/Town/Alchemy/KrakPot_ResetRecipePagination.cpp:
+    complete
+    .text start:0x02158cac end:0x02158cfc
+
+src/Town/Alchemy/Util_UpdateOrInsertHalfwordRecord.cpp:
+    complete
+    .text start:0x02153e8c end:0x02153f24
+
+src/Town/Alchemy/KrakPot_QueueResultItemSprite.cpp:
+    complete
+    .text start:0x0215fe34 end:0x0215fecc
+
+src/Town/Alchemy/KrakPot_GetRecipeAtPageRowClamped.cpp:
+    complete
+    .text start:0x02158d8c end:0x02158de0
+
+src/Town/Alchemy/Graphics_InitializeCameraIfPresent.cpp:
+    complete
+    .text start:0x021542f4 end:0x02154348
+
+src/Town/Alchemy/Util_FindNodeAndUpdateSixteenEntryAnchor.cpp:
+    complete
+    .text start:0x02158cfc end:0x02158d50
+
+src/Town/Alchemy/Graphics_DrawFourObjectsWithConditionalCameraSetup.cpp:
+    complete
+    .text start:0x02154e58 end:0x02154fe4
+
+src/Town/Alchemy/Graphics_ProjectBoneAnchorsAndDrawScreenMarkers.cpp:
+    complete
+    .text start:0x02154a60 end:0x02154e58
+
+src/Town/Alchemy/Graphics_ConfigureDisplayPartSevenAndResetLinkedOwner.cpp:
+    complete
+    .text start:0x02159db0 end:0x02159e50
+
+src/Town/Alchemy/KrakPot_UpdateDialogueNotificationTimer.cpp:
+    complete
+    .text start:0x02159fb0 end:0x0215a00c
+
+src/Town/Alchemy/Graphics_AdvanceBrightnessTransitionFromInput.cpp:
+    complete
+    .text start:0x0215b0fc end:0x0215b1a0
+
+src/Town/Alchemy/Graphics_ToggleFourTextureEntries.cpp:
+    complete
+    .text start:0x0215e5f8 end:0x0215e69c
+
+src/Town/Alchemy/KrakPot_FindLayoutHitRegion.cpp:
+    complete
+    .text start:0x02157368 end:0x021573c8
+
+src/Town/Alchemy/Text_AdvanceFormattedMessageAndRefreshDisplay.cpp:
+    complete
+    .text start:0x0215a00c end:0x0215a33c
+
+src/Town/Alchemy/KrakPot_ConfigureIngredientPickerHitRegions.cpp:
+    complete
+    .text start:0x021573c8 end:0x0215745c
+
+src/Town/Alchemy/CancelTwoBackgroundTasksAndResetObject.cpp:
+    complete
+    .text start:0x02155508 end:0x021555b0
+
+src/Town/Alchemy/GameState_InterpolateProtagonistAttributePercent.cpp:
+    complete
+    .text start:0x02153f24 end:0x02154138
+
+src/Town/Alchemy/Graphics_ClearFlagAndRefreshBackgrounds.cpp:
+    complete
+    .text start:0x02157184 end:0x021571b8
+
+src/Town/Alchemy/Graphics_InitializeBackgroundPriorities.cpp:
+    complete
+    .text start:0x02155480 end:0x02155508
+
+src/Town/Alchemy/KrakPot_GetSelectedCategoryItemCount.cpp:
+    complete
+    .text start:0x021591ec end:0x02159218
+
+src/Town/Alchemy/Graphics_PollConditionalCanvasResourceLoad.cpp:
+    complete
+    .text start:0x02156bd8 end:0x02156d70
+
+src/Town/Alchemy/Graphics_UpdateTwoStageDisplaySelection.cpp:
+    complete
+    .text start:0x0215daf0 end:0x0215dee8
+
+src/Town/Alchemy/KrakPot_GetSelectedIngredientAndStock.cpp:
+    complete
+    .text start:0x02159274 end:0x02159320
+
+src/Town/Alchemy/Object_ConfigureSelectedDisplayPart.cpp:
+    complete
+    .text start:0x0215fcf0 end:0x0215fd60
+
+src/Town/Alchemy/Util_AddCountToGroupedHalfwordEntry.cpp:
+    complete
+    .text start:0x02158fd8 end:0x02159094
+
+src/Town/Alchemy/Graphics_UpdateSelectionAndFinalizeInputResult.cpp:
+    complete
+    .text start:0x02159e50 end:0x02159f0c
+
+src/Town/Alchemy/KrakPot_RefreshRecipeBatchQuantity.cpp:
+    complete
+    .text start:0x0215a5dc end:0x0215a5fc
+
+src/Town/Alchemy/KrakPot_UpdatePotAnimationAndRecipePreview.cpp:
+    complete
+    .text start:0x02156b80 end:0x02156bd8
+
+src/Town/Alchemy/KrakPot_SubmitControlSprite.cpp:
+    complete
+    .text start:0x02158054 end:0x02158080
+
+src/Town/Alchemy/Ov006_ProcessObjectWhenFlag800Set.cpp:
+    complete
+    .text start:0x021571cc end:0x021571fc
+
+src/Town/Alchemy/Resource_ResolveThreeRequiredEntries.cpp:
+    complete
+    .text start:0x021537d0 end:0x02153a78
+
+src/Town/Alchemy/Object_RefreshIndexedPointerAndCheckSignedState.cpp:
+    complete
+    .text start:0x02159564 end:0x021595b4
+
+src/Town/Alchemy/KrakPot_HasItemsInSelectedCategory.cpp:
+    complete
+    .text start:0x02159218 end:0x02159274
+
+src/Town/Alchemy/KrakPot_UpdateSceneDisplayTransfers.cpp:
+    complete
+    .text start:0x02154fe4 end:0x02155068
+
+src/Town/Alchemy/KrakPot_RequestRecipePreviewIfChanged.cpp:
+    complete
+    .text start:0x021555b0 end:0x02155630
+
+src/Town/Alchemy/KrakPot_GetSelectedCategoryItemQuantities.cpp:
+    complete
+    .text start:0x021591c4 end:0x021591ec
+
+src/Town/Alchemy/SetFlag800AndUpdateEmbeddedScreen.cpp:
+    complete
+    .text start:0x021570fc end:0x02157184
+
+src/Town/Alchemy/KrakPot_DecreaseIngredientQuantity.cpp:
+    complete
+    .text start:0x021593b0 end:0x0215943c
+
+src/Town/Alchemy/QueueTwoGP2FilesBehindLoaderFence.cpp:
+    complete
+    .text start:0x0215a33c end:0x0215a384
+
+src/Town/Alchemy/KrakPot_IncreaseIngredientQuantity.cpp:
+    complete
+    .text start:0x02159320 end:0x021593b0
+
+src/Town/Alchemy/KrakPot_GetSelectedCategoryItemIds.cpp:
+    complete
+    .text start:0x0215919c end:0x021591c4
+
+src/Town/Alchemy/KrakPot_GetRecipePageHead.cpp:
+    complete
+    .text start:0x02158d50 end:0x02158d8c
+
+src/Town/Alchemy/Memory_WriteWordAtOffset0.cpp:
+    complete
+    .text start:0x0215373c end:0x02153744
+
+src/Town/Alchemy/Memory_WriteThreeWordsAtOffset4.cpp:
+    complete
+    .text start:0x021537c8 end:0x021537d0
+
+src/Town/Alchemy/KrakPot_RefreshSelectedIngredientPreview.cpp:
+    complete
+    .text start:0x0215f740 end:0x0215f7e8
+
+src/Town/Alchemy/KrakPot_RequestIngredientPreview.cpp:
+    complete
+    .text start:0x02155710 end:0x021557c0
+
+src/Town/Alchemy/KrakPot_UpdateSceneAndDispatchPhase.cpp:
+    complete
+    .text start:0x021549ac end:0x02154a60
+
+src/Town/Alchemy/KrakPot_ClassifyRecipeBrowserAction.cpp:
+    complete
+    .text start:0x02159bb0 end:0x02159c64
+
+src/Town/Alchemy/KrakPot_DestroyMenuResources.cpp:
+    complete
+    .text start:0x02157cc0 end:0x02157d7c
+
+src/Town/Alchemy/KrakPot_GetRecipeIngredientStockCounts.cpp:
+    complete
+    .text start:0x02153b9c end:0x02153c60
+
+src/Town/Alchemy/KrakPot_RefreshSelectedIngredientLabels.cpp:
+    complete
+    .text start:0x021553bc end:0x02155480
+
+src/Town/Alchemy/KrakPot_UpdateSelectionCursorPosition.cpp:
+    complete
+    .text start:0x021585c4 end:0x0215868c
+
+src/Town/Alchemy/KrakPot_ConfigureRecipeBrowserHitRegions.cpp:
+    complete
+    .text start:0x0215729c end:0x02157368
+
+src/Town/Alchemy/KrakPot_FindRecipeForSelectedIngredients.cpp:
+    complete
+    .text start:0x0215fd60 end:0x0215fe34
+
+src/Town/Alchemy/KrakPot_QueueResultAndIngredientSprites.cpp:
+    complete
+    .text start:0x02156f04 end:0x02156fdc
+
+src/Town/Alchemy/KrakPot_StartQueuedAlchemyEffect.cpp:
+    complete
+    .text start:0x02156d70 end:0x02156e54
+
+src/Town/Alchemy/KrakPot_GrantAlchemyResultAndConsumeIngredients.cpp:
+    complete
+    .text start:0x0215759c end:0x021576a0
+
+src/Town/Alchemy/KrakPot_CycleIngredientPagePreservingRow.cpp:
+    complete
+    .text start:0x0215f3d8 end:0x0215f4dc
+
+src/Town/Alchemy/KrakPot_AdvanceMenuResourceLoading.cpp:
+    complete
+    .text start:0x0215a5fc end:0x0215b0fc
+
+src/Town/Alchemy/KrakPot_AdvanceRecipeAlchemyResult.cpp:
+    complete
+    .text start:0x0215e69c end:0x0215f2b4
+
+src/Town/Alchemy/KrakPot_SubmitRecipeBrowserControlSprites.cpp:
+    complete
+    .text start:0x02158914 end:0x02158a28
+
+src/Town/Alchemy/KrakPot_HasIngredientsForBatch.cpp:
+    complete
+    .text start:0x02153a78 end:0x02153b9c
+
+src/Town/Alchemy/CompleteLoadedRecordGroup.cpp:
+    complete
+    .text start:0x0215a384 end:0x0215a5dc
+
+src/Town/Alchemy/UpdateBoundedSelectionFromInput.cpp:
+    complete
+    .text start:0x02159834 end:0x021599ac
+
+src/Town/Alchemy/UpdateIngredientLimitedSelectionFromInput.cpp:
+    complete
+    .text start:0x021599c0 end:0x02159bb0
+
+src/Town/Alchemy/RenderSelectionScreenAndResetTransfers.cpp:
+    complete
+    .text start:0x02158478 end:0x021585ac
+
+src/Town/Alchemy/HandlePageAndScreenToggleInput.cpp:
+    complete
+    .text start:0x021595b4 end:0x021596f0
+
+src/Town/Alchemy/SubmitPageAndToggleDisplayRecords.cpp:
+    complete
+    .text start:0x0215868c end:0x021587d0
+
+src/Town/Alchemy/ConfigureQuantitySelectionInputAndPart.cpp:
+    complete
+    .text start:0x021596f0 end:0x02159834
+
+src/Town/Alchemy/SubmitQuantityControlDisplayRecords.cpp:
+    complete
+    .text start:0x021587d0 end:0x02158914
+
+src/Town/Alchemy/InitializeSceneResourceOwner.cpp:
+    complete
+    .text start:0x02154614 end:0x0215479c
+
+src/Town/Alchemy/RestoreLastPendingGroupedEntry.cpp:
+    complete
+    .text start:0x02159094 end:0x02159108
+
+src/Town/Alchemy/SetPendingZoneSelectionAndCancelTasks.cpp:
+    complete
+    .text start:0x02155630 end:0x02155710
+
+src/Town/Alchemy/ToggleListModeAndPreserveSelectedNode.cpp:
+    complete
+    .text start:0x02159c64 end:0x02159db0
+
+src/Town/Alchemy/InitializeGroupedValueSelection.cpp:
+    complete
+    .text start:0x0215943c end:0x0215951c
+
+src/Town/Alchemy/FindNonnegativeHalfwordKeyInPackedTable.cpp:
+    complete
+    .text start:0x02153c6c end:0x02153cbc
+
+src/Town/Alchemy/InitializeInvalidPackedKeyRecord.cpp:
+    complete
+    .text start:0x02153e54 end:0x02153e8c
+
+src/Town/Alchemy/DestroySceneResourceOwnerAndReset.cpp:
+    complete
+    .text start:0x021547c8 end:0x021549ac
+
+src/Town/Alchemy/RenderSelectionScreenControlsAndResult.cpp:
+    complete
+    .text start:0x021580b8 end:0x02158478
+
+src/Town/Alchemy/MergeTwoPackedKeysAndIncrementPlacementCounters.cpp:
+    complete
+    .text start:0x02153cbc end:0x02153e54
+
+src/Town/Alchemy/AdvanceProportionalRecordPlacement.cpp:
+    complete
+    .text start:0x0215cc70 end:0x0215daf0
+
+src/Town/Alchemy/KrakPot_RebuildAvailableIngredientInventory.cpp:
+    complete
+    .text start:0x02158de0 end:0x02158fd8
+
+src/Town/Alchemy/KrakPot_RefreshRecipePage.cpp:
+    complete
+    .text start:0x0215f7e8 end:0x0215f9e8
+
+src/Town/Alchemy/KrakPot_InitializeMenu.cpp:
+    complete
+    .text start:0x02157a60 end:0x02157c78
+
+src/Town/Alchemy/KrakPot_AdvanceRecipeBookBrowser.cpp:
+    complete
+    .text start:0x0215b57c end:0x0215b7e8
+
+src/Town/Alchemy/KrakPot_AdvanceAlchemyModeSelection.cpp:
+    complete
+    .text start:0x0215b7e8 end:0x0215bb7c
+
+src/Town/Alchemy/KrakPot_AdvanceRecipeCategorySelection.cpp:
+    complete
+    .text start:0x0215b1a0 end:0x0215b57c
+
+src/Town/Alchemy/KrakPot_RenderActiveMenuScene.cpp:
+    complete
+    .text start:0x02158038 end:0x02158054
+
+src/Town/Alchemy/KrakPot_InitializeItemPreviewSprite.cpp:
+    complete
+    .text start:0x0215479c end:0x021547c8
+
+src/Town/Alchemy/KrakPot_AllocateSceneResources.cpp:
+    complete
+    .text start:0x02154348 end:0x02154614

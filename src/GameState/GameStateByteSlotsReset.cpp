@@ -7,7 +7,8 @@ typedef char GameStateByteSlotsSizeCheck[
 typedef char GameStateByteSlotsOffsetCheck[
     offsetof(GameState, byteSlots_7f74_) == 0x7f74 ? 1 : -1];
 
-extern "C" void func_0200fb40(GameState* state)
+// Original: arm9/main @ 0x0200FB40; symbol: func_0200fb40; size: 0x44.
+extern "C" void GameState_ClearByteSlots(GameState* state)
 {
     state->byteSlots_7f74_.unknown_00_ = 0;
     state->byteSlots_7f74_.unknown_01_ = 0;

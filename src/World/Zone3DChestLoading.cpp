@@ -4,6 +4,7 @@
 #include "Filesystem/FileIO.h"
 #include "std_library_functions.h"
 
+// Original: arm9/main @ 0x02018D28; symbol: _ZN6Zone3D15LoadChestModelsEP13SafeAllocator; size: 0x208.
 void Zone3D::LoadChestModels(SafeAllocator* temporaryAllocator)
 {
     unsigned int vramState[10];

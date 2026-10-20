@@ -1,0 +1,13 @@
+#include <globaldefs.h>
+ARM
+#define W(p,o) (*(unsigned*)((char*)(p)+(o)))
+#define I(p,o) (*(int*)((char*)(p)+(o)))
+#define H(p,o) (*(short*)((char*)(p)+(o)))
+#define U(p,o) (*(unsigned short*)((char*)(p)+(o)))
+#define B(p,o) (*(unsigned char*)((char*)(p)+(o)))
+#define P(p,o) (*(char**)((char*)(p)+(o)))
+
+#define S(p,o) (*(signed char*)((char*)(p)+(o)))
+extern "C" void* _ZN9GameState11GetInstanceEv();extern "C" void* Zone3D_GetMainInstance();extern "C" void* _ZN13SafeAllocator8AllocateEj(void*,unsigned);extern "C" void _ZN13SafeAllocator21ResetAllocatorPointerEv(void*);extern "C" void _ZN13SafeAllocator11CreateTypeAEPvj(void*,void*,unsigned);extern "C" void _ZN13ZoneState2754C1Ev(void*);extern "C" void World_ResetZoneStateAndClearThreeWords(unsigned char*);extern "C" void World_ResetTemporaryZoneResourceState(void*);extern "C" int Inventory_AddGroupedItemQuantityAndCacheResult(char*,unsigned,unsigned,...);extern "C" unsigned TextContext_GetSharedInstance();extern "C" void** GameState_GetFieldAddress5CA4(void*);extern "C" int GameState_GetFieldAddress468(int);extern "C" int Script_ReadParameterAsInteger(void*);extern "C" unsigned Script_ReadParameterString(void*);extern "C" char* ZoneTable_FindEntryByMapName(void*,char*);extern "C" unsigned _ZNK13SafeAllocator24GetMaxPossibleAllocationEv(void*);extern "C" void _ZN6Zone3D19InitializeResourcesEP13SafeAllocatorPv(void*,void*,void*);extern "C" void _ZN6Zone3D10SwitchZoneEt(void*,unsigned short);
+// Original: arm9/ov001 @ 0x02163B14; symbol: Script_CreateZoneResourcesFromNumericOrNamedId; size: 0x114.
+extern "C" int Zone3D_ScriptCreateSecondaryZoneFromIdOrMapName(char* parameter){void* game=_ZN9GameState11GetInstanceEv();char* global=(char*)Zone3D_GetMainInstance();void** output=GameState_GetFieldAddress5CA4(game);int id=-1;if(W(parameter,0)==0)id=Script_ReadParameterAsInteger(parameter);else if(W(parameter,0)==2){char* name=(char*)Script_ReadParameterString(parameter);if(!name)return 0;char* record=ZoneTable_FindEntryByMapName((void*)GameState_GetFieldAddress468((int)game),name);if(!record)return 0;id=U(record,0);}if(id<0)return 0;void* pool=P(global,76);void* context=P(global,80);void* zone=_ZN13SafeAllocator8AllocateEj(pool,0x2824);if(!zone)return 0;void* allocator=_ZN13SafeAllocator8AllocateEj(pool,20);unsigned size=_ZNK13SafeAllocator24GetMaxPossibleAllocationEv(pool);void* memory=_ZN13SafeAllocator8AllocateEj(pool,size);_ZN13SafeAllocator11CreateTypeAEPvj(allocator,memory,size);_ZN6Zone3D19InitializeResourcesEP13SafeAllocatorPv(zone,allocator,context);((void(*)(void*,unsigned,int))_ZN6Zone3D10SwitchZoneEt)(zone,id,0);*output=zone;return 1;}

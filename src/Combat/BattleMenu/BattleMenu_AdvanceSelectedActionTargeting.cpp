@@ -1,0 +1,6 @@
+#include <globaldefs.h>
+ARM
+extern "C" char* BattleMenu_FindActionDefinition(char*,unsigned);extern "C" unsigned char BattleMenu_ResolveActionTargetSelectionState(void*,void*);extern "C" void __clear(void*,unsigned);extern "C" void String_ReplaceBracketedNamesByRowColumnTable(const char*,char*,int,unsigned,unsigned,int);extern "C" void Text_FormatAndConditionallyUppercaseOutput(const char*,char*,int);extern "C" void TextSprite_FormatAndUpdateTextReference(void*,const char*);
+// Original: arm9/ov000 @ 0x021718A4; symbol: FormatSelectedRecordAndAppendHistory; size: 0x98.
+// Resolves the selected record, appends its byte to history, expands names and submits formatted text.
+extern "C" void BattleMenu_AdvanceSelectedActionTargeting(char* self){char* state=self+8;char* record=BattleMenu_FindActionDefinition(self,*(unsigned short*)(state+0x1e));if(record){(*(signed char*)(state+0x10))++;unsigned char value=BattleMenu_ResolveActionTargetSelectionState(record,self);(state+*(signed char*)(state+0x10))[8]=value;char expanded[128];char formatted[128];__clear(expanded,128);__clear(formatted,128);String_ReplaceBracketedNamesByRowColumnTable(*(char**)record,expanded,1,0,0,0);Text_FormatAndConditionallyUppercaseOutput(expanded,formatted,0);TextSprite_FormatAndUpdateTextReference(self+0x50,formatted);}}

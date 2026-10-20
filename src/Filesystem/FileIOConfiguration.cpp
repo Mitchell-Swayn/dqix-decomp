@@ -12,6 +12,7 @@ FileIOConfiguration gFileIOConfiguration = {
 };
 
 #pragma define_section init ".init" RX
+// Original: arm9/main @ 0x020E60E0; symbol: __sinit_020e60e0; size: 0x18.
 extern "C" __declspec(section "init") void __sinit_020e60e0()
 {
     gFileIOConfiguration.revisionNumber = gFileIOConfiguration.revision + 11;

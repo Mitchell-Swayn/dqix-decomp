@@ -1,0 +1,110 @@
+{
+  "core": "DeSmuME",
+  "version": "git 95b4d79",
+  "core_sha256": "0fe7664ffdc626bca548dc03f7d1907569474175ff13e131de1cf3aaf555f399",
+  "rom_sha256": "a5bbe96f69256d973c145d92e69bb8813b6f07edf28abfd9d69b9c2c75599b32",
+  "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+  "frames_requested": 3600,
+  "input_events": [
+    {
+      "start": 1201,
+      "end": 1206,
+      "buttons": [
+        "start"
+      ]
+    },
+    {
+      "start": 1801,
+      "end": 1806,
+      "buttons": [
+        "a"
+      ]
+    },
+    {
+      "start": 2101,
+      "end": 2106,
+      "buttons": [
+        "a"
+      ]
+    },
+    {
+      "start": 2401,
+      "end": 2406,
+      "buttons": [
+        "a"
+      ]
+    }
+  ],
+  "loaded_state": null,
+  "loaded_state_sha256": null,
+  "initial_cartridge_save_sha256": "27489c308ffe9563afeaee6a64590476dc16fa5eecc364cc5dac8ae87328116e",
+  "captures": [
+    {
+      "frame": 0,
+      "file": "frame-000000.png",
+      "sha256": "62b8ca715e48ec5b31b5967d4971f3376931a08cce46347fc27e6981cfd4cd3b"
+    },
+    {
+      "frame": 1200,
+      "file": "frame-001200.png",
+      "sha256": "2d0ee5c3b104b296c63e6c8c5b2f89f28d970d977b1ff69ef4078520402dd784"
+    },
+    {
+      "frame": 2400,
+      "file": "frame-002400.png",
+      "sha256": "4223e66b23a72e5d50731b2708cf6d2f20a207a8e876f80ed039c3568dfdd8b3"
+    },
+    {
+      "frame": 3599,
+      "file": "frame-003599.png",
+      "sha256": "476e1f3b606d31b8ac82a8199da6216f4474f1b46a2126b74e4a73b05b857321"
+    }
+  ],
+  "automatic_gameplay_assertions": false,
+  "elapsed_seconds": 11.235000000102445,
+  "frames_executed": 3600,
+  "variables": {
+    "desmume_firmware_language": "Auto",
+    "desmume_use_external_bios": "disabled",
+    "desmume_boot_into_bios": "disabled",
+    "desmume_load_to_memory": "enabled",
+    "desmume_num_cores": "1",
+    "desmume_cpu_mode": "interpreter",
+    "desmume_jit_block_size": "12",
+    "desmume_advanced_timing": "enabled",
+    "desmume_frameskip": "0",
+    "desmume_internal_resolution": "256x192",
+    "desmume_opengl_mode": "disabled",
+    "desmume_color_depth": "16-bit",
+    "desmume_gfx_multisampling": "disabled",
+    "desmume_gfx_texture_smoothing": "disabled",
+    "desmume_opengl_shadow_polygon": "enabled",
+    "desmume_opengl_special_zero_alpha": "enabled",
+    "desmume_opengl_nds_depth_calculation": "enabled",
+    "desmume_opengl_depth_lequal_polygon_facing": "disabled",
+    "desmume_gfx_highres_interpolate_color": "disabled",
+    "desmume_gfx_linehack": "enabled",
+    "desmume_gfx_txthack": "disabled",
+    "desmume_gfx_edgemark": "enabled",
+    "desmume_gfx_texture_scaling": "1",
+    "desmume_gfx_texture_deposterize": "disabled",
+    "desmume_screens_layout": "top/bottom",
+    "desmume_screens_gap": "0",
+    "desmume_hybrid_layout_ratio": "3:1",
+    "desmume_hybrid_layout_scale": "disabled",
+    "desmume_hybrid_showboth_screens": "enabled",
+    "desmume_hybrid_cursor_always_smallscreen": "enabled",
+    "desmume_pointer_mouse": "enabled",
+    "desmume_pointer_type": "touch",
+    "desmume_mouse_speed": "1.0",
+    "desmume_input_rotation": "0",
+    "desmume_pointer_device_l": "none",
+    "desmume_pointer_device_r": "none",
+    "desmume_pointer_device_deadzone": "15",
+    "desmume_pointer_device_acceleration_mod": "0",
+    "desmume_pointer_stylus_pressure": "50",
+    "desmume_pointer_colour": "white",
+    "desmume_mic_mode": "pattern"
+  },
+  "final_cartridge_save_sha256": "bf43dd4a03b764dc626ca5a0465cf21317e1d90aca96d76d488e2ddb1231e142"
+}

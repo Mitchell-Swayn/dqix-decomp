@@ -4,6 +4,7 @@
 #define INTERRUPT_ENABLE (*(volatile unsigned int*)0x04000210)
 #define INTERRUPT_REQUEST_FLAGS (*(volatile unsigned int*)0x04000214)
 
+// Original: arm9/main @ 0x020C6C90; symbol: _Z28SetSpecificInterruptsEnabledj; size: 0x2C.
 unsigned int SetSpecificInterruptsEnabled(unsigned int which)
 {
     unsigned int oldIME = INTERRUPT_MASTER_ENABLE;
@@ -20,6 +21,7 @@ unsigned int SetSpecificInterruptsEnabled(unsigned int which)
     return oldIE;
 }
 
+// Original: arm9/main @ 0x020C6CBC; symbol: _Z24EnableSpecificInterruptsj; size: 0x30.
 unsigned int EnableSpecificInterrupts(unsigned int mask)
 {
     unsigned int oldIME = INTERRUPT_MASTER_ENABLE;
@@ -36,6 +38,7 @@ unsigned int EnableSpecificInterrupts(unsigned int mask)
     return oldIE;
 }
 
+// Original: arm9/main @ 0x020C6CEC; symbol: _Z25DisableSpecificInterruptsj; size: 0x30.
 unsigned int DisableSpecificInterrupts(unsigned int mask)
 {
     unsigned short oldIME = INTERRUPT_MASTER_ENABLE;
@@ -51,6 +54,7 @@ unsigned int DisableSpecificInterrupts(unsigned int mask)
     return oldIE;
 }
 
+// Original: arm9/main @ 0x020C6D1C; symbol: _Z29AcknowledgeSpecificInterruptsj; size: 0x2C.
 unsigned int AcknowledgeSpecificInterrupts(unsigned int flagMask)
 {
     unsigned short oldIME = INTERRUPT_MASTER_ENABLE;

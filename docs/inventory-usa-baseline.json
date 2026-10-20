@@ -1,0 +1,4341 @@
+{
+  "schema_version": 1,
+  "source_revision": "94cc9c872266f0a6d15d3fb037fba24b8d3696d6",
+  "rom_sha1": "c7c3014c237900c8281289b8bc76a781969b6278",
+  "report_sha256": "1ec3d87666118dcf9ecc8472db566c19dc74a850cb8af55d3967e48535d25743",
+  "report_measures": {
+    "fuzzy_match_percent": 4.84626,
+    "total_code": "2959478",
+    "matched_code": "142700",
+    "matched_code_percent": 4.8217964,
+    "total_data": "1602476",
+    "matched_data": "25908",
+    "matched_data_percent": 1.6167481,
+    "total_functions": 14790,
+    "matched_functions": 1072,
+    "matched_functions_percent": 7.248141,
+    "complete_code": "143400",
+    "complete_code_percent": 4.845449,
+    "complete_data": "26092",
+    "complete_data_percent": 1.6282303,
+    "total_units": 175,
+    "complete_units": 84
+  },
+  "configured_tool_versions": {
+    "DSD_VERSION": "v0.10.2",
+    "WIBO_VERSION": "0.6.16",
+    "OBJDIFF_VERSION": "v2.7.1",
+    "MWCC_VERSION": "2.0/sp2p2"
+  },
+  "cartridge": {
+    "gamecode": "YDQE",
+    "processors": {
+      "arm9": {
+        "rom_offset": 16384,
+        "stored_size": 638196,
+        "entry": 33556480,
+        "load_address": 33554432,
+        "stored_sha256": "4070277b2687aab9f207e3c2349972c17734fbfecc0a46aa4a88ee61f7d996ad"
+      },
+      "arm7": {
+        "rom_offset": 1975296,
+        "stored_size": 167876,
+        "entry": 37224448,
+        "load_address": 37224448,
+        "stored_sha256": "cc8c8860273661450c38f4414b6f2d07006cd53c2b9d62e640c2b45cd06ba763"
+      }
+    },
+    "overlays": {
+      "arm9": [
+        {
+          "id": 0,
+          "load_address": 34944736,
+          "initialized_size": 199488,
+          "bss_size": 128,
+          "ctor_start": 35141796,
+          "ctor_end": 35141812,
+          "file_id": 0,
+          "flags": 16901048,
+          "rom_offset": 656384,
+          "stored_size": 123832,
+          "stored_sha256": "da7ed929ebf0cb7d9a66f10bd9f4ac5edcf94541e85c3b549d1c3006888ebc73"
+        },
+        {
+          "id": 1,
+          "load_address": 34944736,
+          "initialized_size": 74016,
+          "bss_size": 5408,
+          "ctor_start": 35015540,
+          "ctor_end": 35015552,
+          "file_id": 1,
+          "flags": 16820440,
+          "rom_offset": 780288,
+          "stored_size": 43224,
+          "stored_sha256": "8608c0af1ebadb26ad5f97b87823093d126bab0f82f4d0ed6c625e81661e8772"
+        },
+        {
+          "id": 2,
+          "load_address": 34944736,
+          "initialized_size": 105664,
+          "bss_size": 32,
+          "ctor_start": 35048620,
+          "ctor_end": 35048624,
+          "file_id": 2,
+          "flags": 16841448,
+          "rom_offset": 823808,
+          "stored_size": 64232,
+          "stored_sha256": "92a2569ca05b4a077104427b9130e290d80d20a07c6498a519d448b132103b1f"
+        },
+        {
+          "id": 3,
+          "load_address": 34944736,
+          "initialized_size": 185792,
+          "bss_size": 160,
+          "ctor_start": 35126392,
+          "ctor_end": 35126400,
+          "file_id": 3,
+          "flags": 16894892,
+          "rom_offset": 888320,
+          "stored_size": 117676,
+          "stored_sha256": "8125a0e6f29fae932828189cd0b8bd71b5933da6dbeab7a7412bdd6b4f6afea5"
+        },
+        {
+          "id": 4,
+          "load_address": 34944736,
+          "initialized_size": 119008,
+          "bss_size": 2208,
+          "ctor_start": 35062600,
+          "ctor_end": 35062608,
+          "file_id": 4,
+          "flags": 16848708,
+          "rom_offset": 1006080,
+          "stored_size": 71492,
+          "stored_sha256": "e6536a5f30745d7fde293f7063c51485c8053007446a0c5421bd68c81ebfcb35"
+        },
+        {
+          "id": 5,
+          "load_address": 34944736,
+          "initialized_size": 38720,
+          "bss_size": 0,
+          "ctor_start": 34983140,
+          "ctor_end": 34983144,
+          "file_id": 5,
+          "flags": 16802672,
+          "rom_offset": 1077760,
+          "stored_size": 25456,
+          "stored_sha256": "202c21798fbe229fbc76dd5551fe6fcdaee1b24e41d38d80ac84639b282f0416"
+        },
+        {
+          "id": 6,
+          "load_address": 34944736,
+          "initialized_size": 52384,
+          "bss_size": 32,
+          "ctor_start": 34996348,
+          "ctor_end": 34996352,
+          "file_id": 6,
+          "flags": 16809464,
+          "rom_offset": 1103360,
+          "stored_size": 32248,
+          "stored_sha256": "ba5c6216a7be8e360b664b4b76dec60e3002f4663172ccdf36c35b6d007dee91"
+        },
+        {
+          "id": 7,
+          "load_address": 35144352,
+          "initialized_size": 32,
+          "bss_size": 0,
+          "ctor_start": 35144352,
+          "ctor_end": 35144356,
+          "file_id": 7,
+          "flags": 16777236,
+          "rom_offset": 1135616,
+          "stored_size": 20,
+          "stored_sha256": "07d1d94d7d3269a1155925f01090a020e40387e8e8998fc3b4a1a3c633ca4d46"
+        },
+        {
+          "id": 8,
+          "load_address": 35144352,
+          "initialized_size": 29440,
+          "bss_size": 0,
+          "ctor_start": 35173312,
+          "ctor_end": 35173316,
+          "file_id": 8,
+          "flags": 16796600,
+          "rom_offset": 1136128,
+          "stored_size": 19384,
+          "stored_sha256": "4fbbd4a6a33f13b85d801f8ee7699fc84d29cee033a116e5352d512b999dec63"
+        },
+        {
+          "id": 9,
+          "load_address": 35144352,
+          "initialized_size": 27328,
+          "bss_size": 0,
+          "ctor_start": 35171480,
+          "ctor_end": 35171484,
+          "file_id": 9,
+          "flags": 16795184,
+          "rom_offset": 1155584,
+          "stored_size": 17968,
+          "stored_sha256": "e820905a53e20f2103cb4dd51c4f7c64ae2f6c6f8ea128052e4a93eeed3be698"
+        },
+        {
+          "id": 10,
+          "load_address": 35144352,
+          "initialized_size": 2080,
+          "bss_size": 0,
+          "ctor_start": 35146348,
+          "ctor_end": 35146352,
+          "file_id": 10,
+          "flags": 16778784,
+          "rom_offset": 1174016,
+          "stored_size": 1568,
+          "stored_sha256": "829fb6be967bac8f56cec422130014cb1277f75e9d264359c34d575ae10d31a0"
+        },
+        {
+          "id": 11,
+          "load_address": 35144352,
+          "initialized_size": 18656,
+          "bss_size": 0,
+          "ctor_start": 35162520,
+          "ctor_end": 35162524,
+          "file_id": 11,
+          "flags": 16787408,
+          "rom_offset": 1176064,
+          "stored_size": 10192,
+          "stored_sha256": "827cec1c939cfa3976b9c098d246a0f1682a8b06e30e898b776ff0cd12f225e6"
+        },
+        {
+          "id": 12,
+          "load_address": 35144352,
+          "initialized_size": 28800,
+          "bss_size": 0,
+          "ctor_start": 35172880,
+          "ctor_end": 35172884,
+          "file_id": 12,
+          "flags": 16794236,
+          "rom_offset": 1186304,
+          "stored_size": 17020,
+          "stored_sha256": "508b4a2107bea593ae3d04ed03255df2c31ba3a64df11eef627e704113f6c929"
+        },
+        {
+          "id": 13,
+          "load_address": 35144352,
+          "initialized_size": 15424,
+          "bss_size": 0,
+          "ctor_start": 35159532,
+          "ctor_end": 35159536,
+          "file_id": 13,
+          "flags": 16787416,
+          "rom_offset": 1203712,
+          "stored_size": 10200,
+          "stored_sha256": "21c96c913f55e93a715fabc7603e96a57c2c497557f02a03905677d300ed6c2b"
+        },
+        {
+          "id": 14,
+          "load_address": 35144352,
+          "initialized_size": 21856,
+          "bss_size": 32,
+          "ctor_start": 35165592,
+          "ctor_end": 35165600,
+          "file_id": 14,
+          "flags": 16791556,
+          "rom_offset": 1213952,
+          "stored_size": 14340,
+          "stored_sha256": "e6aa5560bf18ecc38eef25f4f063b012f166f41903aec38e5156c9e08d037dcf"
+        },
+        {
+          "id": 15,
+          "load_address": 35173792,
+          "initialized_size": 36800,
+          "bss_size": 160,
+          "ctor_start": 35209116,
+          "ctor_end": 35209120,
+          "file_id": 15,
+          "flags": 16799200,
+          "rom_offset": 1228800,
+          "stored_size": 21984,
+          "stored_sha256": "b80ad10207a37827134d7d55c51624e4e1aa5ba606f96b69f4bdc6905945545c"
+        },
+        {
+          "id": 16,
+          "load_address": 35173792,
+          "initialized_size": 72480,
+          "bss_size": 320,
+          "ctor_start": 35245988,
+          "ctor_end": 35245992,
+          "file_id": 16,
+          "flags": 16810896,
+          "rom_offset": 1250816,
+          "stored_size": 33680,
+          "stored_sha256": "fe74d17ee3bfa63a0739e3e507b961a10dc1b4f137f301c3fece3481dfa02ae0"
+        },
+        {
+          "id": 17,
+          "load_address": 35173792,
+          "initialized_size": 314688,
+          "bss_size": 1888,
+          "ctor_start": 35484432,
+          "ctor_end": 35484480,
+          "file_id": 17,
+          "flags": 16977388,
+          "rom_offset": 1284608,
+          "stored_size": 200172,
+          "stored_sha256": "9291a7929484890ae3579f3944ef7db46605acaae42d191f460092471193d163"
+        },
+        {
+          "id": 18,
+          "load_address": 35173792,
+          "initialized_size": 32,
+          "bss_size": 0,
+          "ctor_start": 35173792,
+          "ctor_end": 35173796,
+          "file_id": 18,
+          "flags": 16777236,
+          "rom_offset": 1484800,
+          "stored_size": 20,
+          "stored_sha256": "07d1d94d7d3269a1155925f01090a020e40387e8e8998fc3b4a1a3c633ca4d46"
+        },
+        {
+          "id": 19,
+          "load_address": 35173792,
+          "initialized_size": 3456,
+          "bss_size": 0,
+          "ctor_start": 35177132,
+          "ctor_end": 35177136,
+          "file_id": 19,
+          "flags": 16779540,
+          "rom_offset": 1485312,
+          "stored_size": 2324,
+          "stored_sha256": "d9557873dd2658fcb425e158ec480ae789053257a289b4a4a61ff2160f5e4b76"
+        },
+        {
+          "id": 20,
+          "load_address": 35173792,
+          "initialized_size": 10112,
+          "bss_size": 0,
+          "ctor_start": 35183528,
+          "ctor_end": 35183536,
+          "file_id": 20,
+          "flags": 16783072,
+          "rom_offset": 1487872,
+          "stored_size": 5856,
+          "stored_sha256": "ca03a2e4028a9754f29c6da0e41781b1c54fc679aafb0e492ff184e0fb5c578f"
+        },
+        {
+          "id": 21,
+          "load_address": 35173792,
+          "initialized_size": 1600,
+          "bss_size": 0,
+          "ctor_start": 35175380,
+          "ctor_end": 35175384,
+          "file_id": 21,
+          "flags": 16778556,
+          "rom_offset": 1494016,
+          "stored_size": 1340,
+          "stored_sha256": "99b17f32e2e8eb81485e757cfcfe138afe5acc85e84dc687736e1695965f4ae0"
+        },
+        {
+          "id": 22,
+          "load_address": 35490368,
+          "initialized_size": 32,
+          "bss_size": 0,
+          "ctor_start": 35490368,
+          "ctor_end": 35490372,
+          "file_id": 22,
+          "flags": 16777236,
+          "rom_offset": 1495552,
+          "stored_size": 20,
+          "stored_sha256": "07d1d94d7d3269a1155925f01090a020e40387e8e8998fc3b4a1a3c633ca4d46"
+        },
+        {
+          "id": 23,
+          "load_address": 35490368,
+          "initialized_size": 159648,
+          "bss_size": 1376,
+          "ctor_start": 35641940,
+          "ctor_end": 35641944,
+          "file_id": 23,
+          "flags": 16874056,
+          "rom_offset": 1496064,
+          "stored_size": 96840,
+          "stored_sha256": "5f98fae67b91086911f21572ba19f8114a8aeb25e5a9f359f99e67b6a1f1d8ec"
+        },
+        {
+          "id": 24,
+          "load_address": 35490368,
+          "initialized_size": 161536,
+          "bss_size": 32,
+          "ctor_start": 35647956,
+          "ctor_end": 35647960,
+          "file_id": 24,
+          "flags": 16854784,
+          "rom_offset": 1593344,
+          "stored_size": 77568,
+          "stored_sha256": "072d96c24cce4ddfb4e6b068fab17bc4c79ccd75ed6dd960bbb39640a767b569"
+        },
+        {
+          "id": 25,
+          "load_address": 35490368,
+          "initialized_size": 93984,
+          "bss_size": 128,
+          "ctor_start": 35582872,
+          "ctor_end": 35582888,
+          "file_id": 25,
+          "flags": 16838336,
+          "rom_offset": 1671168,
+          "stored_size": 61120,
+          "stored_sha256": "2ed8f60ed99d7305bd7fc3cbb7b176ca503e9b8d76d603eb51de31cee527fd84"
+        },
+        {
+          "id": 26,
+          "load_address": 35490368,
+          "initialized_size": 25792,
+          "bss_size": 32,
+          "ctor_start": 35514420,
+          "ctor_end": 35514424,
+          "file_id": 26,
+          "flags": 16794164,
+          "rom_offset": 1732608,
+          "stored_size": 16948,
+          "stored_sha256": "43457900807704bc25b55449d8b23b29e49b57c4afc580ab33a85d62ad2ec415"
+        },
+        {
+          "id": 27,
+          "load_address": 35490368,
+          "initialized_size": 20192,
+          "bss_size": 23328,
+          "ctor_start": 35510492,
+          "ctor_end": 35510496,
+          "file_id": 27,
+          "flags": 16790744,
+          "rom_offset": 1750016,
+          "stored_size": 13528,
+          "stored_sha256": "64f8f996f778139344f1458377c1fa50e7e48e9f654be7c289d4d591c342e15c"
+        },
+        {
+          "id": 28,
+          "load_address": 35490368,
+          "initialized_size": 4256,
+          "bss_size": 256,
+          "ctor_start": 35494528,
+          "ctor_end": 35494536,
+          "file_id": 28,
+          "flags": 16780420,
+          "rom_offset": 1763840,
+          "stored_size": 3204,
+          "stored_sha256": "49dbf6579f85a3e5cb67dedc166af05d4feb3c6cde8eb43c2a9cb4bd315b6fd4"
+        },
+        {
+          "id": 29,
+          "load_address": 35490368,
+          "initialized_size": 7840,
+          "bss_size": 32,
+          "ctor_start": 35498164,
+          "ctor_end": 35498188,
+          "file_id": 29,
+          "flags": 16782176,
+          "rom_offset": 1767424,
+          "stored_size": 4960,
+          "stored_sha256": "a37cb290490347892084586bf84aa0b4e5daa14bece6a79efcd7e24c3d7b7863"
+        },
+        {
+          "id": 30,
+          "load_address": 35490368,
+          "initialized_size": 4640,
+          "bss_size": 0,
+          "ctor_start": 35495004,
+          "ctor_end": 35495008,
+          "file_id": 30,
+          "flags": 16780516,
+          "rom_offset": 1772544,
+          "stored_size": 3300,
+          "stored_sha256": "d2e9a699cd8e1ed2f2c18e1ab62026a190dd71ba0ee549d2fe4e609301fc3726"
+        },
+        {
+          "id": 31,
+          "load_address": 35651936,
+          "initialized_size": 313376,
+          "bss_size": 285568,
+          "ctor_start": 35952228,
+          "ctor_end": 35952236,
+          "file_id": 31,
+          "flags": 16972060,
+          "rom_offset": 1776128,
+          "stored_size": 194844,
+          "stored_sha256": "bc6d8afb019137e015d00d2d6e1da6f5b64e10ab394e2df052990bad882cee5e"
+        },
+        {
+          "id": 32,
+          "load_address": 35651936,
+          "initialized_size": 32,
+          "bss_size": 663552,
+          "ctor_start": 35651936,
+          "ctor_end": 35651940,
+          "file_id": 32,
+          "flags": 16777236,
+          "rom_offset": 1971200,
+          "stored_size": 20,
+          "stored_sha256": "07d1d94d7d3269a1155925f01090a020e40387e8e8998fc3b4a1a3c633ca4d46"
+        },
+        {
+          "id": 33,
+          "load_address": 36315520,
+          "initialized_size": 2208,
+          "bss_size": 1952,
+          "ctor_start": 36317668,
+          "ctor_end": 36317676,
+          "file_id": 33,
+          "flags": 16778688,
+          "rom_offset": 1971712,
+          "stored_size": 1472,
+          "stored_sha256": "bc9ec8ea005d09d0b56a3f49e07e850182064ff7e07bfd4479035f3c98959513"
+        },
+        {
+          "id": 34,
+          "load_address": 36315520,
+          "initialized_size": 2272,
+          "bss_size": 1952,
+          "ctor_start": 36317744,
+          "ctor_end": 36317752,
+          "file_id": 34,
+          "flags": 16778772,
+          "rom_offset": 1973248,
+          "stored_size": 1556,
+          "stored_sha256": "fb7e45e7da992ecd55f364d043b760e97f8a17fa365729d5724f942ef48115df"
+        }
+      ],
+      "arm7": []
+    }
+  },
+  "modules": [
+    {
+      "name": "main",
+      "processor": "arm9",
+      "initialized_size": 994912,
+      "extracted_sha256": "8aa0ec16841c77584511fece37293a66895356b5af1491ad6b62633706199ae0",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 33554432,
+          "end": 34494752,
+          "size": 940320,
+          "kind": "code"
+        },
+        {
+          "section": ".init",
+          "start": 34494752,
+          "end": 34498860,
+          "size": 4108,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 34498860,
+          "end": 34532120,
+          "size": 33260,
+          "kind": "rodata"
+        },
+        {
+          "section": ".ctor",
+          "start": 34532120,
+          "end": 34532292,
+          "size": 172,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 34532320,
+          "end": 34549344,
+          "size": 17024,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 34549344,
+          "end": 34944736,
+          "size": 395392,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [
+        {
+          "source": "src/GameState/GameStateInstance.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 33616792,
+              "end": 33616804,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "source": "src/GameState/GameStateObjects.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 33619312,
+              "end": 33619620,
+              "size": 308
+            }
+          ]
+        },
+        {
+          "source": "src/GameState/GameTime.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 33620304,
+              "end": 33620936,
+              "size": 632
+            }
+          ]
+        },
+        {
+          "source": "src/Grotto/Main/GrottoNameDataFile.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 33625668,
+              "end": 33625692,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "source": "src/Grotto/Main/GrottoStruct.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 33625912,
+              "end": 33625924,
+              "size": 12
+            }
+          ]
+        },
+        {
+          "source": "src/World/Zone3D.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 33634364,
+              "end": 33635184,
+              "size": 820
+            }
+          ]
+        },
+        {
+          "source": "src/Grotto/Main/GenerateObjectPosition.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 33661320,
+              "end": 33661696,
+              "size": 376
+            }
+          ]
+        },
+        {
+          "source": "src/Grotto/Main/TileFeatures.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 33679956,
+              "end": 33680324,
+              "size": 368
+            }
+          ]
+        },
+        {
+          "source": "src/Filesystem/BackgroundLoader.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".bss",
+              "start": 34620164,
+              "end": 34622220,
+              "size": 2056
+            },
+            {
+              "section": ".text",
+              "start": 33748736,
+              "end": 33752628,
+              "size": 3892
+            }
+          ]
+        },
+        {
+          "source": "src/Resource/Script.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 33752628,
+              "end": 33754216,
+              "size": 1588
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/ExtendedVectorMath.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 33754216,
+              "end": 33755292,
+              "size": 1076
+            }
+          ]
+        },
+        {
+          "source": "src/Memory/SafeAllocator.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 33760364,
+              "end": 33761468,
+              "size": 1104
+            },
+            {
+              "section": ".data",
+              "start": 34535708,
+              "end": 34535712,
+              "size": 4
+            },
+            {
+              "section": ".bss",
+              "start": 34622220,
+              "end": 34622224,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "source": "src/Resource/BCFG.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 33768352,
+              "end": 33769928,
+              "size": 1576
+            },
+            {
+              "section": ".data",
+              "start": 34536008,
+              "end": 34536104,
+              "size": 96
+            },
+            {
+              "section": ".bss",
+              "start": 34622224,
+              "end": 34622232,
+              "size": 8
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/AlphaTween.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 33769928,
+              "end": 33770436,
+              "size": 508
+            }
+          ]
+        },
+        {
+          "source": "src/World/Object3D.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 33770436,
+              "end": 33783056,
+              "size": 12620
+            },
+            {
+              "section": ".rodata",
+              "start": 34502656,
+              "end": 34502668,
+              "size": 12
+            },
+            {
+              "section": ".data",
+              "start": 34536104,
+              "end": 34536260,
+              "size": 156
+            },
+            {
+              "section": ".bss",
+              "start": 34622232,
+              "end": 34622304,
+              "size": 72
+            }
+          ]
+        },
+        {
+          "source": "src/Resource/Brightness.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 33795808,
+              "end": 33797272,
+              "size": 1464
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/LightingManager.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 33883220,
+              "end": 33892696,
+              "size": 9476
+            },
+            {
+              "section": ".init",
+              "start": 34495896,
+              "end": 34496044,
+              "size": 148
+            },
+            {
+              "section": ".ctor",
+              "start": 34532168,
+              "end": 34532172,
+              "size": 4
+            },
+            {
+              "section": ".data",
+              "start": 34538252,
+              "end": 34538528,
+              "size": 276
+            },
+            {
+              "section": ".bss",
+              "start": 34634012,
+              "end": 34634188,
+              "size": 176
+            }
+          ]
+        },
+        {
+          "source": "src/Util/Random.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34030032,
+              "end": 34030760,
+              "size": 728
+            }
+          ]
+        },
+        {
+          "source": "src/Combat/Main/BasicAttackCalculation.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34030760,
+              "end": 34031416,
+              "size": 656
+            }
+          ]
+        },
+        {
+          "source": "src/Combat/Main/TensionBonusCalculation.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34031460,
+              "end": 34031524,
+              "size": 64
+            }
+          ]
+        },
+        {
+          "source": "src/Combat/Main/CritRateCalculation.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34031524,
+              "end": 34031672,
+              "size": 148
+            }
+          ]
+        },
+        {
+          "source": "src/Filesystem/FileIO.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34033816,
+              "end": 34035340,
+              "size": 1524
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/AtmosphericEffect.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34054240,
+              "end": 34058956,
+              "size": 4716
+            },
+            {
+              "section": ".init",
+              "start": 34496804,
+              "end": 34496940,
+              "size": 136
+            },
+            {
+              "section": ".ctor",
+              "start": 34532212,
+              "end": 34532216,
+              "size": 4
+            },
+            {
+              "section": ".data",
+              "start": 34541112,
+              "end": 34541256,
+              "size": 144
+            },
+            {
+              "section": ".bss",
+              "start": 34639424,
+              "end": 34639456,
+              "size": 32
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/LightingInfo.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34058956,
+              "end": 34060840,
+              "size": 1884
+            },
+            {
+              "section": ".init",
+              "start": 34496940,
+              "end": 34497076,
+              "size": 136
+            },
+            {
+              "section": ".ctor",
+              "start": 34532216,
+              "end": 34532220,
+              "size": 4
+            },
+            {
+              "section": ".data",
+              "start": 34541256,
+              "end": 34541336,
+              "size": 80
+            },
+            {
+              "section": ".bss",
+              "start": 34639456,
+              "end": 34639480,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "source": "src/World/LootableContainer.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34060884,
+              "end": 34062916,
+              "size": 2032
+            },
+            {
+              "section": ".data",
+              "start": 34541336,
+              "end": 34541448,
+              "size": 112
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/Animation3D.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34070624,
+              "end": 34071100,
+              "size": 476
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/Model3D.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34071140,
+              "end": 34073884,
+              "size": 2744
+            }
+          ]
+        },
+        {
+          "source": "src/Grotto/Main/ActiveGrottoClass.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34143848,
+              "end": 34144916,
+              "size": 1068
+            }
+          ]
+        },
+        {
+          "source": "src/Grotto/Main/ActiveGrottoClass_2.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34145084,
+              "end": 34145348,
+              "size": 264
+            }
+          ]
+        },
+        {
+          "source": "src/Grotto/Main/FloorMapGenerator.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34145348,
+              "end": 34154052,
+              "size": 8704
+            }
+          ]
+        },
+        {
+          "source": "src/Grotto/Main/FloorMap.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34154052,
+              "end": 34155124,
+              "size": 1072
+            }
+          ]
+        },
+        {
+          "source": "src/Grotto/Main/TreasureMapDataStructs.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34224692,
+              "end": 34225892,
+              "size": 1200
+            }
+          ]
+        },
+        {
+          "source": "src/Grotto/Main/DetailedTreasureMapData.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".rodata",
+              "start": 34508856,
+              "end": 34508916,
+              "size": 60
+            },
+            {
+              "section": ".text",
+              "start": 34225892,
+              "end": 34233528,
+              "size": 7636
+            }
+          ]
+        },
+        {
+          "source": "src/Grotto/Main/TreasureMapMetadata.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34233528,
+              "end": 34234500,
+              "size": 972
+            }
+          ]
+        },
+        {
+          "source": "src/Memory/SignedAllocator.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".bss",
+              "start": 34643964,
+              "end": 34643980,
+              "size": 16
+            },
+            {
+              "section": ".text",
+              "start": 34270920,
+              "end": 34271756,
+              "size": 836
+            }
+          ]
+        },
+        {
+          "source": "src/Memory/HPXEAllocator.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34271756,
+              "end": 34273336,
+              "size": 1580
+            }
+          ]
+        },
+        {
+          "source": "src/Memory/HMRFAllocator.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34273336,
+              "end": 34274032,
+              "size": 696
+            }
+          ]
+        },
+        {
+          "source": "src/Memory/UnusedSignedAllocator.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34274032,
+              "end": 34274136,
+              "size": 104
+            }
+          ]
+        },
+        {
+          "source": "src/Filesystem/NarcHandle.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34274136,
+              "end": 34274760,
+              "size": 624
+            }
+          ]
+        },
+        {
+          "source": "src/Memory/AllocatorTypes.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".rodata",
+              "start": 34509152,
+              "end": 34509176,
+              "size": 24
+            },
+            {
+              "section": ".text",
+              "start": 34274760,
+              "end": 34274868,
+              "size": 108
+            }
+          ]
+        },
+        {
+          "source": "src/Memory/AllocatorUnion.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34274924,
+              "end": 34275012,
+              "size": 88
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/NSBXX/Animation.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34286284,
+              "end": 34287164,
+              "size": 880
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/NSBXX/TEX.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34287164,
+              "end": 34289344,
+              "size": 2180
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/NSBXX/RenderConfig.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34289344,
+              "end": 34290384,
+              "size": 1040
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/NSBXX/AnimationProcessing.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34290384,
+              "end": 34291744,
+              "size": 1360
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/NSBXX/RenderCommands.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34291744,
+              "end": 34297688,
+              "size": 5944
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/NSBXX/RenderCommands_10_13.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34299572,
+              "end": 34302360,
+              "size": 2788
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/NSBXX/GeometryFifo.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34302360,
+              "end": 34303640,
+              "size": 1280
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/NSBXX/NSBXX.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34303640,
+              "end": 34304876,
+              "size": 1236
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/NSBXX/PatternAnimation.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34305684,
+              "end": 34306112,
+              "size": 428
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/NSBXX/MAM.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34311776,
+              "end": 34312824,
+              "size": 1048
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/NSBXX/MAT.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34312824,
+              "end": 34313884,
+              "size": 1060
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/NSBXX/MPT.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34313884,
+              "end": 34314540,
+              "size": 656
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/NSBXX/VAV.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34314540,
+              "end": 34314672,
+              "size": 132
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/NSBXX/RenderCommandProcs.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34314672,
+              "end": 34321444,
+              "size": 6772
+            }
+          ]
+        },
+        {
+          "source": "src/System/VRAM.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34355788,
+              "end": 34360436,
+              "size": 4648
+            }
+          ]
+        },
+        {
+          "source": "src/System/BGBases.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34360436,
+              "end": 34361572,
+              "size": 1136
+            }
+          ]
+        },
+        {
+          "source": "src/System/ColorEffects.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34361572,
+              "end": 34361708,
+              "size": 136
+            }
+          ]
+        },
+        {
+          "source": "src/System/LoadToVRAM.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34363424,
+              "end": 34367764,
+              "size": 4340
+            }
+          ]
+        },
+        {
+          "source": "src/System/InterruptEnableDisable.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34368656,
+              "end": 34368840,
+              "size": 184
+            }
+          ]
+        },
+        {
+          "source": "src/System/GamecardBusOwnership.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34369096,
+              "end": 34369664,
+              "size": 568
+            }
+          ]
+        },
+        {
+          "source": "src/System/ContextList.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34369956,
+              "end": 34370652,
+              "size": 696
+            }
+          ]
+        },
+        {
+          "source": "src/System/Mutex.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34373724,
+              "end": 34374220,
+              "size": 496
+            }
+          ]
+        },
+        {
+          "source": "src/System/Cache.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34374220,
+              "end": 34374472,
+              "size": 252
+            }
+          ]
+        },
+        {
+          "source": "src/System/Timing.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34376784,
+              "end": 34378376,
+              "size": 1592
+            }
+          ]
+        },
+        {
+          "source": "src/System/CPSRInterruptState.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34379496,
+              "end": 34379628,
+              "size": 132
+            }
+          ]
+        },
+        {
+          "source": "src/System/DMA.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34380812,
+              "end": 34381992,
+              "size": 1180
+            }
+          ]
+        },
+        {
+          "source": "src/System/IPC.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".bss",
+              "start": 34674340,
+              "end": 34674472,
+              "size": 132
+            },
+            {
+              "section": ".text",
+              "start": 34385176,
+              "end": 34385972,
+              "size": 796
+            }
+          ]
+        },
+        {
+          "source": "src/Filesystem/NitroVM.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".rodata",
+              "start": 34526920,
+              "end": 34526956,
+              "size": 36
+            },
+            {
+              "section": ".text",
+              "start": 34385972,
+              "end": 34390268,
+              "size": 4296
+            }
+          ]
+        },
+        {
+          "source": "src/Filesystem/LowNitroHandle.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34390268,
+              "end": 34392384,
+              "size": 2116
+            }
+          ]
+        },
+        {
+          "source": "src/Filesystem/FileAccessor.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34392384,
+              "end": 34393980,
+              "size": 1596
+            }
+          ]
+        },
+        {
+          "source": "src/Filesystem/OverlayFSManagement.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34393980,
+              "end": 34395284,
+              "size": 1304
+            }
+          ]
+        },
+        {
+          "source": "src/Filesystem/CardReadManagerInit.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34405564,
+              "end": 34406348,
+              "size": 784
+            }
+          ]
+        },
+        {
+          "source": "src/Filesystem/CardReadManagerAcquireBus.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34406348,
+              "end": 34406464,
+              "size": 116
+            }
+          ]
+        },
+        {
+          "source": "src/Filesystem/CardReadManager.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34408524,
+              "end": 34410436,
+              "size": 1912
+            }
+          ]
+        },
+        {
+          "source": "src/Filesystem/ExtendedNitroVM.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34440980,
+              "end": 34443212,
+              "size": 2232
+            }
+          ]
+        },
+        {
+          "source": "src/Filesystem/GPC.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34443212,
+              "end": 34444976,
+              "size": 1764
+            }
+          ]
+        },
+        {
+          "source": "src/Resource/ResourceMutex.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".bss",
+              "start": 34923688,
+              "end": 34923720,
+              "size": 32
+            },
+            {
+              "section": ".text",
+              "start": 34444976,
+              "end": 34445224,
+              "size": 248
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/VRAMStaging.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".bss",
+              "start": 34924004,
+              "end": 34944552,
+              "size": 20548
+            },
+            {
+              "section": ".text",
+              "start": 34455676,
+              "end": 34456084,
+              "size": 408
+            }
+          ]
+        }
+      ],
+      "config": "arm9/delinks.txt",
+      "report_coverage": {
+        "total_code": 943394,
+        "matched_code": 135236,
+        "total_data": 445848,
+        "matched_data": 23928,
+        "total_functions": 6211,
+        "matched_functions": 1036,
+        "complete_code": 135936,
+        "complete_data": 24112
+      },
+      "generated_fallback_units": 48,
+      "source_units": 79,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "extraction_metadata": {
+        "base_address": 33554432,
+        "entry_function": 33556480,
+        "build_info": 2976,
+        "autoload_callback": 33557164,
+        "overlay_signatures": 0,
+        "bss_start": 34549344,
+        "bss_end": 34944736,
+        "sdk_version": 67269945
+      }
+    },
+    {
+      "name": "itcm",
+      "processor": "arm9",
+      "initialized_size": 5952,
+      "extracted_sha256": "5956c1a3e11adcbf12e71595a32585400bd56c6490356cb1b74615dac7453dfb",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 33521664,
+          "end": 33527616,
+          "size": 5952,
+          "kind": "code"
+        },
+        {
+          "section": ".bss",
+          "start": 33527616,
+          "end": 33550976,
+          "size": 23360,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [
+        {
+          "source": "src/System/itcm/DMA_ITCM.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 33522816,
+              "end": 33523128,
+              "size": 312
+            }
+          ]
+        },
+        {
+          "source": "src/Graphics/itcm/VRAMStagingITCM.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 33523620,
+              "end": 33527508,
+              "size": 3888
+            }
+          ]
+        }
+      ],
+      "config": "arm9/itcm/delinks.txt",
+      "report_coverage": {
+        "total_code": 5952,
+        "matched_code": 4200,
+        "total_data": 23360,
+        "matched_data": 0,
+        "total_functions": 42,
+        "matched_functions": 23,
+        "complete_code": 4200,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 3,
+      "source_units": 2,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "extraction_metadata": {
+        "base_address": 33521664,
+        "code_size": 5952,
+        "bss_size": 23360
+      }
+    },
+    {
+      "name": "dtcm",
+      "processor": "arm9",
+      "initialized_size": 96,
+      "extracted_sha256": "a9bd1c9dfc65d5af599478379cb503b42a1eba872a7adb06dc0221677d885d24",
+      "sections": [
+        {
+          "section": ".data",
+          "start": 41811968,
+          "end": 41812064,
+          "size": 96,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 41812064,
+          "end": 41812096,
+          "size": 32,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/dtcm/delinks.txt",
+      "report_coverage": {
+        "total_code": 0,
+        "matched_code": 0,
+        "total_data": 128,
+        "matched_data": 0,
+        "total_functions": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "extraction_metadata": {
+        "base_address": 41811968,
+        "code_size": 96,
+        "bss_size": 32
+      }
+    },
+    {
+      "name": "ov000",
+      "processor": "arm9",
+      "initialized_size": 199488,
+      "extracted_sha256": "ec199c8cf1eb22d870dc9792991d7c1a7be2240868f0004a7387de686b80074f",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 34944736,
+          "end": 35138136,
+          "size": 193400,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35138136,
+          "end": 35141392,
+          "size": 3256,
+          "kind": "rodata"
+        },
+        {
+          "section": ".init",
+          "start": 35141392,
+          "end": 35141796,
+          "size": 404,
+          "kind": "code"
+        },
+        {
+          "section": ".ctor",
+          "start": 35141796,
+          "end": 35141812,
+          "size": 16,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35141824,
+          "end": 35144224,
+          "size": 2400,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35144224,
+          "end": 35144352,
+          "size": 128,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [
+        {
+          "source": "src/Combat/Overlay_0/GetCombatantByID.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34944736,
+              "end": 34944760,
+              "size": 24
+            }
+          ]
+        },
+        {
+          "source": "src/Combat/Overlay_0/UpdateCombatantBuffs.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 34953808,
+              "end": 34954900,
+              "size": 1092
+            }
+          ]
+        }
+      ],
+      "config": "arm9/overlays/ov000/delinks.txt",
+      "report_coverage": {
+        "total_code": 193804,
+        "matched_code": 1116,
+        "total_data": 5800,
+        "matched_data": 0,
+        "total_functions": 826,
+        "matched_functions": 8,
+        "complete_code": 1116,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 3,
+      "source_units": 2,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 0,
+        "load_address": 34944736,
+        "initialized_size": 199488,
+        "bss_size": 128,
+        "ctor_start": 35141796,
+        "ctor_end": 35141812,
+        "file_id": 0,
+        "flags": 16901048,
+        "rom_offset": 656384,
+        "stored_size": 123832,
+        "stored_sha256": "da7ed929ebf0cb7d9a66f10bd9f4ac5edcf94541e85c3b549d1c3006888ebc73"
+      }
+    },
+    {
+      "name": "ov001",
+      "processor": "arm9",
+      "initialized_size": 74016,
+      "extracted_sha256": "da3b922598de96b04f4435be3b4af0e34c2138a90b777a2e5d4b2fd46dd98b3b",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 34944736,
+          "end": 35015208,
+          "size": 70472,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35015208,
+          "end": 35015256,
+          "size": 48,
+          "kind": "rodata"
+        },
+        {
+          "section": ".init",
+          "start": 35015256,
+          "end": 35015540,
+          "size": 284,
+          "kind": "code"
+        },
+        {
+          "section": ".ctor",
+          "start": 35015540,
+          "end": 35015552,
+          "size": 12,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35015552,
+          "end": 35018752,
+          "size": 3200,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35018752,
+          "end": 35024160,
+          "size": 5408,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov001/delinks.txt",
+      "report_coverage": {
+        "total_code": 70756,
+        "matched_code": 0,
+        "total_data": 8668,
+        "matched_data": 0,
+        "total_functions": 515,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 1,
+        "load_address": 34944736,
+        "initialized_size": 74016,
+        "bss_size": 5408,
+        "ctor_start": 35015540,
+        "ctor_end": 35015552,
+        "file_id": 1,
+        "flags": 16820440,
+        "rom_offset": 780288,
+        "stored_size": 43224,
+        "stored_sha256": "8608c0af1ebadb26ad5f97b87823093d126bab0f82f4d0ed6c625e81661e8772"
+      }
+    },
+    {
+      "name": "ov002",
+      "processor": "arm9",
+      "initialized_size": 105664,
+      "extracted_sha256": "4467f780e5bcc14e991ab806319e1a011516ee8efd5a6cb4a82ab2ec7451c26b",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 34944736,
+          "end": 35047788,
+          "size": 103052,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35047788,
+          "end": 35048620,
+          "size": 832,
+          "kind": "rodata"
+        },
+        {
+          "section": ".ctor",
+          "start": 35048620,
+          "end": 35048624,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35048640,
+          "end": 35050400,
+          "size": 1760,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35050400,
+          "end": 35050432,
+          "size": 32,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov002/delinks.txt",
+      "report_coverage": {
+        "total_code": 103052,
+        "matched_code": 0,
+        "total_data": 2628,
+        "matched_data": 0,
+        "total_functions": 213,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 2,
+        "load_address": 34944736,
+        "initialized_size": 105664,
+        "bss_size": 32,
+        "ctor_start": 35048620,
+        "ctor_end": 35048624,
+        "file_id": 2,
+        "flags": 16841448,
+        "rom_offset": 823808,
+        "stored_size": 64232,
+        "stored_sha256": "92a2569ca05b4a077104427b9130e290d80d20a07c6498a519d448b132103b1f"
+      }
+    },
+    {
+      "name": "ov003",
+      "processor": "arm9",
+      "initialized_size": 185792,
+      "extracted_sha256": "6bfbf97d0bad06a6cf5217ab1a097c7f26258321e61841ca00d02be3e363d142",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 34944736,
+          "end": 35123840,
+          "size": 179104,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35123840,
+          "end": 35126256,
+          "size": 2416,
+          "kind": "rodata"
+        },
+        {
+          "section": ".init",
+          "start": 35126256,
+          "end": 35126392,
+          "size": 136,
+          "kind": "code"
+        },
+        {
+          "section": ".ctor",
+          "start": 35126392,
+          "end": 35126400,
+          "size": 8,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35126400,
+          "end": 35130528,
+          "size": 4128,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35130528,
+          "end": 35130688,
+          "size": 160,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov003/delinks.txt",
+      "report_coverage": {
+        "total_code": 179240,
+        "matched_code": 0,
+        "total_data": 6712,
+        "matched_data": 0,
+        "total_functions": 510,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 3,
+        "load_address": 34944736,
+        "initialized_size": 185792,
+        "bss_size": 160,
+        "ctor_start": 35126392,
+        "ctor_end": 35126400,
+        "file_id": 3,
+        "flags": 16894892,
+        "rom_offset": 888320,
+        "stored_size": 117676,
+        "stored_sha256": "8125a0e6f29fae932828189cd0b8bd71b5933da6dbeab7a7412bdd6b4f6afea5"
+      }
+    },
+    {
+      "name": "ov004",
+      "processor": "arm9",
+      "initialized_size": 119008,
+      "extracted_sha256": "4e69186df34447828d706b552f7f4ce6c04967bc348af121df384ec28b18f065",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 34944736,
+          "end": 35060348,
+          "size": 115612,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35060348,
+          "end": 35062556,
+          "size": 2208,
+          "kind": "rodata"
+        },
+        {
+          "section": ".init",
+          "start": 35062556,
+          "end": 35062600,
+          "size": 44,
+          "kind": "code"
+        },
+        {
+          "section": ".ctor",
+          "start": 35062600,
+          "end": 35062608,
+          "size": 8,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35062624,
+          "end": 35063744,
+          "size": 1120,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35063744,
+          "end": 35065952,
+          "size": 2208,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov004/delinks.txt",
+      "report_coverage": {
+        "total_code": 115656,
+        "matched_code": 0,
+        "total_data": 5544,
+        "matched_data": 0,
+        "total_functions": 532,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 4,
+        "load_address": 34944736,
+        "initialized_size": 119008,
+        "bss_size": 2208,
+        "ctor_start": 35062600,
+        "ctor_end": 35062608,
+        "file_id": 4,
+        "flags": 16848708,
+        "rom_offset": 1006080,
+        "stored_size": 71492,
+        "stored_sha256": "e6536a5f30745d7fde293f7063c51485c8053007446a0c5421bd68c81ebfcb35"
+      }
+    },
+    {
+      "name": "ov005",
+      "processor": "arm9",
+      "initialized_size": 38720,
+      "extracted_sha256": "73538b6300cf5ccf95c180e3434960bf3c17eef3720e2690874b25b07eca91e7",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 34944736,
+          "end": 34982868,
+          "size": 38132,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 34982868,
+          "end": 34983140,
+          "size": 272,
+          "kind": "rodata"
+        },
+        {
+          "section": ".ctor",
+          "start": 34983140,
+          "end": 34983144,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 34983168,
+          "end": 34983456,
+          "size": 288,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 34983456,
+          "end": 34983456,
+          "size": 0,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov005/delinks.txt",
+      "report_coverage": {
+        "total_code": 38132,
+        "matched_code": 0,
+        "total_data": 564,
+        "matched_data": 0,
+        "total_functions": 89,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 5,
+        "load_address": 34944736,
+        "initialized_size": 38720,
+        "bss_size": 0,
+        "ctor_start": 34983140,
+        "ctor_end": 34983144,
+        "file_id": 5,
+        "flags": 16802672,
+        "rom_offset": 1077760,
+        "stored_size": 25456,
+        "stored_sha256": "202c21798fbe229fbc76dd5551fe6fcdaee1b24e41d38d80ac84639b282f0416"
+      }
+    },
+    {
+      "name": "ov006",
+      "processor": "arm9",
+      "initialized_size": 52384,
+      "extracted_sha256": "e47cac06e05314ff6dc9b9af6fc4e5b5489c919a204d404f1af63e09c481521e",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 34944736,
+          "end": 34996052,
+          "size": 51316,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 34996052,
+          "end": 34996348,
+          "size": 296,
+          "kind": "rodata"
+        },
+        {
+          "section": ".ctor",
+          "start": 34996348,
+          "end": 34996352,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 34996352,
+          "end": 34997120,
+          "size": 768,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 34997120,
+          "end": 34997152,
+          "size": 32,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov006/delinks.txt",
+      "report_coverage": {
+        "total_code": 51316,
+        "matched_code": 0,
+        "total_data": 1100,
+        "matched_data": 0,
+        "total_functions": 132,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 6,
+        "load_address": 34944736,
+        "initialized_size": 52384,
+        "bss_size": 32,
+        "ctor_start": 34996348,
+        "ctor_end": 34996352,
+        "file_id": 6,
+        "flags": 16809464,
+        "rom_offset": 1103360,
+        "stored_size": 32248,
+        "stored_sha256": "ba5c6216a7be8e360b664b4b76dec60e3002f4663172ccdf36c35b6d007dee91"
+      }
+    },
+    {
+      "name": "ov007",
+      "processor": "arm9",
+      "initialized_size": 32,
+      "extracted_sha256": "66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925",
+      "sections": [
+        {
+          "section": ".ctor",
+          "start": 35144352,
+          "end": 35144356,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".bss",
+          "start": 35144384,
+          "end": 35144384,
+          "size": 0,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov007/delinks.txt",
+      "report_coverage": {
+        "total_code": 0,
+        "matched_code": 0,
+        "total_data": 4,
+        "matched_data": 0,
+        "total_functions": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 7,
+        "load_address": 35144352,
+        "initialized_size": 32,
+        "bss_size": 0,
+        "ctor_start": 35144352,
+        "ctor_end": 35144356,
+        "file_id": 7,
+        "flags": 16777236,
+        "rom_offset": 1135616,
+        "stored_size": 20,
+        "stored_sha256": "07d1d94d7d3269a1155925f01090a020e40387e8e8998fc3b4a1a3c633ca4d46"
+      }
+    },
+    {
+      "name": "ov008",
+      "processor": "arm9",
+      "initialized_size": 29440,
+      "extracted_sha256": "1a14ed8dcade130b82c9aeb15e0ad11d85f00ddc995d97281615a1d36b34e6d7",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35144352,
+          "end": 35173120,
+          "size": 28768,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35173120,
+          "end": 35173312,
+          "size": 192,
+          "kind": "rodata"
+        },
+        {
+          "section": ".ctor",
+          "start": 35173312,
+          "end": 35173316,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35173344,
+          "end": 35173792,
+          "size": 448,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35173792,
+          "end": 35173792,
+          "size": 0,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov008/delinks.txt",
+      "report_coverage": {
+        "total_code": 28768,
+        "matched_code": 0,
+        "total_data": 644,
+        "matched_data": 0,
+        "total_functions": 63,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 8,
+        "load_address": 35144352,
+        "initialized_size": 29440,
+        "bss_size": 0,
+        "ctor_start": 35173312,
+        "ctor_end": 35173316,
+        "file_id": 8,
+        "flags": 16796600,
+        "rom_offset": 1136128,
+        "stored_size": 19384,
+        "stored_sha256": "4fbbd4a6a33f13b85d801f8ee7699fc84d29cee033a116e5352d512b999dec63"
+      }
+    },
+    {
+      "name": "ov009",
+      "processor": "arm9",
+      "initialized_size": 27328,
+      "extracted_sha256": "a2db883cfb9e0431a4f00d125391d21fd389b296058f01835d9af80aaf77e13e",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35144352,
+          "end": 35170652,
+          "size": 26300,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35170652,
+          "end": 35171480,
+          "size": 828,
+          "kind": "rodata"
+        },
+        {
+          "section": ".ctor",
+          "start": 35171480,
+          "end": 35171484,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35171488,
+          "end": 35171680,
+          "size": 192,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35171680,
+          "end": 35171680,
+          "size": 0,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov009/delinks.txt",
+      "report_coverage": {
+        "total_code": 26300,
+        "matched_code": 0,
+        "total_data": 1024,
+        "matched_data": 0,
+        "total_functions": 43,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 9,
+        "load_address": 35144352,
+        "initialized_size": 27328,
+        "bss_size": 0,
+        "ctor_start": 35171480,
+        "ctor_end": 35171484,
+        "file_id": 9,
+        "flags": 16795184,
+        "rom_offset": 1155584,
+        "stored_size": 17968,
+        "stored_sha256": "e820905a53e20f2103cb4dd51c4f7c64ae2f6c6f8ea128052e4a93eeed3be698"
+      }
+    },
+    {
+      "name": "ov010",
+      "processor": "arm9",
+      "initialized_size": 2080,
+      "extracted_sha256": "5091f366902c611ae929e019233028afef4e21464aea3ad42be400fc7eb7d03a",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35144352,
+          "end": 35146348,
+          "size": 1996,
+          "kind": "code"
+        },
+        {
+          "section": ".ctor",
+          "start": 35146348,
+          "end": 35146352,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35146368,
+          "end": 35146432,
+          "size": 64,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35146432,
+          "end": 35146432,
+          "size": 0,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov010/delinks.txt",
+      "report_coverage": {
+        "total_code": 1996,
+        "matched_code": 0,
+        "total_data": 68,
+        "matched_data": 0,
+        "total_functions": 3,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 10,
+        "load_address": 35144352,
+        "initialized_size": 2080,
+        "bss_size": 0,
+        "ctor_start": 35146348,
+        "ctor_end": 35146352,
+        "file_id": 10,
+        "flags": 16778784,
+        "rom_offset": 1174016,
+        "stored_size": 1568,
+        "stored_sha256": "829fb6be967bac8f56cec422130014cb1277f75e9d264359c34d575ae10d31a0"
+      }
+    },
+    {
+      "name": "ov011",
+      "processor": "arm9",
+      "initialized_size": 18656,
+      "extracted_sha256": "948eefbd4049c4e88a72abade67fe2cc705d7955db1bfb534d12c308f5c7e938",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35144352,
+          "end": 35162372,
+          "size": 18020,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35162372,
+          "end": 35162520,
+          "size": 148,
+          "kind": "rodata"
+        },
+        {
+          "section": ".ctor",
+          "start": 35162520,
+          "end": 35162524,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35162528,
+          "end": 35163008,
+          "size": 480,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35163008,
+          "end": 35163008,
+          "size": 0,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov011/delinks.txt",
+      "report_coverage": {
+        "total_code": 18020,
+        "matched_code": 0,
+        "total_data": 632,
+        "matched_data": 0,
+        "total_functions": 186,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 11,
+        "load_address": 35144352,
+        "initialized_size": 18656,
+        "bss_size": 0,
+        "ctor_start": 35162520,
+        "ctor_end": 35162524,
+        "file_id": 11,
+        "flags": 16787408,
+        "rom_offset": 1176064,
+        "stored_size": 10192,
+        "stored_sha256": "827cec1c939cfa3976b9c098d246a0f1682a8b06e30e898b776ff0cd12f225e6"
+      }
+    },
+    {
+      "name": "ov012",
+      "processor": "arm9",
+      "initialized_size": 28800,
+      "extracted_sha256": "6f86d0fb2e8e46cea51857e434f927ff8d0539cb80a4c0885ee86d1327d2a95e",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35144352,
+          "end": 35172212,
+          "size": 27860,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35172212,
+          "end": 35172880,
+          "size": 668,
+          "kind": "rodata"
+        },
+        {
+          "section": ".ctor",
+          "start": 35172880,
+          "end": 35172884,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35172896,
+          "end": 35173152,
+          "size": 256,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35173152,
+          "end": 35173152,
+          "size": 0,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov012/delinks.txt",
+      "report_coverage": {
+        "total_code": 27860,
+        "matched_code": 0,
+        "total_data": 928,
+        "matched_data": 0,
+        "total_functions": 71,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 12,
+        "load_address": 35144352,
+        "initialized_size": 28800,
+        "bss_size": 0,
+        "ctor_start": 35172880,
+        "ctor_end": 35172884,
+        "file_id": 12,
+        "flags": 16794236,
+        "rom_offset": 1186304,
+        "stored_size": 17020,
+        "stored_sha256": "508b4a2107bea593ae3d04ed03255df2c31ba3a64df11eef627e704113f6c929"
+      }
+    },
+    {
+      "name": "ov013",
+      "processor": "arm9",
+      "initialized_size": 15424,
+      "extracted_sha256": "8154e4ff20db758032142192bb3c9589af89bb9ab5cb713134b53d55dd570502",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35144352,
+          "end": 35159432,
+          "size": 15080,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35159432,
+          "end": 35159532,
+          "size": 100,
+          "kind": "rodata"
+        },
+        {
+          "section": ".ctor",
+          "start": 35159532,
+          "end": 35159536,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35159552,
+          "end": 35159776,
+          "size": 224,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35159776,
+          "end": 35159776,
+          "size": 0,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov013/delinks.txt",
+      "report_coverage": {
+        "total_code": 15080,
+        "matched_code": 0,
+        "total_data": 328,
+        "matched_data": 0,
+        "total_functions": 40,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 13,
+        "load_address": 35144352,
+        "initialized_size": 15424,
+        "bss_size": 0,
+        "ctor_start": 35159532,
+        "ctor_end": 35159536,
+        "file_id": 13,
+        "flags": 16787416,
+        "rom_offset": 1203712,
+        "stored_size": 10200,
+        "stored_sha256": "21c96c913f55e93a715fabc7603e96a57c2c497557f02a03905677d300ed6c2b"
+      }
+    },
+    {
+      "name": "ov014",
+      "processor": "arm9",
+      "initialized_size": 21856,
+      "extracted_sha256": "d31a7df67a0a47232971b6097b5f0c1079dfdf38ca3bd45e29f005263ee69204",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35144352,
+          "end": 35165288,
+          "size": 20936,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35165288,
+          "end": 35165456,
+          "size": 168,
+          "kind": "rodata"
+        },
+        {
+          "section": ".init",
+          "start": 35165456,
+          "end": 35165592,
+          "size": 136,
+          "kind": "code"
+        },
+        {
+          "section": ".ctor",
+          "start": 35165592,
+          "end": 35165600,
+          "size": 8,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35165600,
+          "end": 35166208,
+          "size": 608,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35166208,
+          "end": 35166240,
+          "size": 32,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov014/delinks.txt",
+      "report_coverage": {
+        "total_code": 21072,
+        "matched_code": 0,
+        "total_data": 816,
+        "matched_data": 0,
+        "total_functions": 69,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 14,
+        "load_address": 35144352,
+        "initialized_size": 21856,
+        "bss_size": 32,
+        "ctor_start": 35165592,
+        "ctor_end": 35165600,
+        "file_id": 14,
+        "flags": 16791556,
+        "rom_offset": 1213952,
+        "stored_size": 14340,
+        "stored_sha256": "e6aa5560bf18ecc38eef25f4f063b012f166f41903aec38e5156c9e08d037dcf"
+      }
+    },
+    {
+      "name": "ov015",
+      "processor": "arm9",
+      "initialized_size": 36800,
+      "extracted_sha256": "2cecea838245d70a0a69fad06a46ab690a664b3f1775e81403a3c099c6c96247",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35173792,
+          "end": 35208400,
+          "size": 34608,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35208400,
+          "end": 35209116,
+          "size": 716,
+          "kind": "rodata"
+        },
+        {
+          "section": ".ctor",
+          "start": 35209116,
+          "end": 35209120,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35209120,
+          "end": 35210592,
+          "size": 1472,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35210592,
+          "end": 35210752,
+          "size": 160,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov015/delinks.txt",
+      "report_coverage": {
+        "total_code": 34608,
+        "matched_code": 0,
+        "total_data": 2352,
+        "matched_data": 0,
+        "total_functions": 103,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 15,
+        "load_address": 35173792,
+        "initialized_size": 36800,
+        "bss_size": 160,
+        "ctor_start": 35209116,
+        "ctor_end": 35209120,
+        "file_id": 15,
+        "flags": 16799200,
+        "rom_offset": 1228800,
+        "stored_size": 21984,
+        "stored_sha256": "b80ad10207a37827134d7d55c51624e4e1aa5ba606f96b69f4bdc6905945545c"
+      }
+    },
+    {
+      "name": "ov016",
+      "processor": "arm9",
+      "initialized_size": 72480,
+      "extracted_sha256": "61836e459267db191a71a5b0b974f6d30f87bfd3c40175026b393a883018a9de",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35173792,
+          "end": 35195340,
+          "size": 21548,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35195340,
+          "end": 35245988,
+          "size": 50648,
+          "kind": "rodata"
+        },
+        {
+          "section": ".ctor",
+          "start": 35245988,
+          "end": 35245992,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35246016,
+          "end": 35246272,
+          "size": 256,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35246272,
+          "end": 35246592,
+          "size": 320,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov016/delinks.txt",
+      "report_coverage": {
+        "total_code": 23052,
+        "matched_code": 0,
+        "total_data": 51228,
+        "matched_data": 0,
+        "total_functions": 88,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 16,
+        "load_address": 35173792,
+        "initialized_size": 72480,
+        "bss_size": 320,
+        "ctor_start": 35245988,
+        "ctor_end": 35245992,
+        "file_id": 16,
+        "flags": 16810896,
+        "rom_offset": 1250816,
+        "stored_size": 33680,
+        "stored_sha256": "fe74d17ee3bfa63a0739e3e507b961a10dc1b4f137f301c3fece3481dfa02ae0"
+      }
+    },
+    {
+      "name": "ov017",
+      "processor": "arm9",
+      "initialized_size": 314688,
+      "extracted_sha256": "071a8aeb62328d54ea478676edb0450ef46233dd92fa52b6a4859ede2139b4a0",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35173792,
+          "end": 35479900,
+          "size": 306108,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35479900,
+          "end": 35482920,
+          "size": 3020,
+          "kind": "rodata"
+        },
+        {
+          "section": ".init",
+          "start": 35482920,
+          "end": 35484432,
+          "size": 1512,
+          "kind": "code"
+        },
+        {
+          "section": ".ctor",
+          "start": 35484432,
+          "end": 35484480,
+          "size": 48,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35484480,
+          "end": 35488480,
+          "size": 4000,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35488480,
+          "end": 35490368,
+          "size": 1888,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov017/delinks.txt",
+      "report_coverage": {
+        "total_code": 307620,
+        "matched_code": 0,
+        "total_data": 8956,
+        "matched_data": 0,
+        "total_functions": 1194,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 17,
+        "load_address": 35173792,
+        "initialized_size": 314688,
+        "bss_size": 1888,
+        "ctor_start": 35484432,
+        "ctor_end": 35484480,
+        "file_id": 17,
+        "flags": 16977388,
+        "rom_offset": 1284608,
+        "stored_size": 200172,
+        "stored_sha256": "9291a7929484890ae3579f3944ef7db46605acaae42d191f460092471193d163"
+      }
+    },
+    {
+      "name": "ov018",
+      "processor": "arm9",
+      "initialized_size": 32,
+      "extracted_sha256": "66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925",
+      "sections": [
+        {
+          "section": ".ctor",
+          "start": 35173792,
+          "end": 35173796,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".bss",
+          "start": 35173824,
+          "end": 35173824,
+          "size": 0,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov018/delinks.txt",
+      "report_coverage": {
+        "total_code": 0,
+        "matched_code": 0,
+        "total_data": 4,
+        "matched_data": 0,
+        "total_functions": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 18,
+        "load_address": 35173792,
+        "initialized_size": 32,
+        "bss_size": 0,
+        "ctor_start": 35173792,
+        "ctor_end": 35173796,
+        "file_id": 18,
+        "flags": 16777236,
+        "rom_offset": 1484800,
+        "stored_size": 20,
+        "stored_sha256": "07d1d94d7d3269a1155925f01090a020e40387e8e8998fc3b4a1a3c633ca4d46"
+      }
+    },
+    {
+      "name": "ov019",
+      "processor": "arm9",
+      "initialized_size": 3456,
+      "extracted_sha256": "167a7b6405e3625dc0010d5db16c22e7003321c06c71bf9eeebd128206b77201",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35173792,
+          "end": 35177104,
+          "size": 3312,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35177104,
+          "end": 35177132,
+          "size": 28,
+          "kind": "rodata"
+        },
+        {
+          "section": ".ctor",
+          "start": 35177132,
+          "end": 35177136,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35177152,
+          "end": 35177248,
+          "size": 96,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35177248,
+          "end": 35177248,
+          "size": 0,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov019/delinks.txt",
+      "report_coverage": {
+        "total_code": 3312,
+        "matched_code": 0,
+        "total_data": 128,
+        "matched_data": 0,
+        "total_functions": 5,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 19,
+        "load_address": 35173792,
+        "initialized_size": 3456,
+        "bss_size": 0,
+        "ctor_start": 35177132,
+        "ctor_end": 35177136,
+        "file_id": 19,
+        "flags": 16779540,
+        "rom_offset": 1485312,
+        "stored_size": 2324,
+        "stored_sha256": "d9557873dd2658fcb425e158ec480ae789053257a289b4a4a61ff2160f5e4b76"
+      }
+    },
+    {
+      "name": "ov020",
+      "processor": "arm9",
+      "initialized_size": 10112,
+      "extracted_sha256": "a4468199ea8b94b3b817f80a3e5101c0f8c13503864bc9c1cb0b0face4f43d36",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35173792,
+          "end": 35182916,
+          "size": 9124,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35182916,
+          "end": 35183504,
+          "size": 588,
+          "kind": "rodata"
+        },
+        {
+          "section": ".init",
+          "start": 35183504,
+          "end": 35183528,
+          "size": 24,
+          "kind": "code"
+        },
+        {
+          "section": ".ctor",
+          "start": 35183528,
+          "end": 35183536,
+          "size": 8,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35183552,
+          "end": 35183904,
+          "size": 352,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35183904,
+          "end": 35183904,
+          "size": 0,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov020/delinks.txt",
+      "report_coverage": {
+        "total_code": 9148,
+        "matched_code": 0,
+        "total_data": 948,
+        "matched_data": 0,
+        "total_functions": 18,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 20,
+        "load_address": 35173792,
+        "initialized_size": 10112,
+        "bss_size": 0,
+        "ctor_start": 35183528,
+        "ctor_end": 35183536,
+        "file_id": 20,
+        "flags": 16783072,
+        "rom_offset": 1487872,
+        "stored_size": 5856,
+        "stored_sha256": "ca03a2e4028a9754f29c6da0e41781b1c54fc679aafb0e492ff184e0fb5c578f"
+      }
+    },
+    {
+      "name": "ov021",
+      "processor": "arm9",
+      "initialized_size": 1600,
+      "extracted_sha256": "16dc392bda3994f885808e282db6060f78cbded490f9ac39d5e8d8e5e6480b68",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35173792,
+          "end": 35175364,
+          "size": 1572,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35175364,
+          "end": 35175380,
+          "size": 16,
+          "kind": "rodata"
+        },
+        {
+          "section": ".ctor",
+          "start": 35175380,
+          "end": 35175384,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".bss",
+          "start": 35175392,
+          "end": 35175392,
+          "size": 0,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov021/delinks.txt",
+      "report_coverage": {
+        "total_code": 1572,
+        "matched_code": 0,
+        "total_data": 20,
+        "matched_data": 0,
+        "total_functions": 5,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 21,
+        "load_address": 35173792,
+        "initialized_size": 1600,
+        "bss_size": 0,
+        "ctor_start": 35175380,
+        "ctor_end": 35175384,
+        "file_id": 21,
+        "flags": 16778556,
+        "rom_offset": 1494016,
+        "stored_size": 1340,
+        "stored_sha256": "99b17f32e2e8eb81485e757cfcfe138afe5acc85e84dc687736e1695965f4ae0"
+      }
+    },
+    {
+      "name": "ov022",
+      "processor": "arm9",
+      "initialized_size": 32,
+      "extracted_sha256": "66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925",
+      "sections": [
+        {
+          "section": ".ctor",
+          "start": 35490368,
+          "end": 35490372,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".bss",
+          "start": 35490400,
+          "end": 35490400,
+          "size": 0,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov022/delinks.txt",
+      "report_coverage": {
+        "total_code": 0,
+        "matched_code": 0,
+        "total_data": 4,
+        "matched_data": 0,
+        "total_functions": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 22,
+        "load_address": 35490368,
+        "initialized_size": 32,
+        "bss_size": 0,
+        "ctor_start": 35490368,
+        "ctor_end": 35490372,
+        "file_id": 22,
+        "flags": 16777236,
+        "rom_offset": 1495552,
+        "stored_size": 20,
+        "stored_sha256": "07d1d94d7d3269a1155925f01090a020e40387e8e8998fc3b4a1a3c633ca4d46"
+      }
+    },
+    {
+      "name": "ov023",
+      "processor": "arm9",
+      "initialized_size": 159648,
+      "extracted_sha256": "1634609881d46e74a91224abf50474887eec6a35ec85df5e17114e732b39aae5",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35490368,
+          "end": 35640592,
+          "size": 150224,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35640592,
+          "end": 35641940,
+          "size": 1348,
+          "kind": "rodata"
+        },
+        {
+          "section": ".ctor",
+          "start": 35641940,
+          "end": 35641944,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35641952,
+          "end": 35650016,
+          "size": 8064,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35650016,
+          "end": 35651392,
+          "size": 1376,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov023/delinks.txt",
+      "report_coverage": {
+        "total_code": 150224,
+        "matched_code": 0,
+        "total_data": 10792,
+        "matched_data": 0,
+        "total_functions": 827,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 23,
+        "load_address": 35490368,
+        "initialized_size": 159648,
+        "bss_size": 1376,
+        "ctor_start": 35641940,
+        "ctor_end": 35641944,
+        "file_id": 23,
+        "flags": 16874056,
+        "rom_offset": 1496064,
+        "stored_size": 96840,
+        "stored_sha256": "5f98fae67b91086911f21572ba19f8114a8aeb25e5a9f359f99e67b6a1f1d8ec"
+      }
+    },
+    {
+      "name": "ov024",
+      "processor": "arm9",
+      "initialized_size": 161536,
+      "extracted_sha256": "9d3b8037f2c0fd40d86a9337b870b55a09e2d65020fdebab54ae44cb861edae0",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35490368,
+          "end": 35645128,
+          "size": 154760,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35645128,
+          "end": 35647956,
+          "size": 2828,
+          "kind": "rodata"
+        },
+        {
+          "section": ".ctor",
+          "start": 35647956,
+          "end": 35647960,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35647968,
+          "end": 35651904,
+          "size": 3936,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35651904,
+          "end": 35651936,
+          "size": 32,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [
+        {
+          "source": "src/Combat/Overlay_24/GetAttackBaseDamage.cpp",
+          "declared_complete": false,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 35552192,
+              "end": 35553508,
+              "size": 1316
+            }
+          ]
+        }
+      ],
+      "config": "arm9/overlays/ov024/delinks.txt",
+      "report_coverage": {
+        "total_code": 154760,
+        "matched_code": 0,
+        "total_data": 6800,
+        "matched_data": 0,
+        "total_functions": 573,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 2,
+      "source_units": 1,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 24,
+        "load_address": 35490368,
+        "initialized_size": 161536,
+        "bss_size": 32,
+        "ctor_start": 35647956,
+        "ctor_end": 35647960,
+        "file_id": 24,
+        "flags": 16854784,
+        "rom_offset": 1593344,
+        "stored_size": 77568,
+        "stored_sha256": "072d96c24cce4ddfb4e6b068fab17bc4c79ccd75ed6dd960bbb39640a767b569"
+      }
+    },
+    {
+      "name": "ov025",
+      "processor": "arm9",
+      "initialized_size": 93984,
+      "extracted_sha256": "6651d6f34cfd41fcf67493216e377cdfbb8e87cadd201327352d11734b323b34",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35490368,
+          "end": 35581600,
+          "size": 91232,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35581600,
+          "end": 35582464,
+          "size": 864,
+          "kind": "rodata"
+        },
+        {
+          "section": ".init",
+          "start": 35582464,
+          "end": 35582872,
+          "size": 408,
+          "kind": "code"
+        },
+        {
+          "section": ".ctor",
+          "start": 35582872,
+          "end": 35582888,
+          "size": 16,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35582912,
+          "end": 35584352,
+          "size": 1440,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35584352,
+          "end": 35584480,
+          "size": 128,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov025/delinks.txt",
+      "report_coverage": {
+        "total_code": 91640,
+        "matched_code": 0,
+        "total_data": 2448,
+        "matched_data": 0,
+        "total_functions": 304,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 25,
+        "load_address": 35490368,
+        "initialized_size": 93984,
+        "bss_size": 128,
+        "ctor_start": 35582872,
+        "ctor_end": 35582888,
+        "file_id": 25,
+        "flags": 16838336,
+        "rom_offset": 1671168,
+        "stored_size": 61120,
+        "stored_sha256": "2ed8f60ed99d7305bd7fc3cbb7b176ca503e9b8d76d603eb51de31cee527fd84"
+      }
+    },
+    {
+      "name": "ov026",
+      "processor": "arm9",
+      "initialized_size": 25792,
+      "extracted_sha256": "35dc7412b1d27f07e6ce0171866a8e71cdbc22bc652b4eb6b72a803b69de1790",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35490368,
+          "end": 35514016,
+          "size": 23648,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35514016,
+          "end": 35514420,
+          "size": 404,
+          "kind": "rodata"
+        },
+        {
+          "section": ".ctor",
+          "start": 35514420,
+          "end": 35514424,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35514432,
+          "end": 35516160,
+          "size": 1728,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35516160,
+          "end": 35516192,
+          "size": 32,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov026/delinks.txt",
+      "report_coverage": {
+        "total_code": 23648,
+        "matched_code": 0,
+        "total_data": 2168,
+        "matched_data": 0,
+        "total_functions": 24,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 26,
+        "load_address": 35490368,
+        "initialized_size": 25792,
+        "bss_size": 32,
+        "ctor_start": 35514420,
+        "ctor_end": 35514424,
+        "file_id": 26,
+        "flags": 16794164,
+        "rom_offset": 1732608,
+        "stored_size": 16948,
+        "stored_sha256": "43457900807704bc25b55449d8b23b29e49b57c4afc580ab33a85d62ad2ec415"
+      }
+    },
+    {
+      "name": "ov027",
+      "processor": "arm9",
+      "initialized_size": 20192,
+      "extracted_sha256": "8dba21bd687f2a728f38f4b718ce6360e0b9322fb4a0c1266046a4db7d5a69c7",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35490368,
+          "end": 35510456,
+          "size": 20088,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35510456,
+          "end": 35510492,
+          "size": 36,
+          "kind": "rodata"
+        },
+        {
+          "section": ".ctor",
+          "start": 35510492,
+          "end": 35510496,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35510496,
+          "end": 35510560,
+          "size": 64,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35510560,
+          "end": 35533888,
+          "size": 23328,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov027/delinks.txt",
+      "report_coverage": {
+        "total_code": 20088,
+        "matched_code": 0,
+        "total_data": 23432,
+        "matched_data": 0,
+        "total_functions": 87,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 27,
+        "load_address": 35490368,
+        "initialized_size": 20192,
+        "bss_size": 23328,
+        "ctor_start": 35510492,
+        "ctor_end": 35510496,
+        "file_id": 27,
+        "flags": 16790744,
+        "rom_offset": 1750016,
+        "stored_size": 13528,
+        "stored_sha256": "64f8f996f778139344f1458377c1fa50e7e48e9f654be7c289d4d591c342e15c"
+      }
+    },
+    {
+      "name": "ov028",
+      "processor": "arm9",
+      "initialized_size": 4256,
+      "extracted_sha256": "ff1d237ecc4ae18edf7f72e493c8e4b056d081ec92afe7e8e5e048b562ff2942",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35490368,
+          "end": 35494424,
+          "size": 4056,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35494424,
+          "end": 35494484,
+          "size": 60,
+          "kind": "rodata"
+        },
+        {
+          "section": ".init",
+          "start": 35494484,
+          "end": 35494528,
+          "size": 44,
+          "kind": "code"
+        },
+        {
+          "section": ".ctor",
+          "start": 35494528,
+          "end": 35494536,
+          "size": 8,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35494560,
+          "end": 35494624,
+          "size": 64,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35494624,
+          "end": 35494880,
+          "size": 256,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov028/delinks.txt",
+      "report_coverage": {
+        "total_code": 4100,
+        "matched_code": 0,
+        "total_data": 388,
+        "matched_data": 0,
+        "total_functions": 34,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 28,
+        "load_address": 35490368,
+        "initialized_size": 4256,
+        "bss_size": 256,
+        "ctor_start": 35494528,
+        "ctor_end": 35494536,
+        "file_id": 28,
+        "flags": 16780420,
+        "rom_offset": 1763840,
+        "stored_size": 3204,
+        "stored_sha256": "49dbf6579f85a3e5cb67dedc166af05d4feb3c6cde8eb43c2a9cb4bd315b6fd4"
+      }
+    },
+    {
+      "name": "ov029",
+      "processor": "arm9",
+      "initialized_size": 7840,
+      "extracted_sha256": "732d5e49c12f95988c1f456749e36297f1200bee959fe676503a121327ec2363",
+      "sections": [
+        {
+          "section": ".rodata",
+          "start": 35490368,
+          "end": 35498164,
+          "size": 7796,
+          "kind": "rodata"
+        },
+        {
+          "section": ".ctor",
+          "start": 35498164,
+          "end": 35498188,
+          "size": 24,
+          "kind": "rodata"
+        },
+        {
+          "section": ".bss",
+          "start": 35498208,
+          "end": 35498240,
+          "size": 32,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov029/delinks.txt",
+      "report_coverage": {
+        "total_code": 0,
+        "matched_code": 0,
+        "total_data": 7852,
+        "matched_data": 0,
+        "total_functions": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 29,
+        "load_address": 35490368,
+        "initialized_size": 7840,
+        "bss_size": 32,
+        "ctor_start": 35498164,
+        "ctor_end": 35498188,
+        "file_id": 29,
+        "flags": 16782176,
+        "rom_offset": 1767424,
+        "stored_size": 4960,
+        "stored_sha256": "a37cb290490347892084586bf84aa0b4e5daa14bece6a79efcd7e24c3d7b7863"
+      }
+    },
+    {
+      "name": "ov030",
+      "processor": "arm9",
+      "initialized_size": 4640,
+      "extracted_sha256": "41d928f2c0efd3f292f878658bc7ab9137f6f4a3a61de285d20c423512919f90",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35490368,
+          "end": 35495004,
+          "size": 4636,
+          "kind": "code"
+        },
+        {
+          "section": ".ctor",
+          "start": 35495004,
+          "end": 35495008,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".bss",
+          "start": 35495008,
+          "end": 35495008,
+          "size": 0,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov030/delinks.txt",
+      "report_coverage": {
+        "total_code": 4636,
+        "matched_code": 0,
+        "total_data": 4,
+        "matched_data": 0,
+        "total_functions": 11,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 30,
+        "load_address": 35490368,
+        "initialized_size": 4640,
+        "bss_size": 0,
+        "ctor_start": 35495004,
+        "ctor_end": 35495008,
+        "file_id": 30,
+        "flags": 16780516,
+        "rom_offset": 1772544,
+        "stored_size": 3300,
+        "stored_sha256": "d2e9a699cd8e1ed2f2c18e1ab62026a190dd71ba0ee549d2fe4e609301fc3726"
+      }
+    },
+    {
+      "name": "ov031",
+      "processor": "arm9",
+      "initialized_size": 313376,
+      "extracted_sha256": "dfebdd13c150dc8d8f790c5d7cacdc4b2be6fba04900dddfe2359a73ae6b0e43",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 35651936,
+          "end": 35938216,
+          "size": 286280,
+          "kind": "code"
+        },
+        {
+          "section": ".rodata",
+          "start": 35938216,
+          "end": 35952208,
+          "size": 13992,
+          "kind": "rodata"
+        },
+        {
+          "section": ".init",
+          "start": 35952208,
+          "end": 35952228,
+          "size": 20,
+          "kind": "code"
+        },
+        {
+          "section": ".ctor",
+          "start": 35952228,
+          "end": 35952236,
+          "size": 8,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 35952256,
+          "end": 35965312,
+          "size": 13056,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 35965312,
+          "end": 36250880,
+          "size": 285568,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov031/delinks.txt",
+      "report_coverage": {
+        "total_code": 286300,
+        "matched_code": 0,
+        "total_data": 312624,
+        "matched_data": 0,
+        "total_functions": 1962,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 31,
+        "load_address": 35651936,
+        "initialized_size": 313376,
+        "bss_size": 285568,
+        "ctor_start": 35952228,
+        "ctor_end": 35952236,
+        "file_id": 31,
+        "flags": 16972060,
+        "rom_offset": 1776128,
+        "stored_size": 194844,
+        "stored_sha256": "bc6d8afb019137e015d00d2d6e1da6f5b64e10ab394e2df052990bad882cee5e"
+      }
+    },
+    {
+      "name": "ov032",
+      "processor": "arm9",
+      "initialized_size": 32,
+      "extracted_sha256": "66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925",
+      "sections": [
+        {
+          "section": ".ctor",
+          "start": 35651936,
+          "end": 35651940,
+          "size": 4,
+          "kind": "rodata"
+        },
+        {
+          "section": ".bss",
+          "start": 35651968,
+          "end": 36315520,
+          "size": 663552,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov032/delinks.txt",
+      "report_coverage": {
+        "total_code": 0,
+        "matched_code": 0,
+        "total_data": 663556,
+        "matched_data": 0,
+        "total_functions": 0,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 32,
+        "load_address": 35651936,
+        "initialized_size": 32,
+        "bss_size": 663552,
+        "ctor_start": 35651936,
+        "ctor_end": 35651940,
+        "file_id": 32,
+        "flags": 16777236,
+        "rom_offset": 1971200,
+        "stored_size": 20,
+        "stored_sha256": "07d1d94d7d3269a1155925f01090a020e40387e8e8998fc3b4a1a3c633ca4d46"
+      }
+    },
+    {
+      "name": "ov033",
+      "processor": "arm9",
+      "initialized_size": 2208,
+      "extracted_sha256": "4cb6bf9395dbe7fc42bb5fa8417cff4c36f45e98c1517203aac85bb6ba291ce4",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 36315520,
+          "end": 36317624,
+          "size": 2104,
+          "kind": "code"
+        },
+        {
+          "section": ".init",
+          "start": 36317624,
+          "end": 36317668,
+          "size": 44,
+          "kind": "code"
+        },
+        {
+          "section": ".ctor",
+          "start": 36317668,
+          "end": 36317676,
+          "size": 8,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 36317696,
+          "end": 36317720,
+          "size": 24,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 36317728,
+          "end": 36319680,
+          "size": 1952,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [
+        {
+          "source": "src/Filesystem/Overlay_33/Ov33BackgroundLoader.cpp",
+          "declared_complete": true,
+          "ranges": [
+            {
+              "section": ".text",
+              "start": 36315520,
+              "end": 36317624,
+              "size": 2104
+            },
+            {
+              "section": ".init",
+              "start": 36317624,
+              "end": 36317668,
+              "size": 44
+            },
+            {
+              "section": ".ctor",
+              "start": 36317668,
+              "end": 36317672,
+              "size": 4
+            },
+            {
+              "section": ".data",
+              "start": 36317696,
+              "end": 36317720,
+              "size": 24
+            },
+            {
+              "section": ".bss",
+              "start": 36317728,
+              "end": 36319680,
+              "size": 1952
+            }
+          ]
+        }
+      ],
+      "config": "arm9/overlays/ov033/delinks.txt",
+      "report_coverage": {
+        "total_code": 2148,
+        "matched_code": 2148,
+        "total_data": 1984,
+        "matched_data": 1980,
+        "total_functions": 5,
+        "matched_functions": 5,
+        "complete_code": 2148,
+        "complete_data": 1980
+      },
+      "generated_fallback_units": 1,
+      "source_units": 1,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 33,
+        "load_address": 36315520,
+        "initialized_size": 2208,
+        "bss_size": 1952,
+        "ctor_start": 36317668,
+        "ctor_end": 36317676,
+        "file_id": 33,
+        "flags": 16778688,
+        "rom_offset": 1971712,
+        "stored_size": 1472,
+        "stored_sha256": "bc9ec8ea005d09d0b56a3f49e07e850182064ff7e07bfd4479035f3c98959513"
+      }
+    },
+    {
+      "name": "ov034",
+      "processor": "arm9",
+      "initialized_size": 2272,
+      "extracted_sha256": "c56228277c6be0da8cad17c4f0ed3837ec27a97cb356ae0826b36273adcc60e7",
+      "sections": [
+        {
+          "section": ".text",
+          "start": 36315520,
+          "end": 36317700,
+          "size": 2180,
+          "kind": "code"
+        },
+        {
+          "section": ".init",
+          "start": 36317700,
+          "end": 36317744,
+          "size": 44,
+          "kind": "code"
+        },
+        {
+          "section": ".ctor",
+          "start": 36317744,
+          "end": 36317752,
+          "size": 8,
+          "kind": "rodata"
+        },
+        {
+          "section": ".data",
+          "start": 36317760,
+          "end": 36317792,
+          "size": 32,
+          "kind": "data"
+        },
+        {
+          "section": ".bss",
+          "start": 36317792,
+          "end": 36319744,
+          "size": 1952,
+          "kind": "bss"
+        }
+      ],
+      "source_ranges": [],
+      "config": "arm9/overlays/ov034/delinks.txt",
+      "report_coverage": {
+        "total_code": 2224,
+        "matched_code": 0,
+        "total_data": 1992,
+        "matched_data": 0,
+        "total_functions": 5,
+        "matched_functions": 0,
+        "complete_code": 0,
+        "complete_data": 0
+      },
+      "generated_fallback_units": 1,
+      "source_units": 0,
+      "verification": "dsd check module hash and symbols via ninja check; report via objdiff",
+      "overlay": {
+        "id": 34,
+        "load_address": 36315520,
+        "initialized_size": 2272,
+        "bss_size": 1952,
+        "ctor_start": 36317744,
+        "ctor_end": 36317752,
+        "file_id": 34,
+        "flags": 16778772,
+        "rom_offset": 1973248,
+        "stored_size": 1556,
+        "stored_sha256": "fb7e45e7da992ecd55f364d043b760e97f8a17fa365729d5724f942ef48115df"
+      }
+    },
+    {
+      "name": "arm7",
+      "processor": "arm7",
+      "initialized_size": 167876,
+      "extracted_sha256": "cc8c8860273661450c38f4414b6f2d07006cd53c2b9d62e640c2b45cd06ba763",
+      "extraction_metadata": {
+        "base_address": 37224448,
+        "entry_function": 37224448,
+        "build_info": 0,
+        "autoload_callback": 37224840
+      },
+      "report_coverage": null,
+      "source_coverage": "untracked; original binary passthrough",
+      "code_data_split": "unknown",
+      "verification": "exact extracted bytes compared to ROM header range"
+    }
+  ],
+  "scope": "Header-declared modules plus extracted ARM9 ITCM/DTCM. Not a complete native-code audit.",
+  "unknowns": [
+    "ARM7 code/data/function boundaries and autoloads have not been analyzed.",
+    "Asset files and script payloads have not been audited for embedded executable code.",
+    "ARM9 section ranges include padding and possible embedded data; report counters are symbol-based.",
+    "Declared complete ranges are configuration claims; use matched report counters for byte coverage.",
+    "Data report includes BSS; initialized bytes are not a code-coverage denominator.",
+    "No gameplay or final ROM SHA-1 verification is performed by this inventory."
+  ]
+}
