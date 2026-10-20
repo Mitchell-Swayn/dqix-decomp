@@ -2836,3 +2836,7 @@ src/Combat/BattleMenu/ov000/BattleMenu_ApplyMemberCommandSelection.cpp:
 src/Combat/BattleMenu/ov000/BattleMenu_InitializeMemberCommandFromActor.cpp:
     complete
     .text start:0x02171138 end:0x02171210
+
+src/Combat/BattleMenu/ov000/BattleMenu_AppendPartyCommandOptions.cpp:
+    complete
+    .text start:0x0217737c end:0x02177454
