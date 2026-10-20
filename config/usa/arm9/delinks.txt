@@ -20077,3 +20077,7 @@ src/System/OSi_ReferSymbol.cpp:
 src/Resource/NNS_SndArcStrmGetTimeLength.cpp:
     complete
     .text start:0x020becd4 end:0x020bed10
+
+src/World/WorldMap_ReallocateTaggedMarkerCoordinates.cpp:
+    complete
+    .text start:0x02027b10 end:0x02027b5c
