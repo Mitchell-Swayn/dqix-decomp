@@ -1816,3 +1816,7 @@ src/Menu/Status/ProfileMenu_RemoveSelectedSavedProfile.cpp:
 src/Menu/SharedServices/ov004/Menu_RebuildCatalogueFilteredList.cpp:
     complete
     .text start:0x0215482c end:0x02154984
+
+src/Menu/SharedServices/ov004/Menu_GetInventorySlotOnCurrentPage.cpp:
+    complete
+    .text start:0x021570a4 end:0x021570f0
