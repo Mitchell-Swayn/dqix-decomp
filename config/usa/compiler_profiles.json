@@ -13043,6 +13043,49 @@
         "include"
       ],
       "origin": "swarm profile O4p; exact bytes and relocations verified"
+    },
+    "src/Graphics/FX_SinFx64c_internal.cpp": {
+      "version": "2.0/base",
+      "executable": "tools/mwccarm/2.0/base/mwccarm.exe",
+      "executable_sha256": "7150fa4fe4cb6db6867ac530ec1a0754f6ca4df92868d963a7875196f9222880",
+      "source": "src/Graphics/FX_SinFx64c_internal.cpp",
+      "flags": [
+        "-O2",
+        "-enum",
+        "int",
+        "-char",
+        "signed",
+        "-str",
+        "noreuse",
+        "-proc",
+        "arm946e",
+        "-gccext,on",
+        "-fp",
+        "soft",
+        "-inline",
+        "noauto",
+        "-lang=c++",
+        "-Cpp_exceptions",
+        "off",
+        "-RTTI",
+        "off",
+        "-interworking",
+        "-w",
+        "off",
+        "-sym",
+        "on",
+        "-gccinc",
+        "-nolink",
+        "-msgstyle",
+        "gcc",
+        "-str",
+        "pool,reuse",
+        "-d",
+        "usa",
+        "-i",
+        "include"
+      ],
+      "origin": "swarm profile base-O2; exact bytes and relocations verified"
     }
   }
 }
