@@ -8220,3 +8220,7 @@ src/Online/Settings/ov031/WfcUtility_InsertListNodeBefore.cpp:
 src/Online/Sockets/ov031/Network_IsSocketHandleInvalid.cpp:
     complete
     .text start:0x02207180 end:0x022071b4
+
+src/Online/WifiConnection/ov031/Multiboot_GetConnectedChildRecord.cpp:
+    complete
+    .text start:0x02239250 end:0x02239284
