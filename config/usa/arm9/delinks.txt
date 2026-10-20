@@ -20149,3 +20149,7 @@ src/Resource/MD5_CompressBufferedBlock.cpp:
 src/Actor/GameObject_ReviveAndRestoreHP.cpp:
     complete
     .text start:0x02048150 end:0x02048228
+
+src/Resource/NNS_SndStrmSetup.cpp:
+    complete
+    .text start:0x020bc9d0 end:0x020bcb70
