@@ -8292,3 +8292,7 @@ src/Online/Settings/ov031/WfcUtility_SelectConnectionProfileForEditing.cpp:
 src/Online/WifiConnection/ov031/Wireless_AdvanceDownloadPeerHandshake.cpp:
     complete
     .text start:0x0223b228 end:0x0223b30c
+
+src/Online/Sockets/ov031/Network_BroadcastArpRequest.cpp:
+    complete
+    .text start:0x02200ccc end:0x02200dc8
