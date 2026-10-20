@@ -295,3 +295,7 @@ src/Online/DownloadPlay/MBi_InitTaskThread.cpp:
 src/Online/DownloadPlay/MBi_CommParentSendDLFileInfo.cpp:
     complete
     .text start:0x021d9704 end:0x021d989c
+
+src/Online/DownloadPlay/ov027/MBi_IsTaskBusy.cpp:
+    complete
+    .text start:0x021dd3e0 end:0x021dd3f8
