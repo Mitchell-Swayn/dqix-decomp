@@ -4632,3 +4632,7 @@ src/Field/Scene/ov017/Field_ResetGroupResponseTracking.cpp:
 src/Field/Events/ov017/Script_TestValuePairNonzero.cpp:
     complete
     .text start:0x021d49ac end:0x021d49d0
+
+src/Field/Screens/ov017/ItemTrade_TickIncomingOfferTimeout.cpp:
+    complete
+    .text start:0x021a85e8 end:0x021a8614
