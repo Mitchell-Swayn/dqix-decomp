@@ -8232,3 +8232,7 @@ src/Online/Settings/ov031/WfcUtility_CreateBottomButtonsForDisplayMode.cpp:
 src/Online/Settings/ov031/WfcUtility_ConfigureSecondaryControlsForDisplayMode.cpp:
     complete
     .text start:0x02223518 end:0x02223568
+
+src/Online/Settings/ov031/WfcUtility_PositionIpv4EditorCursor.cpp:
+    complete
+    .text start:0x0222e048 end:0x0222e09c
