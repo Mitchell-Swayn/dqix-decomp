@@ -8176,3 +8176,7 @@ src/Online/Sockets/Network_ReceiveStreamWithOptionalWait.cpp:
 src/Online/Security/Ssl_AuthenticateAndEncryptRecord.cpp:
     complete
     .text start:0x0220963c end:0x02209840
+
+src/Online/Security/ov031/Ssl_SendChangeCipherSpecAndFinished.cpp:
+    complete
+    .text start:0x02209e98 end:0x02209ff0
