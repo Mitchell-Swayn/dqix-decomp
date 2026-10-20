@@ -33,8 +33,18 @@ struct Camera {
 extern "C" {
 void MotionOwner_AdvanceThreeTracksPositionAndAngle(Camera*);
 void Graphics_AdvanceTimedAngleTransition(Camera*);
-extern Vector3fix data_020e73c0;
-extern short data_020e9450[];
+// Original data: arm9/main @ 0x20e73c0; symbol: data_020e73c0.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 000000000010000000000000.
+// Observed span: 12 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern Vector3fix CameraUpdateRenderView_UnknownRoleInitializedBytes;
+// Original data: arm9/main @ 0x20e9450; symbol: data_020e9450.
+// Interleaved signed Q12 sine/cosine lookup table used by Fix32Sin and Fix32Cos. Source definition preserves the complete fixed-point table.
+// Initial values: hex 00000010060000100d00001013000010190000101f000010260000102c00001032000010390000103f0000104500ff0f4b00ff0f5200ff0f5800ff0f5e00ff0f ...; full span in module reference.
+// Observed span: 1536 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern short Math_SinCosQ12Table[];
 }
 // Rotate the eye-to-target displacement, keeping the eye fixed.
 static inline void ApplyCameraYaw(Vector3fix* eye, Vector3fix* target, short yaw)
@@ -58,12 +68,12 @@ extern "C" void Camera_UpdateRenderView(Camera* self)
         Mat4x3_ApplyToVector(&self->worldTarget, &self->transform, &self->worldTarget);
     }
     Mat4x4_MaybeWriteFrustum(self->projectionSine, self->projectionCosine, self->aspect,
-        self->nearPlane, self->farPlane, 0x1000, &data_0210a010.projectionMatrix);
-    data_0210a010.flags &= ~0x50;
+        self->nearPlane, self->farPlane, 0x1000, &RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.projectionMatrix);
+    RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.flags &= ~0x50;
     if (!self->roll) {
         self->up.x = 0; self->up.y = 0x1000; self->up.z = 0;
     } else {
-        Vector3fix up = data_020e73c0;
+        Vector3fix up = CameraUpdateRenderView_UnknownRoleInitializedBytes;
         Matrix4x3 rotation = RotationMatrixZ(self->roll);
         Mat4x3_ApplyToVector(&up, &rotation, &up);
         Vector3fix direction;
@@ -85,7 +95,7 @@ extern "C" void Camera_UpdateRenderView(Camera* self)
         }
     }
     if (self->shakeAmplitude > 0) {
-        const Matrix4x3* view = &data_0210a010.viewMatrix;
+        const Matrix4x3* view = &RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.viewMatrix;
         Vector3fix horizontal = {view->entries[0],view->entries[1],view->entries[2]};
         Vector3fix vertical = {view->entries[3],view->entries[4],view->entries[5]};
         switch (rand() % 4) {
@@ -113,7 +123,7 @@ extern "C" void Camera_UpdateRenderView(Camera* self)
     }
     if (self->bobEnabled) {
         self->bobPhase += (int)(self->bobSpeed * (float)(GameState::GetInstance()->GetTickCount() * 182));
-        self->bobOffset = data_020e9450[2*(self->bobPhase >> 4)+1] >> 3;
+        self->bobOffset = Math_SinCosQ12Table[2*(self->bobPhase >> 4)+1] >> 3;
         self->bobOffset = FIX32_MULTIPLY(self->bobOffset,self->bobAmplitude);
         eye.y += self->bobOffset;
         target.y += self->bobOffset;
@@ -124,11 +134,11 @@ extern "C" void Camera_UpdateRenderView(Camera* self)
     if (yaw) {
         ApplyCameraYaw(&eye,&target,yaw);
     }
-    data_0210a010.eyeVector = eye;
-    data_0210a010.upVector = self->up;
-    data_0210a010.targetVector = target;
-    Mat4x3_WriteViewMatrix(&eye,&self->up,&target,&data_0210a010.viewMatrix);
-    data_0210a010.flags &= ~0xe8;
+    RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.eyeVector = eye;
+    RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.upVector = self->up;
+    RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.targetVector = target;
+    Mat4x3_WriteViewMatrix(&eye,&self->up,&target,&RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.viewMatrix);
+    RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.flags &= ~0xe8;
     Vector3fix_Subtract(&self->worldTarget,&self->worldEye,&self->direction);
     Vector3fix_Normalize(&self->direction,&self->direction);
     const Matrix4x3* inverse = RenderConfig::GetInverseViewMatrix();

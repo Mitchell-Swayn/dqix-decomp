@@ -4,9 +4,9 @@
 #include "Filesystem/FileIO.h"
 #include "Filesystem/BackgroundLoader.h"
 extern "C" void __clear(void*,unsigned);
-extern "C" char data_020f0118[];
-extern "C" void* ReadGlobalAt02107800();
-extern "C" void func_02047b40(ZoneContainerRenderPart*,void*,unsigned);
+extern "C" char ResourceFile_LoadNamedRFileUnderLoaderLock_FormatDataAniS[];
+extern "C" void* Text_GetSharedResourceScratchBuffer();
+extern "C" void ZoneContainerRenderPart_LoadSerializedFramesAndAnimations(ZoneContainerRenderPart*,void*,unsigned);
 // Original: arm9/main @ 0x02047A78; symbol: func_02047a78; size: 0xB8.
 extern "C" ARM void ResourceFile_LoadNamedRFileUnderLoaderLock(ZoneContainerRenderPart* p,char* name,unsigned flags)
 {
@@ -21,10 +21,10 @@ extern "C" ARM void ResourceFile_LoadNamedRFileUnderLoaderLock(ZoneContainerRend
         if((name+size)[-1]=='r')
         {
             __clear(path,128);
-            sprintf(path,data_020f0118,name);
-            void* buffer=ReadGlobalAt02107800();
+            sprintf(path,ResourceFile_LoadNamedRFileUnderLoaderLock_FormatDataAniS,name);
+            void* buffer=Text_GetSharedResourceScratchBuffer();
             BackgroundLoader::AddLockGlobal();
-            if(LoadFileIntoMemory(path,buffer,0))func_02047b40(p,buffer,flags);
+            if(LoadFileIntoMemory(path,buffer,0))ZoneContainerRenderPart_LoadSerializedFramesAndAnimations(p,buffer,flags);
             BackgroundLoader::RemoveLockGlobal();
         }
     }

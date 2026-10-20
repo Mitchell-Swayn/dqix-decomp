@@ -6,7 +6,7 @@
 
 #if defined(jpn)
 #define MIi_CpuClear16 func_020cbe5c
-#define data_020f1c78 data_020f1de4
+#define InitializeModelAnimationFromMAT_UnknownRoleProcedureReferenceRecords data_020f1de4
 #endif
 
 extern "C"
@@ -16,7 +16,12 @@ extern "C"
 }
 
 // processing callback for M.AT animations
-extern void (*data_020f1c78)(void* data, AnimationData* anim, int arg);
+// Original data: arm9/main @ 0x20f1c78; symbol: data_020f1c78.
+// Contains original relocated procedure references. Record fields, dispatch contract and exclusive ownership may remain unresolved.
+// Initial values: hex 58960b02.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern void (*InitializeModelAnimationFromMAT_UnknownRoleProcedureReferenceRecords)(void* data, AnimationData* anim, int arg);
 
 // Original: arm9/main @ 0x020B9278; symbol: _Z24SampleScalarFromMATTrackP17NSBXXAnimationMATjjj; size: 0x100.
 fix32_t SampleScalarFromMATTrack(NSBXXAnimationMAT* mat, unsigned int metadata, unsigned int offset, unsigned int frame)
@@ -290,7 +295,7 @@ void InitializeModelAnimationFromMAT(AnimationData* anim, void* pvMAT, NSBXXInte
         materials = (NSBXXModelMaterialData*)((intptr_t)model + model->materialsOffset_);
     else
         materials = NULL;
-    anim->callback_ = data_020f1c78;
+    anim->callback_ = InitializeModelAnimationFromMAT_UnknownRoleProcedureReferenceRecords;
 
     anim->numEntries_ = model->numMaterials_;
     MIi_CpuClear16(0, &anim->entries_[0], anim->numEntries_ * 2);

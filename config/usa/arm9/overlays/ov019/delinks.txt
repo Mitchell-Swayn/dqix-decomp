@@ -4,54 +4,54 @@
     .data       start:0x0218c2c0 end:0x0218c320 kind:data align:32
     .bss        start:0x0218c320 end:0x0218c320 kind:bss align:32
 
-src/Unclassified/ov019/func_ov019_0218b5a0.cpp:
+src/System/ErrorScreens/ErrorScreen_ConstructContext.cpp:
     complete
     .text start:0x0218b5a0 end:0x0218b5a4
 
-src/Unclassified/ov019/func_ov019_0218b5a4.cpp:
+src/System/ErrorScreens/ErrorScreen_DestroyContext.cpp:
     complete
     .text start:0x0218b5a4 end:0x0218b5a8
 
-src/Unclassified/ov019/func_ov019_0218c240.cpp:
+src/System/ErrorScreens/ErrorScreen_ConsumeAcknowledgementInput.cpp:
     complete
     .text start:0x0218c240 end:0x0218c290
 
-src/GameState/ov019/func_ov019_0218c178.cpp:
+src/System/ErrorScreens/ErrorScreen_UpdatePenPromptAnimation.cpp:
     complete
     .text start:0x0218c178 end:0x0218c240
 
-src/Data/ov019/data_ov019_0218c2c0.cpp:
+src/Data/ErrorScreen_RunScene_PathDataBinIconNsarc.cpp:
     complete
     .data start:0x0218c2c0 end:0x0218c2d4
 
-src/Data/ov019/data_ov019_0218c2d4.cpp:
+src/Data/ErrorScreen_RunScene_TextARC.cpp:
     complete
     .data start:0x0218c2d4 end:0x0218c2d8
 
-src/Data/ov019/data_ov019_0218c2d8.cpp:
+src/Data/ErrorScreen_RunScene_PathDataBinStrErrGp2.cpp:
     complete
     .data start:0x0218c2d8 end:0x0218c2ed
 
-src/Data/ov019/data_ov019_0218c2ed.cpp:
+src/Data/ErrorScreen_RunScene_MarkupStrErrLGNat.cpp:
     complete
     .data start:0x0218c2ed end:0x0218c2fe
 
-src/Data/ov019/data_ov019_0218c2fe.cpp:
+src/Data/ErrorScreen_RunScene_PathDataAniPenPac.cpp:
     complete
     .data start:0x0218c2fe end:0x0218c320
 
-src/Data/ov019/data_ov019_0218c290.cpp:
+src/Data/Data_UnknownRole.cpp:
     complete
     .rodata start:0x0218c290 end:0x0218c294
 
-src/Data/ov019/data_ov019_0218c294.cpp:
+src/Data/ErrorScreenRunScene_CameraVectorsCopiedIntoSetupLocalsByOriginalInstructions.cpp:
     complete
     .rodata start:0x0218c294 end:0x0218c2a0
 
-src/Data/ov019/data_ov019_0218c2a0.cpp:
+src/Data/ErrorScreenRunScene_CameraVectorsCopiedIntoSetupLocalsByOriginalInstructions_Variant2.cpp:
     complete
     .rodata start:0x0218c2a0 end:0x0218c2ac
 
-src/Data/ov019/data_ov019_0218c2ac.cpp:
+src/Data/SharedData_NullConstructorListTerminatorNotACallableRoutine.cpp:
     complete
     .ctor start:0x0218c2ac end:0x0218c2b0

@@ -2,7 +2,12 @@
 ARM
 #pragma always_inline on
 struct Vec {int x,y,z;};struct Directions {Vec vectors[4];};
-extern "C" const Directions data_020e7a20;
+// Original data: arm9/main @ 0x20e7a20; symbol: data_020e7a20.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 00100000000000000000000000000000000000000010000000f0ffff0000000000000000000000000000000000f0ffff.
+// Observed span: 48 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" const Directions ObjectDispatchRandomStepWithinBounds_UnknownRoleInitializedBytes;
 extern "C" int rand();
 extern "C" int _Z8fix32sini(int);
 extern "C" int _Z8fix32cosi(int);
@@ -13,7 +18,7 @@ struct Configuration {char pad[0x1f];unsigned char mode;char gap[2];short angle;
 struct Object {char pad[12];Configuration* config;};
 // Original: arm9/main @ 0x02040F48; symbol: func_02040f48; size: 0x234.
 extern "C" void Object_DispatchRandomStepWithinBounds(Object* p,const Vec* input) {
- Directions directions=data_020e7a20;
+ Directions directions=ObjectDispatchRandomStepWithinBounds_UnknownRoleInitializedBytes;
  Vec position=*input;
  Vec candidates[4];
  if(p->config->mode==8) {

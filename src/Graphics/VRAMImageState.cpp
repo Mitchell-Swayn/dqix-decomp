@@ -14,7 +14,7 @@ extern "C" int FreeTextureImageVRAM(unsigned int /*key*/)
 void SaveTextureImageVRAMState(unsigned int* state)
 {
     int index = 0;
-    Struct_020f1f14* pool = data_020f1f14;
+    Struct_020f1f14* pool = ResetTextureImageVRAM_UnknownRoleInitializedBytes;
     int offset = 0;
     do
     {
@@ -30,7 +30,7 @@ void RestoreTextureImageVRAMState(const unsigned int* state)
 {
     int index = 0;
     int offset = 0;
-    Struct_020f1f14* pool = data_020f1f14;
+    Struct_020f1f14* pool = ResetTextureImageVRAM_UnknownRoleInitializedBytes;
     do
     {
         pool->freeStart_ = state[offset];

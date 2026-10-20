@@ -21,18 +21,18 @@
 #if defined(jpn)
 #define GameState_ReadUnknownB0 func_0200ff18
 #define RenderConfig_CopyTransformAndClearFlagsA4 func_02016b2c
-#define Object_GetSubrecordAtOffset144 func_0202e8e4
+#define Camera_GetInverseViewRotation func_0202e8e4
 #define func_02030e2c func_02030964
 #define func_02030e88 func_020309c0
 #define Graphics_SubmitNonzeroXRotation func_02030d28
 #define BuildAndDispatchYRotationMatrixWhenAngleNonzero func_02030d6c
 #define Graphics_ApplyNonzeroZRotation func_02030db0
-#define WriteOrApplyHalfwordFileStatePair func_0203a698
+#define ResourceHandle_StartOrDeferSequenceArchiveEntry func_0203a698
 #define MI_Copy36B func_020cbff4
 #define CopyRangeCleanCacheAndReturnLength func_020d9e88
-#define func_020d1d1c func_020d37e8
+#define Checksum_UpdateOnesComplement16 func_020d37e8
 
-#define data_02108760 data_021086a4
+#define Main_UnknownRoleZeroInitializedStorage data_021086a4
 #endif
 
 ModelRenderContext* GetModel3DContext(Model3D* model);
@@ -48,20 +48,20 @@ extern "C"
     // update world matrix rotation
     void RenderConfig_CopyTransformAndClearFlagsA4(const Matrix3x3* rotation);
 
-    const Matrix3x3* Object_GetSubrecordAtOffset144(void*);
+    const Matrix3x3* Camera_GetInverseViewRotation(void*);
 
     void Graphics_SubmitNonzeroXRotation(fix32_t); // send x-rotation to fifo
     void BuildAndDispatchYRotationMatrixWhenAngleNonzero(fix32_t); // send y-rotation to fifo
     void Graphics_ApplyNonzeroZRotation(fix32_t); // send z-rotation to fifo
 
     // based on testing, this is responsible for playing sound effects
-    void WriteOrApplyHalfwordFileStatePair(void*, int, int, int);
+    void ResourceHandle_StartOrDeferSequenceArchiveEntry(void*, int, int, int);
 
     // copy 3x3 matrix
     void MI_Copy36B(const void*, void*);
 
     // compute a checksum for a string
-    void func_020d1d1c(unsigned short* out, const void* data, unsigned int length);
+    void Checksum_UpdateOnesComplement16(unsigned short* out, const void* data, unsigned int length);
 
     // memcpy and flush cache
     unsigned int CopyRangeCleanCacheAndReturnLength(void*, const void*, unsigned);
@@ -147,7 +147,12 @@ struct Struct_02104b18
     Matrix4x3 boneMatrixWithView;
 } boneTracking;
 
-extern char data_02108760[];
+// Original data: arm9/main @ 0x2108760; symbol: data_02108760.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 208 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern char Main_UnknownRoleZeroInitializedStorage[];
 
 // Original: arm9/main @ 0x02034BC4; symbol: _ZN8Object3D10InitializeEv; size: 0x140.
 void Object3D::Initialize()
@@ -349,15 +354,15 @@ void Object3D::AdvanceAnimations_v0()
         if (loopEntry->triggerTime == 0)
         {
             if (unknown_40_bit_1_ || (animationReachedEnd_ && !(animationFlags_ & OBJECT_ANIMATION_DONT_LOOP)))
-                WriteOrApplyHalfwordFileStatePair(data_02108760, unknown_7a_, loopEntry->maybeSoundEffect, 0);
+                ResourceHandle_StartOrDeferSequenceArchiveEntry(Main_UnknownRoleZeroInitializedStorage, unknown_7a_, loopEntry->maybeSoundEffect, 0);
         }
         else if (loopEntry->triggerTime == 1.0) // why use a double?!
         {
             if (animationEnded_)
-                WriteOrApplyHalfwordFileStatePair(data_02108760, unknown_7a_, loopEntry->maybeSoundEffect, 0);
+                ResourceHandle_StartOrDeferSequenceArchiveEntry(Main_UnknownRoleZeroInitializedStorage, unknown_7a_, loopEntry->maybeSoundEffect, 0);
         }  
         else if (prevFrameNormalizedAnimationTime_ < loopEntry->triggerTime && loopEntry->triggerTime <= normalizedAnimationTime_)
-            WriteOrApplyHalfwordFileStatePair(data_02108760, unknown_7a_, loopEntry->maybeSoundEffect, 0);
+            ResourceHandle_StartOrDeferSequenceArchiveEntry(Main_UnknownRoleZeroInitializedStorage, unknown_7a_, loopEntry->maybeSoundEffect, 0);
     }
 }
 
@@ -462,15 +467,15 @@ void Object3D::AdvanceAnimations_v1()
             if (loopEntry->triggerTime == 0)
             {
                 if (unknown_40_bit_1_ || (animationReachedEnd_ && !(animationFlags_ & OBJECT_ANIMATION_DONT_LOOP)))
-                    WriteOrApplyHalfwordFileStatePair(data_02108760, unknown_7a_, loopEntry->maybeSoundEffect, 0);
+                    ResourceHandle_StartOrDeferSequenceArchiveEntry(Main_UnknownRoleZeroInitializedStorage, unknown_7a_, loopEntry->maybeSoundEffect, 0);
             }
             else if (loopEntry->triggerTime == 1.0) // why use a double?!
             {
                 if (animationEnded_)
-                    WriteOrApplyHalfwordFileStatePair(data_02108760, unknown_7a_, loopEntry->maybeSoundEffect, 0);
+                    ResourceHandle_StartOrDeferSequenceArchiveEntry(Main_UnknownRoleZeroInitializedStorage, unknown_7a_, loopEntry->maybeSoundEffect, 0);
             }  
             else if (prevFrameNormalizedAnimationTime_ < loopEntry->triggerTime && loopEntry->triggerTime <= normalizedAnimationTime_)
-                WriteOrApplyHalfwordFileStatePair(data_02108760, unknown_7a_, loopEntry->maybeSoundEffect, 0);
+                ResourceHandle_StartOrDeferSequenceArchiveEntry(Main_UnknownRoleZeroInitializedStorage, unknown_7a_, loopEntry->maybeSoundEffect, 0);
         }
     }
 }
@@ -547,7 +552,7 @@ void Object3D::ApplyTextures()
 // Original: arm9/main @ 0x02035728; symbol: _Z15CreateRotationXP9Matrix3x3ii; size: 0xC.
 void CreateRotationX(Matrix3x3* out, fix32_t s, fix32_t c)
 {
-    Mat3x3_WriteRotationX(out, s, c);
+    MTX_RotX33_(out, s, c);
 }
 
 // Original: arm9/main @ 0x02035734; symbol: _Z15CreateRotationYP9Matrix3x3ii; size: 0xC.
@@ -568,7 +573,7 @@ void Object3D::PopulateRenderConfigWorld()
     if (pPrevChild_ ? 1 : 0)
     {
         Matrix3x3 worldRotation;
-        MI_Copy36B(&data_0210a010.objectRotationPosition, &worldRotation);
+        MI_Copy36B(&RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.objectRotationPosition, &worldRotation);
         Matrix3x3 axisRotation;
         fix32_t rotationComponents[3];
         rotationComponents[0] = rotation_.z;
@@ -599,11 +604,11 @@ void Object3D::PopulateRenderConfigWorld()
         ownScale.x = scale_[0];
         ownScale.y = scale_[1];
         ownScale.z = scale_[2];
-        Vector3fixMultiply(&data_0210a010.objectScale, &ownScale, &multipliedScale);
+        Vector3fixMultiply(&RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.objectScale, &ownScale, &multipliedScale);
         RenderConfig::SetObjectScale(&multipliedScale);
         Vector3fix multipliedPosition;
         Vector3fixMultiply(&position_, &multipliedScale, &multipliedPosition);
-        Vector3fix_Add(&data_0210a010.objectRotationPosition.translation, &multipliedPosition, &multipliedPosition);
+        Vector3fix_Add(&RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.objectRotationPosition.translation, &multipliedPosition, &multipliedPosition);
         RenderConfig::SetObjectPosition(&multipliedPosition);
     }
     else
@@ -611,9 +616,9 @@ void Object3D::PopulateRenderConfigWorld()
         RenderConfig::SetObjectPosition(&position_);
         if (flags_ & (1 << OBJECT3D_FLAG_19))
         {
-            const Matrix3x3* rotation = Object_GetSubrecordAtOffset144(GameState_ReadUnknownB0(GameState::GetInstance()));
-            MI_Copy36B(rotation, &data_0210a010.objectRotationPosition.rotation);
-            data_0210a010.flags &= ~((1 << RENDER_CONFIG_FLAG_WORLDVIEW_CACHE_VALID) | (1 << RENDER_CONFIG_FLAG_5) | (1 << RENDER_CONFIG_FLAG_2));
+            const Matrix3x3* rotation = Camera_GetInverseViewRotation(GameState_ReadUnknownB0(GameState::GetInstance()));
+            MI_Copy36B(rotation, &RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.objectRotationPosition.rotation);
+            RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.flags &= ~((1 << RENDER_CONFIG_FLAG_WORLDVIEW_CACHE_VALID) | (1 << RENDER_CONFIG_FLAG_5) | (1 << RENDER_CONFIG_FLAG_2));
         }
         else
         {
@@ -862,7 +867,7 @@ bool Object3D::DrawSimple3(bool applyClipping)
 }
 
 // Original: arm9/main @ 0x02035F10; symbol: _ZN8Object3D24MaybeUpdateBonePositionsEv; size: 0xD0.
-void Object3D::MaybeUpdateBonePositions()
+void Object3D::UpdateTrackedBoneMatrices()
 {
     if (pModel_ == NULL)
         return;
@@ -959,13 +964,13 @@ void Object3D::LoadType0AnimationFromFile(int slot, const char* filename, SafeAl
     {
         BackgroundLoader::AddLockGlobal();
         unsigned int length;
-        if (LoadFileIntoMemory(filename, data_0211e33c, &length))
+        if (LoadFileIntoMemory(filename, Main_UnknownRoleZeroInitializedStorage_Variant6, &length))
         {
             unsigned int lengthAgain = length;
             void* allocation = alloc->Allocate(lengthAgain);
             if (allocation != NULL)
             {
-                memcpy(allocation, data_0211e33c, lengthAgain);
+                memcpy(allocation, Main_UnknownRoleZeroInitializedStorage_Variant6, lengthAgain);
                 LoadType0AnimationFromPersistentMemory(slot, alloc, allocation, lengthAgain);
             }
         }
@@ -1009,7 +1014,7 @@ void Object3D::LoadType0AnimationPackageFromBCFGScript(const char *filename, Saf
 {
     BackgroundLoader::AddLockGlobal();
     unsigned int length;
-    const void* data = LoadFileIntoMemory(filename, data_0211e33c, &length);
+    const void* data = LoadFileIntoMemory(filename, Main_UnknownRoleZeroInitializedStorage_Variant6, &length);
     if (data != NULL)
         LoadType0AnimationPackageFromBCFGScript(alloc, data, length);
     BackgroundLoader::RemoveLockGlobal();
@@ -1276,7 +1281,7 @@ bool Object3D::LoadFromCCHROrCMOTArchive(ObjectArchiveLoadInfo *loadInfo, int (*
             int reducedNameLength = strlen(filename) - 5;            
             entry->length = reducedNameLength;
             unsigned short invChecksum = 0;
-            func_020d1d1c(&invChecksum, filename + 5, reducedNameLength);
+            Checksum_UpdateOnesComplement16(&invChecksum, filename + 5, reducedNameLength);
             entry->checksum = ~invChecksum;
             NitroVM_FinishRead(&machine);
         }
@@ -1321,7 +1326,7 @@ bool Object3D::LoadFromCCHROrCMOTArchive(ObjectArchiveLoadInfo *loadInfo, int (*
                 {
                     nameLength = strlen(candidateName);
                     unsigned short invChecksum = 0;
-                    func_020d1d1c(&invChecksum, candidateName, nameLength);
+                    Checksum_UpdateOnesComplement16(&invChecksum, candidateName, nameLength);
                     unsigned int checksum = ~invChecksum;
                     foundInLookup_inner = false;
                     for (int k = 0; k < lookup.numEntries; k++)
@@ -1425,7 +1430,7 @@ void Object3D::ShallowCloneModelAndAnimationsTo(Object3D *out)
 }
 
 // Original: arm9/main @ 0x02036E34; symbol: _ZN8Object3D24MaybeSetRegularAnimationEPKci; size: 0x26C.
-bool Object3D::MaybeSetRegularAnimation(const char *animName, int flags)
+bool Object3D::SetAnimationByName(const char *animName, int flags)
 {
     if (pModel_ == NULL || animName == NULL || (flags_ & (1 << OBJECT3D_FLAG_22)) || animName[0] == '\0')
         return false;
@@ -1525,7 +1530,7 @@ bool Object3D::MaybeSetRegularAnimation(const char *animName, int flags)
 }
 
 // Original: arm9/main @ 0x020370A0; symbol: _ZN8Object3D21MaybeSetBCFGAnimationEii; size: 0x98.
-bool Object3D::MaybeSetBCFGAnimation(int index, int flags)
+bool Object3D::SetBCFGAnimationByIndex(int index, int flags)
 {
     if (loadedAnimationPackageList_ == NULL)
         return false;
@@ -1905,7 +1910,7 @@ ModelRenderContext* GetModel3DContext(Model3D* model)
 }
 
 // Original: arm9/main @ 0x02037774; symbol: _ZNK8Object3D20MaybeGetShadowSourceEv; size: 0x40.
-Vector3fix Object3D::MaybeGetShadowSource() const
+Vector3fix Object3D::GetShadowSourcePosition() const
 {
     Vector3fix ret = position_;
     ret.x = maybeShadowPosition_.x;

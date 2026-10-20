@@ -1,6 +1,0 @@
-#include <globaldefs.h>
-ARM
-extern "C" unsigned char* ReadGlobalValueAt02108844();extern "C" int ReadNonnegativeIndexedBit(void*,void*,unsigned);extern "C" void BitArray_SetIndexedBoolean(void*,void*,unsigned,int),GameState_CopyB0ByteStateBufferToOutput(void*),AddToField14ValueClamped1500(void*,int),Object_AddSaturatedFieldAtOffset14Limit1F4(void*,int),GameState_Copy176BytesAtOffset7540(void*);
-struct Bits{unsigned kind:4;unsigned pad:8;unsigned id:11;unsigned rest:9;};
-// Original: arm9/main @ 0x0207CC18; symbol: func_0207cc18; size: 0xD8.
-extern "C" void RecordNewObjectIdAndPrepareTemporaryState(unsigned unused,unsigned char* object){unsigned char temp[176];if(object){unsigned char* state=ReadGlobalValueAt02108844();int id=(unsigned short)((Bits*)(object+12))->id;if(id>0&&!ReadNonnegativeIndexedBit(state,state+0x8c,id+0xc76)){BitArray_SetIndexedBoolean(state,state+0x8c,id+0xc76,1);GameState_CopyB0ByteStateBufferToOutput(temp);unsigned kind=(unsigned char)((Bits*)(object+8))->kind;int low=kind<=7;if(low)AddToField14ValueClamped1500(temp,1);else{bool range;if(kind>=8&&kind<=9)range=true;else range=false;if(range)Object_AddSaturatedFieldAtOffset14Limit1F4(temp,1);}GameState_Copy176BytesAtOffset7540(temp);}}}

@@ -166,7 +166,9 @@ def audit(project, manifest, elf, original_config, original_module, generated_mo
     original, generated = Path(original_module).read_bytes(), Path(generated_module).read_bytes()
     if original != generated or len(original) != bounds['bss_start'] - bounds['base_address']:
         raise ValueError('Module bytes/extent differ from original before BSS')
-    names = {row['name'] for row in rows} | {section_name+'_BSS_START', section_name+'_BSS_END'}
+    from integration_data_aliases import selected_aliases, verify_deferred_objects, audit_linked_aliases
+    deferred_aliases = selected_aliases(project,module,manifest)
+    names = {row['name'] for row in rows} | {section_name+'_BSS_START', section_name+'_BSS_END'} | {a['name'] for a in deferred_aliases}
     linked = read_elf(elf, names,section_name)
     indices = [i for i, section in enumerate(linked['sections']) if section['name'] == section_name]
     if len(indices) != 1 or linked['sections'][indices[0]]['address'] != bounds['base_address']:
@@ -176,6 +178,7 @@ def audit(project, manifest, elf, original_config, original_module, generated_mo
         symbol = linked['symbols'].get(name)
         if not symbol or symbol['value'] != bounds[key] or symbol['section'] not in (index, 0xfff1):
             raise ValueError('Linked BSS boundary differs: ' + name)
+    audit_linked_aliases(linked, deferred_aliases, index)
     intervals, units = [], {}
     for row in rows:
         start, size = number(row['address']), int(row['size'])
@@ -206,6 +209,9 @@ def audit(project, manifest, elf, original_config, original_module, generated_mo
         paths = [(project / unit[key]).resolve() for key in ('target_path', 'base_path')]
         if any(not path.is_relative_to(project / 'build') for path in paths) or paths[0].samefile(paths[1]):
             raise ValueError('Original/candidate objects must be independent build files')
+        unit_aliases = [a for a in deferred_aliases if str(Path(a['source']).with_suffix('')) == name]
+        if unit_aliases:
+            verify_deferred_objects(paths[0], paths[1], unit_aliases)
         declared=manifest.get('unit_sections',{}).get(owned[0]['source'])
         target, candidate = [object_layout(path, owned,declared) for path in paths]
         if declared is not None:
@@ -241,7 +247,7 @@ def audit(project, manifest, elf, original_config, original_module, generated_mo
         target['section'].pop('alignment');candidate['section'].pop('alignment')
         if target != candidate:
             raise ValueError('Original/candidate BSS metadata differ')
-    return dict(match=True, bss_symbols=len(rows), bss_bytes=sum(int(row['size']) for row in rows),
+    return dict(match=True, linked_aliases_audited=sorted(a['name'] for a in deferred_aliases), bss_symbols=len(rows), bss_bytes=sum(int(row['size']) for row in rows),
                 initialized_data_bytes=0, bss_start=bounds['bss_start'], bss_end=bounds['bss_end'],
                 original_bss_metadata_sha256=expected_hash, rom_acceptance=False)
 

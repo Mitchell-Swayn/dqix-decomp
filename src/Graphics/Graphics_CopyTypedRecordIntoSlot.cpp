@@ -5,9 +5,9 @@ struct Payload {unsigned a,b,c,d,e,f,g,h;};
 struct Record { Payload* payload; char* text; unsigned flags:4; unsigned rest:28; unsigned other[5]; };
 extern "C" void* memset(void*,int,unsigned);
 extern "C" int sprintf(char*,const char*,...);
-extern "C" void InitializePacked999FieldsAndInvalidIndex(void*);
-extern "C" void Copy10RecordFields(void*,void*);
-extern "C" char* GetSelectedEmbeddedTextBufferPointer(char*,int);
+extern "C" void ZoneSerializedRecord_Reset(void*);
+extern "C" void CharacterState_CopyEquipmentDescriptor(void*,void*);
+extern "C" char* CharacterState_GetEquipmentNameBuffer(char*,int);
 // Original: arm9/main @ 0x0208358C; symbol: func_0208358c; size: 0x158.
 extern "C" void Graphics_CopyTypedRecordIntoSlot(char* self,Record* input,int custom) {
  if(!input)return;
@@ -32,8 +32,8 @@ extern "C" void Graphics_CopyTypedRecordIntoSlot(char* self,Record* input,int cu
  memset(text,0,48);
  sprintf(text,input->text);
  }
- InitializePacked999FieldsAndInvalidIndex(slot);
- Copy10RecordFields(slot,input);
+ ZoneSerializedRecord_Reset(slot);
+ CharacterState_CopyEquipmentDescriptor(slot,input);
  slot->payload=(Payload*)(self+0x6f0+index*32);
- slot->text=GetSelectedEmbeddedTextBufferPointer(self,index);
+ slot->text=CharacterState_GetEquipmentNameBuffer(self,index);
 }

@@ -1,3 +1,3 @@
 #include "System/RuntimeFloatConstants.h"
 
-RuntimeBinary32Constant data_020eecc4 = {0x7f800000};
+RuntimeBinary32Constant RuntimeParseDoubleFromCharacterCallback_UnknownRoleInitializedBytes = {0x7f800000};

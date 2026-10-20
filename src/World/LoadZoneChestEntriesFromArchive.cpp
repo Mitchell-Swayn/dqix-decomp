@@ -13,10 +13,10 @@ extern "C" {
  void _ZN24LootableContainerManager5ResetEv(LocalContainerManager*);
  void _ZN24LootableContainerManager14ResetAllocatorEP13SafeAllocator(LocalContainerManager*,SafeAllocator*);
  void _ZN24LootableContainerManager18LoadZoneContainersEPKvjPKcP13SafeAllocator(LocalContainerManager*,const void*,unsigned,const char*,SafeAllocator*);
- void* Object_GetGlobalConnectionState();
- int TestActiveWordAndGlobalStateNonzero(void*);
- void ClearTwentyEntryBufferAndFlags(ZoneContainerOwner*);
- unsigned ReadGlobalValueAt020FB3F0();
+ void* Network_GetConnectionManager();
+ int Network_IsClientSession(void*);
+ void WorldMap_ClearChestMarkers(ZoneContainerOwner*);
+ unsigned Zone3D_GetMainInstance();
  int fix32_Divide(int,int);
  void CopyNextEntryToCallerAndAdvanceCount(ZoneContainerOwner*,ZoneContainerEntry*);
 }
@@ -24,8 +24,8 @@ extern "C" {
 // Load named zones' chest entries from treasure archive, apply placement offsets, retain standard chests.
 extern "C" int LoadZoneChestEntriesFromArchive(ZoneContainerOwner* owner,const void* archive,unsigned archiveLength) {
  if(!owner->zoneCount || !owner->zones) return 0;
- if(TestActiveWordAndGlobalStateNonzero(Object_GetGlobalConnectionState())) { ClearTwentyEntryBufferAndFlags(owner);return 0; }
- ReadGlobalValueAt020FB3F0();
+ if(Network_IsClientSession(Network_GetConnectionManager())) { WorldMap_ClearChestMarkers(owner);return 0; }
+ Zone3D_GetMainInstance();
  char buffer[2048];
  SafeAllocator allocator;
  allocator.ResetAllocatorPointer();allocator.ResetAllocatorPointer();allocator.CreateTypeA(buffer,2048);

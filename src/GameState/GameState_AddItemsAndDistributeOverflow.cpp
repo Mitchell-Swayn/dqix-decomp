@@ -8,14 +8,19 @@ unsigned char* GameState_GetIndexList(void*);
 void Memory_FreeThroughAllocatorUnion(void*,void*);
 void _ZN13SafeAllocator7DestroyEv(void*);
 void* _ZNK13SafeAllocator18GetSignedAllocatorEv(void*);
-unsigned char* ReadWordFieldAtOffset150(void*);
-int TestIndirectField150FlagsNonzero(char*);
-void RecordNewObjectIdAndPrepareTemporaryState(void*,unsigned char*);
+unsigned char* GameObject_GetLinkedIndexedState(void*);
+int GameObject_HasLinkedStatusNibble(char*);
+void Inventory_LogFirstAcquisitionAndUpdateCounters(void*,unsigned char*);
 void AllocatePerCountBufferAndBuildGP2State(void*,const short*,int);
 int Inventory_AddItemCountWithNinetyNineLimit(void*,int,int);
-int ReadSignedByteValueForNonnegativeHalfwordKey(char*,int);
-unsigned char* FindSerializedPrimaryRecordByKey(void*,int);
-extern unsigned char data_02114e20[];
+int Inventory_GetItemCount(char*,int);
+unsigned char* ZoneState2754_FindPrimaryRecordByKey(void*,int);
+// Original data: arm9/main @ 0x2114e20; symbol: data_02114e20.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 16 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern unsigned char Main_UnknownRoleZeroInitializedStorage_Variant3[];
 }
 struct ActorList { char pad[0xf78]; unsigned char ids[4]; unsigned char count; };
 struct ItemDetail { char pad[0x454]; short slots[8]; };
@@ -24,21 +29,21 @@ extern "C" int GameState_AddItemsAndDistributeOverflow(unsigned char* p,short ke
  int created=0;
  if(!*(void**)(p+0x2c)) { AllocatePerCountBufferAndBuildGP2State(p,&key,1); created=1; }
  int result=0;
- unsigned char* record=FindSerializedPrimaryRecordByKey(*(void**)(p+0x2c),key);
+ unsigned char* record=ZoneState2754_FindPrimaryRecordByKey(*(void**)(p+0x2c),key);
  if(record) {
   void* state=_ZN9GameState11GetInstanceEv();
   unsigned char* inventory=GameState_GetIndexList(state);
   short available=count;
   short total=0;
   if(distribute) {
-   int space=99-ReadSignedByteValueForNonnegativeHalfwordKey((char*)GameState_GetIndexList(state),key);
+   int space=99-Inventory_GetItemCount((char*)GameState_GetIndexList(state),key);
    if(space>count) space=count;
    available=space;
   }
   result=Inventory_AddItemCountWithNinetyNineLimit(inventory,key,(signed char)available);
   total+=available;
   if(result) {
-   RecordNewObjectIdAndPrepareTemporaryState(p,record);
+   Inventory_LogFirstAcquisitionAndUpdateCounters(p,record);
    *(unsigned*)(p+0x30)=*(unsigned*)(record+4);
    *(void**)(p+0x34)=*(void**)(_ZN9GameState14GetProtagonistEv(state)+0x134);
   }
@@ -46,13 +51,13 @@ extern "C" int GameState_AddItemsAndDistributeOverflow(unsigned char* p,short ke
    ActorList* list=(ActorList*)GameState_GetIndexList(state);
    for(int i=0;i<list->count;i++) {
     unsigned char* object=GameState_GetObjectWithFlag100(state,list->ids[i]);
-    if(!object || TestIndirectField150FlagsNonzero((char*)object)) continue;
-    ItemDetail* detail=(ItemDetail*)ReadWordFieldAtOffset150(object);
+    if(!object || GameObject_HasLinkedStatusNibble((char*)object)) continue;
+    ItemDetail* detail=(ItemDetail*)GameObject_GetLinkedIndexedState(object);
     if(!detail) continue;
     for(int j=0;j<8;j++) {
      if(detail->slots[j]<=0) {
       detail->slots[j]=key;
-      RecordNewObjectIdAndPrepareTemporaryState(p,record);
+      Inventory_LogFirstAcquisitionAndUpdateCounters(p,record);
       ++total;
       if(total==count) break;
      }
@@ -64,7 +69,7 @@ extern "C" int GameState_AddItemsAndDistributeOverflow(unsigned char* p,short ke
  if(created) {
   void* allocation=_ZNK13SafeAllocator18GetSignedAllocatorEv(p);
   _ZN13SafeAllocator7DestroyEv(p);
-  Memory_FreeThroughAllocatorUnion(data_02114e20,allocation);
+  Memory_FreeThroughAllocatorUnion(Main_UnknownRoleZeroInitializedStorage_Variant3,allocation);
   *(void**)(p+0x2c)=0;
  }
  return result;

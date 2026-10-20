@@ -13,7 +13,12 @@ struct Message {
 };
 struct MessageList { Message* head; short count; short padding; };
 struct MessageContext { unsigned short* count; unsigned short* groups; MessageList* list; SafeAllocator* allocator; };
-extern "C" MessageContext data_02108fd4;
+// Original data: arm9/main @ 0x2108fd4; symbol: data_02108fd4.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 16 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" MessageContext ScriptExecuteWithArgumentsAndOutputRecord_UnknownRoleZeroInitializedStorage;
 extern "C" unsigned int String_CountBytesUntilTerminator(const char*);
 extern "C" void WorldScriptRecordList_AllocateAndAppendNode(MessageList*,SafeAllocator*,const Message*);
 // Original: arm9/main @ 0x0208DC84; symbol: func_0208dc84; size: 0x28C.
@@ -26,20 +31,20 @@ extern "C" int Script_AllocateAndAppendAllowedGroupedMessage(Script::Parameter* 
     message.flag = 0;
     message.text = 0;
     message.next = 0;
-    if (data_02108fd4.groups) {
+    if (ScriptExecuteWithArgumentsAndOutputRecord_UnknownRoleZeroInitializedStorage.groups) {
         message.id = params[0].ToInt();
         const char* text = params[1].ToString();
         message.type = (unsigned short)params[2].ToInt();
         message.group = (unsigned short)params[3].ToInt();
         message.index = (unsigned short)params[4].ToInt();
         message.flag = (unsigned short)params[5].ToInt();
-        for (unsigned short i=0;i<*data_02108fd4.count;++i) {
-            if (message.group == data_02108fd4.groups[i]) {
+        for (unsigned short i=0;i<*ScriptExecuteWithArgumentsAndOutputRecord_UnknownRoleZeroInitializedStorage.count;++i) {
+            if (message.group == ScriptExecuteWithArgumentsAndOutputRecord_UnknownRoleZeroInitializedStorage.groups[i]) {
                 if (text) {
-                    message.text = (char*)data_02108fd4.allocator->Allocate(String_CountBytesUntilTerminator(text)+1);
+                    message.text = (char*)ScriptExecuteWithArgumentsAndOutputRecord_UnknownRoleZeroInitializedStorage.allocator->Allocate(String_CountBytesUntilTerminator(text)+1);
                     if (message.text) strcpy(message.text,text);
                 }
-                WorldScriptRecordList_AllocateAndAppendNode(data_02108fd4.list,data_02108fd4.allocator,&message);
+                WorldScriptRecordList_AllocateAndAppendNode(ScriptExecuteWithArgumentsAndOutputRecord_UnknownRoleZeroInitializedStorage.list,ScriptExecuteWithArgumentsAndOutputRecord_UnknownRoleZeroInitializedStorage.allocator,&message);
                 break;
             }
         }
@@ -47,14 +52,14 @@ extern "C" int Script_AllocateAndAppendAllowedGroupedMessage(Script::Parameter* 
         message.id = params[0].ToInt();
         const char* text = params[1].ToString();
         if (text) {
-            message.text = (char*)data_02108fd4.allocator->Allocate(String_CountBytesUntilTerminator(text)+1);
+            message.text = (char*)ScriptExecuteWithArgumentsAndOutputRecord_UnknownRoleZeroInitializedStorage.allocator->Allocate(String_CountBytesUntilTerminator(text)+1);
             if (message.text) strcpy(message.text,text);
         }
         message.type = (unsigned short)params[2].ToInt();
         message.group = (unsigned short)params[3].ToInt();
         message.index = (unsigned short)params[4].ToInt();
         message.flag = (unsigned short)params[5].ToInt();
-        WorldScriptRecordList_AllocateAndAppendNode(data_02108fd4.list,data_02108fd4.allocator,&message);
+        WorldScriptRecordList_AllocateAndAppendNode(ScriptExecuteWithArgumentsAndOutputRecord_UnknownRoleZeroInitializedStorage.list,ScriptExecuteWithArgumentsAndOutputRecord_UnknownRoleZeroInitializedStorage.allocator,&message);
     }
     return 1;
 }

@@ -1,0 +1,11 @@
+#include <globaldefs.h>
+ARM
+extern "C" void Graphics_StopIndexedObjectAnimation(void*, void*);
+// Original data: arm9/ov001 @ 0x2165884; symbol: data_ov001_02165884.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 52 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/ov001.md.
+extern "C" void* AdvanceSessionCommandLists_UnknownRoleZeroInitializedStorage;
+// Original: arm9/ov001 @ 0x02159B34; symbol: func_ov001_02159b34; size: 0x20.
+extern "C" int CutsceneActor_StopAnimationCommand(void* unused, void* p) { Graphics_StopIndexedObjectAnimation(AdvanceSessionCommandLists_UnknownRoleZeroInitializedStorage, *(void**)((char*)p + 0x70)); return 0; }

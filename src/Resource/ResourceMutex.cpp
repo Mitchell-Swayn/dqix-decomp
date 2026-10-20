@@ -2,7 +2,7 @@
 
 #ifdef jpn
 #define OS_InitThread func_020c8f28
-#define ProcessorContext_ReadPrimaryContextSetupFlag func_020c9070
+#define ProcessorContext_IsPrimaryContextInitialized func_020c9070
 #endif
 
 struct ResourceMutex
@@ -22,13 +22,13 @@ extern "C"
     // set up the main context
     void OS_InitThread();
     // check if the main context has been set up
-    bool ProcessorContext_ReadPrimaryContextSetupFlag();
+    bool ProcessorContext_IsPrimaryContextInitialized();
 }
 
 // Original: arm9/main @ 0x020D96B0; symbol: _Z23InitializeResourceMutexv; size: 0x44.
 void InitializeResourceMutex()
 {
-    if (!ProcessorContext_ReadPrimaryContextSetupFlag())
+    if (!ProcessorContext_IsPrimaryContextInitialized())
         OS_InitThread();
 
     ZeroInitializeMutex(&s_resourceMutex.mutex_);

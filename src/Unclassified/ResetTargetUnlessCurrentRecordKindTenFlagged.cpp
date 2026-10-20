@@ -1,4 +1,0 @@
-#include <globaldefs.h>
-extern "C" void* _ZN9GameState11GetInstanceEv(); extern "C" void* Object_ReadWordAtOffset330(void*); extern "C" int ReadIndirectByteOrMinusOne(unsigned); extern "C" unsigned char* Record_ReadInitialWord(unsigned); extern "C" void Object3D_DrawHeightAdjustedObjectAndLinkedInstances(void*);
-// Original: arm9/main @ 0x020ACA30; symbol: func_020aca30; size: 0x58.
-extern "C" ARM void ResetTargetUnlessCurrentRecordKindTenFlagged(char* object) { void* state=_ZN9GameState11GetInstanceEv(); void* target; unsigned id=*(unsigned*)(object+0x36fc); target=Object_ReadWordAtOffset330(state); int kind=ReadIndirectByteOrMinusOne(id); unsigned char* record=Record_ReadInitialWord(id); if(!target) return; if(kind==10 && record[3]) return; Object3D_DrawHeightAdjustedObjectAndLinkedInstances(target); }

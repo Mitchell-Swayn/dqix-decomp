@@ -1,6 +1,11 @@
 // Fixed-width condition names indexed by parsed text-condition IDs.
 // func_02068ea0 concatenates up to four entries to describe a condition.
-extern "C" const char data_020e80cc[52][12] = {
+// Original data: arm9/main @ 0x20e80cc; symbol: data_020e80cc.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 414354494f4e0000000000004143544f5200000000000000434f4e534f4e414e54000000454c53450000000000000000454e4449460000000000000046000000 ...; full span in module reference.
+// Observed span: 624 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" const char TextFormatUpToFourIndexedStringFragments_UnknownRoleInitializedBytes[52][12] = {
     "ACTION",
     "ACTOR",
     "CONSONANT",

@@ -1,0 +1,26 @@
+{
+  "SharedData_UnknownRoleZeroInitializedStorage_Variant7": {
+    "base": "WfcUtilityRunSettingsModal_UnknownRoleZeroInitializedStorage",
+    "offset": "0x6540",
+    "object": "WfcSettingsHeapArena.o",
+    "section": ".bss"
+  },
+  "SharedData_UnknownRoleZeroInitializedStorage_Variant8": {
+    "base": "WfcUtilityRunSettingsModal_UnknownRoleZeroInitializedStorage",
+    "offset": "0x1f5e7",
+    "object": "WfcSettingsHeapArena.o",
+    "section": ".bss"
+  },
+  "SharedData_UnknownRoleZeroInitializedStorage_Variant9": {
+    "base": "WfcUtilityRunSettingsModal_UnknownRoleZeroInitializedStorage",
+    "offset": "0x2039b",
+    "object": "WfcSettingsHeapArena.o",
+    "section": ".bss"
+  },
+  "SharedData_UnknownRoleZeroInitializedStorage_Variant10": {
+    "base": "WfcUtilityRunSettingsModal_UnknownRoleZeroInitializedStorage",
+    "offset": "0x2e3e5",
+    "object": "WfcSettingsHeapArena.o",
+    "section": ".bss"
+  }
+}

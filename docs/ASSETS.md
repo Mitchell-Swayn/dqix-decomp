@@ -261,3 +261,33 @@ are not fully exposed by this scan. Consequently neither negative signature
 results nor successful asset preservation prove that all files are non-executable.
 Finishing the executable census requires decoding unresolved containers, tracing
 loaders/decompressors and investigating potential code-loading or dispatch paths.
+
+## Item sprite PNG export
+
+`data/ani/d_*.spr` contains 1,021 item sprite resources. Export them with:
+
+```sh
+python3 tools/export_item_sprites.py
+```
+
+The tool requires Pillow and writes transparent PNGs, a contact sheet, a source
+hash manifest and a self-contained searchable `index.html` gallery under
+`build/assets/item-sprites/`. `--input-dir` and `--output-dir` select other paths.
+Generated images remain outside source control. Filenames preserve resource codes;
+they are not a verified mapping to item names or inventory IDs.
+
+The decoder follows `src/Graphics/Graphics_LoadRResourceFramesPaletteAndGroups.cpp`.
+A little-endian header supplies frame count and texture format. Each frame has
+its canvas dimensions and rectangular image count. Image records supply x/y
+placement and width/height codes (`8 << code`), followed by row-major palette
+indices. Format 3 packs two 4-bit indices per byte, low nibble first; format 4
+uses one 8-bit index. The following palette stores RGB555 colours. PNG output
+expands those colours to RGB888 and makes palette index zero transparent.
+The item resources each contain one 24×24 frame; the animation/group tail is
+outside this exporter's interpretation. Other `.spr` variants remain outside
+this item-format claim and may be rejected.
+
+Run `python3 -m unittest discover -s tools -p test_export_item_sprites.py` for
+pixel ordering, transparency, palette and bounds checks. The generic asset audit
+still classifies unrecognized SPR payloads as opaque; this exporter is separate
+analysis tooling and does not change ROM packaging or reconstructed coverage.

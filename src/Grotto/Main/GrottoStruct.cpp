@@ -13,7 +13,7 @@ typedef char GameStateGrottoStructOffsetCheck[
     offsetof(GameState, grottoInfo_) == 0x63e4 ? 1 : -1];
 typedef char GameStateGrottoSizeCheck[sizeof(GameState) == 0x7ff4 ? 1 : -1];
 
-extern "C" void Object_QueueA1RecordForEligibleGlobalState();
+extern "C" void Grotto_QueueClientExitRequest();
 extern "C" void Network_QueueGrottoStateRecord(int, int);
 
 // Original: arm9/main @ 0x0201165C; symbol: func_0201165c; size: 0x6C.
@@ -42,7 +42,7 @@ extern "C" void GameState_ResetGrottoAndTreasureMapInitialFlags(GameState* state
     for (int i = 0; i < collection.numMaps; ++i)
         collection.maps[i].ClearInitialByteUnknownBit();
     GameState_CopyGrottoMetadataCollection(&collection);
-    Object_QueueA1RecordForEligibleGlobalState();
+    Grotto_QueueClientExitRequest();
     Network_QueueGrottoStateRecord(-1, 0);
 }
 

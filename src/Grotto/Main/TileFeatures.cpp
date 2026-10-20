@@ -2,14 +2,24 @@
 #include "std_library_functions.h"
 
 #ifdef jpn
-#define data_020e7010 data_020e78b4
-#define ReadGlobalValueAt020FB3F0 func_02012dac
-#define data_020e700c data_020e78b0
+#define ChooseTileFeaturePosition_UnknownRoleInitializedBytes data_020e78b4
+#define Zone3D_GetMainInstance func_02012dac
+#define ChooseTileFeatureOrientation_UnknownRoleInitializedBytes data_020e78b0
 #endif
 
-extern unsigned char const data_020e7010[];
-extern "C" int ReadGlobalValueAt020FB3F0(void);
-extern unsigned char const data_020e700c[];
+// Original data: arm9/main @ 0x20e7010; symbol: data_020e7010.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex ff0000000000000000000000000a000040000000000800002f0000004000000000080000.
+// Observed span: 36 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern unsigned char const ChooseTileFeaturePosition_UnknownRoleInitializedBytes[];
+extern "C" int Zone3D_GetMainInstance(void);
+// Original data: arm9/main @ 0x20e700c; symbol: data_020e700c.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex ff000000.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern unsigned char const ChooseTileFeatureOrientation_UnknownRoleInitializedBytes[];
 
 // USA: func_0201ea54
 // JPN: func_0201e7e0
@@ -20,13 +30,13 @@ int ChooseTileFeaturePosition(const TileFeaturePlacementData* data)
  
     // This function doesn't seem to do anything besides put a value in r0.
     // We never use the value, but it gets called so yeah   
-    ReadGlobalValueAt020FB3F0();
+    Zone3D_GetMainInstance();
 
     int validCount = 0;
 
     int j = 9;
     unsigned char* copyDst = validArray;
-    const unsigned char* copySrc = data_020e7010;
+    const unsigned char* copySrc = ChooseTileFeaturePosition_UnknownRoleInitializedBytes;
     do
     {
         j--;
@@ -54,11 +64,11 @@ int ChooseTileFeatureOrientation(const TileFeaturePlacementData* data,
 {
     char validDirections[4];
 
-    ReadGlobalValueAt020FB3F0();
+    Zone3D_GetMainInstance();
     int numValidDirections = 0;    
     int j = 4;
     unsigned char* dstPtr = (unsigned char*)validDirections;
-    const unsigned char* srcPtr = data_020e700c;
+    const unsigned char* srcPtr = ChooseTileFeatureOrientation_UnknownRoleInitializedBytes;
     do {
         j--;
         *dstPtr = *srcPtr;

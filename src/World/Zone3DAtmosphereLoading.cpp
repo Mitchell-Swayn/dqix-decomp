@@ -14,13 +14,13 @@
 #if defined(jpn)
 #define GameState_GetFieldAddress468 func_020112f4
 #define func_02013750 func_02013518
-#define ReadWordFieldAtOffset150 func_02054fe4
+#define GameObject_GetLinkedIndexedState func_02054fe4
 #define func_0207a5b8 func_0207b3f0
 #define func_0207b9cc func_0207c804
-#define SnapshotBlockAndVolatileWordPair func_0207ecd0
-#define ReadGlobalAt02108F0C func_0208b2a8
+#define TextureVRAM_SnapshotAllocationBounds func_0207ecd0
+#define PartyProgress_GetInstance func_0208b2a8
 #define func_02094d00 func_02096950
-#define Object_FindRecordByKeyInCountedArray func_0209b684
+#define ZoneTable_FindEntryById func_0209b684
 #define func_020de848 func_020e01c4
 
 
@@ -30,17 +30,17 @@ extern "C"
 {
     void* GameState_GetFieldAddress468(GameState*);
 
-    void* ReadWordFieldAtOffset150(void*);
+    void* GameObject_GetLinkedIndexedState(void*);
     void Script_InitializeAndExecuteOwnerContextCode(const char*, SafeAllocator*, const void*, unsigned int);
 
     // Texture functions
-    void* SnapshotBlockAndVolatileWordPair(void*);
+    void* TextureVRAM_SnapshotAllocationBounds(void*);
     void Graphics_RestoreTextureImageAndPaletteVRAMState(void*);
     void Object_InvokeSaveTextureImageVRAMState(void*);
 
-    void* ReadGlobalAt02108F0C();
+    void* PartyProgress_GetInstance();
     void func_02094d00(void*);
-    Zone3D_StructPtr_8* Object_FindRecordByKeyInCountedArray(void*, unsigned short id);
+    Zone3D_StructPtr_8* ZoneTable_FindEntryById(void*, unsigned short id);
 
     void DisableInterruptsAndHaltForever(); // abort() or similar
     void func_020de848(void*);

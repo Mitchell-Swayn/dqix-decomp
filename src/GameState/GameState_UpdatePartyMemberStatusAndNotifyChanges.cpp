@@ -6,13 +6,13 @@ struct Context
     char pad[0x36d0];
     void* party;
 };
-extern "C" void* Object_GetGlobalConnectionState();
-extern "C" int TestInactiveOrPrimaryIndexState();
-extern "C" void SubtractLinkedHalfwordCountWithOptionalEmptyState(void*,unsigned char,int);
-extern "C" void WriteIndexedField558Boolean(void*,int,int);
-extern "C" void SetGlobalRecordStrideThirtyTwoFirstByte(void*,int);
-extern "C" int IsFirstWordNonzero(void*);
-extern "C" void QueueCharacterStatePacketTypeFour(int,int,int,int);
+extern "C" void* Network_GetConnectionManager();
+extern "C" int Network_IsParentOrOffline();
+extern "C" void GameObject_SubtractHPWithOptionalDeath(void*,unsigned char,int);
+extern "C" void PartyStatus_SetMemberChangeAnimationEnabled(void*,int,int);
+extern "C" void PartyStatus_MarkMemberSnapshotChanged(void*,int);
+extern "C" int Network_IsSessionActive(void*);
+extern "C" void Network_QueueCurrentPartyMemberState(int,int,int,int);
 // Original: arm9/main @ 0x0208AEBC; symbol: func_0208aebc; size: 0xBC.
 extern "C" ARM void GameState_UpdatePartyMemberStatusAndNotifyChanges(char* p,int index)
 {
@@ -23,14 +23,14 @@ extern "C" ARM void GameState_UpdatePartyMemberStatusAndNotifyChanges(char* p,in
     char* context=(char*)GameResources_GetInstance();
     party=((Context*)context)->party;
     member=(char*)state->GetPartyMemberByIndex(index);
-    mode=Object_GetGlobalConnectionState();
+    mode=Network_GetConnectionManager();
     unsigned short previous=*(unsigned short*)(*(char**)(member+0x130)+4);
-    if(!TestInactiveOrPrimaryIndexState())*(short*)(*(char**)(member+0x130)+4)=1;
-    else SubtractLinkedHalfwordCountWithOptionalEmptyState(member,(unsigned char)p[5],0);
+    if(!Network_IsParentOrOffline())*(short*)(*(char**)(member+0x130)+4)=1;
+    else GameObject_SubtractHPWithOptionalDeath(member,(unsigned char)p[5],0);
     if(previous!=*(unsigned short*)(*(char**)(member+0x130)+4))
     {
-        WriteIndexedField558Boolean(party,index,1);
-        SetGlobalRecordStrideThirtyTwoFirstByte(party,index);
+        PartyStatus_SetMemberChangeAnimationEnabled(party,index,1);
+        PartyStatus_MarkMemberSnapshotChanged(party,index);
     }
-    if(IsFirstWordNonzero(mode))QueueCharacterStatePacketTypeFour(index,1,0,1);
+    if(Network_IsSessionActive(mode))Network_QueueCurrentPartyMemberState(index,1,0,1);
 }

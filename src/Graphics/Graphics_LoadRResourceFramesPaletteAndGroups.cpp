@@ -3,7 +3,12 @@ extern "C" void* memcpy(void*,const void*,unsigned);
 extern "C" unsigned strlen(const char*);
 extern "C" char* strcpy(char*,const char*);
 extern "C" unsigned AllocateTexturePaletteVRAM(unsigned,unsigned,unsigned);
-extern "C" unsigned short data_020e7a0c[];
+// Original data: arm9/main @ 0x20e7a0c; symbol: data_020e7a0c.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 0800100020004000800000010002000433030000.
+// Observed span: 20 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" unsigned short GraphicsLoadRResourceFramesPaletteAndGroups_UnknownRoleInitializedBytes[];
 struct Image { unsigned short x,y,width,height; int size; unsigned char* pixels; };
 struct Frame { unsigned short a,b,count,pad; Image* images; unsigned size; unsigned char* pixels; };
 struct Group { char* name; unsigned count; unsigned* a; unsigned* b; unsigned* c; };
@@ -40,8 +45,8 @@ extern "C" void Graphics_LoadRResourceFramesPaletteAndGroups(Resource* self,cons
  int w=image->width;
  bool half=self->format==3;
  int h=image->height;
- int width=data_020e7a0c[w];
- int height=data_020e7a0c[h];
+ int width=GraphicsLoadRResourceFramesPaletteAndGroups_UnknownRoleInitializedBytes[w];
+ int height=GraphicsLoadRResourceFramesPaletteAndGroups_UnknownRoleInitializedBytes[h];
  if(half) image->size=(width*height)/2;
  else image->size=width*height;
  image->pixels=input+offset;

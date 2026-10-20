@@ -1,7 +1,7 @@
 #include <globaldefs.h>
 #include <Memory/SafeAllocator.h>
 #pragma optimize_for_size off
-extern "C" void ResetRecordCountersFlagsAndThreeVectorBuffers(int);
+extern "C" void EffectEmitter_ResetTrackStateAndBindings(int);
 
 // Original: arm9/main @ 0x020556DC; symbol: func_020556dc; size: 0x3C.
 extern "C" int Memory_AllocateAndInitialize368ByteRecord(int *out, unsigned int size) {
@@ -12,6 +12,6 @@ extern "C" int Memory_AllocateAndInitialize368ByteRecord(int *out, unsigned int 
     if (*out == 0) {
         return 0;
     }
-    ResetRecordCountersFlagsAndThreeVectorBuffers(*out);
+    EffectEmitter_ResetTrackStateAndBindings(*out);
     return 1;
 }

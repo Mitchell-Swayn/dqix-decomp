@@ -1,4 +1,0 @@
-#include <globaldefs.h>
-struct Obj { unsigned char pad[0x110]; int active:1; unsigned rest:31; unsigned char pad2[0x54];void (*callback)(Obj *); }; extern "C" unsigned char data_02110a40[]; extern "C" void *data_021103b0[]; extern "C" void ResourceJob_DecrementCounterAndCompleteAtZero(Obj *); extern "C" void RemoveMatchingAllocatorNodesWithIRQDisabled(void *,Obj *); extern "C" void ClearIndirectField14CAndThreeFlagBits(Obj *);
-// Original: arm9/main @ 0x020BF238; symbol: func_020bf238; size: 0x64.
- extern "C" void InvokeActiveCallbackAndNotifyQueues(Obj *p) { if(!p->active) return;ResourceJob_DecrementCounterAndCompleteAtZero(p);p->callback(p);RemoveMatchingAllocatorNodesWithIRQDisabled(data_02110a40,p);if(data_021103b0[1]) RemoveMatchingAllocatorNodesWithIRQDisabled((unsigned char *)data_021103b0[1]+0x4e0,p);ClearIndirectField14CAndThreeFlagBits(p); }

@@ -1,11 +1,11 @@
 #include <globaldefs.h>
 ARM
 extern "C" void* _ZN9GameState11GetInstanceEv();
-extern "C" void* Object_GetGlobalConnectionState();
+extern "C" void* Network_GetConnectionManager();
 extern "C" void* GameResources_GetInstance();
-extern "C" void* ReadGlobalValueAt020FB3F0();
+extern "C" void* Zone3D_GetMainInstance();
 extern "C" char* _ZN9GameState15GetGrottoStructEv(void*);
-extern "C" void Object_ResetFlagsAndEmbeddedRecordState(void*);
+extern "C" void ZoneState_ResetTrackedZone(void*);
 extern "C" void _ZN13SafeAllocator5ResetEv(void*);
 extern "C" char* _ZN13SafeAllocator8AllocateEj(void*,unsigned);
 extern "C" void GameState_ClearObjectByIndex(void*,unsigned);
@@ -16,13 +16,13 @@ struct Slot { unsigned short id; unsigned short a:2,used:1,b:13; char pad[12]; v
 // Original: arm9/main @ 0x02028A54; symbol: func_02028a54; size: 0x158.
 extern "C" int GameState_AllocateIndexedObjectGroup(Slot* slots,int id){
 void* gs=_ZN9GameState11GetInstanceEv();
-Object_GetGlobalConnectionState();GameResources_GetInstance();ReadGlobalValueAt020FB3F0();_ZN9GameState15GetGrottoStructEv(gs);
+Network_GetConnectionManager();GameResources_GetInstance();Zone3D_GetMainInstance();_ZN9GameState15GetGrottoStructEv(gs);
 for(int i=0;i<4;i++)if(slots[i].id==id)return 0;
 int index=-1;
 for(int i=0;i<4;i++){if(!slots[i].used){index=i;break;}}
 if(index<0)return 0;
 Slot* slot=&slots[index];
-Object_ResetFlagsAndEmbeddedRecordState(slot);
+ZoneState_ResetTrackedZone(slot);
 slot->used=1;slots[index].id=id;
 _ZN13SafeAllocator5ResetEv(slot->alloc1);_ZN13SafeAllocator5ResetEv(slot->alloc2);
 char* objects=_ZN13SafeAllocator8AllocateEj(slot->alloc1,0x1320);

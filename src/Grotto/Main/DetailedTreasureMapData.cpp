@@ -12,29 +12,29 @@
 #include <asmhacks.h>
 
 #ifdef jpn
-#define PushBoundedModeIndexOntoGlobalStack func_020a3b70
-#define OverlayLoader_PopSlotAndOptionallyRestorePriorOverlay func_020a3bcc
+#define OverlayLoader_PushPrimarySelection func_020a3b70
+#define OverlayLoader_PopPrimarySelectionAndOptionallyRestoreOverlay func_020a3bcc
 
 #define func_02075098 func_02076224
 #define func_02075248 func_02076378
 
-#define data_020f1ae4 data_020f1c5c
-#define data_020f1af8 data_020f1c70
-#define data_0211e33c data_0211fb64
+#define ProgramData_PathDataTmapParamPac data_020f1c5c
+#define ProgramData_FormatPDDat data_020f1c70
+#define Main_UnknownRoleZeroInitializedStorage_Variant6 data_0211fb64
 #endif
 
 extern "C"
 {
-    void PushBoundedModeIndexOntoGlobalStack(unsigned int);
-    void OverlayLoader_PopSlotAndOptionallyRestorePriorOverlay(unsigned int);
+    void OverlayLoader_PushPrimarySelection(unsigned int);
+    void OverlayLoader_PopPrimarySelectionAndOptionallyRestoreOverlay(unsigned int);
 
     // copies character name into the buffer? (not used in jpn version)
-    void EncodeTextAsGlyphIds(void*, char* buffer, int);
+    void Text_EncodeGlyphIndices(void*, char* buffer, int);
 
     // Based on where it's called, this is probably returning a language-
     // dependent string for "Lv. " (at least, if called with 1011 as arg).
     // Not used in jpn version
-    const char* LookupGlobalResourceByKey(int);
+    const char* Text_LookupStandardString(int);
 
     // seems to get the game language. In the USA version, if it would
     // return a value other than 2 or 5, it returns 1, which seems to reflect
@@ -214,7 +214,7 @@ void DetailedTreasureMapData::RegularMapData::Populate(unsigned short newseed, u
     seed_ = newseed;
     srand(seed_);
     quality_ = newquality;
-    PushBoundedModeIndexOntoGlobalStack(4);
+    OverlayLoader_PushPrimarySelection(4);
 
     GenerateUnknownData();
     GenerateEnviron();
@@ -238,7 +238,7 @@ void DetailedTreasureMapData::RegularMapData::Populate(unsigned short newseed, u
     GenerateNameBuffers();
     GeneratePopupName();
     
-    OverlayLoader_PopSlotAndOptionallyRestorePriorOverlay(1);
+    OverlayLoader_PopPrimarySelectionAndOptionallyRestoreOverlay(1);
 }
 
 // Original: arm9/main @ 0x020A40C0; symbol: _ZNK23DetailedTreasureMapData17LegacyBossMapData26MaybeGetCurrentAlternateIDEv; size: 0x28.
@@ -271,7 +271,7 @@ bool DetailedTreasureMapData::UpdateFollowingCompletion(bool levelledUp, unsigne
     // custom text encoding (e.g. lowercase a is 0x2A vs ascii 0x61)
     void* playerRelatedPtr = *(void**)((intptr_t)GameState::GetInstance()->GetProtagonist() + 0x134);
     char asciiName[10] = { 0 };
-    EncodeTextAsGlyphIds(playerRelatedPtr, asciiName, 1);
+    Text_EncodeGlyphIndices(playerRelatedPtr, asciiName, 1);
 #else
     // 0200fc28 is the address in the japanese version
     char* asciiName = *(char**)((intptr_t)GameState::GetInstance()->GetProtagonist() + 0x134);
@@ -331,10 +331,20 @@ void GrottoStruct::LoadActiveMetadataFromDetailed(DetailedTreasureMapData* from)
 
 #if defined(usa)
 
-extern const char data_020f1ac0[]; // "%s"
-extern const char data_020f1ac3[]; // ""
-extern const char data_020f1ac4[]; // "%s%d"
-extern const char data_020f1ac9[]; // "%s %s"
+// Original data: arm9/main @ 0x20f1ac0; symbol: data_020f1ac0.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 257300.
+// Observed span: 3 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const char DetailedTreasureMapDataLegacyBossMapDataPopulate_UnknownRoleInitializedBytes[]; // "%s"
+// Original data: arm9/main @ 0x20f1ac3; symbol: data_020f1ac3.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 00.
+// Observed span: 1 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const char DetailedTreasureMapDataLegacyBossMapDataPopulate_UnknownRoleInitializedBytes_Variant2[]; // ""
+extern const char ProgramData_FormatSD[]; // "%s%d"
+extern const char ProgramData_FormatSS[]; // "%s %s"
 
 #elif defined(jpn)
 
@@ -425,11 +435,11 @@ void DetailedTreasureMapData::LegacyBossMapData::Populate(
     minTurns_ = newMinTurns;
 
 #if defined(usa)
-    sprintf(mapNameNoLevel_v2_, data_020f1ac0, mapNameNoLevel_);
-    strcpy(seeminglyEmptyBuffer_, data_020f1ac3);
-    sprintf(mapLevelString_, data_020f1ac4, LookupGlobalResourceByKey(1011), level_);
-    sprintf(topScreenName_, data_020f1ac9, mapNameNoLevel_, mapLevelString_);
-    sprintf(popupName_, data_020f1ac9, bossName_, mapLevelString_);
+    sprintf(mapNameNoLevel_v2_, DetailedTreasureMapDataLegacyBossMapDataPopulate_UnknownRoleInitializedBytes, mapNameNoLevel_);
+    strcpy(seeminglyEmptyBuffer_, DetailedTreasureMapDataLegacyBossMapDataPopulate_UnknownRoleInitializedBytes_Variant2);
+    sprintf(mapLevelString_, ProgramData_FormatSD, Text_LookupStandardString(1011), level_);
+    sprintf(topScreenName_, ProgramData_FormatSS, mapNameNoLevel_, mapLevelString_);
+    sprintf(popupName_, ProgramData_FormatSS, bossName_, mapLevelString_);
 #elif defined(jpn)
     char bossNameUndecorated[256];
 
@@ -450,8 +460,8 @@ void DetailedTreasureMapData::LegacyBossMapData::Populate(
 void DetailedTreasureMapData::LegacyBossMapData::WriteMapLevelString()
 {
 #if defined(usa)
-    const char* lvlPrefix = LookupGlobalResourceByKey(1011);
-    sprintf(mapLevelString_, data_020f1ac4, lvlPrefix, level_);
+    const char* lvlPrefix = Text_LookupStandardString(1011);
+    sprintf(mapLevelString_, ProgramData_FormatSD, lvlPrefix, level_);
 #elif defined(jpn)
     sprintf(mapLevelString_, data_020f1c27, level_);
 #endif
@@ -832,11 +842,21 @@ void DetailedTreasureMapData::RegularMapData::GenerateLocaleRank()
 
 #if defined(usa)
 
-extern char data_020f1ad0[]; // "%s%d"
-extern char data_020f1ad5[]; // "%s %s"
+extern char ProgramData_FormatSD_Copy2[]; // "%s%d"
+extern char ProgramData_FormatSS_Copy2[]; // "%s %s"
 
-extern const unsigned char data_020e9074[]; // { 4, 13, 11 }
-extern const unsigned char data_020e9077[]; // { 4, 13, 11 }
+// Original data: arm9/main @ 0x20e9074; symbol: data_020e9074.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 040d0b.
+// Observed span: 3 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const unsigned char DetailedTreasureMapDataRegularMapDataGenerateNameBuffers_UnknownRoleInitializedBytes[]; // { 4, 13, 11 }
+// Original data: arm9/main @ 0x20e9077; symbol: data_020e9077.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 040d0b0000.
+// Observed span: 5 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const unsigned char DetailedTreasureMapDataRegularMapDataGeneratePopupName_UnknownRoleInitializedBytes[]; // { 4, 13, 11 }
 
 // USA: func_020a51b0
 void DetailedTreasureMapData::RegularMapData::GenerateNameBuffers()
@@ -901,7 +921,7 @@ void DetailedTreasureMapData::RegularMapData::GenerateNameBuffers()
     for (int i = 0; i < 3; i++)
     {
         int currentNamePart = partOrder[i];
-        int ptrListIndex = data_020e9074[currentNamePart];
+        int ptrListIndex = DetailedTreasureMapDataRegularMapDataGenerateNameBuffers_UnknownRoleInitializedBytes[currentNamePart];
         
         readOffset = offsetArray[ptrListIndex];
         
@@ -945,11 +965,11 @@ void DetailedTreasureMapData::RegularMapData::GenerateNameBuffers()
         }
     }
 
-    sprintf(levelString_, data_020f1ad0, LookupGlobalResourceByKey(1011), level_);
-    sprintf(topScreenName_, data_020f1ad5, nameNoLevel_, levelString_);
+    sprintf(levelString_, ProgramData_FormatSD_Copy2, Text_LookupStandardString(1011), level_);
+    sprintf(topScreenName_, ProgramData_FormatSS_Copy2, nameNoLevel_, levelString_);
 }
 
-extern char data_020f1adb[]; // "%s%d"
+extern char ProgramData_FormatSD_Copy3[]; // "%s%d"
 
 // USA: func_020a54d0
 void DetailedTreasureMapData::RegularMapData::GeneratePopupName()
@@ -1014,7 +1034,7 @@ void DetailedTreasureMapData::RegularMapData::GeneratePopupName()
     for (int i = 0; i < 3; i++)
     {
         int currentNamePart = partOrder[i];
-        int ptrListIndex = data_020e9077[currentNamePart];
+        int ptrListIndex = DetailedTreasureMapDataRegularMapDataGeneratePopupName_UnknownRoleInitializedBytes[currentNamePart];
         
         readOffset = offsetArray[ptrListIndex];
         
@@ -1058,7 +1078,7 @@ void DetailedTreasureMapData::RegularMapData::GeneratePopupName()
         }
     }
 
-    sprintf(tempBuffer, data_020f1adb, LookupGlobalResourceByKey(1011), level_);
+    sprintf(tempBuffer, ProgramData_FormatSD_Copy3, Text_LookupStandardString(1011), level_);
     strcat(popupName_, tempBuffer);
 }
 
@@ -1222,10 +1242,15 @@ void DetailedTreasureMapData::RegularMapData::GeneratePopupName()
 
 #endif
 
-extern char data_020f1ae4[];
-extern char data_020f1af8[];
+extern char ProgramData_PathDataTmapParamPac[];
+extern char ProgramData_FormatPDDat[];
 
-extern unsigned char data_0211e33c[];
+// Original data: arm9/main @ 0x211e33c; symbol: data_0211e33c.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 7889 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern unsigned char Main_UnknownRoleZeroInitializedStorage_Variant6[];
 
 // Original: arm9/main @ 0x020A57E4; symbol: _ZN23DetailedTreasureMapData19LoadLegacyBossStatsEbPKh; size: 0x338.
 void DetailedTreasureMapData::LoadLegacyBossStats(bool compute, const unsigned char* providedArchive)
@@ -1242,13 +1267,13 @@ void DetailedTreasureMapData::LoadLegacyBossStats(bool compute, const unsigned c
     
     BackgroundLoader::AddLockGlobal();
     unsigned int archiveSize = 0;
-    const unsigned char* usedArchive = data_0211e33c;
+    const unsigned char* usedArchive = Main_UnknownRoleZeroInitializedStorage_Variant6;
     
     if (providedArchive)
         usedArchive = providedArchive;
     else
     {
-        if (!LoadFileIntoMemory(data_020f1ae4, const_cast<unsigned char*>(usedArchive), &archiveSize))
+        if (!LoadFileIntoMemory(ProgramData_PathDataTmapParamPac, const_cast<unsigned char*>(usedArchive), &archiveSize))
         {
             BackgroundLoader::RemoveLockGlobal();
             return;
@@ -1256,7 +1281,7 @@ void DetailedTreasureMapData::LoadLegacyBossStats(bool compute, const unsigned c
     }
 
     char innerFileName[256];
-    sprintf(innerFileName, data_020f1af8, legacy_.bossMonsterID_);
+    sprintf(innerFileName, ProgramData_FormatPDDat, legacy_.bossMonsterID_);
     const unsigned char* innerFileData;
     unsigned int innerFileSize;
     if (!GetFileInNarc(usedArchive, innerFileName, reinterpret_cast<const void**>(&innerFileData), &innerFileSize, 0))

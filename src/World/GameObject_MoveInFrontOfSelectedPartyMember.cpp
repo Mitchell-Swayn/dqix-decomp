@@ -11,7 +11,7 @@ struct PartyPositionActor {
     unsigned char partySelection;
 };
 extern "C" {
-int ReadEnabledPackedField17DSelector(unsigned char*);
+int FieldMonster_GetSelectedPartyMemberOrInvalid(unsigned char*);
 void Object3D_SetNormalizedAngleAndUpdatePosition(char*,int);
 }
 // Signed division preserves truncation toward zero for negative radii.
@@ -29,7 +29,7 @@ extern "C" void GameObject_MoveInFrontOfSelectedPartyMember(PartyPositionActor* 
     if (self->partySelection & 8) {
         GameState* state = GameState::GetInstance();
         PartyPositionActor* member = (PartyPositionActor*)state->GetPartyMemberByIndex(
-            ReadEnabledPackedField17DSelector((unsigned char*)self));
+            FieldMonster_GetSelectedPartyMemberOrInvalid((unsigned char*)self));
         if (member && !(member->placementState & 1)) {
             fix32_t memberRadius = member->object.GetRadius();
             fix32_t ownRadius = self->object.GetRadius();

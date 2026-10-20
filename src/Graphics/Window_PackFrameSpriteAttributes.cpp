@@ -1,0 +1,3 @@
+#include <globaldefs.h>
+// Original: arm9/main @ 0x020E197C; symbol: func_020e197c; size: 0xF8.
+extern "C" void Window_PackFrameSpriteAttributes(unsigned* out,int x,unsigned y,int tile,int size,int color,unsigned mode,unsigned flags,int priority,unsigned palette,int bank,int extra) {if(mode==0x100||mode==0x300){if(size==3)*out=mode|(flags|((y&0xff)|(extra<<25)|(size<<10)|(color<<12))|((unsigned)(x<<23)>>7));else *out=mode|(flags|((y&0xff)|((extra<<25)|(priority<<13))|(size<<10)|(color<<12))|((unsigned)(x<<23)>>7));}else {if(size==3)*out=mode|(flags|((y&0xff)|(size<<10)|(color<<12))|((unsigned)(x<<23)>>7));else *out=mode|(flags|((y&0xff)|(priority<<13)|(size<<10)|(color<<12))|((unsigned)(x<<23)>>7));}*(unsigned short*)(out+1)=palette|(tile<<10)|(bank<<12);}

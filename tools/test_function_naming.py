@@ -47,3 +47,8 @@ class NamingTests(unittest.TestCase):
         with patch('function_naming.readable_names', return_value=['Model3D::Func0207e2e0()']):
             with self.assertRaisesRegex(ValueError, 'descriptive'):
                 validate_new_functions(self.root,self.root,{'functions':[self.row]})
+
+    def test_overlay_address_placeholder_rejected(self):
+        with self.assertRaisesRegex(ValueError, 'descriptive'):
+            self.check('// Original: arm9/ov017 @ 0x0205BB04; symbol: old;\n',
+                       'func_ov017_0205bb04', module='ov017')

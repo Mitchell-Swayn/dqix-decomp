@@ -2,7 +2,7 @@
 ARM
 extern "C" void* memcpy(void*,const void*,unsigned);
 extern "C" double RuntimeDecimalDouble_ParseTextAsDouble(const char*);
-extern "C" unsigned ReadWordFieldAtOffset1C();
+extern "C" unsigned TextContext_GetSharedInstance();
 // Original: arm9/main @ 0x02069C1C; symbol: func_02069c1c; size: 0xC4.
 extern "C" int Resource_ParseFixedPointValueAndWriteMarker(void** output,char* text){
  float values[1];unsigned short marker;
@@ -15,7 +15,7 @@ extern "C" int Resource_ParseFixedPointValueAndWriteMarker(void** output,char* t
  text++;
  }
  }
- unsigned char* object=(unsigned char*)ReadWordFieldAtOffset1C();
+ unsigned char* object=(unsigned char*)TextContext_GetSharedInstance();
  *(int*)(object+0x1840)=4096.0f*values[0];
  void* destination=*output;
  marker=0xff2a;

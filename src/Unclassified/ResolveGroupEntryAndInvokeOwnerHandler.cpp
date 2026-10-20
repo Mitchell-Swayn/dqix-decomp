@@ -1,5 +1,0 @@
-#include <globaldefs.h>
-#pragma optimize_for_size off
-struct Entry{unsigned pad;unsigned short value;unsigned char pad2[2],first,second;};struct Context{Entry* entry;void* group;unsigned source,index;};extern "C" unsigned* ResourceManager_GetIndexedHeaderTableCEntry(unsigned);extern "C" void* ReadIndexedSixteenByteTableWord14(unsigned);extern "C" Entry* Object_GetValidTwelveByteEntry(void*,unsigned);extern "C" int ResourceManager_AllocateAndConfigureResourceEntry(unsigned,unsigned,unsigned,unsigned,Entry*,void*,unsigned,unsigned);
-// Original: arm9/main @ 0x020BE7A8; symbol: func_020be7a8; size: 0x80.
-extern "C" ARM int ResolveGroupEntryAndInvokeOwnerHandler(unsigned owner,unsigned source,unsigned index){unsigned* p=ResourceManager_GetIndexedHeaderTableCEntry(source);if(!p)return 0;void* group=ReadIndexedSixteenByteTableWord14(*p);if(!group)return 0;Entry* entry=Object_GetValidTwelveByteEntry(group,index);if(!entry)return 0;return ResourceManager_AllocateAndConfigureResourceEntry(owner,entry->second,entry->value,entry->first,entry,group,source,index);}

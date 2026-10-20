@@ -1,0 +1,4 @@
+#include <globaldefs.h>
+struct Obj{char pad[0x1c];unsigned short id;unsigned char flags,padding;void* entry;};extern "C" void Input_UpdateSelectionFromPointerOrDirectionalKeys(Obj*),SpriteAnimation_StartTrack(void*,unsigned short),SpriteAnimation_AdvanceAllTracks(void*,int),Window_ReadCoordinatesAndApplyMargins(Obj*);extern "C" unsigned char* SpriteAnimation_FindTrackByKey(void*,unsigned short);
+// Original: arm9/main @ 0x020E263C; symbol: func_020e263c; size: 0x60.
+extern "C" ARM void Window_UpdateOptionSelectionAndEntry(Obj* p,int arg){if(!p->entry)return;Input_UpdateSelectionFromPointerOrDirectionalKeys(p);SpriteAnimation_StartTrack(p->entry,p->id);unsigned char flags=p->flags;unsigned char* item=SpriteAnimation_FindTrackByKey(p->entry,p->id);if(item)item[0x15]|=flags;SpriteAnimation_AdvanceAllTracks(p->entry,arg);Window_ReadCoordinatesAndApplyMargins(p);}

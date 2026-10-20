@@ -5,7 +5,7 @@ extern "C" void __clear(void*,unsigned);
 extern "C" void* _ZN9GameState11GetInstanceEv();
 extern "C" void* _ZN9GameState21GetPartyMemberByIndexEi(void*,int);
 extern "C" void* GameState_FindIndexedObjectWithFlag1000(void*,int);
-extern "C" int ReadFieldAtOffset2D0(void*);
+extern "C" int GameObject_GetAssociatedPartyMemberIndex(void*);
 extern "C" void GameState_CollectPresentPartyMemberIndices(signed char*,signed char*);
 // Original: arm9/main @ 0x020DC548; symbol: func_020dc548; size: 0x1C4.
 extern "C" void GameState_CopyPartyMemberGroup(int member,signed char* output,signed char* outputCount) {
@@ -26,7 +26,7 @@ extern "C" void GameState_CopyPartyMemberGroup(int member,signed char* output,si
   int index=indices[i];
   void* obj=GameState_FindIndexedObjectWithFlag1000(gs,index);
   if(obj) {
-   if(key==ReadFieldAtOffset2D0(obj)) {
+   if(key==GameObject_GetAssociatedPartyMemberIndex(obj)) {
     groups[group][column]=(signed char)index;
     sizes[group]++;
     column++;

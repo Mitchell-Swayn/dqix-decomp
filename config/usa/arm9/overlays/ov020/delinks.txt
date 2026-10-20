@@ -5,54 +5,134 @@
     .data       start:0x0218dbc0 end:0x0218dd20 kind:data align:32
     .bss        start:0x0218dd20 end:0x0218dd20 kind:bss align:32
 
-src/Unclassified/ov020/func_ov020_0218b700.cpp:
+src/System/Boot/BootScreen_ReleaseSharedTextWindow.cpp:
     complete
     .text start:0x0218b700 end:0x0218b710
 
-src/Unclassified/ov020/func_ov020_0218c7f0.cpp:
+src/System/Boot/BootScreen_ConfigureMenuSelectionGrids.cpp:
     complete
     .text start:0x0218c7f0 end:0x0218c840
 
-src/Unclassified/ov020/func_ov020_0218d7ac.cpp:
+src/System/Boot/Graphics_SetMainBrightnessTarget.cpp:
     complete
     .text start:0x0218d7ac end:0x0218d800
 
-src/Unclassified/ov020/func_ov020_0218d800.cpp:
+src/System/Boot/Graphics_SetSubBrightnessTarget.cpp:
     complete
     .text start:0x0218d800 end:0x0218d854
 
-src/Unclassified/ov020/func_ov020_0218d8d8.cpp:
+src/System/Boot/BootScreen_ReleaseResourcesAndResetAudio.cpp:
     complete
     .text start:0x0218d8d8 end:0x0218d944
 
-src/GameState/ov020/func_ov020_0218d854.cpp:
+src/System/Boot/BootScreen_AdvanceScreenDelay.cpp:
     complete
     .text start:0x0218d854 end:0x0218d898
 
-src/Unclassified/ov020/func_ov020_0218d898.cpp:
+src/System/Boot/Graphics_HasActiveBrightnessTransition.cpp:
     complete
     .text start:0x0218d898 end:0x0218d8d8
 
-src/GameState/ov020/func_ov020_0218d644.cpp:
+src/System/Boot/Graphics_AdvanceBrightnessTransitions.cpp:
     complete
     .text start:0x0218d644 end:0x0218d7ac
 
-src/Unclassified/ov020/func_ov020_0218c7bc.cpp:
+src/System/Boot/ConfigureBackgroundLayerOneControlBits.cpp:
     complete
     .text start:0x0218c7bc end:0x0218c7f0
 
-src/Graphics/ov020/Graphics_SetDisplayControlBits.cpp:
+src/System/Boot/Graphics_SetDisplayControlBits.cpp:
     complete
     .text start:0x0218cd64 end:0x0218cd98
 
-src/Graphics/ov020/Graphics_InitializeDualScreenCanvasResources.cpp:
+src/System/Boot/Graphics_InitializeDualScreenCanvasResources.cpp:
     complete
     .text start:0x0218cf8c end:0x0218d32c
 
-src/Graphics/ov020/Graphics_LoadDualScreenCanvasResources.cpp:
+src/System/Boot/Graphics_LoadDualScreenCanvasResources.cpp:
     complete
     .text start:0x0218c98c end:0x0218cd64
 
-src/Graphics/ov020/Graphics_InitializeSubBackgroundCanvasAndDisplay.cpp:
+src/System/Boot/Graphics_InitializeSubBackgroundCanvasAndDisplay.cpp:
     complete
     .text start:0x0218cd98 end:0x0218cf8c
+
+src/System/Boot/Graphics_InitializeCanvasAndLoadSelectedArchive.cpp:
+    complete
+    .text start:0x0218d32c end:0x0218d644
+
+src/System/Boot/RunOverlayDisplaySequenceAndSelection.cpp:
+    complete
+    .text start:0x0218b710 end:0x0218c7bc
+
+src/System/Boot/UpdateDisplaySelectionAndSetGameStateByte4.cpp:
+    complete
+    .text start:0x0218c840 end:0x0218c98c
+
+src/System/Boot/ResourceLiterals/RunOverlayDisplaySequenceAndSelection_PathDataAniBgTmPac.cpp:
+    complete
+    .data start:0x0218dbdc end:0x0218dbef
+
+src/System/Boot/ResourceLiterals/RunOverlayDisplaySequenceAndSelection_FormatSS.cpp:
+    complete
+    .data start:0x0218dbef end:0x0218dbf5
+
+src/System/Boot/ResourceLiterals/RunOverlayDisplaySequenceAndSelection_TextVer035.cpp:
+    complete
+    .data start:0x0218dbf5 end:0x0218dbfc
+
+src/System/Boot/ResourceLiterals/RunOverlayDisplaySequenceAndSelection_TextApr142010.cpp:
+    complete
+    .data start:0x0218dbfc end:0x0218dc08
+
+src/System/Boot/ResourceLiterals/RunOverlayDisplaySequenceAndSelection_FormatNITROSDKDDD.cpp:
+    complete
+    .data start:0x0218dc08 end:0x0218dc1b
+
+src/System/Boot/ResourceLiterals/RunOverlayDisplaySequenceAndSelection_FormatNITROSYSTEMD.cpp:
+    complete
+    .data start:0x0218dc1b end:0x0218dc2b
+
+src/System/Boot/ResourceLiterals/RunOverlayDisplaySequenceAndSelection_FormatNITROWiFiDDD.cpp:
+    complete
+    .data start:0x0218dc2b end:0x0218dc3f
+
+src/System/Boot/ResourceLiterals/RunOverlayDisplaySequenceAndSelection_FormatNITROCRYPTODDD.cpp:
+    complete
+    .data start:0x0218dc3f end:0x0218dc55
+
+src/System/Boot/ResourceLiterals/RunOverlayDisplaySequenceAndSelection_FormatDWCDLDDD.cpp:
+    complete
+    .data start:0x0218dc55 end:0x0218dc65
+
+src/System/Boot/ResourceLiterals/RunOverlayDisplaySequenceAndSelection_FormatSWCDDD.cpp:
+    complete
+    .data start:0x0218dc65 end:0x0218dc72
+
+src/System/Boot/ResourceLiterals/RunOverlayDisplaySequenceAndSelection_TextDRAGONQUESTIX.cpp:
+    complete
+    .data start:0x0218dc72 end:0x0218dc82
+
+src/System/Boot/ResourceLiterals/RunOverlayDisplaySequenceAndSelection_TextXENLONProject.cpp:
+    complete
+    .data start:0x0218dc82 end:0x0218dc91
+
+src/System/Boot/ResourceLiterals/RunOverlayDisplaySequenceAndSelection_TextLEVEL5INC.cpp:
+    complete
+    .data start:0x0218dc91 end:0x0218dc9d
+
+src/System/Boot/ResourceLiterals/Graphics_LoadDualScreenCanvasResources_PathDataAniBgTitlePac.cpp:
+    complete
+    .data start:0x0218dc9d end:0x0218dcb3
+
+src/System/Boot/ResourceLiterals/Graphics_InitializeSubBackgroundCanvasAndDisplay_PathDataMenuNintendoPac.cpp:
+    complete
+    .data start:0x0218dcb3 end:0x0218dcca
+
+src/System/Boot/ResourceLiterals/Graphics_InitializeDualScreenCanvasResources_PathDataMenuBgMobi2Pac.cpp:
+    complete
+    .data start:0x0218dcca end:0x0218dce2
+
+src/System/Boot/ResourceLiterals/Graphics_InitializeCanvasAndLoadSelectedArchive_PathDataMenuBgSqenPac.cpp:
+    complete
+    .data start:0x0218dce2 end:0x0218dcf8

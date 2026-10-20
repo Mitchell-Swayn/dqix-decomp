@@ -1,0 +1,6 @@
+// Original field widths, callee calling behavior and exact symbols reviewed.
+#include <GameState/GameState.h>
+#include <Memory/SafeAllocator.h>
+extern "C" {void NetworkOwnership_ClearEntry(void*);void LinkedQueue_InitializeNodeStatus(void*);void CombatStatus_ClearAttackStage(void*);void CharacterState_ResetAuxiliaryTracking(void*);void GameState_SelectPlacementVariantAndInvalidateSource(void*,int);void* memcpy(void*,const void*,unsigned);void* Graphics_GetGlobalOamTransferState();int Graphics_ReadSelectedScreenPowerState(void*);void Graphics_SetOamScreenEnabled(void*,unsigned,int);void TextCache_ResetEntry(void*);void* Network_GetConnectionManager();int Network_IsSessionActive(void*);char* DisplayLayout_FindPartById(void*,int);unsigned short* Zone3D_GetMainInstance();void MessageTextTable_Reset(void*);int PartySelection_GetMemberMask(void*,unsigned);void ActorPathGraph_ResetNodeLinksAndFlags(void*);}struct SignedThree{signed int low:3;unsigned int rest:29;};
+// Original: arm9/main @ 0x0203C304; symbol: func_0203c304; size: 0x58.
+extern "C" void TextCache_Reset(char* p){for(int i=0;i<32;++i)TextCache_ResetEntry(p+4+i*40);*(int*)p=0;*(short*)(p+0x512)=0;*(int*)(p+0x504)=1;*(int*)(p+0x50c)=0;*(int*)(p+0x508)=0;*(short*)(p+0x510)=4;}

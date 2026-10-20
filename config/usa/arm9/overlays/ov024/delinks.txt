@@ -4,853 +4,2081 @@
     .data       start:0x021ff1e0 end:0x02200140 kind:data align:32
     .bss        start:0x02200140 end:0x02200160 kind:bss align:32
 
-src/Combat/Overlay_24/GetAttackBaseDamage.cpp:
+src/Combat/Formulas/GetAttackBaseDamage.cpp:
 	.text start:0x021e7bc0 end:0x021e80e4
 
-src/Unclassified/ov024/SelectHalfwordForPartyIndex.cpp:
+src/Combat/Formulas/Combat_SelectMessageForPartyOrMonster.cpp:
     complete
     .text start:0x021da644 end:0x021da670
 
-src/Unclassified/ov024/TestDescriptorFlag100.cpp:
+src/Combat/Formulas/CombatEffect_TargetHasFizzle.cpp:
     complete
     .text start:0x021dd010 end:0x021dd028
 
-src/Unclassified/ov024/TestDescriptorFlag20.cpp:
+src/Combat/Formulas/CombatEffect_TargetHasConfusion.cpp:
     complete
     .text start:0x021de25c end:0x021de274
 
-src/Unclassified/ov024/TestDescriptorFlag400000.cpp:
+src/Combat/Formulas/Combatant_HasFatalDamageProtection.cpp:
     complete
     .text start:0x021e47dc end:0x021e47f4
 
-src/Unclassified/ov024/ClearHalfwordForRecordFlags.cpp:
+src/Combat/Formulas/Combat_SuppressMessageForExceptionalOutcome.cpp:
     complete
     .text start:0x021e8bf0 end:0x021e8c48
 
-src/Unclassified/ov024/SelectNonzeroByteEntry.cpp:
+src/Combat/AI/BattleAI_SelectEnabledActionPolicyEntry.cpp:
     complete
     .text start:0x021fe698 end:0x021fe6b4
 
-src/Unclassified/ov024/CacheSelectedByteEntry.cpp:
+src/Combat/AI/BattleAI_CacheActionPolicyEntry.cpp:
     complete
     .text start:0x021fe6b4 end:0x021fe6c8
 
-src/Unclassified/ov024/TestRecordFlags14Mask01000000.cpp:
+src/Combat/Formulas/Combat_HasSuperHighTension.cpp:
     complete
     .text start:0x021dd260 end:0x021dd278
 
-src/Unclassified/ov024/TestRecordFlags14Mask40.cpp:
+src/Combat/Formulas/CombatEffect_TargetHasDazzle.cpp:
     complete
     .text start:0x021df6ec end:0x021df704
 
-src/Unclassified/ov024/TestRecordFlags18Mask2000.cpp:
+src/Combat/Formulas/Combatant_IsExcludedFromActionResolution.cpp:
     complete
     .text start:0x021e6798 end:0x021e67b0
 
-src/Unclassified/ov024/TestFlagsWithoutBlockedOrRequestedBits.cpp:
+src/Combat/Formulas/Combat_CanReplaceAilmentFlags.cpp:
     complete
     .text start:0x021eb4b0 end:0x021eb4e4
 
-src/Unclassified/ov024/TestRecordFlags14Mask200.cpp:
+src/Combat/AI/Combatant_TestPrimaryStatusFlagBit9.cpp:
     complete
     .text start:0x021eda60 end:0x021eda78
 
-src/Unclassified/ov024/ComputeRecordHalfwordRatioOrZero.cpp:
+src/Combat/Formulas/Combat_GetCurrentHealthFraction.cpp:
     complete
     .text start:0x021db358 end:0x021db3a4
 
-src/Unclassified/ov024/TestLinkedDescriptorFlag800000.cpp:
+src/Combat/Formulas/Combat_HasOrdinaryTension.cpp:
     complete
     .text start:0x021da998 end:0x021da9b0
 
-src/Unclassified/ov024/TestLinkedDescriptorFlag8.cpp:
+src/Combat/Formulas/CombatEffect_TargetHasParalysis.cpp:
     complete
     .text start:0x021da9b0 end:0x021da9c8
 
-src/Unclassified/ov024/TestLinkedDescriptorFlag80000.cpp:
+src/Combat/Formulas/Combat_HasActionRestriction.cpp:
     complete
     .text start:0x021da9c8 end:0x021da9e0
 
-src/Unclassified/ov024/SelectRandomHalfwordIntoFirstSlot.cpp:
+src/Combat/AI/Combat_SelectRandomCandidateInPlace.cpp:
     complete
     .text start:0x021ed890 end:0x021ed8c0
 
-src/Unclassified/ov024/ScaleTypeTwelveCoordinatePair.cpp:
+src/Combat/Formulas/BattleAI_BoostDamageEstimatesForTargetTypeTwelve.cpp:
     complete
     .text start:0x021f6f10 end:0x021f6f60
 
-src/Unclassified/ov024/HasNestedFlagBit10.cpp:
+src/Combat/AI/BattleAI_TestTargetSecondaryStatusFlag10.cpp:
     complete
     .text start:0x021fcac0 end:0x021fcad8
 
-src/Unclassified/ov024/HasNestedFlagBit16.cpp:
+src/Combat/AI/BattleAI_TestTargetStatusFlag16.cpp:
     complete
     .text start:0x021fb460 end:0x021fb478
 
-src/Unclassified/ov024/HasNestedFlagBit3.cpp:
+src/Combat/AI/Combatant_TestSecondaryStatusFlagBit3.cpp:
     complete
     .text start:0x021f273c end:0x021f2754
 
-src/Unclassified/ov024/TestLinkedDescriptorFlag10000000.cpp:
+src/Combat/AI/Combatant_TestPrimaryStatusFlagBit28.cpp:
     complete
 	.text start:0x021edbd8 end:0x021edbf0
 
-src/Unclassified/ov024/TestLinkedDescriptorFlag20000000.cpp:
+src/Combat/AI/Combatant_TestPrimaryStatusFlagBit29.cpp:
     complete
 	.text start:0x021edbf0 end:0x021edc08
 
-src/Unclassified/ov024/TestLinkedDescriptorFlag04000000.cpp:
+src/Combat/AI/Combatant_TestPrimaryStatusFlagBit26.cpp:
     complete
 	.text start:0x021edc08 end:0x021edc20
 
-src/Unclassified/ov024/TestLinkedDescriptorFlag00100000.cpp:
+src/Combat/AI/Combatant_TestPrimaryStatusFlagBit20.cpp:
     complete
 	.text start:0x021edc20 end:0x021edc38
 
-src/Unclassified/ov024/TestLinkedDescriptorFlag00200000.cpp:
+src/Combat/AI/Combatant_TestPrimaryStatusFlagBit21.cpp:
     complete
 	.text start:0x021edc38 end:0x021edc50
 
-src/Unclassified/ov024/ReadContextFlags18Bit11.cpp:
+src/Combat/Formulas/Combatant_HasDirectActionDamageImmunity.cpp:
     complete
     .text start:0x021e7ba8 end:0x021e7bc0
 
-src/Unclassified/ov024/ReadContextFlags14Bit27.cpp:
+src/Combat/AI/Combatant_TestPrimaryStatusFlagBit27.cpp:
     complete
     .text start:0x021edbc0 end:0x021edbd8
 
-src/Unclassified/ov024/ReadContextFlags14Bit30.cpp:
+src/Combat/AI/Combatant_TestPrimaryStatusFlagBit30.cpp:
     complete
     .text start:0x021edc50 end:0x021edc68
 
-src/Unclassified/ov024/ReadContextFlags14Bit31.cpp:
+src/Combat/AI/Combatant_TestPrimaryStatusFlagBit31.cpp:
     complete
     .text start:0x021edc68 end:0x021edc80
 
-src/Unclassified/ov024/TestDescriptorFlag10AtOffset18.cpp:
+src/Combat/Formulas/CombatEffect_TargetHasEerieLight.cpp:
     complete
     .text start:0x021df704 end:0x021df71c
 
-src/Unclassified/ov024/TestDescriptorFlag200AtOffset18.cpp:
+src/Combat/Formulas/Combatant_HasMPCostExemption.cpp:
     complete
     .text start:0x021eadfc end:0x021eae14
 
-src/Unclassified/ov024/TestDescriptorFlag1000.cpp:
+src/Combat/Formulas/Combat_HasMonsterActivationCondition.cpp:
     complete
     .text start:0x021e05e4 end:0x021e05fc
 
-src/Unclassified/ov024/StoreFirstEmptyEntry.cpp:
+src/Combat/Formulas/Combat_RememberTargetWorkInFirstFreeSlot.cpp:
     complete
     .text start:0x021eb4e4 end:0x021eb510
 
-src/Unclassified/ov024/CopyTenByteRecord.cpp:
+src/Combat/AI/BattleAI_CopyActionEffectRecord.cpp:
     complete
     .text start:0x021f6a4c end:0x021f6a88
 
-src/Unclassified/ov024/TestDescriptorFlagFour.cpp:
+src/Combat/AI/CombatStatus_HasDamageCategoryTwoReduction.cpp:
     complete
     .text start:0x021fb448 end:0x021fb460
 
-src/Unclassified/ov024/TestRecordFlags18Mask20.cpp:
+src/Combat/Formulas/Combatant_HasDamageRetaliationStatus.cpp:
     complete
     .text start:0x021e67b0 end:0x021E67C8
 
-src/Unclassified/ov024/func_ov024_021fbec0.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory6.cpp:
     complete
     .text start:0x021fbec0 end:0x021fbec4
 
-src/Unclassified/ov024/func_ov024_021fbff4.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory13.cpp:
     complete
     .text start:0x021fbff4 end:0x021fbff8
 
-src/Unclassified/ov024/func_ov024_021fc378.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory25.cpp:
     complete
     .text start:0x021fc378 end:0x021fc37c
 
-src/Unclassified/ov024/func_ov024_021fc4bc.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory28.cpp:
     complete
     .text start:0x021fc4bc end:0x021fc4c0
 
-src/Unclassified/ov024/func_ov024_021fc68c.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory36.cpp:
     complete
     .text start:0x021fc68c end:0x021fc690
 
-src/Unclassified/ov024/func_ov024_021fc690.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory37.cpp:
     complete
     .text start:0x021fc690 end:0x021fc694
 
-src/Unclassified/ov024/func_ov024_021fc694.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory38.cpp:
     complete
     .text start:0x021fc694 end:0x021fc698
 
-src/Unclassified/ov024/func_ov024_021fc6cc.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory40.cpp:
     complete
     .text start:0x021fc6cc end:0x021fc6d0
 
-src/Unclassified/ov024/func_ov024_021fc6d0.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory41.cpp:
     complete
     .text start:0x021fc6d0 end:0x021fc6d4
 
-src/Unclassified/ov024/func_ov024_021fc6d4.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory42.cpp:
     complete
     .text start:0x021fc6d4 end:0x021fc6d8
 
-src/Unclassified/ov024/func_ov024_021fc6d8.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory43.cpp:
     complete
     .text start:0x021fc6d8 end:0x021fc6dc
 
-src/Unclassified/ov024/func_ov024_021fc74c.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory47.cpp:
     complete
     .text start:0x021fc74c end:0x021fc750
 
-src/Unclassified/ov024/func_ov024_021fc750.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory48.cpp:
     complete
     .text start:0x021fc750 end:0x021fc754
 
-src/Unclassified/ov024/func_ov024_021fcad8.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory50.cpp:
     complete
     .text start:0x021fcad8 end:0x021fcadc
 
-src/Unclassified/ov024/func_ov024_021fcadc.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory51.cpp:
     complete
     .text start:0x021fcadc end:0x021fcae0
 
-src/Unclassified/ov024/func_ov024_021fcae0.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory53.cpp:
     complete
     .text start:0x021fcae0 end:0x021fcae4
 
-src/Unclassified/ov024/func_ov024_021fcae4.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory54.cpp:
     complete
     .text start:0x021fcae4 end:0x021fcae8
 
-src/Unclassified/ov024/func_ov024_021fcae8.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory55.cpp:
     complete
     .text start:0x021fcae8 end:0x021fcaec
 
-src/Unclassified/ov024/func_ov024_021fcaec.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory56.cpp:
     complete
     .text start:0x021fcaec end:0x021fcaf0
 
-src/Unclassified/ov024/func_ov024_021fcb58.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory63.cpp:
     complete
     .text start:0x021fcb58 end:0x021fcb5c
 
-src/Unclassified/ov024/func_ov024_021fcb5c.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory64.cpp:
     complete
     .text start:0x021fcb5c end:0x021fcb60
 
-src/Unclassified/ov024/func_ov024_021fcf9c.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory73.cpp:
     complete
     .text start:0x021fcf9c end:0x021fcfa0
 
-src/Unclassified/ov024/func_ov024_021fd078.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory75.cpp:
     complete
     .text start:0x021fd078 end:0x021fd07c
 
-src/Unclassified/ov024/func_ov024_021fd07c.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory76.cpp:
     complete
     .text start:0x021fd07c end:0x021fd080
 
-src/Unclassified/ov024/func_ov024_021fd080.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory77.cpp:
     complete
     .text start:0x021fd080 end:0x021fd084
 
-src/Unclassified/ov024/func_ov024_021fd084.cpp:
+src/Combat/AI/BattleAI_IgnorePrimaryEffectCategory78.cpp:
     complete
     .text start:0x021fd084 end:0x021fd088
 
-src/Unclassified/ov024/func_ov024_021fd5c0.cpp:
+src/Combat/AI/BattleAI_IgnoreSecondaryEffectCategory9.cpp:
     complete
     .text start:0x021fd5c0 end:0x021fd5c4
 
-src/Unclassified/ov024/func_ov024_021f4174.cpp:
+src/Combat/AI/BattleAI_RejectRule109TargetSelection.cpp:
     complete
     .text start:0x021f4174 end:0x021f417c
 
-src/Unclassified/ov024/func_ov024_021f417c.cpp:
+src/Combat/AI/BattleAI_RejectRule110TargetSelection.cpp:
     complete
     .text start:0x021f417c end:0x021f4184
 
-src/Unclassified/ov024/func_ov024_021f4184.cpp:
+src/Combat/AI/BattleAI_RejectRule111TargetSelection.cpp:
     complete
     .text start:0x021f4184 end:0x021f418c
 
-src/Unclassified/ov024/func_ov024_021f4878.cpp:
+src/Combat/AI/BattleAI_RejectRule118TargetSelection.cpp:
     complete
     .text start:0x021f4878 end:0x021f4880
 
-src/Unclassified/ov024/func_ov024_021f5420.cpp:
+src/Combat/AI/BattleAI_AcceptRule133TargetSelection.cpp:
     complete
     .text start:0x021f5420 end:0x021f5428
 
-src/Unclassified/ov024/func_ov024_021f59bc.cpp:
+src/Combat/AI/BattleAI_RejectRule143TargetSelection.cpp:
     complete
     .text start:0x021f59bc end:0x021f59c4
 
-src/Unclassified/ov024/func_ov024_021f6d24.cpp:
+src/Combat/Formulas/BattleAI_KeepDamageEstimatesForModifierKindFourteen.cpp:
     complete
     .text start:0x021f6d24 end:0x021f6d2c
 
-src/Unclassified/ov024/func_ov024_021f6fe4.cpp:
+src/Combat/Formulas/BattleAI_KeepDamageEstimatesForModifierKindTwentyFive.cpp:
     complete
     .text start:0x021f6fe4 end:0x021f6fec
 
-src/Unclassified/ov024/func_ov024_021f7150.cpp:
+src/Combat/Formulas/BattleAI_KeepDamageEstimatesForModifierKindThirtyOne.cpp:
     complete
     .text start:0x021f7150 end:0x021f7158
 
-src/GameState/ov024/GameState_SelectLowestRatioGroupObject.cpp:
+src/Combat/AI/GameState_SelectLowestRatioGroupObject.cpp:
     complete
     .text start:0x021f8628 end:0x021f875c
 
-src/Unclassified/ov024/func_ov024_021f66c0.cpp:
+src/Combat/AI/BattleAI_ClearTargetRuleContext.cpp:
     complete
     .text start:0x021f66c0 end:0x021f66cc
 
-src/Unclassified/ov024/func_ov024_021fbff8.cpp:
+src/Combat/AI/BattleAI_EvaluateHealingAction.cpp:
     complete
     .text start:0x021fbff8 end:0x021fc004
 
-src/Unclassified/ov024/func_ov024_021da550.cpp:
+src/Combat/Formulas/Combat_ClearPowerCalculatorContext.cpp:
     complete
     .text start:0x021da550 end:0x021da55c
 
-src/Unclassified/ov024/func_ov024_021d8e60.cpp:
+src/Combat/Formulas/Combat_DoublePowerByShift.cpp:
     complete
     .text start:0x021d8e60 end:0x021d8e6c
 
-src/Combat/ov024/Combat_GetRandomizedCombatantValue.cpp:
+src/Combat/Formulas/Combat_GetRandomizedCombatantValue.cpp:
     complete
     .text start:0x021d9654 end:0x021d96d0
 
-src/Unclassified/ov024/Object_TestDescriptorExclusionFlagsClear.cpp:
+src/Combat/AI/CombatStatus_CanReceiveEvaluatedDescriptorEffect.cpp:
     complete
     .text start:0x021fa76c end:0x021fa7ec
 
-src/Unclassified/ov024/func_ov024_021f6820.cpp:
+src/Combat/AI/BattleAI_SetActionChoiceIdentity.cpp:
     complete
     .text start:0x021f6820 end:0x021f6830
 
-src/Unclassified/ov024/func_ov024_021fc27c.cpp:
+src/Combat/AI/BattleAI_ScorePartyStatusFlag8Removal.cpp:
     complete
     .text start:0x021fc27c end:0x021fc28c
 
-src/Unclassified/ov024/func_ov024_021fc368.cpp:
+src/Combat/AI/BattleAI_ScoreHostileStatusFlag8Application.cpp:
     complete
     .text start:0x021fc368 end:0x021fc378
 
-src/Unclassified/ov024/func_ov024_021fbec4.cpp:
+src/Combat/AI/BattleAI_ScorePartyAilmentModeTwoRemoval.cpp:
     complete
     .text start:0x021fbec4 end:0x021fbed4
 
-src/Unclassified/ov024/func_ov024_021fc4ac.cpp:
+src/Combat/AI/BattleAI_ScorePartyStatusFlag20Removal.cpp:
     complete
     .text start:0x021fc4ac end:0x021fc4bc
 
-src/GameState/ov024/GameState_HasObjectLowFlags.cpp:
+src/Combat/Formulas/GameState_HasObjectLowFlags.cpp:
     complete
     .text start:0x021ea500 end:0x021ea584
 
-src/Unclassified/ov024/func_ov024_021f6b28.cpp:
+src/Combat/AI/BattleAI_ScaleDamageBoundsByFiveQuarters.cpp:
     complete
     .text start:0x021f6b28 end:0x021f6b5c
 
-src/Math/ov024/func_ov024_021f6b8c.cpp:
+src/Combat/Formulas/BattleAI_ScaleDamageEstimatesByFiveQuarters.cpp:
     complete
     .text start:0x021f6b8c end:0x021f6bc0
 
-src/Unclassified/ov024/func_ov024_021f6fb0.cpp:
+src/Combat/Formulas/BattleAI_ScaleDamageEstimatesByThirteenTenths.cpp:
     complete
     .text start:0x021f6fb0 end:0x021f6fe4
 
-src/Graphics/ov024/Graphics_ScaleTwoValuesByFourFifths.cpp:
+src/Combat/Formulas/Graphics_ScaleTwoValuesByFourFifths.cpp:
     complete
     .text start:0x021f703c end:0x021f7070
 
-src/Math/ov024/Math_ScalePairByThreeTenths.cpp:
+src/Combat/Formulas/Math_ScalePairByThreeTenths.cpp:
     complete
     .text start:0x021f6e54 end:0x021f6e88
 
-src/Unclassified/ov024/SelectPartyRecordValueWithFlagOverrides.cpp:
+src/Combat/Formulas/Combat_SelectActionAnnouncementWithOverrides.cpp:
     complete
     .text start:0x021e99d8 end:0x021e9b24
 
-src/Unclassified/ov024/func_ov024_021fc498.cpp:
+src/Combat/AI/BattleAI_GetActorPolicyCategory.cpp:
     complete
     .text start:0x021fc498 end:0x021fc4ac
 
-src/Math/ov024/Math_HalfSignedStackValuePlus37.cpp:
+src/Combat/Formulas/Math_HalfSignedStackValuePlus37.cpp:
     complete
     .text start:0x021d9d6c end:0x021d9d80
 
-src/Math/ov024/Math_ScalePairByThreeTenthsAndOneTenth.cpp:
+src/Combat/Formulas/Math_ScalePairByThreeTenthsAndOneTenth.cpp:
     complete
     .text start:0x021f6ed8 end:0x021f6f10
 
-src/GameState/ov024/HasBit1AtNestedOffset18From138.cpp:
+src/Combat/AI/CombatStatus_HasDamageCategoryOneReduction.cpp:
     complete
     .text start:0x021fb430 end:0x021fb448
 
-src/GameState/ov024/GameState_IsFlagBit17Set.cpp:
+src/Combat/AI/GameState_IsFlagBit17Set.cpp:
     complete
     .text start:0x021fb478 end:0x021fb490
 
-src/Math/ov024/func_ov024_021d9224.cpp:
+src/Combat/Formulas/Combat_DivideQuadruplePowerByAdjustedDivisor.cpp:
     complete
     .text start:0x021d9224 end:0x021d923c
 
-src/Unclassified/ov024/TryActivateIndexedObjectByPackedRandomChance.cpp:
+src/Combat/Formulas/Combat_TryActivateMonsterReactionByActionType.cpp:
     complete
     .text start:0x021eb08c end:0x021eb1ec
 
-src/Combat/ov024/Combat_GetGuardedAttributeModifier.cpp:
+src/Combat/AI/Combat_GetGuardedAttributeModifier.cpp:
     complete
     .text start:0x021f875c end:0x021f87dc
 
-src/GameState/ov024/func_ov024_021f3524.cpp:
+src/Combat/AI/BattleAI_SelectActorWithoutRecordBit24.cpp:
     complete
     .text start:0x021f3524 end:0x021f3564
 
-src/GameState/ov024/func_ov024_021f26fc.cpp:
+src/Combat/AI/Combat_SelectSourceWithoutSecondaryStatusBit3.cpp:
     complete
     .text start:0x021f26fc end:0x021f273c
 
-src/Math/ov024/CoordinateScale_ApplyNestedFlagDefaults.cpp:
+src/Combat/AI/CoordinateScale_ApplyNestedFlagDefaults.cpp:
     complete
     .text start:0x021f6ae8 end:0x021f6b28
 
-src/Unclassified/ov024/func_ov024_021d8cf4.cpp:
+src/Combat/Formulas/Combat_BoostPowerForMonsterModeThree.cpp:
     complete
     .text start:0x021d8cf4 end:0x021d8d38
 
-src/GameState/ov024/func_ov024_021d8a40.cpp:
+src/Combat/Formulas/Combat_BoostPowerForMonsterModeTwo.cpp:
     complete
     .text start:0x021d8a40 end:0x021d8a84
 
-src/Math/ov024/Object_ScaleValueByThreeHalvesWhenPacked.cpp:
+src/Combat/Formulas/Object_ScaleValueByThreeHalvesWhenPacked.cpp:
     complete
     .text start:0x021d8f4c end:0x021d8f90
 
-src/Math/ov024/Math_ScaleValueIfIndexedObjectModeMatches.cpp:
+src/Combat/Formulas/Math_ScaleValueIfIndexedObjectModeMatches.cpp:
     complete
     .text start:0x021d901c end:0x021d9060
 
-src/Unclassified/ov024/Object_AdjustIntegerByThreeQuartersForIndexedMode.cpp:
+src/Combat/Formulas/Combat_BoostPowerForMonsterModeFour.cpp:
     complete
     .text start:0x021d9174 end:0x021d91b8
 
-src/Resource/ov024/Resource_ConvertValueForPackedMode.cpp:
+src/Combat/Formulas/Resource_ConvertValueForPackedMode.cpp:
     complete
     .text start:0x021d8c90 end:0x021d8cd4
 
-src/Math/ov024/func_ov024_021d8e6c.cpp:
+src/Combat/Formulas/Combat_BoostPowerForMonsterModeEight.cpp:
     complete
     .text start:0x021d8e6c end:0x021d8eb0
 
-src/GameState/ov024/GameState_TryReadIndexedValue.cpp:
+src/Combat/AI/GameState_TryReadIndexedValue.cpp:
     complete
     .text start:0x021f59c4 end:0x021f5a08
 
-src/GameState/ov024/func_ov024_021f70bc.cpp:
+src/Combat/Formulas/BattleAI_SetDamageEstimatesFromAttackerVocationLevel.cpp:
     complete
     .text start:0x021f70bc end:0x021f7100
 
-src/Math/ov024/Math_ScaleValueByOneAndHalfWhenIndexedModeMatches.cpp:
+src/Combat/Formulas/Math_ScaleValueByOneAndHalfWhenIndexedModeMatches.cpp:
     complete
     .text start:0x021d91c0 end:0x021d9204
 
-src/Math/ov024/AdjustValueByPackedMode.cpp:
+src/Combat/Formulas/AdjustValueByPackedMode.cpp:
     complete
     .text start:0x021d8f90 end:0x021d8fd4
 
-src/Resource/ov024/Ov024_ScaleValueWhenPackedMode.cpp:
+src/Combat/Formulas/Ov024_ScaleValueWhenPackedMode.cpp:
     complete
     .text start:0x021d8ed4 end:0x021d8f18
 
-src/GameState/ov024/GameState_StoreIndexIfObjectFlagClear.cpp:
+src/Combat/AI/GameState_StoreIndexIfObjectFlagClear.cpp:
     complete
     .text start:0x021f5558 end:0x021f559c
 
-src/Math/ov024/Math_ScaleByThreeHalvesWhenPackedMode.cpp:
+src/Combat/Formulas/Math_ScaleByThreeHalvesWhenPackedMode.cpp:
     complete
     .text start:0x021d9084 end:0x021d90c8
 
-src/GameState/ov024/GameState_MarkRatioBelowHalf.cpp:
+src/Combat/AI/GameState_MarkRatioBelowHalf.cpp:
     complete
     .text start:0x021f3688 end:0x021f36cc
 
-src/GameState/ov024/GameState_WriteValueForEligibleIndexedObject.cpp:
+src/Combat/AI/GameState_WriteValueForEligibleIndexedObject.cpp:
     complete
     .text start:0x021f5300 end:0x021f5344
 
-src/GameState/ov024/GameState_IsNestedFlagBit1Set.cpp:
+src/Combat/AI/GameState_IsNestedFlagBit1Set.cpp:
     complete
     .text start:0x021f0d0c end:0x021f0d28
 
-src/Unclassified/ov024/func_ov024_021f1440.cpp:
+src/Combat/AI/Combatant_TestTargetCapabilityBit2.cpp:
     complete
     .text start:0x021f1440 end:0x021f145c
 
-src/Combat/ov024/Combat_CalculateThreeQuarterAttackPhysicalDamage.cpp:
+src/Combat/Formulas/Combat_CalculateThreeQuarterAttackPhysicalDamage.cpp:
     complete
     .text start:0x021d8ad8 end:0x021d8b68
 
-src/Resource/ov024/Resource_ScaleValueForMatchingIndexedObject.cpp:
+src/Combat/Formulas/Resource_ScaleValueForMatchingIndexedObject.cpp:
     complete
     .text start:0x021d8e18 end:0x021d8e60
 
-src/Combat/ov024/Combat_SelectHighestPriorityCandidate.cpp:
+src/Combat/AI/Combat_SelectHighestPriorityCandidate.cpp:
     complete
     .text start:0x021f8d80 end:0x021f8f20
 
-src/Combat/ov024/Combat_ScaleTwoCombatantValuesByFourFifths.cpp:
+src/Combat/Formulas/Combat_ScaleTwoCombatantValuesByFourFifths.cpp:
     complete
     .text start:0x021d923c end:0x021d92d0
 
-src/Grotto/ov024/Grotto_CheckNestedModeAndWriteOutputs.cpp:
+src/Combat/AI/Grotto_CheckNestedModeAndWriteOutputs.cpp:
     complete
     .text start:0x021f51d4 end:0x021f5220
 
-src/GameState/ov024/func_ov024_021f2d4c.cpp:
+src/Combat/AI/BattleAI_SelectActorWithMagicalMendingStageBelowMaximum.cpp:
     complete
     .text start:0x021f2d4c end:0x021f2d98
 
-src/GameState/ov024/GameState_TryWriteIndexedValueBelowThreshold.cpp:
+src/Combat/AI/GameState_TryWriteIndexedValueBelowThreshold.cpp:
     complete
     .text start:0x021f331c end:0x021f3368
 
-src/Unclassified/ov024/Unclassified_DispatchObjectModeHandler.cpp:
+src/Combat/AI/BattleAI_DispatchActionDamageBoundsHandler.cpp:
     complete
     .text start:0x021f736c end:0x021f73b8
 
-src/Graphics/ov024/Graphics_ScaleValuesForZeroPackedMode.cpp:
+src/Combat/Formulas/Graphics_ScaleValuesForZeroPackedMode.cpp:
     complete
     .text start:0x021f7070 end:0x021f70bc
 
-src/Unclassified/ov024/func_ov024_021d8cd4.cpp:
+src/Combat/Formulas/Combat_HalvePowerUsingFloat.cpp:
     complete
     .text start:0x021d8cd4 end:0x021d8cf4
 
-src/Math/ov024/func_ov024_021d8c70.cpp:
+src/Combat/Formulas/Combat_ScalePowerByThreeQuarters.cpp:
     complete
     .text start:0x021d8c70 end:0x021d8c90
 
-src/Math/ov024/Math_ConvertSixthIntegerToThreeHalves.cpp:
+src/Combat/Formulas/Math_ConvertSixthIntegerToThreeHalves.cpp:
     complete
     .text start:0x021d9204 end:0x021d9224
 
-src/Math/ov024/Math_ScaleSixthArgumentByThreeHalves.cpp:
+src/Combat/Formulas/Math_ScaleSixthArgumentByThreeHalves.cpp:
     complete
     .text start:0x021d92d0 end:0x021d92f0
 
-src/Combat/ov024/Combat_ComputeClampedStatPercentage.cpp:
+src/Combat/AI/Combat_ComputeClampedStatPercentage.cpp:
     complete
     .text start:0x021f8bd8 end:0x021f8d80
 
-src/GameState/ov024/func_ov024_021f4e84.cpp:
+src/Combat/AI/BattleAI_ClearTargetsWhenActorBelowHalfHp.cpp:
     complete
     .text start:0x021f4e84 end:0x021f4ed4
 
-src/Math/ov024/Math_ScaleFloatPairByThreeHalvesWhenModeThree.cpp:
+src/Combat/Formulas/Math_ScaleFloatPairByThreeHalvesWhenModeThree.cpp:
     complete
     .text start:0x021f6c70 end:0x021f6cc0
 
-src/GameState/ov024/func_ov024_021f6e04.cpp:
+src/Combat/Formulas/BattleAI_BoostDamageEstimatesForTargetTypeEight.cpp:
     complete
     .text start:0x021f6e04 end:0x021f6e54
 
-src/Resource/ov024/Resource_ScaleValuesByThreeQuartersForFlag.cpp:
+src/Combat/Formulas/Resource_ScaleValuesByThreeQuartersForFlag.cpp:
     complete
     .text start:0x021f6bf0 end:0x021f6c40
 
-src/Unclassified/ov024/func_ov024_021f6fec.cpp:
+src/Combat/Formulas/BattleAI_BoostDamageEstimatesForTargetTypeSix.cpp:
     complete
     .text start:0x021f6fec end:0x021f703c
 
-src/GameState/ov024/GameState_FindIndexedObjectAndWriteOutputs.cpp:
+src/Combat/AI/GameState_FindIndexedObjectAndWriteOutputs.cpp:
     complete
     .text start:0x021f5428 end:0x021f5478
 
-src/Unclassified/ov024/Object_ScalePairByThreeHalvesForModeSeven.cpp:
+src/Combat/Formulas/BattleAI_BoostDamageEstimatesForTargetTypeSeven.cpp:
     complete
     .text start:0x021f6e88 end:0x021f6ed8
 
-src/Math/ov024/func_ov024_021f6f60.cpp:
+src/Combat/Formulas/BattleAI_BoostDamageEstimatesForTargetTypeFive.cpp:
     complete
     .text start:0x021f6f60 end:0x021f6fb0
 
-src/World/ov024/World_ScaleFieldsForSubtype4.cpp:
+src/Combat/Formulas/World_ScaleFieldsForSubtype4.cpp:
     complete
     .text start:0x021f7100 end:0x021f7150
 
-src/GameState/ov024/Ov024_SelectRecordHalfword.cpp:
+src/Combat/Formulas/Ov024_SelectRecordHalfword.cpp:
     complete
     .text start:0x021e9b24 end:0x021e9b74
 
-src/Math/ov024/Math_ScaleCoordinatePairWhenFieldEqualsTen.cpp:
+src/Combat/Formulas/Math_ScaleCoordinatePairWhenFieldEqualsTen.cpp:
     complete
     .text start:0x021f7158 end:0x021f71a8
 
-src/Math/ov024/Math_InsertScoredRecordIntoFourSlots.cpp:
+src/Combat/AI/Math_InsertScoredRecordIntoFourSlots.cpp:
     complete
     .text start:0x021f6830 end:0x021f68c8
 
-src/Unclassified/ov024/AdjustDescriptorValueForObject.cpp:
+src/Combat/AI/BattleAI_ComputeActionMpCost.cpp:
     complete
     .text start:0x021f87dc end:0x021f8874
 
-src/GameState/ov024/GameState_FindObjectAndSetOutputs.cpp:
+src/Combat/AI/GameState_FindObjectAndSetOutputs.cpp:
     complete
     .text start:0x021f2548 end:0x021f259c
 
-src/GameState/ov024/GameState_WriteValueIfObjectHasEligibleDescriptor.cpp:
+src/Combat/AI/GameState_WriteValueIfObjectHasEligibleDescriptor.cpp:
     complete
     .text start:0x021f2064 end:0x021f20b8
 
-src/Unclassified/ov024/func_ov024_021f6d2c.cpp:
+src/Combat/Formulas/BattleAI_DoubleDamageEstimatesForDamageRecoverableAilment.cpp:
     complete
     .text start:0x021f6d2c end:0x021f6d80
 
-src/Math/ov024/Math_ScalePairByFiveQuartersForNestedType11.cpp:
+src/Combat/Formulas/Math_ScalePairByFiveQuartersForNestedType11.cpp:
     complete
     .text start:0x021f6d80 end:0x021f6dd4
 
-src/GameState/ov024/GameState_InitializeBufferForAvailableObject.cpp:
+src/Combat/AI/GameState_InitializeBufferForAvailableObject.cpp:
     complete
     .text start:0x021f5888 end:0x021f58dc
 
-src/GameState/ov024/GameState_SetObjectNibbleByThreshold.cpp:
+src/Combat/Formulas/GameState_SetObjectNibbleByThreshold.cpp:
     complete
     .text start:0x021eb3e0 end:0x021eb47c
 
-src/GameState/ov024/GameState_MapObjectValueRatioToByte.cpp:
+src/Combat/Formulas/GameState_MapObjectValueRatioToByte.cpp:
     complete
     .text start:0x021eb344 end:0x021eb3e0
 
-src/GameState/ov024/GameState_MapIndexToCode.cpp:
+src/Combat/Formulas/GameState_MapIndexToCode.cpp:
     complete
     .text start:0x021e8c48 end:0x021e8ca0
 
-src/Math/ov024/Math_ScaleIntegerBy2_5.cpp:
+src/Combat/Formulas/Math_ScaleIntegerBy2_5.cpp:
     complete
     .text start:0x021d8bc8 end:0x021d8bec
 
-src/Math/ov024/Math_ScaleSixthArgumentBySixFifths.cpp:
+src/Combat/Formulas/Math_ScaleSixthArgumentBySixFifths.cpp:
     complete
     .text start:0x021d8ff8 end:0x021d901c
 
-src/Math/ov024/Math_ScaleIntegerBy0_8.cpp:
+src/Combat/Formulas/Math_ScaleIntegerBy0_8.cpp:
     complete
     .text start:0x021d9060 end:0x021d9084
 
-src/Math/ov024/ConvertSixthIntByFloatScale03.cpp:
+src/Combat/Formulas/ConvertSixthIntByFloatScale03.cpp:
     complete
     .text start:0x021d8eb0 end:0x021d8ed4
 
-src/Math/ov024/Math_ScaleIntegerBySevenTenths.cpp:
+src/Combat/Formulas/Math_ScaleIntegerBySevenTenths.cpp:
     complete
     .text start:0x021d92f8 end:0x021d931c
 
-src/GameState/ov024/Ov024_TestNestedByteEqualFive.cpp:
+src/Combat/AI/Ov024_TestNestedByteEqualFive.cpp:
     complete
     .text start:0x021edca4 end:0x021edcc8
 
-src/Combat/ov024/Combat_RepeatTargetListForActionProperties.cpp:
+src/Combat/Formulas/Combat_RepeatTargetListForActionProperties.cpp:
     complete
     .text start:0x021e8dc0 end:0x021e8fa4
 
-src/GameState/ov024/GameState_FindMatchingRequestRequirement.cpp:
+src/Combat/Formulas/GameState_FindMatchingRequestRequirement.cpp:
     complete
     .text start:0x021df71c end:0x021df924
 
-src/GameState/ov024/GameState_UpdateIndexedRecordHistory.cpp:
+src/Combat/Formulas/GameState_UpdateIndexedRecordHistory.cpp:
     complete
     .text start:0x021ea584 end:0x021ea78c
 
-src/Combat/ov024/AdjustRecordValueForCombatant.cpp:
+src/Combat/Formulas/AdjustRecordValueForCombatant.cpp:
     complete
     .text start:0x021d8c10 end:0x021d8c70
 
-src/Combat/ov024/Combat_ComputeRandomFractionOfCombatantValue.cpp:
+src/Combat/Formulas/Combat_ComputeRandomFractionOfCombatantValue.cpp:
     complete
     .text start:0x021d937c end:0x021d93dc
 
-src/Combat/ov024/Combat_GetRandomizedCombatantStatWithFallback.cpp:
+src/Combat/Formulas/Combat_GetRandomizedCombatantStatWithFallback.cpp:
     complete
     .text start:0x021d931c end:0x021d937c
 
-src/GameState/ov024/GameState_CreateAndAppendIndexedRecord.cpp:
+src/Combat/Formulas/GameState_CreateAndAppendIndexedRecord.cpp:
     complete
     .text start:0x021e8ca0 end:0x021e8cfc
 
-src/Unclassified/ov024/Object_ScalePairByThreeHalvesWhenFlagPredicateMatches.cpp:
+src/Combat/Formulas/BattleAI_BoostDamageEstimatesForRecoverableAilment.cpp:
     complete
     .text start:0x021f6cc0 end:0x021f6d24
 
-src/GameState/ov024/GameState_StoreValueUnlessThreeFlagGroupsPassThreshold.cpp:
+src/Combat/AI/GameState_StoreValueUnlessThreeFlagGroupsPassThreshold.cpp:
     complete
     .text start:0x021f5c80 end:0x021f5ce4
 
-src/Combat/ov024/Combat_AdjustInputByCombatantFlags.cpp:
+src/Combat/Formulas/Combat_AdjustInputByCombatantFlags.cpp:
     complete
     .text start:0x021d8db4 end:0x021d8e18
 
-src/Combat/ov024/QueueQuarterOfLinkedNodeValuesForPartyObject.cpp:
+src/Combat/Formulas/QueueQuarterOfLinkedNodeValuesForPartyObject.cpp:
     complete
     .text start:0x021e6104 end:0x021e62cc
 
-src/Unclassified/ov024/Grotto_FindEntryBySlotIndex.cpp:
+src/Combat/AI/BattleAI_FindPartyActionStateBySlot.cpp:
     complete
     .text start:0x021f69b4 end:0x021f6a1c
 
-src/Grotto/ov024/Grotto_ApplyPositiveSlotDescriptor.cpp:
+src/Combat/AI/Grotto_ApplyPositiveSlotDescriptor.cpp:
     complete
     .text start:0x021f691c end:0x021f69b4
 
-src/GameState/ov024/GameState_SelectCombatantScaledValue.cpp:
+src/Combat/Formulas/GameState_SelectCombatantScaledValue.cpp:
     complete
     .text start:0x021d95e0 end:0x021d9654
 
-src/Unclassified/ov024/Util_IsType3Or4WithBits14To18Clear.cpp:
+src/Combat/Formulas/Combat_IsUnconditionalCriticalEligibleAction.cpp:
     complete
     .text start:0x021ea4d0 end:0x021ea500
 
-src/Math/ov024/Ov024_ScaleObjectFieldsByThreeQuarters.cpp:
+src/Combat/Formulas/Ov024_ScaleObjectFieldsByThreeQuarters.cpp:
     complete
     .text start:0x021f6bc0 end:0x021f6bf0
 
-src/Graphics/ov024/Object3D_ScaleAdjacentFloatFieldsByThreeQuarters.cpp:
+src/Combat/Formulas/Object3D_ScaleAdjacentFloatFieldsByThreeQuarters.cpp:
     complete
     .text start:0x021f6b5c end:0x021f6b8c
 
-src/Math/ov024/Ov024_ScaleObjectFieldsByThreeHalves.cpp:
+src/Combat/Formulas/Ov024_ScaleObjectFieldsByThreeHalves.cpp:
     complete
     .text start:0x021f71a8 end:0x021f71d8
 
-src/Math/ov024/Math_HalveFloatFields14And18To1CAnd20.cpp:
+src/Combat/Formulas/Math_HalveFloatFields14And18To1CAnd20.cpp:
     complete
     .text start:0x021f6c40 end:0x021f6c70
 
-src/Unclassified/ov024/Unclassified_AddPackedModeMatchToBase.cpp:
+src/Combat/Formulas/Combat_IncrementPowerForMonsterTraitBitTwelve.cpp:
     complete
     .text start:0x021d8a84 end:0x021d8ab4
 
-src/Resource/ov024/AppendTenByteRecordIfCapacity.cpp:
+src/Combat/AI/AppendTenByteRecordIfCapacity.cpp:
     complete
     .text start:0x021f6a1c end:0x021f6a4c
 
-src/Graphics/ov024/SubmitPercentScaledDisplayRecord.cpp:
+src/Combat/AI/SubmitPercentScaledDisplayRecord.cpp:
     complete
     .text start:0x021fd088 end:0x021fd104
 
-src/World/ov024/Effect_ApplyMagnitudeAndChannelSetting.cpp:
+src/Combat/AI/Effect_ApplyMagnitudeAndChannelSetting.cpp:
     complete
     .text start:0x021fd104 end:0x021fd160
 
-src/Graphics/ov024/UpdateConditionalDisplayPercentFromNestedState.cpp:
+src/Combat/AI/UpdateConditionalDisplayPercentFromNestedState.cpp:
     complete
     .text start:0x021fd358 end:0x021fd3f0
 
-src/Combat/ov024/Combat_ApplyClampedDescriptorPercentage.cpp:
+src/Combat/AI/Combat_ApplyClampedDescriptorPercentage.cpp:
     complete
     .text start:0x021fd5c4 end:0x021fd66c
 
-src/Unclassified/ov024/UpdateClampedDescriptorPercentage.cpp:
+src/Combat/AI/BattleAI_AppendDamageRecoverableAilmentChance.cpp:
     complete
     .text start:0x021fd45c end:0x021fd504
 
-src/Combat/ov024/Combat_ApplyClampedScaledEntryValue.cpp:
+src/Combat/AI/Combat_ApplyClampedScaledEntryValue.cpp:
     complete
     .text start:0x021fd2b4 end:0x021fd358
 
-src/Graphics/ov024/Graphics_ScaleAndApplyCopiedConfiguration.cpp:
+src/Combat/AI/Graphics_ScaleAndApplyCopiedConfiguration.cpp:
     complete
     .text start:0x021fd7b8 end:0x021fd858
 
-src/Resource/ov024/Resource_UpdateSelectedEntryIfEnabled.cpp:
+src/Combat/AI/Resource_UpdateSelectedEntryIfEnabled.cpp:
     complete
     .text start:0x021fcaf0 end:0x021fcb24
 
-src/GameState/ov024/Ov024_UpdateSelectedEntry.cpp:
+src/Combat/AI/Ov024_UpdateSelectedEntry.cpp:
     complete
     .text start:0x021fc698 end:0x021fc6cc
 
-src/Graphics/ov024/Graphics_ApplyModeThreeIfDescriptorReady.cpp:
+src/Combat/AI/Graphics_ApplyModeThreeIfDescriptorReady.cpp:
     complete
     .text start:0x021fd428 end:0x021fd45c
 
-src/Unclassified/ov024/Ov024_ForwardFifthArgument.cpp:
+src/Combat/AI/Combat_DispatchPartyAilmentClearReadinessGate.cpp:
     complete
     .text start:0x021f090c end:0x021f0920
 
-src/GameState/ov024/Ov024_UpdateWhenModeTwoAndInactive.cpp:
+src/Combat/AI/Ov024_UpdateWhenModeTwoAndInactive.cpp:
     complete
     .text start:0x021fd3f0 end:0x021fd428
 
-src/Unclassified/ov024/Combatant_ClearWordWhenCapacityThresholdReached.cpp:
+src/Combat/AI/Combat_ClearSelectionWhenHpAtMostHalf.cpp:
     complete
     .text start:0x021ee33c end:0x021ee378
 
-src/GameState/ov024/InvokeObjectProcessorIndex4WhenCountAtLeast3.cpp:
+src/Combat/AI/InvokeObjectProcessorIndex4WhenCountAtLeast3.cpp:
     complete
     .text start:0x021fbefc end:0x021fbf18
 
-src/Combat/ov024/Combat_SetCombatantNestedFlag21ByID.cpp:
+src/Combat/Formulas/Combat_SetCombatantNestedFlag21ByID.cpp:
     complete
     .text start:0x021e57c0 end:0x021e57e0
 
-src/Graphics/ov024/Graphics_UpdateSelectedEntryPercentage.cpp:
+src/Combat/AI/Graphics_UpdateSelectedEntryPercentage.cpp:
     complete
     .text start:0x021fd504 end:0x021fd5c0
 
-src/GameState/ov024/GameState_ClearSelectedRecordAndMarkCombatant.cpp:
+src/Combat/Formulas/Combat_ApplyDirectDamageImmunityCondition.cpp:
     complete
     .text start:0x021e5e80 end:0x021e5ec4
 
-src/Combat/ov024/Ov024_GetActionForMissingCombatant.cpp:
+src/Combat/Formulas/Ov024_GetActionForMissingCombatant.cpp:
     complete
     .text start:0x021e9990 end:0x021e99d8
 
-src/Graphics/ov024/Ov024_ProcessObjectWhenEntryOneSelected.cpp:
+src/Combat/AI/Ov024_ProcessObjectWhenEntryOneSelected.cpp:
     complete
     .text start:0x021fbed4 end:0x021fbefc
 
-src/Unclassified/ov024/Unclassified_InvokeHelperSevenWhenEntryOneNonzero.cpp:
+src/Combat/AI/BattleAI_ScoreHostileStatusFlag20Application.cpp:
     complete
     .text start:0x021fc28c end:0x021fc2b4
 
-src/Resource/ov024/Object_ProcessEntryFiveWhenByteEntryOneSelected.cpp:
+src/Combat/AI/Object_ProcessEntryFiveWhenByteEntryOneSelected.cpp:
     complete
     .text start:0x021fc254 end:0x021fc27c
 
-src/GameState/ov024/ProcessObjectAtIndex6WhenEntryFlagPresent.cpp:
+src/Combat/AI/ProcessObjectAtIndex6WhenEntryFlagPresent.cpp:
     complete
     .text start:0x021fc018 end:0x021fc040
 
-src/Unclassified/ov024/OV024_ValidateAndStoreIndexedResult.cpp:
+src/Combat/AI/Combat_SelectSourceUnlessAilmentCategoryFourOrFive.cpp:
     complete
     .text start:0x021f26a8 end:0x021f26fc
 
-src/Combat/ov024/Combat_InitializeTurnWorkBuffer.cpp:
+src/Combat/Formulas/Combat_InitializeTurnWorkBuffer.cpp:
     complete
     .text start:0x021eb510 end:0x021eb5d0
 
-src/Combat/ov024/Combatant_GetPartyStateValue.cpp:
+src/Combat/Formulas/Combatant_GetPartyStateValue.cpp:
     complete
     .text start:0x021e9464 end:0x021e94c4
 
-src/Combat/ov024/Object_ApplyConditionalFloatBlendAndRestoreField124.cpp:
+src/Combat/AI/BattleAI_ScoreHealingWithAdjustedHpThreshold.cpp:
     complete
     .text start:0x021fcb60 end:0x021fcbc8
 
-src/Unclassified/ov024/Network_ValidateAndDispatchRecord.cpp:
+src/Combat/AI/Combat_SelectWeightedEligiblePartyTargets.cpp:
     complete
     .text start:0x021f1844 end:0x021f18a0
 
-src/GameState/ov024/Ov024_UpdateEntryForPackedMode.cpp:
+src/Combat/AI/Ov024_UpdateEntryForPackedMode.cpp:
     complete
     .text start:0x021fc2b4 end:0x021fc320
 
-src/Resource/ov024/Resource_ScaleIntegerByRandomFactor.cpp:
+src/Combat/Formulas/Resource_ScaleIntegerByRandomFactor.cpp:
     complete
     .text start:0x021d8f18 end:0x021d8f4c
+
+src/Combat/Formulas/Combat_SelectConfusionMessage.cpp:
+    complete
+    .text start:0x021e9320 end:0x021e939c
+
+src/Combat/Formulas/Combat_ComputeQuarterLevelPlusFive.cpp:
+    complete
+    .text start:0x021d96d0 end:0x021d974c
+
+src/Combat/Formulas/Combat_ClearNegativeStatusesAndQueueRecoveryResult.cpp:
+    complete
+    .text start:0x021e40d8 end:0x021e4158
+
+src/Combat/AI/FilterCombatantsByDescriptorFlag20.cpp:
+    complete
+    .text start:0x021f0720 end:0x021f0734
+
+src/Combat/AI/Combat_DispatchPartyStatusBit5ClearReadinessGate.cpp:
+    complete
+    .text start:0x021f0734 end:0x021f0748
+
+src/Combat/AI/FindCombatantsWithElementMask10.cpp:
+    complete
+    .text start:0x021f08f8 end:0x021f090c
+
+src/Combat/Formulas/Combat_ClearConfusionAndBuildMask.cpp:
+    complete
+    .text start:0x021e4588 end:0x021e4604
+
+src/Combat/Formulas/Combat_SelectPartyHalfwordForDescriptorMode.cpp:
+    complete
+    .text start:0x021e929c end:0x021e9320
+
+src/Combat/AI/Combat_TestPartyFlagsAndUnrestrictedDescriptor.cpp:
+    complete
+    .text start:0x021ed9dc end:0x021eda60
+
+src/Combat/AI/Combat_DispatchEntryNineteenForDescriptorMode.cpp:
+    complete
+    .text start:0x021fbe3c end:0x021fbec0
+
+src/Combat/Formulas/Combat_ScaleFormulaKindThreePowerByFiveQuarters.cpp:
+    complete
+    .text start:0x021d8ab4 end:0x021d8ad8
+
+src/Combat/Formulas/Combat_ScaleFormulaKindSevenPowerByFiveQuarters.cpp:
+    complete
+    .text start:0x021d8bec end:0x021d8c10
+
+src/Combat/Formulas/Math_ScaleIntegerByThirteenTenths.cpp:
+    complete
+    .text start:0x021d8fd4 end:0x021d8ff8
+
+src/Combat/AI/BattleAI_ScoreHostileModeNineWhenPolicyAllows.cpp:
+    complete
+    .text start:0x021fc040 end:0x021fc068
+
+src/Combat/AI/BattleAI_CopyPartyAfterFlagDistributionGate.cpp:
+    complete
+    .text start:0x021f639c end:0x021f6424
+
+src/Combat/AI/BattleAI_ScoreAttackStageChangeByTargetSide.cpp:
+    complete
+    .text start:0x021fbd2c end:0x021fbdb4
+
+src/Combat/AI/BattleAI_ScoreDefenseStageChangeByTargetSide.cpp:
+    complete
+    .text start:0x021fbdb4 end:0x021fbe3c
+
+src/Combat/Formulas/Combat_SelectMessageForModeAndSignedResult.cpp:
+    complete
+    .text start:0x021e9904 end:0x021e9990
+
+src/Combat/AI/Combatant_IsRecordMask200ClearForId.cpp:
+    complete
+    .text start:0x021f0920 end:0x021f094c
+
+src/Combat/Formulas/Combat_CountListedCombatantsWithFlagThree.cpp:
+    complete
+    .text start:0x021eb2b4 end:0x021eb344
+
+src/Combat/Formulas/Math_DoubleObjectFloatFields14And18Into1CAnd20.cpp:
+    complete
+    .text start:0x021f6dd4 end:0x021f6e04
+
+src/Combat/AI/BattleAI_ScoreFlagFourWardWhenUseful.cpp:
+    complete
+    .text start:0x021fc4c0 end:0x021fc4f4
+
+src/Combat/AI/BattleAI_ScoreAttributeTwoWardWhenUseful.cpp:
+    complete
+    .text start:0x021fcb24 end:0x021fcb58
+
+src/Combat/AI/BattleAI_AppendFlag20RemovalWhenNotAlreadyQueued.cpp:
+    complete
+    .text start:0x021fd784 end:0x021fd7b8
+
+src/Combat/Formulas/Combat_GetRandomizedCombatantRecordValue.cpp:
+    complete
+    .text start:0x021d8b68 end:0x021d8bc8
+
+src/Combat/AI/BattleAI_ScaleDamageBoundsForModeTwo.cpp:
+    complete
+    .text start:0x021f6a88 end:0x021f6ae8
+
+src/Combat/AI/LookupAndUpdateIndexedWorldValue.cpp:
+    complete
+    .text start:0x021ee378 end:0x021ee3e8
+
+src/Combat/AI/GameState_FindEligibleIndexedObjectAndSetOutputs.cpp:
+    complete
+    .text start:0x021f5768 end:0x021f57a8
+
+src/Combat/AI/BattleAI_SelectEmergencyHealingOrDamageAction.cpp:
+    complete
+    .text start:0x021f8144 end:0x021f81dc
+
+src/Combat/AI/Combat_SubmitDefaultDescriptorForEligibleActor.cpp:
+    complete
+    .text start:0x021fcd7c end:0x021fce14
+
+src/Combat/AI/BattleAI_ResetPartyActionAvailabilityCache.cpp:
+    complete
+    .text start:0x021f67f8 end:0x021f6820
+
+src/Combat/Formulas/Combat_ComputeRandomizedTwoAndHalfTimesLevel.cpp:
+    complete
+    .text start:0x021d93dc end:0x021d947c
+
+src/Combat/Formulas/Combat_ComputeRandomizedTripleLevel.cpp:
+    complete
+    .text start:0x021d947c end:0x021d951c
+
+src/Combat/Formulas/Combat_ClearNegativeStatusesAndBuildActionResult.cpp:
+    complete
+    .text start:0x021df1e8 end:0x021df284
+
+src/Combat/Formulas/Combat_ResetStatusGroupsAndQueueResetResult.cpp:
+    complete
+    .text start:0x021e3cec end:0x021e3d88
+
+src/Combat/AI/BattleAI_ScoreTensionActionOnlyAtBaseTension.cpp:
+    complete
+    .text start:0x021fce14 end:0x021fceb0
+
+src/Combat/AI/ReadAndCopyPositiveFourFieldRecord.cpp:
+    complete
+    .text start:0x021f18a0 end:0x021f18fc
+
+src/Combat/Formulas/SetNestedValueAnd85PercentFloats.cpp:
+    complete
+    .text start:0x021f729c end:0x021f72f8
+
+src/Combat/Formulas/Math_StoreQuarterInputsPlusFive.cpp:
+    complete
+    .text start:0x021f7244 end:0x021f729c
+
+src/Combat/AI/World_ApplySelectedEntryThresholdAction.cpp:
+    complete
+    .text start:0x021fc6dc end:0x021fc74c
+
+src/Combat/Formulas/Combat_ReserveIndexedObjectAndCreateCurrentRecord.cpp:
+    complete
+    .text start:0x021dfe9c end:0x021dff3c
+
+src/Combat/AI/Combatant_IsAilmentCategoryFour.cpp:
+    complete
+    .text start:0x021edc80 end:0x021edca4
+
+src/Combat/Formulas/Combat_IsActionInSpecialUsageTrackingList.cpp:
+    complete
+    .text start:0x021eb47c end:0x021eb4b0
+
+src/Combat/Formulas/Combat_RandomizeCombatantFieldOrUseFallback.cpp:
+    complete
+    .text start:0x021d974c end:0x021d97a8
+
+src/Combat/AI/Combat_TryMarkEligibleIndexedState.cpp:
+    complete
+    .text start:0x021f6230 end:0x021f6298
+
+src/Combat/Formulas/BattleAI_ScaleDamageEstimatesByTargetCount.cpp:
+    complete
+    .text start:0x021f71d8 end:0x021f7244
+
+src/Combat/Formulas/Combat_ComputeRandomizedDoubleLevelPlus125.cpp:
+    complete
+    .text start:0x021d90c8 end:0x021d9174
+
+src/Combat/AI/BattleAI_ScoreDefaultActionUnlessDescriptorFlag200.cpp:
+    complete
+    .text start:0x021fcbc8 end:0x021fcc6c
+
+src/Combat/Formulas/ClearCombatantModeAndReturnMessageMask.cpp:
+    complete
+    .text start:0x021e324c end:0x021e32f4
+
+src/Combat/Formulas/Combat_PreserveFormulaKindFourteenPower.cpp:
+    complete
+    .text start:0x021d8dac end:0x021d8db4
+
+src/Combat/Formulas/Combat_PreserveFormulaKindThirtyOnePower.cpp:
+    complete
+    .text start:0x021d91b8 end:0x021d91c0
+
+src/Combat/Formulas/Combat_PreserveFormulaKindThirtySevenPower.cpp:
+    complete
+    .text start:0x021d92f0 end:0x021d92f8
+
+src/Combat/Formulas/Combat_ClearParalysisAndQueueResult.cpp:
+    complete
+    .text start:0x021e32f4 end:0x021e33a4
+
+src/Combat/Formulas/Combat_TryTypeSeventeenActivationAndBuildResult.cpp:
+    complete
+    .text start:0x021e0b48 end:0x021e0bf4
+
+src/Combat/Formulas/Combat_ComputeRandomizedDoubleLevelPlusTen.cpp:
+    complete
+    .text start:0x021d9ad8 end:0x021d9b8c
+
+src/Combat/Formulas/Combat_BuildTargetResultWithPartySpecificMessage.cpp:
+    complete
+    .text start:0x021e1328 end:0x021e13e0
+
+src/Combat/AI/Combat_ResetTurnSelectionBuffersAndFlags.cpp:
+    complete
+    .text start:0x021f73b8 end:0x021f7478
+
+src/Combat/Formulas/Combat_ComputeRandomizedCappedDoubleLevelPlusThirty.cpp:
+    complete
+    .text start:0x021d951c end:0x021d95e0
+
+src/Combat/Formulas/Combat_QueueTensionLossNotification.cpp:
+    complete
+    .text start:0x021e8cfc end:0x021e8dc0
+
+src/Combat/AI/Combat_CopyPartyIdsWhenAnyLacksPrimaryStatusBit5.cpp:
+    complete
+    .text start:0x021f0578 end:0x021f063c
+
+src/Combat/AI/Combat_CopyPartyIdsWhenAnyLacksPrimaryStatusBit8.cpp:
+    complete
+    .text start:0x021f101c end:0x021f10e0
+
+src/Combat/AI/Combat_CopyPartyIdsWhenAnyLacksPrimaryStatusBit6.cpp:
+    complete
+    .text start:0x021f1198 end:0x021f125c
+
+src/Combat/AI/BattleAI_SelectActorWhenNoEnemyOfSpecies180Exists.cpp:
+    complete
+    .text start:0x021f65fc end:0x021f66c0
+
+src/Combat/Formulas/Combat_SelectAilmentModeMessage.cpp:
+    complete
+    .text start:0x021e939c end:0x021e9464
+
+src/Combat/Formulas/Combat_CanRollPostActionActivation.cpp:
+    complete
+    .text start:0x021eb1ec end:0x021eb2b4
+
+src/Combat/AI/Combat_CopyPartyIdsWhenAnyLacksDamageRecoverableAilment.cpp:
+    complete
+    .text start:0x021f0748 end:0x021f0810
+
+src/Combat/AI/BattleAI_CopyPartyWhenAnyActorLacksDescriptorFlag10.cpp:
+    complete
+    .text start:0x021f5bb8 end:0x021f5c80
+
+src/Combat/AI/BattleAI_CopyEnemiesWhenAnyLacksRecordBit24.cpp:
+    complete
+    .text start:0x021f5ce4 end:0x021f5db0
+
+src/Combat/AI/Combat_TestFlaggedCandidatesBelowOneThird.cpp:
+    complete
+    .text start:0x021ede2c end:0x021edf00
+
+src/Combat/AI/Combat_CopyCandidatesWhenAnyPassesFlagTests.cpp:
+    complete
+    .text start:0x021f125c end:0x021f1330
+
+src/Combat/AI/Combat_FilterCandidatesAndSelectRandomHalfword.cpp:
+    complete
+    .text start:0x021f2f78 end:0x021f304c
+
+src/Combat/Formulas/Combat_ScaleSummedPartyHalfwordsByRandomFactor.cpp:
+    complete
+    .text start:0x021da47c end:0x021da550
+
+src/Combat/AI/Combat_TestAnyUnrestrictedCandidateWithNonzeroDescriptor.cpp:
+    complete
+    .text start:0x021f094c end:0x021f0a20
+
+src/Combat/AI/Combat_CopyPartyIdsWhenAnyAgilityLowerAvailable.cpp:
+    complete
+    .text start:0x021eff3c end:0x021f0014
+
+src/Combat/AI/Combat_CopyPartyIdsWhenAnyUnflaggedModifierCanDecrease.cpp:
+    complete
+    .text start:0x021f1768 end:0x021f1844
+
+src/Combat/AI/BattleAI_CopyPartyWhenRecoverableAilmentGateAllows.cpp:
+    complete
+    .text start:0x021f6424 end:0x021f6500
+
+src/Combat/AI/BattleAI_CopyPartyWhenAnyAttackCanBeLowered.cpp:
+    complete
+    .text start:0x021f3368 end:0x021f3440
+
+src/Combat/AI/BattleAI_CopyPartyWhenAttackOrMagicalMightCanBeLowered.cpp:
+    complete
+    .text start:0x021f5a08 end:0x021f5ae0
+
+src/Combat/AI/BattleAI_CopyPartyWhenDefenseOrAgilityCanBeLowered.cpp:
+    complete
+    .text start:0x021f5ae0 end:0x021f5bb8
+
+src/Combat/AI/BattleAI_SelectActorWhenEightGroupMembersLackRecoverableAilment.cpp:
+    complete
+    .text start:0x021f5344 end:0x021f5420
+
+src/Combat/AI/BattleAI_SelectActorWhenThreeGroupMembersLackRecoverableAilment.cpp:
+    complete
+    .text start:0x021f5db0 end:0x021f5e8c
+
+src/Combat/AI/BattleAI_ScoreSpecialTensionOrRestrictionAction.cpp:
+    complete
+    .text start:0x021fbf18 end:0x021fbff4
+
+src/Combat/Formulas/Combat_ComputeRandomizedDoubleLevelWithFloor35.cpp:
+    complete
+    .text start:0x021da328 end:0x021da404
+
+src/Combat/AI/Combat_SelectRequestedIndexWhenAnyPartyCandidateAllowed.cpp:
+    complete
+    .text start:0x021f3168 end:0x021f3248
+
+src/Combat/AI/Combat_SelectRandomCandidateWithLinkedFlag8.cpp:
+    complete
+    .text start:0x021f4974 end:0x021f4a54
+
+src/Combat/AI/Combat_SelectRandomCandidateWithoutFlag40.cpp:
+    complete
+    .text start:0x021f5220 end:0x021f5300
+
+src/Combat/Formulas/Combat_ComputeSevenfoldRandomStatWithMinimum280.cpp:
+    complete
+    .text start:0x021d9d80 end:0x021d9e60
+
+src/Combat/Formulas/Combat_ComputeSevenfoldRandomStatWithMinimum260.cpp:
+    complete
+    .text start:0x021da168 end:0x021da248
+
+src/Combat/Formulas/Combat_ComputeSixfoldRandomStatWithMinimum160.cpp:
+    complete
+    .text start:0x021da248 end:0x021da328
+
+src/Combat/AI/Combat_CopyPartyCandidatesWhenFlagDistributionAllows.cpp:
+    complete
+    .text start:0x021f4c8c end:0x021f4d6c
+
+src/Combat/AI/BattleAI_SelectRandomPartyMemberWithoutRecoverableAilment.cpp:
+    complete
+    .text start:0x021f606c end:0x021f6150
+
+src/Combat/AI/BattleAI_CopyPartyWhenAttackAndCounterAt4FAllowLowering.cpp:
+    complete
+    .text start:0x021f3440 end:0x021f3524
+
+src/Combat/Formulas/Combat_ComputeRandomizedSixfoldLevelWithFloor180.cpp:
+    complete
+    .text start:0x021da080 end:0x021da168
+
+src/Combat/AI/Combat_CopyPartyIdsWhenTwoThirdsAilmentClearReady.cpp:
+    complete
+    .text start:0x021f0810 end:0x021f08f8
+
+src/Combat/AI/Combat_SelectRandomEnemyBelowHalfHp.cpp:
+    complete
+    .text start:0x021f1c64 end:0x021f1d4c
+
+src/Combat/Formulas/Combat_DefeatCombatantAndQueueMaskedResult.cpp:
+    complete
+    .text start:0x021e5af8 end:0x021e5be4
+
+src/Combat/AI/BattleAI_SelectActorWhenOtherEnemyHpAtMostEightPercent.cpp:
+    complete
+    .text start:0x021f3d78 end:0x021f3e64
+
+src/Combat/AI/BattleAI_SelectRandomPartyMemberWithMpAndClearFlag200.cpp:
+    complete
+    .text start:0x021f567c end:0x021f5768
+
+src/Combat/AI/BattleAI_ScoreDefaultActionWithLinkedResourceTarget.cpp:
+    complete
+    .text start:0x021fceb0 end:0x021fcf9c
+
+src/Combat/Formulas/Combat_ActivateMonsterReactionAndBuildResult.cpp:
+    complete
+    .text start:0x021e1de8 end:0x021e1ed4
+
+src/Combat/AI/Combat_CopyPartyIdsWhenTwoThirdsDefenseLowerReady.cpp:
+    complete
+    .text start:0x021ef6c4 end:0x021ef7b8
+
+src/Combat/AI/Combat_CopyPartyIdsWhenTwoThirdsAgilityLowerReady.cpp:
+    complete
+    .text start:0x021f0014 end:0x021f0108
+
+src/Combat/AI/Combat_CopyCandidateIdsWhenAnyCombatantHasLowSignedField.cpp:
+    complete
+    .text start:0x021f1578 end:0x021f166c
+
+src/Combat/AI/Combat_SelectRandomCombatantWithElementOrDescriptorFlag.cpp:
+    complete
+    .text start:0x021f37fc end:0x021f38f0
+
+src/Combat/AI/Combat_SelectRandomCombatantWithEitherModeFlag.cpp:
+    complete
+    .text start:0x021f4880 end:0x021f4974
+
+src/Combat/AI/Combat_SelectRandomNonzeroCombatantWithSignedFieldAboveMinusTwo.cpp:
+    complete
+    .text start:0x021f4fd8 end:0x021f50cc
+
+src/Combat/AI/SelectRandomLivingCandidateWithoutDescriptorFlag.cpp:
+    complete
+    .text start:0x021f2d98 end:0x021f2e88
+
+src/Combat/AI/StoreIdForPackedRecordsWithClearDescriptorFlag.cpp:
+    complete
+    .text start:0x021f2e88 end:0x021f2f78
+
+src/Combat/Formulas/Combat_ApplyBounceAndBuildResult.cpp:
+    complete
+    .text start:0x021de678 end:0x021de770
+
+src/Combat/Formulas/Combat_ApplyReverseCycleAndBuildResult.cpp:
+    complete
+    .text start:0x021de770 end:0x021de868
+
+src/Combat/Formulas/Combat_ApplyExclusiveConditionBitTwentyAndBuildResult.cpp:
+    complete
+    .text start:0x021dec50 end:0x021ded48
+
+src/Combat/Formulas/Combat_ApplyAlmaMaterAndBuildResult.cpp:
+    complete
+    .text start:0x021deff8 end:0x021df0f0
+
+src/Combat/Formulas/Combat_ApplyExclusiveConditionBitTwentyOneAndBuildResult.cpp:
+    complete
+    .text start:0x021e0a50 end:0x021e0b48
+
+src/Combat/Formulas/Combat_ApplyRightAsRainAndBuildResult.cpp:
+    complete
+    .text start:0x021e01b8 end:0x021e02b0
+
+src/Combat/Formulas/Combat_ApplyRoughAndTumbleAndBuildResult.cpp:
+    complete
+    .text start:0x021e1824 end:0x021e191c
+
+src/Combat/Formulas/Combat_ApplyTwocusPocusAndBuildResult.cpp:
+    complete
+    .text start:0x021e1028 end:0x021e1120
+
+src/Combat/Formulas/Combat_ApplyIceBarrierAndBuildResult.cpp:
+    complete
+    .text start:0x021e0f30 end:0x021e1028
+
+src/Combat/Formulas/Combat_ApplyHolyImpregnableAndBuildResult.cpp:
+    complete
+    .text start:0x021e1120 end:0x021e1218
+
+src/Combat/Formulas/Combat_ApplyFeelTheBurnAndBuildResult.cpp:
+    complete
+    .text start:0x021e00c0 end:0x021e01b8
+
+src/Combat/Formulas/Combat_ApplyFireBarrierAndBuildResult.cpp:
+    complete
+    .text start:0x021e0e38 end:0x021e0f30
+
+src/Combat/Formulas/Combat_ApplyFocusPocusAndBuildResult.cpp:
+    complete
+    .text start:0x021e268c end:0x021e2784
+
+src/Combat/AI/Grotto_ApplyFirstPositiveDescriptorOrLowestRatio.cpp:
+    complete
+    .text start:0x021f8300 end:0x021f83f8
+
+src/Combat/AI/BattleAI_SelectSupportActionWithSixtyPercentHpThreshold.cpp:
+    complete
+    .text start:0x021f83f8 end:0x021f84f0
+
+src/Combat/AI/BattleAI_AppendActionRestrictionEffectChance.cpp:
+    complete
+    .text start:0x021fd1bc end:0x021fd2b4
+
+src/Combat/Formulas/ApplyPackedPartySelectionToCombatantRecord.cpp:
+    complete
+    .text start:0x021df0f0 end:0x021df1e8
+
+src/Combat/AI/Combat_SelectRandomUnflaggedEnemyBelowHalfHp.cpp:
+    complete
+    .text start:0x021ee6a8 end:0x021ee7a4
+
+src/Combat/AI/Combat_CopyEnemyIdsAfterSourceCapabilityAndPositiveCountGate.cpp:
+    complete
+    .text start:0x021f166c end:0x021f1768
+
+src/Combat/AI/Combat_CopyEnemyIdsWhenTwoThirdsBelowHalfHp.cpp:
+    complete
+    .text start:0x021f20b8 end:0x021f21b4
+
+src/Combat/AI/Combat_CopyCandidateIdsWhenAnyLacksFlagBitOneAndModeOne.cpp:
+    complete
+    .text start:0x021f43b0 end:0x021f44ac
+
+src/Combat/AI/Combat_SelectRandomCandidateWithCategoryAndNonpositiveField.cpp:
+    complete
+    .text start:0x021f6500 end:0x021f65fc
+
+src/Combat/AI/Combat_SelectRandomModeOneOrTwoTarget.cpp:
+    complete
+    .text start:0x021ee8b4 end:0x021ee9b4
+
+src/Combat/AI/Combat_SelectRandomEnemyWithDefenseRaiseAvailable.cpp:
+    complete
+    .text start:0x021eee68 end:0x021eef68
+
+src/Combat/AI/Combat_SelectRandomEnemyWithAgilityRaiseAvailable.cpp:
+    complete
+    .text start:0x021ef7b8 end:0x021ef8b8
+
+src/Combat/AI/Combat_SelectRandomEnemyWithAttackRaiseAvailable.cpp:
+    complete
+    .text start:0x021f0108 end:0x021f0208
+
+src/Combat/AI/Combat_FilterPreferredTargetsAndDispatchSelection.cpp:
+    complete
+    .text start:0x021f1f64 end:0x021f2064
+
+src/Combat/AI/BattleAI_SelectRandomPartyMemberWithCounterAt4AAndClearFlags.cpp:
+    complete
+    .text start:0x021f5f6c end:0x021f606c
+
+src/Combat/Formulas/Combat_AddScaledValueAndQueueDescriptor.cpp:
+    complete
+    .text start:0x021e56c0 end:0x021e57c0
+
+src/Combat/AI/Combat_CopyEightCandidateIdsWhenAtLeastOneThirdPassFlags.cpp:
+    complete
+    .text start:0x021ee9b4 end:0x021eeab8
+
+src/Combat/AI/Combat_SelectTargetsWithLinkedModeFlagBit12.cpp:
+    complete
+    .text start:0x021f22d8 end:0x021f23e0
+
+src/Combat/Formulas/Combat_SelectTimedConditionModeMessage.cpp:
+    complete
+    .text start:0x021e9198 end:0x021e929c
+
+src/Combat/AI/Combat_CopyCandidateIdsWhenOneThirdHasElementFlag.cpp:
+    complete
+    .text start:0x021eeab8 end:0x021eebbc
+
+src/Combat/AI/Combat_CopyCandidateIdsWhenTwoThirdsHaveNonzeroByte46.cpp:
+    complete
+    .text start:0x021f4ed4 end:0x021f4fd8
+
+src/Combat/AI/Combat_CopyCandidateIdsWhenAnyHasLowSignedFieldAndValidId.cpp:
+    complete
+    .text start:0x021f6298 end:0x021f639c
+
+src/Combat/AI/BattleAI_CopyPartyWhenTwoThirdsAgilityCanBeLowered.cpp:
+    complete
+    .text start:0x021f50cc end:0x021f51d4
+
+src/Combat/AI/Combat_SelectRandomUnflaggedEnemyWithDefenseRaiseAvailable.cpp:
+    complete
+    .text start:0x021eef68 end:0x021ef074
+
+src/Combat/AI/Combat_SelectRandomUnflaggedEnemyWithAgilityRaiseAvailable.cpp:
+    complete
+    .text start:0x021ef8b8 end:0x021ef9c4
+
+src/Combat/AI/Combat_SelectRandomUnflaggedEnemyWithAttackRaiseAvailable.cpp:
+    complete
+    .text start:0x021f0208 end:0x021f0314
+
+src/Combat/AI/Combat_FilterAndProcessTargetsWithoutDescriptorFlag20.cpp:
+    complete
+    .text start:0x021f1d4c end:0x021f1e58
+
+src/Combat/AI/Combat_FilterAndProcessTargetsWithoutLinkedDescriptorFlag8.cpp:
+    complete
+    .text start:0x021f1e58 end:0x021f1f64
+
+src/Combat/AI/Combat_SelectTargetsWithoutPrimaryStatusBit19.cpp:
+    complete
+    .text start:0x021f259c end:0x021f26a8
+
+src/Combat/AI/BattleAI_CopyPartyWhenAnyActorLacksBothAilmentModes.cpp:
+    complete
+    .text start:0x021f4a54 end:0x021f4b60
+
+src/Combat/Formulas/Combat_ApplyEerieLightAndBuildResult.cpp:
+    complete
+    .text start:0x021e1218 end:0x021e1328
+
+src/Combat/Formulas/Combat_ApplySoulAsylumAndBuildResult.cpp:
+    complete
+    .text start:0x021e2580 end:0x021e268c
+
+src/Combat/AI/Combat_SelectRandomDeadEnemyWhenGroupModeBelowFive.cpp:
+    complete
+    .text start:0x021eebbc end:0x021eecc8
+
+src/Combat/Formulas/Combat_ComputeRandomizedQuadraticPower70Divisor22Floor180.cpp:
+    complete
+    .text start:0x021d97a8 end:0x021d98b8
+
+src/Combat/Formulas/Combat_ComputeRandomizedQuadraticPower90Divisor22Floor200.cpp:
+    complete
+    .text start:0x021d98b8 end:0x021d99c8
+
+src/Combat/Formulas/Combat_ComputeRandomizedQuadraticPower100Divisor23Floor170.cpp:
+    complete
+    .text start:0x021d99c8 end:0x021d9ad8
+
+src/Combat/Formulas/Combat_ComputeRandomizedQuadraticPower100Divisor23Floor217.cpp:
+    complete
+    .text start:0x021d9e60 end:0x021d9f70
+
+src/Combat/Formulas/Combat_ComputeRandomizedQuadraticPower150Divisor26Floor200.cpp:
+    complete
+    .text start:0x021d9f70 end:0x021da080
+
+src/Combat/Formulas/Combat_SelectAttackStageChangeMessage.cpp:
+    complete
+    .text start:0x021e94c4 end:0x021e95d4
+
+src/Combat/Formulas/Combat_SelectStage2ActionId.cpp:
+    complete
+    .text start:0x021e95d4 end:0x021e96e4
+
+src/Combat/Formulas/Combat_SelectAgilityStageChangeMessage.cpp:
+    complete
+    .text start:0x021e96e4 end:0x021e97f4
+
+src/Combat/Formulas/Combat_SelectSpellResistanceStageChangeMessage.cpp:
+    complete
+    .text start:0x021e97f4 end:0x021e9904
+
+src/Combat/AI/Combat_FilterModeTwoClearCandidatesAndApplySelection.cpp:
+    complete
+    .text start:0x021f18fc end:0x021f1a0c
+
+src/Combat/AI/Combat_FilterCandidatesWithPositiveNestedCount.cpp:
+    complete
+    .text start:0x021f4768 end:0x021f4878
+
+src/Combat/AI/Combat_QueueEligibleInactivePartyRows.cpp:
+    complete
+    .text start:0x021fcc6c end:0x021fcd7c
+
+src/Combat/AI/BattleAI_SelectHealthyActorWhenThirdOfEnemiesBelowHalfHp.cpp:
+    complete
+    .text start:0x021f38f0 end:0x021f3a04
+
+src/Combat/AI/Combat_InitializeRatioDispatchState.cpp:
+    complete
+    .text start:0x021f8f20 end:0x021f9030
+
+src/Combat/Formulas/Combat_ApplyVanishAndBuildResult.cpp:
+    complete
+    .text start:0x021e093c end:0x021e0a50
+
+src/Combat/AI/Combat_SubmitClampedDescriptorPercentForSelectedRecord.cpp:
+    complete
+    .text start:0x021fd66c end:0x021fd784
+
+src/Combat/AI/Combat_SelectRandomOtherUnlinkedEnemyWhenSourceHalfHp.cpp:
+    complete
+    .text start:0x021f2754 end:0x021f286c
+
+src/Combat/AI/BattleAI_CopyPartyWhenTwoThirdsPassLinkedFlagCounterAt4E.cpp:
+    complete
+    .text start:0x021f4d6c end:0x021f4e84
+
+src/Combat/AI/Combat_SelectTargetsWithoutPrimaryStatusBit9.cpp:
+    complete
+    .text start:0x021ee0f0 end:0x021ee20c
+
+src/Combat/AI/Combat_SelectWeightedTargetCountFromPackedMode.cpp:
+    complete
+    .text start:0x021ed8c0 end:0x021ed9dc
+
+src/Combat/AI/Combat_SelectRandomCandidateBelowDescriptorThreshold.cpp:
+    complete
+    .text start:0x021f145c end:0x021f1578
+
+src/Combat/AI/BattleAI_SelectTargetsAboveMinimumSpellResistance.cpp:
+    complete
+    .text start:0x021f304c end:0x021f3168
+
+src/Combat/AI/Combat_FilterAndDispatchEligibleCombatants.cpp:
+    complete
+    .text start:0x021f23e0 end:0x021f24fc
+
+src/Combat/AI/Combat_FilterPreferredDescriptorTargetsAndDispatch.cpp:
+    complete
+    .text start:0x021f2998 end:0x021f2ab4
+
+src/Combat/AI/BattleAI_SelectHealthyActorWhenHalfOfEnemiesNeedHpSupport.cpp:
+    complete
+    .text start:0x021f3a04 end:0x021f3b20
+
+src/Combat/AI/BattleAI_SelectRandomOtherEnemyWithMissingHp.cpp:
+    complete
+    .text start:0x021f3b20 end:0x021f3c3c
+
+src/Combat/AI/BattleAI_CopyPartyWhenTwoThirdsAreSusceptibleToSleep.cpp:
+    complete
+    .text start:0x021f4294 end:0x021f43b0
+
+src/Combat/AI/BattleAI_CopyPartyWhenTwoThirdsAreSusceptibleToPoison.cpp:
+    complete
+    .text start:0x021f44ac end:0x021f45c8
+
+src/Combat/AI/Combat_SelectAtLeastTwoTargetsWithoutPrimaryStatusBit3.cpp:
+    complete
+    .text start:0x021ee454 end:0x021ee574
+
+src/Combat/Formulas/Combat_ClearAilmentModesAndBuildActionResult.cpp:
+    complete
+    .text start:0x021dbc64 end:0x021dbd84
+
+src/Combat/AI/Combat_FilterReadyCombatantsAndDispatch.cpp:
+    complete
+    .text start:0x021efcd8 end:0x021efdfc
+
+src/Combat/AI/Combat_SelectTargetsWithAttackLowerAvailable.cpp:
+    complete
+    .text start:0x021f0314 end:0x021f0438
+
+src/Combat/AI/Combat_SelectPartyTargetsWithDefenseLowerAvailable.cpp:
+    complete
+    .text start:0x021f21b4 end:0x021f22d8
+
+src/Combat/AI/Combat_SelectTargetsWithoutAilmentOrPrimaryStatusBit5.cpp:
+    complete
+    .text start:0x021f1b40 end:0x021f1c64
+
+src/Combat/AI/Combat_SelectIndexWhenAnyNegativeStatusOrFlagIsPresent.cpp:
+    complete
+    .text start:0x021f3564 end:0x021f3688
+
+src/Combat/AI/BattleAI_SelectSupportActionWithFortyPercentHpThreshold.cpp:
+    complete
+    .text start:0x021f81dc end:0x021f8300
+
+src/Combat/AI/Combat_CopyCandidatesWhenTwoThirdsHavePositiveByte4D.cpp:
+    complete
+    .text start:0x021f4b60 end:0x021f4c8c
+
+src/Combat/AI/Combat_DispatchTransformedRecordHandler.cpp:
+    complete
+    .text start:0x021f66cc end:0x021f67f8
+
+src/Combat/AI/Combat_SelectRandomOtherCandidateWithFiveFlagsClear.cpp:
+    complete
+    .text start:0x021f36cc end:0x021f37fc
+
+src/Combat/AI/Combat_SelectRandomOtherCandidateBelowFullRatio.cpp:
+    complete
+    .text start:0x021f3c3c end:0x021f3d78
+
+src/Combat/Formulas/Combat_ComputeFlagAdjustedEighthProduct.cpp:
+    complete
+    .text start:0x021e6948 end:0x021e6a90
+
+src/Combat/AI/Combat_TestPreferredTargetExclusionFlags.cpp:
+    complete
+    .text start:0x021eda78 end:0x021edbc0
+
+src/Combat/Formulas/Combat_RestorePartyTargetAndAppendAppliedValue.cpp:
+    complete
+    .text start:0x021e556c end:0x021e56c0
+
+src/Combat/AI/Combat_TestCandidateFlagsOrNegativePackedStatus.cpp:
+    complete
+    .text start:0x021edcc8 end:0x021ede2c
+
+src/Combat/AI/Combat_SelectLowStatusGroupCandidateAfterPartyGate.cpp:
+    complete
+    .text start:0x021f0a20 end:0x021f0b84
+
+src/Combat/AI/Combat_CopyGroupCandidatesWhenLowStatusExistsAfterPartyGate.cpp:
+    complete
+    .text start:0x021f0d28 end:0x021f0e90
+
+src/Combat/Formulas/Combat_RestoreQuarterOfLinkedValuesAndQueueRecord.cpp:
+    complete
+    .text start:0x021e5988 end:0x021e5af8
+
+src/Combat/Formulas/Combat_SelectCategoryMessageCode.cpp:
+    complete
+    .text start:0x021e9018 end:0x021e9198
+
+src/Combat/AI/Combat_SelectLowStatusCandidateAfterNestedAndPartyGates.cpp:
+    complete
+    .text start:0x021f0b84 end:0x021f0d0c
+
+src/Combat/AI/Combat_CopyGroupCandidatesAfterNestedPartyAndLowStatusGates.cpp:
+    complete
+    .text start:0x021f0e90 end:0x021f101c
+
+src/Combat/Formulas/Combat_RestoreValueAndBuildDescriptorResult.cpp:
+    complete
+    .text start:0x021ddf5c end:0x021de124
+
+src/Combat/Formulas/Combat_RestoreLinkedValueAndClearDescriptorConditions.cpp:
+    complete
+    .text start:0x021e2784 end:0x021e2950
+
+src/Combat/Formulas/Combat_RollHealthReductionOrDefeat.cpp:
+    complete
+    .text start:0x021e4604 end:0x021e47dc
+
+src/Combat/Formulas/Combat_TransferHealthAndBuildRestorationResult.cpp:
+    complete
+    .text start:0x021dc700 end:0x021dc93c
+
+src/Combat/AI/Combat_CopyPartyCandidatesWhenAnyHasListedStatus.cpp:
+    complete
+    .text start:0x021f3e64 end:0x021f40c8
+
+src/Combat/Formulas/Combat_RestoreFortyPercentAndClearNegativeStatuses.cpp:
+    complete
+    .text start:0x021e13e0 end:0x021e1580
+
+src/Combat/Formulas/Combat_RestoreLinkedValueAndClearFourConditions.cpp:
+    complete
+    .text start:0x021e2950 end:0x021e2bd0
+
+src/Combat/Formulas/Combat_RetargetThroughCategoryPriorityLists.cpp:
+    complete
+    .text start:0x021e9b74 end:0x021e9f68
+
+src/Combat/Formulas/Combat_DecrementFlaggedTargetStateAndRecordTransition.cpp:
+    complete
+    .text start:0x021e373c end:0x021e386c
+
+src/Combat/AI/Combat_SelectAtLeastTwoCandidatesWithFlags8And200Clear.cpp:
+    complete
+    .text start:0x021ee574 end:0x021ee6a8
+
+src/Combat/AI/Combat_SelectCandidatesWithModeOrLinkedFlag8.cpp:
+    complete
+    .text start:0x021f1a0c end:0x021f1b40
+
+src/Combat/Formulas/Combat_ClearLinkedFlag8AndBuildResult.cpp:
+    complete
+    .text start:0x021dd6f0 end:0x021dd828
+
+src/Combat/Formulas/Combat_ClearDescriptorFlag20AndBuildResult.cpp:
+    complete
+    .text start:0x021de124 end:0x021de25c
+
+src/Combat/AI/Combat_ApplyRankedDescriptorPrioritiesOrLowestRatio.cpp:
+    complete
+    .text start:0x021f84f0 end:0x021f8628
+
+src/Combat/Formulas/Combat_AdjustPackedStageEightAndBuildResult.cpp:
+    complete
+    .text start:0x021ded48 end:0x021dee84
+
+src/Combat/Formulas/Combat_SetDescriptorFlag100AndBuildResult.cpp:
+    complete
+    .text start:0x021dced0 end:0x021dd010
+
+src/Combat/Formulas/Combat_ResetModeFieldsAndBuildResult.cpp:
+    complete
+    .text start:0x021dd828 end:0x021dd968
+
+src/Combat/AI/Combat_SelectPositiveByte50CandidatesWithValidStatus.cpp:
+    complete
+    .text start:0x021ef4ac end:0x021ef5ec
+
+src/Combat/AI/Combat_SelectPositiveByte51CandidatesWithValidStatus.cpp:
+    complete
+    .text start:0x021efdfc end:0x021eff3c
+
+src/Combat/AI/Combat_SelectPositiveByte4FCandidatesWithValidStatus.cpp:
+    complete
+    .text start:0x021f0438 end:0x021f0578
+
+src/Combat/AI/Combat_SelectCandidatesBelowTwiceSourceHalfword8.cpp:
+    complete
+    .text start:0x021edfa0 end:0x021ee0f0
+
+src/Combat/Formulas/Combat_AdjustPackedStageNineAndBuildResult.cpp:
+    complete
+    .text start:0x021dde08 end:0x021ddf5c
+
+src/Combat/Formulas/Combat_AdjustCharmStageAndBuildResult.cpp:
+    complete
+    .text start:0x021e0380 end:0x021e04e0
+
+src/Combat/Formulas/Combat_UpdateLinkedHalfwordAndQueueRecord.cpp:
+    complete
+    .text start:0x021de868 end:0x021de9dc
+
+src/Combat/Formulas/_Z43Combat_TryApplyBoundedDirectionalAdjustmentPciiP16ActionDescriptori.cpp:
+    complete
+    .text start:0x021e2ebc end:0x021e303c
+
+src/Combat/Formulas/_Z43Combat_SelectDescriptorHalfwordAndApplyModePciiP14ModeDescriptoriih.cpp:
+    complete
+    .text start:0x021dff3c end:0x021e00c0
+
+src/Combat/AI/_Z56Combat_CollectMembersFromRandomQualifiedGroupByModeFieldPPviiPiPs.cpp:
+    complete
+    .text start:0x021ef9c4 end:0x021efb48
+
+src/Combat/Formulas/_Z44Combat_BuildRecordWithConditionalMaskUpdatesPciiS_iih.cpp:
+    complete
+    .text start:0x021ddc80 end:0x021dde08
+
+src/Combat/Formulas/Combat_ClearNegativeStatusesAndReapplyBuffs.cpp:
+    complete
+    .text start:0x021eae14 end:0x021eb08c
+
+src/Combat/Formulas/ClearCombatantStatusGroupsApplyBuffsAndDispatchRecords.cpp:
+    complete
+    .text start:0x021ea85c end:0x021eaa50
+
+src/Combat/Formulas/Combat_ClearStatusGroupsAndBuildRecord.cpp:
+    complete
+    .text start:0x021df454 end:0x021df6ec
+
+src/Combat/AI/Combat_CopyValueWhenIndexedObjectModeBelowTwo.cpp:
+    complete
+    .text start:0x021f24fc end:0x021f2548
+
+src/Combat/AI/Combat_CopyIndexWhenObjectLowTenBitValueBelowTwo.cpp:
+    complete
+    .text start:0x021f4120 end:0x021f4174
+
+src/Combat/Formulas/LookupModeValueUnlessPackedModeRejected.cpp:
+    complete
+    .text start:0x021e8fa4 end:0x021e9018
+
+src/Combat/AI/Combat_CopyIndexWhenTwoSignedStatusFieldsBelowTwo.cpp:
+    complete
+    .text start:0x021f40c8 end:0x021f4120
+
+src/Combat/AI/BattleAI_SelectActionPolicyEntryTwo.cpp:
+    complete
+    .text start:0x021fc004 end:0x021fc018
+
+src/Combat/Formulas/Combat_ComputeRandomizedSelectedValueWithFloor.cpp:
+    complete
+    .text start:0x021d9c7c end:0x021d9d6c
+
+src/Combat/Formulas/Combat_ShouldRandomizeCriticalDamage.cpp:
+    complete
+    .text start:0x021ea7fc end:0x021ea85c
+
+src/Combat/Formulas/BattleAI_AddLinkedStatToHalvedDamageEstimates.cpp:
+    complete
+    .text start:0x021f72f8 end:0x021f736c
+
+src/Combat/AI/Combat_CollectFourEligiblePartyIds.cpp:
+    complete
+    .text start:0x021ee3e8 end:0x021ee454
+
+src/Combat/AI/Combat_CopyPartyIdsWhenAnyDescriptorIsEligible.cpp:
+    complete
+    .text start:0x021f10e0 end:0x021f1198
+
+src/Combat/Formulas/ScaleValueForCombatantModeFlags.cpp:
+    complete
+    .text start:0x021d8d38 end:0x021d8dac
+
+src/Combat/Formulas/Combat_AddQuarterPackedPartyStatToHalfPower.cpp:
+    complete
+    .text start:0x021da404 end:0x021da47c
+
+src/Combat/AI/Combat_SelectObjectWhenResourceRatioAtMostOneTenth.cpp:
+    complete
+    .text start:0x021f3248 end:0x021f32b4
+
+src/Combat/AI/Combat_MarkObjectAtOrBelowOneEighthRatio.cpp:
+    complete
+    .text start:0x021f32b4 end:0x021f331c
+
+src/Combat/AI/BattleAI_SelectRandomPartyMemberWithMp.cpp:
+    complete
+    .text start:0x021f559c end:0x021f567c
+
+src/Combat/AI/BattleAI_SelectRandomPartyMemberWithTension.cpp:
+    complete
+    .text start:0x021f57a8 end:0x021f5888
+
+src/Combat/AI/BattleAI_SelectRandomPartyMemberWithoutDescriptorFlag20.cpp:
+    complete
+    .text start:0x021f5e8c end:0x021f5f6c
+
+src/Combat/AI/BattleAI_SelectRandomPartyMemberWithoutDescriptorFlag100.cpp:
+    complete
+    .text start:0x021f6150 end:0x021f6230
+
+src/Combat/AI/BattleAI_SelectActorWhenEncounterCountBelowFour.cpp:
+    complete
+    .text start:0x021f5478 end:0x021f5558
+
+src/Combat/AI/BattleAI_SelectActorWhenEncounterCountBelowTwo.cpp:
+    complete
+    .text start:0x021f58dc end:0x021f59bc
+
+src/Combat/AI/Combat_CopyPartyIdsWhenAnyDefenseLowerAvailable.cpp:
+    complete
+    .text start:0x021ef5ec end:0x021ef6c4
+
+src/Combat/AI/Combat_CopyPartyIdsWhenTwoThirdsStatusBit5ClearReady.cpp:
+    complete
+    .text start:0x021f063c end:0x021f0720
+
+src/Combat/AI/Combat_CopyPartyIdsWhenFlaggedCountBelowOneThird.cpp:
+    complete
+    .text start:0x021ee20c end:0x021ee2fc
+
+src/Combat/AI/Combat_CopyEnemyIdsWhenTwoThirdsUnflaggedBelowHalfHp.cpp:
+    complete
+    .text start:0x021ee7a4 end:0x021ee8b4
+
+src/Combat/AI/BattleAI_SelectTargetsWithAttackStageAboveMinimum.cpp:
+    complete
+    .text start:0x021f2c30 end:0x021f2d4c
+
+src/Combat/AI/Combat_SelectTargetsWithDefenseLowerAvailable.cpp:
+    complete
+    .text start:0x021ef388 end:0x021ef4ac
+
+src/Combat/AI/Combat_SelectRandomEnemyBelowModifierCapAfterSourceGate.cpp:
+    complete
+    .text start:0x021f1330 end:0x021f1440
+
+src/Combat/AI/Combat_SelectRandomOtherUnlinkedEnemyBelowHalfHp.cpp:
+    complete
+    .text start:0x021f286c end:0x021f2998
+
+src/Combat/AI/Combat_SelectLinkedTargetOrPrimaryStatusBits23Or24Targets.cpp:
+    complete
+    .text start:0x021f2ab4 end:0x021f2c30
+
+src/Combat/AI/Combat_CollectRandomGroupWithDefenseRaiseAvailable.cpp:
+    complete
+    .text start:0x021ef074 end:0x021ef1f8
+
+src/Combat/AI/Combat_CollectRandomGroupWithDefenseRaiseAndStatusClear.cpp:
+    complete
+    .text start:0x021ef1f8 end:0x021ef388
+
+src/Combat/AI/Combat_CollectRandomGroupWithUnflaggedAgilityRaiseAvailable.cpp:
+    complete
+    .text start:0x021efb48 end:0x021efcd8
+
+src/Combat/AI/Combat_CollectEnemyTargetsWithDeadMemberQuota.cpp:
+    complete
+    .text start:0x021eecc8 end:0x021eee68
+
+src/Combat/AI/Combat_CollectTargetsForPackedActionId.cpp:
+    complete
+    .text start:0x021edf6c end:0x021edfa0
+
+src/Combat/AI/Combat_TryGetLinkedLivingTargetId.cpp:
+    complete
+    .text start:0x021edf00 end:0x021edf6c
+
+src/Combat/AI/BattleAI_TestActionUsabilityAndMpCost.cpp:
+    complete
+    .text start:0x021f8874 end:0x021f8938
+
+src/Combat/AI/BattleAI_ScoreDefaultActionUnlessCoreStagesBoosted.cpp:
+    complete
+    .text start:0x021fcfa0 end:0x021fd078
+
+src/Combat/AI/BattleAI_ScoreFullPartyRevivalWhenMultipleInactive.cpp:
+    complete
+    .text start:0x021fc4f4 end:0x021fc68c
+
+src/Combat/AI/BattleAI_ScorePartialRevivalTargets.cpp:
+    complete
+    .text start:0x021fc068 end:0x021fc254
+
+src/Combat/Formulas/Combat_TryAdjustSpellResistanceStage.cpp:
+    complete
+    .text start:0x021e3d88 end:0x021e3f14
+
+src/Combat/Formulas/Combat_TryAdjustDefenseStageAndReturnEffectMask.cpp:
+    complete
+    .text start:0x021e3594 end:0x021e373c
+
+src/Combat/AI/BattleAI_ScoreFlagFourReductionBuffWhenUseful.cpp:
+    complete
+    .text start:0x021fc320 end:0x021fc368
+
+src/Combat/AI/BattleAI_AppendGuaranteedSecondaryEffect.cpp:
+    complete
+    .text start:0x021fd160 end:0x021fd1bc
+
+src/Combat/Formulas/Combat_CanFatalProtectionPreventLethalAction.cpp:
+    complete
+    .text start:0x021ea78c end:0x021ea7fc
+
+src/Combat/Formulas/Combat_DeductActionGoldCost.cpp:
+    complete
+    .text start:0x021e5be4 end:0x021e5c7c
+
+src/Combat/Formulas/Combat_ComputeRandomizedTripleLevelPlus53WithFloor140.cpp:
+    complete
+    .text start:0x021d9b8c end:0x021d9c7c
+
+src/Combat/Formulas/Combat_ApplyMPCostExemptionAndBuildResult.cpp:
+    complete
+    .text start:0x021e1580 end:0x021e16a4
+
+src/Combat/Formulas/Combat_ActivateMonsterConditionAndBuildActionResult.cpp:
+    complete
+    .text start:0x021e04e0 end:0x021e05e4
+
+src/Combat/AI/BattleAI_SelectActorBelowThirdOfPartyMeanAttackDefense.cpp:
+    complete
+    .text start:0x021f418c end:0x021f4294
+
+src/Combat/Formulas/Combat_IncreasePermanentAttributeAndBuildActionResult.cpp:
+    complete
+    .text start:0x021de54c end:0x021de678
+
+src/Combat/Formulas/Combat_SelectMonsterGroupRewardMessageAndBuildResult.cpp:
+    complete
+    .text start:0x021e1cbc end:0x021e1de8
+
+src/Combat/Formulas/Combat_ComputeRepeatedHitDamageFromAccumulatedPower.cpp:
+    complete
+    .text start:0x021e67c8 end:0x021e6948
+
+src/Combat/Formulas/Combat_TransformSelfOrRemoveMonsterAndBuildResult.cpp:
+    complete
+    .text start:0x021e0d00 end:0x021e0e38
+
+src/Combat/Formulas/Combat_TryMarkMonsterGroupAndBuildResult.cpp:
+    complete
+    .text start:0x021e16a4 end:0x021e1824
+
+src/Combat/Formulas/Combat_RollSceneModeFromCombinedPartyLevels.cpp:
+    complete
+    .text start:0x021e20c0 end:0x021e2298
+
+src/Combat/Formulas/Combat_AdjustAgilityStageAndBuildActionResult.cpp:
+    complete
+    .text start:0x021db994 end:0x021dbaf4
+
+src/Combat/Formulas/Combat_ApplyAilmentModeAndBuildActionResult.cpp:
+    complete
+    .text start:0x021dbaf4 end:0x021dbc64
+
+src/Combat/Formulas/Combat_AdjustBreathResistanceStageAndBuildResult.cpp:
+    complete
+    .text start:0x021ddaa0 end:0x021ddc80
+
+src/Combat/Formulas/Combat_ClearMonsterReactionAndLowerTension.cpp:
+    complete
+    .text start:0x021e3f14 end:0x021e40d8
+
+src/Combat/Formulas/Combat_ApplyDazzleAndBuildResult.cpp:
+    complete
+    .text start:0x021dd534 end:0x021dd6f0
+
+src/Combat/Formulas/Combat_AdjustSpellResistanceStageAndBuildResult.cpp:
+    complete
+    .text start:0x021dd968 end:0x021ddaa0
+
+src/Combat/Formulas/Combat_TryDefeatWeakerTargetAndBuildActionResult.cpp:
+    complete
+    .text start:0x021e05fc end:0x021e07b0
+
+src/Combat/Formulas/Combat_TryApplyDazzleWithMode.cpp:
+    complete
+    .text start:0x021e43e0 end:0x021e4588
+
+src/Combat/Formulas/Combat_TryApplyConfusion.cpp:
+    complete
+    .text start:0x021e386c end:0x021e3a34
+
+src/Combat/Formulas/Combat_TryApplySleep.cpp:
+    complete
+    .text start:0x021e33a4 end:0x021e3594
+
+src/Combat/Formulas/Combat_TryApplyParalysis.cpp:
+    complete
+    .text start:0x021e3a34 end:0x021e3cec
+
+src/Combat/Formulas/Combat_TryApplyAilmentModeAndReturnEffectMask.cpp:
+    complete
+    .text start:0x021e303c end:0x021e324c
+
+src/Combat/Formulas/Combat_TryApplyActionRestrictionAndReturnEffectMask.cpp:
+    complete
+    .text start:0x021e2bd0 end:0x021e2ebc
+
+src/Combat/Formulas/Combat_TryTransferGoldOnHit.cpp:
+    complete
+    .text start:0x021e5c7c end:0x021e5e80
+
+src/Combat/Formulas/Combat_RollMonsterGroupMarkersAndSelectSummaryMessage.cpp:
+    complete
+    .text start:0x021e2298 end:0x021e2580
+
+src/Combat/AI/BattleAI_ComputeActionBaseMagnitudeRange.cpp:
+    complete
+    .text start:0x021f8938 end:0x021f8bd8
+
+src/Combat/Formulas/Combat_AdjustMagicalMendingStageAndBuildActionResult.cpp:
+    complete
+    .text start:0x021dee84 end:0x021deff8

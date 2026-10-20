@@ -1,36 +1,36 @@
 #include <globaldefs.h>
 ARM
-extern "C" void* Object_GetGlobalConnectionState();
+extern "C" void* Network_GetConnectionManager();
 extern "C" void* _ZN9GameState11GetInstanceEv();
 extern "C" char* GameState_ReadUnkF8(void*);
-extern "C" unsigned short* ReadGlobalValueAt020FB3F0();
+extern "C" unsigned short* Zone3D_GetMainInstance();
 extern "C" int _ZN13ZoneState084018IsValueInRangeC3b5Ei(char*,int);
 extern "C" int _ZN13ZoneState084024IsValueAtHundredBoundaryEi(char*,int);
 extern "C" int _ZN13ZoneState084018IsValueInRangeC545Ei(char*,int);
 extern "C" void _ZN13ZoneState084020UpdateEntryCountTierEv(char*);
 extern "C" char* _ZN9GameState14GetProtagonistEv(void*);
-extern "C" bool TestInactiveOrPrimaryIndexState(unsigned*);
-extern "C" bool TestActiveWordAndGlobalStateNonzero(unsigned*);
-extern "C" void func_ov017_021d3e3c(unsigned char);
-extern "C" void GameState_CopyChunkAtOffset3F8(void*,void*);
+extern "C" bool Network_IsParentOrOffline(unsigned*);
+extern "C" bool Network_IsClientSession(unsigned*);
+extern "C" void Network_QueueBoundaryZoneTier(unsigned char);
+extern "C" void GameState_ReplacePendingFieldTransition(void*,void*);
 // Original: arm9/main @ 0x02097CAC; symbol: func_02097cac; size: 0x21C.
 extern "C" void World_UpdateBoundaryZoneTier(char* self){
- unsigned* connection=(unsigned*)Object_GetGlobalConnectionState();
+ unsigned* connection=(unsigned*)Network_GetConnectionManager();
  void* state=_ZN9GameState11GetInstanceEv();
  char* zone=GameState_ReadUnkF8(state);
- unsigned short* global=ReadGlobalValueAt020FB3F0();
+ unsigned short* global=Zone3D_GetMainInstance();
  int current=*(unsigned short*)zone;
  char* protagonist;int previous=*global;
  if(!_ZN13ZoneState084018IsValueInRangeC3b5Ei(self,current) && !_ZN13ZoneState084018IsValueInRangeC3b5Ei(self,previous))return;
  protagonist=_ZN9GameState14GetProtagonistEv(state);
  if(_ZN13ZoneState084024IsValueAtHundredBoundaryEi(self,current) && (!_ZN13ZoneState084024IsValueAtHundredBoundaryEi(self,previous) || *(unsigned char*)(zone+0x65))){
-  if(TestInactiveOrPrimaryIndexState(connection) && !(*(unsigned*)(*(char**)(protagonist+0x130))&1))_ZN13ZoneState084020UpdateEntryCountTierEv(self);
+  if(Network_IsParentOrOffline(connection) && !(*(unsigned*)(*(char**)(protagonist+0x130))&1))_ZN13ZoneState084020UpdateEntryCountTierEv(self);
   unsigned tier=*(unsigned*)(self+0x1b3c);
-  func_ov017_021d3e3c((unsigned char)tier);
+  Network_QueueBoundaryZoneTier((unsigned char)tier);
   switch(tier){case 0:break;case 1:case 2:*(unsigned short*)zone=0xc3b5;break;case 3:case 4:*(unsigned short*)zone=0xc419;break;case 5:*(unsigned short*)zone=0xc47d;break;case 6:*(unsigned short*)zone=0xc4e1;break;}
-  GameState_CopyChunkAtOffset3F8(state,zone);return;
+  GameState_ReplacePendingFieldTransition(state,zone);return;
  }
- if(!TestActiveWordAndGlobalStateNonzero(connection) || !*(unsigned char*)(zone+0x65))return;
+ if(!Network_IsClientSession(connection) || !*(unsigned char*)(zone+0x65))return;
  unsigned tier=*(unsigned*)(self+0x1b3c);
  if(!_ZN13ZoneState084018IsValueInRangeC3b5Ei(self,current))return;
  if(_ZN13ZoneState084018IsValueInRangeC545Ei(self,current))return;

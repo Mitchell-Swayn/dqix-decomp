@@ -6,9 +6,9 @@ struct MapLocationContext { unsigned short zoneId; unsigned char unknown2[6]; vo
 struct FilteredMapObject { unsigned short flags; unsigned char unknown2[0x18a]; unsigned int filterFlags; };
 extern "C" {
 FilteredMapObject* GameState_GetObjectWithFlag100(GameState*,int);
-MapLocationContext* ReadGlobalValueAt020FB3F0();
-void SetWordFieldsAtOffsets1A8And1AC(void*,int,int);
-void WriteByteAtOffset1B0(void*,int);
+MapLocationContext* Zone3D_GetMainInstance();
+void GameObject_SetMapMarkerCoordinates(void*,int,int);
+void GameObject_SetMapMarkerCategory(void*,int);
 }
 // Applies pending ID rules to the first four game objects, with special-zone grouping and boss selection.
 // The embedded-address check preserves the original context validity test; its broader type is unknown.
@@ -21,7 +21,7 @@ extern "C" void WorldMap_ApplyObjectIdFilterRules(MapObjectFilterState* self,int
   GameResources_GetInstance();
   FilteredMapObject* object=GameState_GetObjectWithFlag100(state,i);
   if(!object)continue;
-  MapLocationContext* location=ReadGlobalValueAt020FB3F0();
+  MapLocationContext* location=Zone3D_GetMainInstance();
   if(!location->embedded || !location->active)return;
   if((object->flags&0x1000) && (location->zoneId==10000 || location->zoneId==10100)) {
    object->filterFlags&=~8;
@@ -43,8 +43,8 @@ extern "C" void WorldMap_ApplyObjectIdFilterRules(MapObjectFilterState* self,int
       if(!rule->configured)object->filterFlags&=~0x10;
       else {
        object->filterFlags|=0x10;
-       SetWordFieldsAtOffsets1A8And1AC(object,rule->valueA,rule->valueB);
-       WriteByteAtOffset1B0(object,rule->style);
+       GameObject_SetMapMarkerCoordinates(object,rule->valueA,rule->valueB);
+       GameObject_SetMapMarkerCategory(object,rule->style);
       }
       found=1;
      }
@@ -67,8 +67,8 @@ extern "C" void WorldMap_ApplyObjectIdFilterRules(MapObjectFilterState* self,int
       if(!rule->configured)object->filterFlags&=~0x10;
       else {
        object->filterFlags|=0x10;
-       SetWordFieldsAtOffsets1A8And1AC(object,rule->valueA,rule->valueB);
-       WriteByteAtOffset1B0(object,rule->style);
+       GameObject_SetMapMarkerCoordinates(object,rule->valueA,rule->valueB);
+       GameObject_SetMapMarkerCategory(object,rule->style);
       }
       found=1;
      }

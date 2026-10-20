@@ -122,22 +122,10 @@ def context_metrics(root, graph, metrics, ledger):
 
 
 def source_owners(root, report, graph):
-    from dependency_rank import source_ranges
-    ranges = source_ranges(root); result = {}
-    by_name = {}
-    for n in graph['nodes']:
-        if n.get('matched_source'):
-            by_name.setdefault(n['name'], []).append(n)
-    for unit in report['units']:
-        source = unit.get('metadata', {}).get('source_path', '').replace('\\', '/')
-        for f in unit.get('functions', []):
-            if f.get('fuzzy_match_percent') != 100:
-                continue
-            for n in by_name.get(f['name'], []):
-                if int(f['size']) == n['size'] and any(
-                        mod == n['module'] and start <= n['address'] and n['address'] + n['size'] <= end
-                        for mod, start, end in ranges.get(source, [])):
-                    result[n['id']] = source
+    from dependency_rank import current_source_owners
+    matched = {n['id'] for n in graph['nodes'] if n.get('matched_source')}
+    result = {fid: source for fid, source in current_source_owners(root, report, graph['nodes']).items()
+              if fid in matched}
     arm7 = root / 'build/usa/arm7/report.json'
     if arm7.exists():
         for unit in json.loads(arm7.read_text()).get('units', []):

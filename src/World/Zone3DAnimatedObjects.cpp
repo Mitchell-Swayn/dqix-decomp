@@ -73,7 +73,7 @@ bool Zone3D::LoadBMDJAnimatedObject(Zone3D_BMDJStruct::ObjectEntry* entry, Zone3
     }
     if (object)
     {
-        ObjectAnimationRules rules = data_020e6f48;
+        ObjectAnimationRules rules = Zone3DLoadBMDJAnimatedObject_UnknownRoleInitializedBytes;
         for (ObjectAnimationRule* rule = rules.rules; rule->mask; ++rule)
         {
             if (!(rule->mask & definition->unk_2)) continue;

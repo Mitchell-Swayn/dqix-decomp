@@ -1,14 +1,19 @@
 #include <globaldefs.h>
 struct VertexTable { int xyz[4][3]; };
-extern "C" const VertexTable data_020e8804;
-extern "C" void Graphics_WritePackedPolygonAttributeFields_Main0207076C(int,int,int,int,int,int);
+// Original data: arm9/main @ 0x20e8804; symbol: data_020e8804.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 00100000001000000000000000f0ffff001000000000000000f0ffff00f0ffff000000000010000000f0ffff00000000.
+// Observed span: 48 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" const VertexTable GraphicsDrawColoredAlphaGeometry_UnknownRoleInitializedBytes;
+extern "C" void AlphaGeometry_WritePolygonAttributes(int,int,int,int,int,int);
 extern "C" void Graphics_WriteThreeVertexCoordinates(short,short,short);
 #define REG(a) (*(volatile unsigned int*)(a))
 // Original: arm9/main @ 0x0207051C; symbol: func_0207051c; size: 0x250.
 extern "C" void Graphics_DrawColoredAlphaGeometry(int unused, unsigned int color, int alpha) {
-    VertexTable vertices = data_020e8804;
+    VertexTable vertices = GraphicsDrawColoredAlphaGeometry_UnknownRoleInitializedBytes;
     REG(0x040004a8) = 0x900000;
-    Graphics_WritePackedPolygonAttributeFields_Main0207076C(0,0,3,0x3a,alpha,0x8000);
+    AlphaGeometry_WritePolygonAttributes(0,0,3,0x3a,alpha,0x8000);
     REG(0x04000444) = 0;
     REG(0x0400046c) = 0x100000;
     REG(0x0400046c) = 0xc0000;
@@ -22,7 +27,7 @@ extern "C" void Graphics_DrawColoredAlphaGeometry(int unused, unsigned int color
     REG(0x04000504) = 0;
     REG(0x04000448) = 1;
     if (alpha == 31) {
-        Graphics_WritePackedPolygonAttributeFields_Main0207076C(0,0,3,0x3a,0,0x8000);
+        AlphaGeometry_WritePolygonAttributes(0,0,3,0x3a,0,0x8000);
         REG(0x04000444) = 0;
         REG(0x0400046c) = 0x100000;
         REG(0x0400046c) = 0xc0000;

@@ -1,0 +1,9 @@
+#include "globaldefs.h"
+#include "std_library_functions.h"
+#define H(p,o) (*(unsigned short*)((unsigned char*)(p)+(o)))
+#define S(p,o) (*(short*)((unsigned char*)(p)+(o)))
+#define W(p,o) (*(unsigned*)((unsigned char*)(p)+(o)))
+#define P(p,o) (*(unsigned char**)((unsigned char*)(p)+(o)))
+struct Descriptor;extern "C" int GameObject_GetCombatTrackingRecord(int),Grotto_ApplyPositiveSlotDescriptor(Descriptor*,unsigned short*,unsigned char*,int),GameState_SelectLowestRatioGroupObject(unsigned char**,int,int,short*);extern "C" void BattleAI_EvaluateAvailableActionsByCategory(void*);
+// Original: arm9/ov024 @ 0x021F81DC; symbol: func_ov024_021f81dc; size: 0x124.
+extern "C" ARM void BattleAI_SelectSupportActionWithFortyPercentHpThreshold(unsigned char*self,int unused,int object,short*out){unsigned char*data=(unsigned char*)GameObject_GetCombatTrackingRecord(object);if(!data)return;*(float*)(self+0x124)=0.4f;BattleAI_EvaluateAvailableActionsByCategory(self);if(Grotto_ApplyPositiveSlotDescriptor((Descriptor*)(self+0x4c8),(unsigned short*)out,data,S(self,4)))return;if(Grotto_ApplyPositiveSlotDescriptor((Descriptor*)(self+0x498),(unsigned short*)out,data,S(self,4)))return;if(*(int*)(self+12)>=4){if(Grotto_ApplyPositiveSlotDescriptor((Descriptor*)(self+0x528),(unsigned short*)out,data,S(self,4)))return;}if(*(int*)(self+12)>=4){if(Grotto_ApplyPositiveSlotDescriptor((Descriptor*)(self+0x3a8),(unsigned short*)out,data,S(self,4)))return;if(Grotto_ApplyPositiveSlotDescriptor((Descriptor*)(self+0x408),(unsigned short*)out,data,S(self,4)))return;}else{if(Grotto_ApplyPositiveSlotDescriptor((Descriptor*)(self+0x438),(unsigned short*)out,data,S(self,4)))return;}GameState_SelectLowestRatioGroupObject((unsigned char**)self,unused,object,out);}

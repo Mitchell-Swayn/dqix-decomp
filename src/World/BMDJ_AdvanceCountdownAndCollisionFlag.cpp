@@ -2,10 +2,10 @@
 #include "Resource/GameResources.h"
 struct CountdownFeature { unsigned char kind,group,instance,unknown3,unknown4,enabled,unknown6,immediate,linkedGroup,linkedInstance; };
 struct CountdownContext { unsigned char unknown0[3]; unsigned char immediate; };
-extern "C" Zone3D* ReadGlobalValueAt020FB3F0();
+extern "C" Zone3D* Zone3D_GetMainInstance();
 // Original: arm9/main @ 0x020A88E8; symbol: func_020a88e8; size: 0x14C.
 extern "C" void BMDJ_AdvanceCountdownAndCollisionFlag(CountdownFeature* feature) {
- Zone3D* zone=ReadGlobalValueAt020FB3F0();
+ Zone3D* zone=Zone3D_GetMainInstance();
  Zone3D_BMDJStruct::InstanceEntry* instance=zone->FindLastBMDJInstance(feature->group,feature->instance);
  Zone3D_BMDJStruct::InstanceEntry* linked=zone->FindLastBMDJInstance(feature->linkedGroup,feature->linkedInstance);
  if(!instance || !linked)return;

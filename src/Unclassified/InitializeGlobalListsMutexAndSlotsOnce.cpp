@@ -1,7 +1,0 @@
-#include <globaldefs.h>
-#include <Memory/SignedAllocator.h>
-#include <System/Mutex.h>
-#include <Filesystem/NitroVM.h>
-void NitroVM_Initialize(NitroVM*);extern "C" unsigned data_021103b0[];extern "C" SignedAllocatorList data_021103bc;extern "C" char data_021103e0[],data_02111020[],data_02110a4c[],data_02110560[];extern "C" Mutex data_021103c8;extern "C" void InitializeChannelIDsAndAllocateConfiguredResources(unsigned);extern "C" void InitializeGlobalCallbacksAndOwnerFlagFields(void*);extern "C" void InitializeAndStartProcessorContextWithList(void*,unsigned);
-// Original: arm9/main @ 0x020BE9E8; symbol: func_020be9e8; size: 0x104.
-extern "C" ARM void InitializeGlobalListsMutexAndSlotsOnce(unsigned value,unsigned mode){if(data_021103b0[0]){InitializeChannelIDsAndAllocateConfiguredResources(mode);return;}data_021103b0[0]=1;data_021103bc.Initialize(0);for(int i=0;i<8;i++)data_021103bc.InsertAtEnd((SignedAllocatorHeader*)(data_021103e0+i*0x30));ZeroInitializeMutex(&data_021103c8);data_021103b0[2]=(unsigned)data_02111020;for(int i=0;i<4;i++){char* p=data_02110a4c+i*0x174;*(unsigned*)(p+0x110)&=~1;NitroVM_Initialize((NitroVM*)(p+0x5c));InitializeGlobalCallbacksAndOwnerFlagFields(p);*(int*)(p+0x148)=i;p[0x124]=0;*(unsigned*)(p+0x12c)=0;*(unsigned*)(p+0x130)=0;*(unsigned*)(p+0x120)=0;}InitializeChannelIDsAndAllocateConfiguredResources(mode);InitializeAndStartProcessorContextWithList(data_02110560,value);}

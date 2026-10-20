@@ -3,12 +3,12 @@
 #include <Graphics/Vector.h>
 #include <World/Object3D.h>
 
-extern "C" void ReadContextOrLocalObjectPosition(Vector3fix* out, void* monster);
+extern "C" void GameObject_GetAuthorityPosition(Vector3fix* out, void* monster);
 extern "C" void SetObjectAngleAndClearFlagC48000(Object3D* object, int angle);
-extern "C" void ChangeCurrentValueAndNotifyUpdate(Object3D* object, int mode);
-extern "C" void* Object_GetGlobalConnectionState();
-extern "C" int IsFirstWordNonzero(void* state);
-extern "C" int ReadIndexedSignedField1038(void* state);
+extern "C" void GameObject_ChangeMotionStateAndRefreshAnimation(Object3D* object, int mode);
+extern "C" void* Network_GetConnectionManager();
+extern "C" int Network_IsSessionActive(void* state);
+extern "C" int Network_GetLocalMemberId(void* state);
 extern "C" void GameState_QueueObjectTransform(unsigned int, int, int,
                                      Vector3fix, Vector3fix, unsigned int);
 
@@ -27,7 +27,7 @@ extern "C" ARM int Object3D_FaceIndexedMonsterAndRestoreVisibility(Object3D* inp
         int copy[3];
         int direction[3];
         int target[3];
-        ReadContextOrLocalObjectPosition(reinterpret_cast<Vector3fix*>(target), found);
+        GameObject_GetAuthorityPosition(reinterpret_cast<Vector3fix*>(target), found);
         COPY_ARRAY(copy, target);
         Vector3fix_Subtract(reinterpret_cast<Vector3fix*>(copy),
                             reinterpret_cast<Vector3fix*>(reinterpret_cast<unsigned char*>(object) + 0x44),
@@ -36,13 +36,13 @@ extern "C" ARM int Object3D_FaceIndexedMonsterAndRestoreVisibility(Object3D* inp
                              reinterpret_cast<Vector3fix*>(direction));
         SetObjectAngleAndClearFlagC48000(object, fix32_Atan2(direction[0], direction[2]));
         *reinterpret_cast<unsigned short*>(reinterpret_cast<unsigned char*>(object) + 0xb2) = 0;
-        ChangeCurrentValueAndNotifyUpdate(object, 0);
+        GameObject_ChangeMotionStateAndRefreshAnimation(object, 0);
         object->EnableFlag(0x80);
         object->SetInheritedAlpha(0x1f);
         *(reinterpret_cast<unsigned char*>(object) + 0x17a) = 0;
 
-        void* state = Object_GetGlobalConnectionState();
-        if (IsFirstWordNonzero(state) && !ReadIndexedSignedField1038(state)) {
+        void* state = Network_GetConnectionManager();
+        if (Network_IsSessionActive(state) && !Network_GetLocalMemberId(state)) {
             const unsigned int field = object->GetField06();
             Vector3fix* position = (Vector3fix*)((char*)object + 0x44);
             Vector3fix* rotation = (Vector3fix*)((char*)object + 0x50);

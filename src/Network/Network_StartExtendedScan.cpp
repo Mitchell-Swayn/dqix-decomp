@@ -3,8 +3,8 @@ ARM
 struct ScanParam { void* buffer; unsigned short size,channel,time; unsigned char bssid[6]; unsigned short type,length; unsigned char ssid[32]; unsigned short match; };
 struct Request { unsigned short command,channel;void* buffer;unsigned short size,time; unsigned char bssid[6];unsigned short type,length;unsigned char ssid[32];unsigned short match; unsigned reserved; };
 extern "C" void MI_CpuCopy8(const void*,void*,unsigned);
-extern "C" void SetGlobalIndexedWordAtOffset18(int,unsigned);
-extern "C" int CopyAndSendCachedPayloadToArm7CommandTen(const void*,unsigned);
+extern "C" void WMi_SetCallbackTable(int,unsigned);
+extern "C" int WMi_SendCommandDirect(const void*,unsigned);
 extern "C" int TestCurrentStatusAgainstVariadicAllowedValues(unsigned,...);
 // Original: arm9/main @ 0x020D5340; symbol: func_020d5340; size: 0x150.
 extern "C" int Network_StartExtendedScan(unsigned callback,ScanParam* param) {
@@ -18,7 +18,7 @@ extern "C" int Network_StartExtendedScan(unsigned callback,ScanParam* param) {
  unsigned short type=param->type;
  if(type!=0 && type!=1 && type!=2 && type!=3)return 6;
  if((unsigned short)(type+65534)<=1 && param->match>32)return 6;
- SetGlobalIndexedWordAtOffset18(38,callback);
+ WMi_SetCallbackTable(38,callback);
  request.command=38;
  request.channel=param->channel;
  request.buffer=param->buffer;
@@ -29,7 +29,7 @@ extern "C" int Network_StartExtendedScan(unsigned callback,ScanParam* param) {
  request.match=param->match;
  request.length=param->length;
  MI_CpuCopy8(param->ssid,request.ssid,32);
- result=CopyAndSendCachedPayloadToArm7CommandTen(&request,60);
+ result=WMi_SendCommandDirect(&request,60);
  if(result==0)return 2;
  return result;
 }

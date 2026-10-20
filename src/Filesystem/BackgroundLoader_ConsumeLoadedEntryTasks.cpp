@@ -1,6 +1,6 @@
 #include <globaldefs.h>
 #include "Filesystem/BackgroundLoader.h"
-extern "C" void ClearWordsAndHalfwordsAtOffsets8Through18(void*);
+extern "C" void Graphics_ResetBackgroundMapResourceBindings(void*);
 extern "C" void Graphics_InitializeBackgroundMapFromDataAndPalette(void*,void*,unsigned,int,int);
 struct State
 {
@@ -22,7 +22,7 @@ extern "C" ARM void BackgroundLoader_ConsumeLoadedEntryTasks(State* p,int* tasks
         for(int i=0;i<p->count;++i)
         {
             loader->GetLoadedFileByID(tasks[i],&data,&size);
-            ClearWordsAndHalfwordsAtOffsets8Through18(p->entries+i*36+8);
+            Graphics_ResetBackgroundMapResourceBindings(p->entries+i*36+8);
             Graphics_InitializeBackgroundMapFromDataAndPalette(p->entries+i*36+8,data,flags,1,0);
             BackgroundLoader::GetInstance()->RemoveTask(tasks[i]);
             tasks[i]=-1;

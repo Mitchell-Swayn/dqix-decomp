@@ -1,7 +1,0 @@
-#include "Filesystem/BackgroundLoader.h"
-extern "C" {
-struct EntryFlags{unsigned char unused:1,active:1,rest:6;};struct Entry{unsigned char pre[0x13];EntryFlags flags;};struct ModeFlags{unsigned char a:1,b:1,c:1,d:1,rest:4;};struct Owner{unsigned char pre[0x48];Entry* current;Entry* previous;unsigned* descriptor;unsigned* previousDescriptor;void* other;void* next;unsigned char* text[3];int task,load,frame,otherTask;unsigned char initialized, f7d,count,active,selected,flags;ModeFlags mode;unsigned char gap[3];short tasks[5];unsigned char gap2[3];unsigned char changed;};
-void func_ov014_02188d10(void*);
-// Original: arm9/ov014 @ 0x02184F78; symbol: func_ov014_02184f78; size: 0x154.
-void func_ov014_02184f78(Owner* p,Entry* current,unsigned* descriptor,unsigned char mode){if(!p->initialized)return;if(!current||!descriptor){p->current=current;return;}BackgroundLoader* loader=BackgroundLoader::GetInstance();if(p->task>=0){loader->RemoveTask(p->task);p->task=-1;}for(int i=0;i<5;i++){short task=p->tasks[i];if(task>=0){BackgroundLoader::GetInstance()->RemoveTask(task);p->tasks[i]=-1;}}func_ov014_02188d10((unsigned char*)p+0x1c);p->active=0;p->selected=0;p->current=current;p->descriptor=descriptor;*p->text[0]=0;*p->text[1]=0;*p->text[2]=0;p->flags|=1;p->flags&=~8;p->mode.c=mode; if(!p->current->flags.active){p->flags&=~1;p->flags|=16;p->flags&=~4;p->changed=0;return;}p->flags&=~16;if(p->load>=0){loader->RemoveTask(p->load);p->load=-1;}p->count=0;p->changed=1;}
-}

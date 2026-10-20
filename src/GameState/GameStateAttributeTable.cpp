@@ -11,16 +11,16 @@ typedef char GameStateAttributeTableBufferOffsetCheck[
 typedef char GameStateAttributeTableStateSizeCheck[
     sizeof(GameState) == 0x7ff4 ? 1 : -1];
 
-extern "C" void Initialize2RecordFields_Main0209A338(GameStateAttributeTable* table);
+extern "C" void SkillTable_Reset(GameStateAttributeTable* table);
 extern "C" void LoadAndExecuteScriptWithGlobalObject(GameStateAttributeTable* table, void* buffer);
-extern "C" GameStateAttributeRecord* Object_FindIdByDirectIndexThenLinearSearch(
+extern "C" GameStateAttributeRecord* SkillTable_FindEntryById(
     GameStateAttributeTable* table, int identifier);
 
 // Original: arm9/main @ 0x0201133C; symbol: func_0201133c; size: 0x40.
 extern "C" void GameState_InitializeAttributeTableBuffer(GameState* state)
 {
     memset(state->attributeTableBuffer_, 0, sizeof(state->attributeTableBuffer_));
-    Initialize2RecordFields_Main0209A338(&state->attributeTable_);
+    SkillTable_Reset(&state->attributeTable_);
     LoadAndExecuteScriptWithGlobalObject(&state->attributeTable_, state->attributeTableBuffer_);
 }
 
@@ -29,7 +29,7 @@ extern "C" unsigned int GameState_ReadAttributeBits12To19(GameState* state, int 
 {
     unsigned int result = 0;
     GameStateAttributeRecord* record =
-        Object_FindIdByDirectIndexThenLinearSearch(&state->attributeTable_, identifier);
+        SkillTable_FindEntryById(&state->attributeTable_, identifier);
     if (record != NULL)
         result = (record->attributes_ << 12) >> 24;
     return result;

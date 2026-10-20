@@ -1,4 +1,4 @@
-"""Rebuild the hash-pinned objdiff2.7.1 ARM empty-map repair in ignored build/.
+"""Rebuild the hash-pinned objdiff2.7.1 ARM mapping repair in ignored build/.
 
 Original configured tools and ROM inputs are never modified. Requires the pinned
 factory image and Docker access; all Rust/Cargo state stays workspace-local.
@@ -32,7 +32,7 @@ def acquire(url,target,expected,supplied=None):
   target.write_bytes(payload)
  return checked(target,expected)
 
-def prepare_source(archive,work,policy):
+def prepare_source(archive,work,policy,prefix_patch=None):
  source=work/'objdiff-2.7.1'
  # Never reuse potentially edited source or target caches from another build.
  if source.exists():shutil.rmtree(source)
@@ -44,6 +44,11 @@ def prepare_source(archive,work,policy):
  arm=source/'objdiff-core/src/arch/arm.rs';text=arm.read_text()
  if text.count(OLD)!=1:raise ValueError('Unexpected upstream ARM mapping context')
  arm.write_text(text.replace(OLD,NEW))
+ checked(arm,policy.get('empty_map_source_sha256',policy['patched_source_sha256']))
+ if policy.get('prefix_patch'):
+  if prefix_patch is None:raise ValueError('Missing pinned prefix mapping patch')
+  checked(prefix_patch,policy['prefix_patch_sha256'])
+  subprocess.run(['patch','--batch','--forward','-p1','-i',str(Path(prefix_patch).resolve())],cwd=source,check=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
  checked(arm,policy['patched_source_sha256']);checked(source/'Cargo.lock',policy['cargo_lock_sha256'])
  return source
 
@@ -63,7 +68,12 @@ def build(root,source_archive=None,rustup_installer=None,check_inputs=False,dock
  patch=(root/policy['patch']).resolve()
  if not patch.is_relative_to(root/'tools'):raise ValueError('Patch leaves tools directory')
  checked(patch,policy['patch_sha256']);source=acquire(SOURCE_URL,work/'source.tar.gz',SOURCE_SHA,source_archive);installer=acquire(RUSTUP_URL,work/'rustup-init',RUSTUP_SHA,rustup_installer);channel=acquire(MANIFEST_URL,work/'channel.toml',MANIFEST_SHA)
- prepare_source(source,work,policy)
+ prefix_patch=None
+ if policy.get('prefix_patch'):
+  prefix_patch=(root/policy['prefix_patch']).resolve()
+  if not prefix_patch.is_relative_to(root/'tools'):raise ValueError('Prefix patch leaves tools directory')
+  checked(prefix_patch,policy['prefix_patch_sha256'])
+ prepare_source(source,work,policy,prefix_patch)
  if check_inputs:return {'inputs_verified':True,'work':str(work)}
  installer.chmod(0o755)
  # Pin the exact image ID used for the accepted binary, not a mutable tag.
@@ -76,6 +86,7 @@ def build(root,source_archive=None,rustup_installer=None,check_inputs=False,dock
  if temp.is_symlink():raise ValueError('Temporary output must not be a symlink')
  shutil.copyfile(binary,temp);temp.chmod(0o755);checked(temp,policy['binary_sha256']);os.replace(temp,dest)
  receipt=dict(binary=str(dest.relative_to(root)),binary_sha256=digest(dest),source_sha256=SOURCE_SHA,patch_sha256=policy['patch_sha256'],rustup_installer_sha256=RUSTUP_SHA,rust_manifest_sha256=MANIFEST_SHA,build_image=IMAGE)
+ if prefix_patch:receipt['prefix_patch_sha256']=policy['prefix_patch_sha256']
  (work/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n');return receipt
 
 if __name__=='__main__':

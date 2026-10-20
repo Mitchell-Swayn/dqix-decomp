@@ -9,11 +9,11 @@ void CycleCurrentPriorityContexts()
     ProcessorContext* lastEqualPriorityContext = NULL;
     int numEqualPriorityContexts = 0;
     int priorState;
-    ProcessorContext* active = data_021112e0.substruct_24.activeContext;
+    ProcessorContext* active = OSInitThread_UnknownRoleZeroInitializedStorage.substruct_24.activeContext;
     priorState = DisableIRQInterrupts();
     ProcessorContext* loopPrevContext = NULL;
-    ProcessorContext* loopContext = data_021112e0.substruct_24.firstContext;
-    if (data_021112e0.substruct_24.firstContext != NULL)
+    ProcessorContext* loopContext = OSInitThread_UnknownRoleZeroInitializedStorage.substruct_24.firstContext;
+    if (OSInitThread_UnknownRoleZeroInitializedStorage.substruct_24.firstContext != NULL)
     {
         unsigned int targetPriority = active->priority;
         do {
@@ -35,7 +35,7 @@ void CycleCurrentPriorityContexts()
     }
     if (contextBeforeActive == NULL)
     {
-        data_021112e0.substruct_24.firstContext = active->pNext;
+        OSInitThread_UnknownRoleZeroInitializedStorage.substruct_24.firstContext = active->pNext;
     }
     else
     {

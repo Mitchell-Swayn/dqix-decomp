@@ -206,6 +206,11 @@ def _print_check(result, verbose):
         print('  ' + line)
     for problem in result['problems']:
         print('  problem: ' + problem)
+    for row in result.get('canonical', {}).get('declarations', []):
+        print(f"  canonical: {row['path']} [{row['authority']}] {row['decl']}")
+        print(f"    candidate: {row['candidate_declaration']}")
+    for line in result.get('canonical', {}).get('messages', []):
+        print('  ' + line)
     for warning in result.get('warnings', []):
         print('  warning: ' + warning)
     if result.get('diff') and (verbose or status != 'match'):
@@ -223,12 +228,12 @@ def run_check(project, db, args, task):
     include_dir = None
     if args.file != '-':
         parent = Path(args.file).resolve().parent
-        if parent.is_relative_to(project.root):
-            include_dir = parent.relative_to(project.root)
+        include_dir = parent.relative_to(project.root) if parent.is_relative_to(project.root) else parent
     result = check(project, db, task, text, args.symbol, suffix, include_dir, args.profile)
     score = result.get('score', 0) if result['status'] in ('match', 'mismatch') else 0
-    db.execute('UPDATE tasks SET checks=checks+1, best=max(best,?), updated=? WHERE id=?',
-               (score, time.time(), task['id']))
+    if not result['status'].startswith('canonical_'):
+        db.execute('UPDATE tasks SET checks=checks+1, best=max(best,?), updated=? WHERE id=?',
+                   (score, time.time(), task['id']))
     log(db, 'check', task['id'], worker_name(args, task), status=result['status'], score=score)
     return result, text, suffix
 
@@ -256,6 +261,23 @@ def cmd_submit(project, args):
     if result['status'] != 'match':
         print('not submitted: candidate does not match')
         return 1
+    from canonical import accepted_read, snapshot, StateUnavailable
+    try:
+        with accepted_read(project):
+            if snapshot(project, db)[0] != result['canonical_state']:
+                raise StateUnavailable('canonical inputs changed before submit; rerun submit')
+            current = get_task(db, args.task)
+            if current['status'] not in ('open', 'leased') and not (
+                    current['status'] == 'submitted' and current['worker'] == worker_name(args, current)):
+                print('not submitted: task state changed; retry')
+                return 1
+            return _enqueue(project, db, args, current, result, text, suffix)
+    except StateUnavailable as error:
+        print('not submitted: ' + str(error))
+        return 1
+
+
+def _enqueue(project, db, args, task, result, text, suffix):
     symbol = result['symbol']
     clash = db.execute('SELECT module,address FROM symbols WHERE name=? AND NOT (module=? AND address=?)',
                        (symbol, task['module'], task['address'])).fetchone()

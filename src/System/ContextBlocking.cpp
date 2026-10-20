@@ -33,7 +33,7 @@ void BlockCurrentContext(BlockedContextList* blockQueue)
 {
     int priorState = DisableIRQInterrupts();
 
-    ProcessorContext* current = *data_021112e0.ppActiveContext;
+    ProcessorContext* current = *OSInitThread_UnknownRoleZeroInitializedStorage.ppActiveContext;
     if (blockQueue != NULL)
     {
         current->containerBlockedQueue = blockQueue;
@@ -81,7 +81,7 @@ void MarkContextReadyAndSwitch(ProcessorContext* context)
 // Original: arm9/main @ 0x020C7978; symbol: _Z20GetFirstReadyContextv; size: 0x28.
 ProcessorContext* GetFirstReadyContext()
 {
-    ProcessorContext* context = data_021112e0.substruct_24.firstContext;
+    ProcessorContext* context = OSInitThread_UnknownRoleZeroInitializedStorage.substruct_24.firstContext;
     while (context != NULL && context->blockState != CONTEXT_STATE_READY)
     {
         context = context->pNext;

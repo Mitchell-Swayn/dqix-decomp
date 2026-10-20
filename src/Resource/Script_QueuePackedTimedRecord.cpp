@@ -2,11 +2,21 @@
 ARM
 extern "C" int _ZNK6Script9Parameter5ToIntEv(const void*);
 extern "C" char* _ZN13SafeAllocator8AllocateEj(unsigned,unsigned);
-extern "C" void* ReadGlobalValueAt02108844();
-extern "C" int ReadOneOf204PackedTwoBitValues(volatile unsigned char*,int);
+extern "C" void* GameState_GetSerializedProgressState();
+extern "C" int Script_GetPackedEntryState(volatile unsigned char*,int);
 extern "C" void DecodePackedScriptParametersToLists(unsigned,int,void*,void*,void*);
-extern "C" void PrependNodeToFieldA0List(unsigned char*,unsigned char*);
-extern "C" char data_02109404[],data_02109418[];
+extern "C" void Quest_PrependOrderCondition(unsigned char*,unsigned char*);
+// Original data: arm9/main @ 0x2109404; symbol: data_02109404.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 20 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x2109418; symbol: data_02109418.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" char ScriptQueuePackedTimedRecord_UnknownRoleZeroInitializedStorage[],QuestGetGlobalOrderState_UnknownRoleZeroInitializedStorage[];
 struct Flag16 {unsigned short key:9,a:1,b:1,c:1,d:1,e:1,pad:2;};
 struct Time32 {unsigned byte:8,hour:6,minute:5,pad:13;};
 struct Node {unsigned short zone;Flag16 flags;Time32 time;void* lists[2];};
@@ -14,7 +24,7 @@ struct Node {unsigned short zone;Flag16 flags;Time32 time;void* lists[2];};
 extern "C" int Script_QueuePackedTimedRecord(char* params,int count) {
  int key=_ZNK6Script9Parameter5ToIntEv(params);
  int zone=_ZNK6Script9Parameter5ToIntEv(params+8);
- unsigned current=*(unsigned short*)(data_02109404+8);
+ unsigned current=*(unsigned short*)(ScriptQueuePackedTimedRecord_UnknownRoleZeroInitializedStorage+8);
  if(zone!=current) {
   if(current>=0xc3b5 && current<=0xc4e5) {if(zone!=0xc3b5)return 0;}
   else return 1;
@@ -22,15 +32,15 @@ extern "C" int Script_QueuePackedTimedRecord(char* params,int count) {
  int byte=_ZNK6Script9Parameter5ToIntEv(params+16);
  int hour=_ZNK6Script9Parameter5ToIntEv(params+24);
  int minute=_ZNK6Script9Parameter5ToIntEv(params+32);
- if(hour*100+minute>*(unsigned char*)(data_02109404+3)*100+*(unsigned char*)(data_02109404+4))return 0;
+ if(hour*100+minute>*(unsigned char*)(ScriptQueuePackedTimedRecord_UnknownRoleZeroInitializedStorage+3)*100+*(unsigned char*)(ScriptQueuePackedTimedRecord_UnknownRoleZeroInitializedStorage+4))return 0;
  int flag=_ZNK6Script9Parameter5ToIntEv(params+40);
- volatile unsigned char* state=(volatile unsigned char*)ReadGlobalValueAt02108844();
+ volatile unsigned char* state=(volatile unsigned char*)GameState_GetSerializedProgressState();
  int index=_ZNK6Script9Parameter5ToIntEv(params+48);
  if(index>=0) {
-  int ready=(ReadOneOf204PackedTwoBitValues(state,index)==3)?1:0;
+  int ready=(Script_GetPackedEntryState(state,index)==3)?1:0;
   if(!ready)return 0;
  }
- Node* node=(Node*)_ZN13SafeAllocator8AllocateEj(*(unsigned*)(data_02109404+0xc),16);
+ Node* node=(Node*)_ZN13SafeAllocator8AllocateEj(*(unsigned*)(ScriptQueuePackedTimedRecord_UnknownRoleZeroInitializedStorage+0xc),16);
  node->zone=(unsigned short)zone;
  node->flags.key=(unsigned short)key;
  node->time.byte=byte;node->time.hour=hour;node->time.minute=minute;
@@ -43,7 +53,7 @@ extern "C" int Script_QueuePackedTimedRecord(char* params,int count) {
  node->flags.e=(unsigned short)_ZNK6Script9Parameter5ToIntEv(final);
  node->lists[0]=0;node->lists[1]=0;
  unsigned extra=0;
- DecodePackedScriptParametersToLists(*(unsigned*)(data_02109404+0xc),count-11,final+8,node->lists,&extra);
- PrependNodeToFieldA0List((unsigned char*)data_02109418,(unsigned char*)node);
+ DecodePackedScriptParametersToLists(*(unsigned*)(ScriptQueuePackedTimedRecord_UnknownRoleZeroInitializedStorage+0xc),count-11,final+8,node->lists,&extra);
+ Quest_PrependOrderCondition((unsigned char*)QuestGetGlobalOrderState_UnknownRoleZeroInitializedStorage,(unsigned char*)node);
  return 1;
 }

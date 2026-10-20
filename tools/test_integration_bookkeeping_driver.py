@@ -2,6 +2,7 @@
 These tests prove ledger ownership/rollback behavior, not source acceptance.
 """
 import contextlib
+import hashlib
 import io
 import json
 from pathlib import Path
@@ -15,7 +16,7 @@ from integration_bookkeeping import atomic_write
 
 
 class DriverTests(unittest.TestCase):
-    def run_case(self, publication_failure=False):
+    def run_case(self, publication_failure=False, refinement=False):
         with tempfile.TemporaryDirectory() as temporary:
             root=Path(temporary)/'main';worker=Path(temporary)/'worker';label='candidate'
             receipts=root/'build/run';folder=receipts/label
@@ -28,8 +29,21 @@ class DriverTests(unittest.TestCase):
             (root/delinks).write_text(header)
             (worker/delinks).write_text(header+'\n'+source+':\n    complete\n    .text start:0x02000010 end:0x02000014\n')
             (worker/source).parent.mkdir(parents=True);(worker/source).write_text('void New() {}\n')
-            (worker/'manifest.json').write_text(json.dumps({'functions':[{'name':'New','address':'02000010','size':4,'source':source}], 'units':['src/Review/New']}))
+            dependency='config/usa/keep_symbols.txt'
+            (root/dependency).write_bytes(b'Existing\n');(worker/dependency).write_bytes(b'Existing\nNew\n')
+            (worker/'manifest.json').write_text(json.dumps({'functions':[{'name':'New','address':'02000010','size':4,'source':source}], 'units':['src/Review/New'], 'dependencies':[{'path':dependency,'before_sha256':hashlib.sha256(b'Existing\n').hexdigest(),'after_sha256':hashlib.sha256(b'Existing\nNew\n').hexdigest()}]}))
+            original_source=None
+            if refinement:
+                header=(worker/delinks).read_text();(root/delinks).write_text(header)
+                original_source=b'extern "C" unsigned Getter(void*);\nvoid New() {}\n'
+                (root/source).parent.mkdir(parents=True);(root/source).write_bytes(original_source)
+                changed=original_source.replace(b'unsigned Getter',b'unsigned char Getter');(worker/source).write_bytes(changed)
+                owner=b'extern "C" unsigned char Getter(void* p){return 0;}\n';(root/'src/Owner.cpp').write_bytes(owner)
+                manifest=json.loads((worker/'manifest.json').read_text());manifest.pop('dependencies')
+                manifest['source_refinements']=[{'source':source,'before_sha256':hashlib.sha256(original_source).hexdigest(),'after_sha256':hashlib.sha256(changed).hexdigest(),'changes':[{'before':'extern "C" unsigned Getter(void*);','after':'extern "C" unsigned char Getter(void*);','canonical_source':'src/Owner.cpp','canonical_source_sha256':hashlib.sha256(owner).hexdigest()}]}]
+                (worker/'manifest.json').write_text(json.dumps(manifest));after=before.copy()
             report=root/'build/usa/report.json';report.parent.mkdir(parents=True);report.write_text(json.dumps({'measures':before}))
+            arm7=root/'build/usa/arm7/report.json';arm7.parent.mkdir();arm7.write_text('{}')
             receipts.mkdir(parents=True);checkpoint=receipts/'checkpoint.json';checkpoint.write_bytes(b'previous checkpoint')
             foreign=receipts/'support-validation';foreign.mkdir();(foreign/'receipt.json').write_text(json.dumps({'accepted':True,'match':True,'functions':99,'code_bytes':400}))
             progress=root/'build/progress';progress.mkdir(parents=True);page=progress/'index.html';page.write_bytes(b'previous page')
@@ -40,10 +54,13 @@ class DriverTests(unittest.TestCase):
                 commands.append(argv)
                 if argv[0]=='sudo':
                     if 'rollback' in Path(kwargs['stdout'].name).name:
-                        self.assertFalse((root/source).exists())
+                        self.assertEqual((root/dependency).read_bytes(),b'Existing\n')
+                        if refinement:self.assertEqual((root/source).read_bytes(),original_source)
+                        else:self.assertFalse((root/source).exists())
                         self.assertEqual(json.loads(report.read_text())['measures'],before)
                     else:
-                        self.assertTrue((root/source).exists());report.write_text(json.dumps({'measures':after}))
+                        self.assertEqual((root/dependency).read_bytes(),b'Existing\n' if refinement else b'Existing\nNew\n')
+                        self.assertTrue((root/source).exists());report.write_text(json.dumps({'measures':after,'units':[{'name':'src/Review/New','functions':[{'name':'New','fuzzy_match_percent':100}]}]}))
                 elif argv[:2]==['python3','tools/work_batch.py']:
                     workflow.mkdir(parents=True,exist_ok=True);(workflow/(argv[2]+'.json')).write_text(argv[2])
                 else:raise AssertionError('Unexpected external command: '+str(argv))
@@ -72,7 +89,8 @@ class DriverTests(unittest.TestCase):
             if publication_failure:
                 self.assertEqual(json.loads(report.read_text())['measures'],before)
                 self.assertEqual((root/delinks).read_text(),header)
-                self.assertFalse((root/source).exists())
+                if refinement:self.assertEqual((root/source).read_bytes(),original_source)
+                else:self.assertFalse((root/source).exists())
                 self.assertFalse((workflow/'start.json').exists());self.assertFalse((workflow/'finish.json').exists())
                 self.assertEqual(checkpoint.read_bytes(),b'previous checkpoint');self.assertEqual(page.read_bytes(),b'previous page')
                 self.assertEqual([p.name for p in history.glob('*.json')],['previous.json'])
@@ -82,7 +100,9 @@ class DriverTests(unittest.TestCase):
             else:
                 record=json.loads((folder/'receipt.json').read_text());self.assertTrue(record['accepted'])
                 ledger=json.loads(checkpoint.read_text());self.assertEqual(ledger['accepted_batches'],[label])
-                self.assertEqual((ledger['new_functions'],ledger['new_code_bytes']), (1,4))
+                self.assertEqual(ledger['workers'], {})
+                self.assertEqual((ledger['new_functions'],ledger['new_code_bytes']), (0,0) if refinement else (1,4))
+                if refinement:self.assertEqual(record['refined_functions'],1)
                 self.assertEqual(page.read_bytes(),b'prepared accepted page')
                 self.assertEqual(sum(command[0]=='sudo' for command in commands),1)
 
@@ -91,6 +111,12 @@ class DriverTests(unittest.TestCase):
 
     def test_late_checkpoint_failure_rolls_back_source_and_all_bookkeeping(self):
         self.run_case(publication_failure=True)
+
+    def test_existing_declaration_refinement_publishes_without_coverage_credit(self):
+        self.run_case(refinement=True)
+
+    def test_late_publication_failure_restores_existing_declarations(self):
+        self.run_case(publication_failure=True,refinement=True)
 
 
 if __name__ == '__main__':unittest.main()

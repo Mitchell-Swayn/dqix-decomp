@@ -20,16 +20,16 @@ void SetInterruptHandler(unsigned int mask, const void* proc)
             // DMA channels
             if (interruptID >= 8 && interruptID <= 11)
             {
-                dmaTimerData = &data_0211127c[interruptID - 8];
+                dmaTimerData = &GetInterruptHandler_UnknownRoleZeroInitializedStorage[interruptID - 8];
             }
             // timer overflows
             else if (interruptID >= 3 && interruptID <= 6)
             {
-                dmaTimerData = &data_0211127c[interruptID + 1];
+                dmaTimerData = &GetInterruptHandler_UnknownRoleZeroInitializedStorage[interruptID + 1];
             }
             else
             {
-                data_027e0000.interruptProcTable[interruptID] = (InterruptHandlerProc)proc;
+                Entry_UnknownRoleProcedureReferenceRecords.interruptProcTable[interruptID] = (InterruptHandlerProc)proc;
             }
 
             if (dmaTimerData != NULL)

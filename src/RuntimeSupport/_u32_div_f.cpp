@@ -15,6 +15,8 @@ rt_0200d150:
 rt_0200d154:
     bxeq lr
 rt_0200d158:
+// Historical data_ spelling denotes a shared executable entry used by _ull_mod.
+// This accepted runtime ABI label addresses cmp r0, r1, rather than a data object.
 data_0200d158:
     cmp r0, r1
 rt_0200d15c:

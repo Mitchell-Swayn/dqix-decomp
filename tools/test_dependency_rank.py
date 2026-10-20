@@ -66,6 +66,7 @@ class RankingIntegration(unittest.TestCase):
         self.root = Path(self.temp.name)
         config = self.root / 'config/usa/arm9'
         config.mkdir(parents=True)
+        (config / 'symbols.txt').write_text('A kind:function(arm,size=0x8) addr:0x10\nB kind:function(arm,size=0xc) addr:0x20\nC kind:function(arm,size=0x10) addr:0x30\nD kind:function(arm,size=0x8) addr:0x40\n')
         (config / 'delinks.txt').write_text('src/C.cpp:\n    .text start:0x30 end:0x40\n')
         (self.root / 'src').mkdir()
         (self.root / 'src/C.cpp').write_text('void C() {}')
@@ -116,6 +117,43 @@ class RankingIntegration(unittest.TestCase):
         nodes = [dict(id='main:C', name='C', module='arm9/main', address=0x30, size=16),
                  dict(id='overlay:C', name='C', module='arm9/ov000', address=0x30, size=16)]
         self.assertEqual(current_completion(self.root, self.report, nodes), {'main:C'})
+
+    def test_rename_resolves_exact_original_identity_and_context_owner(self):
+        from reconstruction_context import source_owners
+        self.report['units'][0]['functions'][0]['name'] = 'RenamedC'
+        (self.root/'config/usa/arm9/symbols.txt').write_text('RenamedC kind:function(arm,size=0x10) addr:0x30\n')
+        rows, g = ranked_queue(self.db, self.root, self.report, self.candidates)
+        self.assertEqual(g['metadata']['ranking']['matched_source_functions'], 1)
+        self.assertEqual(source_owners(self.root, self.report, g), {'C': 'src/C.cpp'})
+        self.assertTrue(next(r for r in rows if r['name'] == 'B')['callees_ready'])
+        self.assertEqual(next(n for n in g['nodes'] if n['id'] == 'C')['name'], 'C')
+
+    def test_current_symbol_boundary_module_source_and_match_fail_closed(self):
+        from reconstruction_context import source_owners
+        symbol = self.root/'config/usa/arm9/symbols.txt'
+        for declaration in ['C kind:function(arm,size=0x10) addr:0x31',
+                            'C kind:function(arm,size=0xf) addr:0x30', '']:
+            symbol.write_text(declaration+'\n')
+            _, g = ranked_queue(self.db, self.root, self.report, self.candidates)
+            self.assertEqual(g['metadata']['ranking']['matched_source_functions'], 0)
+            self.assertEqual(source_owners(self.root, self.report, g), {})
+        symbol.write_text('C kind:function(arm,size=0x10) addr:0x30\n')
+        for percent in [99.99, '100', None]:
+            self.report['units'][0]['functions'][0]['fuzzy_match_percent'] = percent
+            self.assertEqual(current_completion(self.root,self.report,[dict(id='C',name='C',module='arm9/main',address=0x30,size=16)]),set())
+        self.report['units'][0]['functions'][0]['fuzzy_match_percent'] = 100
+        (self.root/'src/C.cpp').unlink()
+        _, g = ranked_queue(self.db, self.root, self.report, self.candidates)
+        self.assertEqual(source_owners(self.root,self.report,g),{})
+
+    def test_duplicate_overlay_current_names_disambiguate_by_owner(self):
+        config=self.root/'config/usa/arm9/overlays/ov000';config.mkdir(parents=True)
+        (config/'symbols.txt').write_text('C kind:function(arm,size=0x10) addr:0x30\n')
+        nodes=[dict(id='main',name='oldMain',module='arm9/main',address=0x30,size=16),
+               dict(id='overlay',name='oldOverlay',module='arm9/ov000',address=0x30,size=16)]
+        self.assertEqual(current_completion(self.root,self.report,nodes),{'main'})
+        (config/'delinks.txt').write_text('src/C.cpp:\n    .text start:0x30 end:0x40\n')
+        self.assertEqual(current_completion(self.root,self.report,nodes),set())
 
     def test_generated_fallback_cannot_supply_source_credit(self):
         self.report['units'][0]['metadata']['auto_generated'] = True

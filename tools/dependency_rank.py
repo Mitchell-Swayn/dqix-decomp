@@ -58,29 +58,57 @@ def source_ranges(root):
     return result
 
 
+def current_symbols(root):
+    """Current names are hints; immutable identity is module/address/size."""
+    result = {}
+    base = root / 'config/usa/arm9'
+    for path in sorted(base.rglob('symbols.txt')):
+        module = 'arm9/' + ('main' if path.parent == base else path.parent.name)
+        for line in path.read_text().splitlines():
+            match = re.match(r'(\S+)\s+kind:function\((?:arm|thumb),size=0x([0-9a-fA-F]+)\)\s+addr:0x([0-9a-fA-F]+)', line)
+            if match:
+                result.setdefault(match[1], []).append((module, int(match[3], 16), int(match[2], 16)))
+    return result
+
+
+def current_source_owners(root, report, nodes):
+    """Join exact current symbols and owned source extents to original identities.
+
+    Multiple possible boundaries or source owners fail closed. Original names and
+    inventory hashes are never rewritten by a naming migration.
+    """
+    symbols = current_symbols(root)
+    ranges = source_ranges(root)
+    identities = {}
+    for node in nodes:
+        identities.setdefault((node['module'], node['address'], node['size']), []).append(node['id'])
+    owners = {}
+    for unit in report['units']:
+        meta = unit.get('metadata', {})
+        source = meta.get('source_path', '').replace('\\', '/')
+        path = (root / source).resolve()
+        if (meta.get('auto_generated') or Path(source).suffix.lower() not in ('.c', '.cpp', '.cc', '.cxx', '.s')
+                or not path.is_relative_to(root.resolve()) or not path.is_file()):
+            continue
+        for function in unit.get('functions', []):
+            if function.get('fuzzy_match_percent') != 100:
+                continue
+            matches = [identity for identity in symbols.get(function['name'], [])
+                       if identity[2] == int(function['size']) and any(
+                           module == identity[0] and start <= identity[1] and identity[1] + identity[2] <= end
+                           for module, start, end in ranges.get(source, []))]
+            if len(matches) != 1 or len(identities.get(matches[0], [])) != 1:
+                continue
+            owners.setdefault(identities[matches[0]][0], set()).add(source)
+    return {fid: next(iter(paths)) for fid, paths in owners.items() if len(paths) == 1}
+
+
 def current_completion(root, report, nodes):
     """Resolve current source units to module-qualified original identities."""
     by_name = {}
     for n in nodes:
         by_name.setdefault(n['name'], []).append(n)
-    ranges = source_ranges(root)
-    completed = set()
-    for unit in report['units']:
-        meta = unit.get('metadata', {})
-        source = meta.get('source_path', '').replace('\\', '/')
-        if meta.get('auto_generated') or Path(source).suffix.lower() not in ('.c', '.cpp', '.cc', '.cxx', '.s'):
-            continue
-        # Require the declared source to exist in this checkout.
-        if not (root / source).is_file():
-            continue
-        for f in unit.get('functions', []):
-            if f.get('fuzzy_match_percent') != 100:
-                continue
-            matches = [n for n in by_name.get(f['name'], []) if n['size'] == int(f['size']) and any(
-                module == n['module'] and start <= n['address'] and n['address'] + n['size'] <= end
-                for module, start, end in ranges.get(source, []))]
-            if len(matches) == 1:
-                completed.add(matches[0]['id'])
+    completed = set(current_source_owners(root, report, nodes))
     # ARM7 completion requires its own current verified source build report.
     path = root / 'build/usa/arm7/report.json'
     if path.exists():

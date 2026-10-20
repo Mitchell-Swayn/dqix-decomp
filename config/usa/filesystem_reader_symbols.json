@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "subsystem": "Filesystem/Reader",
+  "functions": [
+    {
+      "function_id": "arm9/main:020d8714",
+      "name": "_ZNK17CompressionPrefix21GetDecompressedLengthEv",
+      "address": "0x020d8714",
+      "source": "src/Filesystem/ExtendedNitroVM.cpp",
+      "review": "retained-established-api",
+      "ownership": "Filesystem/Reader",
+      "evidence": "Complete class/stream processing body reviewed with BackgroundLoader/GPC consumers. Public ABI and precise existing operation names retained."
+    },
+    {
+      "function_id": "arm9/main:020d8720",
+      "name": "_ZN12Decompressor17InitAndDecompressEPvjPKvj",
+      "address": "0x020d8720",
+      "source": "src/Filesystem/ExtendedNitroVM.cpp",
+      "review": "retained-established-api",
+      "ownership": "Filesystem/Reader",
+      "evidence": "Complete class/stream processing body reviewed with BackgroundLoader/GPC consumers. Public ABI and precise existing operation names retained."
+    },
+    {
+      "function_id": "arm9/main:020d8824",
+      "name": "_ZN12Decompressor12ProcessBytesEPKvj",
+      "address": "0x020d8824",
+      "source": "src/Filesystem/ExtendedNitroVM.cpp",
+      "review": "retained-established-api",
+      "ownership": "Filesystem/Reader",
+      "evidence": "Complete class/stream processing body reviewed with BackgroundLoader/GPC consumers. Public ABI and precise existing operation names retained."
+    },
+    {
+      "function_id": "arm9/main:020d890c",
+      "name": "_Z22CacheMainFileAccessorsv",
+      "address": "0x020d890c",
+      "source": "src/Filesystem/ExtendedNitroVM.cpp",
+      "review": "retained-established-api",
+      "ownership": "Filesystem/FileCache",
+      "evidence": "Complete class/stream processing body reviewed with BackgroundLoader/GPC consumers. Public ABI and precise existing operation names retained."
+    },
+    {
+      "function_id": "arm9/main:020d8a48",
+      "name": "_ZN15ExtendedNitroVM14ZeroInitializeEv",
+      "address": "0x020d8a48",
+      "source": "src/Filesystem/ExtendedNitroVM.cpp",
+      "review": "retained-established-api",
+      "ownership": "Filesystem/Reader",
+      "evidence": "Complete class/stream processing body reviewed with BackgroundLoader/GPC consumers. Public ABI and precise existing operation names retained."
+    },
+    {
+      "function_id": "arm9/main:020d8a68",
+      "name": "_ZN15ExtendedNitroVM17IsInReadableStateEv",
+      "address": "0x020d8a68",
+      "source": "src/Filesystem/ExtendedNitroVM.cpp",
+      "review": "retained-established-api",
+      "ownership": "Filesystem/Reader",
+      "evidence": "Complete class/stream processing body reviewed with BackgroundLoader/GPC consumers. Public ABI and precise existing operation names retained."
+    },
+    {
+      "function_id": "arm9/main:020d8ab0",
+      "name": "_ZN15ExtendedNitroVM11GetFileSizeEv",
+      "address": "0x020d8ab0",
+      "source": "src/Filesystem/ExtendedNitroVM.cpp",
+      "review": "retained-established-api",
+      "ownership": "Filesystem/Reader",
+      "evidence": "Complete class/stream processing body reviewed with BackgroundLoader/GPC consumers. Public ABI and precise existing operation names retained."
+    },
+    {
+      "function_id": "arm9/main:020d8ae8",
+      "name": "_ZN15ExtendedNitroVM4SeekEj",
+      "address": "0x020d8ae8",
+      "source": "src/Filesystem/ExtendedNitroVM.cpp",
+      "review": "retained-established-api",
+      "ownership": "Filesystem/Reader",
+      "evidence": "Complete class/stream processing body reviewed with BackgroundLoader/GPC consumers. Public ABI and precise existing operation names retained."
+    },
+    {
+      "function_id": "arm9/main:020d8b4c",
+      "name": "_ZN15ExtendedNitroVM5CloseEv",
+      "address": "0x020d8b4c",
+      "source": "src/Filesystem/ExtendedNitroVM.cpp",
+      "review": "retained-established-api",
+      "ownership": "Filesystem/Reader",
+      "evidence": "Complete class/stream processing body reviewed with BackgroundLoader/GPC consumers. Public ABI and precise existing operation names retained."
+    },
+    {
+      "function_id": "arm9/main:020d8b94",
+      "name": "_ZN15ExtendedNitroVM4OpenEPKcb",
+      "address": "0x020d8b94",
+      "source": "src/Filesystem/ExtendedNitroVM.cpp",
+      "review": "retained-established-api",
+      "ownership": "Filesystem/Reader",
+      "evidence": "Complete class/stream processing body reviewed with BackgroundLoader/GPC consumers. Public ABI and precise existing operation names retained."
+    },
+    {
+      "function_id": "arm9/main:020d8c78",
+      "name": "_ZN15ExtendedNitroVM4ReadEPvj",
+      "address": "0x020d8c78",
+      "source": "src/Filesystem/ExtendedNitroVM.cpp",
+      "review": "retained-established-api",
+      "ownership": "Filesystem/Reader",
+      "evidence": "Complete class/stream processing body reviewed with BackgroundLoader/GPC consumers. Public ABI and precise existing operation names retained."
+    },
+    {
+      "function_id": "arm9/main:020d8d20",
+      "name": "_ZN15ExtendedNitroVM5AbortEv",
+      "address": "0x020d8d20",
+      "source": "src/Filesystem/ExtendedNitroVM.cpp",
+      "review": "retained-established-api",
+      "ownership": "Filesystem/Reader",
+      "evidence": "Complete class/stream processing body reviewed with BackgroundLoader/GPC consumers. Public ABI and precise existing operation names retained."
+    },
+    {
+      "function_id": "arm9/main:020d8d5c",
+      "name": "_ZN15ExtendedNitroVM26DecompressWithScratchSpaceER12DecompressorRjS2_S2_Pvj",
+      "address": "0x020d8d5c",
+      "source": "src/Filesystem/ExtendedNitroVM.cpp",
+      "review": "retained-established-api",
+      "ownership": "Filesystem/Reader",
+      "evidence": "Complete class/stream processing body reviewed with BackgroundLoader/GPC consumers. Public ABI and precise existing operation names retained."
+    },
+    {
+      "function_id": "arm9/main:020d8ee4",
+      "name": "_ZN15ExtendedNitroVM15DecompressBytesEPvRjjj",
+      "address": "0x020d8ee4",
+      "source": "src/Filesystem/ExtendedNitroVM.cpp",
+      "review": "retained-established-api",
+      "ownership": "Filesystem/Reader",
+      "evidence": "Complete class/stream processing body reviewed with BackgroundLoader/GPC consumers. Public ABI and precise existing operation names retained."
+    },
+    {
+      "function_id": "arm9/main:020ca95c",
+      "name": "Decompressor_ProcessRleStream",
+      "address": "0x020ca95c",
+      "original_symbol": "DecompressC",
+      "review": "unreconstructed-symbol",
+      "ownership": "Filesystem/Reader",
+      "evidence": "Control bit7 selects repeated/literal runs; low7bits encode length, context stores remaining run and output bytes; original STRB/SWPB loop and context offsets examined."
+    },
+    {
+      "function_id": "arm9/main:020cab94",
+      "name": "Decompressor_ProcessHuffmanStream",
+      "address": "0x020cab94",
+      "original_symbol": "DecompressB",
+      "review": "unreconstructed-symbol",
+      "ownership": "Filesystem/Reader",
+      "evidence": "Loads tree table, traverses node offsets with input bits, emits4/8bit symbols into packed output words and persists tree/bit state at context offsets08..18."
+    },
+    {
+      "function_id": "arm9/main:020caa10",
+      "address": "0x020caa10",
+      "name": "MI_ReadUncompLZ8",
+      "source": "src/RuntimeSupport/MI_ReadUncompLZ8.cpp",
+      "review": "preserved-sdk-runtime",
+      "ownership": "RuntimeSupport",
+      "evidence": "Existing SDK assembly provenance and runtime policy remain authoritative; no C reconstruction credit or source change."
+    }
+  ],
+  "relationships": [
+    {
+      "caller": "arm9/ov033:022a21a8",
+      "callee": "arm9/main:020d8714",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov034:022a21a8",
+      "callee": "arm9/main:020d8714",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9354",
+      "callee": "arm9/main:020d8714",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8720",
+      "callee": "arm9/main:020c82f0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8720",
+      "callee": "arm9/main:020d84f8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8720",
+      "callee": "arm9/main:020d8824",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8ee4",
+      "callee": "arm9/main:020d8720",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8824",
+      "callee": "arm9/main:020c82f0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8824",
+      "callee": "arm9/main:020ca95c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8824",
+      "callee": "arm9/main:020caa10",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8824",
+      "callee": "arm9/main:020cab94",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8824",
+      "callee": "arm9/main:020d8524",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8824",
+      "callee": "arm9/main:020d970c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8824",
+      "callee": "arm9/main:020d974c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8d5c",
+      "callee": "arm9/main:020d8824",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d890c",
+      "callee": "arm9/itcm:01ff860c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d890c",
+      "callee": "arm9/main:02003f28",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d890c",
+      "callee": "arm9/main:02004040",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d890c",
+      "callee": "arm9/main:020cc940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a0c0c",
+      "callee": "arm9/main:020d890c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8a48",
+      "callee": "arm9/main:020d84f8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov033:022a21a8",
+      "callee": "arm9/main:020d8a48",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov034:022a21a8",
+      "callee": "arm9/main:020d8a48",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:0202f808",
+      "callee": "arm9/main:020d8a48",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02075098",
+      "callee": "arm9/main:020d8a48",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:0207517c",
+      "callee": "arm9/main:020d8a48",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8ae8",
+      "callee": "arm9/main:020d8a68",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8c78",
+      "callee": "arm9/main:020d8a68",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8ee4",
+      "callee": "arm9/main:020d8a68",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d917c",
+      "callee": "arm9/main:020d8a68",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d91a8",
+      "callee": "arm9/main:020d8a68",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9400",
+      "callee": "arm9/main:020d8a68",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9580",
+      "callee": "arm9/main:020d8a68",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov033:022a21a8",
+      "callee": "arm9/main:020d8ab0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov034:022a21a8",
+      "callee": "arm9/main:020d8ab0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02075098",
+      "callee": "arm9/main:020d8ab0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:0207517c",
+      "callee": "arm9/main:020d8ab0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8ae8",
+      "callee": "arm9/main:020ccc10",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov033:022a21a8",
+      "callee": "arm9/main:020d8ae8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov034:022a21a8",
+      "callee": "arm9/main:020d8ae8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9354",
+      "callee": "arm9/main:020d8ae8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9458",
+      "callee": "arm9/main:020d8ae8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8b4c",
+      "callee": "arm9/main:020cca80",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8b4c",
+      "callee": "arm9/main:020d84f8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov033:022a21a8",
+      "callee": "arm9/main:020d8b4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov034:022a21a8",
+      "callee": "arm9/main:020d8b4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02075098",
+      "callee": "arm9/main:020d8b4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:0207517c",
+      "callee": "arm9/main:020d8b4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8b94",
+      "callee": "arm9/main:020d8b4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d91a8",
+      "callee": "arm9/main:020d8b4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8b94",
+      "callee": "arm9/itcm:01ff860c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8b94",
+      "callee": "arm9/main:020cc9c8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8b94",
+      "callee": "arm9/main:020cca38",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov033:022a21a8",
+      "callee": "arm9/main:020d8b94",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov034:022a21a8",
+      "callee": "arm9/main:020d8b94",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02075098",
+      "callee": "arm9/main:020d8b94",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:0207517c",
+      "callee": "arm9/main:020d8b94",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d91dc",
+      "callee": "arm9/main:020d8b94",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8c78",
+      "callee": "arm9/main:020c82f0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8c78",
+      "callee": "arm9/main:020ccbf0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8c78",
+      "callee": "arm9/main:020d9788",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov033:022a21a8",
+      "callee": "arm9/main:020d8c78",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov034:022a21a8",
+      "callee": "arm9/main:020d8c78",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02075098",
+      "callee": "arm9/main:020d8c78",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:0207517c",
+      "callee": "arm9/main:020d8c78",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8d5c",
+      "callee": "arm9/main:020d8c78",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8ee4",
+      "callee": "arm9/main:020d8c78",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d91dc",
+      "callee": "arm9/main:020d8c78",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9354",
+      "callee": "arm9/main:020d8c78",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9458",
+      "callee": "arm9/main:020d8c78",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8d20",
+      "callee": "arm9/main:020ccba8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8d20",
+      "callee": "arm9/main:020d970c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8d20",
+      "callee": "arm9/main:020d974c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02030110",
+      "callee": "arm9/main:020d8d20",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8d5c",
+      "callee": "arm9/main:020c82f0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8d5c",
+      "callee": "arm9/main:020d84f8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d8ee4",
+      "callee": "arm9/main:020d8d5c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov033:022a21a8",
+      "callee": "arm9/main:020d8ee4",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov034:022a21a8",
+      "callee": "arm9/main:020d8ee4",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d91dc",
+      "callee": "arm9/main:020d8ee4",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d9458",
+      "callee": "arm9/main:020d8ee4",
+      "kind": "call",
+      "ambiguous": false
+    }
+  ],
+  "scope": "13 reader/decompression source functions, one related cache initializer sharing the unit, two unreconstructed stream algorithms and one preserved SDK runtime dependency.",
+  "boundary": [
+    "ExtendedNitroVM is the readable-state and chunk-decompression wrapper; NitroVM command execution is a dependency.",
+    "FileCache initializer remains logically FileCache; compilation unit stays intact.",
+    "SDK LZ assembly remains under RuntimeSupport; no new C credit."
+  ],
+  "limitations": [
+    "ExtendedNitroVM status2 remains unclassified; behavior varies by method and is not renamed as a guessed device/mode.",
+    "Binary RLE/Huffman algorithms receive behavior names without claimed original SDK spelling."
+  ]
+}

@@ -1,12 +1,12 @@
 #include <globaldefs.h>
 ARM
-extern "C" int Object_ReadOptionalResourceWordC(char*);
+extern "C" int ResourceTracks_GetScalarAndVectorSection(char*);
 struct Key {unsigned time;float x,y,z;};
 extern "C" Key** _ZN19SignedAllocatorList13GetNthElementEj(void*,unsigned);
 extern "C" float Point_ComputeFloatingPointSlope(Key**,Key**);
 // Original: arm9/main @ 0x02055CCC; symbol: func_02055ccc; size: 0x204.
 extern "C" void Object_AdvanceScalarAndVectorKeyframes(char* self) {
- unsigned char* config=(unsigned char*)Object_ReadOptionalResourceWordC(*(char**)(self+0x30));
+ unsigned char* config=(unsigned char*)ResourceTracks_GetScalarAndVectorSection(*(char**)(self+0x30));
  for(int i=0;i<3;i++) {
   unsigned entries=(config+0x10)[i];
   if(entries<=1)continue;

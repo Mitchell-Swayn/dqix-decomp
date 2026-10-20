@@ -1,0 +1,6 @@
+#include <globaldefs.h>
+ARM
+extern "C" unsigned char* GameState_GetSerializedProgressState();extern "C" int BitArray_ReadNonnegativeIndexMask(void*,void*,unsigned);extern "C" void BitArray_SetIndexedBoolean(void*,void*,unsigned,int),GameState_CopyStatisticsRecord(void*),Statistics_AddNewEquipmentTypeCount(void*,int),Statistics_AddNewConsumableTypeCount(void*,int),GameState_StoreStatisticsRecord(void*);
+struct Bits{unsigned kind:4;unsigned pad:8;unsigned id:11;unsigned rest:9;};
+// Original: arm9/main @ 0x0207CC18; symbol: func_0207cc18; size: 0xD8.
+extern "C" void Inventory_LogFirstAcquisitionAndUpdateCounters(unsigned unused,unsigned char* object){unsigned char temp[176];if(object){unsigned char* state=GameState_GetSerializedProgressState();int id=(unsigned short)((Bits*)(object+12))->id;if(id>0&&!BitArray_ReadNonnegativeIndexMask(state,state+0x8c,id+0xc76)){BitArray_SetIndexedBoolean(state,state+0x8c,id+0xc76,1);GameState_CopyStatisticsRecord(temp);unsigned kind=(unsigned char)((Bits*)(object+8))->kind;int low=kind<=7;if(low)Statistics_AddNewEquipmentTypeCount(temp,1);else{bool range;if(kind>=8&&kind<=9)range=true;else range=false;if(range)Statistics_AddNewConsumableTypeCount(temp,1);}GameState_StoreStatisticsRecord(temp);}}}

@@ -6,7 +6,12 @@
 #include <asmhacks.h>
 #include "std_library_functions.h"
 
-extern int data_021112dc;
+// Original data: arm9/main @ 0x21112dc; symbol: data_021112dc.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern int InitializeGamecardBusOwnership_UnknownRoleZeroInitializedStorage;
 
 #define REG_EXTMEMCTRL (*(volatile unsigned short*)0x04000204)
 #define EXTMEMCTRL_FLAG_RELINQUISH_GBA_BUS (1 << 7)
@@ -51,13 +56,13 @@ void MarkNDSBusReleased();
 // this is almost correct except the first bit, excluding it for now
 void InitializeGamecardBusOwnership()
 {
-    if (data_021112dc)
+    if (InitializeGamecardBusOwnership_UnknownRoleZeroInitializedStorage)
     {
         return;
     }
     
     GamecardBusLock* ndsLock = PTR_UNKNOWN_BUS_LOCK;
-    data_021112dc = true;
+    InitializeGamecardBusOwnership_UnknownRoleZeroInitializedStorage = true;
     ndsLock->atomic = 0;
     
     WeakLockGamecardBusLock(126, ndsLock, NULL);

@@ -6,7 +6,7 @@
 
 #if defined(jpn)
 #define MIi_CpuClear16 func_020cbe5c
-#define data_020f1c7c data_020f1de8
+#define InitializeModelAnimationFromMPT_UnknownRoleProcedureReferenceRecords data_020f1de8
 #endif
 
 extern "C"
@@ -16,7 +16,12 @@ extern "C"
 }
 
 // processing callback for M.PT animations
-extern void (*data_020f1c7c)(void*, AnimationData*, int);
+// Original data: arm9/main @ 0x20f1c7c; symbol: data_020f1c7c.
+// Contains original relocated procedure references. Record fields, dispatch contract and exclusive ownership may remain unresolved.
+// Initial values: hex b8980b02.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern void (*InitializeModelAnimationFromMPT_UnknownRoleProcedureReferenceRecords)(void*, AnimationData*, int);
 
 // Original: arm9/main @ 0x020B969C; symbol: _Z31InitializeModelAnimationFromMPTP13AnimationDataPvP18NSBXXInternalModel; size: 0xDC.
 void InitializeModelAnimationFromMPT(AnimationData* anim, void* pvMPT, NSBXXInternalModel* model)
@@ -28,7 +33,7 @@ void InitializeModelAnimationFromMPT(AnimationData* anim, void* pvMPT, NSBXXInte
     else
         materials = NULL;
     
-    anim->callback_ = data_020f1c7c;
+    anim->callback_ = InitializeModelAnimationFromMPT_UnknownRoleProcedureReferenceRecords;
 
     anim->numEntries_ = model->numMaterials_;
     NSBXXAnimationMPT* mpt = (NSBXXAnimationMPT*)pvMPT;

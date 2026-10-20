@@ -9,16 +9,16 @@
 #if defined(jpn)
 #define CardReadManager_ReadGlobalStatus func_020d2c64
 
-#define data_02111304 data_02110fa4
+#define OSInitThread_UnknownRoleZeroInitializedStorage_Variant2 data_02110fa4
 
-#define data_02111728 data_021113c8
-#define data_0211172c data_021113cc
-#define data_02111738 data_021113d8
-#define data_0211173c data_021113dc
-#define data_02111754 data_021113f4
-#define data_02111880 data_02111520
-#define data_021118e0 data_02111580
-#define data_02111f00 data_02111ba0
+#define NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage data_021113c8
+#define SetROMFilesystemRoot_UnknownRoleZeroInitializedStorage data_021113cc
+#define InitializeROMFilesystem_UnknownRoleZeroInitializedStorage data_021113d8
+#define ChangeROMLoadDMAChannel_UnknownRoleZeroInitializedStorage data_021113dc
+#define ChangeROMLoadDMAChannel_UnknownRoleZeroInitializedStorage_Variant2 data_021113f4
+#define InitializeCardReadManager_UnknownRoleZeroInitializedStorage data_02111520
+#define TryReadViaDMA_UnknownRoleZeroInitializedStorage data_02111580
+#define InitializeCardReading_UnknownRoleZeroInitializedStorage data_02111ba0
 #endif
 
 extern "C"
@@ -72,18 +72,58 @@ struct Struct_02111f00
     Struct_02111f20 innerStruct;
 };
 
-extern Struct_02111728 data_02111728;
+// Original data: arm9/main @ 0x2111728; symbol: data_02111728.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern Struct_02111728 NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage;
 // The directory overlaps the registry at +4. These registry declarations still
 // refer to original fallback storage; a member macro changes matched codegen.
-extern NitroDirectoryAccessor data_0211172c;
+// Original data: arm9/main @ 0x211172c; symbol: data_0211172c.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 12 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern NitroDirectoryAccessor SetROMFilesystemRoot_UnknownRoleZeroInitializedStorage;
 
-extern int data_02111738; // stores whether the rom fs is initialised
+// Original data: arm9/main @ 0x2111738; symbol: data_02111738.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern int InitializeROMFilesystem_UnknownRoleZeroInitializedStorage; // stores whether the rom fs is initialised
 // Extra data for cartridge filesystem
-extern Struct_0211173c data_0211173c;
+// Original data: arm9/main @ 0x211173c; symbol: data_0211173c.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 24 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern Struct_0211173c ChangeROMLoadDMAChannel_UnknownRoleZeroInitializedStorage;
 // Handle for the cartridge filesystem
-extern NitroHandle data_02111754;
+// Original data: arm9/main @ 0x2111754; symbol: data_02111754.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 92 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern NitroHandle ChangeROMLoadDMAChannel_UnknownRoleZeroInitializedStorage_Variant2;
 
-extern Arm7CardReadData data_02111880;
-extern CardReadManager data_021118e0;
-extern Struct_02111f00 data_02111f00;
+// Original data: arm9/main @ 0x2111880; symbol: data_02111880.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 96 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern Arm7CardReadData InitializeCardReadManager_UnknownRoleZeroInitializedStorage;
+// Original data: arm9/main @ 0x21118e0; symbol: data_021118e0.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 1568 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern CardReadManager TryReadViaDMA_UnknownRoleZeroInitializedStorage;
+// Original data: arm9/main @ 0x2111f00; symbol: data_02111f00.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 576 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern Struct_02111f00 InitializeCardReading_UnknownRoleZeroInitializedStorage;
 //extern Struct_02111f20 data_02111f20;

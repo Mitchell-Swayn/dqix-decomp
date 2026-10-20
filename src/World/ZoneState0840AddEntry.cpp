@@ -4,7 +4,7 @@
 
 extern "C" {
     int RuntimeMemory_CompareByteRanges(const void*, const void*, unsigned int);
-    int Calendar_ReadCurrentDateThroughSynchronousReply(void*);
+    int RTC_GetDate(void*);
 }
 
 // Original: arm9/main @ 0x02098630; symbol: _ZN13ZoneState08408AddEntryEPKNS_5EntryEbb; size: 0x204.
@@ -29,7 +29,7 @@ bool ZoneState0840::AddEntry(const Entry* entry, bool incrementValue, bool updat
     destination->flags.unknown30 = 1;
     destination->value.value = unknown_1b34;
     int date[4];
-    if (!Calendar_ReadCurrentDateThroughSynchronousReply(date))
+    if (!RTC_GetDate(date))
     {
         entries[index].byteFlags.low = (unsigned char)date[0];
         entries[index].flags.unknown15 = date[1];

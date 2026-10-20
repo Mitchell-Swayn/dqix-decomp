@@ -21,7 +21,7 @@ extern "C" void GameState_SetGroupedFiveBitFlag(GameState* state, unsigned int g
 }
 
 // Original: arm9/main @ 0x020113E0; symbol: func_020113e0; size: 0x28.
-extern "C" void GameState_FillField5CD0FlagsWithFF(GameState* state)
+extern "C" void GameState_SetAllGroupedFiveBitFlags(GameState* state)
 {
     for (int i = 0; i < 10; ++i)
         state->unknownBitFlags_5cd0_[i] = 0xff;
@@ -45,7 +45,7 @@ extern "C" bool GameState_TestGroupedFiveBitFlag(GameState* state, unsigned int 
 }
 
 // Original: arm9/main @ 0x02011468; symbol: func_02011468; size: 0x2C.
-extern "C" void GameState_CopyField5718BufferFromSource(GameState* state, unsigned int length,
+extern "C" void GameState_StoreProtagonistPartySlotList(GameState* state, unsigned int length,
                               const void* source)
 {
     memcpy(state->unknownByteBuffer_5718_, source, length);
@@ -53,7 +53,7 @@ extern "C" void GameState_CopyField5718BufferFromSource(GameState* state, unsign
 }
 
 // Original: arm9/main @ 0x02011494; symbol: func_02011494; size: 0x2C.
-extern "C" unsigned int GameState_CopyByteBufferAtOffset5718(GameState* state, void* destination)
+extern "C" unsigned int GameState_CopyProtagonistPartySlotList(GameState* state, void* destination)
 {
     memcpy(destination, state->unknownByteBuffer_5718_,
            state->unknownByteBufferLength_571c_);
@@ -61,7 +61,7 @@ extern "C" unsigned int GameState_CopyByteBufferAtOffset5718(GameState* state, v
 }
 
 // Original: arm9/main @ 0x020114C0; symbol: func_020114c0; size: 0x2C.
-extern "C" void GameState_CopyOffset571DByteBufferAndSetLength(GameState* state, unsigned int length,
+extern "C" void GameState_StoreActivePartySlotList(GameState* state, unsigned int length,
                               const void* source)
 {
     memcpy(state->unknownByteBuffer_571d_, source, length);
@@ -69,7 +69,7 @@ extern "C" void GameState_CopyOffset571DByteBufferAndSetLength(GameState* state,
 }
 
 // Original: arm9/main @ 0x020114EC; symbol: func_020114ec; size: 0x2C.
-extern "C" unsigned int GameState_CopyField571DBufferToDestination(GameState* state, void* destination)
+extern "C" unsigned int GameState_CopyActivePartySlotList(GameState* state, void* destination)
 {
     memcpy(destination, state->unknownByteBuffer_571d_,
            state->unknownByteBufferLength_5721_);
@@ -77,7 +77,7 @@ extern "C" unsigned int GameState_CopyField571DBufferToDestination(GameState* st
 }
 
 // Original: arm9/main @ 0x02011518; symbol: func_02011518; size: 0x20.
-extern "C" int GameState_ReadByteBufferElementAtOffset571D(GameState* state, unsigned int index)
+extern "C" int GameState_GetActivePartySlotOrInvalid(GameState* state, unsigned int index)
 {
     if (index < state->unknownByteBufferLength_5721_)
         return state->unknownByteBuffer_571d_[index];
@@ -85,7 +85,7 @@ extern "C" int GameState_ReadByteBufferElementAtOffset571D(GameState* state, uns
 }
 
 // Original: arm9/main @ 0x02011538; symbol: func_02011538; size: 0xC.
-extern "C" unsigned int GameState_ReadOffset5721ByteBufferLength(GameState* state)
+extern "C" unsigned int GameState_GetActivePartySlotCount(GameState* state)
 {
     return state->unknownByteBufferLength_5721_;
 }

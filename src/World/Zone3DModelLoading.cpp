@@ -101,7 +101,7 @@ found:
     }
     if (entry->model)
     {
-        ModelAnimationRules rules = data_020e6fa8;
+        ModelAnimationRules rules = Zone3DLoadBMDJModel_UnknownRoleInitializedBytes;
         rules.rules[0].destination = &entry->skeletalAnimation;
         rules.rules[1].destination = &entry->materialAnimation;
         rules.rules[2].destination = &entry->textureAnimation;

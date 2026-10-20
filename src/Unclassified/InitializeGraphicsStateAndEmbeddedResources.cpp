@@ -1,4 +1,0 @@
-#include <globaldefs.h>
-extern "C" void ClearRecordAndInvalidateTwoIndices(void*);extern "C" void InitializeWorldScriptArrayList(void*);extern "C" void Graphics_InitializeCanvasTransferState(void*);extern "C" void InitializeRecordBuffersAndEnabledByte(void*);
-// Original: arm9/main @ 0x0208B9A0; symbol: func_0208b9a0; size: 0xB4.
-extern "C" ARM void InitializeGraphicsStateAndEmbeddedResources(unsigned char* p,unsigned char flag){*(unsigned*)p=0;ClearRecordAndInvalidateTwoIndices(p+4);InitializeWorldScriptArrayList(p+28);p[60]=0;p[61]=0;Graphics_InitializeCanvasTransferState(p+64);InitializeRecordBuffersAndEnabledByte(p+96);*(unsigned*)(p+180)=0;*(unsigned*)(p+184)=(*(volatile unsigned*)0x04001000&0x1f00)>>8;*(unsigned*)(p+188)=-1;*(unsigned*)(p+192)=-1;*(float*)(p+204)=1.f;*(unsigned*)(p+200)=0;*(short*)(p+210)=-1;p[212]=0;p[213]=0;p[214]=0;p[215]=0;p[216]=1;p[217]=0;*(unsigned short*)(p+218)=0;p[220]=1;p[221]=0;p[222]=0;p[223]=flag;p[224]=0;}

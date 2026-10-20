@@ -4,9 +4,9 @@ extern "C" char* _ZN9GameState11GetInstanceEv();
 extern "C" void* GameState_ReadIndexedRecordsIndex(void*,int);
 extern "C" void InitializeCharacterStateArraysAndDefaults(void*);
 extern "C" int SaveData_WriteNamedChecksumPacket(int);
-extern "C" int SubmitZeroed84BytePayloadWithCRC(int);
+extern "C" int SaveData_ClearAuxiliaryRecordWithChecksum(int);
 extern "C" void* GameState_GetIndexList(void*);
-extern "C" void InitializePairedRecordBuffersAndLists(void*);
+extern "C" void PartyRoster_InitializeInventoryRecordsAndTransfers(void*);
 extern "C" void VectorizedMemset(void*,int,unsigned);
 struct Defaults {
  unsigned a:12,b:4,c:5,d:4,e:1,f:1,g:1,h:1,i:1,j:1,k:1;
@@ -22,8 +22,8 @@ extern "C" int SaveData_InitializeDefaultStateAndPackets() {
  }
  if(!SaveData_WriteNamedChecksumPacket(0))return 0;
  if(!SaveData_WriteNamedChecksumPacket(1))return 0;
- if(!SubmitZeroed84BytePayloadWithCRC(0))return 0;
- if(!SubmitZeroed84BytePayloadWithCRC(1))return 0;
+ if(!SaveData_ClearAuxiliaryRecordWithChecksum(0))return 0;
+ if(!SaveData_ClearAuxiliaryRecordWithChecksum(1))return 0;
  Defaults* defaults=(Defaults*)(state+0x569c);
  defaults->a=2000;
  defaults->b=1;
@@ -41,7 +41,7 @@ extern "C" int SaveData_InitializeDefaultStateAndPackets() {
  defaults->m=300;
  defaults->n=706;
  defaults->byte=0;
- InitializePairedRecordBuffersAndLists(GameState_GetIndexList(state));
+ PartyRoster_InitializeInventoryRecordsAndTransfers(GameState_GetIndexList(state));
  VectorizedMemset(state+0x6380,0,0x54);
  return 1;
 }

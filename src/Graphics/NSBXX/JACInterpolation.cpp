@@ -392,14 +392,14 @@ bool GetMatrixFromIndex(Matrix3x3* out, intptr_t pivotList, intptr_t basisList, 
         int form = pivot->flags & 0xf;
         out->entries[form] = (pivot->flags & 0x10) ? -1 << 12 : 1 << 12;
 
-        out->entries[data_020e9284[form].a] = entryA;
-        out->entries[data_020e9284[form].b] = entryB;
+        out->entries[GetMatrixFromIndex_UnknownRoleInitializedBytes[form].a] = entryA;
+        out->entries[GetMatrixFromIndex_UnknownRoleInitializedBytes[form].b] = entryB;
 
         fix32_t entryC = (pivot->flags & 0x20) ? -entryB : entryB;
-        out->entries[data_020e9284[form].c] = entryC;
+        out->entries[GetMatrixFromIndex_UnknownRoleInitializedBytes[form].c] = entryC;
         
         fix32_t entryD = (pivot->flags & 0x40) ? -entryA : entryA;
-        out->entries[data_020e9284[form].d] = entryD;
+        out->entries[GetMatrixFromIndex_UnknownRoleInitializedBytes[form].d] = entryD;
 
         return false;
     }

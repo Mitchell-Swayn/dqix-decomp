@@ -74,6 +74,10 @@ def render(row,targets):
   out.extend((f'loc_{at:08X}:',f'    {code}'))
  out.append('}');return '\n'.join(out)+'\n'
 
+def reference_source_path(row):
+ processor=row['module_id'].split('/')[0]
+ return f"src/AssemblyFallback/{processor}/{row['name']}.inc"
+
 def generate(root,output):
  global _module_rows,_module_bases
  db=sqlite3.connect(f'file:{root/"inventory/functions.sqlite"}?mode=ro',uri=True);db.row_factory=sqlite3.Row
@@ -85,7 +89,7 @@ def generate(root,output):
  for row in sorted(selected.values(),key=lambda r:(r['module_id'],r['address'])):
   raw=bytes(row['original_bytes'])
   if len(raw)!=row['size'] or sha(raw)!=row['original_sha256'] or original_module_bytes(root,row)!=raw:raise ValueError('Original evidence mismatch: '+row['id'])
-  source=f'src/AssemblyFallback/{row["module_id"]}/{row["name"]}.inc';text=render(row,targets);path=root/source if output is None else output/source
+  source=reference_source_path(row);text=render(row,targets);path=root/source if output is None else output/source
   if path.exists():raise FileExistsError('Refusing to overwrite assembly source: '+str(path))
   path.parent.mkdir(parents=True,exist_ok=True);path.write_text(text)
   records.append(dict(function_id=row['id'],module=row['module_id'],name=row['name'],address=f'0x{row["address"]:08X}',size=row['size'],mode=row['mode'],source=source,source_sha256=sha(text.encode()),original_sha256=sha(raw),partial_source=row.get('partial_source'),compiled=False,linked=False,c_instruction_credit=0))

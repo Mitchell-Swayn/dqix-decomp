@@ -18,18 +18,18 @@ struct ResourceTrackState {
  float finalValues[4],tripleValues[3][3],singleValue; unsigned largeValue,delay; float threeValues[3],vectorValues[3];
 };
 extern "C" {
-ResourceFour* Object_ReadOptionalResolvedValue(ResourceContext*);
-ResourceTriples* ReadResolvedRecordWord4OrZero(ResourceContext*);
-ResourceSingle* ReadResolvedRecordWordTwoOrZero(ResourceContext*);
-ResourceThreeAndOne* Object_ReadOptionalResourceWordC(ResourceContext*);
-ResourceTiming* ReadResolvedRecordWord10OrZero(ResourceContext*);
-LargeResource* Object_ReadInitialOptionalResourceWord(ResourceContext*);
+ResourceFour* ResourceTracks_GetFourScalarSection(ResourceContext*);
+ResourceTriples* ResourceTracks_GetTripleScalarSection(ResourceContext*);
+ResourceSingle* ResourceTracks_GetSingleScalarSection(ResourceContext*);
+ResourceThreeAndOne* ResourceTracks_GetScalarAndVectorSection(ResourceContext*);
+ResourceTiming* ResourceTracks_GetPlaybackTiming(ResourceContext*);
+LargeResource* ResourceTracks_GetLargePayloadSection(ResourceContext*);
 float Point_ComputeFloatingPointSlope(ResourcePoint**,ResourcePoint**);
 }
 // Original: arm9/main @ 0x02056D80; symbol: func_02056d80; size: 0x5B4.
 extern "C" void ResourceTracks_InitializeCurrentValuesAndSlopes(ResourceTrackState* self) {
  if(!self->context || !self->boundResource)return;
- ResourceFour* four=Object_ReadOptionalResolvedValue(self->context);
+ ResourceFour* four=ResourceTracks_GetFourScalarSection(self->context);
  {
   ResourcePoint** first=(ResourcePoint**)self->context->final[0].ElementAfter(0);
   self->finalValues[0]=(*first)->value;
@@ -66,7 +66,7 @@ extern "C" void ResourceTracks_InitializeCurrentValuesAndSlopes(ResourceTrackSta
    if(next)self->finalSlopes[3]=Point_ComputeFloatingPointSlope(first,next);
   }
  }
- ResourceTriples* triples=ReadResolvedRecordWord4OrZero(self->context);
+ ResourceTriples* triples=ResourceTracks_GetTripleScalarSection(self->context);
  for(int i=0;i<3;++i) {
   ResourcePoint** first=(ResourcePoint**)self->context->triple0[i].ElementAfter(0);
   self->tripleValues[0][i]=(*first)->value;
@@ -94,7 +94,7 @@ extern "C" void ResourceTracks_InitializeCurrentValuesAndSlopes(ResourceTrackSta
    if(next)self->tripleSlopes[2][i]=Point_ComputeFloatingPointSlope(first,next);
   }
  }
- ResourceSingle* single=ReadResolvedRecordWordTwoOrZero(self->context);
+ ResourceSingle* single=ResourceTracks_GetSingleScalarSection(self->context);
  {
   ResourcePoint** first=(ResourcePoint**)self->context->single.ElementAfter(0);
   self->singleValue=(float)*(unsigned*)&(*first)->value;
@@ -104,7 +104,7 @@ extern "C" void ResourceTracks_InitializeCurrentValuesAndSlopes(ResourceTrackSta
    if(next)self->singleSlope=Point_ComputeFloatingPointSlope(first,next);
   }
  }
- ResourceThreeAndOne* three=Object_ReadOptionalResourceWordC(self->context);
+ ResourceThreeAndOne* three=ResourceTracks_GetScalarAndVectorSection(self->context);
  for(int i=0;i<3;++i) {
   ResourcePoint** first=(ResourcePoint**)self->context->three[i].ElementAfter(0);
   self->threeValues[i]=(*first)->value;
@@ -127,14 +127,14 @@ extern "C" void ResourceTracks_InitializeCurrentValuesAndSlopes(ResourceTrackSta
    {ResourceVectorPoint* a=*first; ResourceVectorPoint* b=*next; self->vectorSlopes[2]=(b->values[2]-a->values[2])/(float)(int)(b->time-a->time);}
   }
  }
- ResourceTiming* timing=ReadResolvedRecordWord10OrZero(self->context);
+ ResourceTiming* timing=ResourceTracks_GetPlaybackTiming(self->context);
  self->time=0;
  self->duration=timing->first+timing->second;
  self->repeat=timing->repeat;
  self->mode=timing->mode;
  self->delay=timing->second;
  if(timing->repeat)self->repeat=1;
- if(Object_ReadInitialOptionalResourceWord(self->context)->count) {
+ if(ResourceTracks_GetLargePayloadSection(self->context)->count) {
   unsigned** first=(unsigned**)self->context->large.ElementAfter(0);
   self->largeValue=**first;
  }

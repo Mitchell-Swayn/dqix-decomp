@@ -1,5 +1,0 @@
-#include <globaldefs.h>
-ARM
-extern "C" char data_020f0238[],data_020f023d[],data_020f0242[];extern "C" void __clear(void*,unsigned);extern "C" void* memcpy(void*,const void*,unsigned);extern "C" int RuntimeMemory_CompareByteRanges(const void*,const void*,unsigned);extern "C" void Graphics_CopyResourceHeaderAndCleanPayloadCache(void*,const void*);extern "C" void Graphics_CleanSelectedPaletteBlockCaches(void*,const void*);extern "C" void ClearHalfwordPairBytePairAndWordPair(void*);extern "C" void CopyImageLengthAndFlushPayloadCache(void*,const void*);
-// Original: arm9/main @ 0x0204B2E0; symbol: func_0204b2e0; size: 0xC0.
-extern "C" void DispatchResourceParserByFourByteMagic(char* p,const void* src){char magic[8],temp[16];if(src){__clear(magic,5);memcpy(magic,src,5);if(!RuntimeMemory_CompareByteRanges(magic,data_020f0238,4))Graphics_CopyResourceHeaderAndCleanPayloadCache(p,src);else if(!RuntimeMemory_CompareByteRanges(magic,data_020f023d,4))Graphics_CleanSelectedPaletteBlockCaches(p+12,src);else if(!RuntimeMemory_CompareByteRanges(magic,data_020f0242,4)){ClearHalfwordPairBytePairAndWordPair(temp);CopyImageLengthAndFlushPayloadCache(temp,src);}}}

@@ -5,13 +5,13 @@
 #include "Memory/AllocatorUnion.h"
 
 #if defined(jpn)
-#define ComputeAlignedResourceSizeByKind func_020b4538
+#define NSBXX_ComputeAnimationBindingSize func_020b4538
 #endif
 
 extern "C"
 {
     // get allocation size for animation data
-    unsigned int ComputeAlignedResourceSizeByKind(const void* rawAnim, NSBXXInternalModel* model);
+    unsigned int NSBXX_ComputeAnimationBindingSize(const void* rawAnim, NSBXXInternalModel* model);
 }
 
 #pragma optimize_for_size off
@@ -19,7 +19,7 @@ extern "C"
 // Original: arm9/main @ 0x020B6E98; symbol: NSBXX_Model_AllocateAnimationData; size: 0x24.
 extern "C" AnimationData* NSBXX_Model_AllocateAnimationData(AllocatorUnion* alloc, const void* rawAnim, NSBXXInternalModel* model)
 {
-    unsigned int size = ComputeAlignedResourceSizeByKind(rawAnim, model);
+    unsigned int size = NSBXX_ComputeAnimationBindingSize(rawAnim, model);
     return (AnimationData*)alloc->Allocate(size);
 }
 

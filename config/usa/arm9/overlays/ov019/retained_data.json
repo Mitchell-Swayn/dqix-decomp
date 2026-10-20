@@ -2,12 +2,12 @@
   "schema_version": 1,
   "symbols": [
     {
-      "name": "data_ov019_0218c290",
+      "name": "Data_UnknownRole",
       "address": "0x0218c290",
       "size": 4,
       "section": ".rodata",
-      "source": "src/Data/ov019/data_ov019_0218c290.cpp",
-      "source_sha256": "a7cab35e41b2cab0624ad2f5497dd0ec0ac172c91ce4e4c5222a4e2aa993322a",
+      "source": "src/Data/Data_UnknownRole.cpp",
+      "source_sha256": "9cc33a2112e689cbfb1b662d8fe54a44e38f3db1c2c9ce35efe8ba01e1f6e1ed",
       "original_sha256": "5ce158a61ce9bd3b656ff996af42e25e7c4c0c844080470967dff8e70d0542fc",
       "reason": "Original readonly word0x19000 lacks a live reference; retain source definition at its original location without shifting referenced camera vectors. Semantic role unknown."
     }

@@ -5,8 +5,8 @@ struct ZoneType2StoredState
     int unknown_0;
     unsigned short featureMask;
 };
-extern "C" void* ReadGlobalAt020FDD44();
-extern "C" ZoneType2StoredState* FindRecordAmongFourByNonnegativeKey(void*, unsigned short);
+extern "C" void* ZoneState_GetTrackedZoneCache();
+extern "C" ZoneType2StoredState* ZoneState_FindTrackedZoneByIdentifier(void*, unsigned short);
 
 // These reset the feature's active bit and its linked instance flags. Names
 // describe observed movement behavior; the exact gameplay role remains unknown.
@@ -52,7 +52,7 @@ void Zone3D::ReverseType2FeatureMotion(ZoneFeatures::Opcode6aEntry* feature)
     if (!(feature->unk_2c.type2.unk_2_high & 8))
     {
         int index = GetType2FeatureIndex(feature);
-        ZoneType2StoredState* stored = FindRecordAmongFourByNonnegativeKey(ReadGlobalAt020FDD44(), currentZoneID_);
+        ZoneType2StoredState* stored = ZoneState_FindTrackedZoneByIdentifier(ZoneState_GetTrackedZoneCache(), currentZoneID_);
         if (stored) stored->featureMask &= ~(1 << index);
     }
 }
@@ -95,7 +95,7 @@ void Zone3D::ResetType2FeaturePosition(ZoneFeatures::Opcode6aEntry* feature)
     if (!(feature->unk_2c.type2.unk_2_high & 8))
     {
         int index = GetType2FeatureIndex(feature);
-        ZoneType2StoredState* stored = FindRecordAmongFourByNonnegativeKey(ReadGlobalAt020FDD44(), currentZoneID_);
+        ZoneType2StoredState* stored = ZoneState_FindTrackedZoneByIdentifier(ZoneState_GetTrackedZoneCache(), currentZoneID_);
         if (stored) stored->featureMask &= ~(1 << index);
     }
 }

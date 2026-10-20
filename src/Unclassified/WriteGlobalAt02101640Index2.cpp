@@ -1,4 +1,0 @@
-// ARM range reviewed; all named globals checked against exact relocations.
-struct Mode{int low:18;int value:3;int high:11;};extern "C" signed char data_020e8ebc[];extern "C" char data_02107850[];extern "C" unsigned int data_02101640[];
-// Original: arm9/main @ 0x0202D688; symbol: func_0202d688; size: 0x10.
-extern "C" void WriteGlobalAt02101640Index2(unsigned int v){data_02101640[2]=v;}

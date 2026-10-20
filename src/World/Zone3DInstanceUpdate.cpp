@@ -2,10 +2,20 @@
 #include "World/Zone3DPaths.h"
 #include "GameState/GameState.h"
 
-extern char data_02108760[];
-extern char data_02109bf4[];
-extern "C" void DispatchStoredHalfwordIndexWithTwoArguments(void*, int, int);
-extern "C" int TestNonnegativeIdentifierWithByteOverride(void*);
+// Original data: arm9/main @ 0x2108760; symbol: data_02108760.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 208 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern char Main_UnknownRoleZeroInitializedStorage[];
+// Original data: arm9/main @ 0x2109bf4; symbol: data_02109bf4.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 208 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern char Main_UnknownRoleZeroInitializedStorage_Variant2[];
+extern "C" void SoundSfx_StartCurrentSequenceArchiveEntry(void*, int, int);
+extern "C" int Bgm_IsTemporarySequencePendingOrPlaying(void*);
 
 // Original: arm9/main @ 0x02015554; symbol: _ZN6Zone3D18UpdateBMDJInstanceEPN17Zone3D_BMDJStruct13InstanceEntryE; size: 0x378.
 void Zone3D::UpdateBMDJInstance(Zone3D_BMDJStruct::InstanceEntry* instance)
@@ -78,10 +88,10 @@ void Zone3D::UpdateBMDJInstance(Zone3D_BMDJStruct::InstanceEntry* instance)
         if (instance->doorState == 0)
         {
             instance->object->SetAnimationPlaybackSpeed(0x1800, 0);
-            if (instance->object->MaybeSetRegularAnimation(gZone3DPaths.openAnimation, 1))
-                DispatchStoredHalfwordIndexWithTwoArguments(data_02108760, 0x12, 0);
-            else if (instance->object->MaybeSetRegularAnimation(gZone3DPaths.openAnimation2, 1))
-                DispatchStoredHalfwordIndexWithTwoArguments(data_02108760, 0x62, 0);
+            if (instance->object->SetAnimationByName(gZone3DPaths.openAnimation, 1))
+                SoundSfx_StartCurrentSequenceArchiveEntry(Main_UnknownRoleZeroInitializedStorage, 0x12, 0);
+            else if (instance->object->SetAnimationByName(gZone3DPaths.openAnimation2, 1))
+                SoundSfx_StartCurrentSequenceArchiveEntry(Main_UnknownRoleZeroInitializedStorage, 0x62, 0);
             instance->doorState = 1;
         }
         else if (instance->doorState == 1)
@@ -97,12 +107,12 @@ void Zone3D::UpdateBMDJInstance(Zone3D_BMDJStruct::InstanceEntry* instance)
             unsigned int elapsed = game->GetEffectiveDeltaTime();
             if (elapsed < instance->doorTimer)
                 instance->doorTimer -= elapsed;
-            else if (!TestNonnegativeIdentifierWithByteOverride(data_02109bf4))
+            else if (!Bgm_IsTemporarySequencePendingOrPlaying(Main_UnknownRoleZeroInitializedStorage_Variant2))
             {
-                if (instance->object->MaybeSetRegularAnimation(gZone3DPaths.closeAnimation, 5))
-                    DispatchStoredHalfwordIndexWithTwoArguments(data_02108760, 0x13, 0);
-                else if (instance->object->MaybeSetRegularAnimation(gZone3DPaths.closeAnimation2, 5))
-                    DispatchStoredHalfwordIndexWithTwoArguments(data_02108760, 0x62, 0);
+                if (instance->object->SetAnimationByName(gZone3DPaths.closeAnimation, 5))
+                    SoundSfx_StartCurrentSequenceArchiveEntry(Main_UnknownRoleZeroInitializedStorage, 0x13, 0);
+                else if (instance->object->SetAnimationByName(gZone3DPaths.closeAnimation2, 5))
+                    SoundSfx_StartCurrentSequenceArchiveEntry(Main_UnknownRoleZeroInitializedStorage, 0x62, 0);
                 instance->flags &= ~0x100;
             }
         }

@@ -1,0 +1,5 @@
+#include <globaldefs.h>
+ARM
+extern "C" void __clear(void*,unsigned);extern "C" void Text_ExpandRecognizedAngleBracketTags(void*,void*,void*);extern "C" void TextMask_CopyTokensMarkupAndSeparators(void*,void*,void*,unsigned);extern "C" void TextMarkup_ExpandConditionalBranches(void*,void*,void*,unsigned);extern "C" void TextMarkup_ExpandHandlersTokensAndBracketNames(void*,void*,void*,unsigned);extern "C" void Text_StripMatchingTagAndConvertGlyphBytes(void*,void*,void*,unsigned);extern "C" void TextLayout_WrapEncodedTextToPixelWidth(void*,int,void*,void*,int,int,int,unsigned);
+// Original: arm9/main @ 0x02046608; symbol: func_02046608; size: 0xC0.
+extern "C" void TextMarkup_ExpandAndWrapText(void* p,int unused,void* a,void* b,int c,int d,unsigned flags){unsigned buffer[600];if(a&&b){__clear(buffer,2400);Text_ExpandRecognizedAngleBracketTags(p,a,buffer);TextMask_CopyTokensMarkupAndSeparators(p,buffer,b,flags);TextMarkup_ExpandConditionalBranches(p,b,buffer,flags);TextMarkup_ExpandHandlersTokensAndBracketNames(p,buffer,b,flags);Text_StripMatchingTagAndConvertGlyphBytes(p,b,buffer,flags);TextLayout_WrapEncodedTextToPixelWidth(p,0,buffer,b,c,d,0,flags);}}

@@ -6,24 +6,24 @@
 
 inline DMACompletionCallback& CallbackByIndex(int n, int base = 0)
 {
-    return *(DMACompletionCallback*)((unsigned int)&data_0211127c[base].callback + n * sizeof(DMAOrTimerResponse));
+    return *(DMACompletionCallback*)((unsigned int)&GetInterruptHandler_UnknownRoleZeroInitializedStorage[base].callback + n * sizeof(DMAOrTimerResponse));
 }
 
 inline unsigned int& ShouldStayEnabledByIndex(int n, int base = 0)
 {
-    return *(unsigned int*)((unsigned int)&data_0211127c[base].stayEnabledAfter + n * sizeof(DMAOrTimerResponse));
+    return *(unsigned int*)((unsigned int)&GetInterruptHandler_UnknownRoleZeroInitializedStorage[base].stayEnabledAfter + n * sizeof(DMAOrTimerResponse));
 }
 
 inline int& CallbackUserdataByIndex(int n, int base = 0)
 {
-    return *(int*)((unsigned int)&data_0211127c[base].userdata + n * sizeof(DMAOrTimerResponse));
+    return *(int*)((unsigned int)&GetInterruptHandler_UnknownRoleZeroInitializedStorage[base].userdata + n * sizeof(DMAOrTimerResponse));
 }
 
 // Original: arm9/main @ 0x020C6B74; symbol: _Z19GetInterruptHandlerj; size: 0x8C.
 InterruptHandlerProc GetInterruptHandler(unsigned int mask)
 {
     int interruptId = 0;
-    InterruptHandlerProc* pProc = &data_027e0000.interruptProcTable[0];
+    InterruptHandlerProc* pProc = &Entry_UnknownRoleProcedureReferenceRecords.interruptProcTable[0];
     do
     {
         if (!(mask & 1))
@@ -31,11 +31,11 @@ InterruptHandlerProc GetInterruptHandler(unsigned int mask)
 
         if (interruptId >= 8 && interruptId <= 11)
         {
-            return (InterruptHandlerProc)data_0211127c[interruptId - 8].callback;
+            return (InterruptHandlerProc)GetInterruptHandler_UnknownRoleZeroInitializedStorage[interruptId - 8].callback;
         }
         else if (interruptId >= 3 && interruptId <= 6)
         {
-            return (InterruptHandlerProc)data_0211127c[interruptId + 1].callback;
+            return (InterruptHandlerProc)GetInterruptHandler_UnknownRoleZeroInitializedStorage[interruptId + 1].callback;
         }
         else
         {

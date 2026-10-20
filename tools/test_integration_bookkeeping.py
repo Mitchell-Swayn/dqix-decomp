@@ -56,6 +56,25 @@ class BookkeepingTests(unittest.TestCase):
         (self.receipts/'broken/receipt.json').write_text('broken JSON')
         with self.assertRaises(json.JSONDecodeError):accepted_receipts(self.receipts)
 
+    def test_checkpoint_does_not_invent_or_inherit_worker_observations(self):
+        # Historical roles/statuses and run metadata are not a current census.
+        previous = {**receipt(2, 32, marked=True),
+                    'role': 'worker_b', 'workers': {'worker_b': 'running'}}
+        self.write_receipt('previous', previous)
+        (self.receipts/'run.json').write_text(json.dumps({
+            'deadline_utc': 'deadline', 'workers': {'worker_c': 'running'}}))
+        (self.receipts/'checkpoint.json').write_text(json.dumps({
+            'workers': {'old-worker': 'running'}}))
+        current = {**receipt(1, 16, marked=True), 'role': 'current-worker'}
+        original = copy.deepcopy(current)
+        result = checkpoint(self.receipts, 'new', current, {}, 'now')
+        self.assertEqual(result['workers'], {})
+        self.assertEqual(result['deadline'], 'deadline')
+        self.assertEqual(result['accepted_batches'], ['previous', 'new'])
+        self.assertEqual((result['new_functions'], result['new_code_bytes']), (3, 48))
+        self.assertEqual(current, original)
+        self.assertEqual(json.loads((self.receipts/'previous/receipt.json').read_text()), previous)
+
     def test_prepare_failure_never_publishes_success(self):
         page = self.root/'build/progress/index.html';page.parent.mkdir(parents=True);page.write_bytes(b'accepted old page')
         ledger = self.receipts/'checkpoint.json';ledger.write_bytes(b'old checkpoint')

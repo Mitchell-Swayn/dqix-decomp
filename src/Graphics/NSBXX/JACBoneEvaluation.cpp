@@ -180,5 +180,5 @@ void CalculateBoneMatrixRenderDataFromJAC(NSBXXAnimationJAC* jac, int arg, fix32
     }
 
     int boneMatrixFlags = (bmrd->flags_ & 1) ? 4 : 0;
-    data_0210a274->boneMatrixRenderDataScalePopulateProc_(bmrd, &scaleData, data_0210a274->instructionPointer_, boneMatrixFlags);
+    ApplyBindPoseScaling_UnknownRoleZeroInitializedStorage->boneMatrixRenderDataScalePopulateProc_(bmrd, &scaleData, ApplyBindPoseScaling_UnknownRoleZeroInitializedStorage->instructionPointer_, boneMatrixFlags);
 }

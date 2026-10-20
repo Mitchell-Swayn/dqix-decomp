@@ -6,7 +6,7 @@
 
 #if defined(jpn)
 #define MIi_CpuClear16 func_020cbe5c
-#define data_020f1c80 data_020f1dec
+#define InitializeModelAnimationFromMAM_UnknownRoleProcedureReferenceRecords data_020f1dec
 #endif
 
 extern "C"
@@ -16,7 +16,12 @@ extern "C"
 }
 
 // processing callback for M.AM animations
-extern void (*data_020f1c80)(void* data, AnimationData* anim, int arg);
+// Original data: arm9/main @ 0x20f1c80; symbol: data_020f1c80.
+// Contains original relocated procedure references. Record fields, dispatch contract and exclusive ownership may remain unresolved.
+// Initial values: hex 88910b02.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern void (*InitializeModelAnimationFromMAM_UnknownRoleProcedureReferenceRecords)(void* data, AnimationData* anim, int arg);
 
 // Original: arm9/main @ 0x020B8E60; symbol: _Z29GetColorFromMaterialAnimationP17NSBXXAnimationMAMjj; size: 0x168.
 unsigned short GetColorFromMaterialAnimation(NSBXXAnimationMAM* mam, unsigned int trackEntry, unsigned int frame)
@@ -172,7 +177,7 @@ void InitializeModelAnimationFromMAM(AnimationData* anim, void* pvMAM, NSBXXInte
         materials = (NSBXXModelMaterialData*)((intptr_t)model + model->materialsOffset_);
     else
         materials = NULL;
-    anim->callback_ = data_020f1c80;
+    anim->callback_ = InitializeModelAnimationFromMAM_UnknownRoleProcedureReferenceRecords;
 
     anim->numEntries_ = model->numMaterials_;
     MIi_CpuClear16(0, &anim->entries_[0], anim->numEntries_ * 2);

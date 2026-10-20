@@ -7,7 +7,7 @@ extern "C" void Graphics_UploadObjectPaletteByScreenSelector(Owner*);
 extern "C" unsigned int Graphics_SplitRectangleIntoParts(RectPart*,unsigned,unsigned,unsigned,unsigned,unsigned);
 extern "C" int Graphics_ReadObjectMappingAlignmentShift(int);
 extern "C" int Graphics_ComputeObjectVRAMCapacity(int);
-extern "C" unsigned int Object_ReadHalfProductOfTwoNestedBytes(char*);
+extern "C" unsigned int Window_GetFillPatternByteSize(char*);
 extern "C" void ResourceBuffer_InvokeIndexedTransformWithCacheMaintenance(unsigned char*);
 // Original: arm9/main @ 0x020E1B2C; symbol: func_020e1b2c; size: 0x18C.
 extern "C" unsigned int Graphics_PartitionObjectAndComputeVRAMBudget(Owner* self,unsigned int limit) {
@@ -53,7 +53,7 @@ extern "C" unsigned int Graphics_PartitionObjectAndComputeVRAMBudget(Owner* self
  unsigned int available=Graphics_ComputeObjectVRAMCapacity(self->info->screen);
  Info* info=self->info;
  if(limit!=~0u) available=limit;
- info->freeBytes=available-(info->usedBytes+Object_ReadHalfProductOfTwoNestedBytes((char*)info));
+ info->freeBytes=available-(info->usedBytes+Window_GetFillPatternByteSize((char*)info));
  ResourceBuffer_InvokeIndexedTransformWithCacheMaintenance((unsigned char*)self->info+0xc);
  return self->info->freeBytes;
 }

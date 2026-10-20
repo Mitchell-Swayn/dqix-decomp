@@ -4,74 +4,146 @@
     .data       start:0x0218aca0 end:0x0218ad60 kind:data align:32
     .bss        start:0x0218ad60 end:0x0218ad60 kind:bss align:32
 
-src/Unclassified/ov009/func_ov009_021847c4.cpp:
+src/Menu/CharacterCreation/CharacterCreation_ClearChoiceGridLayout.cpp:
     complete
     .text start:0x021847c4 end:0x021847ec
 
-src/Unclassified/ov009/func_ov009_0218a888.cpp:
+src/Menu/CharacterCreation/CharacterNameFilter_IsByteInCharacterClass.cpp:
     complete
     .text start:0x0218a888 end:0x0218a8b8
 
-src/Unclassified/ov009/func_ov009_0218a4c8.cpp:
+src/Menu/CharacterCreation/CharacterNameFilter_ContainsLiteralAtCandidatePositions.cpp:
     complete
     .text start:0x0218a4c8 end:0x0218a518
 
-src/Unclassified/ov009/func_ov009_0218a930.cpp:
+src/Menu/CharacterCreation/CharacterCreation_AdvanceCompletionDelay.cpp:
     complete
     .text start:0x0218a930 end:0x0218a95c
 
-src/Unclassified/ov009/func_ov009_0218a484.cpp:
+src/Menu/CharacterCreation/CharacterNameFilter_CopyUppercaseAsciiBytes.cpp:
     complete
     .text start:0x0218a484 end:0x0218a4c8
 
-src/Unclassified/ov009/func_ov009_021885b8.cpp:
+src/Menu/CharacterCreation/CharacterCreation_QueueChangedAppearancePreview.cpp:
     complete
     .text start:0x021885b8 end:0x02188604
 
-src/Unclassified/ov009/func_ov009_021855dc.cpp:
+src/Menu/CharacterCreation/CharacterCreation_EnterPhaseAndMarkScreenDirty.cpp:
     complete
     .text start:0x021855dc end:0x02185634
 
-src/Unclassified/ov009/func_ov009_021847ec.cpp:
+src/Menu/CharacterCreation/CharacterNameFilter_ResetAndResolveTokenGlyphs.cpp:
     complete
     .text start:0x021847ec end:0x02184848
 
-src/Unclassified/ov009/func_ov009_02184bbc.cpp:
+src/Menu/CharacterCreation/Graphics_UpdateStageResourceRecords.cpp:
     complete
     .text start:0x02184bbc end:0x02184c30
 
-src/World/ov009/func_ov009_02184c30.cpp:
+src/Menu/CharacterCreation/World_DrawStageObjectAttachments.cpp:
     complete
     .text start:0x02184c30 end:0x02184ca4
 
-src/Unclassified/ov009/func_ov009_021883cc.cpp:
+src/Menu/CharacterCreation/CharacterCreation_UpdateExitFade.cpp:
     complete
     .text start:0x021883cc end:0x02188454
 
-src/Unclassified/ov009/func_ov009_02184ca4.cpp:
+src/Menu/CharacterCreation/CharacterCreation_RefreshScreenTransfersAndText.cpp:
     complete
     .text start:0x02184ca4 end:0x02184d70
 
-src/Data/ov009/CharacterFilterTokens.cpp:
+src/Data/CharacterFilterTokens.cpp:
     complete
     .rodata start:0x0218aafc end:0x0218ab47
 
-src/Data/ov009/SelectionCoordinates.cpp:
+src/Data/SelectionCoordinates.cpp:
     complete
     .rodata start:0x0218aa70 end:0x0218aa98
 
-src/Unclassified/ov009/func_ov009_02188bf8.cpp:
+src/Menu/CharacterCreation/CharacterCreation_ReadBodyScalePreset.cpp:
     complete
     .text start:0x02188bf8 end:0x02188c2c
 
-src/Graphics/ov009/ConfigureGridSelectionForCurrentMode.cpp:
+src/Menu/CharacterCreation/ConfigureGridSelectionForCurrentMode.cpp:
     complete
     .text start:0x02188c2c end:0x02188d9c
 
-src/Util/ov009/Util_MatchEncodedBytePattern.cpp:
+src/Menu/CharacterCreation/Util_MatchEncodedBytePattern.cpp:
     complete
     .text start:0x0218a518 end:0x0218a888
 
-src/System/ov009/Input_UpdateObjectYawFromButtonsAndTarget.cpp:
+src/Menu/CharacterCreation/Input_UpdateObjectYawFromButtonsAndTarget.cpp:
     complete
     .text start:0x02188604 end:0x02188944
+
+src/Menu/CharacterCreation/CharacterCreation_MapGenderDependentAppearanceChoice.cpp:
+    complete
+    .text start:0x02188b14 end:0x02188bf8
+
+src/Menu/CharacterCreation/CharacterCreation_UpdateBodyBuildSelection.cpp:
+    complete
+    .text start:0x021865dc end:0x021866f0
+
+src/Menu/CharacterCreation/CharacterCreation_UpdateHairStyleSelection.cpp:
+    complete
+    .text start:0x021868c4 end:0x021869d8
+
+src/Menu/CharacterCreation/CharacterCreation_UpdateHairColorSelection.cpp:
+    complete
+    .text start:0x021869d8 end:0x02186aec
+
+src/Menu/CharacterCreation/Graphics_AdvanceSelectionPhaseAndApplyChoice.cpp:
+    complete
+    .text start:0x02186aec end:0x02186c00
+
+src/Menu/CharacterCreation/ReleaseNestedAllocatorStorage.cpp:
+    complete
+    .text start:0x02184848 end:0x02184a18
+
+src/Menu/CharacterCreation/ApplyChoiceToPairedObjectSettings.cpp:
+    complete
+    .text start:0x02188944 end:0x02188b14
+
+src/Menu/CharacterCreation/AdvanceChoicePhaseAndTransitionVectors.cpp:
+    complete
+    .text start:0x021866f0 end:0x021868c4
+
+src/Menu/CharacterCreation/AdvanceModeSevenChoicePhaseAndVectors.cpp:
+    complete
+    .text start:0x02186c00 end:0x02186e00
+
+src/Menu/CharacterCreation/AdvanceBrightnessGatedChoicePhase.cpp:
+    complete
+    .text start:0x021863d0 end:0x021865dc
+
+src/Menu/CharacterCreation/QueueStateBackgroundResourceLoad.cpp:
+    complete
+    .text start:0x02184d70 end:0x02184e58
+
+src/Menu/CharacterCreation/RelocateCountedPatternPointers.cpp:
+    complete
+    .text start:0x0218a420 end:0x0218a484
+
+src/Menu/CharacterCreation/FormatRandomCategoryEntry.cpp:
+    complete
+    .text start:0x0218a8b8 end:0x0218a930
+
+src/Menu/CharacterCreation/UpdatePairedObjectsAndDispatchState.cpp:
+    complete
+    .text start:0x02184a18 end:0x02184bbc
+
+src/Menu/CharacterCreation/UpdateTextEntrySelectionPhase.cpp:
+    complete
+    .text start:0x02186e00 end:0x0218742c
+
+src/Menu/CharacterCreation/CharacterCreation_SwapReadyAppearancePreview.cpp:
+    complete
+    .text start:0x02188454 end:0x021885b8
+
+src/Menu/CharacterCreation/CharacterCreation_InitializeController.cpp:
+    complete
+    .text start:0x0218454c end:0x021847c4
+
+src/Menu/CharacterCreation/CharacterCreation_AllocateWorkingStorage.cpp:
+    complete
+    .text start:0x021842a0 end:0x0218454c

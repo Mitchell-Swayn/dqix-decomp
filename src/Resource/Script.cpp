@@ -3,10 +3,15 @@
 #include <globaldefs.h>
 
 #if defined(jpn)
-#define data_020ef918 data_020ef808
+#define ScriptGetDataString_UnknownRoleInitializedBytes data_020ef808
 #endif
 
-extern char data_020ef918[]; // holds a blank string
+// Original data: arm9/main @ 0x20ef918; symbol: data_020ef918.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 00000000.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern char ScriptGetDataString_UnknownRoleInitializedBytes[]; // holds a blank string
 
 inline float BitCastIntToFloat(const uint32_t* num)
 {
@@ -233,7 +238,7 @@ const char* Script::GetDataString(int32_t offset)
         return NULL;
 
     if (offset == -1)
-        return data_020ef918;
+        return ScriptGetDataString_UnknownRoleInitializedBytes;
 
     if (offset == -2 || offset < 0)
         return NULL;

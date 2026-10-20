@@ -30,7 +30,7 @@ void RenderCommand_9(RenderCommandHandler* handler, int modifier)
             Struct_0210b678* ptr_r7;
             unsigned int offset;
             offset = instructionPtr[1] * sizeof(Struct_0210b678);
-            ptr_r7 = (Struct_0210b678*)((intptr_t)data_0210b678 + offset);
+            ptr_r7 = (Struct_0210b678*)((intptr_t)RenderCommand9_UnknownRoleZeroInitializedStorage + offset);
             unsigned int inverseBindIndex = instructionPtr[1];
             unsigned int inBitfield = handler->invBindBitfield_[inverseBindIndex >> 5] & (1 << (inverseBindIndex & 0x1f));
             if (!inBitfield)
@@ -77,7 +77,7 @@ void RenderCommand_9(RenderCommandHandler* handler, int modifier)
             instructionPtr += 3;
             // very stupid but this was the only way to avoid optimizing out
             // the data_0210b678+0x40 reference
-            mat3x3_unaffr8 = (fix32_t*)((intptr_t)&data_0210b678[0].mat3x3.entries[0] + offset);
+            mat3x3_unaffr8 = (fix32_t*)((intptr_t)&RenderCommand9_UnknownRoleZeroInitializedStorage[0].mat3x3.entries[0] + offset);
             if (!inBitfield)
             {
                 while (Graphics_ReadMatrixWhenGeometryNotBusy(mat3x3_unaffr8) != 0) {}

@@ -63,11 +63,16 @@ typedef char PoolSlotSizeCheck[sizeof(PoolSlot)==0xd4?1:-1];
 typedef char ObjectTemplateSizeCheck[sizeof(ObjectTemplate)==0x1ec?1:-1];
 extern "C" {
 void GameState_SetIndexedObjectAndSlot(GameState*,int,GameObject*);
-void ClearSevenWords(ResourceBinding*);
-int Object_BindThreeResourcesAndUpdateResolvedState(ResourceBinding*,void*,Object3D*,void*);
-void InvokeObjectOperationWithModeOneAndTable(RenderCommandHandler*);
-extern const char data_020e7d90[];
-extern const Vector3fix data_020e7d84;
+void ResourceTracks_ClearBindingOwner(ResourceBinding*);
+int ResourceTracks_BindResourcesAndInitializePlayback(ResourceBinding*,void*,Object3D*,void*);
+void Graphics_SubmitScaledBillboardMatrix(RenderCommandHandler*);
+extern const char ObjectPool_SpawnFromTemplate_TextZure[];
+// Original data: arm9/main @ 0x20e7d84; symbol: data_020e7d84.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 0a0100000a0100000a010000.
+// Observed span: 12 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const Vector3fix ObjectPoolSpawnFromTemplate_UnknownRoleInitializedBytes;
 }
 ModelRenderContext* GetModel3DContext(Model3D*);
 // Original: arm9/main @ 0x02057FD8; symbol: func_02057fd8; size: 0x58C.
@@ -97,9 +102,9 @@ extern "C" int ObjectPool_SpawnFromTemplate(ObjectPool* pool, ObjectTemplate* so
         object->rotation_ = params->rotation;
         object->SetScale(params->scale.x,params->scale.y,params->scale.z);
         if (params->animation[0] == 0)
-            object->MaybeSetBCFGAnimation(0,params->animationFlags);
+            object->SetBCFGAnimationByIndex(0,params->animationFlags);
         else
-            object->MaybeSetRegularAnimation(params->animation,params->animationFlags);
+            object->SetAnimationByName(params->animation,params->animationFlags);
         pool->slots[slotIndex].valueB0 = params->value12;
         pool->slots[slotIndex].valueB2 = params->value14;
         pool->slots[slotIndex].valueB4 = params->value16;
@@ -116,9 +121,9 @@ extern "C" int ObjectPool_SpawnFromTemplate(ObjectPool* pool, ObjectTemplate* so
         if (object->pModel_) {
             ModelRenderContext* context = GetModel3DContext(object->pModel_);
             NSBXXNameList* bones = context->internalModel_ ? &context->internalModel_->boneList_ : 0;
-            int bone = bones ? NNS_G3dGetResDictIdxByName(bones,data_020e7d90) : -1;
+            int bone = bones ? NNS_G3dGetResDictIdxByName(bones,ObjectPool_SpawnFromTemplate_TextZure) : -1;
             if (bone >= 0)
-                SetModelRenderContextRenderCommandHook(context,InvokeObjectOperationWithModeOneAndTable,0,7,1);
+                SetModelRenderContextRenderCommandHook(context,Graphics_SubmitScaledBillboardMatrix,0,7,1);
         }
     } else {
         pool->slots[slotIndex].templateKey = source->key;
@@ -135,15 +140,15 @@ extern "C" int ObjectPool_SpawnFromTemplate(ObjectPool* pool, ObjectTemplate* so
         pool->slots[slotIndex].sourceFlag6 = params->flag6 != 0;
         pool->slots[slotIndex].sourceFlag7 = params->flag7 != 0;
         GameState_SetIndexedObjectAndSlot(state,objectIndex,(GameObject*)&source->object);
-        ClearSevenWords(&pool->slots[slotIndex].content.binding);
-        Object_BindThreeResourcesAndUpdateResolvedState(&pool->slots[slotIndex].content.binding,
+        ResourceTracks_ClearBindingOwner(&pool->slots[slotIndex].content.binding);
+        ResourceTracks_BindResourcesAndInitializePlayback(&pool->slots[slotIndex].content.binding,
             source->resourceDescriptor,&source->object,source->resourceC);
         Matrix4x3 translation;
         MTX_Identity43_(&translation);
         Mat4x3_ApplyTranslation(&translation,&translation,params->position.x,params->position.y,params->position.z);
         ResourceInstance* instance = pool->slots[slotIndex].content.binding.instance;
         instance->transform = translation;
-        Vector3fix scale = data_020e7d84;
+        Vector3fix scale = ObjectPoolSpawnFromTemplate_UnknownRoleInitializedBytes;
         source->object.SetScale(&scale);
         if (params->flag3 && pool->slots[slotIndex].content.binding.instance)
             pool->slots[slotIndex].content.binding.instance->enabled = 0;

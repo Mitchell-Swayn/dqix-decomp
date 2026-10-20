@@ -109,7 +109,7 @@ extern "C"
     //      ( 1  0  0 )
     //  M = ( 0  c  s )
     //      ( 0 -s  c )
-    void Mat3x3_WriteRotationX(Matrix3x3* out, fix32_t sine, fix32_t cosine);
+    void MTX_RotX33_(Matrix3x3* out, fix32_t sine, fix32_t cosine);
     // usa: func_020c1280
     // writes a y-axis rotation into the matrix specified. Instead
     // of providing the angle of rotation, you specify the sine/cosine
@@ -130,7 +130,7 @@ extern "C"
     // calculates the inverse of the input matrix.
     // returns 0 if the process succeeded (i.e. the input matrix was invertible)
     // and -1 if it failed.
-    int Mat3x3_Invert(const Matrix3x3* in, Matrix3x3* out);
+    int MTX_Inverse33(const Matrix3x3* in, Matrix3x3* out);
     // usa: func_020c15a4
     // computes inA * inB and stores to out.
     void Mat3x3_Multiply(const Matrix3x3* inA, const Matrix3x3* inB, Matrix3x3* out);
@@ -144,7 +144,7 @@ extern "C"
     void MTX_Identity43_(Matrix4x3* out);
     // usa: func_020c1868
     // converts an input 4x3 matrix to a 4x4 matrix.
-    void Mat4x3_ConvertTo4x4(const Matrix4x3* in, Matrix4x4* out);
+    void MTX_Copy43To44(const Matrix4x3* in, Matrix4x4* out);
     // usa: func_020c189c
     // computes translate(x, y, z) * in, and writes to out.
     // note the resulting matrix represents first translating, then applying
@@ -163,7 +163,7 @@ extern "C"
     //  M = ( 0  c  s )
     //      ( 0 -s  c )
     //      ( 0  0  0 )
-    void Mat4x3_WriteRotationX(Matrix4x3* out, fix32_t sine, fix32_t cosine);
+    void MTX_RotX43_(Matrix4x3* out, fix32_t sine, fix32_t cosine);
     // usa: func_020c199c
     // writes a y-axis rotation into the matrix specified. Instead
     // of providing the angle of rotation, you specify the sine/cosine
@@ -172,7 +172,7 @@ extern "C"
     // M = ( 0  1  0 )
     //     ( s  0  c )
     //     ( 0  0  0 )
-    void Mat4x3_WriteRotationY(Matrix4x3* out, fix32_t sine, fix32_t cosine);
+    void MTX_RotY43_(Matrix4x3* out, fix32_t sine, fix32_t cosine);
     // usa: func_020c19b8
     // writes a z-axis rotation into the matrix specified. Instead
     // of providing the angle of rotation, you specify the sine/cosine
@@ -181,7 +181,7 @@ extern "C"
     // M = ( -s  c  0 )
     //     (  0  0  1 )
     //     (  0  0  0 )
-    void Mat4x3_WriteRotationZ(Matrix4x3* out, fix32_t sine, fix32_t cosine);
+    void MTX_RotZ43_(Matrix4x3* out, fix32_t sine, fix32_t cosine);
     // usa: func_020c19d4
     // calculates the inverse of the input matrix.
     // returns 0 if the process succeeded (i.e. the input matrix was invertible)
@@ -201,10 +201,10 @@ extern "C"
 
 
     // usa: func_020c21dc
-    void Mat4x4_WriteIdentity(Matrix4x4* out);
+    void MTX_Identity44(Matrix4x4* out);
     // usa: func_020c2208
     // converts an input 4x4 matrix to a 4x3 matrix.
-    void Mat4x4_ConvertTo4x3(const Matrix4x4* in, Matrix4x3* out);
+    void MTX_Copy44To43(const Matrix4x4* in, Matrix4x3* out);
     // usa: func_020c223c
     // computes inA * inB and stores to out.
     void Mat4x4_Multiply(const Matrix4x4* inA, const Matrix4x4* inB, Matrix4x4* out);

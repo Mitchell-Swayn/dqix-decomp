@@ -9,7 +9,7 @@
 #if defined(jpn)
 #define MIi_CpuClear16 func_020cbe5c
 
-#define data_020f1c74 data_020f1de0
+#define InitializeModelAnimationFromJAC_UnknownRoleProcedureReferenceRecords data_020f1de0
 #endif
 
 extern "C"
@@ -45,7 +45,12 @@ static inline void CalculateThirdRowByCrossProduct(Matrix3x3* mat)
 }
 
 // processing callback for J.AC animations
-extern void (*data_020f1c74)(void*, AnimationData*, int);
+// Original data: arm9/main @ 0x20f1c74; symbol: data_020f1c74.
+// Contains original relocated procedure references. Record fields, dispatch contract and exclusive ownership may remain unresolved.
+// Initial values: hex bc780b02.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern void (*InitializeModelAnimationFromJAC_UnknownRoleProcedureReferenceRecords)(void*, AnimationData*, int);
 
 
 void ApplyBindPoseTranslation(BoneMatrixRenderData*);

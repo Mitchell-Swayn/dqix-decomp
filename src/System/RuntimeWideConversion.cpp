@@ -6,7 +6,7 @@ extern "C" char* strncpy(char*, const char*, unsigned int);
 // Original: arm9/main @ 0x020019AC; symbol: func_020019ac; size: 0x1C.
 extern "C" int RuntimeWideConversion_EncodeWideCharacter(char* dest, unsigned short value)
 {
-    return data_020eed28.characters->encode(dest, value);
+    return RuntimeWideConversionEncodeWideCharacter_UnknownRoleDataReferences.characters->encode(dest, value);
 }
 // Original: arm9/main @ 0x020019C8; symbol: func_020019c8; size: 0x78.
 extern "C" unsigned int Runtime_ConvertWideStringToBytes(char* dest, const unsigned short* source, unsigned int count)

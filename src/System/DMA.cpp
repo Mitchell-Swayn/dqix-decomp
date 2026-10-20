@@ -250,7 +250,7 @@ void ResetAllDMAChannels()
 //     - if newTiming = HBlank, then VBlank timing is permitted
 // Note that only channels 0, 1, 2 are checked.
 // Original: arm9/main @ 0x020C9FD0; symbol: _Z39VerifyDMATimingChangePermitted_020c9fd0ij; size: 0x84.
-void VerifyDMATimingChangePermitted_020c9fd0(int channel, unsigned int newTimingFlags)
+void VerifyOtherDMATimingCompatibility(int channel, unsigned int newTimingFlags)
 {
     int loopChannel = 0;
     volatile unsigned int* pControl = &DMARegisterControl(0);

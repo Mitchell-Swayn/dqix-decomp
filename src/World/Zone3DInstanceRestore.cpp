@@ -3,8 +3,8 @@
 #include "World/BMDJStateNotification.h"
 
 extern "C" void* GameState_ReadUnkF8(GameState*);
-extern "C" void* ReadGlobalValueAt02108844();
-extern "C" bool BitMap_ReadReversedColumnBit(void*, unsigned char, short);
+extern "C" void* GameState_GetSerializedProgressState();
+extern "C" bool Zone3D_TestRecordedBMDJStateBit(void*, unsigned char, short);
 
 // Only the zone ID field is initialized for these two state notifications.
 // Remaining payload fields and the event numbers are not yet understood.
@@ -16,13 +16,13 @@ void Zone3D::RestoreBMDJFlag4State()
     GameState* game = GameState::GetInstance();
     if (!game) return;
     if (!GameState_ReadUnkF8(game)) return;
-    void* state = ReadGlobalValueAt02108844();
+    void* state = GameState_GetSerializedProgressState();
     if (!state || !unknown_281d_) return;
     for (int groupID = 0; groupID < 2; ++groupID)
     {
         for (int i = 0; i < 0x7f; ++i)
         {
-            if (BitMap_ReadReversedColumnBit(state, groupID, i))
+            if (Zone3D_TestRecordedBMDJStateBit(state, groupID, i))
             {
                 Zone3D_BMDJStruct::InstanceEntry* instance = FindBMDJInstance(groupID, i);
                 if (instance) instance->flags &= ~4;
@@ -30,7 +30,7 @@ void Zone3D::RestoreBMDJFlag4State()
         }
         for (int i = 0x80; i < 0xff; ++i)
         {
-            if (BitMap_ReadReversedColumnBit(state, groupID, i))
+            if (Zone3D_TestRecordedBMDJStateBit(state, groupID, i))
             {
                 Zone3D_BMDJStruct::InstanceEntry* instance = FindBMDJInstance(groupID, i - 0x80);
                 if (!instance) continue;

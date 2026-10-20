@@ -62,16 +62,31 @@
 //     (  0  s_y )
 
 #if defined(jpn)
-#define data_020f1e88 data_020f1ff4
-#define data_020f1ea8 data_020f2014
-#define data_020f1ec8 data_020f2034
+#define MaterialTextureMatrixLoadProcType0_UnknownRoleProcedureReferenceRecords data_020f1ff4
+#define MaterialTextureMatrixLoadProcType2_UnknownRoleProcedureReferenceRecords data_020f2014
+#define MaterialTextureMatrixLoadProcType3_UnknownRoleProcedureReferenceRecords data_020f2034
 #endif
 
 #pragma optimize_for_size off
 
-extern void (*data_020f1e88[8])(Matrix4x4*, MaterialRenderData*);
-extern void (*data_020f1ea8[8])(Matrix4x4*, MaterialRenderData*);
-extern void (*data_020f1ec8[8])(Matrix4x4*, MaterialRenderData*);
+// Original data: arm9/main @ 0x20f1e88; symbol: data_020f1e88.
+// Contains original relocated procedure references. Record fields, dispatch contract and exclusive ownership may remain unresolved.
+// Initial values: hex 809c0b02889d0b02589e0b02d49e0b021c9f0b02fc9f0b02b4a00b02f8a00b02.
+// Observed span: 32 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern void (*MaterialTextureMatrixLoadProcType0_UnknownRoleProcedureReferenceRecords[8])(Matrix4x4*, MaterialRenderData*);
+// Original data: arm9/main @ 0x20f1ea8; symbol: data_020f1ea8.
+// Contains original relocated procedure references. Record fields, dispatch contract and exclusive ownership may remain unresolved.
+// Initial values: hex 78a70b0280a80b0268a90b02e8a90b0230aa0b0228ab0b0200ac0b0250ac0b02.
+// Observed span: 32 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern void (*MaterialTextureMatrixLoadProcType2_UnknownRoleProcedureReferenceRecords[8])(Matrix4x4*, MaterialRenderData*);
+// Original data: arm9/main @ 0x20f1ec8; symbol: data_020f1ec8.
+// Contains original relocated procedure references. Record fields, dispatch contract and exclusive ownership may remain unresolved.
+// Initial values: hex bcad0b0210af0b02f0af0b0274b00b02c8b00b0294b10b0238b20b0278b20b02.
+// Observed span: 32 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern void (*MaterialTextureMatrixLoadProcType3_UnknownRoleProcedureReferenceRecords[8])(Matrix4x4*, MaterialRenderData*);
 
 // Original: arm9/main @ 0x020B99B0; symbol: _Z34BoneMatrixDataSubmissionProc_Type0P20BoneMatrixRenderData; size: 0x7C.
 void BoneMatrixDataSubmissionProc_Type0(BoneMatrixRenderData* renderData)
@@ -165,7 +180,7 @@ void BoneMatrixScaleCalculationProc_Type1(BoneMatrixRenderData* renderData, NSBX
         if (thirdArg & 2)
         {
             unsigned int thisBoneIdx = ip[1];
-            data_0210a274->boneMatrixBitfield_[thisBoneIdx >> 5] |= (1 << (thisBoneIdx & 0x1f));
+            ApplyBindPoseScaling_UnknownRoleZeroInitializedStorage->boneMatrixBitfield_[thisBoneIdx >> 5] |= (1 << (thisBoneIdx & 0x1f));
         }
     }
     else
@@ -176,10 +191,10 @@ void BoneMatrixScaleCalculationProc_Type1(BoneMatrixRenderData* renderData, NSBX
         if (thirdArg & 2)
         {
             unsigned int thisBoneIdx = ip[1];
-            data_0210a274->boneMatrixBitfield_[thisBoneIdx >> 5] &= ~(1 << (thisBoneIdx & 0x1f));
-            data_0210b078[thisBoneIdx].vec1_.x = scaling->x_v2;
-            data_0210b078[thisBoneIdx].vec1_.y = scaling->y_v2;
-            data_0210b078[thisBoneIdx].vec1_.z = scaling->z_v2;
+            ApplyBindPoseScaling_UnknownRoleZeroInitializedStorage->boneMatrixBitfield_[thisBoneIdx >> 5] &= ~(1 << (thisBoneIdx & 0x1f));
+            BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[thisBoneIdx].vec1_.x = scaling->x_v2;
+            BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[thisBoneIdx].vec1_.y = scaling->y_v2;
+            BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[thisBoneIdx].vec1_.z = scaling->z_v2;
         }
     }
 
@@ -187,13 +202,13 @@ void BoneMatrixScaleCalculationProc_Type1(BoneMatrixRenderData* renderData, NSBX
     {
         unsigned int parentBoneIdx = ip[2];
         renderData->flags_ |= 0x20;
-        if (data_0210a274->boneMatrixBitfield_[parentBoneIdx >> 5] & (1 << (parentBoneIdx & 0x1f)))
+        if (ApplyBindPoseScaling_UnknownRoleZeroInitializedStorage->boneMatrixBitfield_[parentBoneIdx >> 5] & (1 << (parentBoneIdx & 0x1f)))
         {
             renderData->flags_ |= 8;
         }
         else
         {
-            renderData->scale_v1_ = data_0210b078[parentBoneIdx].vec1_;
+            renderData->scale_v1_ = BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[parentBoneIdx].vec1_;
         }
     }
 
@@ -389,7 +404,7 @@ void MaterialTextureMatrixLoadProc_Type0(MaterialRenderData* renderData)
     fifoData.matrix.entries[15] = 1 << 12;
     // Build the six nontrivial entries of the matrix by composing rotation,
     // translation and scale in that order (keep only the ones we have data for)
-    data_020f1e88[renderData->flags_ & 7](&fifoData.matrix, renderData);
+    MaterialTextureMatrixLoadProcType0_UnknownRoleProcedureReferenceRecords[renderData->flags_ & 7](&fifoData.matrix, renderData);
     
     if (renderData->materialxScale_ != 1 << 12)
     {
@@ -458,15 +473,15 @@ void BoneMatrixScaleCalculationProc_Type2(BoneMatrixRenderData* renderData, NSBX
     if (boneMatrixFlags & 4) // no scaling
     {
         renderData->flags_ |= 1; // no scaling
-        if (data_0210a274->boneMatrixBitfield_[parentBoneIdx >> 5] & (1 << (parentBoneIdx & 0x1f)))
+        if (ApplyBindPoseScaling_UnknownRoleZeroInitializedStorage->boneMatrixBitfield_[parentBoneIdx >> 5] & (1 << (parentBoneIdx & 0x1f)))
         {
-            data_0210a274->boneMatrixBitfield_[thisBoneIdx >> 5] |= (1 << (thisBoneIdx & 0x1f));
+            ApplyBindPoseScaling_UnknownRoleZeroInitializedStorage->boneMatrixBitfield_[thisBoneIdx >> 5] |= (1 << (thisBoneIdx & 0x1f));
             renderData->flags_ |= 0x18;
         }
         else
         {
-            Struct_0210b078* parent = &data_0210b078[parentBoneIdx];
-            MIi_CpuCopy32(parent, &data_0210b078[thisBoneIdx], sizeof(Struct_0210b078));
+            Struct_0210b078* parent = &BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[parentBoneIdx];
+            MIi_CpuCopy32(parent, &BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[thisBoneIdx], sizeof(Struct_0210b078));
             // copy to scale2 and scale3
             MIi_CpuCopy32(parent, &renderData->scale_v1_, 2 * 3 * sizeof(fix32_t));
         }
@@ -476,22 +491,22 @@ void BoneMatrixScaleCalculationProc_Type2(BoneMatrixRenderData* renderData, NSBX
         renderData->scale_v0_.x = scaling->x;
         renderData->scale_v0_.y = scaling->y;
         renderData->scale_v0_.z = scaling->z;
-        if (data_0210a274->boneMatrixBitfield_[parentBoneIdx >> 5] & (1 << (parentBoneIdx & 0x1f)))
+        if (ApplyBindPoseScaling_UnknownRoleZeroInitializedStorage->boneMatrixBitfield_[parentBoneIdx >> 5] & (1 << (parentBoneIdx & 0x1f)))
         {
-            MIi_CpuCopy32(scaling, &data_0210b078[thisBoneIdx], 2 * 3 * sizeof(fix32_t));
-            data_0210a274->boneMatrixBitfield_[thisBoneIdx >> 5] &= ~(1 << (thisBoneIdx & 0x1f));
+            MIi_CpuCopy32(scaling, &BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[thisBoneIdx], 2 * 3 * sizeof(fix32_t));
+            ApplyBindPoseScaling_UnknownRoleZeroInitializedStorage->boneMatrixBitfield_[thisBoneIdx >> 5] &= ~(1 << (thisBoneIdx & 0x1f));
             renderData->flags_ |= 0x18;
         }
         else
         {
-            data_0210a274->boneMatrixBitfield_[thisBoneIdx >> 5] &= ~(1 << (thisBoneIdx & 0x1f));
-            data_0210b078[thisBoneIdx].vec0_.x = ((int64_t)scaling->x * (int64_t)data_0210b078[parentBoneIdx].vec0_.x) >> 12;
-            data_0210b078[thisBoneIdx].vec0_.y = ((int64_t)scaling->y * (int64_t)data_0210b078[parentBoneIdx].vec0_.y) >> 12;
-            data_0210b078[thisBoneIdx].vec0_.z = ((int64_t)scaling->z * (int64_t)data_0210b078[parentBoneIdx].vec0_.z) >> 12;
-            data_0210b078[thisBoneIdx].vec1_.x = ((int64_t)scaling->x_v2 * (int64_t)data_0210b078[parentBoneIdx].vec1_.x) >> 12;
-            data_0210b078[thisBoneIdx].vec1_.y = ((int64_t)scaling->y_v2 * (int64_t)data_0210b078[parentBoneIdx].vec1_.y) >> 12;
-            data_0210b078[thisBoneIdx].vec1_.z = ((int64_t)scaling->z_v2 * (int64_t)data_0210b078[parentBoneIdx].vec1_.z) >> 12;
-            MIi_CpuCopy32(&data_0210b078[parentBoneIdx], &renderData->scale_v1_, 2 * 3 * sizeof(fix32_t));
+            ApplyBindPoseScaling_UnknownRoleZeroInitializedStorage->boneMatrixBitfield_[thisBoneIdx >> 5] &= ~(1 << (thisBoneIdx & 0x1f));
+            BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[thisBoneIdx].vec0_.x = ((int64_t)scaling->x * (int64_t)BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[parentBoneIdx].vec0_.x) >> 12;
+            BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[thisBoneIdx].vec0_.y = ((int64_t)scaling->y * (int64_t)BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[parentBoneIdx].vec0_.y) >> 12;
+            BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[thisBoneIdx].vec0_.z = ((int64_t)scaling->z * (int64_t)BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[parentBoneIdx].vec0_.z) >> 12;
+            BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[thisBoneIdx].vec1_.x = ((int64_t)scaling->x_v2 * (int64_t)BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[parentBoneIdx].vec1_.x) >> 12;
+            BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[thisBoneIdx].vec1_.y = ((int64_t)scaling->y_v2 * (int64_t)BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[parentBoneIdx].vec1_.y) >> 12;
+            BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[thisBoneIdx].vec1_.z = ((int64_t)scaling->z_v2 * (int64_t)BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[parentBoneIdx].vec1_.z) >> 12;
+            MIi_CpuCopy32(&BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[parentBoneIdx], &renderData->scale_v1_, 2 * 3 * sizeof(fix32_t));
         }
     }
 }
@@ -787,7 +802,7 @@ void MaterialTextureMatrixLoadProc_Type2(MaterialRenderData* renderData)
     // apply whichever of translation, rotation, scale are available.
     // Note that this time, translation happens first. Also rotation is stupid,
     // the center of rotation is not (8w, 8h) like in v0.
-    data_020f1ea8[renderData->flags_ & 7](&fifoData.matrix, renderData);
+    MaterialTextureMatrixLoadProcType2_UnknownRoleProcedureReferenceRecords[renderData->flags_ & 7](&fifoData.matrix, renderData);
 
     if (renderData->materialxScale_ != (1 << 12))
     {
@@ -1041,7 +1056,7 @@ void MaterialTextureMatrixLoadProc_Type3(MaterialRenderData* renderData)
         renderData->translateX_ = renderData->translateY_ = 0;
     }
 
-    data_020f1ec8[renderData->flags_ & 7](&fifoData.matrix, renderData);
+    MaterialTextureMatrixLoadProcType3_UnknownRoleProcedureReferenceRecords[renderData->flags_ & 7](&fifoData.matrix, renderData);
 
     if (renderData->materialxScale_ != (1 << 12))
     {
@@ -1062,7 +1077,7 @@ void MaterialTextureMatrixLoadProc_Type3(MaterialRenderData* renderData)
 
 // Select the matrix builder for each combination of rotation, translation,
 // and scale flags. The table order follows the low three bits of flags_.
-void (*data_020f1e88[8])(Matrix4x4*, MaterialRenderData*) = {
+void (*MaterialTextureMatrixLoadProcType0_UnknownRoleProcedureReferenceRecords[8])(Matrix4x4*, MaterialRenderData*) = {
     CreateTextureMatrix_v0_RotateTranslateScale,
     CreateTextureMatrix_v0_RotateTranslate,
     CreateTextureMatrix_v0_TranslateScale,
@@ -1073,7 +1088,7 @@ void (*data_020f1e88[8])(Matrix4x4*, MaterialRenderData*) = {
     CreateTextureMatrix_v0_NoExtensions
 };
 
-void (*data_020f1ea8[8])(Matrix4x4*, MaterialRenderData*) = {
+void (*MaterialTextureMatrixLoadProcType2_UnknownRoleProcedureReferenceRecords[8])(Matrix4x4*, MaterialRenderData*) = {
     CreateTextureMatrix_v2_TranslateRotateScale,
     CreateTextureMatrix_v2_TranslateRotate,
     CreateTextureMatrix_v2_TranslateScale,
@@ -1084,7 +1099,7 @@ void (*data_020f1ea8[8])(Matrix4x4*, MaterialRenderData*) = {
     CreateTextureMatrix_v2_NoExtensions
 };
 
-void (*data_020f1ec8[8])(Matrix4x4*, MaterialRenderData*) = {
+void (*MaterialTextureMatrixLoadProcType3_UnknownRoleProcedureReferenceRecords[8])(Matrix4x4*, MaterialRenderData*) = {
     CreateTextureMatrix_v3_ScaleTranslateRotate,
     CreateTextureMatrix_v3_TranslateRotate,
     CreateTextureMatrix_v3_TranslateScale,

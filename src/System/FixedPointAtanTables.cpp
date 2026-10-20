@@ -4,7 +4,12 @@
 // 129 samples of atan(i / 128), rounded to nearest positive integer.
 // The final zero is storage padding matching the original four-byte boundary.
 
-extern "C" const int16_t data_020ed450[130] = {
+// Original data: arm9/main @ 0x20ed450; symbol: data_020ed450.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 00002000400060008000a000c000e000000120013f015f017f019f01be01de01fd011d023c025c027b029a02b902d802f70216033503540372039103af03cd03 ...; full span in module reference.
+// Observed span: 260 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" const int16_t Fix32Atan2_UnknownRoleInitializedBytes[130] = {
     0, 32, 64, 96, 128, 160, 192, 224, 256, 288,
     319, 351, 383, 415, 446, 478, 509, 541, 572, 604,
     635, 666, 697, 728, 759, 790, 821, 852, 882, 913,
@@ -20,7 +25,12 @@ extern "C" const int16_t data_020ed450[130] = {
     3085, 3102, 3119, 3135, 3152, 3168, 3185, 3201, 3217, 0,
 };
 
-extern "C" const int16_t data_020ed554[130] = {
+// Original data: arm9/main @ 0x20ed554; symbol: data_020ed554.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 00005100a300f40046019701e9013a028b02dc022d037e03cf0320047004c10411056105b10501065106a006ef063e078d07dc072a087808c60814096109ae09 ...; full span in module reference.
+// Observed span: 260 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" const int16_t Fix32Atan2Rescaled_UnknownRoleInitializedBytes[130] = {
     0, 81, 163, 244, 326, 407, 489, 570, 651, 732,
     813, 894, 975, 1056, 1136, 1217, 1297, 1377, 1457, 1537,
     1617, 1696, 1775, 1854, 1933, 2012, 2090, 2168, 2246, 2324,

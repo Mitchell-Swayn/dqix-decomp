@@ -3,8 +3,8 @@
 #include "Util/Random.h"
 
 extern "C" {
-    void ReadGlobalValueAt02108844(GameState*);
-    int GameState_ReadWordAtOffset5CB0(GameState*);
+    void GameState_GetSerializedProgressState(GameState*);
+    int GameState_GetProgressChapter(GameState*);
 }
 
 // Original: arm9/main @ 0x0208E778; symbol: _ZN20WorldPlacementSource12AppendRecordEPNS_6RecordE; size: 0x2C.
@@ -30,7 +30,7 @@ int WorldPlacementSource::GetRandomValue()
     if (!randomValues) return 0;
     int size = 8;
     GameState* game = GameState::GetInstance();
-    ReadGlobalValueAt02108844(game);
-    if (GameState_ReadWordAtOffset5CB0(game) >= 19) size = 16;
+    GameState_GetSerializedProgressState(game);
+    if (GameState_GetProgressChapter(game) >= 19) size = 16;
     return randomValues[NextRandomMax(GetBTRandom(), size)];
 }

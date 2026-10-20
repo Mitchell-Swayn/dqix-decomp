@@ -45,3 +45,17 @@ class IntegrationLockTests(unittest.TestCase):
                     raise ValueError('candidate rejected, accepted state restored')
             with integration_guard(root):
                 self.assertFalse((Path(root)/'build/progress/integration.lock').exists())
+
+    def test_explicit_recovery_requires_marker_and_keeps_it_until_verified(self):
+        with tempfile.TemporaryDirectory() as root:
+            with self.assertRaisesRegex(RuntimeError,'requires'):
+                with integration_guard(root,recovery=True):self.fail('No unfinished transaction')
+            with integration_guard(root) as owner:owner.begin_changes()
+            with self.assertRaises(ValueError):
+                with integration_guard(root,recovery=True) as owner:
+                    self.assertTrue(owner.changed)
+                    raise ValueError('still unverified')
+            with self.assertRaisesRegex(RuntimeError,'unfinished'):
+                with integration_guard(root):self.fail('Must remain blocked')
+            with integration_guard(root,recovery=True) as owner:owner.release_publication()
+            with integration_guard(root):pass

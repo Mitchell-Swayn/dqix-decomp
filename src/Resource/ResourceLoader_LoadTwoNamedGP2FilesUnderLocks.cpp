@@ -10,7 +10,7 @@ ResourceManager *Object_GetGlobalSixteenEntryDisplayState();
 void Graphics_RestoreTextureImageAndPaletteVRAMState(ResourceLock *);
 void Object_InvokeSaveTextureImageVRAMState(ResourceLock *);
 int AllocateInitializeAndAppendLinkedNode(ResourceManager *,int,SafeAllocator *,void *,unsigned,ResourceLock *);
-extern char data_020f28cb[];
+extern char ResourceLoader_LoadTwoNamedGP2FilesUnderLocks_FormatEv99999DChr[];
 }
 // Original: arm9/main @ 0x020DAA58; symbol: func_020daa58; size: 0x110.
 extern "C" int ResourceLoader_LoadTwoNamedGP2FilesUnderLocks(ResourcePair *pair, GPCFile *gpc, int first, int second) {
@@ -23,15 +23,15 @@ extern "C" int ResourceLoader_LoadTwoNamedGP2FilesUnderLocks(ResourcePair *pair,
         unsigned size = 0;
         void *data = 0;
         char name[32];
-        sprintf(name, data_020f28cb, first);
-        if (GetUnknownGP2InnerFileDataByName(&data, &size, gpc, name)) {
+        sprintf(name, ResourceLoader_LoadTwoNamedGP2FilesUnderLocks_FormatEv99999DChr, first);
+        if (Filesystem_GetGPCInnerFileDataByName(&data, &size, gpc, name)) {
             loaded = data;
             Graphics_RestoreTextureImageAndPaletteVRAMState(lock);
             AllocateInitializeAndAppendLinkedNode(manager, 0x14, allocator, loaded, size, lock);
             Object_InvokeSaveTextureImageVRAMState(lock);
         }
-        sprintf(name, data_020f28cb, second);
-        if (GetUnknownGP2InnerFileDataByName(&data, &size, gpc, name)) {
+        sprintf(name, ResourceLoader_LoadTwoNamedGP2FilesUnderLocks_FormatEv99999DChr, second);
+        if (Filesystem_GetGPCInnerFileDataByName(&data, &size, gpc, name)) {
             loaded = data;
             Graphics_RestoreTextureImageAndPaletteVRAMState(lock);
             AllocateInitializeAndAppendLinkedNode(manager, 0x15, allocator, loaded, size, lock);

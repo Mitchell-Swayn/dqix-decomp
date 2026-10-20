@@ -2,7 +2,7 @@
 
 extern "C" void OS_SpinWait(int delay);
 extern "C" int PowerManagement_IsLcdPowerEnabled();
-extern "C" int WaitForOperationAndReturnCallbackValue(int kind, int value);
+extern "C" int PowerManagement_SetDeviceEnabledSynchronously(int kind, int value);
 extern "C" int IPC_SendNormalizedBooleanModeCommand(int value);
 
 // Original: arm9/main @ 0x020CEF94; symbol: func_020cef94; size: 0x8C.
@@ -13,12 +13,12 @@ extern "C" void IPC_WaitForPendingCommandsAndRetryWithDelays()
         return;
     }
 
-    int pending = WaitForOperationAndReturnCallbackValue(2, 0);
+    int pending = PowerManagement_SetDeviceEnabledSynchronously(2, 0);
     if (pending == 0) goto no_pending;
     const unsigned int delay = 0xa3a47;
 loop_pending:
     OS_SpinWait(delay);
-    pending = WaitForOperationAndReturnCallbackValue(2, 0);
+    pending = PowerManagement_SetDeviceEnabledSynchronously(2, 0);
     if (pending != 0) goto loop_pending;
 no_pending:
 

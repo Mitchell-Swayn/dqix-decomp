@@ -1,5 +1,0 @@
-#pragma optimize_for_size off
-#include <globaldefs.h>
-extern "C" int _ZN8Object3D4DrawEb(void*,bool);extern "C" int UpdateValueWithFlagDependentScale(void*,unsigned);extern "C" void* GameResources_GetInstance(int);extern "C" void func_ov017_0218eafc(void*,int);struct Object{char pad[0xd4];unsigned char hidden:1;unsigned char rest:7;};struct Owner{unsigned pad[4];Object* first;void* second;Object* third;unsigned char* fourth;};
-// Original: arm9/main @ 0x02040910; symbol: func_02040910; size: 0xA0.
-extern "C" ARM int DrawFirstAvailableObjectVariant(Owner* owner,unsigned arg){if(owner->first)_ZN8Object3D4DrawEb(owner->first,true);if(owner->second)return UpdateValueWithFlagDependentScale(owner->second,arg);if(owner->third){if(owner->third->hidden)return 1;return _ZN8Object3D4DrawEb(owner->third,true);}if(owner->fourth){unsigned flag=owner->fourth[0x2f0];if(flag)return 1;int id=*(short*)(owner->fourth+4);void* handle=GameResources_GetInstance(flag);func_ov017_0218eafc(handle,id);return 1;}return 0;}

@@ -10,7 +10,7 @@
 ARM
 struct PaletteOwner {char prefix[0x18];Object3D* object;};
 struct PaletteTintRecord {char prefix[0x20];unsigned short color;};
-extern "C" PaletteTintRecord* ReadWordAtOffsetC_Main02040538(PaletteOwner*);
+extern "C" PaletteTintRecord* Actor_GetMotionDescriptor(PaletteOwner*);
 // Adds RGB555 tint with channel saturation, then uploads the temporary model palette.
 // Zero tint and no object palette override use the original palette upload path.
 // Original: arm9/main @ 0x0203DB44; symbol: func_0203db44; size: 0x1A0.
@@ -19,7 +19,7 @@ extern "C" void Graphics_UploadObjectTexturePaletteWithAdditiveTint(void* unused
  if(!owner->object)return;
  GameState::GetInstance();
  Object3D* object=owner->object;
- PaletteTintRecord* record=ReadWordAtOffsetC_Main02040538(owner);
+ PaletteTintRecord* record=Actor_GetMotionDescriptor(owner);
  if(!record)return;
  unsigned short tint=record->color;
  unsigned short red=tint&31;

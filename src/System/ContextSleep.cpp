@@ -22,8 +22,8 @@ void SleepCompletionProc(ProcessorContext **ppContext)
 PFNSwitchContextProc SetSwitchContextProcB(PFNSwitchContextProc proc)
 {
     int priorState = DisableIRQInterrupts();
-    PFNSwitchContextProc oldProc = data_021112e0.substruct_24.switchContextProcB;
-    data_021112e0.substruct_24.switchContextProcB = proc;
+    PFNSwitchContextProc oldProc = OSInitThread_UnknownRoleZeroInitializedStorage.substruct_24.switchContextProcB;
+    OSInitThread_UnknownRoleZeroInitializedStorage.substruct_24.switchContextProcB = proc;
     SetIRQInterruptState(priorState);
     return oldProc;
 }

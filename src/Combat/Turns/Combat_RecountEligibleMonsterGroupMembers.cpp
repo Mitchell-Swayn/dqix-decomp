@@ -1,0 +1,6 @@
+#include "globaldefs.h"
+#include "std_library_functions.h"
+#include "GameState/GameState.h"
+// Original: arm9/ov000 @ 0x02155e94; symbol: CountEligibleCombatantsInPackedPartyGroups.
+struct GroupHeader{unsigned char total:4,groups:2,rest:2;};struct GroupCount{unsigned char count:4,eligible:4;};struct Slot{unsigned char pad[2],index;};extern "C" GameObject*_ZN9GameState19GetCombatantByIndexEi(GameState*,int);extern "C" bool GameObject_IsDead(void*);extern "C" int Combat_IsCombatantExcludedFromSelection(char*);
+extern "C" ARM void Combat_RecountEligibleMonsterGroupMembers(unsigned char*self){((GroupHeader*)(self+0x81b1))->total=0;for(int group=0;group<((GroupHeader*)(self+0x81b1))->groups;group++){unsigned char*record=self+0x81b4+group*24;((GroupCount*)(record+10))->eligible=0;for(int i=0;i<((GroupCount*)(record+10))->count;i++){short index=((Slot*)(record+i))->index+192;GameState*state=GameState::GetInstance();GameObject*object=state->GetCombatantByIndex(index);if(object&&!GameObject_IsDead(object)&&!Combat_IsCombatantExcludedFromSelection((char*)object)){((GroupCount*)(record+10))->eligible++;GroupHeader*header=(GroupHeader*)(self+0x81b1);header->total=(unsigned char)(header->total+1);}}}}

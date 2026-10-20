@@ -1,0 +1,11 @@
+#include <globaldefs.h>
+ARM
+#define B(p,o) (*(unsigned char*)((char*)(p)+(o)))
+#define S(p,o) (*(signed char*)((char*)(p)+(o)))
+#define H(p,o) (*(short*)((char*)(p)+(o)))
+#define U(p,o) (*(unsigned short*)((char*)(p)+(o)))
+#define W(p,o) (*(unsigned*)((char*)(p)+(o)))
+#define P(p,o) (*(char**)((char*)(p)+(o)))
+struct GameState;struct GameResources;struct Object3D;extern "C" void* _ZN9GameState11GetInstanceEv();extern "C" void* Zone3D_GetMainInstance();extern "C" void* Network_GetConnectionManager();extern "C" bool Network_IsParentOrOffline(unsigned*);struct PlacementAllocator;extern "C" void* GameState_GetIndexList(GameState*);extern "C" void _ZN13SafeAllocator21ResetAllocatorPointerEv(void*);extern "C" void _ZN13ZoneState2754C1Ev(void*);extern "C" void World_ResetZoneStateAndClearThreeWords(unsigned char*);extern "C" int PlacementAllocator_ApplyCountByRecordKindAndAvailableActors(PlacementAllocator*,short,int,int);extern "C" void World_ResetTemporaryZoneResourceState(void*);extern "C" int GameState_TestKeyInContainersOrListedPartyMembers(unsigned char*,int);struct KeyCounts{char pad[10];unsigned short first:4;unsigned short second:4;unsigned short third:4;unsigned short rest:4;};
+// Original: arm9/ov006 @ 0x0215759C; symbol: GameState_ApplyPlacementAndTestPackedKeyCounts; size: 0x104.
+extern "C" void KrakPot_GrantAlchemyResultAndConsumeIngredients(char* self,char* record,unsigned count){unsigned char* list=(unsigned char*)GameState_GetIndexList((GameState*)_ZN9GameState11GetInstanceEv());unsigned char placement[56];_ZN13SafeAllocator21ResetAllocatorPointerEv(placement);_ZN13ZoneState2754C1Ev(placement+20);World_ResetZoneStateAndClearThreeWords(placement);World_ResetZoneStateAndClearThreeWords(placement);PlacementAllocator_ApplyCountByRecordKindAndAvailableActors((PlacementAllocator*)placement,H(self,24),(signed char)count,0);World_ResetTemporaryZoneResourceState(placement);for(unsigned char i=0;i<count;i++){for(unsigned char j=0;j<((KeyCounts*)record)->first;j++)GameState_TestKeyInContainersOrListedPartyMembers(list,H(record,4));for(unsigned char j=0;j<((KeyCounts*)record)->second;j++)GameState_TestKeyInContainersOrListedPartyMembers(list,H(record,6));for(unsigned char j=0;j<((KeyCounts*)record)->third;j++)GameState_TestKeyInContainersOrListedPartyMembers(list,H(record,8));}}

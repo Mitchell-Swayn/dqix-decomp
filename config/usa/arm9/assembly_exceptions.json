@@ -65,7 +65,7 @@
       "approval_scope": "Only the two CLZ hardware primitives; all index/partition control flow and arithmetic remain C. Mixed source unit, not pure C.",
       "reason": "The pinned CodeWarrior compiler exposes no matching CLZ intrinsic; these two CLZ instructions implement floor-log2 and are explicitly retained as necessary hardware primitives.",
       "original_assembly_authorship": "unknown",
-      "source_sha256": "2c5bd82700ce9ef92fa83e0b91fc49781b49c11a4686583e6a41c6a3f2e29129",
+      "source_sha256": "c217fbbf39c744605da3efd9c4e6d8732212e5642f420036d50561a931462bc3",
       "module_path": "build/usa/build/arm9.bin",
       "module_base": "0x02000000",
       "start": "0x20b10b4",

@@ -1,0 +1,5 @@
+#include "globaldefs.h"
+#include "std_library_functions.h"
+extern "C" int Http_FindHeaderLineEndAndColon(void*,int,int,int*),Http_SkipHeaderValueSpaces(void*,int,int),Http_CompareHeaderTokenIgnoringCase(void*,int,int,const char*,int);
+// Original: arm9/ov031 @ 0x022410D8; symbol: func_ov031_022410d8; size: 0x10C.
+extern "C" ARM int Http_FindResponseHeaderValueSpan(int*buffer,const char*name,int*out){int colon;int line=Http_FindHeaderLineEndAndColon(buffer,12,*buffer,&colon);if(line>0)do{int next=Http_FindHeaderLineEndAndColon(buffer,line,*buffer,&colon);if(colon>0&&!Http_CompareHeaderTokenIgnoringCase(buffer,line,colon,name,0)){if(colon+1<*(volatile int*)buffer){int end=Http_FindHeaderLineEndAndColon(buffer,colon+1,*buffer,0);int limit;if(end<=0)limit=*buffer;else{if(end<2)return -1;limit=end-2;}int start=Http_SkipHeaderValueSpaces(buffer,colon+1,limit);if(start<0)start=limit;*out=start;return limit-start;}return 0;}line=next;}while(line>0);return -1;}

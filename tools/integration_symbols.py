@@ -27,13 +27,23 @@ def capture_symbols(main, worker, module, manifest):
             refined=refined.replace(old,new)
         before_for_append=refined.encode()
     else:before_for_append=before
+    refined_data_names=set()
     for item in data_refinements:
         if item['path']!=relative.as_posix():raise ValueError('Data refinement outside selected module')
         old,new=item['before'],item['after'];name=old.split()[0];row=selected.get(name)
-        match=re.fullmatch(re.escape(name)+r' kind:data\(byte\[([0-9]+)\]\) addr:0x([0-9a-fA-F]+)',new)
-        if not row or row.get('section') not in ('.data','.rodata','.ctor') or not match or int(match[1])!=row['size'] or int(match[2],16)!=int(row['address'],16):raise ValueError('Data refinement must bind exact selected initialized extent')
-        if old!=name+' kind:data(any) addr:0x'+match[2] or old not in before_for_append.decode().splitlines() or new not in worker_lines:raise ValueError('Data refinement changes original address or kind')
-        before_for_append=before_for_append.decode().replace(old,new).encode()
+        # DSD array counts are elements, whereas source manifests record bytes.
+        # Support only reviewed primitive widths; never infer an opaque span.
+        match=re.fullmatch(re.escape(name)+r' kind:data\((byte|word)\[([0-9]+)\]\) addr:0x([0-9a-fA-F]+)',new)
+        if not row or row.get('section') not in ('.data','.rodata','.ctor') or not match:raise ValueError('Data refinement must bind exact selected initialized extent')
+        width={'byte':1,'word':4}[match[1]];count=int(match[2]);address=int(match[3],16)
+        if count<=0 or count*width!=row['size'] or address!=int(row['address'],16) or address%width:raise ValueError('Data refinement must bind exact selected initialized extent')
+        if name in refined_data_names:raise ValueError('Duplicate initialized data refinement')
+        refined_data_names.add(name)
+        lines=before_for_append.decode().splitlines(keepends=True)
+        named_lines=[line for line in lines if re.match(r'\s*'+re.escape(name)+r'\s',line)]
+        if old!=name+' kind:data(any) addr:0x'+match[3] or len(named_lines)!=1 or named_lines[0].rstrip('\r\n')!=old or new not in worker_lines:raise ValueError('Data refinement changes original address or kind')
+        # Replace one complete symbol line, never text in comments or prefixes.
+        before_for_append=''.join(new+line[len(old):] if line.rstrip('\r\n')==old else line for line in lines).encode()
     for declaration in declarations:
         if 'path' in declaration and declaration['path']!=relative.as_posix():raise ValueError('Symbol declaration outside selected module')
         line=declaration.get('line')

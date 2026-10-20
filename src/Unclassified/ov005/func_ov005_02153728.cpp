@@ -1,4 +1,0 @@
-extern "C" void func_ov005_021538fc(void*,const int*,int*,int,int);
-struct Coordinates { unsigned prefix[6]; int targetX1,targetY1,targetX2,targetY2; int currentX1,currentY1,currentX2,currentY2; };
-// Original: arm9/ov005 @ 0x02153728; symbol: func_ov005_02153728; size: 0x94.
-extern "C" void func_ov005_02153728(Coordinates* self,int ticks) { if(!ticks)ticks=1; int factor=ticks*0xb33; int threshold=ticks*0xccc; func_ov005_021538fc(self,&self->targetX1,&self->currentX1,factor,threshold); func_ov005_021538fc(self,&self->targetY1,&self->currentY1,factor,threshold); func_ov005_021538fc(self,&self->targetX2,&self->currentX2,factor,threshold); func_ov005_021538fc(self,&self->targetY2,&self->currentY2,factor,threshold); }

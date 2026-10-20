@@ -1,11 +1,11 @@
 #include <globaldefs.h>
 #include <GameState/GameState.h>
 extern "C" GameObject* GameState_FindIndexedObjectWithFlag1000(GameState*,int);
-extern "C" int ReadFieldAtOffset2D0(GameObject*);
+extern "C" int GameObject_GetAssociatedPartyMemberIndex(GameObject*);
 extern "C" int GameState_ReadProtagonistObjectIndex(GameState*);
-extern "C" char* Object_GetGlobalConnectionState();
-extern "C" bool IsFirstWordNonzero(void*);
-extern "C" int TestResolvedRecordBitThirteen(void*,int);
+extern "C" char* Network_GetConnectionManager();
+extern "C" bool Network_IsSessionActive(void*);
+extern "C" int Network_IsMemberAvailableForInteraction(void*,int);
 extern "C" int TestResolvedEntryHalfwordHighBit(void*,int);
 extern "C" int Object_TestMemberHalfwordBit14(void*,int);
 struct ObjectFlag5 {unsigned char low:5,flag:1,high:2;};
@@ -13,22 +13,22 @@ struct ObjectFlag5 {unsigned char low:5,flag:1,high:2;};
 extern "C" ARM bool ReadAvailableMemberValueRelativeToProtagonist(int index,int checkBlocked,int allowSpecial,int checkAvailable) {
  GameState* state=GameState::GetInstance();
  GameObject* protagonist=state->GetProtagonist();
- char* context=Object_GetGlobalConnectionState();
+ char* context=Network_GetConnectionManager();
  if(protagonist){
   GameObject* member=state->GetPartyMemberByIndex(index);
   if(member){
-   if(IsFirstWordNonzero(context) && checkAvailable){
+   if(Network_IsSessionActive(context) && checkAvailable){
     int owner=index;
     if(*(unsigned short*)member & 0x1000)owner=0;
-    if(owner!=GameState_ReadProtagonistObjectIndex(state) && !TestResolvedRecordBitThirteen(context,owner))return false;
+    if(owner!=GameState_ReadProtagonistObjectIndex(state) && !Network_IsMemberAvailableForInteraction(context,owner))return false;
    }
    if(checkBlocked && index!=GameState_ReadProtagonistObjectIndex(state)){
     if(TestResolvedEntryHalfwordHighBit(context,index))return false;
     GameObject* owner=GameState_FindIndexedObjectWithFlag1000(state,index);
-    if(owner){int parent=ReadFieldAtOffset2D0(owner);if(TestResolvedEntryHalfwordHighBit(context,parent) && parent!=GameState_ReadProtagonistObjectIndex(state))return false;}
+    if(owner){int parent=GameObject_GetAssociatedPartyMemberIndex(owner);if(TestResolvedEntryHalfwordHighBit(context,parent) && parent!=GameState_ReadProtagonistObjectIndex(state))return false;}
     if(Object_TestMemberHalfwordBit14(context,index))return false;
     owner=GameState_FindIndexedObjectWithFlag1000(state,index);
-    if(owner){int parent=ReadFieldAtOffset2D0(owner);if(Object_TestMemberHalfwordBit14(context,parent) && parent!=GameState_ReadProtagonistObjectIndex(state))return false;}
+    if(owner){int parent=GameObject_GetAssociatedPartyMemberIndex(owner);if(Object_TestMemberHalfwordBit14(context,parent) && parent!=GameState_ReadProtagonistObjectIndex(state))return false;}
    }
    bool same=false;
    unsigned a=protagonist->obj3D_.GetField06();

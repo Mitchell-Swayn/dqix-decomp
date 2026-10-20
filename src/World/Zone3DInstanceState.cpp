@@ -2,8 +2,8 @@
 #include "GameState/GameState.h"
 
 extern "C" void* GameState_ReadUnkF8(GameState*);
-extern "C" void* ReadGlobalValueAt02108844();
-extern "C" void InvokeHandlerForHalfwordIndexRange(void*, unsigned char, int, int);
+extern "C" void* GameState_GetSerializedProgressState();
+extern "C" void Zone3D_ClearRecordedBMDJStateRange(void*, unsigned char, int, int);
 extern "C" void SetBankedReverseBitFlag(void*, unsigned char, short, bool);
 
 // The receiving state store and the gameplay meaning of flag 4 are unresolved.
@@ -14,12 +14,12 @@ void Zone3D::RecordBMDJFlag4State()
     GameState* game = GameState::GetInstance();
     if (!game) return;
     if (!GameState_ReadUnkF8(game)) return;
-    void* state = ReadGlobalValueAt02108844();
+    void* state = GameState_GetSerializedProgressState();
     if (!state) return;
     for (int i = 0; i < 2; ++i)
     {
-        InvokeHandlerForHalfwordIndexRange(state, i, 0, 0x7f);
-        InvokeHandlerForHalfwordIndexRange(state, i, 0x80, 0xff);
+        Zone3D_ClearRecordedBMDJStateRange(state, i, 0, 0x7f);
+        Zone3D_ClearRecordedBMDJStateRange(state, i, 0x80, 0xff);
     }
     int count;
     for (Zone3D_BMDJStruct* group = firstBMDJStruct_41c_; group; group = group->pNext_)

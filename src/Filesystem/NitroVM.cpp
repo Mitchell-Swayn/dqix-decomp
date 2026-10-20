@@ -10,11 +10,16 @@
 typedef int(*FixedCommand)(NitroVM*);
 
 #if defined(jpn)
-#define data_020f2288 data_020f23f4
+#define NitroVMDefaultCommandGetPath_UnknownRoleInitializedBytes data_020f23f4
 #endif
 
 #define NITROFS_ID_INVALID 0x10000
-extern unsigned char data_020f2288[]; // ":/"
+// Original data: arm9/main @ 0x20f2288; symbol: data_020f2288.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 3a2f0000.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern unsigned char NitroVMDefaultCommandGetPath_UnknownRoleInitializedBytes[]; // ":/"
 
 // Original: arm9/main @ 0x020CB034; symbol: _Z28NitroVM_UnlinkAndStoreResultP7NitroVMi; size: 0x5C.
 extern "C" void NitroVM_UnlinkAndStoreResult(NitroVM* vm, int result)
@@ -588,7 +593,7 @@ int NitroVM_DefaultCommand_GetPath(NitroVM* vm)
         MI_CpuCopy8(&nitroHandle->signature, writeDst, signatureLength);
         signatureLength = uselessZero + signatureLength;
         // copy ":/"
-        MI_CpuCopy8(data_020f2288, writeDst + signatureLength, 2);
+        MI_CpuCopy8(NitroVMDefaultCommandGetPath_UnknownRoleInitializedBytes, writeDst + signatureLength, 2);
     }
 
     NitroVM_LoadDirectoryDataByIndex(&tempVM, targetDirID);

@@ -1,0 +1,7 @@
+#include <globaldefs.h>
+ARM
+#pragma optimization_level 4
+extern "C" void GuestList_GetActionRowMarkerPosition(void*,unsigned short*,unsigned short*); extern "C" void GuestList_GetSubmenuMarkerPosition(unsigned char*,unsigned short*,unsigned short*); extern "C" void Ov003_ConfigureIndexedRecord(void*,unsigned,int,int,int,int,int); extern "C" unsigned char* SpriteAnimation_FindTrackByKey(void*,unsigned);
+// Original: arm9/ov003 @ 0x021704E8; symbol: Graphics_ConfigureRecordFromPairedCoordinates; size: 0xEC.
+// Resolves two record coordinate pairs and either configures indexed record state or clears the matching record flag.
+extern "C" void GuestList_UpdateActionSelectionMarkers(unsigned char* self){void* list=*(void**)(self+0xa4);if(!list)return;short a,b;GuestList_GetActionRowMarkerPosition(self,(unsigned short*)&a,(unsigned short*)&b);if((short)a!=0&&(short)b!=0)Ov003_ConfigureIndexedRecord(self+0x68,8,a,b,-1,1,3);else{unsigned char* e=SpriteAnimation_FindTrackByKey(list,2);if(e)e[0x15]&=~8;}short c,d;GuestList_GetSubmenuMarkerPosition(self,(unsigned short*)&c,(unsigned short*)&d);if((short)c!=0&&(short)d!=0)Ov003_ConfigureIndexedRecord(self+0x68,8,c,d,-1,1,3);else{unsigned char* e=SpriteAnimation_FindTrackByKey(list,3);if(e)e[0x15]&=~8;}}

@@ -2,12 +2,12 @@
 #include "GameState/GameState.h"
 struct AssetHeader { char unknown[0x3c]; void* data; void* records; char unknown44[8]; unsigned short count; char unknown4e[2]; unsigned char flag; };
 struct LoadingOwner { char unknown[0x2d0]; int task; SafeAllocator* allocator; AssetHeader* asset; char* records; void* data; unsigned short count; unsigned char unknown2e6, phase; };
-extern "C" char data_020f007f[], data_020f0093[];
-extern "C" void InitializeRecordBuffersAndEnabledByte(AssetHeader*);
-extern "C" void InitializeFixedPointScalesAndInvalidIndices(void*);
-extern "C" void Object_ClearWordAndHalfwordOutput(void*);
+extern "C" char BackgroundLoader_AdvanceThreePhaseArchiveAssetLoad_PathDataAniObjTmGp2[], BackgroundLoader_AdvanceThreePhaseArchiveAssetLoad_MarkupObjTmLGPac[];
+extern "C" void Graphics_InitializeSpriteResourceBuffers(AssetHeader*);
+extern "C" void Graphics_InitializeSpriteTransformDefaults(void*);
+extern "C" void SpriteAnimation_ResetTrackList(void*);
 extern "C" int ResourceFile_CountActiveStrideRecords(void*);
-extern "C" void* FindVariableLengthBlockByIndex(void*,int,unsigned*,unsigned*);
+extern "C" void* ResourceFile_GetPayloadByIndex(void*,int,unsigned*,unsigned*);
 extern "C" void Graphics_DispatchDataByResourceMagic(AssetHeader*,void*,unsigned,SafeAllocator*);
 // Original: arm9/main @ 0x02043368; symbol: func_02043368; size: 0x234.
 extern "C" void BackgroundLoader_AdvanceThreePhaseArchiveAssetLoad(LoadingOwner* owner)
@@ -19,7 +19,7 @@ extern "C" void BackgroundLoader_AdvanceThreePhaseArchiveAssetLoad(LoadingOwner*
         if (!owner->asset) {
             unsigned char* grotto = (unsigned char*)GameState::GetInstance()->GetGrottoStruct();
             if (!grotto || !grotto[0] || grotto[2]) {
-                owner->task = loader->QueueLoadFileInGP2(data_020f007f, data_020f0093, 0);
+                owner->task = loader->QueueLoadFileInGP2(BackgroundLoader_AdvanceThreePhaseArchiveAssetLoad_PathDataAniObjTmGp2, BackgroundLoader_AdvanceThreePhaseArchiveAssetLoad_MarkupObjTmLGPac, 0);
                 ++owner->phase;
             }
         }
@@ -30,9 +30,9 @@ extern "C" void BackgroundLoader_AdvanceThreePhaseArchiveAssetLoad(LoadingOwner*
             owner->records = (char*)owner->allocator->Allocate(0xf0);
             owner->data = owner->allocator->Allocate(8);
             if (owner->asset && owner->records && owner->data) {
-                InitializeRecordBuffersAndEnabledByte(owner->asset);
-                for (unsigned short i = 0; i < 6; ++i) InitializeFixedPointScalesAndInvalidIndices(owner->records + i * 40);
-                Object_ClearWordAndHalfwordOutput(owner->data);
+                Graphics_InitializeSpriteResourceBuffers(owner->asset);
+                for (unsigned short i = 0; i < 6; ++i) Graphics_InitializeSpriteTransformDefaults(owner->records + i * 40);
+                SpriteAnimation_ResetTrackList(owner->data);
                 owner->asset->flag = 0;
                 AssetHeader* asset = owner->asset;
                 asset->records = owner->records;
@@ -42,7 +42,7 @@ extern "C" void BackgroundLoader_AdvanceThreePhaseArchiveAssetLoad(LoadingOwner*
                 loader->GetLoadedFileByID(owner->task, &local.file, &local.size);
                 int count = ResourceFile_CountActiveStrideRecords(local.file);
                 for (int i = 0; i < count; ++i) {
-                    void* record = FindVariableLengthBlockByIndex(local.file, i, &local.kind, &local.count);
+                    void* record = ResourceFile_GetPayloadByIndex(local.file, i, &local.kind, &local.count);
                     Graphics_DispatchDataByResourceMagic(owner->asset, record, local.count, owner->allocator);
                 }
             }

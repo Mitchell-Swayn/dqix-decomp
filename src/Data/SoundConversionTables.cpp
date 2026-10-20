@@ -5,7 +5,12 @@ struct SoundConversionTables {
     short volumeAttenuation[128];
     unsigned short fractionalOctaveIncrement[768];
 };
-extern "C" const SoundConversionTables data_020ed82c = {
+// Original data: arm9/main @ 0x20ed82c; symbol: data_020ed82c.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 00805bfe97febbfed4fee7fef7fe04ff10ff1aff23ff2cff33ff3aff40ff46ff4cff51ff56ff5bff5fff64ff68ff6cff6fff73ff76ff7aff7dff80ff83ff86ff ...; full span in module reference.
+// Observed span: 1792 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" const SoundConversionTables NNSiSndArcStrmMain_UnknownRoleInitializedBytes = {
   {
     -32768, -421, -361, -325, -300, -281, -265, -252, -240, -230, -221, -212, -205, -198, -192, -186,
     -180, -175, -170, -165, -161, -156, -152, -148, -145, -141, -138, -134, -131, -128, -125, -122,

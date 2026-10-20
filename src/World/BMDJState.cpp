@@ -1,12 +1,12 @@
 #include "World/BMDJ.h"
 
-extern "C" void* ReadGlobalValueAt02108844();
+extern "C" void* GameState_GetSerializedProgressState();
 
 // The middle argument is unused; flag 4's gameplay role is still uncertain.
 // Original: arm9/main @ 0x02013380; symbol: _Z15UpdateBMDJFlag4PN17Zone3D_BMDJStruct13InstanceEntryEii; size: 0x34.
 void UpdateBMDJFlag4(Zone3D_BMDJStruct::InstanceEntry* instance, int unused, int clear)
 {
-    ReadGlobalValueAt02108844();
+    GameState_GetSerializedProgressState();
     if (clear) instance->flags &= ~4;
     else instance->flags |= 4;
     instance->flags |= 0x40;

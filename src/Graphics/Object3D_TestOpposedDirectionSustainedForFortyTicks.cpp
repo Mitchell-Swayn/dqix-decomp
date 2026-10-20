@@ -3,12 +3,12 @@
 #include <globaldefs.h>
 
 extern "C" {
-int ReadFieldE0Bit6(void*);
-void* Object_GetOffsetE4RecordWhenBit6Set(void*);
-void* Object_GetSubrecordAtOffset11C(void*);
-void* AreHalfwordBitsFiveThroughNineNonzero_Main0204BE78(void*);
-void* DecodePackedColorAsDecimalIdentifier(void*);
-void* PackedColor_ReadBlueComponent(void*);
+int GameObject_HasWallContactGeometry(void*);
+void* GameObject_GetWallContactGeometry(void*);
+void* GameObject_GetWallContactDescriptor(void*);
+void* ActorDescriptor_HasOpposedFacingTrigger(void*);
+void* ActorDescriptor_GetOpposedFacingTriggerIdentifier(void*);
+void* ActorDescriptor_GetOpposedFacingTriggerParameter(void*);
 }
 
 ARM
@@ -24,12 +24,12 @@ extern "C" int Object3D_TestOpposedDirectionSustainedForFortyTicks(void* object,
     int ready = 1;
     if (*(int*)((char*)object + 0x134) == 0)
         ready = 0;
-    if (ReadFieldE0Bit6(object) == 0)
+    if (GameObject_HasWallContactGeometry(object) == 0)
         ready = 0;
-    void* target = Object_GetSubrecordAtOffset11C(object);
+    void* target = GameObject_GetWallContactDescriptor(object);
     if (target == 0)
         ready = 0;
-    int result = (int)AreHalfwordBitsFiveThroughNineNonzero_Main0204BE78(target);
+    int result = (int)ActorDescriptor_HasOpposedFacingTrigger(target);
     if (result == 0)
         ready = 0;
     if (!ready) {
@@ -44,7 +44,7 @@ extern "C" int Object3D_TestOpposedDirectionSustainedForFortyTicks(void* object,
         facing.z = forwardZ;
         Vector3fix_Normalize(&facing, &facing);
 
-        void* orientation = Object_GetOffsetE4RecordWhenBit6Set(object);
+        void* orientation = GameObject_GetWallContactGeometry(object);
         fix32_t directionZ = *(fix32_t*)((char*)orientation + 0x2c);
         fix32_t directionX = *(fix32_t*)((char*)orientation + 0x24);
         direction.x = directionX;
@@ -60,8 +60,8 @@ extern "C" int Object3D_TestOpposedDirectionSustainedForFortyTicks(void* object,
         if (*elapsedField < 0x28) {
             result = 0;
         } else {
-            *outFirst = DecodePackedColorAsDecimalIdentifier(target);
-            *outSecond = PackedColor_ReadBlueComponent(target);
+            *outFirst = ActorDescriptor_GetOpposedFacingTriggerIdentifier(target);
+            *outSecond = ActorDescriptor_GetOpposedFacingTriggerParameter(target);
             result = 1;
         }
     }

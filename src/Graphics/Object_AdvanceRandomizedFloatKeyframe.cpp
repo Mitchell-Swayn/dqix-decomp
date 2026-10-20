@@ -7,11 +7,11 @@ extern "C" unsigned _fdiv(unsigned,unsigned);
 extern "C" unsigned _fmul(unsigned,unsigned);
 extern "C" int _ffix(unsigned);
 extern "C" unsigned _fflt(int);
-extern "C" int ReadResolvedRecordWord1COrZero(char*);
+extern "C" int ResourceTracks_GetPairedVectorSection(char*);
 extern "C" unsigned** _ZN19SignedAllocatorList13GetNthElementEj(void*,unsigned);
 // Original: arm9/main @ 0x020589B8; symbol: func_020589b8; size: 0x184.
 extern "C" void Object_AdvanceRandomizedFloatKeyframe(char* self) {
- unsigned char* config=(unsigned char*)ReadResolvedRecordWord1COrZero(*(char**)(self+0x28));
+ unsigned char* config=(unsigned char*)ResourceTracks_GetPairedVectorSection(*(char**)(self+0x28));
  if(config[9]<=1)return;
  if(config[9]<=*(unsigned short*)(self+0x68))return;
  unsigned** prev=_ZN19SignedAllocatorList13GetNthElementEj(*(char**)(self+0x28)+0xd4,*(unsigned short*)(self+0x68));

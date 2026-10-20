@@ -12,10 +12,10 @@ unsigned int AddContextSwitchLock()
     // Original leaves the return register unchanged when the counter is saturated.
     // The return value is unspecified in that case; do not manufacture a new value.
     unsigned int oldCount;
-    if (data_021112e0.contextSwitchLock < (unsigned int)-1)
+    if (OSInitThread_UnknownRoleZeroInitializedStorage.contextSwitchLock < (unsigned int)-1)
     {
-        oldCount = data_021112e0.contextSwitchLock;
-        data_021112e0.contextSwitchLock++;
+        oldCount = OSInitThread_UnknownRoleZeroInitializedStorage.contextSwitchLock;
+        OSInitThread_UnknownRoleZeroInitializedStorage.contextSwitchLock++;
     }
 
     SetIRQInterruptState(priorState);
@@ -28,10 +28,10 @@ unsigned int RemoveContextSwitchLock()
     int priorState = DisableIRQInterrupts();
 
     unsigned int oldCount = 0;
-    if (data_021112e0.contextSwitchLock > 0)
+    if (OSInitThread_UnknownRoleZeroInitializedStorage.contextSwitchLock > 0)
     {
-        oldCount = data_021112e0.contextSwitchLock;
-        data_021112e0.contextSwitchLock--;
+        oldCount = OSInitThread_UnknownRoleZeroInitializedStorage.contextSwitchLock;
+        OSInitThread_UnknownRoleZeroInitializedStorage.contextSwitchLock--;
     }
 
     SetIRQInterruptState(priorState);

@@ -1,7 +1,12 @@
 // Text_ConvertUnicodeToShiftJis passes this 161-pair table to func_02032e24.
 // Each entry stores Shift-JIS output followed by its Unicode input codepoint.
 struct CharacterEncodingPair { unsigned short shiftJis; unsigned short unicode; };
-extern "C" const CharacterEncodingPair data_020e752c[161] = {
+// Original data: arm9/main @ 0x20e752c; symbol: data_020e752c.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 5c8115205d8110205e810fff5f815c0060811c306181162062815cff6381262064812520658118206681192067811c2068811d20698108ff6a8109ff6b811430 ...; full span in module reference.
+// Observed span: 644 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" const CharacterEncodingPair TextConvertUnicodeToShiftJis_UnknownRoleInitializedBytes_Variant5[161] = {
     {0x815c, 0x2015},
     {0x815d, 0x2010},
     {0x815e, 0xff0f},

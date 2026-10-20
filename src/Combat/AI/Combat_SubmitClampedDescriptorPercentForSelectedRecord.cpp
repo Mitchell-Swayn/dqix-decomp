@@ -1,0 +1,9 @@
+#include "globaldefs.h"
+#include "std_library_functions.h"
+#define H(p,o) (*(unsigned short*)((unsigned char*)(p)+(o)))
+#define S(p,o) (*(short*)((unsigned char*)(p)+(o)))
+#define W(p,o) (*(unsigned*)((unsigned char*)(p)+(o)))
+#define P(p,o) (*(unsigned char**)((unsigned char*)(p)+(o)))
+struct GuardBits{unsigned short low:12,enabled:1,high:3;};struct LinkedDescriptorView;struct EntryState;struct Packed14{unsigned a:7,percent:7,rest:18;};struct Packed4{unsigned kind:12,rest:20;};extern "C" int CombatStatus_CanReceiveEvaluatedDescriptorEffect(LinkedDescriptorView*),CombatEffect_TargetHasParalysis(LinkedDescriptorView*),Combat_TestMonsterDescriptorMode(void*,int,int,int);extern "C" bool CombatStatus_CanApplyParalysis(unsigned*);extern "C" void BattleAI_CacheActionPolicyEntry(EntryState*,int),SubmitPercentScaledDisplayRecord(char*,float,unsigned char);
+// Original: arm9/ov024 @ 0x021FD66C; symbol: func_ov024_021fd66c; size: 0x118.
+extern "C" ARM void Combat_SubmitClampedDescriptorPercentForSelectedRecord(unsigned char*self){unsigned char*object=P(self,0x668);if(!CombatStatus_CanReceiveEvaluatedDescriptorEffect((LinkedDescriptorView*)object))return;if(!CombatStatus_CanApplyParalysis((unsigned*)P(object,0x138)))return;if(CombatEffect_TargetHasParalysis((LinkedDescriptorView*)object))return;unsigned char*record=P(self,0x64c);float percent=(float)((Packed14*)(record+20))->percent*((float)(unsigned)P(object,0x138)[0x4e]/100.0f);unsigned kind=((Packed4*)(record+4))->kind;if(kind==88){if((H(object,0)&0x400)&&P(object,0x144)&&((GuardBits*)(P(object,0x144)+10))->enabled){self[44]=1;percent=50.0f;}}else if(kind==82){if(!Combat_TestMonsterDescriptorMode(*(void**)self,S(object,4),9,0))return;}if(percent>100.0f)percent=100.0f;BattleAI_CacheActionPolicyEntry((EntryState*)self,1);SubmitPercentScaledDisplayRecord((char*)self,percent,3);}

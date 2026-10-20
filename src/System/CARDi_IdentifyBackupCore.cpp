@@ -8,7 +8,12 @@ struct CARDBackupSpec {
 };
 struct CARDCommand { unsigned result; int type; unsigned id, source, destination, length; CARDBackupSpec spec; };
 struct CARDCommonPrefix { CARDCommand *command; };
-extern "C" CARDCommonPrefix data_021118e0;
+// Original data: arm9/main @ 0x21118e0; symbol: data_021118e0.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 1568 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" CARDCommonPrefix TryReadViaDMA_UnknownRoleZeroInitializedStorage;
 extern "C" void VectorizedMemset(void *, int, unsigned);
 // ARM9 main, original func_020d0078 at 0x020d0078; SDK CARDi_IdentifyBackupCore.
 // Extended spec layout derived from DQIX accesses; base algorithm is community CARD_spi.c
@@ -16,7 +21,7 @@ extern "C" void VectorizedMemset(void *, int, unsigned);
 // Total wait expressions preserve the original reuse of each initial sector wait.
 extern "C" ARM void CARDi_IdentifyBackupCore(int type)
 {
-    CARDCommand *const p = data_021118e0.command;
+    CARDCommand *const p = TryReadViaDMA_UnknownRoleZeroInitializedStorage.command;
     VectorizedMemset(&p->spec, 0, sizeof(p->spec));
     p->type = type;
     p->spec.capabilities = 0x203f;
@@ -88,7 +93,7 @@ extern "C" ARM void CARDi_IdentifyBackupCore(int type)
         } else {
 invalidType:
             p->type = 0; p->spec.totalSize = 0;
-            data_021118e0.command->result = 3;
+            TryReadViaDMA_UnknownRoleZeroInitializedStorage.command->result = 3;
             return;
         }
     }

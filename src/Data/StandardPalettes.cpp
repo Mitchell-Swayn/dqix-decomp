@@ -1,6 +1,11 @@
 // func_0202ac74 loads all 512 bytes into the main BG standard palette.
 // Sixteen Nintendo DS palettes, each with sixteen RGB555 entries.
-extern "C" const unsigned short data_020e7170[16][16] = {
+// Original data: arm9/main @ 0x20e7170; symbol: data_020e7170.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex ff7f000000000000000000000000000000000000000000000000000000000000ff7f007c007c007c000000000000000000000000000000000000000000000000 ...; full span in module reference.
+// Observed span: 528 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" const unsigned short GraphicsLoadBackgroundPaletteAndInitializeTileEntries_UnknownRoleInitializedBytes[16][16] = {
     {0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000},
     {0x7fff, 0x7c00, 0x7c00, 0x7c00, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000},
     {0x7fff, 0x001f, 0x001f, 0x001f, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000},

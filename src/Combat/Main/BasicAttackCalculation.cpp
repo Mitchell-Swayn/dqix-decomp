@@ -12,7 +12,7 @@ ARM float CalculatePhysicalDamage(int attack, int defense, struct Random* random
     float atkAsFloat;
     float defAsFloat;
     if (random == NULL) {
-        random = &data_02108ddc;
+        random = &GetBTRandom_UnknownRoleZeroInitializedStorage;
 	}
     atkAsFloat = attack;
     defAsFloat = defense;

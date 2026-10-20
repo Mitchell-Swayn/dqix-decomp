@@ -1,6 +1,21 @@
 // Reviewed ARM field widths and callee argument/return behavior; symbols follow original relocation targets.
 #include <GameState/GameState.h>
 #include <Memory/AllocatorUnion.h>
-extern "C" {int ReadElement0At021015A0();void ReadLowAndHighBytesIntoOutputPointers(void*,unsigned char*,unsigned char*);void ClearWordHalfwordsAndByteAt0A(void*);void* memset(void*,int,unsigned);void* memcpy(void*,const void*,unsigned);int RuntimeMemory_CompareByteRanges(const void*,const void*,unsigned);extern char* data_0210782c[];int Object_FindSignedByteKeyInSixteenEntries(void*,int);int FindSignedByteValueInSixteenSlots(void*,int);void InitializeThirtyTwoRecordsAndOwnerCounters(void*);extern char data_021056b4[];extern char* data_02105244[];}struct Nibbles{unsigned char low:4;unsigned char high:4;};struct SignedSix{signed char value:6;unsigned char rest:2;};
+// Original data: arm9/main @ 0x2105244; symbol: data_02105244.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x21056b4; symbol: data_021056b4.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 1024 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x210782c; symbol: data_0210782c.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" {int Network_GetAssociationId();void Window_ReadResourceFormatAndLayer(void*,unsigned char*,unsigned char*);void Graphics_ResetCharacterResourceHeader(void*);void* memset(void*,int,unsigned);void* memcpy(void*,const void*,unsigned);int RuntimeMemory_CompareByteRanges(const void*,const void*,unsigned);extern char* TextLookupFindGlyphIndexByText_UnknownRoleZeroInitializedStorage[];int Network_FindWirelessSlotByMemberId(void*,int);int Network_FindPreviousWirelessSlotByMemberId(void*,int);void TextCache_Reset(void*);extern char GraphicsGetSubOamStagingBuffer_UnknownRoleZeroInitializedStorage[];extern char* TextSpriteDecodeCachedText_UnknownRoleZeroInitializedStorage[];}struct Nibbles{unsigned char low:4;unsigned char high:4;};struct SignedSix{signed char value:6;unsigned char rest:2;};
 // Original: arm9/main @ 0x0204254C; symbol: func_0204254c; size: 0x68.
-extern "C" char* TextLookup_FindMatchingByteKeyEntry(const void* key,int index){if(!key)return 0;char* p=data_0210782c[index];for(unsigned i=0;i<*(unsigned*)(p+4);++i){char* q=*(char**)(p+16)+i*8;if(!RuntimeMemory_CompareByteRanges(*(void**)q,key,((SignedSix*)(q+5))->value))return q;}return 0;}
+extern "C" char* TextLookup_FindMatchingByteKeyEntry(const void* key,int index){if(!key)return 0;char* p=TextLookupFindGlyphIndexByText_UnknownRoleZeroInitializedStorage[index];for(unsigned i=0;i<*(unsigned*)(p+4);++i){char* q=*(char**)(p+16)+i*8;if(!RuntimeMemory_CompareByteRanges(*(void**)q,key,((SignedSix*)(q+5))->value))return q;}return 0;}

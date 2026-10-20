@@ -68,6 +68,63 @@ archive. A snapshot-name collision fails publication rather than replacing
 history. Rollback removes transaction-created snapshots and restores the prior
 workflow, checkpoint and page while the publication lock remains held.
 
+`integrate_verified_subset.py` accepts hash-bound `dependencies` for selected
+function renames. Each dependency pins its canonical relative path and exact
+before/after SHA-256; a missing preimage uses null. The allowlist covers existing
+C/C++ reference sources and headers, the selected module's symbol map, the naming
+registry, compiler profiles and linker roots. Existing source changes contain
+only selected identifier replacements and preserve original-identity comments.
+Symbol changes retain original addresses and metadata; registry/profile/root
+changes preserve unrelated entries. Compiler profiles use the approved Swarm
+profile definitions and verified compiler hashes. Callee type changes are not
+accepted as reference dependencies.
+
+Dependency capture runs under the project-wide integration guard. Installation
+rechecks every preimage before its first write, verifies installed bytes, and
+restores all preimages on failure alongside the existing source/config rollback.
+Full ROM, module, symbol, object and linked-layout gates remain mandatory, as do
+exact coverage gains, unchanged denominators, per-function report matches and
+an unchanged ARM7 report. Dependency hashes accompany the accepted receipt;
+bookkeeping and dashboard publication complete before guard release.
+
+Existing caller declarations can use `source_refinements` to correct scalar
+return types against independent owning C/C++ definitions. Each entry pins the
+caller's before/after hashes, the exact prototype replacement and the owning
+source hash. Parameters, bodies, identities and delink ownership stay identical;
+mixed policy changes are refused. The same object, per-function, linked-layout,
+module, symbol, ROM and publication gates apply. These transactions require zero
+coverage gain and report refined functions separately from reconstructed code.
+
+Broader existing-owner parameter, return, type and caller-dataflow corrections
+use `--source-contract-only` with an independent hash-bound review. The existing
+mixed transaction supplies the same guard, journal, object/layout/ROM gates,
+rollback, recovery and publication. It accepts existing complete code-only TUs,
+compares every ordinary caller, freezes configuration and original targets, and
+requires a complete reference/conformance census. It earns zero coverage.
+See [Reviewed source contracts](SOURCE_CONTRACTS.md) for the strict schema,
+header dependency requirements and review/recovery procedure.
+
+`--source-contract-additions` uses that same transaction to add a new owner and
+repair its existing callers atomically. New owner ranges earn their exact source
+gain; caller corrections earn zero. Independent DSD derivation binds the full
+comparison configuration and new original targets before installation. No owner
+is accepted separately from the reviewed caller corrections.
+
+Existing TUs can opt into declared insertion of an existing unchanged canonical
+header. Exact header/dependency closure hashes and compiler `.d` pre/postimages
+bind the insertion; all other directives remain unchanged. The real compiler
+must emit the expected dependency file, and rollback rebuilds its exact baseline.
+The source-contract documentation describes this optional per-file schema.
+
+Rollback gives restored source/config dependencies fresh timestamps so Ninja
+cannot reuse objects compiled from rejected contents. It preserves file modes.
+`--recover-failed` authenticates an already restored, unpublished new-function
+transaction against its saved preimages, invalidates dependency timestamps and
+reruns the full build/check/report/SHA-1 gate. Recovery requires the project-wide
+process lock and retained publication marker; it refuses partial publication or
+changed preimages. It earns no coverage and releases the marker only after the
+accepted report, ARM7 report and unchanged published checkpoint are verified.
+
 ## Compile and compare in one agent call
 
 For candidate selection, Ghidra batch inspection, source/range preparation,
@@ -128,10 +185,16 @@ remain mandatory. Objdiff reports three nested runtime labels as additional
 function records; acceptance verifies those aliases separately while runtime
 totals count the 44 named helpers once.
 
-Runtime retention uses the LCF `FORCEACTIVE` directive because MWLD limits its
-command-line symbol list to 255 characters. Replacing the previous `.s` sources
-uses the existing locked integration gate with a hash-bound runtime replacement
-manifest and rollback of both source forms and policy. It earns no new coverage.
+The ARM linker does not retain an otherwise unreferenced C/C++ function merely
+because its name appears in an appended LCF `FORCEACTIVE` block. Reconstructed
+functions needing an independent root use native `#pragma force_active on`
+around their definitions. Object comparisons, original linked extents and full
+ROM checks remain mandatory. MWLD limits its command-line symbol list to 255
+characters.
+
+Replacing the previous `.s` sources uses the existing locked integration gate
+with a hash-bound runtime replacement manifest and rollback of both source
+forms and policy. It earns no new coverage.
 
 Assembly is reported separately from C/C++ coverage. `audit_assembly.py` validates
 the accepted source hashes, linked original-byte hashes and report matches before
@@ -178,10 +241,13 @@ under ignored build/verification/ (archived logs in its archive/ directory).
 ### Pinned objdiff ARM parser repair
 
 USA selects the hash-pinned objdiff 2.7.1 repair in
-`config/usa/objdiff_tool.json`. The sole ARM parser change is upstream PR359,
+`config/usa/objdiff_tool.json`. The ARM parser includes upstream PR359,
 commit `e28a2021eb3e669f6011f7645b009f73aa19ddbc`: when an executable section
 has no mapping symbols, use the existing fallback instruction modes. This fixes
 an out-of-bounds panic without dropping sections or modifying original targets.
+The prefix-mapping repair bounds lookup before the first mapping and preserves
+an exact leading ELF OBJECT extent as data until the first real code mapping.
+Existing mappings and section-based report measures remain unchanged.
 The input CLI remains read-only. A newer release was not substituted because its
 report accounting differs from the accepted baseline.
 

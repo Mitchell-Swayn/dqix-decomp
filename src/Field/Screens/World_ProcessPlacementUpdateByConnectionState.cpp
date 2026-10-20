@@ -1,0 +1,10 @@
+#include "globaldefs.h"
+#include "std_library_functions.h"
+#define H(p,o) (*(unsigned short*)((unsigned char*)(p)+(o)))
+#define S(p,o) (*(short*)((unsigned char*)(p)+(o)))
+#define W(p,o) (*(unsigned*)((unsigned char*)(p)+(o)))
+#define P(p,o) (*(unsigned char**)((unsigned char*)(p)+(o)))
+#include "World/WorldPlacementSource.h"
+extern "C" bool Network_IsParentOrOffline(unsigned*);extern "C" int World_ClearPlacementFlagsAndRemoveInstance(unsigned char*),Network_GetLocalMemberId(char*);extern "C" void World_QueueTypeB7PlacementRecord(unsigned char,unsigned char,unsigned char,unsigned char,const unsigned*);extern "C" unsigned*GameState_GetAvailablePersistentPlacementEntry(char*,int);
+// Original: arm9/ov017 @ 0x021D3AA4; symbol: func_ov017_021d3aa4; size: 0x118.
+extern "C" ARM void World_ProcessPlacementUpdateByConnectionState(int index,unsigned char*message,char*state,unsigned char*resources,char*connection){WorldPlacementSource::GetInstance();unsigned char*record=P(resources,0x3b28);if(Network_IsParentOrOffline((unsigned*)connection)){if(message[4]!=1)return;if(World_ClearPlacementFlagsAndRemoveInstance(message+4))((void(*)(unsigned char,signed char,unsigned char,unsigned char,const unsigned*))World_QueueTypeB7PlacementRecord)(1,(signed char)index,message[6],message[7],(unsigned*)(message+8));else ((void(*)(unsigned char,signed char,unsigned char,unsigned char,const unsigned*))World_QueueTypeB7PlacementRecord)(2,(signed char)index,message[6],message[7],(unsigned*)(message+8));return;}if(index)return;if(message[4]==0){unsigned*slot=GameState_GetAvailablePersistentPlacementEntry(state,message[7]);if(slot)*slot=W(message,8);return;}else if(message[4]==1){if(*(signed char*)(message+5)==Network_GetLocalMemberId(connection)&&record[2])record[9]=1;World_ClearPlacementFlagsAndRemoveInstance(message+4);return;}else if(message[4]==2){if(*(signed char*)(message+5)==Network_GetLocalMemberId(connection))record[9]=2;}}

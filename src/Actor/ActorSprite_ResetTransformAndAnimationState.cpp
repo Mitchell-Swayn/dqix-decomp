@@ -1,0 +1,4 @@
+// Reviewed original ARM field widths and source behavior; float initialization is a real 1.0 constant.
+extern "C" {int strcmp(const char*,const char*);void* memset(void*,int,unsigned);void func_02030b0c(void*);}
+// Original: arm9/main @ 0x0203EF7C; symbol: func_0203ef7c; size: 0x8C.
+extern "C" void ActorSprite_ResetTransformAndAnimationState(char* p){*(int*)p=0;*(short*)(p+40)=-1;*(int*)(p+4)=0;*(int*)(p+8)=0;*(int*)(p+12)=0;*(int*)(p+16)=0;*(int*)(p+20)=0;*(int*)(p+24)=0;*(int*)(p+28)=4096;*(int*)(p+32)=4096;*(int*)(p+36)=4096;*(short*)(p+42)=32767;*(short*)(p+44)=31;*(short*)(p+46)=61;*(int*)(p+48)=0;*(int*)(p+52)=0;*(int*)(p+56)=0;*(int*)(p+60)=0;*(float*)(p+64)=1.0f;*(int*)(p+76)=0;*(int*)(p+68)=-1;*(int*)(p+72)=-1;*(int*)(p+80)=0;*(int*)(p+84)=0;*(short*)(p+88)=-1;*(short*)(p+90)=-1;}

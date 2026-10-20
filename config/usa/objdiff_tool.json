@@ -4,16 +4,20 @@
   "upstream_fix_commit": "e28a2021eb3e669f6011f7645b009f73aa19ddbc",
   "upstream_fix_url": "https://github.com/encounter/objdiff/pull/359",
   "patch_sha256": "e5a669723eefa09fd23d77168b75dd523481e7943862c377503f1a21cdb66c81",
-  "binary_sha256": "1a7410afcbd5053e70e7f40ef1ac2782659b2cbc919f6c845534b5c45d275958",
+  "binary_sha256": "c53f0c77f068326d5afc1f43a1a05f5a7d731ea741f2f5fd20b8253ae5710405",
   "rust_toolchain": "1.85.1-x86_64-unknown-linux-gnu",
   "build_container": "factory-dqix:0.1",
   "command": "RUST_MIN_STACK=33554432 cargo build --locked --release -p objdiff-cli -j 8",
   "cargo_lock_sha256": "699712fc49c3f5a5dfef9f0f51dbb64910eb95463006a2d76466d9fc2a77df57",
-  "patched_source_sha256": "a262784df335a4a30ab45a380c84520a924b5093593e1ffa7776f58e263508dc",
+  "patched_source_sha256": "9adaf7f3d5984f9aceda324a784413d19e95ab77fb517730fbdaa31b50ee7e9d",
   "version": "objdiff-cli-2.7.1-arm-empty-map 2.7.1",
   "schema_version": 1,
   "executable": "build/tools/objdiff-cli-arm-empty-map",
   "configured_sha256": "75be77f91eefb9956998ce040aaf5cdd53d27c3e0ca4fe117154fe8b864478f6",
   "patch": "tools/patches/objdiff-2.7.1-arm-empty-map.patch",
-  "scope": "Same2.7.1 parser with upstream fallback-mode fix only; no original object changes or unit filtering."
+  "scope": "Same2.7.1 parser plus PR359 empty-map repair and a bounded mapping lookup before the first map. An exact leading ELF OBJECT extent is parsed as data until the first real mapping; existing mappings and section-based report measures are unchanged.",
+  "empty_map_source_sha256": "a262784df335a4a30ab45a380c84520a924b5093593e1ffa7776f58e263508dc",
+  "prefix_patch": "tools/patches/objdiff-2.7.1-arm-prefix-map.patch",
+  "prefix_patch_sha256": "fdaa35a9357f68f5142b220e3d4cbc013b2f4f90afb7132639738a20b7eebfc6",
+  "prefix_fix_evidence": "main_11 .text BuildInfo prefix 0..0xfc precedes first $a at0xfc; exact67-map panic reproduced with pinned old tool."
 }

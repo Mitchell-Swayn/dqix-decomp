@@ -2,7 +2,7 @@
 
 void ApplyBindPoseRotation(BoneMatrixRenderData* bmrd)
 {  
-    RenderCommandHandler* handler = data_0210a274;
+    RenderCommandHandler* handler = ApplyBindPoseScaling_UnknownRoleZeroInitializedStorage;
     NSBXXBoneMatrix* boneMatrix = handler->boneList_->GetEntryFromu32Offset_v2<NSBXXBoneMatrix>(handler->instructionPointer_[1]);
 
     intptr_t addrRotation = (intptr_t)(boneMatrix + 1);
@@ -19,22 +19,22 @@ void ApplyBindPoseRotation(BoneMatrixRenderData* bmrd)
             fix32_t entryA = pivot->a;
             fix32_t entryB = pivot->b;
 
-            func_020ca7d0(&bmrd->rotationMatrix_);
+            MI_Zero36B(&bmrd->rotationMatrix_);
             fix32_t unit = (boneMatrix->flags_ & 0x100) ? -1 << 12 : 1 << 12;
 
-            int indexA = data_020e9284[pivotForm].a;
-            int indexB = data_020e9284[pivotForm].b;
+            int indexA = GetMatrixFromIndex_UnknownRoleInitializedBytes[pivotForm].a;
+            int indexB = GetMatrixFromIndex_UnknownRoleInitializedBytes[pivotForm].b;
             
             bmrd->rotationMatrix_.entries[pivotForm] = unit;
             bmrd->rotationMatrix_.entries[indexA] = entryA;
             bmrd->rotationMatrix_.entries[indexB] = entryB;
 
             fix32_t entryC = (boneMatrix->flags_ & 0x200) ? -entryB : entryB;
-            int indexC = data_020e9284[pivotForm].c;
-            bmrd->rotationMatrix_.entries[data_020e9284[pivotForm].c] = entryC;
+            int indexC = GetMatrixFromIndex_UnknownRoleInitializedBytes[pivotForm].c;
+            bmrd->rotationMatrix_.entries[GetMatrixFromIndex_UnknownRoleInitializedBytes[pivotForm].c] = entryC;
 
             fix32_t entryD = (boneMatrix->flags_ & 0x400) ? -entryA : entryA;
-            int indexD = data_020e9284[pivotForm].d;
+            int indexD = GetMatrixFromIndex_UnknownRoleInitializedBytes[pivotForm].d;
             bmrd->rotationMatrix_.entries[indexD] = entryD;
         }
         else // generic 3x3 matrix format

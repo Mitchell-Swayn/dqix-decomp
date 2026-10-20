@@ -1,6 +1,0 @@
-// Original field widths, callee calling behavior and exact symbols reviewed.
-#include <GameState/GameState.h>
-#include <Memory/SafeAllocator.h>
-extern "C" {void ClearFourBytes_Main020E303C(void*);void InitializeFourWordsWithInvalidIndex(void*);void ClearField14Flag400AndField58Flag7AndBytes6EAnd91(void*);void InitializeHalfwordFields956Through95E(void*);void GameState_SetByteField5CDAAndClearPlacementFlag(void*,int);void* memcpy(void*,const void*,unsigned);void* ReadGlobalAt02105AB4();int Graphics_ReadSelectedScreenPowerState(void*);void Object_WriteIndexedByteAtOffsetC(void*,unsigned,int);void Object_InitializeThirtyTwoByteBufferAndSlotFlags(void*);void* Object_GetGlobalConnectionState();int IsFirstWordNonzero(void*);char* FindNonnegativeKeyInEntryArray(void*,int);unsigned short* ReadGlobalValueAt020FB3F0();void ClearWordAndTwoHalfwords_Main020727D8(void*);int ToggleMaskedFlagsAtOffset34(void*,unsigned);void ClearFourLeadingBytesAndWordAtOffsetC(void*);}struct SignedThree{signed int low:3;unsigned int rest:29;};
-// Original: arm9/main @ 0x0203C304; symbol: func_0203c304; size: 0x58.
-extern "C" void InitializeThirtyTwoRecordsAndOwnerCounters(char* p){for(int i=0;i<32;++i)Object_InitializeThirtyTwoByteBufferAndSlotFlags(p+4+i*40);*(int*)p=0;*(short*)(p+0x512)=0;*(int*)(p+0x504)=1;*(int*)(p+0x50c)=0;*(int*)(p+0x508)=0;*(short*)(p+0x510)=4;}

@@ -8,7 +8,7 @@
 // Original: arm9/main @ 0x020CFFCC; symbol: _Z22SetReadContextPriorityj; size: 0x3C.
 unsigned int SetReadContextPriority(unsigned int priority)
 {
-    CardReadManager* manager = (CardReadManager*)&data_021118e0;
+    CardReadManager* manager = (CardReadManager*)&TryReadViaDMA_UnknownRoleZeroInitializedStorage;
     int priorState = DisableIRQInterrupts();
     unsigned int oldPrio = manager->contextPriority_108;
     manager->contextPriority_108 = priority;

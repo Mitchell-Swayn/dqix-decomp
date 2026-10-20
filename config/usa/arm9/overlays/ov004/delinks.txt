@@ -5,1294 +5,1810 @@
     .data       start:0x02170360 end:0x021707c0 kind:data align:32
     .bss        start:0x021707c0 end:0x02171060 kind:bss align:32
 
-src/Data/ov004/data_ov004_02170398.cpp:
+src/Data/MenuPopulateCollectionTextPage_TextCodePoint10.cpp:
     complete
     .data start:0x02170398 end:0x0217039a
 
-src/Data/ov004/data_ov004_0217039a.cpp:
+src/Data/Resource_LoadScriptAndBuildEnabledKeyList_PathDataBinTtldataGp2.cpp:
     complete
     .data start:0x0217039a end:0x021703af
 
-src/Data/ov004/data_ov004_021703af.cpp:
+src/Data/Resource_LoadScriptAndBuildEnabledKeyList_MarkupTtldataLGBin.cpp:
     complete
     .data start:0x021703af end:0x021703c0
 
-src/Data/ov004/data_ov004_021703c0.cpp:
+src/Data/Menu_AdvanceOfferRefreshRequestAndShowResult_MarkupPAGE.cpp:
     complete
     .data start:0x021703c0 end:0x021703c7
 
-src/Data/ov004/data_ov004_021703c7.cpp:
+src/Data/Menu_SubmitOfferInfoAndShowPartyRoute_MarkupPADWAITADD.cpp:
     complete
     .data start:0x021703c7 end:0x021703d7
 
-src/Data/ov004/data_ov004_021703d7.cpp:
+src/Data/Graphics_ClearBackgroundMapsAndLoadArchiveContext_PathDataPrmItemnameGp2.cpp:
     complete
     .data start:0x021703d7 end:0x021703ed
 
-src/Data/ov004/data_ov004_021703ed.cpp:
+src/Data/Graphics_ClearBackgroundMapsAndLoadArchiveContext_MarkupItemnameLGNat.cpp:
     complete
     .data start:0x021703ed end:0x021703ff
 
-src/Data/ov004/data_ov004_021703ff.cpp:
+src/Data/Menu_LoadItemMarketRoxSprite_PathDataMenuDqaRoxSpr.cpp:
     complete
     .data start:0x021703ff end:0x02170415
 
-src/Data/ov004/data_ov004_02170415.cpp:
+src/Data/Menu_LoadItemMarketMonthlySprite_PathDataMenuDqa02DGp2.cpp:
     complete
     .data start:0x02170415 end:0x0217042c
 
-src/Data/ov004/data_ov004_0217042c.cpp:
+src/Data/Menu_LoadItemMarketMonthlySprite_FormatDqa02DLGSpr.cpp:
     complete
     .data start:0x0217042c end:0x0217043e
 
-src/Data/ov004/data_ov004_0217043e.cpp:
+src/Data/Menu_SaveItemMarketStateAndResumeRequestResult_TextInfo.cpp:
     complete
     .data start:0x0217043e end:0x02170444
 
-src/Data/ov004/data_ov004_02170525.cpp:
+src/Data/StatusMenuRefreshEquipmentNamesAndDescriptors_TextCodePoint10.cpp:
     complete
     .data start:0x02170525 end:0x02170527
 
-src/Data/ov004/data_ov004_02170527.cpp:
+src/Data/StatusMenu_PopulatePassiveTraitsPage_Text100.cpp:
     complete
     .data start:0x02170527 end:0x0217052d
 
-src/Data/ov004/data_ov004_0217052d.cpp:
+src/Data/StatusMenu_LoadPartyVocationStatTables_PathDataPrmLevelDBin.cpp:
     complete
     .data start:0x0217052d end:0x02170542
 
-src/Data/ov004/data_ov004_02170542.cpp:
+src/Data/Graphics_LoadAndDispatchSubscreenResources_PathDataAniBgSlime3Pac.cpp:
     complete
     .data start:0x02170542 end:0x0217055c
 
-src/Data/ov004/data_ov004_0217055c.cpp:
+src/Data/TreasureMapMenu_InitializeMapCollection_PathDataPrmItemTmnGp2.cpp:
     complete
     .data start:0x0217055c end:0x02170572
 
-src/Data/ov004/data_ov004_02170572.cpp:
+src/Data/TreasureMapMenu_InitializeMapCollection_MarkupItemTmnLGNat.cpp:
     complete
     .data start:0x02170572 end:0x02170584
 
-src/Data/ov004/data_ov004_02170584.cpp:
+src/Data/TreasureMapMenu_PopulateVisibleMapPage_PathDataTmapParamPac.cpp:
     complete
     .data start:0x02170584 end:0x02170598
 
-src/Data/ov004/data_ov004_021705a0.cpp:
+src/Data/System_RebuildFlagFilteredRecordLists_Format03D.cpp:
     complete
     .data start:0x021705a0 end:0x021705a5
 
-src/Data/ov004/data_ov004_021705a5.cpp:
+src/Data/QuestMenu_AdvanceMessageAndCancellationScriptLoading_PathDataScenarioQuestmsgGp2.cpp:
     complete
     .data start:0x021705a5 end:0x021705c0
 
-src/Data/ov004/data_ov004_021705c0.cpp:
+src/Data/QuestMenu_AdvanceMessageAndCancellationScriptLoading_MarkupQuestmsgLGBin.cpp:
     complete
     .data start:0x021705c0 end:0x021705d2
 
-src/Data/ov004/data_ov004_021705d2.cpp:
+src/Data/QuestMenu_AdvanceMessageAndCancellationScriptLoading_PathDataScenarioQuestcancelBin.cpp:
     complete
     .data start:0x021705d2 end:0x021705f8
 
-src/Data/ov004/data_ov004_021706f4.cpp:
+src/Data/MiniMedalMenuStartGuardedFrAnimation_TextFr.cpp:
     complete
     .data start:0x021706f4 end:0x021706f7
 
-src/Data/ov004/data_ov004_021706f7.cpp:
+src/Data/MiniMedalMenu_ResetActorToStandingPose_TextStand.cpp:
     complete
     .data start:0x021706f7 end:0x021706fd
 
-src/Data/ov004/data_ov004_021706fd.cpp:
+src/Data/MiniMedalMenuStartCpAnimation_TextCp.cpp:
     complete
     .data start:0x021706fd end:0x02170700
 
-src/Data/ov004/data_ov004_02170700.cpp:
+src/Data/MiniMedalMenuStartYbAnimation_TextYb.cpp:
     complete
     .data start:0x02170700 end:0x02170704
 
-src/Data/ov004/data_ov004_02170704.cpp:
+src/Data/ProfileMenuPopulateSelectedStatisticsAndDescription_TextCodePoint10.cpp:
     complete
     .data start:0x02170704 end:0x02170708
 
-src/Data/ov004/data_ov004_02170708.cpp:
+src/Data/TitleMenu_AllocateVariantLowerBackground_TextMenuBgTitleUnderPac.cpp:
     complete
     .data start:0x02170708 end:0x02170720
 
-src/Data/ov004/data_ov004_02170720.cpp:
+src/Data/TitleMenu_AllocateVariantLowerBackground_TextMenuBgTitleUnder1Pac.cpp:
     complete
     .data start:0x02170720 end:0x02170739
 
-src/Data/ov004/data_ov004_02170739.cpp:
+src/Data/TitleMenu_AllocateVariantLowerBackground_TextMenuBgTitleUnder2Pac.cpp:
     complete
     .data start:0x02170739 end:0x02170752
 
-src/Data/ov004/data_ov004_02170752.cpp:
+src/Data/TitleMenu_AllocateVariantUpperBackground_TextMenuBgUpGp2.cpp:
     complete
     .data start:0x02170752 end:0x02170761
 
-src/Data/ov004/data_ov004_02170761.cpp:
+src/Data/TitleMenu_AllocateVariantUpperBackground_MarkupBgUpLGPac.cpp:
     complete
     .data start:0x02170761 end:0x02170770
 
-src/Data/ov004/data_ov004_02170770.cpp:
+src/Data/TitleMenu_AllocateVariantUpperBackground_TextMenuBgUp1Gp2.cpp:
     complete
     .data start:0x02170770 end:0x02170780
 
-src/Data/ov004/data_ov004_02170780.cpp:
+src/Data/TitleMenu_AllocateVariantUpperBackground_MarkupBgUp1LGPac.cpp:
     complete
     .data start:0x02170780 end:0x02170790
 
-src/Data/ov004/data_ov004_02170790.cpp:
+src/Data/TitleMenu_AllocateVariantUpperBackground_TextMenuBgUp2Gp2.cpp:
     complete
     .data start:0x02170790 end:0x021707a0
 
-src/Data/ov004/data_ov004_021707a0.cpp:
+src/Data/TitleMenu_AllocateVariantUpperBackground_MarkupBgUp2LGPac.cpp:
     complete
     .data start:0x021707a0 end:0x021707b0
 
-src/Data/ov004/data_ov004_021707b0.cpp:
+src/Data/OnlineTransferMenu_FormatQuestCodeDisplay_Format012Llu.cpp:
     complete
     .data start:0x021707b0 end:0x021707c0
 
-src/Data/ov004/data_ov004_0216fe5c.cpp:
+src/Data/StatusMenuSelectNextPartyMember_MenuIndexOrderLookupPermutationOfZeroBasedIDs012.cpp:
     complete
     .rodata start:0x0216fe5c end:0x0216fe90
 
-src/Data/ov004/data_ov004_0216fe90.cpp:
+src/Data/StatusMenuPopulatePassiveTraitsPage_MenuIndexOrderLookupPermutationOfOneBasedIDs126.cpp:
     complete
     .rodata start:0x0216fe90 end:0x0216fef8
 
-src/Unclassified/ov004/DispatchStateDependentCode31Or50.cpp:
+src/Town/MiniMedals/MiniMedalMenu_BranchOnCarriedMedalAvailability.cpp:
     complete
     .text start:0x02167e6c end:0x02167eb0
 
-src/Unclassified/ov004/InitializeThreeHalfwordRecord.cpp:
+src/Menu/SharedServices/Menu_ResetPendingItemTransaction.cpp:
     complete
     .text start:0x0215b7c8 end:0x0215b7e0
 
-src/Unclassified/ov004/ResetRenderPartEntries.cpp:
+src/Menu/SharedServices/Menu_ResetItemMarketSpriteEntries.cpp:
     complete
     .text start:0x0215c474 end:0x0215c494
 
-src/Unclassified/ov004/GetIndexedRenderEntry.cpp:
+src/Menu/SharedServices/Menu_GetIndexedRenderEntry.cpp:
     complete
     .text start:0x0215e438 end:0x0215e460
 
-src/Unclassified/ov004/GameState_TestPredicateForKey.cpp:
+src/Menu/Status/StatusMenu_HasAvailablePartyMember.cpp:
     complete
     .text start:0x0215f74c end:0x0215f770
 
-src/Unclassified/ov004/CopySignedOffset5CHalfwords.cpp:
+src/Menu/SharedServices/Menu_GetGridPageAndPageCount.cpp:
     complete
     .text start:0x0216351c end:0x02163530
 
-src/Unclassified/ov004/TestIndexedHalfwordFlag.cpp:
+src/Menu/Status/StatusMenu_TestUnlockedVocation.cpp:
     complete
     .text start:0x0215eb20 end:0x0215eb40
 
-src/Unclassified/ov004/TestSecondOverlayPredicate.cpp:
+src/Menu/Status/StatusMenu_HasAlternatePartyModel.cpp:
     complete
     .text start:0x0215e460 end:0x0215e47c
 
-src/Unclassified/ov004/ClearFlagAndPopOverlaySlot.cpp:
+src/Menu/SharedServices/Grotto_ReleaseMonsterMessageCommandAndRestoreOverlay.cpp:
     complete
     .text start:0x0216fa48 end:0x0216fa74
 
-src/Unclassified/ov004/func_ov004_02153778.cpp:
+src/Menu/SharedServices/Menu_IgnoreResourcePositionChange.cpp:
     complete
     .text start:0x02153778 end:0x0215377c
 
-src/Unclassified/ov004/func_ov004_021537dc.cpp:
+src/Menu/SharedServices/Menu_IgnoreResourceControlModeChange.cpp:
     complete
     .text start:0x021537dc end:0x021537e0
 
-src/Unclassified/ov004/func_ov004_02156e28.cpp:
+src/Menu/SharedServices/Menu_IgnoreResourceCallbackAtD8.cpp:
     complete
     .text start:0x02156e28 end:0x02156e2c
 
-src/Unclassified/ov004/func_ov004_0215434c.cpp:
+src/Menu/SharedServices/Menu_IgnoreResourceCallbackAtE0.cpp:
     complete
     .text start:0x0215434c end:0x02154350
 
-src/Unclassified/ov004/func_ov004_0215e2dc.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnorePositiveDrawOffset.cpp:
     complete
     .text start:0x0215e2dc end:0x0215e2e0
 
-src/Unclassified/ov004/func_ov004_0215e2d8.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreNegativeDrawOffset.cpp:
     complete
     .text start:0x0215e2d8 end:0x0215e2dc
 
-src/Unclassified/ov004/func_ov004_0215e2f8.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreUnknownVirtualHookAtOffsetD4.cpp:
     complete
     .text start:0x0215e2f8 end:0x0215e2fc
 
-src/Unclassified/ov004/func_ov004_0215e2fc.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreUnknownVirtualHookAtOffsetD0.cpp:
     complete
     .text start:0x0215e2fc end:0x0215e300
 
-src/Unclassified/ov004/func_ov004_0215e32c.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreAuxiliaryVectorChange.cpp:
     complete
     .text start:0x0215e32c end:0x0215e330
 
-src/Unclassified/ov004/func_ov004_0215e330.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreUnknownVirtualHookAtOffsetC4.cpp:
     complete
     .text start:0x0215e330 end:0x0215e334
 
-src/Unclassified/ov004/func_ov004_0215e354.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreTouchRepeatCallback.cpp:
     complete
     .text start:0x0215e354 end:0x0215e358
 
-src/Unclassified/ov004/func_ov004_0215e358.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreTouchCallbacks.cpp:
     complete
     .text start:0x0215e358 end:0x0215e35c
 
-src/Unclassified/ov004/func_ov004_0215e364.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreTouchPressCallback.cpp:
     complete
     .text start:0x0215e364 end:0x0215e368
 
-src/Unclassified/ov004/func_ov004_0215e370.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreRButtonCallback.cpp:
     complete
     .text start:0x0215e370 end:0x0215e374
 
-src/Unclassified/ov004/func_ov004_0215e37c.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreLButtonCallback.cpp:
     complete
     .text start:0x0215e37c end:0x0215e380
 
-src/Unclassified/ov004/func_ov004_0215e388.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreLeftCallback.cpp:
     complete
     .text start:0x0215e388 end:0x0215e38c
 
-src/Unclassified/ov004/func_ov004_0215e394.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreRightCallback.cpp:
     complete
     .text start:0x0215e394 end:0x0215e398
 
-src/Unclassified/ov004/func_ov004_0215e3a0.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreXCallback.cpp:
     complete
     .text start:0x0215e3a0 end:0x0215e3a4
 
-src/Unclassified/ov004/func_ov004_0215e3ac.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreYCallback.cpp:
     complete
     .text start:0x0215e3ac end:0x0215e3b0
 
-src/Unclassified/ov004/func_ov004_0215e3b8.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreDownCallback.cpp:
     complete
     .text start:0x0215e3b8 end:0x0215e3bc
 
-src/Unclassified/ov004/func_ov004_0215e3c4.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreUpCallback.cpp:
     complete
     .text start:0x0215e3c4 end:0x0215e3c8
 
-src/Unclassified/ov004/func_ov004_0215e3d0.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreSelectCallback.cpp:
     complete
     .text start:0x0215e3d0 end:0x0215e3d4
 
-src/Unclassified/ov004/func_ov004_0215e3dc.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnorePageChangedCallback.cpp:
     complete
     .text start:0x0215e3dc end:0x0215e3e0
 
-src/Unclassified/ov004/func_ov004_0215e3e8.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreSelectionChangedCallback.cpp:
     complete
     .text start:0x0215e3e8 end:0x0215e3ec
 
-src/Unclassified/ov004/func_ov004_0215e3f4.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreConfirmCallback.cpp:
     complete
     .text start:0x0215e3f4 end:0x0215e3f8
 
-src/Unclassified/ov004/func_ov004_0215e408.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreYStateRoute.cpp:
     complete
     .text start:0x0215e408 end:0x0215e40c
 
-src/Unclassified/ov004/func_ov004_0215e414.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreXStateRoute.cpp:
     complete
     .text start:0x0215e414 end:0x0215e418
 
-src/Unclassified/ov004/func_ov004_0215e420.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreXConfirmationMode.cpp:
     complete
     .text start:0x0215e420 end:0x0215e424
 
-src/Unclassified/ov004/func_ov004_0215e424.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreBackgroundLoadRefresh.cpp:
     complete
     .text start:0x0215e424 end:0x0215e428
 
-src/Unclassified/ov004/func_ov004_0215e428.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreDestinationCacheClean.cpp:
     complete
     .text start:0x0215e428 end:0x0215e42c
 
-src/Unclassified/ov004/func_ov004_0215e42c.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreScreenBufferClear.cpp:
     complete
     .text start:0x0215e42c end:0x0215e430
 
-src/Unclassified/ov004/func_ov004_0215e430.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreDrawPass.cpp:
     complete
     .text start:0x0215e430 end:0x0215e434
 
-src/Unclassified/ov004/func_ov004_0215e434.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_IgnoreSecondaryPass.cpp:
     complete
     .text start:0x0215e434 end:0x0215e438
 
-src/Unclassified/ov004/func_ov004_02153d84.cpp:
+src/Menu/SharedServices/Menu_GetNullResourceLinkedData.cpp:
     complete
     .text start:0x02153d84 end:0x02153d8c
 
-src/Unclassified/ov004/func_ov004_02159468.cpp:
+src/Menu/SharedServices/Menu_IgnoreOfferListCallback.cpp:
     complete
     .text start:0x02159468 end:0x02159470
 
-src/Unclassified/ov004/func_ov004_0215c08c.cpp:
+src/Menu/SharedServices/Menu_IgnoreItemListingCallback.cpp:
     complete
     .text start:0x0215c08c end:0x0215c094
 
-src/Unclassified/ov004/func_ov004_0215e2d0.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultGroupDispatchActivity.cpp:
     complete
     .text start:0x0215e2d0 end:0x0215e2d8
 
-src/Unclassified/ov004/func_ov004_0215e2e0.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultZoneState.cpp:
     complete
     .text start:0x0215e2e0 end:0x0215e2e8
 
-src/Unclassified/ov004/func_ov004_0215e2e8.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultNumericValue.cpp:
     complete
     .text start:0x0215e2e8 end:0x0215e2f0
 
-src/Unclassified/ov004/func_ov004_0215e2f0.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultTextStyle.cpp:
     complete
     .text start:0x0215e2f0 end:0x0215e2f8
 
-src/Unclassified/ov004/func_ov004_0215e334.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_ReturnZeroFromUnknownVirtualHookAtOffsetC0.cpp:
     complete
     .text start:0x0215e334 end:0x0215e33c
 
-src/Unclassified/ov004/func_ov004_0215e33c.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_ReturnZeroFromUnknownVirtualHookAtOffsetBC.cpp:
     complete
     .text start:0x0215e33c end:0x0215e344
 
-src/Unclassified/ov004/func_ov004_0215e344.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_ReturnNotEligibleForSelection.cpp:
     complete
     .text start:0x0215e344 end:0x0215e34c
 
-src/Unclassified/ov004/func_ov004_0215e34c.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultTouchRepeatCallback.cpp:
     complete
     .text start:0x0215e34c end:0x0215e354
 
-src/Unclassified/ov004/func_ov004_0215e35c.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultTouchPressCallback.cpp:
     complete
     .text start:0x0215e35c end:0x0215e364
 
-src/Unclassified/ov004/func_ov004_0215e368.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultRButtonCallback.cpp:
     complete
     .text start:0x0215e368 end:0x0215e370
 
-src/Unclassified/ov004/func_ov004_0215e374.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultLButtonCallback.cpp:
     complete
     .text start:0x0215e374 end:0x0215e37c
 
-src/Unclassified/ov004/func_ov004_0215e380.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultLeftCallback.cpp:
     complete
     .text start:0x0215e380 end:0x0215e388
 
-src/Unclassified/ov004/func_ov004_0215e38c.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultRightCallback.cpp:
     complete
     .text start:0x0215e38c end:0x0215e394
 
-src/Unclassified/ov004/func_ov004_0215e398.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultXCallback.cpp:
     complete
     .text start:0x0215e398 end:0x0215e3a0
 
-src/Unclassified/ov004/func_ov004_0215e3a4.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultYCallback.cpp:
     complete
     .text start:0x0215e3a4 end:0x0215e3ac
 
-src/Unclassified/ov004/func_ov004_0215e3b0.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultDownCallback.cpp:
     complete
     .text start:0x0215e3b0 end:0x0215e3b8
 
-src/Unclassified/ov004/func_ov004_0215e3bc.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultUpCallback.cpp:
     complete
     .text start:0x0215e3bc end:0x0215e3c4
 
-src/Unclassified/ov004/func_ov004_0215e3c8.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultSelectCallback.cpp:
     complete
     .text start:0x0215e3c8 end:0x0215e3d0
 
-src/Unclassified/ov004/func_ov004_0215e3d4.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultPageChangedCallback.cpp:
     complete
     .text start:0x0215e3d4 end:0x0215e3dc
 
-src/Unclassified/ov004/func_ov004_0215e3e0.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultSelectionChangedCallback.cpp:
     complete
     .text start:0x0215e3e0 end:0x0215e3e8
 
-src/Unclassified/ov004/func_ov004_0215e3ec.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultConfirmCallback.cpp:
     complete
     .text start:0x0215e3ec end:0x0215e3f4
 
-src/Unclassified/ov004/func_ov004_0215e3f8.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultConfirmStateRoute.cpp:
     complete
     .text start:0x0215e3f8 end:0x0215e400
 
-src/Unclassified/ov004/func_ov004_0215e400.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultYStateRoute.cpp:
     complete
     .text start:0x0215e400 end:0x0215e408
 
-src/Unclassified/ov004/func_ov004_0215e40c.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultXStateRoute.cpp:
     complete
     .text start:0x0215e40c end:0x0215e414
 
-src/Unclassified/ov004/func_ov004_0215e418.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_GetDefaultXConfirmationEnabled.cpp:
     complete
     .text start:0x0215e418 end:0x0215e420
 
-src/Unclassified/ov004/func_ov004_02166f90.cpp:
+src/Menu/Quests/QuestMenu_ReturnZeroForPrimaryIdleCallback.cpp:
     complete
     .text start:0x02166f90 end:0x02166f98
 
-src/Unclassified/ov004/func_ov004_02166f98.cpp:
+src/Menu/Quests/QuestMenu_ReturnZeroForSecondaryIdleCallback.cpp:
     complete
     .text start:0x02166f98 end:0x02166fa0
 
-src/Unclassified/ov004/func_ov004_0216ace8.cpp:
+src/Menu/StorySummary/StorySummary_IgnoreDisplaySetupCallback.cpp:
     complete
     .text start:0x0216ace8 end:0x0216acf0
 
-src/Unclassified/ov004/func_ov004_0216acf0.cpp:
+src/Menu/StorySummary/StorySummary_IgnoreUnusedScriptCallback.cpp:
     complete
     .text start:0x0216acf0 end:0x0216acf8
 
-src/Unclassified/ov004/func_ov004_0216d718.cpp:
+src/Menu/Titles/TitleMenu_IgnoreQuestCodeDisplayCallback.cpp:
     complete
     .text start:0x0216d718 end:0x0216d720
 
-src/Unclassified/ov004/func_ov004_0216fa3c.cpp:
+src/Menu/SharedServices/Grotto_DispatchMonsterMessageCommand.cpp:
     complete
     .text start:0x0216fa3c end:0x0216fa48
 
-src/Filesystem/ov004/func_ov004_02166ac4.cpp:
+src/Menu/SharedServices/Filesystem_CleanupBackgroundLoadState.cpp:
     complete
     .text start:0x02166ac4 end:0x02166b40
 
-src/Unclassified/ov004/InitializeTagged36Record.cpp:
+src/Menu/SharedServices/Grotto_InitializeMonsterMessageCommand.cpp:
     complete
     .text start:0x0216fa08 end:0x0216fa3c
 
-src/Resource/ov004/Resource_InitializeTableWithCallback.cpp:
+src/Menu/SharedServices/Resource_InitializeTableWithCallback.cpp:
     complete
     .text start:0x0216aa70 end:0x0216aaec
 
-src/GameState/ov004/GameState_ResetResourceFlagsAndApplyOverlayModes.cpp:
+src/Menu/SharedServices/GameState_ResetResourceFlagsAndApplyOverlayModes.cpp:
     complete
     .text start:0x0216d920 end:0x0216da58
 
-src/GameState/ov004/GameState_CopyGrottoTextAndObjectNameToFirstSlot.cpp:
+src/Menu/SharedServices/GameState_CopyGrottoTextAndObjectNameToFirstSlot.cpp:
     complete
     .text start:0x02165d74 end:0x02165df4
 
-src/Unclassified/ov004/SumFirstRecordCountsForTwelveIds.cpp:
+src/Menu/SharedServices/Menu_SumCompletedSubtypeCounts.cpp:
     complete
     .text start:0x021537e0 end:0x02153860
 
-src/Graphics/ov004/Graphics_LoadAndDispatchSubscreenResources.cpp:
+src/Menu/SharedServices/Graphics_LoadAndDispatchSubscreenResources.cpp:
     complete
     .text start:0x02163144 end:0x02163284
 
-src/Unclassified/ov004/Object_CycleEnabledIndexedFlag.cpp:
+src/Menu/Status/StatusMenu_CycleAvailableVocation.cpp:
     complete
     .text start:0x0215e9dc end:0x0215eb20
 
-src/Util/ov004/Util_InitializeTwoRecordBanks.cpp:
+src/Menu/Status/StatusMenu_ResetAbilityAndTraitBanks.cpp:
     complete
     .text start:0x0215ee90 end:0x0215ef14
 
-src/GameState/ov004/func_ov004_0215c23c.cpp:
+src/Menu/SharedServices/Menu_EnterListingPriceConfirmation.cpp:
     complete
     .text start:0x0215c23c end:0x0215c250
 
-src/Unclassified/ov004/func_ov004_0215c0ac.cpp:
+src/Menu/SharedServices/Menu_EnterListingCategorySelection.cpp:
     complete
     .text start:0x0215c0ac end:0x0215c0c0
 
-src/Unclassified/ov004/func_ov004_0215c228.cpp:
+src/Menu/SharedServices/Menu_EnterListingItemSelection.cpp:
     complete
     .text start:0x0215c228 end:0x0215c23c
 
-src/GameState/ov004/func_ov004_0216589c.cpp:
+src/Menu/TreasureMaps/TreasureMapMenu_RequestTransferProcessing.cpp:
     complete
     .text start:0x0216589c end:0x021658b0
 
-src/Unclassified/ov004/func_ov004_0215c948.cpp:
+src/Menu/SharedServices/Menu_EnterItemMarketOfferList.cpp:
     complete
     .text start:0x0215c948 end:0x0215c95c
 
-src/GameState/ov004/func_ov004_02165b4c.cpp:
+src/Menu/TreasureMaps/TreasureMapMenu_RequestSelectedMapActionPhase.cpp:
     complete
     .text start:0x02165b4c end:0x02165b60
 
-src/Unclassified/ov004/func_ov004_02165b38.cpp:
+src/Menu/TreasureMaps/TreasureMapMenu_RequestUnknownMapDecisionPhase.cpp:
     complete
     .text start:0x02165b38 end:0x02165b4c
 
-src/Unclassified/ov004/func_ov004_02165a08.cpp:
+src/Menu/TreasureMaps/TreasureMapMenu_RequestUnknownTransferExitPhase.cpp:
     complete
     .text start:0x02165a08 end:0x02165a1c
 
-src/Unclassified/ov004/func_ov004_021650e4.cpp:
+src/Menu/TreasureMaps/TreasureMapMenu_RequestUnknownTransferPollPhase.cpp:
     complete
     .text start:0x021650e4 end:0x021650f8
 
-src/GameState/ov004/func_ov004_02168024.cpp:
+src/Town/MiniMedals/MiniMedalMenu_RequestUnknownPrimaryReturn.cpp:
     complete
     .text start:0x02168024 end:0x02168038
 
-src/Unclassified/ov004/func_ov004_02168038.cpp:
+src/Town/MiniMedals/MiniMedalMenu_RequestUnknownSecondaryReturn.cpp:
     complete
     .text start:0x02168038 end:0x0216804c
 
-src/Unclassified/ov004/func_ov004_0216804c.cpp:
+src/Town/MiniMedals/MiniMedalMenu_RequestUnknownTertiaryReturn.cpp:
     complete
     .text start:0x0216804c end:0x02168060
 
-src/Unclassified/ov004/func_ov004_02165bd0.cpp:
+src/Menu/TreasureMaps/GrottoMenu_RequestUnknownTerminalPhase.cpp:
     complete
     .text start:0x02165bd0 end:0x02165be4
 
-src/GameState/ov004/func_ov004_021680b8.cpp:
+src/Town/MiniMedals/MiniMedalMenu_RequestUnknownRewardListPhase.cpp:
     complete
     .text start:0x021680b8 end:0x021680cc
 
-src/GameState/ov004/State_ApplyValue6CAndReturnZero.cpp:
+src/Menu/SharedServices/State_ApplyValue6CAndReturnZero.cpp:
     complete
     .text start:0x02167678 end:0x0216768c
 
-src/Unclassified/ov004/func_ov004_02168060.cpp:
+src/Town/MiniMedals/MiniMedalMenu_RequestUnknownChoicePhase.cpp:
     complete
     .text start:0x02168060 end:0x02168074
 
-src/Unclassified/ov004/func_ov004_02168268.cpp:
+src/Town/MiniMedals/MiniMedalMenu_RequestUnknownRewardConfirmation.cpp:
     complete
     .text start:0x02168268 end:0x0216827c
 
-src/Unclassified/ov004/func_ov004_02165888.cpp:
+src/Menu/TreasureMaps/TreasureMapMenu_RequestUnknownTransferResolution.cpp:
     complete
     .text start:0x02165888 end:0x0216589c
 
-src/GameState/ov004/func_ov004_02168670.cpp:
+src/Town/MiniMedals/MiniMedalMenu_RequestUnknownFinalPhase.cpp:
     complete
     .text start:0x02168670 end:0x02168684
 
-src/GameState/ov004/State_ApplyValue5BAndReturnZero.cpp:
+src/Menu/SharedServices/State_ApplyValue5BAndReturnZero.cpp:
     complete
     .text start:0x0216a5e8 end:0x0216a5fc
 
-src/Unclassified/ov004/func_ov004_0216827c.cpp:
+src/Town/MiniMedals/MiniMedalMenu_RequestUnknownReturnAfterRewardChoice.cpp:
     complete
     .text start:0x0216827c end:0x02168290
 
-src/Unclassified/ov004/func_ov004_0216a7fc.cpp:
+src/Menu/SharedServices/Menu_RequestSavedSummaryFollowup.cpp:
     complete
     .text start:0x0216a7fc end:0x0216a810
 
-src/Unclassified/ov004/func_ov004_0216dc8c.cpp:
+src/Menu/Titles/TitleMenu_RequestAdventureLogDeletedNotice.cpp:
     complete
     .text start:0x0216dc8c end:0x0216dca0
 
-src/GameState/ov004/State_ApplyValueC9AndReturnZero.cpp:
+src/Menu/SharedServices/State_ApplyValueC9AndReturnZero.cpp:
     complete
     .text start:0x0216dcb4 end:0x0216dcc8
 
-src/GameState/ov004/func_ov004_0216dca0.cpp:
+src/Menu/Titles/TitleMenu_RequestUnknownQuickSaveEntryDiagnostic.cpp:
     complete
     .text start:0x0216dca0 end:0x0216dcb4
 
-src/Unclassified/ov004/func_ov004_0216a5fc.cpp:
+src/Menu/Status/ProfileMenu_RequestUnknownContinuation.cpp:
     complete
     .text start:0x0216a5fc end:0x0216a610
 
-src/Unclassified/ov004/func_ov004_0216dc78.cpp:
+src/Menu/Titles/TitleMenu_RequestAdventureLogDeletionPrompt.cpp:
     complete
     .text start:0x0216dc78 end:0x0216dc8c
 
-src/Unclassified/ov004/func_ov004_0216dcdc.cpp:
+src/Menu/Titles/TitleMenu_RequestUnknownQuickSaveCompletionDiagnostic.cpp:
     complete
     .text start:0x0216dcdc end:0x0216dcf0
 
-src/Unclassified/ov004/func_ov004_0216dcc8.cpp:
+src/Menu/Titles/TitleMenu_RequestQuestCodeScreen.cpp:
     complete
     .text start:0x0216dcc8 end:0x0216dcdc
 
-src/Unclassified/ov004/func_ov004_0216dcf0.cpp:
+src/Menu/Titles/TitleMenu_RequestCorruptAdventureLogRecovery.cpp:
     complete
     .text start:0x0216dcf0 end:0x0216dd04
 
-src/Unclassified/ov004/func_ov004_021683ec.cpp:
+src/Town/MiniMedals/MiniMedalMenu_RequestUnknownPostPreviewPhase.cpp:
     complete
     .text start:0x021683ec end:0x02168400
 
-src/GameState/ov004/func_ov004_0216f620.cpp:
+src/Online/Content/OnlineTransferMenu_RequestClose.cpp:
     complete
     .text start:0x0216f620 end:0x0216f634
 
-src/GameState/ov004/State_ApplyValue194AndReturnZero.cpp:
+src/Menu/SharedServices/State_ApplyValue194AndReturnZero.cpp:
     complete
     .text start:0x0216dd4c end:0x0216dd60
 
-src/Memory/ov004/func_ov004_021633ac.cpp:
+src/Menu/SharedServices/Menu_AllocateOverlayDispatchTemplate.cpp:
     complete
     .text start:0x021633ac end:0x021633e4
 
-src/Resource/ov004/Script_CreateLinkedCoordinateEntry.cpp:
+src/Menu/SharedServices/Script_CreateLinkedCoordinateEntry.cpp:
     complete
     .text start:0x021560b0 end:0x021560e8
 
-src/Unclassified/ov004/func_ov004_021570f0.cpp:
+src/Menu/SharedServices/Menu_GetListedPartyMemberIndex.cpp:
     complete
     .text start:0x021570f0 end:0x02157128
 
-src/GameState/ov004/GameState_ClearFlagsAndIndexedBit3.cpp:
+src/Menu/SharedServices/GameState_ClearFlagsAndIndexedBit3.cpp:
     complete
     .text start:0x02168884 end:0x021688bc
 
-src/Unclassified/ov004/func_ov004_021537a8.cpp:
+src/Menu/SharedServices/Menu_SetKeyedControlMode.cpp:
     complete
     .text start:0x021537a8 end:0x021537dc
 
-src/Resource/ov004/FindType15EntryForState.cpp:
+src/Menu/SharedServices/Menu_FindInventoryValueEntryByKey.cpp:
     complete
     .text start:0x02156f38 end:0x02156f6c
 
-src/Unclassified/ov004/ApplyIndexedRecordValueAndSetState68.cpp:
+src/Town/MiniMedals/MiniMedalMenu_PreviewSelectedRewardItem.cpp:
     complete
     .text start:0x02168290 end:0x02168318
 
-src/Unclassified/ov004/func_ov004_02156fa0.cpp:
+src/Menu/SharedServices/Menu_FindInventorySpriteByKey.cpp:
     complete
     .text start:0x02156fa0 end:0x02156fd4
 
-src/World/ov004/Ov004_CheckAndUpdateTypeSeven.cpp:
+src/Menu/SharedServices/Ov004_CheckAndUpdateTypeSeven.cpp:
     complete
     .text start:0x0216863c end:0x02168670
 
-src/Unclassified/ov004/func_ov004_02168aa0.cpp:
+src/Menu/Status/ProfileMenu_FindControlById.cpp:
     complete
     .text start:0x02168aa0 end:0x02168ad4
 
-src/Unclassified/ov004/Unclassified_FindTypeSixObject.cpp:
+src/Menu/SharedServices/Menu_FindInventoryTextCanvasByKey.cpp:
     complete
     .text start:0x02156f6c end:0x02156fa0
 
-src/Unclassified/ov004/HasTypeSixAtResolvedHandle.cpp:
+src/Menu/SharedServices/Menu_FindCatalogueTextCanvasByKey.cpp:
     complete
     .text start:0x02153944 end:0x02153978
 
-src/Resource/ov004/FindType8EntryForState.cpp:
+src/Menu/Status/ProfileMenu_FindTextDisplayById.cpp:
     complete
     .text start:0x02168a6c end:0x02168aa0
 
-src/World/ov004/Ov004_FindObjectWithFieldEleven.cpp:
+src/Menu/SharedServices/Ov004_FindObjectWithFieldEleven.cpp:
     complete
     .text start:0x02168ad4 end:0x02168b08
 
-src/Unclassified/ov004/OV011_GetObjectIfFieldValueSeven.cpp:
+src/Menu/SharedServices/Menu_FindInventoryGridByKey.cpp:
     complete
     .text start:0x02156ed0 end:0x02156f04
 
-src/Grotto/ov004/OV023_ReturnObjectWhenField04IsF.cpp:
+src/Menu/Status/ProfileMenu_FindNumericDisplayById.cpp:
     complete
     .text start:0x02168a38 end:0x02168a6c
 
-src/Util/ov004/Util_FindRecordBySignedId.cpp:
+src/Menu/SharedServices/Menu_FindCategoryCounterByKind.cpp:
     complete
     .text start:0x021538b4 end:0x021538f0
 
-src/Grotto/ov004/OV023_GetEmbeddedField20WhenTypeFour.cpp:
+src/Menu/Status/ProfileMenu_GetMessageTableById.cpp:
     complete
     .text start:0x02168b08 end:0x02168b44
 
-src/Unclassified/ov004/OV004_FindSixByteRecordByHalfword.cpp:
+src/Menu/SharedServices/Menu_FindAlternateCategoryCounter.cpp:
     complete
     .text start:0x021550c8 end:0x02155104
 
-src/GameState/ov004/func_ov004_0216d6dc.cpp:
+src/Menu/Titles/TitleMenu_RequestAdventureLogUpload.cpp:
     complete
     .text start:0x0216d6dc end:0x0216d718
 
-src/Resource/ov004/GetTypeSevenRowMajorIndex.cpp:
+src/Menu/SharedServices/GetTypeSevenRowMajorIndex.cpp:
     complete
     .text start:0x02156e2c end:0x02156e68
 
-src/GameState/ov004/func_ov004_0216d188.cpp:
+src/Menu/Titles/TitleMenu_RequestNewAdventure.cpp:
     complete
     .text start:0x0216d188 end:0x0216d1c4
 
-src/GameState/ov004/func_ov004_0216d6a0.cpp:
+src/Menu/Titles/TitleMenu_RequestWifiSettings.cpp:
     complete
     .text start:0x0216d6a0 end:0x0216d6dc
 
-src/GameState/ov004/func_ov004_0216dc24.cpp:
+src/Menu/Titles/TitleMenu_RequestReturnToOpening.cpp:
     complete
     .text start:0x0216dc24 end:0x0216dc60
 
-src/Unclassified/ov004/func_ov004_0215b7e0.cpp:
+src/Menu/SharedServices/Menu_EnterPendingItemRecoveryContinuation.cpp:
     complete
     .text start:0x0215b7e0 end:0x0215b7f8
 
-src/GameState/ov004/State_ApplyValue39FAndReturnZero.cpp:
+src/Menu/SharedServices/State_ApplyValue39FAndReturnZero.cpp:
     complete
     .text start:0x0215c194 end:0x0215c1ac
 
-src/Unclassified/ov004/func_ov004_0215c250.cpp:
+src/Menu/SharedServices/Menu_ResumeListingRecipientSelection.cpp:
     complete
     .text start:0x0215c250 end:0x0215c268
 
-src/GameState/ov004/func_ov004_0215c95c.cpp:
+src/Menu/SharedServices/Menu_EnterItemMarketRequestUnavailableRoute.cpp:
     complete
     .text start:0x0215c95c end:0x0215c974
 
-src/GameState/ov004/GameState_SetFlagAndInitializeState3E7.cpp:
+src/Menu/SharedServices/GameState_SetFlagAndInitializeState3E7.cpp:
     complete
     .text start:0x0216e8b4 end:0x0216e8f0
 
-src/Unclassified/ov004/func_ov004_02159b74.cpp:
+src/Menu/SharedServices/Menu_EnterPurchaseQuantityFollowup.cpp:
     complete
     .text start:0x02159b74 end:0x02159b8c
 
-src/Unclassified/ov004/func_ov004_0215cc40.cpp:
+src/Menu/SharedServices/Menu_EnterItemMarketConnectionFollowup.cpp:
     complete
     .text start:0x0215cc40 end:0x0215cc58
 
-src/Unclassified/ov004/func_ov004_0215c094.cpp:
+src/Menu/SharedServices/Menu_ResumeItemMarketAfterListing.cpp:
     complete
     .text start:0x0215c094 end:0x0215c0ac
 
-src/GameState/ov004/func_ov004_0216acd0.cpp:
+src/Menu/StorySummary/StorySummary_RequestClose.cpp:
     complete
     .text start:0x0216acd0 end:0x0216ace8
 
-src/Unclassified/ov004/func_ov004_021688bc.cpp:
+src/Menu/SharedServices/FieldMenu_QueryTransitionFlagAndReturnZero.cpp:
     complete
     .text start:0x021688bc end:0x021688d4
 
-src/Unclassified/ov004/func_ov004_0216d908.cpp:
+src/Menu/Titles/TitleMenu_CloseAfterDeletionNotice.cpp:
     complete
     .text start:0x0216d908 end:0x0216d920
 
-src/Unclassified/ov004/func_ov004_02165bb8.cpp:
+src/Menu/TreasureMaps/GrottoMenu_EnableUnknownTextControl.cpp:
     complete
     .text start:0x02165bb8 end:0x02165bd0
 
-src/GameState/ov004/Ov004_SetField2C8OnReadObject.cpp:
+src/Menu/Quests/QuestMenu_EnableUnknownTextControl.cpp:
     complete
     .text start:0x0216768c end:0x021676a4
 
-src/GameState/ov004/func_ov004_0216dd1c.cpp:
+src/Menu/Titles/TitleMenu_RequestUnknownRecoveryConfirmationDiagnostic.cpp:
     complete
     .text start:0x0216dd1c end:0x0216dd34
 
-src/GameState/ov004/GameState_ClearGlobalRecordFlag.cpp:
+src/Menu/Status/StatusMenu_ClearSharedMenuFlag.cpp:
     complete
     .text start:0x0216312c end:0x02163144
 
-src/GameState/ov004/GameState_ApplyModeSpecificState.cpp:
+src/Menu/SharedServices/GameState_ApplyModeSpecificState.cpp:
     complete
     .text start:0x0215aff0 end:0x0215b02c
 
-src/Unclassified/ov004/func_ov004_0216dd34.cpp:
+src/Menu/Titles/TitleMenu_RequestUnknownRecoveryTransferDiagnostic.cpp:
     complete
     .text start:0x0216dd34 end:0x0216dd4c
 
-src/Unclassified/ov004/func_ov004_0216dd60.cpp:
+src/Menu/Titles/TitleMenu_RequestRecoveryFailureNotice.cpp:
     complete
     .text start:0x0216dd60 end:0x0216dd78
 
-src/Unclassified/ov004/func_ov004_0216dc60.cpp:
+src/Menu/Titles/TitleMenu_RequestOptionsRebuild.cpp:
     complete
     .text start:0x0216dc60 end:0x0216dc78
 
-src/Unclassified/ov004/func_ov004_0216dd04.cpp:
+src/Menu/Titles/TitleMenu_RequestUnknownRecoveryEntryDiagnostic.cpp:
     complete
     .text start:0x0216dd04 end:0x0216dd1c
 
-src/Unclassified/ov004/OV004_GetTypeFourEmbeddedField.cpp:
+src/Menu/SharedServices/Menu_FindMessageTableByWidgetKey.cpp:
     complete
     .text start:0x0216ea38 end:0x0216ea74
 
-src/Unclassified/ov004/OV004_ReadRecordByteFiveForHalfwordEight.cpp:
+src/Menu/SharedServices/Menu_GetCompletedAlternateCategoryEightCount.cpp:
     complete
     .text start:0x02155090 end:0x021550c8
 
-src/Unclassified/ov004/func_ov004_0216e1cc.cpp:
+src/Menu/Titles/TitleMenu_RequestQuickSaveCorruptionReturnNotice.cpp:
     complete
     .text start:0x0216e1cc end:0x0216e1e4
 
-src/GameState/ov004/GameState_SetGlobalMask80AndReturnZero.cpp:
+src/Menu/SharedServices/GameState_SetGlobalMask80AndReturnZero.cpp:
     complete
     .text start:0x0216e3fc end:0x0216e414
 
-src/GameState/ov004/GameState_ComputeKeyedValueDeficit.cpp:
+src/Menu/SharedServices/GameState_ComputeKeyedValueDeficit.cpp:
     complete
     .text start:0x0215799c end:0x02157a28
 
-src/Graphics/ov004/Graphics_GetResolvedEntryTextWidth.cpp:
+src/Menu/SharedServices/Graphics_GetResolvedEntryTextWidth.cpp:
     complete
     .text start:0x0215e4e8 end:0x0215e574
 
-src/Graphics/ov004/Graphics_GetRecordTextWidth.cpp:
+src/Menu/SharedServices/Graphics_GetRecordTextWidth.cpp:
     complete
     .text start:0x0216af24 end:0x0216afb0
 
-src/Unclassified/ov004/Unclassified_ForwardObjectWithField04Value16.cpp:
+src/Menu/SharedServices/Menu_ClearCatalogueDetails.cpp:
     complete
     .text start:0x02154210 end:0x02154250
 
-src/Unclassified/ov004/CycleStateByte.cpp:
+src/Menu/TreasureMaps/TreasureMapMenu_AdvanceSortMode.cpp:
     complete
     .text start:0x02163478 end:0x021634b8
 
-src/Unclassified/ov004/func_ov004_0215d6f8.cpp:
+src/Menu/SharedServices/Menu_ShowPurchaseQuantityPrompt.cpp:
     complete
     .text start:0x0215d6f8 end:0x0215d738
 
-src/Unclassified/ov004/Unclassified_GetType7ObjectValue.cpp:
+src/Menu/TreasureMaps/TreasureMapMenu_GetSelectedMapIndex.cpp:
     complete
     .text start:0x021634dc end:0x0216351c
 
-src/Unclassified/ov004/OV011_ForwardIndexedTypeSixteenObject.cpp:
+src/Menu/SharedServices/Menu_ClearAlternateCatalogueDetails.cpp:
     complete
     .text start:0x021556dc end:0x0215571c
 
-src/Graphics/ov004/Graphics_ConfigureLanguageSpecificRecords.cpp:
+src/Menu/SharedServices/Graphics_ConfigureLanguageSpecificRecords.cpp:
     complete
     .text start:0x02165c04 end:0x02165d74
 
-src/GameState/ov004/GameState_SetStateFromPartyIndexSum.cpp:
+src/Menu/SharedServices/GameState_SetStateFromPartyIndexSum.cpp:
     complete
     .text start:0x02168074 end:0x021680b8
 
-src/GameState/ov004/GameState_SetValueFromPartyIndexedSum.cpp:
+src/Menu/SharedServices/GameState_SetValueFromPartyIndexedSum.cpp:
     complete
     .text start:0x02167e28 end:0x02167e6c
 
-src/Filesystem/ov004/Filesystem_DestroyEmbeddedLoaderAndAllocator.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_DestroyResources.cpp:
     complete
     .text start:0x021678bc end:0x021678d8
 
-src/Unclassified/ov004/func_ov004_0215de80.cpp:
+src/Menu/SharedServices/Menu_RequestTemporaryMusicSequence.cpp:
     complete
     .text start:0x0215de80 end:0x0215de9c
 
-src/Unclassified/ov004/func_ov004_0216dfbc.cpp:
+src/Menu/Titles/TitleMenu_PlayRecoveryFailureMusic.cpp:
     complete
     .text start:0x0216dfbc end:0x0216dfd8
 
-src/GameState/ov004/GameState_SetGlobalObjectShort35AndReturnZero.cpp:
+src/Menu/SharedServices/GameState_SetGlobalObjectShort35AndReturnZero.cpp:
     complete
     .text start:0x0216dfa0 end:0x0216dfbc
 
-src/Memory/ov004/InitializeGlobalTreeEntry.cpp:
+src/Menu/SharedServices/InitializeGlobalTreeEntry.cpp:
     complete
     .text start:0x0216e210 end:0x0216e258
 
-src/GameState/ov004/func_ov004_02165868.cpp:
+src/Menu/TreasureMaps/TreasureMapMenu_ClearTransferMarkerAndRequestUnknownPhase.cpp:
     complete
     .text start:0x02165868 end:0x02165888
 
-src/Unclassified/ov004/func_ov004_0215e47c.cpp:
+src/Menu/SharedServices/Menu_FindCanvasNodeByKey.cpp:
     complete
     .text start:0x0215e47c end:0x0215e49c
 
-src/GameState/ov004/GameState_InvalidateTransferredTreasureMapAndSetWorldByte.cpp:
+src/Menu/SharedServices/GameState_InvalidateTransferredTreasureMapAndSetWorldByte.cpp:
     complete
     .text start:0x02165ad4 end:0x02165af4
 
-src/GameState/ov004/SetGlobalObjectFieldsAndReturnZero.cpp:
+src/Menu/SharedServices/SetGlobalObjectFieldsAndReturnZero.cpp:
     complete
     .text start:0x02165af4 end:0x02165b14
 
-src/Unclassified/ov004/Unclassified_TriggerState87WhenLookup82Succeeds.cpp:
+src/Menu/Status/StatusMenu_RotateCharacterModelBackward.cpp:
     complete
     .text start:0x02162b04 end:0x02162b3c
 
-src/Grotto/ov004/Grotto_AppendTransferredTreasureMap.cpp:
+src/Menu/SharedServices/Grotto_AppendTransferredTreasureMap.cpp:
     complete
     .text start:0x02164f48 end:0x021650e4
 
-src/Graphics/ov004/Graphics_RevealSelectedListEntries.cpp:
+src/Menu/SharedServices/Graphics_RevealSelectedListEntries.cpp:
     complete
     .text start:0x0216e8f0 end:0x0216e984
 
-src/Unclassified/ov004/Object_ResetSharedValuesAndSetFlag.cpp:
+src/Menu/Status/StatusMenu_ResetPreviewTracking.cpp:
     complete
     .text start:0x02163284 end:0x021632bc
 
-src/GameState/ov004/GameState_ResetSelectedObjectVectorAndSetField3B0.cpp:
+src/Menu/Status/StatusMenu_RestorePreviewCamera.cpp:
     complete
     .text start:0x021630a4 end:0x0216312c
 
-src/Graphics/ov004/Graphics_ApplyConditionalObjectTransition.cpp:
+src/Menu/SharedServices/Graphics_ApplyConditionalObjectTransition.cpp:
     complete
     .text start:0x02162acc end:0x02162b04
 
-src/Resource/ov004/func_ov004_0216342c.cpp:
+src/Menu/SharedServices/Resource_ClearBufferAndCopyInstanceByte42E.cpp:
     complete
     .text start:0x0216342c end:0x02163478
 
-src/Graphics/ov004/Graphics_CenterResolvedTextEntry.cpp:
+src/Menu/SharedServices/Graphics_CenterResolvedTextEntry.cpp:
     complete
     .text start:0x0215e574 end:0x0215e5fc
 
-src/Filesystem/ov004/Filesystem_QueuePositionRecord.cpp:
+src/Menu/SharedServices/Filesystem_QueuePositionRecord.cpp:
     complete
     .text start:0x02165ef4 end:0x02165f2c
 
-src/World/ov004/Ov004_FindTypeOneAndWriteHalfword.cpp:
+src/Menu/SharedServices/Ov004_FindTypeOneAndWriteHalfword.cpp:
     complete
     .text start:0x02165ea4 end:0x02165ef4
 
-src/Graphics/ov004/Graphics_UpdateTypeSevenEntryPageCount.cpp:
+src/Menu/SharedServices/Menu_ResetCollectionPagingFromSavedCount.cpp:
     complete
     .text start:0x02156760 end:0x021567f8
 
-src/GameState/ov004/SumSixIndexedEntryByteValues.cpp:
+src/Menu/SharedServices/SumSixIndexedEntryByteValues.cpp:
     complete
     .text start:0x02153860 end:0x021538b4
 
-src/Graphics/ov004/Graphics_InitializeType15RecordResources.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_Initialize.cpp:
     complete
     .text start:0x02167820 end:0x021678bc
 
-src/Resource/ov004/Resource_ConfigureCoordinateScaleRecord.cpp:
+src/Menu/SharedServices/Resource_ConfigureCoordinateScaleRecord.cpp:
     complete
     .text start:0x0216aed0 end:0x0216af24
 
-src/System/ov004/System_SelectStateFromTwoStatusBytes.cpp:
+src/Menu/SharedServices/System_SelectStateFromTwoStatusBytes.cpp:
     complete
     .text start:0x0216f788 end:0x0216f824
 
-src/GameState/ov004/GameState_ReadEntrySevenByteCount.cpp:
+src/Menu/SharedServices/GameState_ReadEntrySevenByteCount.cpp:
     complete
     .text start:0x021538f0 end:0x02153944
 
-src/Graphics/ov004/Object_UpdateAvailabilityOfSelectedWidgets.cpp:
+src/Menu/SharedServices/Object_UpdateAvailabilityOfSelectedWidgets.cpp:
     complete
     .text start:0x02154c78 end:0x02154da8
 
-src/System/ov004/Object_InitializeTransformStateAndVectors.cpp:
+src/Menu/SharedServices/Object_InitializeTransformStateAndVectors.cpp:
     complete
     .text start:0x021633e4 end:0x02163408
 
-src/System/ov004/InitializeObjectVectorsStateAndTransform.cpp:
+src/Menu/SharedServices/InitializeObjectVectorsStateAndTransform.cpp:
     complete
     .text start:0x02163408 end:0x0216342c
 
-src/Grotto/ov004/Grotto_ResetInitialFlagsAndTreasureMapRecords.cpp:
+src/Menu/SharedServices/Grotto_ResetInitialFlagsAndTreasureMapRecords.cpp:
     complete
     .text start:0x02165b60 end:0x02165bb8
 
-src/GameState/ov004/Ov004_InitializeRecordFields.cpp:
+src/Menu/SharedServices/Menu_ResetItemListingSelection.cpp:
     complete
     .text start:0x0215a2f8 end:0x0215a31c
 
-src/Util/ov004/UpdateRecordPageCountFromGlobalEntries.cpp:
+src/Menu/SharedServices/UpdateRecordPageCountFromGlobalEntries.cpp:
     complete
     .text start:0x02163530 end:0x021635d0
 
-src/GameState/ov004/GameState_UpdateIndexedNodeIfTypeSeven.cpp:
+src/Menu/SharedServices/GameState_UpdateIndexedNodeIfTypeSeven.cpp:
     complete
     .text start:0x0216b1c4 end:0x0216b20c
 
-src/Resource/ov004/Resource_PrepareFlagDependentScratchBuffer.cpp:
+src/Menu/SharedServices/Resource_PrepareFlagDependentScratchBuffer.cpp:
     complete
     .text start:0x0216aaec end:0x0216acd0
 
-src/Unclassified/ov004/Object_ClearTwoEntryArrayValuesAndCounts.cpp:
+src/Menu/Quests/QuestMenu_ClearEntryLinksAndActiveList.cpp:
     complete
     .text start:0x021660f4 end:0x02166198
 
-src/Graphics/ov004/DisableCaptureControlWithMasks.cpp:
+src/Menu/SharedServices/DisableCaptureControlWithMasks.cpp:
     complete
     .text start:0x0216d7f8 end:0x0216d820
 
-src/Grotto/ov004/Grotto_RefreshStateAndClearResourceFlag.cpp:
+src/Menu/SharedServices/Grotto_RefreshStateAndClearResourceFlag.cpp:
     complete
     .text start:0x0216acf8 end:0x0216ad20
 
-src/Unclassified/ov004/Util_GetResultIfField04EqualsSix.cpp:
+src/Menu/SharedServices/Menu_FindPageIndicatorByKey.cpp:
     complete
     .text start:0x0215e4c0 end:0x0215e4e8
 
-src/Graphics/ov004/Graphics_UpdateLanguageSpecificRecordRectangles.cpp:
+src/Menu/SharedServices/Graphics_UpdateLanguageSpecificRecordRectangles.cpp:
     complete
     .text start:0x0216a810 end:0x0216aa10
 
-src/GameState/ov004/GameState_ApplyPartyKeySideEffectsAndIncrementCount.cpp:
+src/Menu/SharedServices/GameState_ApplyPartyKeySideEffectsAndIncrementCount.cpp:
     complete
     .text start:0x02167a0c end:0x02167a6c
 
-src/Resource/ov004/Resource_LoadScriptAndBuildEnabledKeyList.cpp:
+src/Menu/SharedServices/Resource_LoadScriptAndBuildEnabledKeyList.cpp:
     complete
     .text start:0x021567f8 end:0x02156a00
 
-src/Grotto/ov004/Grotto_ProcessAvailableMetadataTransfer.cpp:
+src/Menu/SharedServices/Grotto_ProcessAvailableMetadataTransfer.cpp:
     complete
     .text start:0x021658b0 end:0x02165910
 
-src/Resource/ov004/Resource_AllocateThreeZeroedBuffersFromSelectedNode.cpp:
+src/Menu/SharedServices/Resource_AllocateThreeZeroedBuffersFromSelectedNode.cpp:
     complete
     .text start:0x02163304 end:0x021633ac
 
-src/System/ov004/System_RebuildFlagFilteredRecordLists.cpp:
+src/Menu/SharedServices/System_RebuildFlagFilteredRecordLists.cpp:
     complete
     .text start:0x02166198 end:0x02166608
 
-src/Resource/ov004/Resource_AllocateConfiguredNodeAndAppend.cpp:
+src/Menu/SharedServices/Resource_AllocateConfiguredNodeAndAppend.cpp:
     complete
     .text start:0x0216b120 end:0x0216b1c4
 
-src/Unclassified/ov004/Unclassified_SetStateValue65IfGlobalField998Zero.cpp:
+src/Menu/TreasureMaps/TreasureMapMenu_ReturnToSelectionWhenTextIdle.cpp:
     complete
     .text start:0x021652bc end:0x021652e8
 
-src/GameState/ov004/ApplyFourIndexedParameters.cpp:
+src/Menu/SharedServices/ApplyFourIndexedParameters.cpp:
     complete
     .text start:0x02157874 end:0x021578a8
 
-src/GameState/ov004/GameState_ApplyModes2And8ThenValue68.cpp:
+src/Menu/SharedServices/GameState_ApplyModes2And8ThenValue68.cpp:
     complete
     .text start:0x0215cbec end:0x0215cc14
 
-src/GameState/ov004/GameState_CompactEightSelectedSlotGroups.cpp:
+src/Menu/SharedServices/GameState_CompactEightSelectedSlotGroups.cpp:
     complete
     .text start:0x0215b694 end:0x0215b710
 
-src/Unclassified/ov004/Unclassified_SetLookupKey2Flag8AndStateValue396.cpp:
+src/Menu/SharedServices/Menu_HideMarketRootAndResumeListingSelection.cpp:
     complete
     .text start:0x0215cc14 end:0x0215cc40
 
-src/Unclassified/ov004/AllocateAndConfigureTemplateBlob.cpp:
+src/Menu/Titles/TitleMenu_AllocateAndInstallScriptCallbacks.cpp:
     complete
     .text start:0x0216e9cc end:0x0216ea38
 
-src/Unclassified/ov004/OV004_AllocateCopyAndDispatch.cpp:
+src/Menu/Quests/QuestMenu_InstallCallbackTable.cpp:
     complete
     .text start:0x021677b4 end:0x02167820
 
-src/Grotto/ov004/Ov004_ProcessTypeTenEmbeddedObject.cpp:
+src/Menu/SharedServices/Ov004_ProcessTypeTenEmbeddedObject.cpp:
     complete
     .text start:0x0216e828 end:0x0216e894
 
-src/Unclassified/ov004/BuildSevenDigitValueAndAdvanceState.cpp:
+src/Menu/SharedServices/Menu_CommitListingPriceDigits.cpp:
     complete
     .text start:0x0215adf8 end:0x0215aea8
 
-src/Resource/ov004/Resource_InvokeType15CallbacksForTwoKeys.cpp:
+src/Menu/SharedServices/Resource_InvokeType15CallbacksForTwoKeys.cpp:
     complete
     .text start:0x0215af80 end:0x0215aff0
 
-src/GameState/ov004/GameState_SetState67AndFlags.cpp:
+src/Menu/SharedServices/GameState_SetState67AndFlags.cpp:
     complete
     .text start:0x0216f824 end:0x0216f854
 
-src/GameState/ov004/GameState_InitializeGlobalRecordAndSet39E.cpp:
+src/Menu/SharedServices/Menu_CancelItemListingSelection.cpp:
     complete
     .text start:0x0215b330 end:0x0215b360
 
-src/Graphics/ov004/Graphics_CopySelectedMappedNameToFirstSlot.cpp:
+src/Menu/SharedServices/Graphics_CopySelectedMappedNameToFirstSlot.cpp:
     complete
     .text start:0x02169a28 end:0x02169adc
 
-src/Unclassified/ov004/Ui_ConfigurePairedEntriesAndOptionalAction.cpp:
+src/Menu/Status/ProfileMenu_RestoreSavedListActions.cpp:
     complete
     .text start:0x02169adc end:0x02169b4c
 
-src/System/ov004/InitializeAllowedRecordFields.cpp:
+src/Menu/SharedServices/Menu_UpdateSharedRecordSizeControls.cpp:
     complete
     .text start:0x0215781c end:0x02157874
 
-src/Unclassified/ov004/OV004_ApplyLanguageBrightnessAndState.cpp:
+src/Menu/Titles/TitleMenu_StartExitFadeAndStopMusic.cpp:
     complete
     .text start:0x0216da58 end:0x0216dad0
 
-src/Unclassified/ov004/RemapAndApplyValueThroughObjectVirtualMethods.cpp:
+src/Menu/Titles/TitleMenu_BindMappedActivationCallbacks.cpp:
     complete
     .text start:0x0216b20c end:0x0216b2c8
 
-src/GameState/ov004/GameState_TestRecordWithMode65.cpp:
+src/Menu/SharedServices/GameState_TestRecordWithMode65.cpp:
     complete
     .text start:0x021571d8 end:0x021571f4
 
-src/Graphics/ov004/Graphics_DisplayClampedPercentageAndRawValue.cpp:
+src/Menu/SharedServices/Graphics_DisplayClampedPercentageAndRawValue.cpp:
     complete
     .text start:0x0215571c end:0x021557ac
 
-src/Unclassified/ov004/Object_ResetEmbeddedSelectionAndUpdateState.cpp:
+src/Menu/TreasureMaps/GrottoMenu_ResetTextAndCommitMapCollection.cpp:
     complete
     .text start:0x02165be4 end:0x02165c04
 
-src/Unclassified/ov004/Unclassified_InitializeObjectAndSetState2.cpp:
+src/Town/MiniMedals/MiniMedalMenu_ResetActorForRewardConversation.cpp:
     complete
     .text start:0x021683cc end:0x021683ec
 
-src/Grotto/ov004/Ov004_AdvanceBoundedObjectCounter.cpp:
+src/Menu/SharedServices/Ov004_AdvanceBoundedObjectCounter.cpp:
     complete
     .text start:0x0215cdac end:0x0215cdf0
 
-src/Unclassified/ov004/OV004_AdvanceObjectProgressAndRefresh.cpp:
+src/Menu/SharedServices/Menu_ShowNextInventoryItemPage.cpp:
     complete
     .text start:0x0215ce38 end:0x0215ce7c
 
-src/Unclassified/ov004/Unclassified_SetGlobalObjectByte3EAndCall.cpp:
+src/Menu/SharedServices/Menu_SelectListingPriceTensDigit.cpp:
     complete
     .text start:0x0215ccd4 end:0x0215ccf8
 
-src/Unclassified/ov004/Unclassified_SetGlobalObjectByte3EToSixAndCall.cpp:
+src/Menu/SharedServices/Menu_SelectMillionsDigit.cpp:
     complete
     .text start:0x0215cd88 end:0x0215cdac
 
-src/Unclassified/ov004/System_SetGlobalObjectModeThreeAndUpdate.cpp:
+src/Menu/SharedServices/Menu_SelectThousandsDigit.cpp:
     complete
     .text start:0x0215cd1c end:0x0215cd40
 
-src/Graphics/ov004/SetGlobalModeFiveAndRunObjectRoutine.cpp:
+src/Menu/SharedServices/SetGlobalModeFiveAndRunObjectRoutine.cpp:
     complete
     .text start:0x0215cd64 end:0x0215cd88
 
-src/Unclassified/ov004/OV004_DecrementObjectProgressAndRefresh.cpp:
+src/Menu/SharedServices/Menu_ShowPreviousInventoryItemPage.cpp:
     complete
     .text start:0x0215ce7c end:0x0215cec4
 
-src/Unclassified/ov004/Unclassified_InitializeObjectAndSetState150.cpp:
+src/Town/MiniMedals/MiniMedalMenu_PrepareSelectedRewardText.cpp:
     complete
     .text start:0x02168244 end:0x02168268
 
-src/Resource/ov004/Resource_MarkFoundNodeAndApplyContext.cpp:
+src/Menu/SharedServices/Resource_MarkFoundNodeAndApplyContext.cpp:
     complete
     .text start:0x0216e984 end:0x0216e9cc
 
-src/Unclassified/ov004/Object_DecrementStoredIndexWithFallback.cpp:
+src/Menu/SharedServices/Menu_ShowPreviousPurchaseOfferPage.cpp:
     complete
     .text start:0x0215cdf0 end:0x0215ce38
 
-src/Unclassified/ov004/SetObjectModeTwoAndContinue.cpp:
+src/Menu/SharedServices/Menu_SelectHundredsDigit.cpp:
     complete
     .text start:0x0215ccf8 end:0x0215cd1c
 
-src/GameState/ov004/State_InitializeWithZeroAndSetValue150.cpp:
+src/Menu/SharedServices/State_InitializeWithZeroAndSetValue150.cpp:
     complete
     .text start:0x0216848c end:0x021684b0
 
-src/GameState/ov004/InitializeObjectAndSetState141.cpp:
+src/Menu/SharedServices/InitializeObjectAndSetState141.cpp:
     complete
     .text start:0x021684b0 end:0x021684d4
 
-src/Unclassified/ov004/SetGlobalObjectByte3EAndInitialize.cpp:
+src/Menu/SharedServices/Menu_SelectTenThousandsDigit.cpp:
     complete
     .text start:0x0215cd40 end:0x0215cd64
 
-src/Grotto/ov004/Ov004_ClearTypeSevenRecordFields.cpp:
+src/Menu/TreasureMaps/TreasureMapMenu_ResetAuxiliaryGridSelection.cpp:
     complete
     .text start:0x02164df4 end:0x02164e40
 
-src/Resource/ov004/Resource_AllocateAndAppendTypeFifteenRecord.cpp:
+src/Menu/SharedServices/Menu_AllocateAndAppendNumericLabelWidget.cpp:
     complete
     .text start:0x0216b06c end:0x0216b120
 
-src/Graphics/ov004/Graphics_InitializeSavedSummaryDisplay.cpp:
+src/Menu/SharedServices/Graphics_InitializeSavedSummaryDisplay.cpp:
     complete
     .text start:0x02168b44 end:0x02169144
 
-src/Unclassified/ov004/Unclassified_DecrementGlobalObjectByte3EAndCall.cpp:
+src/Menu/SharedServices/Menu_SelectPreviousListingPriceDigit.cpp:
     complete
     .text start:0x0215cc84 end:0x0215ccb0
 
-src/World/ov004/World_ProcessEntriesUntilNegativeThreshold.cpp:
+src/Menu/SharedServices/World_ProcessEntriesUntilNegativeThreshold.cpp:
     complete
     .text start:0x02155b6c end:0x02155bbc
 
-src/Unclassified/ov004/Unclassified_ApplyType130LookupToGlobalContext.cpp:
+src/Menu/Status/StatusMenu_InitializeSelectedCharacterModel.cpp:
     complete
     .text start:0x02162a9c end:0x02162acc
 
-src/GameState/ov004/UpdateObjectTickFieldUnlessFlag10.cpp:
+src/Menu/QuestMessagePanels/QuestMessagePanelRecord_UpdateIndicators.cpp:
     complete
     .text start:0x021678d8 end:0x02167908
 
-src/GameState/ov004/GameState_ComputeNextThresholdAndPartyContribution.cpp:
+src/Menu/SharedServices/GameState_ComputeNextThresholdAndPartyContribution.cpp:
     complete
     .text start:0x0216794c end:0x02167a0c
 
-src/GameState/ov004/GameState_DispatchThresholdAvailabilityState.cpp:
+src/Menu/SharedServices/GameState_DispatchThresholdAvailabilityState.cpp:
     complete
     .text start:0x02167d90 end:0x02167e28
 
-src/Unclassified/ov004/Unclassified_TransformAvailableGlobalPointer.cpp:
+src/Menu/SharedServices/Menu_GetInventoryDetailState.cpp:
     complete
     .text start:0x02157088 end:0x021570a4
 
-src/Unclassified/ov004/Grotto_ConfigureHardwareAndRefreshContext.cpp:
+src/Menu/SharedServices/Menu_RestoreDisplayAndRefreshWorldContext.cpp:
     complete
     .text start:0x0216aa10 end:0x0216aa70
 
-src/World/ov004/World_CopyScriptEntryNameToOwner.cpp:
+src/Menu/SharedServices/World_CopyScriptEntryNameToOwner.cpp:
     complete
     .text start:0x02167310 end:0x02167370
 
-src/Unclassified/ov004/Unclassified_CheckType37AndProcessResolvedHandle.cpp:
+src/Menu/SharedServices/Menu_RefreshCatalogueSubtypeCompletion.cpp:
     complete
     .text start:0x02154718 end:0x02154748
 
-src/Resource/ov004/Object_InitializeAndProcessResolvedType37.cpp:
+src/Menu/SharedServices/Object_InitializeAndProcessResolvedType37.cpp:
     complete
     .text start:0x021547fc end:0x0215482c
 
-src/Unclassified/ov004/InvokeActionForMatchingEntryPair.cpp:
+src/Menu/SharedServices/Menu_RefreshAlternateCataloguePageWhenWidgetsExist.cpp:
     complete
     .text start:0x02155544 end:0x021555b0
 
-src/Resource/ov004/Script_InitializeLookupBuffers.cpp:
+src/Menu/SharedServices/Script_InitializeLookupBuffers.cpp:
     complete
     .text start:0x02167d04 end:0x02167d70
 
-src/Unclassified/ov004/OV004_ApplyPlacementFromAvailableActors.cpp:
+src/Town/MiniMedals/MiniMedalMenu_AwardItemThroughPlacementState.cpp:
     complete
     .text start:0x02167a6c end:0x02167adc
 
-src/Unclassified/ov004/Unclassified_SetTwoFlagsOnWordFieldPointer.cpp:
+src/Menu/Titles/TitleMenu_EnableMessageWaitControls.cpp:
     complete
     .text start:0x0216e894 end:0x0216e8b4
 
-src/Unclassified/ov004/Resource_ClampModeAndDispatchAssociatedEntries.cpp:
+src/Menu/SharedServices/Menu_ResetListingQuantityToOne.cpp:
     complete
     .text start:0x0215c684 end:0x0215c6fc
 
-src/Resource/ov004/Resource_AdvanceContextByteAndDispatchEntries.cpp:
+src/Menu/SharedServices/Resource_AdvanceContextByteAndDispatchEntries.cpp:
     complete
     .text start:0x0215c6fc end:0x0215c774
 
-src/Unclassified/ov004/GameState_DecrementSelectionAndDispatchHandlers.cpp:
+src/Menu/SharedServices/Menu_DecreaseListingQuantity.cpp:
     complete
     .text start:0x0215b0a8 end:0x0215b120
 
-src/Unclassified/ov004/Filesystem_UpdateOwnerTaskFromStackByte.cpp:
+src/Menu/Quests/QuestMenu_RefreshRowsAndQueueSelectedPreview.cpp:
     complete
     .text start:0x021675fc end:0x02167648
 
-src/Unclassified/ov004/System_ClearSharedObjectByteAndUpdate.cpp:
+src/Menu/SharedServices/Menu_SelectListingPriceUnitsDigit.cpp:
     complete
     .text start:0x0215ccb0 end:0x0215ccd4
 
-src/World/ov004/ProcessAllowedResolvedHandles.cpp:
+src/Menu/SharedServices/ProcessAllowedResolvedHandles.cpp:
     complete
     .text start:0x02154984 end:0x021549e4
 
-src/Unclassified/ov004/GameState_ConfigureFieldFromCalculatedStatus.cpp:
+src/Town/MiniMedals/MiniMedalMenu_ExchangeAndChooseRewardOrContinue.cpp:
     complete
     .text start:0x02167eb0 end:0x02167f1c
 
-src/Resource/ov004/Resource_DecrementActiveEntryAndInvokeHandler.cpp:
+src/Menu/SharedServices/Resource_DecrementActiveEntryAndInvokeHandler.cpp:
     complete
     .text start:0x021599b4 end:0x02159a2c
 
-src/Unclassified/ov004/FindEntryWithHalfwordTen.cpp:
+src/Menu/SharedServices/Menu_FindInventoryDetailWidgetByKey.cpp:
     complete
     .text start:0x02157054 end:0x02157088
 
-src/World/ov004/World_FindType8EntryByStateValue.cpp:
+src/Menu/SharedServices/Menu_FindInventoryTextEntryByKey.cpp:
     complete
     .text start:0x02156f04 end:0x02156f38
+
+src/Menu/SharedServices/Filesystem_BuildOwnerTaskGridAndReturnZero.cpp:
+    complete
+    .text start:0x02167424 end:0x02167434
+
+src/Menu/SharedServices/Menu_RefreshPurchaseRecipientDetails.cpp:
+    complete
+    .text start:0x02159fb0 end:0x02159fcc
+
+src/Menu/SharedServices/Menu_QueueBroadcastMemberProfileRequest.cpp:
+    complete
+    .text start:0x0216a7e0 end:0x0216a7fc
+
+src/Town/MiniMedals/MiniMedalMenu_ResetActorForPrimaryConversation.cpp:
+    complete
+    .text start:0x02167d70 end:0x02167d90
+
+src/Menu/SharedServices/Menu_IncreaseListingQuantity.cpp:
+    complete
+    .text start:0x0215b02c end:0x0215b0a8
+
+src/Menu/Quests/QuestMenu_RefreshCategoryAndSortIndicators.cpp:
+    complete
+    .text start:0x02166608 end:0x02166684
+
+src/Menu/Quests/QuestMenu_ToggleStatusSortingAndPreserveSelection.cpp:
+    complete
+    .text start:0x02166fe4 end:0x02167068
+
+src/Menu/SharedServices/Menu_ReturnPendingListingItemsToInventory.cpp:
+    complete
+    .text start:0x0215b740 end:0x0215b7c8
+
+src/Menu/SharedServices/Menu_StoreCategoryCompletionCounts.cpp:
+    complete
+    .text start:0x021545f0 end:0x02154618
+
+src/Menu/SharedServices/SetState50AndAppendListEntry2.cpp:
+    complete
+    .text start:0x0215c064 end:0x0215c08c
+
+src/Menu/TreasureMaps/TreasureMapMenu_SetEntryDecorationVariant.cpp:
+    complete
+    .text start:0x021634b8 end:0x021634dc
+
+src/Menu/TreasureMaps/TreasureMapMenu_ConfigureSecondaryMessageAdvance.cpp:
+    complete
+    .text start:0x02165b14 end:0x02165b38
+
+src/Town/MiniMedals/MiniMedalMenu_PrepareExchangeContinuationText.cpp:
+    complete
+    .text start:0x02167fb0 end:0x02167fd4
+
+src/Menu/Status/ProfileMenu_SelectSecondaryPage.cpp:
+    complete
+    .text start:0x021694e8 end:0x0216950c
+
+src/Menu/Titles/TitleMenu_ReturnToOptionsWithoutContinue.cpp:
+    complete
+    .text start:0x0216df7c end:0x0216dfa0
+
+src/Menu/SharedServices/Menu_HandleNetworkPurchaseResponse.cpp:
+    complete
+    .text start:0x0215d670 end:0x0215d6f8
+
+src/Menu/SharedServices/ConfigureResource30AndSetFlag1A0.cpp:
+    complete
+    .text start:0x0216986c end:0x021698f4
+
+src/Menu/SharedServices/GameState_WriteF70AndSetObjectValue999.cpp:
+    complete
+    .text start:0x0216e1e4 end:0x0216e210
+
+src/Town/MiniMedals/MiniMedalMenu_ExchangeForSelectedReward.cpp:
+    complete
+    .text start:0x02168400 end:0x0216848c
+
+src/Menu/SharedServices/Menu_ShowSelectedCompletedCatalogueRecord.cpp:
+    complete
+    .text start:0x02153d8c end:0x02153e20
+
+src/Menu/SharedServices/Menu_ShowSelectedCompletedAlternateCatalogueRecord.cpp:
+    complete
+    .text start:0x021552b8 end:0x0215534c
+
+src/Town/MiniMedals/MiniMedalMenu_ExchangeAndChooseRewardOrExhausted.cpp:
+    complete
+    .text start:0x02167f1c end:0x02167fb0
+
+src/Menu/SharedServices/ZoneRenderPart_InitializeEmbeddedEntriesAndContainer.cpp:
+    complete
+    .text start:0x0215c448 end:0x0215c474
+
+src/Town/MiniMedals/MiniMedalMenu_ExchangeMedalsThroughNextReward.cpp:
+    complete
+    .text start:0x02167adc end:0x02167b78
+
+src/Menu/SharedServices/Resource_CancelBackgroundTaskForEntry7.cpp:
+    complete
+    .text start:0x02167648 end:0x02167678
+
+src/Menu/SharedServices/Menu_FindTextCanvasWidgetByKey.cpp:
+    complete
+    .text start:0x0216ae9c end:0x0216aed0
+
+src/Menu/SharedServices/Menu_CopyPositionUnlessSourceDescriptorIsActive.cpp:
+    complete
+    .text start:0x021536e0 end:0x02153778
+
+src/Menu/Quests/QuestMenu_SelectCategoryAndRebuildGrid.cpp:
+    complete
+    .text start:0x02166b40 end:0x02166bd8
+
+src/Menu/SharedServices/Menu_SetTextEntryMessageId.cpp:
+    complete
+    .text start:0x0215e49c end:0x0215e4c0
+
+src/Menu/TreasureMaps/TreasureMapMenu_ReturnToSelectionAndSuppressDetailRefresh.cpp:
+    complete
+    .text start:0x0216583c end:0x02165868
+
+src/Town/MiniMedals/MiniMedalMenu_QueueCompletionScriptAndSetProgressFlag.cpp:
+    complete
+    .text start:0x02167fd4 end:0x02168024
+
+src/Menu/Status/ProfileMenu_ClearSavedProfileRecord.cpp:
+    complete
+    .text start:0x021695fc end:0x02169658
+
+src/Menu/SharedServices/ClearWorldEntryFlagsAndRequestBMDJState.cpp:
+    complete
+    .text start:0x02162d78 end:0x02162dd8
+
+src/Menu/SharedServices/Menu_GetCategoryCompletionCounts.cpp:
+    complete
+    .text start:0x021546c0 end:0x02154718
+
+src/Menu/SharedServices/Menu_ResetPurchaseQuantityToOne.cpp:
+    complete
+    .text start:0x0215c494 end:0x0215c50c
+
+src/Menu/SharedServices/Resource_CancelTaskForSelectedEntry.cpp:
+    complete
+    .text start:0x02166fa0 end:0x02166fe4
+
+src/Menu/SharedServices/Resource_ReadIndexedNodeAndFlag.cpp:
+    complete
+    .text start:0x021666bc end:0x02166730
+
+src/Menu/SharedServices/Menu_ShowSelectedListingInventoryCategory.cpp:
+    complete
+    .text start:0x0215b710 end:0x0215b740
+
+src/Menu/SharedServices/Resource_EncodeTypeAndKeyCode.cpp:
+    complete
+    .text start:0x0216f990 end:0x0216fa08
+
+src/Menu/SharedServices/Menu_SelectNextListingPriceDigit.cpp:
+    complete
+    .text start:0x0215cc58 end:0x0215cc84
+
+src/Town/MiniMedals/MiniMedalMenu_GetPlacementState.cpp:
+    complete
+    .text start:0x02167908 end:0x0216794c
+
+src/Menu/SharedServices/Menu_DisplayCatalogueSubtypeCompletion.cpp:
+    complete
+    .text start:0x02154618 end:0x021546c0
+
+src/Menu/SharedServices/Menu_RefreshItemMarketPartyLabels.cpp:
+    complete
+    .text start:0x02159470 end:0x0215951c
+
+src/Menu/Status/StatusMenu_RefreshCharacterAndRestrictMemberSwitching.cpp:
+    complete
+    .text start:0x02162b84 end:0x02162c30
+
+src/Menu/Titles/TitleMenu_PrepareContinueAndPreserveAudioVolumes.cpp:
+    complete
+    .text start:0x0216d504 end:0x0216d5b0
+
+src/Menu/SharedServices/Grotto_SetMonsterMessageOverlayRestoreRequired.cpp:
+    complete
+    .text start:0x0216fa74 end:0x0216fa7c
+
+src/Menu/SharedServices/Menu_WaitForOfferInfoSubmissionAndResume.cpp:
+    complete
+    .text start:0x0215c268 end:0x0215c30c
+
+src/Menu/SharedServices/Menu_DisplayCatalogueKindCompletion.cpp:
+    complete
+    .text start:0x02154748 end:0x021547fc
+
+src/Menu/SharedServices/Menu_PrepareListingPriceMessage.cpp:
+    complete
+    .text start:0x0215b120 end:0x0215b1d4
+
+src/Menu/SharedServices/Resource_DispatchLinkedRecordModeMessage.cpp:
+    complete
+    .text start:0x02167370 end:0x02167424
+
+src/Menu/SharedServices/Resource_ComparePartySumWithSelectedThreshold.cpp:
+    complete
+    .text start:0x02168318 end:0x021683cc
+
+src/Menu/SharedServices/Menu_GetSelectedInventoryPartyMember.cpp:
+    complete
+    .text start:0x02157128 end:0x021571d8
+
+src/Menu/SharedServices/Menu_DisableEmptyCatalogueKinds.cpp:
+    complete
+    .text start:0x02154e64 end:0x02154f1c
+
+src/Menu/SharedServices/Menu_AllocateAndAppendTextLabelWidget.cpp:
+    complete
+    .text start:0x0216afb0 end:0x0216b06c
+
+src/Menu/SharedServices/Menu_DisableEmptyCatalogueSubtypes.cpp:
+    complete
+    .text start:0x02154da8 end:0x02154e64
+
+src/Menu/SharedServices/Resource_InitializeIndexedTypeSevenDisplay.cpp:
+    complete
+    .text start:0x0216c750 end:0x0216c810
+
+src/Menu/TreasureMaps/TreasureMapMenu_SynchronizePagedListSelection.cpp:
+    complete
+    .text start:0x021653e4 end:0x021654a8
+
+src/Menu/TreasureMaps/TreasureMapMenu_CopyPagedListSelectionAndRefresh.cpp:
+    complete
+    .text start:0x021654a8 end:0x0216556c
+
+src/Menu/SharedServices/Menu_PopulateListingPriceDigits.cpp:
+    complete
+    .text start:0x0215ad34 end:0x0215adf8
+
+src/Menu/TreasureMaps/TreasureMapMenu_RefreshSelectedMapDetailsWhenIdle.cpp:
+    complete
+    .text start:0x0216556c end:0x02165630
+
+src/Menu/SharedServices/Menu_EnterSelectedCollectionCategory.cpp:
+    complete
+    .text start:0x021560e8 end:0x021561b0
+
+src/Menu/TreasureMaps/TreasureMapMenu_SynchronizePageSelection.cpp:
+    complete
+    .text start:0x02164670 end:0x02164738
+
+src/Menu/Status/ProfileMenu_RestoreScenePresentation.cpp:
+    complete
+    .text start:0x02169144 end:0x0216920c
+
+src/Menu/SharedServices/Resource_CombineTypeSevenFieldWithRowIndex.cpp:
+    complete
+    .text start:0x02166684 end:0x021666bc
+
+src/Menu/SharedServices/Grotto_DispatchAvailableTransferWhenDisplayIsIdle.cpp:
+    complete
+    .text start:0x021650f8 end:0x021651c8
+
+src/Menu/SharedServices/Resource_MapThousandRangeIdToLocalCode.cpp:
+    complete
+    .text start:0x0216f8c0 end:0x0216f990
+
+src/Menu/SharedServices/Graphics_ClearBackgroundMapsAndLoadArchiveContext.cpp:
+    complete
+    .text start:0x0215bf94 end:0x0215c064
+
+src/Menu/SharedServices/Filesystem_FindTypeFourEmbeddedValue.cpp:
+    complete
+    .text start:0x02157018 end:0x02157054
+
+src/Menu/SharedServices/Menu_ChargePurchaseAndReduceOfferStock.cpp:
+    complete
+    .text start:0x0215c0c0 end:0x0215c194
+
+src/Menu/Titles/TitleMenu_DisableQuickSaveChoicesAndEnterReload.cpp:
+    complete
+    .text start:0x0216d720 end:0x0216d7f8
+
+src/Menu/SharedServices/Menu_OpenListingItemsWhenInventoryNonempty.cpp:
+    complete
+    .text start:0x0215aa10 end:0x0215aaf0
+
+src/Menu/SharedServices/Menu_RefreshPurchaseQuantityAndTotal.cpp:
+    complete
+    .text start:0x02159384 end:0x02159468
+
+src/Menu/Titles/TitleMenu_DeleteAdventureLogAndShowResult.cpp:
+    complete
+    .text start:0x0216d5b0 end:0x0216d6a0
+
+src/Menu/TreasureMaps/TreasureMapMenu_UpdateDecorationModeIndicators.cpp:
+    complete
+    .text start:0x021651c8 end:0x021652bc
+
+src/Menu/SharedServices/Menu_PositionDecimalDigitSelectionMarkers.cpp:
+    complete
+    .text start:0x021578a8 end:0x0215799c
+
+src/Menu/SharedServices/ApplyModeSelectedBackgroundRecord.cpp:
+    complete
+    .text start:0x0215be9c end:0x0215bf94
+
+src/Menu/SharedServices/Menu_DisplayCatalogueCompletionRatio.cpp:
+    complete
+    .text start:0x02154250 end:0x0215434c
+
+src/Menu/TreasureMaps/TreasureMapMenu_TogglePanelDecorationsWhenIdle.cpp:
+    complete
+    .text start:0x021652e8 end:0x021653e4
+
+src/Menu/SharedServices/Menu_DisableEmptyAlternateCatalogueCategories.cpp:
+    complete
+    .text start:0x02155ea4 end:0x02155fa0
+
+src/Menu/SharedServices/FieldMenu_TurnTowardActorAndMarkParentTransition.cpp:
+    complete
+    .text start:0x021688d4 end:0x021689d8
+
+src/Menu/SharedServices/Menu_DeliverPendingPurchaseToBag.cpp:
+    complete
+    .text start:0x0215da0c end:0x0215db14
+
+src/Menu/Titles/TitleMenu_PositionCursorAfterTextLabel.cpp:
+    complete
+    .text start:0x0216b390 end:0x0216b498
+
+src/Menu/Status/StatusMenu_SelectNextSubpage.cpp:
+    complete
+    .text start:0x021612ec end:0x021613f8
+
+src/Menu/SharedServices/Menu_ConfigureLanguageSpecificEntryCanvas.cpp:
+    complete
+    .text start:0x0216ad20 end:0x0216ae2c
+
+src/Menu/SharedServices/Menu_CountCompletedCatalogueMatches.cpp:
+    complete
+    .text start:0x02153b6c end:0x02153c74
+
+src/Menu/Titles/TitleMenu_AllocateVariantUpperBackground.cpp:
+    complete
+    .text start:0x0216e0c0 end:0x0216e1cc
+
+src/Menu/SharedServices/Menu_GetSelectedCatalogueRecord.cpp:
+    complete
+    .text start:0x02153c74 end:0x02153d84
+
+src/Menu/SharedServices/Menu_LocalizeCatalogueCategoryCanvas.cpp:
+    complete
+    .text start:0x02154f1c end:0x0215502c
+
+src/Menu/SharedServices/Menu_GetSelectedAlternateCatalogueRecord.cpp:
+    complete
+    .text start:0x021551a8 end:0x021552b8
+
+src/Menu/SharedServices/Menu_LocalizeAlternateCatalogueCategoryCanvas.cpp:
+    complete
+    .text start:0x02155fa0 end:0x021560b0
+
+src/Menu/SharedServices/Menu_LocalizeCollectionSortingCanvas.cpp:
+    complete
+    .text start:0x02156cb8 end:0x02156dc8
+
+src/Menu/Quests/QuestMenu_UpdateLocalizedHeaderCanvas.cpp:
+    complete
+    .text start:0x021676a4 end:0x021677b4
+
+src/Menu/SharedServices/Menu_RestoreWorldAfterItemMarket.cpp:
+    complete
+    .text start:0x02158298 end:0x021583a8
+
+src/Menu/Titles/TitleMenu_BuildQuickSaveNoticeChoice.cpp:
+    complete
+    .text start:0x0216d820 end:0x0216d908
+
+src/Menu/SharedServices/Menu_DeliverPendingPurchaseByItemKind.cpp:
+    complete
+    .text start:0x0215e148 end:0x0215e25c
+
+src/Menu/Quests/QuestMenu_SelectQuestRowAndRefreshHighlight.cpp:
+    complete
+    .text start:0x02166730 end:0x02166844
+
+src/Menu/SharedServices/Menu_AddPurchaseToGroupedInventoryOrChooseRecipient.cpp:
+    complete
+    .text start:0x02159bcc end:0x02159ce0
+
+src/Menu/SharedServices/Menu_RoutePendingItemOrConnectionStatus.cpp:
+    complete
+    .text start:0x02158a60 end:0x02158b78
+
+src/Menu/SharedServices/GameState_CycleCurrentOptionBackwardAndRefresh.cpp:
+    complete
+    .text start:0x021613f8 end:0x02161514
+
+src/Menu/SharedServices/Menu_ResetAlternateCataloguePagingForCategory.cpp:
+    complete
+    .text start:0x021555b0 end:0x021556dc
+
+src/Menu/SharedServices/Menu_IncreasePurchaseQuantityWithinLimits.cpp:
+    complete
+    .text start:0x02159888 end:0x021599b4
+
+src/Menu/SharedServices/PopulateOwnerThresholdSlotsAndResourceText.cpp:
+    complete
+    .text start:0x02167b78 end:0x02167d04
+
+src/Menu/SharedServices/PopulateSelectedRecordTextPanel.cpp:
+    complete
+    .text start:0x021636b0 end:0x02163944
+
+src/Menu/SharedServices/AllocateAndPopulateCategoryBitCounts.cpp:
+    complete
+    .text start:0x02154350 end:0x021545f0
+
+src/Menu/SharedServices/BuildModeSpecificByteLookupNodes.cpp:
+    complete
+    .text start:0x0216b498 end:0x0216b7bc
+
+src/Menu/SharedServices/CopyIdentifierClassMessage.cpp:
+    complete
+    .text start:0x02157374 end:0x0215781c
+
+src/Menu/SharedServices/PopulateEightSelectedObjectRecordLabels.cpp:
+    complete
+    .text start:0x0215951c end:0x02159650
+
+src/Menu/SharedServices/ResetActiveCanvasAndDispatchPendingNotification.cpp:
+    complete
+    .text start:0x021698f4 end:0x02169a28
+
+src/Menu/SharedServices/ReturnDisallowedSelectedEquipmentToInventory.cpp:
+    complete
+    .text start:0x0215dd3c end:0x0215de80
+
+src/Menu/SharedServices/InitializeD3DisplayLayoutAndIndexedEntries.cpp:
+    complete
+    .text start:0x0216d004 end:0x0216d188
+
+src/Menu/SharedServices/Menu_GetCompletedAlternateCategoryNineCount.cpp:
+    complete
+    .text start:0x02155104 end:0x0215513c
+
+src/Menu/SharedServices/Graphics_AllocateAndRegisterEightWordTemplate.cpp:
+    complete
+    .text start:0x02156dc8 end:0x02156e28
+
+src/Menu/SharedServices/Menu_GetZeroResourcePosition.cpp:
+    complete
+    .text start:0x0215377c end:0x021537a8
+
+src/Menu/SharedServices/ClearThreeWordRecordViaTemporary.cpp:
+    complete
+    .text start:0x0215e300 end:0x0215e32c
+
+src/Menu/SharedServices/AllocateAndInstallTenWordTable.cpp:
+    complete
+    .text start:0x0216f854 end:0x0216f8c0
+
+src/Menu/SharedServices/Grotto_AllocateSevenWordStateAndInstallRefreshCallback.cpp:
+    complete
+    .text start:0x0216ae2c end:0x0216ae9c
+
+src/Menu/SharedServices/Resource_InstallCopiedHundredWordTableAndSelectionCallback.cpp:
+    complete
+    .text start:0x0215e25c end:0x0215e2d0
+
+src/Menu/SharedServices/System_DecrementSelectedDigitAndRefreshRecord.cpp:
+    complete
+    .text start:0x0215af14 end:0x0215af80
+
+src/Menu/SharedServices/Graphics_AdvanceSelectedDecimalDigit.cpp:
+    complete
+    .text start:0x0215aea8 end:0x0215af14
+
+src/Menu/SharedServices/SavePacketAndRouteOverlayState.cpp:
+    complete
+    .text start:0x0216e414 end:0x0216e490
+
+src/Menu/SharedServices/Graphics_AllocateAndRegisterTwentyWordTemplate.cpp:
+    complete
+    .text start:0x0215502c end:0x02155090
+
+src/Menu/SharedServices/Menu_RefreshCataloguePageWhenWidgetsExist.cpp:
+    complete
+    .text start:0x02154038 end:0x021540a4
+
+src/Menu/SharedServices/Menu_GetAlternateCatalogueCategoryFilters.cpp:
+    complete
+    .text start:0x0215513c end:0x021551a8
+
+src/Menu/SharedServices/Menu_ResetCataloguePagingForCategory.cpp:
+    complete
+    .text start:0x021540a4 end:0x02154210
+
+src/Menu/SharedServices/Menu_GetCatalogueCategoryFilters.cpp:
+    complete
+    .text start:0x02153978 end:0x02153b6c
+
+src/Menu/SharedServices/Menu_RebuildAlternateCatalogueFilteredList.cpp:
+    complete
+    .text start:0x02155a3c end:0x02155b6c
+
+src/Menu/TreasureMaps/GrottoMenu_InstallCallbacksAndCleanupHandler.cpp:
+    complete
+    .text start:0x02165df4 end:0x02165e70
+
+src/Menu/SharedServices/FieldMenu_InstallTransitionCallbacks.cpp:
+    complete
+    .text start:0x021689d8 end:0x02168a38
+
+src/Menu/Status/ProfileMenu_RemoveSelectedSavedProfile.cpp:
+    complete
+    .text start:0x0216950c end:0x021695fc

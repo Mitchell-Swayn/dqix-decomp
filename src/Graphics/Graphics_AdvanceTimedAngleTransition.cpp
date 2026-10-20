@@ -2,8 +2,13 @@
 ARM
 extern "C" void* _ZN9GameState11GetInstanceEv();
 extern "C" unsigned _ZNK9GameState21GetEffectiveDeltaTimeEv(void*);
-extern "C" void SetAngleAndCacheTrig(void*,unsigned);
-extern "C" unsigned data_02104300;
+extern "C" void Camera_SetProjectionAngle(void*,unsigned);
+// Original data: arm9/main @ 0x2104300; symbol: data_02104300.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" unsigned GraphicsAdvanceTimedAngleTransition_UnknownRoleZeroInitializedStorage;
 // Original: arm9/main @ 0x0202F0E0; symbol: func_0202f0e0; size: 0xC4.
 extern "C" void Graphics_AdvanceTimedAngleTransition(char *self) {
     unsigned delta;
@@ -20,7 +25,7 @@ extern "C" void Graphics_AdvanceTimedAngleTransition(char *self) {
         float difference = (float)(*(int*)(self + 0x1f0) - current);
         angle = (int)(start + difference * ((float)delta / (float)*(unsigned*)(self + 0x1f4)));
         *(unsigned*)(self + 0x1f4) -= delta;
-        ++data_02104300;
+        ++GraphicsAdvanceTimedAngleTransition_UnknownRoleZeroInitializedStorage;
     }
-    SetAngleAndCacheTrig(self,angle);
+    Camera_SetProjectionAngle(self,angle);
 }

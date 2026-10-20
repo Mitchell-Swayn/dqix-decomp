@@ -16,7 +16,7 @@ void RenderCommand_12(RenderCommandHandler*, int);
 void RenderCommand_13(RenderCommandHandler*, int);
 
 // The dispatcher masks opcodes to five bits; slots 14..31 are null.
-void (*data_020f1e08[32])(RenderCommandHandler*, int) = {
+void (*ExecuteRenderCommands_UnknownRoleProcedureReferenceRecords[32])(RenderCommandHandler*, int) = {
     RenderCommand_0,
     RenderCommand_1,
     RenderCommand_2,
@@ -32,4 +32,4 @@ void (*data_020f1e08[32])(RenderCommandHandler*, int) = {
     RenderCommand_12,
     RenderCommand_13
 };
-typedef char RenderCommandDispatchSizeCheck[sizeof(data_020f1e08) == 128 ? 1 : -1];
+typedef char RenderCommandDispatchSizeCheck[sizeof(ExecuteRenderCommands_UnknownRoleProcedureReferenceRecords) == 128 ? 1 : -1];

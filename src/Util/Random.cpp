@@ -2,17 +2,22 @@
 #include "Util/Random.h"
 
 #ifdef jpn
-#define data_020f0d5c data_020f0e54
+#define ProgramData_TextNoName data_020f0e54
 #endif
 
-extern char const data_020f0d5c[]; // "(no-name)"
+extern char const ProgramData_TextNoName[]; // "(no-name)"
 
 /* note: initialized by usa:func_020e60c0, in .init */
-extern struct Random data_02108ddc;
+// Original data: arm9/main @ 0x2108ddc; symbol: data_02108ddc.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 32 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern struct Random GetBTRandom_UnknownRoleZeroInitializedStorage;
 
 // Original: arm9/main @ 0x020741D0; symbol: _Z11GetBTRandomv; size: 0xC.
 ARM struct Random* GetBTRandom(void) {
-    return &data_02108ddc;
+    return &GetBTRandom_UnknownRoleZeroInitializedStorage;
 }
 
 // Original: arm9/main @ 0x020741DC; symbol: _Z12CreateRandomP6RandomPKch; size: 0x2C.
@@ -25,7 +30,7 @@ ARM struct Random* CreateRandom(struct Random* random, char const* name, unsigne
 // Original: arm9/main @ 0x02074208; symbol: _Z10InitRandomP6RandomyPKch; size: 0x24.
 ARM void InitRandom(struct Random* random, unsigned long long lcg_state, char const* name, unsigned char unk_1C) {
     if (name == NULL) {
-        name = data_020f0d5c;
+        name = ProgramData_TextNoName;
     }
 
     random->unk_1C = unk_1C;

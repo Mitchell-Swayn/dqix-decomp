@@ -1,0 +1,4 @@
+#include <globaldefs.h>
+struct Vec {int x,y,z;};struct Target {char pad[0x50];Vec pos;char pad2[0x54];unsigned field;char pad3[0x220];unsigned other;};struct Owner {char pad[20];void* first;Target* second;Target* third;};extern "C" void ActorSprite_SetQuantizedFacingAndTarget(void*,unsigned);extern "C" void Object3D_SetRotationComponents(Target*,int,unsigned,int);
+// Original: arm9/main @ 0x02040B2C; symbol: func_02040b2c; size: 0xA0.
+extern "C" void Actor_SetRepresentationCurrentAndTargetYaw(Owner* self,unsigned value) {if(self->first){ActorSprite_SetQuantizedFacingAndTarget(self->first,value);}else if(self->second){Vec pos=self->second->pos;Object3D_SetRotationComponents(self->second,pos.x,value,pos.z);self->second->field=value;}else if(self->third){Vec pos=self->third->pos;Object3D_SetRotationComponents(self->third,pos.x,value,pos.z);self->third->other=value;}}

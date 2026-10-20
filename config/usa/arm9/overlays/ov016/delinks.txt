@@ -4,266 +4,374 @@
     .data       start:0x0219cfc0 end:0x0219d0c0 kind:data align:32
     .bss        start:0x0219d0c0 end:0x0219d200 kind:bss align:32
 
-src/Data/ov016/data_ov016_0219ca60.cpp:
+src/Data/ModsDecoderGetSampleClampTable_MovieDecoderSampleClampInputBiasedBy64.cpp:
     complete
     .rodata start:0x0219ca60 end:0x0219cbe0
 
-src/Data/ov016/data_ov016_0219cbe0.cpp:
+src/Data/FilesystemReadNextBufferedChunk_MovieRGB555ConversionLookupInputBiasedBy256.cpp:
     complete
     .rodata start:0x0219cbe0 end:0x0219cee0
 
-src/Data/ov016/data_ov016_0219cee0.cpp:
+src/Data/DecodeAdpcmBytePairs_IMAADPCMIndexAdjustmentFor3BitMagnitudeRepeatedForSignBit.cpp:
     complete
     .rodata start:0x0219cee0 end:0x0219cef0
 
-src/Data/ov016/data_ov016_0219cfc0.cpp:
+src/Data/Movie_RunSelectionAndPlayback_TextMovie.cpp:
     complete
     .data start:0x0219cfc0 end:0x0219cfc6
 
-src/Data/ov016/data_ov016_0219cfc6.cpp:
+src/Data/Movie_RunSelectionAndPlayback_FormatDS.cpp:
     complete
     .data start:0x0219cfc6 end:0x0219cfcc
 
-src/Data/ov016/data_ov016_0219cfcc.cpp:
+src/Data/Movie_RunSelectionAndPlayback_PathDataBinMenuStrJopGp2.cpp:
     complete
     .data start:0x0219cfcc end:0x0219cfe6
 
-src/Data/ov016/data_ov016_0219cfe6.cpp:
+src/Data/Movie_RunSelectionAndPlayback_MarkupStrJopLGBin.cpp:
     complete
     .data start:0x0219cfe6 end:0x0219cff7
 
-src/Data/ov016/data_ov016_0219cff7.cpp:
+src/Data/Movie_RunSelectionAndPlayback_PathDataBinMenuStrJvsGp2.cpp:
     complete
     .data start:0x0219cff7 end:0x0219d011
 
-src/Data/ov016/data_ov016_0219d011.cpp:
+src/Data/Movie_RunSelectionAndPlayback_MarkupStrJvsLGBin.cpp:
     complete
     .data start:0x0219d011 end:0x0219d022
 
-src/Data/ov016/data_ov016_0219d022.cpp:
+src/Data/Movie_RunSelectionAndPlayback_PathDataMovieS.cpp:
     complete
     .data start:0x0219d022 end:0x0219d030
 
-src/Data/ov016/data_ov016_0219d030.cpp:
+src/Data/Movie_PlaySingleScreenFile_PathDataAniBgTPac.cpp:
     complete
     .data start:0x0219d030 end:0x0219d044
 
-src/Data/ov016/data_ov016_0219d054.cpp:
+src/Data/Script_LoadFileAndExecuteWithOwner_PathDataMovieMovielistBin.cpp:
     complete
     .data start:0x0219d054 end:0x0219d06d
 
-src/Data/ov016/data_ov016_0219d06d.cpp:
+src/Data/MovieCaptionsDrawProgressiveText_TextCodePoint10.cpp:
     complete
     .data start:0x0219d06d end:0x0219d06f
 
-src/Data/ov016/data_ov016_0219d06f.cpp:
+src/Data/MovieCaptionsDrawProgressiveText_TextN.cpp:
     complete
     .data start:0x0219d06f end:0x0219d07c
 
-src/Data/ov016/data_ov016_0219cef0.cpp:
+src/Data/DecodeAdpcmBytePairs_IMAADPCMStepSizesIndexed088.cpp:
     complete
     .rodata start:0x0219cef0 end:0x0219cfa4
 
-src/Data/ov016/data_ov016_02191d78.cpp:
+src/Data/InitializeModsStreamBuffers_MovieCoefficientVariableLengthDecoderLookup.cpp:
     complete
     .rodata start:0x02191d78 end:0x02193e78
 
-src/Data/ov016/data_ov016_02193e78.cpp:
+src/Data/GetOrCopyFixedDecoderTable_MovieCoefficientVariableLengthDecoderLookup.cpp:
     complete
     .rodata start:0x02193e78 end:0x02195f78
 
-src/Data/ov016/data_ov016_02191578.cpp:
+src/Data/Movie_ExcitationTable.cpp:
     complete
     .rodata start:0x02191578 end:0x02191d78
 
-src/Unclassified/ov016/GetResourceStateConstant659C.cpp:
+src/Event/Movies/ModsDecoder_GetPrimaryCacheCapacity.cpp:
     complete
     .text start:0x0218fc78 end:0x0218fc84
 
-src/Unclassified/ov016/func_ov016_0218e78c.cpp:
+src/Event/Movies/ModsStream_NoOpDestructor.cpp:
     complete
     .text start:0x0218e78c end:0x0218e790
 
-src/Unclassified/ov016/func_ov016_0218f6b4.cpp:
+src/Event/Movies/ModsNitroStream_NoOpDestructor.cpp:
     complete
     .text start:0x0218f6b4 end:0x0218f6b8
 
-src/Unclassified/ov016/func_ov016_0218fc84.cpp:
+src/Event/Movies/ModsDecoder_GetSecondaryCacheCapacity.cpp:
     complete
     .text start:0x0218fc84 end:0x0218fc8c
 
-src/Unclassified/ov016/func_ov016_0218f4fc.cpp:
+src/Event/Movies/ModsNitroStream_FreeStorage.cpp:
     complete
     .text start:0x0218f4fc end:0x0218f508
 
-src/Unclassified/ov016/func_ov016_0218e7a4.cpp:
+src/Event/Movies/ModsDecoder_AllocateStorage.cpp:
     complete
     .text start:0x0218e7a4 end:0x0218e7b0
 
-src/Unclassified/ov016/func_ov016_0218f4f0.cpp:
+src/Event/Movies/ModsNitroStream_AllocateStorage.cpp:
     complete
     .text start:0x0218f4f0 end:0x0218f4fc
 
-src/Memory/ov016/Memory_FreeOverlayAllocation.cpp:
+src/Event/Movies/Memory_FreeOverlayAllocation.cpp:
     complete
     .text start:0x0218e7b0 end:0x0218e7bc
 
-src/Resource/ov016/Resource_AdvanceDoubleBufferedRecord.cpp:
+src/Event/Movies/Resource_AdvanceDoubleBufferedRecord.cpp:
     complete
     .text start:0x0218ef50 end:0x0218f088
 
-src/Filesystem/ov016/Filesystem_ReadAlignedAsync.cpp:
+src/Event/Movies/Filesystem_ReadAlignedAsync.cpp:
     complete
     .text start:0x0218f5fc end:0x0218f678
 
-src/Memory/ov016/GetOrCopyDataBlock.cpp:
+src/Event/Movies/GetOrCopyDataBlock.cpp:
     complete
     .text start:0x0218fcd4 end:0x0218fd50
 
-src/Unclassified/ov016/func_ov016_0218f330.cpp:
+src/Event/Movies/ModsDecoder_GetCurrentAudioBlockCount.cpp:
     complete
     .text start:0x0218f330 end:0x0218f340
 
-src/Unclassified/ov016/func_ov016_0218e62c.cpp:
+src/Event/Movies/ModsNitroStream_Delete.cpp:
     complete
     .text start:0x0218e62c end:0x0218e640
 
-src/Memory/ov016/Memory_ClearThreeWords.cpp:
+src/Event/Movies/Memory_ClearThreeWords.cpp:
     complete
     .text start:0x0218e00c end:0x0218e020
 
-src/Unclassified/ov016/func_ov016_0218f6a0.cpp:
+src/Event/Movies/ModsNitroStream_FinishRead.cpp:
     complete
     .text start:0x0218f6a0 end:0x0218f6b4
 
-src/Memory/ov016/Memory_ReleaseNonNullPointerIndirectAndReturn.cpp:
+src/Event/Movies/Memory_ReleaseNonNullPointerIndirectAndReturn.cpp:
     complete
     .text start:0x0218e790 end:0x0218e7a4
 
-src/Unclassified/ov016/func_ov016_0218fea0.cpp:
+src/Event/Movies/ModsAudio_InitializeAdpcmBlockState.cpp:
     complete
     .text start:0x0218fea0 end:0x0218feb4
 
-src/System/ov016/System_ReadMaskedHardwareStatus.cpp:
+src/Event/Movies/System_ReadMaskedHardwareStatus.cpp:
     complete
     .text start:0x0218ca70 end:0x0218caa8
 
-src/Unclassified/ov016/func_ov016_0218e750.cpp:
+src/Event/Movies/ModsDecoder_GetCurrentAudioBlockCountOrZero.cpp:
     complete
     .text start:0x0218e750 end:0x0218e768
 
-src/Resource/ov016/Script_LoadFileAndExecuteWithOwner.cpp:
+src/Event/Movies/Script_LoadFileAndExecuteWithOwner.cpp:
     complete
     .text start:0x0218e098 end:0x0218e124
 
-src/GameState/ov016/AdvanceBoundedCounters.cpp:
+src/Event/Movies/AdvanceBoundedCounters.cpp:
     complete
     .text start:0x0218f2f0 end:0x0218f330
 
-src/Unclassified/ov016/func_ov016_0218bc70.cpp:
+src/Event/Movies/Movie_SetDisplayEngineSelection.cpp:
     complete
     .text start:0x0218bc70 end:0x0218bc8c
 
-src/Memory/ov016/Memory_AllocateSafe.cpp:
+src/Event/Movies/Memory_AllocateSafe.cpp:
     complete
     .text start:0x0218bc8c end:0x0218bca8
 
-src/Memory/ov016/FreeWithGlobalSafeAllocator.cpp:
+src/Event/Movies/FreeWithGlobalSafeAllocator.cpp:
     complete
     .text start:0x0218bca8 end:0x0218bcc4
 
-src/Memory/ov016/Memory_ReleaseOwnedResources.cpp:
+src/Event/Movies/Memory_ReleaseOwnedResources.cpp:
     complete
     .text start:0x0218edac end:0x0218ef14
 
-src/Unclassified/ov016/Ov016_UpdateObjectAndReturnSelf.cpp:
+src/Event/Movies/ModsDecoder_Destroy.cpp:
     complete
     .text start:0x0218e7ec end:0x0218e800
 
-src/Graphics/ov016/Graphics_ToggleMainDisplayMode.cpp:
+src/Event/Movies/Graphics_ToggleMainDisplayMode.cpp:
     complete
     .text start:0x0218be7c end:0x0218bec4
 
-src/Graphics/ov016/Graphics_GetVramAddressForModeFlag.cpp:
+src/Event/Movies/Graphics_GetVramAddressForModeFlag.cpp:
     complete
     .text start:0x0218be5c end:0x0218be7c
 
-src/Unclassified/ov016/func_ov016_0218fc8c.cpp:
+src/Event/Movies/ModsDecoder_ConfigurePrimaryCache.cpp:
     complete
     .text start:0x0218fc8c end:0x0218fcac
 
-src/Memory/ov016/CleanupAndFreeOverlayAllocationIfPresent.cpp:
+src/Event/Movies/CleanupAndFreeOverlayAllocationIfPresent.cpp:
     complete
     .text start:0x0218e640 end:0x0218e660
 
-src/System/ov016/NitroVM_SeekAndTrackPosition.cpp:
+src/Event/Movies/NitroVM_SeekAndTrackPosition.cpp:
     complete
     .text start:0x0218f540 end:0x0218f58c
 
-src/Resource/ov016/Resource_TryAdvanceDoubleBufferedRecord.cpp:
+src/Event/Movies/Resource_TryAdvanceDoubleBufferedRecord.cpp:
     complete
     .text start:0x0218e6c0 end:0x0218e6e4
 
-src/GameState/ov016/Ov016_SelectStatusFromObjectPointers.cpp:
+src/Event/Movies/Ov016_SelectStatusFromObjectPointers.cpp:
     complete
     .text start:0x0218ef2c end:0x0218ef50
 
-src/GameState/ov016/Ov016_GetObjectPointerStatus.cpp:
+src/Event/Movies/Ov016_GetObjectPointerStatus.cpp:
     complete
     .text start:0x0218e6a8 end:0x0218e6c0
 
-src/Util/ov016/Util_IncrementGlobal64BitCounterAt44.cpp:
+src/Event/Movies/Movie_AdvanceDualScreenAudioPlaybackClock.cpp:
     complete
     .text start:0x0218cf34 end:0x0218cf58
 
-src/Memory/ov016/IncrementGlobal64BitCounterAt48.cpp:
+src/Event/Movies/Movie_AdvanceSingleScreenAudioPlaybackClock.cpp:
     complete
     .text start:0x0218bcc4 end:0x0218bce8
 
-src/Graphics/ov016/Graphics_ToggleDisplayModeAndSignal.cpp:
+src/Event/Movies/Graphics_ToggleDisplayModeAndSignal.cpp:
     complete
     .text start:0x0218d034 end:0x0218d0d4
 
-src/GameState/ov016/System_SetGlobalActiveAndCountIfIdle.cpp:
+src/Event/Movies/System_SetGlobalActiveAndCountIfIdle.cpp:
     complete
     .text start:0x0218c024 end:0x0218c04c
 
-src/Resource/ov016/Resource_SetGlobalFlagAndAdvanceCounterIfReady.cpp:
+src/Event/Movies/Resource_SetGlobalFlagAndAdvanceCounterIfReady.cpp:
     complete
     .text start:0x0218d294 end:0x0218d2bc
 
-src/System/ov016/System_AwaitPendingNitroVMCommand.cpp:
+src/Event/Movies/System_AwaitPendingNitroVMCommand.cpp:
     complete
     .text start:0x0218f678 end:0x0218f6a0
 
-src/Unclassified/ov016/Util_ConfigureGlobalState.cpp:
+src/Event/Movies/ModsDecoder_ConfigureSecondaryCache.cpp:
     complete
     .text start:0x0218fcac end:0x0218fcd4
 
-src/Unclassified/ov016/GetOrCopyGeometryDataChunk.cpp:
+src/Event/Movies/ModsDecoder_GetSampleClampTable.cpp:
     complete
     .text start:0x0218fe30 end:0x0218fea0
 
-src/Filesystem/ov016/Filesystem_ReadFromNitroVMState.cpp:
+src/Event/Movies/Filesystem_ReadFromNitroVMState.cpp:
     complete
     .text start:0x0218f58c end:0x0218f5fc
 
-src/Unclassified/ov016/Util_CallHandlerIfObjectExists.cpp:
+src/Event/Movies/ModsDecoder_GetAudioSampleRateOrZero.cpp:
     complete
     .text start:0x0218e660 end:0x0218e678
 
-src/Unclassified/ov016/CallFunctionIfNonNull.cpp:
+src/Event/Movies/ModsDecoder_GetFixedPointFrameRateOrZero.cpp:
     complete
     .text start:0x0218e678 end:0x0218e690
 
-src/Resource/ov016/Resource_IsNonNullAndHelperReturnsOne.cpp:
+src/Event/Movies/Resource_IsNonNullAndHelperReturnsOne.cpp:
     complete
     .text start:0x0218e708 end:0x0218e72c
 
-src/System/ov016/Ov016_ReadMaskedHardwareState.cpp:
+src/Event/Movies/Ov016_ReadMaskedHardwareState.cpp:
     complete
     .text start:0x0218d2bc end:0x0218d2f4
 
-src/Unclassified/ov016/Unclassified_InitializeRangeMetrics.cpp:
+src/Event/Movies/ModsNitroStream_Initialize.cpp:
     complete
     .text start:0x0218f508 end:0x0218f540
+
+src/Event/Movies/ModsDecoder_GetFrameCountOrZero.cpp:
+    complete
+    .text start:0x0218e690 end:0x0218e6a8
+
+src/Event/Movies/FindLinkedListNodeByHalfwordKey.cpp:
+    complete
+    .text start:0x0218e124 end:0x0218e14c
+
+src/Event/Movies/GetLinkedListNodeAtIndex.cpp:
+    complete
+    .text start:0x0218e14c end:0x0218e174
+
+src/Event/Movies/ModsDecoder_TryDecodeVideoFrame.cpp:
+    complete
+    .text start:0x0218e6e4 end:0x0218e708
+
+src/Event/Movies/System_ReferenceSymbolAndForwardArguments.cpp:
+    complete
+    .text start:0x0218e528 end:0x0218e558
+
+src/Event/Movies/Memory_ClearRecordWordsAtSelectedOffsets.cpp:
+    complete
+    .text start:0x0218e7bc end:0x0218e7ec
+
+src/Event/Movies/ModsDecoder_SkipVideoFrame.cpp:
+    complete
+    .text start:0x0218e72c end:0x0218e750
+
+src/Event/Movies/ModsDecoder_GetAudioSampleRate.cpp:
+    complete
+    .text start:0x0218ef14 end:0x0218ef1c
+
+src/Event/Movies/ModsDecoder_GetFixedPointFrameRate.cpp:
+    complete
+    .text start:0x0218ef1c end:0x0218ef24
+
+src/Event/Movies/ModsDecoder_GetFrameCount.cpp:
+    complete
+    .text start:0x0218ef24 end:0x0218ef2c
+
+src/Event/Movies/MovieList_GetEntryCount.cpp:
+    complete
+    .text start:0x0218e174 end:0x0218e17c
+
+src/Event/Movies/Graphics_InitializeDisplayOnceAndSetHardwareFlag.cpp:
+    complete
+    .text start:0x0218be1c end:0x0218be5c
+
+src/Event/Movies/Filesystem_ReadNextBufferedChunk.cpp:
+    complete
+    .text start:0x0218fdc0 end:0x0218fe30
+
+src/Event/Movies/ModsDecoder_CreateFromNitroVM.cpp:
+    complete
+    .text start:0x0218e558 end:0x0218e62c
+
+src/Event/Movies/ModsDecoder_PresentDecodedFrame.cpp:
+    complete
+    .text start:0x0218f16c end:0x0218f2f0
+
+src/Event/Movies/ConsumePendingVideoBuffers.cpp:
+    complete
+    .text start:0x0218d0d4 end:0x0218d294
+
+src/Event/Movies/AppendCopiedOptionsEntry.cpp:
+    complete
+    .text start:0x0218e020 end:0x0218e098
+
+src/Event/Movies/DecodeAdpcmBytePairs.cpp:
+    complete
+    .text start:0x0218feb4 end:0x0219000c
+
+src/Event/Movies/GetOrCopyFixedDecoderTable.cpp:
+    complete
+    .text start:0x0218fd50 end:0x0218fdc0
+
+src/Event/Movies/TryDecodeAudioBlock.cpp:
+    complete
+    .text start:0x0218e768 end:0x0218e78c
+
+src/Event/Movies/ConfigureStereoSamplePlayback.cpp:
+    complete
+    .text start:0x0218bce8 end:0x0218be1c
+
+src/Event/Movies/ConfigureMonoSamplePlayback.cpp:
+    complete
+    .text start:0x0218cf58 end:0x0218d034
+
+src/Event/Movies/InitializeModsStreamBuffers.cpp:
+    complete
+    .text start:0x0218e800 end:0x0218edac
+
+src/Event/Movies/Movie_PresentSingleScreenFrameWithCaptions.cpp:
+    complete
+    .text start:0x0218bec4 end:0x0218c024
+
+src/Event/Movies/ScriptBuildStringOptions.cpp:
+    complete
+    .text start:0x0218de60 end:0x0218e00c
+
+src/Event/Movies/ModsDecoder_DecodeNextAudioBlock.cpp:
+    complete
+    .text start:0x0218f340 end:0x0218f4f0
+
+src/Event/Movies/ModsDecoder_DecodeVideoFrame.cpp:
+    complete
+    .text start:0x0218f088 end:0x0218f16c

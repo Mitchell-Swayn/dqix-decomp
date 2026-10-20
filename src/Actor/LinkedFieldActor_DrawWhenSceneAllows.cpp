@@ -1,0 +1,4 @@
+#include <globaldefs.h>
+extern "C" void* _ZN9GameState11GetInstanceEv(); extern "C" void* GameState_GetAuxiliaryFieldObject(void*); extern "C" int LinkedQueue_GetFrontKindOrInvalid(unsigned); extern "C" unsigned char* LinkedQueue_GetFrontNode(unsigned); extern "C" void Object3D_DrawHeightAdjustedObjectAndLinkedInstances(void*);
+// Original: arm9/main @ 0x020ACA30; symbol: func_020aca30; size: 0x58.
+extern "C" ARM void LinkedFieldActor_DrawWhenSceneAllows(char* object) { void* state=_ZN9GameState11GetInstanceEv(); void* target; unsigned id=*(unsigned*)(object+0x36fc); target=GameState_GetAuxiliaryFieldObject(state); int kind=LinkedQueue_GetFrontKindOrInvalid(id); unsigned char* record=LinkedQueue_GetFrontNode(id); if(!target) return; if(kind==10 && record[3]) return; Object3D_DrawHeightAdjustedObjectAndLinkedInstances(target); }

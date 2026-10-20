@@ -7,14 +7,19 @@ extern "C" int _Z8fix32sini(int);
 extern "C" int _Z8fix32cosi(int);
 struct E;
 extern "C" E* LinkedList_FindNodeByUnsignedKey(E**,unsigned int);
-extern "C" unsigned char data_02108cec[];
+// Original data: arm9/main @ 0x2108cec; symbol: data_02108cec.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 24 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" unsigned char ScriptQueueFilteredRecord_UnknownRoleZeroInitializedStorage[];
 // Original: arm9/main @ 0x0206C6F4; symbol: func_0206c6f4; size: 0x138.
 extern "C" int Script_SetAngledRadiusBounds(unsigned char* args) {
  unsigned key=_ZNK6Script9Parameter5ToIntEv(args);
- unsigned char* p=(unsigned char*)LinkedList_FindNodeByUnsignedKey(*(E***)(data_02108cec+16),key);
+ unsigned char* p=(unsigned char*)LinkedList_FindNodeByUnsignedKey(*(E***)(ScriptQueueFilteredRecord_UnknownRoleZeroInitializedStorage+16),key);
  if(!p) return 0;
  while(p) {
-  if(*(unsigned short*)(p+0x44)==*(unsigned short*)(data_02108cec+10)) break;
+  if(*(unsigned short*)(p+0x44)==*(unsigned short*)(ScriptQueueFilteredRecord_UnknownRoleZeroInitializedStorage+10)) break;
   p=*(unsigned char**)(p+0x70);
  }
  if(!p)return 0;

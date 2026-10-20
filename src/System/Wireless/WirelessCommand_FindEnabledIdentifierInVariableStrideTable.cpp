@@ -2,7 +2,7 @@
 #pragma optimize_for_size off
 #pragma optimization_level 2
 
-extern "C" char* ReadGlobalOperationContextPointerAt4();
+extern "C" char* WMi_GetSystemWork();
 extern "C" int WirelessCommand_ReadInitializedStatus();
 extern "C" void _Z24InvalidateDataCacheRangePKvj(const void*, unsigned);
 
@@ -12,7 +12,7 @@ extern "C" void _Z24InvalidateDataCacheRangePKvj(const void*, unsigned);
 extern "C" ARM char* WirelessCommand_FindEnabledIdentifierInVariableStrideTable(char* table, unsigned identifier)
 {
     unsigned int rows[15];
-    char* state = ReadGlobalOperationContextPointerAt4();
+    char* state = WMi_GetSystemWork();
     if (WirelessCommand_ReadInitializedStatus()) return 0;
     if (identifier < 1 || identifier > 15) return 0;
     char* data = *(char**)(state + 4);

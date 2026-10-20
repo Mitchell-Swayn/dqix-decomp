@@ -50,15 +50,25 @@ required work; it must not be described as fully named source.
 
 ## Source file organization
 
-Place source under its established subsystem (`Filesystem`, `Graphics`, `Resource`,
-`System`, `Memory`, `GameState`, `World`, `Combat`, or `Grotto`). Preserve established
-class units and keep each matched compilation unit separate until regrouping is
-independently verified. A single-function file uses the descriptive function name.
+Place source under its subsystem folder. Engine and game-core folders are
+`System`, `Graphics`, `Sound`, `Filesystem`, `Resource`, `Memory`, `Math`, `Util`, `Network`,
+`Text`, `UI`, `Save`, `Actor`, `Camera`, `World`, `Script`, `GameState` and `Grotto`.
+Game-mode overlays use `Combat`, `Field`, `Event`, `Town`, `Menu`, `Online` and `Debug`.
+`docs/subsystem-map-usa.json` assigns every ARM9 function to a chunk with a folder;
+use its `source_directory` when present, otherwise its root `folder`, unless
+reviewed evidence shows a different owner. Feature ownership is primary: examples
+are `src/Menu/Bestiary/` and `src/Menu/CharacterCreation/`. Module names identify binary locations in symbol maps and original-location
+comments; they are not source-directory components. Preserve
+established class units and keep each matched compilation unit separate until
+regrouping is independently verified. A single-function file uses the descriptive
+function name.
 
-Use `src/Unclassified/` when the subsystem is not established; retain precise
-operation names and recorded uncertainty instead of inventing a gameplay category.
+`src/Unclassified/` is a legacy holding area, not a destination. Record remaining
+uncertainty in the name's `Unknown` part and the naming registry rather than
+inventing a gameplay category.
 Initialized data and BSS units without an established owner live under `src/Data/`.
-Overlay and autoload sources include their module in the directory path. Dedicated
+Overlay identity is retained in original-location comments and the owning binary
+maps. Source directories use feature ownership without `ovNNN` components. Dedicated
 runtime inline assembly remains directly under `src/RuntimeSupport/` for its compiler
 and provenance rules.
 
@@ -68,3 +78,50 @@ source paths to their reorganized locations. Update delink maps, live naming rec
 retention manifests, runtime policies, and linker object references together when
 moving a source. Preserve original-location comments and source bytes; verify the
 complete ROM and unchanged coverage before accepting a move.
+
+## Auditing existing naming debt
+
+`python3 tools/audit_naming.py --output build/naming-review.json` lists matched
+ARM9 functions with address-only names, temporary address disambiguators or
+recorded uncertainty, plus functions whose subsystem ownership is unclassified.
+The lists are review queues, not instructions to generate names automatically.
+Names containing `Unknown` can correctly retain uncertainty; compiler-generated
+initialization symbols and established SDK/runtime names keep their ABI spellings.
+
+Review complete bodies and relevant callers before proposing a name. Keep a
+precise behavioural name under `Unclassified` when the subsystem is unresolved.
+Do not replace empty callbacks with invented roles or move functions into a
+subsystem based only on their caller. Rename a source file together with its
+function and update source-layout and naming records, live references, delink
+maps, symbol maps and hash-bound provenance. Preserve original identity comments.
+Verify matching coverage and the full ROM before publishing the changed tree.
+
+## Subsystem discovery and serial integration
+
+Refactor one bounded subsystem at a time. `docs/SUBSYSTEM_MAP.md` defines the
+proposed ARM9 chunks, their order and `tools/subsystem_map.py` work packets.
+Start with an identified entry point and
+trace its complete bodies, callers, callees, shared state, callback registration
+and relevant resources. Distinguish the owning routines from generic SDK/runtime
+dependencies and consumers. Call-graph connectivity or adjacent addresses alone
+do not establish common ownership. Keep ambiguous indirect/overlay references
+explicit.
+
+Record a module/address inventory and behavior evidence before naming. Preserve
+accurate established names and ABI symbols. Name uncertain operations precisely
+without guessing gameplay roles. Keep unreconstructed and encoded routine
+identities separate from matched-source coverage.
+
+Integrate each reviewed subsystem as one guarded naming/path migration, updating
+references, symbol maps, source-layout/naming records and provenance together.
+Preserve compilation-unit boundaries and run the full object/module/symbol/ROM
+and unchanged-coverage checks before moving to the next subsystem. Preserve
+pending evidence when discovery exposes an unresolved boundary.
+
+## Data symbol names and values
+
+Keep original processor, module, address and symbol comments beside data definitions or declarations. Record inferred purpose and original initialized values; large objects can link to the full module record under `docs/data-symbols/`. Distinguish initialized bytes from mutable runtime state and zero-initialized BSS.
+
+Use literal-content or established layout names where supported. A consumer scope records a reference and does not prove exclusive ownership. Use `UnknownRole` for unresolved semantics and keep `semantic_review_required` in `config/usa/data_names.json`; contextual renaming does not clear that debt. Preserve overlapping labels, distinct copies, original bytes and logical layout uncertainty.
+
+The legacy linker limits the aggregate `-force_active` symbol list to 255 characters, including commas; separate occurrences share that limit. Retained symbols need concise names within that total.

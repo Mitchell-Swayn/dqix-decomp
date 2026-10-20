@@ -20,26 +20,46 @@ struct Channel {
 };
 
 extern "C" {
-extern SignedAllocatorList data_0210f3cc;
-extern SignedAllocatorList data_0210f3d8;
-extern Slot data_0210f3e4[16];
-extern Channel data_0210f824[32];
+// Original data: arm9/main @ 0x210f3cc; symbol: data_0210f3cc.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 12 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern SignedAllocatorList InitializeTwoAllocatorListsAndSixteenSlots_UnknownRoleZeroInitializedStorage;
+// Original data: arm9/main @ 0x210f3d8; symbol: data_0210f3d8.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 12 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern SignedAllocatorList SoundPlayerInsertSequenceByPriority_UnknownRoleZeroInitializedStorage;
+// Original data: arm9/main @ 0x210f3e4; symbol: data_0210f3e4.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 1088 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern Slot InitializeTwoAllocatorListsAndSixteenSlots_UnknownRoleZeroInitializedStorage_Variant2[16];
+// Original data: arm9/main @ 0x210f824; symbol: data_0210f824.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 24 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern Channel AllocateHeaderAndInitializePayload_UnknownRoleZeroInitializedStorage[32];
 }
 
 // Original: arm9/main @ 0x020BC23C; symbol: func_020bc23c; size: 0xB4.
 extern "C" ARM void InitializeTwoAllocatorListsAndSixteenSlots() {
-    data_0210f3d8.Initialize(0x14);
-    data_0210f3cc.Initialize(0x14);
+    SoundPlayerInsertSequenceByPriority_UnknownRoleZeroInitializedStorage.Initialize(0x14);
+    InitializeTwoAllocatorListsAndSixteenSlots_UnknownRoleZeroInitializedStorage.Initialize(0x14);
     int i;
-    Slot* slot = data_0210f3e4;
+    Slot* slot = InitializeTwoAllocatorListsAndSixteenSlots_UnknownRoleZeroInitializedStorage_Variant2;
     i = 0;
     do {
         slot->unknown_2c = 0;
         slot->index = i;
-        data_0210f3cc.InsertAtEnd(&slot->header);
+        InitializeTwoAllocatorListsAndSixteenSlots_UnknownRoleZeroInitializedStorage.InsertAtEnd(&slot->header);
         slot++;
     } while (++i < 16);
-    Channel* channel = data_0210f824;
+    Channel* channel = AllocateHeaderAndInitializePayload_UnknownRoleZeroInitializedStorage;
     int j = 0;
     do {
         channel->listA.Initialize(0xc);

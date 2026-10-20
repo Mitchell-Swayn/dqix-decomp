@@ -11,18 +11,18 @@
 #if defined(jpn)
 #define GameState_ReadUnknownB0 func_0200ff18
 #define Graphics_ConvertCopiedWorldVectorToScreenCoordinates func_0202e7f4
-#define ReadGlobalValueAt02108844 func_0205ff20
-#define ReadNonnegativeIndexedBit func_0206f104
+#define GameState_GetSerializedProgressState func_0205ff20
+#define BitArray_ReadNonnegativeIndexMask func_0206f104
 #define ReadIndexedTripleIntoThreeOutputs func_0207c860
 #define Graphics_WriteHalfwordRegister35CAndDisplayControl func_020c6f70
 #define Graphics_CopySixteenBytesToEdgeColorRegisters func_020c7028
 #define Geometry_SetEdgeColorTable func_020c7040
 
-#define ReadMaskedFlagsAt55F4 func_ov000_02162740
+#define BattleScene_GetMaskedFlags func_ov000_02162740
 
 #define Graphics_CreateRelatedObjectBoneAndMaterialArrays func_ov017_02190d90
-#define OV017_ReadWordField6AC func_ov017_021b8978
-#define OV017_GetEmbeddedField1C func_ov017_021b8988
+#define FieldBattle_GetScene func_ov017_021b8978
+#define FieldBattle_GetEncounterRequest func_ov017_021b8988
 #endif
 
 struct FifoCommandInfo
@@ -82,9 +82,9 @@ extern "C"
 
     void Graphics_ConvertCopiedWorldVectorToScreenCoordinates(void*, const Vector3fix*, int*, int*);
 
-    bool ReadNonnegativeIndexedBit(void*, void*, int);
+    bool BitArray_ReadNonnegativeIndexMask(void*, void*, int);
 
-    char* ReadGlobalValueAt02108844();
+    char* GameState_GetSerializedProgressState();
 
     void ReadIndexedTripleIntoThreeOutputs(LightingInfo*, int, float*, float*, float*);
 
@@ -95,11 +95,11 @@ extern "C"
     void Geometry_SetEdgeColorTable(void*);
 
     // do bitmask of something
-    int ReadMaskedFlagsAt55F4(void*, int);
+    int BattleScene_GetMaskedFlags(void*, int);
 
-    void* OV017_ReadWordField6AC(void*);
+    void* FieldBattle_GetScene(void*);
     void Graphics_CreateRelatedObjectBoneAndMaterialArrays(GameResources*);
-    void* OV017_GetEmbeddedField1C(void*);
+    void* FieldBattle_GetEncounterRequest(void*);
 }
 
 void SetVector3fixComponents(Vector3fix*, fix32_t, fix32_t, fix32_t);
@@ -440,10 +440,10 @@ void LightingManager::GetCurrentAdvancedLightingValues(unsigned short *outMaybeA
         void* ov17thing = GameResources_GetInstance()->unknown_ptr_3718;
         if (ov17thing != NULL)
         {
-            void* ov0thing = OV017_ReadWordField6AC(ov17thing);
-            if (ov0thing != NULL && ReadMaskedFlagsAt55F4(ov0thing, 1 << 9))
+            void* ov0thing = FieldBattle_GetScene(ov17thing);
+            if (ov0thing != NULL && BattleScene_GetMaskedFlags(ov0thing, 1 << 9))
             {
-                unsigned char* overrideData = (unsigned char*)OV017_GetEmbeddedField1C(ov17thing);
+                unsigned char* overrideData = (unsigned char*)FieldBattle_GetEncounterRequest(ov17thing);
                 currentTimeType = overrideData[5];
                 lerpFactor = 0.0f;
                 nextTimeType = currentTimeType + 1;
@@ -671,13 +671,13 @@ void LightingManager::ModelTransformTintBrightnessContrast(NSBXXInternalModel *m
     int totalNumOperands;
     readPos = (uintptr_t)lightingInfo; // cursed dont look
     
-    char* struct0205ec34 = ReadGlobalValueAt02108844();
+    char* struct0205ec34 = GameState_GetSerializedProgressState();
 
     if (((LightingInfo*)readPos)->maybeMode_ != 1)
         return;
 
     int index;
-    if (zone->currentZoneID_ == 6401 && ReadNonnegativeIndexedBit(struct0205ec34, struct0205ec34 + 0x8c, 0x2a))
+    if (zone->currentZoneID_ == 6401 && BitArray_ReadNonnegativeIndexMask(struct0205ec34, struct0205ec34 + 0x8c, 0x2a))
         index = 4;
     else
     {
@@ -783,7 +783,7 @@ void LightingManager::ProcessZoneChange(Zone3D *newZone)
     LightingInfo* info = &zone->lighting_;    
     gameState = GameState::GetInstance();
     GameResources_GetInstance();
-    char* struct0205ec34 = ReadGlobalValueAt02108844();
+    char* struct0205ec34 = GameState_GetSerializedProgressState();
 
     if (info->maybeMode_ == 2)
     {
@@ -798,7 +798,7 @@ void LightingManager::ProcessZoneChange(Zone3D *newZone)
         info->basic_.FillMissingEntries();
         
         // 6401 = id of front of starflight express
-        if (zone->currentZoneID_ == 6401 && ReadNonnegativeIndexedBit(struct0205ec34, struct0205ec34 + 0x8c, 0x2a))
+        if (zone->currentZoneID_ == 6401 && BitArray_ReadNonnegativeIndexMask(struct0205ec34, struct0205ec34 + 0x8c, 0x2a))
         {
             index = 4;
         }
@@ -1081,10 +1081,10 @@ void LightingManager::DrawBackgroundGradient()
         void* ov17inner = resources->unknown_ptr_3718;
         if (ov17inner != NULL)
         {
-            void* ov0thing = OV017_ReadWordField6AC(ov17inner);
-            if (ov0thing != NULL && ReadMaskedFlagsAt55F4(ov0thing, 1 << 9))
+            void* ov0thing = FieldBattle_GetScene(ov17inner);
+            if (ov0thing != NULL && BattleScene_GetMaskedFlags(ov0thing, 1 << 9))
             {
-                unsigned char* overrideData = (unsigned char*)OV017_GetEmbeddedField1C(ov17inner);
+                unsigned char* overrideData = (unsigned char*)FieldBattle_GetEncounterRequest(ov17inner);
                 int index = overrideData[5];
                 outerColor = lightingInfo->advanced_.backgroundColor[index];
                 innerColor = lightingInfo->advanced_.backgroundSecondColor[index];

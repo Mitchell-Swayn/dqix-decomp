@@ -5,8 +5,8 @@
 extern "C"
 {
     int GameState_ReadByteAtOffset4(GameState*);
-    bool Object_ReadByteAtOffset63D6(GameState*);
-    int GameState_ReadWordAtOffset7F6C(GameState*);
+    bool GameState_GetPendingFieldReloadMode(GameState*);
+    int GameState_GetStartupDispatchMode(GameState*);
 }
 
 // Numeric mode tests and the unidentified state fields preserve the original
@@ -78,8 +78,8 @@ void Zone3D::InitializeState()
     }
     unknown_281d_ = 0;
     unknown_281e_ = 0;
-    if (Object_ReadByteAtOffset63D6(game)) return;
-    if (GameState_ReadWordAtOffset7F6C(game) == 5 || GameState_ReadByteAtOffset4(game) == 4 || GameState_ReadByteAtOffset4(game) == 2)
+    if (GameState_GetPendingFieldReloadMode(game)) return;
+    if (GameState_GetStartupDispatchMode(game) == 5 || GameState_ReadByteAtOffset4(game) == 4 || GameState_ReadByteAtOffset4(game) == 2)
     {
         state_840_.Reset();
         unknown_27b4_ = 2;

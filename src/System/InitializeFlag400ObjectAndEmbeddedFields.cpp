@@ -3,10 +3,10 @@
 #include <System/Cache.h>
 ARM
 #pragma optimization_level 4
-extern "C" void ResetStateAndSetFlag80(void);
+extern "C" void GameObject_InitializeCombatStateLinks(void);
 // Original: arm9/main @ 0x02048614; symbol: func_02048614; size: 0x7C.
 extern "C" void InitializeFlag400ObjectAndEmbeddedFields(unsigned short *state) {
-    ResetStateAndSetFlag80();
+    GameObject_InitializeCombatStateLinks();
     unsigned short flags = *state;
     unsigned int zero = 0;
     *state = flags | 0x400;

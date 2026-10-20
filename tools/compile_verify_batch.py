@@ -15,7 +15,7 @@ from match_unit import new_attempt, object_paths, run_logged, select_unit, sha25
 from objdiff_diagnosis import classify
 
 
-def compare_unit(root, unit, directory, initial, raw_required):
+def compare_unit(root, unit, directory, initial, raw_required, deferred_aliases=None):
     started = time.monotonic()
     target, base = object_paths(root, unit)
     directory.mkdir()
@@ -38,6 +38,16 @@ def compare_unit(root, unit, directory, initial, raw_required):
         document = json.loads((directory / 'diff.json').read_text())
         rows = summarize(document)
         mismatches = [row for row in rows if row['match_percent'] < 100 or not row['paired']]
+        record['all_object_symbols_match'] = not mismatches
+        if deferred_aliases:
+            from integration_data_aliases import verify_deferred_objects
+            deferred = verify_deferred_objects(target, base, deferred_aliases)
+            omitted = [row for row in mismatches if row['symbol'] in deferred and row['side']=='target' and row['section']=='.bss' and not row['paired']]
+            if {row['symbol'] for row in omitted} != set(deferred):
+                raise ValueError('Declared deferred aliases do not match original-only object labels')
+            mismatches = [row for row in mismatches if row not in omitted]
+            record['linker_aliases_deferred'] = deferred
+            record['linked_alias_audit_required'] = True
         diagnosis = classify(document)
         raw = compare_bytes(target, base)
         (directory / 'diagnosis.json').write_text(json.dumps(diagnosis, indent=2) + '\n')
@@ -57,7 +67,7 @@ def compare_unit(root, unit, directory, initial, raw_required):
     return record
 
 
-def run(root, names, jobs=2, compare_jobs=4, ninja=None, no_build=False, raw_required=False):
+def run(root, names, jobs=2, compare_jobs=4, ninja=None, no_build=False, raw_required=False, deferred_aliases=None):
     started = time.monotonic()
     config = root / 'objdiff.json'
     document = json.loads(config.read_text())
@@ -89,7 +99,7 @@ def run(root, names, jobs=2, compare_jobs=4, ninja=None, no_build=False, raw_req
             raise ValueError('objdiff configuration changed during build')
         compare_started = time.monotonic()
         with ThreadPoolExecutor(max_workers=compare_jobs) as pool:
-            futures = [pool.submit(compare_unit, root, unit, attempt / f'unit-{index:04d}', initial[index], raw_required)
+            futures = [pool.submit(compare_unit, root, unit, attempt / f'unit-{index:04d}', initial[index], raw_required, (deferred_aliases or {}).get(unit['name']))
                        for index, unit in enumerate(units)]
             results = [future.result() for future in futures]
         if config_hash != sha256(config):
@@ -102,6 +112,8 @@ def run(root, names, jobs=2, compare_jobs=4, ninja=None, no_build=False, raw_req
                   'compare_seconds': time.monotonic() - compare_started,
                   'elapsed_seconds': time.monotonic() - started,
                   'raw_required': raw_required, 'rom_acceptance': False,
+                  'linker_aliases_deferred': sorted({name for row in results for name in row.get('linker_aliases_deferred', [])}),
+                  'linked_alias_audit_required': any(row.get('linked_alias_audit_required') for row in results),
                   'artifacts': str(attempt.relative_to(root)),
                   'differences': [row for row in results if not row['match']][:10]}
         (attempt / 'units.json').write_text(json.dumps(results, indent=2) + '\n')
@@ -143,8 +155,13 @@ def main(argv=None):
                 raise ValueError('Source verification requires a manifest')
             from arm9_module import verify_manifest_units
             verify_manifest_units(document, json.loads((args.project / 'objdiff.json').read_text()))
+        deferred = {}
+        if args.manifest and isinstance(document, dict) and document.get('data_alias_dependency'):
+            from integration_data_aliases import selected_aliases
+            for alias in selected_aliases(args.project.resolve(), document.get('module','main'), document):
+                deferred.setdefault(str(Path(alias['source']).with_suffix('')), []).append(alias)
         code, result = run(args.project.resolve(), names, args.jobs, args.compare_jobs,
-                           args.ninja, args.no_build, args.require_raw)
+                           args.ninja, args.no_build, args.require_raw, deferred)
     except (OSError, ValueError, KeyError, TypeError) as error:
         code, result = 2, {'status': 'error', 'match': False, 'error': str(error), 'rom_acceptance': False}
     print(json.dumps(result))

@@ -371,3 +371,49 @@ objects are rebuilt and the restored report checked before publication unlock.
 If rollback verification fails, the publication lock stays in place for recovery.
 The command uses the factory Docker toolchain and retains the three established
 unused symbols required by the current verified baseline. It does not commit.
+
+
+### Interior BSS aliases
+
+A `data_alias_dependency` in a single-module manifest carries new interior BSS
+labels through the guarded integration transaction. The dependency names that
+module's `linker_symbols.json`, pins its before and after SHA256 hashes, and lists
+the added alias names. A missing original policy uses a null `before_sha256`.
+Every existing policy entry remains unchanged. Existing compiler profiles that
+reference the selected policy through `absolute_linker_symbols` retain all their
+fields except `policy_sha256`: the transaction derives that pin's replacement
+from the authenticated before hash and the append-only policy's after hash.
+Mismatched existing pins are rejected. Worker compiler-profile edits are not
+imported, and the original profile bytes are recorded and restored on rejection.
+Each added entry uses the normal
+`base`, `offset`, `object` and `section` linker-alias fields; the section is `.bss`.
+
+The base is a selected source-owned BSS row with a frozen source hash and an exact
+positive extent. Its original module symbol address is preserved. Every original
+interior BSS label within that extent is declared, and its offset resolves to the
+same original address. An alias adds no storage and receives no independent data
+or function credit. `symbol_size_dependency` records an exact base-size refinement
+when the original symbol map divides one established object at interior labels.
+
+The compiler object reserves the complete typed base object in `SHT_NOBITS`.
+`compile_verify_batch.py` checks the original and candidate BSS section and base
+object layouts and rejects extra allocated sections or storage. Only original-only
+interior labels authenticated by the dependency are deferred from object symbol
+comparison. Receipts list `linker_aliases_deferred` and set
+`linked_alias_audit_required`; this is not a claim that C defines those labels.
+Neither original comparison targets nor candidate ELF metadata is rewritten.
+
+The linker defines the aliases as base-plus-offset expressions.
+`audit_bss_layout.py` checks every alias's linked address, module section, global
+binding, zero size and `NOTYPE` classification, together with the base reservation,
+alignment, original BSS bounds and unchanged initialized module bytes. Acceptance
+requires the complete linked alias audit, the normal module/symbol/ROM SHA1 gates
+and unchanged coverage denominators. Integration receipts separate BSS bytes from
+initialized data and C/C++ code.
+
+The transaction records the policy preimage and restores it on a rejected batch
+before rebuilding and checking the prior state. Automated `--restore-interrupted`
+excludes data manifests. An interrupted data transaction retains its publication
+marker until authenticated manual restoration and all normal validation gates
+succeed; the recorded `data-alias-preimage.json` preserves the policy's prior bytes
+or its original absence.

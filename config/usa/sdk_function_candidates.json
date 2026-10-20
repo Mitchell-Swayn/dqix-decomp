@@ -17,7 +17,7 @@
     {
       "id": "arm9/itcm:01ff8218",
       "module_id": "arm9/itcm",
-      "name": "func_01ff8218",
+      "name": "OSi_DoBoot",
       "size": 204,
       "original_sha256": "dfe6eafead381e80d6ae8e530344c2b3df790855d90d81c67442570c691c15ee",
       "address": "0x01FF8218",
@@ -52,7 +52,7 @@
     {
       "id": "arm9/itcm:01ff82e4",
       "module_id": "arm9/itcm",
-      "name": "func_01ff82e4",
+      "name": "OSi_CpuClear32",
       "size": 28,
       "original_sha256": "234da5c7e8e76dbad0ffa50de07656f92dea67450b7905091f3e46d53bcdcaf5",
       "address": "0x01FF82E4",
@@ -261,7 +261,7 @@
     {
       "id": "arm9/ov020:0218b700",
       "module_id": "arm9/ov020",
-      "name": "func_ov020_0218b700",
+      "name": "BootScreen_ReleaseSharedTextWindow",
       "size": 16,
       "original_sha256": "c10d7f65071deee45161fad02e5c6282e69df6f09bf58deff75f01070c766f32",
       "address": "0x0218B700",
@@ -415,7 +415,7 @@
     {
       "id": "arm9/ov027:021d8c6c",
       "module_id": "arm9/ov027",
-      "name": "func_ov027_021d8c6c",
+      "name": "MBi_CommChangeParentStateCallbackOnly",
       "size": 40,
       "original_sha256": "e3f3bbb7a7ff58685bb74ac71235d1d602a5e3ab91c71afe8625f003f761eb09",
       "address": "0x021D8C6C",
@@ -440,7 +440,7 @@
     {
       "id": "arm9/ov027:021d8c94",
       "module_id": "arm9/ov027",
-      "name": "func_ov027_021d8c94",
+      "name": "MBi_CommParentCallback",
       "size": 1184,
       "original_sha256": "548ab60ddc56d99ab71d2d25abf01b9e03de5f0af4a3ac0a62a71eed457c6927",
       "address": "0x021D8C94",
@@ -515,7 +515,7 @@
     {
       "id": "arm9/ov027:021d9704",
       "module_id": "arm9/ov027",
-      "name": "func_ov027_021d9704",
+      "name": "MBi_CommParentSendDLFileInfo",
       "size": 408,
       "original_sha256": "6d654241568728c50afda79167f62eab4524da22e69556f935effba45a1ae901",
       "address": "0x021D9704",
@@ -565,7 +565,7 @@
     {
       "id": "arm9/ov027:021d9940",
       "module_id": "arm9/ov027",
-      "name": "func_ov027_021d9940",
+      "name": "MBi_CommParentSendBlock",
       "size": 668,
       "original_sha256": "44b162deba37b4a5cbb8d54ae6ed93283376fe4f09ed58b5e85ecd69d582b327",
       "address": "0x021D9940",
@@ -715,7 +715,7 @@
     {
       "id": "arm9/ov027:021d9e9c",
       "module_id": "arm9/ov027",
-      "name": "func_ov027_021d9e9c",
+      "name": "MB_ReadSegment",
       "size": 1144,
       "original_sha256": "10deabf2fced3e38cf953e6e21bc1b8a2f59d9ea4f31169e9a99182d5a7929ef",
       "address": "0x021D9E9C",
@@ -765,7 +765,7 @@
     {
       "id": "arm9/ov027:021da38c",
       "module_id": "arm9/ov027",
-      "name": "func_ov027_021da38c",
+      "name": "MB_RegisterFile",
       "size": 656,
       "original_sha256": "95a7a32b5b8bc8c044df81894af4642ac5b4f745bf3aeea8adeb30af2323099a",
       "address": "0x021DA38C",
@@ -1215,7 +1215,7 @@
     {
       "id": "arm9/ov027:021dafc0",
       "module_id": "arm9/ov027",
-      "name": "func_ov027_021dafc0",
+      "name": "MBi_SendFixedGameInfoBeacon",
       "size": 356,
       "original_sha256": "e52012d7f23860819f5014cedc121f167954c8a97a5050b56072d6d67e4d45a2",
       "address": "0x021DAFC0",
@@ -1265,7 +1265,7 @@
     {
       "id": "arm9/ov027:021db154",
       "module_id": "arm9/ov027",
-      "name": "func_ov027_021db154",
+      "name": "MBi_SendVolatBeacon",
       "size": 620,
       "original_sha256": "0389eeb7ef2f301db88aac7c5c798f0118191001b626422e4b57d97540c4935c",
       "address": "0x021DB154",
@@ -1415,7 +1415,7 @@
     {
       "id": "arm9/ov027:021dc680",
       "module_id": "arm9/ov027",
-      "name": "func_ov027_021dc680",
+      "name": "MB_Init",
       "size": 484,
       "original_sha256": "1ffe247c56467685ad7af12b27cdcdaa563a0a52d748766ba578059636c96c96",
       "address": "0x021DC680",
@@ -1515,7 +1515,7 @@
     {
       "id": "arm9/ov027:021dca40",
       "module_id": "arm9/ov027",
-      "name": "func_ov027_021dca40",
+      "name": "MBi_StartParentCore",
       "size": 484,
       "original_sha256": "5eb32e65813b6593a8e6af2543b0050a644cf353256b5005341df7890880eddf",
       "address": "0x021DCA40",
@@ -1640,7 +1640,7 @@
     {
       "id": "arm9/ov027:021dcd5c",
       "module_id": "arm9/ov027",
-      "name": "func_ov027_021dcd5c",
+      "name": "MB_DisconnectChild",
       "size": 396,
       "original_sha256": "79782c051f2e2dc08e8fb7b84b145f894f0300defa99702be53a7fd9f1806125",
       "address": "0x021DCD5C",
@@ -1940,7 +1940,7 @@
     {
       "id": "arm9/ov027:021dd330",
       "module_id": "arm9/ov027",
-      "name": "func_ov027_021dd330",
+      "name": "MBi_InitTaskThread",
       "size": 128,
       "original_sha256": "1d456721eb4d762b16a4668d806883821303920083b649e21e7aea5d3075a6e8",
       "address": "0x021DD330",
@@ -2224,7 +2224,7 @@
     {
       "id": "arm9/ov031:022070c8",
       "module_id": "arm9/ov031",
-      "name": "func_ov031_022070c8",
+      "name": "Network_RegisterActiveSocket",
       "size": 24,
       "original_sha256": "9bd3184705b58d4a7570fb0462c55e45e0ec0aceb27b4aca8b73670548d7ad0e",
       "address": "0x022070C8",
@@ -2276,7 +2276,7 @@
     {
       "id": "arm9/ov031:022070f0",
       "module_id": "arm9/ov031",
-      "name": "func_ov031_022070f0",
+      "name": "Network_RegisterClosedSocket",
       "size": 24,
       "original_sha256": "ded229672911b329e5e4f1d72229c6f15e5fe96129afe3e42618092251eb1414",
       "address": "0x022070F0",
@@ -2520,7 +2520,7 @@
     {
       "id": "arm9/ov031:02211aec",
       "module_id": "arm9/ov031",
-      "name": "func_ov031_02211aec",
+      "name": "OnlineError_IsSet",
       "size": 28,
       "original_sha256": "08d0d08c729dea1004731c5d093e5b6fa6b464787daacaec9876afa343e08395",
       "address": "0x02211AEC",
@@ -2676,7 +2676,7 @@
     {
       "id": "arm9/ov031:0222a274",
       "module_id": "arm9/ov031",
-      "name": "func_ov031_0222a274",
+      "name": "WfcUtility_UpdateTimedMessageWait",
       "size": 16,
       "original_sha256": "586d3cc7e0ae99dc1c8d94acedb8d1362ff2c2ec279fa80d6505591de14dfc41",
       "address": "0x0222A274",
@@ -2730,7 +2730,7 @@
     {
       "id": "arm9/ov031:0222b550",
       "module_id": "arm9/ov031",
-      "name": "func_ov031_0222b550",
+      "name": "WfcUtility_UpdateTimedNoticeWait",
       "size": 16,
       "original_sha256": "e7f53b69f235961b2a2f2cd69e40c00c991a262bbef89e282a284d5bc061b8c7",
       "address": "0x0222B550",
@@ -2946,7 +2946,7 @@
     {
       "id": "arm9/ov031:02231a9c",
       "module_id": "arm9/ov031",
-      "name": "func_ov031_02231a9c",
+      "name": "WfcUtility_IncrementScreenCallbackCounter",
       "size": 16,
       "original_sha256": "e7f53b69f235961b2a2f2cd69e40c00c991a262bbef89e282a284d5bc061b8c7",
       "address": "0x02231A9C",
@@ -3054,7 +3054,7 @@
     {
       "id": "arm9/ov031:0223442c",
       "module_id": "arm9/ov031",
-      "name": "func_ov031_0223442c",
+      "name": "WfcUtility_UpdateTimedScreenAndRunEmptyHook",
       "size": 16,
       "original_sha256": "e7f53b69f235961b2a2f2cd69e40c00c991a262bbef89e282a284d5bc061b8c7",
       "address": "0x0223442C",
@@ -3516,7 +3516,7 @@
     {
       "id": "arm9/main:020c0e9c",
       "module_id": "arm9/main",
-      "name": "func_020c0e9c",
+      "name": "SHA1_TransformBlocks",
       "size": 660,
       "original_sha256": "009d0abe2e34411658ae9867d0089eba838bae486bf4ecc5f22d249814d379a7",
       "address": "0x020C0E9C",
@@ -3611,7 +3611,7 @@
     {
       "id": "arm9/main:020c12b4",
       "module_id": "arm9/main",
-      "name": "Mat3x3_Invert",
+      "name": "MTX_Inverse33",
       "size": 752,
       "original_sha256": "b9431f5c208c2983b249d537cf0c3f232823d39d8aa0eb240d2c9a15b5f127c7",
       "address": "0x020C12B4",
@@ -4588,7 +4588,7 @@
     {
       "id": "arm9/main:020c30ac",
       "module_id": "arm9/main",
-      "name": "func_020c30ac",
+      "name": "FX_SinFx64c_internal",
       "size": 232,
       "original_sha256": "7382392c72e98b6180ed39ba68c008e7ce40cc6c1a57c40be6d060d0648efd61",
       "address": "0x020C30AC",
@@ -4638,7 +4638,7 @@
     {
       "id": "arm9/main:020c3260",
       "module_id": "arm9/main",
-      "name": "func_020c3260",
+      "name": "FX_SinFx64c",
       "size": 152,
       "original_sha256": "e79f4d67229a60e106413185fc6facd2f0af31a1310eadc37fb0e3c9e74115ae",
       "address": "0x020C3260",
@@ -4663,7 +4663,7 @@
     {
       "id": "arm9/main:020c32f8",
       "module_id": "arm9/main",
-      "name": "func_020c32f8",
+      "name": "FX_CosFx64c",
       "size": 148,
       "original_sha256": "c4a8284e31fcca483835b28aca6a9a8bb3e9460a2fa6476b055fb2f1e9402c00",
       "address": "0x020C32F8",
@@ -10531,7 +10531,7 @@
     {
       "id": "arm9/main:020c7d34",
       "module_id": "arm9/main",
-      "name": "SaveContext",
+      "name": "OS_SaveContext",
       "size": 76,
       "original_sha256": "84bb776df5b0602f49440a0725f930c0a50bed3a0ed20a8b8cb5b45b1bf6467c",
       "address": "0x020C7D34",
@@ -10575,7 +10575,7 @@
     {
       "id": "arm9/main:020c7d80",
       "module_id": "arm9/main",
-      "name": "RestoreContext",
+      "name": "OS_LoadContext",
       "size": 68,
       "original_sha256": "527d7ada0ccd27b173c3f6d75ac7f128834f7fb42ac76d7a2930c14b17040e78",
       "address": "0x020C7D80",
@@ -11040,7 +11040,7 @@
     {
       "id": "arm9/main:020c89f8",
       "module_id": "arm9/main",
-      "name": "func_020c89f8",
+      "name": "OS_EnableProtectionUnit",
       "size": 16,
       "original_sha256": "a54f1f3201a56509e6a0727e44f68ca4f479e222921ff268e2372feb98b6f8d8",
       "address": "0x020C89F8",
@@ -11075,7 +11075,7 @@
     {
       "id": "arm9/main:020c8a08",
       "module_id": "arm9/main",
-      "name": "func_020c8a08",
+      "name": "OS_DisableProtectionUnit",
       "size": 16,
       "original_sha256": "e2198bc0e9e6362a947b8f7f58b87509a209bd79c12981f1c91eb3fc6b2838ec",
       "address": "0x020C8A08",
@@ -11145,7 +11145,7 @@
     {
       "id": "arm9/main:020c8b30",
       "module_id": "arm9/main",
-      "name": "func_020c8b30",
+      "name": "System_CaptureExceptionAndInvokeCallback",
       "size": 20,
       "original_sha256": "269e007b8961f1fc5b061a274fbe77a2f7c0e1e08a13198079ba061c44af9502",
       "address": "0x020C8B30",
@@ -11180,7 +11180,7 @@
     {
       "id": "arm9/main:020c8b44",
       "module_id": "arm9/main",
-      "name": "func_020c8b44",
+      "name": "System_CaptureExceptionContext",
       "size": 144,
       "original_sha256": "ce8516471d0a1b433a4c1b0046ec9bbe33e8b370d0ffa629abcacf886be04216",
       "address": "0x020C8B44",
@@ -11731,7 +11731,7 @@
     {
       "id": "arm9/main:020c9fd0",
       "module_id": "arm9/main",
-      "name": "_Z39VerifyDMATimingChangePermitted_020c9fd0ij",
+      "name": "_Z33VerifyOtherDMATimingCompatibilityij",
       "size": 132,
       "original_sha256": "8019a2b18df89b4912031753aeff398281b587f52dae5adea88bca721f692c1c",
       "address": "0x020C9FD0",
@@ -11871,7 +11871,7 @@
     {
       "id": "arm9/main:020ca24c",
       "module_id": "arm9/main",
-      "name": "func_020ca24c",
+      "name": "MIi_DMACallback",
       "size": 96,
       "original_sha256": "84c08fa7de612ad2bd85fef875563f1485b1799ba4472e8d872191dd32cc8b43",
       "address": "0x020CA24C",
@@ -12114,7 +12114,7 @@
     {
       "id": "arm9/main:020ca430",
       "module_id": "arm9/main",
-      "name": "func_020ca430",
+      "name": "MI_Send32",
       "size": 40,
       "original_sha256": "692aa3d273f28a84c0c95f4b98c78c55e1c1b920eb5be1a3cfa3e6c4cb406840",
       "address": "0x020CA430",
@@ -12675,7 +12675,7 @@
     {
       "id": "arm9/main:020cf864",
       "module_id": "arm9/main",
-      "name": "func_020cf864",
+      "name": "RealTimeClock_WaitForRequestCompletion",
       "size": 24,
       "original_sha256": "084170db5361529520dabc025da0d4986570683a5242976e8b35afaa597f58a3",
       "address": "0x020CF864",

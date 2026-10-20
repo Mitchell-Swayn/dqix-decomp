@@ -1,4 +1,0 @@
-#include <globaldefs.h>
-extern "C" void* Object_ReadGlobalDisplayContextWord();extern "C" void BackgroundLoader_CancelEightTasksAndResetState(void*);extern "C" void ReadWordFieldAtOffset1C();extern "C" void ResetGlobalOwnerAndEmbeddedSelectionState();extern "C" void func_ov016_0218b5c0(int,int);extern "C" void SetLoadedResourceIndexMask(int);extern "C" void Clear336ByteRecordAndPackedFlags(void*);struct State{unsigned char pad[0x150];unsigned char reserved:6;unsigned char cleanup:1;unsigned char active:1;};
-// Original: arm9/main @ 0x020D7AA0; symbol: func_020d7aa0; size: 0x64.
-extern "C" ARM void CleanupOptionalResourceAndResetStateOwner(State* p){void* resource=Object_ReadGlobalDisplayContextWord();if(p->active)BackgroundLoader_CancelEightTasksAndResetState(resource);if(p->cleanup){ReadWordFieldAtOffset1C();ResetGlobalOwnerAndEmbeddedSelectionState();p->cleanup=0;}func_ov016_0218b5c0(1,-1);SetLoadedResourceIndexMask(-1);Clear336ByteRecordAndPackedFlags(p);}

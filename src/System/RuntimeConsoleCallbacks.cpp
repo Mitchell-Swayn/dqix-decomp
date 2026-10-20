@@ -1,15 +1,15 @@
 #pragma optimize_for_size off
 
 // Stream callbacks retain the existing single-character semihosting helpers.
-extern "C" int func_0200d8a8();
-extern "C" void func_0200d894(const char*);
+extern "C" int RuntimeSemihosting_ReadCharacter();
+extern "C" void RuntimeSemihosting_WriteCharacter(const char*);
 // Original: arm9/main @ 0x0200D8CC; symbol: func_0200d8cc; size: 0x50.
 extern "C" int Runtime_ReadConsoleCharacters(unsigned int handle, char* buffer, unsigned int* count, void* context)
 {
     unsigned int i = 0;
     unsigned int limit = *count;
     if (i < limit) do {
-        int character = func_0200d8a8();
+        int character = RuntimeSemihosting_ReadCharacter();
         buffer[i] = character;
         if ((unsigned char)character == '\r' || (unsigned char)character == '\n') {
             *count = i + 1;
@@ -24,7 +24,7 @@ extern "C" int RuntimeConsoleCallbacks_WriteConsoleBuffer(unsigned int handle, c
     unsigned int i = 0;
     unsigned int limit = *count;
     if (i < limit) do {
-        func_0200d894(buffer + i);
+        RuntimeSemihosting_WriteCharacter(buffer + i);
     } while (++i < limit);
     return 0;
 }

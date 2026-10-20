@@ -23,4 +23,10 @@ def resolve_objdiff(project, version, configured):
         raise ValueError('Repaired objdiff hash mismatch; rebuild the pinned tool')
     if digest(patch) != policy['patch_sha256']:
         raise ValueError('Objdiff upstream patch hash mismatch')
+    if policy.get('prefix_patch'):
+        prefix_patch = (root / policy['prefix_patch']).resolve()
+        if not prefix_patch.is_relative_to(root / 'tools'):
+            raise ValueError('Objdiff prefix patch leaves tools directory')
+        if digest(prefix_patch) != policy['prefix_patch_sha256']:
+            raise ValueError('Objdiff prefix patch hash mismatch')
     return str(executable)

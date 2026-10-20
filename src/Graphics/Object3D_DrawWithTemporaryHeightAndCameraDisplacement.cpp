@@ -38,7 +38,7 @@ extern "C" ARM int Object3D_DrawWithTemporaryHeightAndCameraDisplacement(Object3
     if (*(unsigned short*)(bytes+0xbc)) {
         unsigned ticks=GameState::GetInstance()->GetEffectiveDeltaTime();
         PositionWords direction;
-        const int* cameraBasis=(const int*)&data_0210a010.viewMatrix;
+        const int* cameraBasis=(const int*)&RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.viewMatrix;
         direction.x=cameraBasis[0];
         direction.y=cameraBasis[3];
         direction.z=cameraBasis[6];

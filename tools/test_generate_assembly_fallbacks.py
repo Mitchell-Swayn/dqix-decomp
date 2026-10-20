@@ -1,7 +1,13 @@
 import unittest
-from generate_assembly_fallbacks import render
+from generate_assembly_fallbacks import render, reference_source_path
 
 class ReferenceAssemblyTests(unittest.TestCase):
+    def test_reference_paths_do_not_create_overlay_directories(self):
+        row = dict(module_id='arm9/ov004', name='func_ov004_02167820')
+        self.assertEqual(reference_source_path(row), 'src/AssemblyFallback/arm9/func_ov004_02167820.inc')
+        row = dict(module_id='arm7/wram', name='Arm7Worker')
+        self.assertEqual(reference_source_path(row), 'src/AssemblyFallback/arm7/Arm7Worker.inc')
+
     def row(self,assembly):
         return dict(id='arm9/main:02000000',module_id='arm9/main',name='PendingFunction',address=0x02000000,size=16,mode='arm',original_sha256='a'*64,assembly=assembly)
 

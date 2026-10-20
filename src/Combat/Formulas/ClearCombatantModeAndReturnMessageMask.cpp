@@ -1,0 +1,6 @@
+#include <globaldefs.h>
+ARM
+extern "C" char* _Z16GetCombatantByIDii(int,int);extern "C" int CombatStatus_HasAilmentModeOne(void*);extern "C" int CombatStatus_HasAilmentModeTwo(void*);extern "C" void CombatStatus_ClearAilmentModeOne(void*);extern "C" void Combat_SetResultMaskFlag(void*,unsigned long long*,unsigned);extern "C" void* GameState_CreateAndAppendIndexedRecord(void*,unsigned);extern "C" void Combat_PopulateResultWithCurrentHealthAndMagic(int,void*,void*,int,int,int,int);
+// Original: arm9/ov024 @ 0x021E324C; symbol: ClearCombatantModeAndReturnMessageMask; size: 0xA8.
+// Clears either active combatant mode and returns bit17 in the resulting two-word mask.
+extern "C" unsigned long long ClearCombatantModeAndReturnMessageMask(char* self,int unused,int id){char* combatant=_Z16GetCombatantByIDii(*(int*)(self+0x10),id);if(!combatant)return 0;unsigned long long mask=0;if(CombatStatus_HasAilmentModeOne(*(void**)(combatant+0x138)) || CombatStatus_HasAilmentModeTwo(*(void**)(combatant+0x138))){CombatStatus_ClearAilmentModeOne(*(void**)(combatant+0x138));Combat_SetResultMaskFlag(*(void**)(self+0x10),&mask,17);void* message=GameState_CreateAndAppendIndexedRecord(self,0x54);if(message)Combat_PopulateResultWithCurrentHealthAndMagic(*(int*)(self+0x10),message,combatant,0,0,0,0);}return mask;}

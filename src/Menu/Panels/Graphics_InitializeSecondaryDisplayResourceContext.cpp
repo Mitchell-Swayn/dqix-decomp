@@ -1,0 +1,10 @@
+#include <globaldefs.h>
+ARM
+#define W(p,o) (*(int*)((char*)(p)+(o)))
+#define P(p,o) (*(char**)((char*)(p)+(o)))
+#define H(p,o) (*(unsigned short*)((char*)(p)+(o)))
+#define S(p,o) (*(short*)((char*)(p)+(o)))
+#define B(p,o) (*(unsigned char*)((char*)(p)+(o)))
+extern "C" void _ZN13SafeAllocator21ResetAllocatorPointerEv(void*);extern "C" void* _ZN9GameState11GetInstanceEv();extern "C" unsigned short GetSubBGVRAMBanks(),GetSubObjVRAMBanks();extern "C" void Graphics_SnapshotSubBackgroundControlRegistersOnce(void*),Selection_InitializeDisplayController(void*),ResourceStringLoader_Reset(char*),Graphics_InitializeCanvasTransferState(char*),TextCanvas_InitializeLayoutAndTransferDefaults(unsigned char*),TimeRecord_ClearDuration(void*);extern "C" int GameState_ReadProtagonistObjectIndex(void*);
+// Original: arm9/ov023 @ 0x021e7220; symbol: Graphics_InitializeSecondaryDisplayResourceContext; size 0x120.
+extern "C" void Graphics_InitializeSecondaryDisplayResourceContext(char* self,int owner){_ZN13SafeAllocator21ResetAllocatorPointerEv(self);_ZN13SafeAllocator21ResetAllocatorPointerEv(self+20);_ZN13SafeAllocator21ResetAllocatorPointerEv(self+40);void* game=_ZN9GameState11GetInstanceEv();W(self,60)=owner;W(self,64)=GetSubBGVRAMBanks();W(self,68)=GetSubObjVRAMBanks();W(self,72)=(*(volatile unsigned*)0x04001000&0x1f00)>>8;B(self,116)=0;B(self,117)=0;Graphics_SnapshotSubBackgroundControlRegistersOnce(self+100);Selection_InitializeDisplayController(self+120);ResourceStringLoader_Reset(self+76);for(int i=0;i<2;i++)Graphics_InitializeCanvasTransferState(self+0x134+i*32);for(int i=0;i<5;i++)TextCanvas_InitializeLayoutAndTransferDefaults((unsigned char*)self+0x174+i*224);W(self,0x5d4)=0;W(self,0x5d8)=0;W(self,0x5dc)=0;W(self,0x5e0)=0;W(self,0x5e4)=-1;W(self,0x5ec)=0;W(self,0x5e8)=0;W(self,0x5f0)=GameState_ReadProtagonistObjectIndex(game);W(self,0x5f4)=0;W(self,0x5f8)=0;W(self,0x5fc)=0;W(self,0x600)=0;W(self,0x604)=0;W(self,0x608)=0;B(self,0x60c)=0;B(self,0x60d)=0;TimeRecord_ClearDuration(self+0x60e);}

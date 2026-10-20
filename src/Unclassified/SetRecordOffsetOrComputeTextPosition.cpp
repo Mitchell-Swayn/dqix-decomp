@@ -1,5 +1,0 @@
-#include <globaldefs.h>
-struct Record { char pad[6]; short offset; char gap[6]; short x; char gap2[2]; unsigned char status; unsigned char font:4,rest:4; };
-extern "C" Record* FindNonnegativeKeyInEntryArray(void*,int); extern "C" Record* FindNonnegativeKeyInCountedRecordArray(void*,int); extern "C" char* FindRecordValueByKeyOrZero(void*,int); extern "C" unsigned TestValueEqualsTwelve(unsigned char); extern "C" int TextLayout_ComputeWidthWithGlyphSpacing(const char*,unsigned);
-// Original: arm9/main @ 0x020806D8; symbol: func_020806d8; size: 0xA4.
-extern "C" void SetRecordOffsetOrComputeTextPosition(void** p,int lookup,int record,int mode,short offset) { Record* target=FindNonnegativeKeyInEntryArray(p+1,record); if(!target)return; if(!mode){target->offset=offset;return;} if(target->status)return; char* text=FindRecordValueByKeyOrZero(*p,target->x); if(!text)return; int width=TextLayout_ComputeWidthWithGlyphSpacing(text,TestValueEqualsTwelve(target->font)); Record* source=FindNonnegativeKeyInCountedRecordArray(p+3,lookup); if(!source)return; target->offset=(short)(source->x<<3)-width-offset; }

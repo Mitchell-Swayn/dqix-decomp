@@ -1,7 +1,12 @@
 #include <globaldefs.h>
 #pragma always_inline on
 #pragma optimize_for_size off
-extern "C" const unsigned short data_020e69ac[];
+// Original data: arm9/main @ 0x20e69ac; symbol: data_020e69ac.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 04000400040004000400040004000400040006010401040104010401040004000400040004000400040004000400040004000400040004000400040004000400 ...; full span in module reference.
+// Observed span: 256 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" const unsigned short RuntimeParsePrintfConversion_UnknownRoleInitializedBytes[];
 // printf conversion state: byte flags and length/conversion precede width/precision.
 struct FormatFields {
     unsigned char padding, sign, precisionSpecified, alternate;
@@ -12,7 +17,7 @@ struct FormatFields {
 typedef FormatFields FormatConversion;
 struct ConversionWords { unsigned int words[4]; };
 static inline int IsDecimal(int c) {
-    return c < 0 || c >= 128 ? 0 : data_020e69ac[c] & 8;
+    return c < 0 || c >= 128 ? 0 : RuntimeParsePrintfConversion_UnknownRoleInitializedBytes[c] & 8;
 }
 // Original: arm9/main @ 0x02001BDC; symbol: func_02001bdc; size: 0x590.
 extern "C" const char* Runtime_ParsePrintfConversion(const char* format, int** arguments, FormatConversion* output) {

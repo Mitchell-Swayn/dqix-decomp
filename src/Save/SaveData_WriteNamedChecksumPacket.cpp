@@ -1,0 +1,6 @@
+#include "globaldefs.h"
+#pragma optimize_for_size on
+ARM
+struct Packet{unsigned checksum;unsigned reserved;char name[12];};extern "C" int SaveData_ReadCardSaveBytes(int,void*,int,int);extern "C" void* memset(void*,int,unsigned);extern "C" char* strcpy(char*,const char*);extern "C" unsigned FileCache_ComputeCRC32(const void*,unsigned);extern "C" void SaveData_WriteBackupBytes(unsigned,const void*,unsigned,int);extern "C" char SaveData_SerializeGameState_TextSave013[];
+// Original: arm9/main @ 0x020ABA5C; symbol: func_020aba5c; size: 0x8C.
+extern "C" int SaveData_WriteNamedChecksumPacket(int mode){unsigned state;Packet packet;if(!SaveData_ReadCardSaveBytes(0,&state,1,0))return 0;memset(&packet,0,20);strcpy(packet.name,SaveData_SerializeGameState_TextSave013);packet.checksum=FileCache_ComputeCRC32((unsigned char*)&packet+4,16);SaveData_WriteBackupBytes(mode?0x8010:0x10,&packet,20,0);return 1;}

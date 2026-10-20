@@ -1,5 +1,10 @@
 // IMA ADPCM decode step sizes indexed by per-channel step state in func_020bf79c.
-extern "C" const unsigned short data_020e9348[89] = {
+// Original data: arm9/main @ 0x20e9348; symbol: data_020e9348.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 0700080009000a000b000c000d000e001000110013001500170019001c001f002200250029002d00320037003c00420049005000580061006b00760082008f00 ...; full span in module reference.
+// Observed span: 180 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" const unsigned short SoundStreamFillAndDecodeRequestedBuffers_UnknownRoleInitializedBytes_Variant2[89] = {
     7, 8, 9, 10, 11, 12, 13, 14,
     16, 17, 19, 21, 23, 25, 28, 31,
     34, 37, 41, 45, 50, 55, 60, 66,

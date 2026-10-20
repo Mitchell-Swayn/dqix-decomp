@@ -5,29 +5,39 @@
 #include "Filesystem/FileIO.h"
 
 #ifdef jpn
-#define ComputeRandomScaledIntegerThroughDouble func_02031ea8
+#define Random_ScaleIntegerByRandFraction func_02031ea8
 
-#define data_02108e78 data_02108dbc
-#define data_02108e90 data_02108dd4
+#define LootManagerCreateContainer_UnknownRoleZeroInitializedStorage data_02108dbc
+#define LootableContainerManagerGetMainInstance_UnknownRoleZeroInitializedStorage data_02108dd4
 #endif
 
 extern "C"
 {
     // rng value between 0 and max-1 from A-table
-    int ComputeRandomScaledIntegerThroughDouble(int max);
+    int Random_ScaleIntegerByRandFraction(int max);
 }
 
 struct {
     LootDistribution* distribution;
     LootableContainerManager* manager;
     SafeAllocator* allocator;
-} extern data_02108e78;
+// Original data: arm9/main @ 0x2108e78; symbol: data_02108e78.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 12 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+} extern LootManagerCreateContainer_UnknownRoleZeroInitializedStorage;
 
-extern LootableContainerManager data_02108e90;
+// Original data: arm9/main @ 0x2108e90; symbol: data_02108e90.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 12 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern LootableContainerManager LootableContainerManagerGetMainInstance_UnknownRoleZeroInitializedStorage;
 
 // Original: arm9/main @ 0x0207BA54; symbol: _ZN24LootableContainerManager15GetMainInstanceEv; size: 0xC.
 LootableContainerManager *LootableContainerManager::GetMainInstance() {
-    return &data_02108e90;
+    return &LootableContainerManagerGetMainInstance_UnknownRoleZeroInitializedStorage;
 }
 
 // Original: arm9/main @ 0x0207BA60; symbol: _Z14Loot_Opcode_64PN6Script9ParameterEi; size: 0x8.
@@ -37,9 +47,9 @@ int Loot_Opcode_64(Script::Parameter* params, int numParams) { return 1; }
 int Loot_Opcode_65(Script::Parameter* params, int numParams) { return 1; }
 
 // Original: arm9/main @ 0x0207BA70; symbol: _Z22LootManager_Unknown_66PN6Script9ParameterEi; size: 0x20.
-int LootManager_Unknown_66(Script::Parameter* params, int numParams)
+int LootManager_SetUnknownField10(Script::Parameter* params, int numParams)
 {
-    data_02108e78.manager->unk_10 = params[0].ToInt();
+    LootManagerCreateContainer_UnknownRoleZeroInitializedStorage.manager->unk_10 = params[0].ToInt();
     return 1;
 }
 
@@ -48,7 +58,7 @@ int LootManager_CreateContainer(Script::Parameter* params, int numParams)
 {
     (void)GameResources_GetInstance();
     LootableContainerManager::Container* container =
-        (LootableContainerManager::Container*)data_02108e78.allocator->Allocate(sizeof(LootableContainerManager::Container));
+        (LootableContainerManager::Container*)LootManagerCreateContainer_UnknownRoleZeroInitializedStorage.allocator->Allocate(sizeof(LootableContainerManager::Container));
     if (container == NULL)
         return 0;
 
@@ -115,7 +125,7 @@ int LootManager_CreateContainer(Script::Parameter* params, int numParams)
             container->unk_6 = entries[3];
         }
     }
-    data_02108e78.manager->RegisterContainer(container);
+    LootManagerCreateContainer_UnknownRoleZeroInitializedStorage.manager->RegisterContainer(container);
     return 1;
 }
 
@@ -131,11 +141,11 @@ void LootableContainerManager::Reset()
 // Original: arm9/main @ 0x0207BCEC; symbol: _ZN24LootableContainerManager14ResetAllocatorEP13SafeAllocator; size: 0x48.
 void LootableContainerManager::ResetAllocator(SafeAllocator *alloc)
 {
-    data_02108e78.allocator = &GameResources_GetInstance()->lootableContainerAllocator_18c_;
+    LootManagerCreateContainer_UnknownRoleZeroInitializedStorage.allocator = &GameResources_GetInstance()->lootableContainerAllocator_18c_;
     if (alloc != NULL)
         alloc->Reset();
     else
-        data_02108e78.allocator->Reset();
+        LootManagerCreateContainer_UnknownRoleZeroInitializedStorage.allocator->Reset();
     pContainerList_ = 0;
     numEntries_ = 0;
 }
@@ -143,7 +153,7 @@ void LootableContainerManager::ResetAllocator(SafeAllocator *alloc)
 static Script::OpcodeLookupEntry s_zoneContainerOpcodes[] = {
     { 0x64, &Loot_Opcode_64 },
     { 0x65, &Loot_Opcode_65 },
-    { 0x66, &LootManager_Unknown_66 },
+    { 0x66, &LootManager_SetUnknownField10 },
     { 0x67, &LootManager_CreateContainer },
     { 0, NULL }
 };
@@ -159,19 +169,19 @@ void LootableContainerManager::LoadZoneContainers(const void *treasureArchive,
     unsigned int scriptFileLength;
     if (!GetFileInNarcPermissive(treasureArchive, scriptFilename, &scriptFile, &scriptFileLength))
         return;
-    data_02108e78.manager = this;
+    LootManagerCreateContainer_UnknownRoleZeroInitializedStorage.manager = this;
     GameResources* resources = GameResources_GetInstance();
 
     if (alloc != NULL)
-        data_02108e78.allocator = alloc;
+        LootManagerCreateContainer_UnknownRoleZeroInitializedStorage.allocator = alloc;
     else
-        data_02108e78.allocator = &resources->lootableContainerAllocator_18c_;
+        LootManagerCreateContainer_UnknownRoleZeroInitializedStorage.allocator = &resources->lootableContainerAllocator_18c_;
     Script runner;
     runner.Initialize();
     runner.SetOpcodeLookup(s_zoneContainerOpcodes);
     runner.Load(scriptFile, scriptFileLength);
     runner.Execute();
-    data_02108e78.allocator = &resources->lootableContainerAllocator_18c_;
+    LootManagerCreateContainer_UnknownRoleZeroInitializedStorage.allocator = &resources->lootableContainerAllocator_18c_;
 
     char allocationBuffer[0x400];
     SafeAllocator tempAlloc;
@@ -275,14 +285,14 @@ int LootDistribution_DeclareOutcome(Script::Parameter* params, int numParams)
     outcome.lootType = resultType;
     outcome.itemID = id;
     outcome.percentage = percentage;
-    data_02108e78.distribution->InsertOutcome(&outcome);
+    LootManagerCreateContainer_UnknownRoleZeroInitializedStorage.distribution->InsertOutcome(&outcome);
     return 1;
 }
 
 // Original: arm9/main @ 0x0207C084; symbol: _Z33LootDistribution_AllocateOutcomesPN6Script9ParameterEi; size: 0x28.
 int LootDistribution_AllocateOutcomes(Script::Parameter* params, int numParams)
 {
-    data_02108e78.distribution->AllocateOutcomes(params[0].ToInt());
+    LootManagerCreateContainer_UnknownRoleZeroInitializedStorage.distribution->AllocateOutcomes(params[0].ToInt());
     return 1;
 }
 
@@ -306,14 +316,14 @@ static Script::OpcodeLookupEntry s_distributionOpcodes[] = {
 // Original: arm9/main @ 0x0207C0C4; symbol: _ZN16LootDistribution14LoadFromScriptEP13SafeAllocatorPKvj; size: 0x64.
 void LootDistribution::LoadFromScript(SafeAllocator* alloc, const void* script, unsigned int length)
 {
-    data_02108e78.distribution = this;
+    LootManagerCreateContainer_UnknownRoleZeroInitializedStorage.distribution = this;
     pAllocator_ = alloc;
     Script runner;
     runner.Initialize();
     runner.SetOpcodeLookup(s_distributionOpcodes);
     runner.Load(script, length);
     runner.Execute();
-    data_02108e78.distribution = NULL;
+    LootManagerCreateContainer_UnknownRoleZeroInitializedStorage.distribution = NULL;
 }
 
 // Original: arm9/main @ 0x0207C128; symbol: _ZN16LootDistribution13InsertOutcomeEPNS_7OutcomeE; size: 0x3C.
@@ -346,7 +356,7 @@ const LootDistribution::Outcome* LootDistribution::Sample(int rank)
     if (numOutcomes == 0)
         return NULL;
 
-    int rng = ComputeRandomScaledIntegerThroughDouble(100);
+    int rng = Random_ScaleIntegerByRandFraction(100);
     for (int i = 0; i < numOutcomes; i++)
     {
         rng -= outcomes[i]->percentage;

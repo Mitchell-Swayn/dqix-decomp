@@ -1,7 +1,0 @@
-#include <globaldefs.h>
-ARM
-#include <GameState/GameState.h>
-#include <Resource/Brightness.h>
-struct State{unsigned char pad[0xb8];int target;unsigned char padbc[0x19];unsigned char stage;unsigned char padd6[4];unsigned short flags;};extern "C" {GameResources* GameState_ReadPResources();void Object_ResetAndDeactivateState(void*);void ComputeGrottoAndContextDependentStateFlags(int);void BackgroundLoader_RemoveTwoTasksAndDestroyFiveAllocators(State*);void Flags_ClearWordMask(GameResources*,int);
-// Original: arm9/main @ 0x0208D340; symbol: func_0208d340; size: 0xEC.
-void AdvanceSubBrightnessTransitionStages(State* p){GameState::GetInstance();GameResources* resources=GameState_ReadPResources();unsigned char stage=p->stage;if(stage==0){if(!(p->flags&0x10))SetSubBrightness(resources,-16,8);p->stage++;return;}if(stage==1){if(!IsSubBrightnessTransitionActive(resources))p->stage++;return;}if(stage==2){p->flags&=~4;Object_ResetAndDeactivateState((unsigned char*)p+0x2c);ComputeGrottoAndContextDependentStateFlags(0);p->stage++;return;}if(stage!=3)return;volatile unsigned int* regs=(volatile unsigned int*)0x04001000;regs[0]=(regs[0]&~0x1f00)|(p->target<<8);*(volatile unsigned short*)((unsigned char*)regs+0x50)=0;p->stage++;BackgroundLoader_RemoveTwoTasksAndDestroyFiveAllocators(p);GameState::GetInstance();Flags_ClearWordMask(GameState_ReadPResources(),0x6000);}}

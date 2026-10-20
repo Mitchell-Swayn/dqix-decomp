@@ -1,0 +1,6 @@
+#include <globaldefs.h>
+ARM
+extern "C" {void* _ZN16BackgroundLoader11GetInstanceEv();int Menu_GetBackgroundLoadTicket(void*);unsigned _ZN16BackgroundLoader13GetTaskStatusEi(void*,unsigned);int _ZN16BackgroundLoader21GetDetailedTaskStatusEi(void*,int);void _ZN16BackgroundLoader17GetLoadedFileByIDEiPPvPj(void*,int,void**,unsigned*);void* ResourceFile_FindNamedPayloadAndSize(void*,const char*,unsigned*);void Script_InstallValidatedPackedTableOrExecuteCharacterVariant(void*,void*,void*,unsigned);}
+// Original: arm9/ov023 @ 0x021FA5A0; symbol: AttachCompletedNamedPayloadToTypeFourRecord; size: 0xa4.
+// Attaches named payload once owner background load reaches detailed state2.
+extern "C" void Menu_BindNamedCompletedMessageTablePayload(char* self,void* owner){void* loader=_ZN16BackgroundLoader11GetInstanceEv();int task=Menu_GetBackgroundLoadTicket(owner);if(task<0)return;if(!_ZN16BackgroundLoader13GetTaskStatusEi(loader,task))return;if(_ZN16BackgroundLoader21GetDetailedTaskStatusEi(loader,task)!=2)return;void* file;unsigned length;_ZN16BackgroundLoader17GetLoadedFileByIDEiPPvPj(loader,task,&file,&length);if(!file || !length)return;unsigned size;void* payload=ResourceFile_FindNamedPayloadAndSize(file,*(char**)(self+16),&size);if(payload)Script_InstallValidatedPackedTableOrExecuteCharacterVariant(self,owner,payload,size);}

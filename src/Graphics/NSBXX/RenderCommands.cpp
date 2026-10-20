@@ -7,7 +7,7 @@ void ExecuteRenderCommands(RenderCommandHandler* handler)
     {
         handler->flags_ &= ~(1 << RCH_FLAG_6);
         uint8_t opcode = handler->instructionPointer_[0];
-        data_020f1e08[opcode & 0x1f](handler, opcode & 0xe0);
+        ExecuteRenderCommands_UnknownRoleProcedureReferenceRecords[opcode & 0x1f](handler, opcode & 0xe0);
     } while (!(handler->flags_ & (1 << RCH_FLAG_5)));
 }
 
@@ -31,9 +31,9 @@ void SetUpRenderCommandHandler(RenderCommandHandler* handler, ModelRenderContext
 
     handler->modelMaterials_ = modelData->internalModel_->GetMaterialData();
     handler->meshList_ = modelData->internalModel_->GetMeshList();
-    handler->boneMatrixRenderDataScalePopulateProc_ = data_020f1cec[modelData->internalModel_->boneScalingMode_];
-    handler->boneMatrixRenderDataSubmitProc_ = data_020f1ce0[modelData->internalModel_->boneScalingMode_];
-    handler->textureMatrixCreateProc_ = data_020f1cf8[modelData->internalModel_->materialCallbackType_];
+    handler->boneMatrixRenderDataScalePopulateProc_ = SetUpRenderCommandHandler_UnknownRoleProcedureReferenceRecords_Variant2[modelData->internalModel_->boneScalingMode_];
+    handler->boneMatrixRenderDataSubmitProc_ = SetUpRenderCommandHandler_UnknownRoleProcedureReferenceRecords[modelData->internalModel_->boneScalingMode_];
+    handler->textureMatrixCreateProc_ = RenderMeshWithMaterial_UnknownRoleProcedureReferenceRecords[modelData->internalModel_->materialCallbackType_];
 
     handler->upScale_ = modelData->internalModel_->upScale_;
     handler->downScale_ = modelData->internalModel_->downScale_;
@@ -108,15 +108,15 @@ void RenderModelFromRenderData(ModelRenderContext* renderData)
         renderData->flags_ &= ~0x10;
     }
 
-    if (data_0210a274 != NULL)
+    if (ApplyBindPoseScaling_UnknownRoleZeroInitializedStorage != NULL)
     {
-        SetUpRenderCommandHandler(data_0210a274, renderData);
+        SetUpRenderCommandHandler(ApplyBindPoseScaling_UnknownRoleZeroInitializedStorage, renderData);
     }
     else
     {
-        data_0210a274 = &handler;
+        ApplyBindPoseScaling_UnknownRoleZeroInitializedStorage = &handler;
         SetUpRenderCommandHandler(&handler, renderData);
-        data_0210a274 = NULL;
+        ApplyBindPoseScaling_UnknownRoleZeroInitializedStorage = NULL;
     }
 }
 
@@ -272,7 +272,7 @@ void MaterialBindProc(RenderCommandHandler* handler, int modifier, NSBXXMaterial
             if (modelMaterialArray != NULL)
                 targetData = &modelMaterialArray[idx];
             else
-                targetData = &data_0210a278[idx];
+                targetData = &MaterialBindProc_UnknownRoleZeroInitializedStorage[idx];
         }
         else
         {
@@ -286,7 +286,7 @@ void MaterialBindProc(RenderCommandHandler* handler, int modifier, NSBXXMaterial
                 if (!(modifier != 0x40))
                 {
                     handler->materialBitfield_[idx >> 5] |= (1 << (idx & 0x1f));
-                    targetData = &data_0210a278[idx];
+                    targetData = &MaterialBindProc_UnknownRoleZeroInitializedStorage[idx];
                 }
                 else
                     targetData = &handler->scratchMaterialRenderData_;
@@ -298,15 +298,15 @@ void MaterialBindProc(RenderCommandHandler* handler, int modifier, NSBXXMaterial
             {
                 targetData->flags_ |= 0x20;
             }
-            int difambMask = data_020e9240[(material->flags_ >> 6) & 7];
-            targetData->paramDIF_AMB_ = (data_0210a010.diffuseAmbientArg & ~difambMask) |
+            int difambMask = MaterialBindProc_UnknownRoleInitializedBytes[(material->flags_ >> 6) & 7];
+            targetData->paramDIF_AMB_ = (RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.diffuseAmbientArg & ~difambMask) |
                 (material->paramDIF_AMB_ & difambMask);
 
-            int speemiMask = data_020e9240[(material->flags_ >> 9) & 7];
-            targetData->paramSPE_EMI_ = (data_0210a010.specularArg & ~speemiMask) |
+            int speemiMask = MaterialBindProc_UnknownRoleInitializedBytes[(material->flags_ >> 9) & 7];
+            targetData->paramSPE_EMI_ = (RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.specularArg & ~speemiMask) |
                 (material->paramSPE_EMI_ & speemiMask);
 
-            targetData->paramPOLYGON_ATTR_ = (data_0210a010.polygonAttrArg & ~material->maskPOLYGON_ATTR_) |
+            targetData->paramPOLYGON_ATTR_ = (RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.polygonAttrArg & ~material->maskPOLYGON_ATTR_) |
                 (material->paramPOLYGON_ATTR_ & material->maskPOLYGON_ATTR_);
             targetData->paramTEXIMAGE_PARAMS_ = material->paramTEXIMAGE_PARAMS_;
             targetData->texturePaletteBase_ = material->texturePaletteVRAMOffset_;
@@ -428,7 +428,7 @@ void RenderCommand_4(RenderCommandHandler* handler, int modifier)
         {
             NSBXXMaterial* material = handler->modelMaterials_->GetMaterialByIndex(materialIdx);
             // MaterialBindProc
-            data_020f1d08.materialBindFunctions[material->unk_0](handler, modifier, material, materialIdx);
+            RenderCommand12_UnknownRoleProcedureReferenceRecords.materialBindFunctions[material->unk_0](handler, modifier, material, materialIdx);
         }
     }
     handler->instructionPointer_ += 2;
@@ -476,7 +476,7 @@ void RenderCommand_5(RenderCommandHandler* handler, int modifier)
         int meshIdx = handler->instructionPointer_[1];
         NSBXXNameList* meshList = handler->meshList_;
         NSBXXMesh* mesh = meshList->GetEntryFromu32Offset_v2<NSBXXMesh>(meshIdx);
-        data_020f1d08.meshDrawFunctions[mesh->unk_0](handler, modifier, mesh, meshIdx);
+        RenderCommand12_UnknownRoleProcedureReferenceRecords.meshDrawFunctions[mesh->unk_0](handler, modifier, mesh, meshIdx);
     }
     handler->instructionPointer_ += 2;
 }
@@ -591,7 +591,7 @@ void RenderCommand_6(RenderCommandHandler* handler, int modifier)
                         (NSBXXBoneMatrix::PivotMatrixData*)boneMatrixExtraPtr;
                     fix32_t entryA = pivot->a;
                     fix32_t entryB = pivot->b;
-                    func_020ca7d0(&targetData->rotationMatrix_);
+                    MI_Zero36B(&targetData->rotationMatrix_);
                     
                     fix32_t unit;
                     if (boneMatrix->flags_ & 0x100)
@@ -601,18 +601,18 @@ void RenderCommand_6(RenderCommandHandler* handler, int modifier)
 
                     targetData->rotationMatrix_.entries[form] = unit;
 
-                    uint8_t indexA = data_020e9260[form].a;
-                    uint8_t indexB = data_020e9260[form].b;
+                    uint8_t indexA = RenderCommand6_UnknownRoleInitializedBytes[form].a;
+                    uint8_t indexB = RenderCommand6_UnknownRoleInitializedBytes[form].b;
 
                     targetData->rotationMatrix_.entries[indexA] = entryA;
                     targetData->rotationMatrix_.entries[indexB] = entryB;
 
                     fix32_t entryC = (boneMatrix->flags_ & 0x200) ? -entryB : entryB;
-                    uint8_t indexC = data_020e9260[form].c;
+                    uint8_t indexC = RenderCommand6_UnknownRoleInitializedBytes[form].c;
                     targetData->rotationMatrix_.entries[indexC] = entryC;
 
                     fix32_t entryD = (boneMatrix->flags_ & 0x400) ? -entryA : entryA;
-                    uint8_t indexD = data_020e9260[form].d;
+                    uint8_t indexD = RenderCommand6_UnknownRoleInitializedBytes[form].d;
                     targetData->rotationMatrix_.entries[indexD] = entryD;
                     boneMatrixExtraPtr += sizeof(*pivot);
                 }
@@ -690,8 +690,8 @@ void RenderCommand_6(RenderCommandHandler* handler, int modifier)
 void RenderCommand_7(RenderCommandHandler* handler, int modifier)
 {
     int numBytesConsumed = 2;
-    Vector3fix* pTranslation = &data_020f1d78.rotationTranslation.translation;
-    Vector3fix* pScaling = &data_020f1d78.scaling;
+    Vector3fix* pTranslation = &RenderCommand7_UnknownRoleInitializedBytes.rotationTranslation.translation;
+    Vector3fix* pScaling = &RenderCommand7_UnknownRoleInitializedBytes.scaling;
     if (handler->flags_ & (1 << RCH_FLAG_9))
     {
         if (modifier == 0x40 || modifier == 0x60)
@@ -739,17 +739,17 @@ void RenderCommand_7(RenderCommandHandler* handler, int modifier)
         // get the current world * view matrix (we set projection matrix to identity, so
         // it doesn't contribute here)
         while (Geometry_ReadClipMatrixWhenIdle(&clipMatrix) != 0) {}
-        if (data_0210a010.flags & (1 << RENDER_CONFIG_FLAG_0))
+        if (RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.flags & (1 << RENDER_CONFIG_FLAG_0))
         {
             const Matrix4x3* worldView4x3 = RenderConfig::GetCombinedWorldViewMatrix();
             Matrix4x4 worldView;
-            Mat4x3_ConvertTo4x4(worldView4x3, &worldView);
+            MTX_Copy43To44(worldView4x3, &worldView);
             Mat4x4_Multiply(&clipMatrix, &worldView, &clipMatrix);
         }
-        else if (data_0210a010.flags & (1 << RENDER_CONFIG_FLAG_1))
+        else if (RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.flags & (1 << RENDER_CONFIG_FLAG_1))
         {
             Matrix4x4 view4x4;
-            Mat4x3_ConvertTo4x4(&data_0210a010.viewMatrix, &view4x4);
+            MTX_Copy43To44(&RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.viewMatrix, &view4x4);
             Mat4x4_Multiply(&clipMatrix, &view4x4, &clipMatrix);
         }
 
@@ -766,31 +766,31 @@ void RenderCommand_7(RenderCommandHandler* handler, int modifier)
         // note: if clipMatrix has a representation as (scaling) * (rotation) * (translation)
         // then the above is extracting the scaling and translation components
 
-        if (data_0210a010.flags & (1 << RENDER_CONFIG_FLAG_0))
+        if (RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.flags & (1 << RENDER_CONFIG_FLAG_0))
         {
             GXFIFO = COMBINE_GXFIFO_COMMANDS3(GXFifoCommand_PopMatrix, GXFifoCommand_SetMatrixMode, GXFifoCommand_LoadMat4x3);
-            func_020ca430(&data_020f1d78.popMatrixParameter, &GXFIFO, 8); // pass pop / matrix mode commands
+            MI_Send32(&RenderCommand7_UnknownRoleInitializedBytes.popMatrixParameter, &GXFIFO, 8); // pass pop / matrix mode commands
             // load the matrix returned by func_020b3a24(), inverse of func_020b39ec()
-            func_020ca430(RenderConfig::GetInverseCombinedWorldViewMatrix(), &GXFIFO, 4*3 * sizeof(fix32_t));
+            MI_Send32(RenderConfig::GetInverseCombinedWorldViewMatrix(), &GXFIFO, 4*3 * sizeof(fix32_t));
             // the matrix to multiply by is a translation matrix, so we're composing
             // scaling with translation (remember the final operation represents
             // the first matrix transformation to carry out)
             GXFIFO = COMBINE_GXFIFO_COMMANDS2(GXFifoCommand_MultiplyMat4x3, GXFifoCommand_ScaleMatrix);
-            func_020ca430(&data_020f1d78.rotationTranslation, &GXFIFO, (4*3 + 3) * sizeof(fix32_t));
+            MI_Send32(&RenderCommand7_UnknownRoleInitializedBytes.rotationTranslation, &GXFIFO, (4*3 + 3) * sizeof(fix32_t));
         }
-        else if (data_0210a010.flags & (1 << RENDER_CONFIG_FLAG_1))
+        else if (RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.flags & (1 << RENDER_CONFIG_FLAG_1))
         {
             GXFIFO = COMBINE_GXFIFO_COMMANDS3(GXFifoCommand_PopMatrix, GXFifoCommand_SetMatrixMode, GXFifoCommand_LoadMat4x3);
-            func_020ca430(&data_020f1d78.popMatrixParameter, &GXFIFO, 8);
-            func_020ca430(RenderConfig::GetInverseViewMatrix(), &GXFIFO, 4*3 * sizeof(fix32_t));
+            MI_Send32(&RenderCommand7_UnknownRoleInitializedBytes.popMatrixParameter, &GXFIFO, 8);
+            MI_Send32(RenderConfig::GetInverseViewMatrix(), &GXFIFO, 4*3 * sizeof(fix32_t));
             GXFIFO = COMBINE_GXFIFO_COMMANDS2(GXFifoCommand_MultiplyMat4x3, GXFifoCommand_ScaleMatrix);
-            func_020ca430(&data_020f1d78.rotationTranslation, &GXFIFO, (4*3 + 3) * sizeof(fix32_t));
+            MI_Send32(&RenderCommand7_UnknownRoleInitializedBytes.rotationTranslation, &GXFIFO, (4*3 + 3) * sizeof(fix32_t));
         }
         else
         {
             // send all the commands at once: pop the matrix, set matrix mode to 2,
             // then load a translation + scaling matrix
-            func_020ca430(&data_020f1d78, &GXFIFO, sizeof(data_020f1d78));
+            MI_Send32(&RenderCommand7_UnknownRoleInitializedBytes, &GXFIFO, sizeof(RenderCommand7_UnknownRoleInitializedBytes));
         }
 
     }
@@ -823,9 +823,9 @@ void RenderCommand_7(RenderCommandHandler* handler, int modifier)
 void RenderCommand_8(RenderCommandHandler* handler, int modifier)
 {
     int numBytesConsumed = 2;
-    Vector3fix* pTranslation = &data_020f1dc0.rotationTranslation.translation;
-    Vector3fix* pScaling = &data_020f1dc0.scaling;
-    Matrix3x3* pRotation = &data_020f1dc0.rotationTranslation.rotation;
+    Vector3fix* pTranslation = &RenderCommand8_UnknownRoleInitializedBytes.rotationTranslation.translation;
+    Vector3fix* pScaling = &RenderCommand8_UnknownRoleInitializedBytes.scaling;
+    Matrix3x3* pRotation = &RenderCommand8_UnknownRoleInitializedBytes.rotationTranslation.rotation;
     if (handler->flags_ & (1 << RCH_FLAG_9))
     {
         if (modifier == 0x40 || modifier == 0x60)
@@ -871,17 +871,17 @@ void RenderCommand_8(RenderCommandHandler* handler, int modifier)
         GXFIFO = 0; // why is this here?
         Matrix4x4 clipMatrix;
         while (Geometry_ReadClipMatrixWhenIdle(&clipMatrix) != 0) {}
-        if (data_0210a010.flags & (1 << RENDER_CONFIG_FLAG_0))
+        if (RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.flags & (1 << RENDER_CONFIG_FLAG_0))
         {
             const Matrix4x3* worldView4x3 = RenderConfig::GetCombinedWorldViewMatrix();
             Matrix4x4 worldView;
-            Mat4x3_ConvertTo4x4(worldView4x3, &worldView);
+            MTX_Copy43To44(worldView4x3, &worldView);
             Mat4x4_Multiply(&clipMatrix, &worldView, &clipMatrix);
         }
-        else if (data_0210a010.flags & (1 << RENDER_CONFIG_FLAG_1))
+        else if (RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.flags & (1 << RENDER_CONFIG_FLAG_1))
         {
             Matrix4x4 view4x4;
-            Mat4x3_ConvertTo4x4(&data_0210a010.viewMatrix, &view4x4);
+            MTX_Copy43To44(&RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.viewMatrix, &view4x4);
             Mat4x4_Multiply(&clipMatrix, &view4x4, &clipMatrix);
         }
 
@@ -914,33 +914,33 @@ void RenderCommand_8(RenderCommandHandler* handler, int modifier)
         // then the above extracts the components, and reduces the rotation part to
         // only be a rotation in the x-axis
 
-        if (data_0210a010.flags & (1 << RENDER_CONFIG_FLAG_0))
+        if (RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.flags & (1 << RENDER_CONFIG_FLAG_0))
         {
             GXFIFO = COMBINE_GXFIFO_COMMANDS3(GXFifoCommand_PopMatrix, GXFifoCommand_SetMatrixMode, GXFifoCommand_LoadMat4x3);
-            func_020ca430(&data_020f1dc0.popMatrixParameter, &GXFIFO, 8); // pass pop / matrix mode commands
-            func_020ca430(RenderConfig::GetInverseCombinedWorldViewMatrix(), &GXFIFO, 3 * 4 * sizeof(fix32_t));
+            MI_Send32(&RenderCommand8_UnknownRoleInitializedBytes.popMatrixParameter, &GXFIFO, 8); // pass pop / matrix mode commands
+            MI_Send32(RenderConfig::GetInverseCombinedWorldViewMatrix(), &GXFIFO, 3 * 4 * sizeof(fix32_t));
             // the 4x3 matrix is a rotate-then-translate matrix. Recall that matrix multiplication
             // commands put the parameter on the inside, so we are actually ending 
             // up with (scale) -> (rotate then translate) -> (apply matrix from above)
             GXFIFO = COMBINE_GXFIFO_COMMANDS2(GXFifoCommand_MultiplyMat4x3, GXFifoCommand_ScaleMatrix);
-            func_020ca430(&data_020f1dc0.rotationTranslation, &GXFIFO, (4*3 + 3) * sizeof(fix32_t));
+            MI_Send32(&RenderCommand8_UnknownRoleInitializedBytes.rotationTranslation, &GXFIFO, (4*3 + 3) * sizeof(fix32_t));
         }
-        else if (data_0210a010.flags & (1 << RENDER_CONFIG_FLAG_1))
+        else if (RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.flags & (1 << RENDER_CONFIG_FLAG_1))
         {
             GXFIFO = COMBINE_GXFIFO_COMMANDS3(GXFifoCommand_PopMatrix, GXFifoCommand_SetMatrixMode, GXFifoCommand_LoadMat4x3);
-            func_020ca430(&data_020f1dc0.popMatrixParameter, &GXFIFO, 8);
-            func_020ca430(RenderConfig::GetInverseViewMatrix(), &GXFIFO, 4*3 * sizeof(fix32_t));
+            MI_Send32(&RenderCommand8_UnknownRoleInitializedBytes.popMatrixParameter, &GXFIFO, 8);
+            MI_Send32(RenderConfig::GetInverseViewMatrix(), &GXFIFO, 4*3 * sizeof(fix32_t));
             // the 4x3 matrix is a rotate-then-translate matrix. Recall that matrix multiplication
             // commands put the parameter on the inside, so we are actually ending 
             // up with (scale) -> (rotate then translate) -> (apply matrix from above)
             GXFIFO = COMBINE_GXFIFO_COMMANDS2(GXFifoCommand_MultiplyMat4x3, GXFifoCommand_ScaleMatrix);
-            func_020ca430(&data_020f1dc0.rotationTranslation, &GXFIFO, (4*3 + 3) * sizeof(fix32_t));
+            MI_Send32(&RenderCommand8_UnknownRoleInitializedBytes.rotationTranslation, &GXFIFO, (4*3 + 3) * sizeof(fix32_t));
         }
         else
         {
             // send all the commands at once: pop the matrix, set matrix mode to 2,
             // then pre-apply a translation, then pre-apply a scaling
-            func_020ca430(&data_020f1dc0, &GXFIFO, sizeof(data_020f1dc0));
+            MI_Send32(&RenderCommand8_UnknownRoleInitializedBytes, &GXFIFO, sizeof(RenderCommand8_UnknownRoleInitializedBytes));
         }
     }
 

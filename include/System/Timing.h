@@ -1,13 +1,16 @@
+// Original data alias: arm9/main @ 0x2111644; symbol: data_02111644.
+// Upper 32 bits of OS_TimerOverflowCount, at OS_TimerState + 12. Initially zero; runtime contents are mutable.
+// Initial values (hex for initialized storage): zero-filled at load; mutable at runtime.
 #pragma once
 
 #include "std_library_functions.h"
 #include <globaldefs.h>
 
 #if defined(jpn)
-#define data_02111634 data_021112d4
-#define data_02111638 data_021112d8
-#define data_02111644 data_021112e4
-#define data_02111648 data_021112e8
+#define MarkAlarmInitializationFlagBit_UnknownRoleZeroInitializedStorage data_021112d4
+#define OS_TimerState data_021112d8
+#define OS_TimerOverflowCountHighWord data_021112e4
+#define CancelAlarm_UnknownRoleZeroInitializedStorage data_021112e8
 #endif
 
 struct ProcessorContext;
@@ -29,7 +32,12 @@ struct Alarm
                                    // alarm sounds when global tick counter = 2, 7, 12, 17, ...
 };
 
-extern unsigned short data_02111634;
+// Original data: arm9/main @ 0x2111634; symbol: data_02111634.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern unsigned short MarkAlarmInitializationFlagBit_UnknownRoleZeroInitializedStorage;
 
 struct Timer64Bit
 {
@@ -38,7 +46,12 @@ struct Timer64Bit
     volatile uint64_t numTimerOverflows;
 };
 
-extern Timer64Bit data_02111638;
+// Original data: arm9/main @ 0x2111638; symbol: data_02111638.
+// Timer-0 overflow accounting and deferred counter reload state, represented by Timer64Bit. Initially zero; runtime fields are mutable.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 16 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern Timer64Bit OS_TimerState;
 
 struct ActiveAlarmList
 {
@@ -47,7 +60,12 @@ struct ActiveAlarmList
     Alarm* pLastAlarm;
 };
 
-extern ActiveAlarmList data_02111648;
+// Original data: arm9/main @ 0x2111648; symbol: data_02111648.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 12 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern ActiveAlarmList CancelAlarm_UnknownRoleZeroInitializedStorage;
 
 #define TIMER_TICKS_PER_MILLISECOND 33514 // approximate, should be 33513.982
 

@@ -1,12 +1,17 @@
 #include "World/BMDJ.h"
 
-extern const Vector3i data_020e6dfc = { 0x1000, 0x1000, 0x1000 };
+// Original data: arm9/main @ 0x20e6dfc; symbol: data_020e6dfc.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 001000000010000000100000.
+// Observed span: 12 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const Vector3i InitializeBMDJTransforms_UnknownRoleInitializedBytes = { 0x1000, 0x1000, 0x1000 };
 
 // Original: arm9/main @ 0x0201310C; symbol: _Z24InitializeBMDJTransformsPN17Zone3D_BMDJStruct13InstanceEntryE; size: 0x4C.
 void InitializeBMDJTransforms(Zone3D_BMDJStruct::InstanceEntry* instance)
 {
     Vector3i position = { 0, 0, 0 };
-    Vector3i scale = data_020e6dfc;
+    Vector3i scale = InitializeBMDJTransforms_UnknownRoleInitializedBytes;
     int angle = 0;
     ApplyBMDJTransforms(instance, &position, &angle, &scale);
 }

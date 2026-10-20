@@ -11,27 +11,37 @@ struct EffectDrawState {
 };
 struct EffectRenderState { char prefix[0xbc]; char rotation[0x24]; char gap[0x1c]; unsigned flags; };
 extern "C" {
- int Object_TestInactiveCounterWithinLimit(EffectDrawState*);
- EffectRecord* ReadResolvedRecordWordField14OrZero(void*);
+ int Effect_TestLifetimeExpired(EffectDrawState*);
+ EffectRecord* ResourceTracks_GetDrawSettings(void*);
  void NSBXX_Model_SetDiffuseReflectionColor(void*,unsigned short);
  void NSBXX_Model_SetPolygonID(void*,unsigned);
  void _ZN12RenderConfig17SetObjectPositionEP8Vector3i(EffectVector*);
  void _ZN12RenderConfig14SetObjectScaleEP8Vector3i(EffectVector*);
  void* _ZN9GameState11GetInstanceEv();
  void* GameState_ReadUnknownB0(void*);
- void* Object_GetSubrecordAtOffset144(void*);
+ void* Camera_GetInverseViewRotation(void*);
  void MI_Copy36B(const void*,void*);
  void _ZN8Object3D17SetInheritedAlphaEi(void*,int);
  void _ZN8Object3D10DrawSimpleEb(void*,bool);
  void _ZN8Object3D4DrawEb(void*,bool);
- extern EffectRenderState data_0210a010;
- extern const EffectVector data_020e7da4;
+// Original data: arm9/main @ 0x210a010; symbol: data_0210a010.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 612 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+ extern EffectRenderState RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage;
+// Original data: arm9/main @ 0x20e7da4; symbol: data_020e7da4.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 000000000000000000100000.
+// Observed span: 12 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+ extern const EffectVector UpdateAndDrawMovingEffect_UnknownRoleInitializedBytes;
 }
 // Original: arm9/main @ 0x02059a54; symbol: func_02059a54; size: 0x23c.
 // Update an effect's time-based position and submit its colored, scaled object.
 extern "C" void UpdateAndDrawMovingEffect(EffectDrawState* state) {
- if(!state->active || Object_TestInactiveCounterWithinLimit(state)) return;
- EffectRecord* record=ReadResolvedRecordWordField14OrZero(state->resource);
+ if(!state->active || Effect_TestLifetimeExpired(state)) return;
+ EffectRecord* record=ResourceTracks_GetDrawSettings(state->resource);
  int x,y,z;
  unsigned tick=state->tick;
  x=state->origin.x+(int)(4096.0f*((float)tick*(state->velocityX*state->speed)));
@@ -49,10 +59,10 @@ extern "C" void UpdateAndDrawMovingEffect(EffectDrawState* state) {
   _ZN12RenderConfig17SetObjectPositionEP8Vector3i(&position);
   void* world=GameState_ReadUnknownB0(_ZN9GameState11GetInstanceEv());
   if(world) {
-   MI_Copy36B(Object_GetSubrecordAtOffset144(world),data_0210a010.rotation);
-   data_0210a010.flags&=~0xa4;
+   MI_Copy36B(Camera_GetInverseViewRotation(world),RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.rotation);
+   RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.flags&=~0xa4;
   }
-  EffectVector scale=data_020e7da4;
+  EffectVector scale=UpdateAndDrawMovingEffect_UnknownRoleInitializedBytes;
   scale.x=(int)((float)(int)(4096.0f*state->scaleFactorX)*state->scaleX);
   scale.y=(int)((float)(int)(4096.0f*state->scaleFactorY)*state->scaleY);
   _ZN12RenderConfig14SetObjectScaleEP8Vector3i(&scale);

@@ -10,18 +10,38 @@ void VectorizedMemset(void*,int,unsigned);
 void MI_CpuCopy8(const void*,void*,unsigned);
 int ResetIPCOperationStateUnderIRQProtection();
 void System_ClearSharedHalfword96BitZero();
-extern char data_021142e0[],data_02114330[],data_02114344[],data_02114354[];
+// Original data: arm9/main @ 0x21142e0; symbol: data_021142e0.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 8 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x2114330; symbol: data_02114330.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 20 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x2114344; symbol: data_02114344.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 16 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x2114354; symbol: data_02114354.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 44 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern char WMiCheckIdle_UnknownRoleZeroInitializedStorage[],WirelessCommandDispatchSharedResponseAndPortEvents_UnknownRoleZeroInitializedStorage[],WirelessCommandDispatchSharedResponseAndPortEvents_UnknownRoleZeroInitializedStorage_Variant2[],WirelessCommandDispatchSharedResponseAndPortEvents_UnknownRoleZeroInitializedStorage_Variant3[];
 }
 typedef void (*Callback)(void*);
 #define MH(o) (*(unsigned short*)(message+(o)))
 #define MW(o) (*(unsigned*)(message+(o)))
 #define CH(o) (*(unsigned short*)(context+(o)))
 #define CW(o) (*(unsigned*)(context+(o)))
-#define GH(o) (*(unsigned short*)(data_021142e0+(o)))
-#define GW(o) (*(unsigned*)(data_021142e0+(o)))
+#define GH(o) (*(unsigned short*)(WMiCheckIdle_UnknownRoleZeroInitializedStorage+(o)))
+#define GW(o) (*(unsigned*)(WMiCheckIdle_UnknownRoleZeroInitializedStorage+(o)))
 // Original: arm9/main @ 0x020D42E0; symbol: func_020d42e0; size: 0x3AC.
 extern "C" void WirelessCommand_DispatchSharedResponseAndPortEvents(int channel,char* message,int error) {
-char* context=*(char**)(data_021142e0+4);
+char* context=*(char**)(WMiCheckIdle_UnknownRoleZeroInitializedStorage+4);
 if(error) return;
 _Z24InvalidateDataCacheRangePKvj(*(void**)(context+16),256);
 if(!CH(22)) _Z24InvalidateDataCacheRangePKvj(*(void**)(context+4),2048);
@@ -66,19 +86,19 @@ if(event==7 || event==9 || event==26) {
 if(event==7) CW(332)|=1<<aid;
 else CW(332)&=~(1<<aid);
 CH(336)=mode;
-VectorizedMemset(data_02114330,0,68);
+VectorizedMemset(WirelessCommandDispatchSharedResponseAndPortEvents_UnknownRoleZeroInitializedStorage,0,68);
 GH(80)=130;GH(82)=0;GH(84)=event;
 GW(88)=0;GW(92)=0;GH(96)=0;GH(98)=aid;GH(112)=mode;GH(114)=CW(332);GH(106)=65535;GH(140)=reason;
-MI_CpuCopy8(mac,data_02114344,6);
-if(gameInfo) MIi_CpuCopy16(gameInfo,data_02114354,24);
-else MIi_CpuClear16(0,data_02114354,24);
+MI_CpuCopy8(mac,WirelessCommandDispatchSharedResponseAndPortEvents_UnknownRoleZeroInitializedStorage_Variant2,6);
+if(gameInfo) MIi_CpuCopy16(gameInfo,WirelessCommandDispatchSharedResponseAndPortEvents_UnknownRoleZeroInitializedStorage_Variant3,24);
+else MIi_CpuClear16(0,WirelessCommandDispatchSharedResponseAndPortEvents_UnknownRoleZeroInitializedStorage_Variant3,24);
 GH(144)=mode==0?parent:child;
 GH(146)=mode==0?child:parent;
 for(unsigned short i=0;i<16;i++) {
 GH(86)=i;
 if(*(Callback*)(context+i*4+204)) {
 GW(108)=*(unsigned*)(context+i*4+268);
-(*(Callback*)(context+i*4+204))(data_02114330);
+(*(Callback*)(context+i*4+204))(WirelessCommandDispatchSharedResponseAndPortEvents_UnknownRoleZeroInitializedStorage);
 }
 }
 }

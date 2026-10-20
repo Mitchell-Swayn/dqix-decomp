@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 import re
 import subprocess
+import sys
 import time
 
 from state import CONFIG, log
@@ -108,11 +109,18 @@ def plan(project, db, task, protected, basenames):
     if not any(a <= task['address'] and task['address'] + task['size'] <= b
                for a, b in text_ranges(project.config_dir(task['module']))):
         return None, 'outside the module .text section (.init/.ctor units need the existing tools)'
-    result = check(project, db, task, text, new, task['suffix'] or '.cpp', profile=task['profile'] or 'default')
+    # plan runs under the coordinator's exclusive integration process lock.
+    result = check(project, db, task, text, new, task['suffix'] or '.cpp',
+                   profile=task['profile'] or 'default', integration_locked=True)
     if result['status'] != 'match':
         return None, f"re-check failed: {result['problems'][:3] or result.get('messages', [])[:3]}"
     module_dir = task['module'].split('/')[1]
-    sub = Path('src') / (task['subsystem'] or 'Unclassified')
+    subsystem = task['subsystem'] if task['subsystem'] not in (None, 'Unclassified') else None
+    if subsystem is None:  # Default to the owning chunk's folder from docs/subsystem-map-usa.json.
+        sys.path.insert(0, str(project.root / 'tools'))
+        from subsystem_map import folder_for
+        subsystem = folder_for(project.root, task['module'], task['address']) or 'Unclassified'
+    sub = Path('src') / subsystem
     if module_dir != 'main':
         sub = sub / module_dir
     path = sub / f"{new}{task['suffix'] or '.cpp'}"

@@ -1,6 +1,0 @@
-#include <globaldefs.h>
-ARM
-#pragma optimize_for_size off
-extern "C" unsigned char* ReadGlobalOperationContextPointerAt4();extern "C" int ReadOptionalSharedHalfwordStatusUnderIRQGuard();extern "C" void WirelessPacketQueue_HandleCompletionAndClearRecipientBits(),CopyAddressedPacketIntoFourSlotRing();
-// Original: arm9/main @ 0x020D6318; symbol: func_020d6318; size: 0xD8.
-extern "C" void HandleMatchedCallbackObjectAndEventStatus(unsigned char* event){unsigned char* state=ReadGlobalOperationContextPointerAt4()+*(unsigned short*)(event+10)*4;unsigned callback=*(unsigned*)(state+0xcc);unsigned char* object=*(unsigned char**)(state+0x10c);if(callback!=(unsigned)WirelessPacketQueue_HandleCompletionAndClearRecipientBits&&callback!=(unsigned)CopyAddressedPacketIntoFourSlotRing)return;if(!object)return;if(object!=*(unsigned char**)(event+32))return;int error=ReadOptionalSharedHalfwordStatusUnderIRQGuard();unsigned status=*(unsigned short*)(event+2);if(status==0){if(error)return;unsigned short* index=(unsigned short*)(object+0x80a);*(unsigned short*)(object+*index*2+0x800)=(*(unsigned short*)(event+0x1a))>>1;*index=(*index+1)&3;return;}if(status==10){if(error!=0){*(unsigned short*)(object+0x80a)=(*(unsigned short*)(object+0x80a)+3)&3;}*(unsigned short*)(object+0x81c)=4;return;}*(unsigned short*)(object+0x81c)=5;}

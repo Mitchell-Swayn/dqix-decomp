@@ -3,7 +3,7 @@
 
 extern "C"
 {
-    void CopyRecordScalarFieldsAndFlagBits(void*, ZoneContainerRenderPart*);
+    void ZoneContainerRenderPart_ShareFrameAndAnimationResources(void*, ZoneContainerRenderPart*);
 }
 
 // Original: arm9/main @ 0x02013B70; symbol: _ZN6Zone3D28CreateContainerRenderEntriesEP13SafeAllocator; size: 0x140.
@@ -53,8 +53,8 @@ struct ZoneContainerSavedState
     unsigned short zoneID;
     unsigned short flags;
 };
-extern "C" void* ReadGlobalAt020FDD44();
-extern "C" ZoneContainerSavedState* FindRecordAmongFourByNonnegativeKey(void*, unsigned short);
+extern "C" void* ZoneState_GetTrackedZoneCache();
+extern "C" ZoneContainerSavedState* ZoneState_FindTrackedZoneByIdentifier(void*, unsigned short);
 
 // Original: arm9/main @ 0x02013CB0; symbol: _ZN6Zone3D22SetContainerBrokenMaskEj; size: 0x74.
 void Zone3D::SetContainerBrokenMask(unsigned int mask)
@@ -62,7 +62,7 @@ void Zone3D::SetContainerBrokenMask(unsigned int mask)
     for (int i = 0; i < unknown_476_; ++i)
         if (mask & (1 << i))
             unknown_478_[i].state = -1;
-    ZoneContainerSavedState* state = FindRecordAmongFourByNonnegativeKey(ReadGlobalAt020FDD44(), currentZoneID_);
+    ZoneContainerSavedState* state = ZoneState_FindTrackedZoneByIdentifier(ZoneState_GetTrackedZoneCache(), currentZoneID_);
     // Persist the twelve container bits while retaining the low four flags.
     if (state)
         state->flags = (state->flags & 0xffff000f) | ((mask << 20) >> 16);
@@ -79,17 +79,17 @@ void Zone3D::BindContainerModels()
         if (!container) continue;
         if (container->containerType == 1)
         {
-            CopyRecordScalarFieldsAndFlagBits(containerModels_[0], &entry->mainPart);
-            CopyRecordScalarFieldsAndFlagBits(containerModels_[1], &entry->brokenPart);
+            ZoneContainerRenderPart_ShareFrameAndAnimationResources(containerModels_[0], &entry->mainPart);
+            ZoneContainerRenderPart_ShareFrameAndAnimationResources(containerModels_[1], &entry->brokenPart);
             for (int j = 0; j < 4; ++j)
-                CopyRecordScalarFieldsAndFlagBits(containerModels_[2], &entry->fragments[j]);
+                ZoneContainerRenderPart_ShareFrameAndAnimationResources(containerModels_[2], &entry->fragments[j]);
         }
         else if (container->containerType == 2)
         {
-            CopyRecordScalarFieldsAndFlagBits(containerModels_[3], &entry->mainPart);
-            CopyRecordScalarFieldsAndFlagBits(containerModels_[4], &entry->brokenPart);
+            ZoneContainerRenderPart_ShareFrameAndAnimationResources(containerModels_[3], &entry->mainPart);
+            ZoneContainerRenderPart_ShareFrameAndAnimationResources(containerModels_[4], &entry->brokenPart);
             for (int j = 0; j < 4; ++j)
-                CopyRecordScalarFieldsAndFlagBits(containerModels_[5], &entry->fragments[j]);
+                ZoneContainerRenderPart_ShareFrameAndAnimationResources(containerModels_[5], &entry->fragments[j]);
         }
     }
 }

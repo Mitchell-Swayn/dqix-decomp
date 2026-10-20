@@ -3,8 +3,8 @@
 
 extern "C"
 {
-    int ReadIndirectByteOrMinusOne(void*);
-    void SetByteFieldAtOffset253ToOne(GameObject*);
+    int LinkedQueue_GetFrontKindOrInvalid(void*);
+    void GameObject_RequestMovementInputEnable(GameObject*);
     void Object_AdvanceFallingFourPartEntries(Zone3D*);
     void ZoneFeatures_UpdateOpcode6aStateForPartyAndZone();
 }
@@ -28,8 +28,8 @@ void Zone3D::Update()
             GameObject* protagonist = game->GetProtagonist();
             if (protagonist)
             {
-                if (ReadIndirectByteOrMinusOne(GameResources_GetInstance()->unknown_ptr_array_36fc[0]) != 4)
-                    SetByteFieldAtOffset253ToOne(protagonist);
+                if (LinkedQueue_GetFrontKindOrInvalid(GameResources_GetInstance()->unknown_ptr_array_36fc[0]) != 4)
+                    GameObject_RequestMovementInputEnable(protagonist);
             }
             unk_830[0] = 0;
         }

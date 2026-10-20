@@ -2,7 +2,7 @@
 ARM
 #pragma optimization_level 4
 extern "C" char* ResourceManager_GetIndexedHeaderTable24Entry(int);
-extern "C" void SelectFileCallbacksByAvailableBackend(void*,unsigned);
+extern "C" void SoundStream_SelectFileOrMemoryBackend(void*,unsigned);
 typedef int (*Resolve)(int,void*,void*,unsigned);
 typedef void (*Close)(void*);
 typedef int (*Open)(void*,unsigned);
@@ -18,7 +18,7 @@ extern "C" void Resource_AdvanceResolvedFileAndRescalePosition(unsigned char* se
  unsigned char oldMode=self[0xc0];
  unsigned short oldRate=*(unsigned short*)(self+0xc4);
  (*(Close*)(self+0x168))(self);
- SelectFileCallbacksByAvailableBackend(self,*(unsigned*)entry);
+ SoundStream_SelectFileOrMemoryBackend(self,*(unsigned*)entry);
  if(!(*(Open*)(self+0x164))(self,*(unsigned*)entry))return;
  if(oldRate!=*(unsigned short*)(self+0xc4))return;
  if(!oldMode && self[0xc0])return;

@@ -34,4 +34,22 @@ class BuilderPins(unittest.TestCase):
   with tarfile.open(p,'w:gz') as t:
    entry=tarfile.TarInfo('objdiff-2.7.1/link');entry.type=tarfile.SYMTYPE;entry.linkname='/etc/passwd';t.addfile(entry)
   with self.assertRaisesRegex(ValueError,'Unsafe'):prepare_source(p,self.root,{})
+ def test_prefix_patch_requires_exact_hash_and_final_source(self):
+  original=b'.map(|x| x.as_slice())\n'
+  empty=b'.map(|x| if x.is_empty() { &fallback_mappings } else { x.as_slice() })\n'
+  final=empty+b'// reviewed prefix repair\n'
+  archive=self.root/'source.tar.gz'
+  with tarfile.open(archive,'w:gz') as tar:
+   for name,data in [('objdiff-core/src/arch/arm.rs',original),('Cargo.lock',b'locked')]:
+    entry=tarfile.TarInfo('objdiff-2.7.1/'+name);entry.size=len(data);tar.addfile(entry,io.BytesIO(data))
+  prefix=self.root/'prefix.patch'
+  import difflib
+  prefix.write_text(''.join(difflib.unified_diff(empty.decode().splitlines(True),final.decode().splitlines(True),fromfile='a/objdiff-core/src/arch/arm.rs',tofile='b/objdiff-core/src/arch/arm.rs')))
+  digest=lambda b:hashlib.sha256(b).hexdigest()
+  policy=dict(empty_map_source_sha256=digest(empty),patched_source_sha256=digest(final),cargo_lock_sha256=digest(b'locked'),prefix_patch='tools/patches/prefix.patch',prefix_patch_sha256=digest(prefix.read_bytes()))
+  with self.assertRaisesRegex(ValueError,'Missing pinned'):prepare_source(archive,self.root,policy)
+  source=prepare_source(archive,self.root,policy,prefix)
+  self.assertEqual((source/'objdiff-core/src/arch/arm.rs').read_bytes(),final)
+  prefix.write_bytes(b'tampered')
+  with self.assertRaisesRegex(ValueError,'SHA256'):prepare_source(archive,self.root,policy,prefix)
 if __name__=='__main__':unittest.main()

@@ -1,6 +1,11 @@
 struct FontGlyphMask { unsigned char prefix[4]; signed char width; unsigned char unused; short bitOffset; };
 struct FontMaskArchive { unsigned char prefix[4]; unsigned short width; unsigned char unused[6]; unsigned char *bits; };
-extern "C" FontMaskArchive *data_02107834[];
+// Original data: arm9/main @ 0x2107834; symbol: data_02107834.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" FontMaskArchive *TextDrawClippedGlyphMask4Bpp_UnknownRoleZeroInitializedStorage[];
 // Original: arm9/main @ 0x02045864; symbol: func_02045864; size: 0x154.
 // Draws twelve rows of a font glyph bitmask into a clipped 4bpp pixel buffer.
 // Proposed descriptive name: Text_DrawClippedGlyphMask4Bpp.
@@ -16,7 +21,7 @@ extern "C" void Text_DrawClippedGlyphMask4Bpp(short x, short y, FontGlyphMask *g
 
  struct DrawLocals { FontMaskArchive *font; int offset; unsigned char highColor; unsigned char lowColor; int sourceStride; signed char firstBit; int destinationStride; } locals;
  locals.offset=glyph->bitOffset;
- locals.font=data_02107834[fontIndex];
+ locals.font=TextDrawClippedGlyphMask4Bpp_UnknownRoleZeroInitializedStorage[fontIndex];
 
  unsigned short fontWidth=locals.font->width;
  int startingBit=7-(locals.offset&7);

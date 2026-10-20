@@ -1,0 +1,10 @@
+#include <globaldefs.h>
+ARM
+// Original data: arm9/ov031 @ 0x2290cb8; symbol: data_ov031_02290cb8.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/ov031.md.
+extern "C" {unsigned WfcUtility_IsScreenTransitionBusy(int);int WfcUtility_IsBottomButtonBarAbsentOrNotClosing();void WfcUtility_DestroyAnimatedStatusSprite();void Graphics_ClearIndexedMainBackgroundCharacterData(unsigned);void Overlay_ProcessPendingFlag();void WfcUtility_DisableDisplayPlanes(unsigned,unsigned);void System_ValidateThenFreeSharedGlobalAllocation();void WfcUtility_SetNavigationContext(unsigned,unsigned);void WfcUtility_SetMainLoopCallback(void(*)());void WfcConnectionMethod_InitializeChooser();void InitializeControlByte25AndInstallCallback();extern unsigned char Ov031InitializeMapTransition_UnknownRoleZeroInitializedStorage;}
+// Original: arm9/ov031 @ 0x02231E8C; symbol: Graphics_ResetDisplayPlanesAndSelectLoopCallback; size: 0xc8.
+extern "C" void WfcStepThreeScreen_FinishTransition(){if(WfcUtility_IsScreenTransitionBusy(0))return;if(!Ov031InitializeMapTransition_UnknownRoleZeroInitializedStorage&&WfcUtility_IsScreenTransitionBusy(1))return;if(!WfcUtility_IsBottomButtonBarAbsentOrNotClosing())return;WfcUtility_DestroyAnimatedStatusSprite();Graphics_ClearIndexedMainBackgroundCharacterData(0);if(!Ov031InitializeMapTransition_UnknownRoleZeroInitializedStorage){Overlay_ProcessPendingFlag();WfcUtility_DisableDisplayPlanes(1,1);}WfcUtility_DisableDisplayPlanes(0,21);if(!Ov031InitializeMapTransition_UnknownRoleZeroInitializedStorage){System_ValidateThenFreeSharedGlobalAllocation();WfcUtility_SetNavigationContext(2,1);WfcUtility_SetMainLoopCallback(WfcConnectionMethod_InitializeChooser);}else{WfcUtility_SetNavigationContext(0,0);WfcUtility_SetMainLoopCallback(InitializeControlByte25AndInstallCallback);}}

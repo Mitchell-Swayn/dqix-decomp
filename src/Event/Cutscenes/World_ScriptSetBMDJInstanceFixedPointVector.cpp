@@ -1,0 +1,20 @@
+#include <globaldefs.h>
+ARM
+struct IntegerParameterView;struct FloatParameterView;
+extern "C" int Script_ReadParameterAsInteger(IntegerParameterView*);
+extern "C" float Script_ReadParameterAsFloat(FloatParameterView*);
+extern "C" void* Zone3D_GetMainInstance();
+extern "C" unsigned char* _ZN6Zone3D20FindLastBMDJInstanceEii(void*,int,int);
+// Original: arm9/ov001 @ 0x02163E50; symbol: func_ov001_02163e50; size: 0xA4.
+extern "C" int World_ScriptSetBMDJInstanceFixedPointVector(unsigned char* p){
+ int first=Script_ReadParameterAsInteger((IntegerParameterView*)p);
+ int second=Script_ReadParameterAsInteger((IntegerParameterView*)(p+8));
+ void* zone=Zone3D_GetMainInstance();
+ if(!zone)return 0;
+ unsigned char* instance=_ZN6Zone3D20FindLastBMDJInstanceEii(zone,first,second);
+ if(!instance)return 0;
+ *(int*)(instance+8)=4096.0f*Script_ReadParameterAsFloat((FloatParameterView*)(p+16));
+ *(int*)(instance+12)=4096.0f*Script_ReadParameterAsFloat((FloatParameterView*)(p+24));
+ *(int*)(instance+16)=4096.0f*Script_ReadParameterAsFloat((FloatParameterView*)(p+32));
+ return 1;
+}

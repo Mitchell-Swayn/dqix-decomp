@@ -4,9 +4,9 @@
 #include "Resource/GameResources.h"
 
 extern "C" {
-    Zone3D* ReadGlobalValueAt020FB3F0();
-    int ReadIndirectByteOrMinusOne(void*);
-    bool TestFieldBitsAtOffset4(GameResources*, unsigned int);
+    Zone3D* Zone3D_GetMainInstance();
+    int LinkedQueue_GetFrontKindOrInvalid(void*);
+    bool GameResources_GetMaskedSecondaryFlags(GameResources*, unsigned int);
 }
 
 // Original: arm9/main @ 0x0208F410; symbol: _ZN23WorldObjectInstanceList4DrawEv; size: 0xAC.
@@ -14,9 +14,9 @@ void WorldObjectInstanceList::Draw()
 {
     if (!object) return;
     GameResources* resources = GameResources_GetInstance();
-    if (ReadIndirectByteOrMinusOne(resources->unknown_ptr_array_36fc[0]) == 10) return;
-    if (TestFieldBitsAtOffset4(resources, 2)) return;
-    Zone3D_StructPtr_8* info = ReadGlobalValueAt020FB3F0()->pUnknownStruct_8_;
+    if (LinkedQueue_GetFrontKindOrInvalid(resources->unknown_ptr_array_36fc[0]) == 10) return;
+    if (GameResources_GetMaskedSecondaryFlags(resources, 2)) return;
+    Zone3D_StructPtr_8* info = Zone3D_GetMainInstance()->pUnknownStruct_8_;
     WorldPlacementSource* state = WorldPlacementSource::GetInstance();
     if (!info) return;
     if (!state->IsMapEligible(info->mapShortName_)) return;

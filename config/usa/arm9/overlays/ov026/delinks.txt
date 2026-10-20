@@ -4,126 +4,134 @@
     .data       start:0x021de840 end:0x021def00 kind:data align:32
     .bss        start:0x021def00 end:0x021def20 kind:bss align:32
 
-src/Unclassified/ov026/func_ov026_021d8b98.cpp:
+src/Combat/SpecialEffects/BattleScene_SetCameraPresetVectorComponents.cpp:
     complete
     .text start:0x021d8b98 end:0x021d8ba0
 
-src/Unclassified/ov026/func_ov026_021dce1c.cpp:
+src/Combat/SpecialEffects/BattleScene_HasRecoverableAilmentWithTimer5C.cpp:
     complete
     .text start:0x021dce1c end:0x021dce34
 
-src/Unclassified/ov026/func_ov026_021dd3c4.cpp:
+src/Combat/SpecialEffects/BattleScene_IsCombatantExcludedFromEncounterSelection.cpp:
     complete
     .text start:0x021dd3c4 end:0x021dd3dc
 
-src/Unclassified/ov026/func_ov026_021d8a78.cpp:
+src/Combat/SpecialEffects/BattleScene_FormatBattleStringInSharedBuffer.cpp:
     complete
     .text start:0x021d8a78 end:0x021d8aac
 
-src/Unclassified/ov026/func_ov026_021d8a40.cpp:
+src/Combat/SpecialEffects/BattleScene_IsPartyCommandSynchronizationReady.cpp:
     complete
     .text start:0x021d8a40 end:0x021d8a78
 
-src/Unclassified/ov026/func_ov026_021ddd84.cpp:
+src/Combat/SpecialEffects/BattleScene_ProcessPendingPartyRemoval.cpp:
     complete
     .text start:0x021ddd84 end:0x021dddcc
 
-src/Unclassified/ov026/func_ov026_021dae60.cpp:
+src/Combat/SpecialEffects/BattleScene_FindPartyCommandEntry.cpp:
     complete
     .text start:0x021dae60 end:0x021daec8
 
-src/Unclassified/ov026/func_ov026_021dbe44.cpp:
+src/Combat/SpecialEffects/BattleScene_AdmitPendingPartyMembersWhenQueuesReady.cpp:
     complete
     .text start:0x021dbe44 end:0x021dbf04
 
-src/Unclassified/ov026/func_ov026_021d8aac.cpp:
+src/Combat/SpecialEffects/BattleScene_SelectEncounterCameraPreset.cpp:
     complete
     .text start:0x021d8aac end:0x021d8b98
 
-src/Unclassified/ov026/func_ov026_021dbd1c.cpp:
+src/Combat/SpecialEffects/BattleScene_RemovePartyMemberAndRepairOwnership.cpp:
     complete
     .text start:0x021dbd1c end:0x021dbe44
 
-src/Unclassified/ov026/func_ov026_021dbf04.cpp:
+src/Combat/SpecialEffects/BattleScene_ResetCommandSelectionAndRestoreFlags.cpp:
     complete
     .text start:0x021dbf04 end:0x021dc040
 
-src/Unclassified/ov026/func_ov026_021dbba8.cpp:
+src/Combat/SpecialEffects/BattleScene_ReleasePartyStagingActorsAndRestoreCamera.cpp:
     complete
     .text start:0x021dbba8 end:0x021dbd1c
 
-src/Unclassified/ov026/func_ov026_021db3d8.cpp:
+src/Combat/SpecialEffects/BattleScene_AdvanceEncounterTextEffect.cpp:
     complete
     .text start:0x021db3d8 end:0x021db5a4
 
-src/Data/ov026/CameraChoices.cpp:
+src/Data/CameraChoices.cpp:
     complete
     .data start:0x021de87c end:0x021dedbc
 
-src/Data/ov026/data_ov026_021dedbc.cpp:
+src/Data/BattleScene_UpdateCommandSelectionPhase_PathDataPrmSkilltableBin.cpp:
     complete
     .data start:0x021dedbc end:0x021dedd4
 
-src/Data/ov026/data_ov026_021dedd4.cpp:
+src/Data/BattleScene_UpdateCommandSelectionPhase_PathDataPrmSpelltableBin.cpp:
     complete
     .data start:0x021dedd4 end:0x021dedec
 
-src/Data/ov026/data_ov026_021dedf0.cpp:
+src/Data/BattleScene_AdvanceEncounterTextEffect_PathDataEffectEv999991210Chr.cpp:
     complete
     .data start:0x021dedf0 end:0x021dee0c
 
-src/Data/ov026/data_ov026_021dee0c.cpp:
+src/Data/BattleScene_AdvanceCombinedVocationActionSequence_PathDataEffectEb0091Chr.cpp:
     complete
     .data start:0x021dee0c end:0x021dee23
 
-src/Data/ov026/data_ov026_021dee23.cpp:
+src/Data/BattleScene_AdvanceCombinedVocationActionSequence_PathDataEffectEx3000Chr.cpp:
     complete
     .data start:0x021dee23 end:0x021dee3a
 
-src/Data/ov026/data_ov026_021dee3a.cpp:
+src/Data/BattleScene_AdvanceCombinedVocationActionSequence_PathDataCharaSubS264LGChr.cpp:
     complete
     .data start:0x021dee3a end:0x021dee57
 
-src/Data/ov026/data_ov026_021dee57.cpp:
+src/Data/UpdatePartyTrackedBonePlacement_FormatCD.cpp:
     complete
     .data start:0x021dee57 end:0x021dee5c
 
-src/Data/ov026/data_ov026_021dee5c.cpp:
+src/Data/BattleScene_LoadPartyStagingCameraAndAnimations_PathDataPackLv5CharaMpGp2.cpp:
     complete
     .data start:0x021dee5c end:0x021dee77
 
-src/Data/ov026/data_ov026_021dee77.cpp:
+src/Data/BattleScene_LoadPartyStagingCameraAndAnimations_TextMp0200ScChr.cpp:
     complete
     .data start:0x021dee77 end:0x021dee84
 
-src/Data/ov026/data_ov026_021dee84.cpp:
+src/Data/BattleScene_LoadPartyStagingCameraAndAnimations_TextEye.cpp:
     complete
     .data start:0x021dee84 end:0x021dee88
 
-src/Data/ov026/data_ov026_021dee88.cpp:
+src/Data/BattleScene_LoadPartyStagingCameraAndAnimations_TextLookat.cpp:
     complete
     .data start:0x021dee88 end:0x021dee8f
 
-src/Data/ov026/data_ov026_021dee8f.cpp:
+src/Data/BattleScene_LoadPartyStagingCameraAndAnimations_TextMp0200SpChr.cpp:
     complete
     .data start:0x021dee8f end:0x021dee9c
 
-src/Data/ov026/data_ov026_021dee9c.cpp:
+src/Data/BattleScene_LoadPartyStagingCameraAndAnimations_PathDataCharaSubS017SChr.cpp:
     complete
     .data start:0x021dee9c end:0x021deeb5
 
-src/Data/ov026/data_ov026_021deeb5.cpp:
+src/Data/BattleScene_LoadPartyStagingCameraAndAnimations_FormatSsChr.cpp:
     complete
     .data start:0x021deeb5 end:0x021deebd
 
-src/Data/ov026/data_ov026_021deebd.cpp:
+src/Data/BattleScene_ShowEncounterIntroductionMessage_MarkupAUTO30.cpp:
     complete
     .data start:0x021deebd end:0x021deec7
 
-src/Data/ov026/data_ov026_021deec7.cpp:
+src/Data/BattleScene_ShowEncounterIntroductionMessage_MarkupTIME30CLOSE.cpp:
     complete
     .data start:0x021deec7 end:0x021deed8
 
-src/Data/ov026/data_ov026_021deed8.cpp:
+src/Data/BattleScene_ShowEncounterIntroductionMessage_MarkupTIME45CLOSE.cpp:
     complete
     .data start:0x021deed8 end:0x021def00
+
+src/Combat/SpecialEffects/UpdatePartyTrackedBonePlacement.cpp:
+    complete
+    .text start:0x021dc040 end:0x021dc440
+
+src/Combat/Presentation/BattleScene_FaceMonstersTowardCameraAndStaggerAnimations.cpp:
+    complete
+    .text start:0x021daec8 end:0x021db090

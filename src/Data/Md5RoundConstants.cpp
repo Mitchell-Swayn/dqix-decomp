@@ -1,5 +1,10 @@
 // MD5 additive round constants used by func_020c04e8; four rounds of sixteen.
-extern "C" unsigned int data_020f2050[64] = {
+// Original data: arm9/main @ 0x20f2050; symbol: data_020f2050.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 78a46ad756b7c7e8db702024eecebdc1af0f7cf52ac68747134630a8019546fdd8988069aff7448bb15bffffbed75c892211906b937198fd8e4379a62108b449 ...; full span in module reference.
+// Observed span: 256 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" unsigned int MD5CompressBufferedBlock_UnknownRoleInitializedBytes_Variant2[64] = {
     0xd76aa478u, 0xe8c7b756u, 0x242070dbu, 0xc1bdceeeu, 0xf57c0fafu, 0x4787c62au, 0xa8304613u, 0xfd469501u,
     0x698098d8u, 0x8b44f7afu, 0xffff5bb1u, 0x895cd7beu, 0x6b901122u, 0xfd987193u, 0xa679438eu, 0x49b40821u,
     0xf61e2562u, 0xc040b340u, 0x265e5a51u, 0xe9b6c7aau, 0xd62f105du, 0x02441453u, 0xd8a1e681u, 0xe7d3fbc8u,

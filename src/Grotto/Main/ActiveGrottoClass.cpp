@@ -8,7 +8,7 @@
 #ifdef jpn
     #define Random_SelectScaledInclusiveIntegerRange func_02031efc
 
-    #define ReadGlobalValueAt020FB3F0 func_02012dac
+    #define Zone3D_GetMainInstance func_02012dac
 
     #define TreasureMap_LoadLanguageDataAndOffsets func_020a5498
     #define GameState_FreeTreasureMapLanguageBuffersAndRestoreCache func_020a5698
@@ -21,7 +21,7 @@ extern "C"
     int Random_SelectScaledInclusiveIntegerRange(int minimum, int maximum);
 
     // Returns the 'zone struct' (still need to figure out what this contains)
-    void* ReadGlobalValueAt020FB3F0();
+    void* Zone3D_GetMainInstance();
 
     // Not sure exactly what these do but it involves loading/unloading
     // data/tmap/tdata.gp2
@@ -162,7 +162,7 @@ int ActiveGrottoClass::GetActiveGrottoEnviron() const
 int ActiveGrottoClass::GetFloorCount() const
 {
     GrottoStruct* grotto = GameState::GetInstance()->GetGrottoStruct();
-    void* zone = ReadGlobalValueAt020FB3F0();
+    void* zone = Zone3D_GetMainInstance();
     if (!IsGrottoZone(*(unsigned short*)zone))
         return 0;
 

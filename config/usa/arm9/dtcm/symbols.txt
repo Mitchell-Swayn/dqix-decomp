@@ -1,2 +1,2 @@
-data_027e0000 kind:data(any) addr:0x027e0000
-data_027e0060 kind:bss addr:0x027e0060
+Entry_UnknownRoleProcedureReferenceRecords kind:data(any) addr:0x027e0000
+OSIrqHandlerThreadSwitch_UnknownRoleZeroInitializedStorage kind:bss addr:0x027e0060

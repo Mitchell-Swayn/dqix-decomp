@@ -1,0 +1,12 @@
+#include <globaldefs.h>
+ARM
+#pragma optimization_level 4
+// Original data: arm9/main @ 0x2108760; symbol: data_02108760.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 208 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" void Graphics_ConfigureTwoSelectionsFromMode(unsigned char*); extern "C" void Selection_EnableTouchInput(void*); extern "C" void Selection_EnableDirectionalInput(void*); extern "C" void Selection_DisableTouchInput(void*); extern "C" void Selection_DisableDirectionalInput(void*); extern "C" int Selection_ReadEnabledIndexFromControl(void*); extern "C" int Church_IsSelectionConfirmed(char*); extern "C" int Church_IsSelectionCancelled(unsigned char*,int); extern "C" void SoundSfx_StartCurrentSequenceArchiveEntry(char*,int,void*); extern "C" int Church_IsSelectionConfirmed(char*); extern "C" int Church_IsSelectionCancelled(unsigned char*,int); extern "C" void Graphics_ConfigureTwoSelectionsFromMode(unsigned char*); extern "C" unsigned Main_UnknownRoleZeroInitializedStorage;
+// Original: arm9/ov003 @ 0x0215BD34; symbol: UpdateSelectionControllerState; size: 0xEC.
+// Advances a selection controller through initialization and completion states, clearing its controls and dispatching the selected value.
+extern "C" int UpdateSelectionControllerState(unsigned char* self){ unsigned state=self[0x581]; if(state==0){Graphics_ConfigureTwoSelectionsFromMode(self);Selection_EnableTouchInput(self+0xf4);Selection_EnableDirectionalInput(self+0xf4);self[0x581]++;} if(state==1){ self[0x59f]|=1;self[0x585]=Selection_ReadEnabledIndexFromControl(self+0xf4); if(Church_IsSelectionConfirmed((char*)self)!=0){self[0x59f]&=~1;SoundSfx_StartCurrentSequenceArchiveEntry((char*)&Main_UnknownRoleZeroInitializedStorage,1,0);Selection_DisableTouchInput(self+0xf4);Selection_DisableDirectionalInput(self+0xf4);self[0x581]=0;return *(signed char*)(self+0x585);} if(Church_IsSelectionCancelled(self,1)!=0){self[0x59f]&=~1;Selection_DisableTouchInput(self+0xf4);Selection_DisableDirectionalInput(self+0xf4);self[0x581]=0;return -2;} } return -1;}

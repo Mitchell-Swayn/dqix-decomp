@@ -1,4 +1,0 @@
-#include <globaldefs.h>
-extern "C" char* _ZN9GameState11GetInstanceEv();extern "C" void* AllocatorUnion_AllocateFourByteAligned(void*,unsigned);extern "C" int func_02075910(int,void*,unsigned,int);extern "C" void func_02075acc(unsigned,void*,unsigned,int);extern "C" void Memory_FreeThroughAllocatorUnion(void*,void*);extern "C" char data_02114e20[];
-// Original: arm9/main @ 0x020ABCA8; symbol: func_020abca8; size: 0x78.
-extern "C" ARM int AllocateTemporarySaveBufferAndProcessBothSlotIDs(){char* state=_ZN9GameState11GetInstanceEv();int result=0;state[0x5cc8]=0;void* memory=AllocatorUnion_AllocateFourByteAligned(data_02114e20,0x6fe4);if(memory){result=func_02075910(16,memory,0x6fe4,0);if(result)func_02075acc(0x8010,memory,0x6fe4,0);Memory_FreeThroughAllocatorUnion(data_02114e20,memory);}return result;}

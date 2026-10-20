@@ -3,7 +3,7 @@
 // Binary64 word access follows the pinned little-endian ARM runtime ABI.
 extern "C" double RuntimeSineKernel_EvaluateReducedSinePolynomial(double, double, int);
 extern "C" double Runtime_ComputeCosineKernel(double, double);
-extern "C" int func_02007028(double, double*);
+extern "C" int Math_ReduceDoubleAngleByHalfPi(double, double*);
 // Original: arm9/main @ 0x02009424; symbol: func_02009424; size: 0x174.
 extern "C" double Runtime_ComputeSine(double value)
 {
@@ -14,7 +14,7 @@ extern "C" double Runtime_ComputeSine(double value)
     if (high >= 0x7ff00000)
         return value - value;
     double reduced[2];
-    int quadrant = func_02007028(value, reduced);
+    int quadrant = Math_ReduceDoubleAngleByHalfPi(value, reduced);
     switch (quadrant & 3) {
     case 0:
         return RuntimeSineKernel_EvaluateReducedSinePolynomial(reduced[0], reduced[1], 1);

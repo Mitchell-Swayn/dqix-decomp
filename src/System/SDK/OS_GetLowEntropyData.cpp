@@ -1,8 +1,11 @@
+// Original data alias: arm9/main @ 0x2111640; symbol: data_02111640.
+// 64-bit Timer64Bit.numTimerOverflows member at OS_TimerState + 8. Initially zero; updated at runtime.
+// Initial values (hex for initialized storage): zero-filled at load; mutable at runtime.
 #include <globaldefs.h>
 ARM
 extern unsigned short GetMain16BitTimerCounter();
-extern "C" volatile unsigned long long data_02111640;
-#define TICK data_02111640
+extern "C" volatile unsigned long long OS_TimerOverflowCount;
+#define TICK OS_TimerOverflowCount
 struct Work {char a[0x3c]; unsigned long vblank; char b[0xb4]; unsigned long mac; unsigned short mac4; char c[0xee]; unsigned long rtc[2]; char d[0x1a0];unsigned long micaddr; unsigned short mic;char e[2];unsigned short rssi;char f[0xe];volatile unsigned short xy;unsigned short touch[2];};
 // Community SDK C reference: pret/pokeheartgold @ 14c48938174ec92563afc6d03de5fa162f4cfdce,
 // lib/NitroSDK/src/os/os_entropy.c. Reconstructed with local ABI names and layouts.

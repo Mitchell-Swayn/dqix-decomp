@@ -7,7 +7,7 @@
 #ifdef jpn
 #define GameState_ReadProtagonistObjectIndex func_0200ff04
 #define GameState_GetObjectWithFlag100 func_0200fd78
-#define ReadGlobalValueAt020FB3F0 func_02012dac
+#define Zone3D_GetMainInstance func_02012dac
 #endif
 
 extern "C"
@@ -17,7 +17,7 @@ unsigned int GameState_ReadProtagonistObjectIndex(GameState*);
 char* GameState_GetObjectWithFlag100(GameState*, unsigned int);
 
 // returns the overland zone instance
-void* ReadGlobalValueAt020FB3F0();
+void* Zone3D_GetMainInstance();
 }
 
 // USA: func_020a5cb8
@@ -28,7 +28,7 @@ unsigned short GenerateNewMapQuality()
     GameState* gameState = GameState::GetInstance();
     char* maybeMainCharDataPtr = GameState_GetObjectWithFlag100(gameState, GameState_ReadProtagonistObjectIndex(gameState));
     // Another pointless function call
-    (void)ReadGlobalValueAt020FB3F0();
+    (void)Zone3D_GetMainInstance();
     GrottoStruct* grotto = gameState->GetGrottoStruct();
 
 #ifdef jpn

@@ -1,4 +1,0 @@
-#include <globaldefs.h>
-struct Vec{int x,y,z;};struct Node{Vec v;int active;Node* next;};struct Info{char pad[0x1f];unsigned char mode;char gap[2];unsigned char count;char tail[0x11];Node* head;};struct Owner{char pad[12];Info* info;};extern "C" int Vector3fix_Distance(const Vec*,const Vec*);extern "C" void DispatchVectorToFirstAvailableSource(Owner*,const Vec*);extern "C" int rand();
-// Original: arm9/main @ 0x0204117C; symbol: func_0204117c; size: 0xC8.
-extern "C" ARM void AdvanceActiveVectorNodeWithOptionalRandomSelection(Owner* p,const Vec* position){Node* node=p->info->head;while(node){if(node->active){if(Vector3fix_Distance(&node->v,position)){DispatchVectorToFirstAvailableSource(p,&node->v);return;}break;}node=node->next;}node->active=0;node=node->next;if(p->info->mode==9){int n=rand()%p->info->count;for(int i=0;i<n;++i)node=node->next;}Vec v;v.x=node->v.x;v.y=node->v.y;v.z=node->v.z;node->active=1;DispatchVectorToFirstAvailableSource(p,&v);}

@@ -1,3 +1,15 @@
+// Original data alias: arm9/main @ 0x20f0dc2; symbol: data_020f0dc2.
+// Language placeholder: "<LG>" followed by two zero bytes; aliases gFileIOConfiguration.languageTag.
+// Initial values (hex for initialized storage): 3c4c473e0000.
+// Original data alias: arm9/main @ 0x20f0dbc; symbol: data_020f0dbc.
+// Archive root: "arc:/" followed by NUL; aliases gFileIOConfiguration.archiveRoot.
+// Initial values (hex for initialized storage): 6172633a2f00.
+// Original data alias: arm9/main @ 0x20f0db8; symbol: data_020f0db8.
+// Archive signature: "ARC" followed by NUL; aliases gFileIOConfiguration.archiveSignature.
+// Initial values (hex for initialized storage): 41524300.
+// Original data alias: arm9/main @ 0x20f0da0; symbol: data_020f0da0.
+// Language pointer order: Japanese, English, French, German, Italian, Spanish. Aliases gFileIOConfiguration.languages.
+// Initial values (hex for initialized storage): 7f0d0f027c0d0f02760d0f02700d0f02730d0f02790d0f02.
 #include "Filesystem/FileIO.h"
 #include "Filesystem/FileIOConfiguration.h"
 #include "Filesystem/ExtendedNitroVM.h"
@@ -15,19 +27,21 @@
 #include <asmhacks.h>
 
 #ifdef jpn
+#define FileIO_LanguageNamePointers data_020f0da0
+#define FileIO_LanguageTag data_020f0dc2
 
-#define data_020e692c data_020e71d4
+#define MakeCharUpperCase_UnknownRoleInitializedBytes data_020e71d4
 
-#define data_020f0db8 data_020f0e84
-#define data_020f0dbc data_020f0e88
+#define FileIO_ArchiveSignature data_020f0e84
+#define FileIO_ArchiveRoot data_020f0e88
 #endif
 
 extern "C"
 {
     // some sort of bit test of a struct member at offset 0
-    bool TestWordMaskNonzero(void*, unsigned int);
+    bool SystemState_TestAnyFlags(void*, unsigned int);
     // returns pointer to some unknown struct (at 02114e04)
-    void* GetGlobalStatePointer();
+    void* SystemState_GetGlobalFlags();
 
     // get system language?
     int GameState_ReadSupportedFirmwareLanguage(GameState*);
@@ -43,23 +57,28 @@ extern "C"
 int MakeCharUpperCase(char ch);
 
 // character to upper case lookup table
-extern const char data_020e692c[];
+// Original data: arm9/main @ 0x20e692c; symbol: data_020e692c.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f ...; full span in module reference.
+// Observed span: 128 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const char MakeCharUpperCase_UnknownRoleInitializedBytes[];
 
 // USA language order: Japanese, English, French, German, Italian, Spanish.
 #if defined(usa)
-#define data_020f0da0 gFileIOConfiguration.languages
-#define data_020f0db8 gFileIOConfiguration.archiveSignature
-#define data_020f0dbc gFileIOConfiguration.archiveRoot
-#define data_020f0dc2 gFileIOConfiguration.languageTag
+#define FileIO_LanguageNamePointers gFileIOConfiguration.languages
+#define FileIO_ArchiveSignature gFileIOConfiguration.archiveSignature
+#define FileIO_ArchiveRoot gFileIOConfiguration.archiveRoot
+#define FileIO_LanguageTag gFileIOConfiguration.languageTag
 #else
-extern char* data_020f0da0[];
+extern char* FileIO_LanguageNamePointers[];
 
 // "ARC"
-extern char data_020f0db8[];
+extern char FileIO_ArchiveSignature[];
 // "arc:/"
-extern char data_020f0dbc[];
+extern char FileIO_ArchiveRoot[];
 
-extern char data_020f0dc2[]; // "<LG>" (USA only)
+extern char FileIO_LanguageTag[]; // "<LG>" (USA only)
 #endif
 
 // JPN: func_02076224
@@ -81,7 +100,7 @@ void* LoadFileIntoMemory(const char* path, void* buffer, unsigned int* outLength
 
     void* alwaysNull = NULL;
     
-    if (buffer >= data_0211e33c && buffer < &data_0211e33c[0x30000])
+    if (buffer >= Main_UnknownRoleZeroInitializedStorage_Variant6 && buffer < &Main_UnknownRoleZeroInitializedStorage_Variant6[0x30000])
         BackgroundLoader::FreeAllocationsGlobal();
 
     ExtendedNitroVM reader;
@@ -152,12 +171,12 @@ bool GetFileInNarc(const void *narcBuffer, const char *targetFilePath,
     bool success = false;
     LockResourceMutex();
     NarcHandle handle;
-    if (handle.Initialize(data_020f0db8, (const unsigned char*)narcBuffer))
+    if (handle.Initialize(FileIO_ArchiveSignature, (const unsigned char*)narcBuffer))
     {
         NitroVM machine;
         NitroVM_Initialize(&machine);
         unsigned int idx = firstFileIdx;
-        unsigned int prefixLength = strlen(data_020f0dbc);
+        unsigned int prefixLength = strlen(FileIO_ArchiveRoot);
         while (PrepareReadFileInNARCByID(&machine, &handle, idx))
         {
             char currentFilePath[80];
@@ -190,7 +209,7 @@ bool GetFileInNarcPermissive(const void *narcBuffer, const char *targetFilePath,
     bool success = false;
     LockResourceMutex();
     NarcHandle handle;
-    if (handle.Initialize(data_020f0db8, (const unsigned char*)narcBuffer))
+    if (handle.Initialize(FileIO_ArchiveSignature, (const unsigned char*)narcBuffer))
     {
         NitroVM machine;
         char loopFilePathOutput[80];
@@ -209,7 +228,7 @@ bool GetFileInNarcPermissive(const void *narcBuffer, const char *targetFilePath,
         {
             targetUpperCase[i] = MakeCharUpperCase(targetFilePath[i]);
         }
-        unsigned int prefixLength = strlen(data_020f0dbc);
+        unsigned int prefixLength = strlen(FileIO_ArchiveRoot);
         while (fileSearchMinIdx <= fileSearchMaxIdx)
         {
             int i = 0;
@@ -256,7 +275,7 @@ int MakeCharUpperCase(char ch)
 {
     if (ch < 0 || ch >= 0x80)
         return ch;
-    return (unsigned char)data_020e692c[ch];
+    return (unsigned char)MakeCharUpperCase_UnknownRoleInitializedBytes[ch];
 }
 
 // Original: arm9/main @ 0x0207550C; symbol: _Z26FindFilesInNarcBySubstringPKvPKcPS0_Pjj; size: 0xFC.
@@ -271,7 +290,7 @@ unsigned int FindFilesInNarcBySubstring(const void* narcBuffer, const char* subs
     LockResourceMutex();
 
     NarcHandle handle;
-    if (handle.Initialize(data_020f0db8, (const unsigned char*)narcBuffer))
+    if (handle.Initialize(FileIO_ArchiveSignature, (const unsigned char*)narcBuffer))
     {
         NitroVM machine;
         char loopFilename[80];

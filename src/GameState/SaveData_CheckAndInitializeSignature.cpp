@@ -2,24 +2,24 @@
 #include <std_library_functions.h>
 #include <GameState/GameState.h>
 extern "C" {
-    extern char data_020f1bf8[];
-    bool func_02075910(int,void *,unsigned int,int);
-    void func_02075acc(int,void *,unsigned int,int);
-    void WriteActive(GameState *);
+    extern char SaveData_CheckAndInitializeSignature_TextDRAGONQUESTIX[];
+    bool SaveData_ReadCardSaveBytes(int,void *,unsigned int,int);
+    void SaveData_WriteBackupBytes(int,void *,unsigned int,int);
+    void GameState_RequestSaveErrorExit(GameState *);
     void SaveData_InitializeDefaultStateAndPackets();
 // Original: arm9/main @ 0x020AC910; symbol: func_020ac910; size: 0x9C.
     bool SaveData_CheckAndInitializeSignature(){
         char text[16];
         memset(text,0,16);
-        if(!func_02075910(0,text,16,0)){
+        if(!SaveData_ReadCardSaveBytes(0,text,16,0)){
             GameState *state=GameState::GetInstance();
             ((unsigned char *)state)[23752]=0;
-            WriteActive(state);
+            GameState_RequestSaveErrorExit(state);
             return false;
-        }if(strcmp(text,data_020f1bf8)){
+        }if(strcmp(text,SaveData_CheckAndInitializeSignature_TextDRAGONQUESTIX)){
             SaveData_InitializeDefaultStateAndPackets();
-            memcpy(text,data_020f1bf8,16);
-            func_02075acc(0,text,16,0);
+            memcpy(text,SaveData_CheckAndInitializeSignature_TextDRAGONQUESTIX,16);
+            SaveData_WriteBackupBytes(0,text,16,0);
         }return true;
     }
 }

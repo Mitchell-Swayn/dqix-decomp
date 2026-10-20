@@ -72,6 +72,14 @@ def generate(root, report, arm7_report, output, history_directory=None):
     return rendered.encode('utf-8'), data
 
 
+def served_page(root, report, arm7_report, output):
+    # Integration publishes this file atomically after validation. Requests must
+    # not audit a mutable checkout or overwrite the accepted publication.
+    if output.exists():
+        return output.read_bytes()
+    return generate(root, report, arm7_report, output)[0]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--report', type=Path, default=ROOT / 'build/usa/report.json')
@@ -81,7 +89,8 @@ def main():
     parser.add_argument('--port', type=int, default=8765)
     parser.add_argument('--host', default='127.0.0.1', help='Bind address; use a LAN address for a browser on another machine')
     args = parser.parse_args()
-    generate(ROOT, args.report, args.arm7_report, args.output)
+    if not args.serve or not args.output.exists():
+        generate(ROOT, args.report, args.arm7_report, args.output)
     print(args.output.resolve(), flush=True)
     if not args.serve:
         return
@@ -94,7 +103,7 @@ def main():
                 return
             try:
                 with lock:
-                    body, _ = generate(ROOT, args.report, args.arm7_report, args.output)
+                    body = served_page(ROOT, args.report, args.arm7_report, args.output)
             except Exception as error:
                 # Never serve a stale success page if reconciliation fails.
                 self.send_error(503, 'Progress report unavailable; see server log')

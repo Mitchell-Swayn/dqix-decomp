@@ -1,6 +1,6 @@
 #include "GameState/GameState.h"
 
-extern "C" char* ReadGlobalValueAt02108844();
+extern "C" char* GameState_GetSerializedProgressState();
 
 typedef char GameStateSizeCheck[sizeof(GameState) == 0x7ff4 ? 1 : -1];
 typedef char GameStateUnknown5cb0OffsetCheck[
@@ -13,25 +13,25 @@ typedef char GameStateUnknown5cbcOffsetCheck[
     offsetof(GameState, unknown_5cbc_) == 0x5cbc ? 1 : -1];
 
 // Original: arm9/main @ 0x02010774; symbol: func_02010774; size: 0x28.
-extern "C" void GameState_SetField5CB0AndSelectedRecordFirstByte(GameState* state, unsigned int value)
+extern "C" void GameState_SetProgressChapter(GameState* state, unsigned int value)
 {
     state->unknown_5cb0_ = value;
-    char* record = ReadGlobalValueAt02108844();
+    char* record = GameState_GetSerializedProgressState();
     unsigned char recordIndex = *((unsigned char*)record + 0x332);
     *((unsigned char*)record + recordIndex * 0x1c) = value;
 }
 
 // Original: arm9/main @ 0x0201079C; symbol: func_0201079c; size: 0xC.
-extern "C" unsigned int GameState_ReadWordAtOffset5CB0(GameState* state)
+extern "C" unsigned int GameState_GetProgressChapter(GameState* state)
 {
     return state->unknown_5cb0_;
 }
 
 // Original: arm9/main @ 0x020107A8; symbol: func_020107a8; size: 0x28.
-extern "C" void GameState_WriteField5CB4AndIndexedRecordValue(GameState* state, unsigned int value)
+extern "C" void GameState_SetProgressStage(GameState* state, unsigned int value)
 {
     state->unknown_5cb4_ = value;
-    char* record = ReadGlobalValueAt02108844();
+    char* record = GameState_GetSerializedProgressState();
     unsigned char recordIndex = *((unsigned char*)record + 0x332);
     *((unsigned char*)record + recordIndex * 0x1c + 1) = value;
 }
@@ -43,10 +43,10 @@ extern "C" unsigned int GameState_ReadUnknown5cb4(GameState* state)
 }
 
 // Original: arm9/main @ 0x020107DC; symbol: func_020107dc; size: 0x28.
-extern "C" void GameState_SetWord5CB8AndSelectedRecordByte(GameState* state, unsigned int value)
+extern "C" void GameState_SetProgressStep(GameState* state, unsigned int value)
 {
     state->unknown_5cb8_ = value;
-    char* record = ReadGlobalValueAt02108844();
+    char* record = GameState_GetSerializedProgressState();
     unsigned char recordIndex = *((unsigned char*)record + 0x332);
     *((unsigned char*)record + recordIndex * 0x1c + 2) = value;
 }
@@ -64,7 +64,7 @@ extern "C" void GameState_SetUnknown5cbc(GameState* state, unsigned int value)
 }
 
 // Original: arm9/main @ 0x0201081C; symbol: func_0201081c; size: 0xC.
-extern "C" unsigned int GameState_ReadWordAtOffset5CBC(GameState* state)
+extern "C" unsigned int GameState_GetProgressMessageId(GameState* state)
 {
     return state->unknown_5cbc_;
 }

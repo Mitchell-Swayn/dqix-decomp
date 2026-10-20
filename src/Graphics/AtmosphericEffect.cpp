@@ -44,16 +44,16 @@ struct EffectScriptData
 } static effectScriptData;
 
 #if defined(jpn)
-#define GetFieldAddress114 func_02033ad8
-#define PackedColor_TestGreenEqualsTwo func_0204cc40
+#define GameObject_GetFloorContactDescriptor func_02033ad8
+#define ActorDescriptor_TestSecondaryCodeEqualsTwo func_0204cc40
 #define Graphics_RestoreTextureImageAndPaletteVRAMState func_0207ed10
 #define Object_InvokeSaveTextureImageVRAMState func_0207ed2c
 #endif
 
 extern "C"
 {
-    void* GetFieldAddress114(void*);
-    bool PackedColor_TestGreenEqualsTwo(void*);
+    void* GameObject_GetFloorContactDescriptor(void*);
+    bool ActorDescriptor_TestSecondaryCodeEqualsTwo(void*);
 
     void Graphics_RestoreTextureImageAndPaletteVRAMState(void*);
     void Object_InvokeSaveTextureImageVRAMState(void*);
@@ -584,15 +584,15 @@ bool AtmosphericEffectSet::Draw()
         Mat4x4_WriteProjectionUnknown(
             effectiveScreenHeight >> 1, -effectiveScreenHeight >> 1,
             -effectiveScreenWidth >> 1, effectiveScreenWidth >> 1,
-            1 << 12, 100 << 12, 1 << 12, &data_0210a010.projectionMatrix);
+            1 << 12, 100 << 12, 1 << 12, &RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.projectionMatrix);
 
-        data_0210a010.flags &= ~((1 << RENDER_CONFIG_FLAG_4) | (1 << RENDER_CONFIG_FLAG_6));
-        data_0210a010.eyeVector = eye;
-        data_0210a010.upVector = up;
-        data_0210a010.targetVector = target;
-        Mat4x3_WriteViewMatrix(&eye, &up, &target, &data_0210a010.viewMatrix);
+        RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.flags &= ~((1 << RENDER_CONFIG_FLAG_4) | (1 << RENDER_CONFIG_FLAG_6));
+        RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.eyeVector = eye;
+        RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.upVector = up;
+        RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.targetVector = target;
+        Mat4x3_WriteViewMatrix(&eye, &up, &target, &RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.viewMatrix);
         
-        data_0210a010.flags &= ~(
+        RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.flags &= ~(
             (1 << RENDER_CONFIG_FLAG_INVERSE_VIEW_CACHE_VALID) |
             (1 << RENDER_CONFIG_FLAG_WORLDVIEW_CACHE_VALID) |
             (1 << RENDER_CONFIG_FLAG_5) | (1 << RENDER_CONFIG_FLAG_6));
@@ -777,7 +777,7 @@ void AtmosphericEffectSet::DetermineVisibilityFromTimeOfDay()
 // Original: arm9/main @ 0x0207B244; symbol: _ZN20AtmosphericEffectSet30DetermineVisibilityFromUnknownEv; size: 0x88.
 void AtmosphericEffectSet::DetermineVisibilityFromUnknown()
 {
-    bool inputShouldHide = PackedColor_TestGreenEqualsTwo(GetFieldAddress114(GameState::GetInstance()->GetUnknownGameObject()));
+    bool inputShouldHide = ActorDescriptor_TestSecondaryCodeEqualsTwo(GameObject_GetFloorContactDescriptor(GameState::GetInstance()->GetUnknownGameObject()));
 
     if (inputShouldHide != unknown_14_bit_2_ || visibilityDirty_)
     {

@@ -10,7 +10,12 @@ struct State
     DMACompletionCallback callback;
     int userdata;
 };
-extern "C" State data_02111684;
+// Original data: arm9/main @ 0x2111684; symbol: data_02111684.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 32 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" State MIiDMACallback_UnknownRoleZeroInitializedStorage;
 // Original: arm9/main @ 0x020CA2AC; symbol: func_020ca2ac; size: 0xB8.
 extern "C" ARM void DMA_StartTransferOrInvokeCallbackForZeroSize(int channel,unsigned source,unsigned size,DMACompletionCallback callback,int data)
 {
@@ -18,13 +23,13 @@ extern "C" ARM void DMA_StartTransferOrInvokeCallbackForZeroSize(int channel,uns
     {
         if(callback)callback(data);
         return;
-    }while(data_02111684.busy)
+    }while(MIiDMACallback_UnknownRoleZeroInitializedStorage.busy)
     {
-    }data_02111684.busy=1;
-    data_02111684.channel=channel;
-    data_02111684.callback=callback;
-    data_02111684.userdata=data;
-    VerifyDMATimingChangePermitted_020c9fd0(channel,0x38000000);
+    }MIiDMACallback_UnknownRoleZeroInitializedStorage.busy=1;
+    MIiDMACallback_UnknownRoleZeroInitializedStorage.channel=channel;
+    MIiDMACallback_UnknownRoleZeroInitializedStorage.callback=callback;
+    MIiDMACallback_UnknownRoleZeroInitializedStorage.userdata=data;
+    VerifyOtherDMATimingCompatibility(channel,0x38000000);
     VerifyDMASource(channel,source,size,0);
     AwaitDMACompletion(channel);
     SetDMACompletionCallback(channel,Geometry_CompleteDMATransferCallback,0);

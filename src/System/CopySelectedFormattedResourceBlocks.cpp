@@ -4,7 +4,7 @@
 struct PaletteResource { unsigned format; unsigned extended; unsigned size; unsigned char* data; };
 struct PaletteSelection { unsigned short count, reserved; unsigned short* indices; };
 struct PaletteTarget { unsigned format, extended; };
-extern "C" void Object_WriteIndexedWordAtOffset8(PaletteTarget*, int, unsigned);
+extern "C" void NNS_G2dSetImagePaletteLocation(PaletteTarget*, int, unsigned);
 // Original: arm9/main @ 0x020B08B8; symbol: func_020b08b8; size: 0x164.
 extern "C" void CopySelectedFormattedResourceBlocks(PaletteResource* resource, PaletteSelection* selection, unsigned base, int target, PaletteTarget* result) {
     int sourceOffset;
@@ -45,5 +45,5 @@ extern "C" void CopySelectedFormattedResourceBlocks(PaletteResource* resource, P
     while ((i=(unsigned short)(i+1)) < count);
     result->format=resource->format;
     result->extended=resource->extended;
-    Object_WriteIndexedWordAtOffset8(result,target,base);
+    NNS_G2dSetImagePaletteLocation(result,target,base);
 }

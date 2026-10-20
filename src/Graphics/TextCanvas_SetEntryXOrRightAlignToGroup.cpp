@@ -1,0 +1,5 @@
+#include <globaldefs.h>
+struct Record { char pad[6]; short offset; char gap[6]; short x; char gap2[2]; unsigned char status; unsigned char font:4,rest:4; };
+extern "C" Record* DisplayLayout_FindPartById(void*,int); extern "C" Record* DisplayLayout_FindGroupById(void*,int); extern "C" char* MessageTextTable_FindTextById(void*,int); extern "C" unsigned TextLookup_SelectFontTableForFont(unsigned char); extern "C" int TextLayout_ComputeWidthWithGlyphSpacing(const char*,unsigned);
+// Original: arm9/main @ 0x020806D8; symbol: func_020806d8; size: 0xA4.
+extern "C" void TextCanvas_SetEntryXOrRightAlignToGroup(void** p,int lookup,int record,int mode,short offset) { Record* target=DisplayLayout_FindPartById(p+1,record); if(!target)return; if(!mode){target->offset=offset;return;} if(target->status)return; char* text=MessageTextTable_FindTextById(*p,target->x); if(!text)return; int width=TextLayout_ComputeWidthWithGlyphSpacing(text,TextLookup_SelectFontTableForFont(target->font)); Record* source=DisplayLayout_FindGroupById(p+3,lookup); if(!source)return; target->offset=(short)(source->x<<3)-width-offset; }

@@ -34,13 +34,13 @@ void CycleCurrentPriorityContexts()
 
     int priorState;
 
-    ProcessorContext* active = data_021112e0.substruct_24.activeContext;
+    ProcessorContext* active = OSInitThread_UnknownRoleZeroInitializedStorage.substruct_24.activeContext;
     priorState = DisableIRQInterrupts();
     
 
     ProcessorContext* loopPrevContext = NULL;    
-    ProcessorContext* loopContext = data_021112e0.substruct_24.firstContext;
-    if (data_021112e0.substruct_24.firstContext != NULL)
+    ProcessorContext* loopContext = OSInitThread_UnknownRoleZeroInitializedStorage.substruct_24.firstContext;
+    if (OSInitThread_UnknownRoleZeroInitializedStorage.substruct_24.firstContext != NULL)
     {
         unsigned int targetPriority = active->priority;
         do {
@@ -71,7 +71,7 @@ void CycleCurrentPriorityContexts()
     else
     {
         DECLARE_ASM_NOP();
-        data_021112e0.substruct_24.firstContext = active->pNext;
+        OSInitThread_UnknownRoleZeroInitializedStorage.substruct_24.firstContext = active->pNext;
     }
 
     active->pNext = lastEqualPriorityContext->pNext;
@@ -83,7 +83,7 @@ void CycleCurrentPriorityContexts()
 
 bool ChangeContextPriority(ProcessorContext* context, unsigned int newPriority)
 {
-    ProcessorContext* loopContext = data_021112e0.substruct_24.firstContext;
+    ProcessorContext* loopContext = OSInitThread_UnknownRoleZeroInitializedStorage.substruct_24.firstContext;
     ProcessorContext* prevContext = NULL;
     int priorState = DisableIRQInterrupts();
 
@@ -92,7 +92,7 @@ bool ChangeContextPriority(ProcessorContext* context, unsigned int newPriority)
         prevContext = loopContext;
     }
 
-    if (loopContext == NULL || loopContext == &data_021112e0.contextA)
+    if (loopContext == NULL || loopContext == &OSInitThread_UnknownRoleZeroInitializedStorage.contextA)
     {
         SetIRQInterruptState(priorState);
         return false;
@@ -106,7 +106,7 @@ bool ChangeContextPriority(ProcessorContext* context, unsigned int newPriority)
         else
         {
             DECLARE_ASM_NOP();
-            data_021112e0.substruct_24.firstContext = context->pNext;
+            OSInitThread_UnknownRoleZeroInitializedStorage.substruct_24.firstContext = context->pNext;
         }
         
         context->priority = newPriority;
@@ -121,7 +121,7 @@ void SleepCurrentContext(unsigned int milliseconds)
 {
     Alarm timing;
     ZeroInitializeAlarm(&timing);
-    ProcessorContext* context = *data_021112e0.ppActiveContext;
+    ProcessorContext* context = *OSInitThread_UnknownRoleZeroInitializedStorage.ppActiveContext;
 
     int priorState = DisableIRQInterrupts();
 

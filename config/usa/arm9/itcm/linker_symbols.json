@@ -1,59 +1,59 @@
 {
-  "data_01ffdd84": {
+  "Sinit020E6790_UnknownRoleZeroInitializedStorage_Variant10": {
     "base": "g_vramStagingRegionalTaskSets",
     "offset": "0xc",
     "object": "VRAMStagingRegionSets.o",
     "section": ".bss"
   },
-  "data_01ffdd90": {
+  "Sinit020E6790_UnknownRoleZeroInitializedStorage_Variant11": {
     "base": "g_vramStagingRegionalTaskSets",
     "offset": "0x18",
     "object": "VRAMStagingRegionSets.o",
     "section": ".bss"
   },
-  "data_01ffdd9c": {
+  "Sinit020E6790_UnknownRoleZeroInitializedStorage_Variant12": {
     "base": "g_vramStagingRegionalTaskSets",
     "offset": "0x24",
     "object": "VRAMStagingRegionSets.o",
     "section": ".bss"
   },
-  "data_01ffdda8": {
+  "Sinit020E6790_UnknownRoleZeroInitializedStorage_Variant13": {
     "base": "g_vramStagingRegionalTaskSets",
     "offset": "0x30",
     "object": "VRAMStagingRegionSets.o",
     "section": ".bss"
   },
-  "data_01ffddb4": {
+  "Sinit020E6790_UnknownRoleZeroInitializedStorage_Variant14": {
     "base": "g_vramStagingRegionalTaskSets",
     "offset": "0x3c",
     "object": "VRAMStagingRegionSets.o",
     "section": ".bss"
   },
-  "data_01ffddc0": {
+  "Sinit020E6790_UnknownRoleZeroInitializedStorage_Variant15": {
     "base": "g_vramStagingRegionalTaskSets",
     "offset": "0x48",
     "object": "VRAMStagingRegionSets.o",
     "section": ".bss"
   },
-  "data_01ffddcc": {
+  "Sinit020E6790_UnknownRoleZeroInitializedStorage_Variant16": {
     "base": "g_vramStagingRegionalTaskSets",
     "offset": "0x54",
     "object": "VRAMStagingRegionSets.o",
     "section": ".bss"
   },
-  "data_01ffddd8": {
+  "Sinit020E6790_UnknownRoleZeroInitializedStorage_Variant17": {
     "base": "g_vramStagingRegionalTaskSets",
     "offset": "0x60",
     "object": "VRAMStagingRegionSets.o",
     "section": ".bss"
   },
-  "data_01ffdde4": {
+  "Sinit020E6790_UnknownRoleZeroInitializedStorage_Variant18": {
     "base": "g_vramStagingRegionalTaskSets",
     "offset": "0x6c",
     "object": "VRAMStagingRegionSets.o",
     "section": ".bss"
   },
-  "data_01fff270": {
+  "VRAMStagingManagerGetTaskByID_UnknownRoleZeroInitializedStorage": {
     "base": "g_vramStagingTaskQueue",
     "offset": "0x1000",
     "object": "VRAMStagingTaskQueue.o",

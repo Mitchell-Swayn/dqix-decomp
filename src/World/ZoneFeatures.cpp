@@ -5,14 +5,19 @@
 #include "System/Memory.h"
 
 #if defined(jpn)
-#define data_020ef388 data_020ef2c4
-#define data_020fdc20 data_020fd98c
+#define ExecuteZoneWarpScript_UnknownRoleProcedureReferenceRecords data_020ef2c4
+#define WarpScriptOpcode64_UnknownRoleZeroInitializedStorage data_020fd98c
 
 #define GameState_GetFieldAddress468 func_020112f4
-#define FindRecordByName func_0209b6c0
+#define ZoneTable_FindEntryByMapName func_0209b6c0
 #endif
 
-extern Script::OpcodeLookupEntry data_020ef388[];
+// Original data: arm9/main @ 0x20ef388; symbol: data_020ef388.
+// Contains original relocated procedure references. Record fields, dispatch contract and exclusive ownership may remain unresolved.
+// Initial values: hex 640000009cc7010265000000c4c701026600000044c90102670000006cc901026800000038cb010269000000c8cc01026a0000001cd001026b00000044d00102 ...; full span in module reference.
+// Observed span: 144 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern Script::OpcodeLookupEntry ExecuteZoneWarpScript_UnknownRoleProcedureReferenceRecords[];
 
 struct Struct_020fdc20
 {
@@ -23,19 +28,19 @@ struct Struct_020fdc20
     // been identified; their purpose (reserved storage or padding) is unknown. This layout
     // carrier does not establish that they belonged to the original struct.
     unsigned char reserved_c[0x14];
-} data_020fdc20;
+} WarpScriptOpcode64_UnknownRoleZeroInitializedStorage;
 
 extern "C"
 {
     void* GameState_GetFieldAddress468(GameState*);
     // probably get zone data by name
-    unsigned short* FindRecordByName(void*, const char*);
+    unsigned short* ZoneTable_FindEntryByMapName(void*, const char*);
 }
 
 // Original: arm9/main @ 0x0201C79C; symbol: _Z20WarpScript_Opcode_64PN6Script9ParameterEi; size: 0x28.
 int WarpScript_Opcode_64(Script::Parameter* params, int numParams)
 {
-    data_020fdc20.warp->AllocateOpcode64Entries(params[0].ToInt(), data_020fdc20.allocator);
+    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.warp->AllocateOpcode64Entries(params[0].ToInt(), WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.allocator);
     return 1;
 }
 
@@ -79,14 +84,14 @@ int WarpScript_Opcode_65(Script::Parameter* params, int numParams)
     else
         strcpy(entry.string_30, string3);
 
-    data_020fdc20.warp->CreateOpcode64Entry(entry);
+    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.warp->CreateOpcode64Entry(entry);
     return 1;
 }
 
 // Original: arm9/main @ 0x0201C8A8; symbol: _Z20WarpScript_Opcode_7dPN6Script9ParameterEi; size: 0x28.
 int WarpScript_Opcode_7d(Script::Parameter* params, int numParams)
 {
-    data_020fdc20.warp->AllocateGrottoTileFeaturePlacementEntries(params[0].ToInt(), data_020fdc20.allocator);
+    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.warp->AllocateGrottoTileFeaturePlacementEntries(params[0].ToInt(), WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.allocator);
     return 1;
 }
 
@@ -100,14 +105,14 @@ int WarpScript_Opcode_7e(Script::Parameter* params, int numParams)
     for (int i = 0; i < 9; i++)
         placement.directionBitmasks[i] = (params++)->ToInt();
 
-    data_020fdc20.warp->CreateGrottoTileFeaturePlacementEntry(placement);
+    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.warp->CreateGrottoTileFeaturePlacementEntry(placement);
     return 1;
 }
 
 // Original: arm9/main @ 0x0201C944; symbol: _Z20WarpScript_Opcode_66PN6Script9ParameterEi; size: 0x28.
 int WarpScript_Opcode_66(Script::Parameter* params, int numParams)
 {
-    data_020fdc20.warp->AllocateOpcode66Entries(params[0].ToInt(), data_020fdc20.allocator);
+    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.warp->AllocateOpcode66Entries(params[0].ToInt(), WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.allocator);
     return 1;
 }
 
@@ -140,7 +145,7 @@ int WarpScript_Opcode_67(Script::Parameter* params, int numParams)
     entry.unk_18[1] = arg7;
     entry.unk_20 = 4096.0f * arg8;
     
-    data_020fdc20.warp->CreateOpcode66Entry(entry);
+    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.warp->CreateOpcode66Entry(entry);
 
     return 1;
 }
@@ -148,7 +153,7 @@ int WarpScript_Opcode_67(Script::Parameter* params, int numParams)
 // Original: arm9/main @ 0x0201CB38; symbol: _Z20WarpScript_Opcode_68PN6Script9ParameterEi; size: 0x28.
 int WarpScript_Opcode_68(Script::Parameter* params, int numParams)
 {
-    data_020fdc20.warp->AllocateOpcode68Entries(params[0].ToInt(), data_020fdc20.allocator);
+    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.warp->AllocateOpcode68Entries(params[0].ToInt(), WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.allocator);
     return 1;
 }
 
@@ -161,7 +166,7 @@ bool ProcessExtraOpcode69Params(Script::Parameter* param, int numParams, ZoneFea
     entry.unk_0 = (param++)->ToInt();
     if (paramStart[1].type == 0)
     {
-        unsigned short* probablyZone = FindRecordByName(worldData, (param++)->ToString());
+        unsigned short* probablyZone = ZoneTable_FindEntryByMapName(worldData, (param++)->ToString());
         if (probablyZone == NULL)
             return false;
         entry.unk_1c = *probablyZone;
@@ -227,7 +232,7 @@ int WarpScript_Opcode_69(Script::Parameter* params, int numParams)
 
     if (!ProcessExtraOpcode69Params(p, numParams - (p - params), entry))
         return 0;
-    data_020fdc20.warp->CreateOpcode68Entry(entry);
+    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.warp->CreateOpcode68Entry(entry);
     return 1;
 }
 
@@ -301,14 +306,14 @@ int WarpScript_Opcode_72(Script::Parameter* params, int numParams)
 
     if (!ProcessExtraOpcode69Params(params, numParams - (params - paramsStart), entry))
         return 0;
-    data_020fdc20.warp->CreateOpcode68Entry(entry);
+    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.warp->CreateOpcode68Entry(entry);
     return 1;
 }
 
 // Original: arm9/main @ 0x0201D01C; symbol: _Z20WarpScript_Opcode_6aPN6Script9ParameterEi; size: 0x28.
 int WarpScript_Opcode_6a(Script::Parameter* params, int numParams)
 {
-    data_020fdc20.warp->AllocateOpcode6aEntries(params[0].ToInt(), data_020fdc20.allocator);
+    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.warp->AllocateOpcode6aEntries(params[0].ToInt(), WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.allocator);
     return 1;
 }
 
@@ -422,7 +427,7 @@ int WarpScript_Opcode_6b(Script::Parameter* params, int numParams)
         entry.unk_2c.type5.unk_2 = params[1].ToInt();
         entry.unk_2c.type5.unk_4 = 0;
     }
-    Struct_020fdc20* instance = &data_020fdc20;
+    Struct_020fdc20* instance = &WarpScriptOpcode64_UnknownRoleZeroInitializedStorage;
     instance++; // do some nonsense to disable propagation optimizations
     entry.pNext = NULL;
     (instance - 1)->warp->CreateOpcode6aEntry(entry);
@@ -464,7 +469,7 @@ int WarpScript_Opcode_6e(Script::Parameter* params, int numParams)
     params = params->ToVec3fix(&tempVector);
     fix32_t angle = fix32ReduceAngle0To2Pi(4096.0f * (params++)->ToFloat());
 
-    ZoneFeatures* warp = data_020fdc20.warp;
+    ZoneFeatures* warp = WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.warp;
     warp->vector_70_ = tempVector;
     warp->angle_7c_ = angle;
     return 1;
@@ -476,7 +481,7 @@ int WarpScript_Opcode_70(Script::Parameter* params, int numParams)
     int red = (params++)->ToInt();
     int green = (params++)->ToInt();
     int blue = (params++)->ToInt();
-    data_020fdc20.warp->color_7e_ = red | (green << 5) | (blue << 10);
+    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.warp->color_7e_ = red | (green << 5) | (blue << 10);
     return 1;
 }
 
@@ -502,88 +507,88 @@ int WarpScript_Opcode_73(Script::Parameter* params, int numParams)
     entry.unk_24 = zsqu;
     entry.unk_24 = xsqu + zsqu;
 
-    data_020fdc20.currentEntry = data_020fdc20.warp->CreateOpcode6aEntry(entry);
+    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry = WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.warp->CreateOpcode6aEntry(entry);
     return 1;
 }
 
 // Original: arm9/main @ 0x0201D638; symbol: _Z20WarpScript_Opcode_74PN6Script9ParameterEi; size: 0x994.
 int WarpScript_Opcode_74(Script::Parameter* params, int numParams)
 {
-    if (data_020fdc20.currentEntry == NULL)
+    if (WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry == NULL)
         return 0;
     void* worldData = GameState_GetFieldAddress468(GameState::GetInstance());
-    switch (data_020fdc20.currentEntry->maybeType)
+    switch (WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->maybeType)
     {
     case 0:
-        data_020fdc20.currentEntry->unk_2c.type0.unk_0 = 0;
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type0.unk_0 = 0;
         if (numParams != 0)
-            data_020fdc20.currentEntry->unk_0 = params->ToInt();
+            WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_0 = params->ToInt();
         break;
     case 6:
-        data_020fdc20.currentEntry->maybeType = 0;
-        data_020fdc20.currentEntry->unk_2c.type0.unk_0 = 1;
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->maybeType = 0;
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type0.unk_0 = 1;
         if (numParams != 0)
-            data_020fdc20.currentEntry->unk_0 = params->ToInt();
+            WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_0 = params->ToInt();
         break;
     case 1:
         if (numParams != 0)
-            data_020fdc20.currentEntry->unk_0 = params->ToInt();
+            WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_0 = params->ToInt();
         break;
     case 2:
         if (numParams == 3)
         {
-            data_020fdc20.currentEntry->unk_2c.type2.unk_0 = (params++)->ToInt();
-            data_020fdc20.currentEntry->unk_2c.type2.unk_1 = (params++)->ToInt();
-            data_020fdc20.currentEntry->unk_2c.type2.unk_2_high = (params++)->ToInt();
-            data_020fdc20.currentEntry->unk_2c.type2.unk_2_low = 0;
+            WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type2.unk_0 = (params++)->ToInt();
+            WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type2.unk_1 = (params++)->ToInt();
+            WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type2.unk_2_high = (params++)->ToInt();
+            WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type2.unk_2_low = 0;
         }
         else
         {
             int numArgsConsumed = 0;
-            data_020fdc20.currentEntry->unk_2c.type2.unk_0 = (params++)->ToInt();
+            WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type2.unk_0 = (params++)->ToInt();
             numArgsConsumed++;
-            data_020fdc20.currentEntry->unk_2c.type2.unk_1 = (params++)->ToInt();
+            WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type2.unk_1 = (params++)->ToInt();
             numArgsConsumed++;
-            data_020fdc20.currentEntry->unk_2c.type2.unk_2_high = (params++)->ToInt();
+            WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type2.unk_2_high = (params++)->ToInt();
             numArgsConsumed++;
-            data_020fdc20.currentEntry->unk_2c.type2.unk_2_low = (params++)->ToInt();
+            WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type2.unk_2_low = (params++)->ToInt();
             numArgsConsumed++;
             
-            if (data_020fdc20.currentEntry->unk_2c.type2.unk_2_high & 8)
+            if (WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type2.unk_2_high & 8)
             {
                 if (params->type == 0)
                 {
                     const char* zoneName = (params++)->ToString();
                     numArgsConsumed++;
-                    unsigned short* maybeZoneData = FindRecordByName(worldData, zoneName);
+                    unsigned short* maybeZoneData = ZoneTable_FindEntryByMapName(worldData, zoneName);
                     
                     if (maybeZoneData == NULL)
                         return 0;
-                    data_020fdc20.currentEntry->unk_2c.type2.maybeZone = *maybeZoneData;
+                    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type2.maybeZone = *maybeZoneData;
                 }
                 else
                 {
-                    data_020fdc20.currentEntry->unk_2c.type2.maybeZone = (params++)->ToInt();
+                    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type2.maybeZone = (params++)->ToInt();
                     numArgsConsumed++;
                 }
-                data_020fdc20.currentEntry->unk_2c.type2.unk_6 = (params++)->ToInt();
+                WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type2.unk_6 = (params++)->ToInt();
                 numArgsConsumed++;
-                data_020fdc20.currentEntry->unk_2c.type2.unk_8 = (params++)->ToInt();
+                WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type2.unk_8 = (params++)->ToInt();
                 numArgsConsumed++;
                 Vector3fix tempVector;
                 params = params->ToVec3fix(&tempVector);
                 numArgsConsumed += 3;
-                data_020fdc20.currentEntry->unk_2c.type2.vectors_c[0] = tempVector;
-                data_020fdc20.currentEntry->unk_2c.type2.unk_3c = 4096.0f * (params++)->ToFloat();
+                WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type2.vectors_c[0] = tempVector;
+                WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type2.unk_3c = 4096.0f * (params++)->ToFloat();
                 numArgsConsumed++;
-                data_020fdc20.currentEntry->unk_2c.type2.unk_3e = 4096.0f * (params++)->ToFloat();
+                WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type2.unk_3e = 4096.0f * (params++)->ToFloat();
                 numArgsConsumed++;
                 
                 for (int i = 1; i < 4; i++)
                 {
                     params = params->ToVec3fix(&tempVector);
                     numArgsConsumed += 3;
-                    data_020fdc20.currentEntry->unk_2c.type2.vectors_c[i] = tempVector;
+                    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type2.vectors_c[i] = tempVector;
                 }
             }
             if (numArgsConsumed < numParams)
@@ -596,20 +601,20 @@ int WarpScript_Opcode_74(Script::Parameter* params, int numParams)
                 (void)((params++)->ToInt());
                 numArgsConsumed++;
             }
-            if (data_020fdc20.currentEntry->unk_2c.type2.unk_2_high & 0x20)
+            if (WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type2.unk_2_high & 0x20)
             {
-                data_020fdc20.currentEntry->unk_2c.type2.unk_40 = 4096.0f * (params++)->ToFloat();
+                WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type2.unk_40 = 4096.0f * (params++)->ToFloat();
             }
         }
         break;
     case 3:
-        data_020fdc20.currentEntry->unk_2c.type3.unk_0 = (params++)->ToInt();
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type3.unk_0 = (params++)->ToInt();
         break;
     case 4:
     {
-        data_020fdc20.currentEntry->unk_2c.type4.unk_0 = (params++)->ToInt();
-        data_020fdc20.currentEntry->unk_2c.type4.unk_1 = (params++)->ToInt();
-        data_020fdc20.currentEntry->unk_2c.type4.unk_0_high = (params++)->ToInt();
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type4.unk_0 = (params++)->ToInt();
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type4.unk_1 = (params++)->ToInt();
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type4.unk_0_high = (params++)->ToInt();
         Vector3fix vecA;
         Vector3fix vecB;
         params = params->ToVec3fix(&vecA);
@@ -620,7 +625,7 @@ int WarpScript_Opcode_74(Script::Parameter* params, int numParams)
         Vector3fix_Normalize(&vector4.vec3.vec, &vector4.vec3.vec);
         vector4.w = Vector3fix_InnerProduct(&vector4.vec3.vec, &vecA);
         Vector3fix vecC = { 0, 0, 0 };
-        if (data_020fdc20.currentEntry->unk_2c.type4.unk_0 == 4)
+        if (WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type4.unk_0 == 4)
         {
             params = params->ToVec3fix(&vecC);
         }
@@ -631,75 +636,75 @@ int WarpScript_Opcode_74(Script::Parameter* params, int numParams)
         }
         Vector3fix vecD;
         params = params->ToVec3fix(&vecD);
-        data_020fdc20.currentEntry->unk_2c.type4.vector_4.CopyFrom(vector4);
-        data_020fdc20.currentEntry->unk_2c.type4.distance_14 = distance;
-        data_020fdc20.currentEntry->unk_2c.type4.vector_18 = vecC;
-        data_020fdc20.currentEntry->unk_2c.type4.vector_24 = vecD;
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type4.vector_4.CopyFrom(vector4);
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type4.distance_14 = distance;
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type4.vector_18 = vecC;
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type4.vector_24 = vecD;
         break;
     }
     case 5:
-        data_020fdc20.currentEntry->unk_2c.type5.unk_0 = (params++)->ToInt();
-        data_020fdc20.currentEntry->unk_2c.type5.unk_2 = (params++)->ToInt();
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type5.unk_0 = (params++)->ToInt();
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type5.unk_2 = (params++)->ToInt();
         if (numParams > 2)
-            data_020fdc20.currentEntry->unk_0 = (params++)->ToInt();
+            WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_0 = (params++)->ToInt();
         break;
     case 8:
         if (numParams != 0)
-            data_020fdc20.currentEntry->unk_0 = (params++)->ToInt();
+            WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_0 = (params++)->ToInt();
         break;
     case 9:
-        data_020fdc20.currentEntry->unk_2c.type9.unk_0 = (params++)->ToInt();
-        data_020fdc20.currentEntry->unk_2c.type9.unk_2 = (params++)->ToInt();
-        data_020fdc20.currentEntry->unk_2c.type9.unk_4 = (params++)->ToInt();
-        data_020fdc20.currentEntry->unk_2c.type9.unk_5 = (params++)->ToInt();
-        if (data_020fdc20.currentEntry->unk_2c.type9.unk_5 & 2)
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type9.unk_0 = (params++)->ToInt();
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type9.unk_2 = (params++)->ToInt();
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type9.unk_4 = (params++)->ToInt();
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type9.unk_5 = (params++)->ToInt();
+        if (WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type9.unk_5 & 2)
         {
             if (params->type == 0)
             {
                 const char* zoneName = (params++)->ToString();
-                unsigned short* maybeZoneData = FindRecordByName(worldData, zoneName);
+                unsigned short* maybeZoneData = ZoneTable_FindEntryByMapName(worldData, zoneName);
                 
                 if (maybeZoneData == NULL)
                     return 0;
-                data_020fdc20.currentEntry->unk_2c.type9.maybeZone = *maybeZoneData;
+                WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type9.maybeZone = *maybeZoneData;
             }
             else
             {
-                data_020fdc20.currentEntry->unk_2c.type9.maybeZone = (params++)->ToInt();
+                WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type9.maybeZone = (params++)->ToInt();
             }
-            data_020fdc20.currentEntry->unk_2c.type9.unk_8 = (params++)->ToInt();
-            data_020fdc20.currentEntry->unk_2c.type9.unk_a = (params++)->ToInt();
-            params = params->ToVec3fix(&data_020fdc20.currentEntry->unk_2c.type9.vector_c);
-            data_020fdc20.currentEntry->unk_2c.type9.unk_3c = 4096.0f * (params++)->ToFloat();
-            data_020fdc20.currentEntry->unk_2c.type9.unk_3e = 4096.0f * (params++)->ToFloat();
-            params = params->ToVec3fix(&data_020fdc20.currentEntry->unk_2c.type9.vector_18);
-            params = params->ToVec3fix(&data_020fdc20.currentEntry->unk_2c.type9.vector_24);
-            params = params->ToVec3fix(&data_020fdc20.currentEntry->unk_2c.type9.vector_30);
-            data_020fdc20.currentEntry->unk_2c.type9.unk_40 = 4096.0f * (params++)->ToFloat();
-            data_020fdc20.currentEntry->unk_2c.type9.unk_42 = (params++)->ToInt();
+            WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type9.unk_8 = (params++)->ToInt();
+            WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type9.unk_a = (params++)->ToInt();
+            params = params->ToVec3fix(&WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type9.vector_c);
+            WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type9.unk_3c = 4096.0f * (params++)->ToFloat();
+            WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type9.unk_3e = 4096.0f * (params++)->ToFloat();
+            params = params->ToVec3fix(&WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type9.vector_18);
+            params = params->ToVec3fix(&WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type9.vector_24);
+            params = params->ToVec3fix(&WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type9.vector_30);
+            WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type9.unk_40 = 4096.0f * (params++)->ToFloat();
+            WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type9.unk_42 = (params++)->ToInt();
         }
         break;
     case 10:
-        data_020fdc20.currentEntry->unk_2c.type10.unk_0 = (params++)->ToInt();
-        params = params->ToVec3fix(&data_020fdc20.currentEntry->unk_2c.type10.vector_4);
-        data_020fdc20.currentEntry->unk_2c.type10.unk_2 = 4096.0f * (params++)->ToFloat();
-        data_020fdc20.currentEntry->unk_2c.type10.unk_10 = 4096.0f * (params++)->ToFloat();
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type10.unk_0 = (params++)->ToInt();
+        params = params->ToVec3fix(&WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type10.vector_4);
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type10.unk_2 = 4096.0f * (params++)->ToFloat();
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type10.unk_10 = 4096.0f * (params++)->ToFloat();
         if (numParams > 6)
         {
-            params = params->ToVec3fix(&data_020fdc20.currentEntry->unk_2c.type10.vector_14);
-            data_020fdc20.currentEntry->unk_2c.type10.unk_20 = 4096.0f * (params++)->ToFloat();
+            params = params->ToVec3fix(&WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type10.vector_14);
+            WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type10.unk_20 = 4096.0f * (params++)->ToFloat();
         }
         break;
     case 12:
     {
-        VectorizedMemset(&data_020fdc20.currentEntry->unk_2c.type12, 
-            0, sizeof(data_020fdc20.currentEntry->unk_2c.type12));
-        data_020fdc20.currentEntry->unk_2c.type12.subtype = (params++)->ToInt();
-        data_020fdc20.currentEntry->unk_2c.type12.unk_1 = (params++)->ToInt();
-        data_020fdc20.currentEntry->unk_2c.type12.unk_2 = (params++)->ToInt();
+        VectorizedMemset(&WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type12, 
+            0, sizeof(WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type12));
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type12.subtype = (params++)->ToInt();
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type12.unk_1 = (params++)->ToInt();
+        WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry->unk_2c.type12.unk_2 = (params++)->ToInt();
 
         // why didn't we do this 200 lines ago...
-        ZoneFeatures::Opcode6aEntry* entry = data_020fdc20.currentEntry;
+        ZoneFeatures::Opcode6aEntry* entry = WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry;
         switch (entry->unk_2c.type12.subtype)
         {
         case 1:
@@ -739,10 +744,10 @@ int WarpScript_Opcode_7b(Script::Parameter* params, int numParams)
 {
     int count = params[0].ToInt();
     ZoneFeatures::Opcode7bEntry* alloc = 
-        (ZoneFeatures::Opcode7bEntry*)data_020fdc20.allocator->Allocate(count * sizeof(ZoneFeatures::Opcode7bEntry));
+        (ZoneFeatures::Opcode7bEntry*)WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.allocator->Allocate(count * sizeof(ZoneFeatures::Opcode7bEntry));
     if (alloc == NULL)
         return 0;
-    data_020fdc20.warp->SetOpcode7bAllocation(alloc, count);
+    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.warp->SetOpcode7bAllocation(alloc, count);
     return 1;
 }
 
@@ -799,7 +804,7 @@ int WarpScript_Opcode_7c(Script::Parameter* params, int numParams)
     entry.maxX += entry.vector_0.vec.x;
     entry.maxZ += entry.vector_0.vec.z;
 
-    Struct_020fdc20* instance = &data_020fdc20;
+    Struct_020fdc20* instance = &WarpScriptOpcode64_UnknownRoleZeroInitializedStorage;
     instance++;
     (instance - 1)->warp->CreateOpcode7bEntry(entry);
     return 1;
@@ -810,19 +815,19 @@ void ExecuteZoneWarpScript(const void* data, unsigned int length, ZoneFeatures* 
 {
     if (length == 0)
         return;
-    data_020fdc20.warp = warp;
-    data_020fdc20.allocator = alloc;
-    data_020fdc20.currentEntry = NULL;
+    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.warp = warp;
+    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.allocator = alloc;
+    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry = NULL;
     
     Script script;
     script.Initialize();
-    script.SetOpcodeLookup(data_020ef388);
+    script.SetOpcodeLookup(ExecuteZoneWarpScript_UnknownRoleProcedureReferenceRecords);
     script.Load(data, length);
     script.Execute();
 
-    data_020fdc20.warp = NULL;
-    data_020fdc20.allocator = NULL;
-    data_020fdc20.currentEntry = NULL;
+    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.warp = NULL;
+    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.allocator = NULL;
+    WarpScriptOpcode64_UnknownRoleZeroInitializedStorage.currentEntry = NULL;
 }
 
 // Original: arm9/main @ 0x0201E248; symbol: _ZN12ZoneFeatures5ResetEv; size: 0x14.
@@ -1096,7 +1101,7 @@ struct FeatureBounds
     Vector3fix maximum;
     Vector3fix minimum;
 };
-extern "C" bool TestPointInsideThreeDimensionalBounds(const Vector3fix* point, const FeatureBounds* bounds);
+extern "C" bool Bounds3D_ContainsPoint(const Vector3fix* point, const FeatureBounds* bounds);
 
 // Test the coarse X/Z bounds, then undo the feature rotation for its 3D box.
 // Original: arm9/main @ 0x0201E8FC; symbol: _ZN12ZoneFeatures19FindContainingEntryEPK8Vector3i; size: 0x158.
@@ -1123,14 +1128,14 @@ ZoneFeatures::Opcode7bEntry* ZoneFeatures::FindContainingEntry(const Vector3fix*
             entry->vector_0.vec.x + entry->vector_c.vec.x / 2,
             entry->vector_0.vec.y + entry->vector_c.vec.y / 2,
             entry->vector_0.vec.z + entry->vector_c.vec.z / 2);
-        if (TestPointInsideThreeDimensionalBounds(&local, &bounds))
+        if (Bounds3D_ContainsPoint(&local, &bounds))
             return entry;
     }
     return NULL;
 }
 
 // The script interpreter uses a zero opcode/null procedure sentinel.
-Script::OpcodeLookupEntry data_020ef388[] = {
+Script::OpcodeLookupEntry ExecuteZoneWarpScript_UnknownRoleProcedureReferenceRecords[] = {
     { 0x64, WarpScript_Opcode_64 },
     { 0x65, WarpScript_Opcode_65 },
     { 0x66, WarpScript_Opcode_66 },

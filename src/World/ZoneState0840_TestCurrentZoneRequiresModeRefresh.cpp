@@ -1,0 +1,5 @@
+#include <globaldefs.h>
+ARM
+struct Zone3D { unsigned short id; bool IsInstanceFlag4Clear(int,int); }; struct ZoneState0840 { bool IsValueInRangeC3b5(int); bool IsValueInRangeC545(int); }; extern "C" Zone3D *Zone3D_GetMainInstance();
+// Original: arm9/main @ 0x02098080; symbol: func_02098080; size: 0x164.
+extern "C" int ZoneState0840_TestCurrentZoneRequiresModeRefresh(ZoneState0840 *self) { Zone3D *zone=Zone3D_GetMainInstance(); unsigned id=zone->id; int group; unsigned mode=*(unsigned *)((char *)self+0x1b3c); group=(int)id/100-500; if(!self->IsValueInRangeC3b5(id)) return 0; if(self->IsValueInRangeC545(id)) return 0; if(id==0xc3bb) return 0; if(id+0xffff3c44U<=2) return 0; switch(mode) { case 0:break; case 1:if(group!=1)return 1;break; case 2:if(group!=1)return 1; if(id==0xc3b5&&zone->IsInstanceFlag4Clear(9,0))return 1;break; case 3:if(group!=2)return 1;break; case 4:if(group!=2)return 1;if(id==0xc41b&&zone->IsInstanceFlag4Clear(20,0))return 1;break; case 5:if(group!=3)return 1;break; case 6:if(group!=4)return 1;break; } return 0; }

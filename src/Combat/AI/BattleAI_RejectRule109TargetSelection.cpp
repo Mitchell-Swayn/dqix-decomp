@@ -1,0 +1,8 @@
+#include <globaldefs.h>
+ARM
+
+// Original: arm9/ov024 @ 0x021F4174; symbol: func_ov024_021f4174; size: 0x8.
+extern "C" int BattleAI_RejectRule109TargetSelection(void)
+{
+    return 0;
+}

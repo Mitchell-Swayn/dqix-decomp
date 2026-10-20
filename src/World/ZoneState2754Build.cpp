@@ -1,8 +1,8 @@
 #include "World/Zone3DEmbeddedState.h"
 #include "std_library_functions.h"
 
-extern "C" bool func_020def98(SafeAllocator*, ZoneState2754::Data*, ZoneState2754::Data*, const short*, short);
-extern "C" bool func_020df374(SafeAllocator*, ZoneState2754::Data*, ZoneState2754::Data*, const short*, short, int, int);
+extern "C" bool ZoneState2754_CopyRecordsForKeys(SafeAllocator*, ZoneState2754::Data*, ZoneState2754::Data*, const short*, short);
+extern "C" bool ZoneState2754_CopyRecordsMatchingCategoryMasks(SafeAllocator*, ZoneState2754::Data*, ZoneState2754::Data*, const short*, short, int, int);
 
 // Original: arm9/main @ 0x020DE980; symbol: _ZN13ZoneState275411BuildForKeyEP13SafeAllocatorPvjs; size: 0x24.
 bool ZoneState2754::BuildForKey(SafeAllocator* allocator, void* file, unsigned int size, short key)
@@ -17,7 +17,7 @@ bool ZoneState2754::BuildForKeys(SafeAllocator* allocator, void* file, unsigned 
     if (!allocator || !file || !size || !keys || !count) return false;
     Data source;
     source.LoadSerializedData(file, size);
-    bool result = func_020def98(allocator, &data, &source, keys, count);
+    bool result = ZoneState2754_CopyRecordsForKeys(allocator, &data, &source, keys, count);
     unknown_14 = result && data.primaryCount > 1;
     return result;
 }
@@ -35,7 +35,7 @@ bool ZoneState2754::BuildAlternateForKeys(SafeAllocator* allocator, void* file, 
     if (!allocator || !file || !size || !keys || !count) return false;
     Data source;
     source.LoadSerializedData(file, size);
-    bool result = func_020df374(allocator, &data, &source, keys, count, 0, 0);
+    bool result = ZoneState2754_CopyRecordsMatchingCategoryMasks(allocator, &data, &source, keys, count, 0, 0);
     unknown_14 = result && data.primaryCount > 1;
     return result;
 }

@@ -73,7 +73,9 @@ def checkpoint(directory, current_label, current, measures, timestamp):
             'new_bss_bytes': sum(record.get('bss_bytes', 0) for _, record in records),
             'prior_functions': 0, 'prior_code_bytes': 0, 'main': measures,
             'accepted_batches': [label for label, _ in records],
-            'workers': {'worker_b': 'running', 'worker_c': 'running'}}
+            # This publication has no measured worker census. An empty
+            # observation must not imply that any actor is running.
+            'workers': {}}
 
 
 class Bookkeeping:

@@ -6,8 +6,8 @@
 #if defined(jpn)
 #define Graphics_WriteSignedBrightnessMagnitudeAndMode func_020c546c
 #define Graphics_DecodeSignedBrightness func_020c5494
-#define ReadGlobalAt0214E4C8 func_020dc998
-#define UpdateConditionalDisplayTransition func_020dd3d4
+#define DisplayOverlay_GetInstance func_020dc998
+#define DisplayOverlay_InterceptBrightnessChange func_020dd3d4
 #endif
 
 // Temporary internal wrappers
@@ -18,8 +18,8 @@ extern "C"
     // get brightness from master register
     int Graphics_DecodeSignedBrightness(volatile unsigned short *reg);
 
-    void *ReadGlobalAt0214E4C8();
-    int UpdateConditionalDisplayTransition(void *unk, int screen, int brightness, unsigned int duration);
+    void *DisplayOverlay_GetInstance();
+    int DisplayOverlay_InterceptBrightnessChange(void *unk, int screen, int brightness, unsigned int duration);
 }
 #define REG_MASTER_BRIGHT ((volatile unsigned short *) 0x0400006C)
 #define REG_MASTER_BRIGHT_SUB ((volatile unsigned short *) 0x0400106C)
@@ -119,9 +119,9 @@ void SetMainBrightness(GameResources* resources, int brightness, int duration)
     if (resources->mainBrightnessLocked)
         return;
 
-    void *unk = ReadGlobalAt0214E4C8();
+    void *unk = DisplayOverlay_GetInstance();
 
-    if (UpdateConditionalDisplayTransition(unk, 0, brightness, duration) == 0)
+    if (DisplayOverlay_InterceptBrightnessChange(unk, 0, brightness, duration) == 0)
         return;
 
     if (duration == 0)
@@ -145,9 +145,9 @@ void SetSubBrightness(GameResources* resources, int brightness, int duration)
     if (resources->subBrightnessLocked)
         return;
 
-    void *unk = ReadGlobalAt0214E4C8();
+    void *unk = DisplayOverlay_GetInstance();
 
-    if (UpdateConditionalDisplayTransition(unk, 1, brightness, duration) == 0)
+    if (DisplayOverlay_InterceptBrightnessChange(unk, 1, brightness, duration) == 0)
         return;
 
     if (duration == 0)
@@ -233,10 +233,10 @@ void SetMainBrightnessWithDurationMs(GameResources* resources, int brightness, u
     if (resources->mainBrightnessLocked)
         return;
 
-    void *unk = ReadGlobalAt0214E4C8();
+    void *unk = DisplayOverlay_GetInstance();
     unsigned int numFrames = (durationMs * 3) / 100;
 
-    if (UpdateConditionalDisplayTransition(unk, 0, brightness, numFrames) == 0)
+    if (DisplayOverlay_InterceptBrightnessChange(unk, 0, brightness, numFrames) == 0)
         return;
 
     if (durationMs != 0)

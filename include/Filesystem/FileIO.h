@@ -3,10 +3,15 @@
 #include "Memory/SafeAllocator.h"
 
 #ifdef jpn
-#define data_0211e33c data_0211fb64
+#define Main_UnknownRoleZeroInitializedStorage_Variant6 data_0211fb64
 #endif
 
-extern unsigned char data_0211e33c[0x30000];
+// Original data: arm9/main @ 0x211e33c; symbol: data_0211e33c.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 7889 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern unsigned char Main_UnknownRoleZeroInitializedStorage_Variant6[0x30000];
 
 void* LoadFileIntoMemory(const char* path, void* buffer, unsigned int* outLength);
 void* LoadFileIntoNewAllocation(const char* path, SafeAllocator& alloc, unsigned int* outLength);
@@ -40,6 +45,6 @@ void* DecompressLZ77FileIntoAllocatedSpace(SafeAllocator& allocator,
 
 // Returns a pointer to the extracted file. The file will be extracted
 // to the 'file scratch space' at 0x0211e33c (USA).
-extern "C" void* ExtractFileFromGP2(const char* gp2Path, const char* innerFilePath, unsigned int* outSize);
+extern "C" void* Filesystem_ExtractLocalizedGp2FileToScratch(const char* gp2Path, const char* innerFilePath, unsigned int* outSize);
 
 char* StringReplaceLanguageTag(const char* input, char* output, int language);

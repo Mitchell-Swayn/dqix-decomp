@@ -1,0 +1,7 @@
+// Original data: arm9/ov023 @ 0x21fdd6e; symbol: data_ov023_021fdd6e.
+// NUL-terminated ASCII text: "data/bin/menu/str_sli.gp2". The role name describes the literal content; consumer context does not establish exclusive ownership.
+// Observed values: "data/bin/menu/str_sli.gp2".
+// Span: 26 bytes to next configured symbol; logical object size may differ.
+// Overlay 23 resource path, format string, or named animation/UI token.
+// Original initialized storage includes its terminating NUL and zero alignment padding.
+__declspec(align(1)) char Menu_AdvanceSecondaryPanelResourceInitialization_PathDataBinMenuStrSliGp2[26] = "data/bin/menu/str_sli.gp2";

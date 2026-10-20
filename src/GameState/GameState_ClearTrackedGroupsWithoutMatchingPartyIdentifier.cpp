@@ -6,8 +6,8 @@ ARM
 extern "C" GameObject* GameState_GetObjectWithFlag200ByIndex(GameState* state, int index);
 extern "C" void GameState_ClearObjectByIndex(GameState* state, int index);
 // Returns the word at GameObject+0x158 (selects which identifier field applies).
-extern "C" unsigned int ReadWordFieldAtOffset158(GameObject* object);
-extern "C" void Object_ResetFlagsAndEmbeddedRecordState(void* group);
+extern "C" unsigned int GameObject_GetUnknownTrackingContext(GameObject* object);
+extern "C" void ZoneState_ResetTrackedZone(void* group);
 
 // One 0x318-byte group record; only the identifier and the active flag
 // (bit 2 of the halfword at +2) are interpreted here.
@@ -37,7 +37,7 @@ extern "C" void GameState_ClearTrackedGroupsWithoutMatchingPartyIdentifier(Track
             if (object == NULL) {
                 continue;
             }
-            if (ReadWordFieldAtOffset158(object) == 0) {
+            if (GameObject_GetUnknownTrackingContext(object) == 0) {
                 if (identifier != object->obj3D_.GetField06()) {
                     continue;
                 }
@@ -51,7 +51,7 @@ extern "C" void GameState_ClearTrackedGroupsWithoutMatchingPartyIdentifier(Track
             for (int i = 0; i < 12; i++) {
                 GameState_ClearObjectByIndex(state, group * 12 + 0x70 + i);
             }
-            Object_ResetFlagsAndEmbeddedRecordState(entry);
+            ZoneState_ResetTrackedZone(entry);
         }
     }
 }

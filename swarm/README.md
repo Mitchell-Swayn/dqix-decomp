@@ -11,6 +11,7 @@ Worker instructions are in [WORKER.md](WORKER.md).
 |---|---|
 | `swarm.py` | CLI: `build`, `next`, `context`, `check`, `submit`, `release`, `status`, `integrate` |
 | `build.py` | Builds `build/swarm/swarm.db` from the evidence inventory and current delinks |
+| `canonical.py` | Compiler-backed canonical declaration preflight and accepted-state snapshots |
 | `verify.py` | Compiles one candidate on the host and proves bytes and relocations |
 | `integrate.py` | Installs batches, runs configure + `ninja rom check report sha1`, bisects failures |
 | `selftest.py` | Re-verifies integrated single-function units and perturbed copies |
@@ -47,6 +48,46 @@ declarations current on its own.
 
 The compiler (`wibo` + MWCC from the factory inputs) runs directly on the host in
 a scratch directory under `build/swarm/tmp/`; no link or container is involved.
+Before object comparison, `check` compiles candidate prototypes alongside canonical
+prototypes using the selected compiler profile, language and candidate include
+directory. Current owning free-function definitions take precedence over the
+SQLite declaration cache, including old/raw aliases of established renames.
+Compiler evidence determines compatibility; source types and constants are never
+rewritten. Canonical failures do not increment object-variant counts or improve
+the best match score. JSON includes `canonical.status`, declaration paths,
+authority, candidate declarations and compiler diagnostics; human output prints
+the same evidence.
+
+`canonical_conflict` blocks an incompatible declaration. `canonical_context_required`
+blocks a check needing additional type/header context without asserting a proven
+ABI disagreement. `canonical_retry` means integration is active, publication is
+unfinished, or inputs changed during compilation. Retry after accepted publication.
+Short nonblocking shared locks protect snapshots of source, headers, config and
+DB declarations/renames; compilation runs outside the process lock. The ignored
+`build/swarm/canonical-index.cache` reuses per-file content hashes and parsed
+owning declarations across CLI processes. Every use scans file stat identities
+(device, inode, mode, size, nanosecond mtime and ctime) and rereads the declaration
+and rename tables. Uncommitted edits, same-size edits with restored mtime, atomic
+replacement, additions and deletions invalidate the index; changed files alone
+are rehashed/reparsed. A checksum, parser version and atomic replacement protect
+the regenerable cache. Concurrent refresh returns a retry instead of waiting
+under the main lock. Cold refresh scans twice to reject changes during indexing.
+Submit checks
+again and binds enqueue to the same snapshot under the shared lock. A rejected
+submit preserves stored source, queue status and lease. The integration audit and
+full ROM acceptance remain independent requirements.
+
+When a canonical type is missing, preflight can use real headers included by the
+owning source. It captures the candidate function-pointer type before those
+headers are introduced at file scope, then asks the compiler to compare that
+captured type with the canonical type. Later macros and overloads cannot change
+the captured candidate type. JSON records `context_resolution` or
+`context_attempted`, `proof`, and repair paths/headers/local type names. It never
+synthesizes owner-local structs. An unresolved local type remains
+`canonical_context_required`; the worker must investigate its owning source.
+Even a compiler-confirmed nominal pointer-tag disagreement proves declaration
+incompatibility, not necessarily a difference in the machine calling ABI.
+
 A candidate matches when:
 
 - the chosen function has the original size and mode, and all unrelocated bytes

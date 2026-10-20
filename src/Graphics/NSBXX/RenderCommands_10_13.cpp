@@ -71,9 +71,9 @@ void RenderCommand_12(RenderCommandHandler* handler, int modifier)
         {
             handler->pMaterialRenderData_->paramTEXIMAGE_PARAMS_ &= ~0xc0000000;
             handler->pMaterialRenderData_->paramTEXIMAGE_PARAMS_ |= 0x80000000;
-            data_020f1d08.texImageParamsArg_c_ = handler->pMaterialRenderData_->paramTEXIMAGE_PARAMS_;
-            SubmitCommandToGeometryFifo(data_020f1d08.commandTexImageParams_8_,
-                &data_020f1d08.texImageParamsArg_c_, 1);
+            RenderCommand12_UnknownRoleProcedureReferenceRecords.texImageParamsArg_c_ = handler->pMaterialRenderData_->paramTEXIMAGE_PARAMS_;
+            SubmitCommandToGeometryFifo(RenderCommand12_UnknownRoleProcedureReferenceRecords.commandTexImageParams_8_,
+                &RenderCommand12_UnknownRoleProcedureReferenceRecords.texImageParamsArg_c_, 1);
         }
         // switch the matrix mode to texture
         uint32_t textureMatrixMode = 3;
@@ -154,15 +154,15 @@ void RenderCommand_12(RenderCommandHandler* handler, int modifier)
             GetCurrentPositionAndDirectionMatrices(NULL, &directionMat3x3);
             uint32_t textureMode = 3;
             SubmitCommandToGeometryFifo(GXFifoCommand_SetMatrixMode, &textureMode, 1);
-            if (data_0210a010.flags & (1 << RENDER_CONFIG_FLAG_0))
+            if (RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.flags & (1 << RENDER_CONFIG_FLAG_0))
             {
-                SubmitCommandToGeometryFifo(GXFifoCommand_MultiplyMat3x3, (uint32_t*)&data_0210a010.viewMatrix.entries, 9);
-                SubmitCommandToGeometryFifo(GXFifoCommand_MultiplyMat3x3, (uint32_t*)&data_0210a010.objectRotationPosition.rotation.entries, 9);
+                SubmitCommandToGeometryFifo(GXFifoCommand_MultiplyMat3x3, (uint32_t*)&RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.viewMatrix.entries, 9);
+                SubmitCommandToGeometryFifo(GXFifoCommand_MultiplyMat3x3, (uint32_t*)&RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.objectRotationPosition.rotation.entries, 9);
                 SubmitCommandToGeometryFifo(GXFifoCommand_MultiplyMat3x3, (uint32_t*)&directionMat3x3.entries, 9);
             }
-            else if (data_0210a010.flags & (1 << RENDER_CONFIG_FLAG_1))
+            else if (RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.flags & (1 << RENDER_CONFIG_FLAG_1))
             {
-                SubmitCommandToGeometryFifo(GXFifoCommand_MultiplyMat3x3, (uint32_t*)&data_0210a010.viewMatrix.entries, 9);
+                SubmitCommandToGeometryFifo(GXFifoCommand_MultiplyMat3x3, (uint32_t*)&RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.viewMatrix.entries, 9);
                 SubmitCommandToGeometryFifo(GXFifoCommand_MultiplyMat3x3, (uint32_t*)&directionMat3x3.entries, 9);
             }
             else
@@ -197,9 +197,9 @@ void RenderCommand_13(RenderCommandHandler* handler, int modifier)
         {
             handler->pMaterialRenderData_->paramTEXIMAGE_PARAMS_ &= ~0xc0000000;
             handler->pMaterialRenderData_->paramTEXIMAGE_PARAMS_ |= 0xc0000000;
-            data_020f1d08.texImageParamsArg_4_ = handler->pMaterialRenderData_->paramTEXIMAGE_PARAMS_;
-            SubmitCommandToGeometryFifo(data_020f1d08.commandTexImageParams_0_,
-                &data_020f1d08.texImageParamsArg_4_, 1);
+            RenderCommand12_UnknownRoleProcedureReferenceRecords.texImageParamsArg_4_ = handler->pMaterialRenderData_->paramTEXIMAGE_PARAMS_;
+            SubmitCommandToGeometryFifo(RenderCommand12_UnknownRoleProcedureReferenceRecords.commandTexImageParams_0_,
+                &RenderCommand12_UnknownRoleProcedureReferenceRecords.texImageParamsArg_4_, 1);
         }
 
         int callbackStage = (handler->hooks_[13] != NULL) ? handler->hookStages_[13] : 0;
@@ -219,11 +219,11 @@ void RenderCommand_13(RenderCommandHandler* handler, int modifier)
             unsigned int materialWidth = handler->pMaterialRenderData_->materialWidth_;
             unsigned int materialHeight = handler->pMaterialRenderData_->materialHeight_;
 
-            data_020f1d08.command13Matrix4x4_.entries[0] = materialWidth * 0x8000;
-            data_020f1d08.command13Matrix4x4_.entries[5] = -materialHeight * 0x8000;
-            data_020f1d08.command13Matrix4x4_.entries[12] = materialWidth * 0x8000;
-            data_020f1d08.command13Matrix4x4_.entries[13] = materialHeight * 0x8000;
-            SubmitCommandToGeometryFifo(GXFifoCommand_LoadMat4x4, (uint32_t*)data_020f1d08.command13Matrix4x4_.entries, 16);
+            RenderCommand12_UnknownRoleProcedureReferenceRecords.command13Matrix4x4_.entries[0] = materialWidth * 0x8000;
+            RenderCommand12_UnknownRoleProcedureReferenceRecords.command13Matrix4x4_.entries[5] = -materialHeight * 0x8000;
+            RenderCommand12_UnknownRoleProcedureReferenceRecords.command13Matrix4x4_.entries[12] = materialWidth * 0x8000;
+            RenderCommand12_UnknownRoleProcedureReferenceRecords.command13Matrix4x4_.entries[13] = materialHeight * 0x8000;
+            SubmitCommandToGeometryFifo(GXFifoCommand_LoadMat4x4, (uint32_t*)RenderCommand12_UnknownRoleProcedureReferenceRecords.command13Matrix4x4_.entries, 16);
         }
 
         if (callbackStage == 2)
@@ -268,13 +268,13 @@ void RenderCommand_13(RenderCommandHandler* handler, int modifier)
 
         if (flagbit6 == 0)
         {
-            if (data_0210a010.flags & (1 << RENDER_CONFIG_FLAG_0))
+            if (RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.flags & (1 << RENDER_CONFIG_FLAG_0))
             {
-                SubmitCommandToGeometryFifo(GXFifoCommand_TranslateMatrix, (uint32_t*)&data_0210a010.objectRotationPosition.translation, 3);
-                SubmitCommandToGeometryFifo(GXFifoCommand_MultiplyMat3x3, (uint32_t*)&data_0210a010.objectRotationPosition.rotation.entries, 9);
+                SubmitCommandToGeometryFifo(GXFifoCommand_TranslateMatrix, (uint32_t*)&RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.objectRotationPosition.translation, 3);
+                SubmitCommandToGeometryFifo(GXFifoCommand_MultiplyMat3x3, (uint32_t*)&RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.objectRotationPosition.rotation.entries, 9);
                 SubmitCommandToGeometryFifo(GXFifoCommand_MultiplyMat4x3, (uint32_t*)&worldView.entries, 12);
             }
-            else if (data_0210a010.flags & (1 << RENDER_CONFIG_FLAG_1))
+            else if (RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.flags & (1 << RENDER_CONFIG_FLAG_1))
             {
                 SubmitCommandToGeometryFifo(GXFifoCommand_MultiplyMat4x3, (uint32_t*)&worldView.entries, 12);
             }
@@ -394,8 +394,8 @@ void RenderMeshWithMaterial(NSBXXInternalModel* model, unsigned int materialIdx,
             else
                 targetData.flags_ |= 4;
 
-            if (data_020f1cf8[model->materialCallbackType_])
-                data_020f1cf8[model->materialCallbackType_](&targetData);
+            if (RenderMeshWithMaterial_UnknownRoleProcedureReferenceRecords[model->materialCallbackType_])
+                RenderMeshWithMaterial_UnknownRoleProcedureReferenceRecords[model->materialCallbackType_](&targetData);
         }
     }
 

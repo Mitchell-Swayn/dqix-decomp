@@ -1,0 +1,9 @@
+struct Vector3 { int x,y,z; }; struct Choice { int id; Vector3 position; Vector3 direction; };
+// Original data: arm9/ov026 @ 0x21de87c; symbol: data_ov026_021de87c.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 0101000000000000f51000005124000000000000471100000000000002010000affbffffc2150000c2250000affbffffeb1500000000000020010000affbffff ...; full span in module reference.
+// Observed span: 1344 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/ov026.md.
+extern "C" { extern Choice BattleSceneSelectEncounterCameraPreset_UnknownRoleInitializedBytes[]; void BattleScene_SetCameraPresetVectorComponents(Vector3*,int,int,int); void *_ZN8Vector3iaSERKS_(void*,const void*); int TestCollectedObjectResourceIdentifier(void*,short); }
+// Original: arm9/ov026 @ 0x021D8AAC; symbol: func_ov026_021d8aac; size: 0xEC.
+extern "C" void BattleScene_SelectEncounterCameraPreset(char *state,int seed,int mode) { if(!*(void**)(state+0x29c)) return; *(int*)(state+0x77f0)=-1; Choice *choice=BattleSceneSelectEncounterCameraPreset_UnknownRoleInitializedBytes; int id; for(;(id=choice->id)!=-1;++choice) { if(id==0) { if(mode==2) { *(int*)(state+0x77f0)=id; BattleScene_SetCameraPresetVectorComponents((Vector3*)(state+0x77f4),choice->position.x,choice->position.y,choice->position.z); _ZN8Vector3iaSERKS_(state+0x7800,&choice->direction); return; } } else if(TestCollectedObjectResourceIdentifier(*(void**)(state+0x29c),(short)id)) { *(int*)(state+0x77f0)=choice->id; if(choice->id==0x115) choice+=seed%3; BattleScene_SetCameraPresetVectorComponents((Vector3*)(state+0x77f4),choice->position.x,choice->position.y,choice->position.z); _ZN8Vector3iaSERKS_(state+0x7800,&choice->direction); return; } } }

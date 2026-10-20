@@ -1,5 +1,0 @@
-#include <globaldefs.h>
-#include "GameState/GameState.h"
-extern "C" void GameState_SetField5CB0AndSelectedRecordFirstByte(GameState *,unsigned),GameState_WriteField5CB4AndIndexedRecordValue(GameState *,unsigned),GameState_SetWord5CB8AndSelectedRecordByte(GameState *,unsigned);
-// Original: arm9/main @ 0x02064B98; symbol: func_02064b98; size: 0x184.
-extern "C" void SelectIndexedRecordCategoryByIdRanges(unsigned char *p,int id){if((id>=0x1068&&id<=0x106a)||(id>=0x2328&&id<=0x2330)){p[0x332]=1;p+=28;}else if((id>=0x6a4&&id<=0x6aa)||(id>=0x708&&id<=0x710)||(id>=0x1770&&id<=0x1771)||(id>=0x1e14&&id<=0x1e1d)){p[0x332]=2;p+=56;}else if((id>=200&&id<=219)||(id>=0x1e7a&&id<=0x1e81)){p[0x332]=3;p+=84;}else if((id>=0x834&&id<=0x83d)||(id>=0x206d&&id<=0x206f)){p[0x332]=4;p+=112;}else p[0x332]=0;GameState *state=GameState::GetInstance();GameState_SetField5CB0AndSelectedRecordFirstByte(state,p[0]);GameState_WriteField5CB4AndIndexedRecordValue(state,p[1]);GameState_SetWord5CB8AndSelectedRecordByte(state,p[2]);}

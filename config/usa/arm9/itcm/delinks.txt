@@ -88,15 +88,15 @@ src/Memory/itcm/VRAMStagingManager_TaskReset.cpp:
     complete
     .text start:0x01ff96d4 end:0x01ff96e8
 
-src/Unclassified/itcm/func_01ff96e8.cpp:
+src/Graphics/itcm/StagingSpaceAllocation_Reset.cpp:
     complete
     .text start:0x01ff96e8 end:0x01ff96fc
 
-src/Unclassified/itcm/func_01ff972c.cpp:
+src/Graphics/itcm/Graphics_CancelAllVRAMStagingTasksAndReturnManager.cpp:
     complete
     .text start:0x01ff972c end:0x01ff9740
 
-src/Unclassified/itcm/Graphics_ZeroInitializeVRAMStagingManager.cpp:
+src/Graphics/itcm/Graphics_ZeroInitializeVRAMStagingManager.cpp:
     complete
     .text start:0x01ff9718 end:0x01ff972c
 
@@ -107,3 +107,7 @@ src/Graphics/itcm/VRAM_InitializeCommonRegionTaskSet.cpp:
 src/System/itcm/System_WaitForHardwareHalfwordAndClear.cpp:
     complete
     .text start:0x01ff81e4 end:0x01ff8218
+
+src/System/itcm/ReadCartridgeRomRange.cpp:
+    complete
+    .text start:0x01ff83a8 end:0x01ff8480

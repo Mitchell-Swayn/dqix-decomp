@@ -1,0 +1,1185 @@
+{
+  "schema_version": 1,
+  "subsystem": "System/Overlay",
+  "scope": "Overlay slot lifecycle and two selection stacks;18 reviewed routine identities, not all possible runtime consumers.",
+  "functions": [
+    {
+      "function_id": "arm9/main:020a1838",
+      "address": "0x020a1838",
+      "name": "OverlayLoader_InitializeMutexSlotsAndMetadata",
+      "previous_symbol": "OverlayLoader_InitializeMutexSlotsAndMetadata",
+      "evidence": "Initializes mutex, eight six-byte slot banks and metadata for all35 overlays.",
+      "source": "src/System/Overlay/OverlayLoader_InitializeMutexSlotsAndMetadata.cpp",
+      "status": "preserved-existing"
+    },
+    {
+      "function_id": "arm9/main:020a18d4",
+      "address": "0x020a18d4",
+      "name": "OverlayLoader_ClearSixSlotEntries",
+      "previous_symbol": "FillSixWordsWithMinusOne",
+      "evidence": "Original STRB loop writes exactly six bytes of0xFF; old SixWords name is incorrect. Shared slot-bank initialization callee.",
+      "source": "src/System/Overlay/OverlayLoader_ClearSixSlotEntries.cpp",
+      "status": "matched-source"
+    },
+    {
+      "function_id": "arm9/main:020a18f4",
+      "address": "0x020a18f4",
+      "name": "_Z13IsSceneLoadedj",
+      "previous_symbol": "_Z13IsSceneLoadedj",
+      "evidence": "Meaningful upstream C++ API is preserved; checks the current bank entry selected by SceneEntry.group.",
+      "source": "src/System/SceneOverlays.cpp",
+      "status": "preserved-existing"
+    },
+    {
+      "function_id": "arm9/main:020a1940",
+      "address": "0x020a1940",
+      "name": "OverlayLoader_LoadOverlay",
+      "previous_symbol": "func_020a1940",
+      "evidence": "Validates overlayID<35, skips alreadyloaded, cleans previous mapped overlay, loads compressed overlay and invokes decompression/static initialization, publishes slotID under locks.",
+      "source": null,
+      "status": "unreconstructed-symbol"
+    },
+    {
+      "function_id": "arm9/main:020a1a40",
+      "address": "0x020a1a40",
+      "name": "OverlayLoader_LoadOverlayWithVmRead",
+      "previous_symbol": "func_020a1a40",
+      "evidence": "Same slot lifecycle using NitroVM_Initialize, async read completion flag polling, NitroVM_FinishRead and static initialization. Caller is overlay33/34 backgroundloader process; not a generic scene/gameplay operation.",
+      "source": null,
+      "status": "unreconstructed-symbol"
+    },
+    {
+      "function_id": "arm9/main:020a1bb4",
+      "address": "0x020a1bb4",
+      "name": "OverlayLoader_CleanupOverlay",
+      "previous_symbol": "RecordMappedIndexUnderOptionalMutex",
+      "evidence": "Marks indexed slot busy, calls region cleanup via020cd584 under resource lock, then clears mapped slot to0xFF. Does not load overlay bytes.",
+      "source": "src/System/Overlay/OverlayLoader_CleanupOverlay.cpp",
+      "status": "matched-source"
+    },
+    {
+      "function_id": "arm9/main:020a1ccc",
+      "address": "0x020a1ccc",
+      "name": "OverlayLoader_CleanupOverlayForVmRead",
+      "previous_symbol": "OverlayLoader_LoadIndexedOverlayWithSharedStatusLocks",
+      "evidence": "Same cleanup algorithm as020a1bb4; separate entry used by NitroVM load path020a1a40 and backgroundloaders. VmRead suffix records call route, not different cleanup effects.",
+      "source": "src/System/Overlay/OverlayLoader_CleanupOverlayForVmRead.cpp",
+      "status": "matched-source"
+    },
+    {
+      "function_id": "arm9/main:020a1de4",
+      "address": "0x020a1de4",
+      "name": "OverlayLoader_ResetPrimarySelectionStack",
+      "previous_symbol": "ClearGlobalAt02109DA4Index0",
+      "evidence": "Selection-stack family is proven by shared depths02109DA4[0/1], buffers02109DAE/02109DA6, seven-entry overlay maps020F1962/020F1977 and calls to020A1940. Primary/secondary distinguish these two independent stacks without guessing gameplay meaning. Complete body reviewed: OverlayLoader_ResetPrimarySelectionStack.",
+      "source": "src/System/Overlay/OverlayLoader_ResetPrimarySelectionStack.cpp",
+      "status": "matched-source"
+    },
+    {
+      "function_id": "arm9/main:020a1df8",
+      "address": "0x020a1df8",
+      "name": "OverlayLoader_PushPrimarySelection",
+      "previous_symbol": "PushBoundedModeIndexOntoGlobalStack",
+      "evidence": "Selection-stack family is proven by shared depths02109DA4[0/1], buffers02109DAE/02109DA6, seven-entry overlay maps020F1962/020F1977 and calls to020A1940. Primary/secondary distinguish these two independent stacks without guessing gameplay meaning. Complete body reviewed: OverlayLoader_PushPrimarySelection.",
+      "source": "src/System/Overlay/OverlayLoader_PushPrimarySelection.cpp",
+      "status": "matched-source"
+    },
+    {
+      "function_id": "arm9/main:020a1e54",
+      "address": "0x020a1e54",
+      "name": "OverlayLoader_PopPrimarySelectionAndOptionallyRestoreOverlay",
+      "previous_symbol": "OverlayLoader_PopSlotAndOptionallyRestorePriorOverlay",
+      "evidence": "Selection-stack family is proven by shared depths02109DA4[0/1], buffers02109DAE/02109DA6, seven-entry overlay maps020F1962/020F1977 and calls to020A1940. Primary/secondary distinguish these two independent stacks without guessing gameplay meaning. Complete body reviewed: OverlayLoader_PopPrimarySelectionAndOptionallyRestoreOverlay.",
+      "source": "src/System/Overlay/OverlayLoader_PopPrimarySelectionAndOptionallyRestoreOverlay.cpp",
+      "status": "matched-source"
+    },
+    {
+      "function_id": "arm9/main:020a1eb0",
+      "address": "0x020a1eb0",
+      "name": "OverlayLoader_GetPrimarySelectionOrMinusOne",
+      "previous_symbol": "ReadLastGlobalStackValueOrMinusOne",
+      "evidence": "Selection-stack family is proven by shared depths02109DA4[0/1], buffers02109DAE/02109DA6, seven-entry overlay maps020F1962/020F1977 and calls to020A1940. Primary/secondary distinguish these two independent stacks without guessing gameplay meaning. Complete body reviewed: OverlayLoader_GetPrimarySelectionOrMinusOne.",
+      "source": "src/System/Overlay/OverlayLoader_GetPrimarySelectionOrMinusOne.cpp",
+      "status": "matched-source"
+    },
+    {
+      "function_id": "arm9/main:020a1edc",
+      "address": "0x020a1edc",
+      "name": "OverlayLoader_ResetSecondarySelectionStack",
+      "previous_symbol": "ClearElement1",
+      "evidence": "Selection-stack family is proven by shared depths02109DA4[0/1], buffers02109DAE/02109DA6, seven-entry overlay maps020F1962/020F1977 and calls to020A1940. Primary/secondary distinguish these two independent stacks without guessing gameplay meaning. Complete body reviewed: OverlayLoader_ResetSecondarySelectionStack.",
+      "source": "src/System/Overlay/OverlayLoader_ResetSecondarySelectionStack.cpp",
+      "status": "matched-source"
+    },
+    {
+      "function_id": "arm9/main:020a1ef0",
+      "address": "0x020a1ef0",
+      "name": "OverlayLoader_PushSecondarySelection",
+      "previous_symbol": "OverlayLoader_PushMappedOverlaySlot",
+      "evidence": "Selection-stack family is proven by shared depths02109DA4[0/1], buffers02109DAE/02109DA6, seven-entry overlay maps020F1962/020F1977 and calls to020A1940. Primary/secondary distinguish these two independent stacks without guessing gameplay meaning. Complete body reviewed: OverlayLoader_PushSecondarySelection.",
+      "source": "src/System/Overlay/OverlayLoader_PushSecondarySelection.cpp",
+      "status": "matched-source"
+    },
+    {
+      "function_id": "arm9/main:020a1f4c",
+      "address": "0x020a1f4c",
+      "name": "OverlayLoader_PopSecondarySelectionAndOptionallyRestoreOverlay",
+      "previous_symbol": "PopGlobalStackAndOptionallyNotify",
+      "evidence": "Selection-stack family is proven by shared depths02109DA4[0/1], buffers02109DAE/02109DA6, seven-entry overlay maps020F1962/020F1977 and calls to020A1940. Primary/secondary distinguish these two independent stacks without guessing gameplay meaning. Complete body reviewed: OverlayLoader_PopSecondarySelectionAndOptionallyRestoreOverlay.",
+      "source": "src/System/Overlay/OverlayLoader_PopSecondarySelectionAndOptionallyRestoreOverlay.cpp",
+      "status": "matched-source"
+    },
+    {
+      "function_id": "arm9/main:020a1fa8",
+      "address": "0x020a1fa8",
+      "name": "OverlayLoader_GetSecondarySelectionOrMinusOne",
+      "previous_symbol": "ReadLastGlobalStackEntryOrMinusOne",
+      "evidence": "Selection-stack family is proven by shared depths02109DA4[0/1], buffers02109DAE/02109DA6, seven-entry overlay maps020F1962/020F1977 and calls to020A1940. Primary/secondary distinguish these two independent stacks without guessing gameplay meaning. Complete body reviewed: OverlayLoader_GetSecondarySelectionOrMinusOne.",
+      "source": "src/System/Overlay/OverlayLoader_GetSecondarySelectionOrMinusOne.cpp",
+      "status": "matched-source"
+    },
+    {
+      "function_id": "arm9/main:020a1fd4",
+      "address": "0x020a1fd4",
+      "name": "OverlayLoader_SetSecondarySelection",
+      "previous_symbol": "OverlayLoader_SetTopSlotValue",
+      "evidence": "Selection-stack family is proven by shared depths02109DA4[0/1], buffers02109DAE/02109DA6, seven-entry overlay maps020F1962/020F1977 and calls to020A1940. Primary/secondary distinguish these two independent stacks without guessing gameplay meaning. Complete body reviewed: OverlayLoader_SetSecondarySelection.",
+      "source": "src/System/Overlay/OverlayLoader_SetSecondarySelection.cpp",
+      "status": "matched-source"
+    },
+    {
+      "function_id": "arm9/main:020a1ffc",
+      "address": "0x020a1ffc",
+      "name": "OverlayLoader_InitializeSlotBankAndReturnPointer",
+      "previous_symbol": "FillSixWordsWithMinusOneAndReturnPointer",
+      "evidence": "Calls six-byte slot-bank reset and returns its original pointer; existing Words description is incorrect.",
+      "source": "src/System/Overlay/OverlayLoader_InitializeSlotBankAndReturnPointer.cpp",
+      "status": "matched-source"
+    },
+    {
+      "function_id": "arm9/main:020cd584",
+      "address": "0x020cd584",
+      "name": "OverlayLoader_RunRegionCleanupAndReturnSuccess",
+      "previous_symbol": "ProcessOverlayAndReturnSuccess",
+      "evidence": "Calls Runtime_RunCleanupCallbacksForMemoryRegion with overlay metadata then returns1. This is the overlay-specific adapter; generic callback-list runtime stays separate.",
+      "source": "src/System/Overlay/OverlayLoader_RunRegionCleanupAndReturnSuccess.cpp",
+      "status": "matched-source"
+    }
+  ],
+  "relationships": [
+    {
+      "caller": "arm9/main:020a1838",
+      "callee": "arm9/main:020a18d4",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1838",
+      "callee": "arm9/main:020c805c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1838",
+      "callee": "arm9/main:020cd0f4",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02000c9c",
+      "callee": "arm9/main:020a1838",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1ffc",
+      "callee": "arm9/main:020a18d4",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021bb8f0",
+      "callee": "arm9/main:020a18f4",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02012bd8",
+      "callee": "arm9/main:020a18f4",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02065418",
+      "callee": "arm9/main:020a18f4",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020dbae0",
+      "callee": "arm9/main:020a18f4",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1940",
+      "callee": "arm9/main:020a1bb4",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1940",
+      "callee": "arm9/main:020c8074",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1940",
+      "callee": "arm9/main:020c80f8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1940",
+      "callee": "arm9/main:020cd27c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1940",
+      "callee": "arm9/main:020cd3a0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1940",
+      "callee": "arm9/main:020d970c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1940",
+      "callee": "arm9/main:020d974c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1940",
+      "callee": "arm9/main:020d9834",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov001:02162338",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov002:02168d54",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov003:0217e6b0",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov004:0216f634",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov008:02189c70",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov008:0218af80",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021a9768",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021b1e24",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021b24d0",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021c03a4",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021c0850",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021c17fc",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021c26ac",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov021:0218b5fc",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov023:021eeaac",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02000c9c",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1df8",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1e54",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1ef0",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1f4c",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d6c0c",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d6c34",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d6c68",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d6cb4",
+      "callee": "arm9/main:020a1940",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1a40",
+      "callee": "arm9/main:020a1ccc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1a40",
+      "callee": "arm9/main:020c8074",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1a40",
+      "callee": "arm9/main:020c80f8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1a40",
+      "callee": "arm9/main:020cc758",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1a40",
+      "callee": "arm9/main:020cca80",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1a40",
+      "callee": "arm9/main:020cd1f0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1a40",
+      "callee": "arm9/main:020cd3a0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1a40",
+      "callee": "arm9/main:020d970c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1a40",
+      "callee": "arm9/main:020d974c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1a40",
+      "callee": "arm9/main:020d9834",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov033:022a21a8",
+      "callee": "arm9/main:020a1a40",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov034:022a21a8",
+      "callee": "arm9/main:020a1a40",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1bb4",
+      "callee": "arm9/main:020c8074",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1bb4",
+      "callee": "arm9/main:020c80f8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1bb4",
+      "callee": "arm9/main:020cd584",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1bb4",
+      "callee": "arm9/main:020d970c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1bb4",
+      "callee": "arm9/main:020d974c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1bb4",
+      "callee": "arm9/main:020d9834",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov001:02162338",
+      "callee": "arm9/main:020a1bb4",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:02000c9c",
+      "callee": "arm9/main:020a1bb4",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020d6cb4",
+      "callee": "arm9/main:020a1bb4",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1ccc",
+      "callee": "arm9/main:020c8074",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1ccc",
+      "callee": "arm9/main:020c80f8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1ccc",
+      "callee": "arm9/main:020cd584",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1ccc",
+      "callee": "arm9/main:020d970c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1ccc",
+      "callee": "arm9/main:020d974c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1ccc",
+      "callee": "arm9/main:020d9834",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov033:022a21a8",
+      "callee": "arm9/main:020a1ccc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov034:022a21a8",
+      "callee": "arm9/main:020a1ccc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:0218b688",
+      "callee": "arm9/main:020a1de4",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:0219de70",
+      "callee": "arm9/main:020a1de4",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1df8",
+      "callee": "arm9/main:020c9be0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov003:0217e3b8",
+      "callee": "arm9/main:020a1df8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov003:0217ef58",
+      "callee": "arm9/main:020a1df8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:02196e58",
+      "callee": "arm9/main:020a1df8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:0219de70",
+      "callee": "arm9/main:020a1df8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021a1284",
+      "callee": "arm9/main:020a1df8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021a5600",
+      "callee": "arm9/main:020a1df8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021b1564",
+      "callee": "arm9/main:020a1df8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021b24d0",
+      "callee": "arm9/main:020a1df8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021b2ce8",
+      "callee": "arm9/main:020a1df8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021b688c",
+      "callee": "arm9/main:020a1df8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021b790c",
+      "callee": "arm9/main:020a1df8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021ba998",
+      "callee": "arm9/main:020a1df8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021bacd8",
+      "callee": "arm9/main:020a1df8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021bbc10",
+      "callee": "arm9/main:020a1df8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021c1404",
+      "callee": "arm9/main:020a1df8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021c17fc",
+      "callee": "arm9/main:020a1df8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov021:0218b5fc",
+      "callee": "arm9/main:020a1df8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a3a34",
+      "callee": "arm9/main:020a1df8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a3fd8",
+      "callee": "arm9/main:020a1df8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020dac94",
+      "callee": "arm9/main:020a1df8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov003:0217e36c",
+      "callee": "arm9/main:020a1e54",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov003:0217f118",
+      "callee": "arm9/main:020a1e54",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov004:0216fa48",
+      "callee": "arm9/main:020a1e54",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021a18c8",
+      "callee": "arm9/main:020a1e54",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021a5974",
+      "callee": "arm9/main:020a1e54",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021b14ec",
+      "callee": "arm9/main:020a1e54",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021b2200",
+      "callee": "arm9/main:020a1e54",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021b2c88",
+      "callee": "arm9/main:020a1e54",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021b67d8",
+      "callee": "arm9/main:020a1e54",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021b6f9c",
+      "callee": "arm9/main:020a1e54",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021ba94c",
+      "callee": "arm9/main:020a1e54",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021bac8c",
+      "callee": "arm9/main:020a1e54",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021bb1a4",
+      "callee": "arm9/main:020a1e54",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021c1394",
+      "callee": "arm9/main:020a1e54",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021c1a24",
+      "callee": "arm9/main:020a1e54",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov021:0218b5fc",
+      "callee": "arm9/main:020a1e54",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a3a34",
+      "callee": "arm9/main:020a1e54",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a3fd8",
+      "callee": "arm9/main:020a1e54",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020dae08",
+      "callee": "arm9/main:020a1e54",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021bbc10",
+      "callee": "arm9/main:020a1eb0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021bc77c",
+      "callee": "arm9/main:020a1eb0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021ca1a4",
+      "callee": "arm9/main:020a1eb0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:02160620",
+      "callee": "arm9/main:020a1edc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:0218b688",
+      "callee": "arm9/main:020a1edc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:0219de70",
+      "callee": "arm9/main:020a1edc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021b790c",
+      "callee": "arm9/main:020a1edc",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020a1ef0",
+      "callee": "arm9/main:020c9be0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:02160620",
+      "callee": "arm9/main:020a1ef0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov001:021619bc",
+      "callee": "arm9/main:020a1ef0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov001:0216224c",
+      "callee": "arm9/main:020a1ef0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov002:0215624c",
+      "callee": "arm9/main:020a1ef0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov002:02168d54",
+      "callee": "arm9/main:020a1ef0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov003:0217e6b0",
+      "callee": "arm9/main:020a1ef0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:0219de70",
+      "callee": "arm9/main:020a1ef0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021a1284",
+      "callee": "arm9/main:020a1ef0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021a5600",
+      "callee": "arm9/main:020a1ef0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021a9768",
+      "callee": "arm9/main:020a1ef0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021b1564",
+      "callee": "arm9/main:020a1ef0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021b24d0",
+      "callee": "arm9/main:020a1ef0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021b2ce8",
+      "callee": "arm9/main:020a1ef0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021c03a4",
+      "callee": "arm9/main:020a1ef0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021c0850",
+      "callee": "arm9/main:020a1ef0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021c1404",
+      "callee": "arm9/main:020a1ef0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021c17fc",
+      "callee": "arm9/main:020a1ef0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov023:021edc08",
+      "callee": "arm9/main:020a1ef0",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov001:02155dd0",
+      "callee": "arm9/main:020a1f4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov001:02161a60",
+      "callee": "arm9/main:020a1f4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov001:0216227c",
+      "callee": "arm9/main:020a1f4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov002:021556fc",
+      "callee": "arm9/main:020a1f4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov002:02168d54",
+      "callee": "arm9/main:020a1f4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov002:0216c654",
+      "callee": "arm9/main:020a1f4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov003:0217e67c",
+      "callee": "arm9/main:020a1f4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021a18c8",
+      "callee": "arm9/main:020a1f4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021a5974",
+      "callee": "arm9/main:020a1f4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021a9768",
+      "callee": "arm9/main:020a1f4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021b14ec",
+      "callee": "arm9/main:020a1f4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021b2200",
+      "callee": "arm9/main:020a1f4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021b2c88",
+      "callee": "arm9/main:020a1f4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021b6f9c",
+      "callee": "arm9/main:020a1f4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021c03a4",
+      "callee": "arm9/main:020a1f4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021c07d0",
+      "callee": "arm9/main:020a1f4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021c1394",
+      "callee": "arm9/main:020a1f4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov017:021c1a24",
+      "callee": "arm9/main:020a1f4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov023:021f3fbc",
+      "callee": "arm9/main:020a1f4c",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:02160620",
+      "callee": "arm9/main:020a1fa8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:02160b54",
+      "callee": "arm9/main:020a1fa8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:02160c84",
+      "callee": "arm9/main:020a1fa8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:0216377c",
+      "callee": "arm9/main:020a1fa8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:02163b14",
+      "callee": "arm9/main:020a1fa8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:02163b40",
+      "callee": "arm9/main:020a1fa8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:02163d94",
+      "callee": "arm9/main:020a1fa8",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/ov000:02160e48",
+      "callee": "arm9/main:020a1fd4",
+      "kind": "call",
+      "ambiguous": false
+    },
+    {
+      "caller": "arm9/main:020cd584",
+      "callee": "arm9/main:020cd494",
+      "kind": "call",
+      "ambiguous": false
+    }
+  ],
+  "boundary": {
+    "shared_dependencies": [
+      "Filesystem overlay metadata and compressed read APIs",
+      "Resource/Mutex locks",
+      "ProcessorContext_SleepOrYieldPriorityPeers",
+      "Runtime_RunCleanupCallbacksForMemoryRegion"
+    ],
+    "consumers": [
+      "main startup",
+      "System/Protection script/startup adapter",
+      "ov033/ov034 backgroundloaders",
+      "Other scene/gameplay consumers retain their own subsystem ownership"
+    ]
+  },
+  "limitations": [
+    "Static graph is original-address authoritative but stored symbol names may be historical.",
+    "Indirect calls and ambiguous overlay targets remain explicit; no complete gameplay-role claim."
+  ]
+}

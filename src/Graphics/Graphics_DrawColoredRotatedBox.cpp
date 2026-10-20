@@ -9,7 +9,7 @@ extern "C" int _Z8fix32sini(int);
 extern "C" int _Z8fix32cosi(int);
 extern "C" THUMB void MTX_RotY33_(void*,int,int);
 extern "C" void Graphics_WriteTextureImageParameterBits(unsigned,unsigned,unsigned,unsigned,unsigned,unsigned,unsigned,unsigned);
-extern "C" void Graphics_WritePackedPolygonAttributeFields_Main0208B588(unsigned,unsigned,unsigned,unsigned,unsigned,unsigned);
+extern "C" void RotatedBox_WritePolygonAttributes(unsigned,unsigned,unsigned,unsigned,unsigned,unsigned);
 ARM
 // Original: arm9/main @ 0x0208B610; symbol: func_0208b610; size: 0x178.
 extern "C" void Graphics_DrawColoredRotatedBox(Vec position,unsigned color,int sx,int sy,int sz,short angle) {
@@ -22,7 +22,7 @@ extern "C" void Graphics_DrawColoredRotatedBox(Vec position,unsigned color,int s
  _ZN12RenderConfig14SetObjectScaleEP8Vector3i(&scale);
  _ZN12RenderConfig12SubmitToFifoEv();
  Graphics_WriteTextureImageParameterBits(0,0,1,1,0,0,0,0);
- Graphics_WritePackedPolygonAttributeFields_Main0208B588(0,0,3,0,0,0);
+ RotatedBox_WritePolygonAttributes(0,0,3,0,0,0);
  *(volatile unsigned*)0x04000500=1;
  *(volatile unsigned*)0x04000480=color;
  volatile unsigned* v=(volatile unsigned*)0x0400048c;

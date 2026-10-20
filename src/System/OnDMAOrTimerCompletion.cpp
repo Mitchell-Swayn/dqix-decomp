@@ -7,16 +7,16 @@
 // Original: arm9/main @ 0x020C69CC; symbol: _Z22OnDMAOrTimerCompletioni; size: 0x88.
 void OnDMAOrTimerCompletion(int index)
 {
-    unsigned int irqMask = 1 << data_020f2274[index];
+    unsigned int irqMask = 1 << OnDMAOrTimerCompletion_UnknownRoleInitializedBytes[index];
 
-    DMACompletionCallback callback = data_0211127c[index].callback;
-    data_0211127c[index].callback = NULL;
+    DMACompletionCallback callback = GetInterruptHandler_UnknownRoleZeroInitializedStorage[index].callback;
+    GetInterruptHandler_UnknownRoleZeroInitializedStorage[index].callback = NULL;
 
     if (callback != NULL)
-        callback(data_0211127c[index].userdata);
+        callback(GetInterruptHandler_UnknownRoleZeroInitializedStorage[index].userdata);
 
     DTCM_DATA_INTERRUPTS_FIRED |= irqMask;
 
-    if (!data_0211127c[index].stayEnabledAfter)
+    if (!GetInterruptHandler_UnknownRoleZeroInitializedStorage[index].stayEnabledAfter)
         DisableSpecificInterrupts(irqMask);
 }

@@ -3,7 +3,7 @@
 // Scale an integer by a random factor from either [0.95,1.05] or [1.5,2.0].
 extern "C" float RandomlyScaleInteger(int value, int narrowRange, Random* random)
 {
-    if (!random) random = &data_02108ddc;
+    if (!random) random = &GetBTRandom_UnknownRoleZeroInitializedStorage;
     if (narrowRange)
         return (float)value * NextRandomFloatBetween(random, 0.95f, 1.05f);
     return (float)value * NextRandomFloatBetween(random, 1.5f, 2.0f);

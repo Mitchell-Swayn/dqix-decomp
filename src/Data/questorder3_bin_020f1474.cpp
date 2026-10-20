@@ -1,2 +1,7 @@
 // Resource filename/path storage; explicit extent preserves original zero padding.
-extern "C" char data_020f1474[60] = "data/scenario/questorder3.bin" "\0" "data/scenario/questcancel.bin";
+// Original data: arm9/main @ 0x20f1474; symbol: data_020f1474.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 646174612f7363656e6172696f2f71756573746f72646572332e62696e00646174612f7363656e6172696f2f717565737463616e63656c2e62696e00.
+// Observed span: 60 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" char QuestLoadOrdersForCurrentScenario_UnknownRoleInitializedBytes[60] = "data/scenario/questorder3.bin" "\0" "data/scenario/questcancel.bin";

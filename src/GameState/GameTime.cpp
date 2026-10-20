@@ -1,7 +1,12 @@
 #include "GameState/GameState.h"
 
 // not correct, they're separate but we need the full TU before we can do this properly
-extern float data_020f33b4[6];
+// Original data: arm9/main @ 0x20f33b4; symbol: data_020f33b4.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 24 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern float GameStateSetDayTimer_UnknownRoleZeroInitializedStorage[6];
 
 // Original: arm9/main @ 0x02010150; symbol: _ZN9GameState18CalculateDeltaTimeEy; size: 0xB8.
 void GameState::CalculateDeltaTime(uint64_t microseconds)
@@ -58,14 +63,14 @@ void GameState::SetDayTimer(float to)
         dayTimer_ -= dayLength_;
 
 #if defined(usa) // this is diabolical
-    if (dayTimer_ >= data_020f33b4[2])
+    if (dayTimer_ >= GameStateSetDayTimer_UnknownRoleZeroInitializedStorage[2])
 #elif defined(jpn)
-    if (dayTimer_ >= data_020f33b4[1])
+    if (dayTimer_ >= GameStateSetDayTimer_UnknownRoleZeroInitializedStorage[1])
 #endif
         timeOfDay_ = TimeOfDay_Evening;
-    else if (dayTimer_ >= data_020f33b4[3])
+    else if (dayTimer_ >= GameStateSetDayTimer_UnknownRoleZeroInitializedStorage[3])
         timeOfDay_ = TimeOfDay_Day;
-    else if (dayTimer_ >= data_020f33b4[4])
+    else if (dayTimer_ >= GameStateSetDayTimer_UnknownRoleZeroInitializedStorage[4])
         timeOfDay_ = TimeOfDay_Morning;
     else
         timeOfDay_ = TimeOfDay_Night;
@@ -83,13 +88,13 @@ void GameState::SetTimeOfDay(TimeOfDay to)
     {
         timeOfDay_ = to;
         float thresholds[4] = {
-            data_020f33b4[5],
-            data_020f33b4[4],
-            data_020f33b4[3],
+            GameStateSetDayTimer_UnknownRoleZeroInitializedStorage[5],
+            GameStateSetDayTimer_UnknownRoleZeroInitializedStorage[4],
+            GameStateSetDayTimer_UnknownRoleZeroInitializedStorage[3],
 #if defined(usa)
-            data_020f33b4[2]
+            GameStateSetDayTimer_UnknownRoleZeroInitializedStorage[2]
 #elif defined(jpn)
-            data_020f33b4[1]
+            GameStateSetDayTimer_UnknownRoleZeroInitializedStorage[1]
 #endif
         };
         SetDayTimer(thresholds[to]);

@@ -2,14 +2,14 @@
 #include <std_library_functions.h>
 #include <World/Zone3DContainers.h>
 extern "C" {
-    extern char data_020f14d0[];
+    extern char LoadFourFormattedRenderPartResources_FormatArrowDSpr[];
 
     void ResourceFile_LoadNamedRFileUnderLoaderLock(void *,const char *,int);
 // Original: arm9/main @ 0x02096604; symbol: func_02096604; size: 0x9C.
     void LoadFourFormattedRenderPartResources(unsigned char *p,int value){
         char path[64];
         for(int i=0;i<4;i++){
-            sprintf(path,data_020f14d0,i);
+            sprintf(path,LoadFourFormattedRenderPartResources_FormatArrowDSpr,i);
             ((ZoneContainerRenderPart *)(p+i*136))->Reset();
             ResourceFile_LoadNamedRFileUnderLoaderLock(p+i*136,path,value);
         }p[544]=0;

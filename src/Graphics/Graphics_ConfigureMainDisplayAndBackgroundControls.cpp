@@ -3,9 +3,14 @@
 #include <System/ColorEffects.h>
 extern "C" int GameResources_GetInstance();
 extern "C" void Graphics_InitializeCanvasTransferState(void*);
-extern "C" void DispatchResourceLoadByFourByteTag(void*,unsigned,int,int);
+extern "C" void Graphics_LoadTaggedLayerResource(void*,unsigned,int,int);
 
-extern "C" unsigned char* data_02107800[2];
+// Original data: arm9/main @ 0x2107800; symbol: data_02107800.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 32 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" unsigned char* TextContextGetSharedInstance_UnknownRoleZeroInitializedStorage[2];
 
 extern "C" void func_020c4cc8(void*);
 
@@ -20,7 +25,7 @@ extern "C" void ARM Graphics_ConfigureMainDisplayAndBackgroundControls(void) {
     cnt[0]=(cnt[0]&0x43)|0x1d00;
     cnt[1]=(cnt[1]&0x43)|0x1e00;
     cnt[2]=(cnt[2]&0x43)|0x1f08;
-    unsigned char* buf=data_02107800[0];
+    unsigned char* buf=TextContextGetSharedInstance_UnknownRoleZeroInitializedStorage[0];
     int context=GameResources_GetInstance();
     unsigned size=*(unsigned*)((char*)context+0x2c);
     struct Descriptor { unsigned char prefix[0x1c]; unsigned char low:4; unsigned char high:4; unsigned char tail[3]; } descriptor;
@@ -28,12 +33,12 @@ extern "C" void ARM Graphics_ConfigureMainDisplayAndBackgroundControls(void) {
     Graphics_InitializeCanvasTransferState(&descriptor);
     descriptor.low=0;
     descriptor.high=3;
-    DispatchResourceLoadByFourByteTag(&descriptor,size,0,0);
+    Graphics_LoadTaggedLayerResource(&descriptor,size,0,0);
     if(buf) {
         memset(buf,0,0x1000);
         unsigned char i=0;
         while(i<6) { StageMemoryToVRAM((VRAMSubregion)10,buf,(unsigned)i<<12,0x1000,1,0); i=(unsigned char)(i+1); }
-        unsigned char* volatile* banks=(unsigned char* volatile*)data_02107800;
+        unsigned char* volatile* banks=(unsigned char* volatile*)TextContextGetSharedInstance_UnknownRoleZeroInitializedStorage;
         unsigned char* p=banks[1];
         if(p+0x280) StageMemoryToVRAM((VRAMSubregion)8,p+0x280,0x20,0x900,1,0);
     }

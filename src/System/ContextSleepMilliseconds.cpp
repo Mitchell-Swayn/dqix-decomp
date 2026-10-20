@@ -7,7 +7,7 @@ void SleepCurrentContext(unsigned int milliseconds)
 {
     Alarm timing;
     ZeroInitializeAlarm(&timing);
-    ProcessorContext* volatile context = *data_021112e0.ppActiveContext;
+    ProcessorContext* volatile context = *OSInitThread_UnknownRoleZeroInitializedStorage.ppActiveContext;
 
     int priorState = DisableIRQInterrupts();
 

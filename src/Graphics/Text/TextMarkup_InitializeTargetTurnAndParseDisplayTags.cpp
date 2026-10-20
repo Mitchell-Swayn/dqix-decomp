@@ -17,28 +17,33 @@ struct UiCommandState {
 struct CommandPosition { int x,y,z; };
 struct CommandWords { int words[3]; };
 extern "C" {
-void* Object_GetGlobalThirtyTwoEntryContainer();
-void* GetBoundedSlotUnlessFlag8000(void*, unsigned);
-void ReadFirstAvailableVectorOrZero(CommandPosition*, void*);
+void* ActorPool_GetGlobalInstance();
+void* ActorPool_GetActiveSlot(void*, unsigned);
+void Actor_GetRepresentationPositionOrZero(CommandPosition*, void*);
 int fix32ReduceAngle0To2Pi(int);
 int String_TestSecondIsPrefixOfFirst(const char*,const char*);
-int TestCaseFoldedStringPrefix(const char*,const char*);
+int String_HasCaseInsensitivePrefix(const char*,const char*);
 int Runtime_ParseStringAsBaseTenInteger(const char*);
-void SetRectangleCoordinatesAndDerivedCenter(UiCommandState*,int,int,int,int);
-void DispatchStoredHalfwordIndexWithTwoArguments(void*,int,int);
-extern unsigned char data_02108760[];
-extern const char data_020f0934[],data_020f093d[],data_020f0943[],data_020f0949[],data_020f0950[],data_020f0956[],data_020f095c[],data_020f0963[],data_020f096a[],data_020f0972[];
+void TextWindow_SetViewportRectangle(UiCommandState*,int,int,int,int);
+void SoundSfx_StartCurrentSequenceArchiveEntry(void*,int,int);
+// Original data: arm9/main @ 0x2108760; symbol: data_02108760.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 208 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern unsigned char Main_UnknownRoleZeroInitializedStorage[];
+extern const char TextMarkup_InitializeTargetTurnAndParseDisplayTags_MarkupNTURN[],TextMarkup_InitializeTargetTurnAndParseDisplayTags_MarkupEXC[],TextMarkup_InitializeTargetTurnAndParseDisplayTags_MarkupQES[],TextMarkup_InitializeTargetTurnAndParseDisplayTags_TextRECT[],TextMarkup_InitializeTargetTurnAndParseDisplayTags_MarkupWIN[],TextMarkup_InitializeTargetTurnAndParseDisplayTags_MarkupCEN[],TextMarkup_InitializeTargetTurnAndParseDisplayTags_TextGYOU[],TextMarkup_InitializeTargetTurnAndParseDisplayTags_TextMOJI[],TextMarkup_InitializeTargetTurnAndParseDisplayTags_TextCOLOR[],TextMarkup_InitializeTargetTurnAndParseDisplayTags_MarkupSKIP[];
 }
 // Original: arm9/main @ 0x0206A3C0; symbol: func_0206a3c0; size: 0x5B4.
 extern "C" const char* TextMarkup_InitializeTargetTurnAndParseDisplayTags(UiCommandState* state, const char* text) {
     bool scan = true;
     state->turn = 1;
     GameObject* object = GameState::GetInstance()->GetUnknownGameObject();
-    void* target = GetBoundedSlotUnlessFlag8000(Object_GetGlobalThirtyTwoEntryContainer(), state->targetId);
+    void* target = ActorPool_GetActiveSlot(ActorPool_GetGlobalInstance(), state->targetId);
     if (object && target) {
         CommandPosition origin, destination, temporary;
         *(CommandWords*)&origin = *(CommandWords*)((unsigned char*)object + 0x44);
-        ReadFirstAvailableVectorOrZero(&temporary, target);
+        Actor_GetRepresentationPositionOrZero(&temporary, target);
         *(CommandWords*)&destination = *(CommandWords*)&temporary;
         state->angle = fix32ReduceAngle0To2Pi(fix32_Atan2(origin.x-destination.x, origin.z-destination.z));
         state->turn = 1;
@@ -46,15 +51,15 @@ extern "C" const char* TextMarkup_InitializeTargetTurnAndParseDisplayTags(UiComm
     state->delay = 0;
     state->mark = 0;
     while (scan) {
-        if (String_TestSecondIsPrefixOfFirst(text,data_020f0934)) {
+        if (String_TestSecondIsPrefixOfFirst(text,TextMarkup_InitializeTargetTurnAndParseDisplayTags_MarkupNTURN)) {
             state->angle = state->originalAngle; state->turn=0; text+=8;
-        } else if (String_TestSecondIsPrefixOfFirst(text,data_020f093d)) {
+        } else if (String_TestSecondIsPrefixOfFirst(text,TextMarkup_InitializeTargetTurnAndParseDisplayTags_MarkupEXC)) {
             state->delay=60; state->mark=1; state->question=0; text+=5;
-            DispatchStoredHalfwordIndexWithTwoArguments(data_02108760,6,0);
-        } else if (String_TestSecondIsPrefixOfFirst(text,data_020f0943)) {
+            SoundSfx_StartCurrentSequenceArchiveEntry(Main_UnknownRoleZeroInitializedStorage,6,0);
+        } else if (String_TestSecondIsPrefixOfFirst(text,TextMarkup_InitializeTargetTurnAndParseDisplayTags_MarkupQES)) {
             state->delay=60; state->mark=1; state->question=1; text+=5;
-            DispatchStoredHalfwordIndexWithTwoArguments(data_02108760,28,0);
-        } else if (TestCaseFoldedStringPrefix(text,data_020f0949)) {
+            SoundSfx_StartCurrentSequenceArchiveEntry(Main_UnknownRoleZeroInitializedStorage,28,0);
+        } else if (String_HasCaseInsensitivePrefix(text,TextMarkup_InitializeTargetTurnAndParseDisplayTags_TextRECT)) {
             bool done=false; int index=6;
             int end=index;
             for (;text[end]!='>'; ++end) if (text[end]==0) return text+end;
@@ -72,19 +77,19 @@ extern "C" const char* TextMarkup_InitializeTargetTurnAndParseDisplayTags(UiComm
             if(y<0)y=0; if(y>192)y=192;
             if(width<0)width=256-x; if(width>256)width=256-x;
             if(height<0)height=192-y; if(height>192)height=192-y;
-            SetRectangleCoordinatesAndDerivedCenter(state,x,y,width,height);
+            TextWindow_SetViewportRectangle(state,x,y,width,height);
             text+=end+1;
-        } else if (TestCaseFoldedStringPrefix(text,data_020f0950)) {
+        } else if (String_HasCaseInsensitivePrefix(text,TextMarkup_InitializeTargetTurnAndParseDisplayTags_MarkupWIN)) {
             state->window=0; text+=5;
-        } else if (TestCaseFoldedStringPrefix(text,data_020f0956)) {
+        } else if (String_HasCaseInsensitivePrefix(text,TextMarkup_InitializeTargetTurnAndParseDisplayTags_MarkupCEN)) {
             state->center=1; text+=5;
-        } else if (TestCaseFoldedStringPrefix(text,data_020f095c)) {
+        } else if (String_HasCaseInsensitivePrefix(text,TextMarkup_InitializeTargetTurnAndParseDisplayTags_TextGYOU)) {
             int end=6;
             int count=Runtime_ParseStringAsBaseTenInteger(text+end);
             for(;text[end]!='>'; ++end)if(text[end]==0)return text+end;
             if(count<1)count=1;
             state->lineCount=count; text+=end+1;
-        } else if (TestCaseFoldedStringPrefix(text,data_020f0963)) {
+        } else if (String_HasCaseInsensitivePrefix(text,TextMarkup_InitializeTargetTurnAndParseDisplayTags_TextMOJI)) {
             int index=6,end=6;
             for(;text[end]!='>'; ++end)if(text[end]==0)return text+end;
             int width=Runtime_ParseStringAsBaseTenInteger(text+6);
@@ -93,7 +98,7 @@ extern "C" const char* TextMarkup_InitializeTargetTurnAndParseDisplayTags(UiComm
             int height=Runtime_ParseStringAsBaseTenInteger(text+(index+1));
             if(height<=0)height=16;
             state->charWidth=width; state->charHeight=height; text+=end+1;
-        } else if (TestCaseFoldedStringPrefix(text,data_020f096a)) {
+        } else if (String_HasCaseInsensitivePrefix(text,TextMarkup_InitializeTargetTurnAndParseDisplayTags_TextCOLOR)) {
             int index=7,end=7;
             for(;text[end]!='>'; ++end)if(text[end]==0)return text+end;
             bool done=false;
@@ -111,7 +116,7 @@ extern "C" const char* TextMarkup_InitializeTargetTurnAndParseDisplayTags(UiComm
                     text+=end+1;
                 }
             }
-        } else if (TestCaseFoldedStringPrefix(text,data_020f0972)) {
+        } else if (String_HasCaseInsensitivePrefix(text,TextMarkup_InitializeTargetTurnAndParseDisplayTags_MarkupSKIP)) {
             state->skip=0; text+=6;
         } else scan=false;
     }

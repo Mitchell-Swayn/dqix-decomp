@@ -1,0 +1,6 @@
+// Original data: arm9/ov031 @ 0x2249d50; symbol: data_ov031_02249d50.
+// NUL-terminated ASCII text: "Nitro WiFi SDK/%d.%d". The role name describes the literal content; consumer context does not establish exclusive ownership.
+// Observed values: "Nitro WiFi SDK/%d.%d".
+// Span: 24 bytes to next configured symbol; logical object size may differ.
+// Wi-Fi utility resource path; trailing zero bytes preserve the original storage extent.
+extern "C" char NasAuth_AppendDeviceMetadataFields_FormatNitroWiFiSDKDD[24] = "Nitro WiFi SDK/%d.%d";

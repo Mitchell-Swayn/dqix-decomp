@@ -15,7 +15,7 @@ void Timer3OverflowInterruptHandler();
 struct InitialInterruptTable { InterruptHandler handlers[24]; };
 typedef char InitialInterruptTableSizeCheck[sizeof(InitialInterruptTable) == 96 ? 1 : -1];
 
-InitialInterruptTable data_027e0000 = {{
+InitialInterruptTable Entry_UnknownRoleProcedureReferenceRecords = {{
     EmptyInterruptHandler, EmptyInterruptHandler, EmptyInterruptHandler,
     Timer0OverflowInterruptHandler, Timer1OverflowInterruptHandler,
     Timer2OverflowInterruptHandler, Timer3OverflowInterruptHandler,

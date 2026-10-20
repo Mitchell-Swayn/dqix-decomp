@@ -1,3 +1,0 @@
-extern "C" { void *_ZN9GameState11GetInstanceEv(); void *Object_GetGlobalConnectionState(); void ReadGlobalValueAt02108EA8(void *); int func_ov017_02195658(void *); void func_ov026_021dbd1c(void *,int,unsigned char); }
-// Original: arm9/ov026 @ 0x021DDD84; symbol: func_ov026_021ddd84; size: 0x48.
-extern "C" int func_ov026_021ddd84(void *owner,void *target,int unused2,int unused3,int unused4,int unused5,unsigned char mode) { _ZN9GameState11GetInstanceEv(); ReadGlobalValueAt02108EA8(Object_GetGlobalConnectionState()); int index=func_ov017_02195658(owner); if(index<=-1)return 0; func_ov026_021dbd1c(target,index,mode); return 1; }

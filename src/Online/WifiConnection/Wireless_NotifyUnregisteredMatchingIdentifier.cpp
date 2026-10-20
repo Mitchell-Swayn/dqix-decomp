@@ -1,0 +1,10 @@
+#include "globaldefs.h"
+#include "std_library_functions.h"
+// Original data: arm9/ov031 @ 0x2290d0c; symbol: data_ov031_02290d0c.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/ov031.md.
+extern unsigned char*WirelessInitializeUsbAccessPointScan_UnknownRoleZeroInitializedStorage;extern unsigned char Wireless_InitializeUsbAccessPointScan_TextNWCUSBAP[];extern "C" int RuntimeMemory_CompareByteRanges(const void*,const void*,unsigned);extern "C" void _Z24InvalidateDataCacheRangePKvj(const void*,unsigned);
+// Original: arm9/ov031 @ 0x022378E4; symbol: func_ov031_022378e4; size: 0x10C.
+extern "C" ARM void Wireless_NotifyUnregisteredMatchingIdentifier(unsigned char*self){unsigned char*initial=WirelessInitializeUsbAccessPointScan_UnknownRoleZeroInitializedStorage;if(initial[0x1b95]){void(*callback)(int)=*(void(**)(int))(initial+0x1370);if(callback)callback(initial[0x1b95]);return;}_Z24InvalidateDataCacheRangePKvj(initial+0xf00,0x400);unsigned char*entry;int i=0;int j;unsigned char*id;unsigned char*context;int count=*(unsigned short*)(self+14);if(count<=0)return;context=WirelessInitializeUsbAccessPointScan_UnknownRoleZeroInitializedStorage;do{entry=*(unsigned char**)(self+16+i*4);if(RuntimeMemory_CompareByteRanges(entry+12,Wireless_InitializeUsbAccessPointScan_TextNWCUSBAP,8))goto nextEntry;if(!(entry[21]&1))goto nextEntry;id=context+0x1300;j=0;do{if(RuntimeMemory_CompareByteRanges(entry+4,id,6))goto nextId;struct KnownId{unsigned char value[6],registered;};if(((KnownId*)(context+0x1300))[j].registered)break;void(*callback)(int)=*(void(**)(int))(context+0x1370);if(callback)callback(1);else context[0x1b95]=1;return;nextId:j++;id+=7;}while(j<16);nextEntry:i++;}while(i<count);}

@@ -10,34 +10,34 @@ struct ResourcePairs { unsigned char* values[2]; unsigned char counts[2]; };
 struct ResourceTwelve { unsigned unknown00; unsigned char* values; unsigned char count; };
 struct ResourceFour { unsigned char* values[4]; unsigned char counts[4]; };
 extern "C" {
-int Object_AllocateAndClearTwelveByteSecondaryRecord(ResourceNode**, void*);
+int ResourceTracks_AllocateLargePayloadNode(ResourceNode**, void*);
 int Memory_AllocateAndClearThreeWordRecord(ResourceNode**, void*);
 int AllocateAndClearThreeWords(ResourceNode**, void*);
-int Object_AllocateAndClearTwelveBytePrimaryRecord(ResourceNode**, void*);
-LargeResource* Object_ReadInitialOptionalResourceWord(ResourceContext*);
-ResourceTriples* ReadResolvedRecordWord4OrZero(ResourceContext*);
-ResourceSingle* ReadResolvedRecordWordTwoOrZero(ResourceContext*);
-ResourceThreeAndOne* Object_ReadOptionalResourceWordC(ResourceContext*);
-ResourcePairs* Object_ReadOptionalResourceWord18(ResourceContext*);
-ResourcePairs* ReadResolvedRecordWord1COrZero(ResourceContext*);
-ResourceTwelve* ReadResolvedRecordWordField20OrZero(ResourceContext*);
-ResourceFour* Object_ReadOptionalResolvedValue(ResourceContext*);
+int ResourceTracks_AllocateAngleKeyframeNode(ResourceNode**, void*);
+LargeResource* ResourceTracks_GetLargePayloadSection(ResourceContext*);
+ResourceTriples* ResourceTracks_GetTripleScalarSection(ResourceContext*);
+ResourceSingle* ResourceTracks_GetSingleScalarSection(ResourceContext*);
+ResourceThreeAndOne* ResourceTracks_GetScalarAndVectorSection(ResourceContext*);
+ResourcePairs* ResourceTracks_GetPairedScalarSection(ResourceContext*);
+ResourcePairs* ResourceTracks_GetPairedVectorSection(ResourceContext*);
+ResourceTwelve* ResourceTracks_GetRandomizedAngleSection(ResourceContext*);
+ResourceFour* ResourceTracks_GetFourScalarSection(ResourceContext*);
 }
 // Original: arm9/main @ 0x020546C8; symbol: func_020546c8; size: 0x7A8.
 extern "C" void AllocateAndAppendResourcePayloadNodesAcrossLists(ResourceContext* context) {
     ResourceNode* node0; ResourceNode* node1; ResourceNode* node2; ResourceNode* node3;
     ResourceNode* node4; ResourceNode* node5; ResourceNode* node6; ResourceNode* node7;
     ResourceNode* node8; ResourceNode* node9; ResourceNode* node10;
-    LargeResource* large = Object_ReadInitialOptionalResourceWord(context);
+    LargeResource* large = ResourceTracks_GetLargePayloadSection(context);
     if (large) {
         if (large->count != 0) {
             node0 = 0;
-            if (Object_AllocateAndClearTwelveByteSecondaryRecord(&node0, context->allocator)) {
+            if (ResourceTracks_AllocateLargePayloadNode(&node0, context->allocator)) {
                 context->large.InsertAtEnd((SignedAllocatorHeader*)node0);
                 node0->payload = large->values;
                 for (int index = 1; index < large->count; ++index) {
                     node0 = 0;
-                    if (Object_AllocateAndClearTwelveByteSecondaryRecord(&node0, context->allocator)) {
+                    if (ResourceTracks_AllocateLargePayloadNode(&node0, context->allocator)) {
                         context->large.InsertAtEnd((SignedAllocatorHeader*)node0);
                         node0->payload = large->values + index * 28;
                     }
@@ -45,7 +45,7 @@ extern "C" void AllocateAndAppendResourcePayloadNodesAcrossLists(ResourceContext
             }
         }
     }
-    ResourceTriples* triples = ReadResolvedRecordWord4OrZero(context);
+    ResourceTriples* triples = ResourceTracks_GetTripleScalarSection(context);
     if (triples) {
         for (int group = 0; group < 3; ++group) {
             if (triples->counts[0][group] != 0) {
@@ -92,7 +92,7 @@ extern "C" void AllocateAndAppendResourcePayloadNodesAcrossLists(ResourceContext
             }
         }
     }
-    ResourceSingle* single = ReadResolvedRecordWordTwoOrZero(context);
+    ResourceSingle* single = ResourceTracks_GetSingleScalarSection(context);
     if (single) {
         if (single->count != 0) {
             node4 = 0;
@@ -109,7 +109,7 @@ extern "C" void AllocateAndAppendResourcePayloadNodesAcrossLists(ResourceContext
             }
         }
     }
-    ResourceThreeAndOne* four = Object_ReadOptionalResourceWordC(context);
+    ResourceThreeAndOne* four = ResourceTracks_GetScalarAndVectorSection(context);
     if (four) {
         for (int group = 0; group < 3; ++group) {
             if (four->counts[group] != 0) {
@@ -142,7 +142,7 @@ extern "C" void AllocateAndAppendResourcePayloadNodesAcrossLists(ResourceContext
             }
         }
     }
-    ResourcePairs* pairs7 = Object_ReadOptionalResourceWord18(context);
+    ResourcePairs* pairs7 = ResourceTracks_GetPairedScalarSection(context);
     if (pairs7) {
         for (int group = 0; group < 2; ++group) {
             if (pairs7->counts[group] != 0) {
@@ -161,7 +161,7 @@ extern "C" void AllocateAndAppendResourcePayloadNodesAcrossLists(ResourceContext
             }
         }
     }
-    ResourcePairs* pairs8 = ReadResolvedRecordWord1COrZero(context);
+    ResourcePairs* pairs8 = ResourceTracks_GetPairedVectorSection(context);
     if (pairs8) {
         for (int group = 0; group < 2; ++group) {
             if (pairs8->counts[group] != 0) {
@@ -180,16 +180,16 @@ extern "C" void AllocateAndAppendResourcePayloadNodesAcrossLists(ResourceContext
             }
         }
     }
-    ResourceTwelve* twelve = ReadResolvedRecordWordField20OrZero(context);
+    ResourceTwelve* twelve = ResourceTracks_GetRandomizedAngleSection(context);
     if (twelve) {
         if (twelve->count != 0) {
             node9 = 0;
-            if (Object_AllocateAndClearTwelveBytePrimaryRecord(&node9, context->allocator)) {
+            if (ResourceTracks_AllocateAngleKeyframeNode(&node9, context->allocator)) {
                 context->twelve.InsertAtEnd((SignedAllocatorHeader*)node9);
                 node9->payload = twelve->values;
                 for (int index = 1; index < twelve->count; ++index) {
                     node9 = 0;
-                    if (Object_AllocateAndClearTwelveBytePrimaryRecord(&node9, context->allocator)) {
+                    if (ResourceTracks_AllocateAngleKeyframeNode(&node9, context->allocator)) {
                         context->twelve.InsertAtEnd((SignedAllocatorHeader*)node9);
                         node9->payload = twelve->values + index * 12;
                     }
@@ -197,7 +197,7 @@ extern "C" void AllocateAndAppendResourcePayloadNodesAcrossLists(ResourceContext
             }
         }
     }
-    ResourceFour* final = Object_ReadOptionalResolvedValue(context);
+    ResourceFour* final = ResourceTracks_GetFourScalarSection(context);
     if (final) {
         for (int group = 0; group < 4; ++group) {
             if (final->counts[group] != 0) {

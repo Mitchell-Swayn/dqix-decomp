@@ -1,3 +1,0 @@
-// Overlay 3 resource/format/menu or character-entry string.
-// Text (CP932 when non-ASCII): ri
-__declspec(align(1)) char data_ov003_0218047a[3] = "ri";

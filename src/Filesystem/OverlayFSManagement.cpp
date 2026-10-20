@@ -12,8 +12,8 @@
 #pragma optimize_for_size off
 
 #if defined(jpn)
-#define data_020f2e44 data_020f2e58
-#define data_020f2290 data_020f23fc
+#define DecompressAndStaticInitializeOverlay_UnknownRoleInitializedBytes data_020f2e58
+#define VerifyDownloadPlayStruct_UnknownRoleDataReferences data_020f23fc
 
 #define MIi_UncompressBackward MIi_UncompressBackward
 #define DisableInterruptsAndHaltForever func_020cb6ac
@@ -24,7 +24,7 @@
 extern struct UnknownDownloadPlayStruct
 {
     unsigned int unknown[5];
-} data_020f2e44[];
+} DecompressAndStaticInitializeOverlay_UnknownRoleInitializedBytes[];
 
 #if defined(usa)
 #define ADDR_FIRST_DOWNLOAD_PLAY_STRUCT 0x020f2e44
@@ -35,7 +35,7 @@ extern struct UnknownDownloadPlayStruct
 extern struct {
     const void* pointer;
     unsigned int length;
-} data_020f2290;
+} VerifyDownloadPlayStruct_UnknownRoleDataReferences;
 
 extern "C"
 {
@@ -70,7 +70,7 @@ void InvalidateCacheAndZeroOverlay(const OverlayMetadata &overlay)
 void CreateFileAccessorForOverlay(NitroFileAccessor *outAccessor, const OverlayMetadata &overlay)
 {
     NitroFileAccessor temp;
-    temp.handle = &data_02111754;
+    temp.handle = &ChangeROMLoadDMAChannel_UnknownRoleZeroInitializedStorage_Variant2;
     temp.fileID = overlay.nitroFileID;
     
     // this cast forces the temporary struct to be created on the stack
@@ -150,7 +150,7 @@ bool LoadOverlayMetadataFromNitro(OverlayMetadata *into, bool isArm7,
 bool LoadOverlayMetadata(OverlayMetadata* into, bool isArm7, unsigned int idx)
 {
     Struct_0211173c::ArmOverlayDataTableData* armData;
-    armData = (!isArm7) ? &data_0211173c.arm9Data : &data_0211173c.arm7Data;
+    armData = (!isArm7) ? &ChangeROMLoadDMAChannel_UnknownRoleZeroInitializedStorage.arm9Data : &ChangeROMLoadDMAChannel_UnknownRoleZeroInitializedStorage.arm7Data;
 
     unsigned int offset;
     const char* source = (const char*)armData->start;
@@ -182,7 +182,7 @@ bool LoadOverlayMetadata(OverlayMetadata* into, bool isArm7, unsigned int idx)
     {
         CartridgeHeader::OverlayTableValues* overlay = 
             (CartridgeHeader::OverlayTableValues*)BIOS_ADDR_OVERLAY_TABLE_VALUES;
-        return LoadOverlayMetadataFromNitro(into, isArm7, idx, &data_02111754,
+        return LoadOverlayMetadataFromNitro(into, isArm7, idx, &ChangeROMLoadDMAChannel_UnknownRoleZeroInitializedStorage_Variant2,
             overlay->arm9TableStart, overlay->arm9TableSize,
             overlay->arm7TableStart, overlay->arm7TableSize);
     }
@@ -236,8 +236,8 @@ bool VerifyDownloadPlayStruct(const UnknownDownloadPlayStruct& data,
     VectorizedMemset(&clone, 0, sizeof(UnknownDownloadPlayStruct));
 
     unsigned char buffer[64];
-    MI_CpuCopy8(data_020f2290.pointer, buffer, data_020f2290.length);
-    System_ExecuteSHA1HashOperation(&clone, loadAddress, size, buffer, data_020f2290.length);
+    MI_CpuCopy8(VerifyDownloadPlayStruct_UnknownRoleDataReferences.pointer, buffer, VerifyDownloadPlayStruct_UnknownRoleDataReferences.length);
+    System_ExecuteSHA1HashOperation(&clone, loadAddress, size, buffer, VerifyDownloadPlayStruct_UnknownRoleDataReferences.length);
 
     unsigned int offsetCounter = 0;
     unsigned int* cloneReader = &clone.unknown[0];
@@ -264,7 +264,7 @@ void DecompressAndStaticInitializeOverlay(const OverlayMetadata& overlay)
             // Using two different formats for the same address (number and label)
             // forces the word to appear twice
             UnknownDownloadPlayStruct* start = (UnknownDownloadPlayStruct*)ADDR_FIRST_DOWNLOAD_PLAY_STRUCT;
-            UnknownDownloadPlayStruct* end = data_020f2e44;
+            UnknownDownloadPlayStruct* end = DecompressAndStaticInitializeOverlay_UnknownRoleInitializedBytes;
             if (overlay.overlayIndex < end - start)
             {
                 result = VerifyDownloadPlayStruct(

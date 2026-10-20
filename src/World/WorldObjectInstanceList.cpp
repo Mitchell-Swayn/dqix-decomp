@@ -7,7 +7,7 @@ void WorldObjectInstanceList::SetObject(Object3D* object)
     this->object = object;
     if (!this->object) return;
     this->object->SetScale(266, 266, 266);
-    this->object->MaybeSetBCFGAnimation(0, 0);
+    this->object->SetBCFGAnimationByIndex(0, 0);
 }
 
 // Original: arm9/main @ 0x0208F3A8; symbol: _ZN23WorldObjectInstanceList14ClearInstancesEv; size: 0xC.

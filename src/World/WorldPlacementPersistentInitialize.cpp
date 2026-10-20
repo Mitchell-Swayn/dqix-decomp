@@ -8,7 +8,7 @@
 #include "std_library_functions.h"
 
 extern "C" {
-    void GameState_SetByteField5CDAAndClearPlacementFlag(GameState*, unsigned char);
+    void GameState_SelectPlacementVariantAndInvalidateSource(GameState*, unsigned char);
     void WorldPlacement_ResetFlaggedAvailablePersistentStates(WorldObjectInstanceList*);
     int rand();
 }
@@ -20,7 +20,7 @@ extern "C" void ResetPlacementListOrLoadPlacementResources(WorldObjectInstanceLi
     if (game->unknownPlacementByte_5cda_ == 8)
     {
         list->Reset();
-        GameState_SetByteField5CDAAndClearPlacementFlag(game, (unsigned char)(rand() % 8));
+        GameState_SelectPlacementVariantAndInvalidateSource(game, (unsigned char)(rand() % 8));
     }
     else
     {
@@ -30,11 +30,11 @@ extern "C" void ResetPlacementListOrLoadPlacementResources(WorldObjectInstanceLi
     BackgroundLoader::AddLockGlobal();
     char path[64] = {0};
     unsigned int size = 0;
-    if (LoadFileIntoMemory(data_020f1330, data_0211e33c, &size))
+    if (LoadFileIntoMemory(ResetPlacementListOrLoadPlacementResources_PathDataScenarioFlditemPac, Main_UnknownRoleZeroInitializedStorage_Variant6, &size))
     {
         unsigned int length;
         const void* file;
-        if (GetFileInNarc(data_0211e33c, data_020f134a, &file, &length, 0))
+        if (GetFileInNarc(Main_UnknownRoleZeroInitializedStorage_Variant6, ResetPlacementListOrLoadPlacementResources_TextFldbiasBin, &file, &length, 0))
         {
             Script script;
             script.Initialize();
@@ -45,9 +45,9 @@ extern "C" void ResetPlacementListOrLoadPlacementResources(WorldObjectInstanceLi
         }
         for (int i = 1; i <= 63; ++i)
         {
-            sprintf(path, data_020f1356, i);
+            sprintf(path, ResetPlacementListOrLoadPlacementResources_FormatF02DflditemBin, i);
             size = 0;
-            if (GetFileInNarc(data_0211e33c, path, &file, &length, 0))
+            if (GetFileInNarc(Main_UnknownRoleZeroInitializedStorage_Variant6, path, &file, &length, 0))
             {
                 Script script;
                 script.Initialize();

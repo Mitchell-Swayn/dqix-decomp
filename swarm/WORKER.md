@@ -13,9 +13,9 @@ $S release TASK --note "what you tried"   # give it back when stuck
 $S context TASK --callers | --symbol NAME | --grep REGEX
 ```
 
-`--subsystem` is one of Filesystem, Graphics, Resource, System, Memory, GameState,
-World, Combat, Grotto, Math, Network, Util or Unclassified (the default); never a
-module name such as `main` or `ov017`.
+`--subsystem` is optional: by default the source goes to the folder of the function's
+chunk in `docs/subsystem-map-usa.json`. Override it only with evidence, using a folder
+listed in `swarm/config.json` (never a module name such as `main` or `ov017`).
 
 Loop: `next`, write a file, `check`, edit until it prints `MATCH`, `submit`, `next`.
 Until integration you may `submit` the same task again (same `--worker`) to improve
@@ -48,6 +48,27 @@ Things that often fix them:
   instruction scheduling differs.
 - Match the callee's declared parameter types; look at sibling callers with
   `context --grep NAME`.
+
+Canonical preflight runs before byte comparison in both `check` and `submit`.
+`CANONICAL_CONFLICT` shows the owning declaration's path (or declaration-cache
+path), your prototype and compiler diagnostics. Open that source/header and use
+its types, linkage and calling convention. Current owning definitions outrank
+stale cached context; old/raw callee names follow established renames. Include the
+owning header when possible. Do not change an accepted callee or cast/rewrite
+constants just to hide a disagreement: an isolated byte match is insufficient.
+
+`CANONICAL_CONTEXT_REQUIRED` means canonical types/macros need header context;
+inspect the listed owning headers and owner-local type names rather than assuming
+an ABI conflict. Preflight tries real owning headers with the candidate type
+captured before their macros or overloads are introduced. It does not invent
+local struct definitions. If context remains unresolved, inspect the owning
+source at the reported path and repair the candidate's declarations/includes.
+A nominal struct-pointer mismatch is a declaration disagreement; it does not by
+itself prove a machine ABI difference. `CANONICAL_RETRY` means integration is changing or has not
+published the accepted state; retry after publication. Neither is a successful
+match or a substantive source variant. A rejected submit keeps the stored source,
+status and lease; submit rechecks current declarations even after an earlier
+`MATCH`. The integrator retains its own independent declaration and ROM gates.
 
 `problem:` lines name wrong call targets, data addresses, mode or size. NitroSDK
 code (OS_, MI_, FX_, G2/G3, RTC, CARD, ...) often needs `--profile O4p` or another

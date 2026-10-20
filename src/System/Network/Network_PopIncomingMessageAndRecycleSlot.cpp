@@ -1,0 +1,5 @@
+#include <globaldefs.h>
+ARM
+extern "C" void System_PushInterruptFourEnabledStateAndDisable();extern "C" void Network_IgnoreQueueCriticalSectionEntry();extern "C" void Network_GetConnectionManager();extern "C" int Network_IsSessionActive();extern "C" unsigned char* LinkedQueue_PopFrontUnderGlobalLock(void*);extern "C" void LinkedList_AppendNodeUnderLockAndIncrementCount(void*,void*);extern "C" void Network_LeaveQueueOperationHook();extern "C" void Interrupts_UpdateTimerOneFromShiftingGlobalMask();
+// Original: arm9/main @ 0x0205E41C; symbol: func_0205e41c; size: 0x6C.
+extern "C" unsigned char* Network_PopIncomingMessageAndRecycleSlot(unsigned char* object,int* out){System_PushInterruptFourEnabledStateAndDisable();Network_IgnoreQueueCriticalSectionEntry();unsigned char* result=0;Network_GetConnectionManager();if(Network_IsSessionActive()){result=LinkedQueue_PopFrontUnderGlobalLock(object+0x1518);if(!result){*out=-1;result=0;}else{LinkedList_AppendNodeUnderLockAndIncrementCount(object+0x1500,result);*out=*(short*)(result+0x14);}}Network_LeaveQueueOperationHook();Interrupts_UpdateTimerOneFromShiftingGlobalMask();return result;}

@@ -54,7 +54,36 @@ def resolve(db, name, modules):
     return [(r['address'], r['kind'], r['mode']) for r in rows if not modules or r['module'] in modules]
 
 
-def check(project, db, task, source_text, symbol=None, suffix='.cpp', include_dir=None, profile='default'):
+def check(project, db, task, source_text, symbol=None, suffix='.cpp', include_dir=None, profile='default',
+          integration_locked=False):
+    # Integration callers already own the exclusive project process lock.
+    # Workers must use the default nonblocking accepted-state read gate.
+    from contextlib import nullcontext
+    from canonical import accepted_read, snapshot, audit, StateUnavailable
+    result = dict(task=task['id'], status='canonical_retry', problems=[], warnings=[], profile=profile, elapsed_ms=0)
+    read_gate = nullcontext if integration_locked else lambda: accepted_read(project)
+    try:
+        with read_gate():
+            state = snapshot(project, db)
+        review = audit(project, source_text, suffix, include_dir, profile, state, compile_source)
+        result['canonical'] = review
+        if review['status'] != 'ok':
+            result['status'] = 'canonical_' + review['status']
+            result['problems'].append('Canonical preflight: ' + review['advice'])
+        else:
+            result = _check_object(project, db, task, source_text, symbol, suffix, include_dir, profile)
+            result['canonical'] = review
+        with read_gate():
+            if snapshot(project, db)[0] != state[0]:
+                raise StateUnavailable('canonical inputs changed during check; retry')
+        result['canonical_state'] = state[0]
+    except StateUnavailable as error:
+        result.update(status='canonical_retry', score=0)
+        result['problems'].append(str(error))
+    return result
+
+
+def _check_object(project, db, task, source_text, symbol=None, suffix='.cpp', include_dir=None, profile='default'):
     started = time.perf_counter()
     result = dict(task=task['id'], status='error', problems=[], warnings=[], profile=profile)
     data, messages = compile_source(project, source_text, suffix, include_dir, profile)

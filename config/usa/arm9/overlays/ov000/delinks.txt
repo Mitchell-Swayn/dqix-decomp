@@ -5,1954 +5,2794 @@
     .data       start:0x021838c0 end:0x02184220 kind:data align:32
     .bss        start:0x02184220 end:0x021842a0 kind:bss align:32
 
-src/Combat/Overlay_0/GetCombatantByID.cpp:
+src/Combat/Turns/GetCombatantByID.cpp:
 	complete
 	.text start:0x021536e0 end:0x021536f8
 
-src/Combat/Overlay_0/UpdateCombatantBuffs.cpp:
+src/Combat/Turns/UpdateCombatantBuffs.cpp:
 	complete
 	.text start:0x02155a50 end:0x02155e94
 
-src/Data/ov000/data_ov000_02182e24.cpp:
+src/Data/Combat_ChargeActionMpAndPrepareActorState_ActionParameterTriples.cpp:
     complete
     .rodata start:0x02182e24 end:0x02182e6c
 
-src/Data/ov000/data_ov000_02182e6c.cpp:
+src/Data/Combat_GetActionSummonedSpecies_SummonedSpeciesMappingRecords.cpp:
     complete
     .rodata start:0x02182e6c end:0x02182efc
 
-src/Data/ov000/data_ov000_02182efc.cpp:
+src/Data/Combat_DecrementActiveFlagCounters_StatusDecayReplacementPairs.cpp:
     complete
     .rodata start:0x02182efc end:0x02182fd4
 
-src/Data/ov000/data_ov000_02183118.cpp:
+src/Data/BattleScene_SetMonsterGridDestinations_FormationPositionIdsByCountAndSlot.cpp:
     complete
     .rodata start:0x02183118 end:0x02183158
 
-src/Data/ov000/data_ov000_02183158.cpp:
+src/Data/BattleScene_SetPartyHomeFormation_FormationCoordinatesByCountAndSlot.cpp:
     complete
     .rodata start:0x02183158 end:0x02183198
 
-src/Data/ov000/data_ov000_02183198.cpp:
+src/Data/PlaceCombatantAtFirstUnusedGridIndex_PreferredFormationPositionOrder.cpp:
     complete
     .rodata start:0x02183198 end:0x021831d8
 
-src/Data/ov000/data_ov000_021831d8.cpp:
+src/Data/PlaceCombatantAtFirstUnusedGridIndex_AlternatePreferredFormationPositionOrder.cpp:
     complete
     .rodata start:0x021831d8 end:0x02183218
 
-src/Data/ov000/data_ov000_02182ae4.cpp:
+src/Data/Combat_ResolveMonsterCommandTargets_CombatantSelectionInitialIds.cpp:
     complete
     .rodata start:0x02182ae4 end:0x02182af4
 
-src/Data/ov000/data_ov000_02182af4.cpp:
+src/Data/Combat_SelectAutomaticActionTargets_CombatantSelectionInitialIds.cpp:
     complete
     .rodata start:0x02182af4 end:0x02182b04
 
-src/Data/ov000/data_ov000_02182b04.cpp:
+src/Data/Combat_ProcessTurn_CombatantSelectionInitialIds.cpp:
     complete
     .rodata start:0x02182b04 end:0x02182b14
 
-src/Data/ov000/data_ov000_02182b14.cpp:
+src/Data/Combat_SelectRandomCollectedGroupIndex_CombatantSelectionInitialIds.cpp:
     complete
     .rodata start:0x02182b14 end:0x02182b24
 
-src/Data/ov000/data_ov000_02182b24.cpp:
+src/Data/Combat_SelectPartyOnlyTargetsByActionType_CombatantSelectionInitialIds.cpp:
     complete
     .rodata start:0x02182b24 end:0x02182b34
 
-src/Data/ov000/data_ov000_02182b44.cpp:
+src/Data/Combat_ApplyEndOfTurnRecoveryAndDamage_CombatantSelectionInitialIds.cpp:
     complete
     .rodata start:0x02182b44 end:0x02182b54
 
-src/Data/ov000/data_ov000_02182b54.cpp:
+src/Data/Combat_ApplyEndOfTurnRecoveryAndDamage_CombatantSelectionInitialIds_Copy2.cpp:
     complete
     .rodata start:0x02182b54 end:0x02182b64
 
-src/Data/ov000/data_ov000_02182b64.cpp:
+src/Data/Combat_ResolveMonsterCommandTargets_CombatantSelectionInitialIds_Copy2.cpp:
     complete
     .rodata start:0x02182b64 end:0x02182b74
 
-src/Data/ov000/data_ov000_02182b74.cpp:
+src/Data/Combat_ResolvePartyCommandTargets_CombatantSelectionInitialIds.cpp:
     complete
     .rodata start:0x02182b74 end:0x02182b84
 
-src/Data/ov000/data_ov000_02182b84.cpp:
+src/Data/Combat_SelectRandomOtherCandidateIndex_CombatantSelectionInitialIds.cpp:
     complete
     .rodata start:0x02182b84 end:0x02182b94
 
-src/Data/ov000/data_ov000_02182b94.cpp:
+src/Data/Combat_RollEscapeSuccess_CombatantSelectionInitialIds.cpp:
     complete
     .rodata start:0x02182b94 end:0x02182ba4
 
-src/Data/ov000/data_ov000_02182ba4.cpp:
+src/Data/Combat_ProcessTurn_CombatantSelectionInitialIds_Copy2.cpp:
     complete
     .rodata start:0x02182ba4 end:0x02182bb4
 
-src/Data/ov000/data_ov000_02182bb4.cpp:
+src/Data/Combat_SelectRandomSideDependentAction_CombatantSelectionInitialIds.cpp:
     complete
     .rodata start:0x02182bb4 end:0x02182bc4
 
-src/Data/ov000/data_ov000_02182bc4.cpp:
+src/Data/Combat_FinishTurnAndDetermineOutcome_CombatantSelectionInitialIds.cpp:
     complete
     .rodata start:0x02182bc4 end:0x02182bd4
 
-src/Data/ov000/data_ov000_02182be4.cpp:
+src/Data/Combat_TryRaiseTensionAfterHit_CombatantSelectionInitialIds.cpp:
     complete
     .rodata start:0x02182be4 end:0x02182bf4
 
-src/Data/ov000/data_ov000_02182c14.cpp:
+src/Data/Combat_SelectRandomOtherCandidateIndex_CombatantSelectionInitialIds_Copy2.cpp:
     complete
     .rodata start:0x02182c14 end:0x02182c24
 
-src/Data/ov000/data_ov000_02182c24.cpp:
+src/Data/Combat_ClearForcedTargetsThatBecameInvalid_CombatantSelectionInitialIds.cpp:
     complete
     .rodata start:0x02182c24 end:0x02182c34
 
-src/Data/ov000/data_ov000_02182c34.cpp:
+src/Data/Combat_FindEligibleEnemyWithLeastHomeX_CombatantSelectionInitialIds.cpp:
     complete
     .rodata start:0x02182c34 end:0x02182c44
 
-src/Data/ov000/data_ov000_02182c44.cpp:
+src/Data/TestCollectedObjectResourceIdentifier_CombatantSelectionInitialIds.cpp:
     complete
     .rodata start:0x02182c44 end:0x02182c54
 
-src/Data/ov000/data_ov000_02182c54.cpp:
+src/Data/Combat_PrepareActionForExecution_CombatantSelectionInitialIds.cpp:
     complete
     .rodata start:0x02182c54 end:0x02182c64
 
-src/Data/ov000/data_ov000_02182c64.cpp:
+src/Data/Combat_PrepareActionForExecution_CombatantSelectionInitialIds_Copy2.cpp:
     complete
     .rodata start:0x02182c64 end:0x02182c74
 
-src/Data/ov000/data_ov000_02182c74.cpp:
+src/Data/Combat_UpdateOutcomeAndRecoverStatusesAfterAction_CombatantSelectionInitialIds.cpp:
     complete
     .rodata start:0x02182c74 end:0x02182c84
 
-src/Data/ov000/data_ov000_02182c84.cpp:
+src/Data/Combat_ResolveMonsterCommandTargets_CombatantSelectionInitialIds_Copy3.cpp:
     complete
     .rodata start:0x02182c84 end:0x02182c94
 
-src/Data/ov000/data_ov000_02182c94.cpp:
+src/Data/SelectWeightedEligibleCombatantIndex_CombatantSelectionInitialIds.cpp:
     complete
     .rodata start:0x02182c94 end:0x02182ca4
 
-src/Data/ov000/data_ov000_02182cb4.cpp:
+src/Data/Combat_UpdateRegenerationAndBlockingEffectRecovery_CombatantSelectionInitialIds.cpp:
     complete
     .rodata start:0x02182cb4 end:0x02182cd4
 
-src/Data/ov000/data_ov000_02182cd4.cpp:
+src/Data/Combat_UpdateRegenerationAndBlockingEffectRecovery_CombatantSelectionInitialIds_Copy2.cpp:
     complete
     .rodata start:0x02182cd4 end:0x02182cf4
 
-src/Data/ov000/data_ov000_02182cf4.cpp:
+src/Data/Combat_FinishTurnAndDetermineOutcome_CombatantSelectionInitialIds_Copy2.cpp:
     complete
     .rodata start:0x02182cf4 end:0x02182d14
 
-src/Data/ov000/data_ov000_02182d14.cpp:
+src/Data/Combat_ResetTurnRecordsAndCombatantLinks_CombatantSelectionInitialIds.cpp:
     complete
     .rodata start:0x02182d14 end:0x02182d34
 
-src/Data/ov000/data_ov000_02182d34.cpp:
+src/Data/Combat_ProcessTurn_CombatantSelectionInitialIds_Copy3.cpp:
     complete
     .rodata start:0x02182d34 end:0x02182d54
 
-src/Data/ov000/data_ov000_02183b5c.cpp:
+src/Data/CombatScriptCompileBufferToCommandGroups_CombatResourceScriptOpcodeDispatch.cpp:
     complete
     .data start:0x02183b5c end:0x02183fbc
 
-src/Data/ov000/data_ov000_0218409c.cpp:
+src/Data/CombatDispatchSelectionProcedure_CombatTargetSelectionProcedureDispatch.cpp:
     complete
     .data start:0x0218409c end:0x02184184
 
-src/Data/ov000/data_ov000_021830b4.cpp:
+src/Data/BattleScene_SetPartyHomeFormation_FormationTransformTemplate.cpp:
     complete
     .rodata start:0x021830b4 end:0x021830c0
 
-src/Data/ov000/data_ov000_021830c0.cpp:
+src/Data/BattleScene_SetPartyGridDestinations_FormationTransformTemplate.cpp:
     complete
     .rodata start:0x021830c0 end:0x021830cc
 
-src/Data/ov000/data_ov000_021830cc.cpp:
+src/Data/BattleScene_SetMonsterGridDestinations_FormationTransformTemplate.cpp:
     complete
     .rodata start:0x021830cc end:0x021830d8
 
-src/Data/ov000/data_ov000_021830d8.cpp:
+src/Data/PlaceCombatantAtFirstUnusedGridIndex_FormationTransformTemplate.cpp:
     complete
     .rodata start:0x021830d8 end:0x021830e4
 
-src/Data/ov000/data_ov000_021830e4.cpp:
+src/Data/BattleScene_SetPartyHomeFormation_FormationTransformTemplate_Copy2.cpp:
     complete
     .rodata start:0x021830e4 end:0x021830f0
 
-src/Data/ov000/data_ov000_021830f0.cpp:
+src/Data/BattleScene_RefreshCombatantGridDestinations_FormationTransformTemplate.cpp:
     complete
     .rodata start:0x021830f0 end:0x021830fc
 
-src/Data/ov000/data_ov000_021830fc.cpp:
+src/Data/BattleScene_SetPartyGridDestinations_FormationTransformTemplate_Copy2.cpp:
     complete
     .rodata start:0x021830fc end:0x02183108
 
-src/Data/ov000/data_ov000_02183274.cpp:
+src/Data/BattleCamera_ConfigureRandomPairOrbit_FormationTransformTemplate.cpp:
     complete
     .rodata start:0x02183274 end:0x02183280
 
-src/Data/ov000/data_ov000_02183280.cpp:
+src/Data/BattleCamera_FrameObjectGroup_FormationTransformTemplate.cpp:
     complete
     .rodata start:0x02183280 end:0x0218328c
 
-src/Data/ov000/data_ov000_0218328c.cpp:
+src/Data/BattleCamera_ConfigureDirectedPairShot_FormationTransformTemplate.cpp:
     complete
     .rodata start:0x0218328c end:0x02183298
 
-src/Data/ov000/data_ov000_02183298.cpp:
+src/Data/BattleCamera_UpdateActionPairTracking_FormationTransformTemplate.cpp:
     complete
     .rodata start:0x02183298 end:0x021832a4
 
-src/Data/ov000/data_ov000_02182ad4.cpp:
+src/Data/Combat_UpdateTimedStatusRecovery_StatusRecoveryRatioConstants.cpp:
     complete
     .rodata start:0x02182ad4 end:0x02182ae4
 
-src/Data/ov000/data_ov000_02182bd4.cpp:
+src/Data/Combat_UpdateTimedStatusRecovery_StatusRecoveryRatioConstants_Copy2.cpp:
     complete
     .rodata start:0x02182bd4 end:0x02182be4
 
-src/Data/ov000/data_ov000_021838c8.cpp:
+src/Data/ProgramData_StatusRecoveryRatioConstants.cpp:
     complete
     .data start:0x021838c8 end:0x021838d8
 
-src/Data/ov000/data_ov000_021838e8.cpp:
+src/Data/BattleScene_SaveFieldStateAndEnterBattle_StatusRecoveryRatioConstants.cpp:
     complete
     .data start:0x021838e8 end:0x021838fc
 
-src/Data/ov000/data_ov000_02183b0c.cpp:
+src/Data/BattleSceneRestoreFieldAfterBattle_SentinelFollowedByFourFloatingPointRatioInputs.cpp:
     complete
     .data start:0x02183b0c end:0x02183b20
 
-src/Data/ov000/data_ov000_02183910.cpp:
+src/Data/BattleSceneLoadDisplayEffectsAndCursors_FiveFixedWidthCombatCharacterResourceNamesTerminatedByAnEmptySlot.cpp:
     complete
     .data start:0x02183910 end:0x02183960
 
-src/Unclassified/ov000/OV000_ReadWordFieldEA4.cpp:
+src/Combat/Turns/CombatScene_GetStatusResourcePool.cpp:
     complete
     .text start:0x02163524 end:0x0216352c
 
-src/Unclassified/ov000/ClearCurrentIndexedRecord.cpp:
+src/Combat/Turns/Combat_ClearCurrentResultNodeSlot.cpp:
     complete
     .text start:0x0215e958 end:0x0215e9b8
 
-src/Unclassified/ov000/ClassifyField81FE.cpp:
+src/Combat/Turns/Combat_ClassifySpecialEncounterSpecies.cpp:
     complete
     .text start:0x0215fc60 end:0x0215fc8c
 
-src/Unclassified/ov000/TestSplitWordBit.cpp:
+src/Combat/Turns/Util_TestSplitWordBit.cpp:
     complete
     .text start:0x0215fd90 end:0x0215fe00
 
-src/Unclassified/ov000/InitializeInvalidIndexRecord.cpp:
+src/Combat/Turns/Combat_InitializeCommandRecord.cpp:
     complete
     .text start:0x02160030 end:0x02160068
 
-src/Unclassified/ov000/SetPendingFieldEA8.cpp:
+src/Combat/Scene/BattleScene_RequestPhase.cpp:
     complete
     .text start:0x02160d80 end:0x02160da0
 
-src/Unclassified/ov000/GetEmbeddedFieldC18.cpp:
+src/Combat/Scene/BattleScene_GetCamera.cpp:
     complete
     .text start:0x02160f14 end:0x02160f20
 
-src/Unclassified/ov000/EnableField55F4Bits.cpp:
+src/Combat/Scene/BattleScene_EnableFlags.cpp:
     complete
     .text start:0x02160fa8 end:0x02160fbc
 
-src/Unclassified/ov000/BuildStaggeredGridNeighborIndices.cpp:
+src/Combat/Scene/BattleGrid_GetNeighborCells.cpp:
     complete
     .text start:0x0216f82c end:0x0216fcfc
 
-src/Unclassified/ov000/FindRecordByTwelveBitIdentifier.cpp:
+src/Combat/BattleMenu/BattleMenu_FindActionDefinition.cpp:
     complete
     .text start:0x02170cf8 end:0x02170db0
 
-src/Unclassified/ov000/FindIndexedGameStateObjectWithFlag400.cpp:
+src/Combat/Turns/Combat_FindIndexedMonsterObject.cpp:
     complete
     .text start:0x021536f8 end:0x02153710
 
-src/Unclassified/ov000/ReadPartyObjectWord150.cpp:
+src/Combat/Turns/Combat_GetPartyCharacterData.cpp:
     complete
     .text start:0x02153710 end:0x02153758
 
-src/Unclassified/ov000/PopulateRecordFromDescriptorFields.cpp:
+src/Combat/Turns/Combat_PopulateResultFromCombatantSnapshot.cpp:
     complete
     .text start:0x0215ccbc end:0x0215cd44
 
-src/Unclassified/ov000/AppendNodeToIndexedList.cpp:
+src/Combat/Turns/Combat_AppendTargetResultToCategoryList.cpp:
     complete
     .text start:0x0215ffc4 end:0x0215fff4
 
-src/Unclassified/ov000/ReadIndexedListNode.cpp:
+src/Combat/Turns/Combat_GetTargetResultByCategoryAndPosition.cpp:
     complete
     .text start:0x0215fff4 end:0x02160030
 
-src/Unclassified/ov000/AppendNodeToOffset30List.cpp:
+src/Combat/Turns/Combat_AppendActorSnapshotToCommand.cpp:
     complete
     .text start:0x02160068 end:0x02160094
 
-src/Unclassified/ov000/GetEmbeddedRegionAtOffset3760.cpp:
+src/Combat/Scene/BattleScene_GetMenuController.cpp:
     complete
     .text start:0x02160f08 end:0x02160f14
 
-src/Unclassified/ov000/ComputeGridIndexCoordinatePair.cpp:
+src/Combat/Scene/BattleGrid_GetCellCoordinates.cpp:
     complete
     .text start:0x0216f74c end:0x0216f82c
 
-src/Unclassified/ov000/ClassifyRatioAtThresholds.cpp:
+src/Combat/Turns/BattleHud_ClassifyHealthRatio.cpp:
     complete
     .text start:0x02170c7c end:0x02170cf8
 
-src/Unclassified/ov000/DispatchCombatSelectionProcedure.cpp:
+src/Combat/Turns/Combat_DispatchSelectionProcedure.cpp:
     complete
     .text start:0x021820bc end:0x021820fc
 
-src/Unclassified/ov000/TestIndexedObjectPackedMode.cpp:
+src/Combat/Turns/Combat_TestMonsterDescriptorMode.cpp:
     complete
     .text start:0x02156068 end:0x02156118
 
-src/Unclassified/ov000/SetBitInTwoWordMask.cpp:
+src/Combat/Turns/Combat_SetResultMaskFlag.cpp:
     complete
     .text start:0x02159eac end:0x02159f18
 
-src/Unclassified/ov000/IncrementByteCounterWithSpecialIndex.cpp:
+src/Combat/Turns/Combat_IncrementCappedEventCounter.cpp:
     complete
     .text start:0x0215a8d4 end:0x0215a908
 
-src/Unclassified/ov000/AppendNodeAtOffset20AndIncrementCount.cpp:
+src/Combat/Scene/Combat_AppendActionTargetRecord.cpp:
     complete
     .text start:0x021600cc end:0x021600f8
 
-src/Unclassified/ov000/FindIndexedRecordMatchingCurrentKey.cpp:
+src/Combat/BattleMenu/BattleMenu_GetSelectedPartyCommandRecord.cpp:
     complete
     .text start:0x0217f8c0 end:0x0217f910
 
-src/Unclassified/ov000/AppendLinkedEntryAndIncrementCount.cpp:
+src/Combat/Turns/Combat_AppendActorResultToCategoryList.cpp:
     complete
     .text start:0x0215fe84 end:0x0215feb4
 
-src/Unclassified/ov000/ResolveOverrideOrIndexedRecord.cpp:
+src/Combat/Scene/BattleScene_ResolveCurrentActionRecord.cpp:
     complete
     .text start:0x02160f20 end:0x02160f60
 
-src/Unclassified/ov000/ReadMaskedFlagsAt55F4.cpp:
+src/Combat/Scene/BattleScene_GetMaskedFlags.cpp:
     complete
     .text start:0x02160fd4 end:0x02160fe4
 
-src/Unclassified/ov000/FindFourSlotRecordByIndex.cpp:
+src/Combat/BattleMenu/BattleMenu_FindPartyCommandRecord.cpp:
     complete
     .text start:0x02161318 end:0x02161380
 
-src/Unclassified/ov000/IsStateAt118EqualTwo.cpp:
+src/Combat/BattleMenu/BattleMenu_HasTouchSelectionChanged.cpp:
     complete
     .text start:0x0217542c end:0x02175440
 
-src/Unclassified/ov000/CollectEnabledEightEntryIds.cpp:
+src/Combat/Turns/Combat_CollectPresentEnemyIndices.cpp:
     complete
     .text start:0x0215ec1c end:0x0215ec80
 
-src/Unclassified/ov000/TestNestedRecordFlag200.cpp:
+src/Combat/Turns/Combat_IsMpCostWaived.cpp:
     complete
     .text start:0x02153a8c end:0x02153aa4
 
-src/Unclassified/ov000/TestNestedRecordFlag2000.cpp:
+src/Combat/Turns/Combat_IsCombatantExcludedFromSelection.cpp:
     complete
     .text start:0x02153c0c end:0x02153c24
 
-src/Unclassified/ov000/GetSelectedThirtySixByteRecord.cpp:
+src/Combat/Turns/Combat_GetCurrentTargetRecordSlot.cpp:
     complete
     .text start:0x0215e938 end:0x0215e958
 
-src/Unclassified/ov000/ReadHalfwordByClampedByteSelector.cpp:
+src/Combat/Turns/Combat_GetLatestTargetFromHistory.cpp:
     complete
     .text start:0x0215ffa0 end:0x0215ffc4
 
-src/Unclassified/ov000/TestFourWord28Flags.cpp:
+src/Combat/BattleMenu/BattleMenu_HasCommandBlockingStatus.cpp:
     complete
     .text start:0x021719f8 end:0x02171a60
 
-src/Unclassified/ov000/GetSelectedRecord52.cpp:
+src/Combat/Turns/Combat_GetCurrentActorSnapshotSlot.cpp:
     complete
     .text start:0x0215e918 end:0x0215e938
 
-src/Unclassified/ov000/GetSelectedRecord40.cpp:
+src/Combat/Turns/Combat_GetCurrentCommandSlot.cpp:
     complete
     .text start:0x0215e9d8 end:0x0215e9fc
 
-src/Unclassified/ov000/GetPrimaryLinkedRecordByIndex.cpp:
+src/Combat/Turns/Combat_GetCommandActorSnapshot.cpp:
     complete
     .text start:0x02160094 end:0x021600cc
 
-src/Unclassified/ov000/GetSecondaryLinkedRecordByIndex.cpp:
+src/Combat/Scene/Combat_GetIndexedActionTarget.cpp:
     complete
     .text start:0x021600f8 end:0x02160130
 
-src/Unclassified/ov000/TestLinkedRecordFlag20.cpp:
+src/Combat/Turns/Combat_HasPartyOnlyRetargetingStatus.cpp:
     complete
     .text start:0x021543f4 end:0x0215440c
 
-src/Unclassified/ov000/InitializeInvalidHalfwordRecord.cpp:
+src/Combat/Turns/Combat_InitializeTargetResultRecord.cpp:
     complete
     .text start:0x02157cdc end:0x02157d14
 
-src/Unclassified/ov000/AddClampedLinkedHalfwordValue.cpp:
+src/Combat/Turns/Combat_AddHealthUpToMaximum.cpp:
     complete
     .text start:0x0215a16c end:0x0215a1d4
 
-src/Unclassified/ov000/ReadOverlayControlSecondWord.cpp:
+src/Combat/Scene/BattleScene_GetActiveInstance.cpp:
     complete
     .text start:0x02160130 end:0x02160140
 
-src/Unclassified/ov000/AdvanceDelayThenTestRecordInput.cpp:
+src/Combat/BattleMenu/BattleMenu_TestConfirmInputAfterDelay.cpp:
     complete
     .text start:0x0217c594 end:0x0217c5f4
 
-src/Unclassified/ov000/TestNestedFlags8000At13814.cpp:
+src/Combat/Turns/Combat_HasTimedMagicalMendingModifier.cpp:
 	complete
 	.text start:0x02159994 end:0x021599ac
 
-src/Unclassified/ov000/TestNestedFlags10000At13814.cpp:
+src/Combat/Turns/Combat_HasSpellResistanceModifier.cpp:
 	complete
 	.text start:0x021599ac end:0x021599c4
 
-src/Unclassified/ov000/TestNestedFlags20000At13814.cpp:
+src/Combat/Turns/Combat_HasBreathResistanceModifier.cpp:
 	complete
 	.text start:0x021599c4 end:0x021599dc
 
-src/Unclassified/ov000/ClearByteHalfwordAndWordFields.cpp:
+src/Combat/Scene/MonsterGroup_ResetNameSuffixUsage.cpp:
 	complete
 	.text start:0x021620d8 end:0x021620f0
 
-src/Unclassified/ov000/SetByteAt5901AndFlag8000At55F4.cpp:
+src/Combat/Turns/CombatScene_SetPendingRequestSelector.cpp:
 	complete
 	.text start:0x02163404 end:0x0216341c
 
-src/Unclassified/ov000/StoreThreeArgumentWords.cpp:
+src/Combat/Scene/Combat_StoreFormationVectorComponents.cpp:
 	complete
 	.text start:0x02167b54 end:0x02167b5c
 
-src/Unclassified/ov000/ReadByteAtOffset445.cpp:
+src/Combat/BattleMenu/BattleMenu_IsPartyPanelEnabled.cpp:
 	complete
 	.text start:0x0217f5dc end:0x0217f5e4
 
-src/Unclassified/ov000/ClearFiveWordAndHalfwordRecordFields.cpp:
+src/Combat/Commands/CombatScript_InitializeCommandGroup.cpp:
     complete
     .text start:0x02169a40 end:0x02169a58
 
-src/Unclassified/ov000/ClearRecordFlag445.cpp:
+src/Combat/BattleMenu/BattleMenu_DisablePartyPanel.cpp:
     complete
     .text start:0x0217f5d0 end:0x0217f5dc
 
-src/Unclassified/ov000/ClearThreeByteAndHalfwordRecordFields.cpp:
+src/Combat/Turns/BattleCombo_ClearIndicatorState.cpp:
     complete
     .text start:0x021820fc end:0x02182114
 
-src/Unclassified/ov000/SetThreeCombatantHalfwordFields.cpp:
+src/Combat/Turns/Combat_SetDeferredActionParameters.cpp:
     complete
     .text start:0x0215fa70 end:0x0215fa84
 
-src/Unclassified/ov000/SetThreeRecordHalfwordFields.cpp:
+src/Combat/Turns/CombatScene_SetActionPresentationParameters.cpp:
     complete
     .text start:0x02163440 end:0x02163454
 
-src/Unclassified/ov000/StoreWordThroughOptionalNestedPointer.cpp:
+src/Combat/Scene/GameObject_SetBattleActionScriptIfAttached.cpp:
     complete
     .text start:0x02165480 end:0x02165490
 
-src/Unclassified/ov000/HasObjectFlag02000000.cpp:
+src/Combat/Turns/Combat_HasEvasionModifier.cpp:
     complete
     .text start:0x021563ec end:0x02156404
 
-src/Unclassified/ov000/HasObjectFlag100.cpp:
+src/Combat/Turns/Combat_HasFizzle.cpp:
     complete
     .text start:0x0215985c end:0x02159874
 
-src/Unclassified/ov000/HasNestedObjectFlag04.cpp:
+src/Combat/Turns/Combat_HasIceBarrier.cpp:
     complete
     .text start:0x02159904 end:0x0215991c
 
-src/Unclassified/ov000/HasNestedField138Flag1000At18.cpp:
+src/Combat/Turns/Combat_HasForcedTarget.cpp:
 	complete
 	.text start:0x02155154 end:0x0215516C
 
-src/Unclassified/ov000/HasNestedField138Flag08000000At14.cpp:
+src/Combat/Turns/Combat_HasReducedTargetWeightStatus.cpp:
 	complete
 	.text start:0x0215516C end:0x02155184
 
-src/Unclassified/ov000/HasNestedField138Flag40At18.cpp:
+src/Combat/Turns/Combat_HasSoulAsylum.cpp:
 	complete
 	.text start:0x02156B08 end:0x02156B20
 
-src/Unclassified/ov000/HasNestedField138Flag00400000At14.cpp:
+src/Combat/Turns/Combat_HasAlmaMater.cpp:
 	complete
 	.text start:0x021598D4 end:0x021598EC
 
-src/Unclassified/ov000/FindEntryBySignedHalfwordInFourSlotTable.cpp:
+src/Combat/Turns/CombatScene_FindAuxiliaryObjectByIdentifier.cpp:
 	complete
 	.text start:0x02162D88 end:0x02162DC4
 
-src/Unclassified/ov000/HasNestedFlag10.cpp:
+src/Combat/Turns/Combat_HasIncreasedStatusSusceptibility.cpp:
 	complete
 	.text start:0x02156cac end:0x02156cc4
 
-src/Unclassified/ov000/HasNestedFlag28.cpp:
+src/Combat/Turns/Combat_HasFeelTheBurn.cpp:
 	complete
 	.text start:0x0215988c end:0x021598a4
 
-src/Unclassified/ov000/ClearSelectedPersistentFlags.cpp:
+src/Combat/Scene/BattleScene_ClearFlags.cpp:
 	complete
 	.text start:0x02160fbc end:0x02160fd4
 
-src/Unclassified/ov000/GetIndexedFieldA4.cpp:
+src/Combat/BattleMenu/BattleMenu_GetAbilityChoice.cpp:
 	complete
 	.text start:0x0217199c end:0x021719c0
 
-src/Unclassified/ov000/TestNestedStateWordBit0.cpp:
+src/Combat/Turns/Combat_HasShieldBlockModifier.cpp:
     complete
     .text start:0x02156258 end:0x02156270
 
-src/Unclassified/ov000/TestNestedStateWordBit31.cpp:
+src/Combat/Turns/Combat_HasHpRegeneration.cpp:
     complete
     .text start:0x02158324 end:0x0215833c
 
-src/Unclassified/ov000/GetIndexedWordAtFixedOffset.cpp:
+src/Combat/BattleMenu/BattleMenu_GetEnemyTargetObjectId.cpp:
     complete
     .text start:0x021761ec end:0x02176210
 
-src/Unclassified/ov000/TestIndexedFlagBit.cpp:
+src/Combat/BattleMenu/BattleMenu_IsSkillEquipmentCompatible.cpp:
     complete
     .text start:0x0217c4e8 end:0x0217c514
 
-src/Unclassified/ov000/ReadSignedIndexedByte.cpp:
+src/Combat/BattleMenu/BattleMenu_GetSelectedEquipmentMemberIndex.cpp:
     complete
     .text start:0x021815c8 end:0x021815e4
 
-src/Unclassified/ov000/ClearStateBytesAndWord.cpp:
+src/Combat/Turns/Combat_ResetActionCalculationScratch.cpp:
     complete
     .text start:0x0215cd80 end:0x0215cda0
 
-src/Unclassified/ov000/FindValueInLinkedHalfwordLists.cpp:
+src/Combat/Commands/CombatScript_FindCommandGroupByActionKey.cpp:
     complete
     .text start:0x02169a58 end:0x02169aa4
 
-src/Unclassified/ov000/CountNonzeroIndexedWords.cpp:
+src/Combat/BattleMenu/BattleMenu_CountAbilityChoices.cpp:
     complete
     .text start:0x021719c0 end:0x021719f8
 
-src/Unclassified/ov000/UpdateIndexedStatusFields.cpp:
+src/Combat/Turns/BattleCombo_RequestIndicatorExit.cpp:
     complete
     .text start:0x02182498 end:0x021824d8
 
-src/Unclassified/ov000/TestNestedField18Bit800.cpp:
+src/Combat/Turns/Combat_HasKnightWatch.cpp:
 	complete
 	.text start:0x02156af0 end:0x02156b08
 
-src/Unclassified/ov000/TestNestedField14Bit40.cpp:
+src/Combat/Turns/Combat_HasAccuracyImpairmentStatus.cpp:
 	complete
 	.text start:0x02156b20 end:0x02156b38
 
-src/Unclassified/ov000/TestNestedField14Bit04000000.cpp:
+src/Combat/Turns/Combat_HasReverseCycle.cpp:
 	complete
 	.text start:0x021598bc end:0x021598d4
 
-src/Unclassified/ov000/IsOneOfFourOverlayCodes.cpp:
+src/Combat/Turns/Combat_IsDefaultOrSpecialPresentationAction.cpp:
 	complete
 	.text start:0x02163690 end:0x021636ac
 
-src/Unclassified/ov000/ReadWordForIndexBelow66.cpp:
+src/Combat/BattleMenu/BattleMenu_GetSpellChoice.cpp:
 	complete
 	.text start:0x02171674 end:0x02171698
 
-src/Combat/ov000/func_ov000_0216a350.cpp:
+src/Combat/Commands/Combat_AllocateAndRegisterOwnerEntryForOpcode11.cpp:
     complete
     .text start:0x0216a350 end:0x0216a364
 
-src/Combat/ov000/func_ov000_0216a55c.cpp:
+src/Combat/Commands/Combat_AllocateAndRegisterOwnerEntryForOpcode19.cpp:
     complete
     .text start:0x0216a55c end:0x0216a570
 
-src/Combat/ov000/func_ov000_0216a934.cpp:
+src/Combat/Commands/Combat_AllocateAndRegisterOwnerEntryForOpcode23.cpp:
     complete
     .text start:0x0216a934 end:0x0216a948
 
-src/Combat/ov000/func_ov000_0216a948.cpp:
+src/Combat/Commands/Combat_AllocateAndRegisterOwnerEntryForOpcode24.cpp:
     complete
     .text start:0x0216a948 end:0x0216a95c
 
-src/Combat/ov000/CombatScript_InvokeHandler02169bb4With1F.cpp:
+src/Combat/Commands/CombatScript_InvokeHandler02169bb4With1F.cpp:
     complete
     .text start:0x0216ac68 end:0x0216ac7c
 
-src/Combat/ov000/CombatScript_InvokeHandler02169bb4With20.cpp:
+src/Combat/Commands/CombatScript_InvokeHandler02169bb4With20.cpp:
     complete
     .text start:0x0216ac7c end:0x0216ac90
 
-src/Combat/ov000/CombatScript_IgnoreOpcodeAndReturnTrue.cpp:
+src/Combat/Commands/CombatScript_IgnoreOpcodeAndReturnTrue.cpp:
     complete
     .text start:0x0216a428 end:0x0216a430
 
-src/Unclassified/ov000/func_ov000_02163778.cpp:
+src/Combat/Turns/CombatScene_IgnorePartyRemovalNotification.cpp:
     complete
     .text start:0x02163778 end:0x0216377c
 
-src/Unclassified/ov000/func_ov000_02169d00.cpp:
+src/Combat/Commands/CombatScript_AcceptOpcode02.cpp:
     complete
     .text start:0x02169d00 end:0x02169d08
 
-src/Unclassified/ov000/func_ov000_0216a420.cpp:
+src/Combat/Commands/CombatScript_AcceptOpcode0D.cpp:
     complete
     .text start:0x0216a420 end:0x0216a428
 
-src/Unclassified/ov000/func_ov000_0216a430.cpp:
+src/Combat/Commands/CombatScript_AcceptOpcode0F.cpp:
     complete
     .text start:0x0216a430 end:0x0216a438
 
-src/Unclassified/ov000/func_ov000_0216a4c0.cpp:
+src/Combat/Commands/CombatScript_AcceptOpcode11.cpp:
     complete
     .text start:0x0216a4c0 end:0x0216a4c8
 
-src/Unclassified/ov000/func_ov000_02163338.cpp:
+src/Combat/BattleMenu/BattleMenu_SetPartyCommandMode.cpp:
     complete
     .text start:0x02163338 end:0x02163344
 
-src/Unclassified/ov000/func_ov000_02168720.cpp:
+src/Combat/Scene/BattleScene_GetPendingPartyAnimationReloadCount.cpp:
     complete
     .text start:0x02168720 end:0x0216872c
 
-src/Unclassified/ov000/func_ov000_02160f9c.cpp:
+src/Combat/Scene/BattleScene_GetCurrentActionIndex.cpp:
     complete
     .text start:0x02160f9c end:0x02160fa8
 
-src/Util/ov000/func_ov000_0215faa4.cpp:
+src/Combat/Turns/Util_SeedRandomFromWordPair.cpp:
     complete
     .text start:0x0215faa4 end:0x0215fab0
 
-src/World/ov000/func_ov000_02163b90.cpp:
+src/Combat/Turns/World_SetVisibilityForFlaggedIndexedObjects.cpp:
     complete
     .text start:0x02163b90 end:0x02163c0c
 
-src/Unclassified/ov000/func_ov000_021637c8.cpp:
+src/Combat/Turns/CombatScene_ResetPartyAnimationQueue.cpp:
     complete
     .text start:0x021637c8 end:0x021637fc
 
-src/Unclassified/ov000/func_ov000_02163344.cpp:
+src/Combat/Turns/CombatScene_SetPendingPackedConfiguration.cpp:
     complete
     .text start:0x02163344 end:0x02163378
 
-src/Unclassified/ov000/func_ov000_02171968.cpp:
+src/Combat/BattleMenu/BattleMenu_SetAbilityChoice.cpp:
     complete
     .text start:0x02171968 end:0x0217199c
 
-src/Util/ov000/Util_GetRandomizedTableByte.cpp:
+src/Combat/Turns/Util_GetRandomizedTableByte.cpp:
     complete
     .text start:0x0215fbe0 end:0x0215fc60
 
-src/GameState/ov000/GameState_AddLinkedObjectCategoryBit.cpp:
+src/Combat/BattleMenu/GameState_AddLinkedObjectCategoryBit.cpp:
     complete
     .text start:0x0217c514 end:0x0217c594
 
-src/GameState/ov000/GameState_HasIndexedRecordFlagOne.cpp:
+src/Combat/BattleMenu/BattleMenu_HasPendingInputForActiveParty.cpp:
     complete
     .text start:0x0217fe30 end:0x0217feb0
 
-src/Graphics/ov000/Graphics_SetDisplayControlFields.cpp:
+src/Combat/BattleMenu/Graphics_SetDisplayControlFields.cpp:
     complete
     .text start:0x02172944 end:0x02172978
 
-src/Graphics/ov000/Graphics_SetBg1ControlFields.cpp:
+src/Combat/BattleMenu/Graphics_SetBg1ControlFields.cpp:
     complete
     .text start:0x02172978 end:0x021729ac
 
-src/Graphics/ov000/Text_AppendSixObjectRecordLabels.cpp:
+src/Combat/BattleMenu/Text_AppendSixObjectRecordLabels.cpp:
     complete
     .text start:0x02176500 end:0x02176634
 
-src/Combat/ov000/Combat_ComputeObjectAttributeWeight.cpp:
+src/Combat/Turns/Combat_ComputeObjectAttributeWeight.cpp:
     complete
     .text start:0x02156118 end:0x02156258
 
-src/Unclassified/ov000/func_ov000_02161264.cpp:
+src/Combat/Scene/BattleScene_IsFieldStateRestored.cpp:
     complete
     .text start:0x02161264 end:0x02161274
 
-src/Unclassified/ov000/func_ov000_0216fcfc.cpp:
+src/Combat/Scene/BattleScene_FindResourceTextByKey.cpp:
     complete
     .text start:0x0216fcfc end:0x0216fd0c
 
-src/Unclassified/ov000/func_ov000_02174504.cpp:
+src/Combat/BattleMenu/BattleMenu_GetSharedPanelDispatchArgument.cpp:
     complete
     .text start:0x02174504 end:0x02174514
 
-src/Unclassified/ov000/func_ov000_0216872c.cpp:
+src/Combat/Scene/BattleScene_SetSynchronizedPhaseAndMonsterMask.cpp:
     complete
     .text start:0x0216872c end:0x0216873c
 
-src/Unclassified/ov000/func_ov000_021820ac.cpp:
+src/Combat/Turns/Combat_Write200ToOutputAndReturnSuccess.cpp:
     complete
     .text start:0x021820ac end:0x021820bc
 
-src/GameState/ov000/Ov000_SetPointerAtOffset4.cpp:
+src/Combat/BattleMenu/Ov000_SetPointerAtOffset4.cpp:
     complete
     .text start:0x021744f4 end:0x02174504
 
-src/GameState/ov000/GameState_UpdateFourSlotRecord.cpp:
+src/Combat/Turns/GameState_UpdateFourSlotRecord.cpp:
     complete
     .text start:0x02162b90 end:0x02162c14
 
-src/Unclassified/ov000/ResetRecordDefaults.cpp:
+src/Combat/BattleMenu/BattleMenu_ResetMemberCommandState.cpp:
     complete
     .text start:0x0216fe9c end:0x0216ff20
 
-src/Unclassified/ov000/func_ov000_02171a60.cpp:
+src/Combat/BattleMenu/BattleMenu_HasPrimaryBlockingStatus.cpp:
     complete
     .text start:0x02171a60 end:0x02171a74
 
-src/System/ov000/System_ResetReadPairAndRemoveGlobalLock.cpp:
+src/Combat/Scene/System_ResetReadPairAndRemoveGlobalLock.cpp:
     complete
     .text start:0x0216638c end:0x021663a0
 
-src/Unclassified/ov000/func_ov000_02181f4c.cpp:
+src/Combat/Turns/Combat_CopyIndexedEntryValueIfPresentIndexZero.cpp:
     complete
     .text start:0x02181f4c end:0x02181f60
 
-src/Unclassified/ov000/func_ov000_02180b3c.cpp:
+src/Combat/BattleMenu/BattleMenu_ResetHeaderSlideAnimation.cpp:
     complete
     .text start:0x02180b3c end:0x02180b50
 
-src/Unclassified/ov000/func_ov000_0216f0bc.cpp:
+src/Combat/Scene/BattleCamera_IsActionPairShotSettled.cpp:
     complete
     .text start:0x0216f0bc end:0x0216f0d0
 
-src/Unclassified/ov000/func_ov000_02181f60.cpp:
+src/Combat/Turns/Combat_CopyIndexedEntryValueIfPresentIndexOne.cpp:
     complete
     .text start:0x02181f60 end:0x02181f74
 
-src/Unclassified/ov000/func_ov000_02181f9c.cpp:
+src/Combat/Turns/Combat_CopyIndexedEntryValueIfPresentIndexFour.cpp:
     complete
     .text start:0x02181f9c end:0x02181fb0
 
-src/Unclassified/ov000/func_ov000_02181fc4.cpp:
+src/Combat/Turns/Combat_CopyIndexedEntryValueIfPresentIndexSix.cpp:
     complete
     .text start:0x02181fc4 end:0x02181fd8
 
-src/Unclassified/ov000/func_ov000_02181f74.cpp:
+src/Combat/Turns/Combat_CopyIndexedEntryValueIfPresentIndexTwo.cpp:
     complete
     .text start:0x02181f74 end:0x02181f88
 
-src/Unclassified/ov000/Ov000_ForwardThirdArgWithMode3.cpp:
+src/Combat/Turns/Combat_CopyIndexedEntryValueIfPresentIndexThree.cpp:
     complete
     .text start:0x02181f88 end:0x02181f9c
 
-src/Unclassified/ov000/func_ov000_02181fd8.cpp:
+src/Combat/Turns/Combat_CopyIndexedEntryValueIfPresentIndexSeven.cpp:
     complete
     .text start:0x02181fd8 end:0x02181fec
 
-src/Unclassified/ov000/func_ov000_02181fb0.cpp:
+src/Combat/Turns/Combat_CopyIndexedEntryValueIfPresentIndexFive.cpp:
     complete
     .text start:0x02181fb0 end:0x02181fc4
 
-src/GameState/ov000/ClearThreeByteAndHalfwordRecordFieldsAtOffset6E8.cpp:
+src/Combat/Turns/BattleCombo_ResetIndicator.cpp:
     complete
     .text start:0x02182a44 end:0x02182a58
 
-src/Graphics/ov000/Text_AppendIndexedObjectNames.cpp:
+src/Combat/BattleMenu/Text_AppendIndexedObjectNames.cpp:
     complete
     .text start:0x02177d04 end:0x02177e50
 
-src/Util/ov000/Util_TestSelectedSplitWordFlags.cpp:
+src/Combat/Turns/Util_TestSelectedSplitWordFlags.cpp:
     complete
     .text start:0x02159f7c end:0x0215a004
 
-src/Unclassified/ov000/func_ov000_02171698.cpp:
+src/Combat/BattleMenu/BattleMenu_CountSpellChoices.cpp:
     complete
     .text start:0x02171698 end:0x021716d0
 
-src/Util/ov000/Util_GetListNodeAtIndex.cpp:
+src/Combat/Turns/Util_GetListNodeAtIndex.cpp:
     complete
     .text start:0x0215fe2c end:0x0215fe64
 
-src/World/ov000/ResetZoneContainerRenderParts.cpp:
+src/Combat/Turns/ResetZoneContainerRenderParts.cpp:
     complete
     .text start:0x02182114 end:0x0218214c
 
-src/Resource/ov000/Overlay_CopyIndexedEntryValueIfPresent.cpp:
+src/Combat/Turns/Overlay_CopyIndexedEntryValueIfPresent.cpp:
     complete
     .text start:0x02181990 end:0x021819c8
 
-src/World/ov000/ZoneContainer_ResetRenderParts.cpp:
+src/Combat/Turns/ZoneContainer_ResetRenderParts.cpp:
     complete
     .text start:0x021823a4 end:0x021823dc
 
-src/GameState/ov000/func_ov000_02176054.cpp:
+src/Combat/BattleMenu/BattleMenu_UnlockPartyCommandUpdates.cpp:
     complete
     .text start:0x02176054 end:0x0217608c
 
-src/Unclassified/ov000/func_ov000_02171640.cpp:
+src/Combat/BattleMenu/BattleMenu_SetSpellChoice.cpp:
     complete
     .text start:0x02171640 end:0x02171674
 
-src/Unclassified/ov000/func_ov000_02156050.cpp:
+src/Combat/Turns/Combat_HasTransientActionBlockingStatus.cpp:
     complete
     .text start:0x02156050 end:0x02156068
 
-src/GameState/ov000/Ov000_TestNestedFlagBit3.cpp:
+src/Combat/Turns/Ov000_TestNestedFlagBit3.cpp:
     complete
     .text start:0x02156c94 end:0x02156cac
 
-src/Unclassified/ov000/func_ov000_0215830c.cpp:
+src/Combat/Turns/Combat_HasMpRegeneration.cpp:
     complete
     .text start:0x0215830c end:0x02158324
 
-src/GameState/ov000/HasBit3AtNestedOffset14From138.cpp:
+src/Combat/Turns/Combat_HasParalysis.cpp:
     complete
     .text start:0x02156038 end:0x02156050
 
-src/Unclassified/ov000/func_ov000_02156404.cpp:
+src/Combat/Turns/Combat_HasFixedReactionChanceStatus.cpp:
     complete
     .text start:0x02156404 end:0x0215641c
 
-src/Unclassified/ov000/func_ov000_021598a4.cpp:
+src/Combat/Turns/Combat_HasRotstopper.cpp:
     complete
     .text start:0x021598a4 end:0x021598bc
 
-src/GameState/ov000/GameState_IsFlagBit23Set.cpp:
+src/Combat/Turns/GameState_IsFlagBit23Set.cpp:
     complete
     .text start:0x02157cc4 end:0x02157cdc
 
-src/GameState/ov000/Ov000_TestNestedFlagBit1.cpp:
+src/Combat/Turns/Ov000_TestNestedFlagBit1.cpp:
     complete
     .text start:0x021598ec end:0x02159904
 
-src/Unclassified/ov000/func_ov000_02159874.cpp:
+src/Combat/Turns/Combat_HasBounce.cpp:
     complete
     .text start:0x02159874 end:0x0215988c
 
-src/Unclassified/ov000/func_ov000_0215997c.cpp:
+src/Combat/Turns/Combat_HasTimedMagicalMightModifier.cpp:
     complete
     .text start:0x0215997c end:0x02159994
 
-src/Unclassified/ov000/func_ov000_02159934.cpp:
+src/Combat/Turns/Combat_HasDefenseStageModifier.cpp:
     complete
     .text start:0x02159934 end:0x0215994c
 
-src/Unclassified/ov000/func_ov000_0215991c.cpp:
+src/Combat/Turns/Combat_HasTimedAttackModifier.cpp:
     complete
     .text start:0x0215991c end:0x02159934
 
-src/Combat/ov000/Ov000_TestNestedFlagBit8.cpp:
+src/Combat/Turns/Ov000_TestNestedFlagBit8.cpp:
     complete
     .text start:0x021599dc end:0x021599f4
 
-src/Unclassified/ov000/func_ov000_02159964.cpp:
+src/Combat/Turns/Combat_HasTimedCharmModifier.cpp:
     complete
     .text start:0x02159964 end:0x0215997c
 
-src/GameState/ov000/HasBit12AtNestedOffset14From138.cpp:
+src/Combat/Turns/Combat_HasTimedAgilityModifier.cpp:
     complete
     .text start:0x0215994c end:0x02159964
 
-src/Unclassified/ov000/func_ov000_02174a38.cpp:
+src/Combat/BattleMenu/BattleMenu_SetExpandedMemberRow.cpp:
     complete
     .text start:0x02174a38 end:0x02174a50
 
-src/Memory/ov000/Memory_ClearThreeHalfwords.cpp:
+src/Combat/Turns/Memory_ClearThreeHalfwords.cpp:
     complete
     .text start:0x02163454 end:0x0216346c
 
-src/Unclassified/ov000/Ov000_ForwardSecondThirdWithZeroes.cpp:
+src/Combat/Turns/Combat_GetValidLinkedObjectIndexAtSlotZeroKindZero.cpp:
     complete
     .text start:0x02181fec end:0x02182004
 
-src/Unclassified/ov000/Ov000_ForwardSecondThirdWithMode2Flag1.cpp:
+src/Combat/Turns/Combat_GetValidLinkedObjectIndexAtSlotTwoKindOne.cpp:
     complete
     .text start:0x0218207c end:0x02182094
 
-src/Unclassified/ov000/func_ov000_02182034.cpp:
+src/Combat/Turns/Combat_GetValidLinkedObjectIndexAtSlotThreeKindZero.cpp:
     complete
     .text start:0x02182034 end:0x0218204c
 
-src/Unclassified/ov000/func_ov000_0218204c.cpp:
+src/Combat/Turns/Combat_GetValidLinkedObjectIndexAtSlotZeroKindOne.cpp:
     complete
     .text start:0x0218204c end:0x02182064
 
-src/Unclassified/ov000/func_ov000_02174e1c.cpp:
+src/Combat/BattleMenu/BattleMenu_GetPartyNameTextSprite.cpp:
     complete
     .text start:0x02174e1c end:0x02174e34
 
-src/Unclassified/ov000/func_ov000_02182004.cpp:
+src/Combat/Turns/Combat_FindLinkedObjectIndexForModeOne.cpp:
     complete
     .text start:0x02182004 end:0x0218201c
 
-src/Unclassified/ov000/func_ov000_0218201c.cpp:
+src/Combat/Turns/Combat_GetValidLinkedObjectIndexAtSlotTwoKindZero.cpp:
     complete
     .text start:0x0218201c end:0x02182034
 
-src/Unclassified/ov000/func_ov000_02182064.cpp:
+src/Combat/Turns/Combat_GetValidLinkedObjectIndexAtSlotOneKindOne.cpp:
     complete
     .text start:0x02182064 end:0x0218207c
 
-src/Unclassified/ov000/Ov000_ForwardSecondThirdWithMode3Flag1.cpp:
+src/Combat/Turns/Combat_GetValidLinkedObjectIndexAtSlotThreeKindOne.cpp:
     complete
     .text start:0x02182094 end:0x021820ac
 
-src/Util/ov000/Util_GetNestedListNodeAtIndex.cpp:
+src/Combat/Turns/Util_GetNestedListNodeAtIndex.cpp:
     complete
     .text start:0x0215feb4 end:0x0215fef0
 
-src/GameState/ov000/FindSetFlagIndexByOrdinal.cpp:
+src/Combat/BattleMenu/FindSetFlagIndexByOrdinal.cpp:
     complete
     .text start:0x0218158c end:0x021815c8
 
-src/Graphics/ov000/Text_AppendSelectionPageEntries.cpp:
+src/Combat/BattleMenu/Text_AppendSelectionPageEntries.cpp:
     complete
     .text start:0x0217936c end:0x021794cc
 
-src/GameState/ov000/GameState_MarkMatchingObjectAndBuildName.cpp:
+src/Combat/Scene/GameState_MarkMatchingObjectAndBuildName.cpp:
     complete
     .text start:0x02161274 end:0x02161300
 
-src/Combat/ov000/Combat_UpdateSelectedObjectVisibility.cpp:
+src/Combat/Turns/Combat_UpdateSelectedObjectVisibility.cpp:
     complete
     .text start:0x021626a0 end:0x021627fc
 
-src/Resource/ov000/Resource_ReleaseObjectIndexedRecords.cpp:
+src/Combat/BattleMenu/Resource_ReleaseObjectIndexedRecords.cpp:
     complete
     .text start:0x02181608 end:0x02181694
 
-src/GameState/ov000/GameState_CopyIndexedObjectHalfwordFields.cpp:
+src/Combat/BattleMenu/GameState_CopyIndexedObjectHalfwordFields.cpp:
     complete
     .text start:0x021710ac end:0x02171138
 
-src/GameState/ov000/GameState_TestFlagD0RandomRoll.cpp:
+src/Combat/Turns/GameState_TestFlagD0RandomRoll.cpp:
     complete
     .text start:0x021564cc end:0x02156558
 
-src/Memory/ov000/Memory_InitializePoolsAndFortyTransformStates.cpp:
+src/Combat/BattleMenu/Memory_InitializePoolsAndFortyTransformStates.cpp:
     complete
     .text start:0x02172128 end:0x0217228c
 
-src/GameState/ov000/GameState_UpdateFourAnimationCountdowns.cpp:
+src/Combat/Turns/GameState_UpdateFourAnimationCountdowns.cpp:
     complete
     .text start:0x02163928 end:0x021639b4
 
-src/Combat/ov000/Combat_ComputeClampedAttributeModifier.cpp:
+src/Combat/Turns/Combat_ComputeClampedAttributeModifier.cpp:
     complete
     .text start:0x02156b38 end:0x02156c94
 
-src/GameState/ov000/GameState_CopyFourWordsAndSetFlag.cpp:
+src/Combat/Turns/GameState_CopyFourWordsAndSetFlag.cpp:
     complete
     .text start:0x02163378 end:0x021633b8
 
-src/GameState/ov000/func_ov000_02175440.cpp:
+src/Combat/Turns/GameState_InvalidateRecordWordForEligibleLastEntry.cpp:
     complete
     .text start:0x02175440 end:0x02175480
 
-src/GameState/ov000/GameState_SetFourSlotRecordRelativeByteTo67.cpp:
+src/Combat/Turns/GameState_SetFourSlotRecordRelativeByteTo67.cpp:
     complete
     .text start:0x0218173c end:0x0218177c
 
-src/Graphics/ov000/DrawEightIndexedObjectsAndShadows.cpp:
+src/Combat/Scene/DrawEightIndexedObjectsAndShadows.cpp:
     complete
     .text start:0x02161020 end:0x0216118c
 
-src/Unclassified/ov000/func_ov000_02168268.cpp:
+src/Combat/Scene/BattleScene_InitializePartyAnimationReloadRecord.cpp:
     complete
     .text start:0x02168268 end:0x02168284
 
-src/Memory/ov000/Memory_CopyConstantBlock16.cpp:
+src/Combat/Turns/Memory_CopyConstantBlock16.cpp:
     complete
     .text start:0x02174da4 end:0x02174dc0
 
-src/GameState/ov000/GameState_SetFourSlotRecordFlag2.cpp:
+src/Combat/BattleMenu/BattleMenu_RequestPartyPalettePulseStop.cpp:
     complete
     .text start:0x021754e0 end:0x021754fc
 
-src/Unclassified/ov000/Object_CountEntriesWithPositiveHalfword18.cpp:
+src/Combat/BattleMenu/BattleMenu_CountValidItemChoices.cpp:
     complete
     .text start:0x02171bc0 end:0x02171c04
 
-src/Unclassified/ov000/func_ov000_0217f464.cpp:
+src/Combat/BattleMenu/BattleMenu_HasUnfinishedPartyCommand.cpp:
     complete
     .text start:0x0217f464 end:0x0217f480
 
-src/Unclassified/ov000/ResetFourSixByteRecordsAndFlag.cpp:
+src/Combat/Scene/BattleScene_ResetPartyAnimationReloadQueue.cpp:
     complete
     .text start:0x02168230 end:0x02168268
 
-src/Unclassified/ov000/func_ov000_02176038.cpp:
+src/Combat/BattleMenu/BattleMenu_CancelDisplayResourceLoad.cpp:
     complete
     .text start:0x02176038 end:0x02176054
 
-src/Unclassified/ov000/func_ov000_02181d4c.cpp:
+src/Combat/Turns/Combat_ReadLinkedRecordModeOneIndexZero.cpp:
     complete
     .text start:0x02181d4c end:0x02181d68
 
-src/Unclassified/ov000/func_ov000_02181d88.cpp:
+src/Combat/Turns/Combat_ReadLinkedRecordModeOneIndexTwo.cpp:
     complete
     .text start:0x02181d88 end:0x02181da4
 
-src/GameState/ov000/GameState_ClassifyIndexedRecord.cpp:
+src/Combat/Turns/GameState_ClassifyIndexedRecord.cpp:
     complete
     .text start:0x02174e34 end:0x02174e50
 
-src/Unclassified/ov000/func_ov000_02181da4.cpp:
+src/Combat/Turns/Combat_ReadLinkedRecordModeOneIndexThree.cpp:
     complete
     .text start:0x02181da4 end:0x02181dc0
 
-src/Unclassified/ov000/func_ov000_02181df8.cpp:
+src/Combat/Turns/Combat_ReadLinkedRecordModeOneIndexSix.cpp:
     complete
     .text start:0x02181df8 end:0x02181e14
 
-src/Unclassified/ov000/func_ov000_02181dc0.cpp:
+src/Combat/Turns/Combat_ReadLinkedRecordModeOneIndexFour.cpp:
     complete
     .text start:0x02181dc0 end:0x02181ddc
 
-src/Unclassified/ov000/func_ov000_02181e50.cpp:
+src/Combat/Turns/Combat_ReadLinkedRecordModeZeroIndexOne.cpp:
     complete
     .text start:0x02181e50 end:0x02181e6c
 
-src/Unclassified/ov000/Object_SetIndexedEntryAndRefreshCount.cpp:
+src/Combat/BattleMenu/BattleMenu_SetItemChoice.cpp:
     complete
     .text start:0x02171b68 end:0x02171b9c
 
-src/GameState/ov000/Ov000_DecrementStateTimers.cpp:
+src/Combat/Turns/Ov000_DecrementStateTimers.cpp:
     complete
     .text start:0x021824d8 end:0x0218251c
 
-src/Unclassified/ov000/func_ov000_02181ea4.cpp:
+src/Combat/Turns/Combat_ReadLinkedRecordModeZeroIndexFour.cpp:
     complete
     .text start:0x02181ea4 end:0x02181ec0
 
-src/Unclassified/ov000/Ov000_ForwardSecondAndThirdWithMode0Index2.cpp:
+src/Combat/Turns/Combat_ReadSecondaryLinkedTargetAtSlotTwo.cpp:
     complete
     .text start:0x02181e6c end:0x02181e88
 
-src/Unclassified/ov000/func_ov000_02181ddc.cpp:
+src/Combat/Turns/Combat_ReadLinkedRecordModeOneIndexFive.cpp:
     complete
     .text start:0x02181ddc end:0x02181df8
 
-src/Unclassified/ov000/func_ov000_02181e88.cpp:
+src/Combat/Turns/Combat_ReadLinkedRecordModeZeroIndexThree.cpp:
     complete
     .text start:0x02181e88 end:0x02181ea4
 
-src/Unclassified/ov000/func_ov000_02181ec0.cpp:
+src/Combat/Turns/Combat_ReadLinkedRecordModeZeroIndexFive.cpp:
     complete
     .text start:0x02181ec0 end:0x02181edc
 
-src/Unclassified/ov000/func_ov000_02181f14.cpp:
+src/Combat/Turns/Combat_ReadLinkedRecordModeTwoIndexZero.cpp:
     complete
     .text start:0x02181f14 end:0x02181f30
 
-src/Unclassified/ov000/func_ov000_02181edc.cpp:
+src/Combat/Turns/Combat_ReadLinkedRecordModeZeroIndexSix.cpp:
     complete
     .text start:0x02181edc end:0x02181ef8
 
-src/Unclassified/ov000/func_ov000_02181e14.cpp:
+src/Combat/Turns/Combat_ReadLinkedRecordModeOneIndexSeven.cpp:
     complete
     .text start:0x02181e14 end:0x02181e30
 
-src/Unclassified/ov000/Ov000_ForwardSecondAndThirdWithMode2Index1.cpp:
+src/Combat/Turns/Combat_ReadSecondaryLinkedSelectedValueAtSlotOne.cpp:
     complete
     .text start:0x02181f30 end:0x02181f4c
 
-src/GameState/ov000/Object_CountMatchesAtOffset1D1C.cpp:
+src/Combat/BattleMenu/BattleMenu_CountEnemyTargetsWithGroupKey.cpp:
     complete
     .text start:0x02175348 end:0x0217538c
 
-src/Unclassified/ov000/Object_InitializeNextRecordAndSetByte.cpp:
+src/Combat/Scene/BattleScene_QueuePartyAnimationReload.cpp:
     complete
     .text start:0x02168644 end:0x0216867c
 
-src/Unclassified/ov000/func_ov000_02181ef8.cpp:
+src/Combat/Turns/Combat_ReadLinkedRecordModeZeroIndexSeven.cpp:
     complete
     .text start:0x02181ef8 end:0x02181f14
 
-src/GameState/ov000/GameState_SetEligiblePartySlotValue100.cpp:
+src/Combat/Turns/GameState_SetEligiblePartySlotValue100.cpp:
     complete
     .text start:0x02175628 end:0x021756b8
 
-src/GameState/ov000/GameState_MarkFourSlotRecordByStoredIndex.cpp:
+src/Combat/BattleMenu/BattleMenu_ReplacePartyCommandHistoryTops.cpp:
     complete
     .text start:0x0218142c end:0x021814bc
 
-src/Resource/ov000/Resource_InitializeThreeEntryCounts.cpp:
+src/Combat/Turns/Resource_InitializeThreeEntryCounts.cpp:
     complete
     .text start:0x0215d414 end:0x0215d588
 
-src/GameState/ov000/GameState_IsFieldEa8ValueSupported.cpp:
+src/Combat/Turns/GameState_IsFieldEa8ValueSupported.cpp:
     complete
     .text start:0x0216265c end:0x021626a0
 
-src/GameState/ov000/func_ov000_0217608c.cpp:
+src/Combat/Turns/GameState_CountFourSlotsWithEnabledObjectByte.cpp:
     complete
     .text start:0x0217608c end:0x021760d4
 
-src/GameState/ov000/GameState_DecreaseCombatantFieldByIndex.cpp:
+src/Combat/Turns/GameState_DecreaseCombatantFieldByIndex.cpp:
     complete
     .text start:0x0215a124 end:0x0215a16c
 
-src/GameState/ov000/CountFourSlotRecordsWithoutFlag.cpp:
+src/Combat/Turns/CountFourSlotRecordsWithoutFlag.cpp:
     complete
     .text start:0x02175f80 end:0x02175fc8
 
-src/Filesystem/ov000/Ov000_IsBackgroundTaskComplete.cpp:
+src/Combat/Scene/Ov000_IsBackgroundTaskComplete.cpp:
     complete
     .text start:0x0216fd38 end:0x0216fd80
 
-src/GameState/ov000/CopyEnabledIdsToWords.cpp:
+src/Combat/Turns/CopyEnabledIdsToWords.cpp:
     complete
     .text start:0x02181d04 end:0x02181d4c
 
-src/Unclassified/ov000/Unclassified_FindSentinelRecordAndWriteValues.cpp:
+src/Combat/Turns/Combat_GetActionSummonedSpecies.cpp:
     complete
     .text start:0x0215fb54 end:0x0215fb9c
 
-src/GameState/ov000/GameState_AppendActiveObjectRecords.cpp:
+src/Combat/BattleMenu/GameState_AppendActiveObjectRecords.cpp:
     complete
     .text start:0x02171c04 end:0x02171d90
 
-src/Unclassified/ov000/func_ov000_0215fa84.cpp:
+src/Combat/Turns/Combat_GetDeferredActionParameters.cpp:
     complete
     .text start:0x0215fa84 end:0x0215faa4
 
-src/Util/ov000/Util_IncrementByteCounterWrapAt18.cpp:
+src/Combat/Scene/MonsterGroup_AdvanceNameSuffix.cpp:
     complete
     .text start:0x02161bec end:0x02161c0c
 
-src/Unclassified/ov000/func_ov000_0215e9b8.cpp:
+src/Combat/Turns/Combat_GetCurrentMessageLinkSlot.cpp:
     complete
     .text start:0x0215e9b8 end:0x0215e9d8
 
-src/GameState/ov000/GameState_SetFourSlotRecordByte43E.cpp:
+src/Combat/Turns/BattleHud_SetPartySelectionLock.cpp:
     complete
     .text start:0x02162b70 end:0x02162b90
 
-src/Unclassified/ov000/Util_CallStateHandlerIfLastStackEntryIs3.cpp:
+src/Combat/Turns/CombatScene_ResetPartySelectionIfActive.cpp:
     complete
     .text start:0x02163d94 end:0x02163db4
 
-src/GameState/ov000/FilterAndCompactSignedObjectIndices.cpp:
+src/Combat/Turns/FilterAndCompactSignedObjectIndices.cpp:
     complete
     .text start:0x0217ee7c end:0x0217f00c
 
-src/System/ov000/System_CallStateFunctionWhenLastStackEntryIsThree.cpp:
+src/Combat/Turns/System_CallStateFunctionWhenLastStackEntryIsThree.cpp:
     complete
     .text start:0x02163b40 end:0x02163b60
 
-src/Unclassified/ov000/func_ov000_0215ff80.cpp:
+src/Combat/Turns/Combat_GetTargetFromHistory.cpp:
     complete
     .text start:0x0215ff80 end:0x0215ffa0
 
-src/Unclassified/ov000/EnableField55F4Bits2And4.cpp:
+src/Combat/Scene/BattleScene_MarkPartyAndMonsterSetupReady.cpp:
     complete
     .text start:0x02166e3c end:0x02166e5c
 
-src/GameState/ov000/GameState_ShuffleFourActiveIndices.cpp:
+src/Combat/Turns/GameState_ShuffleFourActiveIndices.cpp:
     complete
     .text start:0x02163894 end:0x02163928
 
-src/GameState/ov000/GameState_GetValidLinkedObjectIndex.cpp:
+src/Combat/Turns/GameState_GetValidLinkedObjectIndex.cpp:
     complete
     .text start:0x021819c8 end:0x02181a5c
 
-src/Graphics/ov000/Graphics_ApplySelectedAndIndexedCombatantTransforms.cpp:
+src/Combat/Scene/Graphics_ApplySelectedAndIndexedCombatantTransforms.cpp:
     complete
     .text start:0x02167dd8 end:0x02167e6c
 
-src/Unclassified/ov000/Object_GetHalfwordRatioAt138.cpp:
+src/Combat/Turns/Combat_GetHealthRatio.cpp:
     complete
     .text start:0x02155a04 end:0x02155a50
 
-src/GameState/ov000/GameState_BuildIndexedNameBufferAndLoadRecord.cpp:
+src/Combat/BattleMenu/GameState_BuildIndexedNameBufferAndLoadRecord.cpp:
     complete
     .text start:0x02177cb8 end:0x02177d04
 
-src/GameState/ov000/func_ov000_021633b8.cpp:
+src/Combat/Turns/GameState_AppendSixByteRecord.cpp:
     complete
     .text start:0x021633b8 end:0x02163404
 
-src/GameState/ov000/GameState_UpdateStoredProtagonistIndex.cpp:
+src/Combat/Turns/GameState_UpdateStoredProtagonistIndex.cpp:
     complete
     .text start:0x0216377c end:0x021637c8
 
-src/Combat/ov000/Combat_TestCriticalHitRoll.cpp:
+src/Combat/Turns/Combat_TestCriticalHitRoll.cpp:
     complete
     .text start:0x02156cc4 end:0x02156e30
 
-src/GameState/ov000/GameState_CalculateIndexedObjectWeightedValue.cpp:
+src/Combat/Turns/GameState_CalculateIndexedObjectWeightedValue.cpp:
     complete
     .text start:0x02156270 end:0x021563ec
 
-src/Resource/ov000/Resource_InitializeTextCommandState.cpp:
+src/Combat/Turns/Resource_InitializeTextCommandState.cpp:
     complete
     .text start:0x0217f480 end:0x0217f518
 
-src/Util/ov000/Util_InitializeStateTwoAndFixedPointDefaults.cpp:
+src/Combat/Scene/Util_InitializeStateTwoAndFixedPointDefaults.cpp:
     complete
     .text start:0x0216d2d0 end:0x0216d368
 
-src/GameState/ov000/GameState_QueueFourSlotObjectCountdown.cpp:
+src/Combat/Turns/GameState_QueueFourSlotObjectCountdown.cpp:
     complete
     .text start:0x021637fc end:0x02163894
 
-src/GameState/ov000/GameState_CopyStateAndResetRandomStreams.cpp:
+src/Combat/Scene/GameState_CopyStateAndResetRandomStreams.cpp:
     complete
     .text start:0x021605d0 end:0x02160620
 
-src/GameState/ov000/GameState_UpdateSelectionIfEligible.cpp:
+src/Combat/Turns/GameState_UpdateSelectionIfEligible.cpp:
     complete
     .text start:0x02153cc0 end:0x02153d10
 
-src/Util/ov000/Util_ClearFlagForMatchingEntry.cpp:
+src/Combat/Scene/Util_ClearFlagForMatchingEntry.cpp:
     complete
     .text start:0x02167434 end:0x02167484
 
-src/Util/ov000/Object_AddUniquePositiveHalfword.cpp:
+src/Combat/Scene/Object_AddUniquePositiveHalfword.cpp:
     complete
     .text start:0x0216fdf8 end:0x0216fe48
 
-src/GameState/ov000/GameState_MarkUnflaggedListedPartyRecords.cpp:
+src/Combat/Turns/GameState_MarkUnflaggedListedPartyRecords.cpp:
     complete
     .text start:0x021756b8 end:0x02175754
 
-src/Util/ov000/Util_ReplaceInactiveIndexWithRandomActiveRecord.cpp:
+src/Combat/Turns/Util_ReplaceInactiveIndexWithRandomActiveRecord.cpp:
     complete
     .text start:0x02153c24 end:0x02153cc0
 
-src/Math/ov000/Math_BuildYUpBasisAndTranslation.cpp:
+src/Combat/Scene/Math_BuildYUpBasisAndTranslation.cpp:
     complete
     .text start:0x0216d234 end:0x0216d2d0
 
-src/GameState/ov000/GameState_SetReadyFlagOnSlots.cpp:
+src/Combat/BattleMenu/GameState_SetReadyFlagOnSlots.cpp:
     complete
     .text start:0x02181694 end:0x021816e8
 
-src/GameState/ov000/func_ov000_021816e8.cpp:
+src/Combat/Turns/GameState_ClearIndexedOrAllSlotEnableBytes.cpp:
     complete
     .text start:0x021816e8 end:0x0218173c
 
-src/Combat/ov000/Combat_TestCombatantBlockingFlags.cpp:
+src/Combat/Turns/Combat_TestCombatantBlockingFlags.cpp:
     complete
     .text start:0x02155f9c end:0x02156038
 
-src/Unclassified/ov000/ClearSelectedRecordActiveBits.cpp:
+src/Combat/BattleMenu/BattleMenu_DisablePartyCommandInput.cpp:
     complete
     .text start:0x0217fcc4 end:0x0217fd60
 
-src/Combat/ov000/Combat_TestDescriptorAttributeRoll.cpp:
+src/Combat/Turns/Combat_TestDescriptorAttributeRoll.cpp:
     complete
     .text start:0x02156e30 end:0x02156f98
 
-src/Combat/ov000/Combat_BuildRecordCompatibilityBitset.cpp:
+src/Combat/BattleMenu/BattleMenu_BuildSkillEquipmentCompatibilityMask.cpp:
     complete
     .text start:0x0217c32c end:0x0217c4e8
 
-src/GameState/ov000/func_ov000_02160c60.cpp:
+src/Combat/Scene/GameState_RefreshAttachedIndexedObjectState.cpp:
     complete
     .text start:0x02160c60 end:0x02160c84
 
-src/Unclassified/ov000/func_ov000_0216341c.cpp:
+src/Combat/Turns/Grotto_QueueTreasureMapTypeSelection.cpp:
     complete
     .text start:0x0216341c end:0x02163440
 
-src/Unclassified/ov000/Unclassified_FindLinkedListNodeByFirstWord.cpp:
+src/Combat/Commands/CombatScript_FindCommandByOpcode.cpp:
     complete
     .text start:0x02169b54 end:0x02169b78
 
-src/Graphics/ov000/func_ov000_02170054.cpp:
+src/Combat/BattleMenu/BattleMenu_ReleaseMemberTextAndResetCommand.cpp:
     complete
     .text start:0x02170054 end:0x02170078
 
-src/GameState/ov000/GameState_GetIndexedWordIfValid.cpp:
+src/Combat/BattleMenu/GameState_GetIndexedWordIfValid.cpp:
     complete
     .text start:0x02171b9c end:0x02171bc0
 
-src/GameState/ov000/GameState_GetObjectPositionAndZoneRequest.cpp:
+src/Combat/Scene/GameState_GetObjectPositionAndZoneRequest.cpp:
     complete
     .text start:0x021677d8 end:0x021677fc
 
-src/Unclassified/ov000/func_ov000_0216f1e4.cpp:
+src/Combat/Scene/BattleCamera_SetOrbitInterpolation.cpp:
     complete
     .text start:0x0216f1e4 end:0x0216f208
 
-src/Unclassified/ov000/func_ov000_021815e4.cpp:
+src/Combat/BattleMenu/BattleMenu_FindSelectedEquipmentRecord.cpp:
     complete
     .text start:0x021815e4 end:0x02181608
 
-src/Unclassified/ov000/Unclassified_GetPointerAtIndexOrDefaultZero.cpp:
+src/Combat/BattleMenu/BattleMenu_GetEnemyTargetGroupKey.cpp:
     complete
     .text start:0x021761c8 end:0x021761ec
 
-src/Util/ov000/Util_CopyFourSlotRecordSummary.cpp:
+src/Combat/Turns/Util_CopyFourSlotRecordSummary.cpp:
     complete
     .text start:0x02162c14 end:0x02162c90
 
-src/Graphics/ov000/Graphics_FormatPagedRecordNamesWithStyle.cpp:
+src/Combat/BattleMenu/Graphics_FormatPagedRecordNamesWithStyle.cpp:
     complete
     .text start:0x0217979c end:0x0217992c
 
-src/GameState/ov000/func_ov000_0215fd24.cpp:
+src/Combat/Turns/GameState_IsProtagonistOrLinkedToProtagonist.cpp:
     complete
     .text start:0x0215fd24 end:0x0215fd7c
 
-src/GameState/ov000/func_ov000_02175754.cpp:
+src/Combat/Turns/GameState_RefreshFourSlotLinkedObjectValues.cpp:
     complete
     .text start:0x02175754 end:0x021757ac
 
-src/Math/ov000/Math_ComputeThresholdedIntegerRatio.cpp:
+src/Combat/Scene/Math_ComputeThresholdedIntegerRatio.cpp:
     complete
     .text start:0x02167b5c end:0x02167bb4
 
-src/Graphics/ov000/Graphics_FormatAvailablePartyMemberChoices.cpp:
+src/Combat/BattleMenu/Graphics_FormatAvailablePartyMemberChoices.cpp:
     complete
     .text start:0x021777e4 end:0x021779b4
 
-src/Combat/ov000/Combat_ResetSelectedCombatantComponentStates.cpp:
+src/Combat/Scene/Combat_ResetSelectedCombatantComponentStates.cpp:
     complete
     .text start:0x02167f10 end:0x02167fb0
 
-src/GameState/ov000/Owner_ResetCacheAndLoadMatchingRecord.cpp:
+src/Combat/BattleMenu/Owner_ResetCacheAndLoadMatchingRecord.cpp:
     complete
     .text start:0x02177798 end:0x021777e4
 
-src/Graphics/ov000/UpdateMatrixFromIndexedObjectHeading.cpp:
+src/Combat/Scene/UpdateMatrixFromIndexedObjectHeading.cpp:
     complete
     .text start:0x0216d560 end:0x0216d600
 
-src/Unclassified/ov000/Overlay_CopyConfiguredRecordHalfwords.cpp:
+src/Combat/Turns/Combat_CollectConfiguredEnemySpecies.cpp:
     complete
     .text start:0x0215ed34 end:0x0215ed8c
 
-src/Unclassified/ov000/IsOneOfSixAcceptedIds.cpp:
+src/Combat/Turns/Combat_IsFourMemberCooperativeAction.cpp:
     complete
     .text start:0x02159c58 end:0x02159cb4
 
-src/GameState/ov000/AccumulateIndexedRecordFlags.cpp:
+src/Combat/BattleMenu/BattleMenu_HasActivePartyCommandInput.cpp:
     complete
     .text start:0x0217fb98 end:0x0217fbf4
 
-src/Util/ov000/Util_FindLinkedNodeByWord.cpp:
+src/Combat/Commands/Util_FindLinkedNodeByWord.cpp:
     complete
     .text start:0x02169b04 end:0x02169b2c
 
-src/Util/ov000/Util_AppendNodeToLinkedListTail.cpp:
+src/Combat/Commands/Util_AppendNodeToLinkedListTail.cpp:
     complete
     .text start:0x02169b2c end:0x02169b54
 
-src/Graphics/ov000/Graphics_AllocateTexturePaletteSlots.cpp:
+src/Combat/Scene/Graphics_AllocateTexturePaletteSlots.cpp:
     complete
     .text start:0x0216733c end:0x021673e0
 
-src/GameState/ov000/GameState_GetIndexedObjectStateBits3And4.cpp:
+src/Combat/Turns/GameState_GetIndexedObjectStateBits3And4.cpp:
     complete
     .text start:0x02159d94 end:0x02159dbc
 
-src/Util/ov000/Util_CopyLinkedListFieldToArray.cpp:
+src/Combat/Turns/Util_CopyLinkedListFieldToArray.cpp:
     complete
     .text start:0x02181c94 end:0x02181cbc
 
-src/Util/ov000/Util_CopyLinkedNodeHalfwordsToArray.cpp:
+src/Combat/Turns/Util_CopyLinkedNodeHalfwordsToArray.cpp:
     complete
     .text start:0x02181c6c end:0x02181c94
 
-src/Network/ov000/Overlay_EnqueueLinkedNode.cpp:
+src/Combat/Commands/Overlay_EnqueueLinkedNode.cpp:
     complete
     .text start:0x02169b78 end:0x02169bb4
 
-src/Resource/ov000/Script_QueueCopiedStringNode.cpp:
+src/Combat/Commands/Script_QueueCopiedStringNode.cpp:
     complete
     .text start:0x0216ac90 end:0x0216ad0c
 
-src/Network/ov000/Network_AllocateAndEnqueueTypeNinetyFourNode.cpp:
+src/Combat/Commands/Network_AllocateAndEnqueueTypeNinetyFourNode.cpp:
     complete
     .text start:0x0216c28c end:0x0216c2c4
 
-src/Resource/ov000/Script_AllocateType4EIntegerEntry.cpp:
+src/Combat/Commands/Script_AllocateType4EIntegerEntry.cpp:
     complete
     .text start:0x0216bcac end:0x0216bcf0
 
-src/Combat/ov000/Combat_AllocateAndRegisterOwnerEntry.cpp:
+src/Combat/Commands/Combat_AllocateAndRegisterOwnerEntry.cpp:
     complete
     .text start:0x02169bb4 end:0x02169bf0
 
-src/Resource/ov000/AllocateScriptParameterRecord.cpp:
+src/Combat/Commands/AllocateScriptParameterRecord.cpp:
     complete
     .text start:0x0216a300 end:0x0216a350
 
-src/Resource/ov000/Script_AllocateAndQueueStringRecord.cpp:
+src/Combat/Commands/Script_AllocateAndQueueStringRecord.cpp:
     complete
     .text start:0x02169d08 end:0x02169e54
 
-src/Resource/ov000/Resource_AllocateType100ScriptCommand.cpp:
+src/Combat/Commands/Resource_AllocateType100ScriptCommand.cpp:
     complete
     .text start:0x0216c414 end:0x0216c490
 
-src/Resource/ov000/Script_QueueCommand37WithOptionalValues.cpp:
+src/Combat/Commands/Script_QueueCommand37WithOptionalValues.cpp:
     complete
     .text start:0x0216b564 end:0x0216b6ac
 
-src/Resource/ov000/Script_AllocateTaggedHalfwordEntry.cpp:
+src/Combat/Commands/Script_AllocateTaggedHalfwordEntry.cpp:
     complete
     .text start:0x0216aad4 end:0x0216ab24
 
-src/Network/ov000/Network_AllocateAndEnqueueTypeNinetyTwoNode.cpp:
+src/Combat/Commands/Network_AllocateAndEnqueueTypeNinetyTwoNode.cpp:
     complete
     .text start:0x0216c1ec end:0x0216c23c
 
-src/Resource/ov000/Script_AllocateTypedParameterEntry.cpp:
+src/Combat/Commands/Script_AllocateTypedParameterEntry.cpp:
     complete
     .text start:0x0216c584 end:0x0216c5d4
 
-src/GameState/ov000/Script_AllocateTypeTwentyEightEntry.cpp:
+src/Combat/Commands/Script_AllocateTypeTwentyEightEntry.cpp:
     complete
     .text start:0x0216ab24 end:0x0216ab74
 
-src/Resource/ov000/Script_AllocateType39EntryFromParameter.cpp:
+src/Combat/Commands/CombatScript_QueueOpcode27Byte.cpp:
     complete
     .text start:0x0216adcc end:0x0216ae1c
 
-src/Resource/ov000/AllocateScriptIntegerRecord.cpp:
+src/Combat/Commands/AllocateScriptIntegerRecord.cpp:
     complete
     .text start:0x0216c5d4 end:0x0216c624
 
-src/Resource/ov000/Script_AllocateTypeSevenHalfwordEntry.cpp:
+src/Combat/Commands/Script_AllocateTypeSevenHalfwordEntry.cpp:
     complete
     .text start:0x0216a018 end:0x0216a1a4
 
-src/Resource/ov000/Resource_ScriptAllocateAndSubmitType1DEntry.cpp:
+src/Combat/Commands/Resource_ScriptAllocateAndSubmitType1DEntry.cpp:
     complete
     .text start:0x0216ab74 end:0x0216abc4
 
-src/Resource/ov000/Script_QueueIndexedFixedPointNode.cpp:
+src/Combat/Commands/Script_QueueIndexedFixedPointNode.cpp:
     complete
     .text start:0x0216a95c end:0x0216a9dc
 
-src/Resource/ov000/Resource_ScriptQueueType2BRecord.cpp:
+src/Combat/Commands/Resource_ScriptQueueType2BRecord.cpp:
     complete
     .text start:0x0216b088 end:0x0216b110
 
-src/Resource/ov000/Script_AllocateTaggedHalfwordEntry6E.cpp:
+src/Combat/Commands/Script_AllocateTaggedHalfwordEntry6E.cpp:
     complete
     .text start:0x0216c6d0 end:0x0216c720
 
-src/Resource/ov000/Script_AllocateBooleanParameterEntry.cpp:
+src/Combat/Commands/Script_AllocateBooleanParameterEntry.cpp:
     complete
     .text start:0x0216cc88 end:0x0216ccd8
 
-src/Network/ov000/Network_AllocateAndEnqueueTypeNinetyEightNode.cpp:
+src/Combat/Commands/Network_AllocateAndEnqueueTypeNinetyEightNode.cpp:
     complete
     .text start:0x0216c9ac end:0x0216c9fc
 
-src/Resource/ov000/Script_AllocateTypeFortySixRecordWithOptionalString.cpp:
+src/Combat/Commands/Script_AllocateTypeFortySixRecordWithOptionalString.cpp:
     complete
     .text start:0x0216b180 end:0x0216b204
 
-src/Resource/ov000/Script_AllocateType40EntryFromParameterMinus26.cpp:
+src/Combat/Commands/CombatScript_QueueOpcode28BiasedSelector.cpp:
     complete
     .text start:0x0216ae1c end:0x0216ae70
 
-src/GameState/ov000/Script_AllocateTypeOneHundredThirtyTwoEntry.cpp:
+src/Combat/Commands/Script_AllocateTypeOneHundredThirtyTwoEntry.cpp:
     complete
     .text start:0x0216cf84 end:0x0216cfd4
 
-src/Resource/ov000/Script_AllocateType5DHalfwordEntry.cpp:
+src/Combat/Commands/Script_AllocateType5DHalfwordEntry.cpp:
     complete
     .text start:0x0216c23c end:0x0216c28c
 
-src/Combat/ov000/CombatScript_InvokeHandler02169bb4With25.cpp:
+src/Combat/Commands/CombatScript_InvokeHandler02169bb4With25.cpp:
     complete
     .text start:0x0216ada4 end:0x0216adb8
 
-src/Resource/ov000/AllocateScriptHalfwordRecord.cpp:
+src/Combat/Commands/AllocateScriptHalfwordRecord.cpp:
     complete
     .text start:0x0216b700 end:0x0216b754
 
-src/Resource/ov000/Resource_AllocateType115ScriptCommand.cpp:
+src/Combat/Commands/Resource_AllocateType115ScriptCommand.cpp:
     complete
     .text start:0x0216c85c end:0x0216c8e4
 
-src/Resource/ov000/Resource_ScriptAllocateAndSubmitType40Entry.cpp:
+src/Combat/Commands/CombatScript_TryQueueOpcode40Integer.cpp:
     complete
     .text start:0x0216b900 end:0x0216b954
 
-src/Resource/ov000/Script_AllocateCoordinateHalfwordEntry.cpp:
+src/Combat/Commands/Script_AllocateCoordinateHalfwordEntry.cpp:
     complete
     .text start:0x0216b8ac end:0x0216b900
 
-src/Resource/ov000/Script_TryAllocateTypedParameterEntry.cpp:
+src/Combat/Commands/Script_TryAllocateTypedParameterEntry.cpp:
     complete
     .text start:0x0216bc00 end:0x0216bc54
 
-src/Resource/ov000/Script_AllocateTaggedHalfwordEntry47.cpp:
+src/Combat/Commands/Script_AllocateTaggedHalfwordEntry47.cpp:
     complete
     .text start:0x0216bb1c end:0x0216bb70
 
-src/Unclassified/ov000/Ov000_ApplyValue2DAndReturnOne.cpp:
+src/Combat/Commands/CombatScript_QueueOpcode2D.cpp:
     complete
     .text start:0x0216b16c end:0x0216b180
 
-src/Resource/ov000/Ov000_AllocateAndInitializeLinkedEntry.cpp:
+src/Combat/Commands/Ov000_AllocateAndInitializeLinkedEntry.cpp:
     complete
     .text start:0x0216b6ac end:0x0216b700
 
-src/Network/ov000/Network_AllocateAndEnqueueTypeSixtySixNode.cpp:
+src/Combat/Commands/Network_AllocateAndEnqueueTypeSixtySixNode.cpp:
     complete
     .text start:0x0216b9a8 end:0x0216ba00
 
-src/Resource/ov000/Resource_ScriptQueueType42VectorRecord.cpp:
+src/Combat/Commands/Resource_ScriptQueueType42VectorRecord.cpp:
     complete
     .text start:0x0216aed0 end:0x0216b088
 
-src/Resource/ov000/Script_AllocateType82ConditionalByteEntry.cpp:
+src/Combat/Commands/Script_AllocateType82ConditionalByteEntry.cpp:
     complete
     .text start:0x0216cf18 end:0x0216cf70
 
-src/Resource/ov000/Script_AllocateType84EntryFromFloatParameter.cpp:
+src/Combat/Commands/CombatScript_QueueOpcode54FixedPointHalfword.cpp:
     complete
     .text start:0x0216be00 end:0x0216be58
 
-src/GameState/ov000/Script_AllocateTypeOneHundredFourteenEntry.cpp:
+src/Combat/Commands/Script_AllocateTypeOneHundredFourteenEntry.cpp:
     complete
     .text start:0x0216c804 end:0x0216c85c
 
-src/Resource/ov000/Script_QueueOpcode76FixedPointParameters.cpp:
+src/Combat/Commands/Script_QueueOpcode76FixedPointParameters.cpp:
     complete
     .text start:0x0216cad0 end:0x0216cc88
 
-src/Combat/ov000/CombatScript_InvokeHandler02169bb4With4B.cpp:
+src/Combat/Commands/CombatScript_InvokeHandler02169bb4With4B.cpp:
     complete
     .text start:0x0216bbec end:0x0216bc00
 
-src/Resource/ov000/Script_QueueFixedRadianCommand8C.cpp:
+src/Combat/Commands/Script_QueueFixedRadianCommand8C.cpp:
     complete
     .text start:0x0216d110 end:0x0216d19c
 
-src/Resource/ov000/Resource_ScriptQueueType1ERecord.cpp:
+src/Combat/Commands/Resource_ScriptQueueType1ERecord.cpp:
     complete
     .text start:0x0216abc4 end:0x0216ac68
 
-src/Unclassified/ov000/Ov000_ApplyValue67AndReturnOne.cpp:
+src/Combat/Commands/CombatScript_QueueOpcode67.cpp:
     complete
     .text start:0x0216c500 end:0x0216c514
 
-src/Resource/ov000/Script_AllocateAndInitializeType48Record.cpp:
+src/Combat/Commands/CombatScript_TryQueueOpcode48Integer.cpp:
     complete
     .text start:0x0216bb70 end:0x0216bbc4
 
-src/Resource/ov000/AllocateScriptBytePairRecord.cpp:
+src/Combat/Commands/AllocateScriptBytePairRecord.cpp:
     complete
     .text start:0x0216a8d8 end:0x0216a934
 
-src/Resource/ov000/Script_AllocateTaggedHalfwordIntEntry.cpp:
+src/Combat/Commands/Script_AllocateTaggedHalfwordIntEntry.cpp:
     complete
     .text start:0x0216c4a4 end:0x0216c500
 
-src/Resource/ov000/Resource_ScriptAllocateAndSubmitType34Entry.cpp:
+src/Combat/Commands/CombatScript_QueueOpcode34BytePair.cpp:
     complete
     .text start:0x0216b408 end:0x0216b464
 
-src/Combat/ov000/CombatScript_InvokeHandler02169bb4With83.cpp:
+src/Combat/Commands/CombatScript_InvokeHandler02169bb4With83.cpp:
     complete
     .text start:0x0216cf70 end:0x0216cf84
 
-src/Resource/ov000/Resource_AllocateScriptType44Entry.cpp:
+src/Combat/Commands/CombatScript_TryQueueOpcode44Integer.cpp:
     complete
     .text start:0x0216ba14 end:0x0216ba68
 
-src/Resource/ov000/Script_AllocateTwoHalfwordParameterEntry.cpp:
+src/Combat/Commands/Script_AllocateTwoHalfwordParameterEntry.cpp:
     complete
     .text start:0x0216c514 end:0x0216c570
 
-src/Unclassified/ov000/Ov000_ApplyValue87AndReturnOne.cpp:
+src/Combat/Commands/CombatScript_QueueOpcode87.cpp:
     complete
     .text start:0x0216cffc end:0x0216d010
 
-src/Resource/ov000/Ov000_AllocateOptionalLinkedEntry.cpp:
+src/Combat/Commands/Ov000_AllocateOptionalLinkedEntry.cpp:
     complete
     .text start:0x0216cdec end:0x0216ce48
 
-src/Resource/ov000/Script_AllocateType69EntryWithTwoIntegers.cpp:
+src/Combat/Commands/CombatScript_TryQueueOpcode45HalfwordPair.cpp:
     complete
     .text start:0x0216ba68 end:0x0216bac8
 
-src/Combat/ov000/CombatScript_InvokeHandler02169bb4With8D.cpp:
+src/Combat/Commands/CombatScript_InvokeHandler02169bb4With8D.cpp:
     complete
     .text start:0x0216d19c end:0x0216d1b0
 
-src/Resource/ov000/Script_AllocateTaggedByteAndHalfwordEntry.cpp:
+src/Combat/Commands/Script_AllocateTaggedByteAndHalfwordEntry.cpp:
     complete
     .text start:0x0216c624 end:0x0216c680
 
-src/Resource/ov000/Script_AllocateType29BytePairEntry.cpp:
+src/Combat/Commands/Script_AllocateType29BytePairEntry.cpp:
     complete
     .text start:0x0216ae70 end:0x0216aed0
 
-src/Resource/ov000/Script_QueuePatchedStringNode.cpp:
+src/Combat/Commands/Script_QueuePatchedStringNode.cpp:
     complete
     .text start:0x0216a4c8 end:0x0216a55c
 
-src/Unclassified/ov000/Util_CallFunctionWithConstant7E.cpp:
+src/Combat/Commands/CombatScript_QueueOpcode7E.cpp:
     complete
     .text start:0x0216ce48 end:0x0216ce5c
 
-src/Combat/ov000/Combat_ResetRecordPools.cpp:
+src/Combat/Turns/Combat_ResetRecordPools.cpp:
     complete
     .text start:0x0215d090 end:0x0215d414
 
-src/Resource/ov000/Script_AllocateVectorAndThreeFixedPointScalars.cpp:
+src/Combat/Commands/Script_AllocateVectorAndThreeFixedPointScalars.cpp:
     complete
     .text start:0x0216bfa4 end:0x0216c04c
 
-src/Resource/ov000/Script_QueueTwoVectorCommand59.cpp:
+src/Combat/Commands/Script_QueueTwoVectorCommand59.cpp:
     complete
     .text start:0x0216c04c end:0x0216c0f4
 
-src/Resource/ov000/Script_QueueOptionalStringNode.cpp:
+src/Combat/Commands/Script_QueueOptionalStringNode.cpp:
     complete
     .text start:0x0216c144 end:0x0216c1ec
 
-src/Math/ov000/Math_ComputeCosineEasingFromHorizontalLength.cpp:
+src/Combat/Scene/Math_ComputeCosineEasingFromHorizontalLength.cpp:
     complete
     .text start:0x0216f210 end:0x0216f2b8
 
-src/GameState/ov000/GameState_CollectPresentFourSlotPartyIndices.cpp:
+src/Combat/Turns/GameState_CollectPresentFourSlotPartyIndices.cpp:
     complete
     .text start:0x0217edd4 end:0x0217ee7c
 
-src/Combat/ov000/Combat_SelectPrioritizedStatusCode.cpp:
+src/Combat/Turns/Combat_SelectPrioritizedStatusCode.cpp:
     complete
     .text start:0x0217ff34 end:0x02180394
 
-src/GameState/ov000/GameState_ResetExtendedStateAndRandomSeed.cpp:
+src/Combat/Turns/GameState_ResetExtendedStateAndRandomSeed.cpp:
     complete
     .text start:0x0215ce80 end:0x0215d090
 
-src/Filesystem/ov000/Filesystem_RemoveFailedTaskAndResetLoadState.cpp:
+src/Combat/Scene/Filesystem_RemoveFailedTaskAndResetLoadState.cpp:
     complete
     .text start:0x02160e94 end:0x02160ef8
 
-src/Resource/ov000/AllocateScriptValueWithOptionalFlag.cpp:
+src/Combat/Commands/AllocateScriptValueWithOptionalFlag.cpp:
     complete
     .text start:0x0216a1a4 end:0x0216a208
 
-src/Resource/ov000/Script_AllocateTaggedIntegerEntry3A.cpp:
+src/Combat/Commands/Script_AllocateTaggedIntegerEntry3A.cpp:
     complete
     .text start:0x0216b754 end:0x0216b7b8
 
-src/Resource/ov000/AllocateScriptFixedPointRecord.cpp:
+src/Combat/Commands/AllocateScriptFixedPointRecord.cpp:
     complete
     .text start:0x0216ce5c end:0x0216cec0
 
-src/Filesystem/ov000/BackgroundLoader_RemoveFailedTaskAndResetOwnerState.cpp:
+src/Combat/Scene/BackgroundLoader_RemoveFailedTaskAndResetOwnerState.cpp:
     complete
     .text start:0x02160de4 end:0x02160e48
 
-src/Resource/ov000/Script_AllocateScaledFloatParameterEntry.cpp:
+src/Combat/Commands/Script_AllocateScaledFloatParameterEntry.cpp:
     complete
     .text start:0x0216c7a0 end:0x0216c804
 
-src/Unclassified/ov000/Object_UpdateFourRecordType65Offsets.cpp:
+src/Combat/BattleMenu/BattleMenu_AdjustPartyPanelForCommandTransition.cpp:
     complete
     .text start:0x02174fc0 end:0x02175024
 
-src/Util/ov000/Util_AppendLinkedNodeAndIncrementCount.cpp:
+src/Combat/Turns/Util_AppendLinkedNodeAndIncrementCount.cpp:
     complete
     .text start:0x0215fe00 end:0x0215fe2c
 
-src/Resource/ov000/Resource_AllocateAndInitializeLinkedCoordinateEntry.cpp:
+src/Combat/Commands/Resource_AllocateAndInitializeLinkedCoordinateEntry.cpp:
     complete
     .text start:0x02169e54 end:0x02169e80
 
-src/Unclassified/ov000/Util_ResetObjectStateFields.cpp:
+src/Combat/BattleMenu/BattleText_ResetSelectiveStringLoader.cpp:
     complete
     .text start:0x0216fe48 end:0x0216fe74
 
-src/World/ov000/World_GetObjectDimensionByMode.cpp:
+src/Combat/Turns/World_GetObjectDimensionByMode.cpp:
     complete
     .text start:0x021635e4 end:0x02163690
 
-src/Memory/ov000/Memory_Clear66WordsAndHalfword.cpp:
+src/Combat/BattleMenu/Memory_Clear66WordsAndHalfword.cpp:
     complete
     .text start:0x02171614 end:0x02171640
 
-src/GameState/ov000/GameState_ResetSelectedPartyMemberState.cpp:
+src/Combat/Scene/GameState_ResetSelectedPartyMemberState.cpp:
     complete
     .text start:0x021674f4 end:0x021675a0
 
-src/Unclassified/ov000/Object_AddIndexedEntryAndLink.cpp:
+src/Combat/Turns/Combat_AppendResultMessage.cpp:
     complete
     .text start:0x0215a88c end:0x0215a8d4
 
-src/GameState/ov000/GameState_ClearSixteenWordsAndByte86.cpp:
+src/Combat/BattleMenu/GameState_ClearSixteenWordsAndByte86.cpp:
     complete
     .text start:0x02171b3c end:0x02171b68
 
-src/Resource/ov000/Script_AllocateTypeSeventyNineBitfieldRecord.cpp:
+src/Combat/Commands/Script_AllocateTypeSeventyNineBitfieldRecord.cpp:
     complete
     .text start:0x0216bcf0 end:0x0216bd9c
 
-src/GameState/ov000/StoreValueAtIndexedField54F4ForIndex0To3.cpp:
+src/Combat/Turns/CombatScene_SetPartySelectionSyncValue.cpp:
     complete
     .text start:0x02162c90 end:0x02162cbc
 
-src/Filesystem/ov000/Filesystem_QueueLoadFileInGP2IntoOutput.cpp:
+src/Combat/Scene/Filesystem_QueueLoadFileInGP2IntoOutput.cpp:
     complete
     .text start:0x0216fd0c end:0x0216fd38
 
-src/Combat/ov000/SelectWeightedEligibleCombatantIndex.cpp:
+src/Combat/Turns/SelectWeightedEligibleCombatantIndex.cpp:
     complete
     .text start:0x02154f30 end:0x02155154
 
-src/GameState/ov000/GameState_ResetFlaggedEntriesOutsideSelectedOwner.cpp:
+src/Combat/Turns/GameState_ResetFlaggedEntriesOutsideSelectedOwner.cpp:
     complete
     .text start:0x021751ac end:0x02175258
 
-src/Combat/ov000/Combat_TestEffectSuccessAndConsumeWard.cpp:
+src/Combat/Turns/Combat_TestEffectSuccessAndConsumeWard.cpp:
     complete
     .text start:0x02156648 end:0x02156af0
 
-src/Combat/ov000/Combat_CopySecondaryLinkedRecords.cpp:
+src/Combat/Turns/Combat_CopySecondaryLinkedRecords.cpp:
     complete
     .text start:0x0215b278 end:0x0215b5a0
 
-src/Combat/ov000/Combat_AppendCombatantDescriptorRecords.cpp:
+src/Combat/Turns/Combat_AppendCombatantDescriptorRecords.cpp:
     complete
     .text start:0x0215acb8 end:0x0215ae80
 
-src/Unclassified/ov000/Script_AllocateTaggedBytePairHalfwordEntry.cpp:
+src/Combat/Commands/CombatScript_QueueBytePairAndHalfword.cpp:
     complete
     .text start:0x0216b204 end:0x0216b26c
 
-src/GameState/ov000/Script_AllocateTypeNinetySevenEntry.cpp:
+src/Combat/Commands/Script_AllocateTypeNinetySevenEntry.cpp:
     complete
     .text start:0x0216c384 end:0x0216c3ec
 
-src/Resource/ov000/Ov000_AllocateConditionalLinkedEntry.cpp:
+src/Combat/Commands/Ov000_AllocateConditionalLinkedEntry.cpp:
     complete
     .text start:0x0216d0a8 end:0x0216d110
 
-src/GameState/ov000/Overlay_TestResolvedRecordTransformState.cpp:
+src/Combat/Turns/Overlay_TestResolvedRecordTransformState.cpp:
     complete
     .text start:0x021627fc end:0x02162864
 
-src/GameState/ov000/GameState_AddCombatantValueUpToMaximum.cpp:
+src/Combat/Turns/GameState_AddCombatantValueUpToMaximum.cpp:
     complete
     .text start:0x0215a1d4 end:0x0215a23c
 
-src/Resource/ov000/LoadOverlayHeaderAndReturnLength.cpp:
+src/Combat/Scene/LoadOverlayHeaderAndReturnLength.cpp:
     complete
     .text start:0x02166008 end:0x02166070
 
-src/Unclassified/ov000/Script_AllocateScaledFloatEntry.cpp:
+src/Combat/Commands/CombatScript_QueueOptionalFixedPointWithDefault.cpp:
     complete
     .text start:0x0216cd28 end:0x0216cd90
 
-src/Graphics/ov000/Graphics_RebuildOwnerTextRecords.cpp:
+src/Combat/BattleMenu/Graphics_RebuildOwnerTextRecords.cpp:
     complete
     .text start:0x02176498 end:0x02176500
 
-src/GameState/ov000/GameState_ReadLinkedRecordValueByMode.cpp:
+src/Combat/Turns/GameState_ReadLinkedRecordValueByMode.cpp:
     complete
     .text start:0x021818e0 end:0x02181990
 
-src/Graphics/ov000/Graphics_AppendSelectableRecordNameList.cpp:
+src/Combat/BattleMenu/Graphics_AppendSelectableRecordNameList.cpp:
     complete
     .text start:0x0217a2dc end:0x0217a514
 
-src/Resource/ov000/Script_TryAllocateOptionalHalfwordEntry.cpp:
+src/Combat/Commands/Script_TryAllocateOptionalHalfwordEntry.cpp:
     complete
     .text start:0x0216c734 end:0x0216c7a0
 
-src/Combat/ov000/Combat_AppendDescriptorActionForCombatant.cpp:
+src/Combat/Turns/Combat_AppendDescriptorActionForCombatant.cpp:
     complete
     .text start:0x0215af54 end:0x0215b198
 
-src/Resource/ov000/Script_CreateTag22RecordFromStringParameter.cpp:
+src/Combat/Commands/CombatScript_QueueOpcode22CopiedString.cpp:
     complete
     .text start:0x0216ad0c end:0x0216ad7c
 
-src/GameState/ov000/Script_AllocateTypeOneHundredThirtyEightVectorEntry.cpp:
+src/Combat/Commands/Script_AllocateTypeOneHundredThirtyEightVectorEntry.cpp:
     complete
     .text start:0x0216d038 end:0x0216d0a8
 
-src/Unclassified/ov000/Script_ExecuteBufferAndReturnGlobalValue.cpp:
+src/Combat/Commands/CombatScript_CompileBufferToCommandGroups.cpp:
     complete
     .text start:0x0216d1c4 end:0x0216d234
 
-src/Util/ov000/String_FormatAndTrimSuffix.cpp:
+src/Combat/BattleMenu/String_FormatAndTrimSuffix.cpp:
     complete
     .text start:0x0217aa08 end:0x0217aa78
 
-src/GameState/ov000/GameState_AppendIndexedEvent.cpp:
+src/Combat/Turns/GameState_AppendIndexedEvent.cpp:
     complete
     .text start:0x0215ff50 end:0x0215ff80
 
-src/Memory/ov000/Memory_Initialize32ByteRecordWithSentinels.cpp:
+src/Combat/Turns/Memory_Initialize32ByteRecordWithSentinels.cpp:
     complete
     .text start:0x0215fef0 end:0x0215ff20
 
-src/GameState/ov000/GameState_CountSetBitsInWord68.cpp:
+src/Combat/BattleMenu/GameState_CountSetBitsInWord68.cpp:
     complete
     .text start:0x0218155c end:0x0218158c
 
-src/Combat/ov000/Combat_TestDescriptorThresholdChance.cpp:
+src/Combat/Turns/Combat_TestDescriptorThresholdChance.cpp:
     complete
     .text start:0x02156f98 end:0x0215704c
 
-src/Unclassified/ov000/Util_DecrementCountAndReadIndexedByte.cpp:
+src/Combat/Turns/Combat_PopPendingPartyJoin.cpp:
     complete
     .text start:0x0215fad4 end:0x0215fb04
 
-src/Unclassified/ov000/CreateAllocatedStringParameterRecord.cpp:
+src/Combat/Commands/CombatScript_QueueOpcode33OptionalCopiedString.cpp:
     complete
     .text start:0x0216b394 end:0x0216b408
 
-src/Resource/ov000/Script_AllocateTypeSixEntryFromFloats.cpp:
+src/Combat/Commands/CombatScript_QueueOpcode06FixedPointPair.cpp:
     complete
     .text start:0x02169fa4 end:0x0216a018
 
-src/Resource/ov000/Resource_ScriptQueueType3BWithCopiedString.cpp:
+src/Combat/Commands/Resource_ScriptQueueType3BWithCopiedString.cpp:
     complete
     .text start:0x0216b7b8 end:0x0216b870
 
-src/GameState/ov000/GameState_InterpolateIndexedFixedValue.cpp:
+src/Combat/Turns/GameState_InterpolateIndexedFixedValue.cpp:
     complete
     .text start:0x0216352c end:0x021635e4
 
-src/Combat/ov000/Combat_DecrementActiveFlagCounters.cpp:
+src/Combat/Turns/Combat_DecrementActiveFlagCounters.cpp:
     complete
     .text start:0x021599f4 end:0x02159c58
 
-src/GameState/ov000/ProcessEmbeddedRecord.cpp:
+src/Combat/Turns/ProcessEmbeddedRecord.cpp:
     complete
     .text start:0x021540c8 end:0x021540fc
 
-src/Unclassified/ov000/Util_CallTargetWithFlagsOne.cpp:
+src/Combat/Turns/Combat_CollectPrimarySameSideCombatants.cpp:
     complete
     .text start:0x02181a5c end:0x02181a74
 
-src/Unclassified/ov000/Unclassified_InvokeHelperWithZeroFlags.cpp:
+src/Combat/Turns/Combat_CollectSecondaryRecordOpposingCombatants.cpp:
     complete
     .text start:0x02181aa4 end:0x02181abc
 
-src/Resource/ov000/Script_QueueTypedFloatVectorNode.cpp:
+src/Combat/Commands/Script_QueueTypedFloatVectorNode.cpp:
     complete
     .text start:0x0216a364 end:0x0216a420
 
-src/Graphics/ov000/Graphics_AppendPagedPartyStateText.cpp:
+src/Combat/BattleMenu/Graphics_AppendPagedPartyStateText.cpp:
     complete
     .text start:0x02179ed8 end:0x02179f94
 
-src/Unclassified/ov000/ProcessEightFlaggedIndexedObjects.cpp:
+src/Combat/Scene/BattleScene_AdvanceMonsterAppearanceAnimations.cpp:
     complete
     .text start:0x02160fe4 end:0x02161020
 
-src/GameState/ov000/SetBoundedStatusAndDispatchTransition.cpp:
+src/Combat/Turns/SetBoundedStatusAndDispatchTransition.cpp:
     complete
     .text start:0x021823dc end:0x02182498
 
-src/Unclassified/ov000/GameState_SetHalfwordAtEAndNotifyIfChanged.cpp:
+src/Combat/BattleMenu/BattleMenu_SetPartyCurrentMpAndBroadcast.cpp:
     complete
     .text start:0x02176150 end:0x0217616c
 
-src/Graphics/ov000/Graphics_AppendGroupedMemberNameText.cpp:
+src/Combat/BattleMenu/Graphics_AppendGroupedMemberNameText.cpp:
     complete
     .text start:0x02178938 end:0x02178ba8
 
-src/Unclassified/ov000/Object_RebuildReadyRecordBufferAndLoad.cpp:
+src/Combat/BattleMenu/BattleMenu_RefreshEnemyGroupTargetWindow.cpp:
     complete
     .text start:0x021788d8 end:0x02178938
 
-src/Unclassified/ov000/OV000_HasRelevantFlagOrStatus.cpp:
+src/Combat/BattleMenu/BattleMenu_TestCancelInput.cpp:
     complete
     .text start:0x0217c5f4 end:0x0217c638
 
-src/Util/ov000/Ov000_ConvertFourHalfwordsToWords.cpp:
+src/Combat/Turns/Ov000_ConvertFourHalfwordsToWords.cpp:
     complete
     .text start:0x02181cbc end:0x02181d04
 
-src/Unclassified/ov000/OV000_ClearLookupScratchAndRefresh.cpp:
+src/Combat/BattleMenu/BattleMenu_RefreshTacticsPanelText.cpp:
     complete
     .text start:0x02177a7c end:0x02177ac8
 
-src/Unclassified/ov000/World_ResetCachedBufferAndReloadOwner.cpp:
+src/Combat/BattleMenu/BattleMenu_RefreshPartyCommandPanelText.cpp:
     complete
     .text start:0x02177330 end:0x0217737c
 
-src/GameState/ov000/RebuildPartySelectionTextForOwner.cpp:
+src/Combat/BattleMenu/RebuildPartySelectionTextForOwner.cpp:
     complete
     .text start:0x021785fc end:0x02178648
 
-src/Unclassified/ov000/Script_ResetFourRecordsAndRefresh.cpp:
+src/Combat/BattleMenu/BattleMenu_CompletePartyCommandSelections.cpp:
     complete
     .text start:0x021813d4 end:0x0218142c
 
-src/GameState/ov000/GameState_ConfigureAndSubmitIndexedRecord.cpp:
+src/Combat/Turns/GameState_ConfigureAndSubmitIndexedRecord.cpp:
     complete
     .text start:0x021811f4 end:0x0218124c
 
-src/GameState/ov000/ResetStateEntryResources.cpp:
+src/Combat/Turns/ResetStateEntryResources.cpp:
     complete
     .text start:0x021742c8 end:0x02174324
 
-src/Unclassified/ov000/OV000_ApplyTransformWhenObjectFlagged.cpp:
+src/Combat/BattleMenu/BattleMenu_BroadcastPartyDisplayStats.cpp:
     complete
     .text start:0x0217616c end:0x021761c8
 
-src/System/ov000/InitializeObjectAndConfigureSelectionIfPresent.cpp:
+src/Combat/BattleMenu/InitializeObjectAndConfigureSelectionIfPresent.cpp:
     complete
     .text start:0x02170fd0 end:0x02170ffc
 
-src/Memory/ov000/Memory_ZeroThirtyTwoByteBlock.cpp:
+src/Combat/Turns/Memory_ZeroThirtyTwoByteBlock.cpp:
     complete
     .text start:0x0215fd7c end:0x0215fd90
 
-src/Unclassified/ov000/GameState_RefreshFourIndexedRecordValues.cpp:
+src/Combat/BattleMenu/BattleMenu_RefreshChangedMemberStatuses.cpp:
     complete
     .text start:0x02174514 end:0x0217457c
 
-src/Resource/ov000/Ov000_BuildIndexedDescription.cpp:
+src/Combat/BattleMenu/Ov000_BuildIndexedDescription.cpp:
     complete
     .text start:0x021795e0 end:0x0217964c
 
-src/GameState/ov000/GameState_ProcessEligibleListedMemberRecords.cpp:
+src/Combat/Turns/GameState_ProcessEligibleListedMemberRecords.cpp:
     complete
     .text start:0x0217fa60 end:0x0217fb98
 
-src/GameState/ov000/GameState_ResetIndexedRecordsAndFinalize.cpp:
+src/Combat/Turns/GameState_ResetIndexedRecordsAndFinalize.cpp:
     complete
     .text start:0x02181364 end:0x021813d4
 
-src/Filesystem/ov000/CompleteBackgroundFileLoad.cpp:
+src/Combat/Scene/CompleteBackgroundFileLoad.cpp:
     complete
     .text start:0x0216fd80 end:0x0216fdf8
 
-src/GameState/ov000/Ov000_ApplyIndexedSlotOrReset.cpp:
+src/Combat/Turns/Ov000_ApplyIndexedSlotOrReset.cpp:
     complete
     .text start:0x0217f78c end:0x0217f7d4
 
-src/Unclassified/ov000/World_ResetBufferForCurrentIndexedRecord.cpp:
+src/Combat/BattleMenu/BattleMenu_RefreshEquipmentChoicePanelText.cpp:
     complete
     .text start:0x0217819c end:0x021781f8
 
-src/Graphics/ov000/Object_BuildAlternateSelectionBufferAndLoadOwnerRecord.cpp:
+src/Combat/BattleMenu/Object_BuildAlternateSelectionBufferAndLoadOwnerRecord.cpp:
     complete
     .text start:0x02178cbc end:0x02178d28
 
-src/Unclassified/ov000/GameState_UpdateReadyRecordProgress.cpp:
+src/Combat/BattleMenu/Window_SetCanvasActiveWhileProgressIncomplete.cpp:
     complete
     .text start:0x0217a9d0 end:0x0217aa08
 
-src/Unclassified/ov000/Unclassified_SelectModeValue.cpp:
+src/Combat/Scene/MonsterFormation_GetRadiusScale.cpp:
     complete
     .text start:0x021681f8 end:0x02168230
 
-src/Unclassified/ov000/Object_BuildSelectionBufferAndLoadOwnerRecord.cpp:
+src/Combat/BattleMenu/BattleMenu_RefreshSkillListWindow.cpp:
     complete
     .text start:0x02179128 end:0x02179194
+
+src/Combat/Scene/ResetPresentStateResources.cpp:
+    complete
+    .text start:0x02160ad0 end:0x02160b54
+
+src/Combat/Turns/Combat_AppendTaggedTargetToHistory.cpp:
+    complete
+    .text start:0x0215ff20 end:0x0215ff50
+
+src/Combat/BattleMenu/BattleMenu_ResetListedPartyCommands.cpp:
+    complete
+    .text start:0x02180404 end:0x0218048c
+
+src/Combat/Commands/CombatScript_QueueValue3EEntry.cpp:
+    complete
+    .text start:0x0216b898 end:0x0216b8ac
+
+src/Combat/Commands/CombatScript_QueueValue43Entry.cpp:
+    complete
+    .text start:0x0216ba00 end:0x0216ba14
+
+src/Combat/Commands/CombatScript_QueueValue49Entry.cpp:
+    complete
+    .text start:0x0216bbc4 end:0x0216bbd8
+
+src/Combat/Commands/CombatScript_QueueValue4AEntry.cpp:
+    complete
+    .text start:0x0216bbd8 end:0x0216bbec
+
+src/Combat/Commands/CombatScript_QueueValue55Entry.cpp:
+    complete
+    .text start:0x0216be58 end:0x0216be6c
+
+src/Combat/Commands/CombatScript_QueueValue62Entry.cpp:
+    complete
+    .text start:0x0216c3ec end:0x0216c400
+
+src/Combat/Commands/CombatScript_QueueValue63Entry.cpp:
+    complete
+    .text start:0x0216c400 end:0x0216c414
+
+src/Combat/Commands/CombatScript_QueueValue65Entry.cpp:
+    complete
+    .text start:0x0216c490 end:0x0216c4a4
+
+src/Combat/Commands/CombatScript_QueueValue69Entry.cpp:
+    complete
+    .text start:0x0216c570 end:0x0216c584
+
+src/Combat/Commands/CombatScript_QueueValue6FEntry.cpp:
+    complete
+    .text start:0x0216c720 end:0x0216c734
+
+src/Combat/Commands/CombatScript_QueueValue81Entry.cpp:
+    complete
+    .text start:0x0216cf04 end:0x0216cf18
+
+src/Combat/Commands/CombatScript_QueueValue85Entry.cpp:
+    complete
+    .text start:0x0216cfd4 end:0x0216cfe8
+
+src/Combat/BattleMenu/BattleMenu_CanSelectIndividualEnemyTarget.cpp:
+    complete
+    .text start:0x0217c2a0 end:0x0217c32c
+
+src/Combat/BattleMenu/BattleMenu_PushActionDefinitionSelectionState.cpp:
+    complete
+    .text start:0x02175b54 end:0x02175be4
+
+src/Combat/Commands/CombatScript_QueueOpcode86.cpp:
+    complete
+    .text start:0x0216cfe8 end:0x0216cffc
+
+src/Combat/Commands/CombatScript_QueueOpcode88.cpp:
+    complete
+    .text start:0x0216d010 end:0x0216d024
+
+src/Combat/Commands/CombatScript_QueueOpcode89.cpp:
+    complete
+    .text start:0x0216d024 end:0x0216d038
+
+src/Combat/Commands/CombatScript_QueueOpcode8E.cpp:
+    complete
+    .text start:0x0216d1b0 end:0x0216d1c4
+
+src/Combat/Commands/Combat_AllocateAndRegisterOwnerEntryWithCode23.cpp:
+    complete
+    .text start:0x0216ad7c end:0x0216ad90
+
+src/Combat/Commands/Combat_AllocateAndRegisterOwnerEntryWithCode24.cpp:
+    complete
+    .text start:0x0216ad90 end:0x0216ada4
+
+src/Combat/Commands/Combat_AllocateAndRegisterOwnerEntryWithCode26.cpp:
+    complete
+    .text start:0x0216adb8 end:0x0216adcc
+
+src/Combat/Commands/Combat_AllocateAndRegisterOwnerEntryWithCode35.cpp:
+    complete
+    .text start:0x0216b464 end:0x0216b478
+
+src/Combat/Commands/Combat_AllocateAndRegisterOwnerEntryWithCode3C.cpp:
+    complete
+    .text start:0x0216b870 end:0x0216b884
+
+src/Combat/Commands/Combat_AllocateAndRegisterOwnerEntryWithCode3D.cpp:
+    complete
+    .text start:0x0216b884 end:0x0216b898
+
+src/Combat/Commands/Script_AllocateType50VectorOptionalByteEntry.cpp:
+    complete
+    .text start:0x0216b328 end:0x0216b394
+
+src/Combat/BattleMenu/BattleMenu_SetPartyCurrentHpAndBroadcast.cpp:
+    complete
+    .text start:0x02176134 end:0x02176150
+
+src/Combat/Turns/GameState_ReadLinkedRecordModeOneIndexOne.cpp:
+    complete
+    .text start:0x02181d68 end:0x02181d88
+
+src/Combat/Turns/GameState_ReadLinkedRecordModeZeroIndexZero.cpp:
+    complete
+    .text start:0x02181e30 end:0x02181e50
+
+src/Combat/Turns/Combat_CollectSecondarySameSideCombatants.cpp:
+    complete
+    .text start:0x02181a74 end:0x02181a8c
+
+src/Combat/Turns/Combat_CollectPrimaryRecordOpposingCombatants.cpp:
+    complete
+    .text start:0x02181a8c end:0x02181aa4
+
+src/Combat/Scene/Camera_UpdateRenderViewAndConditionalTargetMatrix.cpp:
+    complete
+    .text start:0x0216d50c end:0x0216d530
+
+src/Combat/Commands/CreateScriptOpcode80Entry.cpp:
+    complete
+    .text start:0x0216cec0 end:0x0216cf04
+
+src/Combat/BattleMenu/BattleMenu_AdvancePartyPalettePulses.cpp:
+    complete
+    .text start:0x021754fc end:0x02175544
+
+src/Combat/BattleMenu/BattleMenu_SelectNextPartyCommandAndResetTransition.cpp:
+    complete
+    .text start:0x0217f62c end:0x0217f6bc
+
+src/Combat/BattleMenu/BattleMenu_RefreshAvailableCategoryPanelText.cpp:
+    complete
+    .text start:0x02177f28 end:0x02177f74
+
+src/Combat/Commands/CombatScript_QueueOpcode30FixedPointVector.cpp:
+    complete
+    .text start:0x0216b26c end:0x0216b2bc
+
+src/Combat/Commands/CombatScript_QueueOpcode5AByte.cpp:
+    complete
+    .text start:0x0216c0f4 end:0x0216c144
+
+src/Combat/Commands/CombatScript_QueueOpcode5FInteger.cpp:
+    complete
+    .text start:0x0216c2c4 end:0x0216c314
+
+src/Combat/Commands/CombatScript_QueueOpcode6DHalfword.cpp:
+    complete
+    .text start:0x0216c680 end:0x0216c6d0
+
+src/Combat/Commands/CombatScript_QueueOpcode79Byte.cpp:
+    complete
+    .text start:0x0216c95c end:0x0216c9ac
+
+src/Combat/Commands/CombatScript_QueueOpcode78Boolean.cpp:
+    complete
+    .text start:0x0216ccd8 end:0x0216cd28
+
+src/Combat/Commands/CombatScript_TryQueueOpcode41Integer.cpp:
+    complete
+    .text start:0x0216b954 end:0x0216b9a8
+
+src/Combat/BattleMenu/BattleMenu_RefreshSharedActionEnemyGroupWindow.cpp:
+    complete
+    .text start:0x0217a628 end:0x0217a688
+
+src/Combat/BattleMenu/BattleMenu_RefreshVocationActionWindow.cpp:
+    complete
+    .text start:0x02179c6c end:0x02179cdc
+
+src/Combat/Turns/Network_PrepareAndQueuePackedEntryRecords.cpp:
+    complete
+    .text start:0x0215e8e8 end:0x0215e918
+
+src/Combat/Turns/CombatScene_ClearFadingEnemyList.cpp:
+    complete
+    .text start:0x02163b60 end:0x02163b90
+
+src/Combat/Scene/BattleCamera_SetTrackedCombatant.cpp:
+    complete
+    .text start:0x0216d530 end:0x0216d560
+
+src/Combat/Turns/System_ForwardStateAndIndexWhenStackEntryIsThree.cpp:
+    complete
+    .text start:0x02163b14 end:0x02163b40
+
+src/Combat/BattleMenu/BattleMenu_ClearAbilityChoices.cpp:
+    complete
+    .text start:0x0217193c end:0x02171968
+
+src/Combat/Turns/Combat_ApplyActionFlagToUnmarkedCombatants.cpp:
+    complete
+    .text start:0x0215f110 end:0x0215f1ac
+
+src/Combat/BattleMenu/BattleMenu_ProcessPendingCommandMenuRefresh.cpp:
+    complete
+    .text start:0x02174d08 end:0x02174da4
+
+src/Combat/BattleMenu/BattleMenu_ClearCommandWindowsAndRestoreSelectedPanel.cpp:
+    complete
+    .text start:0x0218048c end:0x02180528
+
+src/Combat/Turns/TestCollectedObjectResourceIdentifier.cpp:
+    complete
+    .text start:0x0215fc8c end:0x0215fd24
+
+src/Combat/Turns/TestCombatantState4OrDisplayKey2.cpp:
+    complete
+    .text start:0x02162954 end:0x021629ec
+
+src/Combat/Turns/SetCollectedCombatantsAlpha31Immediately.cpp:
+    complete
+    .text start:0x02163a7c end:0x02163b14
+
+src/Combat/BattleMenu/BattleMenu_AdvanceSelectedActionTargeting.cpp:
+    complete
+    .text start:0x021718a4 end:0x0217193c
+
+src/Combat/BattleMenu/Resource_RebuildOwnerBufferAndRefreshReadyRecord.cpp:
+    complete
+    .text start:0x02177558 end:0x021775a4
+
+src/Combat/Commands/CombatScript_TryQueueFixedPointAndIntegerPair.cpp:
+    complete
+    .text start:0x0216c8e4 end:0x0216c95c
+
+src/Combat/Turns/Combat_InitializeSourceResultRecord.cpp:
+    complete
+    .text start:0x02157d14 end:0x02157d3c
+
+src/Combat/BattleMenu/BattleMenu_GetSpriteResourceEntry.cpp:
+    complete
+    .text start:0x0216fe74 end:0x0216fe9c
+
+src/Combat/BattleMenu/BattleMenu_RefreshFlaggedPartyStatusLabels.cpp:
+    complete
+    .text start:0x021814bc end:0x0218155c
+
+src/Combat/Commands/CreateScriptFixedPointOpcode4DEntry.cpp:
+    complete
+    .text start:0x0216bc54 end:0x0216bcac
+
+src/Combat/Commands/CreateScriptOpcode7CEntry.cpp:
+    complete
+    .text start:0x0216cd90 end:0x0216cdec
+
+src/Combat/BattleMenu/BattleMenu_RefreshPartyPanelTilemap.cpp:
+    complete
+    .text start:0x02175480 end:0x021754e0
+
+src/Combat/Commands/Resource_AllocateType0x46EntryFromScriptInteger.cpp:
+    complete
+    .text start:0x0216bac8 end:0x0216bb1c
+
+src/Combat/Commands/Resource_AllocateType0x2CEntryFromScriptParameters.cpp:
+    complete
+    .text start:0x0216b110 end:0x0216b16c
+
+src/Combat/BattleMenu/BattleMenu_RefreshAllyTargetWindow.cpp:
+    complete
+    .text start:0x02179a14 end:0x02179a70
+
+src/Combat/BattleMenu/BattleMenu_AdvanceHeaderSlideAnimation.cpp:
+    complete
+    .text start:0x02180b50 end:0x02180bac
+
+src/Combat/Commands/CombatScript_QueueOpcode57FixedPointHalfword.cpp:
+    complete
+    .text start:0x0216bf40 end:0x0216bfa4
+
+src/Combat/BattleMenu/BattleMenu_RefreshPendingMemberPanel.cpp:
+    complete
+    .text start:0x02170078 end:0x021700dc
+
+src/Combat/BattleMenu/System_TestNewInputMaskOrStateModeTwo.cpp:
+    complete
+    .text start:0x0217ab48 end:0x0217ab8c
+
+src/Combat/Turns/Combat_IsSummoningAction.cpp:
+    complete
+    .text start:0x0215fb9c end:0x0215fbe0
+
+src/Combat/Scene/Camera_UpdateManualRotationAndClampedDistance.cpp:
+    complete
+    .text start:0x0216d464 end:0x0216d50c
+
+src/Combat/Turns/Grotto_ReadBossOverrideOrSevenBitObjectValue.cpp:
+    complete
+    .text start:0x02159dbc end:0x02159e60
+
+src/Combat/Scene/BattleScene_GetCombatContext.cpp:
+    complete
+    .text start:0x02160ef8 end:0x02160f00
+
+src/Combat/Scene/BattleScene_GetPlaybackResourcePool.cpp:
+    complete
+    .text start:0x02160f00 end:0x02160f08
+
+src/Combat/Commands/Resource_ScriptQueueType50FixedPointAndIntegerRecord.cpp:
+    complete
+    .text start:0x0216bd9c end:0x0216be00
+
+src/Combat/Scene/Combat_StoreThreeWords.cpp:
+    complete
+    .text start:0x0216d368 end:0x0216d370
+
+src/Combat/Scene/BattleCamera_GetDesiredOrbitParameters.cpp:
+    complete
+    .text start:0x0216f208 end:0x0216f210
+
+src/Combat/Scene/BattleCamera_SetCombatContext.cpp:
+    complete
+    .text start:0x0216f700 end:0x0216f708
+
+src/Combat/Scene/BattleCamera_SetPartyFormationWidth.cpp:
+    complete
+    .text start:0x0216f708 end:0x0216f710
+
+src/Combat/Scene/BattleCamera_SetPartyFormationHeight.cpp:
+    complete
+    .text start:0x0216f710 end:0x0216f718
+
+src/Combat/Turns/GameState_ResetFourSelectedRecordsAndOwnerState.cpp:
+    complete
+    .text start:0x02180528 end:0x02180594
+
+src/Combat/Scene/BattleCamera_SetMonsterFormationWidth.cpp:
+    complete
+    .text start:0x0216f718 end:0x0216f720
+
+src/Combat/Commands/Resource_ScriptQueueType60FixedPointAndIntegerRecord.cpp:
+    complete
+    .text start:0x0216c314 end:0x0216c384
+
+src/Combat/Scene/BattleCamera_SetMonsterFormationHeight.cpp:
+    complete
+    .text start:0x0216f720 end:0x0216f728
+
+src/Combat/Turns/GameState_UpdateFourRecordsFromObjects.cpp:
+    complete
+    .text start:0x02175fc8 end:0x02176038
+
+src/Combat/BattleMenu/BattleMenu_SetRestoredActionAttribute.cpp:
+    complete
+    .text start:0x0216ff20 end:0x0216ff28
+
+src/Combat/Scene/BattleScene_RestoreCombatantHomeTransforms.cpp:
+    complete
+    .text start:0x02167e6c end:0x02167f10
+
+src/Combat/BattleMenu/BattleMenu_FinishPartyTransitionDialogue.cpp:
+    complete
+    .text start:0x0217de64 end:0x0217df08
+
+src/Combat/BattleMenu/BattleMenu_ResetPartyCommandSelection.cpp:
+    complete
+    .text start:0x0217f518 end:0x0217f5d0
+
+src/Combat/Scene/AssignCombatantToFirstRadiusCompatibleSlot.cpp:
+    complete
+    .text start:0x02167c28 end:0x02167cd4
+
+src/Combat/Turns/Combat_ResetCollectedMotionAndTargets.cpp:
+    complete
+    .text start:0x021629ec end:0x02162aac
+
+src/Combat/BattleMenu/BattleMenu_RemovePartyMember.cpp:
+    complete
+    .text start:0x02174a50 end:0x02174b14
+
+src/Combat/BattleMenu/BattleMenu_CancelPartyCommandReview.cpp:
+    complete
+    .text start:0x0217c094 end:0x0217c158
+
+src/Combat/Turns/Combat_SelectRandomOtherCandidateIndex.cpp:
+    complete
+    .text start:0x02153d78 end:0x02153e40
+
+src/Combat/Turns/Combat_ShowSelectedObjectPairsAndApplyPlacement.cpp:
+    complete
+    .text start:0x021639b4 end:0x02163a7c
+
+src/Combat/BattleMenu/Graphics_FormatPriorityFlaggedPartyLabel.cpp:
+    complete
+    .text start:0x02171a74 end:0x02171b3c
+
+src/Combat/BattleMenu/Graphics_FormatObjectPositionedDetailWindow.cpp:
+    complete
+    .text start:0x021779b4 end:0x02177a7c
+
+src/Combat/BattleMenu/Graphics_FormatObjectPositionedNameWindow.cpp:
+    complete
+    .text start:0x02177bf0 end:0x02177cb8
+
+src/Combat/BattleMenu/BattleMenu_UpdateTransitionForSelectedPartyCommand.cpp:
+    complete
+    .text start:0x0218099c end:0x02180a64
+
+src/Combat/Turns/Combat_PushPendingPartyJoin.cpp:
+    complete
+    .text start:0x0215fab0 end:0x0215fad4
+
+src/Combat/Turns/Resource_CountRangeAfterPrefix.cpp:
+    complete
+    .text start:0x02153e40 end:0x02153e78
+
+src/Combat/Scene/BattleScene_GetPreviousActionRecord.cpp:
+    complete
+    .text start:0x02160f60 end:0x02160f9c
+
+src/Combat/Turns/CombatScene_CollectCommandFinalTargets.cpp:
+    complete
+    .text start:0x02162908 end:0x02162954
+
+src/Combat/Turns/InitializeZeroedRecordWithInvalidHalfword.cpp:
+    complete
+    .text start:0x0215fe64 end:0x0215fe84
+
+src/Combat/BattleMenu/BattleMenu_SelectFirstEligiblePartyInCommandOrder.cpp:
+    complete
+    .text start:0x0217f990 end:0x0217fa60
+
+src/Combat/BattleMenu/BattleMenu_IsPartyCommandInputPending.cpp:
+    complete
+    .text start:0x0217fd60 end:0x0217fe30
+
+src/Combat/BattleMenu/BattleMenu_FindItemByEquipmentKey.cpp:
+    complete
+    .text start:0x02171d90 end:0x02171e60
+
+src/Combat/BattleMenu/BattleMenu_PopSelectionPanels.cpp:
+    complete
+    .text start:0x0217629c end:0x0217636c
+
+src/Combat/BattleMenu/BattleMenu_FindRememberedActionSelection.cpp:
+    complete
+    .text start:0x0217aa78 end:0x0217ab48
+
+src/Combat/Commands/CombatScript_QueueVectorAndFixedPointScalars.cpp:
+    complete
+    .text start:0x0216be6c end:0x0216bf40
+
+src/Combat/Commands/CombatScript_QueueModeSelectedHalfwordPair.cpp:
+    complete
+    .text start:0x0216c9fc end:0x0216cad0
+
+src/Combat/BattleMenu/BattleMenu_StartTransitionWhenAllPartyCommandsAreReady.cpp:
+    complete
+    .text start:0x02180a64 end:0x02180b3c
+
+src/Combat/BattleMenu/BattleMenu_RefreshSelectedPartyPanelExpansion.cpp:
+    complete
+    .text start:0x02175258 end:0x02175348
+
+src/Combat/Turns/Combat_TestPartyConditionalReactionChance.cpp:
+    complete
+    .text start:0x02156558 end:0x02156648
+
+src/Combat/Scene/BattleScene_LoadZoneAndWaitUntilReady.cpp:
+    complete
+    .text start:0x02166880 end:0x02166978
+
+src/Combat/BattleMenu/BattleMenu_RefreshSharedPartyActionWindow.cpp:
+    complete
+    .text start:0x0217a0a4 end:0x0217a19c
+
+src/Combat/Commands/Script_AllocateTaggedFixedPointEntry.cpp:
+    complete
+    .text start:0x0216a9dc end:0x0216aad4
+
+src/Combat/BattleMenu/BattleMenu_ResetCommandsOnReviewCancel.cpp:
+    complete
+    .text start:0x0217e46c end:0x0217e558
+
+src/Combat/Scene/Graphics_UpdateSelectedResourceBranchesAndReleaseReadyBuffer.cpp:
+    complete
+    .text start:0x02160c84 end:0x02160d80
+
+src/Combat/BattleMenu/Graphics_InitializePagedPartyPanelAndTextRecords.cpp:
+    complete
+    .text start:0x02179b70 end:0x02179c6c
+
+src/Combat/BattleMenu/BattleMenu_AppendAllyTargetNames.cpp:
+    complete
+    .text start:0x02179a70 end:0x02179b70
+
+src/Combat/BattleMenu/BattleMenu_OpenSessionOptionsPanel.cpp:
+    complete
+    .text start:0x02177454 end:0x02177558
+
+src/Combat/Turns/Combat_CollectGroupIndicesByDescriptorFlags.cpp:
+    complete
+    .text start:0x0215eb1c end:0x0215ec1c
+
+src/Combat/Turns/Combat_SelectToggleResultForNonPartyIndex.cpp:
+    complete
+    .text start:0x0215f57c end:0x0215f67c
+
+src/Combat/Scene/BattleCamera_ConfigureDirectedPairShot.cpp:
+    complete
+    .text start:0x0216de00 end:0x0216df00
+
+src/Combat/BattleMenu/BattleMenu_AppendAvailableCategoryPage.cpp:
+    complete
+    .text start:0x02177f74 end:0x02178074
+
+src/Combat/Scene/BattleScene_DrawWorldCombatantsAndSelectionEffects.cpp:
+    complete
+    .text start:0x02160b54 end:0x02160c60
+
+src/Combat/BattleMenu/BattleMenu_OpenPartyMemberChoicePanel.cpp:
+    complete
+    .text start:0x0217768c end:0x02177798
+
+src/Combat/Turns/Combat_RecountEligibleMonsterGroupMembers.cpp:
+    complete
+    .text start:0x02155e94 end:0x02155f9c
+
+src/Combat/BattleMenu/BattleMenu_BuildSharedPartyActionWindow.cpp:
+    complete
+    .text start:0x02179f94 end:0x0217a0a4
+
+src/Combat/Turns/GameState_TestReadyLinkedPartyAgainstCombatants.cpp:
+    complete
+    .text start:0x02163c80 end:0x02163d94
+
+src/Combat/BattleMenu/BattleMenu_BuildSpellListWindow.cpp:
+    complete
+    .text start:0x02178ba8 end:0x02178cbc
+
+src/Combat/BattleMenu/BattleMenu_BuildSharedActionEnemyGroupWindow.cpp:
+    complete
+    .text start:0x0217a514 end:0x0217a628
+
+src/Combat/BattleMenu/BattleMenu_BuildCarriedItemListWindow.cpp:
+    complete
+    .text start:0x021794cc end:0x021795e0
+
+src/Combat/BattleMenu/BattleMenu_HandleTacticsMemberInput.cpp:
+    complete
+    .text start:0x0217d324 end:0x0217d438
+
+src/Combat/BattleMenu/BattleMenu_BuildSkillListWindow.cpp:
+    complete
+    .text start:0x02179018 end:0x02179128
+
+src/Combat/Turns/Graphics_DrawLanguageEntryAndInactivePartyMarker.cpp:
+    complete
+    .text start:0x0218124c end:0x02181364
+
+src/Combat/Commands/CombatScript_QueueCharacterPathWithOptionalSelector.cpp:
+    complete
+    .text start:0x0216a570 end:0x0216a68c
+
+src/Combat/Scene/BattleScene_InitializeMenuAfterDisplayTransition.cpp:
+    complete
+    .text start:0x02166978 end:0x02166a94
+
+src/Combat/BattleMenu/BattleMenu_BuildEnemyGroupTargetWindow.cpp:
+    complete
+    .text start:0x021787b8 end:0x021788d8
+
+src/Combat/Turns/Combat_CollectEligiblePartyIds.cpp:
+    complete
+    .text start:0x0215e9fc end:0x0215eb1c
+
+src/Combat/Commands/CombatScript_QueueFixedPointPairAndScalar.cpp:
+    complete
+    .text start:0x02169e80 end:0x02169fa4
+
+src/Combat/Turns/Combat_SubtractHealthAndRecordProtagonistDefeat.cpp:
+    complete
+    .text start:0x0215a004 end:0x0215a124
+
+src/Combat/BattleMenu/GameState_BuildIndexedTextAndEnsureReadyRecord.cpp:
+    complete
+    .text start:0x021781f8 end:0x0217831c
+
+src/Combat/BattleMenu/BattleMenu_OpenMemberCommandGrid.cpp:
+    complete
+    .text start:0x0217636c end:0x02176498
+
+src/Combat/BattleMenu/BattleMenu_ResolveEquippedActionTargetMode.cpp:
+    complete
+    .text start:0x02171ffc end:0x02172128
+
+src/Combat/BattleMenu/BattleMenu_ResetMemberWorkspace.cpp:
+    complete
+    .text start:0x0216ff28 end:0x02170054
+
+src/Combat/Scene/Graphics_SetRandomOffsetBasedOnRelativeObjectHeight.cpp:
+    complete
+    .text start:0x0216d90c end:0x0216da34
+
+src/Combat/BattleMenu/Text_AppendSixAlternatingWidthAlignedLabels.cpp:
+    complete
+    .text start:0x02177ac8 end:0x02177bf0
+
+src/Combat/BattleMenu/Graphics_ConfigurePositionedSevenRowDetailPanel.cpp:
+    complete
+    .text start:0x02178074 end:0x0217819c
+
+src/Combat/BattleMenu/Graphics_ConfigureModeSizedEightRowDetailPanel.cpp:
+    complete
+    .text start:0x021784d4 end:0x021785fc
+
+src/Combat/BattleMenu/BattleMenu_ResetMemberCommandSelections.cpp:
+    complete
+    .text start:0x02174614 end:0x02174738
+
+src/Combat/Turns/Combat_UpdateTimedStatusRecovery.cpp:
+    complete
+    .text start:0x0215858c end:0x0215985c
+
+src/Combat/BattleMenu/UpdateMarginSelectionAndSkipEmptyRecords.cpp:
+    complete
+    .text start:0x0217c158 end:0x0217c2a0
+
+src/Combat/Scene/PlaceCombatantAtFirstUnusedGridIndex.cpp:
+    complete
+    .text start:0x02167fb0 end:0x02168144
+
+src/Combat/BattleMenu/GameState_CleanupOwnedResourcesAndResetRecords.cpp:
+    complete
+    .text start:0x02172720 end:0x02172850
+
+src/Combat/Scene/Graphics_AssignPaletteToEligibleTextureRecord.cpp:
+    complete
+    .text start:0x02166784 end:0x02166804
+
+src/Combat/BattleMenu/BattleMenu_CommitMatchingPartyVocationActions.cpp:
+    complete
+    .text start:0x021759f4 end:0x02175b54
+
+src/Combat/Scene/BattleScene_CommitPartyCommandSelections.cpp:
+    complete
+    .text start:0x02169850 end:0x02169a40
+
+src/Combat/BattleMenu/BattleMenu_UpdatePartyFlashPaletteColor.cpp:
+    complete
+    .text start:0x02174e50 end:0x02174fc0
+
+src/Combat/BattleMenu/BattleMenu_RefreshMemberCommandLabel.cpp:
+    complete
+    .text start:0x02170db0 end:0x02170fd0
+
+src/Combat/Turns/Combat_SelectRandomCollectedGroupIndex.cpp:
+    complete
+    .text start:0x02153d10 end:0x02153d78
+
+src/Combat/Turns/CombatScene_CollectCommandActorIndices.cpp:
+    complete
+    .text start:0x021628c8 end:0x02162908
+
+src/Combat/BattleMenu/BattleMenu_AppendUniquePartyActionChoice.cpp:
+    complete
+    .text start:0x021757ac end:0x02175808
+
+src/Combat/Turns/ApplyZoneOverridesAndRecordParity.cpp:
+    complete
+    .text start:0x021636ac end:0x02163710
+
+src/Combat/BattleMenu/BattleMenu_ApplyPartyHealthClassToDigitSprites.cpp:
+    complete
+    .text start:0x0217f5e4 end:0x0217f62c
+
+src/Combat/Turns/CombatScene_FindCommandContainingActor.cpp:
+    complete
+    .text start:0x02162864 end:0x021628c8
+
+src/Combat/Turns/Combat_InitializeTextForActiveIndexedRecords.cpp:
+    complete
+    .text start:0x02180394 end:0x02180404
+
+src/Combat/Turns/Resource_ReleaseThreeAndEightIndexedRecords.cpp:
+    complete
+    .text start:0x02174dc0 end:0x02174e1c
+
+src/Combat/Turns/Combat_CopyLowTwoBitFieldToFourRecords.cpp:
+    complete
+    .text start:0x021760d4 end:0x02176134
+
+src/Combat/Scene/MonsterStats_CopyDefinitionRecord.cpp:
+    complete
+    .text start:0x02161dfc end:0x02161e30
+
+src/Combat/Turns/CombatScene_AddUniqueRedirectedTarget.cpp:
+    complete
+    .text start:0x0216346c end:0x021634c8
+
+src/Combat/Turns/FindNonPartyObjectResourceRecord.cpp:
+    complete
+    .text start:0x02153758 end:0x021537b8
+
+src/Combat/Turns/Graphics_SubmitFirstCoordinatePaletteEntry.cpp:
+    complete
+    .text start:0x021704d8 end:0x02170538
+
+src/Combat/Turns/CombatScene_AddUniqueOriginalTarget.cpp:
+    complete
+    .text start:0x021634c8 end:0x02163524
+
+src/Combat/Scene/Memory_ClaimFirstAvailablePoolSlot.cpp:
+    complete
+    .text start:0x021673e0 end:0x02167434
+
+src/Combat/Commands/Script_QueueType49CoordinateNode.cpp:
+    complete
+    .text start:0x0216b2bc end:0x0216b328
+
+src/Combat/Scene/GetMaximumPriorityForAvailableCombatantSlot.cpp:
+    complete
+    .text start:0x02167bb4 end:0x02167c28
+
+src/Combat/BattleScene/BattleMenu_CountEnemyTargetGroups.cpp:
+    complete
+    .text start:0x0217538c end:0x021753d8
+
+src/Combat/BattleScene/BattleMenu_GetEnemyTargetGroupIndex.cpp:
+    complete
+    .text start:0x021753d8 end:0x0217542c
+
+src/Combat/BattleScene/BattleCamera_IsActionInSpecialShotRange.cpp:
+    complete
+    .text start:0x0216f728 end:0x0216f74c
+
+src/Combat/BattleScene/Combat_GetVocationFallbackAction.cpp:
+    complete
+    .text start:0x02159cb4 end:0x02159d24
+
+src/Combat/BattleScene/Combat_GetVocationSpecialActionChance.cpp:
+    complete
+    .text start:0x02159d24 end:0x02159d94
+
+src/Combat/BattleScene/BattleScene_AppendRequiredMonsterSpecies.cpp:
+    complete
+    .text start:0x02167484 end:0x021674f4
+
+src/Combat/BattleScene/Combat_GetCombatantLevel.cpp:
+    complete
+    .text start:0x02159e60 end:0x02159eac
+
+src/Combat/BattleScene/BattleScene_ProcessTurnAndQueuePlayback.cpp:
+    complete
+    .text start:0x02169770 end:0x02169850
+
+src/Combat/BattleScene/BattleCamera_ResetShotAndTransitions.cpp:
+    complete
+    .text start:0x0216d370 end:0x0216d464
+
+src/Combat/BattleScene/BattleScene_ConfigureOpeningCamera.cpp:
+    complete
+    .text start:0x0216118c end:0x02161264
+
+src/Combat/BattleScene/BattleMenu_EnablePartyCommandInput.cpp:
+    complete
+    .text start:0x0217fbf4 end:0x0217fcc4
+
+src/Combat/BattleScene/BattleMenu_DismissActorCommandMessage.cpp:
+    complete
+    .text start:0x0217bfbc end:0x0217c094
+
+src/Combat/BattleScene/BattleMenu_FindNextPartyNeedingCommand.cpp:
+    complete
+    .text start:0x0217f6bc end:0x0217f78c
+
+src/Combat/Turns/Combat_FlushDeferredMpAdjustmentActions.cpp:
+    complete
+    .text start:0x0215ae80 end:0x0215af54
+
+src/Combat/Turns/Combat_FlushDeferredDescriptorActions.cpp:
+    complete
+    .text start:0x0215b198 end:0x0215b278
+
+src/Combat/Turns/Combat_UpdateOutcomeAndRecoverStatusesAfterAction.cpp:
+    complete
+    .text start:0x02157d3c end:0x02157e1c
+
+src/Combat/Turns/Combat_QueueDeferredMpResults.cpp:
+    complete
+    .text start:0x0215c2d0 end:0x0215c4cc
+
+src/Combat/Turns/Combat_TestResultMaskWordsFlag.cpp:
+    complete
+    .text start:0x02159f18 end:0x02159f7c
+
+src/Combat/Turns/Combat_ResetTurnRecordsAndCombatantLinks.cpp:
+    complete
+    .text start:0x0215d588 end:0x0215d63c
+
+src/Combat/Turns/Combat_CopyCommandPayloadAndLinks.cpp:
+    complete
+    .text start:0x0215f500 end:0x0215f57c
+
+src/Combat/Turns/Combat_CopyEnemyAttributeTablesFromDefinitions.cpp:
+    complete
+    .text start:0x0215f03c end:0x0215f110
+
+src/Combat/BattleScene/MonsterGroup_CopyRosterRecord.cpp:
+    complete
+    .text start:0x02165f90 end:0x02166008
+
+src/Combat/Turns/Combat_IsMonsterInPresentationExceptionSet.cpp:
+    complete
+    .text start:0x02163c0c end:0x02163c80
+
+src/Combat/Turns/Combat_ClearForcedTargetsThatBecameInvalid.cpp:
+    complete
+    .text start:0x0215c4cc end:0x0215c758
+
+src/Combat/Turns/Combat_QueueDeferredDamageResults.cpp:
+    complete
+    .text start:0x0215bf5c end:0x0215c2d0
+
+src/Combat/Turns/Combat_QueueDeferredNonMpResults.cpp:
+    complete
+    .text start:0x0215bbbc end:0x0215bf5c
+
+src/Combat/Turns/Combat_TryInterruptMonsterActionWithPartyCharm.cpp:
+    complete
+    .text start:0x0215704c end:0x02157288

@@ -7,7 +7,7 @@ extern "C" double Runtime_ScaleDoubleExponent(double, int);
 extern "C" int Runtime_CountSetBits64(unsigned long long);
 extern "C" void RuntimeDecimalPowerOfTwo_ComputeDecimalPowerOfTwo(RuntimeDecimal*, int);
 extern "C" void Runtime_ConvertUnsignedToDecimalDigits(RuntimeDecimal*, unsigned long long);
-extern "C" void func_02009778(RuntimeDecimal*, const RuntimeDecimal*, const RuntimeDecimal*);
+extern "C" void RuntimeDecimal_MultiplyPositiveDigitValues(RuntimeDecimal*, const RuntimeDecimal*, const RuntimeDecimal*);
 // Original: arm9/main @ 0x0200A180; symbol: func_0200a180; size: 0x180.
 extern "C" void RuntimeDecimalFromDouble_ConvertDoubleToDecimal(RuntimeDecimal* result, double value)
 {
@@ -37,6 +37,6 @@ extern "C" void RuntimeDecimalFromDouble_ConvertDoubleToDecimal(RuntimeDecimal* 
     RuntimeDecimal integer, power;
     RuntimeDecimalPowerOfTwo_ComputeDecimalPowerOfTwo(&power, exponent - precision);
     Runtime_ConvertUnsignedToDecimalDigits(&integer, (unsigned long long)Runtime_ScaleDoubleExponent(value, precision));
-    func_02009778(result, &integer, &power);
+    RuntimeDecimal_MultiplyPositiveDigitValues(result, &integer, &power);
     result->sign = negative;
 }

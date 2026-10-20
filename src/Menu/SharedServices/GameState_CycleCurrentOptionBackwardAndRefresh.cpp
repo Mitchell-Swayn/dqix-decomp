@@ -1,0 +1,15 @@
+#include <globaldefs.h>
+ARM
+#define W(p,o) (*(int*)((char*)(p)+(o)))
+#define P(p,o) (*(char**)((char*)(p)+(o)))
+#define H(p,o) (*(unsigned short*)((char*)(p)+(o)))
+#define S(p,o) (*(short*)((char*)(p)+(o)))
+#define B(p,o) (*(unsigned char*)((char*)(p)+(o)))
+// Original data: arm9/ov004 @ 0x21707e8; symbol: data_ov004_021707e8.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 44 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/ov004.md.
+struct State{char pad[6];signed char count;unsigned char kind,index,pad9,pad10;signed char selected;char rest[16];int key;};extern "C" State StatusMenuSelectNextSubpage_UnknownRoleZeroInitializedStorage;extern "C" int StatusMenu_HasAvailablePartyMember(int,int);extern "C" void StatusMenu_SelectNextPartyMember(void*),StatusMenu_PopulateVocationStatsPage(void*),StatusMenu_PopulateVocationSpellsPage(void*),StatusMenu_PopulateLearnedAbilitiesPage(void*),StatusMenu_PopulatePassiveTraitsPage(void*),StatusMenu_SelectPreviousSkillGroupPage(int);extern "C" unsigned char StatusMenu_CycleAvailableVocation(void*,int,unsigned char,int);extern "C" void* Menu_FindPageIndicatorByKey(void*);extern "C" void MenuTextCanvas_RefreshConfiguredFrameAndContents(void*,void*);
+// Original: arm9/ov004 @ 0x021613f8; symbol: GameState_CycleCurrentOptionBackwardAndRefresh; size 0x11c.
+extern "C" int GameState_CycleCurrentOptionBackwardAndRefresh(void* self){if(StatusMenuSelectNextSubpage_UnknownRoleZeroInitializedStorage.count<=1)return 0;if(!StatusMenu_HasAvailablePartyMember((int)self,StatusMenuSelectNextSubpage_UnknownRoleZeroInitializedStorage.key)){StatusMenu_SelectNextPartyMember(self);return 0;}(StatusMenuSelectNextSubpage_UnknownRoleZeroInitializedStorage.selected)--;if(StatusMenuSelectNextSubpage_UnknownRoleZeroInitializedStorage.selected<0)StatusMenuSelectNextSubpage_UnknownRoleZeroInitializedStorage.selected=StatusMenuSelectNextSubpage_UnknownRoleZeroInitializedStorage.count-1;switch(StatusMenuSelectNextSubpage_UnknownRoleZeroInitializedStorage.kind){case 100:StatusMenuSelectNextSubpage_UnknownRoleZeroInitializedStorage.index=StatusMenu_CycleAvailableVocation(self,StatusMenuSelectNextSubpage_UnknownRoleZeroInitializedStorage.key,StatusMenuSelectNextSubpage_UnknownRoleZeroInitializedStorage.index,0);StatusMenu_PopulateVocationStatsPage(self);break;case 101:StatusMenuSelectNextSubpage_UnknownRoleZeroInitializedStorage.index=StatusMenu_CycleAvailableVocation(self,StatusMenuSelectNextSubpage_UnknownRoleZeroInitializedStorage.key,StatusMenuSelectNextSubpage_UnknownRoleZeroInitializedStorage.index,0);StatusMenu_PopulateVocationSpellsPage(self);break;case 102:StatusMenu_SelectPreviousSkillGroupPage(1);StatusMenu_PopulateLearnedAbilitiesPage(self);break;case 103:StatusMenu_SelectPreviousSkillGroupPage(0);StatusMenu_PopulatePassiveTraitsPage(self);break;}void* result=((void*(*)(void*,int))Menu_FindPageIndicatorByKey)(self,3);MenuTextCanvas_RefreshConfiguredFrameAndContents(result,self);return 0;}

@@ -1,9 +1,0 @@
-#include "Filesystem/BackgroundLoader.h"
-struct GameState{static GameState* GetInstance();};struct LightingManager{static LightingManager* GetInstance();};
-extern "C" {
-struct Bits{unsigned char a:1,b:1,c:1,d:1,top:4;};
-struct Owner {unsigned words[3];unsigned char archive[0x10];unsigned char table[0x20];SafeAllocator* allocators;void* object;unsigned word;void* current;void* previous;unsigned* descriptor;unsigned* previousDescriptor;void* fields[5];int task,load,frame,otherTask;unsigned char f7c,f7d,count,active,selected,flags;Bits bits;unsigned char gap[3];short tasks[5];unsigned char gap2[8];void* pointer;unsigned char list[0x10];};
-extern unsigned data_ov014_02189800[];void Object_Clear16Bytes(void*);void ClearSixteenBytes_Main02096FC4(void*);void func_ov014_02188bd0(void*);void func_ov014_02188d10(void*);void func_ov014_021845d4(void*);void func_02001aac(void*,int,unsigned);void GameState_SetUnknown3b0(GameState*,unsigned);int func_020328b4(void*);void func_02032730(void*);
-// Original: arm9/ov014 @ 0x021845EC; symbol: func_ov014_021845ec; size: 0x114.
-void func_ov014_021845ec(Owner* p){if(p->task>=0){BackgroundLoader* loader=BackgroundLoader::GetInstance();loader->RemoveTask(p->task);p->task=-1;}if(p->load>=0){BackgroundLoader* loader=BackgroundLoader::GetInstance();loader->RemoveTask(p->load);p->load=-1;}for(int i=0;i<5;i++){short task=p->tasks[i];if(task>=0){BackgroundLoader::GetInstance()->RemoveTask(task);p->tasks[i]=-1;}}func_ov014_02188d10(p->table);ClearSixteenBytes_Main02096FC4(p->archive);func_ov014_02188bd0(p->table);GameState_SetUnknown3b0(GameState::GetInstance(),data_ov014_02189800[3]);data_ov014_02189800[3]=0;((unsigned char*)LightingManager::GetInstance())[0x85]=1;if(p->allocators){for(int i=0;i<6;i++){SafeAllocator* item=p->allocators+i;if(item->GetSignedAllocator())p->allocators[i].Destroy();}}}
-}

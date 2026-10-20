@@ -7,7 +7,12 @@ struct DownloadPlayAudioConstants {
     unsigned char invertedVerificationKey[64];
     short squareVolumeAttenuation[128];
 };
-extern "C" const DownloadPlayAudioConstants data_020ed6ec = {
+// Original data: arm9/main @ 0x20ed6ec; symbol: data_020ed6ec.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 2106c0deba98ce3fa692e39d46f2ed0176e3cc08562363facad4ecdf9a6278348f6d633cfe22ca9220889723d2cfaec232678dfeca836498acfd3e3787465824 ...; full span in module reference.
+// Observed span: 320 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" const DownloadPlayAudioConstants SharedData_UnknownRoleInitializedBytes_Variant51 = {
   {
     0x21, 0x06, 0xc0, 0xde, 0xba, 0x98, 0xce, 0x3f, 0xa6, 0x92, 0xe3, 0x9d, 0x46, 0xf2, 0xed, 0x01,
     0x76, 0xe3, 0xcc, 0x08, 0x56, 0x23, 0x63, 0xfa, 0xca, 0xd4, 0xec, 0xdf, 0x9a, 0x62, 0x78, 0x34,

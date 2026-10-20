@@ -11,12 +11,12 @@ struct AngleTimelineState {
     char unknown2c[0x20]; float anglePerTick; char unknown50[0x10]; float segmentAngle;
     char unknown64[6]; unsigned short frameIndex;
 };
-extern "C" AngleTimelineRecord *ReadResolvedRecordWordField20OrZero(AngleTimelineResource *);
+extern "C" AngleTimelineRecord *ResourceTracks_GetRandomizedAngleSection(AngleTimelineResource *);
 // ARM9 main, original func_02058b3c at 0x02058b3c.
 // Proposed semantic name: AdvanceRandomizedAngleKeyframe.
 extern "C" ARM void AdvanceRandomizedAngleKeyframe(AngleTimelineState *state)
 {
-    AngleTimelineRecord *record = ReadResolvedRecordWordField20OrZero(state->resource);
+    AngleTimelineRecord *record = ResourceTracks_GetRandomizedAngleSection(state->resource);
     if (record->count <= 1) return;
     if (record->count <= state->frameIndex) return;
     AngleKeyframeNode *previous = (AngleKeyframeNode *)state->resource->keyframes.GetNthElement(state->frameIndex);

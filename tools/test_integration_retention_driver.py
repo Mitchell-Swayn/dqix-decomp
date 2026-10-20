@@ -36,6 +36,7 @@ class RetentionDriverTests(unittest.TestCase):
             data={key:row[key] for key in ('name','address','size','section','source')};data['sha256']=row['original_sha256']
             (worker/'manifest.json').write_text(json.dumps({'module':'ov019','functions':[],'data':[data],'units':['src/Review/New'],'retention_policy':policy.as_posix(),'retention_policy_sha256':hashlib.sha256(content).hexdigest()}))
             report=root/'build/usa/report.json';report.parent.mkdir(parents=True);report.write_text(json.dumps({'measures':before}))
+            arm7=root/'build/usa/arm7/report.json';arm7.parent.mkdir();arm7.write_text('{}')
             receipts.mkdir(parents=True);checkpoint=receipts/'checkpoint.json';checkpoint.write_bytes(b'previous checkpoint')
             foreign=receipts/'support-validation';foreign.mkdir();(foreign/'receipt.json').write_text(json.dumps({'accepted':True,'match':True,'functions':99,'code_bytes':400}))
             progress=root/'build/progress';progress.mkdir(parents=True);page=progress/'index.html';page.write_bytes(b'previous page')

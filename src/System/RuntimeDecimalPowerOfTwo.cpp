@@ -4,7 +4,7 @@
 // Copy the full 38-byte object representation, including its padding.
 union RuntimeDecimalStorage { RuntimeDecimal decimal; unsigned short words[19]; };
 extern "C" void Runtime_InitializeDecimalDigitsFromText(RuntimeDecimal*, const char*, short);
-extern "C" void func_02009778(RuntimeDecimal*, const RuntimeDecimal*, const RuntimeDecimal*);
+extern "C" void RuntimeDecimal_MultiplyPositiveDigitValues(RuntimeDecimal*, const RuntimeDecimal*, const RuntimeDecimal*);
 // Original: arm9/main @ 0x02009998; symbol: func_02009998; size: 0x384.
 extern "C" void RuntimeDecimalPowerOfTwo_ComputeDecimalPowerOfTwo(RuntimeDecimal* result, int exponent)
 {
@@ -77,7 +77,7 @@ extern "C" void RuntimeDecimalPowerOfTwo_ComputeDecimalPowerOfTwo(RuntimeDecimal
     }
     // Bias negative odd exponents before the arithmetic shift (division toward zero).
     RuntimeDecimalPowerOfTwo_ComputeDecimalPowerOfTwo(&half, (exponent + (int)(((unsigned int)exponent & 0x80000000) >> 31)) >> 1);
-    func_02009778(result, &half, &half);
+    RuntimeDecimal_MultiplyPositiveDigitValues(result, &half, &half);
     if ((exponent & 1) == 0)
         return;
     saved = *(const RuntimeDecimalStorage*)result;
@@ -85,5 +85,5 @@ extern "C" void RuntimeDecimalPowerOfTwo_ComputeDecimalPowerOfTwo(RuntimeDecimal
         Runtime_InitializeDecimalDigitsFromText(&half, gRuntimeDecimalPowers.power1, 0);
     else
         Runtime_InitializeDecimalDigitsFromText(&half, gRuntimeDecimalPowers.powerN1, -1);
-    func_02009778(result, &saved.decimal, &half);
+    RuntimeDecimal_MultiplyPositiveDigitValues(result, &saved.decimal, &half);
 }

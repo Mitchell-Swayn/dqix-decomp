@@ -5,15 +5,20 @@ extern "C" {
 int RuntimeMemory_CompareByteRanges(const void*,const void*,unsigned);
 void* _ZN9GameState11GetInstanceEv();
 unsigned _ZNK9GameState21GetEffectiveDeltaTimeEv(void*);
-void* Object_GetGlobalConnectionState();
-bool TestInactiveOrPrimaryIndexState(void*);
-unsigned Object_TestIndexedByte100EFlagByKey(void*,int);
-void InitializeHalfwordKeyAndInvalidByteIds(void*);
+void* Network_GetConnectionManager();
+bool Network_IsParentOrOffline(void*);
+unsigned Network_TestMemberDisconnectFlag(void*,int);
+void PartySync_ResetRecord(void*);
 void Object_EmitMatchedTextEntryPacket(unsigned);
-void Object_QueueTypedRecordAndInitializeState(unsigned,int);
-extern const char data_020e8a4c[];
+void Network_QueueEncounterFinalization(unsigned,int);
+// Original data: arm9/main @ 0x20e8a4c; symbol: data_020e8a4c.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 0000000000000000.
+// Observed span: 8 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const char ClearIndexedTextRecordStatesAndNotify_UnknownRoleInitializedBytes[];
 }
-inline bool HasClearedStatuses(TextEntry* p) { return RuntimeMemory_CompareByteRanges(p->status,data_020e8a4c,4)==0; }
+inline bool HasClearedStatuses(TextEntry* p) { return RuntimeMemory_CompareByteRanges(p->status,ClearIndexedTextRecordStatesAndNotify_UnknownRoleInitializedBytes,4)==0; }
 inline signed char* EntryStatuses(TextEntry* p) { return p->status; }
 // Original: arm9/main @ 0x0207DBA8; symbol: func_0207dba8; size: 0x148.
 extern "C" void Network_UpdateTextEntryTimeoutsAndStatus(TextEntry* entries) {
@@ -24,15 +29,15 @@ extern "C" void Network_UpdateTextEntryTimeoutsAndStatus(TextEntry* entries) {
   if(key && node->owner<0) {
    if(node->time<1000) node->time+=_ZNK9GameState21GetEffectiveDeltaTimeEv(state);
    else if(HasClearedStatuses(node)) {
-    Object_QueueTypedRecordAndInitializeState(key,0);
-    InitializeHalfwordKeyAndInvalidByteIds(node);
+    Network_QueueEncounterFinalization(key,0);
+    PartySync_ResetRecord(node);
    }
   } else node->time=0;
  }
- void* connection=Object_GetGlobalConnectionState();
- if(!TestInactiveOrPrimaryIndexState(connection)) return;
+ void* connection=Network_GetConnectionManager();
+ if(!Network_IsParentOrOffline(connection)) return;
  for(int key=1;key<4;key++) {
-  if(Object_TestIndexedByte100EFlagByKey(connection,key)) {
+  if(Network_TestMemberDisconnectFlag(connection,key)) {
    TextEntry* node=entries;
    for(int i=0;i<4;node++,i++) {
     signed char* statuses=EntryStatuses(node);

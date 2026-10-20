@@ -8,7 +8,7 @@ extern "C" void RuntimeFreeDefault_FreeDefaultArenaHeapBlock(void*);
 // Original: arm9/main @ 0x02001710; symbol: func_02001710; size: 0x18.
 extern "C" double RuntimeValueHooks_ConvertStoredValueToDouble()
 {
-    return _f2d(data_020eecc8.value);
+    return _f2d(RuntimePowerEvaluateDoublePower_UnknownRoleInitializedBytes_Variant4.value);
 }
 // Original: arm9/main @ 0x02001728; symbol: func_02001728; size: 0x14.
 extern "C" void Runtime_ReleaseNonNullPointer(void* pointer)

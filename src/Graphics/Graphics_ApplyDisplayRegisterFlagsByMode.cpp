@@ -2,7 +2,7 @@
 #include <System/Cache.h>
 #include <System/LoadToVRAM.h>
 
-extern "C" void WriteIndexedWord(void*, int, void*, unsigned int);
+extern "C" void NNS_G2dSetImageLocation(void*, int, void*, unsigned int);
 
 // Original: arm9/main @ 0x020B0368; symbol: func_020b0368; size: 0x22C.
 extern "C" ARM void Graphics_ApplyDisplayRegisterFlagsByMode(unsigned short* input, void* destination, int mode, void* record)
@@ -71,5 +71,5 @@ extern "C" ARM void Graphics_ApplyDisplayRegisterFlagsByMode(unsigned short* inp
     *(unsigned int*)((char*)record + 0x1c) = 1;
     unsigned int flags=*(unsigned int*)((char*)input + 8);
     *(unsigned int*)((char*)record + 0x20) = flags;
-    WriteIndexedWord(record, mode, destination, flags);
+    NNS_G2dSetImageLocation(record, mode, destination, flags);
 }

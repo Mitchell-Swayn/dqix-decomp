@@ -10,17 +10,17 @@
 
 inline DMACompletionCallback& CallbackByIndex(int n, int base = 0)
 {
-    return *(DMACompletionCallback*)((unsigned int)&data_0211127c[base].callback + n * sizeof(DMAOrTimerResponse));
+    return *(DMACompletionCallback*)((unsigned int)&GetInterruptHandler_UnknownRoleZeroInitializedStorage[base].callback + n * sizeof(DMAOrTimerResponse));
 }
 
 inline unsigned int& ShouldStayEnabledByIndex(int n, int base = 0)
 {
-    return *(unsigned int*)((unsigned int)&data_0211127c[base].stayEnabledAfter + n * sizeof(DMAOrTimerResponse));
+    return *(unsigned int*)((unsigned int)&GetInterruptHandler_UnknownRoleZeroInitializedStorage[base].stayEnabledAfter + n * sizeof(DMAOrTimerResponse));
 }
 
 inline int& CallbackUserdataByIndex(int n, int base = 0)
 {
-    return *(int*)((unsigned int)&data_0211127c[base].userdata + n * sizeof(DMAOrTimerResponse));
+    return *(int*)((unsigned int)&GetInterruptHandler_UnknownRoleZeroInitializedStorage[base].userdata + n * sizeof(DMAOrTimerResponse));
 }
 
 // Start of exposed functions
@@ -34,7 +34,7 @@ void WaitForInterrupt(bool onlySubsequent, unsigned int mask)
     
     if (!(mask & DTCM_DATA.interruptsFired))
     {
-        BlockedContextList* list = &data_027e0000.block_60;
+        BlockedContextList* list = &Entry_UnknownRoleProcedureReferenceRecords.block_60;
         unsigned int* pData;
         do {
             pData = &DTCM_DATA.interruptsFired;
@@ -49,7 +49,7 @@ void EmptyInterruptHandler() {}
 // This function matches with wrong registers
 void OnDMAOrTimerCompletion(int index)
 {
-    unsigned int irqId = data_020f2274[index];
+    unsigned int irqId = OnDMAOrTimerCompletion_UnknownRoleInitializedBytes[index];
     unsigned int irqMask = 1 << irqId;
 
     DMACompletionCallback callback = CallbackByIndex(index);
@@ -72,7 +72,7 @@ void OnDMAOrTimerCompletion(int index)
     }
 }
 
-void InitializeInterruptContextBlock_020c6ad4()
+void InitializeInterruptBlockedThreadList()
 {
     BlockedContextList& list = GetInterruptDataBlockedContextList();
     list.first = list.last = NULL;
@@ -89,8 +89,8 @@ void SetInterruptHandler(unsigned int mask, const void* proc)
     
     int interruptID;
     
-    regularTable = data_027e0000.interruptProcTable;
-    specialTable = data_0211127c;
+    regularTable = Entry_UnknownRoleProcedureReferenceRecords.interruptProcTable;
+    specialTable = GetInterruptHandler_UnknownRoleZeroInitializedStorage;
     interruptID = 0;
     do {
         

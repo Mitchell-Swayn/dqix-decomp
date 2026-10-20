@@ -1,0 +1,9 @@
+#include <globaldefs.h>
+// Original data: arm9/main @ 0x20f08f1; symbol: data_020f08f1.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 256400.
+// Observed span: 3 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+struct Context {char pad[0x8b0];const char* texts[1];char pad2[0x3d];unsigned char mode;char pad3[0x10];unsigned char width;inline unsigned GetWidth(int i) const {return ((const Context*)((const char*)this+i))->width;}inline unsigned char GetMode(int i)const{return ((const Context*)((const char*)this+i))->mode;}};extern "C" {int Text_ParseIntegerFromFirstDecimalDigit(void*);int Text_FormatAbsoluteIntegerAndMeasureWidth(int,const char*);int sprintf(char*,const char*,...);extern char TextMarkup_AppendAlignedNumericArgument_FormatDWD[],TextMarkup_AppendAlignedNumericArgument_FormatWDD[],TextMarkupAppendAlignedNumericArgument_UnknownRoleInitializedBytes[];
+// Original: arm9/main @ 0x02068238; symbol: func_02068238; size: 0xE4.
+void TextMarkup_AppendAlignedNumericArgument(void* p,char** out,Context* context) { int count=Text_ParseIntegerFromFirstDecimalDigit(p);const char* text=context->texts[count-1];unsigned width=context->GetWidth(count-1);unsigned char mode=context->GetMode(count-1);if(width){int padding=width*8-Text_FormatAbsoluteIntegerAndMeasureWidth(0,text);switch(mode){case 0:{*out+=sprintf(*out,TextMarkup_AppendAlignedNumericArgument_FormatDWD,text,padding);return;}case 1:{*out+=sprintf(*out,TextMarkup_AppendAlignedNumericArgument_FormatWDD,padding,text);return;}default:*out+=sprintf(*out,TextMarkupAppendAlignedNumericArgument_UnknownRoleInitializedBytes,text);return;}}*out+=sprintf(*out,TextMarkupAppendAlignedNumericArgument_UnknownRoleInitializedBytes,text);} }

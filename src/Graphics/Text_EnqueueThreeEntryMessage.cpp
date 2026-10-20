@@ -2,7 +2,7 @@
 #include <std_library_functions.h>
 ARM
 #pragma always_inline on
-extern "C" int TestContextModeAndZeroSlot();
+extern "C" int Field_IsHostDisconnectPending();
 struct Entry { char text[111]; unsigned char category:6,flag2:1,flag1:1; };
 struct Queue { Entry entries[3]; unsigned char count:6,other:2; unsigned char pad; unsigned short timer;
  void Append(const char* text,int category,int flag1,unsigned char flag2) {
@@ -15,7 +15,7 @@ struct Queue { Entry entries[3]; unsigned char count:6,other:2; unsigned char pa
 };
 // Original: arm9/main @ 0x020D7E10; symbol: func_020d7e10; size: 0x24C.
 extern "C" void Text_EnqueueThreeEntryMessage(Queue* self,const char* text,unsigned char category,unsigned char flag1,unsigned char deduplicate,unsigned char flag2) {
- if(TestContextModeAndZeroSlot()) return;
+ if(Field_IsHostDisconnectPending()) return;
  unsigned count=self->count;
  if(count && deduplicate) {
  if(!strcmp(self->entries[0].text,text)) return;

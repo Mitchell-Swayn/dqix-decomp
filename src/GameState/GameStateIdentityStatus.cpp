@@ -9,12 +9,12 @@ typedef char GameStateIdentityByteOffsetCheck[
 typedef char GameStateIdentityStatusStateSizeCheck[
     sizeof(GameState) == 0x7ff4 ? 1 : -1];
 
-extern "C" GameStateIndexedRecord* GameState_FindRecordByObjectIndex(GameState* state, int index);
+extern "C" GameStateIndexedRecord* GameState_FindCharacterStateByObjectIndex(GameState* state, int index);
 
 // Original: arm9/main @ 0x02011FF0; symbol: func_02011ff0; size: 0x20.
 extern "C" unsigned int GameState_ReadIndexedRecordLowNibble(GameState* state, int index)
 {
-    GameStateIndexedRecord* record = GameState_FindRecordByObjectIndex(state, index);
+    GameStateIndexedRecord* record = GameState_FindCharacterStateByObjectIndex(state, index);
     if (record != NULL)
         return record->lowNibble_56b_;
     return 0;
@@ -27,7 +27,7 @@ extern "C" void GameState_SetUnknown7f6c(GameState* state, unsigned int value)
 }
 
 // Original: arm9/main @ 0x0201201C; symbol: func_0201201c; size: 0xC.
-extern "C" unsigned int GameState_ReadWordAtOffset7F6C(GameState* state)
+extern "C" unsigned int GameState_GetStartupDispatchMode(GameState* state)
 {
     return state->unknown_7f6c_;
 }

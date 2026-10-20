@@ -1,0 +1,3 @@
+extern "C" { void *_ZN9GameState11GetInstanceEv(); void *Network_GetConnectionManager(); void PartySync_GetSharedRecordTable(void *); int Field_RemoveNextDisconnectedOrSupersededMember(void *); void BattleScene_RemovePartyMemberAndRepairOwnership(void *,int,unsigned char); }
+// Original: arm9/ov026 @ 0x021DDD84; symbol: func_ov026_021ddd84; size: 0x48.
+extern "C" int BattleScene_ProcessPendingPartyRemoval(void *owner,void *target,int unused2,int unused3,int unused4,int unused5,unsigned char mode) { _ZN9GameState11GetInstanceEv(); PartySync_GetSharedRecordTable(Network_GetConnectionManager()); int index=Field_RemoveNextDisconnectedOrSupersededMember(owner); if(index<=-1)return 0; BattleScene_RemovePartyMemberAndRepairOwnership(target,index,mode); return 1; }

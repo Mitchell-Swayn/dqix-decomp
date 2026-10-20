@@ -1,0 +1,4 @@
+#include "globaldefs.h"
+// Original: arm9/ov000 @ 0x02175258; symbol: RefreshFourSlotRecordFlagBySelectedValue.
+struct Slot{signed char pad[0x6c];signed char index;};struct Value{signed char pad[16];signed char value;};extern "C" void BattleMenu_UpdateMemberRowPositions(void*);
+extern "C" ARM void BattleMenu_RefreshSelectedPartyPanelExpansion(unsigned char*self){int i=0;unsigned char *base=self+0x158;base+=0x800;for(;i<4;i++){unsigned char *record=base+((Slot*)(self+i))->index*0x448;record[0x24]&=~4;BattleMenu_UpdateMemberRowPositions(self);}base=self+0x958;for(int i=0;i<4;i++){unsigned char *record=base+((Slot*)(self+i))->index*0x448;if(*(unsigned*)(self+0x17c)==*(unsigned*)(record+0x4c)){int flag=(record[0x24]&4)!=0;int value=((Value*)(record+((signed char*)record)[0x18]))->value;if(value>=100){if(!flag)return;record[0x24]&=~4;BattleMenu_UpdateMemberRowPositions(self);return;}if(flag)return;record[0x24]|=4;BattleMenu_UpdateMemberRowPositions(self);return;}}}

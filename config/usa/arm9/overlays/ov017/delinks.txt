@@ -5,3374 +5,4622 @@
     .data       start:0x021d7340 end:0x021d82e0 kind:data align:32
     .bss        start:0x021d82e0 end:0x021d8a40 kind:bss align:32
 
-src/Data/ov017/data_ov017_021d7358.cpp:
+src/Data/ProgramData_TextRevision17659.cpp:
     complete
     .data start:0x021d7358 end:0x021d736c
 
-src/Data/ov017/data_ov017_021d736c.cpp:
+src/Data/Field_RunSceneLifecycle_TextOpeningStb.cpp:
     complete
     .data start:0x021d736c end:0x021d7378
 
-src/Data/ov017/data_ov017_021d7378.cpp:
+src/Data/Field_RunSceneLifecycle_TextUploadStb.cpp:
     complete
     .data start:0x021d7378 end:0x021d7383
 
-src/Data/ov017/data_ov017_021d7383.cpp:
+src/Data/Field_LoadSharedPresentationEffect_PathDataEffectEv999992400Chr.cpp:
     complete
     .data start:0x021d7383 end:0x021d739f
 
-src/Data/ov017/data_ov017_021d739f.cpp:
+src/Data/FieldSpawnSharedPresentationEffectAtPosition_Text0.cpp:
     complete
     .data start:0x021d739f end:0x021d73a4
 
-src/Data/ov017/data_ov017_021d73f8.cpp:
+src/Data/Field_LoadActionShortcutDisplay_PathDataBinMenuStrSgsGp2.cpp:
     complete
     .data start:0x021d73f8 end:0x021d7412
 
-src/Data/ov017/data_ov017_021d7412.cpp:
+src/Data/Field_LoadActionShortcutDisplay_MarkupStrSgsLGNat.cpp:
     complete
     .data start:0x021d7412 end:0x021d7423
 
-src/Data/ov017/data_ov017_021d7423.cpp:
+src/Data/Field_LoadActionShortcutDisplay_PathDataAniBgTmPac.cpp:
     complete
     .data start:0x021d7423 end:0x021d7438
 
-src/Data/ov017/data_ov017_021d7439.cpp:
+src/Data/ProgramData_TextTaru02Spr.cpp:
     complete
     .data start:0x021d7439 end:0x021d7445
 
-src/Data/ov017/data_ov017_021d7445.cpp:
+src/Data/ProgramData_TextEvMarkSpr.cpp:
     complete
     .data start:0x021d7445 end:0x021d7451
 
-src/Data/ov017/data_ov017_021d7451.cpp:
+src/Data/ProgramData_TextFukiInSpr.cpp:
     complete
     .data start:0x021d7451 end:0x021d745d
 
-src/Data/ov017/data_ov017_021d745d.cpp:
+src/Data/ProgramData_TextTaru03Spr.cpp:
     complete
     .data start:0x021d745d end:0x021d7469
 
-src/Data/ov017/data_ov017_021d7469.cpp:
+src/Data/ProgramData_TextTaru01Spr.cpp:
     complete
     .data start:0x021d7469 end:0x021d7475
 
-src/Data/ov017/data_ov017_021d7475.cpp:
+src/Data/ProgramData_TextFieldQuSpr.cpp:
     complete
     .data start:0x021d7475 end:0x021d7482
 
-src/Data/ov017/data_ov017_021d7482.cpp:
+src/Data/ProgramData_TextFukiHknSpr.cpp:
     complete
     .data start:0x021d7482 end:0x021d748f
 
-src/Data/ov017/data_ov017_021d748f.cpp:
+src/Data/ProgramData_TextFukiComSpr.cpp:
     complete
     .data start:0x021d748f end:0x021d749c
 
-src/Data/ov017/data_ov017_021d749c.cpp:
+src/Data/ProgramData_TextTsubo01Spr.cpp:
     complete
     .data start:0x021d749c end:0x021d74a9
 
-src/Data/ov017/data_ov017_021d74a9.cpp:
+src/Data/ProgramData_TextTsubo02Spr.cpp:
     complete
     .data start:0x021d74a9 end:0x021d74b6
 
-src/Data/ov017/data_ov017_021d74b6.cpp:
+src/Data/ProgramData_TextTsubo03Spr.cpp:
     complete
     .data start:0x021d74b6 end:0x021d74c3
 
-src/Data/ov017/data_ov017_021d74c3.cpp:
+src/Data/ProgramData_TextFukiComQSpr.cpp:
     complete
     .data start:0x021d74c3 end:0x021d74d2
 
-src/Data/ov017/data_ov017_021d74d2.cpp:
+src/Data/ProgramData_TextFieldMon01Spr.cpp:
     complete
     .data start:0x021d74d2 end:0x021d74e2
 
-src/Data/ov017/data_ov017_021d74e2.cpp:
+src/Data/ProgramData_TextFukiComApcSpr.cpp:
     complete
     .data start:0x021d74e2 end:0x021d74f3
 
-src/Data/ov017/data_ov017_021d74f3.cpp:
+src/Data/ProgramData_TextFieldSatoriSpr.cpp:
     complete
     .data start:0x021d74f3 end:0x021d7504
 
-src/Data/ov017/data_ov017_021d7504.cpp:
+src/Data/Field_LoadChestPickupAndInteractionVisuals_PathDataBinS.cpp:
     complete
     .data start:0x021d7504 end:0x021d7510
 
-src/Data/ov017/data_ov017_021d7510.cpp:
+src/Data/Field_LoadChestPickupAndInteractionVisuals_TextIconNsarc.cpp:
     complete
     .data start:0x021d7510 end:0x021d751b
 
-src/Data/ov017/data_ov017_021d751b.cpp:
+src/Data/Field_LoadChestPickupAndInteractionVisuals_TextARC.cpp:
     complete
     .data start:0x021d751b end:0x021d751f
 
-src/Data/ov017/data_ov017_021d751f.cpp:
+src/Data/Field_LoadChestPickupAndInteractionVisuals_FormatARCS.cpp:
     complete
     .data start:0x021d751f end:0x021d7526
 
-src/Data/ov017/data_ov017_021d7526.cpp:
+src/Data/Field_LoadChestPickupAndInteractionVisuals_TextWing1Spr.cpp:
     complete
     .data start:0x021d7526 end:0x021d7530
 
-src/Data/ov017/data_ov017_021d7530.cpp:
+src/Data/Field_LoadChestPickupAndInteractionVisuals_TextWing2Spr.cpp:
     complete
     .data start:0x021d7530 end:0x021d753a
 
-src/Data/ov017/data_ov017_021d753a.cpp:
+src/Data/Field_LoadChestPickupAndInteractionVisuals_TextWing3Spr.cpp:
     complete
     .data start:0x021d753a end:0x021d7544
 
-src/Data/ov017/data_ov017_021d7544.cpp:
+src/Data/Field_LoadChestPickupAndInteractionVisuals_TextARCEvIcon0Spr.cpp:
     complete
     .data start:0x021d7544 end:0x021d7555
 
-src/Data/ov017/data_ov017_021d7555.cpp:
+src/Data/Field_LoadChestPickupAndInteractionVisuals_TextARCFieldBatSpr.cpp:
     complete
     .data start:0x021d7555 end:0x021d7567
 
-src/Data/ov017/data_ov017_021d7567.cpp:
+src/Data/Field_LoadChestPickupAndInteractionVisuals_TextEv999990300Chr.cpp:
     complete
     .data start:0x021d7567 end:0x021d7577
 
-src/Data/ov017/data_ov017_021d7577.cpp:
+src/Data/Field_LoadWindowCoffinShadowAndAnimationResources_TextKanokeNsbmd.cpp:
     complete
     .data start:0x021d7577 end:0x021d7584
 
-src/Data/ov017/data_ov017_021d7584.cpp:
+src/Data/Field_LoadWindowCoffinShadowAndAnimationResources_TextKageChr.cpp:
     complete
     .data start:0x021d7584 end:0x021d758d
 
-src/Data/ov017/data_ov017_021d758d.cpp:
+src/Data/Field_LoadWindowCoffinShadowAndAnimationResources_PathDataAniObjDefPac.cpp:
     complete
     .data start:0x021d758d end:0x021d75a2
 
-src/Data/ov017/data_ov017_021d75a2.cpp:
+src/Data/Field_LoadWindowCoffinShadowAndAnimationResources_PathDataAniBgDefBncl.cpp:
     complete
     .data start:0x021d75a2 end:0x021d75b8
 
-src/Data/ov017/data_ov017_021d75d0.cpp:
+src/Data/Field_QueueMemoryScenarioScript_TextMemory2Stb.cpp:
     complete
     .data start:0x021d75d0 end:0x021d75dc
 
-src/Data/ov017/data_ov017_021d75dc.cpp:
+src/Data/Field_RequestZoneReturnAndScenarioMessage_PathDataScenarioChurMessetBin.cpp:
     complete
     .data start:0x021d75dc end:0x021d75fa
 
-src/Data/ov017/data_ov017_021d75fc.cpp:
+src/Data/Field_AdvanceZoneEntryTransition_PathDataScenarioTreasureNsarc.cpp:
     complete
     .data start:0x021d75fc end:0x021d7619
 
-src/Data/ov017/data_ov017_021d7619.cpp:
+src/Data/Field_AdvanceZoneEntryTransition_FormatSC.cpp:
     complete
     .data start:0x021d7619 end:0x021d761e
 
-src/Data/ov017/data_ov017_021d761e.cpp:
+src/Data/Field_AdvanceZoneEntryTransition_PathDataMapIneventdata3Bin.cpp:
     complete
     .data start:0x021d761e end:0x021d7638
 
-src/Data/ov017/data_ov017_021d7638.cpp:
+src/Data/Resource_ResetFourZoneEntriesAndLoadSharedSplitResource_PathDataPrmMonModdataNat.cpp:
     complete
     .data start:0x021d7638 end:0x021d7654
 
-src/Data/ov017/data_ov017_021d7668.cpp:
+src/Data/FieldMonster_LoadCurrentZoneModelCache_PathDataPackLv5EnemyGp2.cpp:
     complete
     .data start:0x021d7668 end:0x021d7680
 
-src/Data/ov017/data_ov017_021d7680.cpp:
+src/Data/FieldMonster_LoadCurrentZoneModelCache_FormatSFMon.cpp:
     complete
     .data start:0x021d7680 end:0x021d7689
 
-src/Data/ov017/data_ov017_021d76a6.cpp:
+src/Data/Field_LoadZoneNpcPlacementsAndDefinitions_PathDataScenarioSNpc.cpp:
     complete
     .data start:0x021d76a6 end:0x021d76bb
 
-src/Data/ov017/data_ov017_021d76bb.cpp:
+src/Data/Field_LoadZoneNpcPlacementsAndDefinitions_TextARC.cpp:
     complete
     .data start:0x021d76bb end:0x021d76bf
 
-src/Data/ov017/data_ov017_021d76bf.cpp:
+src/Data/Field_LoadZoneNpcPlacementsAndDefinitions_TextPlaceBin.cpp:
     complete
     .data start:0x021d76bf end:0x021d76c9
 
-src/Data/ov017/data_ov017_021d76c9.cpp:
+src/Data/Field_LoadZoneNpcPlacementsAndDefinitions_TextNpcBin.cpp:
     complete
     .data start:0x021d76c9 end:0x021d76d1
 
-src/Data/ov017/data_ov017_021d76d1.cpp:
+src/Data/FieldLoadZoneNpcPlacementsAndDefinitions_TextR0.cpp:
     complete
     .data start:0x021d76d1 end:0x021d76d4
 
-src/Data/ov017/data_ov017_021d76d4.cpp:
+src/Data/Field_LoadZoneNpcPlacementsAndDefinitions_TextR05.cpp:
     complete
     .data start:0x021d76d4 end:0x021d76d8
 
-src/Data/ov017/data_ov017_021d76dc.cpp:
+src/Data/FieldMenu_HandleMenuAndStoryShortcutInput_TextStoryStb.cpp:
     complete
     .data start:0x021d76dc end:0x021d76e8
 
-src/Data/ov017/data_ov017_021d76e8.cpp:
+src/Data/Field_AdvanceGrottoMapPromptLoading_PathDataAniBgTmPac.cpp:
     complete
     .data start:0x021d76e8 end:0x021d76fb
 
-src/Data/ov017/data_ov017_021d76fb.cpp:
+src/Data/Field_AdvanceGrottoMapPromptLoading_PathDataAniOtfGp2.cpp:
     complete
     .data start:0x021d76fb end:0x021d770c
 
-src/Data/ov017/data_ov017_021d770c.cpp:
+src/Data/Field_AdvanceGrottoMapPromptLoading_MarkupOtfLGPac.cpp:
     complete
     .data start:0x021d770c end:0x021d7719
 
-src/Data/ov017/data_ov017_021d7728.cpp:
+src/Data/ProgramData_PathDataEffectEm1810Chr.cpp:
     complete
     .data start:0x021d7728 end:0x021d773f
 
-src/Data/ov017/data_ov017_021d773f.cpp:
+src/Data/ProgramData_PathDataEffectEv999991710Chr.cpp:
     complete
     .data start:0x021d773f end:0x021d775b
 
-src/Data/ov017/data_ov017_021d775b.cpp:
+src/Data/ProgramData_PathDataEffectEv999993400Chr.cpp:
     complete
     .data start:0x021d775b end:0x021d7778
 
-src/Data/ov017/data_ov017_021d7778.cpp:
+src/Data/FieldAdvanceArrivalEffect_Text0.cpp:
     complete
     .data start:0x021d7778 end:0x021d777a
 
-src/Data/ov017/data_ov017_021d777a.cpp:
+src/Data/FieldAdvanceArrivalEffect_Text1.cpp:
     complete
     .data start:0x021d777a end:0x021d777c
 
-src/Data/ov017/data_ov017_021d777c.cpp:
+src/Data/Field_AdvancePartyTravelEffect_PathDataEffectEv999993400Chr.cpp:
     complete
     .data start:0x021d777c end:0x021d7798
 
-src/Data/ov017/data_ov017_021d7798.cpp:
+src/Data/Field_AdvanceTravelConfirmation_PathDataBinMenuStrArkGp2.cpp:
     complete
     .data start:0x021d7798 end:0x021d77b2
 
-src/Data/ov017/data_ov017_021d77b2.cpp:
+src/Data/Field_AdvanceTravelConfirmation_MarkupStrArkLGNat.cpp:
     complete
     .data start:0x021d77b2 end:0x021d77c4
 
-src/Data/ov017/data_ov017_021d77c4.cpp:
+src/Data/ItemTrade_AdvanceIncomingOffer_PathDataBinMenuStrTrdGp2.cpp:
     complete
     .data start:0x021d77c4 end:0x021d77de
 
-src/Data/ov017/data_ov017_021d77de.cpp:
+src/Data/ItemTrade_AdvanceIncomingOffer_MarkupStrTrdLGNat.cpp:
     complete
     .data start:0x021d77de end:0x021d77f0
 
-src/Data/ov017/data_ov017_021d77f0.cpp:
+src/Data/Field_AdvanceTravelDestinationMenu_PathDataBinMenuStrArkGp2.cpp:
     complete
     .data start:0x021d77f0 end:0x021d780a
 
-src/Data/ov017/data_ov017_021d780a.cpp:
+src/Data/Field_AdvanceTravelDestinationMenu_MarkupStrArkLGNat.cpp:
     complete
     .data start:0x021d780a end:0x021d781c
 
-src/Data/ov017/data_ov017_021d781c.cpp:
+src/Data/GrottoInitializeMapMetadataAndExportNamedDetails_TextS.cpp:
     complete
     .data start:0x021d781c end:0x021d781f
 
-src/Data/ov017/data_ov017_021d781f.cpp:
+src/Data/FieldTreasureMap_UpdateReceivedMapRegistration_MarkupPAGEADD.cpp:
     complete
     .data start:0x021d781f end:0x021d782b
 
-src/Data/ov017/data_ov017_021d782b.cpp:
+src/Data/FieldTreasureMap_UpdateReceivedMapRegistration_MarkupEND.cpp:
     complete
     .data start:0x021d782b end:0x021d7831
 
-src/Data/ov017/data_ov017_021d7831.cpp:
+src/Data/FieldTreasureMap_QueueMapScriptAndFadeOut_TextTmapStb.cpp:
     complete
     .data start:0x021d7831 end:0x021d783c
 
-src/Data/ov017/data_ov017_021d7868.cpp:
+src/Data/FieldMessage_UpdatePartyHpReducedToOneNotice_MarkupADD.cpp:
     complete
     .data start:0x021d7868 end:0x021d7870
 
-src/Data/ov017/data_ov017_021d7870.cpp:
+src/Data/FieldRecovery_UpdateRevivalPromptAndRestoreParty_PathDataAniBgTmPac.cpp:
     complete
     .data start:0x021d7870 end:0x021d7883
 
-src/Data/ov017/data_ov017_021d7883.cpp:
+src/Data/FieldRecovery_UpdateRevivalPromptAndRestoreParty_PathDataBinMenuBmRevGp2.cpp:
     complete
     .data start:0x021d7883 end:0x021d789c
 
-src/Data/ov017/data_ov017_021d789c.cpp:
+src/Data/FieldRecovery_UpdateRevivalPromptAndRestoreParty_TextBmRev.cpp:
     complete
     .data start:0x021d789c end:0x021d78a4
 
-src/Data/ov017/data_ov017_021d78c4.cpp:
+src/Data/FieldEscape_ResolveDestinationAndQueueTransition_PathDataMapRiremitoBin.cpp:
     complete
     .data start:0x021d78c4 end:0x021d78da
 
-src/Data/ov017/data_ov017_021d78da.cpp:
+src/Data/FieldEscape_UpdateExitEffectAndFade_PathDataEffectEm1800Chr.cpp:
     complete
     .data start:0x021d78da end:0x021d78f1
 
-src/Data/ov017/data_ov017_021d78f1.cpp:
+src/Data/FieldEscape_UpdateExitEffectAndFade_TextMemory2Stb.cpp:
     complete
     .data start:0x021d78f1 end:0x021d7900
 
-src/Data/ov017/data_ov017_021d7920.cpp:
+src/Data/FieldBookshelf_UpdateScenarioTextAndRewards_MarkupNTURNADD.cpp:
     complete
     .data start:0x021d7920 end:0x021d792f
 
-src/Data/ov017/data_ov017_021d792f.cpp:
+src/Data/FieldBookshelf_UpdateScenarioTextAndRewards_PathDataScenarioHtanaCGp2.cpp:
     complete
     .data start:0x021d792f end:0x021d7949
 
-src/Data/ov017/data_ov017_021d7949.cpp:
+src/Data/FieldBookshelf_UpdateScenarioTextAndRewards_FormatHtanaCLGBin.cpp:
     complete
     .data start:0x021d7949 end:0x021d795c
 
-src/Data/ov017/data_ov017_021d795c.cpp:
+src/Data/FieldPartyEffect_UpdateTransitionAndRecallSequence_PathDataEffectEv999991710Chr.cpp:
     complete
     .data start:0x021d795c end:0x021d7978
 
-src/Data/ov017/data_ov017_021d7978.cpp:
+src/Data/FieldPartyEffect_UpdateTransitionAndRecallSequence_PathDataEffectEm1810Chr.cpp:
     complete
     .data start:0x021d7978 end:0x021d798f
 
-src/Data/ov017/data_ov017_021d798f.cpp:
+src/Data/FieldPartyEffect_UpdateTransitionAndRecallSequence_TextMemory2Stb.cpp:
     complete
     .data start:0x021d798f end:0x021d799c
 
-src/Data/ov017/data_ov017_021d799c.cpp:
+src/Data/Field_AdvanceChestOpeningInteraction_FormatSS.cpp:
     complete
     .data start:0x021d799c end:0x021d79a2
 
-src/Data/ov017/data_ov017_021d79a2.cpp:
+src/Data/FieldAdvanceChestOpeningInteraction_TextS.cpp:
     complete
     .data start:0x021d79a2 end:0x021d79a8
 
-src/Data/ov017/data_ov017_021d79a8.cpp:
+src/Data/Field_AdvanceItemPickupPresentation_FormatDataAniDC03DSpr.cpp:
     complete
     .data start:0x021d79a8 end:0x021d79c0
 
-src/Data/ov017/data_ov017_021d7a28.cpp:
+src/Data/Resource_QueueFileWithTemporaryAllocator_PathDataMenuS.cpp:
     complete
     .data start:0x021d7a28 end:0x021d7a38
 
-src/Data/ov017/data_ov017_021d7a40.cpp:
+src/Data/ProgramData_PathDataPackLv5CharaMpGp2.cpp:
     complete
     .data start:0x021d7a40 end:0x021d7a5b
 
-src/Data/ov017/data_ov017_021d7a5b.cpp:
+src/Data/ProgramData_PathDataPackLv5CharaPcGp2.cpp:
     complete
     .data start:0x021d7a5b end:0x021d7a78
 
-src/Data/ov017/data_ov017_021d7a78.cpp:
+src/Data/FieldAppearance_UpdateMemberResourceRefresh_PathDataBinAttnpcGp2.cpp:
     complete
     .data start:0x021d7a78 end:0x021d7a8c
 
-src/Data/ov017/data_ov017_021d7a8c.cpp:
+src/Data/FieldAppearance_UpdateMemberResourceRefresh_MarkupAttnpcLGBin.cpp:
     complete
     .data start:0x021d7a8c end:0x021d7a9c
 
-src/Data/ov017/data_ov017_021d7a9c.cpp:
+src/Data/FieldAppearance_UpdateMemberResourceRefresh_PathDataCharaSubS03DnChr.cpp:
     complete
     .data start:0x021d7a9c end:0x021d7ab6
 
-src/Data/ov017/data_ov017_021d7ab6.cpp:
+src/Data/Resource_QueueRefreshForChangedMemberEquipment_PathDataPrmItembtlprmNat.cpp:
     complete
     .data start:0x021d7ab6 end:0x021d7ace
 
-src/Data/ov017/data_ov017_021d7ace.cpp:
+src/Data/Resource_QueueChangedMemberEquipmentModels_FormatS2Chr.cpp:
     complete
     .data start:0x021d7ace end:0x021d7ad6
 
-src/Data/ov017/data_ov017_021d7ad6.cpp:
+src/Data/Resource_QueueChangedMemberEquipmentModels_FormatSChr.cpp:
     complete
     .data start:0x021d7ad6 end:0x021d7add
 
-src/Data/ov017/data_ov017_021d7add.cpp:
+src/Data/FieldAppearance_ApplyLoadedMemberModelsAndAnimations_TextBact.cpp:
     complete
     .data start:0x021d7add end:0x021d7ae3
 
-src/Data/ov017/data_ov017_021d7ae3.cpp:
+src/Data/FieldAppearance_ApplyLoadedMemberModelsAndAnimations_TextStand.cpp:
     complete
     .data start:0x021d7ae3 end:0x021d7aec
 
-src/Data/ov017/data_ov017_021d7afc.cpp:
+src/Data/ZoneEncounterLoader_BeginZoneDataLoad_FormatSP00Bin.cpp:
     complete
     .data start:0x021d7afc end:0x021d7b06
 
-src/Data/ov017/data_ov017_021d7b06.cpp:
+src/Data/ZoneEncounterLoader_BeginZoneDataLoad_FormatSBin.cpp:
     complete
     .data start:0x021d7b06 end:0x021d7b0d
 
-src/Data/ov017/data_ov017_021d7b0d.cpp:
+src/Data/ZoneEncounterLoader_BeginZoneDataLoad_PathDataPackLv5PathGp2.cpp:
     complete
     .data start:0x021d7b0d end:0x021d7b24
 
-src/Data/ov017/data_ov017_021d7b24.cpp:
+src/Data/ZoneEncounterLoader_BeginZoneDataLoad_PathDataMapZ0DM01Ambl.cpp:
     complete
     .data start:0x021d7b24 end:0x021d7b3a
 
-src/Data/ov017/data_ov017_021d7b3a.cpp:
+src/Data/ZoneEncounterLoader_BeginZoneDataLoad_PathDataPrmEncmonsBin.cpp:
     complete
     .data start:0x021d7b3a end:0x021d7b4f
 
-src/Data/ov017/data_ov017_021d7b4f.cpp:
+src/Data/ZoneEncounterLoader_LoadPathGraphAndQueueMonsterSelection_TextBin.cpp:
     complete
     .data start:0x021d7b4f end:0x021d7b53
 
-src/Data/ov017/data_ov017_021d7b53.cpp:
+src/Data/ZoneEncounterLoader_BuildGrottoGraphAndQueueMonsterSelection_TextARC.cpp:
     complete
     .data start:0x021d7b53 end:0x021d7b57
 
-src/Data/ov017/data_ov017_021d7b57.cpp:
+src/Data/ZoneEncounterLoader_BuildGrottoGraphAndQueueMonsterSelection_TextBpos.cpp:
     complete
     .data start:0x021d7b57 end:0x021d7b5d
 
-src/Data/ov017/data_ov017_021d7b5d.cpp:
+src/Data/ZoneEncounterLoader_SelectMonsterIdsAndQueueFieldChoices_PathDataPrmEncfldBin.cpp:
     complete
     .data start:0x021d7b5d end:0x021d7b71
 
-src/Data/ov017/data_ov017_021d7b71.cpp:
+src/Data/ZoneEncounterLoader_LoadFieldChoicesAndQueueBattleGroups_PathDataPrmEncbtlBin.cpp:
     complete
     .data start:0x021d7b71 end:0x021d7b85
 
-src/Data/ov017/data_ov017_021d7b85.cpp:
+src/Data/ZoneEncounterLoader_LoadBattleGroupsAndQueueMonsterData_PathDataPrmMonsDmyBin.cpp:
     complete
     .data start:0x021d7b85 end:0x021d7b9b
 
-src/Data/ov017/data_ov017_021d7b9b.cpp:
+src/Data/ZoneEncounterLoader_LoadBattleGroupsAndQueueMonsterData_PathDataPrmMonDataGp2.cpp:
     complete
     .data start:0x021d7b9b end:0x021d7bb1
 
-src/Data/ov017/data_ov017_021d7bb1.cpp:
+src/Data/ZoneEncounterLoader_LoadBattleGroupsAndQueueMonsterData_MarkupMonDataLGNat.cpp:
     complete
     .data start:0x021d7bb1 end:0x021d7bc3
 
-src/Data/ov017/data_ov017_021d7bc3.cpp:
+src/Data/ZoneEncounterLoader_CopyMonsterDataAndQueueFieldParameters_PathDataPrmFldMondataBin.cpp:
     complete
     .data start:0x021d7bc3 end:0x021d7bdc
 
-src/Data/ov017/data_ov017_021d7bdc.cpp:
+src/Data/ZoneEncounterLoader_LoadFieldParametersAndQueueOverrides_PathDataPrmMonModdataNat.cpp:
     complete
     .data start:0x021d7bdc end:0x021d7bf8
 
-src/Data/ov017/data_ov017_021d7bf8.cpp:
+src/Data/Field_QueueContainerLootSpriteOrSpecialPresentation_FormatDataAniDC03DSpr.cpp:
     complete
     .data start:0x021d7bf8 end:0x021d7c10
 
-src/Data/ov017/data_ov017_021d7c10.cpp:
+src/Data/FieldBattle_AdvanceEntryTransition_PathDataEventEventbattleBin.cpp:
     complete
     .data start:0x021d7c10 end:0x021d7c2c
 
-src/Data/ov017/data_ov017_021d7c3c.cpp:
+src/Data/Field_LoadAndExecuteCurrentZoneTriggers_TextScenarioTriggerBin.cpp:
     complete
     .data start:0x021d7c3c end:0x021d7c54
 
-src/Data/ov017/data_ov017_021d7c90.cpp:
+src/Data/FieldDialogue_AdvanceConversation_TextN303.cpp:
     complete
     .data start:0x021d7c90 end:0x021d7c95
 
-src/Data/ov017/data_ov017_021d7c95.cpp:
+src/Data/FieldDialogue_AdvanceConversation_PathDataScenarioSC0Gp2.cpp:
     complete
     .data start:0x021d7c95 end:0x021d7cad
 
-src/Data/ov017/data_ov017_021d7cad.cpp:
+src/Data/FieldDialogue_AdvanceConversation_Format03DLGBin.cpp:
     complete
     .data start:0x021d7cad end:0x021d7cbc
 
-src/Data/ov017/data_ov017_021d7d6c.cpp:
+src/Data/FieldEvent_BeginScriptLoadAndSuspendFieldControl_TextStand.cpp:
     complete
     .data start:0x021d7d6c end:0x021d7d72
 
-src/Data/ov017/data_ov017_021d7d72.cpp:
+src/Data/FieldEvent_ReleaseResourcesAndResumeFieldControl_TextHasigoLoop.cpp:
     complete
     .data start:0x021d7d72 end:0x021d7d7e
 
-src/Data/ov017/data_ov017_021d7d7e.cpp:
+src/Data/FieldEvent_InitializeInEventScriptRequest_TextIneventStb.cpp:
     complete
     .data start:0x021d7d7e end:0x021d7d8a
 
-src/Data/ov017/data_ov017_021d7d8a.cpp:
+src/Data/FieldEvent_InitializeLuidaScriptRequest_TextEvluidaStb.cpp:
     complete
     .data start:0x021d7d8a end:0x021d7d96
 
-src/Data/ov017/data_ov017_021d7d96.cpp:
+src/Data/FieldEvent_InitializeLuidaScriptRequest_TextF12Ev3D.cpp:
     complete
     .data start:0x021d7d96 end:0x021d7d9e
 
-src/Data/ov017/data_ov017_021d7d9e.cpp:
+src/Data/FieldEvent_BeginScriptLoadAndSuspendFieldControl_PathDataMapIneventdata3Bin.cpp:
     complete
     .data start:0x021d7d9e end:0x021d7db8
 
-src/Data/ov017/data_ov017_021d7db8.cpp:
+src/Data/FieldEventBeginScriptLoadAndSuspendFieldControl_TextR0.cpp:
     complete
     .data start:0x021d7db8 end:0x021d7dbb
 
-src/Data/ov017/data_ov017_021d7dbb.cpp:
+src/Data/FieldEvent_BeginScriptLoadAndSuspendFieldControl_TextM01.cpp:
     complete
     .data start:0x021d7dbb end:0x021d7dbf
 
-src/Data/ov017/data_ov017_021d7dbf.cpp:
+src/Data/FieldEvent_BeginScriptLoadAndSuspendFieldControl_PathDataEvsptLv5EventlistLv5Bin.cpp:
     complete
     .data start:0x021d7dbf end:0x021d7de0
 
-src/Data/ov017/data_ov017_021d7de0.cpp:
+src/Data/FieldEvent_BeginScriptLoadAndSuspendFieldControl_PathDataEventEvlQuestBin.cpp:
     complete
     .data start:0x021d7de0 end:0x021d7df9
 
-src/Data/ov017/data_ov017_021d7df9.cpp:
+src/Data/FieldEvent_BeginScriptLoadAndSuspendFieldControl_PathDataEventEventlist6Bin.cpp:
     complete
     .data start:0x021d7df9 end:0x021d7e14
 
-src/Data/ov017/data_ov017_021d7e14.cpp:
+src/Data/Field_UpdateAlternatePartyModels_PathDataCharaSubS023N2Chr.cpp:
     complete
     .data start:0x021d7e14 end:0x021d7e2e
 
-src/Data/ov017/data_ov017_021d7e2e.cpp:
+src/Data/Field_UpdateAlternatePartyModels_PathDataCharaSubS069Chr.cpp:
     complete
     .data start:0x021d7e2e end:0x021d7e46
 
-src/Data/ov017/data_ov017_021d7e46.cpp:
+src/Data/Field_UpdateAlternatePartyModels_PathDataPackLv5CharaPdGp2.cpp:
     complete
     .data start:0x021d7e46 end:0x021d7e61
 
-src/Data/ov017/data_ov017_021d7e61.cpp:
+src/Data/Field_UpdateAlternatePartyModels_TextDWingChr.cpp:
     complete
     .data start:0x021d7e61 end:0x021d7e6c
 
-src/Data/ov017/data_ov017_021d7e6c.cpp:
+src/Data/Field_UpdateAlternatePartyModels_TextDWaChr.cpp:
     complete
     .data start:0x021d7e6c end:0x021d7e75
 
-src/Data/ov017/data_ov017_021d7e75.cpp:
+src/Data/Field_UpdateAlternatePartyModels_TextStand.cpp:
     complete
     .data start:0x021d7e75 end:0x021d7e7b
 
-src/Data/ov017/data_ov017_021d7e7b.cpp:
+src/Data/Field_UpdateAlternatePartyModels_TextRun.cpp:
     complete
     .data start:0x021d7e7b end:0x021d7e80
 
-src/Data/ov017/data_ov017_021d7e80.cpp:
+src/Data/Field_AdvanceGrottoReturnEffectAndTransition_PathDataEffectEm1800Chr.cpp:
     complete
     .data start:0x021d7e80 end:0x021d7e98
 
-src/Data/ov017/data_ov017_021d7e98.cpp:
+src/Data/Field_AdvanceGrottoNamePopupOrReturn_PathDataBinMenuStrTmpNat.cpp:
     complete
     .data start:0x021d7e98 end:0x021d7eb2
 
-src/Data/ov017/data_ov017_021d7eb2.cpp:
+src/Data/Field_AdvanceGrottoNamePopupOrReturn_FormatSPADWAIT.cpp:
     complete
     .data start:0x021d7eb2 end:0x021d7ec0
 
-src/Data/ov017/data_ov017_021d7ec0.cpp:
+src/Data/Grotto_UpdateTreasureMapEndPrompt_PathDataBinTmsEndGp2.cpp:
     complete
     .data start:0x021d7ec0 end:0x021d7ed5
 
-src/Data/ov017/data_ov017_021d7ed5.cpp:
+src/Data/Grotto_UpdateTreasureMapEndPrompt_MarkupTmsEndLGBin.cpp:
     complete
     .data start:0x021d7ed5 end:0x021d7ee8
 
-src/Data/ov017/data_ov017_021d7ee8.cpp:
+src/Data/Field_BeginContainerLootPresentation_FormatDataAniDC03DSpr.cpp:
     complete
     .data start:0x021d7ee8 end:0x021d7f00
 
-src/Data/ov017/data_ov017_021d7f00.cpp:
+src/Data/RecordsScreen_UpdateFieldScreenSession_TextDcStb.cpp:
     complete
     .data start:0x021d7f00 end:0x021d7f07
 
-src/Data/ov017/data_ov017_021d7f07.cpp:
+src/Data/RecordsScreen_UpdateFieldScreenSession_TextGetIlStb.cpp:
     complete
     .data start:0x021d7f07 end:0x021d7f12
 
-src/Data/ov017/data_ov017_021d7f12.cpp:
+src/Data/RecordsScreen_UpdateFieldScreenSession_TextTlStb.cpp:
     complete
     .data start:0x021d7f12 end:0x021d7f19
 
-src/Data/ov017/data_ov017_021d7f19.cpp:
+src/Data/RecordsScreen_UpdateFieldScreenSession_TextQlstStb.cpp:
     complete
     .data start:0x021d7f19 end:0x021d7f22
 
-src/Data/ov017/data_ov017_021d7f22.cpp:
+src/Data/RecordsScreen_UpdateFieldScreenSession_TextMmateStb.cpp:
     complete
     .data start:0x021d7f22 end:0x021d7f2c
 
-src/Data/ov017/data_ov017_021d7f2c.cpp:
+src/Data/Field_LoadAttachedNpcForParty_PathDataBinAttnpcGp2.cpp:
     complete
     .data start:0x021d7f2c end:0x021d7f40
 
-src/Data/ov017/data_ov017_021d7f40.cpp:
+src/Data/Field_LoadAttachedNpcForParty_MarkupAttnpcLGBin.cpp:
     complete
     .data start:0x021d7f40 end:0x021d7f50
 
-src/Data/ov017/data_ov017_021d7f50.cpp:
+src/Data/Field_LoadAttachedNpcForParty_PathDataCharaSubS03DnChr.cpp:
     complete
     .data start:0x021d7f50 end:0x021d7f6c
 
-src/Data/ov017/data_ov017_021d7f6c.cpp:
+src/Data/LoadAndApplyPartyDisplayResource_PathDataEffectEm1830Chr.cpp:
     complete
     .data start:0x021d7f6c end:0x021d7f84
 
-src/Data/ov017/data_ov017_021d8288.cpp:
+src/Data/Field_ProcessPartyRecoveryCommand_MarkupStrTmLGNat.cpp:
     complete
     .data start:0x021d8288 end:0x021d8298
 
-src/Data/ov017/data_ov017_021d8298.cpp:
+src/Data/Field_ProcessPartyRecoveryCommand_PathDataBinMenuStrTmGp2.cpp:
     complete
     .data start:0x021d8298 end:0x021d82b1
 
-src/Data/ov017/data_ov017_021d82b1.cpp:
+src/Data/Graphics_ApplyPartyMemberAnimationCommand_TextHasigoIn.cpp:
     complete
     .data start:0x021d82b1 end:0x021d82bb
 
-src/Data/ov017/data_ov017_021d82bb.cpp:
+src/Data/Graphics_ApplyPartyMemberAnimationCommand_TextHasigoOut.cpp:
     complete
     .data start:0x021d82bb end:0x021d82c6
 
-src/Data/ov017/data_ov017_021d82c6.cpp:
+src/Data/Graphics_ApplyPartyMemberAnimationCommand_TextHasigoLoop.cpp:
     complete
     .data start:0x021d82c6 end:0x021d82d4
 
-src/Data/ov017/data_ov017_021d82d4.cpp:
+src/Data/Resource_InitializeSb2ScriptBuffers_TextSB2.cpp:
     complete
     .data start:0x021d82d4 end:0x021d82e0
 
-src/Data/ov017/data_ov017_021d64b0.cpp:
+src/Data/Field_ReleaseChestPickupAndInteractionVisuals_SentinelTerminatedIndexList.cpp:
     complete
     .rodata start:0x021d64b0 end:0x021d64f4
 
-src/Data/ov017/data_ov017_021d68cc.cpp:
+src/Data/Memory_DestroyEmbeddedAndIndexedAllocators_SentinelTerminatedIndexList.cpp:
     complete
     .rodata start:0x021d68cc end:0x021d6924
 
-src/Data/ov017/data_ov017_021d6b34.cpp:
+src/Data/FieldAppearance_ApplyLoadedMemberModelsAndAnimations_SentinelTerminatedIndexList.cpp:
     complete
     .rodata start:0x021d6b34 end:0x021d6b54
 
-src/Data/ov017/data_ov017_021d6b78.cpp:
+src/Data/FieldAppearance_ApplyLoadedEquipmentDescriptors_SentinelTerminatedIndexList.cpp:
     complete
     .rodata start:0x021d6b78 end:0x021d6bcc
 
-src/Data/ov017/data_ov017_021d62d8.cpp:
+src/Data/FieldResolveObjectAgainstInstancePolygons_FixedPointComponentLookupCardinal1024AndDiagonal737Offsets.cpp:
     complete
     .rodata start:0x021d62d8 end:0x021d62f8
 
-src/Data/ov017/data_ov017_021d62f8.cpp:
+src/Data/FieldResolveObjectAgainstInstancePolygons_FixedPointComponentLookupCardinal1024AndDiagonal737Offsets_Variant2.cpp:
     complete
     .rodata start:0x021d62f8 end:0x021d6318
 
-src/Data/ov017/data_ov017_021d6ca4.cpp:
+src/Data/Field_BeginContainerLootPresentation_TextDataAniDI127Spr.cpp:
     complete
     .rodata start:0x021d6ca4 end:0x021d6cc4
 
-src/Data/ov017/data_ov017_021d73a4.cpp:
+src/Data/FieldCreatePartyObjectAndEquipmentSlots_TextStandWithAdjacentText.cpp:
     complete
     .data start:0x021d73a4 end:0x021d73d8
 
-src/Data/ov017/data_ov017_021d7689.cpp:
+src/Data/FieldMonsterLoadCurrentZoneModelCache_TextCchrWithAdjacentText.cpp:
     complete
     .data start:0x021d7689 end:0x021d76a6
 
-src/Data/ov017/data_ov017_021d783c.cpp:
+src/Data/FieldMessageUpdatePartyHpReducedToOneNotice_TextHIRAGANALETTERNAHIRAGANALETTERNHIRAGANALETTERTOFULLWIDTHEXCLAMATIONMARKIDEOGRAPHICSPACEPERCENTSIGNLATINSM.cpp:
     complete
     .data start:0x021d783c end:0x021d7868
 
-src/Data/ov017/data_ov017_021d73d8.cpp:
+src/Data/ProgramData_ResourceSetupBounds.cpp:
     complete
     .data start:0x021d73d8 end:0x021d73e8
 
-src/Data/ov017/data_ov017_021d73e8.cpp:
+src/Data/ProgramData_ResourceSetupBounds_Copy2.cpp:
     complete
     .data start:0x021d73e8 end:0x021d73f8
 
-src/Data/ov017/data_ov017_021d79c0.cpp:
+src/Data/ProgramData_ResourceSetupBounds_Copy3.cpp:
     complete
     .data start:0x021d79c0 end:0x021d79d0
 
-src/Data/ov017/data_ov017_021d79d0.cpp:
+src/Data/ProgramData_ResourceSetupBounds_Copy4.cpp:
     complete
     .data start:0x021d79d0 end:0x021d79e0
 
-src/Data/ov017/data_ov017_021d7aec.cpp:
+src/Data/ProgramData_ResourceSetupBounds_Copy5.cpp:
     complete
     .data start:0x021d7aec end:0x021d7afc
 
-src/Data/ov017/data_ov017_021d7c2c.cpp:
+src/Data/ProgramData_ResourceSetupBounds_Copy6.cpp:
     complete
     .data start:0x021d7c2c end:0x021d7c3c
 
-src/Data/ov017/data_ov017_021d7cbc.cpp:
+src/Data/ProgramData_ResourceSetupBounds_Copy7.cpp:
     complete
     .data start:0x021d7cbc end:0x021d7ccc
 
-src/Resource/ov017/GameResources_SetInstance.cpp:
+src/Field/Scene/GameResources_SetInstance.cpp:
     complete
     .text start:0x0218b5a0 end:0x0218b5b0
 
-src/Resource/ov017/GameResources_GetInstance.cpp:
+src/Field/Scene/GameResources_GetInstance.cpp:
     complete
     .text start:0x0218b5b0 end:0x0218b5c0
 
-src/Unclassified/ov017/OV017_ReadWordField1C.cpp:
+src/Field/Scene/Field_GetSharedSubscreenInstance.cpp:
     complete
     .text start:0x021a193c end:0x021a1944
 
-src/Unclassified/ov017/OV017_ReadWordField6AC.cpp:
+src/Field/Events/FieldBattle_GetScene.cpp:
     complete
     .text start:0x021b8468 end:0x021b8470
 
-src/Unclassified/ov017/OV017_ReadWordField6B0.cpp:
+src/Field/Events/FieldBattle_GetCombatContext.cpp:
     complete
     .text start:0x021b8470 end:0x021b8478
 
-src/Unclassified/ov017/OV017_GetEmbeddedField1C.cpp:
+src/Field/Events/FieldBattle_GetEncounterRequest.cpp:
     complete
     .text start:0x021b8478 end:0x021b8480
 
-src/Unclassified/ov017/OV017_ReadWordField4338.cpp:
+src/Field/Scene/GameResources_GetAlternatePartyModel.cpp:
     complete
     .text start:0x021bdbcc end:0x021bdbd8
 
-src/Unclassified/ov017/OV017_ReadWordField04.cpp:
+src/Field/Events/Script_ReadParameterString.cpp:
     complete
     .text start:0x021d612c end:0x021d6134
 
-src/Unclassified/ov017/SetObjectWordPairAt30.cpp:
+src/Field/Scene/Field_SetOverlayLoadCallbackAndParameter.cpp:
     complete
     .text start:0x021b2bd0 end:0x021b2bdc
 
-src/Unclassified/ov017/ClearIndirectBytePairAt441C.cpp:
+src/Field/Multiplayer/Field_ResetActivePartyJoinRequest.cpp:
     complete
     .text start:0x02195748 end:0x02195760
 
-src/Unclassified/ov017/SetKindThreeIndirectWord4.cpp:
+src/Field/Events/Script_WriteFloatReferenceOutput.cpp:
     complete
     .text start:0x021d6148 end:0x021d615c
 
-src/Unclassified/ov017/UpdatePairFlagsFromMonsterAndGrottoType.cpp:
+src/Field/Events/FieldBattle_ResolveMonsterAndTreasureMapFlags.cpp:
     complete
     .text start:0x021b6e70 end:0x021b6f18
 
-src/Unclassified/ov017/QueueTwoFiveHalfwordIndexedMessages.cpp:
+src/Field/Events/Network_QueuePartyMemberLinkedStats.cpp:
     complete
     .text start:0x021c3fb4 end:0x021c40ec
 
-src/Unclassified/ov017/QueuePackedDisplayFieldsMessage.cpp:
+src/Field/Events/Network_QueuePartyMemberPackedAttributes.cpp:
     complete
     .text start:0x021c4418 end:0x021c44d8
 
-src/Unclassified/ov017/QueueDayTimerMessage93.cpp:
+src/Field/Multiplayer/Field_QueueDayTimerSynchronization.cpp:
     complete
     .text start:0x021cdaa0 end:0x021cdae4
 
-src/Unclassified/ov017/SetLoadedResourceIndexMask.cpp:
+src/Field/Scene/GameResources_RequestPartyPortraitRefresh.cpp:
     complete
     .text start:0x0218b5f8 end:0x0218b628
 
-src/Unclassified/ov017/InitializeTwentyByteRecordDefaults.cpp:
+src/Field/Scene/Field_InitializeInteractionCandidate.cpp:
     complete
     .text start:0x0219a674 end:0x0219a6b8
 
-src/Unclassified/ov017/ResetTypeThreeRecordPreservingOptionalPayload.cpp:
+src/Field/Scene/Field_InitializeZoneTransitionCommand.cpp:
     complete
     .text start:0x0219e310 end:0x0219e384
 
-src/Unclassified/ov017/FindFieldMonsterByRecordIdentifier.cpp:
+src/Field/Scene/FieldMonster_FindByPersistentRecordIdentifier.cpp:
     complete
     .text start:0x021a278c end:0x021a27e8
 
-src/Unclassified/ov017/InitializeTypeTenRecordAndAllocator.cpp:
+src/Field/Events/FieldBattle_InitializeCommand.cpp:
     complete
     .text start:0x021b6f18 end:0x021b6f9c
 
-src/Unclassified/ov017/ApplyIndexedObjectPlacementVariant.cpp:
+src/Field/Scene/Field_ApplyMemberWeaponAttachmentVariant.cpp:
     complete
     .text start:0x021917f0 end:0x021919c8
 
-src/Unclassified/ov017/CopyTypeTenDescriptorAndClearResourceState.cpp:
+src/Field/Events/FieldBattle_ConfigureEncounterRequest.cpp:
     complete
     .text start:0x021b7104 end:0x021b71d8
 
-src/Unclassified/ov017/CopyNameWithTwelveByteLimit.cpp:
+src/Field/Screens/FieldScreen_SetScriptResourceName.cpp:
     complete
     .text start:0x021b2ba0 end:0x021b2bd0
 
-src/Unclassified/ov017/SetNestedSecondWordForTypeThree.cpp:
+src/Field/Events/Script_WriteIntegerReferenceOutput.cpp:
     complete
     .text start:0x021d6134 end:0x021d6148
 
-src/Unclassified/ov017/BuildActiveAndProtagonistSlotLists.cpp:
+src/Field/Scene/Field_RebuildDisplayedAndProtagonistRosters.cpp:
     complete
     .text start:0x02191234 end:0x021913d0
 
-src/Unclassified/ov017/InitializeAllocatorBackedState45.cpp:
+src/Field/Screens/Resource_InitializeOverlayLoadState.cpp:
     complete
     .text start:0x021b2174 end:0x021b2200
 
-src/Unclassified/ov017/QueueCharacterStatePacketTypeFour.cpp:
+src/Field/Events/Network_QueueCurrentPartyMemberState.cpp:
     complete
     .text start:0x021c9e00 end:0x021c9f18
 
-src/Unclassified/ov017/WriteCurrentNestedField55D.cpp:
+src/Field/Scene/GameResources_SetPartyStatusSnapshotTracking.cpp:
     complete
     .text start:0x0218b5c0 end:0x0218b5f8
 
-src/Unclassified/ov017/TestContextModeAndZeroSlot.cpp:
+src/Field/Scene/Field_IsHostDisconnectPending.cpp:
     complete
     .text start:0x021959b4 end:0x021959ec
 
-src/Unclassified/ov017/TestPrimaryOrPairedByteFlags.cpp:
+src/Field/Scene/FieldEvent_IsQueuedOrSynchronizing.cpp:
     complete
     .text start:0x021bd3a4 end:0x021bd3d4
 
-src/Unclassified/ov017/ReadScriptParameterAsInteger.cpp:
+src/Field/Events/Script_ReadParameterAsInteger.cpp:
     complete
     .text start:0x021d60f4 end:0x021d6110
 
-src/Unclassified/ov017/ReadScriptParameterAsFloat.cpp:
+src/Field/Events/Script_ReadParameterAsFloat.cpp:
     complete
     .text start:0x021d6110 end:0x021d612c
 
-src/Unclassified/ov017/PackFieldsIntoHalfwordAt0400000C.cpp:
+src/Field/Scene/Graphics_ConfigureMainBackgroundTwoControl.cpp:
 	complete
 	.text start:0x021999b4 end:0x021999e0
 
-src/Unclassified/ov017/ClearEmbeddedCharacterSlotFlag.cpp:
+src/Field/Multiplayer/Field_ClearPendingMemberJoinMask.cpp:
     complete
     .text start:0x02195520 end:0x02195530
 
-src/Unclassified/ov017/CopyPackedCharacterDescriptor.cpp:
+src/Field/Screens/Field_CopyPackedPartyRecoveryDescriptor.cpp:
     complete
     .text start:0x021d2d00 end:0x021d2d64
 
-src/Unclassified/ov017/ComputeSignedAngleToTargetVector.cpp:
+src/Field/Events/FieldInteraction_ComputeSignedFacingAngleToTarget.cpp:
     complete
     .text start:0x021a4700 end:0x021a4754
 
-src/Unclassified/ov017/GameState_SetFlagAtOffset4324.cpp:
+src/Field/Scene/Field_RequestSceneLoopExit.cpp:
     complete
     .text start:0x0218d258 end:0x0218d268
 
-src/Unclassified/ov017/GameObject_ReadFieldAtOffset2B08.cpp:
+src/Field/Scene/Field_GetResourcePoolProfile.cpp:
     complete
     .text start:0x0219e008 end:0x0219e014
 
-src/Unclassified/ov017/InitializeType39Record.cpp:
+src/Field/Multiplayer/Field_InitializeSessionLeaveTask.cpp:
     complete
     .text start:0x021b11b0 end:0x021b11d8
 
-src/Unclassified/ov017/GameObject_ReadNestedStateByte.cpp:
+src/Field/Screens/OnlineDownload_GetTransferSubstate.cpp:
     complete
     .text start:0x021b2038 end:0x021b204c
 
-src/Unclassified/ov017/InitializeType16Record.cpp:
+src/Field/Events/Field_InitializeChurchServiceCommand.cpp:
     complete
     .text start:0x021ba90c end:0x021ba94c
 
-src/Unclassified/ov017/InitializeType32Record.cpp:
+src/Field/Scene/PartyTransition_InitializeDialogueRequest.cpp:
     complete
     .text start:0x021c0124 end:0x021c0160
 
-src/Unclassified/ov017/ReleaseTypeFlaggedResource.cpp:
+src/Field/Scene/Field_ReleaseOverlayTenAction.cpp:
     complete
     .text start:0x021c2710 end:0x021c2744
 
-src/Unclassified/ov017/SetWordField320ToOne.cpp:
+src/Field/Multiplayer/Field_LatchSessionTransition.cpp:
     complete
     .text start:0x02195530 end:0x02195540
 
-src/Unclassified/ov017/SetByteFieldOneToOne.cpp:
+src/Field/Screens/Field_CompleteDeferredActorRequest.cpp:
     complete
     .text start:0x021a7c1c end:0x021a7c28
 
-src/Unclassified/ov017/ReadNestedField438OrZero.cpp:
+src/Field/Screens/OnlineDownload_HasInitializationFailed.cpp:
     complete
     .text start:0x021b204c end:0x021b2060
 
-src/Unclassified/ov017/CopyElevenByteRecordFields.cpp:
+src/Field/Multiplayer/Field_CopyMonsterTransformSnapshot.cpp:
     complete
     .text start:0x021c90f8 end:0x021c912c
 
-src/Unclassified/ov017/ClearByteAtOffset4331.cpp:
+src/Field/Scene/Field_ClearPartySyncFlagMask.cpp:
     complete
     .text start:0x0218d500 end:0x0218d510
 
-src/Unclassified/ov017/ZeroSixByteRecord.cpp:
+src/Field/Scene/Field_ClearPartyRecoveryRequest.cpp:
     complete
     .text start:0x0218d7fc end:0x0218d818
 
-src/Unclassified/ov017/GetEmbeddedObjectAtOffset24Plus50.cpp:
+src/Field/Screens/OnlineDownload_GetArchiveEntryTable.cpp:
     complete
     .text start:0x021b1fc0 end:0x021b1fd4
 
-src/Unclassified/ov017/SetHalfwordAtOffset11A.cpp:
+src/Field/Scene/FieldEvent_SetContinuationEventId.cpp:
     complete
     .text start:0x021bbbec end:0x021bbbf8
 
-src/Unclassified/ov017/InitializeKindTwoObjectAndAllocator.cpp:
+src/Field/Scene/Field_InitializeSharedSubscreenCommand.cpp:
     complete
     .text start:0x021a124c end:0x021a1284
 
-src/Unclassified/ov017/InitializeKind2BObjectAndClearFields.cpp:
+src/Field/Multiplayer/Field_InitializeOverlayTransitionTask.cpp:
     complete
     .text start:0x021b14a0 end:0x021b14ec
 
-src/Unclassified/ov017/InitializeKind51ObjectAndClearWords.cpp:
+src/Field/Events/Field_InitializeGrottoDiscoveryCommand.cpp:
     complete
     .text start:0x021be0a0 end:0x021be0c4
 
-src/Unclassified/ov017/DispatchCode1CMessageWithWord.cpp:
+src/Field/Screens/Network_QueueInnRecoveryValue.cpp:
     complete
     .text start:0x021d243c end:0x021d246c
 
-src/Unclassified/ov017/InitializeKind70ObjectWithTwoBytes.cpp:
+src/Field/Scene/PartyRecovery_InitializePresentationRequest.cpp:
     complete
     .text start:0x021c2b28 end:0x021c2b6c
 
-src/Unclassified/ov017/DispatchCodeA2MessageWithByte.cpp:
+src/Field/Multiplayer/Grotto_QueueEntryFlagUpdate.cpp:
     complete
     .text start:0x021cfc74 end:0x021cfcb4
 
-src/Unclassified/ov017/AddPositiveCountsFromEightObjectSlots.cpp:
+src/Field/Events/Field_ReturnMemberCarriedItemsToBag.cpp:
     complete
     .text start:0x021b6bb8 end:0x021b6c2c
 
-src/Unclassified/ov017/DispatchCode26IndexedObjectFields.cpp:
+src/Field/Multiplayer/Field_QueueObjectPartyFormation.cpp:
     complete
     .text start:0x021ce32c end:0x021ce3ac
 
-src/Unclassified/ov017/ResourceContext_SetActiveFlagIfIdle.cpp:
+src/Field/Scene/Field_MarkClientZoneRefreshPending.cpp:
     complete
     .text start:0x021a01bc end:0x021a01f4
 
-src/Unclassified/ov017/Object_ReadNestedWordAtOffset3A8OrZero.cpp:
+src/Field/Screens/OnlineDownload_GetProgressFixedPoint.cpp:
     complete
     .text start:0x021b1fd4 end:0x021b1fe8
 
-src/Unclassified/ov017/Object_SetFlag10FromValueSignBit.cpp:
+src/Field/Scene/Field_SetOverlayLoadSkipFadeOut.cpp:
     complete
     .text start:0x021b2bf4 end:0x021b2c0c
 
-src/Unclassified/ov017/DispatchMessageOpcode1B.cpp:
+src/Field/Screens/Network_QueuePartyRecoveryRequest.cpp:
     complete
     .text start:0x021d2400 end:0x021d2428
 
-src/Unclassified/ov017/DispatchByteMessageOpcode3C.cpp:
+src/Field/Multiplayer/Field_QueuePartyAnimationReset.cpp:
     complete
     .text start:0x021d440c end:0x021d443c
 
-src/Unclassified/ov017/ReadPointerField433C.cpp:
+src/Field/Scene/GameResources_GetAlternateWingAttachment.cpp:
     complete
     .text start:0x0021bdbd8 end:0x021bdbe4
 
-src/Unclassified/ov017/CopyTwoWordPair.cpp:
+src/Field/Events/Script_CopyTaggedValue.cpp:
     complete
     .text start:0x0021d4a64 end:0x021d4a78
 
-src/Unclassified/ov017/ClearOverlayRecordWordAt4320.cpp:
+src/Field/Multiplayer/Field_ResetSessionTransitionLatch.cpp:
     complete
     .text start:0x02195540 end:0x02195550
 
-src/Unclassified/ov017/IsOverlayRecordFieldAt4354NonPositive.cpp:
+src/Field/Events/FieldInput_IsPostCommandCooldownExpired.cpp:
     complete
     .text start:0x021a4e70 end:0x021a4e88
 
-src/Unclassified/ov017/GetNestedRecordByte34OrZero.cpp:
+src/Field/Screens/OnlineDownload_GetTransferMode.cpp:
     complete
     .text start:0x021b2024 end:0x021b2038
 
-src/Unclassified/ov017/ReleaseStagedAllocationsFromFixedStrideArray.cpp:
+src/Field/Screens/Field_ReleasePromptBackgroundStagingBuffers.cpp:
     complete
     .text start:0x021a5b08 end:0x021a5b48
 
-src/Unclassified/ov017/Field_GetIndexedRecord.cpp:
+src/Field/Scene/GameResources_GetPartyResourceRecord.cpp:
     complete
     .text start:0x021a11f4 end:0x021a120c
 
-src/Unclassified/ov017/Field_ReadNestedStatusByte.cpp:
+src/Field/Events/FieldAppearance_ReadMemberRefreshRequest.cpp:
     complete
     .text start:0x021b354c end:0x021b3560
 
-src/Unclassified/ov017/Field_WriteNestedHalfword.cpp:
+src/Field/Scene/FieldEvent_SetPendingContinuationEventId.cpp:
     complete
     .text start:0x021bbbf8 end:0x021bbc04
 
-src/Unclassified/ov017/Field_CopyPackedRecord14.cpp:
+src/Field/Multiplayer/Field_CopyMonsterIdentitySnapshot.cpp:
     complete
     .text start:0x021c90b4 end:0x021c90f8
 
-src/Unclassified/ov017/ReadNestedByteAtOffset398.cpp:
+src/Field/Screens/OnlineDownload_GetErrorCategory.cpp:
     complete
     .text start:0x021b2010 end:0x021b2024
 
-src/Unclassified/ov017/ReadWordAtOverlayOffset4328.cpp:
+src/Field/Scene/GameResources_GetTouchMovementController.cpp:
     complete
     .text start:0x0218d268 end:0x0218d274
 
-src/Unclassified/ov017/ReadWordAtOverlayOffset4340.cpp:
+src/Field/Scene/GameResources_GetAlternateWaAttachment.cpp:
     complete
     .text start:0x021bdbe4 end:0x021bdbf0
 
-src/Unclassified/ov017/ResetFieldsAtOffsets12CTo136.cpp:
+src/Field/Events/FieldDialogue_ResetPeerResponseTracking.cpp:
     complete
     .text start:0x021b994c end:0x021b996c
 
-src/Unclassified/ov017/SetOverlayByte331Bit.cpp:
+src/Field/Screens/Field_SetPartyMemberMessageFlag.cpp:
     complete
     .text start:0x0218d4b8 end:0x0218d4d0
 
-src/Unclassified/ov017/InitializeRecordType30.cpp:
+src/Field/Events/FieldBookshelf_InitializeReadCommand.cpp:
 	complete
 	.text start:0x021ac2ec end:0x021ac32c
 
-src/Unclassified/ov017/InitializeRecordType2F.cpp:
+src/Field/Events/ProfileScreen_InitializeFieldSession.cpp:
 	complete
 	.text start:0x021c17cc end:0x021c17fc
 
-src/Unclassified/ov017/IsNestedOffset4498Byte14Nonzero.cpp:
+src/Field/Scene/Field_HasSpawnedSharedPresentationEffect.cpp:
     complete
     .text start:0x0218d75c end:0x0218d77c
 
-src/Unclassified/ov017/InitializeRecordKind06AndFiveWords.cpp:
+src/Field/Events/FieldTransition_InitializeFeatureExitCommand.cpp:
     complete
     .text start:0x021ab250 end:0x021ab280
 
-src/Unclassified/ov017/InitializeRecordKind21AndEmbeddedAllocator.cpp:
+src/Field/Events/FieldChest_InitializeOpenCommand.cpp:
     complete
     .text start:0x021adc58 end:0x021adcb0
 
-src/Unclassified/ov017/ReadNestedByte439OrZero.cpp:
+src/Field/Screens/OnlineDownload_HasInitializationResult.cpp:
     complete
     .text start:0x021b2060 end:0x021b2074
 
-src/Unclassified/ov017/ClearEmbeddedWordAndHalfwordArrays.cpp:
+src/Field/Scene/FieldEvent_ClearContinuationAndPeerReplyState.cpp:
     complete
     .text start:0x021bb0c4 end:0x021bb108
 
-src/Unclassified/ov017/ReadPointerAtOffset4334.cpp:
+src/Field/Scene/GameResources_GetAlternateLeaderModel.cpp:
     complete
     .text start:0x021bdbc0 end:0x021bdbcc
 
-src/Unclassified/ov017/SetByteOffset1ToOne.cpp:
+src/Field/Events/Field_CompleteQueuedOperation.cpp:
     complete
     .text start:0x021c178c end:0x021c1798
 
-src/Unclassified/ov017/LinkedRecord_SetByte56BLowNibble.cpp:
+src/Field/Scene/GameObject_SetLinkedStatusCode.cpp:
     complete
     .text start:0x0218f57c end:0x0218f5a4
 
-src/Unclassified/ov017/DecrementCounter4354ClampedAtZero.cpp:
+src/Field/Events/FieldInput_AdvancePostCommandCooldown.cpp:
     complete
     .text start:0x021a4e48 end:0x021a4e70
 
-src/Unclassified/ov017/InitializeRecordKind39.cpp:
+src/Field/Screens/Field_InitializeFixedDestinationConfirmation.cpp:
     complete
     .text start:0x021a942c end:0x021a9454
 
-src/Unclassified/ov017/func_ov017_0219a188.cpp:
+src/Field/Scene/Field_IgnoreStartupDisplayHook.cpp:
     complete
     .text start:0x0219a188 end:0x0219a18c
 
-src/Unclassified/ov017/func_ov017_0219fc84.cpp:
+src/Field/Scene/Field_ReleaseZoneTransitionCommand.cpp:
     complete
     .text start:0x0219fc84 end:0x0219fc88
 
-src/Unclassified/ov017/func_ov017_021a63cc.cpp:
+src/Field/Screens/Field_IgnoreGrottoMapPromptFrameHook.cpp:
     complete
     .text start:0x021a63cc end:0x021a63d0
 
-src/Unclassified/ov017/func_ov017_021a9fec.cpp:
+src/Field/Events/FieldTreasureMap_IgnoreDisplayTransfer.cpp:
     complete
     .text start:0x021a9fec end:0x021a9ff0
 
-src/Unclassified/ov017/func_ov017_021aa3f0.cpp:
+src/Field/Events/FieldMessage_IgnoreHpNoticeRelease.cpp:
     complete
     .text start:0x021aa3f0 end:0x021aa3f4
 
-src/Unclassified/ov017/func_ov017_021accfc.cpp:
+src/Field/Events/FieldPartyEffect_IgnoreOverlayDraw.cpp:
     complete
     .text start:0x021accfc end:0x021acd00
 
-src/Unclassified/ov017/func_ov017_021b1f9c.cpp:
+src/Field/Screens/Field_IgnoreOverlayThirtyOneTransferHook.cpp:
     complete
     .text start:0x021b1f9c end:0x021b1fa0
 
-src/Unclassified/ov017/func_ov017_021b1fa0.cpp:
+src/Field/Screens/Field_IgnoreOverlayThirtyOneDrawHook.cpp:
     complete
     .text start:0x021b1fa0 end:0x021b1fa4
 
-src/Unclassified/ov017/func_ov017_021b1fa4.cpp:
+src/Field/Screens/Field_IgnoreOverlayThirtyOneUpdateHook.cpp:
     complete
     .text start:0x021b1fa4 end:0x021b1fa8
 
-src/Unclassified/ov017/func_ov017_021b65d8.cpp:
+src/Field/Events/FieldBattle_IgnoreEntryTransitionDraw.cpp:
     complete
     .text start:0x021b65d8 end:0x021b65dc
 
-src/Unclassified/ov017/func_ov017_021b65dc.cpp:
+src/Field/Events/FieldBattle_IgnoreEntryTransitionCancellation.cpp:
     complete
     .text start:0x021b65dc end:0x021b65e0
 
-src/Unclassified/ov017/func_ov017_021b8d18.cpp:
+src/Field/Events/Field_IgnoreZoneTriggerCommandCancellation.cpp:
     complete
     .text start:0x021b8d18 end:0x021b8d1c
 
-src/Unclassified/ov017/func_ov017_021be09c.cpp:
+src/Field/Scene/Field_IgnoreAlternatePartyModelCleanup.cpp:
     complete
     .text start:0x021be09c end:0x021be0a0
 
-src/Unclassified/ov017/func_ov017_021bef48.cpp:
+src/Field/Events/Field_IgnoreGrottoNamePopupResourceUpdate.cpp:
     complete
     .text start:0x021bef48 end:0x021bef4c
 
-src/Unclassified/ov017/func_ov017_021c6b8c.cpp:
+src/Field/Multiplayer/Network_IgnorePacketType44.cpp:
     complete
     .text start:0x021c6b8c end:0x021c6b90
 
-src/Unclassified/ov017/func_ov017_021c6b90.cpp:
+src/Field/Multiplayer/Network_IgnorePacketType45.cpp:
     complete
     .text start:0x021c6b90 end:0x021c6b94
 
-src/Unclassified/ov017/func_ov017_021c6b94.cpp:
+src/Field/Multiplayer/Network_IgnorePacketType46.cpp:
     complete
     .text start:0x021c6b94 end:0x021c6b98
 
-src/Unclassified/ov017/func_ov017_021c6b98.cpp:
+src/Field/Multiplayer/Network_IgnorePacketType47.cpp:
     complete
     .text start:0x021c6b98 end:0x021c6b9c
 
-src/Unclassified/ov017/func_ov017_021c6b9c.cpp:
+src/Field/Multiplayer/Network_IgnorePacketType48.cpp:
     complete
     .text start:0x021c6b9c end:0x021c6ba0
 
-src/Unclassified/ov017/func_ov017_021c6ba0.cpp:
+src/Field/Multiplayer/Network_IgnorePacketType49.cpp:
     complete
     .text start:0x021c6ba0 end:0x021c6ba4
 
-src/Unclassified/ov017/func_ov017_021c6ba4.cpp:
+src/Field/Multiplayer/Network_IgnorePacketType4A.cpp:
     complete
     .text start:0x021c6ba4 end:0x021c6ba8
 
-src/Unclassified/ov017/func_ov017_021c6ba8.cpp:
+src/Field/Multiplayer/Network_IgnorePacketType4B.cpp:
     complete
     .text start:0x021c6ba8 end:0x021c6bac
 
-src/Unclassified/ov017/func_ov017_021c6bac.cpp:
+src/Field/Multiplayer/Network_IgnorePacketType4C.cpp:
     complete
     .text start:0x021c6bac end:0x021c6bb0
 
-src/Unclassified/ov017/func_ov017_021c6bb0.cpp:
+src/Field/Multiplayer/Network_IgnorePacketType4D.cpp:
     complete
     .text start:0x021c6bb0 end:0x021c6bb4
 
-src/Unclassified/ov017/func_ov017_021c6bb4.cpp:
+src/Field/Multiplayer/Network_IgnorePacketType4E.cpp:
     complete
     .text start:0x021c6bb4 end:0x021c6bb8
 
-src/Unclassified/ov017/func_ov017_021c6bb8.cpp:
+src/Field/Multiplayer/Network_IgnorePacketType4F.cpp:
     complete
     .text start:0x021c6bb8 end:0x021c6bbc
 
-src/Unclassified/ov017/func_ov017_021c6bbc.cpp:
+src/Field/Multiplayer/Network_IgnorePacketType50.cpp:
     complete
     .text start:0x021c6bbc end:0x021c6bc0
 
-src/Unclassified/ov017/func_ov017_021c6bc0.cpp:
+src/Field/Multiplayer/Network_IgnorePacketType51.cpp:
     complete
     .text start:0x021c6bc0 end:0x021c6bc4
 
-src/Unclassified/ov017/func_ov017_021c6bc4.cpp:
+src/Field/Multiplayer/Network_IgnorePacketType52.cpp:
     complete
     .text start:0x021c6bc4 end:0x021c6bc8
 
-src/Unclassified/ov017/func_ov017_021c8398.cpp:
+src/Field/Multiplayer/Combat_IgnoreEncounterLoadSyncRequest.cpp:
     complete
     .text start:0x021c8398 end:0x021c839c
 
-src/Unclassified/ov017/func_ov017_021c839c.cpp:
+src/Field/Multiplayer/Combat_IgnoreEncounterLoadSyncFollowup.cpp:
     complete
     .text start:0x021c839c end:0x021c83a0
 
-src/Unclassified/ov017/func_ov017_021c8478.cpp:
+src/Field/Multiplayer/Combat_IgnoreReservedConfigurationPacket.cpp:
     complete
     .text start:0x021c8478 end:0x021c847c
 
-src/Unclassified/ov017/func_ov017_021c8f38.cpp:
+src/Field/Multiplayer/Field_IgnoreReservedEncounterPacket.cpp:
     complete
     .text start:0x021c8f38 end:0x021c8f3c
 
-src/Unclassified/ov017/func_ov017_021cda9c.cpp:
+src/Field/Multiplayer/Network_IgnoreCommand90.cpp:
     complete
     .text start:0x021cda9c end:0x021cdaa0
 
-src/Unclassified/ov017/func_ov017_021ce298.cpp:
+src/Field/Multiplayer/Network_IgnoreCommand2D.cpp:
     complete
     .text start:0x021ce298 end:0x021ce29c
 
-src/Unclassified/ov017/func_ov017_021ce700.cpp:
+src/Field/Multiplayer/Network_IgnoreCommandB1.cpp:
     complete
     .text start:0x021ce700 end:0x021ce704
 
-src/Unclassified/ov017/func_ov017_021cea2c.cpp:
+src/Field/Multiplayer/Network_IgnoreCommand2F.cpp:
     complete
     .text start:0x021cea2c end:0x021cea30
 
-src/Unclassified/ov017/func_ov017_021cea30.cpp:
+src/Field/Multiplayer/Network_IgnoreCommand30.cpp:
     complete
     .text start:0x021cea30 end:0x021cea34
 
-src/Unclassified/ov017/func_ov017_021d0358.cpp:
+src/Field/Screens/Network_IgnoreCommandType95.cpp:
     complete
     .text start:0x021d0358 end:0x021d035c
 
-src/Unclassified/ov017/func_ov017_021d0798.cpp:
+src/Field/Scene/FieldNetwork_IgnoreCommand98.cpp:
     complete
     .text start:0x021d0798 end:0x021d079c
 
-src/Unclassified/ov017/func_ov017_021d09c4.cpp:
+src/Field/Scene/FieldNetwork_IgnoreCommand89.cpp:
     complete
     .text start:0x021d09c4 end:0x021d09c8
 
-src/Unclassified/ov017/func_ov017_021d09c8.cpp:
+src/Field/Scene/FieldNetwork_IgnoreCommand8A.cpp:
     complete
     .text start:0x021d09c8 end:0x021d09cc
 
-src/Unclassified/ov017/func_ov017_021d1010.cpp:
+src/Field/Multiplayer/Network_IgnoreCommandAC.cpp:
     complete
     .text start:0x021d1010 end:0x021d1014
 
-src/Unclassified/ov017/func_ov017_021d24a4.cpp:
+src/Field/Screens/Network_IgnoreCommandType1D.cpp:
     complete
     .text start:0x021d24a4 end:0x021d24a8
 
-src/Unclassified/ov017/func_ov017_021a01b4.cpp:
+src/Field/Scene/Field_ReportSubscreenGateInactive.cpp:
     complete
     .text start:0x021a01b4 end:0x021a01bc
 
-src/Unclassified/ov017/func_ov017_021ab6a0.cpp:
+src/Field/Events/FieldEscapeScript_AcceptOpcode100.cpp:
     complete
     .text start:0x021ab6a0 end:0x021ab6a8
 
-src/Unclassified/ov017/func_ov017_021ab6a8.cpp:
+src/Field/Events/FieldEscapeScript_AcceptOpcode101.cpp:
     complete
     .text start:0x021ab6a8 end:0x021ab6b0
 
-src/Unclassified/ov017/func_ov017_021aca1c.cpp:
+src/Field/Events/FieldBookshelfScript_AcceptOpcode101.cpp:
     complete
     .text start:0x021aca1c end:0x021aca24
 
-src/Unclassified/ov017/func_ov017_021aca24.cpp:
+src/Field/Events/FieldBookshelfScript_AcceptOpcode100.cpp:
     complete
     .text start:0x021aca24 end:0x021aca2c
 
-src/Unclassified/ov017/func_ov017_021bff24.cpp:
+src/Field/Scene/Field_ReturnContainerActionCompletePhase.cpp:
     complete
     .text start:0x021bff24 end:0x021bff2c
 
-src/Unclassified/ov017/func_ov017_0219dffc.cpp:
+src/Field/Scene/Field_SetResourcePoolProfile.cpp:
     complete
     .text start:0x0219dffc end:0x0219e008
 
-src/Unclassified/ov017/func_ov017_021a9670.cpp:
+src/Field/Screens/Field_CancelFixedDestinationConfirmation.cpp:
     complete
     .text start:0x021a9670 end:0x021a967c
 
-src/Unclassified/ov017/func_ov017_021acd24.cpp:
+src/Field/Events/FieldPartyEffect_MarkCommandComplete.cpp:
     complete
     .text start:0x021acd24 end:0x021acd30
 
-src/Unclassified/ov017/func_ov017_021a55a4.cpp:
+src/Field/Events/FieldMenu_SetPartyMenuOptions.cpp:
     complete
     .text start:0x021a55a4 end:0x021a55b0
 
-src/Unclassified/ov017/func_ov017_021afb10.cpp:
+src/Field/Multiplayer/Field_MarkJoinPreparationComplete.cpp:
     complete
     .text start:0x021afb10 end:0x021afb1c
 
-src/Unclassified/ov017/func_ov017_021afb1c.cpp:
+src/Field/Multiplayer/Field_RequestPartyMemberSnapshotTransfer.cpp:
     complete
     .text start:0x021afb1c end:0x021afb28
 
-src/Unclassified/ov017/func_ov017_021afb28.cpp:
+src/Field/Multiplayer/Field_RequestPartyJoinFinalization.cpp:
     complete
     .text start:0x021afb28 end:0x021afb34
 
-src/Unclassified/ov017/func_ov017_021aee9c.cpp:
+src/Field/Scene/Field_ReleaseItemPickupCommand.cpp:
     complete
     .text start:0x021aee9c end:0x021aeea8
 
-src/Unclassified/ov017/func_ov017_021b8480.cpp:
+src/Field/Events/FieldBattle_GetLifecyclePhase.cpp:
     complete
     .text start:0x021b8480 end:0x021b848c
 
-src/Unclassified/ov017/func_ov017_021b5a24.cpp:
+src/Field/Scene/Field_ReleaseContainerLootCommand.cpp:
     complete
     .text start:0x021b5a24 end:0x021b5a30
 
-src/Unclassified/ov017/func_ov017_021bbc04.cpp:
+src/Field/Scene/FieldEvent_GetPendingContinuationEventId.cpp:
     complete
     .text start:0x021bbc04 end:0x021bbc10
 
-src/Unclassified/ov017/func_ov017_021bb9fc.cpp:
+src/Field/Scene/FieldEvent_GetRemoteEventToken.cpp:
     complete
     .text start:0x021bb9fc end:0x021bba08
 
-src/Unclassified/ov017/func_ov017_021bd38c.cpp:
+src/Field/Scene/FieldEvent_AttachQuestMessagePanelAndAllocator.cpp:
     complete
     .text start:0x021bd38c end:0x021bd398
 
-src/Unclassified/ov017/func_ov017_021c1e34.cpp:
+src/Field/Scene/Field_CompleteReturnToSavedZoneRequest.cpp:
     complete
     .text start:0x021c1e34 end:0x021c1e40
 
-src/Unclassified/ov017/func_ov017_021bd398.cpp:
+src/Field/Scene/FieldEvent_MarkScriptDispatchRequested.cpp:
     complete
     .text start:0x021bd398 end:0x021bd3a4
 
-src/Unclassified/ov017/func_ov017_021c2b1c.cpp:
+src/Field/Scene/FieldMonsterCall_CompleteRequest.cpp:
     complete
     .text start:0x021c2b1c end:0x021c2b28
 
-src/Network/ov017/Network_QueueProtagonistNameRecord.cpp:
+src/Field/Multiplayer/Network_QueueProtagonistNameRecord.cpp:
     complete
     .text start:0x021cc0cc end:0x021cc148
 
-src/Resource/ov017/Resource_CleanupOverlayState.cpp:
+src/Field/Events/Resource_CleanupOverlayState.cpp:
     complete
     .text start:0x021b98f8 end:0x021b9904
 
-src/GameState/ov017/GameState_CopyRecordForMatchingProtagonistIndex.cpp:
+src/Field/Multiplayer/Field_ApplyTargetedZoneTransition.cpp:
     complete
     .text start:0x021cf5d4 end:0x021cf650
 
-src/Unclassified/ov017/SetByteFlagAtOffset1.cpp:
+src/Field/Multiplayer/Field_CompletePartyMemberNoticeTask.cpp:
     complete
     .text start:0x021c32a4 end:0x021c32b0
 
-src/Combat/ov017/Combat_ApplyRemotePackedState.cpp:
+src/Field/Multiplayer/Combat_ApplyRemotePackedState.cpp:
     complete
     .text start:0x021c6ebc end:0x021c6ff0
 
-src/Resource/ov017/Script_SetOpcodeHandlerTable.cpp:
+src/Field/Events/Script_SetOpcodeHandlerTable.cpp:
     complete
     .text start:0x021d4cc0 end:0x021d4ccc
 
-src/Graphics/ov017/Graphics_SelectIndexedObjectAndPositionOnScreen.cpp:
+src/Field/Scene/Graphics_SelectIndexedObjectAndPositionOnScreen.cpp:
     complete
     .text start:0x0219b43c end:0x0219b578
 
-src/Network/ov017/Network_QueueGrottoStateRecord.cpp:
+src/Field/Multiplayer/Network_QueueGrottoStateRecord.cpp:
     complete
     .text start:0x021cf730 end:0x021cf86c
 
-src/Network/ov017/Network_QueueObjectShortValuesInTwoChunks.cpp:
+src/Field/Screens/Network_QueueObjectShortValuesInTwoChunks.cpp:
     complete
     .text start:0x021cff8c end:0x021d00c8
 
-src/Memory/ov017/Memory_DestroyAndFreeSafeAllocator.cpp:
+src/Field/Events/Memory_DestroyAndFreeSafeAllocator.cpp:
     complete
     .text start:0x021adb1c end:0x021adb50
 
-src/World/ov017/World_SetIndexedByteValue.cpp:
+src/Field/Scene/World_SetIndexedByteValue.cpp:
     complete
     .text start:0x0218d77c end:0x0218d7b0
 
-src/Memory/ov017/Memory_DestroyAndFreeSafeAllocatorAt2C.cpp:
+src/Field/Scene/Field_ReleaseItemPickupSpriteAllocator.cpp:
     complete
     .text start:0x021aeea8 end:0x021aeedc
 
-src/World/ov017/FieldMonster_HideByRecordIdentifier.cpp:
+src/Field/Scene/FieldMonster_HideByRecordIdentifier.cpp:
     complete
     .text start:0x021a23b0 end:0x021a23e4
 
-src/Unclassified/ov017/func_ov017_02199964.cpp:
+src/Field/Scene/Graphics_WriteBackgroundControlRegisterFields.cpp:
     complete
     .text start:0x02199964 end:0x02199998
 
-src/World/ov017/func_ov017_021a9bc4.cpp:
+src/Field/Events/FieldTreasureMap_InitializeReceiveCommand.cpp:
     complete
     .text start:0x021a9bc4 end:0x021a9bf8
 
-src/World/ov017/World_SetKind2BByte.cpp:
+src/Field/Multiplayer/World_SetKind2BByte.cpp:
     complete
     .text start:0x021b146c end:0x021b14a0
 
-src/Util/ov017/LinkedQueue_InitializeAndAppendType2FRecord.cpp:
+src/Field/Events/LinkedQueue_InitializeAndAppendType2FRecord.cpp:
     complete
     .text start:0x021c1798 end:0x021c17cc
 
-src/Memory/ov017/Memory_ResetSafeAllocatorState.cpp:
+src/Field/Scene/Memory_ResetSafeAllocatorState.cpp:
     complete
     .text start:0x021bac58 end:0x021bac8c
 
-src/World/ov017/World_HasBMDJInstanceForObject.cpp:
+src/Field/Scene/World_HasBMDJInstanceForObject.cpp:
     complete
     .text start:0x021bf5f4 end:0x021bf628
 
-src/GameState/ov017/World_RemoveObjectFromRecord.cpp:
+src/Field/Screens/World_RemoveObjectFromRecord.cpp:
     complete
     .text start:0x021d0164 end:0x021d0198
 
-src/World/ov017/World_QueueSourceValueWithTag7A.cpp:
+src/Field/Multiplayer/World_QueueSourceValueWithTag7A.cpp:
     complete
     .text start:0x021c8b78 end:0x021c8bac
 
-src/Resource/ov017/Resource_RemoveInactiveLinkedNode.cpp:
+src/Field/Scene/Resource_RemoveInactiveLinkedNode.cpp:
     complete
     .text start:0x02197528 end:0x0219755c
 
-src/GameState/ov017/GameState_InitializeEquipmentEntry.cpp:
+src/Field/Scene/GameState_InitializeEquipmentEntry.cpp:
     complete
     .text start:0x021bac24 end:0x021bac58
 
-src/GameState/ov017/GameState_CopyTwoIndexedBytesWhenSignedFieldIsNonzero.cpp:
+src/Field/Screens/GameState_CopyTwoIndexedBytesWhenSignedFieldIsNonzero.cpp:
     complete
     .text start:0x021d1c84 end:0x021d1cb8
 
-src/Combat/ov017/Combat_QueueCombatantPackedFields.cpp:
+src/Field/Multiplayer/Combat_QueueCombatantPackedFields.cpp:
     complete
     .text start:0x021c7b8c end:0x021c7ebc
 
-src/GameState/ov017/GameState_TrySelectIndexedEntry.cpp:
+src/Field/Events/GameState_TrySelectIndexedEntry.cpp:
     complete
     .text start:0x021b9bcc end:0x021b9d00
 
-src/GameState/ov017/Script_TrySelectIndexedString.cpp:
+src/Field/Events/Script_TrySelectIndexedString.cpp:
     complete
     .text start:0x021b9d00 end:0x021b9e30
 
-src/Unclassified/ov017/InitializeSharedRecordFromVectors.cpp:
+src/Field/Scene/Field_InitializeTransitionFromZoneFeature.cpp:
     complete
     .text start:0x0219c6f4 end:0x0219c774
 
-src/Graphics/ov017/Graphics_InitializeType13StateAndEnableObjectPlane.cpp:
+src/Field/Scene/Graphics_InitializeType13StateAndEnableObjectPlane.cpp:
     complete
     .text start:0x021bf410 end:0x021bf490
 
-src/Combat/ov017/Combat_CopyMatchingRecordVector.cpp:
+src/Field/Multiplayer/Combat_CopyMatchingRecordVector.cpp:
     complete
     .text start:0x021c88cc end:0x021c894c
 
-src/GameState/ov017/GameState_ApplyIndexedNonProtagonistRecordState.cpp:
+src/Field/Multiplayer/GameState_ApplyIndexedNonProtagonistRecordState.cpp:
     complete
     .text start:0x021ca6dc end:0x021ca81c
 
-src/Graphics/ov017/Graphics_DrawObjectRangeAndShadows.cpp:
+src/Field/Scene/Graphics_DrawObjectRangeAndShadows.cpp:
     complete
     .text start:0x021973e8 end:0x02197528
 
-src/Resource/ov017/Resource_QueueFileWithTemporaryAllocator.cpp:
+src/Field/Screens/Resource_QueueFileWithTemporaryAllocator.cpp:
     complete
     .text start:0x021b2388 end:0x021b24d0
 
-src/Unclassified/ov017/func_ov017_021941ec.cpp:
+src/Field/Scene/Field_ResetPartyJoinRequestState.cpp:
     complete
     .text start:0x021941ec end:0x021941fc
 
-src/Unclassified/ov017/func_ov017_0219aa5c.cpp:
+src/Field/Scene/Field_ClearTouchHudCapture.cpp:
     complete
     .text start:0x0219aa5c end:0x0219aa6c
 
-src/Unclassified/ov017/func_ov017_0219aa6c.cpp:
+src/Field/Scene/Field_RequestEncounterInteraction.cpp:
     complete
     .text start:0x0219aa6c end:0x0219aa7c
 
-src/Unclassified/ov017/func_ov017_021a3b30.cpp:
+src/Field/Events/FieldCommandQueue_DrawFrontOverlay.cpp:
     complete
     .text start:0x021a3b30 end:0x021a3b40
 
-src/Unclassified/ov017/func_ov017_021a3af0.cpp:
+src/Field/Events/FieldCommandQueue_DrawFrontCommandModel.cpp:
     complete
     .text start:0x021a3af0 end:0x021a3b00
 
-src/Unclassified/ov017/func_ov017_021a3dcc.cpp:
+src/Field/Events/FieldCommandQueue_DrawFrontWorldObjects.cpp:
     complete
     .text start:0x021a3dcc end:0x021a3ddc
 
-src/Unclassified/ov017/Ov017_ForwardWithFirstField.cpp:
+src/Field/Events/FieldCommandQueue_TransferFrontDisplayBuffers.cpp:
     complete
     .text start:0x021a4358 end:0x021a4368
 
-src/Unclassified/ov017/func_ov017_021a932c.cpp:
+src/Field/Screens/Field_SetTravelDestinationMenuVariant.cpp:
     complete
     .text start:0x021a932c end:0x021a933c
 
-src/Unclassified/ov017/func_ov017_021b2164.cpp:
+src/Field/Screens/Resource_GetSharedLoadState.cpp:
     complete
     .text start:0x021b2164 end:0x021b2174
 
-src/Unclassified/ov017/func_ov017_021d3ef0.cpp:
+src/Field/Screens/GameState_ClearTenBitFlagWordsForObject.cpp:
     complete
     .text start:0x021d3ef0 end:0x021d3f00
 
-src/Graphics/ov017/Graphics_InitializeRecordGridAndCanvasArrays.cpp:
+src/Field/Scene/Graphics_InitializeRecordGridAndCanvasArrays.cpp:
     complete
     .text start:0x021996fc end:0x02199780
 
-src/GameState/ov017/GameState_QueueThreeObjectWords.cpp:
+src/Field/Multiplayer/GameState_QueueThreeObjectWords.cpp:
     complete
     .text start:0x021ccb58 end:0x021ccbdc
 
-src/GameState/ov017/Script_TrySelectIndexedStringWhenObjectReady.cpp:
+src/Field/Events/Script_TrySelectIndexedStringWhenObjectReady.cpp:
     complete
     .text start:0x021ba3dc end:0x021ba524
 
-src/GameState/ov017/GameState_QueueObjectTypeElevenRecord.cpp:
+src/Field/Multiplayer/PartySync_QueueVocationProgressSummary.cpp:
     complete
     .text start:0x021cc97c end:0x021cca00
 
-src/GameState/ov017/Ov017_TestFlagAt4331.cpp:
+src/Field/Screens/Field_TestPartyMemberMessageFlag.cpp:
     complete
     .text start:0x0218d4ec end:0x0218d500
 
-src/Unclassified/ov017/func_ov017_021a85d4.cpp:
+src/Field/Screens/ItemTrade_SetIncomingOfferPhase.cpp:
     complete
     .text start:0x021a85d4 end:0x021a85e8
 
-src/Util/ov017/LinkedList_SetGroupMatchFlag.cpp:
+src/Field/Scene/LinkedList_SetGroupMatchFlag.cpp:
     complete
     .text start:0x02198f70 end:0x02198f84
 
-src/Unclassified/ov017/func_ov017_021a99c8.cpp:
+src/Field/Events/Resource_MarkAndReleaseAllocatorState.cpp:
     complete
     .text start:0x021a99c8 end:0x021a99dc
 
-src/Unclassified/ov017/func_ov017_021ac294.cpp:
+src/Field/Events/Resource_MarkAndRemoveDisplayState.cpp:
     complete
     .text start:0x021ac294 end:0x021ac2a8
 
-src/Unclassified/ov017/Ov017_SetFlagAndForward.cpp:
+src/Field/Events/FieldBookshelf_CancelReadAndReleaseResources.cpp:
     complete
     .text start:0x021aca00 end:0x021aca14
 
-src/Unclassified/ov017/func_ov017_021afae8.cpp:
+src/Field/Multiplayer/Field_AcknowledgeMemberJoinRoster.cpp:
     complete
     .text start:0x021afae8 end:0x021afafc
 
-src/Unclassified/ov017/Func0205C96cAtOffset24WithZero.cpp:
+src/Field/Screens/Field_DrawTravelConfirmationPanel.cpp:
     complete
     .text start:0x021a7998 end:0x021a79ac
 
-src/Unclassified/ov017/func_ov017_021afafc.cpp:
+src/Field/Multiplayer/Field_AcknowledgeMemberJoinPreparation.cpp:
     complete
     .text start:0x021afafc end:0x021afb10
 
-src/Unclassified/ov017/func_ov017_021a9248.cpp:
+src/Field/Screens/Field_DrawTravelDestinationMenu.cpp:
     complete
     .text start:0x021a9248 end:0x021a925c
 
-src/Unclassified/ov017/func_ov017_021adb08.cpp:
+src/Field/Events/FieldPartyEffect_CancelTransitionAndFreeArena.cpp:
     complete
     .text start:0x021adb08 end:0x021adb1c
 
-src/Unclassified/ov017/func_ov017_021adc30.cpp:
+src/Field/Events/FieldPartyEffect_DrawMessagePanelAndCursor.cpp:
     complete
     .text start:0x021adc30 end:0x021adc44
 
-src/Unclassified/ov017/func_ov017_021c30f8.cpp:
+src/Field/Scene/Resource_MarkObjectActiveAndDestroy.cpp:
     complete
     .text start:0x021c30f8 end:0x021c310c
 
-src/Unclassified/ov017/Ov017_ReadPointerAt24Then394.cpp:
+src/Field/Screens/OnlineDownload_GetErrorCode.cpp:
     complete
     .text start:0x021b1ffc end:0x021b2010
 
-src/Unclassified/ov017/func_ov017_021b1fe8.cpp:
+src/Field/Screens/OnlineDownload_GetResultFlags.cpp:
     complete
     .text start:0x021b1fe8 end:0x021b1ffc
 
-src/Unclassified/ov017/func_ov017_021b8c70.cpp:
+src/Field/Events/Field_InitializeZoneTriggerCommand.cpp:
     complete
     .text start:0x021b8c70 end:0x021b8c84
 
-src/Unclassified/ov017/func_ov017_021d23ec.cpp:
+src/Field/Screens/Field_ApplyTransitionCommandValue.cpp:
     complete
     .text start:0x021d23ec end:0x021d2400
 
-src/Unclassified/ov017/SetByteOneThenCall021C1A24.cpp:
+src/Field/Events/ProfileScreen_CancelFieldSession.cpp:
     complete
     .text start:0x021c1a10 end:0x021c1a24
 
-src/Unclassified/ov017/func_ov017_021d3eb4.cpp:
+src/Field/Screens/Network_ApplySharedCommandValue.cpp:
     complete
     .text start:0x021d3eb4 end:0x021d3ec8
 
-src/Unclassified/ov017/func_ov017_021d35f8.cpp:
+src/Field/Screens/Field_ClearPartyRecoveryDisplayResult.cpp:
     complete
     .text start:0x021d35f8 end:0x021d360c
 
-src/Unclassified/ov017/Ov017_ClearFields3CThrough44.cpp:
+src/Field/Events/Script_ClearExecutionStatusAndArchive.cpp:
     complete
     .text start:0x021d4a24 end:0x021d4a38
 
-src/Unclassified/ov017/func_ov017_021d2428.cpp:
+src/Field/Screens/GameState_RequestPartyRecovery.cpp:
     complete
     .text start:0x021d2428 end:0x021d243c
 
-src/GameState/ov017/GameState_ApplyRemoteCombatantFlags.cpp:
+src/Field/Multiplayer/GameState_ApplyRemoteCombatantFlags.cpp:
     complete
     .text start:0x021c7334 end:0x021c7484
 
-src/World/ov017/World_ClearPlacementFlagsAndRemoveInstance.cpp:
+src/Field/Screens/World_ClearPlacementFlagsAndRemoveInstance.cpp:
     complete
     .text start:0x021d3950 end:0x021d3aa4
 
-src/Graphics/ov017/Ov017_AllocateVRAMStagingEntries.cpp:
+src/Field/Scene/Ov017_AllocateVRAMStagingEntries.cpp:
     complete
     .text start:0x02199684 end:0x021996bc
 
-src/GameState/ov017/ClearMatchingHalfwordEntry.cpp:
+src/Field/Scene/ClearMatchingHalfwordEntry.cpp:
     complete
     .text start:0x02197324 end:0x0219735c
 
-src/Graphics/ov017/func_ov017_021a5ad0.cpp:
+src/Field/Screens/Graphics_AllocateVRAMStagingMemoryForRecords.cpp:
     complete
     .text start:0x021a5ad0 end:0x021a5b08
 
-src/Graphics/ov017/Ov017_InitializeAllocatorRecord.cpp:
+src/Field/Scene/Ov017_InitializeAllocatorRecord.cpp:
     complete
     .text start:0x021b61e4 end:0x021b621c
 
-src/Unclassified/ov017/Unclassified_InitializeRecordWithInvalidIndex.cpp:
+src/Field/Events/ZoneEncounterLoader_InitializeCommand.cpp:
     complete
     .text start:0x021b46d8 end:0x021b4710
 
-src/Util/ov017/Util_RollKeyedRecordValue.cpp:
+src/Field/Events/Util_RollKeyedRecordValue.cpp:
     complete
     .text start:0x021b8a34 end:0x021b8abc
 
-src/Graphics/ov017/Model3D_ResetAttachedObjectsAndAllocator.cpp:
+src/Field/Scene/Model3D_ResetAttachedObjectsAndAllocator.cpp:
     complete
     .text start:0x0219bc50 end:0x0219bc88
 
-src/GameState/ov017/GameState_UpdateCountdownAndSetObjectFlags.cpp:
+src/Field/Scene/GameState_UpdateCountdownAndSetObjectFlags.cpp:
     complete
     .text start:0x021bfe60 end:0x021bfee8
 
-src/GameState/ov017/InitializeQueuedRecordOwner.cpp:
+src/Field/Events/InitializeQueuedRecordOwner.cpp:
     complete
     .text start:0x021c9b90 end:0x021c9bc8
 
-src/GameState/ov017/func_ov017_021d246c.cpp:
+src/Field/Screens/Field_ApplyInnRecoveryValueIfLeaderFlagged.cpp:
     complete
     .text start:0x021d246c end:0x021d24a4
 
-src/Grotto/ov017/Grotto_UpdateFlagsFromEntryKind.cpp:
+src/Field/Multiplayer/Grotto_UpdateFlagsFromEntryKind.cpp:
     complete
     .text start:0x021cfcb4 end:0x021cfcec
 
-src/Network/ov017/Network_QueueRecord61.cpp:
+src/Field/Events/Network_QueueEncounterRequest.cpp:
     complete
     .text start:0x021c5284 end:0x021c530c
 
-src/GameState/ov017/GameState_UpdateMatchingEmbeddedFourSlotRecord.cpp:
+src/Field/Multiplayer/GameState_UpdateMatchingEmbeddedFourSlotRecord.cpp:
     complete
     .text start:0x021c6b04 end:0x021c6b8c
 
-src/Graphics/ov017/Ov017_QueueSourceForIndex.cpp:
+src/Field/Multiplayer/Ov017_QueueSourceForIndex.cpp:
     complete
     .text start:0x021cc68c end:0x021cc6c4
 
-src/Unclassified/ov017/Unclassified_QueueRecordWithByteArguments.cpp:
+src/Field/Multiplayer/Field_QueuePartyTransitionResponse.cpp:
     complete
     .text start:0x021cf4b0 end:0x021cf4e8
 
-src/Util/ov017/Util_ContainsHalfwordValue.cpp:
+src/Field/Scene/Util_ContainsHalfwordValue.cpp:
     complete
     .text start:0x0219735c end:0x02197394
 
-src/Network/ov017/QueuePositionAndDayTimerMessage36.cpp:
+src/Field/Events/QueuePositionAndDayTimerMessage36.cpp:
     complete
     .text start:0x021c4664 end:0x021c46ec
 
-src/GameState/ov017/GameState_QueuePositionAndZoneRequest.cpp:
+src/Field/Multiplayer/GameState_QueuePositionAndZoneRequest.cpp:
     complete
     .text start:0x021cf3c0 end:0x021cf448
 
-src/Resource/ov017/Script_TrySelectIndexedEntryWhenIdle.cpp:
+src/Field/Events/Script_TrySelectIndexedEntryWhenIdle.cpp:
     complete
     .text start:0x021ba124 end:0x021ba280
 
-src/GameState/ov017/Script_TrySelectIndexedStringWhenConnected.cpp:
+src/Field/Events/Script_TrySelectIndexedStringWhenConnected.cpp:
     complete
     .text start:0x021ba280 end:0x021ba3dc
 
-src/Unclassified/ov017/Object_TestNestedBitAtOffset55D.cpp:
+src/Field/Scene/GameResources_IsPartyStatusSnapshotTrackingEnabled.cpp:
     complete
     .text start:0x0218b628 end:0x0218b664
 
-src/Resource/ov017/func_ov017_021b2ad8.cpp:
+src/Field/Screens/FieldScreen_WaitForZoneReload.cpp:
     complete
     .text start:0x021b2ad8 end:0x021b2b14
 
-src/Resource/ov017/Resource_CreateKind39RecordAndAppend.cpp:
+src/Field/Screens/Field_QueueFixedDestinationConfirmation.cpp:
     complete
     .text start:0x021a93f0 end:0x021a942c
 
-src/Unclassified/ov017/func_ov017_021a5568.cpp:
+src/Field/Events/FieldMenu_InitializePartyMenuCommand.cpp:
     complete
     .text start:0x021a5568 end:0x021a55a4
 
-src/GameState/ov017/Ov017_IsStateFlagSet.cpp:
+src/Field/Multiplayer/Ov017_IsStateFlagSet.cpp:
     complete
     .text start:0x02195550 end:0x0219558c
 
-src/Unclassified/ov017/func_ov017_021a99b0.cpp:
+src/Field/Screens/Field_RefreshOverlayEightActivityText.cpp:
     complete
     .text start:0x021a99b0 end:0x021a99c8
 
-src/Unclassified/ov017/func_ov017_0219a370.cpp:
+src/Field/Scene/Field_IsActionShortcutDisplayReady.cpp:
     complete
     .text start:0x0219a370 end:0x0219a388
 
-src/Graphics/ov017/TextPanel_InitializeFormattedName.cpp:
+src/Field/Multiplayer/TextPanel_InitializeFormattedName.cpp:
     complete
     .text start:0x021afb8c end:0x021afcec
 
-src/Unclassified/ov017/func_ov017_021b6b44.cpp:
+src/Field/Events/Field_DrawPartyManagementProtagonistPreview.cpp:
     complete
     .text start:0x021b6b44 end:0x021b6b5c
 
-src/Unclassified/ov017/func_ov017_021b2c4c.cpp:
+src/Field/Events/FieldFacilityMenu_InitializeOverlayCommand.cpp:
     complete
     .text start:0x021b2c4c end:0x021b2c88
 
-src/Graphics/ov017/Graphics_AllocatePoolsAndReserveVram.cpp:
+src/Field/Scene/Graphics_AllocatePoolsAndReserveVram.cpp:
     complete
     .text start:0x021a0630 end:0x021a0790
 
-src/Util/ov017/Util_ClearBitAtOffsetA.cpp:
+src/Field/Multiplayer/Util_ClearBitAtOffsetA.cpp:
     complete
     .text start:0x021b1454 end:0x021b146c
 
-src/Unclassified/ov017/func_ov017_021acce4.cpp:
+src/Field/Events/FieldPartyEffect_AcquireSharedTextContext.cpp:
     complete
     .text start:0x021acce4 end:0x021accfc
 
-src/GameState/ov017/Ov017_SetField38Bit3.cpp:
+src/Field/Scene/Field_SetOverlayReturnBackgroundRestoreEnabled.cpp:
     complete
     .text start:0x021b2bdc end:0x021b2bf4
 
-src/Unclassified/ov017/func_ov017_021a5530.cpp:
+src/Field/Events/FieldMenu_QueuePartyMenuAtFront.cpp:
     complete
     .text start:0x021a5530 end:0x021a5568
 
-src/Unclassified/ov017/func_ov017_021c0520.cpp:
+src/Field/Events/FieldScreen_DrawOptionalMappedObjects.cpp:
     complete
     .text start:0x021c0520 end:0x021c0538
 
-src/GameState/ov017/GameState_ApplyQueuedRecordValue.cpp:
+src/Field/Multiplayer/GameState_ApplyQueuedRecordValue.cpp:
     complete
     .text start:0x021cbbd0 end:0x021cbc0c
 
-src/Unclassified/ov017/func_ov017_021c0550.cpp:
+src/Field/Events/Graphics_ResetTransferEntriesAndCleanResources.cpp:
     complete
     .text start:0x021c0550 end:0x021c0568
 
-src/Unclassified/ov017/func_ov017_021a9998.cpp:
+src/Field/Screens/Field_ResetOverlayEightActivityDisplay.cpp:
     complete
     .text start:0x021a9998 end:0x021a99b0
 
-src/Unclassified/ov017/Ov017_UpdateSignedObjectIfPresent.cpp:
+src/Field/Events/RecordsScreen_UpdateOptionalPanel.cpp:
     complete
     .text start:0x021c11f0 end:0x021c1208
 
-src/Graphics/ov017/func_ov017_021c19e0.cpp:
+src/Field/Events/ProfileScreen_RefreshOptionalComponents.cpp:
     complete
     .text start:0x021c19e0 end:0x021c19f8
 
-src/Unclassified/ov017/func_ov017_021c1208.cpp:
+src/Field/Events/RecordsScreen_DrawOptionalPanel.cpp:
     complete
     .text start:0x021c1208 end:0x021c1220
 
-src/Graphics/ov017/Graphics_InitializeAllocatorAndVramReservations.cpp:
+src/Field/Scene/Graphics_InitializeAllocatorAndVramReservations.cpp:
     complete
     .text start:0x021a0c0c end:0x021a0d6c
 
-src/Graphics/ov017/Ov017_UpdateScreenIfPresent.cpp:
+src/Field/Events/Ov017_UpdateScreenIfPresent.cpp:
     complete
     .text start:0x021c19f8 end:0x021c1a10
 
-src/GameState/ov017/Ov017_InvokeIndexedCallback.cpp:
+src/Field/Events/Ov017_InvokeIndexedCallback.cpp:
     complete
     .text start:0x021d4bc8 end:0x021d4c04
 
-src/Unclassified/ov017/func_ov017_021c0538.cpp:
+src/Field/Events/Graphics_ResetAndProcessTransferRecords.cpp:
     complete
     .text start:0x021c0538 end:0x021c0550
 
-src/Unclassified/ov017/func_ov017_021b2c0c.cpp:
+src/Field/Scene/Field_SetOverlayLoadRenderStatePreserved.cpp:
     complete
     .text start:0x021b2c0c end:0x021b2c24
 
-src/Unclassified/ov017/func_ov017_021b8b54.cpp:
+src/Field/Events/FieldBattle_IsSceneActive.cpp:
     complete
     .text start:0x021b8b54 end:0x021b8b6c
 
-src/Math/ov017/GetAbsoluteSignedAngleToTargetVector.cpp:
+src/Field/Events/GetAbsoluteSignedAngleToTargetVector.cpp:
     complete
     .text start:0x021a4754 end:0x021a476c
 
-src/GameState/ov017/GameState_SetPartyMemberFlagFromRecord.cpp:
+src/Field/Screens/GameState_SetPartyMemberFlagFromRecord.cpp:
     complete
     .text start:0x021d25b8 end:0x021d25f4
 
-src/Memory/ov017/Memory_AllocateIndexedAllocatorBlocks.cpp:
+src/Field/Scene/Memory_AllocateIndexedAllocatorBlocks.cpp:
     complete
     .text start:0x021a1178 end:0x021a11b4
 
-src/Unclassified/ov017/MoveQueuedRecordWithBytePair.cpp:
+src/Field/Multiplayer/Field_QueueTargetedPartyRosterRefresh.cpp:
     complete
     .text start:0x021cfed0 end:0x021cff0c
 
-src/Resource/ov017/Resource_ApplyQueuedRecordKind31.cpp:
+src/Field/Screens/Resource_ApplyQueuedRecordKind31.cpp:
     complete
     .text start:0x021d257c end:0x021d25b8
 
-src/GameState/ov017/GameState_QueuePartyMemberFields.cpp:
+src/Field/Events/GameState_QueuePartyMemberFields.cpp:
     complete
     .text start:0x021c41fc end:0x021c435c
 
-src/GameState/ov017/GameState_AdvanceDayTimerAndUpdateLighting.cpp:
+src/Field/Scene/GameState_AdvanceDayTimerAndUpdateLighting.cpp:
     complete
     .text start:0x0218d0ec end:0x0218d258
 
-src/Graphics/ov017/Graphics_CreateRelatedObjectBoneAndMaterialArrays.cpp:
+src/Field/Scene/Graphics_CreateRelatedObjectBoneAndMaterialArrays.cpp:
     complete
     .text start:0x021901ac end:0x02190238
 
-src/Resource/ov017/Resource_ResetZoneAndAllocator.cpp:
+src/Field/Scene/Resource_ResetZoneAndAllocator.cpp:
     complete
     .text start:0x0219bf74 end:0x0219bfb4
 
-src/GameState/ov017/GameState_FindUnusedMemberValue.cpp:
+src/Field/Scene/GameState_FindUnusedMemberValue.cpp:
     complete
     .text start:0x02191764 end:0x021917f0
 
-src/Network/ov017/InitializeConnectionRecordState.cpp:
+src/Field/Multiplayer/InitializeConnectionRecordState.cpp:
     complete
     .text start:0x02195618 end:0x02195658
 
-src/Graphics/ov017/Graphics_FreeVRAMStagingEntries.cpp:
+src/Field/Scene/Graphics_FreeVRAMStagingEntries.cpp:
     complete
     .text start:0x021996bc end:0x021996fc
 
-src/Util/ov017/Util_InitializeKindTwoObjectAndEnqueue.cpp:
+src/Field/Scene/Util_InitializeKindTwoObjectAndEnqueue.cpp:
     complete
     .text start:0x021a120c end:0x021a124c
 
-src/Resource/ov017/func_ov017_021abb68.cpp:
+src/Field/Events/FieldEscape_InitializeExitEffectCommand.cpp:
     complete
     .text start:0x021abb68 end:0x021abba8
 
-src/Resource/ov017/Resource_InitializeEntryState.cpp:
+src/Field/Events/Resource_InitializeEntryState.cpp:
     complete
     .text start:0x021aa16c end:0x021aa1ac
 
-src/Resource/ov017/Resource_ReleaseOverlayLoadState.cpp:
+src/Field/Screens/Resource_ReleaseOverlayLoadState.cpp:
     complete
     .text start:0x021b2200 end:0x021b228c
 
-src/Unclassified/ov017/Unclassified_InitializeRecordWithType45.cpp:
+src/Field/Scene/FieldMonsterCall_InitializeRequest.cpp:
     complete
     .text start:0x021c2744 end:0x021c2784
 
-src/Resource/ov017/Resource_ApplyQueuedRecordKind53.cpp:
+src/Field/Multiplayer/Resource_ApplyQueuedRecordKind53.cpp:
     complete
     .text start:0x021c8c04 end:0x021c8c44
 
-src/Unclassified/ov017/MoveQueuedRecordWithShortAndBytePair.cpp:
+src/Field/Multiplayer/Field_QueueTargetedZoneTransition.cpp:
     complete
     .text start:0x021cf594 end:0x021cf5d4
 
-src/Memory/ov017/ReleaseResourceAndAllocator.cpp:
+src/Field/Events/ReleaseResourceAndAllocator.cpp:
     complete
     .text start:0x021c0364 end:0x021c03a4
 
-src/GameState/ov017/GameState_CopyMatchingNonProtagonistRecordFields.cpp:
+src/Field/Multiplayer/Combat_ApplyRemoteExtendedCombatantIdentity.cpp:
     complete
     .text start:0x021ca4a8 end:0x021ca534
 
-src/Network/ov017/Network_QueueTypeSeventeenRecord.cpp:
+src/Field/Multiplayer/Network_QueueTypeSeventeenRecord.cpp:
     complete
     .text start:0x021ce014 end:0x021ce054
 
-src/GameState/ov017/func_ov017_021d3e3c.cpp:
+src/Field/Screens/Network_QueueBoundaryZoneTier.cpp:
     complete
     .text start:0x021d3e3c end:0x021d3e7c
 
-src/GameState/ov017/func_ov017_021d2cc0.cpp:
+src/Field/Screens/Network_QueuePartyRecoveryCommand.cpp:
     complete
     .text start:0x021d2cc0 end:0x021d2d00
 
-src/GameState/ov017/GameState_QueueActiveCombatantRecords.cpp:
+src/Field/Multiplayer/GameState_QueueActiveCombatantRecords.cpp:
     complete
     .text start:0x021c6d50 end:0x021c6ebc
 
-src/System/ov017/System_QueueType84Record.cpp:
+src/Field/Multiplayer/Field_QueueMonsterPathMovement.cpp:
     complete
     .text start:0x021c9168 end:0x021c91f4
 
-src/Resource/ov017/Resource_QueueKind70NodeForMatchingObject.cpp:
+src/Field/Screens/Resource_QueueKind70NodeForMatchingObject.cpp:
     complete
     .text start:0x021d24f0 end:0x021d257c
 
-src/Unclassified/ov017/func_ov017_021c0568.cpp:
+src/Field/Events/Resource_ReleaseResourceAndMarkObjectActive.cpp:
     complete
     .text start:0x021c0568 end:0x021c0580
 
-src/World/ov017/World_ActivateZoneChestFromMatchingRecord.cpp:
+src/Field/Multiplayer/World_ActivateZoneChestFromMatchingRecord.cpp:
     complete
     .text start:0x021cfda0 end:0x021cfde0
 
-src/Unclassified/ov017/Object_QueueTaggedRecordWhenInactive.cpp:
+src/Field/Multiplayer/Grotto_QueueResetFlagUpdate.cpp:
     complete
     .text start:0x021cfcec end:0x021cfd2c
 
-src/GameState/ov017/QueueType2CRecordAndApplySourceValue.cpp:
+src/Field/Multiplayer/Field_QueueIndexedResponseValue.cpp:
     complete
     .text start:0x021cc198 end:0x021cc1d8
 
-src/Graphics/ov017/Graphics_ClearBackgroundsAndFinishTransition.cpp:
+src/Field/Screens/Graphics_ClearBackgroundsAndFinishTransition.cpp:
     complete
     .text start:0x021b2968 end:0x021b2ad8
 
-src/Graphics/ov017/Graphics_InitializeTableDrivenAllocatorsAndVRAM.cpp:
+src/Field/Scene/Graphics_InitializeTableDrivenAllocatorsAndVRAM.cpp:
     complete
     .text start:0x021a07f4 end:0x021a0964
 
-src/Graphics/ov017/Graphics_InitializeIndexedAllocatorsAndVRAMReservations.cpp:
+src/Field/Scene/Graphics_InitializeIndexedAllocatorsAndVRAMReservations.cpp:
     complete
     .text start:0x021a0fa4 end:0x021a1114
 
-src/GameState/ov017/GameState_QueueThirteenByteChunk.cpp:
+src/Field/Screens/GameState_QueueThirteenByteChunk.cpp:
     complete
     .text start:0x021d3d40 end:0x021d3dcc
 
-src/Graphics/ov017/Graphics_InitializeTableDrivenAllocatorAndVramReservations.cpp:
+src/Field/Scene/Graphics_InitializeTableDrivenAllocatorAndVramReservations.cpp:
     complete
     .text start:0x021a0dd0 end:0x021a0f40
 
-src/Resource/ov017/Resource_InitializeTag32Entry.cpp:
+src/Field/Scene/Resource_InitializeTag32Entry.cpp:
     complete
     .text start:0x021bdbf0 end:0x021bdc34
 
-src/Unclassified/ov017/Unclassified_InitializeRecordWithType2E.cpp:
+src/Field/Events/FieldScreen_InitializeOverlayThreeSession.cpp:
     complete
     .text start:0x021c1350 end:0x021c1394
 
-src/Memory/ov017/Memory_ReleaseAllocatorAndSignedAllocation.cpp:
+src/Field/Scene/Memory_ReleaseAllocatorAndSignedAllocation.cpp:
     complete
     .text start:0x021c0160 end:0x021c01a4
 
-src/Unclassified/ov017/MoveQueuedRecordWithThreeHalfwords.cpp:
+src/Field/Multiplayer/Field_QueueContainerLootFlags.cpp:
     complete
     .text start:0x021cfde0 end:0x021cfe24
 
-src/GameState/ov017/GameState_SetObjectFlagBitsFromCommand.cpp:
+src/Field/Multiplayer/GameState_SetObjectFlagBitsFromCommand.cpp:
     complete
     .text start:0x021cee34 end:0x021cee78
 
-src/GameState/ov017/func_ov017_021d0d58.cpp:
+src/Field/Multiplayer/PartyRoster_QueueSynchronizedConfigurationWord.cpp:
     complete
     .text start:0x021d0d58 end:0x021d0d9c
 
-src/Unclassified/ov017/Ov017_InitializeAndSetFlagByte1.cpp:
+src/Field/Scene/PartyTransition_ReleaseDialogueRequest.cpp:
     complete
     .text start:0x021c031c end:0x021c0334
 
-src/Unclassified/ov017/MoveQueuedRecordWithThreeBytes.cpp:
+src/Field/Screens/Network_QueueEquipmentReturnExchange.cpp:
     complete
     .text start:0x021d27a0 end:0x021d27e4
 
-src/GameState/ov017/QueueTaggedHalfwordAndByteRecord.cpp:
+src/Field/Multiplayer/QueueTaggedHalfwordAndByteRecord.cpp:
     complete
     .text start:0x021cfd5c end:0x021cfda0
 
-src/Graphics/ov017/Graphics_RenderPartyMemberShadow.cpp:
+src/Field/Scene/Graphics_RenderPartyMemberShadow.cpp:
     complete
     .text start:0x0218dba0 end:0x0218dd18
 
-src/Network/ov017/Network_QueueTypeAdRecord.cpp:
+src/Field/Multiplayer/Network_QueueTypeAdRecord.cpp:
     complete
     .text start:0x021d1810 end:0x021d1854
 
-src/Resource/ov017/Resource_PollNestedLoaderIfPresent.cpp:
+src/Field/Scene/Resource_PollNestedLoaderIfPresent.cpp:
     complete
     .text start:0x0218d5ac end:0x0218d5c8
 
-src/Unclassified/ov017/Ov017_IgnoreNestedObjectIfPresent.cpp:
+src/Field/Scene/Field_InvokeSelectedFeatureNoOpHook.cpp:
     complete
     .text start:0x02199480 end:0x0219949c
 
-src/Graphics/ov017/Graphics_InitializeDisplayStateRecord.cpp:
+src/Field/Events/Graphics_InitializeDisplayStateRecord.cpp:
     complete
     .text start:0x021aa50c end:0x021aa59c
 
-src/Unclassified/ov017/func_ov017_0218d4d0.cpp:
+src/Field/Screens/Field_ClearPartyMemberMessageFlag.cpp:
     complete
     .text start:0x0218d4d0 end:0x0218d4ec
 
-src/System/ov017/System_SetRegisterBit15_Overlay017.cpp:
+src/Field/Screens/System_SetRegisterBit15_Overlay017.cpp:
     complete
     .text start:0x021b1ca8 end:0x021b1cc4
 
-src/GameState/ov017/GameState_IsFlagAtOffset441CZero.cpp:
+src/Field/Multiplayer/Field_IsPartyJoinRequestIdle.cpp:
     complete
     .text start:0x02195760 end:0x0219577c
 
-src/GameState/ov017/GameState_MarkObjectAndSetByte253.cpp:
+src/Field/Events/GameState_MarkObjectAndSetByte253.cpp:
     complete
     .text start:0x021ab67c end:0x021ab698
 
-src/Graphics/ov017/DrawEmbeddedObjectIfStateThree.cpp:
+src/Field/Events/DrawEmbeddedObjectIfStateThree.cpp:
     complete
     .text start:0x021b65bc end:0x021b65d8
 
-src/Graphics/ov017/Graphics_SetBackground2Priority.cpp:
+src/Field/Scene/Graphics_SetBackground2Priority.cpp:
     complete
     .text start:0x021999e0 end:0x021999fc
 
-src/Unclassified/ov017/Ov017_ForwardHalfwordAndContext.cpp:
+src/Field/Events/Network_HandleEncounterRemovalCommand.cpp:
     complete
     .text start:0x021c9b04 end:0x021c9b20
 
-src/Unclassified/ov017/func_ov017_021c9b58.cpp:
+src/Field/Events/Network_ApplyEncounterParticipantResult.cpp:
     complete
     .text start:0x021c9b58 end:0x021c9b74
 
-src/Unclassified/ov017/func_ov017_021b8b94.cpp:
+src/Field/Events/FieldBattle_IsSceneInSupportedSyncPhase.cpp:
     complete
     .text start:0x021b8b94 end:0x021b8bb0
 
-src/Unclassified/ov017/func_ov017_021c9b74.cpp:
+src/Field/Events/Network_HandleEncounterRemovalNotification.cpp:
     complete
     .text start:0x021c9b74 end:0x021c9b90
 
-src/Graphics/ov017/Graphics_SetBG1Priority.cpp:
+src/Field/Scene/Graphics_SetBG1Priority.cpp:
     complete
     .text start:0x02199998 end:0x021999b4
 
-src/Unclassified/ov017/func_ov017_021cfe24.cpp:
+src/Field/Multiplayer/GameState_ApplyBoundedKeyFlagsAndBitArrayFromRecord.cpp:
     complete
     .text start:0x021cfe24 end:0x021cfe40
 
-src/Network/ov017/Network_QueueTypeB5PositionRecord.cpp:
+src/Field/Screens/Network_QueueTypeB5PositionRecord.cpp:
     complete
     .text start:0x021d1dc0 end:0x021d1e50
 
-src/GameState/ov017/SetGameStateFloatWhenConditionClear.cpp:
+src/Field/Multiplayer/SetGameStateFloatWhenConditionClear.cpp:
     complete
     .text start:0x021cdae4 end:0x021cdb00
 
-src/Graphics/ov017/Graphics_ComputeInputRelativeMovementVector.cpp:
+src/Field/Scene/Graphics_ComputeInputRelativeMovementVector.cpp:
     complete
     .text start:0x0218d8cc end:0x0218da48
 
-src/Network/ov017/Network_DispatchEnabledPendingRecords.cpp:
+src/Field/Events/Network_DispatchEnabledPendingRecords.cpp:
     complete
     .text start:0x021d48f0 end:0x021d4980
 
-src/GameState/ov017/GameState_RestoreMaskedPartyMemberTransform.cpp:
+src/Field/Scene/GameState_RestoreMaskedPartyMemberTransform.cpp:
     complete
     .text start:0x021bd440 end:0x021bd4d0
 
-src/Graphics/ov017/Graphics_AllocateResourceBlocksAndSaveVramStates.cpp:
+src/Field/Scene/Graphics_AllocateResourceBlocksAndSaveVramStates.cpp:
     complete
     .text start:0x021a02f0 end:0x021a0470
 
-src/GameState/ov017/GameState_ApplyMatchingNonProtagonistRecord.cpp:
+src/Field/Multiplayer/GameState_ApplyMatchingNonProtagonistRecord.cpp:
     complete
     .text start:0x021c6784 end:0x021c6814
 
-src/Graphics/ov017/Graphics_ModifyObjectTexturePalette.cpp:
+src/Field/Scene/Graphics_ModifyObjectTexturePalette.cpp:
     complete
     .text start:0x0218f968 end:0x0218fcf8
 
-src/Memory/ov017/func_ov017_021a6be4.cpp:
+src/Field/Screens/Field_InitializePartyTravelEffect.cpp:
     complete
     .text start:0x021a6be4 end:0x021a6c2c
 
-src/Resource/ov017/Resource_InitializeTypeNineteenRecord.cpp:
+src/Field/Events/Resource_InitializeTypeNineteenRecord.cpp:
     complete
     .text start:0x021b2f64 end:0x021b2fac
 
-src/World/ov017/Ov017_QueueTypeSevenRecord.cpp:
+src/Field/Multiplayer/PartySync_QueueMemberAssignmentRequest.cpp:
     complete
     .text start:0x021cc340 end:0x021cc388
 
-src/Network/ov017/Network_QueueTypeSixtyNineRecord.cpp:
+src/Field/Multiplayer/Network_QueueTypeSixtyNineRecord.cpp:
     complete
     .text start:0x021cd4c8 end:0x021cd510
 
-src/Unclassified/ov017/func_ov017_021bef84.cpp:
+src/Field/Events/Resource_DestroyObjectAllocatorAndClearFlags.cpp:
     complete
     .text start:0x021bef84 end:0x021befcc
 
-src/Resource/ov017/func_ov017_021a6b9c.cpp:
+src/Field/Screens/Resource_InitializeAndAppendTypedNode.cpp:
     complete
     .text start:0x021a6b9c end:0x021a6be4
 
-src/World/ov017/World_InitializeObjectIfHasBMDJInstance.cpp:
+src/Field/Scene/World_InitializeObjectIfHasBMDJInstance.cpp:
     complete
     .text start:0x021991e4 end:0x0219922c
 
-src/GameState/ov017/GameState_ApplyPartyMemberVisualParameters.cpp:
+src/Field/Screens/GameState_ApplyPartyMemberVisualParameters.cpp:
     complete
     .text start:0x021d2c78 end:0x021d2cc0
 
-src/Network/ov017/Ov017_QueueConnectionStateRecord.cpp:
+src/Field/Screens/Ov017_QueueConnectionStateRecord.cpp:
     complete
     .text start:0x021d1cb8 end:0x021d1d00
 
-src/GameState/ov017/func_ov017_021d24a8.cpp:
+src/Field/Screens/Network_QueuePartyDisplayRequestForCurrentZone.cpp:
     complete
     .text start:0x021d24a8 end:0x021d24f0
 
-src/Unclassified/ov017/func_ov017_021befcc.cpp:
+src/Field/Events/Resource_DestroyAndMarkObjectActive.cpp:
     complete
     .text start:0x021befcc end:0x021befe4
 
-src/GameState/ov017/ApplyFlagRecordAndMaybeActivate.cpp:
+src/Field/Scene/FieldNetwork_ApplyProgressFlagUpdateAndReactivate.cpp:
     complete
     .text start:0x021d097c end:0x021d09c4
 
-src/Unclassified/ov017/func_ov017_021b86e0.cpp:
+src/Field/Events/FieldBattle_MarkSceneSetupReady.cpp:
     complete
     .text start:0x021b86e0 end:0x021b86f8
 
-src/Graphics/ov017/Graphics_ProcessLightingEntryIfIdMatches.cpp:
+src/Field/Multiplayer/Graphics_ProcessLightingEntryIfIdMatches.cpp:
     complete
     .text start:0x021cbc0c end:0x021cbc48
 
-src/Combat/ov017/Combat_QueuePartyComponentFlags.cpp:
+src/Field/Multiplayer/Combat_QueuePartyComponentFlags.cpp:
     complete
     .text start:0x021c71a4 end:0x021c7334
 
-src/System/ov017/Input_UpdateTouchRectangleDrag.cpp:
+src/Field/Scene/Input_UpdateTouchRectangleDrag.cpp:
     complete
     .text start:0x0219a6b8 end:0x0219aa5c
 
-src/Graphics/ov017/Graphics_SetNestedModelPolygonIDIfAvailable.cpp:
+src/Field/Scene/Graphics_SetNestedModelPolygonIDIfAvailable.cpp:
     complete
     .text start:0x021923e0 end:0x02192400
 
-src/Unclassified/ov017/func_ov017_021a5a48.cpp:
+src/Field/Screens/Field_GetPartyMenuActionModeOrInvalid.cpp:
     complete
     .text start:0x021a5a48 end:0x021a5a68
 
-src/GameState/ov017/Ov017_ClearBytesOrReadStatus.cpp:
+src/Field/Multiplayer/Ov017_ClearBytesOrReadStatus.cpp:
     complete
     .text start:0x021b04c0 end:0x021b04e0
 
-src/GameState/ov017/GameState_ResetAndHideUnflaggedFieldMonsterGroups.cpp:
+src/Field/Scene/GameState_ResetAndHideUnflaggedFieldMonsterGroups.cpp:
     complete
     .text start:0x0219e0ec end:0x0219e180
 
-src/Unclassified/ov017/func_ov017_021b2328.cpp:
+src/Field/Screens/FieldScreen_InvokeSecondVirtualOnCanvasNodes.cpp:
     complete
     .text start:0x021b2328 end:0x021b2348
 
-src/World/ov017/World_UpdateZoneEntriesForMatchingObject.cpp:
+src/Field/Multiplayer/World_UpdateZoneEntriesForMatchingObject.cpp:
     complete
     .text start:0x021d18d8 end:0x021d196c
 
-src/Unclassified/ov017/func_ov017_021b2348.cpp:
+src/Field/Screens/FieldScreen_UpdateCanvasNodes.cpp:
     complete
     .text start:0x021b2348 end:0x021b2368
 
-src/Graphics/ov017/Graphics_ResetEnabledTransfersAndWindowIfActive.cpp:
+src/Field/Events/Graphics_ResetEnabledTransfersAndWindowIfActive.cpp:
     complete
     .text start:0x021b2f2c end:0x021b2f4c
 
-src/Unclassified/ov017/Ov017_ProcessGlobalObjectIfPresent.cpp:
+src/Field/Screens/FieldScreen_InvokeSixthVirtualOnCanvasNodes.cpp:
     complete
     .text start:0x021b2368 end:0x021b2388
 
-src/GameState/ov017/func_ov017_021a9fa0.cpp:
+src/Field/Events/GameState_ApplyConditionalModeState.cpp:
     complete
     .text start:0x021a9fa0 end:0x021a9fec
 
-src/GameState/ov017/GameState_QueueType32RecordByProtagonistStatus.cpp:
+src/Field/Scene/PartyTransition_QueueDialogueIfProtagonistReady.cpp:
     complete
     .text start:0x021bff8c end:0x021c0124
 
-src/GameState/ov017/GameState_GetMaximumIndexedBytePlusOne.cpp:
+src/Field/Scene/GameState_GetMaximumIndexedBytePlusOne.cpp:
     complete
     .text start:0x02192548 end:0x02192594
 
-src/Unclassified/ov017/func_ov017_021be3ec.cpp:
+src/Field/Events/Resource_DispatchStoredHandleAndMarkObjectActive.cpp:
     complete
     .text start:0x021be3ec end:0x021be40c
 
-src/Util/ov017/Util_ClearSixHalfwords.cpp:
+src/Field/Events/Util_ClearSixHalfwords.cpp:
     complete
     .text start:0x021b8b34 end:0x021b8b54
 
-src/GameState/ov017/GameState_ResetPartyMemberHalfwords.cpp:
+src/Field/Scene/GameState_ResetPartyMemberHalfwords.cpp:
     complete
     .text start:0x02192594 end:0x021925e0
 
-src/Memory/ov017/Overlay_DestroyAllocatorAndFreeSignedAllocation.cpp:
+src/Field/Scene/Overlay_DestroyAllocatorAndFreeSignedAllocation.cpp:
     complete
     .text start:0x021bac8c end:0x021bacd8
 
-src/Memory/ov017/func_ov017_021ba94c.cpp:
+src/Field/Events/Field_ReleaseChurchServiceMenu.cpp:
     complete
     .text start:0x021ba94c end:0x021ba998
 
-src/Unclassified/ov017/RecordArray_CopySixByteEntryAndRefreshFlag.cpp:
+src/Field/Scene/Field_QueuePartyRecoveryOwnershipRequest.cpp:
     complete
     .text start:0x0218d7b0 end:0x0218d7fc
 
-src/GameState/ov017/GameState_IncrementFlaggedObjectField184.cpp:
+src/Field/Multiplayer/Field_ApplyMemberQueuedActionCompletion.cpp:
     complete
     .text start:0x021cc320 end:0x021cc340
 
-src/GameState/ov017/func_ov017_021a9f58.cpp:
+src/Field/Events/GameState_ResetSelectionAndDisplayState.cpp:
     complete
     .text start:0x021a9f58 end:0x021a9fa0
 
-src/GameState/ov017/func_ov017_021c4618.cpp:
+src/Field/Events/GameState_ConvertEntryTextAndCopyStoredString.cpp:
     complete
     .text start:0x021c4618 end:0x021c4664
 
-src/Graphics/ov017/Graphics_InsertRecordByClassification.cpp:
+src/Field/Multiplayer/NavigationMessage_ApplyMemberNotificationPacket.cpp:
     complete
     .text start:0x021d1854 end:0x021d1874
 
-src/World/ov017/Ov017_ResetZoneObjectStateIfAllowed.cpp:
+src/Field/Multiplayer/Ov017_ResetZoneObjectStateIfAllowed.cpp:
     complete
     .text start:0x021cfe84 end:0x021cfed0
 
-src/Unclassified/ov017/func_ov017_021ca2d8.cpp:
+src/Field/Multiplayer/Field_ApplyMemberEncounterDeparture.cpp:
     complete
     .text start:0x021ca2d8 end:0x021ca2f8
 
-src/Unclassified/ov017/Util_AdvancePointerBy8AndStore.cpp:
+src/Field/Events/Script_PushIntegerValue.cpp:
     complete
     .text start:0x021d4a78 end:0x021d4a98
 
-src/Unclassified/ov017/func_ov017_021cc1d8.cpp:
+src/Field/Multiplayer/Field_ApplyMatchingIndexedResponse.cpp:
     complete
     .text start:0x021cc1d8 end:0x021cc1f8
 
-src/GameState/ov017/func_ov017_021d0d9c.cpp:
+src/Field/Multiplayer/PartyRoster_ApplySynchronizedConfigurationWord.cpp:
     complete
     .text start:0x021d0d9c end:0x021d0dbc
 
-src/Resource/ov017/Resource_QueueRecordKind28WhenPartyMemberAbsent.cpp:
+src/Field/Multiplayer/Resource_QueueRecordKind28WhenPartyMemberAbsent.cpp:
     complete
     .text start:0x021ce494 end:0x021ce4e0
 
-src/Graphics/ov017/OV017_ApplyMatchingEmbeddedOverride.cpp:
+src/Field/Multiplayer/OV017_ApplyMatchingEmbeddedOverride.cpp:
     complete
     .text start:0x021cc080 end:0x021cc0cc
 
-src/System/ov017/System_QueueFourByteTypedRecord.cpp:
+src/Field/Screens/System_QueueFourByteTypedRecord.cpp:
     complete
     .text start:0x021d3bbc end:0x021d3c08
 
-src/Unclassified/ov017/Ov017_AppendThreeAndValue.cpp:
+src/Field/Events/Script_PushVariableReference.cpp:
     complete
     .text start:0x021d4ab8 end:0x021d4ad8
 
-src/Network/ov017/Network_QueueSelectedPackedEntryRecords.cpp:
+src/Field/Multiplayer/Network_QueueSelectedPackedEntryRecords.cpp:
     complete
     .text start:0x021ca534 end:0x021ca6dc
 
-src/Util/ov017/Util_AppendTaggedWordRecord.cpp:
+src/Field/Events/Util_AppendTaggedWordRecord.cpp:
     complete
     .text start:0x021d4ad8 end:0x021d4af8
 
-src/GameState/ov017/GameState_ApplyIndexedObjectSlotValues.cpp:
+src/Field/Scene/GameState_ApplyIndexedObjectSlotValues.cpp:
     complete
     .text start:0x02192400 end:0x02192548
 
-src/GameState/ov017/GameState_ApplyIndexedCountCommand.cpp:
+src/Field/Screens/GameState_ApplyIndexedCountCommand.cpp:
     complete
     .text start:0x021d3c08 end:0x021d3d40
 
-src/Graphics/ov017/Graphics_InitializeTextureVRAMForGameState.cpp:
+src/Field/Scene/Graphics_InitializeTextureVRAMForGameState.cpp:
     complete
     .text start:0x0218d274 end:0x0218d2c4
 
-src/Unclassified/ov017/func_ov017_021a7328.cpp:
+src/Field/Screens/Field_InitializeTravelConfirmation.cpp:
     complete
     .text start:0x021a7328 end:0x021a7378
 
-src/GameState/ov017/GameState_TestSelectedIdFlag.cpp:
+src/Field/Scene/GameState_TestSelectedIdFlag.cpp:
     complete
     .text start:0x021a26e8 end:0x021a2738
 
-src/Memory/ov017/Memory_DestroySignedSafeAllocator.cpp:
+src/Field/Events/Memory_DestroySignedSafeAllocator.cpp:
     complete
     .text start:0x021c07d0 end:0x021c0820
 
-src/GameState/ov017/Object_QueueA1RecordForEligibleGlobalState.cpp:
+src/Field/Multiplayer/Grotto_QueueClientExitRequest.cpp:
     complete
     .text start:0x021cfabc end:0x021cfb0c
 
-src/World/ov017/World_UpdateAndSnapshotObjectState.cpp:
+src/Field/Scene/World_UpdateAndSnapshotObjectState.cpp:
     complete
     .text start:0x0218d5c8 end:0x0218d618
 
-src/Resource/ov017/Resource_SetFlagAndMarkReady.cpp:
+src/Field/Multiplayer/Resource_SetFlagAndMarkReady.cpp:
     complete
     .text start:0x021afb34 end:0x021afb84
 
-src/Memory/ov017/Memory_RecreateFourEntryAllocatorPools.cpp:
+src/Field/Scene/Memory_RecreateFourEntryAllocatorPools.cpp:
     complete
     .text start:0x0219fec0 end:0x0219ff58
 
-src/Resource/ov017/Resource_InitializeType3ARecordAndAllocator.cpp:
+src/Field/Screens/Field_InitializeOverlayEightActivityRequest.cpp:
     complete
     .text start:0x021a967c end:0x021a9714
 
-src/Unclassified/ov017/func_ov017_021c164c.cpp:
+src/Field/Events/Graphics_UpdateGlobalPartyEffectAndDraw.cpp:
     complete
     .text start:0x021c164c end:0x021c166c
 
-src/Resource/ov017/Script_SelectProtagonistParameterRow.cpp:
+src/Field/Events/Script_SelectProtagonistParameterRow.cpp:
     complete
     .text start:0x021ab6b0 end:0x021ab860
 
-src/Unclassified/ov017/Unclassified_PrepareAndAppendNodeWhenEnabled.cpp:
+src/Field/Events/FieldInteraction_QueueSelectedMemberFragmentTransfer.cpp:
     complete
     .text start:0x021a4dd0 end:0x021a4e0c
 
-src/Unclassified/ov017/QueuePartyIndexedPackedTriple.cpp:
+src/Field/Multiplayer/CharacterState_QueueVocationStatBonuses.cpp:
     complete
     .text start:0x021cf078 end:0x021cf234
 
-src/GameState/ov017/GameState_AdvanceUnflaggedObjectsA0ThroughBF.cpp:
+src/Field/Scene/GameState_AdvanceUnflaggedObjectsA0ThroughBF.cpp:
     complete
     .text start:0x02197394 end:0x021973e8
 
-src/GameState/ov017/Ov017_FindGameObjectByHalfwordId.cpp:
+src/Field/Scene/Ov017_FindGameObjectByHalfwordId.cpp:
     complete
     .text start:0x021a2738 end:0x021a278c
 
-src/Resource/ov017/func_ov017_021a9714.cpp:
+src/Field/Screens/Resource_ReleaseAllocatorAndResetState.cpp:
     complete
     .text start:0x021a9714 end:0x021a9768
 
-src/GameState/ov017/QueueType3FRecordFromSixByteSource.cpp:
+src/Field/Events/Network_QueueEncounterResponse.cpp:
     complete
     .text start:0x021c5f00 end:0x021c5f54
 
-src/Network/ov017/Network_QueueActiveCombatantPackedRecords.cpp:
+src/Field/Multiplayer/Network_QueueActiveCombatantPackedRecords.cpp:
     complete
     .text start:0x021c7484 end:0x021c787c
 
-src/Resource/ov017/func_ov017_021d49d0.cpp:
+src/Field/Events/Script_ResetInterpreterContext.cpp:
     complete
     .text start:0x021d49d0 end:0x021d4a24
 
-src/Resource/ov017/Resource_ApplyObjectRecordBytes.cpp:
+src/Field/Multiplayer/Field_ApplyObjectPartyFormation.cpp:
     complete
     .text start:0x021ce3ac end:0x021ce400
 
-src/Graphics/ov017/Ov017_UpdateEmbeddedObjectFromRecord.cpp:
+src/Field/Multiplayer/Ov017_UpdateEmbeddedObjectFromRecord.cpp:
     complete
     .text start:0x021cf024 end:0x021cf078
 
-src/Resource/ov017/func_ov017_021d2ad0.cpp:
+src/Field/Screens/Network_QueuePartyPositionUpdate.cpp:
     complete
     .text start:0x021d2ad0 end:0x021d2b24
 
-src/Unclassified/ov017/func_ov017_021b8420.cpp:
+src/Field/Events/FieldBattle_DrawAttachedCombatantRepresentations.cpp:
     complete
     .text start:0x021b8420 end:0x021b8438
 
-src/Resource/ov017/CopyBoundedResourceChunk.cpp:
+src/Field/Screens/CopyBoundedResourceChunk.cpp:
     complete
     .text start:0x021d2368 end:0x021d23bc
 
-src/GameState/ov017/GameState_ResetMapObjectAndDispatchState.cpp:
+src/Field/Screens/GameState_ResetMapObjectAndDispatchState.cpp:
     complete
     .text start:0x021b228c end:0x021b2328
 
-src/Resource/ov017/Resource_StartHandleAndCaptureTimestamp.cpp:
+src/Field/Scene/Resource_StartHandleAndCaptureTimestamp.cpp:
     complete
     .text start:0x021c2e50 end:0x021c2ea4
 
-src/Memory/ov017/Memory_DestroyNestedAndDetachedAllocators.cpp:
+src/Field/Scene/Memory_DestroyNestedAndDetachedAllocators.cpp:
     complete
     .text start:0x021bb108 end:0x021bb1a4
 
-src/Memory/ov017/Memory_RecreateSelectedAllocatorAfterFreeingEntries.cpp:
+src/Field/Scene/Memory_RecreateSelectedAllocatorAfterFreeingEntries.cpp:
     complete
     .text start:0x021a050c end:0x021a05a8
 
-src/Grotto/ov017/Grotto_ApplyMatchingTreasureMapRequest.cpp:
+src/Field/Multiplayer/Grotto_ApplyMatchingTreasureMapRequest.cpp:
     complete
     .text start:0x021cd510 end:0x021cd590
 
-src/GameState/ov017/GameState_ApplyPacketObjectByteSegment.cpp:
+src/Field/Multiplayer/GameState_ApplyPacketObjectByteSegment.cpp:
     complete
     .text start:0x021ccd10 end:0x021ccdac
 
-src/Unclassified/ov017/func_ov017_021b1ce4.cpp:
+src/Field/Screens/KrakPot_DrawFieldMenuSession.cpp:
     complete
     .text start:0x021b1ce4 end:0x021b1d04
 
-src/Network/ov017/QueueIndexedEntryMessages41.cpp:
+src/Field/Multiplayer/QueueIndexedEntryMessages41.cpp:
     complete
     .text start:0x021c66e8 end:0x021c6784
 
-src/GameState/ov017/GameState_CopyHalfwordRangeToUnlistedObject.cpp:
+src/Field/Screens/GameState_CopyHalfwordRangeToUnlistedObject.cpp:
     complete
     .text start:0x021d00c8 end:0x021d0164
 
-src/GameState/ov017/GameState_QueueSixHalfwordObjectRange.cpp:
+src/Field/Multiplayer/GameState_QueueSixHalfwordObjectRange.cpp:
     complete
     .text start:0x021cca5c end:0x021ccaf8
 
-src/GameState/ov017/GameState_QueueObjectTransform.cpp:
+src/Field/Multiplayer/GameState_QueueObjectTransform.cpp:
     complete
     .text start:0x021c9400 end:0x021c949c
 
-src/Memory/ov017/Memory_DestroyEmbeddedAndIndexedAllocators.cpp:
+src/Field/Scene/Memory_DestroyEmbeddedAndIndexedAllocators.cpp:
     complete
     .text start:0x021a0470 end:0x021a050c
 
-src/Network/ov017/Network_QueueTwelveByteDataChunk.cpp:
+src/Field/Multiplayer/Network_QueueTwelveByteDataChunk.cpp:
     complete
     .text start:0x021d0ef8 end:0x021d0f94
 
-src/World/ov017/World_AdvanceObjectBrightnessTransition.cpp:
+src/Field/Events/World_AdvanceObjectBrightnessTransition.cpp:
     complete
     .text start:0x021ab280 end:0x021ab67c
 
-src/GameState/ov017/GameState_ClearDisplayObjectsAndResetSlots.cpp:
+src/Field/Scene/GameState_ClearDisplayObjectsAndResetSlots.cpp:
     complete
     .text start:0x021a27e8 end:0x021a2840
 
-src/Resource/ov017/Script_InitializeLoadAndExecute.cpp:
+src/Field/Events/Script_InitializeLoadAndExecute.cpp:
     complete
     .text start:0x021acc8c end:0x021acce4
 
-src/Network/ov017/Network_QueueConnectionValueRecord.cpp:
+src/Field/Scene/Network_QueueConnectionValueRecord.cpp:
     complete
     .text start:0x021d0924 end:0x021d097c
 
-src/Resource/ov017/Resource_QueueConnectionRecordB3.cpp:
+src/Field/Screens/Network_QueueZoneTransitionParameters.cpp:
     complete
     .text start:0x021d1c2c end:0x021d1c84
 
-src/GameState/ov017/Object_LeaveStateUnchangedAfterOptionalCallback.cpp:
+src/Field/Events/Object_LeaveStateUnchangedAfterOptionalCallback.cpp:
     complete
     .text start:0x021b9904 end:0x021b9928
 
-src/Util/ov017/Util_AppendNodeIfInactive.cpp:
+src/Field/Scene/Util_AppendNodeIfInactive.cpp:
     complete
     .text start:0x0219bc88 end:0x0219bcac
 
-src/GameState/ov017/Ov017_InitializeStateRecord.cpp:
+src/Field/Scene/Ov017_InitializeStateRecord.cpp:
     complete
     .text start:0x021c1acc end:0x021c1af0
 
-src/GameState/ov017/GameState_DestroyFieldObjectsAndResetAllocators.cpp:
+src/Field/Scene/GameState_DestroyFieldObjectsAndResetAllocators.cpp:
     complete
     .text start:0x021a316c end:0x021a3338
 
-src/Util/ov017/Util_InitializeRecordWithMarker44.cpp:
+src/Field/Scene/Util_InitializeRecordWithMarker44.cpp:
     complete
     .text start:0x021c2688 end:0x021c26ac
 
-src/Graphics/ov017/Graphics_SetLightingRecordByteFromArgument.cpp:
+src/Field/Events/Network_ApplyBattleContextControlByte.cpp:
     complete
     .text start:0x021c9d08 end:0x021c9d2c
 
-src/GameState/ov017/GameState_SetMatchedTableKeyBitAndNotify.cpp:
+src/Field/Scene/GameState_SetMatchedTableKeyBitAndNotify.cpp:
     complete
     .text start:0x0219e290 end:0x0219e310
 
-src/Resource/ov017/Resource_SetLinkedNodeValueAndAppend.cpp:
+src/Field/Scene/Resource_SetLinkedNodeValueAndAppend.cpp:
     complete
     .text start:0x021c1a98 end:0x021c1acc
 
-src/GameState/ov017/Camera_UpdateFromGameStateFlags.cpp:
+src/Field/Scene/Camera_UpdateFromGameStateFlags.cpp:
     complete
     .text start:0x021959ec end:0x02195a20
 
-src/GameState/ov017/GameState_ReleaseTemporaryAllocatorAndEnableObjects.cpp:
+src/Field/Scene/GameState_ReleaseTemporaryAllocatorAndEnableObjects.cpp:
     complete
     .text start:0x021ae760 end:0x021ae800
 
-src/GameState/ov017/Ov017_CopyThreeValuesToGameObject.cpp:
+src/Field/Multiplayer/Ov017_CopyThreeValuesToGameObject.cpp:
     complete
     .text start:0x021ccbdc end:0x021ccc34
 
-src/Network/ov017/QueueMissingIndexedObjectValuesMessage77.cpp:
+src/Field/Multiplayer/QueueMissingIndexedObjectValuesMessage77.cpp:
     complete
     .text start:0x021c8654 end:0x021c86f4
 
-src/Graphics/ov017/Graphics_RestoreBackgroundStateAndRecordCanvas.cpp:
+src/Field/Scene/Field_RestoreBackgroundsAfterActionShortcutDisplay.cpp:
     complete
     .text start:0x02199780 end:0x02199964
 
-src/Network/ov017/Network_UpdateDisconnectSelectionState.cpp:
+src/Field/Multiplayer/Network_UpdateDisconnectSelectionState.cpp:
     complete
     .text start:0x021af2f8 end:0x021af4ec
 
-src/Graphics/ov017/Ov017_InitializeAllocatorRecordTypeFourE.cpp:
+src/Field/Events/Field_InitializeGrottoReturnEffectCommand.cpp:
     complete
     .text start:0x021be40c end:0x021be468
 
-src/Graphics/ov017/Graphics_AllocatePoolsReserveVramAndCopyState.cpp:
+src/Field/Scene/Graphics_AllocatePoolsReserveVramAndCopyState.cpp:
     complete
     .text start:0x021a09c8 end:0x021a0ba8
 
-src/Resource/ov017/Resource_UpdateIndexedStateFlag.cpp:
+src/Field/Multiplayer/Resource_UpdateIndexedStateFlag.cpp:
     complete
     .text start:0x021954c4 end:0x02195520
 
-src/Unclassified/ov017/InitializeType40RecordWithDefaults.cpp:
+src/Field/Screens/Field_InitializeDeferredActorRequest.cpp:
     complete
     .text start:0x021a7adc end:0x021a7b38
 
-src/GameState/ov017/GameState_CopyEntryFieldsFromRecord.cpp:
+src/Field/Multiplayer/GameState_CopyEntryFieldsFromRecord.cpp:
     complete
     .text start:0x021cca00 end:0x021cca5c
 
-src/Memory/ov017/Memory_ReleaseTwoEmbeddedAllocatorsAndClearResourceFlag.cpp:
+src/Field/Scene/Memory_ReleaseTwoEmbeddedAllocatorsAndClearResourceFlag.cpp:
     complete
     .text start:0x021bf490 end:0x021bf534
 
-src/GameState/ov017/GameState_ApplyRemoteIndexedRecordData.cpp:
+src/Field/Multiplayer/Combat_ApplyRemoteExtendedCombatantState.cpp:
     complete
     .text start:0x021ca918 end:0x021ca9bc
 
-src/Network/ov017/QueueTaggedRecordOperationMessage34.cpp:
+src/Field/Multiplayer/QueueTaggedRecordOperationMessage34.cpp:
     complete
     .text start:0x021cebcc end:0x021cec70
 
-src/GameState/ov017/GameState_ApplyMatchedQueuedRecord.cpp:
+src/Field/Multiplayer/GameState_ApplyMatchedQueuedRecord.cpp:
     complete
     .text start:0x021cd424 end:0x021cd4c8
 
-src/System/ov017/System_PushExecutionFrameAndClearLocalSlots.cpp:
+src/Field/Events/System_PushExecutionFrameAndClearLocalSlots.cpp:
     complete
     .text start:0x021d4af8 end:0x021d4b9c
 
-src/Resource/ov017/Resource_QueueNamedRecordAndUpdateText.cpp:
+src/Field/Multiplayer/Field_QueueNameAndCacheMemberText.cpp:
     complete
     .text start:0x021d0b30 end:0x021d0bd4
 
-src/Util/ov017/Util_ApplyActiveContextEntryUpdate.cpp:
+src/Field/Multiplayer/Util_ApplyActiveContextEntryUpdate.cpp:
     complete
     .text start:0x021ceb28 end:0x021cebcc
 
-src/Unclassified/ov017/Unclassified_InitializeRecordType19AndClearThreeHalfwords.cpp:
+src/Field/Events/FieldMessage_InitializeHpReducedToOneNotice.cpp:
     complete
     .text start:0x021aa3f4 end:0x021aa41c
 
-src/Memory/ov017/Memory_InitializeRecord47AndFlags.cpp:
+src/Field/Scene/Field_InitializeMemberMessageRequest.cpp:
     complete
     .text start:0x021c316c end:0x021c3194
 
-src/Memory/ov017/Overlay_PopAndDestroyObject.cpp:
+src/Field/Events/Overlay_PopAndDestroyObject.cpp:
     complete
     .text start:0x021b2c88 end:0x021b2ce8
 
-src/Unclassified/ov017/InitializeSelectionControlRecord.cpp:
+src/Field/Screens/Field_InitializeTravelDestinationMenu.cpp:
     complete
     .text start:0x021a8670 end:0x021a86d0
 
-src/GameState/ov017/GameState_SetResolvedSlotWhenIndexedValueChanges.cpp:
+src/Field/Multiplayer/GameState_SetResolvedSlotWhenIndexedValueChanges.cpp:
     complete
     .text start:0x021cea64 end:0x021cea8c
 
-src/Resource/ov017/Resource_DestroyAndFreeAllocatedObject.cpp:
+src/Field/Scene/Resource_DestroyAndFreeAllocatedObject.cpp:
     complete
     .text start:0x021c310c end:0x021c316c
 
-src/Unclassified/ov017/Unclassified_ApplyQueuedRecordType50FromGlobal.cpp:
+src/Field/Multiplayer/Network_QueueLocalMemberInteractionExclusion.cpp:
     complete
     .text start:0x021cea8c end:0x021ceab4
 
-src/Resource/ov017/Resource_InitializeTypeSixtyFiveRecord.cpp:
+src/Field/Screens/Resource_InitializeTypeSixtyFiveRecord.cpp:
     complete
     .text start:0x021a7d78 end:0x021a7dd8
 
-src/GameState/ov017/GameState_ResetUnknownObjectAndResourceFlag.cpp:
+src/Field/Scene/GameState_ResetUnknownObjectAndResourceFlag.cpp:
     complete
     .text start:0x021bff2c end:0x021bff8c
 
-src/GameState/ov017/GameState_GetIndexedByteField.cpp:
+src/Field/Scene/GameState_GetIndexedByteField.cpp:
     complete
     .text start:0x0219219c end:0x021921fc
 
-src/GameState/ov017/ApplySelectedPartModesByObjectType.cpp:
+src/Field/Events/ApplySelectedPartModesByObjectType.cpp:
     complete
     .text start:0x021ab060 end:0x021ab0c0
 
-src/Resource/ov017/Resource_CreateLinkedByteRecord.cpp:
+src/Field/Screens/Resource_CreateLinkedByteRecord.cpp:
     complete
     .text start:0x021a8614 end:0x021a8670
 
-src/Util/ov017/Util_FindMatchingRecordOrInitializeFreeSlot.cpp:
+src/Field/Events/Util_FindMatchingRecordOrInitializeFreeSlot.cpp:
     complete
     .text start:0x021a4658 end:0x021a4700
 
-src/Resource/ov017/Resource_DestroyAndResetTypeSixtyFiveRecord.cpp:
+src/Field/Screens/Resource_DestroyAndResetTypeSixtyFiveRecord.cpp:
     complete
     .text start:0x021a7dd8 end:0x021a7e14
 
-src/GameState/ov017/GameState_TickResetTimer.cpp:
+src/Field/Scene/GameState_TickResetTimer.cpp:
     complete
     .text start:0x021bfee8 end:0x021bff24
 
-src/World/ov017/World_AdjustMatchingFieldMonstersToGround.cpp:
+src/Field/Scene/World_AdjustMatchingFieldMonstersToGround.cpp:
     complete
     .text start:0x021a3338 end:0x021a33e0
 
-src/Resource/ov017/MoveQueuedRecordWithResourceByteQuad.cpp:
+src/Field/Multiplayer/MoveQueuedRecordWithResourceByteQuad.cpp:
     complete
     .text start:0x021ce29c end:0x021ce2fc
 
-src/GameState/ov017/GameState_DispatchNineStateCallbacksAndFinish.cpp:
+src/Field/Scene/GameState_DispatchNineStateCallbacksAndFinish.cpp:
     complete
     .text start:0x021bf534 end:0x021bf5dc
 
-src/GameState/ov017/GameState_ApplyIndexedMaskedFlagsFromByteList.cpp:
+src/Field/Multiplayer/GameState_ApplyIndexedMaskedFlagsFromByteList.cpp:
     complete
     .text start:0x021ccf70 end:0x021ccfd0
 
-src/GameState/ov017/UpdateKeyedRecordByteFlags.cpp:
+src/Field/Scene/Field_UpdateCombatantAppearanceFlags.cpp:
     complete
     .text start:0x02191aac end:0x02191b40
 
-src/GameState/ov017/GameState_ReinsertObjectIndexedEntry.cpp:
+src/Field/Multiplayer/GameState_ReinsertObjectIndexedEntry.cpp:
     complete
     .text start:0x021ce658 end:0x021ce700
 
-src/Network/ov017/Network_QueueContextBufferChunk.cpp:
+src/Field/Multiplayer/Network_QueueContextBufferChunk.cpp:
     complete
     .text start:0x021cdc24 end:0x021cdccc
 
-src/GameState/ov017/ApplyPartyMemberMessageFlags.cpp:
+src/Field/Screens/ApplyPartyMemberMessageFlags.cpp:
     complete
     .text start:0x021d26a4 end:0x021d2738
 
-src/Network/ov017/Network_QueueTypeB6PackedPosition.cpp:
+src/Field/Screens/Network_QueueTypeB6PackedPosition.cpp:
     complete
     .text start:0x021d360c end:0x021d36b4
 
-src/GameState/ov017/GameState_HasValidActionForSelector.cpp:
+src/Field/Scene/GameState_HasValidActionForSelector.cpp:
     complete
     .text start:0x021922ac end:0x0219230c
 
-src/Network/ov017/Network_QueueObjectRecord59.cpp:
+src/Field/Multiplayer/Field_QueuePartyAnimationCommand.cpp:
     complete
     .text start:0x021d3f00 end:0x021d3fa8
 
-src/Network/ov017/Network_QueueSelectedSourceAndDayTimer.cpp:
+src/Field/Events/Network_QueueSelectedSourceAndDayTimer.cpp:
     complete
     .text start:0x021c4fa0 end:0x021c51c0
 
-src/GameState/ov017/GameState_QueueObjectAndResourceStatus.cpp:
+src/Field/Screens/GameState_QueueObjectAndResourceStatus.cpp:
     complete
     .text start:0x021d0490 end:0x021d069c
 
-src/Graphics/ov017/Ov017_InitializeOverlayCanvasState.cpp:
+src/Field/Screens/Ov017_InitializeOverlayCanvasState.cpp:
     complete
     .text start:0x021a5b48 end:0x021a5bac
 
-src/GameState/ov017/GameState_QueueDecodedObjectName.cpp:
+src/Field/Events/GameState_QueueDecodedObjectName.cpp:
     complete
     .text start:0x021c45b4 end:0x021c4618
 
-src/Unclassified/ov017/Unclassified_CheckThreeEntryFlagsAndSetState.cpp:
+src/Field/Multiplayer/Field_WaitForPartyJoinPreparationAcknowledgments.cpp:
     complete
     .text start:0x021b042c end:0x021b0490
 
-src/Graphics/ov017/Graphics_ApplyMemberModelPaletteColor.cpp:
+src/Field/Scene/Graphics_ApplyMemberModelPaletteColor.cpp:
     complete
     .text start:0x0218fd34 end:0x021901ac
 
-src/GameState/ov017/HasValidStatusForKeyAtIndex.cpp:
+src/Field/Events/HasValidStatusForKeyAtIndex.cpp:
     complete
     .text start:0x021c5bf8 end:0x021c5c5c
 
-src/GameState/ov017/GameState_QueuePartyMemberFieldUpdate.cpp:
+src/Field/Multiplayer/GameState_QueuePartyMemberFieldUpdate.cpp:
     complete
     .text start:0x021d0e00 end:0x021d0e64
 
-src/System/ov017/System_QueuePackedRecordAE.cpp:
+src/Field/Multiplayer/ZoneFeatures_QueueTriggerSynchronization.cpp:
     complete
     .text start:0x021d1874 end:0x021d18d8
 
-src/GameState/ov017/Ov017_ProcessIndexedSignedEntries.cpp:
+src/Field/Multiplayer/Ov017_ProcessIndexedSignedEntries.cpp:
     complete
     .text start:0x021d0dbc end:0x021d0e00
 
-src/Graphics/ov017/Graphics_TranslateLinkedFixedPointCoordinatePair.cpp:
+src/Field/Scene/Graphics_TranslateLinkedFixedPointCoordinatePair.cpp:
     complete
     .text start:0x0219b578 end:0x0219b624
 
-src/Graphics/ov017/Graphics_TestObjectBoundsOverlap.cpp:
+src/Field/Scene/Graphics_TestObjectBoundsOverlap.cpp:
     complete
     .text start:0x02194140 end:0x021941ec
 
-src/Graphics/ov017/Graphics_TestNewMaskOrPointOutsideTwoRectangles.cpp:
+src/Field/Events/Graphics_TestNewMaskOrPointOutsideTwoRectangles.cpp:
     complete
     .text start:0x021ab1a4 end:0x021ab250
 
-src/GameState/ov017/GameState_SetPartyPositionAndNormalizedAngle.cpp:
+src/Field/Scene/GameState_SetPartyPositionAndNormalizedAngle.cpp:
     complete
     .text start:0x0219c598 end:0x0219c6f4
 
-src/Util/ov017/Util_GetSignedTableValue1To19.cpp:
+src/Field/Scene/Util_GetSignedTableValue1To19.cpp:
     complete
     .text start:0x0218d2c4 end:0x0218d2f0
 
-src/GameState/ov017/GameState_ApplyIndexedStatusAndRecord.cpp:
+src/Field/Multiplayer/GameState_ApplyIndexedStatusAndRecord.cpp:
     complete
     .text start:0x021cf4e8 end:0x021cf594
 
-src/GameState/ov017/ClearEmbeddedFieldsAtOffsets45B8And44C0.cpp:
+src/Field/Scene/ClearEmbeddedFieldsAtOffsets45B8And44C0.cpp:
     complete
     .text start:0x021972cc end:0x021972f8
 
-src/Filesystem/ov017/Filesystem_RemoveBackgroundTaskAndClearId.cpp:
+src/Field/Events/Filesystem_RemoveBackgroundTaskAndClearId.cpp:
     complete
     .text start:0x021b4760 end:0x021b478c
 
-src/GameState/ov017/GameState_InitializeAndAppendType16Record.cpp:
+src/Field/Events/Field_QueueChurchServiceMenu.cpp:
     complete
     .text start:0x021ba8e0 end:0x021ba90c
 
-src/GameState/ov017/InitializeObjectSentinelAndType42.cpp:
+src/Field/Scene/InitializeObjectSentinelAndType42.cpp:
     complete
     .text start:0x021c1e40 end:0x021c1e6c
 
-src/Unclassified/ov017/Ov017_PopRecordValues.cpp:
+src/Field/Events/Script_PopExecutionFrame.cpp:
     complete
     .text start:0x021d4b9c end:0x021d4bc8
 
-src/System/ov017/System_ApplyRemoteIndexedRecordUpdate.cpp:
+src/Field/Multiplayer/System_ApplyRemoteIndexedRecordUpdate.cpp:
     complete
     .text start:0x021cac7c end:0x021caea8
 
-src/Unclassified/ov017/Resource_LinkNewEntry.cpp:
+src/Field/Screens/Field_QueueDeferredActorRequest.cpp:
     complete
     .text start:0x021a7a74 end:0x021a7adc
 
-src/Resource/ov017/Resource_SetOverlayBitFromDescriptor.cpp:
+src/Field/Screens/Resource_SetOverlayBitFromDescriptor.cpp:
     complete
     .text start:0x021d2774 end:0x021d27a0
 
-src/Graphics/ov017/Graphics_StageObjectTexturesSevenToEighteen.cpp:
+src/Field/Scene/Graphics_StageObjectTexturesSevenToEighteen.cpp:
     complete
     .text start:0x021a2840 end:0x021a28a8
 
-src/GameState/ov017/GameState_ConsumeNearbyMatchingPositionRecord.cpp:
+src/Field/Scene/GameState_ConsumeNearbyMatchingPositionRecord.cpp:
     complete
     .text start:0x021c2380 end:0x021c25ac
 
-src/World/ov017/Ov017_ApplyZoneFeatureRecord.cpp:
+src/Field/Screens/Ov017_ApplyZoneFeatureRecord.cpp:
     complete
     .text start:0x021d19b0 end:0x021d1a18
 
-src/GameState/ov017/QueueType43SixFieldRecord.cpp:
+src/Field/Multiplayer/QueueType43SixFieldRecord.cpp:
     complete
     .text start:0x021c6a9c end:0x021c6b04
 
-src/Memory/ov017/AppendTwoWordsToObjectBuffer.cpp:
+src/Field/Events/AppendTwoWordsToObjectBuffer.cpp:
     complete
     .text start:0x021d4a38 end:0x021d4a64
 
-src/World/ov017/World_ResolveHorizontalObjectOverlap.cpp:
+src/Field/Scene/World_ResolveHorizontalObjectOverlap.cpp:
     complete
     .text start:0x0218dd18 end:0x0218df50
 
-src/World/ov017/World_ResolveActiveSlotOverlaps.cpp:
+src/Field/Scene/World_ResolveActiveSlotOverlaps.cpp:
     complete
     .text start:0x0218df50 end:0x0218dfd8
 
-src/Filesystem/ov017/BackgroundLoader_ClearStateAndRemoveTasks.cpp:
+src/Field/Events/BackgroundLoader_ClearStateAndRemoveTasks.cpp:
     complete
     .text start:0x021b33d8 end:0x021b3444
 
-src/GameState/ov017/GameState_InitializeMatchingEmbeddedComponents.cpp:
+src/Field/Multiplayer/GameState_InitializeMatchingEmbeddedComponents.cpp:
     complete
     .text start:0x021ca358 end:0x021ca3c4
 
-src/Unclassified/ov017/GameState_UpdatePartyMemberPositionAndValue.cpp:
+src/Field/Scene/GameState_UpdatePartyMemberPositionAndValue.cpp:
     complete
     .text start:0x021bd3d4 end:0x021bd440
 
-src/Unclassified/ov017/QueueIndexedConnectionRecord.cpp:
+src/Field/Scene/FieldNetwork_QueueMemberHalfwordResponse.cpp:
     complete
     .text start:0x021d079c end:0x021d0808
 
-src/GameState/ov017/GameState_ResetConnectionResourcesWhenDisplayInactive.cpp:
+src/Field/Multiplayer/GameState_ResetConnectionResourcesWhenDisplayInactive.cpp:
     complete
     .text start:0x021af4ec end:0x021af59c
 
-src/GameState/ov017/GameState_AllocateUnusedHighIdentifier.cpp:
+src/Field/Scene/GameState_AllocateUnusedHighIdentifier.cpp:
     complete
     .text start:0x021a1a20 end:0x021a1ad0
 
-src/World/ov017/World_PollDistanceAndAnimationCountdown.cpp:
+src/Field/Scene/World_PollDistanceAndAnimationCountdown.cpp:
     complete
     .text start:0x021bf6fc end:0x021bf7ac
 
-src/Combat/ov017/Combat_ApplyMatchingRemotePacketFields.cpp:
+src/Field/Multiplayer/Combat_ApplyMatchingRemotePacketFields.cpp:
     complete
     .text start:0x021c6ca0 end:0x021c6d50
 
-src/GameState/ov017/GameState_ResolveMonsterRecordAndTestState.cpp:
+src/Field/Multiplayer/Field_ResolveSynchronizedMonster.cpp:
     complete
     .text start:0x021d446c end:0x021d451c
 
-src/GameState/ov017/GameState_QueuePartyMemberFlagPair.cpp:
+src/Field/Screens/GameState_QueuePartyMemberFlagPair.cpp:
     complete
     .text start:0x021d25f4 end:0x021d26a4
 
-src/Unclassified/ov017/Util_CallObjectIfByteAt22AboveOne.cpp:
+src/Field/Scene/Field_DrawSharedSubscreenAttachedModel.cpp:
     complete
     .text start:0x021a185c end:0x021a1880
 
-src/GameState/ov017/GameState_ApplyResolvedMonsterPositionAndTransition.cpp:
+src/Field/Multiplayer/GameState_ApplyResolvedMonsterPositionAndTransition.cpp:
     complete
     .text start:0x021c91f4 end:0x021c927c
 
-src/World/ov017/ApplyResolvedObjectPositionAndAngle.cpp:
+src/Field/Multiplayer/ApplyResolvedObjectPositionAndAngle.cpp:
     complete
     .text start:0x021c949c end:0x021c9544
 
-src/Network/ov017/Network_ApplyPackedPositionRecord.cpp:
+src/Field/Screens/Network_ApplyPackedPositionRecord.cpp:
     complete
     .text start:0x021d36b4 end:0x021d38f8
 
-src/GameState/ov017/GameState_ProcessPartyDescriptorAndCaptureZone.cpp:
+src/Field/Scene/GameState_ProcessPartyDescriptorAndCaptureZone.cpp:
     complete
     .text start:0x021c2ea4 end:0x021c2f3c
 
-src/Grotto/ov017/Grotto_ApplyReceivedStateAndRefreshEntrance.cpp:
+src/Field/Multiplayer/Grotto_ApplyReceivedStateAndRefreshEntrance.cpp:
     complete
     .text start:0x021cf86c end:0x021cfabc
 
-src/World/ov017/Ov017_InitializeZoneTintRecord.cpp:
+src/Field/Scene/Ov017_InitializeZoneTintRecord.cpp:
     complete
     .text start:0x0219bcac end:0x0219bd1c
 
-src/GameState/ov017/GameState_SetListedPartyPositionAndAngle.cpp:
+src/Field/Scene/GameState_SetListedPartyPositionAndAngle.cpp:
     complete
     .text start:0x021921fc end:0x021922ac
 
-src/Unclassified/ov017/GameState_ResetActiveIndexedRecords.cpp:
+src/Field/Events/PartyStatus_ResetSelectedRemoteMemberAnimations.cpp:
     complete
     .text start:0x021c6034 end:0x021c60a4
 
-src/World/ov017/Ov017_RegisterZoneTintRecord.cpp:
+src/Field/Scene/Ov017_RegisterZoneTintRecord.cpp:
     complete
     .text start:0x0219bf04 end:0x0219bf74
 
-src/GameState/ov017/GameState_ApplyObjectStateAndPositionPacket.cpp:
+src/Field/Multiplayer/GameState_ApplyObjectStateAndPositionPacket.cpp:
     complete
     .text start:0x021c96c0 end:0x021c98f4
 
-src/GameState/ov017/GameState_ApplyThreePartSelectionAndTransition.cpp:
+src/Field/Events/GameState_ApplyThreePartSelectionAndTransition.cpp:
     complete
     .text start:0x021aa41c end:0x021aa4cc
 
-src/GameState/ov017/Record_UpdateModeWhenIndexedFieldMatches.cpp:
+src/Field/Multiplayer/Record_UpdateModeWhenIndexedFieldMatches.cpp:
     complete
     .text start:0x021ced84 end:0x021cedf4
 
-src/Unclassified/ov017/ClearByteAndHalfwordRecords.cpp:
+src/Field/Scene/Field_ClearDeferredPartyRevivals.cpp:
     complete
     .text start:0x02191b70 end:0x02191ba0
 
-src/Memory/ov017/Memory_InitializeSafeAllocatorRecord.cpp:
+src/Field/Events/Memory_InitializeSafeAllocatorRecord.cpp:
     complete
     .text start:0x021befe4 end:0x021bf014
 
-src/Memory/ov017/Memory_ResetAllocatorState.cpp:
+src/Field/Events/Memory_ResetAllocatorState.cpp:
     complete
     .text start:0x021c0820 end:0x021c0850
 
-src/Memory/ov017/ResetObjectAllocatorAndFields.cpp:
+src/Field/Events/ResetObjectAllocatorAndFields.cpp:
     complete
     .text start:0x021c0334 end:0x021c0364
 
-src/GameState/ov017/ApplyQueuedRecordTag56WithInputHalfword.cpp:
+src/Field/Events/ApplyQueuedRecordTag56WithInputHalfword.cpp:
     complete
     .text start:0x021c9ad4 end:0x021c9b04
 
-src/System/ov017/System_MoveQueuedRecordWithTypeSixDescriptor.cpp:
+src/Field/Multiplayer/System_MoveQueuedRecordWithTypeSixDescriptor.cpp:
     complete
     .text start:0x021cc2f0 end:0x021cc320
 
-src/Resource/ov017/Resource_InitializeExternalModelObject.cpp:
+src/Field/Scene/Resource_InitializeExternalModelObject.cpp:
     complete
     .text start:0x021b621c end:0x021b6290
 
-src/Network/ov017/Network_ApplyMatchingStateMessage.cpp:
+src/Field/Multiplayer/Network_ApplyMatchingStateMessage.cpp:
     complete
     .text start:0x021cd9e8 end:0x021cda9c
 
-src/GameState/ov017/Ov017_ResolvePartyMemberSlot.cpp:
+src/Field/Multiplayer/Ov017_ResolvePartyMemberSlot.cpp:
     complete
     .text start:0x021ceab4 end:0x021ceae4
 
-src/Unclassified/ov017/Unclassified_ApplyQueuedRecordType158.cpp:
+src/Field/Screens/Network_QueueFieldTransitionValue.cpp:
     complete
     .text start:0x021d23bc end:0x021d23ec
 
-src/System/ov017/System_ApplyRemotePackedRecordValues.cpp:
+src/Field/Multiplayer/System_ApplyRemotePackedRecordValues.cpp:
     complete
     .text start:0x021cb974 end:0x021cbbd0
 
-src/GameState/ov017/GameState_ResetPartyMemberAnimationFromFrameState.cpp:
+src/Field/Multiplayer/GameState_ResetPartyMemberAnimationFromFrameState.cpp:
     complete
     .text start:0x021d443c end:0x021d446c
 
-src/Network/ov017/Network_AdvanceConnectionSelectionAndTimeout.cpp:
+src/Field/Multiplayer/Network_AdvanceConnectionSelectionAndTimeout.cpp:
     complete
     .text start:0x021af098 end:0x021af2f8
 
-src/Resource/ov017/Script_PopulateSelectedEntryStringsAndValues.cpp:
+src/Field/Events/Script_PopulateSelectedEntryStringsAndValues.cpp:
     complete
     .text start:0x021aca2c end:0x021acc8c
 
-src/Unclassified/ov017/InitializeOverlayResourceState.cpp:
+src/Field/Events/FieldPartyEffect_InitializeTransitionCommand.cpp:
     complete
     .text start:0x021acd7c end:0x021acdf4
 
-src/Unclassified/ov017/OV017_DestroyResourceAndRestoreOverlay.cpp:
+src/Field/Screens/KrakPot_ReleaseFieldMenuSession.cpp:
     complete
     .text start:0x021b14ec end:0x021b1564
 
-src/Unclassified/ov017/Resource_CreateInitializedQueueEntry.cpp:
+src/Field/Events/FieldPartyEffect_QueueConfiguredTransition.cpp:
     complete
     .text start:0x021acd30 end:0x021acd7c
 
-src/Unclassified/ov017/Util_InitializeObjectAndSetByte1.cpp:
+src/Field/Screens/KrakPot_CancelFieldMenuSession.cpp:
     complete
     .text start:0x021b1d24 end:0x021b1d3c
 
-src/Unclassified/ov017/Unclassified_InitializeAndApplyOptionalValue.cpp:
+src/Field/Scene/Field_QueueZoneRefreshForClientStateChanges.cpp:
     complete
     .text start:0x0219bed0 end:0x0219bf04
 
-src/Resource/ov017/Resource_QueueChangedMemberEquipmentModels.cpp:
+src/Field/Events/Resource_QueueChangedMemberEquipmentModels.cpp:
     complete
     .text start:0x021b38c8 end:0x021b3e14
 
-src/Network/ov017/Network_QueueObjectDirectionAndPosition.cpp:
+src/Field/Multiplayer/Network_QueueObjectDirectionAndPosition.cpp:
     complete
     .text start:0x021c927c end:0x021c9334
 
-src/Unclassified/ov017/Unclassified_InvokeZeroOperationOnWordFieldAtOffset1C.cpp:
+src/Field/Events/FieldPartyEffect_TransferSharedTextWindow.cpp:
     complete
     .text start:0x021adc44 end:0x021adc58
 
-src/Unclassified/ov017/Util_CallObjectAtOffset24IfPresent.cpp:
+src/Field/Events/Field_RefreshPartyManagementTransfersAndWidget.cpp:
     complete
     .text start:0x021b6b74 end:0x021b6b8c
 
-src/GameState/ov017/GameState_ConfigureEmbeddedTextCountFromTick.cpp:
+src/Field/Screens/GameState_ConfigureEmbeddedTextCountFromTick.cpp:
     complete
     .text start:0x021a9638 end:0x021a9670
 
-src/GameState/ov017/UpdateObjectTextCountFromTick.cpp:
+src/Field/Scene/UpdateObjectTextCountFromTick.cpp:
     complete
     .text start:0x021c1dfc end:0x021c1e34
 
-src/Unclassified/ov017/UpdateLoadStateAfterQueueDrains.cpp:
+src/Field/Screens/FieldScreen_WaitForBackgroundTasks.cpp:
     complete
     .text start:0x021b2b68 end:0x021b2ba0
 
-src/Resource/ov017/Resource_ActivateLinkedEntry.cpp:
+src/Field/Events/Resource_ActivateLinkedEntry.cpp:
     complete
     .text start:0x021b66f0 end:0x021b6728
 
-src/GameState/ov017/GameState_UpdateTextHandlerFromTick.cpp:
+src/Field/Scene/GameState_UpdateTextHandlerFromTick.cpp:
     complete
     .text start:0x021bf360 end:0x021bf398
 
-src/GameState/ov017/GameState_UpdateTextCountAndClearEmbeddedObject.cpp:
+src/Field/Events/GameState_UpdateTextCountAndClearEmbeddedObject.cpp:
     complete
     .text start:0x021bef4c end:0x021bef84
 
-src/Unclassified/ov017/GameState_UpdateEmbeddedTextCountFromTick.cpp:
+src/Field/Events/Field_AdvanceAndRenderSharedMessageText.cpp:
     complete
     .text start:0x021be3b4 end:0x021be3ec
 
-src/GameState/ov017/Ov017_InitializeAndSetByteFlag1.cpp:
+src/Field/Screens/Ov017_InitializeAndSetByteFlag1.cpp:
     complete
     .text start:0x021a6b84 end:0x021a6b9c
 
-src/Unclassified/ov017/Unclassified_InitializeObjectFlag1AfterHelper.cpp:
+src/Field/Screens/Field_CancelPartyTravelEffect.cpp:
     complete
     .text start:0x021a72dc end:0x021a72f4
 
-src/Unclassified/ov017/Util_RunInitializerAndSetByte1.cpp:
+src/Field/Screens/Field_CancelTravelConfirmation.cpp:
     complete
     .text start:0x021a7a5c end:0x021a7a74
 
-src/GameState/ov017/Ov017_ProcessPointerAtField20.cpp:
+src/Field/Scene/Field_UpdateOverlayThreePanelResources.cpp:
     complete
     .text start:0x021bae80 end:0x021bae98
 
-src/Unclassified/ov017/CallFunctionOnField6AC.cpp:
+src/Field/Events/FieldBattle_DrawCombatantsAndSelectionEffects.cpp:
     complete
     .text start:0x021b8408 end:0x021b8420
 
-src/Graphics/ov017/Graphics_ResetNestedResourceAtOffset24.cpp:
+src/Field/Events/Field_ResetPartyManagementDisplay.cpp:
     complete
     .text start:0x021b6b5c end:0x021b6b74
 
-src/Resource/ov017/Object_UpdateResourcesWhenField1CSet.cpp:
+src/Field/Events/Field_UpdateChurchServiceTransfersAndWindow.cpp:
     complete
     .text start:0x021babc8 end:0x021babe0
 
-src/GameState/ov017/Ov017_InitializeSecondRecordAndSetFlag1.cpp:
+src/Field/Events/Field_CancelGrottoReturnEffect.cpp:
     complete
     .text start:0x021beb8c end:0x021beba4
 
-src/Resource/ov017/Resource_ApplyUpdateOnlyWhenValidationPasses.cpp:
+src/Field/Scene/Resource_ApplyUpdateOnlyWhenValidationPasses.cpp:
     complete
     .text start:0x0218fcf8 end:0x0218fd34
 
-src/GameState/ov017/GameState_ProcessPendingOperationIfPresent.cpp:
+src/Field/Events/GameState_ProcessPendingOperationIfPresent.cpp:
     complete
     .text start:0x021d4ccc end:0x021d4ce4
 
-src/Unclassified/ov017/Unclassified_ProcessObjectField6ACIfPresent.cpp:
+src/Field/Events/FieldBattle_UpdateSceneResourceBranches.cpp:
     complete
     .text start:0x021b8438 end:0x021b8450
 
-src/Resource/ov017/Resource_SetIndexedObjectCodeAndApply.cpp:
+src/Field/Scene/Resource_SetIndexedObjectCodeAndApply.cpp:
     complete
     .text start:0x021bdb78 end:0x021bdbc0
 
-src/Unclassified/ov017/Object_GetStatusFromField24IfPresent.cpp:
+src/Field/Screens/OnlineDownload_TryRequestTransferStop.cpp:
     complete
     .text start:0x021b2074 end:0x021b2090
 
-src/Memory/ov017/Memory_DestroyTwoAllocatorsAndRestoreGameFlags.cpp:
+src/Field/Scene/Memory_DestroyTwoAllocatorsAndRestoreGameFlags.cpp:
     complete
     .text start:0x021b5a30 end:0x021b5aec
 
-src/Unclassified/ov017/Unclassified_InvokeRoutineWithLocalOutputAndZeroStatus.cpp:
+src/Field/Scene/Field_RebuildMemberFollowChain.cpp:
     complete
     .text start:0x021907dc end:0x02190818
 
-src/Graphics/ov017/Graphics_UpdateSelectedResourceEntryWithCurrentTick.cpp:
+src/Field/Scene/Graphics_UpdateSelectedResourceEntryWithCurrentTick.cpp:
     complete
     .text start:0x021bb930 end:0x021bb9ec
 
-src/GameState/ov017/GameState_ApplyTimedMemberFlagRecord.cpp:
+src/Field/Multiplayer/GameState_ApplyTimedMemberFlagRecord.cpp:
     complete
     .text start:0x021ce054 end:0x021ce110
 
-src/GameState/ov017/Ov017_ProcessGlobalObjectWhenPresent.cpp:
+src/Field/Events/Ov017_ProcessGlobalObjectWhenPresent.cpp:
     complete
     .text start:0x021a5934 end:0x021a5954
 
-src/GameState/ov017/ApplyRemoteIndexedObjectField.cpp:
+src/Field/Events/ApplyRemoteIndexedObjectField.cpp:
     complete
     .text start:0x021c435c end:0x021c4418
 
-src/Unclassified/ov017/Unclassified_ProcessGlobalPointerIfPresent.cpp:
+src/Field/Screens/Field_ResetPartyMenuSelectionFlagsIfOpen.cpp:
     complete
     .text start:0x021a5ab0 end:0x021a5ad0
 
-src/GameState/ov017/Script_CallWithGlobalParameterIfPresent.cpp:
+src/Field/Screens/Script_CallWithGlobalParameterIfPresent.cpp:
     complete
     .text start:0x021a5a68 end:0x021a5a88
 
-src/GameState/ov017/GameState_ApplyMatchingSlotClearMessage.cpp:
+src/Field/Screens/GameState_ApplyMatchingSlotClearMessage.cpp:
     complete
     .text start:0x021cff0c end:0x021cff8c
 
-src/Unclassified/ov017/Unclassified_ProcessSecondGlobalPointerIfPresent.cpp:
+src/Field/Events/FieldScreen_UpdateOverlayThreeTransfers.cpp:
     complete
     .text start:0x021c162c end:0x021c164c
 
-src/GameState/ov017/Ov017_RunGlobalObjectHandlerWhenPresent.cpp:
+src/Field/Screens/Ov017_RunGlobalObjectHandlerWhenPresent.cpp:
     complete
     .text start:0x021b1d04 end:0x021b1d24
 
-src/Graphics/ov017/Graphics_InitializeDisplayState21.cpp:
+src/Field/Scene/Graphics_InitializeDisplayState21.cpp:
     complete
     .text start:0x021b57fc end:0x021b58b8
 
-src/Unclassified/ov017/OV017_CleanupStateAndResumeScene.cpp:
+src/Field/Scene/FieldEvent_FinalizePanelsAndRestoreSubBackground.cpp:
     complete
     .text start:0x021bb8f0 end:0x021bb930
 
-src/System/ov017/RunOverlayContextRoutineWhenGlobalObjectPresent.cpp:
+src/Field/Events/RunOverlayContextRoutineWhenGlobalObjectPresent.cpp:
     complete
     .text start:0x021a5954 end:0x021a5974
 
-src/Graphics/ov017/Graphics_ResetTransferStateAndConfigureTextCount.cpp:
+src/Field/Events/Graphics_ResetTransferStateAndConfigureTextCount.cpp:
     complete
     .text start:0x021aaec8 end:0x021aaf08
 
-src/Resource/ov017/Resource_InitializeSb2ScriptBuffers.cpp:
+src/Field/Events/Resource_InitializeSb2ScriptBuffers.cpp:
     complete
     .text start:0x021d4c04 end:0x021d4cc0
 
-src/Resource/ov017/Resource_ProcessGlobalHandleIfPresent.cpp:
+src/Field/Screens/Resource_ProcessGlobalHandleIfPresent.cpp:
     complete
     .text start:0x021b1cc4 end:0x021b1ce4
 
-src/GameState/ov017/GameState_UpdateTimedStateHandlers.cpp:
+src/Field/Scene/GameState_UpdateTimedStateHandlers.cpp:
     complete
     .text start:0x021b58b8 end:0x021b5a24
 
-src/GameState/ov017/Ov017_InitializeTimedTextRecord.cpp:
+src/Field/Screens/Ov017_InitializeTimedTextRecord.cpp:
     complete
     .text start:0x021a79ac end:0x021a79f0
 
-src/Unclassified/ov017/Resource_RemoveDisplayStateAndFreeBuffers.cpp:
+src/Field/Events/FieldEscape_ReleaseExitEffectResources.cpp:
     complete
     .text start:0x021ac2a8 end:0x021ac2ec
 
-src/Unclassified/ov017/GameState_ProcessCurrentOperationIfPresent.cpp:
+src/Field/Events/FieldFacilityMenu_DrawActiveOverlay.cpp:
     complete
     .text start:0x021b2f0c end:0x021b2f2c
 
-src/GameState/ov017/Ov017_ApplyIndexedSignedValues.cpp:
+src/Field/Events/Ov017_ApplyIndexedSignedValues.cpp:
     complete
     .text start:0x021c3f70 end:0x021c3fb4
 
-src/GameState/ov017/GameState_UpdateCurrentTextAndResetGlobalObject.cpp:
+src/Field/Screens/GameState_UpdateCurrentTextAndResetGlobalObject.cpp:
     complete
     .text start:0x021a925c end:0x021a92a0
 
-src/Graphics/ov017/Graphics_ApplyPartyMemberAnimationCommand.cpp:
+src/Field/Multiplayer/Graphics_ApplyPartyMemberAnimationCommand.cpp:
     complete
     .text start:0x021d3fa8 end:0x021d440c
 
-src/Unclassified/ov017/Unclassified_InvokeHelperWithFourZeroArguments.cpp:
+src/Field/Scene/Field_ResolveObjectZoneCollision.cpp:
     complete
     .text start:0x02193428 end:0x0219344c
 
-src/Unclassified/ov017/ProcessLinkedObjectWhenModeExceedsOne.cpp:
+src/Field/Scene/Field_UpdateSharedSubscreenWindowResources.cpp:
     complete
     .text start:0x021a18a4 end:0x021a18c8
 
-src/GameState/ov017/ConfigureGlobalTextObjectCountTwoAndReset.cpp:
+src/Field/Events/ConfigureGlobalTextObjectCountTwoAndReset.cpp:
     complete
     .text start:0x021acd00 end:0x021acd24
 
-src/Unclassified/ov017/Unclassified_ForwardFiveArgumentsToGlobalPointerHelper.cpp:
+src/Field/Screens/Field_UpdatePartyMenuMemberActionRecords.cpp:
     complete
     .text start:0x021a5a88 end:0x021a5ab0
 
-src/Unclassified/ov017/OV017_ProcessPresentPartyMembers.cpp:
+src/Field/Events/GameState_RefreshPresentPartyCombatantFlags.cpp:
     complete
     .text start:0x021c1264 end:0x021c12b0
 
-src/GameState/ov017/GameState_AppendSerializedRecord.cpp:
+src/Field/Events/GameState_AppendSerializedRecord.cpp:
     complete
     .text start:0x021b6c2c end:0x021b6c78
 
-src/Unclassified/ov017/Object_QueueTypedRecordAndInitializeState.cpp:
+src/Field/Events/Network_QueueEncounterFinalization.cpp:
     complete
     .text start:0x021c9c64 end:0x021c9cb0
 
-src/World/ov017/Ov017_ApplyRecordWhenIndexInactive.cpp:
+src/Field/Multiplayer/Ov017_ApplyRecordWhenIndexInactive.cpp:
     complete
     .text start:0x021d0ae4 end:0x021d0b30
 
-src/Unclassified/ov017/Unclassified_SetObjectFlagAndRunFinalizer.cpp:
+src/Field/Events/FieldScreen_CancelOverlayThreeSession.cpp:
     complete
     .text start:0x021c168c end:0x021c16a8
 
-src/Unclassified/ov017/Resource_CleanupOverlaySlotAndBuffer.cpp:
+src/Field/Events/FieldScreen_ReleaseOverlayThreeSession.cpp:
     complete
     .text start:0x021c1394 end:0x021c1404
 
-src/World/ov017/World_HideMatchingFieldMonsterRequest.cpp:
+src/Field/Events/World_HideMatchingFieldMonsterRequest.cpp:
     complete
     .text start:0x021c5e80 end:0x021c5f00
 
-src/Unclassified/ov017/Unclassified_InvokeIndexedHelperFourTimes.cpp:
+src/Field/Scene/Field_RemoveAllPartyMemberObjects.cpp:
     complete
     .text start:0x02190238 end:0x02190264
 
-src/System/ov017/Ov017_SetOwnerActiveAndUpdateSound.cpp:
+src/Field/Events/Ov017_SetOwnerActiveAndUpdateSound.cpp:
     complete
     .text start:0x021ab010 end:0x021ab060
 
-src/Graphics/ov017/Graphics_ReleaseOptionalBackgroundStateAndMark.cpp:
+src/Field/Events/Graphics_ReleaseOptionalBackgroundStateAndMark.cpp:
     complete
     .text start:0x021b6b8c end:0x021b6bb8
 
-src/Unclassified/ov017/Object_QueueBytePrefixedStringRecord.cpp:
+src/Field/Multiplayer/Field_UpsertHostMemberNameRecord.cpp:
     complete
     .text start:0x021cc148 end:0x021cc198
 
-src/Resource/ov017/PollBackgroundLoadCleanup.cpp:
+src/Field/Screens/PollBackgroundLoadCleanup.cpp:
     complete
     .text start:0x021b2b14 end:0x021b2b68
 
-src/GameState/ov017/GameState_TestGroupedMemberLinkedOrCombatantFlag.cpp:
+src/Field/Scene/GameState_TestGroupedMemberLinkedOrCombatantFlag.cpp:
     complete
     .text start:0x021920dc end:0x0219219c
 
-src/Unclassified/ov017/AppendTypedBufferChunk.cpp:
+src/Field/Events/FieldMemberTransfer_AppendReceivedPayloadFragment.cpp:
     complete
     .text start:0x021a99dc end:0x021a9a9c
 
-src/GameState/ov017/GameState_TriggerForNearbyMatchingObjects.cpp:
+src/Field/Screens/GameState_TriggerForNearbyMatchingObjects.cpp:
     complete
     .text start:0x021d1d00 end:0x021d1dc0
 
-src/Resource/ov017/Resource_ResetAndInsertTypeThreeRecord.cpp:
+src/Field/Scene/Field_QueueZoneTransitionWithInsertionPolicy.cpp:
     complete
     .text start:0x0219bd1c end:0x0219bddc
 
-src/GameState/ov017/GameState_InitializeAndAppendTypeTenRecord.cpp:
+src/Field/Events/FieldBattle_QueueScriptedEncounter.cpp:
     complete
     .text start:0x021b8bb0 end:0x021b8c70
 
-src/Unclassified/ov017/Unclassified_SetIndexedFieldForIndexOneToThree.cpp:
+src/Field/Multiplayer/Field_CopyMemberJoinRecord.cpp:
     complete
     .text start:0x02195494 end:0x021954c4
 
-src/GameState/ov017/GameState_BeginEnabledPartySelectionTransition.cpp:
+src/Field/Events/GameState_BeginEnabledPartySelectionTransition.cpp:
     complete
     .text start:0x021b848c end:0x021b86e0
 
-src/Resource/ov017/CleanupDisplayObject.cpp:
+src/Field/Screens/CleanupDisplayObject.cpp:
     complete
     .text start:0x021a7280 end:0x021a72dc
 
-src/World/ov017/World_TestNearbyFieldMonsterInteraction.cpp:
+src/Field/Events/World_TestNearbyFieldMonsterInteraction.cpp:
     complete
     .text start:0x021c5c5c end:0x021c5e28
 
-src/Network/ov017/Network_ProcessKeyedPacketFragments.cpp:
+src/Field/Multiplayer/Network_ProcessKeyedPacketFragments.cpp:
     complete
     .text start:0x021d15b0 end:0x021d1810
 
-src/Resource/ov017/Ov017_ProcessResourceEntryAndClearState.cpp:
+src/Field/Multiplayer/Ov017_ProcessResourceEntryAndClearState.cpp:
     complete
     .text start:0x021afa70 end:0x021afa9c
 
-src/Unclassified/ov017/BackgroundLoader_ProcessFlaggedPartyEntries.cpp:
+src/Field/Scene/FieldMonster_UpdateSpawningForFlaggedTrackedZones.cpp:
     complete
     .text start:0x021a205c end:0x021a20c0
 
-src/Unclassified/ov017/GameState_InitializeAndAppendLinkedNodeWithMode.cpp:
+src/Field/Events/Field_QueuePartyManagementWithSelectionMode.cpp:
     complete
     .text start:0x021b6728 end:0x021b6790
 
-src/Unclassified/ov017/Object_ResetAsyncStateAndDisplayControl.cpp:
+src/Field/Screens/Field_ReleaseTravelConfirmationResources.cpp:
     complete
     .text start:0x021a79f0 end:0x021a7a5c
 
-src/Unclassified/ov017/OV017_MarkOwnerAfterEmptyEntries.cpp:
+src/Field/Multiplayer/PartySync_ApplyRemovedMemberList.cpp:
     complete
     .text start:0x021cc6c4 end:0x021cc730
 
-src/World/ov017/Ov017_ApplyMapRelativeVector.cpp:
+src/Field/Scene/Ov017_ApplyMapRelativeVector.cpp:
     complete
     .text start:0x0218daa8 end:0x0218db14
 
-src/Unclassified/ov017/GameState_ApplyBoundedKeyFlagsAndBitArray.cpp:
+src/Field/Scene/Field_MarkContainerBrokenAndLootCollected.cpp:
     complete
     .text start:0x021b6174 end:0x021b61e4
 
-src/GameState/ov017/Ov017_AppendTaggedValue.cpp:
+src/Field/Events/Ov017_AppendTaggedValue.cpp:
     complete
     .text start:0x021d4a98 end:0x021d4ab8
 
-src/GameState/ov017/ProcessExistingGameObjects.cpp:
+src/Field/Multiplayer/ProcessExistingGameObjects.cpp:
     complete
     .text start:0x021b0b4c end:0x021b0bc0
 
-src/Unclassified/ov017/CopyRecordIntoTaggedQueueEntry.cpp:
+src/Field/Multiplayer/Combat_QueueEncounterTransitionSelection.cpp:
     complete
     .text start:0x021cbc48 end:0x021cbcc0
 
-src/GameState/ov017/Ov017_TestNestedWordEqualsTwo.cpp:
+src/Field/Scene/Ov017_TestNestedWordEqualsTwo.cpp:
     complete
     .text start:0x0218d618 end:0x0218d644
 
-src/Unclassified/ov017/Unclassified_CopyFiveHalfwordsToEmbeddedRecord.cpp:
+src/Field/Scene/FieldEvent_SetPeerReplyDescriptor.cpp:
     complete
     .text start:0x021bd35c end:0x021bd38c
 
-src/Memory/ov017/ClearFourRecordHalfwordsAt3D00.cpp:
+src/Field/Scene/Field_ClearActionShortcutCanvasStatus.cpp:
     complete
     .text start:0x0219a644 end:0x0219a674
 
-src/Resource/ov017/DispatchEntryBySubtype.cpp:
+src/Field/Scene/DispatchEntryBySubtype.cpp:
     complete
     .text start:0x021d0808 end:0x021d0860
 
-src/Unclassified/ov017/Script_DispatchDescriptorByMode.cpp:
+src/Field/Scene/FieldNetwork_DispatchMemberRequestByResponseMode.cpp:
     complete
     .text start:0x021d08cc end:0x021d0924
 
-src/Unclassified/ov017/DispatchRecordByTwoBitType.cpp:
+src/Field/Multiplayer/Field_ApplyMonsterSnapshotVariant.cpp:
     complete
     .text start:0x021c912c end:0x021c9168
 
-src/Unclassified/ov017/OV017_InitializeIndexedNodeAndAppend.cpp:
+src/Field/Screens/Field_QueueTravelConfirmation.cpp:
     complete
     .text start:0x021a72f4 end:0x021a7328
 
-src/Unclassified/ov017/QueueTaggedInputValue.cpp:
+src/Field/Multiplayer/Network_QueueMemberDisconnectNotice.cpp:
     complete
     .text start:0x021cea34 end:0x021cea64
 
-src/Resource/ov017/Resource_MoveQueuedRecordWithTaggedInput.cpp:
+src/Field/Multiplayer/Resource_MoveQueuedRecordWithTaggedInput.cpp:
     complete
     .text start:0x021cc050 end:0x021cc080
 
-src/Unclassified/ov017/QueueTaggedHalfwordByteRecord.cpp:
+src/Field/Multiplayer/Field_QueueEncounterEnabledFlag.cpp:
     complete
     .text start:0x021cbfb8 end:0x021cbff4
 
-src/Unclassified/ov017/QueueTaggedBytePair.cpp:
+src/Field/Screens/Network_QueuePartyMemberOverlayToggle.cpp:
     complete
     .text start:0x021d2738 end:0x021d2774
 
-src/Unclassified/ov017/GameObject_InitializeType3DEntry.cpp:
+src/Field/Screens/Field_InitializeArrivalEffectRequest.cpp:
     complete
     .text start:0x021a6608 end:0x021a6648
 
-src/Network/ov017/Network_QueuePartyAction.cpp:
+src/Field/Multiplayer/Network_QueuePartyAction.cpp:
     complete
     .text start:0x021ced48 end:0x021ced84
 
-src/Unclassified/ov017/Object_QueueMoveRecordFromThreeArguments.cpp:
+src/Field/Multiplayer/Field_QueueObjectFlagChange.cpp:
     complete
     .text start:0x021cedf4 end:0x021cee34
 
-src/Unclassified/ov017/QueueTransitionRequestIfUninitialized.cpp:
+src/Field/Events/FieldRecovery_QueuePromptIfIdle.cpp:
     complete
     .text start:0x021aa4cc end:0x021aa50c
 
-src/Unclassified/ov017/Resource_InitializeAndAppendNode.cpp:
+src/Field/Screens/Field_QueueArrivalEffect.cpp:
     complete
     .text start:0x021a65c4 end:0x021a6608
 
-src/Unclassified/ov017/Object_QueueType24ThreeByteRecord.cpp:
+src/Field/Screens/Network_QueuePartyVisualStateUpdate.cpp:
     complete
     .text start:0x021d2c34 end:0x021d2c78
 
-src/Resource/ov017/Resource_QueueRecordFromThreeBytePayload.cpp:
+src/Field/Screens/Network_QueuePartyControlLock.cpp:
     complete
     .text start:0x021d035c end:0x021d03a0
 
-src/Graphics/ov017/Graphics_InitializeSubEngineState.cpp:
+src/Field/Scene/Graphics_InitializeSubEngineState.cpp:
     complete
     .text start:0x021ae800 end:0x021ae85c
 
-src/Unclassified/ov017/UpdateFourMatchingObjectHalfwords.cpp:
+src/Field/Events/Field_ClearMatchingPartyEncounterIds.cpp:
     complete
     .text start:0x021c98f4 end:0x021c9954
+
+src/Field/Multiplayer/Field_PopPartyJoinRequest.cpp:
+    complete
+    .text start:0x0219531c end:0x02195398
+
+src/Field/Multiplayer/Field_ApplyTargetedGuestProfileFragment.cpp:
+    complete
+    .text start:0x021d0f94 end:0x021d1010
+
+src/Field/Scene/Field_UpdateMovableObjectsUnlessPaused.cpp:
+    complete
+    .text start:0x0218d06c end:0x0218d0ec
+
+src/Field/Scene/Field_RemoveAlternateStatusMembersAndResetPartyAction.cpp:
+    complete
+    .text start:0x02191484 end:0x02191508
+
+src/Field/Screens/ItemTrade_CancelIncomingOffer.cpp:
+    complete
+    .text start:0x021a85bc end:0x021a85d4
+
+src/Field/Screens/Field_CancelTravelDestinationMenu.cpp:
+    complete
+    .text start:0x021a9314 end:0x021a932c
+
+src/Field/Events/Overlay_PopAndDestroyObjectAndSetByte1.cpp:
+    complete
+    .text start:0x021b2f4c end:0x021b2f64
+
+src/Field/Events/FieldBattle_CancelAndCompleteCommand.cpp:
+    complete
+    .text start:0x021b83f0 end:0x021b8408
+
+src/Field/Events/FieldBattle_ResetSceneResources.cpp:
+    complete
+    .text start:0x021b8450 end:0x021b8468
+
+src/Field/Events/Field_UpdateChurchServiceWindowMask.cpp:
+    complete
+    .text start:0x021babe0 end:0x021babf8
+
+src/Field/Scene/Field_ResetOverlayThreePanelRenderEntries.cpp:
+    complete
+    .text start:0x021bae98 end:0x021baeb0
+
+src/Field/Scene/GameState_ResetFieldAndDestroyNestedAllocators.cpp:
+    complete
+    .text start:0x021bb8d8 end:0x021bb8f0
+
+src/Field/Scene/GameState_ResetObjectAndReleaseEmbeddedAllocators.cpp:
+    complete
+    .text start:0x021bf5dc end:0x021bf5f4
+
+src/Field/Events/RecordsScreen_RefreshOptionalPanelText.cpp:
+    complete
+    .text start:0x021c1220 end:0x021c1238
+
+src/Field/Events/Resource_ProcessOverlayStateIfPresent.cpp:
+    complete
+    .text start:0x021a5a28 end:0x021a5a48
+
+src/Field/Multiplayer/Resource_DispatchGameResourceEntryWord.cpp:
+    complete
+    .text start:0x021afa9c end:0x021afabc
+
+src/Field/Events/Graphics_RefreshVisibleResourceWindowsIfAvailable.cpp:
+    complete
+    .text start:0x021c166c end:0x021c168c
+
+src/Field/Scene/Field_ClearCombatantAppearanceFlags.cpp:
+    complete
+    .text start:0x02191b40 end:0x02191b58
+
+src/Field/Scene/Field_GetCombatantAppearanceFlags.cpp:
+    complete
+    .text start:0x02191b58 end:0x02191b70
+
+src/Field/Scene/Field_CancelSharedSubscreenCommand.cpp:
+    complete
+    .text start:0x021a1924 end:0x021a193c
+
+src/Field/Multiplayer/Resource_RemoveTaggedFifteenByteRecord.cpp:
+    complete
+    .text start:0x02195398 end:0x0219541c
+
+src/Field/Events/Graphics_ResetSharedBuffersAndReleaseStateAllocator.cpp:
+    complete
+    .text start:0x021ac32c end:0x021ac3b0
+
+src/Field/Multiplayer/BackgroundLoader_ApplyRecordToUnmaskedObject.cpp:
+    complete
+    .text start:0x021cc26c end:0x021cc2f0
+
+src/Field/Scene/Field_RequestTransitionFromSelectedZoneFeature.cpp:
+    complete
+    .text start:0x0219cd98 end:0x0219cdc0
+
+src/Field/Events/PrepareFieldMonsterContextForHide.cpp:
+    complete
+    .text start:0x021b8b6c end:0x021b8b94
+
+src/Field/Events/FieldMonster_HideFromStateRecord.cpp:
+    complete
+    .text start:0x021c9cb0 end:0x021c9cd8
+
+src/Field/Scene/RunNestedSetupWhenStateByte22AboveOne.cpp:
+    complete
+    .text start:0x021a1880 end:0x021a18a4
+
+src/Field/Events/Resource_HandleOptionalPointerAndCleanupSubobject.cpp:
+    complete
+    .text start:0x021b9928 end:0x021b994c
+
+src/Field/Events/Field_InitializeDeferredCommandNode.cpp:
+    complete
+    .text start:0x021c16a8 end:0x021c16cc
+
+src/Field/Scene/BackgroundLoader_RemoveTaskForNonnegativeIndex.cpp:
+    complete
+    .text start:0x021c235c end:0x021c2380
+
+src/Field/Scene/Field_UpdateZoneInteractionsAndRegionTriggers.cpp:
+    complete
+    .text start:0x0219755c end:0x021975e4
+
+src/Field/Multiplayer/Resource_DispatchCommandFromEntryAndResetGlobalObject.cpp:
+    complete
+    .text start:0x021afabc end:0x021afae8
+
+src/Field/Events/Graphics_ResetOwnerResourcesAndSetFlag1.cpp:
+    complete
+    .text start:0x021babf8 end:0x021bac24
+
+src/Field/Scene/Memory_DestroyOptionalAllocationAndSetFlag1.cpp:
+    complete
+    .text start:0x021baeb0 end:0x021baedc
+
+src/Field/Events/RecordsScreen_DestroyPanelSession.cpp:
+    complete
+    .text start:0x021c1238 end:0x021c1264
+
+src/Field/Scene/FieldNetwork_ApplyMonsterCallResultOrSpawnRequest.cpp:
+    complete
+    .text start:0x021d0a18 end:0x021d0aa8
+
+src/Field/Events/FieldMenu_SetControlledMemberAndQueuePartyAction.cpp:
+    complete
+    .text start:0x021a4e0c end:0x021a4e48
+
+src/Field/Scene/Field_QueueAllPartyEquipmentRefreshes.cpp:
+    complete
+    .text start:0x0218f758 end:0x0218f79c
+
+src/Field/Events/RemoveDisplayEntry5AndDestroyAllocator.cpp:
+    complete
+    .text start:0x021beb48 end:0x021beb8c
+
+src/Field/Multiplayer/Field_RemoveRemoteMemberAndRefreshParty.cpp:
+    complete
+    .text start:0x0219558c end:0x02195618
+
+src/Field/Multiplayer/Grotto_CopySourceFlagAndResetOutsideGrotto.cpp:
+    complete
+    .text start:0x021cfd2c end:0x021cfd5c
+
+src/Field/Events/Network_QueueSavedPartyMemberMode.cpp:
+    complete
+    .text start:0x021c12b0 end:0x021c12fc
+
+src/Field/Events/Field_LoadAndExecuteCurrentZoneTriggers.cpp:
+    complete
+    .text start:0x021b8c84 end:0x021b8d18
+
+src/Field/Multiplayer/Field_QueueOwnerAndCombatantState.cpp:
+    complete
+    .text start:0x021cdf80 end:0x021ce014
+
+src/Field/Scene/BuildRotationVectorFromFixedPointAngle.cpp:
+    complete
+    .text start:0x0218da48 end:0x0218daa8
+
+src/Field/Screens/Field_CopyDeferredActorRequestDescriptor.cpp:
+    complete
+    .text start:0x021a7c28 end:0x021a7c8c
+
+src/Field/Multiplayer/HandleMatchingFieldMonsterStateParameter.cpp:
+    complete
+    .text start:0x021cbf54 end:0x021cbfb8
+
+src/Field/Scene/ResetUnknownObjectStateForSelectedCodes.cpp:
+    complete
+    .text start:0x02199e98 end:0x02199f08
+
+src/Field/Multiplayer/Field_BeginRequestedPartyMemberTransfer.cpp:
+    complete
+    .text start:0x021b0490 end:0x021b04c0
+
+src/Field/Events/Network_QueueSignedControlValue.cpp:
+    complete
+    .text start:0x021ca174 end:0x021ca1a4
+
+src/Field/Multiplayer/GameState_ApplyPartyMemberVariantAndMarkChanged.cpp:
+    complete
+    .text start:0x021d0e64 end:0x021d0ef8
+
+src/Field/Multiplayer/Object_ResolveAndHideDefaultMovement.cpp:
+    complete
+    .text start:0x021c95b4 end:0x021c95ec
+
+src/Field/Multiplayer/Field_DispatchZoneMatchedPartySceneRequest.cpp:
+    complete
+    .text start:0x021ce458 end:0x021ce494
+
+src/Field/Scene/Field_DrawObjectsPartyAndNearestMonsters.cpp:
+    complete
+    .text start:0x02196398 end:0x02196430
+
+src/Field/Screens/Field_ReleaseTravelDestinationMenuResources.cpp:
+    complete
+    .text start:0x021a92a0 end:0x021a9314
+
+src/Field/Multiplayer/Field_UpdateMemberJoinNameAndCache.cpp:
+    complete
+    .text start:0x0219541c end:0x02195494
+
+src/Field/Screens/Network_QueueGameStateFlagWordReset.cpp:
+    complete
+    .text start:0x021d3ec8 end:0x021d3ef0
+
+src/Field/Scene/Field_RememberRecentEncounterIdentifier.cpp:
+    complete
+    .text start:0x021972f8 end:0x02197324
+
+src/Field/Multiplayer/Field_RespondToMemberProfileRequest.cpp:
+    complete
+    .text start:0x021d1078 end:0x021d1118
+
+src/Field/Multiplayer/Field_ApplyMemberPresenceToken.cpp:
+    complete
+    .text start:0x021cbeec end:0x021cbf18
+
+src/Field/Multiplayer/Grotto_QueueStateForHostMember.cpp:
+    complete
+    .text start:0x021cf704 end:0x021cf730
+
+src/Field/Scene/FieldEvent_QueueZoneEventAndDayTimer.cpp:
+    complete
+    .text start:0x021bc6e0 end:0x021bc77c
+
+src/Field/Events/PartySync_ApplyEncounterOwnerAssignment.cpp:
+    complete
+    .text start:0x021c9bc8 end:0x021c9c64
+
+src/Field/Events/CleanupScriptStateAndFreeAllocator.cpp:
+    complete
+    .text start:0x021a55b0 end:0x021a5600
+
+src/Field/Multiplayer/Combat_MarkMatchingEncounterResourcesReady.cpp:
+    complete
+    .text start:0x021c8bac end:0x021c8c04
+
+src/Field/Multiplayer/QueueTag27ForPositiveIdWhenStateInactive.cpp:
+    complete
+    .text start:0x021ce400 end:0x021ce458
+
+src/Field/Scene/Field_ReleaseSharedSubscreenResources.cpp:
+    complete
+    .text start:0x021a18c8 end:0x021a1924
+
+src/Field/Screens/Graphics_RemoveDisplayEntry12AndRestoreSavedVram.cpp:
+    complete
+    .text start:0x021a6b30 end:0x021a6b84
+
+src/Field/Events/Field_InitializeGrottoNamePopupCommand.cpp:
+    complete
+    .text start:0x021beba4 end:0x021bec00
+
+src/Field/Events/Field_QueuePartyManagementWithReturnMode.cpp:
+    complete
+    .text start:0x021b66b8 end:0x021b66f0
+
+src/Field/Screens/Network_QueueFieldActionResponse.cpp:
+    complete
+    .text start:0x021d0198 end:0x021d01e4
+
+src/Field/Multiplayer/GameState_UpdateEnabledFlagForMatchingRecord.cpp:
+    complete
+    .text start:0x021cbff4 end:0x021cc050
+
+src/Field/Events/FieldFacilityMenu_QueueOverlayCommand.cpp:
+    complete
+    .text start:0x021b2c24 end:0x021b2c4c
+
+src/Field/Scene/GameState_ApplyReadyActionsToFourObjects.cpp:
+    complete
+    .text start:0x0218f79c end:0x0218f80c
+
+src/Field/Events/Network_QueueBattleContextControlByte.cpp:
+    complete
+    .text start:0x021c9cd8 end:0x021c9d08
+
+src/Field/Scene/GameState_SetIndexedActiveValue.cpp:
+    complete
+    .text start:0x02191ba0 end:0x02191bdc
+
+src/Field/Events/Memory_CleanupOverlayContextAllocator.cpp:
+    complete
+    .text start:0x021c1a24 end:0x021c1a98
+
+src/Field/Events/Network_QueueEncounterParticipantResult.cpp:
+    complete
+    .text start:0x021c9b20 end:0x021c9b58
+
+src/Field/Events/PartySync_QueueMemberEncounterSelection.cpp:
+    complete
+    .text start:0x021ca2a0 end:0x021ca2d8
+
+src/Field/Multiplayer/GameState_QueueActiveIndexWithGlobalValue.cpp:
+    complete
+    .text start:0x021ce4e0 end:0x021ce524
+
+src/Field/Multiplayer/BattleScene_QueuePartyCommandModeUpdate.cpp:
+    complete
+    .text start:0x021cefe0 end:0x021cf024
+
+src/Field/Multiplayer/PartySync_ApplyLearnedSkills.cpp:
+    complete
+    .text start:0x021cd1ac end:0x021cd218
+
+src/Field/Multiplayer/Combat_ApplyEncounterBattleSlotAssignments.cpp:
+    complete
+    .text start:0x021cbe50 end:0x021cbeb0
+
+src/Field/Scene/GameResources_FindUnusedPartyResourceRecord.cpp:
+    complete
+    .text start:0x021a11b4 end:0x021a11f4
+
+src/Field/Multiplayer/Combat_QueueEncounterControlByte.cpp:
+    complete
+    .text start:0x021ca2f8 end:0x021ca358
+
+src/Field/Scene/FieldNetwork_QueueSlotFlagUpdate.cpp:
+    complete
+    .text start:0x021d0aa8 end:0x021d0ae4
+
+src/Field/Scene/Field_RestoreCombatantAppearance.cpp:
+    complete
+    .text start:0x02191f4c end:0x02191fec
+
+src/Field/Screens/Network_QueueZoneTypeTwoFeatureActivation.cpp:
+    complete
+    .text start:0x021d196c end:0x021d19b0
+
+src/Field/Screens/World_QueueTypeB7PlacementRecord.cpp:
+    complete
+    .text start:0x021d38f8 end:0x021d3950
+
+src/Field/Multiplayer/World_QueueType6BHalfwordsAndByteRecord.cpp:
+    complete
+    .text start:0x021cdd70 end:0x021cddd4
+
+src/Field/Scene/FieldMonster_CollectPartyHideResponseAndComplete.cpp:
+    complete
+    .text start:0x02192654 end:0x02192700
+
+src/Field/Scene/Field_DispatchFeatureTriggerOrQueueTypeTwentyOneAction.cpp:
+    complete
+    .text start:0x02199138 end:0x021991e4
+
+src/Field/Scene/Field_AdvanceCommandQueueAndDispatchFront.cpp:
+    complete
+    .text start:0x021a3498 end:0x021a3544
+
+src/Field/Events/FieldBattle_AllocateContextAndReplayPendingJoins.cpp:
+    complete
+    .text start:0x021b71d8 end:0x021b7284
+
+src/Field/Scene/Memory_WriteThreeWordsAtOffset0.cpp:
+    complete
+    .text start:0x0218cbcc end:0x0218cbd4
+
+src/Field/Screens/Field_GetDeferredActorRequestDescriptor.cpp:
+    complete
+    .text start:0x021a7c8c end:0x021a7c94
+
+src/Field/Events/FieldTransition_SetExitFeatureDescriptor.cpp:
+    complete
+    .text start:0x021ab698 end:0x021ab6a0
+
+src/Field/Events/FieldBookshelf_SetFeatureDescriptor.cpp:
+    complete
+    .text start:0x021aca14 end:0x021aca1c
+
+src/Field/Multiplayer/Field_SetPartyJoinCompletionStatus.cpp:
+    complete
+    .text start:0x021afb84 end:0x021afb8c
+
+src/Field/Multiplayer/Field_GetPartyJoinTaskState.cpp:
+    complete
+    .text start:0x021b05bc end:0x021b05c4
+
+src/Field/Screens/KrakPot_SetFieldMenuDirectMode.cpp:
+    complete
+    .text start:0x021b1d3c end:0x021b1d44
+
+src/Field/Screens/OnlineDownload_GetLegacyBossId.cpp:
+    complete
+    .text start:0x021b1fa8 end:0x021b1fb0
+
+src/Field/Screens/OnlineDownload_GetLegacyBossLevel.cpp:
+    complete
+    .text start:0x021b1fb0 end:0x021b1fb8
+
+src/Field/Screens/OnlineDownload_GetLegacyMapDiscovererName.cpp:
+    complete
+    .text start:0x021b1fb8 end:0x021b1fc0
+
+src/Field/Scene/FieldEvent_SetPhase.cpp:
+    complete
+    .text start:0x021bb9ec end:0x021bb9f4
+
+src/Field/Scene/FieldEvent_GetPhase.cpp:
+    complete
+    .text start:0x021bb9f4 end:0x021bb9fc
+
+src/Field/Scene/FieldEvent_GetInEventResultDescriptor.cpp:
+    complete
+    .text start:0x021bbbe4 end:0x021bbbec
+
+src/Field/Events/Vector3i_StoreComponents.cpp:
+    complete
+    .text start:0x021c3f68 end:0x021c3f70
+
+src/Field/Events/Resource_InitializeConditionalStateNode.cpp:
+    complete
+    .text start:0x021c0760 end:0x021c07d0
+
+src/Field/Scene/Field_ProcessPartyRecoveryOwnershipRequest.cpp:
+    complete
+    .text start:0x0218d818 end:0x0218d8cc
+
+src/Field/Scene/Field_QueuePartyActionAndNotifyConnection.cpp:
+    complete
+    .text start:0x021913d0 end:0x02191484
+
+src/Field/Events/FieldMenu_ReleasePartyMenuAndRestoreOverlaySelections.cpp:
+    complete
+    .text start:0x021a5974 end:0x021a5a28
+
+src/Field/Screens/Field_ShowTravelDestinationMessage.cpp:
+    complete
+    .text start:0x021a933c end:0x021a93f0
+
+src/Field/Events/Field_ReleasePartyManagementMenu.cpp:
+    complete
+    .text start:0x021b67d8 end:0x021b688c
+
+src/Field/Events/Field_QueueMonsterEncounterDescriptor.cpp:
+    complete
+    .text start:0x021c5b44 end:0x021c5bf8
+
+src/Field/Scene/FieldMonster_HideTrackedZoneGroupAndBroadcast.cpp:
+    complete
+    .text start:0x021a33e0 end:0x021a3498
+
+src/Field/Multiplayer/Field_WaitForPartyJoinRosterAcknowledgments.cpp:
+    complete
+    .text start:0x021b0224 end:0x021b0288
+
+src/Field/Events/PartySync_PropagateMemberEncounterSelection.cpp:
+    complete
+    .text start:0x021c5a8c end:0x021c5b44
+
+src/Field/Screens/Network_ProcessConnectionPromptAndReturnState.cpp:
+    complete
+    .text start:0x021b2698 end:0x021b2758
+
+src/Field/Events/GameState_WaitForFadeAndQueuedTasksThenComplete.cpp:
+    complete
+    .text start:0x021c16cc end:0x021c178c
+
+src/Field/Scene/Resource_InitializeAndLinkModeD7Node.cpp:
+    complete
+    .text start:0x0219593c end:0x021959b4
+
+src/Field/Events/ApplyMatchedConnectionStateFields.cpp:
+    complete
+    .text start:0x021c51c0 end:0x021c5284
+
+src/Field/Multiplayer/CopyRemoteCombatantPackedStateWhenMatched.cpp:
+    complete
+    .text start:0x021c70e0 end:0x021c71a4
+
+src/Field/Scene/GameState_CompleteScriptMessageOrReleaseAllocators.cpp:
+    complete
+    .text start:0x021b5f00 end:0x021b5fc0
+
+src/Field/Events/Network_QueueEncounterPartySelection.cpp:
+    complete
+    .text start:0x021c60a4 end:0x021c616c
+
+src/Field/Multiplayer/Combat_ApplyEncounterBattleGridIndices.cpp:
+    complete
+    .text start:0x021c8ab0 end:0x021c8b78
+
+src/Field/Multiplayer/Combat_ApplyEncounterGroupActiveCounts.cpp:
+    complete
+    .text start:0x021c8e70 end:0x021c8f38
+
+src/Field/Scene/Field_ResetEventCommandScratchRecord.cpp:
+    complete
+    .text start:0x021bb088 end:0x021bb0c4
+
+src/Field/Multiplayer/Field_UpsertMonsterDescriptorFragment.cpp:
+    complete
+    .text start:0x021d451c end:0x021d45e0
+
+src/Field/Multiplayer/Field_UpsertMonsterTransformFragment.cpp:
+    complete
+    .text start:0x021d45e0 end:0x021d46a4
+
+src/Field/Multiplayer/Combat_QueuePendingRequestEntries.cpp:
+    complete
+    .text start:0x021cd35c end:0x021cd424
+
+src/Field/Multiplayer/Combat_ApplyMatchingPendingConfiguration.cpp:
+    complete
+    .text start:0x021cd2dc end:0x021cd35c
+
+src/Field/Scene/Field_InitializeEncounterDescriptor.cpp:
+    complete
+    .text start:0x02196c08 end:0x02196c4c
+
+src/Field/Multiplayer/PartySync_QueueMemberStateRequest.cpp:
+    complete
+    .text start:0x021cc4b8 end:0x021cc4f8
+
+src/Field/Scene/Field_QueueContainerLootSpriteOrSpecialPresentation.cpp:
+    complete
+    .text start:0x021b5cf8 end:0x021b5dc4
+
+src/Field/Multiplayer/Field_ApplyResolvedMonsterPositionAngleAndState.cpp:
+    complete
+    .text start:0x021c9334 end:0x021c9400
+
+src/Field/Scene/Field_AdvanceContainerLootPresentationCleanup.cpp:
+    complete
+    .text start:0x021b5fc0 end:0x021b6090
+
+src/Field/Multiplayer/PartySync_QueueSuppliedLearnedSpellList.cpp:
+    complete
+    .text start:0x021ccea4 end:0x021ccf70
+
+src/Field/Multiplayer/Graphics_InitializeSelectionStateAndCaptureDisplayFlags.cpp:
+    complete
+    .text start:0x021af59c end:0x021af66c
+
+src/Field/Multiplayer/GameState_CreateMissingFlaggedPartyObjects.cpp:
+    complete
+    .text start:0x021b0a7c end:0x021b0b4c
+
+src/Field/Scene/Graphics_SetPolygonIdForPartyObjectGroup.cpp:
+    complete
+    .text start:0x0219230c end:0x021923e0
+
+src/Field/Scene/Field_InitializeContainerApproachTarget.cpp:
+    complete
+    .text start:0x021bf628 end:0x021bf6fc
+
+src/Field/Multiplayer/Network_QueueHalfwordListInSevenEntryChunks.cpp:
+    complete
+    .text start:0x021cd0d8 end:0x021cd1ac
+
+src/Field/Events/Field_QueuePartyManagementWhenMembersResolved.cpp:
+    complete
+    .text start:0x021b65e0 end:0x021b66b8
+
+src/Field/Scene/FieldEvent_UpdatePhaseAndRestoreSceneOverlay.cpp:
+    complete
+    .text start:0x021bb1a4 end:0x021bb27c
+
+src/Field/Multiplayer/Network_DispatchTaggedAcknowledgementCommand.cpp:
+    complete
+    .text start:0x021cec70 end:0x021ced48
+
+src/Field/Scene/Graphics_TestNonzeroDistanceWithinCombinedRadii.cpp:
+    complete
+    .text start:0x02196fc8 end:0x021970a0
+
+src/Field/Multiplayer/GameState_ApplyIndexedBooleanMessageAndMaybeTransition.cpp:
+    complete
+    .text start:0x021cdb4c end:0x021cdc24
+
+src/Field/Scene/GameState_ResetFieldMonsterGroupAndHideObjects.cpp:
+    complete
+    .text start:0x0219e014 end:0x0219e0ec
+
+src/Field/Multiplayer/Combat_QueueFourEnabledCombatantDetailRecords.cpp:
+    complete
+    .text start:0x021c6bc8 end:0x021c6ca0
+
+src/Field/Scene/GameState_UpdateNearbyPositionRecords.cpp:
+    complete
+    .text start:0x021c25ac end:0x021c2688
+
+src/Field/Events/Network_ApplyRemotePartyMemberPackedAttributes.cpp:
+    complete
+    .text start:0x021c44d8 end:0x021c45b4
+
+src/Field/Screens/Field_DispatchDeferredActorRequest.cpp:
+    complete
+    .text start:0x021a7b38 end:0x021a7c1c
+
+src/Field/Screens/World_QueueTypeSixtyFiveRecordOrFallback.cpp:
+    complete
+    .text start:0x021a7c94 end:0x021a7d78
+
+src/Field/Events/FieldRecovery_SelectTouchedPromptChoiceAndTestConfirm.cpp:
+    complete
+    .text start:0x021ab0c0 end:0x021ab1a4
+
+src/Field/Scene/Graphics_SetPartyRelatedObjectAlpha.cpp:
+    complete
+    .text start:0x021919c8 end:0x02191aac
+
+src/Field/Scene/Field_ApplyDeferredPartyRevivals.cpp:
+    complete
+    .text start:0x02191bdc end:0x02191cc0
+
+src/Field/Multiplayer/Resource_ProcessNextIndexedRecord.cpp:
+    complete
+    .text start:0x021b04e0 end:0x021b05bc
+
+src/Field/Scene/Field_DrawFloatingContainerLootSprite.cpp:
+    complete
+    .text start:0x021b6090 end:0x021b6174
+
+src/Field/Screens/ItemTrade_AdvanceIncomingOffer.cpp:
+    complete
+    .text start:0x021a7e14 end:0x021a85bc
+
+src/Field/Scene/Field_MergeClientStateAndTestZoneRefresh.cpp:
+    complete
+    .text start:0x0219bddc end:0x0219bed0
+
+src/Field/Multiplayer/Network_ResetConnectionPoolsAndRefreshPartySlots.cpp:
+    complete
+    .text start:0x021c35ac end:0x021c36a0
+
+src/Field/Scene/Field_SetCombatantAlphaAndPaletteTint.cpp:
+    complete
+    .text start:0x02191e5c end:0x02191f4c
+
+src/Field/Scene/Field_MarkCombatantStatusAppearanceDirty.cpp:
+    complete
+    .text start:0x02191fec end:0x021920dc
+
+src/Field/Events/GameState_RebuildRecordsForNonprotagonistObjects.cpp:
+    complete
+    .text start:0x021b6c78 end:0x021b6d60
+
+src/Field/Screens/Network_QueueSerializedProgressChunks.cpp:
+    complete
+    .text start:0x021d2184 end:0x021d2278
+
+src/Field/Multiplayer/GameState_QueueSelectedCombatantStateRecords.cpp:
+    complete
+    .text start:0x021c6ff0 end:0x021c70e0
+
+src/Field/Multiplayer/PartySync_QueueLearnedSpells.cpp:
+    complete
+    .text start:0x021ccdac end:0x021ccea4
+
+src/Field/Events/ZoneEncounterLoader_CopyMonsterDataAndQueueFieldParameters.cpp:
+    complete
+    .text start:0x021b5250 end:0x021b5348
+
+src/Field/Scene/FieldMonster_RefreshCurrentZoneModelClonesAndMotion.cpp:
+    complete
+    .text start:0x021a2b1c end:0x021a2c14
+
+src/Field/Screens/Network_QueueHostZonePositionAndHeading.cpp:
+    complete
+    .text start:0x021d1a18 end:0x021d1b10
+
+src/Field/Events/FieldDialogue_AdvanceConversation.cpp:
+    complete
+    .text start:0x021b8e8c end:0x021b98f8
+
+src/Field/Events/Network_NotifyOtherEnabledSlotsForMatchingParty.cpp:
+    complete
+    .text start:0x021ca1a4 end:0x021ca2a0
+
+src/Field/Scene/World_FindMatchingActiveOverlapAndCopyPosition.cpp:
+    complete
+    .text start:0x021a01f4 end:0x021a02f0
+
+src/Field/Events/ZoneEncounterLoader_LoadPathGraphAndQueueMonsterSelection.cpp:
+    complete
+    .text start:0x021b498c end:0x021b4a88
+
+src/Field/Screens/Field_ApplyDirectedResourceUpdateOrReply.cpp:
+    complete
+    .text start:0x021d069c end:0x021d0798
+
+src/Field/Events/FieldBattle_AdvanceLifecycleAndParticipantWait.cpp:
+    complete
+    .text start:0x021b790c end:0x021b83f0
+
+src/Field/Scene/FieldEvent_InitializeLuidaScriptRequest.cpp:
+    complete
+    .text start:0x021bbae4 end:0x021bbbe4
+
+src/Field/Scene/GameState_UpdatePartyMemberGroupVisibility.cpp:
+    complete
+    .text start:0x021bd4d0 end:0x021bd5d0
+
+src/Field/Multiplayer/UpdateWanderingMonsterFromIndexedRecord.cpp:
+    complete
+    .text start:0x021ceee0 end:0x021cefe0
+
+src/Field/Events/Graphics_CancelTasksFreeArenaAndClearTwoBackgrounds.cpp:
+    complete
+    .text start:0x021aaf08 end:0x021ab010
+
+src/Field/Scene/Field_FindNearbyUnlistedPartyEncounter.cpp:
+    complete
+    .text start:0x021971c4 end:0x021972cc
+
+src/Field/Events/Resource_QueueEquipmentArchiveWhenStateDiffers.cpp:
+    complete
+    .text start:0x021b3444 end:0x021b354c
+
+src/Field/Events/Resource_QueueRefreshForChangedMemberEquipment.cpp:
+    complete
+    .text start:0x021b3678 end:0x021b3780
+
+src/Field/Scene/Field_AppendActionShortcutLabel.cpp:
+    complete
+    .text start:0x0219a544 end:0x0219a644
+
+src/Field/Multiplayer/GameState_QueueIndexedObjectFieldSnapshot.cpp:
+    complete
+    .text start:0x021c847c end:0x021c8588
+
+src/Field/Multiplayer/PartySync_QueueLearnedSkills.cpp:
+    complete
+    .text start:0x021ccfd0 end:0x021cd0d8
+
+src/Field/Events/FieldDialogue_ReleasePresentation.cpp:
+    complete
+    .text start:0x021b8d80 end:0x021b8e8c
+
+src/Field/Scene/Network_CollectFieldInteractionResponses.cpp:
+    complete
+    .text start:0x02199578 end:0x02199684
+
+src/Field/Screens/Field_ReleaseGrottoMapPromptAndRestoreDisplay.cpp:
+    complete
+    .text start:0x021a5bac end:0x021a5cbc
+
+src/Field/Screens/Field_ApplyPartyPositionCommand.cpp:
+    complete
+    .text start:0x021d2b24 end:0x021d2c34
+
+src/Field/Events/ZoneEncounterLoader_LoadFieldParametersAndQueueOverrides.cpp:
+    complete
+    .text start:0x021b5348 end:0x021b5458
+
+src/Field/Multiplayer/Field_UpdatePartyMemberNoticeTask.cpp:
+    complete
+    .text start:0x021c3194 end:0x021c32a4
+
+src/Field/Events/Network_ApplyRemotePartyMemberLinkedStats.cpp:
+    complete
+    .text start:0x021c40ec end:0x021c41fc
+
+src/Field/Events/Field_StoreMemberAndRemoveFromActiveParty.cpp:
+    complete
+    .text start:0x021b6d60 end:0x021b6e70
+
+src/Field/Events/FieldCommandQueue_DrawActiveCommandWorldObjects.cpp:
+    complete
+    .text start:0x021a3ddc end:0x021a3ef0
+
+src/Field/Multiplayer/Field_PreparePartyJoinNameDisplay.cpp:
+    complete
+    .text start:0x021afcec end:0x021afe00
+
+src/Field/Events/Script_StartArchiveEntry.cpp:
+    complete
+    .text start:0x021d4ce4 end:0x021d4df8
+
+src/Field/Scene/Field_SpawnSharedPresentationEffectAtPosition.cpp:
+    complete
+    .text start:0x0218d644 end:0x0218d75c
+
+src/Field/Screens/World_ProcessPlacementUpdateByConnectionState.cpp:
+    complete
+    .text start:0x021d3aa4 end:0x021d3bbc
+
+src/Field/Scene/Field_QueueZoneEntryEventOrRunFallbackTriggers.cpp:
+    complete
+    .text start:0x0219fc88 end:0x0219fda0
+
+src/Field/Scene/Network_ApplyConnectionEntryResult.cpp:
+    complete
+    .text start:0x021aef80 end:0x021af098
+
+src/Field/Screens/World_ApplyPackedZonePositionOrSaveDeferredRecord.cpp:
+    complete
+    .text start:0x021d1b10 end:0x021d1c2c
+
+src/Field/Scene/Graphics_StagePartyObjectTexturesAfterDisplayWait.cpp:
+    complete
+    .text start:0x0218f80c end:0x0218f92c
+
+src/Field/Scene/World_InitializeTransitionPositionForConnectionState.cpp:
+    complete
+    .text start:0x02199360 end:0x02199480
+
+src/Field/Scene/Resource_ResetFourZoneEntriesAndLoadSharedSplitResource.cpp:
+    complete
+    .text start:0x0219fda0 end:0x0219fec0
+
+src/Field/Scene/Field_RollEncounterOpeningOutcome.cpp:
+    complete
+    .text start:0x021970a0 end:0x021971c4
+
+src/Field/Multiplayer/GameState_ApplySelectedRecordOperation.cpp:
+    complete
+    .text start:0x021ce174 end:0x021ce298
+
+src/Field/Scene/World_SelectNearestFacingTypeEightFeature.cpp:
+    complete
+    .text start:0x021984f4 end:0x02198618
+
+src/Field/Events/Grotto_InitializeMapMetadataAndExportNamedDetails.cpp:
+    complete
+    .text start:0x021a9a9c end:0x021a9bc4
+
+src/Field/Scene/Field_RebuildActiveRosterAndCameraTarget.cpp:
+    complete
+    .text start:0x02191108 end:0x02191234
+
+src/Field/Scene/Field_InitializePeerJoinCommand.cpp:
+    complete
+    .text start:0x021aeedc end:0x021aef0c
+
+src/Field/Multiplayer/CopySixHalfwordsToObjectState.cpp:
+    complete
+    .text start:0x021ccaf8 end:0x021ccb58
+
+src/Field/Events/InitializeType5GraphicsRecord.cpp:
+    complete
+    .text start:0x021b8d1c end:0x021b8d80
+
+src/Field/Multiplayer/GameState_QueueIndexedObjectPosition.cpp:
+    complete
+    .text start:0x021cee78 end:0x021ceee0
+
+src/Field/Events/UpdateIndexedConnectionAvailability.cpp:
+    complete
+    .text start:0x021b996c end:0x021b9a98
+
+src/Field/Scene/PollProtagonistRenderPartLoad.cpp:
+    complete
+    .text start:0x021b5dc4 end:0x021b5f00
+
+src/Field/Multiplayer/QueueCombatantNestedByteLists.cpp:
+    complete
+    .text start:0x021c894c end:0x021c8ab0
+
+src/Field/Events/Resource_QueueConditionalStateNode.cpp:
+    complete
+    .text start:0x021c05f4 end:0x021c0760
+
+src/Field/Scene/Resource_QueueFieldMonsterDescriptor.cpp:
+    complete
+    .text start:0x02196e58 end:0x02196fc8
+
+src/Field/Multiplayer/QueueCollectedCombatantPositions.cpp:
+    complete
+    .text start:0x021c8758 end:0x021c88cc
+
+src/Field/Multiplayer/DispatchTextAndResourceStatePacket.cpp:
+    complete
+    .text start:0x021d0bd4 end:0x021d0d58
+
+src/Field/Multiplayer/QueueOptionalCombatantByteLists.cpp:
+    complete
+    .text start:0x021c812c end:0x021c82bc
+
+src/Field/Scene/InitializeTypeFourStateAndBuffers.cpp:
+    complete
+    .text start:0x021baedc end:0x021bb088
+
+src/Field/Scene/TryQueueTimedTypeTenDescriptor.cpp:
+    complete
+    .text start:0x02196c4c end:0x02196e58
+
+src/Field/Multiplayer/QueueGroupedCombatantStatusRecords.cpp:
+    complete
+    .text start:0x021ca9bc end:0x021cac7c
+
+src/Field/Scene/LoadAndApplyPartyDisplayResource.cpp:
+    complete
+    .text start:0x021c2b6c end:0x021c2e50
+
+src/Field/Events/Script_SelectEntryWithPackedStateGates.cpp:
+    complete
+    .text start:0x021ba524 end:0x021ba810
+
+src/Field/Events/Script_SelectAllowedEntryWithPackedStateGates.cpp:
+    complete
+    .text start:0x021b9e30 end:0x021ba124
+
+src/Field/Scene/GameState_AlignRequestedDayTimerToTransition.cpp:
+    complete
+    .text start:0x0219c774 end:0x0219ca88
+
+src/Field/Scene/Field_QueuePartyMemberEquipmentRefresh.cpp:
+    complete
+    .text start:0x0218f5a4 end:0x0218f758
+
+src/Field/Multiplayer/Combat_ApplyRemoteCombatantPackedValueBanks.cpp:
+    complete
+    .text start:0x021c787c end:0x021c7b8c
+
+src/Field/Multiplayer/Combat_ApplyRemoteExtendedCombatantValueBanks.cpp:
+    complete
+    .text start:0x021cb2f4 end:0x021cb5f8
+
+src/Field/Multiplayer/Field_ApplyPairedStateRequest.cpp:
+    complete
+    .text start:0x021cd748 end:0x021cd9e8
+
+src/Field/Screens/Field_ApplyClientZoneTransitionCommand.cpp:
+    complete
+    .text start:0x021d1e50 end:0x021d2184
+
+src/Field/Scene/Graphics_WriteViewMatrixAndClearStateFlags.cpp:
+    complete
+    .text start:0x02196048 end:0x021960b8
+
+src/Field/Scene/ModifyTexturePaletteWhenIndexedFlagsAllow.cpp:
+    complete
+    .text start:0x0218f92c end:0x0218f968
+
+src/Field/Scene/QueueHalfwordByteAndTwoWordCommand.cpp:
+    complete
+    .text start:0x021d09cc end:0x021d0a18
+
+src/Field/Events/FieldScreen_QueueOverlayThreeSession.cpp:
+    complete
+    .text start:0x021c12fc end:0x021c1350
+
+src/Field/Multiplayer/QueueFirstObjectBytePayload.cpp:
+    complete
+    .text start:0x021cc1f8 end:0x021cc26c
+
+src/Field/Multiplayer/Field_QueueZoneObjectStateReset.cpp:
+    complete
+    .text start:0x021cfe40 end:0x021cfe84
+
+src/Field/Events/World_IsSpecialOrExistingFieldMonsterIdentifier.cpp:
+    complete
+    .text start:0x021c5a1c end:0x021c5a8c
+
+src/Field/Events/RequireZeroTagAndReadInteger.cpp:
+    complete
+    .text start:0x021d4980 end:0x021d49ac
+
+src/Field/Scene/GameState_TestIndexedObjectTypeTriple.cpp:
+    complete
+    .text start:0x02190818 end:0x02190884
+
+src/Field/Multiplayer/Field_CopySynchronizedProgressFragment.cpp:
+    complete
+    .text start:0x021cdccc end:0x021cdd30
+
+src/Field/Multiplayer/QueueTwoWordAndHalfwordCommand.cpp:
+    complete
+    .text start:0x021cf650 end:0x021cf694
+
+src/Field/Multiplayer/Field_QueueProgressOperation.cpp:
+    complete
+    .text start:0x021ce110 end:0x021ce174
+
+src/Field/Multiplayer/Field_QueueEncounterControlHandshake.cpp:
+    complete
+    .text start:0x021cbf18 end:0x021cbf54
+
+src/Field/Events/ContainsKeyInRelativeEightByteRecordTable.cpp:
+    complete
+    .text start:0x021d4df8 end:0x021d4e38
+
+src/Field/Events/InitializeType23LinkedNode.cpp:
+    complete
+    .text start:0x021b6790 end:0x021b67d8
+
+src/Field/Scene/Field_QueueSelectedTypeThirtyFeatureAction.cpp:
+    complete
+    .text start:0x0219931c end:0x02199360
+
+src/Field/Multiplayer/NetworkOwnership_QueuePeerRequestChange.cpp:
+    complete
+    .text start:0x021ceae4 end:0x021ceb28
+
+src/Field/Multiplayer/QueueTag75EmbeddedResourceValues.cpp:
+    complete
+    .text start:0x021c83a0 end:0x021c840c
+
+src/Field/Multiplayer/GameState_ApplyThreeWordPacketAndOptionalType32Queue.cpp:
+    complete
+    .text start:0x021cf448 end:0x021cf4b0
+
+src/Field/Multiplayer/Field_ApplyQueuedSceneByteQuad.cpp:
+    complete
+    .text start:0x021ce2fc end:0x021ce32c
+
+src/Field/Multiplayer/Field_QueueMemberPresenceToken.cpp:
+    complete
+    .text start:0x021cbeb0 end:0x021cbeec
+
+src/Field/Multiplayer/CharacterState_QueueVocationLevelChange.cpp:
+    complete
+    .text start:0x021ce614 end:0x021ce658
+
+src/Field/Multiplayer/Field_QueueIndexedProgressBoolean.cpp:
+    complete
+    .text start:0x021cdb00 end:0x021cdb4c
+
+src/Field/Multiplayer/FieldNetwork_QueueMemberByteResponse.cpp:
+    complete
+    .text start:0x021d0860 end:0x021d08cc
+
+src/Field/Multiplayer/Field_QueuePairedStateRequest.cpp:
+    complete
+    .text start:0x021cd6d8 end:0x021cd748
+
+src/Field/Multiplayer/Field_ApplyTargetedProgressFragment.cpp:
+    complete
+    .text start:0x021cdd30 end:0x021cdd70
+
+src/Field/Multiplayer/PartySync_QueueEncounterRejectionAndReset.cpp:
+    complete
+    .text start:0x021c5e28 end:0x021c5e80
+
+src/Field/Multiplayer/Combat_ApplyRemoteEncounterSharedValue.cpp:
+    complete
+    .text start:0x021c840c end:0x021c8478
+
+src/Field/Multiplayer/BattleScene_ApplyMatchedResultWords.cpp:
+    complete
+    .text start:0x021cf694 end:0x021cf704
+
+src/Field/Multiplayer/Combat_ApplyPartyControlCategorySnapshot.cpp:
+    complete
+    .text start:0x021c8588 end:0x021c8654
+
+src/Field/Multiplayer/Network_ApplySerializedProgressChunk.cpp:
+    complete
+    .text start:0x021d2278 end:0x021d22d4
+
+src/Field/Events/FieldBattle_ReleaseSceneAndRestoreField.cpp:
+    complete
+    .text start:0x021b6f9c end:0x021b7104
+
+src/Field/Scene/GameResources_RecreateSharedSubscreenAllocatorPools.cpp:
+    complete
+    .text start:0x021a05a8 end:0x021a0630
+
+src/Field/Events/FieldBattle_AdvanceEntryTransition.cpp:
+    complete
+    .text start:0x021b6290 end:0x021b65bc
+
+src/Field/Multiplayer/Field_ApplyMemberEncounterExit.cpp:
+    complete
+    .text start:0x021c8c44 end:0x021c8e70
+
+src/Field/Multiplayer/Field_UpdatePartyJoinTask.cpp:
+    complete
+    .text start:0x021af66c end:0x021afa70
+
+src/Field/Scene/Field_SetPartyActionPosition.cpp:
+    complete
+    .text start:0x0218f574 end:0x0218f57c
+
+src/Field/Multiplayer/Field_CopyPartyJoinRecord.cpp:
+    complete
+    .text start:0x02195214 end:0x02195250
+
+src/Field/Events/FieldCommandQueue_DrawCommandModelForActiveCommand.cpp:
+    complete
+    .text start:0x021a3b00 end:0x021a3b30
+
+src/Field/Scene/Field_IsClientPartyTransitionRestricted.cpp:
+    complete
+    .text start:0x021925e0 end:0x02192654
+
+src/Field/Scene/Field_SelectMatchingTypeTenInteraction.cpp:
+    complete
+    .text start:0x02198618 end:0x021986fc
+
+src/Field/Scene/Field_SelectContainingTypeFiveInteraction.cpp:
+    complete
+    .text start:0x021983e0 end:0x021984f4
+
+src/Field/Scene/Field_DispatchDynamicRegionEnterAndLeaveTriggers.cpp:
+    complete
+    .text start:0x02198e30 end:0x02198f70
+
+src/Field/Events/FieldEvent_InitializeInEventScriptRequest.cpp:
+    complete
+    .text start:0x021bba08 end:0x021bbae4
+
+src/Field/Events/FieldPartyEffect_OpenStandardMessagePanel.cpp:
+    complete
+    .text start:0x021adb50 end:0x021adc30
+
+src/Field/Events/FieldMessage_TestAdvanceInputAndPlaySound.cpp:
+    complete
+    .text start:0x021aa080 end:0x021aa16c
+
+src/Field/Events/FieldMessage_UpdatePartyHpReducedToOneNotice.cpp:
+    complete
+    .text start:0x021aa1ac end:0x021aa3f0
+
+src/Field/Appearance/FieldAppearance_ApplyLoadedEquipmentDescriptors.cpp:
+    complete
+    .text start:0x021b3560 end:0x021b3678
+
+src/Field/Scene/Field_ActivateSelectedTypeTwoFeatures.cpp:
+    complete
+    .text start:0x02198f84 end:0x02199138
+
+src/Field/Scene/Field_QueueSelectedChestActionOrTrigger.cpp:
+    complete
+    .text start:0x0219922c end:0x0219931c
+
+src/Field/Scene/FieldInteraction_ExecuteSelectedActorTriggerOrQueueDialogue.cpp:
+    complete
+    .text start:0x021a4cf0 end:0x021a4dd0
+
+src/Field/Resources/GameResources_ReleasePoolsForMapKindsTwoAndThree.cpp:
+    complete
+    .text start:0x021a0790 end:0x021a07f4
+
+src/Field/Resources/GameResources_ReleasePoolsForDefaultMapKind.cpp:
+    complete
+    .text start:0x021a0964 end:0x021a09c8
+
+src/Field/Resources/GameResources_ReleasePoolsForMapKindSeven.cpp:
+    complete
+    .text start:0x021a0ba8 end:0x021a0c0c
+
+src/Field/Resources/GameResources_ReleasePoolsForMapKindEight.cpp:
+    complete
+    .text start:0x021a0d6c end:0x021a0dd0
+
+src/Field/Resources/GameResources_ReleasePoolsForMapKindFive.cpp:
+    complete
+    .text start:0x021a0f40 end:0x021a0fa4
+
+src/Field/Resources/GameResources_ReleasePoolsForMapKindSix.cpp:
+    complete
+    .text start:0x021a1114 end:0x021a1178
+
+src/Field/Resources/Field_SwitchResourcePoolsForZoneCategory.cpp:
+    complete
+    .text start:0x0219de70 end:0x0219dffc
+
+src/Field/Multiplayer/PartySync_ApplyCurrentVocationProgress.cpp:
+    complete
+    .text start:0x021cc830 end:0x021cc97c
+
+src/Field/Multiplayer/Combat_ApplyPartyExperienceAwards.cpp:
+    complete
+    .text start:0x021cd608 end:0x021cd6d8
+
+src/Field/Multiplayer/Field_BeginGuestSessionDiscovery.cpp:
+    complete
+    .text start:0x021c36a0 end:0x021c37a4
+
+src/Field/Resources/PoolGroups/MapKindsTwoAndThree.cpp:
+    complete
+    .rodata start:0x021d665c end:0x021d6668
+
+src/Field/Resources/PoolGroups/MapKindFive.cpp:
+    complete
+    .rodata start:0x021d6668 end:0x021d6674
+
+src/Field/Resources/PoolGroups/DefaultMapKind.cpp:
+    complete
+    .rodata start:0x021d6674 end:0x021d6680
+
+src/Field/Resources/PoolGroups/MapKindSix.cpp:
+    complete
+    .rodata start:0x021d6680 end:0x021d668c
+
+src/Field/Resources/PoolGroups/MapKindEight.cpp:
+    complete
+    .rodata start:0x021d668c end:0x021d669c
+
+src/Field/Resources/PoolGroups/MapKindSeven.cpp:
+    complete
+    .rodata start:0x021d67e8 end:0x021d6800
+
+src/Field/Multiplayer/InitialEncounterMemberIndices.cpp:
+    complete
+    .rodata start:0x021d6d18 end:0x021d6d28
+
+src/Field/Events/EquipmentModelArchivePaths.cpp:
+    complete
+    .data start:0x021d7a38 end:0x021d7a40
+
+src/Field/Appearance/FieldAppearance_ApplyLoadedItemBattleParameters.cpp:
+    complete
+    .text start:0x021b3780 end:0x021b38c8
+
+src/Field/Scene/Field_ReleaseChestPickupAndInteractionVisuals.cpp:
+    complete
+    .text start:0x0219b938 end:0x0219ba0c
+
+src/Field/Events/Grotto_ReleaseTreasureMapEndPrompt.cpp:
+    complete
+    .text start:0x021bf398 end:0x021bf410
+
+src/Field/Multiplayer/Network_ApplyZoneStateTransferChunk.cpp:
+    complete
+    .text start:0x021d3dcc end:0x021d3e3c
+
+src/Field/Multiplayer/Combat_ApplyRemotePackedGroupSummary.cpp:
+    complete
+    .text start:0x021c6534 end:0x021c66e8
+
+src/Field/Multiplayer/Field_RemoveNextDisconnectedOrSupersededMember.cpp:
+    complete
+    .text start:0x02195658 end:0x02195748
+
+src/Field/Multiplayer/Field_RemoveRemoteMemberAndSynchronizationState.cpp:
+    complete
+    .text start:0x021905b8 end:0x021907dc
+
+src/Field/Multiplayer/Field_QueueSessionTransitionTask.cpp:
+    complete
+    .text start:0x0219577c end:0x0219593c

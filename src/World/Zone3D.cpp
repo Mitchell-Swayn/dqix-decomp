@@ -12,13 +12,13 @@
 
 #if defined(jpn)
 #define GameState_GetFieldAddress468 func_020112f4
-#define ReadWordFieldAtOffset150 func_02054fe4
+#define GameObject_GetLinkedIndexedState func_02054fe4
 #define func_0207a5b8 func_0207b3f0
 #define func_0207b9cc func_0207c804
-#define SnapshotBlockAndVolatileWordPair func_0207ecd0
-#define ReadGlobalAt02108F0C func_0208b2a8
+#define TextureVRAM_SnapshotAllocationBounds func_0207ecd0
+#define PartyProgress_GetInstance func_0208b2a8
 #define func_02094d00 func_02096950
-#define Object_FindRecordByKeyInCountedArray func_0209b684
+#define ZoneTable_FindEntryById func_0209b684
 #define func_020de848 func_020e01c4
 
 
@@ -28,16 +28,16 @@ extern "C"
 {
     void* GameState_GetFieldAddress468(GameState*);
 
-    void* ReadWordFieldAtOffset150(void*);
+    void* GameObject_GetLinkedIndexedState(void*);
     void Script_InitializeAndExecuteOwnerContextCode(const char*, SafeAllocator*, const void*, unsigned int);
 
     // Texture functions
-    void* SnapshotBlockAndVolatileWordPair(void*);
+    void* TextureVRAM_SnapshotAllocationBounds(void*);
     void Graphics_RestoreTextureImageAndPaletteVRAMState(void*);
     void Object_InvokeSaveTextureImageVRAMState(void*);
 
-    void* ReadGlobalAt02108F0C();
-    Zone3D_StructPtr_8* Object_FindRecordByKeyInCountedArray(void*, unsigned short id);
+    void* PartyProgress_GetInstance();
+    Zone3D_StructPtr_8* ZoneTable_FindEntryById(void*, unsigned short id);
 
     void DisableInterruptsAndHaltForever(); // abort() or similar
 
@@ -58,7 +58,7 @@ void Zone3D::SwitchZone(unsigned short newID)
     pAllocator_68_ = pAllocator_4c_;
     pAllocator_68_->Reset();
 
-    SnapshotBlockAndVolatileWordPair(unknown_ptr_50_);
+    TextureVRAM_SnapshotAllocationBounds(unknown_ptr_50_);
     ResetZoneResources(true);
 
     previousZoneID_ = currentZoneID_;
@@ -103,20 +103,20 @@ void Zone3D::SwitchZone(unsigned short newID)
     lighting_.Reset();
     state_2754_.Reset();
 
-    pUnknownStruct_8_ = Object_FindRecordByKeyInCountedArray(uVar3, newID);
+    pUnknownStruct_8_ = ZoneTable_FindEntryById(uVar3, newID);
     unknown_4_ = pUnknownStruct_8_->unknown_2_;
     if (pUnknownStruct_8_->unknown_c_low_ == 0)
     {
         GameObject* iVar5 = gameState->GetProtagonist();
         if (iVar5 != NULL)
         {
-            void* iVar6 = ReadWordFieldAtOffset150(iVar5);
+            void* iVar6 = GameObject_GetLinkedIndexedState(iVar5);
             if (iVar6 != NULL)
                 *(unsigned short*)((int)iVar6 + 0x566) = pUnknownStruct_8_->unknown_0_;
         }
     }
 
-    *(bool*)((int)ReadGlobalAt02108F0C() + 0x9c) = pUnknownStruct_8_->unknown_c_high_ != 0;
+    *(bool*)((int)PartyProgress_GetInstance() + 0x9c) = pUnknownStruct_8_->unknown_c_high_ != 0;
     state_2724_.Reset();
 
     grottoTileMapData_420_ = NULL;

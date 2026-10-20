@@ -5,10 +5,18 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from progress_dashboard import generate, snapshot_id
+from progress_dashboard import generate, snapshot_id, served_page
 
 
 class DashboardTests(unittest.TestCase):
+    def test_serving_reads_publication_without_auditing_mutable_checkout(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp) / 'index.html'
+            output.write_bytes(b'accepted checkpoint')
+            with patch('progress_dashboard.build_data', side_effect=ValueError('checkout changing')) as build:
+                self.assertEqual(served_page(Path(tmp), None, None, output), b'accepted checkpoint')
+            build.assert_not_called()
+
     def fixture(self, name='a', symbol='safe'):
         return dict(revision='1234567890', dirty=True, report_sha256=name,
                     arm7_report_sha256='arm7', assembly_groups={}, generated=name,

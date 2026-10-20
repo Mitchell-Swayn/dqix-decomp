@@ -48,10 +48,15 @@ struct CartridgeHeader
 };
 
 #ifdef jpn
-#define data_020f22cc data_020f2438
+#define TryReadViaDMA_UnknownRoleInitializedBytes data_020f2438
 #endif
 
-extern CartridgeHeader* data_020f22cc;
+// Original data: arm9/main @ 0x20f22cc; symbol: data_020f22cc.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 00fe7f02.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern CartridgeHeader* TryReadViaDMA_UnknownRoleInitializedBytes;
 
 // Exists at 0x027FFC40
 struct BootIndicator

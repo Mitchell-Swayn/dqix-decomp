@@ -11,7 +11,7 @@ struct Struct_02104b10
 } static currentBCFGScriptData;
 
 // Original: arm9/main @ 0x020343A0; symbol: _Z20BCFGScript_Opcode_64PN6Script9ParameterEi; size: 0x28.
-int BCFGScript_Opcode_64(Script::Parameter* params, int paramCount)
+int BCFGScript_AllocateAnimationEntries(Script::Parameter* params, int paramCount)
 {
     currentBCFGScriptData.pBCFG->AllocateAnimationEntries(currentBCFGScriptData.allocator, params[0].ToInt());
     return 1;
@@ -24,7 +24,7 @@ int BCFGScript_Opcode_65(Script::Parameter* params, int paramCount)
 }
 
 // Original: arm9/main @ 0x020343D0; symbol: _Z20BCFGScript_Opcode_66PN6Script9ParameterEi; size: 0xA8.
-int BCFGScript_Opcode_66(Script::Parameter* params, int paramCount)
+int BCFGScript_InsertAnimationRecord(Script::Parameter* params, int paramCount)
 {
     const char* name = params[0].ToString();
     int success;
@@ -46,7 +46,7 @@ int BCFGScript_Opcode_66(Script::Parameter* params, int paramCount)
 }
 
 // Original: arm9/main @ 0x02034478; symbol: _Z20BCFGScript_Opcode_6aPN6Script9ParameterEi; size: 0x28.
-int BCFGScript_Opcode_6a(Script::Parameter* params, int paramCount)
+int BCFGScript_AllocateSizeCEntries(Script::Parameter* params, int paramCount)
 {
     currentBCFGScriptData.pBCFG->AllocateSizeCEntries(currentBCFGScriptData.allocator, params[0].ToInt());
     return 1;
@@ -61,7 +61,7 @@ int BCFGScript_Opcode_6b(Script::Parameter* params, int paramCount)
 // when enemies have these it's nearly always only attack1 or attack1a,
 // i.e. the regular attack.
 // Original: arm9/main @ 0x020344A8; symbol: _Z20BCFGScript_Opcode_6cPN6Script9ParameterEi; size: 0x70.
-int BCFGScript_Opcode_6c(Script::Parameter* params, int paramCount)
+int BCFGScript_InsertSizeCEntry(Script::Parameter* params, int paramCount)
 {
     BCFG::SizeCEntry entry;
 
@@ -73,7 +73,7 @@ int BCFGScript_Opcode_6c(Script::Parameter* params, int paramCount)
 }
 
 // Original: arm9/main @ 0x02034518; symbol: _Z20BCFGScript_Opcode_6dPN6Script9ParameterEi; size: 0x28.
-int BCFGScript_Opcode_6d(Script::Parameter* params, int paramCount)
+int BCFGScript_AllocateAltSizeCEntries(Script::Parameter* params, int paramCount)
 {
     currentBCFGScriptData.pBCFG->AllocateAltSizeCEntries(currentBCFGScriptData.allocator, params[0].ToInt());
     return 1;
@@ -86,7 +86,7 @@ int BCFGScript_Opcode_6e(Script::Parameter* params, int paramCount)
 }
 
 // Original: arm9/main @ 0x02034548; symbol: _Z20BCFGScript_Opcode_6fPN6Script9ParameterEi; size: 0x70.
-int BCFGScript_Opcode_6f(Script::Parameter* params, int paramCount)
+int BCFGScript_InsertAltSizeCEntry(Script::Parameter* params, int paramCount)
 {
     BCFG::AltSizeCEntry entry;
 
@@ -98,23 +98,23 @@ int BCFGScript_Opcode_6f(Script::Parameter* params, int paramCount)
 }
 
 // Original: arm9/main @ 0x020345B8; symbol: _Z20BCFGScript_Opcode_71PN6Script9ParameterEi; size: 0x28.
-int BCFGScript_Opcode_71(Script::Parameter* params, int paramCount)
+int BCFGScript_SetRootBoneName(Script::Parameter* params, int paramCount)
 {
     currentBCFGScriptData.pBCFG->MaybeSetRootBoneName(currentBCFGScriptData.allocator, params[0].ToString());
     return 1;
 }
 
 Script::OpcodeLookupEntry bcfgScriptOpcodes[] = {
-    { 0x64, &BCFGScript_Opcode_64 },
+    { 0x64, &BCFGScript_AllocateAnimationEntries },
     { 0x65, &BCFGScript_Opcode_65 },
-    { 0x66, &BCFGScript_Opcode_66 },
-    { 0x6a, &BCFGScript_Opcode_6a },
+    { 0x66, &BCFGScript_InsertAnimationRecord },
+    { 0x6a, &BCFGScript_AllocateSizeCEntries },
     { 0x6b, &BCFGScript_Opcode_6b },
-    { 0x6c, &BCFGScript_Opcode_6c },
-    { 0x6d, &BCFGScript_Opcode_6d },
+    { 0x6c, &BCFGScript_InsertSizeCEntry },
+    { 0x6d, &BCFGScript_AllocateAltSizeCEntries },
     { 0x6e, &BCFGScript_Opcode_6e },
-    { 0x6f, &BCFGScript_Opcode_6f },
-    { 0x71, &BCFGScript_Opcode_71 },
+    { 0x6f, &BCFGScript_InsertAltSizeCEntry },
+    { 0x71, &BCFGScript_SetRootBoneName },
     { 0 }
 };
 

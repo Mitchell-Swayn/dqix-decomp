@@ -18,9 +18,9 @@
 #define Geometry_StartInterruptDrivenDMATransfer func_020cbb74
 #define DMA_StartTransferOrInvokeCallbackForZeroSize func_020cbd78
 #define MIi_CpuCopyFast func_020cbf80
-#define func_020ca430 func_020cbefc
+#define MI_Send32 func_020cbefc
 
-#define data_0210cf78 data_0210cc30
+#define SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage data_0210cc30
 #endif
 
 extern "C"
@@ -52,7 +52,7 @@ extern "C"
     void MIi_CpuCopyFast(const void*, void*, unsigned);
     // repeated u32 memwrite, shifts source ptr along but keeps writing
     // to the same destination
-    void func_020ca430(const void* src, volatile void* dst, unsigned int byteCount);
+    void MI_Send32(const void* src, volatile void* dst, unsigned int byteCount);
 
 }
 
@@ -69,19 +69,19 @@ struct Struct_0210cf78
     QueuedData* pQueuedData;
     volatile int fifoProcessingFlag; // 1 = processing, 0 = done
     int unknown_8;
-} data_0210cf78;
+} SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage;
 typedef char GeometryFifoStateSizeCheck[sizeof(Struct_0210cf78) == 12 ? 1 : -1];
 
 // Original: arm9/main @ 0x020B6998; symbol: SendQueuedDataToGeometryFifo; size: 0x5C.
 extern "C" void SendQueuedDataToGeometryFifo()
 {
-    if (data_0210cf78.fifoProcessingFlag)
+    if (SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.fifoProcessingFlag)
         WaitForFifoProcessingDone();
 
-    if (data_0210cf78.pQueuedData != NULL && data_0210cf78.pQueuedData->amountQueued != 0)
+    if (SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.pQueuedData != NULL && SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.pQueuedData->amountQueued != 0)
     {
-        func_020ca430(data_0210cf78.pQueuedData->data, &GXFIFO, data_0210cf78.pQueuedData->amountQueued * 4);
-        data_0210cf78.pQueuedData->amountQueued = 0;
+        MI_Send32(SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.pQueuedData->data, &GXFIFO, SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.pQueuedData->amountQueued * 4);
+        SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.pQueuedData->amountQueued = 0;
     }
 }
 
@@ -89,7 +89,7 @@ extern "C" void SendQueuedDataToGeometryFifo()
 // Original: arm9/main @ 0x020B69F4; symbol: _Z25WaitForFifoProcessingDonev; size: 0x18.
 void WaitForFifoProcessingDone()
 {
-    while (data_0210cf78.fifoProcessingFlag) {}
+    while (SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.fifoProcessingFlag) {}
 }
 
 // can be made static. 020b6a0c
@@ -103,60 +103,60 @@ void OnGeometryFifoProcessingDone(int userdata)
 // Original: arm9/main @ 0x020B6A18; symbol: SendRawDataToGeometryFifo; size: 0xB4.
 extern "C" void SendRawDataToGeometryFifo(const uint32_t* data, unsigned int numBytes)
 {
-    if (numBytes < 256 || data_020f2270 == -1)
+    if (numBytes < 256 || LoadToSubOAM_UnknownRoleInitializedBytes == -1)
         SubmitCommandToGeometryFifo(data[0], &data[1], (numBytes / 4) - 1);
     else
     {
         SendQueuedDataToGeometryFifo();
-        data_0210cf78.fifoProcessingFlag = 1;
-        if (data_0210cf78.unknown_8)
-            DMA_StartTransferOrInvokeCallbackForZeroSize(data_020f2270, data, numBytes, &OnGeometryFifoProcessingDone,
-                reinterpret_cast<int>(&data_0210cf78.fifoProcessingFlag));
+        SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.fifoProcessingFlag = 1;
+        if (SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.unknown_8)
+            DMA_StartTransferOrInvokeCallbackForZeroSize(LoadToSubOAM_UnknownRoleInitializedBytes, data, numBytes, &OnGeometryFifoProcessingDone,
+                reinterpret_cast<int>(&SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.fifoProcessingFlag));
         else
-            Geometry_StartInterruptDrivenDMATransfer(data_020f2270, data, numBytes, &OnGeometryFifoProcessingDone,
-                reinterpret_cast<int>(&data_0210cf78.fifoProcessingFlag));
+            Geometry_StartInterruptDrivenDMATransfer(LoadToSubOAM_UnknownRoleInitializedBytes, data, numBytes, &OnGeometryFifoProcessingDone,
+                reinterpret_cast<int>(&SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.fifoProcessingFlag));
     }
 }
 
 // Original: arm9/main @ 0x020B6ACC; symbol: SubmitCommandToGeometryFifo; size: 0xE4.
 extern "C" void SubmitCommandToGeometryFifo(int command, const uint32_t* params, unsigned int numParams)
 {
-    if (data_0210cf78.pQueuedData != NULL)
+    if (SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.pQueuedData != NULL)
     {
-        if (data_0210cf78.fifoProcessingFlag)
+        if (SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.fifoProcessingFlag)
         {
-            uint32_t priorSize = data_0210cf78.pQueuedData->amountQueued;
+            uint32_t priorSize = SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.pQueuedData->amountQueued;
             if (priorSize + 1 + numParams <= 0xc0)
             {
-                data_0210cf78.pQueuedData->amountQueued = priorSize + 1;
-                data_0210cf78.pQueuedData->data[priorSize] = command;
+                SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.pQueuedData->amountQueued = priorSize + 1;
+                SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.pQueuedData->data[priorSize] = command;
                 if (numParams != 0)
                 {
                     MIi_CpuCopyFast(params,
-                        &data_0210cf78.pQueuedData->data[data_0210cf78.pQueuedData->amountQueued],
+                        &SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.pQueuedData->data[SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.pQueuedData->amountQueued],
                         numParams * 4);
-                    data_0210cf78.pQueuedData->amountQueued += numParams;
+                    SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.pQueuedData->amountQueued += numParams;
                 }
                 return;
             }
         }
 
-        if (data_0210cf78.pQueuedData->amountQueued != 0)
+        if (SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.pQueuedData->amountQueued != 0)
             SendQueuedDataToGeometryFifo();
         else
         {
-            if (data_0210cf78.fifoProcessingFlag)
+            if (SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.fifoProcessingFlag)
                 WaitForFifoProcessingDone();
         }
     }
     else
     {
-        if (data_0210cf78.fifoProcessingFlag)
+        if (SendRawDataToGeometryFifo_UnknownRoleZeroInitializedStorage.fifoProcessingFlag)
             WaitForFifoProcessingDone();
     }
 
     GXFIFO = command;
-    func_020ca430(params, &GXFIFO, numParams * 4);
+    MI_Send32(params, &GXFIFO, numParams * 4);
 }
 
 // Original: arm9/main @ 0x020B6BB0; symbol: _Z38GetCurrentPositionAndDirectionMatricesP9Matrix4x3P9Matrix3x3; size: 0x8C.
@@ -171,7 +171,7 @@ void GetCurrentPositionAndDirectionMatrices(Matrix4x3* position, Matrix3x3* dire
     {
         Matrix4x4 clipMatrix4x4;
         while (Geometry_ReadClipMatrixWhenIdle(&clipMatrix4x4) != 0) {}
-        Mat4x4_ConvertTo4x3(&clipMatrix4x4, position);
+        MTX_Copy44To43(&clipMatrix4x4, position);
     }
 
     if (direction != NULL)
@@ -219,9 +219,9 @@ int ConvertWorldToScreenCoordinates(const Vector3fix *world, int *outX, int *out
     int success;
     Vector3fix viewVector;
 
-    Matrix4x4* proj = &data_0210a010.projectionMatrix;
+    Matrix4x4* proj = &RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.projectionMatrix;
 
-    Mat4x3_ApplyToVector(world, &data_0210a010.viewMatrix, &viewVector);
+    Mat4x3_ApplyToVector(world, &RenderConfigSubmitToFifo_UnknownRoleZeroInitializedStorage.viewMatrix, &viewVector);
 
     int64_t projectedW = (uint64_t)viewVector.x * proj->entries[3] +
         (int64_t)viewVector.y * proj->entries[7] +

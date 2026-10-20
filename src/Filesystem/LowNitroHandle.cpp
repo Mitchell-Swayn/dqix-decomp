@@ -25,7 +25,7 @@ NitroHandle* NitroHandle_FindBySignature(const char* str, int len)
     unsigned int targetSig = Nitro_CalculateSignature(str, len);
     int oldState = DisableIRQInterrupts();
 
-    NitroHandle* handle = data_02111728.firstHandle;
+    NitroHandle* handle = NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.firstHandle;
 
     while (handle != NULL && handle->signature != targetSig)
     {
@@ -43,19 +43,19 @@ CBool NitroHandle_AddToHandleList(NitroHandle* handle, const char* str, int len)
     int oldState = DisableIRQInterrupts();
     if (NitroHandle_FindBySignature(str, len) == NULL)
     {
-        if (data_02111728.firstHandle == NULL)
+        if (NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.firstHandle == NULL)
         {
-            data_02111728.firstHandle = handle;
-            data_02111728.romFSRoot.handle = handle;
-            data_02111728.romFSRoot.handleSubtableOffset = 0;
-            data_02111728.romFSRoot.firstFileID = 0;
-            data_02111728.romFSRoot.dirID = 0;
+            NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.firstHandle = handle;
+            NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.romFSRoot.handle = handle;
+            NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.romFSRoot.handleSubtableOffset = 0;
+            NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.romFSRoot.firstFileID = 0;
+            NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.romFSRoot.dirID = 0;
         }
         else
         {
             // At the end of this, currentEntry holds the last entry in the list
             // and nextEntry is null (points past the end)
-            NitroHandle* currentEntry = data_02111728.firstHandle;
+            NitroHandle* currentEntry = NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.firstHandle;
             NitroHandle* nextEntry = currentEntry->pNextHandle;
             if (nextEntry != NULL)
             {
@@ -97,12 +97,12 @@ void NitroHandle_RemoveFromHandleList(NitroHandle* handle)
     handle->pNextHandle = NULL;
     handle->flags &= ~(1 << NITROHANDLE_FLAG_IS_IN_MAIN_LIST);
 
-    if (data_02111728.romFSRoot.handle == handle)
+    if (NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.romFSRoot.handle == handle)
     {
-        data_02111728.romFSRoot.handle = data_02111728.firstHandle;
-        data_02111728.romFSRoot.handleSubtableOffset = 0;
-        data_02111728.romFSRoot.firstFileID = 0;
-        data_02111728.romFSRoot.dirID = 0;
+        NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.romFSRoot.handle = NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.firstHandle;
+        NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.romFSRoot.handleSubtableOffset = 0;
+        NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.romFSRoot.firstFileID = 0;
+        NitroHandleFindBySignature_UnknownRoleZeroInitializedStorage.romFSRoot.dirID = 0;
     }
 
     SetIRQInterruptState(oldState);
@@ -313,9 +313,9 @@ void NitroHandle_OnTaskCompletion(NitroHandle* handle, int result)
 // Original: arm9/main @ 0x020CC730; symbol: _Z23InitializeROMFilesystemi; size: 0x28.
 void InitializeROMFilesystem(int dmaChannel)
 {
-    if (data_02111738)
+    if (InitializeROMFilesystem_UnknownRoleZeroInitializedStorage)
         return;
-    data_02111738 = true;
+    InitializeROMFilesystem_UnknownRoleZeroInitializedStorage = true;
     InitializeROMFilesystem_Internal(dmaChannel);
 }
 
@@ -340,7 +340,7 @@ int NitroVM_SearchFileOrDirectory(NitroVM* vm, const char* inPath,
     unsigned char* path = (unsigned char*)inPath;
     if (path[0] == '/' || path[0] == '\\')
     {
-        accessor.handle = data_0211172c.handle;
+        accessor.handle = SetROMFilesystemRoot_UnknownRoleZeroInitializedStorage.handle;
         accessor.dirID = 0;
         accessor.handleSubtableOffset = 0;
         accessor.firstFileID = 0;
@@ -348,7 +348,7 @@ int NitroVM_SearchFileOrDirectory(NitroVM* vm, const char* inPath,
     }
     else
     {
-        accessor = data_0211172c;
+        accessor = SetROMFilesystemRoot_UnknownRoleZeroInitializedStorage;
         int signatureIdx = 0;
         do
         {

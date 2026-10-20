@@ -10,10 +10,10 @@
 #include <globaldefs.h>
 
 #if defined(jpn)
-#define data_020f1ee8 data_020f2054
-#define data_020f1eec data_020f2058
-#define data_020f1ef0 data_020f205c
-#define data_020f1ef4 data_020f2060
+#define InitializeTextureImageVRAM_UnknownRoleProcedureReferenceRecords data_020f2054
+#define InitializeTextureImageVRAM_UnknownRoleProcedureReferenceRecords_Variant2 data_020f2058
+#define InitializeTexturePaletteVRAM_UnknownRoleProcedureReferenceRecords data_020f205c
+#define InitializeTexturePaletteVRAM_UnknownRoleProcedureReferenceRecords_Variant2 data_020f2060
 
 #define Graphics_ReadGeometryStatusUnlessBusy func_020c717c
 #endif
@@ -61,7 +61,7 @@ void Model3D::LoadFromFile(const char* path, AllocatorUnion* alloc, TextureStagi
         return;
     BackgroundLoader::AddLockGlobal();
     unsigned int length;
-    void* scratchData = LoadFileIntoMemory(path, &data_0211e33c, &length);
+    void* scratchData = LoadFileIntoMemory(path, &Main_UnknownRoleZeroInitializedStorage_Variant6, &length);
     if (scratchData == NULL)
     {
         unknown_flags_a8_0_ = false;
@@ -157,7 +157,7 @@ void Model3D::ProcessRawFile(TextureStagingMode stagingMode)
 
             if (block1Len != 0)
             {
-                block1Alloc = data_020f1ee8(block1Len, 0, 0);
+                block1Alloc = InitializeTextureImageVRAM_UnknownRoleProcedureReferenceRecords(block1Len, 0, 0);
                 if (block1Alloc == 0)
                     block1Succeeded = false;
             }
@@ -166,7 +166,7 @@ void Model3D::ProcessRawFile(TextureStagingMode stagingMode)
 
             if (block2Len != 0)
             {
-                block2Alloc = data_020f1ee8(block2Len, 1, 0);
+                block2Alloc = InitializeTextureImageVRAM_UnknownRoleProcedureReferenceRecords(block2Len, 1, 0);
                 if (block2Alloc == 0)
                     block23Succeeded = false;
             }
@@ -175,7 +175,7 @@ void Model3D::ProcessRawFile(TextureStagingMode stagingMode)
             
             if (block4Len != 0)
             {
-                block4Alloc = data_020f1ef0(block4Len, tex0->maybeBlock23Flags_20_ & 0x8000, 0);
+                block4Alloc = InitializeTexturePaletteVRAM_UnknownRoleProcedureReferenceRecords(block4Len, tex0->maybeBlock23Flags_20_ & 0x8000, 0);
                 if (block4Alloc == 0)
                     block4Succeeded = false;
             }
@@ -185,11 +185,11 @@ void Model3D::ProcessRawFile(TextureStagingMode stagingMode)
             if (!block1Succeeded || !block23Succeeded || !block4Succeeded)
             {
                 if (block4Succeeded)
-                    data_020f1ef4(block4Alloc);
+                    InitializeTexturePaletteVRAM_UnknownRoleProcedureReferenceRecords_Variant2(block4Alloc);
                 if (block23Succeeded)
-                    data_020f1eec(block2Alloc);
+                    InitializeTextureImageVRAM_UnknownRoleProcedureReferenceRecords_Variant2(block2Alloc);
                 if (block1Succeeded)
-                    data_020f1eec(block1Alloc);
+                    InitializeTextureImageVRAM_UnknownRoleProcedureReferenceRecords_Variant2(block1Alloc);
                 break; // from switch statement
             }
             else

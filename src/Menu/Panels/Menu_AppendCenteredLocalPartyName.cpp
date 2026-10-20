@@ -1,0 +1,6 @@
+#include <globaldefs.h>
+ARM
+extern "C" {void* _ZN9GameState11GetInstanceEv();char* Network_GetConnectionManager();int Network_IsSessionActive(void*);void* GameState_GetObjectWithFlag100(void*,int);char* GameObject_GetLinkedIndexedState(void*);int Network_GetLocalMemberId(char*);unsigned strlen(const char*);int TextMarkup_AppendXPositionTag(char*,int);int Text_AppendFormatString(char*,const char*);}
+// Original: arm9/ov023 @ 0x021E8E34; symbol: AppendCenteredSelectedPartyName; size: 0xc4.
+// Centers selected party name using five-pixel character width and eight-pixel alignment.
+extern "C" void Menu_AppendCenteredLocalPartyName(char* self){if(!*(int*)(self+0x5f4))return;char* output=*(char**)(self+0x5d8);void* state=_ZN9GameState11GetInstanceEv();char* connection=Network_GetConnectionManager();char* record=0;if(!Network_IsSessionActive(connection)){void* obj=GameState_GetObjectWithFlag100(state,0);if(obj)record=GameObject_GetLinkedIndexedState(obj);}else{void* obj=GameState_GetObjectWithFlag100(state,Network_GetLocalMemberId(connection));if(obj)record=GameObject_GetLinkedIndexedState(obj);}if(!record)return;int width=5*strlen(record+60);int spacing=((((width+6)/8)+1)*8-width)/2;TextMarkup_AppendXPositionTag(output,spacing);Text_AppendFormatString(output,record+60);}

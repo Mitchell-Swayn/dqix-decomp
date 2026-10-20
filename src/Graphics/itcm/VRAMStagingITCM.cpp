@@ -8,18 +8,18 @@
 #include <globaldefs.h>
 
 #if defined(jpn)
-#define data_020ee694 data_020ee7a0
-#define data_020ee6b0 data_020ee7bc
-#define data_020ee6ba data_020ee7c6
-#define data_020ee6d0 data_020ee7dc
-#define data_020ee6e8 data_020ee7f4
+#define VRAMStagingManagerSendReadyDataToVRAM_UnknownRoleInitializedBytes data_020ee7a0
+#define IsSafeToModifySubregion_UnknownRoleInitializedBytes data_020ee7bc
+#define VRAMStagingManagerSendReadyDataToVRAM_UnknownRoleInitializedBytes_Variant2 data_020ee7c6
+#define IsSafeToModifySubregion_UnknownRoleInitializedBytes_Variant2 data_020ee7dc
+#define IsSafeToModifySubregion_UnknownRoleInitializedBytes_Variant3 data_020ee7f4
 
-#define Object_GetGlobalConnectionState func_0202a9d0
-#define ReadGlobalAt02100044 func_0202a9dc
-#define func_0202b2f0 func_0202aea0
-#define func_0205e57c func_0205f868
+#define Network_GetConnectionManager func_0202a9d0
+#define Network_GetCommandRecordPool func_0202a9dc
+#define Network_UpdateConnectionManager func_0202aea0
+#define Network_TransferQueuedRecordsAndPeerMessages func_0205f868
 #define Memory_ClearAndCleanInvalidateRangeReturningLength func_020d9e5c
-#define ReadElement0At0214E4A0 func_020da068
+#define Graphics_GetSwapPhase func_020da068
 
 #endif
 
@@ -27,16 +27,16 @@
 
 extern "C"
 {
-    void* Object_GetGlobalConnectionState();
-    void* ReadGlobalAt02100044();
-    void func_0202b2f0(void*);
-    void func_0205e57c(void*);
+    void* Network_GetConnectionManager();
+    void* Network_GetCommandRecordPool();
+    void Network_UpdateConnectionManager(void*);
+    void Network_TransferQueuedRecordsAndPeerMessages(void*);
 
     // zero memory and flush cache
     unsigned int Memory_ClearAndCleanInvalidateRangeReturningLength(void*, unsigned int);
 
     // gets a byte at 0x0214e4a0
-    int ReadElement0At0214E4A0();
+    int Graphics_GetSwapPhase();
 }
 
 // seems to be one per VRAMRegion
@@ -51,18 +51,38 @@ extern unsigned char g_vramStagingBuffer[0x5000];
 #define STAGING_BUFFER_SIZE 0x5000
 
 // Copy-budget scanline cutoffs: 212 for main-engine regions, 262 for sub-engine regions.
-extern const short data_020ee694[];
+// Original data: arm9/main @ 0x20ee694; symbol: data_020ee694.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex d4000601000400000b0000000406080a0d0f1113030507090c0e1012.
+// Observed span: 28 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const short VRAMStagingManagerSendReadyDataToVRAM_UnknownRoleInitializedBytes[];
 
 // maps VRAMRegion enum to {0 = main, 1 = sub}
-extern const char data_020ee6b0[];
+// Original data: arm9/main @ 0x20ee6b0; symbol: data_020ee6b0.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 00000000010100000101.
+// Observed span: 10 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const char IsSafeToModifySubregion_UnknownRoleInitializedBytes[];
 
 // holds pairs (VRAMRegion, priority) and pending tasks are executed in 
 // this order. When priority = -1 (which is the case for all except
 // VRAMRegion_TextureImage), both regular and high priority are handled jointly
-extern const char data_020ee6ba[];
+// Original data: arm9/main @ 0x20ee6ba; symbol: data_020ee6ba.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 00ff0101010002ff04ff06ff08ff03ff05ff07ff09ff.
+// Observed span: 22 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const char VRAMStagingManagerSendReadyDataToVRAM_UnknownRoleInitializedBytes_Variant2[];
 
 // maps VRAMSubregion to VRAMRegion
-extern const char data_020ee6d0[];
+// Original data: arm9/main @ 0x20ee6d0; symbol: data_020ee6d0.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 000102030303030303030304050505050505050506070809.
+// Observed span: 24 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const char IsSafeToModifySubregion_UnknownRoleInitializedBytes_Variant2[];
 
 // function pointers to get the main/sub screen master brightness (-16...16)
 // note -16 means fully black and 16 means fully white
@@ -75,7 +95,12 @@ extern int (*g_activeComponentFunctions[2])();
 // maps VRAMSubregion to a bitmask of layers
 // (BG0 = 1, BG1 = 2, BG2 = 4, BG3 = 8, Obj = 16)
 // corresponding to which ones the subregion's data can influence
-extern const char data_020ee6e8[];
+// Original data: arm9/main @ 0x20ee6e8; symbol: data_020ee6e8.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 01011f01010202040408081f010102020404080810101010.
+// Observed span: 24 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const char IsSafeToModifySubregion_UnknownRoleInitializedBytes_Variant3[];
 
 // maps VRAMSubregion to the function pointer for loading data to said
 // subregion
@@ -84,7 +109,7 @@ extern void (*g_vramSubregionLoadFunctions[24])(const void*, unsigned int, unsig
 // Original: arm9/itcm @ 0x01FF87A4; symbol: _Z23IsSafeToModifySubregioni; size: 0x6C.
 bool IsSafeToModifySubregion(int subregion)
 {
-    int mainOrSubScreen = data_020ee6b0[data_020ee6d0[subregion]];
+    int mainOrSubScreen = IsSafeToModifySubregion_UnknownRoleInitializedBytes[IsSafeToModifySubregion_UnknownRoleInitializedBytes_Variant2[subregion]];
     bool safe = true;
     
     int absBrightness = abs(g_masterBrightnessFunctions[mainOrSubScreen]());
@@ -94,7 +119,7 @@ bool IsSafeToModifySubregion(int subregion)
     if (absBrightness < 16)
     {
         int activeComponents = g_activeComponentFunctions[mainOrSubScreen]();
-        if (data_020ee6e8[subregion] & activeComponents)
+        if (IsSafeToModifySubregion_UnknownRoleInitializedBytes_Variant3[subregion] & activeComponents)
             safe = false;
     }
 
@@ -298,7 +323,7 @@ int VRAMStagingManager::Stage(VRAMSubregion subregion, const void* data, unsigne
     if (subregion < 24u && data != NULL && length != 0)
     { 
         CancelOverwrittenTasks(subregion, offset, length);
-        int region = data_020ee6d0[subregion];
+        int region = IsSafeToModifySubregion_UnknownRoleInitializedBytes_Variant2[subregion];
         if (IsSafeToModifySubregion(subregion))
         {
             textureLockMask_ <<= 1;
@@ -528,9 +553,9 @@ void VRAMStagingManager::SendReadyDataToVRAM()
     int bVar1;
     int canOverrideCopyLimits = (DATA_027fffa8 & 0x8000) >> 15;
     
-    bVar1 = frameBufferIndex_ != ReadElement0At0214E4A0() || canOverrideCopyLimits != 0;
+    bVar1 = frameBufferIndex_ != Graphics_GetSwapPhase() || canOverrideCopyLimits != 0;
     if (bVar1)
-        frameBufferIndex_ = ReadElement0At0214E4A0();
+        frameBufferIndex_ = Graphics_GetSwapPhase();
     
     
     unsigned int queueHead;
@@ -580,7 +605,7 @@ void VRAMStagingManager::SendReadyDataToVRAM()
 
     // Holds pairs of the form (VRAMRegion, priority)
     // with priority = -1 meaning do both 0 and 1 at once
-    const char* groupingData = &data_020ee6ba[0];
+    const char* groupingData = &VRAMStagingManagerSendReadyDataToVRAM_UnknownRoleInitializedBytes_Variant2[0];
          
     // we loop 11 times because we use the priority system
     // for texture image tasks
@@ -609,7 +634,7 @@ void VRAMStagingManager::SendReadyDataToVRAM()
         {
             int vcount = VCOUNT;
             // data_020ee694 is 212 for main engine or 262 for sub engine.
-            maxAmountCopyableThisGroup = (data_020ee694[region >= 4 ? 1 : 0] - vcount) * 0x400;
+            maxAmountCopyableThisGroup = (VRAMStagingManagerSendReadyDataToVRAM_UnknownRoleInitializedBytes[region >= 4 ? 1 : 0] - vcount) * 0x400;
             maxAmountCopyableThisGroup = (maxAmountCopyableThisGroup + 3) & ~3;
         }  
         else
@@ -698,10 +723,10 @@ void VRAMStagingManager::SendReadyDataToVRAM()
             queueFront_ = 0;
     }
 
-    void* unknownPtr1 = Object_GetGlobalConnectionState();
-    void* unknownPtr2 = ReadGlobalAt02100044();
-    func_0202b2f0(unknownPtr1);
-    func_0205e57c(unknownPtr2);
+    void* unknownPtr1 = Network_GetConnectionManager();
+    void* unknownPtr2 = Network_GetCommandRecordPool();
+    Network_UpdateConnectionManager(unknownPtr1);
+    Network_TransferQueuedRecordsAndPeerMessages(unknownPtr2);
 
     SetResourceMutexOperational(mutexState);
 }

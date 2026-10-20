@@ -2,7 +2,7 @@
 #include <System/Cache.h>
 #pragma optimize_for_size off
 extern "C" void Object_InvokeLockMutex();
-extern "C" void UnlockGlobalCommandMutex();
+extern "C" void SoundCommand_UnlockMutex();
 // Original: arm9/main @ 0x020D2C98; symbol: func_020d2c98; size: 0x48.
 extern "C" void ClearLinkedCommandNodesAndFlushEachHeader(char* object) {
     Object_InvokeLockMutex();
@@ -16,5 +16,5 @@ extern "C" void ClearLinkedCommandNodesAndFlushEachHeader(char* object) {
             node = next;
         } while (node != 0);
     }
-    UnlockGlobalCommandMutex();
+    SoundCommand_UnlockMutex();
 }

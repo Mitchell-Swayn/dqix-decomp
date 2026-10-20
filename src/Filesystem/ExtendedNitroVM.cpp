@@ -1,3 +1,9 @@
+// Original data alias: arm9/main @ 0x20f27b8; symbol: data_020f27b8.
+// Root path "data/" followed by zero padding; aliases gFileCacheConfiguration.root.
+// Initial values (hex for initialized storage): 646174612f000000.
+// Original data alias: arm9/main @ 0x20f2384; symbol: data_020f2384.
+// Two little-endian words {4, 4}; aliases gFileCacheConfiguration.compressionPrefixBytes.
+// Initial values (hex for initialized storage): 0400000004000000.
 #include "Filesystem/ExtendedNitroVM.h"
 #include "Filesystem/FileCacheState.h"
 #include "Filesystem/FileCacheConfiguration.h"
@@ -14,12 +20,12 @@
 
 #define func_020ca95c func_020cc428
 
-#define data_01ffd998 data_01ffd9b8
-#define data_01ffd99c data_01ffd9bc
-#define data_01ffda90 data_01ffdabc
+#define CacheMainFileAccessors_UnknownRoleZeroInitializedStorage data_01ffd9b8
+#define CacheMainFileAccessors_UnknownRoleZeroInitializedStorage_Variant2 data_01ffd9bc
+#define CacheMainFileAccessors_UnknownRoleZeroInitializedStorage_Variant3 data_01ffdabc
 
-#define data_020f2384 data_020f24d0
-#define data_020f27b8 data_020f2974
+#define FileCache_CompressionPrefixSizes data_020f24d0
+#define FileCache_DataRoot data_020f2974
 #endif
 
 #if defined(usa)
@@ -39,33 +45,48 @@ extern "C"
     unsigned int CopyRangeCleanCacheAndReturnLength(void*, const void*, unsigned);
 
     void MI_ReadUncompLZ8(Decompressor*, const void*, unsigned);
-    void DecompressB(Decompressor*, const void*, unsigned);
-    void DecompressC(Decompressor*, const void*, unsigned);
+    void Decompressor_ProcessHuffmanStream(Decompressor*, const void*, unsigned);
+    void Decompressor_ProcessRleStream(Decompressor*, const void*, unsigned);
 }
 // files to prepare accessors in cache for
 extern const char* cachedFilePaths[];
 // Seems to hold whether cached file accessors have been saved or not
 #if defined(usa)
-extern FileCacheReadyFlag data_01ffd998;
-#define FILE_CACHE_READY data_01ffd998.ready
+// Original data: arm9/itcm @ 0x1ffd998; symbol: data_01ffd998.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/itcm.md.
+extern FileCacheReadyFlag CacheMainFileAccessors_UnknownRoleZeroInitializedStorage;
+#define FILE_CACHE_READY CacheMainFileAccessors_UnknownRoleZeroInitializedStorage.ready
 #else
-extern bool data_01ffd998;
+extern bool CacheMainFileAccessors_UnknownRoleZeroInitializedStorage;
 #define FILE_CACHE_READY data_01ffd998
 #endif
 // CRC hashes for cached file accessors
-extern unsigned int data_01ffd99c[NUM_CACHED_FILES];
+// Original data: arm9/itcm @ 0x1ffd99c; symbol: data_01ffd99c.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 244 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/itcm.md.
+extern unsigned int CacheMainFileAccessors_UnknownRoleZeroInitializedStorage_Variant2[NUM_CACHED_FILES];
 // cached file accessors
-extern NitroFileAccessor data_01ffda90[NUM_CACHED_FILES];
+// Original data: arm9/itcm @ 0x1ffda90; symbol: data_01ffda90.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 488 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/itcm.md.
+extern NitroFileAccessor CacheMainFileAccessors_UnknownRoleZeroInitializedStorage_Variant3[NUM_CACHED_FILES];
 // holds the intended length of compression metadata (4 bytes)
 // there are two copies of it, the first is used in USA version and the
 // second in JPN version
 #if defined(usa)
-#define data_020f2384 gFileCacheConfiguration.compressionPrefixBytes
-#define data_020f27b8 gFileCacheConfiguration.root
+#define FileCache_CompressionPrefixSizes gFileCacheConfiguration.compressionPrefixBytes
+#define FileCache_DataRoot gFileCacheConfiguration.root
 #else
-extern unsigned int data_020f2384[];
+extern unsigned int FileCache_CompressionPrefixSizes[];
 // "data/"
-extern char data_020f27b8[];
+extern char FileCache_DataRoot[];
 #endif
 
 // Original: arm9/main @ 0x020D8714; symbol: _ZNK17CompressionPrefix21GetDecompressedLengthEv; size: 0xC.
@@ -134,10 +155,10 @@ bool Decompressor::ProcessBytes(const void* input, unsigned int inputLength)
             break;
         case 2:
         case 3:
-            DecompressB(this, input, inputLength);
+            Decompressor_ProcessHuffmanStream(this, input, inputLength);
             break;
         case 4:
-            DecompressC(this, input, inputLength);
+            Decompressor_ProcessRleStream(this, input, inputLength);
             break;
         case 0: // uncompressed
         default:
@@ -164,14 +185,14 @@ void CacheMainFileAccessors()
         
         for (unsigned int i = 0; i < NUM_CACHED_FILES; )
         {
-            strcpy(fullFilePath, data_020f27b8);
+            strcpy(fullFilePath, FileCache_DataRoot);
             strcat(fullFilePath, *pCurrentFilePath);
             unsigned int crc = 0;
-            if (CreateFileAccessor(&data_01ffda90[i], fullFilePath))
+            if (CreateFileAccessor(&CacheMainFileAccessors_UnknownRoleZeroInitializedStorage_Variant3[i], fullFilePath))
                 crc = FileCache_CalculateStringCRC(fullFilePath);
             // silly goofy register hack (see RemoveFurigana)
             unsigned int iplusone = i + 1;
-            data_01ffd99c[iplusone - 1] = crc;
+            CacheMainFileAccessors_UnknownRoleZeroInitializedStorage_Variant2[iplusone - 1] = crc;
             i++;            
             pCurrentFilePath++;
         }
@@ -181,8 +202,8 @@ void CacheMainFileAccessors()
         while (true)
         {
             bool changesMadeThisPass = false;
-            NitroFileAccessor* pAccessor = data_01ffda90;
-            unsigned int* pCRC = data_01ffd99c;
+            NitroFileAccessor* pAccessor = CacheMainFileAccessors_UnknownRoleZeroInitializedStorage_Variant3;
+            unsigned int* pCRC = CacheMainFileAccessors_UnknownRoleZeroInitializedStorage_Variant2;
             for (unsigned int i = 0; i < passEnd; i++, pAccessor++, pCRC++)
             {
                 NitroFileAccessor currentAccessor;
@@ -303,7 +324,7 @@ bool ExtendedNitroVM::Open(const char *filePath, bool skip)
             while (searchMin <= searchMax)
             {
                 cacheIndex = searchMin + ((searchMax - searchMin + 1) >> 1);
-                unsigned int candidateCRC = data_01ffd99c[cacheIndex];
+                unsigned int candidateCRC = CacheMainFileAccessors_UnknownRoleZeroInitializedStorage_Variant2[cacheIndex];
                 if (targetCRC == candidateCRC)
                     goto EscapeBinarySearch;
                 else if (targetCRC < candidateCRC)
@@ -317,7 +338,7 @@ bool ExtendedNitroVM::Open(const char *filePath, bool skip)
         EscapeBinarySearch:
         if (cacheIndex < NUM_CACHED_FILES)
         {
-            if (NitroVM_PrepareReadFileByID(&machine, data_01ffda90[cacheIndex]))
+            if (NitroVM_PrepareReadFileByID(&machine, CacheMainFileAccessors_UnknownRoleZeroInitializedStorage_Variant3[cacheIndex]))
                 status = Status_Open;
         }
         else
@@ -446,7 +467,7 @@ unsigned int ExtendedNitroVM::DecompressBytes(void* output,
     unsigned int readPos = 0;
     unsigned int metadata = 0;
 
-    const unsigned int* pMaxLength = data_020f2384;
+    const unsigned int* pMaxLength = FileCache_CompressionPrefixSizes;
 #if defined(jpn)
     pMaxLength++;
 #endif

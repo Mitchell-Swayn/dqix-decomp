@@ -6,6 +6,36 @@
 #include <System/Interrupts.h>
 ARM
 #pragma force_active on
-struct Entry{unsigned word;unsigned char a,b,c,pad;};struct Node{unsigned a,b;Node* next;};struct Nine{unsigned v[9];};struct Three{unsigned v[3];};struct Large{Nine a;Three b;unsigned c;};struct Bits{unsigned char a:1,b:1,c:1,d:1,rest:4;};struct Buffer{unsigned length;unsigned char* data;};extern "C"{int Object_FindSignedByteKeyInSixteenEntries(void*,int);int FindSignedByteValueInSixteenSlots(void*,int);void* GameState_GetObjectWithFlag100(GameState*,int);char* ReadWordFieldAtOffset150(void*);int TestFourMappedValuesAgainstTarget(unsigned,void*);unsigned ToggleMaskedFlagsAtOffset34(void*,unsigned);char* FindFirstOfFourRowsWithColumnStateOne(void*,int);void SetGlobalValueExceptModesNineAndTen(unsigned);Object3D* GameState_FindIndexedObjectWithFlag1000(GameState*,int);extern char data_020fe9cc[],data_0210f3d8[];extern unsigned data_02112780[],data_021117ec[],data_02111808[],data_021015a0[];}void HandleCommandReceivedFromArm7();
+// Original data: arm9/main @ 0x20fe9cc; symbol: data_020fe9cc.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 1536 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x21015a0; symbol: data_021015a0.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 96 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x210f3d8; symbol: data_0210f3d8.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 12 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x21117ec; symbol: data_021117ec.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 20 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x2111808; symbol: data_02111808.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 16 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x2112780; symbol: data_02112780.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 36 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+struct Entry{unsigned word;unsigned char a,b,c,pad;};struct Node{unsigned a,b;Node* next;};struct Nine{unsigned v[9];};struct Three{unsigned v[3];};struct Large{Nine a;Three b;unsigned c;};struct Bits{unsigned char a:1,b:1,c:1,d:1,rest:4;};struct Buffer{unsigned length;unsigned char* data;};extern "C"{int Network_FindWirelessSlotByMemberId(void*,int);int Network_FindPreviousWirelessSlotByMemberId(void*,int);void* GameState_GetObjectWithFlag100(GameState*,int);char* GameObject_GetLinkedIndexedState(void*);int Vocation_TestEquipmentCategory(unsigned,void*);unsigned PartySelection_GetMemberMask(void*,unsigned);char* PartySync_FindSelectedEntryForMember(void*,int);void Network_RecordWirelessErrorUnlessTerminal(unsigned);Object3D* GameState_FindIndexedObjectWithFlag1000(GameState*,int);extern char DebugTextWriteTileString_UnknownRoleZeroInitializedStorage[],SoundPlayerInsertSequenceByPriority_UnknownRoleZeroInitializedStorage[];extern unsigned SNDPushCommand_UnknownRoleZeroInitializedStorage[],PMGoSleepMode_UnknownRoleZeroInitializedStorage[],IPCWaitForPendingCommandCompletion_UnknownRoleZeroInitializedStorage[],NetworkGetAssociationId_UnknownRoleZeroInitializedStorage[];}void HandleCommandReceivedFromArm7();
 // Original: arm9/main @ 0x02040668; symbol: func_02040668; size: 0x48.
 extern "C" void Object3D_MakeFirstAvailableRepresentationVisible(char* p){char* q=*(char**)(p+20);if(q){*(unsigned*)(q+80)&=~1;return;}Object3D* a=*(Object3D**)(p+24);if(a){a->MakeVisible();return;}a=*(Object3D**)(p+28);if(a)a->MakeVisible();}

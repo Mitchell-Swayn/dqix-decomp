@@ -1,0 +1,20 @@
+extern "C" {struct Flags{unsigned char unused:1,active:1,rest:6;};struct Node{Node* next;unsigned char gap[0xf];Flags flags;};struct Service{unsigned char pre[0x36];short selected;};struct View{unsigned char pre[0xa8];short width,height,x,y;};struct Owner{unsigned char pre[0xa4];unsigned char list[0x14];Node* head;Node* page;Service* service;unsigned char gap[0xc];short* selected;unsigned char gap2[0x78];unsigned char cursor[0x1c];unsigned char gap3[8];short category,choice,unused,count,previous;unsigned char state,phase,flags;signed char filter;unsigned char options,pad;short total;};
+// Original data: arm9/main @ 0x2108760; symbol: data_02108760.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 208 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x2114e30; symbol: data_02114e30.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 32 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x2114e54; symbol: data_02114e54.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 112 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern unsigned char Main_UnknownRoleZeroInitializedStorage_Variant4[];extern unsigned short KeyRepeaterUpdate_UnknownRoleZeroInitializedStorage[];extern unsigned char Main_UnknownRoleZeroInitializedStorage[];View* TextCanvas_FindDisplayPartByKey(Service*,int);int TextCanvas_HasActiveTilemap();void ReadSelectedCoordinatePair(unsigned char*,unsigned*,unsigned*);int Input_IsKeyMaskNewlyPressed(unsigned short*,unsigned);Node* BestiaryScreen_ResolveSelectedMonster(Owner*);Node* Util_FilterAndRebuildNodeList(void*,int,int,int,int,short*);void BestiaryScreen_SelectPageContainingEntry(Owner*,Node*);void SoundSfx_StartCurrentSequenceArchiveEntry(void*,int,int);void TextCanvas_ClearGroupEntrySelection(Service*,int);void Graphics_SetRecordOptionIndexDisplay(Owner*);void Graphics_PopulateRecordListPage(Owner*);short FindGroupRecordWithNonzeroFieldsAndFlagTwoClear(Service*,int);void TextCanvas_CreateAndConfigureDisplayPart(Service*,int);void KeyRepeater_Reset(void*);int BestiaryScreen_ProcessSelectionActivation(Owner*);int DetectInputOutsideScaledTextureRegion(Owner*);void TextCanvas_ResetDisplayPartByKey(Service*,int);void Graphics_PopulateRecordGroupSummaryDisplay(Owner*);
+// Original: arm9/ov014 @ 0x02187C04; symbol: func_ov014_02187c04; size: 0x1B4.
+void Graphics_ProcessFilteredRecordSelectionInput(Owner* p){short count;if(p->phase==0){if(p->options&16)return;count=0;p->head=Util_FilterAndRebuildNodeList(p->list,p->filter,-1,(p->options&8)?1:0,16,&count);p->page=p->head;Graphics_PopulateRecordGroupSummaryDisplay(p);p->category=1;if(p->choice<0)p->choice=FindGroupRecordWithNonzeroFieldsAndFlagTwoClear(p->service,p->category);p->service->selected=p->choice;TextCanvas_CreateAndConfigureDisplayPart(p->service,p->category);KeyRepeater_Reset(p->cursor);p->selected=0;++p->phase;return;}if(p->phase==1){p->selected=&p->choice;if(BestiaryScreen_ProcessSelectionActivation(p)){SoundSfx_StartCurrentSequenceArchiveEntry(Main_UnknownRoleZeroInitializedStorage,1,0);KeyRepeater_Reset(p->cursor);short choice=*p->selected;if(choice!=8){if(choice==9){p->state=3;p->phase=0;}}else{p->options|=16;p->state=4;p->phase=0;}TextCanvas_ResetDisplayPartByKey(p->service,p->category);p->selected=0;}else if(DetectInputOutsideScaledTextureRegion(p)||Input_IsKeyMaskNewlyPressed(KeyRepeaterUpdate_UnknownRoleZeroInitializedStorage,0x800)){p->state=5;p->phase=0;}}}
+}

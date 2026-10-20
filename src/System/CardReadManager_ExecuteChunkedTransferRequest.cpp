@@ -6,9 +6,14 @@
 
 extern "C" {
 void OSi_ReferSymbol(const void*);
-unsigned int ReadElement7();
+unsigned int CardReadManager_GetBackupCommandChunkLimit();
 int CardReadManager_SendSharedCommandWithRetries(void*, int, unsigned int);
-extern unsigned char* data_021118e0;
+// Original data: arm9/main @ 0x21118e0; symbol: data_021118e0.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 1568 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern unsigned char* TryReadViaDMA_UnknownRoleZeroInitializedStorage;
 }
 
 // Original: arm9/main @ 0x020D03FC; symbol: func_020d03fc; size: 0x1F0.
@@ -20,8 +25,8 @@ extern "C" ARM void CardReadManager_ExecuteChunkedTransferRequest(unsigned int* 
     unsigned int channel = request[0xb];
     unsigned int mode = request[0xc];
     OSi_ReferSymbol((const void*)0x02000bc4);
-    if (channel == 0xb) maxTransfer = ReadElement7();
-    else if (channel == 0xf) maxTransfer = *(unsigned int*)(data_021118e0 + 0x20);
+    if (channel == 0xb) maxTransfer = CardReadManager_GetBackupCommandChunkLimit();
+    else if (channel == 0xf) maxTransfer = *(unsigned int*)(TryReadViaDMA_UnknownRoleZeroInitializedStorage + 0x20);
 
     dma = request + 0x48;
     do {

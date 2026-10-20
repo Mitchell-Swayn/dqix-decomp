@@ -7,16 +7,16 @@
 #include <std_library_functions.h>
 struct Placement {int index;Vector3i position;int time;Placement* next;};
 struct Owner {unsigned int unknown[2];Object3D* object;Placement* placements;};
-extern "C" char* ReadGlobalValueAt020FB3F0();extern "C" void* Object_GetGlobalSixteenEntryDisplayState();extern "C" int Zone3D_FindGroundHeightBelowPosition(char*,Vector3i*);
+extern "C" char* Zone3D_GetMainInstance();extern "C" void* Object_GetGlobalSixteenEntryDisplayState();extern "C" int Zone3D_FindGroundHeightBelowPosition(char*,Vector3i*);
 // Original: arm9/main @ 0x0208F168; symbol: func_0208f168; size: 0x204.
 extern "C" void WorldPlacement_InstantiateAvailableTimedPlacements(Owner* owner,SafeAllocator* allocator) {
  if(!allocator)return;
- char* zone=ReadGlobalValueAt020FB3F0();char* map=*(char**)(zone+8);
+ char* zone=Zone3D_GetMainInstance();char* map=*(char**)(zone+8);
  WorldPlacementSource* source=WorldPlacementSource::GetInstance();
  if(!map)return;
  switch(source->IsMapEligible(map+5)) { case 0: return; default: break; }
  if(!owner->object)return;
- owner->object->MaybeSetBCFGAnimation(0,0);
+ owner->object->SetBCFGAnimationByIndex(0,0);
  BCFG* config=owner->object->GetCurrentAnimationConfig();if(!config)return;
  BCFG::AnimationRecord* animation=config->GetAnimationRecord(0);if(!animation)return;
  GameState* state=GameState::GetInstance();

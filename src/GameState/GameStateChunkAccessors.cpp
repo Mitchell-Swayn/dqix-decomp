@@ -3,7 +3,7 @@
 extern "C" void* GameState_CopyChunkLayout(void* destination, const void* source);
 
 // Original: arm9/main @ 0x0200FCFC; symbol: func_0200fcfc; size: 0x10.
-extern "C" void* GameState_CopyChunkAtOffset3F8(GameState* state, const void* source)
+extern "C" void* GameState_ReplacePendingFieldTransition(GameState* state, const void* source)
 {
     return GameState_CopyChunkLayout(state->unk_3f8, source);
 }

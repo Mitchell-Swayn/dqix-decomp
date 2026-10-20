@@ -12,14 +12,14 @@ void WaitForInterrupt(bool onlySubsequent, unsigned int mask)
 {
     int priorState = DisableIRQInterrupts();
     if (onlySubsequent) {
-        DTCMData* dtcm = &data_027e0000;
+        DTCMData* dtcm = &Entry_UnknownRoleProcedureReferenceRecords;
         dtcm->interruptsFired &= ~mask;
     }
     SetIRQInterruptState(priorState);
 
-    DTCMData* dtcm = &data_027e0000;
+    DTCMData* dtcm = &Entry_UnknownRoleProcedureReferenceRecords;
     if (mask & dtcm->interruptsFired) return;
-    BlockedContextList* list = &data_027e0000.block_60;
+    BlockedContextList* list = &Entry_UnknownRoleProcedureReferenceRecords.block_60;
     unsigned int* fired = &dtcm->interruptsFired;
     do {
         BlockCurrentContext(list);

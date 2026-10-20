@@ -5,350 +5,374 @@
     .data       start:0x021895a0 end:0x02189800 kind:data align:32
     .bss        start:0x02189800 end:0x02189820 kind:bss align:32
 
-src/Unclassified/ov014/func_ov014_02188b18.cpp:
+src/Menu/Bestiary/BestiaryHabitat_ReadMonsterKey.cpp:
     complete
     .text start:0x02188b18 end:0x02188b20
 
-src/Unclassified/ov014/func_ov014_021845d4.cpp:
+src/Menu/Bestiary/BestiaryDetail_ResetMonsterStatSummary.cpp:
     complete
     .text start:0x021845d4 end:0x021845ec
 
-src/Unclassified/ov014/func_ov014_02186d64.cpp:
+src/Menu/Bestiary/BestiaryScreen_DrawMonsterDetails.cpp:
     complete
     .text start:0x02186d64 end:0x02186d7c
 
-src/Unclassified/ov014/func_ov014_02189380.cpp:
+src/Menu/Bestiary/BestiaryHabitat_GetZoneIdArray.cpp:
     complete
     .text start:0x02189380 end:0x02189398
 
-src/Unclassified/ov014/func_ov014_0218940c.cpp:
+src/Menu/Bestiary/BestiaryHabitat_GetHabitatRecord.cpp:
     complete
     .text start:0x0218940c end:0x02189430
 
-src/Unclassified/ov014/func_ov014_021874f8.cpp:
+src/Menu/Bestiary/BestiaryScreen_CountFilteredMonsters.cpp:
     complete
     .text start:0x021874f8 end:0x02187520
 
-src/Unclassified/ov014/func_ov014_021893e4.cpp:
+src/Menu/Bestiary/BestiaryHabitat_GetMonsterHabitatRecords.cpp:
     complete
     .text start:0x021893e4 end:0x0218940c
 
-src/Unclassified/ov014/func_ov014_02187450.cpp:
+src/Menu/Bestiary/BestiaryScreen_GetMonsterProgressRecord.cpp:
     complete
     .text start:0x02187450 end:0x02187488
 
-src/Unclassified/ov014/func_ov014_02186dc8.cpp:
+src/Menu/Bestiary/Graphics_ResetDisplayRecordTransferEntries.cpp:
     complete
     .text start:0x02186dc8 end:0x02186df0
 
-src/Filesystem/ov014/func_ov014_02188bd0.cpp:
+src/Menu/Bestiary/BestiaryHabitat_InitializeLoader.cpp:
     complete
     .text start:0x02188bd0 end:0x02188bfc
 
-src/Unclassified/ov014/func_ov014_02189398.cpp:
+src/Menu/Bestiary/BestiaryHabitat_GetTextPointerArray.cpp:
     complete
     .text start:0x02189398 end:0x021893c4
 
-src/Unclassified/ov014/func_ov014_02188bfc.cpp:
+src/Menu/Bestiary/BestiaryHabitat_BeginLoad.cpp:
     complete
     .text start:0x02188bfc end:0x02188c34
 
-src/Filesystem/ov014/func_ov014_02188d10.cpp:
+src/Menu/Bestiary/BestiaryHabitat_CancelLoad.cpp:
     complete
     .text start:0x02188d10 end:0x02188d48
 
-src/Unclassified/ov014/func_ov014_02189430.cpp:
+src/Menu/Bestiary/BestiaryHabitat_GetHabitatTextPointer.cpp:
     complete
     .text start:0x02189430 end:0x02189468
 
-src/Unclassified/ov014/func_ov014_02186df0.cpp:
+src/Menu/Bestiary/BestiaryScreen_RequestClose.cpp:
     complete
     .text start:0x02186df0 end:0x02186e2c
 
-src/Unclassified/ov014/func_ov014_02187520.cpp:
+src/Menu/Bestiary/BestiaryScreen_GetCurrentPageIndex.cpp:
     complete
     .text start:0x02187520 end:0x02187568
 
-src/Unclassified/ov014/func_ov014_02186d7c.cpp:
+src/Menu/Bestiary/BestiaryScreen_RenderCanvasesAndCursor.cpp:
     complete
     .text start:0x02186d7c end:0x02186dc8
 
-src/Unclassified/ov014/func_ov014_021892d4.cpp:
+src/Menu/Bestiary/BestiaryHabitat_FindMonsterByKey.cpp:
     complete
     .text start:0x021892d4 end:0x0218934c
 
-src/Filesystem/ov014/func_ov014_02185c48.cpp:
+src/Menu/Bestiary/BestiaryDetail_QueueDefaultBackgroundLoad.cpp:
     complete
     .text start:0x02185c48 end:0x02185c90
 
-src/Filesystem/ov014/func_ov014_021882d4.cpp:
+src/Menu/Bestiary/BestiaryScreen_AdvanceCloseFade.cpp:
     complete
     .text start:0x021882d4 end:0x02188330
 
-src/Filesystem/ov014/func_ov014_02184f10.cpp:
+src/Menu/Bestiary/BestiaryDetail_UpdateMonsterSelection.cpp:
     complete
     .text start:0x02184f10 end:0x02184f78
 
-src/Filesystem/ov014/func_ov014_0218854c.cpp:
+src/Menu/Bestiary/Graphics_SetRecordOptionIndexDisplay.cpp:
     complete
     .text start:0x0218854c end:0x021885bc
 
-src/Filesystem/ov014/func_ov014_021884cc.cpp:
+src/Menu/Bestiary/BestiaryScreen_UpdateCategoryHeading.cpp:
     complete
     .text start:0x021884cc end:0x0218854c
 
-src/Filesystem/ov014/func_ov014_02188b20.cpp:
+src/Menu/Bestiary/BestiaryHabitat_ResolveTextPointers.cpp:
     complete
     .text start:0x02188b20 end:0x02188ba0
 
-src/Filesystem/ov014/func_ov014_02187488.cpp:
+src/Menu/Bestiary/BestiaryScreen_MarkDefeatedMonsterEntries.cpp:
     complete
     .text start:0x02187488 end:0x021874f8
 
-src/Filesystem/ov014/func_ov014_02188a8c.cpp:
+src/Menu/Bestiary/BestiaryScreen_UpdateSelectedMonsterValue.cpp:
     complete
     .text start:0x02188a8c end:0x02188b18
 
-src/Unclassified/ov014/sinit_ov014_02189510.cpp:
+src/Menu/Bestiary/Bestiary_InitializeGlobalLayoutDimensions.cpp:
     complete
     .init start:0x02189510 end:0x02189598
 
-src/Unclassified/ov014/func_ov014_02186ff0.cpp:
+src/Menu/Bestiary/DetectInputOutsideScaledTextureRegion.cpp:
     complete
     .text start:0x02186ff0 end:0x02187074
 
-src/Unclassified/ov014/func_ov014_02189244.cpp:
+src/Menu/Bestiary/PrepareAndRelocateResourceTable.cpp:
     complete
     .text start:0x02189244 end:0x021892d4
 
-src/Unclassified/ov014/func_ov014_02186b30.cpp:
+src/Menu/Bestiary/BestiaryScreen_ReleaseResources.cpp:
     complete
     .text start:0x02186b30 end:0x02186bc8
 
-src/Unclassified/ov014/func_ov014_02186a70.cpp:
+src/Menu/Bestiary/BestiaryScreen_Initialize.cpp:
     complete
     .text start:0x02186a70 end:0x02186b30
 
-src/Unclassified/ov014/func_ov014_02184d08.cpp:
+src/Menu/Bestiary/BestiaryDetail_CancelLoadsAndRequestDefaultBackground.cpp:
     complete
     .text start:0x02184d08 end:0x02184dcc
 
-src/Unclassified/ov014/func_ov014_02188c34.cpp:
+src/Menu/Bestiary/BestiaryHabitat_AdvanceLoad.cpp:
     complete
     .text start:0x02188c34 end:0x02188d10
 
-src/Unclassified/ov014/func_ov014_02184c08.cpp:
+src/Menu/Bestiary/ApplyRecordTransformToObject3D.cpp:
     complete
     .text start:0x02184c08 end:0x02184d08
 
-src/Unclassified/ov014/func_ov014_021893c4.cpp:
+src/Menu/Bestiary/BestiaryHabitat_GetMonsterRecord.cpp:
     complete
     .text start:0x021893c4 end:0x021893e4
 
-src/Unclassified/ov014/func_ov014_02188ba0.cpp:
+src/Menu/Bestiary/BestiaryHabitat_ResolveTextOffset.cpp:
     complete
     .text start:0x02188ba0 end:0x02188bd0
 
-src/Unclassified/ov014/func_ov014_021891f0.cpp:
+src/Menu/Bestiary/BestiaryHabitat_ForEachMonsterRecord.cpp:
     complete
     .text start:0x021891f0 end:0x02189244
 
-src/Unclassified/ov014/func_ov014_021872dc.cpp:
+src/Menu/Bestiary/BestiaryScreen_ChangePageWithWrap.cpp:
     complete
     .text start:0x021872dc end:0x02187340
 
-src/Unclassified/ov014/func_ov014_021842a0.cpp:
+src/Menu/Bestiary/BestiaryDetail_FindLayoutEntryByKey.cpp:
     complete
     .text start:0x021842a0 end:0x02184300
 
-src/Unclassified/ov014/func_ov014_02187340.cpp:
+src/Menu/Bestiary/BestiaryScreen_FindPageFirstEntry.cpp:
     complete
     .text start:0x02187340 end:0x021873a0
 
-src/Unclassified/ov014/func_ov014_021873a0.cpp:
+src/Menu/Bestiary/BestiaryScreen_ResolveSelectedMonster.cpp:
     complete
     .text start:0x021873a0 end:0x02187450
 
-src/Unclassified/ov014/func_ov014_02184e3c.cpp:
+src/Menu/Bestiary/BestiaryDetail_PlayNextMonsterAnimation.cpp:
     complete
     .text start:0x02184e3c end:0x02184f10
 
-src/Unclassified/ov014/func_ov014_02186f10.cpp:
+src/Menu/Bestiary/BestiaryScreen_ProcessSelectionActivation.cpp:
     complete
     .text start:0x02186f10 end:0x02186ff0
 
-src/Unclassified/ov014/func_ov014_02187b38.cpp:
+src/Menu/Bestiary/Graphics_AdvanceRecordSelectionState.cpp:
     complete
     .text start:0x02187b38 end:0x02187c04
 
-src/Filesystem/ov014/func_ov014_021844c4.cpp:
+src/Menu/Bestiary/BestiaryDetail_Initialize.cpp:
     complete
     .text start:0x021844c4 end:0x021845d4
 
-src/Filesystem/ov014/func_ov014_021845ec.cpp:
+src/Menu/Bestiary/BestiaryDetail_ReleaseResources.cpp:
     complete
     .text start:0x021845ec end:0x02184700
 
-src/Unclassified/ov014/func_ov014_02187228.cpp:
+src/Menu/Bestiary/BestiaryScreen_SelectPageContainingEntry.cpp:
     complete
     .text start:0x02187228 end:0x021872dc
 
-src/Unclassified/ov014/func_ov014_02186e2c.cpp:
+src/Menu/Bestiary/BestiaryScreen_DrawSelectionCursor.cpp:
     complete
     .text start:0x02186e2c end:0x02186f10
 
-src/Unclassified/ov014/func_ov014_021885bc.cpp:
+src/Menu/Bestiary/Graphics_PopulateRecordListPage.cpp:
     complete
     .text start:0x021885bc end:0x021886f8
 
-src/Filesystem/ov014/func_ov014_02184f78.cpp:
+src/Menu/Bestiary/BestiaryDetail_BeginMonsterLoad.cpp:
     complete
     .text start:0x02184f78 end:0x021850cc
 
-src/Memory/ov014/func_ov014_021868b8.cpp:
+src/Menu/Bestiary/Graphics_InitializeDisplayRecordOwnerMemory.cpp:
     complete
     .text start:0x021868b8 end:0x02186a70
 
-src/Unclassified/ov014/func_ov014_02187c04.cpp:
+src/Menu/Bestiary/Graphics_ProcessFilteredRecordSelectionInput.cpp:
     complete
     .text start:0x02187c04 end:0x02187db8
 
-src/Unclassified/ov014/func_ov014_02188330.cpp:
+src/Menu/Bestiary/Graphics_PopulateRecordGroupSummaryDisplay.cpp:
     complete
     .text start:0x02188330 end:0x021884cc
 
-src/Data/ov014/data_ov014_021895c8.cpp:
+src/Data/BestiaryDetail_PlayNextMonsterAnimation_TextStand.cpp:
     complete
     .data start:0x021895c8 end:0x021895ce
 
-src/Data/ov014/data_ov014_021895ce.cpp:
+src/Data/BestiaryDetailPlayNextMonsterAnimation_TextRunWithAdjacentText.cpp:
     complete
     .data start:0x021895ce end:0x021895d5
 
-src/Data/ov014/data_ov014_021895d5.cpp:
+src/Data/Graphics_AdvanceObjectArchiveAndTextLoads_PathDataPrmMonsInfo2Nat.cpp:
     complete
     .data start:0x021895d5 end:0x021895ed
 
-src/Data/ov014/data_ov014_021895ed.cpp:
+src/Data/Graphics_AdvanceObjectArchiveAndTextLoads_PathDataPrmItemnameGp2.cpp:
     complete
     .data start:0x021895ed end:0x02189603
 
-src/Data/ov014/data_ov014_02189603.cpp:
+src/Data/Graphics_AdvanceObjectArchiveAndTextLoads_MarkupItemnameLGNat.cpp:
     complete
     .data start:0x02189603 end:0x02189615
 
-src/Data/ov014/data_ov014_02189615.cpp:
+src/Data/Graphics_AdvanceObjectArchiveAndTextLoads_PathDataPrmMonTrvDGp2.cpp:
     complete
     .data start:0x02189615 end:0x0218962c
 
-src/Data/ov014/data_ov014_0218962c.cpp:
+src/Data/Graphics_AdvanceObjectArchiveAndTextLoads_FormatMonTrvDLGNat.cpp:
     complete
     .data start:0x0218962c end:0x0218963f
 
-src/Data/ov014/data_ov014_0218963f.cpp:
+src/Data/Graphics_AdvanceObjectArchiveAndTextLoads_PathDataAniBgSiGp2.cpp:
     complete
     .data start:0x0218963f end:0x02189652
 
-src/Data/ov014/data_ov014_02189652.cpp:
+src/Data/Graphics_AdvanceObjectArchiveAndTextLoads_MarkupBgSiLGPac.cpp:
     complete
     .data start:0x02189652 end:0x02189661
 
-src/Data/ov014/data_ov014_02189661.cpp:
+src/Data/Graphics_AdvanceObjectArchiveAndTextLoads_FormatSMon.cpp:
     complete
     .data start:0x02189661 end:0x02189668
 
-src/Data/ov014/data_ov014_02189668.cpp:
+src/Data/Graphics_AdvanceObjectArchiveAndTextLoads_PathDataPackLv5EnemyGp2.cpp:
     complete
     .data start:0x02189668 end:0x02189680
 
-src/Data/ov014/data_ov014_02189680.cpp:
+src/Data/Graphics_AdvanceObjectArchiveAndTextLoads_TextCchr.cpp:
     complete
     .data start:0x02189680 end:0x02189686
 
-src/Data/ov014/data_ov014_02189686.cpp:
+src/Data/Graphics_AdvanceObjectArchiveAndTextLoads_TextCmot.cpp:
     complete
     .data start:0x02189686 end:0x0218968c
 
-src/Data/ov014/data_ov014_0218968c.cpp:
+src/Data/Graphics_AdvanceObjectArchiveAndTextLoads_TextBact.cpp:
     complete
     .data start:0x0218968c end:0x02189692
 
-src/Data/ov014/data_ov014_02189692.cpp:
+src/Data/Graphics_AdvanceLayoutResourceLoading_PathDataAniLaySmlLia.cpp:
     complete
     .data start:0x02189692 end:0x021896a7
 
-src/Data/ov014/data_ov014_021896a7.cpp:
+src/Data/Graphics_AdvanceLayoutResourceLoading_PathDataAniObjSmiPac.cpp:
     complete
     .data start:0x021896a7 end:0x021896bc
 
-src/Data/ov014/data_ov014_021896bc.cpp:
+src/Data/BestiaryDetail_QueueDefaultBackgroundLoad_PathDataAniBgSmitopPac.cpp:
     complete
     .data start:0x021896bc end:0x021896d4
 
-src/Data/ov014/data_ov014_0218970c.cpp:
+src/Data/Graphics_AdvanceSelectionResourceInitialization_PathDataPrmMonListGp2.cpp:
     complete
     .data start:0x0218970c end:0x02189722
 
-src/Data/ov014/data_ov014_02189722.cpp:
+src/Data/Graphics_AdvanceSelectionResourceInitialization_MarkupMonListLGNat.cpp:
     complete
     .data start:0x02189722 end:0x02189734
 
-src/Data/ov014/data_ov014_02189734.cpp:
+src/Data/Graphics_AdvanceSelectionResourceInitialization_PathDataBinMenuBmSmlGp2.cpp:
     complete
     .data start:0x02189734 end:0x0218974d
 
-src/Data/ov014/data_ov014_0218974d.cpp:
+src/Data/Graphics_AdvanceSelectionResourceInitialization_TextBmSml.cpp:
     complete
     .data start:0x0218974d end:0x02189754
 
-src/Data/ov014/data_ov014_02189754.cpp:
+src/Data/Graphics_AdvanceSelectionResourceInitialization_PathDataAniObjSml2Pac.cpp:
     complete
     .data start:0x02189754 end:0x0218976a
 
-src/Data/ov014/data_ov014_0218976a.cpp:
+src/Data/Graphics_AdvanceSelectionResourceInitialization_PathDataBinMenuStrSmlGp2.cpp:
     complete
     .data start:0x0218976a end:0x02189784
 
-src/Data/ov014/data_ov014_02189784.cpp:
+src/Data/Graphics_AdvanceSelectionResourceInitialization_MarkupStrSmlLGNat.cpp:
     complete
     .data start:0x02189784 end:0x02189795
 
-src/Data/ov014/data_ov014_02189795.cpp:
+src/Data/Graphics_LoadLocalizedCanvasResources_PathDataAniBgSmlttlPac.cpp:
     complete
     .data start:0x02189795 end:0x021897ac
 
-src/Data/ov014/data_ov014_021897ac.cpp:
+src/Data/Graphics_LoadLocalizedCanvasResources_PathDataAniBgSmlitiPac.cpp:
     complete
     .data start:0x021897ac end:0x021897c4
 
-src/Data/ov014/data_ov014_021897cc.cpp:
+src/Data/ProgramData_MarkupEnchabLGNat.cpp:
     complete
     .data start:0x021897cc end:0x021897dc
 
-src/Data/ov014/data_ov014_021897dc.cpp:
+src/Data/ProgramData_PathDataPrmEnchabGp2.cpp:
     complete
     .data start:0x021897dc end:0x02189800
 
-src/Unclassified/ov014/func_ov014_02185c3c.cpp:
+src/Menu/Bestiary/BestiaryDetail_AdvanceLoadsCallback.cpp:
     complete
     .text start:0x02185c3c end:0x02185c48
 
-src/Graphics/ov014/Graphics_LoadLocalizedCanvasResources.cpp:
+src/Menu/Bestiary/Graphics_LoadLocalizedCanvasResources.cpp:
     complete
     .text start:0x021886f8 end:0x02188a8c
 
-src/Graphics/ov014/Graphics_ToggleSelectionFromTouchOrButton.cpp:
+src/Menu/Bestiary/Graphics_ToggleSelectionFromTouchOrButton.cpp:
     complete
     .text start:0x02187074 end:0x02187228
 
-src/Memory/ov014/Memory_AllocateGraphicsBuffersAndNestedAllocators.cpp:
+src/Menu/Bestiary/Memory_AllocateGraphicsBuffersAndNestedAllocators.cpp:
     complete
     .text start:0x02184300 end:0x021844c4
 
-src/Graphics/ov014/Graphics_UpdateFilteredDisplaySelection.cpp:
+src/Menu/Bestiary/Graphics_UpdateFilteredDisplaySelection.cpp:
     complete
     .text start:0x02187db8 end:0x02188010
 
-src/Graphics/ov014/Graphics_AdvanceObjectArchiveAndTextLoads.cpp:
+src/Menu/Bestiary/Graphics_AdvanceObjectArchiveAndTextLoads.cpp:
     complete
     .text start:0x021850cc end:0x0218580c
+
+src/Menu/Bestiary/BestiaryDetail_DrawModelAndIndicators.cpp:
+    complete
+    .text start:0x02184a64 end:0x02184c08
+
+src/Menu/Bestiary/BestiaryScreen_AdvanceMonsterListView.cpp:
+    complete
+    .text start:0x02188010 end:0x021882d4
+
+src/Menu/Bestiary/Graphics_UpdateObjectInputRotationAndDispatch.cpp:
+    complete
+    .text start:0x02184700 end:0x02184a64
+
+src/Menu/Bestiary/Graphics_AdvanceLayoutResourceLoading.cpp:
+    complete
+    .text start:0x0218580c end:0x02185c3c
+
+src/Menu/Bestiary/Graphics_AdvanceSelectionResourceInitialization.cpp:
+    complete
+    .text start:0x02187568 end:0x02187b38
+
+src/Menu/Bestiary/BestiaryDetail_ToggleTriviaPage.cpp:
+    complete
+    .text start:0x02184dcc end:0x02184e3c

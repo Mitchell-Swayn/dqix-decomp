@@ -1,0 +1,5 @@
+#include <globaldefs.h>
+ARM
+struct Vec{int x,y,z;};extern "C" void Vector3fix_Subtract(const void*,const void*,void*);extern "C" int Vector3fix_Length(const void*);extern "C" int fix32_Divide(int,int);extern "C" void _Z24Vector3fixMultiplyScalarPK8Vector3iiPS_(void*,int,void*);extern "C" void Vector3fix_Add(const void*,const void*,void*);extern "C" void _ZN8Vector3iaSERKS_(void*,const void*);extern "C" void ActorSprite_SetPositiveAnimationPlaybackRate(void*,float);
+// Original: arm9/main @ 0x0203C960; symbol: func_0203c960; size: 0xC4.
+extern "C" void Object_AdvancePositionTowardTargetAtSpeed(char* p){Vec delta,result;Vector3fix_Subtract(p+120,p+4,&delta);int len=Vector3fix_Length(&delta);if(*(int*)(p+140)<len){int scale=fix32_Divide(*(int*)(p+140),len);_Z24Vector3fixMultiplyScalarPK8Vector3iiPS_(&delta,scale,&delta);Vector3fix_Add(p+4,&delta,&result);_ZN8Vector3iaSERKS_(p+4,&result);ActorSprite_SetPositiveAnimationPlaybackRate(p,(float)((double)*(int*)(p+140)/0.03/4096.0));}else{_ZN8Vector3iaSERKS_(p+4,p+120);*(unsigned*)(p+92)&=~1u;}}

@@ -6,17 +6,17 @@
 #include "Resource/GameResources.h"
 
 #ifdef jpn
-#define PushBoundedModeIndexOntoGlobalStack func_020a3b70
+#define OverlayLoader_PushPrimarySelection func_020a3b70
 #define func_020a57e4 func_020a7588
 #define func_020a5b1c func_020a78c0
-#define OverlayLoader_PopSlotAndOptionallyRestorePriorOverlay func_020a3bcc
+#define OverlayLoader_PopPrimarySelectionAndOptionallyRestoreOverlay func_020a3bcc
 #endif
 
 extern "C"
 {
     // some relation to loading overlays
-    void PushBoundedModeIndexOntoGlobalStack(unsigned int);
-    void OverlayLoader_PopSlotAndOptionallyRestorePriorOverlay(int);
+    void OverlayLoader_PushPrimarySelection(unsigned int);
+    void OverlayLoader_PopPrimarySelectionAndOptionallyRestoreOverlay(int);
 }
 
 #define TMAPLANGDATA_READ(offset, into, len) \
@@ -91,10 +91,10 @@ bool ExportDetailedTreasureMapData(const TreasureMapMetadata* from,
         to->legacy_.Populate(from->QualityOrLegacyBossID, from->LegacyBossLevel, from->SeedOrMinTurns);
     }
 
-    PushBoundedModeIndexOntoGlobalStack(4);
+    OverlayLoader_PushPrimarySelection(4);
     to->LoadLegacyBossStats(computeLegacyStats, legacyStatsData);
     to->LoadTreasures();
-    OverlayLoader_PopSlotAndOptionallyRestorePriorOverlay(1);
+    OverlayLoader_PopPrimarySelectionAndOptionallyRestoreOverlay(1);
 
     for (int i = 0; i < 3; i++)
         to->discoveredTreasures_[i] = false;

@@ -8,6 +8,26 @@ ARM
 #pragma force_active on
 #pragma optimization_level 4
 struct Triple{int x,y,z;};
-extern "C" {void ComputeRotatedEndpointFromAngleHeightAndLength(void*,int,int,int);void* Object_BinarySearch132ByteRecordsByCallback(void*,int,int(*)(void*));int ReadHalfword0Low15Bits(void*);void Object_LoadNarcIntoReusableSafeAllocator(void*);int Graphics_DecodeSignedBrightness(volatile unsigned short*);void* SafeAllocator_ResetAndReturnPointer(void*);void LinkedList_PushFrontUsingWordTwoLink(void*,void*);void* FindRecordAmongFourByNonnegativeKey(void*,int);extern char data_02112754[],data_0210783c[],data_02111804[],data_020fdd44[];}
+// Original data: arm9/main @ 0x20fdd44; symbol: data_020fdd44.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 3168 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x210783c; symbol: data_0210783c.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 20 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x2111804; symbol: data_02111804.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x2112754; symbol: data_02112754.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 44 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" {void ComputeRotatedEndpointFromAngleHeightAndLength(void*,int,int,int);void* MonsterBattleData_BinarySearchWithIdCallback(void*,int,int(*)(void*));int MonsterBattleData_GetRecordId(void*);void WindowFrame_LoadArchivePartsWithReusableAllocator(void*);int Graphics_DecodeSignedBrightness(volatile unsigned short*);void* SafeAllocator_ResetAndReturnPointer(void*);void LinkedList_PushFrontUsingWordTwoLink(void*,void*);void* ZoneState_FindTrackedZoneByIdentifier(void*,int);extern char ObjectInvokeLockMutex_UnknownRoleZeroInitializedStorage[],TextInitializeSharedContextAndResources_UnknownRoleZeroInitializedStorage[],PowerManagementPrependSleepCallback_UnknownRoleZeroInitializedStorage[],ZoneStateGetTrackedZoneCache_UnknownRoleZeroInitializedStorage[];}
 // Original: arm9/main @ 0x020DBFE0; symbol: func_020dbfe0; size: 0x14.
 extern "C" int Graphics_ReadSubSignedBrightness(){return Graphics_DecodeSignedBrightness((volatile unsigned short*)0x0400106c);}

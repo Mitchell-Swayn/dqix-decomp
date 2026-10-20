@@ -52,6 +52,21 @@ class ProfileTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'patch hash'):
             resolve_objdiff(self.root, 'usa', self.old)
 
+    def test_prefix_mapping_patch_is_pinned_and_confined(self):
+        prefix = self.root / 'tools/patches/prefix.patch'
+        prefix.write_bytes(b'prefix repair')
+        self.data.update(prefix_patch='tools/patches/prefix.patch',
+                         prefix_patch_sha256=hashlib.sha256(prefix.read_bytes()).hexdigest())
+        self.save()
+        self.assertEqual(resolve_objdiff(self.root, 'usa', self.old), str(self.new))
+        prefix.write_bytes(b'unreviewed')
+        with self.assertRaisesRegex(ValueError, 'prefix patch hash'):
+            resolve_objdiff(self.root, 'usa', self.old)
+        self.data['prefix_patch'] = '../outside'
+        self.save()
+        with self.assertRaisesRegex(ValueError, 'prefix patch leaves'):
+            resolve_objdiff(self.root, 'usa', self.old)
+
     def test_rejects_path_escape(self):
         self.data['executable'] = '../outside'
         self.save()

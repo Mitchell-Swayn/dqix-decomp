@@ -5,7 +5,7 @@ import re
 import subprocess
 
 POLICY = Path('config/usa/function_naming.json')
-PLACEHOLDER = re.compile(r'(?:^|::)(?:func|Func|FUN|sub)_?[0-9a-fA-F]{8}(?:\(|$)')
+PLACEHOLDER = re.compile(r'(?:^|::)(?:func|Func|FUN|sub)_?(?:ov[0-9]{3}_)?[0-9a-fA-F]{8}(?:\(|$)')
 
 
 def readable_names(names):

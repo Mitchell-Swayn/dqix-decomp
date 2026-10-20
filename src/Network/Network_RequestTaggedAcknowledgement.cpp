@@ -1,0 +1,3 @@
+extern "C" void *Network_GetConnectionManager();extern "C" int Network_IsClientSession(void*);extern "C" void QueueTaggedRecordOperationMessage34(int,unsigned int,int);extern "C" unsigned char *Network_FindTaggedAcknowledgement(void*,unsigned int,int);
+// Original: arm9/main @ 0x020E39D4; symbol: func_020e39d4; size: 0x7C.
+extern "C" void Network_RequestTaggedAcknowledgement(void *self,unsigned int bit,unsigned int key,int value){if(Network_IsClientSession(Network_GetConnectionManager())){QueueTaggedRecordOperationMessage34(0,key&255,value);return;}unsigned char *entry=Network_FindTaggedAcknowledgement(self,key,value);if(!entry)return;if(entry[5]&&entry[5]==entry[6])return;entry[5]|=1u<<bit;}

@@ -1,0 +1,12 @@
+struct Effect { char reserved[16]; unsigned char enabled, flags; char middle[0x22]; int height; char unknown[12]; int x,y,z; };
+extern "C" { void *_ZN16BackgroundLoader11GetInstanceEv(); void *Object_GetGlobalSixteenEntryDisplayState(); char *TextContext_GetSharedInstance(); void _ZN13SafeAllocator5ResetEv(void*); void TextureVRAM_SnapshotAllocationBounds(void*); extern char BattleScene_AdvanceEncounterTextEffect_PathDataEffectEv999991210Chr[]; short _ZN16BackgroundLoader13QueueLoadFileEPKcP13SafeAllocator(void*,const char*,void*); int _ZN16BackgroundLoader13GetTaskStatusEi(void*,short); void _ZN16BackgroundLoader17GetLoadedFileByIDEiPPvPj(void*,short,void**,int*); void AllocateInitializeAndAppendLinkedNode(void*,int,void*,void*,int,void*); void _ZN16BackgroundLoader10RemoveTaskEi(void*,short); void Object_InitializeRenderValuesAndUnitScales(Effect*); short ObjectPool_SpawnFromTemplateKey(void*,int,Effect*); }
+// Original: arm9/ov026 @ 0x021DB3D8; symbol: func_ov026_021db3d8; size: 0x1CC.
+extern "C" void BattleScene_AdvanceEncounterTextEffect(char *state) {
+if(*(unsigned char*)(*(char**)(state+0x29c)+0x8e49)!=2) return;
+void *loader=_ZN16BackgroundLoader11GetInstanceEv();void *effects=Object_GetGlobalSixteenEntryDisplayState();
+if(*(signed char*)(state+0x772e)==0){if(*(int*)(TextContext_GetSharedInstance()+0x9a0)==4)state[0x772e]=1;}
+else if(*(signed char*)(state+0x772e)==1){if(*(int*)(TextContext_GetSharedInstance()+0x9a0)==5)state[0x772e]=2;}
+if(*(signed char*)(state+0x7728)==0){_ZN13SafeAllocator5ResetEv(state+0x774c);TextureVRAM_SnapshotAllocationBounds(state+0x7760);*(short*)(state+0x772a)=_ZN16BackgroundLoader13QueueLoadFileEPKcP13SafeAllocator(loader,BattleScene_AdvanceEncounterTextEffect_PathDataEffectEv999991210Chr,state+0x774c);state[0x7728]=1;}
+else if(*(signed char*)(state+0x7728)==1){if(_ZN16BackgroundLoader13GetTaskStatusEi(loader,*(short*)(state+0x772a))){void *data;int size;_ZN16BackgroundLoader17GetLoadedFileByIDEiPPvPj(loader,*(short*)(state+0x772a),&data,&size);AllocateInitializeAndAppendLinkedNode(effects,19,state+0x774c,data,size,state+0x7760);_ZN16BackgroundLoader10RemoveTaskEi(loader,*(short*)(state+0x772a));state[0x7728]=2;}}
+else if(*(signed char*)(state+0x7728)==2 && *(signed char*)(state+0x772e)==2){Effect effect;Object_InitializeRenderValuesAndUnitScales(&effect);effect.flags|=2;effect.enabled=0;effect.height=-0x3000;effect.x=0x10a;effect.y=0x10a;effect.z=0x10a;*(short*)(state+0x772c)=ObjectPool_SpawnFromTemplateKey(effects,19,&effect);state[0x772e]=-1;state[0x7728]=-1;}
+}

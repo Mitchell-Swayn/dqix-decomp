@@ -1,7 +1,12 @@
 // func_020d2ac4 clamps attenuation to [-723,0], indexing with bias723.
 // Low output byte is this hardware volume code; high byte selects a coarse shift
 // at attenuation thresholds -240,-120,-60. These are numeric gain values.
-extern "C" const unsigned char data_020edf2c[724] = {
+// Original data: arm9/main @ 0x20edf2c; symbol: data_020edf2c.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 00010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101 ...; full span in module reference.
+// Observed span: 724 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" const unsigned char SoundVolumeEncodeClampedDecibelAttenuation_UnknownRoleInitializedBytes[724] = {
     0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,

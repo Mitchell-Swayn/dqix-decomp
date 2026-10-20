@@ -15,19 +15,19 @@
 #pragma optimize_for_size off
 
 #if defined(jpn)
-#define data_020e9240 data_020e934c
-#define data_020e9260 data_020e936c
-#define data_020e9284 data_020e9390
-#define data_020f1ce0 data_020f1e4c
-#define data_020f1cec data_020f1e58
-#define data_020f1cf8 data_020f1e64
-#define data_020f1d08 data_020f1e74
-#define data_020f1d78 data_020f1ee4
-#define data_020f1dc0 data_020f1f2c
-#define data_020f1e08 data_020f1f74
-#define data_0210a274 data_02109f2c
-#define data_0210a278 data_02109f30
-#define data_0210b078 data_0210ad30
+#define MaterialBindProc_UnknownRoleInitializedBytes data_020e934c
+#define RenderCommand6_UnknownRoleInitializedBytes data_020e936c
+#define GetMatrixFromIndex_UnknownRoleInitializedBytes data_020e9390
+#define SetUpRenderCommandHandler_UnknownRoleProcedureReferenceRecords data_020f1e4c
+#define SetUpRenderCommandHandler_UnknownRoleProcedureReferenceRecords_Variant2 data_020f1e58
+#define RenderMeshWithMaterial_UnknownRoleProcedureReferenceRecords data_020f1e64
+#define RenderCommand12_UnknownRoleProcedureReferenceRecords data_020f1e74
+#define RenderCommand7_UnknownRoleInitializedBytes data_020f1ee4
+#define RenderCommand8_UnknownRoleInitializedBytes data_020f1f2c
+#define ExecuteRenderCommands_UnknownRoleProcedureReferenceRecords data_020f1f74
+#define ApplyBindPoseScaling_UnknownRoleZeroInitializedStorage data_02109f2c
+#define MaterialBindProc_UnknownRoleZeroInitializedStorage data_02109f30
+#define BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage data_0210ad30
 
 #define func_020c1868 func_020c3334
 #define func_020c223c func_020c3d08
@@ -38,9 +38,9 @@
 #define Geometry_ReadClipMatrixWhenIdle func_020c6fc8
 #define MIi_CpuClear32 func_020cbeb8
 #define MIi_CpuCopy32 func_020cbed4
-#define func_020ca430 func_020cbefc
+#define MI_Send32 func_020cbefc
 #define MIi_CpuClearFast func_020cbf24
-#define func_020ca7d0 func_020cc29c
+#define MI_Zero36B func_020cc29c
 #endif
 
 // holds values:
@@ -54,23 +54,53 @@
 // ambient reflection color and (set vertex color yes/no)
 // For SPE_EMI these are masks corresponding to specular reflection color,
 // emission color and (enable specular reflection shininess table yes/no)
-extern unsigned int const data_020e9240[];
+// Original data: arm9/main @ 0x20e9240; symbol: data_020e9240.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 00000000ff7f00000000ff7fff7fff7f00800000ffff00000080ff7fffffff7f.
+// Observed span: 32 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern unsigned int const MaterialBindProc_UnknownRoleInitializedBytes[];
 
 // pivot matrix a/b/c/d position lookup
 // both arrays are identical
 struct PivotMatrixPositions {
     uint8_t a, b, c, d;
 };
-extern const PivotMatrixPositions data_020e9260[], data_020e9284[];
+// Original data: arm9/main @ 0x20e9260; symbol: data_020e9260.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 040507080305060803040607010207080002060800010607010204050002030500010304.
+// Observed span: 36 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x20e9284; symbol: data_020e9284.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 040507080305060803040607010207080002060800010607010204050002030500010304.
+// Observed span: 36 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const PivotMatrixPositions RenderCommand6_UnknownRoleInitializedBytes[], GetMatrixFromIndex_UnknownRoleInitializedBytes[];
 
 // Holds { func_020b9a2c, func_020b9b30, func_020ba390 }.
 // Called by command 6 to populate scaling data for the bone matrix
-extern void (*data_020f1cec[])(BoneMatrixRenderData*, NSBXXBoneMatrix::Scaling* boneMatrixScaleData, uint8_t* ip, int boneMatrixFlags);
+// Original data: arm9/main @ 0x20f1cec; symbol: data_020f1cec.
+// Contains original relocated procedure references. Record fields, dispatch contract and exclusive ownership may remain unresolved.
+// Initial values: hex 2c9a0b02309b0b0290a30b02.
+// Observed span: 12 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern void (*SetUpRenderCommandHandler_UnknownRoleProcedureReferenceRecords_Variant2[])(BoneMatrixRenderData*, NSBXXBoneMatrix::Scaling* boneMatrixScaleData, uint8_t* ip, int boneMatrixFlags);
 // Holds { func_020b99b0, func_020b9a6c, func_020ba264 }
 // Called by command 6 to apply bone matrix transformations via the GXFifo
-extern void (*data_020f1ce0[])(BoneMatrixRenderData*);
+// Original data: arm9/main @ 0x20f1ce0; symbol: data_020f1ce0.
+// Contains original relocated procedure references. Record fields, dispatch contract and exclusive ownership may remain unresolved.
+// Initial values: hex b0990b026c9a0b0264a20b02.
+// Observed span: 12 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern void (*SetUpRenderCommandHandler_UnknownRoleProcedureReferenceRecords[])(BoneMatrixRenderData*);
 // Holds { func_020ba11c func_020ba5ac, func_020bac74, func_020bb29c }
-extern void (*data_020f1cf8[])(MaterialRenderData*);
+// Original data: arm9/main @ 0x20f1cf8; symbol: data_020f1cf8.
+// Contains original relocated procedure references. Record fields, dispatch contract and exclusive ownership may remain unresolved.
+// Initial values: hex 1ca10b02aca50b0274ac0b029cb20b02.
+// Observed span: 16 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern void (*RenderMeshWithMaterial_UnknownRoleProcedureReferenceRecords[])(MaterialRenderData*);
 
 extern struct Struct_020f1d08
 {
@@ -87,7 +117,7 @@ extern struct Struct_020f1d08
     void (*meshDrawFunctions[4])(RenderCommandHandler*, int modifier, NSBXXMesh*, unsigned int idx);
 
     Matrix4x4 command13Matrix4x4_;
-} data_020f1d08;
+} RenderCommand12_UnknownRoleProcedureReferenceRecords;
 
 // a blob of GXFIFO data used by command 7. The entries are
 // - combined command (12, 10, 17, 1b) = (pop matrix, matrix mode, load 3x4, scale)
@@ -109,26 +139,61 @@ struct Struct_020f1d78 {
     Matrix4x3 rotationTranslation;
 
     Vector3fix scaling;
-} extern data_020f1d78, data_020f1dc0;
+// Original data: arm9/main @ 0x20f1d78; symbol: data_020f1d78.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 1210171b010000000200000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000000000 ...; full span in module reference.
+// Observed span: 72 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x20f1dc0; symbol: data_020f1dc0.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 1210171b010000000200000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000000000 ...; full span in module reference.
+// Observed span: 72 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+} extern RenderCommand7_UnknownRoleInitializedBytes, RenderCommand8_UnknownRoleInitializedBytes;
 
 // render command lookup
-extern void (*data_020f1e08[])(RenderCommandHandler*, int);
+// Original data: arm9/main @ 0x20f1e08; symbol: data_020f1e08.
+// Contains original relocated procedure references. Record fields, dispatch contract and exclusive ownership may remain unresolved.
+// Initial values: hex 48430b0270430b0298430b0214450b02684a0b02ec4b0b028c4c0b02ec500b02f4530b0258570b02b45e0b02905f0b0200600b0244630b020000000000000000 ...; full span in module reference.
+// Observed span: 128 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern void (*ExecuteRenderCommands_UnknownRoleProcedureReferenceRecords[])(RenderCommandHandler*, int);
 
-extern struct RenderCommandHandler* data_0210a274;
+// Original data: arm9/main @ 0x210a274; symbol: data_0210a274.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern struct RenderCommandHandler* ApplyBindPoseScaling_UnknownRoleZeroInitializedStorage;
 // sizeof == 0x38
-MaterialRenderData extern data_0210a278[64];
+// Original data: arm9/main @ 0x210a278; symbol: data_0210a278.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 3584 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+MaterialRenderData extern MaterialBindProc_UnknownRoleZeroInitializedStorage[64];
 
 struct Struct_0210b078
 {
     Vector3fix vec0_;
     BoneMatrixRenderData::Scale vec1_;
-} extern data_0210b078[64];
+// Original data: arm9/main @ 0x210b078; symbol: data_0210b078.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 1536 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+} extern BoneMatrixScaleCalculationProcType2_UnknownRoleZeroInitializedStorage[64];
 
 struct Struct_0210b678
 {
     Matrix4x4 mat4x4;
     Matrix3x3 mat3x3;
-} extern data_0210b678[64];
+// Original data: arm9/main @ 0x210b678; symbol: data_0210b678.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 6400 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+} extern RenderCommand9_UnknownRoleZeroInitializedStorage[64];
 
 extern "C"
 {  
@@ -168,9 +233,9 @@ extern "C"
     // memcpy via u32 values
     void MIi_CpuCopy32(const void* src, void* dst, unsigned int numBytes);
     // repeatedly write u32s to dst (useful for hardware registers)
-    void func_020ca430(const void* src, volatile void* dst, unsigned int numBytes);
+    void MI_Send32(const void* src, volatile void* dst, unsigned int numBytes);
     // aligned 32-byte-looped memset
     void MIi_CpuClearFast(int value, void* dst, unsigned int len);
     // zero-initialize matrix
-    void func_020ca7d0(void*);
+    void MI_Zero36B(void*);
 }

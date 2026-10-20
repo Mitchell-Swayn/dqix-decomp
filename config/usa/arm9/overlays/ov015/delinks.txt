@@ -4,694 +4,838 @@
     .data       start:0x02193fa0 end:0x02194560 kind:data align:32
     .bss        start:0x02194560 end:0x02194600 kind:bss align:32
 
-src/Unclassified/ov015/func_ov015_02191284.cpp:
+src/Debug/ModelViewer/CharacterViewer_GetMenuSelectionIndex.cpp:
     complete
     .text start:0x02191284 end:0x02191294
 
-src/Unclassified/ov015/func_ov015_02193150.cpp:
+src/Debug/ModelViewer/CharacterViewer_SetMenuSelectionIndex.cpp:
     complete
     .text start:0x02193150 end:0x02193160
 
-src/Unclassified/ov015/func_ov015_021933ac.cpp:
+src/Debug/ModelViewer/CharacterViewer_ResetVramReservationSlot.cpp:
     complete
     .text start:0x021933ac end:0x021933bc
 
-src/Unclassified/ov015/func_ov015_0218bc9c.cpp:
+src/Debug/ModelViewer/CharacterViewer_GetTrackedBoneIndex.cpp:
     complete
     .text start:0x0218bc9c end:0x0218bcb0
 
-src/Unclassified/ov015/func_ov015_0219313c.cpp:
+src/Debug/ModelViewer/CharacterViewer_InitializeMenuSelectionRange.cpp:
     complete
     .text start:0x0219313c end:0x02193150
 
-src/Unclassified/ov015/func_ov015_0218b810.cpp:
+src/Debug/ModelViewer/CharacterViewer_InitializeMenuCatalog.cpp:
     complete
     .text start:0x0218b810 end:0x0218b828
 
-src/Unclassified/ov015/func_ov015_021931b4.cpp:
+src/Debug/ModelViewer/CharacterViewer_PushMenuHistory.cpp:
     complete
     .text start:0x021931b4 end:0x021931cc
 
-src/Unclassified/ov015/func_ov015_0218ba1c.cpp:
+src/Debug/ModelViewer/CharacterViewer_AppendScenePreset.cpp:
     complete
     .text start:0x0218ba1c end:0x0218ba44
 
-src/Unclassified/ov015/func_ov015_0218bb14.cpp:
+src/Debug/ModelViewer/CharacterViewer_GetScenePreset.cpp:
     complete
     .text start:0x0218bb14 end:0x0218bb3c
 
-src/Unclassified/ov015/func_ov015_0218bae8.cpp:
+src/Debug/ModelViewer/CharacterViewer_GetMenuCatalogEntry.cpp:
     complete
     .text start:0x0218bae8 end:0x0218bb14
 
-src/Unclassified/ov015/func_ov015_021931cc.cpp:
+src/Debug/ModelViewer/CharacterViewer_PopMenuHistory.cpp:
     complete
     .text start:0x021931cc end:0x021931f8
 
-src/Unclassified/ov015/func_ov015_0218ffa8.cpp:
+src/Debug/ModelViewer/CharacterViewer_SetPlayerGender.cpp:
     complete
     .text start:0x0218ffa8 end:0x0218ffd0
 
-src/Unclassified/ov015/func_ov015_0218ffd0.cpp:
+src/Debug/ModelViewer/CharacterViewer_SetPlayerSkinColour.cpp:
     complete
     .text start:0x0218ffd0 end:0x0218fff8
 
-src/Unclassified/ov015/func_ov015_0218fff8.cpp:
+src/Debug/ModelViewer/CharacterViewer_SetPlayerHairColour.cpp:
     complete
     .text start:0x0218fff8 end:0x02190020
 
-src/Unclassified/ov015/func_ov015_0218ff7c.cpp:
+src/Debug/ModelViewer/CharacterViewer_SetModelPartResource.cpp:
     complete
     .text start:0x0218ff7c end:0x0218ffa8
 
-src/Unclassified/ov015/func_ov015_0219005c.cpp:
+src/Debug/ModelViewer/CharacterViewer_SetPlayerBodyScale.cpp:
     complete
     .text start:0x0219005c end:0x02190090
 
-src/Unclassified/ov015/func_ov015_021931f8.cpp:
+src/Debug/ModelViewer/CharacterViewer_FindUnusedPlayerVramReservation.cpp:
     complete
     .text start:0x021931f8 end:0x0219322c
 
-src/Unclassified/ov015/func_ov015_0219322c.cpp:
+src/Debug/ModelViewer/CharacterViewer_FindUnusedDollVramReservation.cpp:
     complete
     .text start:0x0219322c end:0x02193260
 
-src/Unclassified/ov015/func_ov015_02193260.cpp:
+src/Debug/ModelViewer/CharacterViewer_FindUnusedSingleModelVramReservation.cpp:
     complete
     .text start:0x02193260 end:0x02193294
 
-src/Resource/ov015/func_ov015_0218b5a0.cpp:
+src/Debug/ModelViewer/CharacterViewer_ScriptAllocateMenuEntries.cpp:
     complete
     .text start:0x0218b5a0 end:0x0218b5c8
 
-src/Resource/ov015/func_ov015_0218b6bc.cpp:
+src/Debug/ModelViewer/Resource_AllocateRecordPairsFromScriptCount.cpp:
     complete
     .text start:0x0218b6bc end:0x0218b6e4
 
-src/Resource/ov015/func_ov015_0218b9ac.cpp:
+src/Debug/ModelViewer/Script_InitializeRecordPairStorage.cpp:
     complete
     .text start:0x0218b9ac end:0x0218b9d4
 
-src/Resource/ov015/func_ov015_0218b978.cpp:
+src/Debug/ModelViewer/CharacterViewer_AllocateMenuCatalogEntries.cpp:
     complete
     .text start:0x0218b978 end:0x0218b9ac
 
-src/Unclassified/ov015/func_ov015_0218b828.cpp:
+src/Debug/ModelViewer/CharacterViewer_DestroyMenuCatalog.cpp:
     complete
     .text start:0x0218b828 end:0x0218b978
 
-src/Resource/ov015/func_ov015_0218b5c8.cpp:
+src/Debug/ModelViewer/CharacterViewer_ScriptAppendMenuEntry.cpp:
     complete
     .text start:0x0218b5c8 end:0x0218b6bc
 
-src/Unclassified/ov015/func_ov015_0218b9d4.cpp:
+src/Debug/ModelViewer/CharacterViewer_AppendMenuCatalogEntry.cpp:
     complete
     .text start:0x0218b9d4 end:0x0218ba1c
 
-src/Data/ov015/data_ov015_02193fc8.cpp:
+src/Data/Resource_LoadAndExecuteScriptWithOwner_PathDataBinCharaview4Bin.cpp:
     complete
     .data start:0x2193fc8 end:0x2193fe0
 
-src/Data/ov015/data_ov015_02193fe4.cpp:
+src/Data/Text_FormatSerializedRecordValue_TextNsbtx.cpp:
     complete
     .data start:0x2193fe4 end:0x2193fea
 
-src/Data/ov015/data_ov015_02193fea.cpp:
+src/Data/Text_FormatSerializedRecordValue_FormatDC03DSSS.cpp:
     complete
     .data start:0x2193fea end:0x2193ffa
 
-src/Data/ov015/data_ov015_02193ffa.cpp:
+src/Data/Text_FormatSerializedRecordValue_FormatPC03DSSS.cpp:
     complete
     .data start:0x2193ffa end:0x219400a
 
-src/Data/ov015/data_ov015_0219400a.cpp:
+src/Data/ResourceFormatCharacterViewerResourceName_TextMd.cpp:
     complete
     .data start:0x219400a end:0x219400d
 
-src/Data/ov015/data_ov015_0219400d.cpp:
+src/Data/ResourceFormatCharacterViewerResourceName_TextMp.cpp:
     complete
     .data start:0x219400d end:0x2194010
 
-src/Data/ov015/data_ov015_02194010.cpp:
+src/Data/ResourceFormatCharacterViewerResourceName_TextWp.cpp:
     complete
     .data start:0x2194010 end:0x2194013
 
-src/Data/ov015/data_ov015_02194013.cpp:
+src/Data/Resource_FormatCharacterViewerResourceName_FormatS02D02DC.cpp:
     complete
     .data start:0x2194013 end:0x2194020
 
-src/Data/ov015/data_ov015_02194020.cpp:
+src/Data/CharacterViewer_ReloadPlayerAnimationArchives_PathDataPackLv5CharaMpGp2.cpp:
     complete
     .data start:0x2194020 end:0x219403b
 
-src/Data/ov015/data_ov015_0219403b.cpp:
+src/Data/CharacterViewer_ReloadPlayerAnimationArchives_FormatSChr.cpp:
     complete
     .data start:0x219403b end:0x2194042
 
-src/Data/ov015/data_ov015_02194042.cpp:
+src/Data/CharacterViewer_ReloadPlayerAnimationArchives_FormatSeChr.cpp:
     complete
     .data start:0x2194042 end:0x219404a
 
-src/Data/ov015/data_ov015_0219404a.cpp:
+src/Data/CharacterViewer_ReloadPlayerAnimationArchives_FormatSmChr.cpp:
     complete
     .data start:0x219404a end:0x2194052
 
-src/Data/ov015/data_ov015_02194052.cpp:
+src/Data/Graphics_LoadNamedModelAndConfigureBones_PathDataCharaSChr.cpp:
     complete
     .data start:0x2194052 end:0x2194064
 
-src/Data/ov015/data_ov015_02194064.cpp:
+src/Data/CharacterViewer_ReloadPlayerAnimationArchives_PathDataCharaSCChr.cpp:
     complete
     .data start:0x2194064 end:0x2194078
 
-src/Data/ov015/data_ov015_02194078.cpp:
+src/Data/Graphics_LoadAnimationArchiveById_PathDataEventLv5SChr.cpp:
     complete
     .data start:0x2194078 end:0x219408e
 
-src/Data/ov015/data_ov015_0219408e.cpp:
+src/Data/Resource_ReloadObjectGroupAnimationFromGPC_TextStand.cpp:
     complete
     .data start:0x219408e end:0x2194094
 
-src/Data/ov015/data_ov015_02194094.cpp:
+src/Data/CharacterViewer_ReloadDollModelParts_PathDataPackLv5CharaPdGp2.cpp:
     complete
     .data start:0x2194094 end:0x21940af
 
-src/Data/ov015/data_ov015_021940af.cpp:
+src/Data/Resource_ReloadObjectGroupAnimationFromGPC_FormatSNsbca.cpp:
     complete
     .data start:0x21940af end:0x21940b8
 
-src/Data/ov015/data_ov015_021940b8.cpp:
+src/Data/Resource_ReloadObjectGroupAnimationFromGPC_FormatSBcfg.cpp:
     complete
     .data start:0x21940b8 end:0x21940c0
 
-src/Data/ov015/data_ov015_021940c0.cpp:
+src/Data/CharacterViewer_ReloadPlayerModelParts_PathDataPackLv5CharaPcGp2.cpp:
     complete
     .data start:0x21940c0 end:0x21940db
 
-src/Data/ov015/data_ov015_021940db.cpp:
+src/Data/CharacterViewer_ReloadPlayerModelParts_TextWaist.cpp:
     complete
     .data start:0x21940db end:0x21940e1
 
-src/Data/ov015/data_ov015_021940e1.cpp:
+src/Data/CharacterViewer_DrawPlayerModelParts_TextArm1R.cpp:
     complete
     .data start:0x21940e1 end:0x21940e7
 
-src/Data/ov015/data_ov015_021940e7.cpp:
+src/Data/CharacterViewer_DrawPlayerModelParts_TextArm1L.cpp:
     complete
     .data start:0x21940e7 end:0x21940ed
 
-src/Data/ov015/data_ov015_021940ed.cpp:
+src/Data/CharacterViewerReloadPlayerModelParts_TextPC.cpp:
     complete
     .data start:0x21940ed end:0x21940f0
 
-src/Data/ov015/data_ov015_021940f0.cpp:
+src/Data/CharacterViewer_ReloadDollModelParts_TextDOLL.cpp:
     complete
     .data start:0x21940f0 end:0x21940f5
 
-src/Data/ov015/data_ov015_021940f5.cpp:
+src/Data/CharacterViewer_LoadMonsterModel_FormatSFMon.cpp:
     complete
     .data start:0x21940f5 end:0x21940fe
 
-src/Data/ov015/data_ov015_021940fe.cpp:
+src/Data/CharacterViewer_LoadMonsterModel_FormatSMon.cpp:
     complete
     .data start:0x21940fe end:0x2194105
 
-src/Data/ov015/data_ov015_02194105.cpp:
+src/Data/CharacterViewer_LoadMonsterModel_PathDataPackLv5EnemyGp2.cpp:
     complete
     .data start:0x2194105 end:0x219411d
 
-src/Data/ov015/data_ov015_0219411d.cpp:
+src/Data/CharacterViewer_LoadMonsterModel_TextCchr.cpp:
     complete
     .data start:0x219411d end:0x2194123
 
-src/Data/ov015/data_ov015_02194123.cpp:
+src/Data/CharacterViewer_LoadMonsterModel_TextCmot.cpp:
     complete
     .data start:0x2194123 end:0x2194129
 
-src/Data/ov015/data_ov015_02194129.cpp:
+src/Data/Graphics_LoadModelArchiveWithSavedTextureState_PathDataCharaSubSChr.cpp:
     complete
     .data start:0x2194129 end:0x219413f
 
-src/Data/ov015/data_ov015_0219413f.cpp:
+src/Data/CharacterViewer_OpenEffectArchive_PathDataEffectSChr.cpp:
     complete
     .data start:0x219413f end:0x2194152
 
-src/Data/ov015/data_ov015_02194152.cpp:
+src/Data/CharacterViewer_OpenEffectArchive_TextARC.cpp:
     complete
     .data start:0x2194152 end:0x2194156
 
-src/Data/ov015/data_ov015_02194156.cpp:
+src/Data/CharacterViewer_OpenEffectArchive_TextBeff.cpp:
     complete
     .data start:0x2194156 end:0x219415c
 
-src/Data/ov015/data_ov015_0219415c.cpp:
+src/Data/Graphics_LoadNamedModelAndConfigureBones_TextEye.cpp:
     complete
     .data start:0x219415c end:0x2194160
 
-src/Data/ov015/data_ov015_02194160.cpp:
+src/Data/Graphics_LoadNamedModelAndConfigureBones_TextLookat.cpp:
     complete
     .data start:0x2194160 end:0x2194167
 
-src/Data/ov015/data_ov015_02194167.cpp:
+src/Data/Graphics_LoadNamedModelAndConfigureBones_TextPos.cpp:
     complete
     .data start:0x2194167 end:0x219416b
 
-src/Data/ov015/data_ov015_0219416b.cpp:
+src/Data/CharacterViewer_DrawPlayerModelParts_TextHead.cpp:
     complete
     .data start:0x219416b end:0x2194170
 
-src/Data/ov015/data_ov015_02194170.cpp:
+src/Data/CharacterViewer_DrawPlayerModelParts_TextLeg1L.cpp:
     complete
     .data start:0x2194170 end:0x2194176
 
-src/Data/ov015/data_ov015_02194176.cpp:
+src/Data/CharacterViewer_DrawPlayerModelParts_TextLeg1R.cpp:
     complete
     .data start:0x2194176 end:0x219417c
 
-src/Data/ov015/data_ov015_0219417c.cpp:
+src/Data/CharacterViewerDrawModelArenaUsage_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH9854FULLWIDTHRIGHTSQUAREBRACKETIDEOGRAPHICS.cpp:
     complete
     .data start:0x219417c end:0x2194192
 
-src/Data/ov015/data_ov015_02194192.cpp:
+src/Data/CharacterViewerDrawModelArenaUsage_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH9AEAFULLWIDTHRIGHTSQUAREBRACKETIDEOGRAPHICS.cpp:
     complete
     .data start:0x2194192 end:0x21941a8
 
-src/Data/ov015/data_ov015_021941a8.cpp:
+src/Data/CharacterViewerDrawModelArenaUsage_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH515CFULLWIDTHRIGHTSQUAREBRACKETIDEOGRAPHICS.cpp:
     complete
     .data start:0x21941a8 end:0x21941be
 
-src/Data/ov015/data_ov015_021941be.cpp:
+src/Data/CharacterViewerDrawModelArenaUsage_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH670DFULLWIDTHRIGHTSQUAREBRACKETIDEOGRAPHICS.cpp:
     complete
     .data start:0x21941be end:0x21941d4
 
-src/Data/ov015/data_ov015_021941d4.cpp:
+src/Data/CharacterViewerDrawModelArenaUsage_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH8155FULLWIDTHRIGHTSQUAREBRACKETIDEOGRAPHICS.cpp:
     complete
     .data start:0x21941d4 end:0x21941ea
 
-src/Data/ov015/data_ov015_021941ea.cpp:
+src/Data/CharacterViewerDrawModelArenaUsage_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETKATAKANALETTERZUKATAKANALETTERBOKATAKANALETTERNFULLWIDTHRIGHTS.cpp:
     complete
     .data start:0x21941ea end:0x2194200
 
-src/Data/ov015/data_ov015_02194200.cpp:
+src/Data/CharacterViewerDrawModelArenaUsage_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH9774FULLWIDTHRIGHTSQUAREBRACKETIDEOGRAPHICS.cpp:
     complete
     .data start:0x2194200 end:0x2194216
 
-src/Data/ov015/data_ov015_02194216.cpp:
+src/Data/CharacterViewerDrawModelArenaUsage_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH6B66CJKUNIFIEDIDEOGRAPH5668FULLWIDTHRIGHTSQ.cpp:
     complete
     .data start:0x2194216 end:0x219422c
 
-src/Data/ov015/data_ov015_0219422c.cpp:
+src/Data/CharacterViewerDrawModelArenaUsage_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH76FEFULLWIDTHRIGHTSQUAREBRACKETIDEOGRAPHICS.cpp:
     complete
     .data start:0x219422c end:0x2194242
 
-src/Data/ov015/data_ov015_02194242.cpp:
+src/Data/CharacterViewerDrawModelArenaUsage_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETKATAKANALETTERMEKATAKANALETTERMOKATAKANALETTERRIFULLWIDTHRIGHT.cpp:
     complete
     .data start:0x2194242 end:0x2194256
 
-src/Data/ov015/data_ov015_02194256.cpp:
+src/Data/Graphics_DrawModelAndAnimationDiagnostics_FormatPFPS2F.cpp:
     complete
     .data start:0x2194256 end:0x2194261
 
-src/Data/ov015/data_ov015_02194261.cpp:
+src/Data/Graphics_DrawModelAndAnimationDiagnostics_FormatPTD.cpp:
     complete
     .data start:0x2194261 end:0x219426a
 
-src/Data/ov015/data_ov015_0219426a.cpp:
+src/Data/Graphics_DrawModelAndAnimationDiagnostics_FormatPQD.cpp:
     complete
     .data start:0x219426a end:0x2194273
 
-src/Data/ov015/data_ov015_02194273.cpp:
+src/Data/GraphicsDrawModelAndAnimationDiagnostics_TextLATINSMALLLETTERPFULLWIDTHLEFTSQUAREBRACKETPERCENTSIGNLATINSMALLLETTERSFULLWIDTHRIGHTSQUAREBRACKET.cpp:
     complete
     .data start:0x2194273 end:0x219427b
 
-src/Data/ov015/data_ov015_0219427b.cpp:
+src/Data/Graphics_DrawModelAndAnimationDiagnostics_FormatPSTEP02F.cpp:
     complete
     .data start:0x219427b end:0x2194288
 
-src/Data/ov015/data_ov015_02194288.cpp:
+src/Data/Graphics_DrawModelAndAnimationDiagnostics_FormatPFRAME02F.cpp:
     complete
     .data start:0x2194288 end:0x2194295
 
-src/Data/ov015/data_ov015_02194295.cpp:
+src/Data/Graphics_DrawModelAndAnimationDiagnostics_FormatPRATE03F.cpp:
     complete
     .data start:0x2194295 end:0x21942a2
 
-src/Data/ov015/data_ov015_021942a2.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextOperation.cpp:
     complete
     .data start:0x21942a2 end:0x21942ae
 
-src/Data/ov015/data_ov015_021942ae.cpp:
+src/Data/Graphics_DrawModeAndAnimationLabels_TextSelectUD.cpp:
     complete
     .data start:0x21942ae end:0x21942ba
 
-src/Data/ov015/data_ov015_021942ba.cpp:
+src/Data/Graphics_DrawModeAndAnimationLabels_TextStepRRL.cpp:
     complete
     .data start:0x21942ba end:0x21942c8
 
-src/Data/ov015/data_ov015_021942c8.cpp:
+src/Data/Graphics_DrawModeAndAnimationLabels_TextNoLoopLA.cpp:
     complete
     .data start:0x21942c8 end:0x21942d4
 
-src/Data/ov015/data_ov015_021942d4.cpp:
+src/Data/Graphics_DrawModeAndAnimationLabels_TextLoopLA.cpp:
     complete
     .data start:0x21942d4 end:0x21942e0
 
-src/Data/ov015/data_ov015_021942e0.cpp:
+src/Data/Graphics_DrawModeAndAnimationLabels_TextPlayRA.cpp:
     complete
     .data start:0x21942e0 end:0x21942ec
 
-src/Data/ov015/data_ov015_021942ec.cpp:
+src/Data/Graphics_DrawModeAndAnimationLabels_TextSceneR.cpp:
     complete
     .data start:0x21942ec end:0x21942f6
 
-src/Data/ov015/data_ov015_021942f6.cpp:
+src/Data/Graphics_DrawModeAndAnimationLabels_TextStopRA.cpp:
     complete
     .data start:0x21942f6 end:0x2194302
 
-src/Data/ov015/data_ov015_02194302.cpp:
+src/Data/Graphics_DrawModeAndAnimationLabels_TextBattleR.cpp:
     complete
     .data start:0x2194302 end:0x219430e
 
-src/Data/ov015/data_ov015_0219430e.cpp:
+src/Data/Graphics_DrawModeAndAnimationLabels_TextNoBattleR.cpp:
     complete
     .data start:0x219430e end:0x219431a
 
-src/Data/ov015/data_ov015_0219431a.cpp:
+src/Data/Graphics_DrawModeAndAnimationLabels_TextBattleL.cpp:
     complete
     .data start:0x219431a end:0x2194324
 
-src/Data/ov015/data_ov015_02194324.cpp:
+src/Data/Graphics_DrawModeAndAnimationLabels_TextFieldL.cpp:
     complete
     .data start:0x2194324 end:0x219432e
 
-src/Data/ov015/data_ov015_0219432e.cpp:
+src/Data/UI_ToggleSelectedFlagAndUpdateText_TextAspect.cpp:
     complete
     .data start:0x219432e end:0x2194338
 
-src/Data/ov015/data_ov015_02194338.cpp:
+src/Data/UI_ToggleSelectedFlagAndUpdateText_TextAspect_Copy2.cpp:
     complete
     .data start:0x2194338 end:0x2194342
 
-src/Data/ov015/data_ov015_02194342.cpp:
+src/Data/UI_ToggleSelectedFlagAndUpdateText_TextFloor.cpp:
     complete
     .data start:0x2194342 end:0x219434b
 
-src/Data/ov015/data_ov015_0219434b.cpp:
+src/Data/UI_ToggleSelectedFlagAndUpdateText_TextMonsterBox.cpp:
     complete
     .data start:0x219434b end:0x219435a
 
-src/Data/ov015/data_ov015_0219435a.cpp:
+src/Data/UI_ToggleSelectedFlagAndUpdateText_TextMonsterBox_Copy2.cpp:
     complete
     .data start:0x219435a end:0x2194369
 
-src/Data/ov015/data_ov015_02194369.cpp:
+src/Data/UI_ToggleSelectedFlagAndUpdateText_TextSyncMotion.cpp:
     complete
     .data start:0x2194369 end:0x2194378
 
-src/Data/ov015/data_ov015_02194378.cpp:
+src/Data/UI_ToggleSelectedFlagAndUpdateText_TextSyncMotion_Copy2.cpp:
     complete
     .data start:0x2194378 end:0x2194387
 
-src/Data/ov015/data_ov015_02194387.cpp:
+src/Data/UI_ToggleSelectedFlagAndUpdateText_TextViewMemory.cpp:
     complete
     .data start:0x2194387 end:0x2194396
 
-src/Data/ov015/data_ov015_02194396.cpp:
+src/Data/UI_ToggleSelectedFlagAndUpdateText_TextViewMemory_Copy2.cpp:
     complete
     .data start:0x2194396 end:0x21943a5
 
-src/Data/ov015/data_ov015_021943a5.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextTopMenu.cpp:
     complete
     .data start:0x21943a5 end:0x21943b0
 
-src/Data/ov015/data_ov015_021943b0.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextLoad.cpp:
     complete
     .data start:0x21943b0 end:0x21943b7
 
-src/Data/ov015/data_ov015_021943b7.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextDel.cpp:
     complete
     .data start:0x21943b7 end:0x21943bd
 
-src/Data/ov015/data_ov015_021943bd.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextPlayer.cpp:
     complete
     .data start:0x21943bd end:0x21943c6
 
-src/Data/ov015/data_ov015_021943c6.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextMonster.cpp:
     complete
     .data start:0x21943c6 end:0x21943d0
 
-src/Data/ov015/data_ov015_021943d0.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextEffect.cpp:
     complete
     .data start:0x21943d0 end:0x21943d9
 
-src/Data/ov015/data_ov015_021943d9.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextNPC.cpp:
     complete
     .data start:0x21943d9 end:0x21943df
 
-src/Data/ov015/data_ov015_021943df.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextMotionCamera.cpp:
     complete
     .data start:0x21943df end:0x21943ef
 
-src/Data/ov015/data_ov015_021943ef.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextGender.cpp:
     complete
     .data start:0x21943ef end:0x21943f8
 
-src/Data/ov015/data_ov015_021943f8.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextFace.cpp:
     complete
     .data start:0x21943f8 end:0x21943ff
 
-src/Data/ov015/data_ov015_021943ff.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextEyeColour.cpp:
     complete
     .data start:0x21943ff end:0x219440c
 
-src/Data/ov015/data_ov015_0219440c.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextSkinColour.cpp:
     complete
     .data start:0x219440c end:0x219441a
 
-src/Data/ov015/data_ov015_0219441a.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextHairstyle.cpp:
     complete
     .data start:0x219441a end:0x2194426
 
-src/Data/ov015/data_ov015_02194426.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextHairColour.cpp:
     complete
     .data start:0x2194426 end:0x2194434
 
-src/Data/ov015/data_ov015_02194434.cpp:
+src/Data/CharacterViewerRebuildMenu_TextLEFTSQUAREBRACKETHIRAGANALETTERYOHIRAGANALETTERROHIRAGANALETTERIRIGHTSQUAREBRACKET.cpp:
     complete
     .data start:0x2194434 end:0x219443d
 
-src/Data/ov015/data_ov015_0219443d.cpp:
+src/Data/CharacterViewerRebuildMenu_TextLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH8155RIGHTSQUAREBRACKET.cpp:
     complete
     .data start:0x219443d end:0x2194442
 
-src/Data/ov015/data_ov015_02194442.cpp:
+src/Data/CharacterViewerRebuildMenu_TextLEFTSQUAREBRACKETKATAKANALETTERZUKATAKANALETTERBOKATAKANALETTERNRIGHTSQUAREBRACKET.cpp:
     complete
     .data start:0x2194442 end:0x219444b
 
-src/Data/ov015/data_ov015_0219444b.cpp:
+src/Data/CharacterViewerRebuildMenu_TextLEFTSQUAREBRACKETHIRAGANALETTERKUHIRAGANALETTERTURIGHTSQUAREBRACKET.cpp:
     complete
     .data start:0x219444b end:0x2194452
 
-src/Data/ov015/data_ov015_02194452.cpp:
+src/Data/CharacterViewerRebuildMenu_TextLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH6B66CJKUNIFIEDIDEOGRAPH5668RIGHTSQUAREBRACKET.cpp:
     complete
     .data start:0x2194452 end:0x2194459
 
-src/Data/ov015/data_ov015_02194459.cpp:
+src/Data/CharacterViewerRebuildMenu_TextLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH76FERIGHTSQUAREBRACKET.cpp:
     complete
     .data start:0x2194459 end:0x219445e
 
-src/Data/ov015/data_ov015_0219445e.cpp:
+src/Data/CharacterViewerRebuildMenu_TextLEFTSQUAREBRACKETCJKUNIFIEDIDEOGRAPH515CRIGHTSQUAREBRACKET.cpp:
     complete
     .data start:0x219445e end:0x2194463
 
-src/Data/ov015/data_ov015_02194463.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextAddMotion.cpp:
     complete
     .data start:0x2194463 end:0x2194470
 
-src/Data/ov015/data_ov015_02194470.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextEventMotion.cpp:
     complete
     .data start:0x2194470 end:0x219447f
 
-src/Data/ov015/data_ov015_0219447f.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextSkillMotion.cpp:
     complete
     .data start:0x219447f end:0x219448e
 
-src/Data/ov015/data_ov015_0219448e.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextBuild.cpp:
     complete
     .data start:0x219448e end:0x2194496
 
-src/Data/ov015/data_ov015_02194496.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextEvent.cpp:
     complete
     .data start:0x2194496 end:0x219449e
 
-src/Data/ov015/data_ov015_0219449e.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextVillager.cpp:
     complete
     .data start:0x219449e end:0x21944a9
 
-src/Data/ov015/data_ov015_021944a9.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextNPCMotion.cpp:
     complete
     .data start:0x21944a9 end:0x21944b6
 
-src/Data/ov015/data_ov015_021944b6.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextTrickMotion.cpp:
     complete
     .data start:0x21944b6 end:0x21944c5
 
-src/Data/ov015/data_ov015_021944c5.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextEventCamera.cpp:
     complete
     .data start:0x21944c5 end:0x21944d4
 
-src/Data/ov015/data_ov015_021944d4.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextSkillCamera.cpp:
     complete
     .data start:0x21944d4 end:0x21944e3
 
-src/Data/ov015/data_ov015_021944e3.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextOption.cpp:
     complete
     .data start:0x21944e3 end:0x21944ec
 
-src/Data/ov015/data_ov015_021944ec.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextInfo.cpp:
     complete
     .data start:0x21944ec end:0x21944f3
 
-src/Data/ov015/data_ov015_021944f3.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextMove.cpp:
     complete
     .data start:0x21944f3 end:0x21944fa
 
-src/Data/ov015/data_ov015_021944fa.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextPreset.cpp:
     complete
     .data start:0x21944fa end:0x2194503
 
-src/Data/ov015/data_ov015_02194503.cpp:
+src/Data/CharacterViewer_RebuildMenu_FormatS.cpp:
     complete
     .data start:0x2194503 end:0x2194508
 
-src/Data/ov015/data_ov015_02194508.cpp:
+src/Data/CharacterViewerRebuildMenu_TextPERCENTSIGNLATINSMALLLETTERSFULLWIDTHCOLONPERCENTSIGNLATINSMALLLETTERS.cpp:
     complete
     .data start:0x2194508 end:0x219450f
 
-src/Data/ov015/data_ov015_0219450f.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextNoData.cpp:
     complete
     .data start:0x219450f end:0x2194517
 
-src/Data/ov015/data_ov015_02194517.cpp:
+src/Data/CharacterViewer_RebuildMenu_Text.cpp:
     complete
     .data start:0x2194517 end:0x219451b
 
-src/Data/ov015/data_ov015_0219451b.cpp:
+src/Data/CharacterViewer_RebuildMenu_Text_Copy2.cpp:
     complete
     .data start:0x219451b end:0x219451f
 
-src/Data/ov015/data_ov015_0219451f.cpp:
+src/Data/CharacterViewer_RebuildMenu_TextMotion.cpp:
     complete
     .data start:0x219451f end:0x2194528
 
-src/Data/ov015/data_ov015_02194528.cpp:
+src/Data/CharacterViewer_Run_Text0123456789FPSTQSIZERAMKBAbcdefghijklmnopqrstuvwxyz.cpp:
     complete
     .data start:0x2194528 end:0x2194560
 
-src/Unclassified/ov015/func_ov015_0218c274.cpp:
+src/Debug/ModelViewer/Resource_FormatCharacterViewerResourceName.cpp:
     complete
     .text start:0x0218c274 end:0x0218c3a4
 
-src/Graphics/ov015/UI_ToggleSelectedFlagAndUpdateText.cpp:
+src/Debug/ModelViewer/UI_ToggleSelectedFlagAndUpdateText.cpp:
     complete
     .text start:0x02191f04 end:0x02192064
 
-src/Resource/ov015/Resource_SetLinkedEntryState.cpp:
+src/Debug/ModelViewer/Resource_SetLinkedEntryState.cpp:
     complete
     .text start:0x02190020 end:0x0219005c
 
-src/Graphics/ov015/Graphics_CaptureSelectedPositionMatrices.cpp:
+src/Debug/ModelViewer/Graphics_CaptureSelectedPositionMatrices.cpp:
     complete
     .text start:0x0218bb3c end:0x0218bc9c
 
-src/Util/ov015/Util_InitializeRecordDefaults.cpp:
+src/Debug/ModelViewer/CharacterViewer_InitializeModelInstance.cpp:
     complete
     .text start:0x0218eef0 end:0x0218ef7c
 
-src/World/ov015/World_AddYawToModeSelectedVectors.cpp:
+src/Debug/ModelViewer/World_AddYawToModeSelectedVectors.cpp:
     complete
     .text start:0x0218f5f8 end:0x0218f794
 
-src/Graphics/ov015/Ov015_AdvanceEffectsWhenActive.cpp:
+src/Debug/ModelViewer/Ov015_AdvanceEffectsWhenActive.cpp:
     complete
     .text start:0x0218e574 end:0x0218e5c0
 
-src/Graphics/ov015/Graphics_AdvanceEffectsWhenReady.cpp:
+src/Debug/ModelViewer/Graphics_AdvanceEffectsWhenReady.cpp:
     complete
     .text start:0x0218e5c0 end:0x0218e60c
 
-src/Graphics/ov015/Graphics_TranslateObjectPositionVariants.cpp:
+src/Debug/ModelViewer/Graphics_TranslateObjectPositionVariants.cpp:
     complete
     .text start:0x0218f44c end:0x0218f5f8
 
-src/Resource/ov015/Resource_MapTypeAndInitializeObject.cpp:
+src/Debug/ModelViewer/Resource_MapTypeAndInitializeObject.cpp:
     complete
     .text start:0x0218f02c end:0x0218f0c4
 
-src/Graphics/ov015/Graphics_ApplyInputToSelectedObjectTransform.cpp:
+src/Debug/ModelViewer/Graphics_ApplyInputToSelectedObjectTransform.cpp:
     complete
     .text start:0x02191874 end:0x021919e4
 
-src/Unclassified/ov015/func_ov015_02193160.cpp:
+src/Debug/ModelViewer/CharacterViewer_FindMenuEntryByCategory.cpp:
     complete
     .text start:0x02193160 end:0x021931b4
 
-src/System/ov015/Input_UpdateField238FromKeyMask.cpp:
+src/Debug/ModelViewer/CharacterViewer_UpdateCameraTargetFollowingFromInput.cpp:
     complete
     .text start:0x021925a8 end:0x02192600
 
-src/Graphics/ov015/Graphics_DrawBoneAttachedObjectParts.cpp:
+src/Debug/ModelViewer/Graphics_DrawBoneAttachedObjectParts.cpp:
     complete
     .text start:0x0218eb04 end:0x0218ecd8
 
-src/Resource/ov015/Resource_LoadAndExecuteScriptWithOwner.cpp:
+src/Debug/ModelViewer/Resource_LoadAndExecuteScriptWithOwner.cpp:
     complete
     .text start:0x0218ba44 end:0x0218bae8
 
-src/Graphics/ov015/Graphics_LoadNamedModelAndConfigureBones.cpp:
+src/Debug/ModelViewer/Graphics_LoadNamedModelAndConfigureBones.cpp:
     complete
     .text start:0x0218e2a4 end:0x0218e498
 
-src/Resource/ov015/Resource_ReloadObjectGroupAnimationFromGPC.cpp:
+src/Debug/ModelViewer/Resource_ReloadObjectGroupAnimationFromGPC.cpp:
     complete
     .text start:0x0218c920 end:0x0218cb2c
 
-src/GameState/ov015/GameState_ConfigureFlaggedObjectEndpoint.cpp:
+src/Debug/ModelViewer/GameState_ConfigureFlaggedObjectEndpoint.cpp:
     complete
     .text start:0x02192544 end:0x021925a8
 
-src/Graphics/ov015/Text_FormatSerializedRecordValue.cpp:
+src/Debug/ModelViewer/Text_FormatSerializedRecordValue.cpp:
     complete
     .text start:0x0218c03c end:0x0218c274
 
-src/Unclassified/ov015/InitializeRecordModeFromOwnerType.cpp:
+src/Debug/ModelViewer/CharacterViewer_InitializeModelForMenuCategory.cpp:
     complete
     .text start:0x0218ef7c end:0x0218f02c
 
-src/Resource/ov015/Resource_IsAcceptedObjectType.cpp:
+src/Debug/ModelViewer/Resource_IsAcceptedObjectType.cpp:
     complete
     .text start:0x02190d08 end:0x02190d7c
 
-src/Graphics/ov015/Graphics_DrawHandleOrObjectAndCollectCounts.cpp:
+src/Debug/ModelViewer/Graphics_DrawHandleOrObjectAndCollectCounts.cpp:
     complete
     .text start:0x0218ee38 end:0x0218eef0
 
-src/Graphics/ov015/UpdateCachedAnimationEntry.cpp:
+src/Debug/ModelViewer/UpdateCachedAnimationEntry.cpp:
     complete
     .text start:0x021900dc end:0x0219011c
 
-src/World/ov015/Object_SetValueOnResolvedLinkedSubrecord.cpp:
+src/Debug/ModelViewer/Object_SetValueOnResolvedLinkedSubrecord.cpp:
     complete
     .text start:0x0219011c end:0x0219015c
 
-src/Graphics/ov015/AdvanceAnimationForType.cpp:
+src/Debug/ModelViewer/AdvanceAnimationForType.cpp:
     complete
     .text start:0x02190090 end:0x021900dc
 
-src/Unclassified/ov015/Overlay_DispatchObjectByMode.cpp:
+src/Debug/ModelViewer/CharacterViewer_DrawModelByKind.cpp:
     complete
     .text start:0x0218f22c end:0x0218f27c
 
-src/Unclassified/ov015/Overlay_DispatchObjectByEffectMode.cpp:
+src/Debug/ModelViewer/CharacterViewer_UpdateModelByKind.cpp:
     complete
     .text start:0x0218f1c4 end:0x0218f22c
+
+src/Debug/ModelViewer/CharacterViewer_AdvanceDollEffects.cpp:
+    complete
+    .text start:0x0218e4f8 end:0x0218e574
+
+src/Debug/ModelViewer/CharacterViewer_LoadModelByKind.cpp:
+    complete
+    .text start:0x0218f27c end:0x0218f308
+
+src/Debug/ModelViewer/IsObjectActiveForPressedOrReleasedInput.cpp:
+    complete
+    .text start:0x02190c98 end:0x02190d08
+
+src/Debug/ModelViewer/CharacterViewer_DeleteModelByIndex.cpp:
+    complete
+    .text start:0x02191af0 end:0x02191ba0
+
+src/Debug/ModelViewer/CharacterViewer_AdjustSelectedAnimationTime.cpp:
+    complete
+    .text start:0x0219015c end:0x021901c8
+
+src/Debug/ModelViewer/CharacterViewer_FindLoadedAnimation.cpp:
+    complete
+    .text start:0x0218f39c end:0x0218f3c4
+
+src/Debug/ModelViewer/CharacterViewer_SelectModelForAnimationMenu.cpp:
+    complete
+    .text start:0x02191ba0 end:0x02191c70
+
+src/Debug/ModelViewer/CharacterViewer_DrawMenuAndScrollbar.cpp:
+    complete
+    .text start:0x02190428 end:0x0219050c
+
+src/Debug/ModelViewer/CharacterViewer_ConfirmOrDeletePendingModel.cpp:
+    complete
+    .text start:0x02192064 end:0x02192158
+
+src/Debug/ModelViewer/CharacterViewer_DrawMonsterAndBounds.cpp:
+    complete
+    .text start:0x0218ecd8 end:0x0218edcc
+
+src/Debug/ModelViewer/CharacterViewer_DestroyModelInstanceResources.cpp:
+    complete
+    .text start:0x0218f0c4 end:0x0218f1c4
+
+src/Debug/ModelViewer/CharacterViewer_ToggleOperationMenu.cpp:
+    complete
+    .text start:0x02190d7c end:0x02190e88
+
+src/Debug/ModelViewer/CharacterViewer_CreateAndAppendModelInstance.cpp:
+    complete
+    .text start:0x021919e4 end:0x02191af0
+
+src/Debug/ModelViewer/CharacterViewer_InitializeState.cpp:
+    complete
+    .text start:0x02193294 end:0x021933ac
+
+src/Debug/ModelViewer/Graphics_LoadModelArchiveWithSavedTextureState.cpp:
+    complete
+    .text start:0x0218df0c end:0x0218e02c
+
+src/Debug/ModelViewer/CharacterViewer_ScriptAppendScenePreset.cpp:
+    complete
+    .text start:0x0218b6e4 end:0x0218b810
+
+src/Debug/ModelViewer/Memory_DestroyOwnedListsAndArenas.cpp:
+    complete
+    .text start:0x021933bc end:0x021934f8
+
+src/Debug/ModelViewer/Memory_CreateModeSelectedArenas.cpp:
+    complete
+    .text start:0x0218bcb0 end:0x0218c03c
+
+src/Debug/ModelViewer/Graphics_DrawModeAndAnimationLabels.cpp:
+    complete
+    .text start:0x02190acc end:0x02190c2c
+
+src/Debug/ModelViewer/UI_HandleAnimationSelectionInput.cpp:
+    complete
+    .text start:0x02191294 end:0x02191668
+
+src/Debug/ModelViewer/Graphics_DrawModelAndAnimationDiagnostics.cpp:
+    complete
+    .text start:0x0219050c end:0x02190acc
+
+src/Debug/ModelViewer/UI_IsOwnerModeInResourceRange.cpp:
+    complete
+    .text start:0x02190c2c end:0x02190c98
+
+src/Debug/ModelViewer/Graphics_DrawSceneOwnersAndOptionalBox.cpp:
+    complete
+    .text start:0x02190348 end:0x02190428
+
+src/Debug/ModelViewer/Graphics_LoadAnimationArchiveById.cpp:
+    complete
+    .text start:0x0218cb2c end:0x0218cc24
+
+src/Debug/ModelViewer/Graphics_InitializeVramReservationGroups.cpp:
+    complete
+    .text start:0x02192600 end:0x02192700
+
+src/Debug/ModelViewer/Graphics_AdvanceEffectsWithInputGate.cpp:
+    complete
+    .text start:0x0218e498 end:0x0218e4f8
+
+src/Debug/ModelViewer/Graphics_ReadAnimationFixedValue.cpp:
+    complete
+    .text start:0x0218f3c4 end:0x0218f408
+
+src/Debug/ModelViewer/Graphics_AdvanceOwnerHandleOrEffectsWithInputGate.cpp:
+    complete
+    .text start:0x0218e60c end:0x0218e670
+
+src/Debug/ModelViewer/Graphics_DispatchAnimationLoadByMode.cpp:
+    complete
+    .text start:0x0218f308 end:0x0218f344
+
+src/Debug/ModelViewer/Graphics_SelectLinkedHistoryEntryAndResetMode.cpp:
+    complete
+    .text start:0x02191ea4 end:0x02191f04
+
+src/Debug/ModelViewer/Graphics_RenderSceneAndDiagnosticOverlay.cpp:
+    complete
+    .text start:0x021901c8 end:0x02190348
+
+src/Debug/ModelViewer/Graphics_UploadSelectedModelPalette.cpp:
+    complete
+    .text start:0x0218c3a4 end:0x0218c538
+
+src/Debug/ModelViewer/CharacterViewer_GetAnimationPackageList.cpp:
+    complete
+    .text start:0x0218f344 end:0x0218f364
+
+src/Debug/ModelViewer/CharacterViewer_PlayNamedAnimation.cpp:
+    complete
+    .text start:0x0218f364 end:0x0218f39c
+
+src/Debug/ModelViewer/CharacterViewer_GetNormalizedAnimationTime.cpp:
+    complete
+    .text start:0x0218f408 end:0x0218f44c
+
+src/Debug/ModelViewer/CharacterViewer_DrawSingleModelAndCollectPolygonCounts.cpp:
+    complete
+    .text start:0x0218edcc end:0x0218ee38

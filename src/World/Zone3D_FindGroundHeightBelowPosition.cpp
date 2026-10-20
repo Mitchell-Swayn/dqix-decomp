@@ -4,8 +4,8 @@ struct GroundTriangle { Vector3i a,b,c,normal; };
 struct GroundPackedTriangle { short components[12]; };
 struct GroundQueryResult { GroundPackedTriangle triangles[96]; int unknown900; int scale; Vector3i origin; unsigned char unknown914[0x6c]; };
 extern "C" {
-int func_02017d90(Zone3D*,int,GroundQueryResult*,GroundQueryBounds,void*);
-void ConvertFourHalfwordTriplesIntoWordTriples(GroundTriangle*,const GroundPackedTriangle*);
+int Zone3D_CollectInstanceCollisionPolygons(Zone3D*,int,GroundQueryResult*,GroundQueryBounds,void*);
+void VectorQuad_ExpandSignedHalfwordComponents(GroundTriangle*,const GroundPackedTriangle*);
 int Geometry_FindHighestUpwardTriangleAndIntersectPlane(GroundTriangle*,int,const Vector3i*,const Vector3i*,Vector3i*);
 }
 // Tests a vertical segment against queried zone triangles and returns the resulting fixed-point height.
@@ -27,13 +27,13 @@ extern "C" int Zone3D_FindGroundHeightBelowPosition(Zone3D* zone,const Vector3i*
     }
     for(int i=0;i<zone->unknown_82c_;++i) {
         if(zone->isInMainGrottoFloor_23b8_ && tile!=i) continue;
-        int count=func_02017d90(zone,i,&query,bounds,0);
+        int count=Zone3D_CollectInstanceCollisionPolygons(zone,i,&query,bounds,0);
         if(count<=0)continue;
         GroundTriangle* triangle=triangles;
         int scale;
         for(int j=0;j<count;) {
             scale=query.scale<<12;
-            ConvertFourHalfwordTriplesIntoWordTriples(triangle,&query.triangles[j]);
+            VectorQuad_ExpandSignedHalfwordComponents(triangle,&query.triangles[j]);
             Vector3fixMultiplyScalar(&triangle->a,scale,&triangle->a);
             Vector3fixMultiplyScalar(&triangle->b,scale,&triangle->b);
             Vector3fixMultiplyScalar(&triangle->c,scale,&triangle->c);

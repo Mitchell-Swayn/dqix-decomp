@@ -3,8 +3,8 @@
 #include <System/Mutex.h>
 
 extern "C" void *ResourceQueue_PopFirstAndDecrementOwnerCountAtomically(void *);
-extern "C" void func_020bf79c(void);
-extern "C" void AppendAllocatorNodeToGlobalListWithIRQDisabled(void *);
+extern "C" void SoundStream_FillAndDecodeRequestedBuffers(void);
+extern "C" void SoundStream_RecycleBufferRequestAtomically(void *);
 
 // Original: arm9/main @ 0x020C015C; symbol: func_020c015c; size: 0x50.
 extern "C" void BlockUntilWorkNodeAvailableAndProcessUnderMutex(char *state) {
@@ -18,8 +18,8 @@ lock:
     UnlockMutex((Mutex *)(state + 0x4c8));
     goto block;
 process:
-    func_020bf79c();
-    AppendAllocatorNodeToGlobalListWithIRQDisabled(result);
+    SoundStream_FillAndDecodeRequestedBuffers();
+    SoundStream_RecycleBufferRequestAtomically(result);
     UnlockMutex((Mutex *)(state + 0x4c8));
     goto lock;
 }

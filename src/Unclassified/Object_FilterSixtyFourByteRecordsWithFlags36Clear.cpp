@@ -1,5 +1,0 @@
-#include <globaldefs.h>
-extern "C" void* memcpy(void*,const void*,unsigned);extern "C" void* memset(void*,int,unsigned);
-struct Palette{unsigned char pad[0x1e];unsigned char flags;unsigned char rest[0x21];};struct Object{unsigned unused;char* owner;char pad[0x90];int count;Palette entries[16];int temporaryCount;Palette temporary[16];};
-// Original: arm9/main @ 0x0209FB90; symbol: func_0209fb90; size: 0xF4.
-extern "C" ARM void Object_FilterSixtyFourByteRecordsWithFlags36Clear(Object* p,int mode){int i;if(!mode){i=0;p->count=0;unsigned char count=*(unsigned char*)(p->owner+0x8e07);for(;i<count;++i){Palette* source=(Palette*)(p->owner+0x5c60+i*64);if(source&&!(source->flags&0x36)){int dest=p->count++;memcpy(p->entries+dest,source,64);}}return;}p->temporaryCount=0;memset(p->temporary,0,0x400);i=0;for(;i<p->count;++i){Palette* source=p->entries+i;if(!(source->flags&0x36)){int dest=p->temporaryCount++;memcpy(p->temporary+dest,source,64);}}p->count=p->temporaryCount;memcpy(p->entries,p->temporary,0x400);}

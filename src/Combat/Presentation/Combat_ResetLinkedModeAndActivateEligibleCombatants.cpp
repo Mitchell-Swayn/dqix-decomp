@@ -1,0 +1,10 @@
+#include <globaldefs.h>
+ARM
+#define W(p,o) (*(int*)((p)+(o)))
+#define P(p,o) (*(unsigned char**)((p)+(o)))
+#define H(p,o) (*(short*)((p)+(o)))
+#define U(p,o) (*(unsigned short*)((p)+(o)))
+extern "C" {void* _ZN9GameState11GetInstanceEv();unsigned TextContext_GetSharedInstance();void* GameResources_GetInstance();void InitializeOverlayAllocatorAndResourceState(void*);void Combat_BindActionSelectionContext(void*,unsigned);void Combat_SuppressAutomaticActionCameraReset(int*);void Combat_ResetMotionTrail(void*);void BattleScene_AssignCommandPrimaryTargets(char*);void Field_ResetSessionTransitionLatch(void*);void Combat_ResetActionMessageQueue(char*);int Combat_CollectPresentEnemyIndices(void*,short*,int,int);unsigned char* _ZN9GameState19GetCombatantByIndexEi(void*,int);void GameObject_SetMotionState(void*,int);void Memory_InitializeLinkedResourceEntries(unsigned char*);}
+// Original: arm9/ov025 @0x021db6dc; symbol:Combat_ResetLinkedModeAndActivateEligibleCombatants; size:0x11c.
+// Resets linked combat mode and resource buffers, clears mode byte for enabled unflagged combatants and marks owner active.
+extern "C" void Combat_ResetLinkedModeAndActivateEligibleCombatants(unsigned char* self){void* game=_ZN9GameState11GetInstanceEv();unsigned char* owner=(unsigned char*)TextContext_GetSharedInstance();void* resources=GameResources_GetInstance();InitializeOverlayAllocatorAndResourceState(self+0x2a8);Combat_BindActionSelectionContext(self+0x2a8,W(self,0x29c));Combat_SuppressAutomaticActionCameraReset((int*)(self+0x2a8));Combat_ResetMotionTrail(self+0x5ab0);Memory_InitializeLinkedResourceEntries(self+0xb30);W(self,0xeb0)=0;Field_ResetSessionTransitionLatch(resources);owner[0x19be]=1;P(self,0x29c)[0x8e49]=0;P(self,0x2a0)[0x35]=0;BattleScene_AssignCommandPrimaryTargets((char*)self);short ids[16];int total=0;total+=Combat_CollectPresentEnemyIndices(P(self,0x29c),ids,16,total);for(int i=0;i<total;++i){unsigned char* object=_ZN9GameState19GetCombatantByIndexEi(game,ids[i]);if(object&&!(W(P(object,0x138),20)&1))GameObject_SetMotionState(object,0);}Combat_ResetActionMessageQueue((char*)self+0x890);W(self,0xeac)=1;self[0x6fd5]=0;}

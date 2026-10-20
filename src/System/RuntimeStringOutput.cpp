@@ -18,7 +18,7 @@ extern "C" int Runtime_AppendBoundedStringOutput(RuntimeStringOutputState* state
 }
 
 typedef int (*RuntimeStringWriter)(RuntimeStringOutputState*, const char*, unsigned int);
-extern "C" int func_02003418(RuntimeStringWriter, RuntimeStringOutputState*, const char*, void*);
+extern "C" int Runtime_WriteFormattedArgumentsToCallback(RuntimeStringWriter, RuntimeStringOutputState*, const char*, void*);
 // Original: arm9/main @ 0x02003C80; symbol: func_02003c80; size: 0x68.
 extern "C" int Runtime_FormatIntoBoundedString(char* buffer, unsigned int size, const char* format, void* args)
 {
@@ -26,7 +26,7 @@ extern "C" int Runtime_FormatIntoBoundedString(char* buffer, unsigned int size, 
     state.buffer = buffer;
     state.capacity = size;
     state.written = 0;
-    int result = func_02003418(Runtime_AppendBoundedStringOutput, &state, format, args);
+    int result = Runtime_WriteFormattedArgumentsToCallback(Runtime_AppendBoundedStringOutput, &state, format, args);
     if (buffer) {
         if ((unsigned int)result < size)
             buffer[result] = 0;

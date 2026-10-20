@@ -1,0 +1,6 @@
+#include "globaldefs.h"
+#include "std_library_functions.h"
+
+// Original: arm9/ov003 @ 0x02159c04; symbol: AdvanceSelectionPromptAndMapResultToState.
+extern "C" unsigned TextContext_GetSharedInstance();extern "C" void Window_SetCanvasDisplayAttribute(char*,int,int),Window_SelectCanvasById(unsigned char*,unsigned);extern "C" int Church_PollServiceOption(char*);
+extern "C" ARM void Church_AdvanceServiceSelection(unsigned char*self){unsigned owner=TextContext_GetSharedInstance();if(*(unsigned*)(owner+0x9a0)==3)*(unsigned char*)(owner+0x19ae)=0;unsigned phase=self[0x580];if(phase==0){Window_SetCanvasDisplayAttribute((char*)self+0xf4,0,0);Window_SetCanvasDisplayAttribute((char*)self+0xf4,1,0);Window_SetCanvasDisplayAttribute((char*)self+0xf4,2,0);Window_SelectCanvasById(self+0xf4,1);self[0x580]++;}if(phase==1){switch(Church_PollServiceOption((char*)self)){case -1:return;case 0:self[0x588]=3;break;case 1:self[0x588]=4;break;case 2:self[0x588]=5;break;case 3:self[0x588]=6;break;case 4:self[0x588]=7;break;case -2:case 5:self[0x588]=8;break;}self[0x580]=0;}}

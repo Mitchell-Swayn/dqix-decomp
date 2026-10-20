@@ -90,6 +90,18 @@
     "Math",
     "Network",
     "Util",
+    "Text",
+    "UI",
+    "Save",
+    "Actor",
+    "Camera",
+    "Script",
+    "Field",
+    "Event",
+    "Town",
+    "Menu",
+    "Online",
+    "Debug",
     "Unclassified"
   ],
   "keep_symbols": [

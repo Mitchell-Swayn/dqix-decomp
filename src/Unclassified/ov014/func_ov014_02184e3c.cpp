@@ -1,6 +1,0 @@
-extern "C" int strcmp(const char*,const char*);
-struct Object3D{unsigned pre[3];void* animation;unsigned word;const char* name;bool MaybeSetRegularAnimation(const char*,int);};
-extern "C" { struct Entry{unsigned char pre[0xc];short index;}; struct Animation{unsigned char pre[0xc];unsigned char count;unsigned char gap[0x1f];const char** names;}; struct Owner{unsigned char pre[0xc];unsigned char archive[0x10];unsigned char gap[0x24];Object3D* object;unsigned word;Entry* entry;unsigned char gap2[0x28];int frame;};extern const char data_ov014_021895c8[];extern const char data_ov014_021895ce[];Animation* Object_FindFortyEightByteRecordByKeyCallback(void*,int);
-// Original: arm9/ov014 @ 0x02184E3C; symbol: func_ov014_02184e3c; size: 0xD4.
-void func_ov014_02184e3c(Owner* p){if(!p->object || !p->object->animation || !p->entry)return;Animation* animation=Object_FindFortyEightByteRecordByKeyCallback(p->archive,p->entry->index);if(!animation)return;const char* name=p->object->name;if(name && strcmp(data_ov014_021895c8,name)!=0 && strcmp(data_ov014_021895ce,name)!=0)return;++p->frame;if(animation->count<=p->frame){p->frame=0;if(animation->count>1)p->frame=1;}const char* next=animation->names[p->frame];if(next && *(const signed char*)next)p->object->MaybeSetRegularAnimation(next,0);}
-}

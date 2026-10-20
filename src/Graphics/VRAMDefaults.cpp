@@ -23,7 +23,7 @@ extern "C" int DefaultTexturePaletteFree(unsigned int)
     return -1;
 }
 
-TextureVRAMAllocateCallback data_020f1ee8 = DefaultTextureImageAllocate;
-TextureVRAMFreeCallback data_020f1eec = DefaultTextureImageFree;
-TextureVRAMAllocateCallback data_020f1ef0 = DefaultTexturePaletteAllocate;
-TextureVRAMFreeCallback data_020f1ef4 = DefaultTexturePaletteFree;
+TextureVRAMAllocateCallback InitializeTextureImageVRAM_UnknownRoleProcedureReferenceRecords = DefaultTextureImageAllocate;
+TextureVRAMFreeCallback InitializeTextureImageVRAM_UnknownRoleProcedureReferenceRecords_Variant2 = DefaultTextureImageFree;
+TextureVRAMAllocateCallback InitializeTexturePaletteVRAM_UnknownRoleProcedureReferenceRecords = DefaultTexturePaletteAllocate;
+TextureVRAMFreeCallback InitializeTexturePaletteVRAM_UnknownRoleProcedureReferenceRecords_Variant2 = DefaultTexturePaletteFree;

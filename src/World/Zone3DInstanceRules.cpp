@@ -5,10 +5,30 @@ extern const unsigned short gZoneRuleList[] = {
     100, 198, 200, 201, 400, 4200, 1100, 1200, 1300, 1500,
     1700, 1800, 1900, 2000, 2100, 2200, 2300, 5700, 5800, 0
 };
-extern const unsigned char data_020e6e53[];
-extern const unsigned char data_020e6e54[];
-extern const unsigned char data_020e6e55[];
-extern const unsigned char data_020e6e56[];
+// Original data: arm9/main @ 0x20e6e53; symbol: data_020e6e53.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 00.
+// Observed span: 1 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const unsigned char Zone3DUpdateZone170CInstances_UnknownRoleInitializedBytes[];
+// Original data: arm9/main @ 0x20e6e54; symbol: data_020e6e54.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 00.
+// Observed span: 1 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const unsigned char Zone3DUpdateZone170CInstances_UnknownRoleInitializedBytes_Variant2[];
+// Original data: arm9/main @ 0x20e6e55; symbol: data_020e6e55.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 01.
+// Observed span: 1 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const unsigned char Zone3DUpdateZone170CInstances_UnknownRoleInitializedBytes_Variant3[];
+// Original data: arm9/main @ 0x20e6e56; symbol: data_020e6e56.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 0001000000000000010001000000.
+// Observed span: 14 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const unsigned char Zone3DUpdateZone170CInstances_UnknownRoleInitializedBytes_Variant4[];
 
 // Original: arm9/main @ 0x0201B868; symbol: _ZN6Zone3D16IsZoneInRuleListEi; size: 0x60.
 bool Zone3D::IsZoneInRuleList(int zoneID)
@@ -38,13 +58,13 @@ void Zone3D::UpdateZone170cInstances(bool first, bool second, bool alternate)
     }
     else row = lighting->timeOfDayIndex_ == 3 ? 2 : 3;
     instance = FindBMDJInstance(0, 2);
-    if (instance) UpdateBMDJFlag4(instance, 0, data_020e6e53[row * 4]);
+    if (instance) UpdateBMDJFlag4(instance, 0, Zone3DUpdateZone170CInstances_UnknownRoleInitializedBytes[row * 4]);
     instance = FindBMDJInstance(0, 12);
-    if (instance) UpdateBMDJFlag4(instance, 0, data_020e6e54[row * 4]);
+    if (instance) UpdateBMDJFlag4(instance, 0, Zone3DUpdateZone170CInstances_UnknownRoleInitializedBytes_Variant2[row * 4]);
     instance = FindBMDJInstance(0, 3);
-    if (instance) UpdateBMDJFlag4(instance, 0, data_020e6e55[row * 4]);
+    if (instance) UpdateBMDJFlag4(instance, 0, Zone3DUpdateZone170CInstances_UnknownRoleInitializedBytes_Variant3[row * 4]);
     instance = FindBMDJInstance(0, 9);
-    if (instance) UpdateBMDJFlag4(instance, 0, data_020e6e56[row * 4]);
+    if (instance) UpdateBMDJFlag4(instance, 0, Zone3DUpdateZone170CInstances_UnknownRoleInitializedBytes_Variant4[row * 4]);
 }
 
 // Original: arm9/main @ 0x0201BA1C; symbol: _ZN6Zone3D27RequestBMDJObjectStateResetEii; size: 0x4C.

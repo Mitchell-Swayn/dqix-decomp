@@ -4,14 +4,24 @@
 #include <globaldefs.h>
 
 #if defined(jpn)
-#define data_020ef2bc data_020ef1f8
-#define data_020ef2c0 data_020ef1fc
+#define MapListOpcode67_UnknownRoleInitializedBytes data_020ef1f8
+#define LoadZoneInfoFromMapListScript_UnknownRoleProcedureReferenceRecords data_020ef1fc
 
-#define data_020fdc14 data_020fd980
+#define MapListOpcode67_UnknownRoleZeroInitializedStorage data_020fd980
 #endif
 
-extern int data_020ef2bc;
-extern Script::OpcodeLookupEntry data_020ef2c0[];
+// Original data: arm9/main @ 0x20ef2bc; symbol: data_020ef2bc.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex ffffffff.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern int MapListOpcode67_UnknownRoleInitializedBytes;
+// Original data: arm9/main @ 0x20ef2c0; symbol: data_020ef2c0.
+// Contains original relocated procedure references. Record fields, dispatch contract and exclusive ownership may remain unresolved.
+// Initial values: hex 66000000f4c5010267000000fcc50102690000001cc701026800000014c70102000000000000000065000000c0c1010264000000b8c1010267000000f8c10102 ...; full span in module reference.
+// Observed span: 184 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern Script::OpcodeLookupEntry LoadZoneInfoFromMapListScript_UnknownRoleProcedureReferenceRecords[];
 
 struct ZoneGroupingList
 {
@@ -63,7 +73,12 @@ struct Struct_020fdc14
     int unk_0;
     MapListInfo* output;
     ZoneGroupingList* groupingInfo; // some legacy code?
-} extern data_020fdc14;
+// Original data: arm9/main @ 0x20fdc14; symbol: data_020fdc14.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 12 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+} extern MapListOpcode67_UnknownRoleZeroInitializedStorage;
 
 extern "C"
 {
@@ -75,16 +90,16 @@ int MapList_Opcode_64_Unused(Script::Parameter* params, int numParams) { return 
 int MapList_Opcode_65_Unused(Script::Parameter* params, int numParams) { return 1; }
 
 // Original: arm9/main @ 0x0201C1C8; symbol: _Z24MapList_Opcode_66_UnusedPN6Script9ParameterEi; size: 0x30.
-int MapList_Opcode_66_Unused(Script::Parameter* params, int numParams)
+int MapList_Opcode_66_AllocateGroupingEntriesB(Script::Parameter* params, int numParams)
 {
-    data_020fdc14.groupingInfo->AllocateB(params[0].ToInt());
-    data_020fdc14.unk_0 = 0;
+    MapListOpcode67_UnknownRoleZeroInitializedStorage.groupingInfo->AllocateB(params[0].ToInt());
+    MapListOpcode67_UnknownRoleZeroInitializedStorage.unk_0 = 0;
     return 1;
 }
 
 // doesn't match
 // Original: arm9/main @ 0x0201C1F8; symbol: _Z24MapList_Opcode_67_UnusedPN6Script9ParameterEi; size: 0x1AC.
-int MapList_Opcode_67_Unused(Script::Parameter* params, int numParams)
+int MapList_Opcode_67_InsertGroupingEntryB(Script::Parameter* params, int numParams)
 {
     ZoneGroupingList::EntryB entry;
     
@@ -120,27 +135,27 @@ int MapList_Opcode_67_Unused(Script::Parameter* params, int numParams)
     memcpy(entry.unk_d, longName, 0x1c);
     
     entry.unk_d[0x1b] = '\0';
-    Struct_020fdc14* info = &data_020fdc14;
+    Struct_020fdc14* info = &MapListOpcode67_UnknownRoleZeroInitializedStorage;
     info++;
     (info - 1)->groupingInfo->InsertB(&entry);
     return 1;
 }
 
 // Original: arm9/main @ 0x0201C3A4; symbol: _Z24MapList_Opcode_68_UnusedPN6Script9ParameterEi; size: 0x4C.
-int MapList_Opcode_68_Unused(Script::Parameter* params, int numParams)
+int MapList_Opcode_68_InsertGroupingEntryA(Script::Parameter* params, int numParams)
 {
     const char* name = params[0].ToString();
     ZoneGroupingList::EntryA entry;
     memset(entry.name, 0, 31);
     strcpy(entry.name, name);
-    data_020fdc14.groupingInfo->InsertA(&entry);
+    MapListOpcode67_UnknownRoleZeroInitializedStorage.groupingInfo->InsertA(&entry);
     return 1;
 }
 
 // Original: arm9/main @ 0x0201C3F0; symbol: _Z24MapList_Opcode_69_UnusedPN6Script9ParameterEi; size: 0x24.
-int MapList_Opcode_69_Unused(Script::Parameter* params, int numParams)
+int MapList_Opcode_69_AllocateGroupingEntriesA(Script::Parameter* params, int numParams)
 {
-    data_020fdc14.groupingInfo->AllocateA(params[0].ToInt());
+    MapListOpcode67_UnknownRoleZeroInitializedStorage.groupingInfo->AllocateA(params[0].ToInt());
     return 1;
 }
 
@@ -217,13 +232,13 @@ int MapList_Opcode_66(Script::Parameter* params, int numParams) { return 1; }
 // Original: arm9/main @ 0x0201C5FC; symbol: _Z17MapList_Opcode_67PN6Script9ParameterEi; size: 0x118.
 int MapList_Opcode_67(Script::Parameter* params, int numParams)
 {
-    if (data_020ef2bc != (params++)->ToInt())
+    if (MapListOpcode67_UnknownRoleInitializedBytes != (params++)->ToInt())
         return 1;
 
     (void)(params++)->ToInt();
     const char* maybeDisplayName = (params++)->ToString();
 #if defined(jpn)
-    strcpy(data_020fdc14.output->jp_buffer, maybeDisplayName);
+    strcpy(MapListOpcode67_UnknownRoleZeroInitializedStorage.output->jp_buffer, maybeDisplayName);
 #endif
     (void)(params++)->ToInt();
     (void)(params++)->ToString();
@@ -236,12 +251,12 @@ int MapList_Opcode_67(Script::Parameter* params, int numParams)
 
     const char* modelName = (params++)->ToString();
     if (modelName != NULL)
-        strcpy(data_020fdc14.output->maybeModelName, modelName);
+        strcpy(MapListOpcode67_UnknownRoleZeroInitializedStorage.output->maybeModelName, modelName);
     (void)(params++)->ToInt();
     float zoneRotation = (params++)->ToFloat();
-    data_020fdc14.output->worldRotation = fix32ReduceAngle0To2Pi(4096.0f * zoneRotation);
-    data_020fdc14.output->unknown_38 = 4096.0f * (params++)->ToFloat();
-    data_020fdc14.output->unknown_3c = 4096.0f * (params++)->ToFloat();
+    MapListOpcode67_UnknownRoleZeroInitializedStorage.output->worldRotation = fix32ReduceAngle0To2Pi(4096.0f * zoneRotation);
+    MapListOpcode67_UnknownRoleZeroInitializedStorage.output->unknown_38 = 4096.0f * (params++)->ToFloat();
+    MapListOpcode67_UnknownRoleZeroInitializedStorage.output->unknown_3c = 4096.0f * (params++)->ToFloat();
     return 1;
 }
 
@@ -253,13 +268,13 @@ int MapList_Opcode_69(Script::Parameter* params, int numParams) { return 1; }
 // Original: arm9/main @ 0x0201C724; symbol: _Z29LoadZoneInfoFromMapListScriptiP11MapListInfoPKvj; size: 0x78.
 void LoadZoneInfoFromMapListScript(int zoneID, MapListInfo* outInfo, const void* script, unsigned int length)
 {
-    data_020fdc14.output = outInfo;
-    data_020ef2bc = zoneID;
+    MapListOpcode67_UnknownRoleZeroInitializedStorage.output = outInfo;
+    MapListOpcode67_UnknownRoleInitializedBytes = zoneID;
     Script runner;
     runner.Initialize();
-    runner.SetOpcodeLookup(data_020ef2c0);
+    runner.SetOpcodeLookup(LoadZoneInfoFromMapListScript_UnknownRoleProcedureReferenceRecords);
     runner.Load(script, length);
     runner.Execute();
-    data_020fdc14.output = NULL;
-    data_020ef2bc = -1;
+    MapListOpcode67_UnknownRoleZeroInitializedStorage.output = NULL;
+    MapListOpcode67_UnknownRoleInitializedBytes = -1;
 }

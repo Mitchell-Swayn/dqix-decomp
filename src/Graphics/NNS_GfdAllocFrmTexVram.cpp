@@ -9,7 +9,12 @@ typedef unsigned long u32;
 typedef int BOOL;
 typedef char CheckSDKWordIsFourBytes[(sizeof(u32) == 4) ? 1 : -1];
 typedef char CheckPoolHasTwentyFourByteStride[(sizeof(Struct_020f1f14) == 24) ? 1 : -1];
-extern Struct_020f1f14* data_020f1ef8[7];
+// Original data: arm9/main @ 0x20f1ef8; symbol: data_020f1ef8.
+// Contains original relocated data addresses. Referenced targets and raw storage values are recorded; semantic role and record layout remain unresolved.
+// Initial values: hex 141f0f025c1f0f02741f0f025c1f0f02141f0f02441f0f022c1f0f02.
+// Observed span: 28 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern Struct_020f1f14* NNSGfdAllocFrmTexVram_UnknownRoleDataReferences[7];
 
 static inline u32 GetCapacity(const Struct_020f1f14* p) { return (u32)(p->freeEnd_ - p->freeStart_); }
 static inline u32 AllocateHead(Struct_020f1f14* p, u32 size) {
@@ -23,8 +28,8 @@ static inline u32 AllocateTail(Struct_020f1f14* p, u32 size) {
 }
 static inline Struct_020f1f14* GetPairedPool(const Struct_020f1f14* p) {
     switch (p->relatedToPairing_) {
-    case 0: return &data_020f1f14[1];
-    case 3: return &data_020f1f14[2];
+    case 0: return &ResetTextureImageVRAM_UnknownRoleInitializedBytes[1];
+    case 3: return &ResetTextureImageVRAM_UnknownRoleInitializedBytes[2];
     default: break;
     }
     return 0;
@@ -35,7 +40,7 @@ static inline BOOL ReservePaired(u32 size, u32* address) {
     Struct_020f1f14* pair = 0;
     i = 0;
     do {
-        p = data_020f1ef8[i];
+        p = NNSGfdAllocFrmTexVram_UnknownRoleDataReferences[i];
         if (p->maybeIsUsable_ && GetCapacity(p) >= size) {
             pair = GetPairedPool(p);
             if (pair->maybeIsUsable_ && GetCapacity(pair) >= size / 2) {
@@ -53,7 +58,7 @@ static inline BOOL ReserveOrdinary(u32 size, u32* address) {
     Struct_020f1f14* p = 0;
     i = 0;
     do {
-        p = (&data_020f1ef8[2])[i];
+        p = (&NNSGfdAllocFrmTexVram_UnknownRoleDataReferences[2])[i];
         if (p->maybeIsUsable_) {
             if (GetCapacity(p) >= size) {
                 *address = AllocateTail(p, size);

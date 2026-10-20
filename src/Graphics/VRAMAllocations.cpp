@@ -3,7 +3,12 @@
 
 #include "Graphics/VRAMImagePool.h"
 
-extern Struct_020f1f14* data_020f1ef8[7];
+// Original data: arm9/main @ 0x20f1ef8; symbol: data_020f1ef8.
+// Contains original relocated data addresses. Referenced targets and raw storage values are recorded; semantic role and record layout remain unresolved.
+// Initial values: hex 141f0f025c1f0f02741f0f025c1f0f02141f0f02441f0f022c1f0f02.
+// Observed span: 28 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern Struct_020f1f14* NNSGfdAllocFrmTexVram_UnknownRoleDataReferences[7];
 // points to elements in the above array.
 // Initially in the order ([4], [3], [0], [2], [1]).
 // No idea why
@@ -13,7 +18,12 @@ struct Struct_0210cf88
 {
     unsigned int freeStart_;
     unsigned int freeEnd_;
-} extern data_0210cf88;
+// Original data: arm9/main @ 0x210cf88; symbol: data_0210cf88.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 12 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+} extern AllocateTexturePaletteVRAM_UnknownRoleZeroInitializedStorage;
 
 #pragma optimize_for_size off
 
@@ -40,7 +50,7 @@ extern "C" unsigned int MaybeAllocateTextureImageVRAM(unsigned int amount, bool 
             Struct_020f1f14* secondaryPool;
             Struct_020f1f14* primaryPool;
             
-            primaryPool = data_020f1ef8[pass];
+            primaryPool = NNSGfdAllocFrmTexVram_UnknownRoleDataReferences[pass];
             
             if (primaryPool->maybeIsUsable_ == 0)
                 continue;
@@ -52,10 +62,10 @@ extern "C" unsigned int MaybeAllocateTextureImageVRAM(unsigned int amount, bool 
             switch (primaryPool->relatedToPairing_)
             {
             case 0:
-                secondaryPool = &data_020f1f14[1];
+                secondaryPool = &ResetTextureImageVRAM_UnknownRoleInitializedBytes[1];
                 break;
             case 3:
-                secondaryPool = &data_020f1f14[2];
+                secondaryPool = &ResetTextureImageVRAM_UnknownRoleInitializedBytes[2];
                 break;
             default:
                 secondaryPool = NULL;
@@ -80,7 +90,7 @@ extern "C" unsigned int MaybeAllocateTextureImageVRAM(unsigned int amount, bool 
         do
         {
             Struct_020f1f14* pool;
-            pool = data_020f1ef8[pass + 2];
+            pool = NNSGfdAllocFrmTexVram_UnknownRoleDataReferences[pass + 2];
             if (pool->maybeIsUsable_ == 0)
                 continue;
             if (pool->freeEnd_ - pool->freeStart_ >= alignedSize)

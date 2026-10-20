@@ -1,10 +1,10 @@
-data_ov032_02200180 kind:bss addr:0x02200180
-data_ov032_022001ee kind:bss addr:0x022001ee
-data_ov032_02210fdc kind:bss addr:0x02210fdc
-data_ov032_0221f024 kind:bss addr:0x0221f024
-data_ov032_02257180 kind:bss addr:0x02257180 ambiguous
-data_ov032_02270227 kind:bss addr:0x02270227 ambiguous
-data_ov032_02270fdb kind:bss addr:0x02270fdb ambiguous
-data_ov032_0227f025 kind:bss addr:0x0227f025 ambiguous
-data_ov032_02292500 kind:bss addr:0x02292500
-data_ov032_02200160 kind:data(any) addr:0x02200160
+BgmLoadArchiveIntoLargeOverlayBuffer_UnknownRoleZeroInitializedStorage kind:bss(size=0xa2000) addr:0x02200180
+SharedData_UnknownRoleZeroInitializedStorage_Variant11 kind:bss addr:0x022001ee
+SharedData_UnknownRoleZeroInitializedStorage_Variant12 kind:bss addr:0x02210fdc
+SharedData_UnknownRoleZeroInitializedStorage_Variant13 kind:bss addr:0x0221f024
+SharedData_UnknownRoleZeroInitializedStorage_Variant14 kind:bss addr:0x02257180 ambiguous
+SharedData_UnknownRoleZeroInitializedStorage_Variant15 kind:bss addr:0x02270227 ambiguous
+SharedData_UnknownRoleZeroInitializedStorage_Variant16 kind:bss addr:0x02270fdb ambiguous
+SharedData_UnknownRoleZeroInitializedStorage_Variant17 kind:bss addr:0x0227f025 ambiguous
+SystemInitializeSharedQueueAndStartProcessorContext_UnknownRoleZeroInitializedStorage_Variant2 kind:bss addr:0x02292500
+SharedData_UnknownRoleInitializedBytes_Variant47 kind:data(any) addr:0x02200160

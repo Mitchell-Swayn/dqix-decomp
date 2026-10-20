@@ -29,7 +29,12 @@ typedef struct Owner
   unsigned unknown8C;
   int chunkSize;
 } Owner;
-extern "C" Owner *data_02110370;
+// Original data: arm9/main @ 0x2110370; symbol: data_02110370.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" Owner *NNSSndArcGetCurrent_UnknownRoleZeroInitializedStorage;
 // Original ARM9 main @ 0x020bd7c4, symbol func_020bd7c4.
 extern "C" ARM int Filesystem_ReadIndexedResourceRangeInChunks(unsigned index, char *destination, int length, unsigned offset)
 {
@@ -42,7 +47,7 @@ extern "C" ARM int Filesystem_ReadIndexedResourceRangeInChunks(unsigned index, c
   int chunk;
   Owner *owner;
   Entry *selectedEntry;
-  owner = data_02110370;
+  owner = NNSSndArcGetCurrent_UnknownRoleZeroInitializedStorage;
   Table *table = owner->table;
   if (index >= table->count)
   {

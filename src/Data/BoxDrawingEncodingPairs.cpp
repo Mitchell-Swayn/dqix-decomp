@@ -1,7 +1,12 @@
 // Box-drawing mappings used by the Unicode-to-Shift-JIS conversion.
 // Stored pair order is Shift-JIS output, Unicode input.
 struct BoxDrawingEncodingPair { unsigned short shiftJis; unsigned short unicode; };
-extern "C" const BoxDrawingEncodingPair data_020e743c[32] = {
+// Original data: arm9/main @ 0x20e743c; symbol: data_020e743c.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 9f840025a0840225a1840c25a2841025a3841825a4841425a5841c25a6842c25a7842425a8843425a9843c25aa840125ab840325ac840f25ad841325ae841b25 ...; full span in module reference.
+// Observed span: 128 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" const BoxDrawingEncodingPair TextConvertUnicodeToShiftJis_UnknownRoleInitializedBytes[32] = {
     {0x849f, 0x2500},
     {0x84a0, 0x2502},
     {0x84a1, 0x250c},

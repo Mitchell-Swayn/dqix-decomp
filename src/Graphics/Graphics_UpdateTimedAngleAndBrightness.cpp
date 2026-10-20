@@ -3,8 +3,8 @@ ARM
 extern "C" void* _ZN9GameState11GetInstanceEv();
 extern "C" unsigned _ZNK9GameState12GetTickCountEv(void*);
 extern "C" void* GameState_ReadUnknownB0(void*);
-extern "C" void Object_SetHalfword7CAndClear1EC1EE(void*,short);
-extern "C" void SetAngleAndCacheTrig(void*,unsigned);
+extern "C" void Camera_SetRollAndStopTransition(void*,short);
+extern "C" void Camera_SetProjectionAngle(void*,unsigned);
 extern "C" int _Z22fix32ReduceAngle0To2Pii(int);
 extern "C" void _ZN8Object3D14AdvanceEffectsEv(void*);
 extern "C" void* GameResources_GetInstance();
@@ -20,8 +20,8 @@ extern "C" int Graphics_UpdateTimedAngleAndBrightness(char* self) {
  float angle=3.14f*(*(float*)(self+8)/180.0f);
  *(float*)(self+12)-=0.433300f;
  void* object=GameState_ReadUnknownB0(state);
- Object_SetHalfword7CAndClear1EC1EE(object,(short)_Z22fix32ReduceAngle0To2Pii((int)(4096.0f*angle)));
- SetAngleAndCacheTrig(object,(int)(4096.0f**(float*)(self+12)));
+ Camera_SetRollAndStopTransition(object,(short)_Z22fix32ReduceAngle0To2Pii((int)(4096.0f*angle)));
+ Camera_SetProjectionAngle(object,(int)(4096.0f**(float*)(self+12)));
  if(*(void**)(self+0xe8)) _ZN8Object3D14AdvanceEffectsEv(*(void**)(self+0xe8));
  else _ZN8Object3D14AdvanceEffectsEv(self+0x3c);
  *(unsigned*)self+=ticks;

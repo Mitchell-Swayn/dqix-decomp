@@ -213,7 +213,7 @@ public:
     // 2D sprite of the item that the alchemy pot spits out. It calls Model3D::Draw()
     // but there might be some trickery to ensure nothing is displayed directly 
     // as a result of this call
-    void MaybeUpdateBonePositions();
+    void UpdateTrackedBoneMatrices();
 
     void SendTransformToFifo();
     void SendTranslationToFifo();
@@ -252,8 +252,8 @@ public:
     void ShallowCloneTo(Object3D* out);
     void ShallowCloneModelAndAnimationsTo(Object3D* out);
 
-    bool MaybeSetRegularAnimation(const char* animName, int flags);
-    bool MaybeSetBCFGAnimation(int index, int flags);
+    bool SetAnimationByName(const char* animName, int flags);
+    bool SetBCFGAnimationByIndex(int index, int flags);
     void StopCurrentAnimation();
 
     // offset 40 bit 0, is set the frame that an animation goes from
@@ -319,7 +319,7 @@ public:
     void StageTextureData();
     void ComputeShadowPosition();
 
-    Vector3fix MaybeGetShadowSource() const;
+    Vector3fix GetShadowSourcePosition() const;
 
     void SetHeight(fix32_t height);
     fix32_t GetHeight() const;

@@ -1,0 +1,7498 @@
+{
+ "description": "Feature-based ARM9 subsystem ownership. Chunks are game features or shared services; module/address ranges index binary locations only. Reviewed owner scopes can cross overlays. Broad shared-service groups retain unresolved ownership explicitly.",
+ "schema_version": 2,
+ "chunks": [
+  {
+   "id": "SYSTEM-RUNTIME",
+   "title": "Runtime and startup",
+   "subsystem": "Engine",
+   "folder": "System",
+   "source_directory": null,
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x02000412",
+     "end": "0x02000416"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02000466",
+     "end": "0x0200046a"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020004ec",
+     "end": "0x020004f0"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0200056c",
+     "end": "0x02000570"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020005d2",
+     "end": "0x020005d6"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0200062c",
+     "end": "0x02000630"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020006aa",
+     "end": "0x020006ae"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02000732",
+     "end": "0x02000736"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0200078c",
+     "end": "0x02000790"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02000800",
+     "end": "0x02000ba0"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02000c9c",
+     "end": "0x0200b5f0"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0200b608",
+     "end": "0x0200c1b4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0200c1c0",
+     "end": "0x0200ca98"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0200caa4",
+     "end": "0x0200d334"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0200d34c",
+     "end": "0x0200ffd0"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0201137c",
+     "end": "0x02011650"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02011818",
+     "end": "0x0201238c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02074060",
+     "end": "0x02075090"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:02000412",
+     "name": "VBlankIntrWait"
+    },
+    {
+     "function_id": "arm9/main:02000466",
+     "name": "WaitByLoop"
+    },
+    {
+     "function_id": "arm9/main:020004ec",
+     "name": "IntrWait"
+    },
+    {
+     "function_id": "arm9/main:0200056c",
+     "name": "Halt"
+    }
+   ],
+   "modules": [
+    "arm9/main"
+   ]
+  },
+  {
+   "id": "SYSTEM-PLATFORM",
+   "title": "Platform services and hardware",
+   "subsystem": "Engine",
+   "folder": "System",
+   "source_directory": null,
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x020123f4",
+     "end": "0x02012f24"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020c6c90",
+     "end": "0x020c8284"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020c8348",
+     "end": "0x020c9c8c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020cad00",
+     "end": "0x020cb034"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020cd594",
+     "end": "0x020cf8e4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020d12e4",
+     "end": "0x020d1de8"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020e0f74",
+     "end": "0x020e1288"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:020123f4",
+     "name": "Input_IsKeyBitOneSet"
+    },
+    {
+     "function_id": "arm9/main:02012408",
+     "name": "Input_IsXButtonHeld"
+    },
+    {
+     "function_id": "arm9/main:0201241c",
+     "name": "Input_IsYButtonHeld"
+    },
+    {
+     "function_id": "arm9/main:02012430",
+     "name": "Input_TestKeyMask"
+    }
+   ],
+   "modules": [
+    "arm9/main"
+   ]
+  },
+  {
+   "id": "GRAPHICS-DISPLAY",
+   "title": "Display and VRAM",
+   "subsystem": "Engine",
+   "folder": "Graphics",
+   "source_directory": null,
+   "ranges": [
+    {
+     "module": "arm9/itcm",
+     "start": "0x01ff8000",
+     "end": "0x01ff8640"
+    },
+    {
+     "module": "arm9/itcm",
+     "start": "0x01ff87a4",
+     "end": "0x01ff9740"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0205a528",
+     "end": "0x0205ac40"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020afec4",
+     "end": "0x020b0a1c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020bb984",
+     "end": "0x020bbc38"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020c2eb8",
+     "end": "0x020c48bc"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020c6230",
+     "end": "0x020c6c90"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020c9c8c",
+     "end": "0x020ca430"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:0205a528",
+     "name": "Graphics_DispatchDataByResourceMagic"
+    },
+    {
+     "function_id": "arm9/main:0205a658",
+     "name": "Graphics_LoadKBECResource"
+    },
+    {
+     "function_id": "arm9/main:0205a984",
+     "name": "Graphics_InitializeCellAnimationSequences"
+    },
+    {
+     "function_id": "arm9/main:0205aaf8",
+     "name": "Graphics_LoadCharacterImageByMappingAndEngine"
+    }
+   ],
+   "modules": [
+    "arm9/itcm",
+    "arm9/main"
+   ]
+  },
+  {
+   "id": "FILESYSTEM-ARCHIVES",
+   "title": "Files, archives and background loading",
+   "subsystem": "Engine",
+   "folder": "Filesystem",
+   "source_directory": null,
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x0202f700",
+     "end": "0x02030cd8"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02032424",
+     "end": "0x020328bc"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020466d0",
+     "end": "0x020472e4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020697b8",
+     "end": "0x0206a974"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02075090",
+     "end": "0x02075344"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020a0c0c",
+     "end": "0x020a0d6c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020a1838",
+     "end": "0x020a1de4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020af014",
+     "end": "0x020afec4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020ca7e0",
+     "end": "0x020cad00"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020cb034",
+     "end": "0x020cd594"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020d84f8",
+     "end": "0x020d9850"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020e5728",
+     "end": "0x020e692c"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:0202f700",
+     "name": "_ZN16BackgroundLoader4Task14ZeroInitializeEv"
+    },
+    {
+     "function_id": "arm9/main:0202f744",
+     "name": "_Z30BackgroundLoaderThreadFunctionP16BackgroundLoader"
+    },
+    {
+     "function_id": "arm9/main:0202f760",
+     "name": "_ZN16BackgroundLoader4Task15GetFullFilenameEPc"
+    },
+    {
+     "function_id": "arm9/main:0202f798",
+     "name": "_ZN16BackgroundLoader11GetInstanceEv"
+    }
+   ],
+   "modules": [
+    "arm9/main"
+   ]
+  },
+  {
+   "id": "RESOURCE-MANAGEMENT",
+   "title": "Resource management",
+   "subsystem": "Engine",
+   "folder": "Resource",
+   "source_directory": null,
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x0203a914",
+     "end": "0x0203b66c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0205e854",
+     "end": "0x0205e8d4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0205e92c",
+     "end": "0x0205e944"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0205eabc",
+     "end": "0x0205eac8"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0205eb08",
+     "end": "0x0205eb24"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209c140",
+     "end": "0x0209c20c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209c290",
+     "end": "0x0209c2b8"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209c3b4",
+     "end": "0x0209c480"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209c5e8",
+     "end": "0x0209c678"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209c6bc",
+     "end": "0x0209c73c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209c840",
+     "end": "0x0209ca2c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020aeec8",
+     "end": "0x020af014"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020bbc38",
+     "end": "0x020bd8f0"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020bd914",
+     "end": "0x020be1a8"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020be280",
+     "end": "0x020be2ec"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020be3f4",
+     "end": "0x020be44c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020be474",
+     "end": "0x020be4a4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020be4f4",
+     "end": "0x020be53c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020be6c4",
+     "end": "0x020be828"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020be924",
+     "end": "0x020c0c3c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020d1de8",
+     "end": "0x020d2f88"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020d9850",
+     "end": "0x020da1ac"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020daf20",
+     "end": "0x020dc07c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020dcf7c",
+     "end": "0x020dd11c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020dde3c",
+     "end": "0x020e063c"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:0203a914",
+     "name": "ResourceHandle_InitializeArchiveAndPlaybackState"
+    },
+    {
+     "function_id": "arm9/main:0203a950",
+     "name": "ResourceHandle_ReleaseArchiveAndResetState"
+    },
+    {
+     "function_id": "arm9/main:0203a974",
+     "name": "ResourceHandle_AllocateLoadAndReadValue"
+    },
+    {
+     "function_id": "arm9/main:0203aa08",
+     "name": "ResourceHandle_PlayDeferredSequenceArchiveEntry"
+    }
+   ],
+   "modules": [
+    "arm9/main"
+   ]
+  },
+  {
+   "id": "GRAPHICS-3D",
+   "title": "Models, animation and 3D rendering",
+   "subsystem": "Engine",
+   "folder": "Graphics",
+   "source_directory": null,
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x02030cd8",
+     "end": "0x02032424"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020472e4",
+     "end": "0x020478bc"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02050400",
+     "end": "0x020546c8"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0207cf30",
+     "end": "0x0207d134"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0207d2c4",
+     "end": "0x0207e060"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020b3880",
+     "end": "0x020bb984"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020c0c3c",
+     "end": "0x020c0e88"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020c0e9c",
+     "end": "0x020c2eb8"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020c5100",
+     "end": "0x020c58cc"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020ca430",
+     "end": "0x020ca7e0"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:02030cd8",
+     "name": "_Z24fix32SignedAngleDistanceii"
+    },
+    {
+     "function_id": "arm9/main:02030d24",
+     "name": "_Z8fix32absi"
+    },
+    {
+     "function_id": "arm9/main:02030d30",
+     "name": "_Z15RotationMatrixXi"
+    },
+    {
+     "function_id": "arm9/main:02030d84",
+     "name": "_Z15RotationMatrixYi"
+    }
+   ],
+   "modules": [
+    "arm9/main"
+   ]
+  },
+  {
+   "id": "GRAPHICS-2D",
+   "title": "Sprites, tilemaps and fonts",
+   "subsystem": "Engine",
+   "folder": "Graphics",
+   "source_directory": null,
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x0204a5d4",
+     "end": "0x0204bdf0"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0204bf30",
+     "end": "0x02050400"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020813ec",
+     "end": "0x02081ea4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020b0a1c",
+     "end": "0x020b2bc0"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020c4b88",
+     "end": "0x020c5100"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020c58cc",
+     "end": "0x020c6230"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:0204a5d4",
+     "name": "Combat_SetSelectionResult"
+    },
+    {
+     "function_id": "arm9/main:0204a5dc",
+     "name": "Object3D_SetLinkedTarget"
+    },
+    {
+     "function_id": "arm9/main:0204a5e4",
+     "name": "Graphics_GetCharacterTransferCallback"
+    },
+    {
+     "function_id": "arm9/main:0204a5f8",
+     "name": "Graphics_GetScreenTransferCallback"
+    }
+   ],
+   "modules": [
+    "arm9/main"
+   ]
+  },
+  {
+   "id": "TEXT-MESSAGES",
+   "title": "Messages and text formatting",
+   "subsystem": "Engine",
+   "folder": "Text",
+   "source_directory": null,
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x020287b4",
+     "end": "0x0202ae18"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02041b00",
+     "end": "0x02042b10"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020464a4",
+     "end": "0x020466d0"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02067e98",
+     "end": "0x020697b8"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0206ed44",
+     "end": "0x0206f4f0"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02093704",
+     "end": "0x02094b5c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209ad30",
+     "end": "0x0209c0f4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020e3580",
+     "end": "0x020e5728"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:020287b4",
+     "name": "ZoneState_ResetFourTrackedZones"
+    },
+    {
+     "function_id": "arm9/main:02028894",
+     "name": "ZoneState_InitializeTrackedZonesWithAllocatorPairs"
+    },
+    {
+     "function_id": "arm9/main:020288e0",
+     "name": "GameState_ClearTrackedGroupsWithoutMatchingPartyIdentifier"
+    },
+    {
+     "function_id": "arm9/main:020289c4",
+     "name": "ZoneState_ResetTrackedZone"
+    }
+   ],
+   "modules": [
+    "arm9/main"
+   ]
+  },
+  {
+   "id": "UI-WIDGETS",
+   "title": "Windows and selection widgets",
+   "subsystem": "Engine",
+   "folder": "UI",
+   "source_directory": null,
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x02020028",
+     "end": "0x0202053c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02026ebc",
+     "end": "0x02026f34"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0202f1a4",
+     "end": "0x0202f700"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02041654",
+     "end": "0x02041b00"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02042b10",
+     "end": "0x020464a4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0205b190",
+     "end": "0x0205e05c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020652c8",
+     "end": "0x02067e98"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0206a974",
+     "end": "0x0206bf2c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0208a03c",
+     "end": "0x0208b548"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020dc07c",
+     "end": "0x020dc0e0"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020e1288",
+     "end": "0x020e3580"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:02020028",
+     "name": "PartyStatus_SetSnapshotTrackingEnabled"
+    },
+    {
+     "function_id": "arm9/main:0202006c",
+     "name": "PartyStatus_RequestMemberPortraitRefresh"
+    },
+    {
+     "function_id": "arm9/main:02020084",
+     "name": "PartyStatus_IsSnapshotTrackingEnabled"
+    },
+    {
+     "function_id": "arm9/main:020200c0",
+     "name": "PartyStatus_RenderMemberPortraitLabels"
+    }
+   ],
+   "modules": [
+    "arm9/main"
+   ]
+  },
+  {
+   "id": "SAVE-DATA",
+   "title": "Save data and card backup",
+   "subsystem": "Engine",
+   "folder": "Save",
+   "source_directory": null,
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x020116c8",
+     "end": "0x02011818"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020758a4",
+     "end": "0x02075d64"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0207c984",
+     "end": "0x0207ca94"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0207cbe8",
+     "end": "0x0207cc18"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020a6030",
+     "end": "0x020a6084"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020a93e0",
+     "end": "0x020abe84"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020abf38",
+     "end": "0x020abf60"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020ac020",
+     "end": "0x020ac494"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020ac4f8",
+     "end": "0x020ac910"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020c8284",
+     "end": "0x020c8348"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020cf8e4",
+     "end": "0x020d12e4"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:020116c8",
+     "name": "GameState_ResetGrottoAndTreasureMapInitialFlags"
+    },
+    {
+     "function_id": "arm9/main:02011738",
+     "name": "_ZN9GameState15GetGrottoStructEv"
+    },
+    {
+     "function_id": "arm9/main:02011744",
+     "name": "GameState_CopyMarkedTreasureMapToActiveGrotto"
+    },
+    {
+     "function_id": "arm9/main:020117cc",
+     "name": "GameState_LoadActiveGrottoMetadataFromDetailed"
+    }
+   ],
+   "modules": [
+    "arm9/main"
+   ]
+  },
+  {
+   "id": "NETWORK-LOCAL",
+   "title": "Local wireless transport",
+   "subsystem": "Engine",
+   "folder": "Network",
+   "source_directory": null,
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x0202ae18",
+     "end": "0x0202df68"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0205e05c",
+     "end": "0x0205e854"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020d3dcc",
+     "end": "0x020d6c0c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020d80b0",
+     "end": "0x020d84f8"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:0202ae18",
+     "name": "Network_GetConnectionManager"
+    },
+    {
+     "function_id": "arm9/main:0202ae24",
+     "name": "Network_GetCommandRecordPool"
+    },
+    {
+     "function_id": "arm9/main:0202ae30",
+     "name": "Network_HandleConnectionEventSixteen"
+    },
+    {
+     "function_id": "arm9/main:0202ae4c",
+     "name": "Network_ProcessDiscoveredPeerAdvertisement"
+    }
+   ],
+   "modules": [
+    "arm9/main"
+   ]
+  },
+  {
+   "id": "ACTORS",
+   "title": "Actors and object lifecycle",
+   "subsystem": "Game core",
+   "folder": "Actor",
+   "source_directory": null,
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x0200ffd0",
+     "end": "0x02010038"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0201238c",
+     "end": "0x020123f4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0201a188",
+     "end": "0x0201ba68"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02027ccc",
+     "end": "0x020287b4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020328bc",
+     "end": "0x02039750"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0203bd88",
+     "end": "0x02041654"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020478bc",
+     "end": "0x0204a5d4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0204bdf0",
+     "end": "0x0204bf30"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020546c8",
+     "end": "0x0205a180"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020733d8",
+     "end": "0x02074060"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02075d64",
+     "end": "0x02079fc8"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0207e060",
+     "end": "0x0207e304"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0207e87c",
+     "end": "0x0207ec7c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020a6084",
+     "end": "0x020a84e0"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020ac910",
+     "end": "0x020ae4c8"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020b2f9c",
+     "end": "0x020b3880"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020d6c0c",
+     "end": "0x020d80b0"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020da1ac",
+     "end": "0x020daf20"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:0200ffd0",
+     "name": "GameState_GetAuxiliaryFieldObject"
+    },
+    {
+     "function_id": "arm9/main:0200ffe0",
+     "name": "GameState_FindFlag20ObjectByKey"
+    },
+    {
+     "function_id": "arm9/main:0201238c",
+     "name": "Actor_DoNothing"
+    },
+    {
+     "function_id": "arm9/main:02012390",
+     "name": "Input_IsLeftHeld"
+    }
+   ],
+   "modules": [
+    "arm9/main"
+   ]
+  },
+  {
+   "id": "CAMERA",
+   "title": "Camera and motion tracks",
+   "subsystem": "Game core",
+   "folder": "Camera",
+   "source_directory": null,
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x0202df68",
+     "end": "0x0202f1a4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020a0d6c",
+     "end": "0x020a1838"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020a1de4",
+     "end": "0x020a36cc"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:0202df68",
+     "name": "Object_InitializeTransformAndEmbeddedStateDefaults"
+    },
+    {
+     "function_id": "arm9/main:0202e08c",
+     "name": "Camera_SetObjectFlags"
+    },
+    {
+     "function_id": "arm9/main:0202e09c",
+     "name": "Camera_GetObjectFlags"
+    },
+    {
+     "function_id": "arm9/main:0202e0a4",
+     "name": "Camera_UpdateRenderView"
+    }
+   ],
+   "modules": [
+    "arm9/main"
+   ]
+  },
+  {
+   "id": "WORLD",
+   "title": "World, zones and placement",
+   "subsystem": "Game core",
+   "folder": "World",
+   "source_directory": null,
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x02012f24",
+     "end": "0x0201a188"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0201ba68",
+     "end": "0x02020028"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0202053c",
+     "end": "0x02026ebc"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02026f34",
+     "end": "0x02027ccc"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02039750",
+     "end": "0x0203a914"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0203b66c",
+     "end": "0x0203bd88"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0205a180",
+     "end": "0x0205a528"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0205ac40",
+     "end": "0x0205b190"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0205eb54",
+     "end": "0x0205eb80"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0205ebb4",
+     "end": "0x0205ebc0"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0205ebfc",
+     "end": "0x0205ec2c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0205ec34",
+     "end": "0x0205ec40"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02075344",
+     "end": "0x020758a4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02079fc8",
+     "end": "0x0207c258"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0207e304",
+     "end": "0x0207e87c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0208b548",
+     "end": "0x0208b9a0"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0208ba54",
+     "end": "0x0208baec"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0208becc",
+     "end": "0x0208bf78"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0208c9cc",
+     "end": "0x0208cb08"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0208cfcc",
+     "end": "0x0208f748"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02094b5c",
+     "end": "0x02094d5c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020965ac",
+     "end": "0x02098268"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020a84e0",
+     "end": "0x020a93e0"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020b2bc0",
+     "end": "0x020b2f9c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020c48bc",
+     "end": "0x020c4b88"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020dc214",
+     "end": "0x020dc428"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020e063c",
+     "end": "0x020e0f74"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:02012f24",
+     "name": "_Z29GetExceptionalZoneRecordIndexi"
+    },
+    {
+     "function_id": "arm9/main:02012f68",
+     "name": "_Z25GetOutdoorZoneRecordIndexi"
+    },
+    {
+     "function_id": "arm9/main:02012fa4",
+     "name": "_Z22ResetZoneFragmentPartsP23ZoneContainerRenderPart"
+    },
+    {
+     "function_id": "arm9/main:02012fe4",
+     "name": "Zone3D_GetMainInstance"
+    }
+   ],
+   "modules": [
+    "arm9/main"
+   ]
+  },
+  {
+   "id": "SCRIPT-VM",
+   "title": "Script VM and commands",
+   "subsystem": "Game core",
+   "folder": "Script",
+   "source_directory": null,
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x0205ec40",
+     "end": "0x020652c8"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0206bf2c",
+     "end": "0x0206ed44"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0206f4f0",
+     "end": "0x020733d8"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0207ec7c",
+     "end": "0x020813ec"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02094d5c",
+     "end": "0x020965ac"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02098268",
+     "end": "0x0209a774"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209caa0",
+     "end": "0x0209cae8"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209cb74",
+     "end": "0x0209cbb8"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209cbcc",
+     "end": "0x0209cc3c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209ccec",
+     "end": "0x0209cdf8"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209ce14",
+     "end": "0x0209fffc"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020ae4c8",
+     "end": "0x020aeec8"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020d2f88",
+     "end": "0x020d3dcc"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020dc0e0",
+     "end": "0x020dc214"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:0205ec40",
+     "name": "Script_InitializeTriggerGroup"
+    },
+    {
+     "function_id": "arm9/main:0205ec70",
+     "name": "DecodePackedScriptParametersToLists"
+    },
+    {
+     "function_id": "arm9/main:0205f9bc",
+     "name": "Script_AcceptTriggerOpcodeHundred"
+    },
+    {
+     "function_id": "arm9/main:0205f9c4",
+     "name": "Script_AcceptTriggerOpcodeHundredOne"
+    }
+   ],
+   "modules": [
+    "arm9/main"
+   ]
+  },
+  {
+   "id": "GAME-STATE",
+   "title": "Party and persistent game state",
+   "subsystem": "Game core",
+   "folder": "GameState",
+   "source_directory": null,
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x02010038",
+     "end": "0x0201137c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x02081ea4",
+     "end": "0x0208a03c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209a774",
+     "end": "0x0209ad30"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020a0364",
+     "end": "0x020a0388"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020dc428",
+     "end": "0x020dcf7c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020dd11c",
+     "end": "0x020dd768"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020dd7ac",
+     "end": "0x020ddb20"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020ddcbc",
+     "end": "0x020dddcc"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:02010038",
+     "name": "GameState_CollectPresentMemberIndices"
+    },
+    {
+     "function_id": "arm9/main:02010088",
+     "name": "GameObject_IsDead"
+    },
+    {
+     "function_id": "arm9/main:020100a0",
+     "name": "GameState_SetProtagonistObjectIndex"
+    },
+    {
+     "function_id": "arm9/main:020100a8",
+     "name": "GameState_ReadProtagonistObjectIndex"
+    }
+   ],
+   "modules": [
+    "arm9/main"
+   ]
+  },
+  {
+   "id": "GROTTO-GENERATION",
+   "title": "Grotto generation and treasure maps",
+   "subsystem": "Game core",
+   "folder": "Grotto",
+   "source_directory": null,
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x02011650",
+     "end": "0x020116c8"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0208f748",
+     "end": "0x02093704"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020a36cc",
+     "end": "0x020a6030"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:02011650",
+     "name": "_ZN9GameState29SetTreasureMapLanguageDataPtrEPh"
+    },
+    {
+     "function_id": "arm9/main:0201165c",
+     "name": "GameState_ConfigureActiveGrottoEntranceAndMetadata"
+    },
+    {
+     "function_id": "arm9/main:0208f748",
+     "name": "_ZN13ZoneState266418ShowEntranceObjectEv"
+    },
+    {
+     "function_id": "arm9/main:0208f7ec",
+     "name": "_ZN13ZoneState26645ResetEv"
+    }
+   ],
+   "modules": [
+    "arm9/main"
+   ]
+  },
+  {
+   "id": "BATTLE-TURNS",
+   "title": "Battle turns and status effects",
+   "subsystem": "Battle",
+   "folder": "Combat",
+   "source_directory": "Combat/Turns",
+   "ranges": [
+    {
+     "module": "arm9/ov000",
+     "start": "0x021536e0",
+     "end": "0x021600cc"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x0216258c",
+     "end": "0x02163338"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02163344",
+     "end": "0x02163db4"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02170460",
+     "end": "0x02170cf8"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x021735d0",
+     "end": "0x02174324"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02174da4",
+     "end": "0x02174e1c"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02174e34",
+     "end": "0x02174e50"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x021751ac",
+     "end": "0x02175258"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02175440",
+     "end": "0x02175480"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02175628",
+     "end": "0x021757ac"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02175f80",
+     "end": "0x02176038"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x0217608c",
+     "end": "0x02176134"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x0217edd4",
+     "end": "0x0217f00c"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x0217f480",
+     "end": "0x0217f518"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x0217f78c",
+     "end": "0x0217f7d4"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x0217fa60",
+     "end": "0x0217fb98"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x0217ff34",
+     "end": "0x02180404"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02180528",
+     "end": "0x02180594"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x021811f4",
+     "end": "0x021813d4"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x021816e8",
+     "end": "0x02182a58"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02183710",
+     "end": "0x021838a4"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov000:021536e0",
+     "name": "_Z16GetCombatantByIDii"
+    },
+    {
+     "function_id": "arm9/ov000:021536f8",
+     "name": "Combat_FindIndexedMonsterObject"
+    },
+    {
+     "function_id": "arm9/ov000:02153710",
+     "name": "Combat_GetPartyCharacterData"
+    },
+    {
+     "function_id": "arm9/ov000:02153758",
+     "name": "FindNonPartyObjectResourceRecord"
+    }
+   ],
+   "modules": [
+    "arm9/ov000"
+   ]
+  },
+  {
+   "id": "BATTLE-SCENE",
+   "title": "Battle scene and participants",
+   "subsystem": "Battle",
+   "folder": "Combat",
+   "source_directory": "Combat/Scene",
+   "ranges": [
+    {
+     "module": "arm9/ov000",
+     "start": "0x021600cc",
+     "end": "0x02161318"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02161380",
+     "end": "0x0216258c"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02163db4",
+     "end": "0x02169a40"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x0216d234",
+     "end": "0x0216fe48"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov000:021600cc",
+     "name": "Combat_AppendActionTargetRecord"
+    },
+    {
+     "function_id": "arm9/ov000:021600f8",
+     "name": "Combat_GetIndexedActionTarget"
+    },
+    {
+     "function_id": "arm9/ov000:02160130",
+     "name": "BattleScene_GetActiveInstance"
+    },
+    {
+     "function_id": "arm9/ov000:02160140",
+     "name": "BattleScene_Initialize"
+    }
+   ],
+   "modules": [
+    "arm9/ov000"
+   ]
+  },
+  {
+   "id": "BATTLE-COMMANDS",
+   "title": "Battle presentation commands",
+   "subsystem": "Battle",
+   "folder": "Combat",
+   "source_directory": "Combat/Commands",
+   "ranges": [
+    {
+     "module": "arm9/ov000",
+     "start": "0x02169a40",
+     "end": "0x0216d234"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov000:02169a40",
+     "name": "CombatScript_InitializeCommandGroup"
+    },
+    {
+     "function_id": "arm9/ov000:02169a58",
+     "name": "CombatScript_FindCommandGroupByActionKey"
+    },
+    {
+     "function_id": "arm9/ov000:02169aa4",
+     "name": "CombatScript_CollectCommandGroupsByActionKey"
+    },
+    {
+     "function_id": "arm9/ov000:02169b04",
+     "name": "Util_FindLinkedNodeByWord"
+    }
+   ],
+   "modules": [
+    "arm9/ov000"
+   ]
+  },
+  {
+   "id": "BATTLE-MENUS",
+   "title": "Battle menus and command selection",
+   "subsystem": "Battle",
+   "folder": "Combat",
+   "source_directory": "Combat/BattleMenu",
+   "ranges": [
+    {
+     "module": "arm9/ov000",
+     "start": "0x02161318",
+     "end": "0x02161380"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02163338",
+     "end": "0x02163344"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x0216fe48",
+     "end": "0x02170460"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02170cf8",
+     "end": "0x021735d0"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02174324",
+     "end": "0x02174da4"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02174e1c",
+     "end": "0x02174e34"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02174e50",
+     "end": "0x021751ac"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02175258",
+     "end": "0x02175440"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02175480",
+     "end": "0x02175628"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x021757ac",
+     "end": "0x02175f80"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02176038",
+     "end": "0x0217608c"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02176134",
+     "end": "0x0217edd4"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x0217f00c",
+     "end": "0x0217f480"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x0217f518",
+     "end": "0x0217f78c"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x0217f7d4",
+     "end": "0x0217fa60"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x0217fb98",
+     "end": "0x0217ff34"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02180404",
+     "end": "0x02180528"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x02180594",
+     "end": "0x021811f4"
+    },
+    {
+     "module": "arm9/ov000",
+     "start": "0x021813d4",
+     "end": "0x021816e8"
+    },
+    {
+     "module": "arm9/ov025",
+     "start": "0x021dafd0",
+     "end": "0x021db038"
+    }
+   ],
+   "evidence": "BattleMenu behavior owners across scene, turn, presentation and command-selection code; includes shared battle-menu helpers.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov000:02161318",
+     "name": "BattleMenu_FindPartyCommandRecord"
+    },
+    {
+     "function_id": "arm9/ov000:02163338",
+     "name": "BattleMenu_SetPartyCommandMode"
+    },
+    {
+     "function_id": "arm9/ov000:0216fe48",
+     "name": "BattleText_ResetSelectiveStringLoader"
+    },
+    {
+     "function_id": "arm9/ov000:0216fe74",
+     "name": "BattleMenu_GetSpriteResourceEntry"
+    }
+   ],
+   "modules": [
+    "arm9/ov000",
+    "arm9/ov025"
+   ]
+  },
+  {
+   "id": "BATTLE-FORMULAS",
+   "title": "Damage, healing and effects",
+   "subsystem": "Battle",
+   "folder": "Combat",
+   "source_directory": "Combat/Formulas",
+   "ranges": [
+    {
+     "module": "arm9/ov024",
+     "start": "0x021d8a40",
+     "end": "0x021ed890"
+    },
+    {
+     "module": "arm9/ov024",
+     "start": "0x021f6b5c",
+     "end": "0x021f736c"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov024:021d8a40",
+     "name": "Combat_BoostPowerForMonsterModeTwo"
+    },
+    {
+     "function_id": "arm9/ov024:021d8a84",
+     "name": "Combat_IncrementPowerForMonsterTraitBitTwelve"
+    },
+    {
+     "function_id": "arm9/ov024:021d8ab4",
+     "name": "Combat_ScaleFormulaKindThreePowerByFiveQuarters"
+    },
+    {
+     "function_id": "arm9/ov024:021d8ad8",
+     "name": "Combat_CalculateThreeQuarterAttackPhysicalDamage"
+    }
+   ],
+   "modules": [
+    "arm9/ov024"
+   ]
+  },
+  {
+   "id": "BATTLE-AI",
+   "title": "Enemy decisions and targeting",
+   "subsystem": "Battle",
+   "folder": "Combat",
+   "source_directory": "Combat/AI",
+   "ranges": [
+    {
+     "module": "arm9/ov024",
+     "start": "0x021ed890",
+     "end": "0x021f6b5c"
+    },
+    {
+     "module": "arm9/ov024",
+     "start": "0x021f736c",
+     "end": "0x021fe6c8"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov024:021ed890",
+     "name": "Combat_SelectRandomCandidateInPlace"
+    },
+    {
+     "function_id": "arm9/ov024:021ed8c0",
+     "name": "Combat_SelectWeightedTargetCountFromPackedMode"
+    },
+    {
+     "function_id": "arm9/ov024:021ed9dc",
+     "name": "Combat_TestPartyFlagsAndUnrestrictedDescriptor"
+    },
+    {
+     "function_id": "arm9/ov024:021eda60",
+     "name": "Combatant_TestPrimaryStatusFlagBit9"
+    }
+   ],
+   "modules": [
+    "arm9/ov024"
+   ]
+  },
+  {
+   "id": "BATTLE-PRESENTATION",
+   "title": "Skill and spell presentation",
+   "subsystem": "Battle",
+   "folder": "Combat",
+   "source_directory": "Combat/Presentation",
+   "ranges": [
+    {
+     "module": "arm9/ov025",
+     "start": "0x021d8a40",
+     "end": "0x021dafd0"
+    },
+    {
+     "module": "arm9/ov025",
+     "start": "0x021db038",
+     "end": "0x021eeea0"
+    },
+    {
+     "module": "arm9/ov025",
+     "start": "0x021ef200",
+     "end": "0x021ef398"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov025:021d8a40",
+     "name": "BattleScene_DispatchTargetResultsByCommandCounts"
+    },
+    {
+     "function_id": "arm9/ov025:021d8ab8",
+     "name": "DispatchLinkedRecordItemCounts"
+    },
+    {
+     "function_id": "arm9/ov025:021d8bfc",
+     "name": "BattleScene_DispatchStoredActionResult"
+    },
+    {
+     "function_id": "arm9/ov025:021d8c30",
+     "name": "BattleScene_PresentActionResult"
+    }
+   ],
+   "modules": [
+    "arm9/ov025"
+   ]
+  },
+  {
+   "id": "BATTLE-SPECIAL-EFFECTS",
+   "title": "Special effect scenes",
+   "subsystem": "Battle",
+   "folder": "Combat",
+   "source_directory": "Combat/SpecialEffects",
+   "ranges": [
+    {
+     "module": "arm9/ov026",
+     "start": "0x021d8a40",
+     "end": "0x021de6a0"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov026:021d8a40",
+     "name": "BattleScene_IsPartyCommandSynchronizationReady"
+    },
+    {
+     "function_id": "arm9/ov026:021d8a78",
+     "name": "BattleScene_FormatBattleStringInSharedBuffer"
+    },
+    {
+     "function_id": "arm9/ov026:021d8aac",
+     "name": "BattleScene_SelectEncounterCameraPreset"
+    },
+    {
+     "function_id": "arm9/ov026:021d8b98",
+     "name": "BattleScene_SetCameraPresetVectorComponents"
+    }
+   ],
+   "modules": [
+    "arm9/ov026"
+   ]
+  },
+  {
+   "id": "FIELD-SCENE",
+   "title": "Field scene and encounters",
+   "subsystem": "Field",
+   "folder": "Field",
+   "source_directory": "Field/Scene",
+   "ranges": [
+    {
+     "module": "arm9/ov017",
+     "start": "0x0218b5a0",
+     "end": "0x0218d2f0"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x0218d500",
+     "end": "0x021941fc"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x0219593c",
+     "end": "0x021a3af0"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021adcb0",
+     "end": "0x021af098"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021b2bd0",
+     "end": "0x021b2c24"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021b57fc",
+     "end": "0x021b6290"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021bac24",
+     "end": "0x021be0a0"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021bf014",
+     "end": "0x021c0334"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021c1a98",
+     "end": "0x021c3194"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021d0798",
+     "end": "0x021d0ae4"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov017:0218b5a0",
+     "name": "GameResources_SetInstance"
+    },
+    {
+     "function_id": "arm9/ov017:0218b5b0",
+     "name": "GameResources_GetInstance"
+    },
+    {
+     "function_id": "arm9/ov017:0218b5c0",
+     "name": "GameResources_SetPartyStatusSnapshotTracking"
+    },
+    {
+     "function_id": "arm9/ov017:0218b5f8",
+     "name": "GameResources_RequestPartyPortraitRefresh"
+    }
+   ],
+   "modules": [
+    "arm9/ov017"
+   ]
+  },
+  {
+   "id": "FIELD-EVENTS",
+   "title": "Field events and triggers",
+   "subsystem": "Field",
+   "folder": "Field",
+   "source_directory": "Field/Events",
+   "ranges": [
+    {
+     "module": "arm9/ov017",
+     "start": "0x021a3af0",
+     "end": "0x021a5a48"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021a99c8",
+     "end": "0x021adcb0"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021b2c24",
+     "end": "0x021b57fc"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021b6290",
+     "end": "0x021bac24"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021be0a0",
+     "end": "0x021bf014"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021c0334",
+     "end": "0x021c1a98"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021c3e18",
+     "end": "0x021c6534"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021c98f4",
+     "end": "0x021ca2d8"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021d48f0",
+     "end": "0x021d615c"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021d6d28",
+     "end": "0x021d7310"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov017:021a3af0",
+     "name": "FieldCommandQueue_DrawFrontCommandModel"
+    },
+    {
+     "function_id": "arm9/ov017:021a3b00",
+     "name": "FieldCommandQueue_DrawCommandModelForActiveCommand"
+    },
+    {
+     "function_id": "arm9/ov017:021a3b30",
+     "name": "FieldCommandQueue_DrawFrontOverlay"
+    },
+    {
+     "function_id": "arm9/ov017:021a3b40",
+     "name": "FieldCommandQueue_DrawActiveCommandOverlay"
+    }
+   ],
+   "modules": [
+    "arm9/ov017"
+   ]
+  },
+  {
+   "id": "FIELD-MULTIPLAYER",
+   "title": "Multiplayer party synchronization",
+   "subsystem": "Field",
+   "folder": "Field",
+   "source_directory": "Field/Multiplayer",
+   "ranges": [
+    {
+     "module": "arm9/ov017",
+     "start": "0x021941fc",
+     "end": "0x0219593c"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021af098",
+     "end": "0x021b14ec"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021c3194",
+     "end": "0x021c3e18"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021c6534",
+     "end": "0x021c98f4"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021ca2d8",
+     "end": "0x021cff0c"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021d0ae4",
+     "end": "0x021d196c"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021d3f00",
+     "end": "0x021d48f0"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov017:021941fc",
+     "name": "Field_UpdateMultiplayerPartySynchronization"
+    },
+    {
+     "function_id": "arm9/ov017:02195214",
+     "name": "Field_CopyPartyJoinRecord"
+    },
+    {
+     "function_id": "arm9/ov017:02195250",
+     "name": "Field_QueueOrReplacePartyJoinRequest"
+    },
+    {
+     "function_id": "arm9/ov017:0219531c",
+     "name": "Field_PopPartyJoinRequest"
+    }
+   ],
+   "modules": [
+    "arm9/ov017"
+   ]
+  },
+  {
+   "id": "FIELD-SCREENS",
+   "title": "Field screens and transitions",
+   "subsystem": "Field",
+   "folder": "Field",
+   "source_directory": "Field/Screens",
+   "ranges": [
+    {
+     "module": "arm9/ov017",
+     "start": "0x0218d2f0",
+     "end": "0x0218d500"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021a5a48",
+     "end": "0x021a99c8"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021b14ec",
+     "end": "0x021b2bd0"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021cff0c",
+     "end": "0x021d0798"
+    },
+    {
+     "module": "arm9/ov017",
+     "start": "0x021d196c",
+     "end": "0x021d3f00"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov017:0218d2f0",
+     "name": "Field_ApplyPartyRecoveryAndRefreshActors"
+    },
+    {
+     "function_id": "arm9/ov017:0218d4b8",
+     "name": "Field_SetPartyMemberMessageFlag"
+    },
+    {
+     "function_id": "arm9/ov017:0218d4d0",
+     "name": "Field_ClearPartyMemberMessageFlag"
+    },
+    {
+     "function_id": "arm9/ov017:0218d4ec",
+     "name": "Field_TestPartyMemberMessageFlag"
+    }
+   ],
+   "modules": [
+    "arm9/ov017"
+   ]
+  },
+  {
+   "id": "CUTSCENE-SCENE",
+   "title": "Cutscene scenes and resources",
+   "subsystem": "Event",
+   "folder": "Event",
+   "source_directory": "Event/Cutscenes",
+   "ranges": [
+    {
+     "module": "arm9/ov001",
+     "start": "0x021536e0",
+     "end": "0x02156ba0"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x0215a718",
+     "end": "0x0215bf94"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x0215c994",
+     "end": "0x0215d168"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x0215e0c0",
+     "end": "0x02162d3c"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x021634e8",
+     "end": "0x02163540"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x02163564",
+     "end": "0x021636d0"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x02163724",
+     "end": "0x02163744"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x02163764",
+     "end": "0x0216376c"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x021637a8",
+     "end": "0x02163a18"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x02163a5c",
+     "end": "0x02163ab4"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x02163aec",
+     "end": "0x0216427c"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov001:021536e0",
+     "name": "Script_CountTextTableEntry"
+    },
+    {
+     "function_id": "arm9/ov001:021536fc",
+     "name": "Script_AppendIntegerAndOwnedString"
+    },
+    {
+     "function_id": "arm9/ov001:021537a0",
+     "name": "Script_ClearTextTable"
+    },
+    {
+     "function_id": "arm9/ov001:021537b0",
+     "name": "Script_BuildOwnedTextTable"
+    }
+   ],
+   "modules": [
+    "arm9/ov001"
+   ]
+  },
+  {
+   "id": "CUTSCENE-MOTION",
+   "title": "Cutscene motion and commands",
+   "subsystem": "Event",
+   "folder": "Event",
+   "source_directory": "Event/Motion",
+   "ranges": [
+    {
+     "module": "arm9/ov001",
+     "start": "0x02156ba0",
+     "end": "0x0215a718"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x0215bf94",
+     "end": "0x0215c994"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x0215d168",
+     "end": "0x0215e0c0"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x02162d3c",
+     "end": "0x021634e8"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x0216427c",
+     "end": "0x02164a28"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x02164a58",
+     "end": "0x02164b74"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov001:02156ba0",
+     "name": "InitializeIndexedThreePartRecords"
+    },
+    {
+     "function_id": "arm9/ov001:02156c14",
+     "name": "BuildTimedCubicPathCoefficients"
+    },
+    {
+     "function_id": "arm9/ov001:021570b4",
+     "name": "AdvanceCubicPathByMinimumDistance"
+    },
+    {
+     "function_id": "arm9/ov001:021573c0",
+     "name": "Math_AdvanceCubicTrack"
+    }
+   ],
+   "modules": [
+    "arm9/ov001"
+   ]
+  },
+  {
+   "id": "CREDITS",
+   "title": "Staff roll",
+   "subsystem": "Event",
+   "folder": "Event",
+   "source_directory": "Event/Credits",
+   "ranges": [
+    {
+     "module": "arm9/ov028",
+     "start": "0x021d8a40",
+     "end": "0x021d9a18"
+    },
+    {
+     "module": "arm9/ov028",
+     "start": "0x021d9a54",
+     "end": "0x021d9a80"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov028:021d8a40",
+     "name": "StaffRoll_InitializeTextCanvas"
+    },
+    {
+     "function_id": "arm9/ov028:021d8a74",
+     "name": "StaffRoll_AdvanceScrollAccumulators"
+    },
+    {
+     "function_id": "arm9/ov028:021d8ad4",
+     "name": "StaffRoll_ClearConsumedTileStrip"
+    },
+    {
+     "function_id": "arm9/ov028:021d8b44",
+     "name": "StaffRoll_AllocateTileBufferAndScriptArena"
+    }
+   ],
+   "modules": [
+    "arm9/ov028"
+   ]
+  },
+  {
+   "id": "MOVIES",
+   "title": "Movie playback",
+   "subsystem": "Event",
+   "folder": "Event",
+   "source_directory": "Event/Movies",
+   "ranges": [
+    {
+     "module": "arm9/ov016",
+     "start": "0x0218b5a0",
+     "end": "0x021909cc"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov016:0218b5a0",
+     "name": "Movie_InitializeOverlayContext"
+    },
+    {
+     "function_id": "arm9/ov016:0218b5c0",
+     "name": "Movie_NoOpOverlayHook"
+    },
+    {
+     "function_id": "arm9/ov016:0218b5c4",
+     "name": "Movie_RunSelectionAndPlayback"
+    },
+    {
+     "function_id": "arm9/ov016:0218bc70",
+     "name": "Movie_SetDisplayEngineSelection"
+    }
+   ],
+   "modules": [
+    "arm9/ov016"
+   ]
+  },
+  {
+   "id": "TOWN-SERVICES",
+   "title": "Shared facility services",
+   "subsystem": "Town",
+   "folder": "Town",
+   "source_directory": "Town/SharedServices",
+   "ranges": [
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215376c",
+     "end": "0x021537d4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021538f4",
+     "end": "0x021539a0"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021541b0",
+     "end": "0x02154450"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215445c",
+     "end": "0x02154720"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021549a8",
+     "end": "0x02154af4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02154f80",
+     "end": "0x021550dc"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02155208",
+     "end": "0x021552b8"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02155580",
+     "end": "0x02155618"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215570c",
+     "end": "0x02155740"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02155f40",
+     "end": "0x02155f88"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02155ffc",
+     "end": "0x02156034"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021580d8",
+     "end": "0x02158214"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02158334",
+     "end": "0x02158480"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02158a84",
+     "end": "0x02158e94"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02159078",
+     "end": "0x02159100"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02159464",
+     "end": "0x021594c4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02159d0c",
+     "end": "0x0215a5b4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215af9c",
+     "end": "0x0215b0e8"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215b3bc",
+     "end": "0x0215b478"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215b580",
+     "end": "0x0215b5c4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215b6f0",
+     "end": "0x0215b7a4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215bd34",
+     "end": "0x0215be20"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215be70",
+     "end": "0x0215bf18"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215c270",
+     "end": "0x0215c300"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215c32c",
+     "end": "0x0215c800"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215ca68",
+     "end": "0x0215ca90"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215dc20",
+     "end": "0x0215dcb8"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215ddc0",
+     "end": "0x0215df1c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215e13c",
+     "end": "0x0215e27c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215e2a8",
+     "end": "0x0215e3fc"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215e498",
+     "end": "0x0215f56c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215f698",
+     "end": "0x0215fce8"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021600b8",
+     "end": "0x0216039c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216052c",
+     "end": "0x02160678"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02160794",
+     "end": "0x02160854"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02160b2c",
+     "end": "0x02160bd0"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02160cc0",
+     "end": "0x02160e34"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02160ec4",
+     "end": "0x02160f4c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02163d7c",
+     "end": "0x02163e4c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02163f60",
+     "end": "0x02163fd4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02165730",
+     "end": "0x02165888"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216664c",
+     "end": "0x021666c4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02166f80",
+     "end": "0x021680d4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021681c8",
+     "end": "0x02168324"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02168438",
+     "end": "0x02168560"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021685a8",
+     "end": "0x021685c4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021685dc",
+     "end": "0x02168654"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02168b50",
+     "end": "0x02168cc8"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216950c",
+     "end": "0x02169554"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02169674",
+     "end": "0x0216982c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02169a84",
+     "end": "0x02169b30"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02169d10",
+     "end": "0x02169eec"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216a974",
+     "end": "0x0216aa28"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216acf0",
+     "end": "0x0216ae0c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216d3f0",
+     "end": "0x0216d468"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216d53c",
+     "end": "0x0216d77c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216d7ec",
+     "end": "0x0216d818"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216d84c",
+     "end": "0x0216d8d4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216dc58",
+     "end": "0x0216dcf0"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216ddfc",
+     "end": "0x0216e02c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216e2a4",
+     "end": "0x0216e714"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216ef14",
+     "end": "0x0216efdc"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216fb6c",
+     "end": "0x0216fc58"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216fe74",
+     "end": "0x0216ffbc"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021700dc",
+     "end": "0x0217019c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021702e4",
+     "end": "0x021703f0"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02170688",
+     "end": "0x02170a7c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02170d38",
+     "end": "0x02170d88"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021714a0",
+     "end": "0x02171550"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02171640",
+     "end": "0x02171764"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02171af0",
+     "end": "0x02171ba0"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02171cf8",
+     "end": "0x02171d74"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02171df0",
+     "end": "0x02171f80"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02172518",
+     "end": "0x021725a4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021726f8",
+     "end": "0x02172a14"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021733d0",
+     "end": "0x021734dc"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02173508",
+     "end": "0x021737e4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02173af4",
+     "end": "0x02173b48"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02173bb0",
+     "end": "0x02173f70"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02174550",
+     "end": "0x021745fc"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217480c",
+     "end": "0x021748c4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02174988",
+     "end": "0x021749c0"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021749f0",
+     "end": "0x02174a80"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217545c",
+     "end": "0x0217577c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02175d78",
+     "end": "0x02175df4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02175f90",
+     "end": "0x02175fd4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02176098",
+     "end": "0x021760cc"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02176468",
+     "end": "0x021765b4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021767ec",
+     "end": "0x021769ec"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02176ed4",
+     "end": "0x02176f94"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02177208",
+     "end": "0x02177300"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02177410",
+     "end": "0x02177550"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217818c",
+     "end": "0x02178218"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021784bc",
+     "end": "0x021785d4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021786bc",
+     "end": "0x02178910"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02179cfc",
+     "end": "0x02179e18"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02179f34",
+     "end": "0x0217a14c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217a220",
+     "end": "0x0217a4ac"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217b200",
+     "end": "0x0217b430"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217bb1c",
+     "end": "0x0217e3b8"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217e598",
+     "end": "0x0217e5b0"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217e5dc",
+     "end": "0x0217ef58"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217f118",
+     "end": "0x0217f218"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217f230",
+     "end": "0x0217f248"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217fbf0",
+     "end": "0x0217fc78"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov003:0215376c",
+     "name": "Graphics_ResetCanvasAndCaptureSubBackgroundState"
+    },
+    {
+     "function_id": "arm9/ov003:021538f4",
+     "name": "Resource_ChangeIndexedLoadSelection"
+    },
+    {
+     "function_id": "arm9/ov003:021541b0",
+     "name": "Graphics_LoadSubBackgroundResourceAfterFade"
+    },
+    {
+     "function_id": "arm9/ov003:0215445c",
+     "name": "Graphics_UpdateSubDisplayFadeOut"
+    }
+   ],
+   "modules": [
+    "arm9/ov003"
+   ]
+  },
+  {
+   "id": "ALCHEMY",
+   "title": "Alchemy and Krak Pot",
+   "subsystem": "Town",
+   "folder": "Town",
+   "source_directory": "Town/Alchemy",
+   "ranges": [
+    {
+     "module": "arm9/ov006",
+     "start": "0x021536e0",
+     "end": "0x0215ff54"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov006:021536e0",
+     "name": "KrakPot_ResetRecipeInventoryContext"
+    },
+    {
+     "function_id": "arm9/ov006:02153730",
+     "name": "KrakPot_ReleaseRecipeInventoryContext"
+    },
+    {
+     "function_id": "arm9/ov006:0215373c",
+     "name": "Memory_WriteWordAtOffset0"
+    },
+    {
+     "function_id": "arm9/ov006:02153744",
+     "name": "KrakPot_ApplySavedRecipeDiscoveryFlags"
+    }
+   ],
+   "modules": [
+    "arm9/ov006"
+   ]
+  },
+  {
+   "id": "PARTY-MENU",
+   "title": "Party items, spells and skills",
+   "subsystem": "Menus",
+   "folder": "Menu",
+   "source_directory": "Menu/Party",
+   "ranges": [
+    {
+     "module": "arm9/ov002",
+     "start": "0x021536e0",
+     "end": "0x0216c96c"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov002:021536e0",
+     "name": "PartyMenu_ClearActionDispatcher"
+    },
+    {
+     "function_id": "arm9/ov002:021536ec",
+     "name": "PartyMenu_DispatchActionEffects"
+    },
+    {
+     "function_id": "arm9/ov002:021538e4",
+     "name": "PartyMenu_ComputeRandomizedRecoveryAmount"
+    },
+    {
+     "function_id": "arm9/ov002:02153be0",
+     "name": "PartyMenu_ComputeRevivalSuccessRate"
+    }
+   ],
+   "modules": [
+    "arm9/ov002"
+   ]
+  },
+  {
+   "id": "MENU-SHARED",
+   "title": "Shared menu services",
+   "subsystem": "Menus",
+   "folder": "Menu",
+   "source_directory": "Menu/SharedServices",
+   "ranges": [
+    {
+     "module": "arm9/ov004",
+     "start": "0x021536e0",
+     "end": "0x0215e2d0"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0215e300",
+     "end": "0x0215e32c"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0215e438",
+     "end": "0x0215e460"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0215e47c",
+     "end": "0x0215e5fc"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x021613f8",
+     "end": "0x02161514"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02162acc",
+     "end": "0x02162b04"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02162b3c",
+     "end": "0x02162b84"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02162d78",
+     "end": "0x02162dd8"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02163144",
+     "end": "0x02163284"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02163304",
+     "end": "0x02163478"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216351c",
+     "end": "0x021635d0"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x021636b0",
+     "end": "0x02163944"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02164f48",
+     "end": "0x021650e4"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x021650f8",
+     "end": "0x021651c8"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x021658b0",
+     "end": "0x02165910"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02165ad4",
+     "end": "0x02165b14"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02165b60",
+     "end": "0x02165bb8"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02165c04",
+     "end": "0x02165df4"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02165ea4",
+     "end": "0x02165f2c"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02166198",
+     "end": "0x02166608"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02166684",
+     "end": "0x02166730"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02166ac4",
+     "end": "0x02166b40"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02166fa0",
+     "end": "0x02166fe4"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02167310",
+     "end": "0x02167434"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02167648",
+     "end": "0x0216768c"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216794c",
+     "end": "0x02167a6c"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02167b78",
+     "end": "0x02167d70"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02167d90",
+     "end": "0x02167e6c"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02168074",
+     "end": "0x021680b8"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02168318",
+     "end": "0x021683cc"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216848c",
+     "end": "0x021684d4"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216863c",
+     "end": "0x02168670"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02168760",
+     "end": "0x02168a38"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02168ad4",
+     "end": "0x02168b08"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02168b44",
+     "end": "0x02169144"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216986c",
+     "end": "0x02169adc"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216a5e8",
+     "end": "0x0216a5fc"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216a610",
+     "end": "0x0216acd0"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216acf8",
+     "end": "0x0216b20c"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216b2c8",
+     "end": "0x0216b390"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216b498",
+     "end": "0x0216b7bc"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216c750",
+     "end": "0x0216c810"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216d004",
+     "end": "0x0216d188"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216d7f8",
+     "end": "0x0216d820"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216d920",
+     "end": "0x0216da58"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216dcb4",
+     "end": "0x0216dcc8"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216dd4c",
+     "end": "0x0216dd60"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216dfa0",
+     "end": "0x0216dfbc"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216e1e4",
+     "end": "0x0216e258"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216e3fc",
+     "end": "0x0216e490"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216e828",
+     "end": "0x0216e894"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216e8b4",
+     "end": "0x0216e9cc"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216ea38",
+     "end": "0x0216ea74"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216f788",
+     "end": "0x0216fa7c"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0217031c",
+     "end": "0x02170348"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov004:021536e0",
+     "name": "Menu_CopyPositionUnlessSourceDescriptorIsActive"
+    },
+    {
+     "function_id": "arm9/ov004:02153778",
+     "name": "Menu_IgnoreResourcePositionChange"
+    },
+    {
+     "function_id": "arm9/ov004:0215377c",
+     "name": "Menu_GetZeroResourcePosition"
+    },
+    {
+     "function_id": "arm9/ov004:021537a8",
+     "name": "Menu_SetKeyedControlMode"
+    }
+   ],
+   "modules": [
+    "arm9/ov004"
+   ]
+  },
+  {
+   "id": "EQUIPMENT-MENU",
+   "title": "Equipment menu",
+   "subsystem": "Menus",
+   "folder": "Menu",
+   "source_directory": "Menu/Equipment",
+   "ranges": [
+    {
+     "module": "arm9/ov005",
+     "start": "0x021536e0",
+     "end": "0x0215cbd4"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov005:021536e0",
+     "name": "EquipmentMenu_ResetCursorRectangle"
+    },
+    {
+     "function_id": "arm9/ov005:02153728",
+     "name": "EquipmentMenu_AnimateCursorRectangle"
+    },
+    {
+     "function_id": "arm9/ov005:021537bc",
+     "name": "UpdateFourRectangleCorners"
+    },
+    {
+     "function_id": "arm9/ov005:021538fc",
+     "name": "EquipmentMenu_ApproachCursorCoordinate"
+    }
+   ],
+   "modules": [
+    "arm9/ov005"
+   ]
+  },
+  {
+   "id": "RECORDS-MENU",
+   "title": "Battle records and party talk",
+   "subsystem": "Menus",
+   "folder": "Menu",
+   "source_directory": "Menu/Records",
+   "ranges": [
+    {
+     "module": "arm9/ov008",
+     "start": "0x021842a0",
+     "end": "0x0218b300"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov008:021842a0",
+     "name": "Memory_InitializeNestedAllocatorPools"
+    },
+    {
+     "function_id": "arm9/ov008:021843f8",
+     "name": "Graphics_ResetAllocatorCanvasAndSelectionState"
+    },
+    {
+     "function_id": "arm9/ov008:02184598",
+     "name": "TimeRecord_Reset"
+    },
+    {
+     "function_id": "arm9/ov008:021845ac",
+     "name": "Graphics_DestroyPanelResourcesAndAllocators"
+    }
+   ],
+   "modules": [
+    "arm9/ov008"
+   ]
+  },
+  {
+   "id": "CHARACTER-CREATION",
+   "title": "Character creation",
+   "subsystem": "Menus",
+   "folder": "Menu",
+   "source_directory": "Menu/CharacterCreation",
+   "ranges": [
+    {
+     "module": "arm9/ov009",
+     "start": "0x021842a0",
+     "end": "0x0218a95c"
+    },
+    {
+     "module": "arm9/ov021",
+     "start": "0x0218b5a0",
+     "end": "0x0218bbc4"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021d99a4",
+     "end": "0x021d9d34"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021d9da4",
+     "end": "0x021d9e60"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021d9f88",
+     "end": "0x021da100"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021da1dc",
+     "end": "0x021da9b4"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021dab5c",
+     "end": "0x021dac40"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov009:021842a0",
+     "name": "CharacterCreation_AllocateWorkingStorage"
+    },
+    {
+     "function_id": "arm9/ov009:0218454c",
+     "name": "CharacterCreation_InitializeController"
+    },
+    {
+     "function_id": "arm9/ov009:021847c4",
+     "name": "CharacterCreation_ClearChoiceGridLayout"
+    },
+    {
+     "function_id": "arm9/ov009:021847ec",
+     "name": "CharacterNameFilter_ResetAndResolveTokenGlyphs"
+    }
+   ],
+   "modules": [
+    "arm9/ov009",
+    "arm9/ov021",
+    "arm9/ov023"
+   ]
+  },
+  {
+   "id": "TAG-PROFILE",
+   "title": "Tag-mode profile editor",
+   "subsystem": "Menus",
+   "folder": "Menu",
+   "source_directory": "Menu/TagProfile",
+   "ranges": [
+    {
+     "module": "arm9/ov012",
+     "start": "0x021842a0",
+     "end": "0x0218af74"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov012:021842a0",
+     "name": "ProfileEditor_UpdatePageIndicator"
+    },
+    {
+     "function_id": "arm9/ov012:0218432c",
+     "name": "ReadModeRangeOffset"
+    },
+    {
+     "function_id": "arm9/ov012:02184384",
+     "name": "ProfileEditor_FindCurrentTitleIndex"
+    },
+    {
+     "function_id": "arm9/ov012:021843d4",
+     "name": "ProfileEditor_InitializeScreen"
+    }
+   ],
+   "modules": [
+    "arm9/ov012"
+   ]
+  },
+  {
+   "id": "SKILL-ALLOCATION",
+   "title": "Skill point allocation",
+   "subsystem": "Menus",
+   "folder": "Menu",
+   "source_directory": "Menu/SkillAllocation",
+   "ranges": [
+    {
+     "module": "arm9/ov013",
+     "start": "0x021842a0",
+     "end": "0x02187d88"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov013:021842a0",
+     "name": "SkillAllocation_HitTestAdjustmentTouchRegion"
+    },
+    {
+     "function_id": "arm9/ov013:02184338",
+     "name": "ComputeIndexedEntryAddressAtStride40"
+    },
+    {
+     "function_id": "arm9/ov013:02184360",
+     "name": "Graphics_InitializeTextCanvasPanel"
+    },
+    {
+     "function_id": "arm9/ov013:021846a0",
+     "name": "Graphics_DestroyModeDependentPanelAndTwoAllocators"
+    }
+   ],
+   "modules": [
+    "arm9/ov013"
+   ]
+  },
+  {
+   "id": "BESTIARY",
+   "title": "Bestiary",
+   "subsystem": "Menus",
+   "folder": "Menu",
+   "source_directory": "Menu/Bestiary",
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x020abe84",
+     "end": "0x020abf38"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020abf60",
+     "end": "0x020ac020"
+    },
+    {
+     "module": "arm9/ov014",
+     "start": "0x021842a0",
+     "end": "0x02189468"
+    },
+    {
+     "module": "arm9/ov014",
+     "start": "0x02189510",
+     "end": "0x02189598"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:020abe84",
+     "name": "Bestiary_ReplaceMonsterRecordsAndCountNewDiscoveries"
+    },
+    {
+     "function_id": "arm9/main:020abf60",
+     "name": "Bestiary_MarkListedMonstersAfterPrerequisiteOnce"
+    },
+    {
+     "function_id": "arm9/ov014:021842a0",
+     "name": "BestiaryDetail_FindLayoutEntryByKey"
+    },
+    {
+     "function_id": "arm9/ov014:02184300",
+     "name": "Memory_AllocateGraphicsBuffersAndNestedAllocators"
+    }
+   ],
+   "modules": [
+    "arm9/main",
+    "arm9/ov014"
+   ]
+  },
+  {
+   "id": "MENU-PANELS",
+   "title": "Shared menu panels",
+   "subsystem": "Menus",
+   "folder": "Menu",
+   "source_directory": "Menu/Panels",
+   "ranges": [
+    {
+     "module": "arm9/ov023",
+     "start": "0x021d8a40",
+     "end": "0x021d8af8"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021d8b6c",
+     "end": "0x021d8c94"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021d8ea0",
+     "end": "0x021d8f2c"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021d90d0",
+     "end": "0x021d921c"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021d9d34",
+     "end": "0x021d9da4"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021d9e60",
+     "end": "0x021d9f88"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021da100",
+     "end": "0x021da1dc"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021da9b4",
+     "end": "0x021dab5c"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021dac40",
+     "end": "0x021db314"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021db3c0",
+     "end": "0x021db564"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021dbc58",
+     "end": "0x021dbd10"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021dbfa8",
+     "end": "0x021dbfd0"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021dc134",
+     "end": "0x021dc488"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021dca88",
+     "end": "0x021dcb70"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021dcba4",
+     "end": "0x021dce88"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021dd344",
+     "end": "0x021dd404"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021dda04",
+     "end": "0x021dde00"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021dfad8",
+     "end": "0x021dfc90"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e0328",
+     "end": "0x021e0414"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e05e4",
+     "end": "0x021e0690"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e07f8",
+     "end": "0x021e0840"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e0a48",
+     "end": "0x021e0b9c"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e0c38",
+     "end": "0x021e0c80"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e1194",
+     "end": "0x021e4f18"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e4fd8",
+     "end": "0x021e5020"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e5628",
+     "end": "0x021e5974"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e60c4",
+     "end": "0x021e6150"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e616c",
+     "end": "0x021e9278"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e92f0",
+     "end": "0x021e9cc4"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e9cf8",
+     "end": "0x021e9f00"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e9f30",
+     "end": "0x021ea14c"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021ea17c",
+     "end": "0x021ea248"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021ea2dc",
+     "end": "0x021ea344"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021ea3ac",
+     "end": "0x021ea884"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021ea8e8",
+     "end": "0x021eaba0"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021eabd4",
+     "end": "0x021eac3c"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021eac70",
+     "end": "0x021eacd8"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021ead40",
+     "end": "0x021eae0c"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021eae38",
+     "end": "0x021ed92c"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021ed988",
+     "end": "0x021ed9f8"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021edf38",
+     "end": "0x021edf54"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021eea98",
+     "end": "0x021eeaac"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f00f4",
+     "end": "0x021f00fc"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f1818",
+     "end": "0x021f1868"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f21f4",
+     "end": "0x021f2368"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f3a8c",
+     "end": "0x021f3aac"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f4098",
+     "end": "0x021f44d0"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f5228",
+     "end": "0x021f52c8"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f5410",
+     "end": "0x021f5448"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f5534",
+     "end": "0x021f5578"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f55a8",
+     "end": "0x021f5680"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f5788",
+     "end": "0x021f5b9c"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f6158",
+     "end": "0x021f65b4"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021fc6cc",
+     "end": "0x021fc71c"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021fcc68",
+     "end": "0x021fccec"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021fcd70",
+     "end": "0x021fcdd4"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov023:021d8a40",
+     "name": "Graphics_InitializeSubDisplayStateAndRecordGrid"
+    },
+    {
+     "function_id": "arm9/ov023:021d8b6c",
+     "name": "Graphics_ResetOwnedResourceBundle"
+    },
+    {
+     "function_id": "arm9/ov023:021d8bb4",
+     "name": "Graphics_UpdateSelectionAndDispatchPhase"
+    },
+    {
+     "function_id": "arm9/ov023:021d8c60",
+     "name": "Graphics_ClearInactiveResourceState"
+    }
+   ],
+   "modules": [
+    "arm9/ov023"
+   ]
+  },
+  {
+   "id": "MENU-RECORDS",
+   "title": "Menu records and widgets",
+   "subsystem": "Menus",
+   "folder": "Menu",
+   "source_directory": "Menu/RecordsFramework",
+   "ranges": [
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f65b4",
+     "end": "0x021fc228"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021fc2b8",
+     "end": "0x021fc30c"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021fc408",
+     "end": "0x021fc518"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021fcdd4",
+     "end": "0x021fd510"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov023:021f65b4",
+     "name": "MenuTileGrid_SetCoordinatesByKey"
+    },
+    {
+     "function_id": "arm9/ov023:021f65d4",
+     "name": "GameState_AppendValueAndSetNodeFlags"
+    },
+    {
+     "function_id": "arm9/ov023:021f6600",
+     "name": "GameState_ClearMaskFromKeyedEntry"
+    },
+    {
+     "function_id": "arm9/ov023:021f6630",
+     "name": "MenuTextCanvas_SetPageIndexAndCountByKey"
+    }
+   ],
+   "modules": [
+    "arm9/ov023"
+   ]
+  },
+  {
+   "id": "MENU-LAYOUTS",
+   "title": "Menu layouts and script adapters",
+   "subsystem": "Menus",
+   "folder": "Menu",
+   "source_directory": "Menu/Layouts",
+   "ranges": [
+    {
+     "module": "arm9/ov011",
+     "start": "0x021842a0",
+     "end": "0x02186834"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x02186884",
+     "end": "0x02186cb8"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x02186d78",
+     "end": "0x02186d90"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x02186e30",
+     "end": "0x02186e54"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x02186eb4",
+     "end": "0x02187154"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x021871b8",
+     "end": "0x021874d0"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x0218753c",
+     "end": "0x02187570"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x02187604",
+     "end": "0x02187650"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x02187720",
+     "end": "0x02187c0c"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x02187e08",
+     "end": "0x02188108"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x02188158",
+     "end": "0x02188284"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x021882d4",
+     "end": "0x021883e8"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x02188438",
+     "end": "0x02188904"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov011:021842a0",
+     "name": "Menu_InitializeArenaNode"
+    },
+    {
+     "function_id": "arm9/ov011:021842c8",
+     "name": "Menu_FindArenaNodeById"
+    },
+    {
+     "function_id": "arm9/ov011:02184324",
+     "name": "Menu_AppendArenaToForwardChain"
+    },
+    {
+     "function_id": "arm9/ov011:02184354",
+     "name": "Menu_AppendNestedArena"
+    }
+   ],
+   "modules": [
+    "arm9/ov011"
+   ]
+  },
+  {
+   "id": "ONLINE-SOCKETS",
+   "title": "Internet transport and sockets",
+   "subsystem": "Online",
+   "folder": "Online",
+   "source_directory": "Online/Sockets",
+   "ranges": [
+    {
+     "module": "arm9/ov031",
+     "start": "0x02200160",
+     "end": "0x022073a4"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02217ecc",
+     "end": "0x022183b4"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov031:02200160",
+     "name": "Network_ResetAddressStateAndWakeSocketWaiters"
+    },
+    {
+     "function_id": "arm9/ov031:02200264",
+     "name": "Network_YieldWithConfiguredPollDelay"
+    },
+    {
+     "function_id": "arm9/ov031:0220028c",
+     "name": "Network_IgnoreAddressConfigurationCallback"
+    },
+    {
+     "function_id": "arm9/ov031:02200290",
+     "name": "Network_ReportDefaultLinkAvailable"
+    }
+   ],
+   "modules": [
+    "arm9/ov031"
+   ]
+  },
+  {
+   "id": "ONLINE-SERVICES",
+   "title": "Authentication and download services",
+   "subsystem": "Online",
+   "folder": "Online",
+   "source_directory": "Online/Services",
+   "ranges": [
+    {
+     "module": "arm9/ov031",
+     "start": "0x022073a4",
+     "end": "0x02207538"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0220fdec",
+     "end": "0x02210044"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022101c4",
+     "end": "0x022101e0"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022102c8",
+     "end": "0x02210314"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02210358",
+     "end": "0x022103dc"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022103f8",
+     "end": "0x0221042c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022104e4",
+     "end": "0x02210674"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02210720",
+     "end": "0x02210780"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02210bec",
+     "end": "0x02210e20"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02210ef8",
+     "end": "0x02211864"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221188c",
+     "end": "0x022125c8"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221268c",
+     "end": "0x02212784"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02212790",
+     "end": "0x02212cbc"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02213694",
+     "end": "0x022141d4"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221525c",
+     "end": "0x022167b8"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022168ec",
+     "end": "0x02216a2c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02216a84",
+     "end": "0x02216b00"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02217598",
+     "end": "0x02217604"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02217c00",
+     "end": "0x02217ecc"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022183b4",
+     "end": "0x0221add4"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0223e348",
+     "end": "0x0223fa20"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0223fa34",
+     "end": "0x0223fa5c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0223fa60",
+     "end": "0x0223faa8"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0223fb48",
+     "end": "0x0223fb8c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0223fcd4",
+     "end": "0x022433d0"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0224342c",
+     "end": "0x02243450"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02243484",
+     "end": "0x022434b4"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022434e8",
+     "end": "0x02243518"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02243714",
+     "end": "0x02243850"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02243c10",
+     "end": "0x02243d20"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02245478",
+     "end": "0x02245528"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02245548",
+     "end": "0x022456f0"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02245750",
+     "end": "0x022457e0"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0224587c",
+     "end": "0x0224598c"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov031:022073a4",
+     "name": "NetworkSocket_SendToAddress"
+    },
+    {
+     "function_id": "arm9/ov031:02207428",
+     "name": "NetworkSocket_Shutdown"
+    },
+    {
+     "function_id": "arm9/ov031:02207434",
+     "name": "NetworkSocket_Close"
+    },
+    {
+     "function_id": "arm9/ov031:02207440",
+     "name": "NetworkSocket_GetHostByName"
+    }
+   ],
+   "modules": [
+    "arm9/ov031"
+   ]
+  },
+  {
+   "id": "ONLINE-SECURITY",
+   "title": "TLS and cryptography",
+   "subsystem": "Online",
+   "folder": "Online",
+   "source_directory": "Online/Security",
+   "ranges": [
+    {
+     "module": "arm9/ov031",
+     "start": "0x02207538",
+     "end": "0x0220c970"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221c49c",
+     "end": "0x0221e6e8"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221f994",
+     "end": "0x02222b0c"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov031:02207538",
+     "name": "Network_SetDnsServersFromBigEndianWords"
+    },
+    {
+     "function_id": "arm9/ov031:022075a4",
+     "name": "Network_ControlSocketNonblockingMode"
+    },
+    {
+     "function_id": "arm9/ov031:022075f4",
+     "name": "Network_AllocateSizePrefixedBuffer"
+    },
+    {
+     "function_id": "arm9/ov031:02207620",
+     "name": "Network_FreeSizePrefixedBuffer"
+    }
+   ],
+   "modules": [
+    "arm9/ov031"
+   ]
+  },
+  {
+   "id": "WIFI-CONNECTION",
+   "title": "Wi-Fi connection and profiles",
+   "subsystem": "Online",
+   "folder": "Online",
+   "source_directory": "Online/WifiConnection",
+   "ranges": [
+    {
+     "module": "arm9/ov031",
+     "start": "0x0220c970",
+     "end": "0x0220fdec"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02212cbc",
+     "end": "0x02213694"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022141d4",
+     "end": "0x0221525c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221add4",
+     "end": "0x0221ae00"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221b0ac",
+     "end": "0x0221b1cc"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221b6f0",
+     "end": "0x0221b780"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221b7fc",
+     "end": "0x0221b848"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221b8b4",
+     "end": "0x0221b8e4"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221be38",
+     "end": "0x0221bfe8"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221c3f8",
+     "end": "0x0221c44c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221e6e8",
+     "end": "0x0221f994"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022321ec",
+     "end": "0x02232204"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0223232c",
+     "end": "0x02232350"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02232354",
+     "end": "0x022323a0"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022324bc",
+     "end": "0x022324e8"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02232508",
+     "end": "0x02232678"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02232780",
+     "end": "0x0223294c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02232a84",
+     "end": "0x02232ac0"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02232b44",
+     "end": "0x02232ce8"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02232d64",
+     "end": "0x02232f58"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02233154",
+     "end": "0x02233178"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02233a00",
+     "end": "0x02233bd4"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02233c94",
+     "end": "0x02233ce0"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02233e4c",
+     "end": "0x02233ee8"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02233f1c",
+     "end": "0x02233f50"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02233f54",
+     "end": "0x02234050"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022340c0",
+     "end": "0x02234118"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022342a4",
+     "end": "0x0223442c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0223447c",
+     "end": "0x022344ec"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02234570",
+     "end": "0x0223471c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02234720",
+     "end": "0x02234790"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022347f4",
+     "end": "0x02234960"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02234a08",
+     "end": "0x02234a68"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02234ae0",
+     "end": "0x02234bb8"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02234d98",
+     "end": "0x02234de4"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022358b4",
+     "end": "0x02235c70"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02235cac",
+     "end": "0x02235e74"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02235eac",
+     "end": "0x02235ecc"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02235eec",
+     "end": "0x02235f0c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02235f70",
+     "end": "0x02235fb0"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02236364",
+     "end": "0x02236474"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022366d8",
+     "end": "0x0223677c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022368bc",
+     "end": "0x022368e0"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02236d98",
+     "end": "0x02236e60"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02236f88",
+     "end": "0x0223701c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022373fc",
+     "end": "0x022379f0"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02238694",
+     "end": "0x0223b324"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0224599c",
+     "end": "0x02245fa8"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02249650",
+     "end": "0x02249664"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov031:0220c970",
+     "name": "Network_InitializeWirelessWorkspace"
+    },
+    {
+     "function_id": "arm9/ov031:0220ca88",
+     "name": "System_ClearSharedPointerWhenWord2260IsOne"
+    },
+    {
+     "function_id": "arm9/ov031:0220cae0",
+     "name": "Network_StartWirelessInitializationUnderIRQ"
+    },
+    {
+     "function_id": "arm9/ov031:0220cce4",
+     "name": "Network_RequestWirelessPowerOff"
+    }
+   ],
+   "modules": [
+    "arm9/ov031"
+   ]
+  },
+  {
+   "id": "WFC-SETTINGS",
+   "title": "WFC settings screens",
+   "subsystem": "Online",
+   "folder": "Online",
+   "source_directory": "Online/Settings",
+   "ranges": [
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221ae00",
+     "end": "0x0221b0ac"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221b1cc",
+     "end": "0x0221b6f0"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221b780",
+     "end": "0x0221b7fc"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221b848",
+     "end": "0x0221b8b4"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221b8e4",
+     "end": "0x0221be38"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221bfe8",
+     "end": "0x0221c3f8"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221c44c",
+     "end": "0x0221c49c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02222b0c",
+     "end": "0x022321ec"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02232204",
+     "end": "0x0223232c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02232350",
+     "end": "0x02232354"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022323a0",
+     "end": "0x022324bc"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022324e8",
+     "end": "0x02232508"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02232678",
+     "end": "0x02232780"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0223294c",
+     "end": "0x02232a84"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02232ac0",
+     "end": "0x02232b44"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02232ce8",
+     "end": "0x02232d64"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02232f58",
+     "end": "0x02233154"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02233178",
+     "end": "0x02233a00"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02233bd4",
+     "end": "0x02233c94"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02233ce0",
+     "end": "0x02233e4c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02233ee8",
+     "end": "0x02233f1c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02233f50",
+     "end": "0x02233f54"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02234050",
+     "end": "0x022340c0"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02234118",
+     "end": "0x022342a4"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0223442c",
+     "end": "0x0223447c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022344ec",
+     "end": "0x02234570"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0223471c",
+     "end": "0x02234720"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02234790",
+     "end": "0x022347f4"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02234960",
+     "end": "0x02234a08"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02234a68",
+     "end": "0x02234ae0"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02234bb8",
+     "end": "0x02234d98"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02234de4",
+     "end": "0x022358b4"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02235c70",
+     "end": "0x02235cac"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02235e74",
+     "end": "0x02235eac"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02235ecc",
+     "end": "0x02235eec"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02235f0c",
+     "end": "0x02235f70"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02235fb0",
+     "end": "0x02236364"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02236474",
+     "end": "0x022366d8"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0223677c",
+     "end": "0x022368bc"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022368e0",
+     "end": "0x02236d98"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02236e60",
+     "end": "0x02236f88"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0223701c",
+     "end": "0x022373fc"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022379f0",
+     "end": "0x02238694"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0223b324",
+     "end": "0x0223e348"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov031:0221ae00",
+     "name": "WfcUtility_DecodePersistentIdentifierFields"
+    },
+    {
+     "function_id": "arm9/ov031:0221aed8",
+     "name": "WfcUtility_WriteIdentifierHeaderToSettingsPages"
+    },
+    {
+     "function_id": "arm9/ov031:0221afb4",
+     "name": "WfcUtility_ReadSettingsStorageBase"
+    },
+    {
+     "function_id": "arm9/ov031:0221aff8",
+     "name": "WfcUtility_ReadFourSettingsPages"
+    }
+   ],
+   "modules": [
+    "arm9/ov031"
+   ]
+  },
+  {
+   "id": "DOWNLOAD-PLAY",
+   "title": "DS Download Play",
+   "subsystem": "Online",
+   "folder": "Online",
+   "source_directory": "Online/DownloadPlay",
+   "ranges": [
+    {
+     "module": "arm9/ov027",
+     "start": "0x021d8a40",
+     "end": "0x021dd8b8"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov027:021d8a40",
+     "name": "Network_SetParentStateCallback"
+    },
+    {
+     "function_id": "arm9/ov027:021d8a68",
+     "name": "MB_CommGetChildUser"
+    },
+    {
+     "function_id": "arm9/ov027:021d8aec",
+     "name": "MB_CommIsBootable"
+    },
+    {
+     "function_id": "arm9/ov027:021d8b40",
+     "name": "Network_SetInterruptProtectedPeerStatus"
+    }
+   ],
+   "modules": [
+    "arm9/ov027"
+   ]
+  },
+  {
+   "id": "MODEL-VIEWER",
+   "title": "Model and animation diagnostics",
+   "subsystem": "Diagnostics",
+   "folder": "Debug",
+   "source_directory": "Debug/ModelViewer",
+   "ranges": [
+    {
+     "module": "arm9/ov015",
+     "start": "0x0218b5a0",
+     "end": "0x02193cd0"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov015:0218b5a0",
+     "name": "CharacterViewer_ScriptAllocateMenuEntries"
+    },
+    {
+     "function_id": "arm9/ov015:0218b5c8",
+     "name": "CharacterViewer_ScriptAppendMenuEntry"
+    },
+    {
+     "function_id": "arm9/ov015:0218b6bc",
+     "name": "Resource_AllocateRecordPairsFromScriptCount"
+    },
+    {
+     "function_id": "arm9/ov015:0218b6e4",
+     "name": "CharacterViewer_ScriptAppendScenePreset"
+    }
+   ],
+   "modules": [
+    "arm9/ov015"
+   ]
+  },
+  {
+   "id": "BOOT-SCREENS",
+   "title": "Boot screens",
+   "subsystem": "Engine",
+   "folder": "System",
+   "source_directory": "System/Boot",
+   "ranges": [
+    {
+     "module": "arm9/ov020",
+     "start": "0x0218b5a0",
+     "end": "0x0218d944"
+    },
+    {
+     "module": "arm9/ov020",
+     "start": "0x0218db90",
+     "end": "0x0218dba8"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov020:0218b5a0",
+     "name": "BootScreen_Setup"
+    },
+    {
+     "function_id": "arm9/ov020:0218b700",
+     "name": "BootScreen_ReleaseSharedTextWindow"
+    },
+    {
+     "function_id": "arm9/ov020:0218b710",
+     "name": "RunOverlayDisplaySequenceAndSelection"
+    },
+    {
+     "function_id": "arm9/ov020:0218c7bc",
+     "name": "ConfigureBackgroundLayerOneControlBits"
+    }
+   ],
+   "modules": [
+    "arm9/ov020"
+   ]
+  },
+  {
+   "id": "STARTUP-SUPPORT",
+   "title": "Startup and support services",
+   "subsystem": "Engine",
+   "folder": "System",
+   "source_directory": "System/Startup",
+   "ranges": [
+    {
+     "module": "arm9/ov029",
+     "start": "0x021d90ec",
+     "end": "0x021d90fc"
+    },
+    {
+     "module": "arm9/ov030",
+     "start": "0x021d8a40",
+     "end": "0x021d9c5c"
+    },
+    {
+     "module": "arm9/ov033",
+     "start": "0x022a2180",
+     "end": "0x022a29e4"
+    },
+    {
+     "module": "arm9/ov034",
+     "start": "0x022a2180",
+     "end": "0x022a2a30"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov029:021d90ec",
+     "name": "__sinit_ov029_021d90ec"
+    },
+    {
+     "function_id": "arm9/ov030:021d8a40",
+     "name": "GameResources_Create"
+    },
+    {
+     "function_id": "arm9/ov030:021d9250",
+     "name": "GameResources_ConstructEquipmentRefreshNode"
+    },
+    {
+     "function_id": "arm9/ov030:021d9264",
+     "name": "GameResources_DestructEquipmentRefreshNode"
+    }
+   ],
+   "modules": [
+    "arm9/ov029",
+    "arm9/ov030",
+    "arm9/ov033",
+    "arm9/ov034"
+   ]
+  },
+  {
+   "id": "QUESTS",
+   "title": "Quest menu",
+   "subsystem": "Menus",
+   "folder": "Menu",
+   "source_directory": "Menu/Quests",
+   "ranges": [
+    {
+     "module": "arm9/ov004",
+     "start": "0x02165e70",
+     "end": "0x02165ea4"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02165f2c",
+     "end": "0x02166198"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02166608",
+     "end": "0x02166684"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02166730",
+     "end": "0x02166ac4"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02166b40",
+     "end": "0x02166fa0"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02166fe4",
+     "end": "0x02167310"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02167434",
+     "end": "0x02167648"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216768c",
+     "end": "0x02167820"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov004:02165e70",
+     "name": "QuestMenu_FindMessagePanelById"
+    },
+    {
+     "function_id": "arm9/ov004:02165f2c",
+     "name": "QuestMenu_LinkEntriesInSelectedStatusOrder"
+    },
+    {
+     "function_id": "arm9/ov004:021660f4",
+     "name": "QuestMenu_ClearEntryLinksAndActiveList"
+    },
+    {
+     "function_id": "arm9/ov004:02166608",
+     "name": "QuestMenu_RefreshCategoryAndSortIndicators"
+    }
+   ],
+   "modules": [
+    "arm9/ov004"
+   ]
+  },
+  {
+   "id": "TITLES",
+   "title": "Titles and accolades",
+   "subsystem": "Menus",
+   "folder": "Menu",
+   "source_directory": "Menu/Titles",
+   "ranges": [
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216b20c",
+     "end": "0x0216b2c8"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216b390",
+     "end": "0x0216b498"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216b7bc",
+     "end": "0x0216c750"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216c810",
+     "end": "0x0216d004"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216d188",
+     "end": "0x0216d7f8"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216d820",
+     "end": "0x0216d920"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216da58",
+     "end": "0x0216dcb4"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216dcc8",
+     "end": "0x0216dd4c"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216dd60",
+     "end": "0x0216dfa0"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216dfbc",
+     "end": "0x0216e1e4"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216e258",
+     "end": "0x0216e3fc"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216e490",
+     "end": "0x0216e828"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216e894",
+     "end": "0x0216e8b4"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216e9cc",
+     "end": "0x0216ea38"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov004:0216b20c",
+     "name": "TitleMenu_BindMappedActivationCallbacks"
+    },
+    {
+     "function_id": "arm9/ov004:0216b390",
+     "name": "TitleMenu_PositionCursorAfterTextLabel"
+    },
+    {
+     "function_id": "arm9/ov004:0216b7bc",
+     "name": "TitleMenu_ConfigureTextCanvasAndAdvanceCharacterOffset"
+    },
+    {
+     "function_id": "arm9/ov004:0216ba70",
+     "name": "TitleMenu_BuildSavedPartySummaryPanel"
+    }
+   ],
+   "modules": [
+    "arm9/ov004"
+   ]
+  },
+  {
+   "id": "TREASURE-MAP-MENU",
+   "title": "Treasure-map menus",
+   "subsystem": "Menus",
+   "folder": "Menu",
+   "source_directory": "Menu/TreasureMaps",
+   "ranges": [
+    {
+     "module": "arm9/ov004",
+     "start": "0x02163478",
+     "end": "0x0216351c"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x021635d0",
+     "end": "0x021636b0"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02163944",
+     "end": "0x02164f48"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x021650e4",
+     "end": "0x021650f8"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x021651c8",
+     "end": "0x021658b0"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02165910",
+     "end": "0x02165ad4"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02165b14",
+     "end": "0x02165b60"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02165bb8",
+     "end": "0x02165c04"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02165df4",
+     "end": "0x02165e70"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov004:02163478",
+     "name": "TreasureMapMenu_AdvanceSortMode"
+    },
+    {
+     "function_id": "arm9/ov004:021634b8",
+     "name": "TreasureMapMenu_SetEntryDecorationVariant"
+    },
+    {
+     "function_id": "arm9/ov004:021634dc",
+     "name": "TreasureMapMenu_GetSelectedMapIndex"
+    },
+    {
+     "function_id": "arm9/ov004:021635d0",
+     "name": "TreasureMapMenu_FindHighlightedMapPosition"
+    }
+   ],
+   "modules": [
+    "arm9/ov004"
+   ]
+  },
+  {
+   "id": "MINI-MEDALS",
+   "title": "Mini-medal rewards",
+   "subsystem": "Town",
+   "folder": "Town",
+   "source_directory": "Town/MiniMedals",
+   "ranges": [
+    {
+     "module": "arm9/ov004",
+     "start": "0x02167908",
+     "end": "0x0216794c"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02167a6c",
+     "end": "0x02167b78"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02167d70",
+     "end": "0x02167d90"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02167e6c",
+     "end": "0x02168074"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x021680b8",
+     "end": "0x02168318"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x021683cc",
+     "end": "0x0216848c"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x021684d4",
+     "end": "0x0216863c"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02168670",
+     "end": "0x02168760"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov004:02167908",
+     "name": "MiniMedalMenu_GetPlacementState"
+    },
+    {
+     "function_id": "arm9/ov004:02167a6c",
+     "name": "MiniMedalMenu_AwardItemThroughPlacementState"
+    },
+    {
+     "function_id": "arm9/ov004:02167adc",
+     "name": "MiniMedalMenu_ExchangeMedalsThroughNextReward"
+    },
+    {
+     "function_id": "arm9/ov004:02167d70",
+     "name": "MiniMedalMenu_ResetActorForPrimaryConversation"
+    }
+   ],
+   "modules": [
+    "arm9/ov004"
+   ]
+  },
+  {
+   "id": "STATUS-MENU",
+   "title": "Character status and profiles",
+   "subsystem": "Menus",
+   "folder": "Menu",
+   "source_directory": "Menu/Status",
+   "ranges": [
+    {
+     "module": "arm9/ov004",
+     "start": "0x0215e460",
+     "end": "0x0215e47c"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0215e5fc",
+     "end": "0x021613f8"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02161514",
+     "end": "0x02162acc"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02162b04",
+     "end": "0x02162b3c"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02162b84",
+     "end": "0x02162d78"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02162dd8",
+     "end": "0x02163144"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02163284",
+     "end": "0x02163304"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02168a38",
+     "end": "0x02168ad4"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02168b08",
+     "end": "0x02168b44"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02169144",
+     "end": "0x0216986c"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02169adc",
+     "end": "0x0216a5e8"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216a5fc",
+     "end": "0x0216a610"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov004:0215e460",
+     "name": "StatusMenu_HasAlternatePartyModel"
+    },
+    {
+     "function_id": "arm9/ov004:0215e5fc",
+     "name": "StatusMenu_RefreshEquipmentNamesAndDescriptors"
+    },
+    {
+     "function_id": "arm9/ov004:0215e9dc",
+     "name": "StatusMenu_CycleAvailableVocation"
+    },
+    {
+     "function_id": "arm9/ov004:0215eb20",
+     "name": "StatusMenu_TestUnlockedVocation"
+    }
+   ],
+   "modules": [
+    "arm9/ov004"
+   ]
+  },
+  {
+   "id": "STORY-SUMMARY",
+   "title": "Story summary",
+   "subsystem": "Menus",
+   "folder": "Menu",
+   "source_directory": "Menu/StorySummary",
+   "ranges": [
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216acd0",
+     "end": "0x0216acf8"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov004:0216acd0",
+     "name": "StorySummary_RequestClose"
+    },
+    {
+     "function_id": "arm9/ov004:0216ace8",
+     "name": "StorySummary_IgnoreDisplaySetupCallback"
+    },
+    {
+     "function_id": "arm9/ov004:0216acf0",
+     "name": "StorySummary_IgnoreUnusedScriptCallback"
+    }
+   ],
+   "modules": [
+    "arm9/ov004"
+   ]
+  },
+  {
+   "id": "QUEST-MESSAGE-PANELS",
+   "title": "Quest message panels",
+   "subsystem": "Menus",
+   "folder": "Menu",
+   "source_directory": "Menu/QuestMessagePanels",
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x0208b9a0",
+     "end": "0x0208ba54"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0208baec",
+     "end": "0x0208becc"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0208bf78",
+     "end": "0x0208c9cc"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0208cb08",
+     "end": "0x0208cfcc"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0215e2d0",
+     "end": "0x0215e300"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x0215e32c",
+     "end": "0x0215e438"
+    },
+    {
+     "module": "arm9/ov004",
+     "start": "0x02167820",
+     "end": "0x02167908"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:0208b9a0",
+     "name": "QuestMessagePanel_Initialize"
+    },
+    {
+     "function_id": "arm9/main:0208baec",
+     "name": "QuestMessagePanel_SubmitScaledIndicatorCell"
+    },
+    {
+     "function_id": "arm9/main:0208bb78",
+     "name": "QuestMessagePanel_UpdateAndDrawIndicators"
+    },
+    {
+     "function_id": "arm9/main:0208be8c",
+     "name": "QuestMessagePanel_FinishOptionalOverlayUpdate"
+    }
+   ],
+   "modules": [
+    "arm9/main",
+    "arm9/ov004"
+   ]
+  },
+  {
+   "id": "ITEM-DETAILS",
+   "title": "Item details",
+   "subsystem": "Menus",
+   "folder": "Menu",
+   "source_directory": "Menu/ItemDetails",
+   "ranges": [
+    {
+     "module": "arm9/ov023",
+     "start": "0x021db314",
+     "end": "0x021db3c0"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021db564",
+     "end": "0x021dbc58"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021dbd10",
+     "end": "0x021dbfa8"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021dbfd0",
+     "end": "0x021dc134"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021dc488",
+     "end": "0x021dca88"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021dcb70",
+     "end": "0x021dcba4"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021dce88",
+     "end": "0x021dd344"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021dd404",
+     "end": "0x021dda04"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021dde00",
+     "end": "0x021dfad8"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021dfc90",
+     "end": "0x021e0328"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e0414",
+     "end": "0x021e05e4"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e0690",
+     "end": "0x021e07f8"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e0840",
+     "end": "0x021e0a48"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e0b9c",
+     "end": "0x021e0c38"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e0c80",
+     "end": "0x021e1194"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov023:021db314",
+     "name": "ItemDetail_CollectEnabledReferenceIds"
+    },
+    {
+     "function_id": "arm9/ov023:021db564",
+     "name": "ItemDetail_ParseCategoryReferenceId"
+    },
+    {
+     "function_id": "arm9/ov023:021db634",
+     "name": "ItemDetail_RenderEnabledReferenceLabels"
+    },
+    {
+     "function_id": "arm9/ov023:021dbb20",
+     "name": "ItemDetail_CopyReferenceLabel"
+    }
+   ],
+   "modules": [
+    "arm9/ov023"
+   ]
+  },
+  {
+   "id": "CHARACTER-PREVIEW",
+   "title": "Character preview",
+   "subsystem": "Menus",
+   "folder": "Menu",
+   "source_directory": "Menu/CharacterPreview",
+   "ranges": [
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e4f18",
+     "end": "0x021e4fd8"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e5020",
+     "end": "0x021e5628"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e5974",
+     "end": "0x021e60c4"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e6150",
+     "end": "0x021e616c"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021fc518",
+     "end": "0x021fc6cc"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021fc71c",
+     "end": "0x021fcc68"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021fccec",
+     "end": "0x021fcd70"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov023:021e4f18",
+     "name": "CharacterPreview_ResetModelsAndReleaseAllocators"
+    },
+    {
+     "function_id": "arm9/ov023:021e4f64",
+     "name": "CharacterPreview_CreateModelAndAnimationAllocators"
+    },
+    {
+     "function_id": "arm9/ov023:021e5020",
+     "name": "CharacterPreview_ConsumeLoadedModelsAndAnimations"
+    },
+    {
+     "function_id": "arm9/ov023:021e540c",
+     "name": "CharacterPreview_StageAppearancePalettes"
+    }
+   ],
+   "modules": [
+    "arm9/ov023"
+   ]
+  },
+  {
+   "id": "BATTLE-RESULTS",
+   "title": "Battle results and growth",
+   "subsystem": "Battle",
+   "folder": "Combat",
+   "source_directory": "Combat/Results",
+   "ranges": [
+    {
+     "module": "arm9/ov023",
+     "start": "0x021d8af8",
+     "end": "0x021d8b6c"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021d8c94",
+     "end": "0x021d8ea0"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021d8f2c",
+     "end": "0x021d90d0"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021d921c",
+     "end": "0x021d99a4"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021ed92c",
+     "end": "0x021ed988"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021ed9f8",
+     "end": "0x021edf38"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021edf54",
+     "end": "0x021eea98"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021eeaac",
+     "end": "0x021f00f4"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f00fc",
+     "end": "0x021f1818"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f1868",
+     "end": "0x021f21f4"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f2368",
+     "end": "0x021f3a8c"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f3aac",
+     "end": "0x021f4098"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f44d0",
+     "end": "0x021f5228"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f52c8",
+     "end": "0x021f5410"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f5448",
+     "end": "0x021f5534"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f5578",
+     "end": "0x021f5598"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov023:021d8af8",
+     "name": "PartyGrowthPanel_ResetDisplay"
+    },
+    {
+     "function_id": "arm9/ov023:021d8c94",
+     "name": "PartyGrowthPanel_ResetActiveWindowTransfers"
+    },
+    {
+     "function_id": "arm9/ov023:021d8cb4",
+     "name": "PartyGrowthPanel_CopyWindowConfiguration"
+    },
+    {
+     "function_id": "arm9/ov023:021d8ddc",
+     "name": "PartyGrowthPanel_SetExperienceAwards"
+    }
+   ],
+   "modules": [
+    "arm9/ov023"
+   ]
+  },
+  {
+   "id": "MENU-SCRIPTS",
+   "title": "Menu script bindings",
+   "subsystem": "Menus",
+   "folder": "Menu",
+   "source_directory": "Menu/ScriptBindings",
+   "ranges": [
+    {
+     "module": "arm9/ov011",
+     "start": "0x02186834",
+     "end": "0x02186884"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x02186cb8",
+     "end": "0x02186d78"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x02186d90",
+     "end": "0x02186e30"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x02186e54",
+     "end": "0x02186eb4"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x02187154",
+     "end": "0x021871b8"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x021874d0",
+     "end": "0x0218753c"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x02187570",
+     "end": "0x02187604"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x02187650",
+     "end": "0x02187720"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x02187c0c",
+     "end": "0x02187e08"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x02188108",
+     "end": "0x02188158"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x02188284",
+     "end": "0x021882d4"
+    },
+    {
+     "module": "arm9/ov011",
+     "start": "0x021883e8",
+     "end": "0x02188438"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021fc228",
+     "end": "0x021fc2b8"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021fc30c",
+     "end": "0x021fc408"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov011:02186834",
+     "name": "MenuScript_SetRecordConfirmCallback"
+    },
+    {
+     "function_id": "arm9/ov011:02186cb8",
+     "name": "MenuScript_SetGridCancelState"
+    },
+    {
+     "function_id": "arm9/ov011:02186d18",
+     "name": "MenuScript_SetGridCancelCallback"
+    },
+    {
+     "function_id": "arm9/ov011:02186d90",
+     "name": "MenuScript_SetRecordSelectionChangedCallback"
+    }
+   ],
+   "modules": [
+    "arm9/ov011",
+    "arm9/ov023"
+   ]
+  },
+  {
+   "id": "STATISTICS",
+   "title": "Statistics and records",
+   "subsystem": "Game core",
+   "folder": "GameState",
+   "source_directory": "GameState/Statistics",
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x0209fffc",
+     "end": "0x020a0364"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020a0388",
+     "end": "0x020a093c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020ac494",
+     "end": "0x020ac4f8"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e9278",
+     "end": "0x021e92f0"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e9cc4",
+     "end": "0x021e9cf8"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021e9f00",
+     "end": "0x021e9f30"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021ea14c",
+     "end": "0x021ea17c"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021ea248",
+     "end": "0x021ea2dc"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021ea344",
+     "end": "0x021ea3ac"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021ea884",
+     "end": "0x021ea8e8"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021eaba0",
+     "end": "0x021eabd4"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021eac3c",
+     "end": "0x021eac70"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021eacd8",
+     "end": "0x021ead40"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021eae0c",
+     "end": "0x021eae38"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:0209fffc",
+     "name": "GameStats_AddActionAttemptCount"
+    },
+    {
+     "function_id": "arm9/main:020a0038",
+     "name": "GameStats_AddActionSuccessCount"
+    },
+    {
+     "function_id": "arm9/main:020a0068",
+     "name": "GameStats_AddPartyOutcomeCount"
+    },
+    {
+     "function_id": "arm9/main:020a00a4",
+     "name": "GameStats_AddQualifiedPartyOutcomeCount"
+    }
+   ],
+   "modules": [
+    "arm9/main",
+    "arm9/ov023"
+   ]
+  },
+  {
+   "id": "INVENTORY",
+   "title": "Inventory and item ownership",
+   "subsystem": "Game core",
+   "folder": "GameState",
+   "source_directory": "GameState/Inventory",
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x0207c258",
+     "end": "0x0207c984"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0207ca94",
+     "end": "0x0207cbe8"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0207cc18",
+     "end": "0x0207cf30"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0207d134",
+     "end": "0x0207d2c4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020a093c",
+     "end": "0x020a0c0c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020dd768",
+     "end": "0x020dd7ac"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020ddb20",
+     "end": "0x020ddcbc"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020dddcc",
+     "end": "0x020dde3c"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:0207c258",
+     "name": "Inventory_InitializeGroupedItemStorage"
+    },
+    {
+     "function_id": "arm9/main:0207c378",
+     "name": "Inventory_AddItemQuantityToTypeGroup"
+    },
+    {
+     "function_id": "arm9/main:0207c484",
+     "name": "Inventory_SubtractItemQuantityFromTypeGroup"
+    },
+    {
+     "function_id": "arm9/main:0207c51c",
+     "name": "Inventory_CompactItemTypeGroup"
+    }
+   ],
+   "modules": [
+    "arm9/main"
+   ]
+  },
+  {
+   "id": "TAVERN",
+   "title": "Tavern and party recruitment",
+   "subsystem": "Town",
+   "folder": "Town",
+   "source_directory": "Town/Tavern",
+   "ranges": [
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215fce8",
+     "end": "0x021600b8"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216039c",
+     "end": "0x0216052c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02160678",
+     "end": "0x02160794"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02160854",
+     "end": "0x02160b2c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02160bd0",
+     "end": "0x02160cc0"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02160e34",
+     "end": "0x02160ec4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02160f4c",
+     "end": "0x02163d7c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02163e4c",
+     "end": "0x02163f60"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02163fd4",
+     "end": "0x02165730"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02165888",
+     "end": "0x0216664c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021666c4",
+     "end": "0x02166f80"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov003:0215fce8",
+     "name": "Tavern_UpdatePartyMenu"
+    },
+    {
+     "function_id": "arm9/ov003:0216039c",
+     "name": "Tavern_DrawPartySelectionCursor"
+    },
+    {
+     "function_id": "arm9/ov003:021604d0",
+     "name": "Tavern_DrawPartyMenuOverlays"
+    },
+    {
+     "function_id": "arm9/ov003:021604f4",
+     "name": "Tavern_SubmitMenuSpriteAtPosition"
+    }
+   ],
+   "modules": [
+    "arm9/ov003"
+   ]
+  },
+  {
+   "id": "INN",
+   "title": "Inn and resting",
+   "subsystem": "Town",
+   "folder": "Town",
+   "source_directory": "Town/Inn",
+   "ranges": [
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215c800",
+     "end": "0x0215ca68"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215ca90",
+     "end": "0x0215dc20"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215dcb8",
+     "end": "0x0215ddc0"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215df1c",
+     "end": "0x0215e13c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215e27c",
+     "end": "0x0215e2a8"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215e3fc",
+     "end": "0x0215e498"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215f56c",
+     "end": "0x0215f698"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216ae0c",
+     "end": "0x0216d3f0"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216d468",
+     "end": "0x0216d53c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216d77c",
+     "end": "0x0216d7ec"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216d818",
+     "end": "0x0216d84c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216d8d4",
+     "end": "0x0216dc58"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216dcf0",
+     "end": "0x0216ddfc"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217ef58",
+     "end": "0x0217f118"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217f218",
+     "end": "0x0217f230"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217f248",
+     "end": "0x0217f280"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov003:0215c800",
+     "name": "Inn_ReleaseStayDialogResources"
+    },
+    {
+     "function_id": "arm9/ov003:0215c924",
+     "name": "Inn_UpdateStayDialog"
+    },
+    {
+     "function_id": "arm9/ov003:0215ca1c",
+     "name": "Inn_DrawStayDialogCanvases"
+    },
+    {
+     "function_id": "arm9/ov003:0215ca90",
+     "name": "Inn_SetPricePerGuestAndComputeTotal"
+    }
+   ],
+   "modules": [
+    "arm9/ov003"
+   ]
+  },
+  {
+   "id": "VOCATIONS",
+   "title": "Vocation changes",
+   "subsystem": "Town",
+   "folder": "Town",
+   "source_directory": "Town/Vocations",
+   "ranges": [
+    {
+     "module": "arm9/ov003",
+     "start": "0x021536e0",
+     "end": "0x0215376c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021537d4",
+     "end": "0x021538f4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021539a0",
+     "end": "0x021541b0"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02154450",
+     "end": "0x0215445c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02154720",
+     "end": "0x021549a8"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02154af4",
+     "end": "0x02154f80"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021550dc",
+     "end": "0x02155208"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021552b8",
+     "end": "0x02155580"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02155618",
+     "end": "0x0215570c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02155740",
+     "end": "0x02155f40"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02155f88",
+     "end": "0x02155ffc"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02156034",
+     "end": "0x021580d8"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02158214",
+     "end": "0x02158334"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02158480",
+     "end": "0x02158a84"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov003:021536e0",
+     "name": "Alltrades_AllocateVocationPreviewArena"
+    },
+    {
+     "function_id": "arm9/ov003:021537d4",
+     "name": "Alltrades_DispatchVocationPreviewState"
+    },
+    {
+     "function_id": "arm9/ov003:0215385c",
+     "name": "Alltrades_ResetIdleVocationPreviewSubphase"
+    },
+    {
+     "function_id": "arm9/ov003:02153874",
+     "name": "Alltrades_CancelVocationPreviewLoads"
+    }
+   ],
+   "modules": [
+    "arm9/ov003"
+   ]
+  },
+  {
+   "id": "CHURCH",
+   "title": "Church services",
+   "subsystem": "Town",
+   "folder": "Town",
+   "source_directory": "Town/Church",
+   "ranges": [
+    {
+     "module": "arm9/ov003",
+     "start": "0x02158e94",
+     "end": "0x02159078"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02159100",
+     "end": "0x02159464"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021594c4",
+     "end": "0x02159d0c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215a5b4",
+     "end": "0x0215af9c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215b0e8",
+     "end": "0x0215b3bc"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215b478",
+     "end": "0x0215b580"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215b5c4",
+     "end": "0x0215b6f0"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215b7a4",
+     "end": "0x0215bd34"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215be20",
+     "end": "0x0215be70"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215bf18",
+     "end": "0x0215c270"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0215c300",
+     "end": "0x0215c32c"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov003:02158e94",
+     "name": "Church_UpdateServiceMenu"
+    },
+    {
+     "function_id": "arm9/ov003:02159100",
+     "name": "Church_DrawServiceMenu"
+    },
+    {
+     "function_id": "arm9/ov003:0215916c",
+     "name": "Church_GetSavedMainDisplayLayerMask"
+    },
+    {
+     "function_id": "arm9/ov003:02159174",
+     "name": "Church_SetExitMode"
+    }
+   ],
+   "modules": [
+    "arm9/ov003"
+   ]
+  },
+  {
+   "id": "BANK",
+   "title": "Banking",
+   "subsystem": "Town",
+   "folder": "Town",
+   "source_directory": "Town/Bank",
+   "ranges": [
+    {
+     "module": "arm9/ov003",
+     "start": "0x021680d4",
+     "end": "0x021681c8"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02168324",
+     "end": "0x02168438"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02168560",
+     "end": "0x021685a8"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021685c4",
+     "end": "0x021685dc"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02168654",
+     "end": "0x02168b50"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02168cc8",
+     "end": "0x0216950c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02169554",
+     "end": "0x02169674"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216982c",
+     "end": "0x02169a84"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02169b30",
+     "end": "0x02169d10"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02169eec",
+     "end": "0x0216a974"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216aa28",
+     "end": "0x0216acf0"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217e3b8",
+     "end": "0x0217e598"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217e5b0",
+     "end": "0x0217e5dc"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov003:021680d4",
+     "name": "Bank_AllocateDialogArenasAndSpriteState"
+    },
+    {
+     "function_id": "arm9/ov003:02168324",
+     "name": "Bank_ReleaseDialogResources"
+    },
+    {
+     "function_id": "arm9/ov003:02168560",
+     "name": "Bank_DrawDialogAndAmountControls"
+    },
+    {
+     "function_id": "arm9/ov003:021685c4",
+     "name": "Bank_GetSavedMainDisplayLayers"
+    }
+   ],
+   "modules": [
+    "arm9/ov003"
+   ]
+  },
+  {
+   "id": "SHOPS",
+   "title": "Shops",
+   "subsystem": "Town",
+   "folder": "Town",
+   "source_directory": "Town/Shops",
+   "ranges": [
+    {
+     "module": "arm9/ov003",
+     "start": "0x02173f70",
+     "end": "0x02174550"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021745fc",
+     "end": "0x0217480c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021748c4",
+     "end": "0x02174988"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021749c0",
+     "end": "0x021749f0"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02174a80",
+     "end": "0x0217545c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217577c",
+     "end": "0x02175d78"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02175df4",
+     "end": "0x02175f90"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02175fd4",
+     "end": "0x02176098"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021760cc",
+     "end": "0x02176468"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021765b4",
+     "end": "0x021767ec"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021769ec",
+     "end": "0x02176ed4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02176f94",
+     "end": "0x02177208"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02177300",
+     "end": "0x02177410"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02177550",
+     "end": "0x0217818c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02178218",
+     "end": "0x021784bc"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021785d4",
+     "end": "0x021786bc"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02178910",
+     "end": "0x02179cfc"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02179e18",
+     "end": "0x02179f34"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217a14c",
+     "end": "0x0217a220"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217a4ac",
+     "end": "0x0217b200"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217b430",
+     "end": "0x0217bb1c"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov003:02173f70",
+     "name": "Shop_AllocateInterfaceResources"
+    },
+    {
+     "function_id": "arm9/ov003:02174114",
+     "name": "Shop_InitializeInterfaceAndPartyRoster"
+    },
+    {
+     "function_id": "arm9/ov003:02174408",
+     "name": "Shop_ResetStockAndPricingConfiguration"
+    },
+    {
+     "function_id": "arm9/ov003:02174454",
+     "name": "Shop_ReleaseInterfaceResources"
+    }
+   ],
+   "modules": [
+    "arm9/ov003"
+   ]
+  },
+  {
+   "id": "GUESTS",
+   "title": "Canvassed guests and tag mode",
+   "subsystem": "Town",
+   "folder": "Town",
+   "source_directory": "Town/Guests",
+   "ranges": [
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216e02c",
+     "end": "0x0216e2a4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216e714",
+     "end": "0x0216ef14"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216efdc",
+     "end": "0x0216fb6c"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216fc58",
+     "end": "0x0216fe74"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0216ffbc",
+     "end": "0x021700dc"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x0217019c",
+     "end": "0x021702e4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021703f0",
+     "end": "0x02170688"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02170a7c",
+     "end": "0x02170d38"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02170d88",
+     "end": "0x021714a0"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02171550",
+     "end": "0x02171640"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02171764",
+     "end": "0x02171af0"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02171ba0",
+     "end": "0x02171cf8"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02171d74",
+     "end": "0x02171df0"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02171f80",
+     "end": "0x02172518"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021725a4",
+     "end": "0x021726f8"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02172a14",
+     "end": "0x021733d0"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021734dc",
+     "end": "0x02173508"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x021737e4",
+     "end": "0x02173af4"
+    },
+    {
+     "module": "arm9/ov003",
+     "start": "0x02173b48",
+     "end": "0x02173bb0"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov003:0216e02c",
+     "name": "GuestList_AllocateCanvasAndSelectionBuffers"
+    },
+    {
+     "function_id": "arm9/ov003:0216e124",
+     "name": "GuestList_UpdateWindowTouchAndState"
+    },
+    {
+     "function_id": "arm9/ov003:0216e200",
+     "name": "GuestList_InitializeCapturedBackground"
+    },
+    {
+     "function_id": "arm9/ov003:0216e714",
+     "name": "GuestList_LoadAndRenderPage"
+    }
+   ],
+   "modules": [
+    "arm9/ov003"
+   ]
+  },
+  {
+   "id": "ONLINE-CONTENT",
+   "title": "Online content and transfers",
+   "subsystem": "Online",
+   "folder": "Online",
+   "source_directory": "Online/Content",
+   "ranges": [
+    {
+     "module": "arm9/ov004",
+     "start": "0x0216ea74",
+     "end": "0x0216f788"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f5598",
+     "end": "0x021f55a8"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f5680",
+     "end": "0x021f5788"
+    },
+    {
+     "module": "arm9/ov023",
+     "start": "0x021f5b9c",
+     "end": "0x021f6158"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02210044",
+     "end": "0x022101c4"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022101e0",
+     "end": "0x022102c8"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02210314",
+     "end": "0x02210358"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022103dc",
+     "end": "0x022103f8"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0221042c",
+     "end": "0x022104e4"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02210674",
+     "end": "0x02210720"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02210780",
+     "end": "0x02210bec"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02210e20",
+     "end": "0x02210ef8"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02211864",
+     "end": "0x0221188c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022125c8",
+     "end": "0x0221268c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02212784",
+     "end": "0x02212790"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022167b8",
+     "end": "0x022168ec"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02216a2c",
+     "end": "0x02216a84"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02216b00",
+     "end": "0x02217598"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02217604",
+     "end": "0x02217c00"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0223fa20",
+     "end": "0x0223fa34"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0223fa5c",
+     "end": "0x0223fa60"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0223faa8",
+     "end": "0x0223fb48"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0223fb8c",
+     "end": "0x0223fcd4"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022433d0",
+     "end": "0x0224342c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02243450",
+     "end": "0x02243484"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022434b4",
+     "end": "0x022434e8"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02243518",
+     "end": "0x02243714"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02243850",
+     "end": "0x02243c10"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02243d20",
+     "end": "0x02245478"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x02245528",
+     "end": "0x02245548"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022456f0",
+     "end": "0x02245750"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x022457e0",
+     "end": "0x0224587c"
+    },
+    {
+     "module": "arm9/ov031",
+     "start": "0x0224598c",
+     "end": "0x0224599c"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov004:0216ea74",
+     "name": "OnlineTransferMenu_InitializeSessionAndCaptureDisplay"
+    },
+    {
+     "function_id": "arm9/ov004:0216ecd0",
+     "name": "OnlineTransferMenu_RestoreDisplayAndReturnToTitle"
+    },
+    {
+     "function_id": "arm9/ov004:0216ed9c",
+     "name": "OnlineTransferMenu_AdvanceProgressAndHandleResult"
+    },
+    {
+     "function_id": "arm9/ov004:0216f3b0",
+     "name": "OnlineTransferMenu_InitializeConnectionAndRouteResult"
+    }
+   ],
+   "modules": [
+    "arm9/ov004",
+    "arm9/ov023",
+    "arm9/ov031"
+   ]
+  },
+  {
+   "id": "ERROR-SCREENS",
+   "title": "Read-error screens",
+   "subsystem": "Engine",
+   "folder": "System",
+   "source_directory": "System/ErrorScreens",
+   "ranges": [
+    {
+     "module": "arm9/ov019",
+     "start": "0x0218b5a0",
+     "end": "0x0218c290"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov019:0218b5a0",
+     "name": "ErrorScreen_ConstructContext"
+    },
+    {
+     "function_id": "arm9/ov019:0218b5a4",
+     "name": "ErrorScreen_DestroyContext"
+    },
+    {
+     "function_id": "arm9/ov019:0218b5a8",
+     "name": "ErrorScreen_RunScene"
+    },
+    {
+     "function_id": "arm9/ov019:0218c178",
+     "name": "ErrorScreen_UpdatePenPromptAnimation"
+    }
+   ],
+   "modules": [
+    "arm9/ov019"
+   ]
+  },
+  {
+   "id": "PITFALLS",
+   "title": "Pitfall placement",
+   "subsystem": "Field",
+   "folder": "Field",
+   "source_directory": "Field/Pitfalls",
+   "ranges": [
+    {
+     "module": "arm9/ov010",
+     "start": "0x021842a0",
+     "end": "0x02184a6c"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/ov010:021842a0",
+     "name": "Pitfall_ResetPlacementSequence"
+    },
+    {
+     "function_id": "arm9/ov010:021842d8",
+     "name": "Pitfall_ReleasePlacementSequence"
+    },
+    {
+     "function_id": "arm9/ov010:02184354",
+     "name": "Pitfall_AdvancePlacementSequence"
+    }
+   ],
+   "modules": [
+    "arm9/ov010"
+   ]
+  },
+  {
+   "id": "SOUND-MUSIC",
+   "title": "Music playback",
+   "subsystem": "Engine",
+   "folder": "Sound",
+   "source_directory": "Sound/Music",
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x0209c0f4",
+     "end": "0x0209c140"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209c20c",
+     "end": "0x0209c290"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209c2b8",
+     "end": "0x0209c3b4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209c480",
+     "end": "0x0209c5e8"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209c678",
+     "end": "0x0209c6bc"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209c73c",
+     "end": "0x0209c840"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209ca2c",
+     "end": "0x0209caa0"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209cae8",
+     "end": "0x0209cb74"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209cbb8",
+     "end": "0x0209cbcc"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209cc3c",
+     "end": "0x0209ccec"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0209cdf8",
+     "end": "0x0209ce14"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x02163540",
+     "end": "0x02163564"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x021636d0",
+     "end": "0x02163724"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x02163744",
+     "end": "0x02163764"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x0216376c",
+     "end": "0x021637a8"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x02163ab4",
+     "end": "0x02163aec"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:0209c0f4",
+     "name": "Bgm_ShouldReplacePrimarySequence"
+    },
+    {
+     "function_id": "arm9/main:0209c20c",
+     "name": "Bgm_StopPlaybackAndResetController"
+    },
+    {
+     "function_id": "arm9/main:0209c278",
+     "name": "Bgm_ReleaseArchiveController"
+    },
+    {
+     "function_id": "arm9/main:0209c2b8",
+     "name": "Bgm_LoadArchiveIntoLargeOverlayBuffer"
+    }
+   ],
+   "modules": [
+    "arm9/main",
+    "arm9/ov001"
+   ]
+  },
+  {
+   "id": "SOUND-EFFECTS",
+   "title": "Sound effects",
+   "subsystem": "Engine",
+   "folder": "Sound",
+   "source_directory": "Sound/Effects",
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x0205e8d4",
+     "end": "0x0205e92c"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0205e944",
+     "end": "0x0205eabc"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0205eac8",
+     "end": "0x0205eb08"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0205eb24",
+     "end": "0x0205eb54"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0205eb80",
+     "end": "0x0205ebb4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0205ebc0",
+     "end": "0x0205ebfc"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x0205ec2c",
+     "end": "0x0205ec34"
+    },
+    {
+     "module": "arm9/ov001",
+     "start": "0x02163a18",
+     "end": "0x02163a5c"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:0205e8d4",
+     "name": "SoundSfx_ResetArchiveController"
+    },
+    {
+     "function_id": "arm9/main:0205e8ec",
+     "name": "SoundSfx_RestoreSecondaryHeapStateAndVolume"
+    },
+    {
+     "function_id": "arm9/main:0205e944",
+     "name": "SoundSfx_SetScaledPlayerVolumes"
+    },
+    {
+     "function_id": "arm9/main:0205e9f4",
+     "name": "SoundSfx_SetVolumeSetting"
+    }
+   ],
+   "modules": [
+    "arm9/main",
+    "arm9/ov001"
+   ]
+  },
+  {
+   "id": "SOUND-RESOURCES",
+   "title": "Sound resources",
+   "subsystem": "Engine",
+   "folder": "Sound",
+   "source_directory": "Sound/Resources",
+   "ranges": [
+    {
+     "module": "arm9/main",
+     "start": "0x020bd8f0",
+     "end": "0x020bd914"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020be1a8",
+     "end": "0x020be280"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020be2ec",
+     "end": "0x020be3f4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020be44c",
+     "end": "0x020be474"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020be4a4",
+     "end": "0x020be4f4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020be53c",
+     "end": "0x020be6c4"
+    },
+    {
+     "module": "arm9/main",
+     "start": "0x020be828",
+     "end": "0x020be924"
+    }
+   ],
+   "evidence": "Reviewed behavior names and existing broad subsystem evidence; module identities are location metadata.",
+   "anchors": [
+    {
+     "function_id": "arm9/main:020bd8f0",
+     "name": "SoundArchive_ForgetInfoOnDispose"
+    },
+    {
+     "function_id": "arm9/main:020bd8fc",
+     "name": "SoundArchive_ForgetFatOnDispose"
+    },
+    {
+     "function_id": "arm9/main:020bd908",
+     "name": "SoundArchive_ForgetSymbolsOnDispose"
+    },
+    {
+     "function_id": "arm9/main:020be1a8",
+     "name": "SoundArchive_LoadSequenceArchiveFile"
+    }
+   ],
+   "modules": [
+    "arm9/main"
+   ]
+  }
+ ],
+ "overlay_slots": {
+  "0x021536e0": "ov000-ov006",
+  "0x021842a0": "ov007-ov014",
+  "0x0218b5a0": "ov015-ov021",
+  "0x021d8a40": "ov022-ov030",
+  "0x02200160": "ov031-ov032",
+  "0x022a2180": "ov033-ov034"
+ },
+ "folder_rule": "Use source_directory (or category folder) directly; do not create overlay directories. Original module/address identity stays in provenance and binary maps. Preserve whole compilation units and runtime/reference policies."
+}

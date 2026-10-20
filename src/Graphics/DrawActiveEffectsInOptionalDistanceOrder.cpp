@@ -6,17 +6,17 @@ extern "C" int _ffix(unsigned);
 extern "C" int _fflt(int);
 extern "C" void* _ZN9GameState11GetInstanceEv();
 extern "C" char* GameState_ReadUnknownB0(void*);
-extern "C" char* ReadResolvedRecordWordField14OrZero(void*);
-extern "C" void QuickSortFloatKeyedRecords(void*,void*,int,int);
-extern "C" bool TestNodeAndChildrenWithinLimits(void*);
+extern "C" char* ResourceTracks_GetDrawSettings(void*);
+extern "C" void EffectEmitter_SortDrawRecordsByDistance(void*,void*,int,int);
+extern "C" bool EffectEmitter_TestCompletionIncludingChildren(void*);
 extern "C" void UpdateAndDrawMovingEffect(void*);
 extern "C" int Vector3fix_Distance(const void*,const void*);
 struct Vec { int x,y,z; };
 struct Pair { char* effect; unsigned distance; };
 // Original: arm9/main @ 0x0205765C; symbol: func_0205765c; size: 0x170.
 extern "C" void DrawActiveEffectsInOptionalDistanceOrder(char* self) {
- if(TestNodeAndChildrenWithinLimits(self) && *(unsigned char*)(self+0x38)) return;
- char* record=ReadResolvedRecordWordField14OrZero(*(void**)(self+0x30));
+ if(EffectEmitter_TestCompletionIncludingChildren(self) && *(unsigned char*)(self+0x38)) return;
+ char* record=ResourceTracks_GetDrawSettings(*(void**)(self+0x30));
  if(!*(unsigned char*)(record+5)) {
  Pair pairs[64];
  memset(pairs,0,sizeof(pairs));
@@ -40,7 +40,7 @@ extern "C" void DrawActiveEffectsInOptionalDistanceOrder(char* self) {
  count++;
  }
  if(count>0) {
- QuickSortFloatKeyedRecords(self,pairs,0,count-1);
+ EffectEmitter_SortDrawRecordsByDistance(self,pairs,0,count-1);
  for(int i=0;i<count;i++) UpdateAndDrawMovingEffect(pairs[i].effect);
  }
  } else {

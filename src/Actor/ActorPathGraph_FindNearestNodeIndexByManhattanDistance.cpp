@@ -1,0 +1,5 @@
+#include "globaldefs.h"
+#include "std_library_functions.h"
+// Original: arm9/main @ 0x02028524; symbol: FindNearestPackedPointByManhattanDistance.
+extern "C" void ActorPathGraph_CopyPackedNodePosition(short*,short*);
+extern "C" ARM unsigned ActorPathGraph_FindNearestNodeIndexByManhattanDistance(unsigned char*self,int *point){if(!self[2])return 0;int x=point[0]<<4;int y=point[1]<<4;int z=point[2]<<4;unsigned char *entries=*(unsigned char**)(self+4);unsigned best=0;short first[3],next[3];ActorPathGraph_CopyPackedNodePosition(first,(short*)(entries+4));int dz=abs(first[2]-(z>>16)),dx=abs(first[0]-(x>>16));int distance=dz+(dx+abs(first[1]-(y>>16)));for(int i=1;i<self[2];i++){ActorPathGraph_CopyPackedNodePosition(next,(short*)(entries+i*16+4));int nz=abs(next[2]-(z>>16)),nx=abs(next[0]-(x>>16));int candidate=nz+(nx+abs(next[1]-(y>>16)));if(candidate<distance){best=i;distance=candidate;}}return best;}

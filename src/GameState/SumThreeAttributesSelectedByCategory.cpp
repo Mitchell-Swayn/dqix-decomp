@@ -1,14 +1,19 @@
 #include <globaldefs.h>
 #include <GameState/GameState.h>
 ARM
-extern "C" short data_020e8a8c[4];
-extern "C" int Object_ReadIndexedBitAtOffset8EC(void*,int);
+// Original data: arm9/main @ 0x20e8a8c; symbol: data_020e8a8c.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex ffffffffffffffff.
+// Observed span: 8 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern "C" short SumThreeAttributesSelectedByCategory_UnknownRoleInitializedBytes[4];
+extern "C" int CharacterState_GetLearnedSkillMask(void*,int);
 extern "C" int GameState_ReadAttributeBits12To19(GameState*,int);
 // Original: arm9/main @ 0x02085CD0; symbol: func_02085cd0; size: 0x24C.
 extern "C" int SumThreeAttributesSelectedByCategory(char* self,int category) {
  if(category<0){if(*(short*)(self+0x2ac)>0)category=((unsigned)*(int*)(self+0x29c)<<23)>>27;else category=0x21;}
  GameState* state=GameState::GetInstance();
- struct Choices { short value[4]; };Choices choices=*(Choices*)data_020e8a8c;
+ struct Choices { short value[4]; };Choices choices=*(Choices*)SumThreeAttributesSelectedByCategory_UnknownRoleInitializedBytes;
  switch(category) {
 case 0x21:choices.value[0]=0x84;choices.value[1]=0x8a;choices.value[2]=0x8d;break;
 case 0:choices.value[0]=1;choices.value[1]=5;choices.value[2]=7;break;
@@ -25,6 +30,6 @@ case 10:choices.value[0]=243;choices.value[1]=245;choices.value[2]=247;break;
 case 11:choices.value[0]=209;choices.value[1]=211;choices.value[2]=215;break;
  }
  int total=0;
- for(unsigned char index=0;choices.value[index]!=-1;++index){int choice=choices.value[index];if(Object_ReadIndexedBitAtOffset8EC(self,choice))total+=GameState_ReadAttributeBits12To19(state,choice);}
+ for(unsigned char index=0;choices.value[index]!=-1;++index){int choice=choices.value[index];if(CharacterState_GetLearnedSkillMask(self,choice))total+=GameState_ReadAttributeBits12To19(state,choice);}
  return total;
 }

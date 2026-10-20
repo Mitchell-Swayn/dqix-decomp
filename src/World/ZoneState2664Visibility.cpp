@@ -2,8 +2,8 @@
 #include "GameState/GameState.h"
 
 extern "C" {
-    Zone3D* ReadGlobalValueAt020FB3F0();
-    void Object_GetGlobalConnectionState(void*);
+    Zone3D* Zone3D_GetMainInstance();
+    void Network_GetConnectionManager(void*);
     extern const Vector3i gGrottoEntranceUpdateScale;
     extern const Vector3i gGrottoEntranceShowScale;
 }
@@ -14,7 +14,7 @@ void ZoneState2664::UpdateEntranceObject()
     if (unknown_b4)
     {
         GameState* game = GameState::GetInstance();
-        unsigned short zone = ReadGlobalValueAt020FB3F0()->currentZoneID_;
+        unsigned short zone = Zone3D_GetMainInstance()->currentZoneID_;
         GrottoStruct* grotto = game->GetGrottoStruct();
         Vector3i scale = gGrottoEntranceUpdateScale;
         Vector3i position = grotto->entrancePosition;
@@ -24,7 +24,7 @@ void ZoneState2664::UpdateEntranceObject()
             {
                 object.position_ = position;
                 object.SetScale(&scale);
-                object.MaybeSetBCFGAnimation(0, 0);
+                object.SetBCFGAnimationByIndex(0, 0);
                 object.MakeVisible();
                 unknown_b6 = 1;
             }
@@ -36,17 +36,17 @@ void ZoneState2664::UpdateEntranceObject()
 // Original: arm9/main @ 0x0208F748; symbol: _ZN13ZoneState266418ShowEntranceObjectEv; size: 0xA4.
 bool ZoneState2664::ShowEntranceObject()
 {
-    if (ReadGlobalValueAt020FB3F0()->pUnknownStruct_8_->unknown_c_low_) return false;
+    if (Zone3D_GetMainInstance()->pUnknownStruct_8_->unknown_c_low_) return false;
     GameState* game = GameState::GetInstance();
     game->GetProtagonist();
-    Object_GetGlobalConnectionState(GameResources_GetInstance());
+    Network_GetConnectionManager(GameResources_GetInstance());
     GrottoStruct* grotto = game->GetGrottoStruct();
     Vector3i position;
     position = grotto->entrancePosition;
     Vector3i scale = gGrottoEntranceShowScale;
     object.position_ = position;
     object.SetScale(&scale);
-    object.MaybeSetBCFGAnimation(0, 0);
+    object.SetBCFGAnimationByIndex(0, 0);
     object.MakeVisible();
     unknown_b6 = 1;
     return true;

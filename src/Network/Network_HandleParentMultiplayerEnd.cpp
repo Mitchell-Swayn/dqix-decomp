@@ -1,0 +1,4 @@
+#include <globaldefs.h>
+struct State { unsigned short a,flag; }; extern "C" void Network_RecordWirelessErrorUnlessTerminal(); extern "C" void Network_RestartOperationAndTrackFailure(); extern "C" void Network_HandleCompletionErrorOrReadyState(); extern "C" int WirelessCommand_SubmitOpcodeNineAfterStateValidation(void(*)());
+// Original: arm9/main @ 0x0202CCDC; symbol: func_0202ccdc; size: 0x4C.
+extern "C" void Network_HandleParentMultiplayerEnd(State* self) { unsigned flag=self->flag; if(flag) { Network_RecordWirelessErrorUnlessTerminal(); Network_RestartOperationAndTrackFailure(); return; } bool busy; if(WirelessCommand_SubmitOpcodeNineAfterStateValidation(Network_HandleCompletionErrorOrReadyState)==2)busy=true; else { Network_RecordWirelessErrorUnlessTerminal(); busy=false; } if(!busy)Network_RestartOperationAndTrackFailure(); }

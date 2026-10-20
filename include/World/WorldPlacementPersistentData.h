@@ -13,7 +13,7 @@ extern WorldPlacementPersistentData gWorldPlacementPersistentData;
 
 // Linker-defined names of the original path subobjects; no extra storage.
 extern "C" {
-    extern char data_020f1330[26];
-    extern char data_020f134a[12];
-    extern char data_020f1356[18];
+    extern char ResetPlacementListOrLoadPlacementResources_PathDataScenarioFlditemPac[26];
+    extern char ResetPlacementListOrLoadPlacementResources_TextFldbiasBin[12];
+    extern char ResetPlacementListOrLoadPlacementResources_FormatF02DflditemBin[18];
 }

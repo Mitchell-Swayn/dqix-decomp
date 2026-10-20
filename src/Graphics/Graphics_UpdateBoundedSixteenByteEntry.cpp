@@ -1,5 +1,5 @@
 #include <globaldefs.h>
-extern "C" void DispatchRenderRequestAtProvidedPosition(void*,void*,unsigned,unsigned,unsigned short);
+extern "C" void Graphics_CopyScreenAtPosition(void*,void*,unsigned,unsigned,unsigned short);
 struct Object
 {
     unsigned char pad[16];
@@ -12,5 +12,5 @@ extern "C" ARM void Graphics_UpdateBoundedSixteenByteEntry(Object* p,unsigned in
 {
     if(p->count<=index)return;
     if(!p->entries)return;
-    DispatchRenderRequestAtProvidedPosition(p,p->entries+index*16,a,b,value);
+    Graphics_CopyScreenAtPosition(p,p->entries+index*16,a,b,value);
 }

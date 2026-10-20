@@ -1,21 +1,21 @@
 #include "GameState/GameState.h"
 
-extern "C" unsigned int ReadFirstValue_Main0202E09C(void* value);
+extern "C" unsigned int Camera_GetObjectFlags(void* value);
 
 // Original: arm9/main @ 0x020100CC; symbol: func_020100cc; size: 0x2C.
-extern "C" void* GameState_FindOffset3B0ObjectWithFlag2(GameState* state)
+extern "C" void* GameState_GetManualControlCamera(GameState* state)
 {
     if (state->unknown_3b0_ != NULL &&
-        (ReadFirstValue_Main0202E09C(state->unknown_3b0_) & 2))
+        (Camera_GetObjectFlags(state->unknown_3b0_) & 2))
         return state->unknown_3b0_;
     return NULL;
 }
 
 // Original: arm9/main @ 0x020100F8; symbol: func_020100f8; size: 0x2C.
-extern "C" void* GameState_GetField3B0ObjectWithFlag4(GameState* state)
+extern "C" void* GameState_GetFieldOrbitCamera(GameState* state)
 {
     if (state->unknown_3b0_ != NULL &&
-        (ReadFirstValue_Main0202E09C(state->unknown_3b0_) & 4))
+        (Camera_GetObjectFlags(state->unknown_3b0_) & 4))
         return state->unknown_3b0_;
     return NULL;
 }

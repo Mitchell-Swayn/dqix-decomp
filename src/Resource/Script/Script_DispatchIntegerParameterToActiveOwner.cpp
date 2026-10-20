@@ -4,6 +4,31 @@
 #include <System/Interrupts.h>
 ARM
 #pragma force_active on
-struct Bits{unsigned char a:1,b:7;};struct Flags{unsigned char low:6,b:1,c:1;};extern "C"{void InitializeTag4CRecordAndClearOwnerFields(void*);void AppendLinkedNodeAndMarkActive(void*,void*);char* FindThirtyTwoByteRecordByHalfwordKey(void*,int);void* memcpy(void*,const void*,unsigned);void* memset(void*,int,unsigned);void InitializeRecordWithThreeUnitValues(void*);char* ReadWordFieldAtOffset1C();void Object_SetWordAtOffset1E20(void*,void*);int Object_TestNestedOffset440RecordAbsentOrIdle(void*);void SetLinkedFadeStateThreeAndAmountsToFixedPointOne(void*);void PointField1E20AtEmbedded914(void*);void Object_SetSelectedRecordWord4(void*,int,const void*);extern int data_02111654[];extern char data_02109bb0[];extern int(*data_020f28fc[])();extern unsigned short data_02111220,data_020f226c;}
+// Original data: arm9/main @ 0x20f226c; symbol: data_020f226c.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 01000000.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x20f28fc; symbol: data_020f28fc.
+// Contains original relocated procedure references. Record fields, dispatch contract and exclusive ownership may remain unresolved.
+// Initial values: hex 6caf0d0254af0d02.
+// Observed span: 8 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x2109bb0; symbol: data_02109bb0.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 24 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x2111220; symbol: data_02111220.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 2 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+// Original data: arm9/main @ 0x2111654; symbol: data_02111654.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 20 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+struct Bits{unsigned char a:1,b:7;};struct Flags{unsigned char low:6,b:1,c:1;};extern "C"{void NetworkTransfer_InitializeSaveDataSend(void*);void LinkedQueue_AppendAndMarkActive(void*,void*);char* Actor_FindChoiceById(void*,int);void* memcpy(void*,const void*,unsigned);void* memset(void*,int,unsigned);void Grid_InitializeSelectionGeometry(void*);char* TextContext_GetSharedInstance();void TextWindow_SelectFrameTransitionRecord(void*,void*);int UI_IsPanelTransitionHidden(void*);void WindowFrame_BeginCloseTransition(void*);void TextWindow_SelectPrimaryFrameTransition(void*);void Actor_SetChoiceFlags(void*,int,const void*);extern int OSInitVAlarm_UnknownRoleZeroInitializedStorage[];extern char ScriptSetPresentGlobalOwnerValue_UnknownRoleZeroInitializedStorage[];extern int(*DisplayOverlayCaptureNormalPlaneMasks_UnknownRoleProcedureReferenceRecords[])();extern unsigned short GXInit_UnknownRoleZeroInitializedStorage,GXInit_UnknownRoleInitializedBytes;}
 // Original: arm9/main @ 0x0209BA2C; symbol: func_0209ba2c; size: 0x44.
-extern "C" int Script_DispatchIntegerParameterToActiveOwner(const Script::Parameter* p){char* q=*(char**)data_02109bb0;if(*(unsigned*)(q+20)){int n=p->ToInt();q=*(char**)data_02109bb0;Object_SetSelectedRecordWord4(*(void**)q,*(int*)(q+24),&n);}return 1;}
+extern "C" int Script_DispatchIntegerParameterToActiveOwner(const Script::Parameter* p){char* q=*(char**)ScriptSetPresentGlobalOwnerValue_UnknownRoleZeroInitializedStorage;if(*(unsigned*)(q+20)){int n=p->ToInt();q=*(char**)ScriptSetPresentGlobalOwnerValue_UnknownRoleZeroInitializedStorage;Actor_SetChoiceFlags(*(void**)q,*(int*)(q+24),&n);}return 1;}

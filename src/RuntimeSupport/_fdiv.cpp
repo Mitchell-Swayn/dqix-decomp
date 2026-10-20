@@ -1,3 +1,6 @@
+// Original data alias: arm9/main @ 0x200c274; symbol: data_0200c274.
+// 256 literal bytes embedded in the accepted floating-point division routine. Source dcd words preserve all values; this is a local data label, not a separate allocation.
+// Initial values (hex for initialized storage): fffffefdfcfbfaf9f8f7f6f5f4f3f2f1f0f0efeeedecebeaeae9e8e7e6e6e5e4e3e2e2e1e0dfdfdedddcdcdbdad9d9d8d7d7d6d5d4d4d3d2d2d1d0d0cfcececdcccccbcbcac9c9c8c8c7c6c6c5c5c4c3c3c2c2c1c0c0bfbfbebebdbdbcbcbbbabab9b9b8b8b7b7b6b6b5b5b4b4b3b3b2b2b1b1b0b0afafafaeaeadadacacababaaaaaaa9a9a8a8a7a7a7a6a6a5a5a4a4a4a3a3a2a2a2a1a1a0a0a09f9f9e9e9e9d9d9d9c9c9b9b9b9a9a9a9999999898989797969696959595949494939393929292919191919090908f8f8f8e8e8e8d8d8d8c8c8c8c8b8b8b8a8a8a8a8989898888888887878786868686858585858484848383838382828282818181818080.
 // Compiler runtime support: _f_div, _fdiv.
 // Accepted as matching assembly by user instruction. Do not decompile into C.
 // Vendor library: ds/2.0/sp2/Mathlib/lib/FP_fastI_v5t_LE.a. Object: _f_div.o.
@@ -101,7 +104,7 @@ rt_0200c26c:
 rt_0200c270:
     bx lr
 rt_0200c274:
-data_0200c274:
+Runtime_FloatDivideLiteralBytes:
     dcd 0xfdfeffff // Literal/table data, not an instruction.
 rt_0200c278:
     dcd 0xf9fafbfc // Literal/table data, not an instruction.

@@ -1,2 +1,2 @@
 // Resource filename/path storage; explicit extent preserves original zero padding.
-extern "C" char data_020f11c0[26] = "data/bin/menu/str_que.gp2";
+extern "C" char QuestMessagePanel_AdvanceOpeningSequence_PathDataBinMenuStrQueGp2[26] = "data/bin/menu/str_que.gp2";

@@ -55,7 +55,7 @@ extern "C" GameStateIndexedRecord* GameState_ReadIndexedRecordsIndex(GameState* 
 }
 
 // Original: arm9/main @ 0x020108F0; symbol: func_020108f0; size: 0x64.
-extern "C" GameStateIndexedRecord* GameState_FindRecordByObjectIndex(GameState* state, int index)
+extern "C" GameStateIndexedRecord* GameState_FindCharacterStateByObjectIndex(GameState* state, int index)
 {
     if (index < 0 || index >= 4)
         return NULL;

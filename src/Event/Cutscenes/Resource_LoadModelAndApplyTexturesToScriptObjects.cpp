@@ -1,0 +1,16 @@
+#include <globaldefs.h>
+ARM
+#define B(p,o) (*(unsigned char*)((char*)(p)+(o)))
+#define S(p,o) (*(signed char*)((char*)(p)+(o)))
+#define H(p,o) (*(short*)((char*)(p)+(o)))
+#define U(p,o) (*(unsigned short*)((char*)(p)+(o)))
+#define W(p,o) (*(unsigned*)((char*)(p)+(o)))
+#define P(p,o) (*(char**)((char*)(p)+(o)))
+// Original data: arm9/ov001 @ 0x21658b8; symbol: data_ov001_021658b8.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 32 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/ov001.md.
+struct GameState;struct GameResources;struct Object3D;extern "C" void* _ZN9GameState11GetInstanceEv();extern "C" GameResources* GameResources_GetInstance();extern "C" void* GameState_ReadUnknownB0(GameState*);extern "C" char* _ZN9GameState20GetGameObjectByIndexEi(void*,int);struct IntegerParameterView;extern "C" unsigned Script_ReadParameterString(void*);extern "C" int Script_ReadParameterAsInteger(IntegerParameterView*);extern "C" int Script_ResolveEventObjectIndex(int);extern "C" char Script_LoadEventTextTable_PathDataS[];extern "C" void* EventSetAllocatorSlot_UnknownRoleZeroInitializedStorage;extern "C" int sprintf(char*,const char*,...);extern "C" void* _ZN13SafeAllocator8AllocateEj(void*,unsigned);extern "C" void _ZN7Model3D5ClearEv(void*);extern "C" void* _ZN16BackgroundLoader11GetInstanceEv();extern "C" int _ZN16BackgroundLoader19GetLoadedFileByNameEPKcPPvPj(void*,const char*,void**,unsigned*);extern "C" void _ZN7Model3D21CopyAndProcessRawFileEP14AllocatorUnionPKvjNS_18TextureStagingModeE(void*,void*,const void*,unsigned,int);extern "C" void _ZN7Model3D12LoadFromFileEPKcP14AllocatorUnionNS_18TextureStagingModeE(void*,const char*,void*,int);extern "C" void _ZN7Model3D22ApplyTexturesFromModelEPS_(void*,void*);
+// Original: arm9/ov001 @ 0x0215EF54; symbol: Resource_LoadModelAndApplyTexturesToScriptObjects; size: 0x10C.
+extern "C" int Resource_LoadModelAndApplyTexturesToScriptObjects(char* parameter,int count){char* current=parameter;parameter+=8;unsigned id=Script_ReadParameterString(current);void* game=_ZN9GameState11GetInstanceEv();if(!game)return 0;char path[32];sprintf(path,Script_LoadEventTextTable_PathDataS,id);void* model;char* allocator=(char*)EventSetAllocatorSlot_UnknownRoleZeroInitializedStorage;model=_ZN13SafeAllocator8AllocateEj(allocator,172);if(!model)return 0;_ZN7Model3D5ClearEv(model);void* data;unsigned size;_ZN16BackgroundLoader19GetLoadedFileByNameEPKcPPvPj(_ZN16BackgroundLoader11GetInstanceEv(),path,&data,&size);if(data)_ZN7Model3D21CopyAndProcessRawFileEP14AllocatorUnionPKvjNS_18TextureStagingModeE(model,allocator+4,data,size,0);else _ZN7Model3D12LoadFromFileEPKcP14AllocatorUnionNS_18TextureStagingModeE(model,path,allocator+4,0);for(int i=1;i<count;i++){int index=Script_ReadParameterAsInteger((IntegerParameterView*)parameter);parameter+=8;index=Script_ResolveEventObjectIndex(index);char* object=_ZN9GameState20GetGameObjectByIndexEi(game,index);if(object&&P(object,8))_ZN7Model3D22ApplyTexturesFromModelEPS_(P(object,8),model);}return 1;}

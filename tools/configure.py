@@ -53,7 +53,7 @@ CC_FLAGS = " ".join([
     "-msgstyle gcc",        # Use GCC-like messages (some IDEs will make file names clickable)
     "-str pool,reuse"       # Pool and reuse strings within translation units
 ])
-active_function_name = "-force_active func_ov030_021d8a40,func_ov020_0218b5a0,func_ov011_02184a18"
+active_function_name = "-force_active GameResources_Create,BootScreen_Setup,ReadStateHalfword1B2"
 if args.version == "jpn":
     active_function_name = "-force_active func_ov029_021d9300,func_ov030_021d9300"
 if any(not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', name) for name in args.keep_symbol):
@@ -134,7 +134,8 @@ from objdiff_profile import resolve_objdiff
 OBJDIFF_POLICY = config_path / args.version / "objdiff_tool.json"
 OBJDIFF = resolve_objdiff(root_path, args.version, OBJDIFF)
 OBJDIFF_PROFILE_DEPS = ([str(OBJDIFF_POLICY), "tools/objdiff_profile.py",
-    "tools/patches/objdiff-2.7.1-arm-empty-map.patch"] if OBJDIFF_POLICY.exists() else [])
+    "tools/patches/objdiff-2.7.1-arm-empty-map.patch",
+    "tools/patches/objdiff-2.7.1-arm-prefix-map.patch"] if OBJDIFF_POLICY.exists() else [])
 CC = os.path.join('.', str(mwcc_path / "mwccarm.exe"))
 LD = os.path.join('.', str(mwcc_path / "mwldarm.exe"))
 AS = os.path.join('.', str(mwcc_path / "mwasmarm.exe"))

@@ -16,11 +16,16 @@ struct DMARegisterSet
 };
 
 #if defined(jpn)
-#define data_020f2270 data_020f23dc
+#define LoadToSubOAM_UnknownRoleInitializedBytes data_020f23dc
 #endif
 
 // DMA channel for general use
-extern int data_020f2270;
+// Original data: arm9/main @ 0x20f2270; symbol: data_020f2270.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 03000000.
+// Observed span: 4 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern int LoadToSubOAM_UnknownRoleInitializedBytes;
 
 // ITCM functions. The atomic operations are wrapped with DisableIRQInterrupts()
 // and SetIRQInterruptState(), 
@@ -44,5 +49,5 @@ void AwaitDMACompletion(int channel);
 void ResetDMAChannel(int channel);
 void ResetAllDMAChannels();
 
-void VerifyDMATimingChangePermitted_020c9fd0(int channel, unsigned int newTimingFlags);
+void VerifyOtherDMATimingCompatibility(int channel, unsigned int newTimingFlags);
 void VerifyDMASource(int channel, unsigned int source, unsigned int length, unsigned int sourceCtrlFlags);

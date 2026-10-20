@@ -11,5 +11,10 @@ struct RuntimeMathTables {
     double piOver2Pieces[8];
 };
 
-extern const RuntimeMathTables data_020e6abc;
+// Original data: arm9/main @ 0x20e6abc; symbol: data_020e6abc.
+// Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
+// Initial values: hex 00000000000000000000004003b8e23f.
+// Observed span: 16 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern const RuntimeMathTables RuntimePowerEvaluateDoublePower_UnknownRoleInitializedBytes;
 typedef char RuntimeMathTablesSizeCheck[sizeof(RuntimeMathTables) == 520 ? 1 : -1];

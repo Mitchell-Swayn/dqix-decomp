@@ -1,3 +1,0 @@
-#include <globaldefs.h>
-// Original: arm9/ov017 @ 0x021C90B4; symbol: func_ov017_021c90b4; size: 0x44.
-extern "C" ARM void Field_CopyPackedRecord14(void* destination,const void* source) { unsigned char* d=(unsigned char*)destination; const unsigned char* s=(const unsigned char*)source; *(unsigned short*)(d+0)=*(const unsigned short*)(s+0); *(unsigned short*)(d+2)=*(const unsigned short*)(s+2); *(unsigned short*)(d+4)=*(const unsigned short*)(s+4); *(unsigned short*)(d+6)=*(const unsigned short*)(s+6); d[8]=s[8]; d[9]=s[9]; *(unsigned short*)(d+10)=*(const unsigned short*)(s+10); *(unsigned short*)(d+12)=*(const unsigned short*)(s+12); }

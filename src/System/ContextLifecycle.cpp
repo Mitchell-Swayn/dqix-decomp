@@ -69,21 +69,21 @@ void PopulateProcessorContext(ProcessorContext *context, unsigned int startAddre
 void ContextExecutionReturnProc()
 {
     DisableIRQInterrupts();
-    ExitContext(data_021112e0.substruct_24.activeContext, 0);
+    ExitContext(OSInitThread_UnknownRoleZeroInitializedStorage.substruct_24.activeContext, 0);
 }
 
 // Original: arm9/main @ 0x020C76D0; symbol: _Z11ExitContextP16ProcessorContexti; size: 0x5C.
 void ExitContext(ProcessorContext *context, int exitCode)
 {
-    if (data_021112e0.unknown_1C != 0)
+    if (OSInitThread_UnknownRoleZeroInitializedStorage.unknown_1C != 0)
     {
         // context will resume execution with pc at ExitCurrentContext invocation
         // and with IRQ interrupts disabled.
-        InitializeContextRegisters(context, (unsigned int)&ExitCurrentContext, data_021112e0.unknown_1C);
+        InitializeContextRegisters(context, (unsigned int)&ExitCurrentContext, OSInitThread_UnknownRoleZeroInitializedStorage.unknown_1C);
         context->userModeRegisters[0] = exitCode;
         context->programStatusRegister |= (1 << 7); // disable IRQ interrupts here
         context->blockState = 1;
-        RestoreContext(context);
+        OS_LoadContext(context);
     }
     else
     {
@@ -94,7 +94,7 @@ void ExitContext(ProcessorContext *context, int exitCode)
 // Original: arm9/main @ 0x020C772C; symbol: _Z18ExitCurrentContexti; size: 0x38.
 void ExitCurrentContext(int code)
 {
-    ProcessorContext* context = *data_021112e0.ppActiveContext;
+    ProcessorContext* context = *OSInitThread_UnknownRoleZeroInitializedStorage.ppActiveContext;
     ProcessorContext::ExitRoutine proc = context->exitProc;
     if (proc != NULL)
     {
@@ -108,7 +108,7 @@ void ExitCurrentContext(int code)
 // Original: arm9/main @ 0x020C7764; symbol: _Z22ShutdownCurrentContextv; size: 0x5C.
 void ShutdownCurrentContext()
 {
-    ProcessorContext* context = *data_021112e0.ppActiveContext;
+    ProcessorContext* context = *OSInitThread_UnknownRoleZeroInitializedStorage.ppActiveContext;
     AddContextSwitchLock();
     UnlockAllMutexesLockedByContext(context);
     if (context->containerBlockedQueue != NULL)
@@ -127,7 +127,7 @@ void ShutdownContext(ProcessorContext* context)
 {
     int priorState = DisableIRQInterrupts();
 
-    if (data_021112e0.substruct_24.activeContext == context)
+    if (OSInitThread_UnknownRoleZeroInitializedStorage.substruct_24.activeContext == context)
         ShutdownCurrentContext(); // function call will not return
 
     AddContextSwitchLock();

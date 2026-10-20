@@ -33,9 +33,9 @@ struct Request {
 };
 
 extern "C" {
-unsigned char* Object_GetValidSixtyByteEntry(void* table, int index);
-Group* GetTwentyByteEntryByBoundedIndex(void* table, unsigned index);
-RangeList* Object_GetBoundedTwentyByteRecord(void* table, unsigned index);
+unsigned char* Resource_GetActiveGraphicCacheEntry(void* table, int index);
+Group* ActorSpriteResource_GetAnimation(void* table, unsigned index);
+RangeList* ActorSpriteResource_GetFrame(void* table, unsigned index);
 }
 
 // Flushes the data cache for every range of the requested element if the selection changed.
@@ -43,11 +43,11 @@ RangeList* Object_GetBoundedTwentyByteRecord(void* table, unsigned index);
 extern "C" ARM void FlushChangedSelectedResourceRangeList(Request* req) {
     if (req->valid < 0) return;
     if (req->elementIndex == req->prevElementIndex && req->groupIndex == req->prevGroupIndex) return;
-    unsigned char* owner = Object_GetValidSixtyByteEntry(req->owner, req->valid);
+    unsigned char* owner = Resource_GetActiveGraphicCacheEntry(req->owner, req->valid);
     if (!owner) return;
-    Group* group = GetTwentyByteEntryByBoundedIndex(owner + 0x10, req->groupIndex);
+    Group* group = ActorSpriteResource_GetAnimation(owner + 0x10, req->groupIndex);
     if (!group) return;
-    RangeList* list = Object_GetBoundedTwentyByteRecord(owner + 0x10, group->elements[req->elementIndex]);
+    RangeList* list = ActorSpriteResource_GetFrame(owner + 0x10, group->elements[req->elementIndex]);
     if (!list) return;
     RangeEntry* entry = list->entries;
     if (!entry) return;

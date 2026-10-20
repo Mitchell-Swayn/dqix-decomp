@@ -1,0 +1,8 @@
+#include <globaldefs.h>
+ARM
+#pragma optimization_level 4
+extern "C" char* Menu_FindSessionArenaById(void*,unsigned); extern "C" int ResourceFile_CountActiveStrideRecords(void*); extern "C" char* ResourceFile_GetPayloadByIndex(void*,int,char**,unsigned*); extern "C" char* strstr(const char*,const char*); extern "C" void Graphics_AllocateScreenDescriptors(unsigned char*,unsigned,void*); extern "C" int Graphics_LoadTaggedLayerResource(void*,const void*,unsigned,unsigned); extern "C" unsigned char Resource_LoadNamedVariableBlocks_TextBnsc[];
+// Original: arm9/ov023 @ 0x021F7AAC; symbol: Resource_LoadNamedVariableBlocks; size: 0xEC.
+// Counts variable-length records whose names contain the configured tag, allocates result slots, and dispatches each record.
+struct VariableBlockOut { char* pointer; unsigned size; };
+extern "C" void Resource_LoadNamedVariableBlocks(unsigned char* self,void* file,void* allocator,void* owner){if(!allocator||!owner)return;char* tree=Menu_FindSessionArenaById(file,*(unsigned short*)(self+8));if(!tree)return;int count=ResourceFile_CountActiveStrideRecords(allocator),matches=0;VariableBlockOut scan,load;for(int i=0;i<count;i++){ResourceFile_GetPayloadByIndex(allocator,i,&scan.pointer,&scan.size);if(strstr(scan.pointer,(char*)Resource_LoadNamedVariableBlocks_TextBnsc))matches++;}if(matches>0)Graphics_AllocateScreenDescriptors(self+0x28,(unsigned char)matches,(char*)(tree+4));for(int i=0;i<count;i++){char* data=ResourceFile_GetPayloadByIndex(allocator,i,&load.pointer,&load.size);if(data)Graphics_LoadTaggedLayerResource(self+0x28,data,(unsigned)(tree+4),load.size);}}

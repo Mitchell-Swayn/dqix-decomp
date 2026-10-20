@@ -5,7 +5,12 @@
 #pragma dont_inline on
 
 // Keep the handler fetch before publishing the decremented callback count.
-extern Mutex data_020f2fb8;
+// Original data: arm9/main @ 0x20f2fb8; symbol: data_020f2fb8.
+// Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
+// Initial values: zero-filled at load; mutable at runtime.
+// Observed span: 168 bytes; not a proven logical object extent.
+// Full values and references: docs/data-symbols/main.md.
+extern Mutex RuntimeRunRegisteredExitHandlersAndTerminate_UnknownRoleZeroInitializedStorage_Variant2;
 extern "C" int Runtime_DispatchSignalHandler(int);
 extern "C" void RuntimeDestructors_DestroyRegisteredObjects();
 extern "C" void Runtime_InvokeConsoleExitHook();
@@ -16,17 +21,17 @@ extern "C" void Runtime_RunRegisteredExitHandlersAndTerminate(int);
 extern "C" void Runtime_AbortProcess()
 {
     Runtime_DispatchSignalHandler(1);
-    data_020f2e60.aborting = 1;
+    RuntimeAbortProcess_UnknownRoleZeroInitializedStorage.aborting = 1;
     Runtime_RunEarlyExitHandlerAndTerminate(1);
 }
 // Original: arm9/main @ 0x0200159C; symbol: func_0200159c; size: 0x4C.
 extern "C" void Runtime_RunEarlyExitHandlerAndTerminate(int status)
 {
-    if (!data_020f2e60.aborting) {
+    if (!RuntimeAbortProcess_UnknownRoleZeroInitializedStorage.aborting) {
         RuntimeDestructors_DestroyRegisteredObjects();
-        if (data_020f2e60.earlyHandler) {
-            data_020f2e60.earlyHandler();
-            data_020f2e60.earlyHandler = 0;
+        if (RuntimeAbortProcess_UnknownRoleZeroInitializedStorage.earlyHandler) {
+            RuntimeAbortProcess_UnknownRoleZeroInitializedStorage.earlyHandler();
+            RuntimeAbortProcess_UnknownRoleZeroInitializedStorage.earlyHandler = 0;
         }
     }
     Runtime_RunRegisteredExitHandlersAndTerminate(status);
@@ -35,29 +40,29 @@ extern "C" void Runtime_RunEarlyExitHandlerAndTerminate(int status)
 extern "C" void Runtime_RunRegisteredExitHandlersAndTerminate(int)
 {
     // Preserve the runtime's observed recursive-lock return-value test.
-    if (!TryLockMutex(&data_020f2fb8)) {
-        data_020f2f70[0] = data_02111304.activeContext->uniqueID;
-        data_020f2f94[0] = 1;
-    } else if (data_020f2f70[0] == data_02111304.activeContext->uniqueID) {
-        ++data_020f2f94[0];
+    if (!TryLockMutex(&RuntimeRunRegisteredExitHandlersAndTerminate_UnknownRoleZeroInitializedStorage_Variant2)) {
+        RuntimeDispatchSignalHandler_UnknownRoleZeroInitializedStorage[0] = OSInitThread_UnknownRoleZeroInitializedStorage_Variant2.activeContext->uniqueID;
+        RuntimeDispatchSignalHandler_UnknownRoleZeroInitializedStorage_Variant2[0] = 1;
+    } else if (RuntimeDispatchSignalHandler_UnknownRoleZeroInitializedStorage[0] == OSInitThread_UnknownRoleZeroInitializedStorage_Variant2.activeContext->uniqueID) {
+        ++RuntimeDispatchSignalHandler_UnknownRoleZeroInitializedStorage_Variant2[0];
     } else {
-        LockMutex(&data_020f2fb8);
-        data_020f2f70[0] = data_02111304.activeContext->uniqueID;
-        data_020f2f94[0] = 1;
+        LockMutex(&RuntimeRunRegisteredExitHandlersAndTerminate_UnknownRoleZeroInitializedStorage_Variant2);
+        RuntimeDispatchSignalHandler_UnknownRoleZeroInitializedStorage[0] = OSInitThread_UnknownRoleZeroInitializedStorage_Variant2.activeContext->uniqueID;
+        RuntimeDispatchSignalHandler_UnknownRoleZeroInitializedStorage_Variant2[0] = 1;
     }
-    if (data_020f2e60.handlerCount > 0) {
+    if (RuntimeAbortProcess_UnknownRoleZeroInitializedStorage.handlerCount > 0) {
         do {
-            int index = data_020f2e60.handlerCount - 1;
-            RuntimeExitHandler handler = data_020f2e70[index];
-            data_020f2e60.handlerCount = index;
+            int index = RuntimeAbortProcess_UnknownRoleZeroInitializedStorage.handlerCount - 1;
+            RuntimeExitHandler handler = RuntimeRunRegisteredExitHandlersAndTerminate_UnknownRoleZeroInitializedStorage[index];
+            RuntimeAbortProcess_UnknownRoleZeroInitializedStorage.handlerCount = index;
             handler();
-        } while (data_020f2e60.handlerCount > 0);
+        } while (RuntimeAbortProcess_UnknownRoleZeroInitializedStorage.handlerCount > 0);
     }
-    if (--data_020f2f94[0] == 0)
-        UnlockMutex(&data_020f2fb8);
-    if (data_020f2e60.lateHandler) {
-        data_020f2e60.lateHandler();
-        data_020f2e60.lateHandler = 0;
+    if (--RuntimeDispatchSignalHandler_UnknownRoleZeroInitializedStorage_Variant2[0] == 0)
+        UnlockMutex(&RuntimeRunRegisteredExitHandlersAndTerminate_UnknownRoleZeroInitializedStorage_Variant2);
+    if (RuntimeAbortProcess_UnknownRoleZeroInitializedStorage.lateHandler) {
+        RuntimeAbortProcess_UnknownRoleZeroInitializedStorage.lateHandler();
+        RuntimeAbortProcess_UnknownRoleZeroInitializedStorage.lateHandler = 0;
     }
     RuntimeStreamBuffers_FlushStreamOrAllStreams(0);
     Runtime_InvokeConsoleExitHook();

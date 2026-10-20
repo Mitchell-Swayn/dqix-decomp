@@ -11,8 +11,9 @@ Preserve existing user changes.
   owning symbol maps together and verify the full ROM after naming migrations.
 
 - Organize integrated sources by the subsystem and descriptive filename rules in
-  `docs/NAMING.md`. Keep run/worker/batch provenance in `build/`; use
-  `src/Unclassified/` when the subsystem is not established.
+  `docs/NAMING.md`. Keep run/worker/batch provenance in `build/`; place new
+  sources in the chunk folder from `docs/subsystem-map-usa.json`, not
+  `src/Unclassified/`.
 
 - `src/AssemblyFallback/*.inc` (recursively) contains unreconstructed assembly
   references, not compiled replacements. Keep these functions eligible for C/C++
