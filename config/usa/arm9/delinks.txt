@@ -20089,3 +20089,7 @@ src/UI/TextLayout_AlignSelectorToDisplayRectangle.cpp:
 src/GameState/Inventory/Inventory_RemoveItemCountAndCompact.cpp:
     complete
     .text start:0x020a0a08 end:0x020a0a60
+
+src/World/Graphics_DrawColoredRotatedBoxFromBasePosition.cpp:
+    complete
+    .text start:0x0208b5b4 end:0x0208b610
