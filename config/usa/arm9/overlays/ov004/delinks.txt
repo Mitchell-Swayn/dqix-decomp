@@ -1824,3 +1824,7 @@ src/Menu/SharedServices/ov004/Menu_GetInventorySlotOnCurrentPage.cpp:
 src/Menu/TreasureMaps/ov004/TreasureMapMenu_FindHighlightedMapPosition.cpp:
     complete
     .text start:0x021635d0 end:0x021636b0
+
+src/Menu/SharedServices/ov004/Menu_PopulateAlternateCataloguePage.cpp:
+    complete
+    .text start:0x0215534c end:0x02155544
