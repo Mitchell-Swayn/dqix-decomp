@@ -4708,3 +4708,7 @@ src/Field/Field_DrawActionShortcutDisplay.cpp:
 src/Field/Field_AdvanceFixedDestinationConfirmation.cpp:
     complete
     .text start:0x021a9454 end:0x021a9638
+
+src/Field/ZoneEncounterLoader_BeginZoneDataLoad.cpp:
+    complete
+    .text start:0x021b478c end:0x021b498c
