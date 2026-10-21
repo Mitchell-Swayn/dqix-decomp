@@ -20161,3 +20161,23 @@ src/Resource/NNSi_SndArcLoadBank.cpp:
 src/UI/SceneCommand_UpdateDisplayOverlay.cpp:
     complete
     .text start:0x020dac94 end:0x020dae08
+
+src/World/ZoneFeatures_AdvanceSubtypeThreeMemberMotion.cpp:
+    complete
+    .text start:0x020a8d08 end:0x020a8e80
+
+src/Actor/GameObject_UpdateCurrentPathNode.cpp:
+    complete
+    .text start:0x020339c8 end:0x02033b58
+
+src/Graphics/Zone3D_DrawBreakableContainers.cpp:
+    complete
+    .text start:0x0201730c end:0x02017540
+
+src/Actor/FieldMonster_ApproachPartyMemberUntilContact.cpp:
+    complete
+    .text start:0x02077788 end:0x02077a20
+
+src/Actor/FieldMonster_MoveToRetreatTargetUntilArrival.cpp:
+    complete
+    .text start:0x02077be0 end:0x02077e80
