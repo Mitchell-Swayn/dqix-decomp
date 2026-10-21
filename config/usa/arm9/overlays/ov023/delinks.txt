@@ -3283,3 +3283,19 @@ src/Menu/Panels/ov023/Menu_UploadSharedTextCanvas.cpp:
 src/Menu/ItemDetails/ItemDetail_RenderPendingItemName.cpp:
     complete
     .text start:0x021dde00 end:0x021ddf5c
+
+src/Menu/Panels/Menu_UpdateCharacterPreviewRotation.cpp:
+    complete
+    .text start:0x021e463c end:0x021e49a4
+
+src/Menu/ItemDetails/ItemDetail_AdvanceDisplayInitialization.cpp:
+    complete
+    .text start:0x021dd59c end:0x021dd974
+
+src/Menu/ItemDetails/ItemDetail_QueueCategoryBackground.cpp:
+    complete
+    .text start:0x021dfc90 end:0x021dfecc
+
+src/Menu/ItemDetails/ItemDetail_ConsumeCategoryBackground.cpp:
+    complete
+    .text start:0x021dfecc end:0x021e0244
