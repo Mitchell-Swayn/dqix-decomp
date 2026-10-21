@@ -1832,3 +1832,23 @@ src/Menu/SharedServices/ov004/Menu_PopulateAlternateCataloguePage.cpp:
 src/Menu/SharedServices/ov004/Menu_ApplyLocalizedPurchaseWidgetLayout.cpp:
     complete
     .text start:0x0215de9c end:0x0215e148
+
+src/Menu/SharedServices/Menu_MaximizePurchaseQuantityWithinLimits.cpp:
+    complete
+    .text start:0x0215c50c end:0x0215c684
+
+src/Town/MiniMedals/MiniMedalMenu_PopulateRepeatableRewardChoices.cpp:
+    complete
+    .text start:0x021680cc end:0x02168244
+
+src/Menu/SharedServices/Menu_ToggleAlternateCatalogueOrderPreservingSelection.cpp:
+    complete
+    .text start:0x02155bbc end:0x02155d54
+
+src/Menu/Titles/TitleMenu_AdvanceBackupCreation.cpp:
+    complete
+    .text start:0x0216e258 end:0x0216e3fc
+
+src/Menu/SharedServices/Menu_RefreshPurchaseOwnedCountAndLocalizedPosition.cpp:
+    complete
+    .text start:0x0215d384 end:0x0215d534
