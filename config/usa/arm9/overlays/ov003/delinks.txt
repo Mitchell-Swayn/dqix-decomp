@@ -3044,3 +3044,23 @@ src/Town/Shops/ov003/Shop_RefreshPartyItemQuantities.cpp:
 src/Town/SharedServices/ov003/Town_ConfirmDefaultDestinationTravel.cpp:
     complete
     .text start:0x0217d53c end:0x0217d6ac
+
+src/Town/Inn/Inn_UpdateServiceSceneLifecycle.cpp:
+    complete
+    .text start:0x0217ef58 end:0x0217f118
+
+src/Town/SharedServices/Town_AdvanceModelPreviewLoading.cpp:
+    complete
+    .text start:0x0217bf78 end:0x0217c2a0
+
+src/Town/SharedServices/Town_CloseModelPreview.cpp:
+    complete
+    .text start:0x0217c7a0 end:0x0217c974
+
+src/Town/Tavern/Tavern_AdvanceHostSessionSetupWithSave.cpp:
+    complete
+    .text start:0x02165278 end:0x0216552c
+
+src/Town/Shops/Shop_AdvanceSaleOwnerSelection.cpp:
+    complete
+    .text start:0x0217a4ac end:0x0217a764
