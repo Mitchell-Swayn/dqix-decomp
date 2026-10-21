@@ -3080,3 +3080,15 @@ src/Town/Shops/Shop_AdvanceMemberItemSale.cpp:
 src/Town/Bank/Bank_AdvanceFarewellMessage.cpp:
     complete
     .text start:0x02169430 end:0x021694b8
+
+src/Town/Church/Church_AdvancePartyExperienceAdvice.cpp:
+    complete
+    .text start:0x0215a5b4 end:0x0215a740
+
+src/Town/Shops/Shop_UpdateInterface.cpp:
+    complete
+    .text start:0x021745fc end:0x0217480c
+
+src/Town/Tavern/Tavern_AdvanceActiveMemberStorage.cpp:
+    complete
+    .text start:0x02162ba8 end:0x02162f40

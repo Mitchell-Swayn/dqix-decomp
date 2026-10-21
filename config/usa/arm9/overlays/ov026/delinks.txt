@@ -135,3 +135,7 @@ src/Combat/SpecialEffects/UpdatePartyTrackedBonePlacement.cpp:
 src/Combat/Presentation/BattleScene_FaceMonstersTowardCameraAndStaggerAnimations.cpp:
     complete
     .text start:0x021daec8 end:0x021db090
+
+src/Combat/SpecialEffects/BattleScene_ResolvePartyEscapeOutcome.cpp:
+    complete
+    .text start:0x021dd3dc end:0x021dd8a8
