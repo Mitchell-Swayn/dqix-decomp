@@ -2896,3 +2896,15 @@ src/Combat/BattleMenu/BattleMenu_OpenPartyCommandPanel.cpp:
 src/Combat/BattleMenu/BattleMenu_HandleEquipmentMemberInput.cpp:
     complete
     .text start:0x0217d674 end:0x0217d87c
+
+src/Combat/BattleMenu/BattleMenu_UpdateSpellDescriptionWindow.cpp:
+    complete
+    .text start:0x02178d28 end:0x02178f28
+
+src/Combat/BattleMenu/BattleMenu_UpdateVocationActionDescriptionWindow.cpp:
+    complete
+    .text start:0x02179cdc end:0x02179ed8
+
+src/Combat/BattleMenu/BattleMenu_DismissGlobalCommandMessage.cpp:
+    complete
+    .text start:0x0217eb28 end:0x0217edd4
