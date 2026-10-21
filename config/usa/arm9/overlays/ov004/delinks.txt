@@ -1852,3 +1852,23 @@ src/Menu/Titles/TitleMenu_AdvanceBackupCreation.cpp:
 src/Menu/SharedServices/Menu_RefreshPurchaseOwnedCountAndLocalizedPosition.cpp:
     complete
     .text start:0x0215d384 end:0x0215d534
+
+src/Menu/SharedServices/Menu_BeginSelectedOfferPurchase.cpp:
+    complete
+    .text start:0x02158dcc end:0x02158fec
+
+src/Menu/SharedServices/Menu_PreparePurchaseRecipientMessage.cpp:
+    complete
+    .text start:0x02159650 end:0x02159888
+
+src/Menu/SharedServices/Menu_RoutePurchaseByEquipmentEligibility.cpp:
+    complete
+    .text start:0x02159a2c end:0x02159b74
+
+src/Menu/SharedServices/Menu_StartItemListingRequest.cpp:
+    complete
+    .text start:0x0215bb54 end:0x0215bc9c
+
+src/Menu/Status/StatusMenu_SelectNextPageCategory.cpp:
+    complete
+    .text start:0x02162c30 end:0x02162d78
