@@ -2,7 +2,7 @@
 ARM
 struct Entry {char pad[8];unsigned amount:8,rest:24;};
 extern "C" {
-void* NetworkOwnership_GetRegistry();void NetworkOwnership_ReleaseForLocalPeer(int,int);void* _ZN9GameState11GetInstanceEv();unsigned TextContext_GetSharedInstance();void* Network_GetConnectionManager();void* ActionData_GetGlobalTables();char* ActionData_FindDefinitionInPrimaryOrSecondaryTable(void*,void*);
+void* NetworkOwnership_GetRegistry();void NetworkOwnership_ReleaseForLocalPeer(int,int);void* _ZN9GameState11GetInstanceEv();unsigned TextContext_GetSharedInstance();void* Network_GetConnectionManager();void* ActionData_GetGlobalTables();void* ActionData_FindDefinitionInPrimaryOrSecondaryTable(char*,int);
 void* memset(void*,int,unsigned);void* memcpy(void*,const void*,unsigned);void TextLayout_ResetFormattingWorkspace(signed char*);void* Text_ClearNameDescriptor(void*);
 char* GameState_GetObjectWithFlag100(void*,int);void TextContext_SetStringArgument(void*,int,const char*);void GameState_BuildTwelveByteDescriptorForPartyMember(void*,int);
 char* _ZN9GameState21GetPartyMemberByIndexEi(void*,int);int Object_SubtractAmountWithConditionalScaling(void*,int);int Network_IsSessionActive(void*);void Network_QueueCurrentPartyMemberState(int,int,int,int);
@@ -16,7 +16,7 @@ extern "C" void Text_FormatCharacterCommandFeedback(char* self,unsigned char* co
  NetworkOwnership_ReleaseForLocalPeer((int)NetworkOwnership_GetRegistry(),1);
  char* output;
  void* state=_ZN9GameState11GetInstanceEv();signed char* formatter=(signed char*)TextContext_GetSharedInstance();void* connection=Network_GetConnectionManager();
- char* entry=ActionData_FindDefinitionInPrimaryOrSecondaryTable(ActionData_GetGlobalTables(),(void*)ACT);if(!entry)return;
+ char* entry=(char*)ActionData_FindDefinitionInPrimaryOrSecondaryTable((char*)ActionData_GetGlobalTables(),ACT);if(!entry)return;
  memset(TXT,0,0x960);memset(*(void**)(self+0x1bd4),0,0x960);TextLayout_ResetFormattingWorkspace(formatter);
  output=TXT;
  Text_ClearNameDescriptor(self+8);Text_ClearNameDescriptor(self+0x14);

@@ -9,7 +9,7 @@ extern "C" void* memset(void*,int,unsigned);
 extern "C" unsigned SpellTable_CollectMappedSpellValues(void*,unsigned char*,unsigned,unsigned short*);
 extern "C" char* ActionData_GetGlobalTables();
 struct Record{unsigned pad[2];unsigned lo:10;unsigned flags:2;unsigned high:20;unsigned padC[3];unsigned low18:12;unsigned kind:4;unsigned high18:16;};
-extern "C" Record* ActionData_FindDefinitionInPrimaryOrSecondaryTable(char*,int);
+extern "C" void* ActionData_FindDefinitionInPrimaryOrSecondaryTable(char*,int);
 extern "C" int GameState_CollectCategoryCodesMeetingRequiredLevel(char* volatile*,void*,unsigned char*);
 extern "C" int CharacterState_GetLearnedSkillMask(unsigned char*,int);
 extern "C" char* SkillTable_FindEntryById(void*,unsigned);
@@ -29,7 +29,7 @@ extern "C" void GameState_BuildEnabledResolvedRecordList(char* self,int index){
  written=0;
  global=ActionData_GetGlobalTables();
  for(firsti=0;firsti<count;firsti++){
-  Record* record=ActionData_FindDefinitionInPrimaryOrSecondaryTable(global,resolved[firsti]);
+  Record* record=(Record*)ActionData_FindDefinitionInPrimaryOrSecondaryTable(global,resolved[firsti]);
   if(record && ids[firsti]==60 && (record->flags&1))AppendRecord(output,written,record);
  }
  if(!*(unsigned*)(*(char**)(object+0x150)+0x950)){
@@ -39,7 +39,7 @@ extern "C" void GameState_BuildEnabledResolvedRecordList(char* self,int index){
  count=SpellTable_CollectMappedSpellValues(self+0x2444,ids,count,(unsigned short*)resolved);
  short* resolvedArray;int i=0;resolvedArray=resolved;
  for(;i<count;i++){
-  Record* record=ActionData_FindDefinitionInPrimaryOrSecondaryTable(global,resolvedArray[i]);
+  Record* record=(Record*)ActionData_FindDefinitionInPrimaryOrSecondaryTable(global,resolvedArray[i]);
   if(record && ids[i]!=60 && (record->flags&1))AppendRecord(output,written,record);
  }
  char* table;unsigned short j=0;
@@ -48,7 +48,7 @@ extern "C" void GameState_BuildEnabledResolvedRecordList(char* self,int index){
    table=self+0x3c;
    char* entry=SkillTable_FindEntryById(table+0x2400,j);
    if(entry && *(unsigned short*)(entry+8)){
-    Record* record=ActionData_FindDefinitionInPrimaryOrSecondaryTable(global,(short)*(unsigned short*)(entry+8));
+    Record* record=(Record*)ActionData_FindDefinitionInPrimaryOrSecondaryTable(global,(short)*(unsigned short*)(entry+8));
     if(record && record->kind==1 && (record->flags&1))AppendRecord(output,written,record);
    }
   }

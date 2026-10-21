@@ -28,7 +28,7 @@ void GameState_BuildTwelveByteDescriptorForPartyMember(void*,int); void TextLayo
 void SoundSfx_LoadGroupAtCurrentHeapState(void*,int,int); void ResourceHandle_InvokeOperationWithValidHalfwordIndex(void*,int,int); void SoundSfx_RestoreHeapAfterGroupPlayback(void*);
 void TextureVRAM_SnapshotAllocationBounds(void*); void Graphics_RestoreTextureImageAndPaletteVRAMState(void*); void Object_InvokeSaveTextureImageVRAMState(void*);
 void* Object_GetGlobalSixteenEntryDisplayState(); int Object_AllocateAndAppendInitializedLinkedNode(void*,int,SafeAllocator*,void*,unsigned); unsigned ObjectPool_SpawnFromTemplateKey(void*,int,EffectDescriptor*);
-int Network_IsParentOrOffline(void*); void* ActionData_GetGlobalTables(); unsigned* ActionData_FindDefinitionInPrimaryOrSecondaryTable(void*,int); void Object_SubtractAmountWithConditionalScaling(GameObject*,unsigned); void GameObject_DeferPositionMatch(GameObject*);
+int Network_IsParentOrOffline(void*); void* ActionData_GetGlobalTables(); void* ActionData_FindDefinitionInPrimaryOrSecondaryTable(char*,int); void Object_SubtractAmountWithConditionalScaling(GameObject*,unsigned); void GameObject_DeferPositionMatch(GameObject*);
 void Network_QueueTypeB6PackedPosition(int,unsigned,unsigned short,PackedPosition);
 // Original data: arm9/main @ 0x2108760; symbol: data_02108760.
 // Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
@@ -147,7 +147,7 @@ extern "C" int Pitfall_AdvancePlacementSequence(PitState* state) {
             unsigned short* location = GameState_GetPendingPartyPositionRecord(game,GameState_ReadProtagonistObjectIndex(game));
             if (location) { location[0]=record->key; location[1]=packed.x; location[2]=packed.y; location[3]=packed.z; }
         }
-        unsigned* entry = ActionData_FindDefinitionInPrimaryOrSecondaryTable(ActionData_GetGlobalTables(),210);
+        unsigned* entry = (unsigned*)ActionData_FindDefinitionInPrimaryOrSecondaryTable((char*)ActionData_GetGlobalTables(),210);
         if (entry) Object_SubtractAmountWithConditionalScaling(member,((LowByte*)(entry+2))->low);
         GameObject* active=game->GetUnknownGameObject(); if (active) GameObject_DeferPositionMatch(active);
         int index=GameState_ReadProtagonistObjectIndex(game);

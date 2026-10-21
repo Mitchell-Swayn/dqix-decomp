@@ -4,7 +4,7 @@ struct GameState;
 extern "C" void* _ZN9GameState11GetInstanceEv();
 extern "C" unsigned char* GameState_FindIndexedObjectWithFlag400(GameState*,unsigned);
 extern "C" void* ActionData_GetGlobalTables();
-extern "C" void ActionData_FindDefinitionInPrimaryOrSecondaryTable(char*,void*);
+extern "C" void* ActionData_FindDefinitionInPrimaryOrSecondaryTable(char*,int);
 extern "C" unsigned GameState_GetIndexedObjectStateBits3And4(int,unsigned);
 struct Dispatcher {int context;typedef int(Dispatcher::*Handler)(unsigned char,char*,int,int);};
 // Original data: arm9/ov024 @ 0x21ff790; symbol: data_ov024_021ff790.
@@ -18,8 +18,7 @@ extern "C" Dispatcher::Handler CombatDispatchTransformedRecordHandler_UnknownRol
 extern "C" int Combat_DispatchTransformedRecordHandler(Dispatcher* self,int context,int recordId,int index,int arg4,int arg5){
  self->context=context;
  GameState_FindIndexedObjectWithFlag400((GameState*)_ZN9GameState11GetInstanceEv(),index);
- // Call sites consume the record pointer in r0; retain the canonical void declaration via an explicit ABI view.
- char* record=((char*(*)(char*,void*))ActionData_FindDefinitionInPrimaryOrSecondaryTable)((char*)ActionData_GetGlobalTables(),(void*)(short)recordId);
+ char* record=(char*)ActionData_FindDefinitionInPrimaryOrSecondaryTable((char*)ActionData_GetGlobalTables(),(short)recordId);
  int code=0;
  switch(GameState_GetIndexedObjectStateBits3And4(self->context,(short)index)){
  case 1:code=*(unsigned short*)(record+12);break;

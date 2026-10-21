@@ -4,7 +4,7 @@ ARM
 extern "C" void* _ZN9GameState11GetInstanceEv();
 extern "C" void* GameState_GetObjectWithFlag100(void*,int);
 extern "C" char* ActionData_GetGlobalTables();
-extern "C" char* ActionData_FindDefinitionInPrimaryOrSecondaryTable(char*,int);
+extern "C" void* ActionData_FindDefinitionInPrimaryOrSecondaryTable(char*,int);
 extern "C" int CharacterState_WeaponDoublesEligibleActionHits(void*);
 extern "C" int Combat_SelectMessageForPartyOrMonster(int,unsigned,unsigned);
 struct Bits { unsigned low:10; unsigned high:10; unsigned rest:12; };
@@ -17,7 +17,7 @@ extern "C" int Combat_SelectActionAnnouncementWithOverrides(char* state,char* ac
  if(IsPartyIndex(index)) {*(unsigned char*)(actor+0xb)|=2; return 0x1ef;}
  }
  if(((IdBits*)(record+4))->id==0x1f8) {
- char* other=ActionData_FindDefinitionInPrimaryOrSecondaryTable(ActionData_GetGlobalTables(),*(short*)(actor+2));
+ char* other=(char*)ActionData_FindDefinitionInPrimaryOrSecondaryTable(ActionData_GetGlobalTables(),*(short*)(actor+2));
  if(!other) return 0;
  unsigned id=*(unsigned short*)(actor+2);
  if(id==0x1c || id==0x247) return 0x2e;

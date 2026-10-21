@@ -9,7 +9,7 @@ extern "C" int TextMarkup_AppendCursorTag(char*,int);
 extern "C" int Text_AppendFormatString(char*,const char*);
 extern "C" int TextLayout_ComputeWidthWithGlyphSpacing(const char*,int);
 extern "C" void* ActionData_GetGlobalTables();
-extern "C" unsigned* ActionData_FindDefinitionInPrimaryOrSecondaryTable(void*,int);
+extern "C" void* ActionData_FindDefinitionInPrimaryOrSecondaryTable(char*,int);
 extern "C" void* ResourceStringTable_GetTextByKey(void*,void*);
 extern "C" int BattleMenu_HasTouchSelectionChanged(void*);
 // Original: arm9/ov000 @ 0x0217A2DC; symbol: func_ov000_0217a2dc; size: 0x238.
@@ -29,7 +29,7 @@ extern "C" void Graphics_AppendSelectableRecordNameList(char* self,void*,char* o
    unsigned id=*(unsigned short*)(self+0x10+i*2);
    if(!id) Text_AppendFormatString(out,empty);
    else {
-    unsigned* record=ActionData_FindDefinitionInPrimaryOrSecondaryTable(manager,(short)id);
+    unsigned* record=(unsigned*)ActionData_FindDefinitionInPrimaryOrSecondaryTable((char*)manager,(short)id);
     if(!record) continue;
     Text_AppendFormatString(out,(const char*)record[0]);
    }
@@ -44,7 +44,7 @@ extern "C" void Graphics_AppendSelectableRecordNameList(char* self,void*,char* o
    unsigned id=*(unsigned short*)(self+0x10+i*2);
    if(!id) Text_AppendFormattedIntegerAndStringFragment(out,i,empty);
    else {
-    unsigned* record=ActionData_FindDefinitionInPrimaryOrSecondaryTable(manager,(short)id);
+    unsigned* record=(unsigned*)ActionData_FindDefinitionInPrimaryOrSecondaryTable((char*)manager,(short)id);
     if(!record) continue;
     Text_AppendFormattedIntegerAndStringFragment(out,i,(const char*)record[0]);
    }
