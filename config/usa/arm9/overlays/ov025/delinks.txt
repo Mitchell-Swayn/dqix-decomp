@@ -1348,3 +1348,19 @@ src/Combat/Presentation/Combat_SetActionCueConditionalSoundId.cpp:
 src/Combat/Presentation/Combat_QueueMovementOrTurnTask.cpp:
     complete
     .text start:0x021eee48 end:0x021eeea0
+
+src/Combat/BattleScene_RefreshCombatantMotionTargets.cpp:
+    complete
+    .text start:0x021dfce0 end:0x021dffac
+
+src/Combat/Combat_MoveActionActorTowardTargetUntilInRange.cpp:
+    complete
+    .text start:0x021e6a08 end:0x021e6cd4
+
+src/Combat/Combat_PlayActionAnimationCommand.cpp:
+    complete
+    .text start:0x021e2980 end:0x021e2c34
+
+src/Combat/Combat_UpdateActionMessageResourcesAndDisplay.cpp:
+    complete
+    .text start:0x021e9fc4 end:0x021ea46c
