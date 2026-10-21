@@ -3064,3 +3064,7 @@ src/Town/Tavern/Tavern_AdvanceHostSessionSetupWithSave.cpp:
 src/Town/Shops/Shop_AdvanceSaleOwnerSelection.cpp:
     complete
     .text start:0x0217a4ac end:0x0217a764
+
+src/Town/Vocations/Alltrades_AdvanceVocationDialogue.cpp:
+    complete
+    .text start:0x021552b8 end:0x02155580
