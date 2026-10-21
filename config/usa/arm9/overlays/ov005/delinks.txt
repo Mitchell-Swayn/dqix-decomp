@@ -303,3 +303,7 @@ src/Menu/Equipment/EquipmentMenu_DrawController.cpp:
 src/Menu/Equipment/EquipmentMenu_UpdateController.cpp:
     complete
     .text start:0x02154de8 end:0x02154ef0
+
+src/Menu/Equipment/EquipmentMenu_InstallStagedItemResources.cpp:
+    complete
+    .text start:0x02155d6c end:0x021562b8
