@@ -771,3 +771,23 @@ src/Menu/Party/ov002/PartyMenu_ConfigureSelectionForCurrentScreen.cpp:
 src/Menu/Party/ov002/PartyMenu_ApplyHpRecoveryAndRemovePoison.cpp:
     complete
     .text start:0x02154020 end:0x02154230
+
+src/Menu/Party/PartyMenu_AppendFieldActionMemberNames.cpp:
+    complete
+    .text start:0x0215e9c4 end:0x0215eadc
+
+src/Menu/Party/PartyMenu_AppendSkillPointMemberNames.cpp:
+    complete
+    .text start:0x0216049c end:0x021605d4
+
+src/Menu/Party/PartyMenu_FormatSelectedMemberSkillPoints.cpp:
+    complete
+    .text start:0x021605d4 end:0x02160734
+
+src/Menu/Party/PartyMenu_RemovePoisonFromTargets.cpp:
+    complete
+    .text start:0x02153ea4 end:0x02154020
+
+src/Menu/Party/PartyMenu_QueueRemoteActionResultNotification.cpp:
+    complete
+    .text start:0x0216c42c end:0x0216c628
