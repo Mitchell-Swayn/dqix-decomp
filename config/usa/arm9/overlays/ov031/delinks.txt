@@ -8320,3 +8320,7 @@ src/Online/Settings/ov031/WfcUtility_LoadAndRepairSettingsPages.cpp:
 src/Online/Content/ov031/NasAuth_AppendDeviceMetadataFields.cpp:
     complete
     .text start:0x022178b4 end:0x02217c00
+
+src/Online/Services/DlcDownload_CreateAuthenticatedRequest.cpp:
+    complete
+    .text start:0x0223ede0 end:0x0223f188
