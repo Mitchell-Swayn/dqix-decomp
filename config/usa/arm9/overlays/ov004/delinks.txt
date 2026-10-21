@@ -1896,3 +1896,7 @@ src/Menu/Titles/TitleMenu_BuildQuickSaveConfirmation.cpp:
 src/Menu/SharedServices/Menu_SaveItemMarketStateAndResumeRequestResult.cpp:
     complete
     .text start:0x0215c974 end:0x0215cbec
+
+src/Menu/TreasureMaps/TreasureMapMenu_SetSelectedMapTextArguments.cpp:
+    complete
+    .text start:0x02164e40 end:0x02164f48

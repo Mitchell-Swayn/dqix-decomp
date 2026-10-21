@@ -3068,3 +3068,15 @@ src/Town/Shops/Shop_AdvanceSaleOwnerSelection.cpp:
 src/Town/Vocations/Alltrades_AdvanceVocationDialogue.cpp:
     complete
     .text start:0x021552b8 end:0x02155580
+
+src/Town/Inn/Inn_AdvanceStayChoice.cpp:
+    complete
+    .text start:0x0215d150 end:0x0215d4fc
+
+src/Town/Shops/Shop_AdvanceMemberItemSale.cpp:
+    complete
+    .text start:0x0217a764 end:0x0217ab34
+
+src/Town/Bank/Bank_AdvanceFarewellMessage.cpp:
+    complete
+    .text start:0x02169430 end:0x021694b8
