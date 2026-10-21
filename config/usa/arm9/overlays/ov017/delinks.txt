@@ -4680,3 +4680,11 @@ src/Field/Scene/Field_DrawMarkedObjectsAndSceneCommands.cpp:
 src/Field/Events/FieldBattle_CancelPendingParticipation.cpp:
     complete
     .text start:0x021b86f8 end:0x021b88d0
+
+src/Field/Screens/FieldScreen_ReleaseCanvasAndRestoreField.cpp:
+    complete
+    .text start:0x021b2758 end:0x021b2968
+
+src/Field/Scene/Field_UpdateContainerLootPresentation.cpp:
+    complete
+    .text start:0x021bfc40 end:0x021bfe60
