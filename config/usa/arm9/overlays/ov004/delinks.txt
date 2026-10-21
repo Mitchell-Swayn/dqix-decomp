@@ -1872,3 +1872,15 @@ src/Menu/SharedServices/Menu_StartItemListingRequest.cpp:
 src/Menu/Status/StatusMenu_SelectNextPageCategory.cpp:
     complete
     .text start:0x02162c30 end:0x02162d78
+
+src/Online/Content/OnlineTransferMenu_InitializeConnectionAndRouteResult.cpp:
+    complete
+    .text start:0x0216f3b0 end:0x0216f4fc
+
+src/Menu/SharedServices/Menu_ToggleCatalogueOrderPreservingSelection.cpp:
+    complete
+    .text start:0x021549e4 end:0x02154b7c
+
+src/Menu/Titles/TitleMenu_AdvancePreviousLogRecovery.cpp:
+    complete
+    .text start:0x0216dd78 end:0x0216df7c
