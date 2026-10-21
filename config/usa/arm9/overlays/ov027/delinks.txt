@@ -303,3 +303,7 @@ src/Online/DownloadPlay/ov027/MBi_IsTaskBusy.cpp:
 src/Online/DownloadPlay/ov027/MB_DisconnectChild.cpp:
     complete
     .text start:0x021dcd5c end:0x021dcee8
+
+src/Online/DownloadPlay/MBi_StartParentCore.cpp:
+    complete
+    .text start:0x021dca40 end:0x021dcc24
