@@ -10,6 +10,10 @@ manifests, and linker metadata in config/ are part of the build contract.
    relocations, callers, and data ownership.
 2. Compile candidate objects and compare unchanged original targets with
    tools/match_unit.py. Detailed comparison logs stay under ignored build/.
+   When variants repeat the same output, consider searching other functions for
+   the distinctive instruction pattern and inspecting an already-matched sibling.
+   Its source can reveal useful types, indexing and update expressions. See
+   [instruction-pattern search](RECONSTRUCTION_TOOLS.md#search-for-already-matched-instruction-patterns).
 3. After ten unproductive variants, record the evidence and switch dependencies.
 Deferred functions remain required work.
 4. Run tools/configure.py usa, then ninja rom check report sha1. Preserve all

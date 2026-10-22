@@ -31,6 +31,58 @@ boundary determination. Selection handles one module at a time; `main`, `itcm`,
 `dtcm`, and `ov000`–`ov034` are supported. Overlay inspection requires the matching
 Ghidra program to be active.
 
+## Search for already-matched instruction patterns
+
+An optional way to investigate a stubborn match is to find another function
+with the same distinctive instruction pattern and inspect its recovered source.
+This is particularly useful when the operations and control flow match but
+register allocation differs, or many source variants produce identical output.
+
+1. Identify a short, distinctive sequence in the original instructions. Include
+   apparently redundant conversions, masks, shifts and operand relationships:
+   these can expose source types and expression boundaries. For example, a
+   nibble update can contain an arithmetic shift by four, a byte mask `0xff`,
+   masks `0xf` and `0xc`, and an OR with a four-bit shifted operand.
+2. Search original instruction listings across main and overlays, including
+   functions already recovered as source. Ghidra instruction searches or a small
+   read-only disassembly scan can find candidates. Text searches with `rg` are
+   useful when listings are available. Normalize aliases such as `ip`/`r12` and
+   immediate formatting; allow consistent register renaming while preserving
+   operand relationships, access widths, condition codes and instruction order.
+   A short sequence may occur inside a larger function or across basic blocks.
+3. Resolve each hit through its module's symbol and delink maps. Keep the module,
+   address, ARM/Thumb mode and original function extent attached to the result;
+   overlay addresses alone are ambiguous. Use the correct original binary and
+   load address, and avoid interpreting data as instructions.
+4. Inspect the matched sibling's C/C++ and the surrounding branch. Compare typed
+   member access versus pointer arithmetic, named indices, intermediate widths,
+   separate compound assignments, and branch-local versus shared stores. Transfer
+   only the relevant source idiom, adapting it to the target's independently
+   established layout and behavior. Similar instructions do not establish shared
+   object types, field meanings or call contracts.
+5. Compile the resulting hypothesis against the unchanged original target. Use
+   a small number of controlled variations to identify which structural choices
+   affect the output. Count distinct emitted patterns as well as candidates so
+   repeated compiler output is visible. Save scans, hits and comparisons under
+   ignored `build/`. Normal semantic review and object, relocation, layout, module,
+   symbol and ROM acceptance checks still apply.
+
+A concrete reference is
+[`Script_SetPackedEntryStateAndNotifyPeers`](../src/Script/Script_SetPackedEntryStateAndNotifyPeers.cpp)
+(main `0x0206E164`). The `kind == 7` branch of
+[`GameState_ApplyEncodedFlagUpdate`](../src/GameState/GameState_ApplyEncodedFlagUpdate.cpp)
+(main `0x0206E748`) contains a closely related nibble update. The setter matches
+with a typed member byte array, a named `half = index / 2`, and byte locals
+followed by separate `&=` and `|=` updates in each branch. A shared result and
+single source-level store express the same intended update but change code
+allocation. The matched implementation uses the default compiler profile
+without extra optimization pragmas or `volatile`.
+
+This example supplies a source-structure hypothesis, not a universal matching
+recipe. Tail merging is a plausible explanation for its shared emitted store;
+that compiler-internal mechanism is not independently established. Exact output
+also does not prove that the recovered text is the original source.
+
 ## Prepare candidates
 
 Use an isolated worktree. Preparation validates each name, address and size

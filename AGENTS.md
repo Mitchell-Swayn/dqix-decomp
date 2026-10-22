@@ -29,6 +29,9 @@ Preserve existing user changes.
 - Give agents bounded subsystem tasks and compact handoffs, not full histories.
 - Compare candidate objects during iteration; run full ROM/module/symbol/SHA1
   checks before accepting integrated batches. Never lower coverage denominators.
+- For stubborn matches, consider searching original instructions for already-matched
+  siblings before expanding source variants. See the instruction-pattern search
+  procedure in `docs/RECONSTRUCTION_TOOLS.md`.
 - After ten unproductive variants, record evidence and switch dependencies.
   Deferred functions remain required work; no fake matching or binary substitutes.
 - Store verbose logs under ignored build/. Return concise differences and results.
