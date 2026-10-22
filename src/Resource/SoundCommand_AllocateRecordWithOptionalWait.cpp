@@ -4,7 +4,7 @@ extern "C" {
     unsigned int SoundCommand_TakeFreeCommand();
     int SoundCommand_CountFreeRecords();
     int SoundCommand_ReclaimCompletedBatch(int);
-    void SoundCommand_FlushPendingBatch(int);
+    int SoundCommand_FlushPendingBatch(unsigned int flags);
     void IPC_SendARM7CommandSevenUntilAccepted();
 // Original: arm9/main @ 0x020D2404; symbol: func_020d2404; size: 0x88.
     unsigned int SoundCommand_AllocateRecordWithOptionalWait(int flags){

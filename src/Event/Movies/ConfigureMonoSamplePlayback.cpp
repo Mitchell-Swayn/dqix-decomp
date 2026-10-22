@@ -5,7 +5,7 @@ extern "C" void SoundCommand_SubmitOpcodeTwentySix(unsigned,unsigned);
 extern "C" void SoundCommand_SubmitPackedPcmChannelSetup(unsigned,unsigned,unsigned,unsigned,unsigned,unsigned,unsigned,unsigned,unsigned,unsigned);
 extern "C" void SoundCommand_SubmitOpcodeEighteenWithResolvedValue(unsigned,unsigned,unsigned,unsigned,unsigned);
 extern "C" void SoundCommand_SubmitOpcodeTwelve(unsigned,unsigned,unsigned,unsigned);
-extern "C" void SoundCommand_FlushPendingBatch(unsigned);
+extern "C" int SoundCommand_FlushPendingBatch(unsigned int flags);
 extern "C" void Movie_AdvanceDualScreenAudioPlaybackClock();
 // Original data: arm9/ov016 @ 0x219d144; symbol: data_ov016_0219d144.
 // Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.

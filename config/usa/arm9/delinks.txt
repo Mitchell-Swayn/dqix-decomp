@@ -20201,3 +20201,7 @@ src/Camera/BoneTrackingCamera_UpdateEndpointsAndAttachment.cpp:
 src/Save/SaveData_WriteBackupBytes.cpp:
     complete
     .text start:0x02075acc end:0x02075ca0
+
+src/System/SoundCommand_FlushPendingBatch.cpp:
+    complete
+    .text start:0x020D24C4 end:0x020D2680

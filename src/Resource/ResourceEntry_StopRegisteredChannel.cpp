@@ -2,7 +2,7 @@
 extern "C" {
 void SoundCommand_SubmitOpcodeThirteenAndTrackMask(unsigned int, unsigned int, unsigned int, unsigned int);
 unsigned int ReadSelectedGlobalValueUnderIRQProtection(void);
-void SoundCommand_FlushPendingBatch(unsigned int);
+int SoundCommand_FlushPendingBatch(unsigned int flags);
 void SoundCommand_WaitForCompletionTarget(unsigned int);
 // Original: arm9/main @ 0x020BCDE0; symbol: func_020bcde0; size: 0x4C.
 ARM void ResourceEntry_StopRegisteredChannel(unsigned int *param_1) {

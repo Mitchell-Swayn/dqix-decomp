@@ -6,7 +6,7 @@ extern "C" void SoundCommand_SubmitOpcodeThirteenAndTrackMask(unsigned int, int,
 extern "C" void LinkedList_RemoveFromGlobalWord2111804ListAtomically(void *);
 extern "C" void InvokeGlobalTailListHandler(void *);
 extern "C" unsigned int ReadSelectedGlobalValueUnderIRQProtection(void);
-extern "C" void SoundCommand_FlushPendingBatch(int);
+extern "C" int SoundCommand_FlushPendingBatch(unsigned int flags);
 extern "C" void SoundCommand_WaitForCompletionTarget(unsigned int);
 extern "C" void SoundStream_ReleaseAlarmAndUnregister(void *);
 // Original: arm9/main @ 0x020BCC7C; symbol: func_020bcc7c; size: 0x74.

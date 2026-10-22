@@ -17,7 +17,7 @@
 // Full values and references: docs/data-symbols/main.md.
 extern "C" unsigned NNSiSndCaptureInit_UnknownRoleZeroInitializedStorage[],NNSiSndCaptureStop_UnknownRoleZeroInitializedStorage_Variant2[];extern "C" char NNSiSndCaptureStop_UnknownRoleZeroInitializedStorage[];
 extern "C" void SoundCommand_SubmitOpcodeThirteenAndTrackMask(unsigned,unsigned,unsigned,unsigned),SoundCommand_SubmitOpcodeTwentyFive(unsigned,unsigned,unsigned,unsigned);
-extern "C" unsigned ReadSelectedGlobalValueUnderIRQProtection();extern "C" void SoundCommand_FlushPendingBatch(unsigned),SoundCommand_WaitForCompletionTarget(unsigned);
+extern "C" unsigned ReadSelectedGlobalValueUnderIRQProtection();extern "C" int SoundCommand_FlushPendingBatch(unsigned int flags);extern "C" void SoundCommand_WaitForCompletionTarget(unsigned);
 extern "C" int MessageQueue_ReceiveWithOptionalBlocking(void*,void**,int);extern "C" void ResourceManager_ClearGlobalFlagMask(unsigned),Sound_ReleaseHardwareChannels(unsigned),Sound_ReleaseStreamAlarmSlot(int);
 inline bool available(int slot){return slot>=0;}
 // Original: arm9/main @ 0x020BCF3C; symbol: func_020bcf3c; size: 0xF0.
