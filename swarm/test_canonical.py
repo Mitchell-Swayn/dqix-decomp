@@ -69,6 +69,21 @@ class CanonicalTests(unittest.TestCase):
         self.assertEqual(self.audit('void Callee(void*);\n')['status'], 'conflict')
         self.assertEqual(self.audit('extern "C" int Callee(int);\n')['status'], 'conflict')
 
+    def test_cached_declaration_recovers_source_linkage(self):
+        self.owner.write_text('extern "C" {\nint Callee(int);\n}\n')
+        self.db.execute("UPDATE decls SET decl='int Callee(int);', path='src/owner.cpp:2'")
+        self.assertEqual(self.audit(self.good)['status'], 'ok')
+        self.assertEqual(self.audit('extern "C" void Callee(void*);\n')['status'], 'conflict')
+        self.owner.write_text('int Callee(int);\n')
+        self.db.execute("UPDATE decls SET path='src/owner.cpp:1'")
+        self.assertEqual(self.audit('int Callee(int);\n')['status'], 'ok')
+        self.assertEqual(self.audit(self.good)['status'], 'conflict')
+
+    def test_stale_cached_declaration_does_not_inherit_linkage(self):
+        self.owner.write_text('extern "C" {\nint Callee(int);\n}\n')
+        self.db.execute("UPDATE decls SET decl='void Callee(void*);', path='src/owner.cpp:2'")
+        self.assertEqual(self.audit(self.good)['status'], 'conflict')
+
     def test_include_profile_and_missing_context(self):
         self.owner.write_text('extern "C" Known* Callee(Known* x) { return x; }')
         self.assertEqual(self.audit(self.good)['status'], 'context_required')

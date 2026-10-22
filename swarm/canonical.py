@@ -111,12 +111,17 @@ def _file_record(root, relative, stamp):
     if current != stamp:
         raise StateUnavailable(f'{relative} changed while indexing; retry')
     definitions = []
+    declarations = []
     content = data.decode(errors='replace') if path.suffix in ('.c', '.cpp', '.h', '.hpp') else ''
     headers = []
     for header in re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)', content, re.M):
         if (root / 'include' / header).is_file():
             headers.append(header)
     type_names = sorted(set(re.findall(r'\b(?:struct|class|enum)\s+(\w+)', content)))
+    for row in signatures(content, path.suffix):
+        if not row['definition']:
+            declarations.append(dict(name=row['name'], decl=row['decl'],
+                                     c_link=row['c_link'], line=row['line']))
     if relative.startswith('src/') and path.suffix in ('.c', '.cpp') and 'RuntimeSupport' not in path.parts:
         content = data.decode(errors='replace')
         for row in signatures(content, path.suffix):
@@ -125,6 +130,7 @@ def _file_record(root, relative, stamp):
                                         path=f'{relative}:{row["line"]}', authority='owning-definition', context_headers=headers,
                                         local_type_names=type_names))
     return dict(stamp=stamp, sha256=hashlib.sha256(data).hexdigest(), definitions=definitions,
+                declarations=declarations,
                 context_headers=headers, type_names=type_names)
 
 
@@ -225,6 +231,16 @@ def snapshot(project, db):
             record = index['files'].get(row['path'].rsplit(':', 1)[0], {})
             row['context_headers'] = record.get('context_headers', [])
             row['local_type_names'] = record.get('type_names', [])
+            # The legacy declaration table loses surrounding extern "C" blocks.
+            # Recover linkage only from the exact recorded source declaration;
+            # stale prototypes must retain their existing conflict checks.
+            normalized = lambda text: re.sub(r'\s+', '', re.sub(r'^extern\s+"C"\s+', '', text))
+            matches = [decl for decl in record.get('declarations', [])
+                       if decl['name'] == row['name']
+                       and str(decl['line']) == row['path'].rsplit(':', 1)[-1]
+                       and normalized(decl['decl']) == normalized(row['decl'])]
+            if len(matches) == 1:
+                row['c_link'] = matches[0]['c_link']
         return digest.hexdigest(), index['owners'], cache, renames
     except (OSError, KeyError, TypeError, ValueError) as error:
         raise StateUnavailable(f'canonical index could not be verified ({error}); retry') from error
