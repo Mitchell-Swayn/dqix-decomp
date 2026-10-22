@@ -20197,3 +20197,7 @@ src/System/RuntimeUnwind_FindMatchingCatchOrExceptionSpecification.cpp:
 src/Camera/BoneTrackingCamera_UpdateEndpointsAndAttachment.cpp:
     complete
     .text start:0x0204a170 end:0x0204a3f0
+
+src/Save/SaveData_WriteBackupBytes.cpp:
+    complete
+    .text start:0x02075acc end:0x02075ca0
