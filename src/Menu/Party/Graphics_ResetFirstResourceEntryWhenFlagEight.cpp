@@ -2,7 +2,7 @@
 ARM
 struct List; struct Entry; struct Lookup;
 extern "C" void SpriteAnimation_AdvanceAllTracks(char* p,unsigned value);
-extern "C" void SpriteAnimation_StartTrack(void*, int);
+extern "C" void SpriteAnimation_StartTrack(void*, unsigned);
 extern "C" Entry* SpriteAnimation_FindTrackByKey(List* list, unsigned int key);
 extern "C" void SpriteAnimation_SetTrackOamStartIndex(void* owner, int index, unsigned char value);
 extern "C" void SpriteAnimation_SubmitAllTrackFrames(unsigned char* p);

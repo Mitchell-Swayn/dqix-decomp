@@ -9,7 +9,7 @@ extern "C" unsigned Window_IsVisible(void*);
 extern "C" void Window_UpdateEnabledEntryAndRoot(void*,void*);
 extern "C" void Tavern_DrawPartySelectionCursor(unsigned char*);
 extern "C" void Graphics_CleanupTransferState(unsigned char*);
-extern "C" void SpriteAnimation_StartTrack(void*,int);
+extern "C" void SpriteAnimation_StartTrack(void*, unsigned);
 extern "C" unsigned char* SpriteAnimation_FindTrackByKey(void*,unsigned);
 extern "C" void SpriteAnimation_AdvanceAllTracks(char*,unsigned);
 extern "C" void Window_SetLookupEntryPosition(void*,unsigned,unsigned,unsigned);

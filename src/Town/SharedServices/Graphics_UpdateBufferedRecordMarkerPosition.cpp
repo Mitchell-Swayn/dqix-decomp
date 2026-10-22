@@ -7,7 +7,7 @@ extern "C" unsigned _ZNK9GameState12GetTickCountEv(void*);
 extern "C" unsigned int TextContext_GetSharedInstance();
 extern "C" int TextCanvas_HasActiveTilemap(char*);
 extern "C" void SpriteAnimation_AdvanceAllTracks(char*,unsigned);
-extern "C" void SpriteAnimation_StartTrack(char*,int);
+extern "C" void SpriteAnimation_StartTrack(void*, unsigned);
 extern "C" char* SpriteAnimation_FindTrackByKey(char*,unsigned);
 extern "C" void SpriteAnimation_SetTrackOamStartIndex(void*,int,unsigned char);
 extern "C" void SpriteAnimation_SubmitAllTrackFrames(unsigned char*);

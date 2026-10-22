@@ -5,7 +5,7 @@ ARM
 struct Entry;struct List;
 extern "C" WindowCanvasRecord* Window_GetSelectedTextCanvas(WindowCanvasOwner*);
 extern "C" int TextCanvas_HasActiveTilemap(char*);
-extern "C" void SpriteAnimation_StartTrack();
+extern "C" void SpriteAnimation_StartTrack(void*, unsigned);
 extern "C" Entry* SpriteAnimation_FindTrackByKey(List*,unsigned);
 extern "C" void SpriteAnimation_AdvanceAllTracks(char*,unsigned);
 extern "C" void SpriteAnimation_SubmitAllTrackFrames(unsigned char*);
@@ -20,7 +20,7 @@ extern "C" void PositionSelectedRecordMarker(unsigned char* p){
  short x,y;ResolveCoordinates(record,&x,&y);
  if(p[0x63c]==3||p[0x63c]==4)x-=8;else{x-=8;y-=2;}
  char* list=*(char**)(*(char**)(p+0x18)+0x3c);if(!list)return;
- ((void(*)(void*,unsigned))SpriteAnimation_StartTrack)(list,*(unsigned short*)(p+0x1c));
+ SpriteAnimation_StartTrack(list,*(unsigned short*)(p+0x1c));
  char* entry=(char*)SpriteAnimation_FindTrackByKey((List*)list,*(unsigned short*)(p+0x1c));if(entry)*(unsigned char*)(entry+0x15)|=8;
  SpriteAnimation_AdvanceAllTracks(list,*(unsigned*)(p+0x14));entry=(char*)SpriteAnimation_FindTrackByKey((List*)list,*(unsigned short*)(p+0x1c));
  if(entry){*(short*)(entry+4)=x;*(short*)(entry+6)=y;}

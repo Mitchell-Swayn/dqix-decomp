@@ -3,7 +3,7 @@
 struct MenuAnimationRecord { unsigned char pad[4]; short x,y; unsigned char pad2[13]; unsigned char flags; };
 struct Overlay19State { unsigned char pad[76]; unsigned flags; unsigned pad2; unsigned char animation[60]; void* element; };
 extern "C" {
-void SpriteAnimation_StartTrack(void*,int);
+void SpriteAnimation_StartTrack(void*, unsigned);
 MenuAnimationRecord* SpriteAnimation_FindTrackByKey(void*,int);
 void SpriteAnimation_AdvanceAllTracks(void*,unsigned);
 void SpriteAnimation_SetTrackOamStartIndex(void*,int,int);

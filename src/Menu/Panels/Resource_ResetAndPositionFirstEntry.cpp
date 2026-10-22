@@ -4,7 +4,7 @@ extern "C" {
 void* _ZN9GameState11GetInstanceEv();
 unsigned _ZNK9GameState12GetTickCountEv(void*);
 void SpriteAnimation_AdvanceAllTracks(char*,unsigned);
-void SpriteAnimation_StartTrack(void*,int);
+void SpriteAnimation_StartTrack(void*, unsigned);
 unsigned char* SpriteAnimation_FindTrackByKey(void*,unsigned);
 void SpriteAnimation_SetTrackOamStartIndex(void*,int,unsigned char);
 void SpriteAnimation_SubmitAllTrackFrames(unsigned char*);

@@ -1,7 +1,7 @@
 #include <globaldefs.h>
 ARM
 extern "C" void GuestList_GetSelectionCursorPosition(void*,short*,short*);
-extern "C" void SpriteAnimation_StartTrack(void*,unsigned);
+extern "C" void SpriteAnimation_StartTrack(void*, unsigned);
 extern "C" unsigned char* SpriteAnimation_FindTrackByKey(void*,unsigned);
 extern "C" void SpriteAnimation_AdvanceAllTracks(void*,unsigned);
 extern "C" void SpriteAnimation_SubmitAllTrackFrames(void*);

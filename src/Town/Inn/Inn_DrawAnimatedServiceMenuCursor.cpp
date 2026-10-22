@@ -6,7 +6,7 @@ extern "C" int SpriteAnimation_AdvanceAllTracks(...);
 extern "C" int TextCanvas_HasActiveTilemap(...);
 extern "C" int SpriteAnimation_FindTrackByKey(...);
 extern "C" WindowCanvasRecord* Window_GetSelectedTextCanvas(WindowCanvasOwner*);
-extern "C" int SpriteAnimation_StartTrack(...);
+extern "C" void SpriteAnimation_StartTrack(void*, unsigned);
 extern "C" int SpriteAnimation_SubmitAllTrackFrames(...);
 extern "C" int Selection_ReadEnabledIndexFromControl(...);
 extern "C" int Window_SetLookupEntryPosition(...);

@@ -6,7 +6,7 @@ extern "C" void SpriteAnimation_SetTrackOamStartIndex(void*,int,unsigned char);
 extern "C" void SpriteAnimation_SubmitAllTrackFrames(unsigned char*);
 extern "C" int TextCanvas_HasActiveTilemap(char*);
 extern "C" void TextCanvas_GetGroupEntryPixelPosition(char*,unsigned,int,short*,short*);
-extern "C" void SpriteAnimation_StartTrack(void*,int);
+extern "C" void SpriteAnimation_StartTrack(void*, unsigned);
 extern "C" unsigned char* SpriteAnimation_FindTrackByKey(void*,unsigned);
 extern "C" void SpriteAnimation_AdvanceAllTracks(char*,unsigned);
 extern "C" void Window_SetLookupEntryPosition(void*,unsigned,unsigned,unsigned);

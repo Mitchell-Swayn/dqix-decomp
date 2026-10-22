@@ -3,7 +3,7 @@ ARM
 struct GameState; struct Entry; struct List;
 extern "C" void* _ZN9GameState11GetInstanceEv();
 extern "C" unsigned _ZNK9GameState12GetTickCountEv(GameState*);
-extern "C" void SpriteAnimation_StartTrack(void*,int);
+extern "C" void SpriteAnimation_StartTrack(void*, unsigned);
 extern "C" Entry* SpriteAnimation_FindTrackByKey(List*,unsigned);
 extern "C" void SpriteAnimation_AdvanceAllTracks(char*,unsigned);
 extern "C" void SpriteAnimation_SetTrackOamStartIndex(void*,int,unsigned char);

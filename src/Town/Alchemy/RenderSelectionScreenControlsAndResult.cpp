@@ -12,7 +12,7 @@ void Graphics_CleanConfiguredDestinationCache(void*,int);
 void Graphics_CopyIndexedScreenRectangle(IndexedRecordView*,unsigned,unsigned,unsigned,short,short,short,short,unsigned short);
 void Graphics_CopyScreenAtPosition(char*,const short*,unsigned,unsigned,unsigned short);
 void SpriteAnimation_AdvanceAllTracks(char*,unsigned);
-void SpriteAnimation_StartTrack();
+void SpriteAnimation_StartTrack(void*, unsigned);
 Entry* SpriteAnimation_FindTrackByKey(List*,unsigned);
 void Graphics_SubmitTransformedCellToOam(void*,void*);
 void SpriteAnimation_SubmitAllTrackFrames(unsigned char*);
@@ -61,7 +61,7 @@ extern "C" void RenderSelectionScreenControlsAndResult(unsigned char* self) {
   Graphics_CleanConfiguredDestinationCache(self+0x54,0);Graphics_CleanConfiguredDestinationCacheForEachThirtyTwoByteEntry((State*)display);
   if(U(0x394)&0x200) {
    self[0x42c]=0;
-   ((void(*)(void*,int))SpriteAnimation_StartTrack)(P(0x28),1);
+   SpriteAnimation_StartTrack(P(0x28),1);
    unsigned char* record=(unsigned char*)SpriteAnimation_FindTrackByKey((List*)P(0x28),0);if(record) record[0x15]&=~8;
    record=(unsigned char*)SpriteAnimation_FindTrackByKey((List*)P(0x28),1);if(record) record[0x15]|=8;
    SpriteAnimation_AdvanceAllTracks((char*)P(0x28),W(0x34c));
