@@ -2,5 +2,5 @@
 ARM
 
 // Original: arm9/main @ 0x020758A4; symbol: func_020758a4; size: 0x4.
-extern "C" void SaveData_IgnoreWriteCompletion(void) {
+extern "C" void SaveData_IgnoreWriteCompletion(void* context) {
 }
