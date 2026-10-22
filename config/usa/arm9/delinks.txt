@@ -20225,3 +20225,7 @@ src/Script/Quest_ActivateFirstMatchingOrderForActor.cpp:
 src/Script/Quest_ActivateEligibleOrders.cpp:
     complete
     .text start:0x2095b30 end:0x2095cfc
+
+src/Script/Quest_InsertActiveRecordInIdOrder.cpp:
+    complete
+    .text start:0x020962f4 end:0x0209645c
