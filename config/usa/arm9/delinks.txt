@@ -20185,3 +20185,15 @@ src/Actor/FieldMonster_MoveToRetreatTargetUntilArrival.cpp:
 src/Camera/Camera_RecalculateOrbitAndEye.cpp:
     complete
     .text start:0x0202eab8 end:0x0202ec5c
+
+src/Save/SaveData_ReadCardSaveBytes.cpp:
+    complete
+    .text start:0x02075910 end:0x02075acc
+
+src/System/RuntimeUnwind_FindMatchingCatchOrExceptionSpecification.cpp:
+    complete
+    .text start:0x0200ea68 end:0x0200ec44
+
+src/Camera/BoneTrackingCamera_UpdateEndpointsAndAttachment.cpp:
+    complete
+    .text start:0x0204a170 end:0x0204a3f0
