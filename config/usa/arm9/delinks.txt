@@ -20205,3 +20205,11 @@ src/Save/SaveData_WriteBackupBytes.cpp:
 src/System/SoundCommand_FlushPendingBatch.cpp:
     complete
     .text start:0x020D24C4 end:0x020D2680
+
+src/Save/SaveData_LoadPartySummaryAndSavedStatistics.cpp:
+    complete
+    .text start:0x020ab5d4 end:0x020ab7a8
+
+src/UI/TextLayout_DrawSelectionPanelAndCursor.cpp:
+    complete
+    .text start:0x0205c96c end:0x0205cb60

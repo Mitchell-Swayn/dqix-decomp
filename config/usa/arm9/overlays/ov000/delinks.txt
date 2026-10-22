@@ -2908,3 +2908,11 @@ src/Combat/BattleMenu/BattleMenu_UpdateVocationActionDescriptionWindow.cpp:
 src/Combat/BattleMenu/BattleMenu_DismissGlobalCommandMessage.cpp:
     complete
     .text start:0x0217eb28 end:0x0217edd4
+
+src/Combat/Scene/BattleCamera_FrameFormation.cpp:
+    complete
+    .text start:0x0216d600 end:0x0216d90c
+
+src/Combat/Scene/BattleScene_Initialize.cpp:
+    complete
+    .text start:0x02160140 end:0x021604f0
