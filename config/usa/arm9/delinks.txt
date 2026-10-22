@@ -20217,3 +20217,11 @@ src/UI/TextLayout_DrawSelectionPanelAndCursor.cpp:
 src/Script/Script_SetPackedEntryStateAndNotifyPeers.cpp:
     complete
     .text start:0x0206E164 end:0x0206E218
+
+src/Script/Quest_ActivateFirstMatchingOrderForActor.cpp:
+    complete
+    .text start:0x2095924 end:0x2095ae0
+
+src/Script/Quest_ActivateEligibleOrders.cpp:
+    complete
+    .text start:0x2095b30 end:0x2095cfc
