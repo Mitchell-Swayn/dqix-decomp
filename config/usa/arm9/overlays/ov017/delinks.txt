@@ -4864,3 +4864,7 @@ src/Field/Scene/Field_UpdateActionShortcutDisplayInput.cpp:
 src/Field/Scene/Field_RequestRecoveryZoneTransition.cpp:
     complete
     .text start:0x0219ff58 end:0x021a01b4
+
+src/Field/Scene/FieldMonster_UpdateVisibleGroupsAndCullDistantMonsters.cpp:
+    complete
+    .text start:0x021a1ad0 end:0x021a1d98
