@@ -4796,3 +4796,7 @@ src/Field/Scene/Field_ResolveContainerLootSpriteKey.cpp:
 src/Field/Scene/Field_ConfigureCameraFollowControlForMapKind.cpp:
     complete
     .text start:0x0219e234 end:0x0219e290
+
+src/Field/Scene/Field_AdvancePeerJoinCommand.cpp:
+    complete
+    .text start:0x021aef0c end:0x021aef80
