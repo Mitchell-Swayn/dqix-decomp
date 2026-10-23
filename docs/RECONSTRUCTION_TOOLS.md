@@ -83,6 +83,23 @@ recipe. Tail merging is a plausible explanation for its shared emitted store;
 that compiler-internal mechanism is not independently established. Exact output
 also does not prove that the recovered text is the original source.
 
+## Check SDK source language when aggregate copies differ
+
+For SDK code that returns structures through inline helpers, include the source
+language among the bounded matching hypotheses. Compare the reference source and
+both emitted objects when aggregate copies or stack slots differ. Source language
+is one possible cause; other SDK routines match as C++.
+
+[TextLayout_RenderAnchoredTextInDirection.c](../src/Graphics/TextLayout_RenderAnchoredTextInDirection.c)
+uses native C and emits the matching 292-byte routine with the pinned compiler.
+The same-body C++ experiment emits 284 bytes; a C++ wrapper that directly returns
+the measurement result emits 264 bytes. A named result in the inner C helper
+preserves the aggregate copies and stack arrangement in this case. These sizes
+are observations for this routine and toolchain, not a general compiler rule.
+Use a `.c` translation unit and the normal build's `-lang=c` selection for this
+option. Canonical interfaces, whole-object comparisons, independent relocated-byte
+proofs and full ROM validation still apply.
+
 ## Prepare candidates
 
 Use an isolated worktree. Preparation validates each name, address and size
