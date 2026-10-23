@@ -3080,3 +3080,7 @@ src/Combat/BattleMenu/BattleMenu_AdvanceCommandWindowTransition.cpp:
 src/Combat/BattleMenu/BattleMenu_AdvancePartyPanelFlashAnimations.cpp:
     complete
     .text start:0x02175024 end:0x021750e4
+
+src/Combat/Turns/Combat_ComputePartyCharmInterruptionFactor.cpp:
+    complete
+    .text start:0x0215641c end:0x021564cc
