@@ -3000,3 +3000,7 @@ src/Combat/BattleMenu/BattleMenu_UpdateMemberRowPositions.cpp:
 src/Combat/BattleMenu/BattleMenu_RefreshPanelForActiveMode.cpp:
     complete
     .text start:0x02177038 end:0x02177184
+
+src/Combat/BattleMenu/BattleMenu_AppendPartyBattleOptionLabels.cpp:
+    complete
+    .text start:0x02178648 end:0x021787b8
