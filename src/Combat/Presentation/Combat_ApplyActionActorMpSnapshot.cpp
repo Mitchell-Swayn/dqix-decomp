@@ -5,7 +5,7 @@ ARM
 #define H(p,o) (*(unsigned short*)((char*)(p)+(o)))
 #define B(p,o) (*(unsigned char*)((char*)(p)+(o)))
 #define S(p,o) (*(signed char*)((char*)(p)+(o)))
-extern "C" unsigned BattleMenu_SetPartyCurrentMpAndBroadcast(...);
+extern "C" void BattleMenu_SetPartyCurrentMpAndBroadcast(void*,int);
 extern "C" unsigned BattleScene_GetMenuController(...);
 extern "C" unsigned Combat_GetCommandActorSnapshot(...);
 extern "C" unsigned BattleScene_GetActiveInstance(...);
