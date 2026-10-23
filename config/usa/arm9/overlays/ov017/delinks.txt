@@ -4724,3 +4724,7 @@ src/Field/FieldEvent_BeginScriptLoadAndSuspendFieldControl.cpp:
 src/Field/Multiplayer/Combat_QueueEncounterBattleSlotAssignments.cpp:
     complete
     .text start:0x21cbdcc end:0x21cbe50
+
+src/Field/Events/FieldDialogue_ProcessPeerResponse.cpp:
+    complete
+    .text start:0x21b9a98 end:0x21b9bcc

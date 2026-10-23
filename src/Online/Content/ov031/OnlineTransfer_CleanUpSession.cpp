@@ -9,7 +9,7 @@ extern "C" GameResources* GameResources_GetInstance();
 extern "C" void GameObject_RequestMovementInputEnable(int);
 extern "C" void* SystemState_GetGlobalFlags();
 extern "C" void SystemState_ClearFlags(unsigned*, unsigned);
-extern "C" int OnlineContent_DispatchDownloadedParts(void*, void*, unsigned, void*);
+extern "C" void OnlineContent_DispatchDownloadedParts(void*, void*, int, void*);
 extern "C" SafeAllocator MemoryFreeWithIRQDisabled_UnknownRoleZeroInitializedStorage;
 
 #define W(p,o) (*(unsigned*)((char*)(p)+(o)))
