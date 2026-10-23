@@ -3084,3 +3084,7 @@ src/Combat/BattleMenu/BattleMenu_AdvancePartyPanelFlashAnimations.cpp:
 src/Combat/Turns/Combat_ComputePartyCharmInterruptionFactor.cpp:
     complete
     .text start:0x0215641c end:0x021564cc
+
+src/Combat/Turns/InitializeBattleSceneUpdateRatios.cpp:
+    complete
+    .init start:0x02183710 end:0x02183794
