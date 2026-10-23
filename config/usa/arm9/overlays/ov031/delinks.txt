@@ -8384,3 +8384,7 @@ src/Online/Sockets/Network_ProcessReceivedArpPacket.cpp:
 src/Online/Security/WirelessSetup_CompareIdentifierBytes.cpp:
     complete
     .text start:0x0221e4fc end:0x0221e51c
+
+src/Online/Settings/WfcUtility_DestroyDeferredBackgroundTilemap.cpp:
+    complete
+    .text start:0x02234f08 end:0x02234f34
