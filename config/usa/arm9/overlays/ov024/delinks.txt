@@ -2082,3 +2082,7 @@ src/Combat/AI/BattleAI_ComputeActionBaseMagnitudeRange.cpp:
 src/Combat/Formulas/Combat_AdjustMagicalMendingStageAndBuildActionResult.cpp:
     complete
     .text start:0x021dee84 end:0x021deff8
+
+src/Combat/Formulas/Combat_ResolveDescriptorEffectsAndBuildCategoryResult.cpp:
+    complete
+    .text start:0x21dc0b8 end:0x21dc2a0
