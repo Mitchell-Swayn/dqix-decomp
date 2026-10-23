@@ -4872,3 +4872,7 @@ src/Field/Scene/FieldMonster_UpdateVisibleGroupsAndCullDistantMonsters.cpp:
 src/Field/Scene/FieldMonster_DrawNearestZoneMonstersAndShadows.cpp:
     complete
     .text start:0x021a1d98 end:0x021a205c
+
+src/Field/Scene/Field_RemovePartyMemberAndEquipment.cpp:
+    complete
+    .text start:0x02190264 end:0x021905b8
