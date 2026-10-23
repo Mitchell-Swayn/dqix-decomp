@@ -819,3 +819,7 @@ src/Menu/Party/PartyMenu_PopPanelGroupAndRestoreSelection.cpp:
 src/Menu/Party/PartyMenu_ApplyMultiplayerActionResponses.cpp:
     complete
     .text start:0x0216c2d8 end:0x0216c42c
+
+src/Menu/Party/PartyMenu_ToggleBagSortOrder.cpp:
+    complete
+    .text start:0x0215b458 end:0x0215b648
