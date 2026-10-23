@@ -10,7 +10,7 @@ void Vector3fix_Subtract(const Vector3fix*,const Vector3fix*,Vector3fix*);
 void Vector3fix_Add(const Vector3fix*,const Vector3fix*,Vector3fix*);
 void Vector3fix_Normalize(const Vector3fix*,Vector3fix*);
 int Vector3fix_Distance(const Vector3fix*,const Vector3fix*);
-int GetAbsoluteSignedAngleToTargetVector(const Vector3fix*,short,const Vector3fix*);
+short GetAbsoluteSignedAngleToTargetVector(void*,int,void*);
 bool LinkedQueue_IsEmpty(void*);
 bool GameObject_HasQueuedActions(GameObject*);
 void Field_InitializeInteractionCandidate(InteractionCandidate*);
