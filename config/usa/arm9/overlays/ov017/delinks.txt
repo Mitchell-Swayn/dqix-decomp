@@ -4828,3 +4828,7 @@ src/Field/Scene/Field_AdvanceOverlayThreePanelTransition.cpp:
 src/Field/Scene/Field_ResolveContainerOverlapAndSelectInteraction.cpp:
     complete
     .text start:0x0218dfd8 end:0x0218e210
+
+src/Field/Scene/Field_DrawPartyMembersForZone.cpp:
+    complete
+    .text start:0x0218e8c8 end:0x0218eafc
