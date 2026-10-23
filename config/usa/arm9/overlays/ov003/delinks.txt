@@ -3092,3 +3092,7 @@ src/Town/Shops/Shop_UpdateInterface.cpp:
 src/Town/Tavern/Tavern_AdvanceActiveMemberStorage.cpp:
     complete
     .text start:0x02162ba8 end:0x02162f40
+
+src/Town/SharedServices/CharacterStatus_PopulateActiveCharacterDetails.cpp:
+    complete
+    .text start:0x2167b34 end:0x2167c9c
