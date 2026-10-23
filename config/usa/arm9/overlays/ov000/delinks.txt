@@ -3100,3 +3100,7 @@ src/Combat/Turns/InitializeBattleSceneRestoreRatios.cpp:
 src/Combat/Turns/BattleHud_ApplyRemotePartySelection.cpp:
     complete
     .text start:0x02162aac end:0x02162b70
+
+src/Combat/Turns/BattleHud_UpdatePartyCommandInterface.cpp:
+    complete
+    .text start:0x021735d0 end:0x02173954
