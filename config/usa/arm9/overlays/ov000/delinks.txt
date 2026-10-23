@@ -3092,3 +3092,7 @@ src/Combat/Turns/InitializeBattleSceneUpdateRatios.cpp:
 src/Combat/Turns/InitializeBattleSceneEntryRatios.cpp:
     complete
     .init start:0x02183794 end:0x0218381c
+
+src/Combat/Turns/InitializeBattleSceneRestoreRatios.cpp:
+    complete
+    .init start:0x0218381c end:0x021838a4
