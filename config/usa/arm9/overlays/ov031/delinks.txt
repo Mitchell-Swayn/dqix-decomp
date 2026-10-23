@@ -8416,3 +8416,7 @@ src/Online/Settings/WfcUtility_DestroyOamServices.cpp:
 src/Online/Settings/WfcUtility_DestroyTaskQueues.cpp:
     complete
     .text start:0x0223e120 end:0x0223e168
+
+src/Online/Security/WirelessSetup_CopyOrTransformRequestPayload.cpp:
+    complete
+    .text start:0x0221dfd4 end:0x0221e028
