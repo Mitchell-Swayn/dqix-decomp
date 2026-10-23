@@ -8588,3 +8588,7 @@ src/Online/Settings/WfcUtility_WriteIdentifierHeaderToSettingsPages.cpp:
 src/Online/Settings/WfcUtility_ReadOptionsMenuInput.cpp:
     complete
     .text start:0x0222938c end:0x02229480
+
+src/Online/Settings/WfcUtility_AdvanceDialogSlideIn.cpp:
+    complete
+    .text start:0x02237f2c end:0x02238000
