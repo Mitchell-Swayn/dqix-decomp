@@ -2086,3 +2086,7 @@ src/Combat/Formulas/Combat_AdjustMagicalMendingStageAndBuildActionResult.cpp:
 src/Combat/Formulas/Combat_ResolveDescriptorEffectsAndBuildCategoryResult.cpp:
     complete
     .text start:0x21dc0b8 end:0x21dc2a0
+
+src/Combat/Turns/Combat_DispatchPostActionEffectHandler.cpp:
+    complete
+    .text start:0x21e6060 end:0x21e6104
