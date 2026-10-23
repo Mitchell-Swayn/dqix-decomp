@@ -8444,3 +8444,7 @@ src/Online/Security/WirelessSetup_FormatHexByte.cpp:
 src/Online/Security/WirelessSetup_FormatMacAddress.cpp:
     complete
     .text start:0x022228f4 end:0x02222928
+
+src/Online/Security/WirelessSetup_XorTokenSecondHalf.cpp:
+    complete
+    .text start:0x0221e404 end:0x0221e428
