@@ -1380,3 +1380,7 @@ src/Combat/Presentation/BattleScene_FinishActionPlayback.cpp:
 src/Combat/Presentation/Combat_QueueOpeningActionMessagesOnce.cpp:
     complete
     .text start:0x21ea474 end:0x21ea604
+
+src/Combat/Presentation/Combat_ApplyActionMpResultsAndShowRecovery.cpp:
+    complete
+    .text start:0x21e9d14 end:0x21e9edc
