@@ -8452,3 +8452,7 @@ src/Online/Security/WirelessSetup_XorTokenSecondHalf.cpp:
 src/Online/Settings/WfcUtility_DestroyTextCanvasServices.cpp:
     complete
     .text start:0x0223c40c end:0x0223c458
+
+src/Online/Settings/WfcUtility_StopSetupTaskAndQueueDisplayExit.cpp:
+    complete
+    .text start:0x0222b1f0 end:0x0222b22c
