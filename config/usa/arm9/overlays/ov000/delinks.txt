@@ -3008,3 +3008,7 @@ src/Combat/BattleMenu/BattleMenu_AppendPartyBattleOptionLabels.cpp:
 src/Combat/BattleMenu/BattleMenu_UpdateSharedPartyActionDescriptionWindow.cpp:
     complete
     .text start:0x0217a19c end:0x0217a2dc
+
+src/Combat/BattleMenu/BattleMenu_HandleEnemyGroupTargetInput.cpp:
+    complete
+    .text start:0x0217b380 end:0x0217b518
