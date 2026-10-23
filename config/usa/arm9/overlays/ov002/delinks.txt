@@ -863,3 +863,7 @@ src/Menu/Party/PartyMenu_UpdateBulkInventoryOwnerSelection.cpp:
 src/Menu/Party/PartyMenu_UpdatePartySummaryDisplay.cpp:
     complete
     .text start:0x021650d4 end:0x02165378
+
+src/Menu/Party/PartyMenu_CommitSkillPointAllocation.cpp:
+    complete
+    .text start:0x02168354 end:0x021685bc
