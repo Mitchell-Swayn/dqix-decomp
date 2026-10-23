@@ -2968,3 +2968,7 @@ src/Combat/BattleMenu/BattleMenu_AdvanceActionListPage.cpp:
 src/Combat/BattleMenu/BattleMenu_BuildAllyTargetWindow.cpp:
     complete
     .text start:0x0217992c end:0x02179a14
+
+src/Combat/BattleMenu/BattleMenu_AppendSessionOptions.cpp:
+    complete
+    .text start:0x021775a4 end:0x0217768c
