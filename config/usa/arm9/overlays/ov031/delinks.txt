@@ -8632,3 +8632,7 @@ src/Online/Settings/WfcUtility_HandleIpv4EditorInput.cpp:
 src/Online/Settings/WfcUtility_DrawConnectionErrorDetails.cpp:
     complete
     .text start:0x0222e484 end:0x0222e7f8
+
+src/Online/WifiConnection/Network_NotifyWirelessEvent.cpp:
+    complete
+    .text start:0x0220d9c8 end:0x0220da1c
