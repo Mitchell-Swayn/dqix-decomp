@@ -2952,3 +2952,7 @@ src/Combat/Menu/BattleMenu_ConfirmSelectedAbility.cpp:
 src/Combat/Scene/BattleCamera_ConfigureRandomPairOrbit.cpp:
     complete
     .text start:0x216da34 end:0x216dbf0
+
+src/Combat/BattleMenu/BattleMenu_OpenAvailableCategoryPanel.cpp:
+    complete
+    .text start:0x02177e50 end:0x02177f28
