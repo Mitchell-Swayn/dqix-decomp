@@ -1,4 +1,5 @@
 #include <globaldefs.h>
+#include <System/Matrix.h>
 ARM
 extern "C" void* _ZN9GameState11GetInstanceEv();
 extern "C" char* Zone3D_GetMainInstance();
@@ -8,7 +9,7 @@ extern "C" bool _ZNK8Object3D7GetFlagEi(void*,int);
 extern "C" void _ZN8Object3D10EnableFlagEi(void*,int);
 extern "C" bool _ZN8Object3D4DrawEb(void*,bool);
 extern "C" int _ZNK8Object3D17GetInheritedAlphaEv(void*);
-struct Vector3 {int x,y,z;};
+typedef Vector3i Vector3;
 extern "C" void _ZNK8Object3D23GetShadowSourcePositionEv(Vector3*,void*);
 extern "C" int _ZNK8Object3D9GetRadiusEv(void*);
 extern "C" int GameResources_GetMaskedSecondaryFlags(void*,int);

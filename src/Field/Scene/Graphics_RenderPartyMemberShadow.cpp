@@ -1,6 +1,7 @@
 #include <globaldefs.h>
+#include <System/Matrix.h>
 ARM
-struct Vec {int x,y,z;};
+typedef Vector3i Vec;
 extern "C" void* _ZN9GameState11GetInstanceEv();
 extern "C" char* _ZN9GameState21GetPartyMemberByIndexEi(void*,int);
 extern "C" bool GameObject_IsMovementPauseActive(char*);

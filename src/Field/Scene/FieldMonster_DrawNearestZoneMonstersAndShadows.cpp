@@ -15,7 +15,7 @@ int GameResources_GetMaskedSecondaryFlags(void*,unsigned);
 int DrawVisibleObjectWithOptionalOverlayPosition(GameObject*,int);
 int GameObject_IsMovementPauseActive(GameObject*);
 int Vector3fix_Distance(const Vector3fix*,const Vector3fix*);
-void Graphics_RenderPresentModelWithDiffuseColorAndScale(const Vector3fix*,int,int,int,int);
+void Graphics_RenderPresentModelWithDiffuseColorAndScale(Vector3fix*,unsigned,int,int,int);
 }
 #pragma force_active on
 // Original: arm9/ov017 @ 0x021A1D98; symbol: func_ov017_021a1d98; size: 0x2C4.

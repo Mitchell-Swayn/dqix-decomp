@@ -1,4 +1,5 @@
 #include <globaldefs.h>
+#include <System/Matrix.h>
 ARM
 extern "C" unsigned _fdiv(unsigned,unsigned);
 extern "C" int _ffix(unsigned);
@@ -14,7 +15,7 @@ extern "C" void _ZNK8Object3D23GetShadowSourcePositionEv(void*,void*);
 extern "C" int GameResources_GetMaskedSecondaryFlags(void*,int);
 extern "C" char* Object_GetGlobalSixteenEntryDisplayState();
 extern "C" void UpdateInactiveEntriesForMatchingParentObject(char*,int);
-extern "C" void Graphics_RenderPresentModelWithDiffuseColorAndScale(void*,unsigned,int,int,int);
+extern "C" void Graphics_RenderPresentModelWithDiffuseColorAndScale(Vector3i*,unsigned,int,int,int);
 extern "C" int NSBXX_Model_GetMaterialPolygonID(void*,unsigned);
 extern "C" void ObjectPool_EnableResourceSlot(unsigned char*,int);
 extern "C" void ObjectPool_DisableResourceSlot(char*,int);
@@ -41,9 +42,9 @@ extern "C" void DrawEightIndexedObjectsAndShadows(char* self) {
  int polygon=1;
  char* model=*(char**)(obj+8);
  if(model && *(void**)(model+0x54)) polygon=NSBXX_Model_GetMaterialPolygonID(*(void**)(model+0x54),0);
- int pos[3];
- _ZNK8Object3D23GetShadowSourcePositionEv(pos,obj);
- Graphics_RenderPresentModelWithDiffuseColorAndScale(pos,color,*(short*)(obj+0x18e),alpha,polygon);
+ Vector3i pos;
+ _ZNK8Object3D23GetShadowSourcePositionEv(&pos,obj);
+ Graphics_RenderPresentModelWithDiffuseColorAndScale(&pos,color,*(short*)(obj+0x18e),alpha,polygon);
  if(flags) ObjectPool_EnableResourceSlot((unsigned char*)flags,i+0xc0);
  } else {
  if(flags) ObjectPool_DisableResourceSlot(flags,i+0xc0);
