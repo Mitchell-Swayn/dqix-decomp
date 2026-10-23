@@ -8380,3 +8380,7 @@ src/Online/Sockets/Network_ExecuteBlockingSocketReceive.cpp:
 src/Online/Sockets/Network_ProcessReceivedArpPacket.cpp:
     complete
     .text start:0x0220186c end:0x022019b0
+
+src/Online/Security/WirelessSetup_CompareIdentifierBytes.cpp:
+    complete
+    .text start:0x0221e4fc end:0x0221e51c
