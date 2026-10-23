@@ -8616,3 +8616,7 @@ src/Online/Security/WirelessSetup_GenerateRandomTokenValue.cpp:
 src/Online/Settings/WfcUtility_HandleProfileResetConfirmation.c:
     complete
     .text start:0x02232fe8 end:0x02233154
+
+src/Online/Settings/WfcUtility_InitializeDisplaysAndRenderServices.c:
+    complete
+    .text start:0x022271f0 end:0x02227468
