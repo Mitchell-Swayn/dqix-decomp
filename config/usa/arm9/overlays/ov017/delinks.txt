@@ -4804,3 +4804,7 @@ src/Field/Scene/Field_AdvancePeerJoinCommand.cpp:
 src/Field/Scene/Field_ApplyDirtyCombatantAppearances.cpp:
     complete
     .text start:0x02191cc0 end:0x02191e5c
+
+src/Field/Scene/Field_DispatchZoneRegionEnterAndLeaveTriggers.cpp:
+    complete
+    .text start:0x0219814c end:0x021982ac
