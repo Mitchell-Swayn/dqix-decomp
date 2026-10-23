@@ -8500,3 +8500,7 @@ src/Online/Security/WirelessSetup_SendConfigurationRequest.cpp:
 src/Online/Security/WirelessSetup_ValidateCapabilityMessage.cpp:
     complete
     .text start:0x02220418 end:0x022204ec
+
+src/Online/Settings/WfcUtility_DestroyBottomButtonBar.cpp:
+    complete
+    .text start:0x022231f0 end:0x02223268
