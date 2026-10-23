@@ -20393,3 +20393,11 @@ src/Sound/Resources/SoundArchive_LoadSingleWave.cpp:
 src/Sound/Streaming/NNSi_SndArcStrmMain.cpp:
     complete
     .text start:0x20bed10 end:0x20bee20
+
+src/Camera/Camera_SetClampedOrbitHeight.cpp:
+    complete
+    .text start:0x202e6c0 end:0x202e71c
+
+src/Camera/Camera_SetClampedOrbitDistance.cpp:
+    complete
+    .text start:0x202e71c end:0x202e784
