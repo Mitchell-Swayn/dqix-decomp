@@ -20353,3 +20353,11 @@ src/Graphics/TextCanvas_BlitGlyphWithinTile.cpp:
 src/System/Checksum_UpdateOnesComplement16.cpp:
     complete
     .text start:0x20d1d1c end:0x20d1de8
+
+src/Graphics/TextLayout_RenderAnchoredTextInDirection.c:
+    complete
+    .text start:0x20b25c4 end:0x20b26e8
+
+src/Graphics/TextCanvas_DrawUncoveredFrameCorners.cpp:
+    complete
+    .text start:0x204ea5c end:0x204ecb4
