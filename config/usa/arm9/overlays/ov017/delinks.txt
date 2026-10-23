@@ -4728,3 +4728,19 @@ src/Field/Multiplayer/Combat_QueueEncounterBattleSlotAssignments.cpp:
 src/Field/Events/FieldDialogue_ProcessPeerResponse.cpp:
     complete
     .text start:0x21b9a98 end:0x21b9bcc
+
+src/Field/Multiplayer/PartyTransition_UpdateDialogueRequest.cpp:
+    complete
+    .text start:0x21c01a4 end:0x21c031c
+
+src/Field/Multiplayer/Combat_HandleTargetedBattleGridExchange.cpp:
+    complete
+    .text start:0x21c82bc end:0x21c8398
+
+src/Field/Multiplayer/Combat_ApplyRemoteMemberActionSelection.cpp:
+    complete
+    .text start:0x21c68e8 end:0x21c6a9c
+
+src/Field/Multiplayer/Combat_ApplyEncounterTransitionSelection.cpp:
+    complete
+    .text start:0x21cbcc0 end:0x21cbdcc
