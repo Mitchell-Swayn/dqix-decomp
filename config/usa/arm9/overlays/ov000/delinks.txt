@@ -2944,3 +2944,7 @@ src/Combat/Turns/Combat_ResolvePartyCommandTargets.cpp:
 src/Combat/Menu/BattleMenu_ConfirmSelectedItem.cpp:
     complete
     .text start:0x2171e60 end:0x2171ffc
+
+src/Combat/Menu/BattleMenu_ConfirmSelectedAbility.cpp:
+    complete
+    .text start:0x21716d0 end:0x21718a4
