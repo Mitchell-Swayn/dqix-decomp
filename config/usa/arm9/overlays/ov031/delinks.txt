@@ -8648,3 +8648,7 @@ src/Online/WifiConnection/Wireless_PollDownloadSessionStateChange.cpp:
 src/Online/WifiConnection/Network_UpdateDcfSignalHistory.cpp:
     complete
     .text start:0x0220f394 end:0x0220f3f4
+
+src/Online/WifiConnection/WirelessSettings_LoadAndClassifyIdentifierInitialization.cpp:
+    complete
+    .text start:0x02212cbc end:0x02212d20
