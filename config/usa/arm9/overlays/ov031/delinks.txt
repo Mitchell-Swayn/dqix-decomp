@@ -8620,3 +8620,7 @@ src/Online/Settings/WfcUtility_HandleProfileResetConfirmation.c:
 src/Online/Settings/WfcUtility_InitializeDisplaysAndRenderServices.c:
     complete
     .text start:0x022271f0 end:0x02227468
+
+src/Online/Settings/WfcUtility_HandleAccessPointListInput.cpp:
+    complete
+    .text start:0x0222bb58 end:0x0222bdac
