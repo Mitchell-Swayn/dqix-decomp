@@ -8568,3 +8568,7 @@ src/Online/Settings/WfcUtility_SlideBottomButtonBarIn.cpp:
 src/Online/Settings/WfcUtility_SlideBottomButtonBarOut.cpp:
     complete
     .text start:0x0222318c end:0x022231f0
+
+src/Online/Settings/WfcUtility_CreatePairedSelectionMarkers.cpp:
+    complete
+    .text start:0x02223720 end:0x022237dc
