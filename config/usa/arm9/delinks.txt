@@ -20365,3 +20365,19 @@ src/Graphics/TextCanvas_DrawUncoveredFrameCorners.cpp:
 src/World/TouchMovement_UpdateCameraRelativeDirection.cpp:
     complete
     .text start:0x2096a20 end:0x2096c38
+
+src/System/Sound/SoundCommand_InitializePoolAndSharedStatus.cpp:
+    complete
+    .text start:0x20d2220 end:0x20d22f4
+
+src/World/ZoneChest_AdvanceLidClosing.cpp:
+    complete
+    .text start:0x2015cd0 end:0x2015ef4
+
+src/Graphics/TextCanvas_DrawJoinedFrame.cpp:
+    complete
+    .text start:0x204ecb4 end:0x204f0ec
+
+src/Math/FX_CosFx64c.cpp:
+    complete
+    .text start:0x20c32f8 end:0x20c338c
