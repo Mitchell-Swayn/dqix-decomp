@@ -32,7 +32,7 @@ inline int SwapHalf(int value){return (value>>8)|(value<<8);}
 #define F(T,p,o) (*(T*)((char*)(p)+(o)))
 // Original: arm9/ov031 @ 0x02201550; symbol: func_ov031_02201550; size: 0x274.
 // Builds TCP pseudo-header, optional SYN MSS option and checksum, transmits and advances sequence state.
-extern "C" void Network_BuildTcpChecksumAndAdvanceSequence(unsigned char* payload,unsigned length,char* context,unsigned flags){
+extern "C" void Network_BuildTcpChecksumAndAdvanceSequence(unsigned char* payload,unsigned length,char* context,unsigned flags,unsigned unused){
 if(F(unsigned char,context,8)==0)return;
 unsigned char* header;
 if(OSInitThread_UnknownRoleZeroInitializedStorage_Variant2.current==NetworkStopWorkersAndResetStack_UnknownRoleZeroInitializedStorage)header=(unsigned char*)NetworkBuildTcpChecksumAndAdvanceSequence_UnknownRoleZeroInitializedStorage;else header=F(unsigned char*,context,0x4c)+34;

@@ -1,10 +1,10 @@
 #include <globaldefs.h>
 ARM
-extern "C" int Network_SelectDestinationOrDefaultGateway(void);
-extern "C" int Network_LookupDestinationMacAddress(void);
+extern "C" unsigned Network_SelectDestinationOrDefaultGateway(unsigned);
+extern "C" void* Network_LookupDestinationMacAddress(unsigned);
 // Original: arm9/ov031 @ 0x02201EF4; symbol: ProcessValueWhenFirstCheckIsNonzero; size: 0x1C.
 // Returns one when the first check yields zero; otherwise returns the follow-up result.
-extern "C" int Network_CanSendWithoutArpResolution(void) {
-    if (Network_SelectDestinationOrDefaultGateway() == 0) return 1;
-    return Network_LookupDestinationMacAddress();
+extern "C" int Network_CanSendWithoutArpResolution(unsigned address) {
+    if ((address=Network_SelectDestinationOrDefaultGateway(address)) == 0) return 1;
+    return (int)Network_LookupDestinationMacAddress(address);
 }
