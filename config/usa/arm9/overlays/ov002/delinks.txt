@@ -823,3 +823,7 @@ src/Menu/Party/PartyMenu_ApplyMultiplayerActionResponses.cpp:
 src/Menu/Party/PartyMenu_ToggleBagSortOrder.cpp:
     complete
     .text start:0x0215b458 end:0x0215b648
+
+src/Menu/Party/PartyMenu_RebuildPanelTextById.cpp:
+    complete
+    .text start:0x0215b9a4 end:0x0215bba8
