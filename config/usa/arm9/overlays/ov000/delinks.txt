@@ -3044,3 +3044,7 @@ src/Combat/BattleMenu/BattleMenu_HandleTacticsPolicyInput.cpp:
 src/Combat/BattleMenu/BattleMenu_HandleAllyTargetInput.cpp:
     complete
     .text start:0x0217bb2c end:0x0217bdf4
+
+src/Combat/BattleMenu/BattleMenu_HandleRootCommandInput.cpp:
+    complete
+    .text start:0x0217cb5c end:0x0217ce24
