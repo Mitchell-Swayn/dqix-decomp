@@ -8548,3 +8548,7 @@ src/Online/Settings/WfcUtility_ReleaseIpv4Editor.cpp:
 src/Online/Settings/WfcUtility_FinishConnectionAttemptAndScheduleResultTransition.cpp:
     complete
     .text start:0x02233d84 end:0x02233e28
+
+src/Online/Security/Ssl_FillNonzeroRandomBytes.cpp:
+    complete
+    .text start:0x02209cf8 end:0x02209e28
