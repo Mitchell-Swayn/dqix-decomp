@@ -4792,3 +4792,7 @@ src/Field/Events/ZoneEncounterLoader_LoadBattleGroupsAndQueueMonsterData.cpp:
 src/Field/Scene/Field_ResolveContainerLootSpriteKey.cpp:
     complete
     .text start:0x021b5c88 end:0x021b5cf8
+
+src/Field/Scene/Field_ConfigureCameraFollowControlForMapKind.cpp:
+    complete
+    .text start:0x0219e234 end:0x0219e290
