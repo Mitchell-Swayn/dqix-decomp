@@ -2920,3 +2920,27 @@ src/Combat/Scene/BattleScene_Initialize.cpp:
 src/Combat/Hud/BattleHud_DrawScaledStatusBar.cpp:
     complete
     .text start:0x21741e0 end:0x21742c8
+
+src/Combat/Scene/BattleScene_PrepareDisplayAndVram.cpp:
+    complete
+    .text start:0x2164280 end:0x21643d4
+
+src/Combat/Turns/Combat_SelectPartyOnlyTargetsByActionType.cpp:
+    complete
+    .text start:0x2153f98 end:0x21540c8
+
+src/Combat/Selection/Combat_CollectBothSidesForPrimaryRecord.cpp:
+    complete
+    .text start:0x2181abc end:0x2181b4c
+
+src/Combat/Selection/Combat_CollectUniqueSecondaryRecordTargets.cpp:
+    complete
+    .text start:0x2181b4c end:0x2181c6c
+
+src/Combat/Turns/Combat_ResolvePartyCommandTargets.cpp:
+    complete
+    .text start:0x21540fc end:0x21543f4
+
+src/Combat/Menu/BattleMenu_ConfirmSelectedItem.cpp:
+    complete
+    .text start:0x2171e60 end:0x2171ffc
