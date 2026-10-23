@@ -4720,3 +4720,7 @@ src/Field/Grotto_UpdateTreasureMapEndPrompt.cpp:
 src/Field/FieldEvent_BeginScriptLoadAndSuspendFieldControl.cpp:
     complete
     .text start:0x021bbc10 end:0x021bbfc4
+
+src/Field/Multiplayer/Combat_QueueEncounterBattleSlotAssignments.cpp:
+    complete
+    .text start:0x21cbdcc end:0x21cbe50
