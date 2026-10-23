@@ -1,10 +1,10 @@
 #include <globaldefs.h>
 ARM
-extern "C" int Network_ProcessTcpFinishSegment(...);
-extern "C" int CyclePriorityContextAndReleaseExpiredWrapper(...);
+extern "C" void Network_ProcessTcpFinishSegment(void*,void*,int);
+extern "C" void CyclePriorityContextAndReleaseExpiredWrapper(void*,void*);
 extern "C" int Network_CompleteActiveTcpHandshake(...);
 extern "C" int System_CheckCombinedFieldValue(...);
-extern "C" int Network_HandleTcpSynchronizeSegment(...);
+extern "C" void Network_HandleTcpSynchronizeSegment(char*,void*,int);
 extern "C" int Network_SendTcpResetForReceivedSegment(...);
 extern "C" int Network_ProcessTcpAcknowledgmentAndPayload(...);
 extern "C" void* memcpy(void*,const void*,unsigned);extern "C" void* memset(void*,int,unsigned);extern "C" char* strcpy(char*,const char*);extern "C" int sprintf(char*,const char*,...);
