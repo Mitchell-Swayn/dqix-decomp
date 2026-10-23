@@ -8388,3 +8388,7 @@ src/Online/Security/WirelessSetup_CompareIdentifierBytes.cpp:
 src/Online/Settings/WfcUtility_DestroyDeferredBackgroundTilemap.cpp:
     complete
     .text start:0x02234f08 end:0x02234f34
+
+src/Online/Settings/WfcUtility_DestroyAnimatedStatusSprite.cpp:
+    complete
+    .text start:0x02222bdc end:0x02222c18
