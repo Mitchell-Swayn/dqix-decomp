@@ -879,3 +879,7 @@ src/Menu/Party/PartyMenu_UpdateStoredItemSelectionConfirmation.cpp:
 src/Menu/Party/PartyMenu_FormatPartySummaryPanel.cpp:
     complete
     .text start:0x0215e644 end:0x0215e900
+
+src/Menu/Party/PartyMenu_ReviveActionTargets.cpp:
+    complete
+    .text start:0x02154230 end:0x021544f4
