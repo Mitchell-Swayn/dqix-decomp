@@ -8344,3 +8344,7 @@ src/Online/Content/YssdSession_GetWorkspaceSize.cpp:
 src/Online/Sockets/Network_StopWorkersAndResetStack.cpp:
     complete
     .text start:0x2200534 end:0x220057c
+
+src/Online/Sockets/Network_ResolveMacAddressWithArpRetries.cpp:
+    complete
+    .text start:0x2200dc8 end:0x2200e38

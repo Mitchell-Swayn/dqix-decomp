@@ -9,13 +9,13 @@ extern "C" unsigned char EventSetAllocatorSlot_UnknownRoleZeroInitializedStorage
 extern "C" void* SystemState_GetGlobalFlags();
 extern "C" void SystemState_SetFlags(unsigned*,unsigned);
 extern "C" void SystemState_ClearFlags(unsigned*,unsigned);
-extern "C" int SaveData_AdvanceStagedSaveWrite(int,int,int,int);
+extern "C" int SaveData_AdvanceStagedSaveWrite(void*,void*,int,int);
 extern "C" void Script_WriteIntegerReferenceOutput(void*,int);
 // Original: arm9/ov001 @ 0x02163070; symbol: SetStateMaskAndWriteInvertedOperationResult; size: 0x84.
 extern "C" int Script_AdvanceStagedSaveAndReportPending(void *output) {
  if(!*(int*)(EventSetAllocatorSlot_UnknownRoleZeroInitializedStorage+0x4b4))return 0;
  unsigned *flags=(unsigned*)SystemState_GetGlobalFlags();SystemState_SetFlags(flags,128);
- bool success=SaveData_AdvanceStagedSaveWrite(*(int*)(EventSetAllocatorSlot_UnknownRoleZeroInitializedStorage+0x4b4),*(int*)(EventSetAllocatorSlot_UnknownRoleZeroInitializedStorage+0x4b8),10,0)!=0;
+ bool success=SaveData_AdvanceStagedSaveWrite((void*)*(int*)(EventSetAllocatorSlot_UnknownRoleZeroInitializedStorage+0x4b4),(void*)*(int*)(EventSetAllocatorSlot_UnknownRoleZeroInitializedStorage+0x4b8),10,0)!=0;
  Script_WriteIntegerReferenceOutput(output,!success);
  if(success)SystemState_ClearFlags(flags,128);return 1;
 }

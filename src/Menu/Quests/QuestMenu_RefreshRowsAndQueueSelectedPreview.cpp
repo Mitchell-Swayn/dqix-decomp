@@ -2,7 +2,7 @@
 ARM
 extern "C" void QuestMenu_PopulateVisibleQuestRows(void);
 extern "C" unsigned int Resource_ReadIndexedNodeAndFlag(void *, unsigned char *);
-extern "C" void *QuestMenu_FindMessagePanelById(void *, unsigned int);
+extern "C" void *QuestMenu_FindMessagePanelById(void *, unsigned short);
 extern "C" void BackgroundLoader_UpdateIdentifierAndCancelPreviousTask(char *, int, unsigned char);
 // Original: arm9/ov004 @ 0x021675FC; symbol: func_ov004_021675fc; size: 0x4C.
 extern "C" int QuestMenu_RefreshRowsAndQueueSelectedPreview(void *owner) {

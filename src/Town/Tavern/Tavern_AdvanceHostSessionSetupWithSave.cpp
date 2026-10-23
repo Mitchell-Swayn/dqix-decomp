@@ -13,7 +13,7 @@ void Graphics_UpdateCounted224ByteDisplayRecords(char* p);
 void Tavern_OpenConfirmationOptions(char* p);
 int Tavern_PollConfirmationOptions(unsigned char* self);
 void SaveData_ResetTransferProgress(unsigned char* p);
-int SaveData_AdvanceStagedSaveWrite(int, int, int, int);
+int SaveData_AdvanceStagedSaveWrite(void*,void*,int,int);
 struct Entry {
     unsigned int a, b;
     unsigned short key;
@@ -83,8 +83,8 @@ extern "C" void Tavern_AdvanceHostSessionSetupWithSave(unsigned char* self)
         BackgroundLoader::AddLockGlobal();
         BackgroundLoader::FreeAllocationsGlobal();
         if (SaveData_AdvanceStagedSaveWrite(
-                (int)(self + 0x4b4),
-                (int)Main_UnknownRoleZeroInitializedStorage_Variant6,
+                (self + 0x4b4),
+                Main_UnknownRoleZeroInitializedStorage_Variant6,
                 0xa,
                 0) == 1) {
             Entry* track = SpriteAnimation_FindTrackByKey(*(List**)(self + 0x38c), 0);

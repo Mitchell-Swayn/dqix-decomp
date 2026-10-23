@@ -2,7 +2,7 @@
 ARM
 extern "C" void *_ZN9GameState11GetInstanceEv(void);
 extern "C" unsigned int _ZNK9GameState12GetTickCountEv(void *);
-extern "C" void TextCanvas_AdvanceDisplayState(void *, int);
+extern "C" void TextCanvas_AdvanceDisplayState(void *, unsigned int);
 extern "C" void TextCanvas_CopyVisibleTilemapToLayer(void *);
 extern "C" void DrawConfiguredRecordTilemapBorder(void *, int);
 // Original: arm9/ov023 @ 0x021F8140; symbol: func_ov023_021f8140; size: 0x50.

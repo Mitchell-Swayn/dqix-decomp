@@ -14,7 +14,7 @@ extern "C" int TextWindow_GetChoiceResult(...);
 extern "C" int CountAllocatorEntriesWithKindOneAndMatchingId(...);
 extern "C" int Script_ExecuteFirstSatisfiedTriggerGroup(...);
 extern "C" int Church_PollYesNoPrompt(...);
-extern "C" int SaveData_AdvanceStagedSaveWrite(...);
+extern "C" int SaveData_AdvanceStagedSaveWrite(void*,void*,int,int);
 extern "C" int _ZN16BackgroundLoader17GetNumQueuedTasksEv(...);
 extern "C" void Window_SetCanvasDisplayAttribute(...);
 extern "C" void Church_StartConfiguredMessage(...);

@@ -22,7 +22,7 @@ void GameState_ClearMaskFromKeyedEntry(State* self, unsigned short value, unsign
 void* SystemState_GetGlobalFlags();
 void SystemState_SetFlags(unsigned int* word, unsigned int mask);
 void SystemState_ClearFlags(unsigned int* word, unsigned int mask);
-int SaveData_AdvanceStagedSaveWrite(int, int, int, int);
+int SaveData_AdvanceStagedSaveWrite(void*,void*,int,int);
 void* GameState_AppendValueAndSetNodeFlags(void* unused, unsigned short value, unsigned int flags);
 unsigned int TextContext_GetSharedInstance();
 void* Filesystem_FindTypeFourEmbeddedValue(void* state, unsigned short key);
@@ -62,8 +62,8 @@ extern "C" int Menu_SaveItemMarketStateAndResumeRequestResult(void* self)
     BackgroundLoader::AddLockGlobal();
     BackgroundLoader::FreeAllocationsGlobal();
     int saved = SaveData_AdvanceStagedSaveWrite(
-        (int)(P(MenuRefreshSixOfferRows_UnknownRoleZeroInitializedStorage, 8) + 0x84),
-        (int)Main_UnknownRoleZeroInitializedStorage_Variant6,
+        (P(MenuRefreshSixOfferRows_UnknownRoleZeroInitializedStorage, 8) + 0x84),
+        Main_UnknownRoleZeroInitializedStorage_Variant6,
         0xa,
         0);
     int success = saved != 0 ? 1 : 0;

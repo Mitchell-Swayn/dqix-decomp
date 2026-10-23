@@ -1912,3 +1912,7 @@ src/Menu/Titles/TitleMenu_BuildQuickSaveRestartConfirmation.cpp:
 src/Menu/Titles/TitleMenu_SelectSecondConfirmationEntry.cpp:
     complete
     .text start:0x216e5f4 end:0x216e638
+
+src/Menu/Quests/QuestMenu_FindMessagePanelById.cpp:
+    complete
+    .text start:0x2165e70 end:0x2165ea4

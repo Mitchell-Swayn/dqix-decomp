@@ -1,6 +1,6 @@
 #include <globaldefs.h>
 ARM
-extern "C" void *QuestMenu_FindMessagePanelById(void *, unsigned int);
+extern "C" void *QuestMenu_FindMessagePanelById(void *, unsigned short);
 extern "C" void BackgroundLoader_UpdateIdentifierAndCancelPreviousTask(char *, int, unsigned char);
 // Original: arm9/ov004 @ 0x02167648; symbol: Resource_CancelBackgroundTaskForEntry7; size: 0x30.
 // Looks up entry 7 and cancels its background task using the task identifier at entry+0x34.

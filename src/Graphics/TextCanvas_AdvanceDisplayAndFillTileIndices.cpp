@@ -1,6 +1,6 @@
 #include <globaldefs.h>
 
-extern "C" void TextCanvas_AdvanceDisplayState(void*, int);
+extern "C" void TextCanvas_AdvanceDisplayState(void*, unsigned int);
 extern "C" void TextCanvas_FillSequentialCharacterTilemap(void*);
 
 // Original: arm9/main @ 0x0204C964; symbol: func_0204c964; size: 0x1C.

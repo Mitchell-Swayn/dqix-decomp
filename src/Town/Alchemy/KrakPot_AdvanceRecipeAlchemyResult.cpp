@@ -33,7 +33,7 @@ extern "C" int _ZN16BackgroundLoader13AddLockGlobalEv(...);
 extern "C" int _ZN16BackgroundLoader16RemoveLockGlobalEv(...);
 extern "C" int _ZN16BackgroundLoader17GetNumQueuedTasksEv(...);
 extern "C" int _ZN16BackgroundLoader21FreeAllocationsGlobalEv(...);
-extern "C" int SaveData_AdvanceStagedSaveWrite(...);
+extern "C" int SaveData_AdvanceStagedSaveWrite(void*,void*,int,int);
 extern "C" int MergeTwoPackedKeysAndIncrementPlacementCounters(...);
 extern "C" int KrakPot_RebuildAvailableIngredientInventory(...);
 extern "C" int CompleteLoadedRecordGroup(...);
