@@ -20361,3 +20361,7 @@ src/Graphics/TextLayout_RenderAnchoredTextInDirection.c:
 src/Graphics/TextCanvas_DrawUncoveredFrameCorners.cpp:
     complete
     .text start:0x204ea5c end:0x204ecb4
+
+src/World/TouchMovement_UpdateCameraRelativeDirection.cpp:
+    complete
+    .text start:0x2096a20 end:0x2096c38
