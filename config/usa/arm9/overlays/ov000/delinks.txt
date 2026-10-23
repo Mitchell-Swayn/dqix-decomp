@@ -3088,3 +3088,7 @@ src/Combat/Turns/Combat_ComputePartyCharmInterruptionFactor.cpp:
 src/Combat/Turns/InitializeBattleSceneUpdateRatios.cpp:
     complete
     .init start:0x02183710 end:0x02183794
+
+src/Combat/Turns/InitializeBattleSceneEntryRatios.cpp:
+    complete
+    .init start:0x02183794 end:0x0218381c
