@@ -20297,3 +20297,15 @@ src/Graphics/TextCanvas_PrepareRenderAndTransferText.cpp:
 src/Graphics/Text/TextCanvas_RenderResolvedDisplayLabel.cpp:
     complete
     .text start:0x208166c end:0x2081818
+
+src/Grotto/Main/ActiveGrottoClass_PrepareZoneTransition.cpp:
+    complete
+    .text start:0x208fa8c end:0x208fc30
+
+src/GameState/GameState_AdvanceActorLevelChange.cpp:
+    complete
+    .text start:0x20e3c94 end:0x20e3ec0
+
+src/GameState/GameState_UpdatePartyTransitionDialogue.cpp:
+    complete
+    .text start:0x2092bcc end:0x2092cd0
