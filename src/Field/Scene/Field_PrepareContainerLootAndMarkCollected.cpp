@@ -17,7 +17,7 @@ int BitArray_ReadNonnegativeIndexMask(void*,const void*,int);
 void GameObject_RequestMovementInputEnable(void*);
 void Memory_DestroyTwoAllocatorsAndRestoreGameFlags(ContainerLootAction*);
 void World_ResetZoneStateAndClearThreeWords(ContainerLootRequest*);
-void Text_FormatModeDependentKeyResourceResult(ContainerLootRequest*,int,int,void*,int);
+int Text_FormatModeDependentKeyResourceResult(void*,int,int,char*,int);
 void Field_MarkContainerBrokenAndLootCollected(int,int,int);
 void Field_QueueContainerLootFlags(int,int,int);
 void* GameResources_GetInstance();
@@ -56,7 +56,7 @@ extern "C" int Field_PrepareContainerLootAndMarkCollected(ContainerLootAction* a
                 World_ResetZoneStateAndClearThreeWords(&request);
                 World_ResetZoneStateAndClearThreeWords(&request);
                 request.source=&zone->state_2754_;
-                Text_FormatModeDependentKeyResourceResult(&request,container->lootType,container->itemIDOrRank,action->context,1);
+                Text_FormatModeDependentKeyResourceResult(&request,container->lootType,container->itemIDOrRank,static_cast<char*>(action->context),1);
                 action->lootValue=container->itemIDOrRank;
             }
         }
