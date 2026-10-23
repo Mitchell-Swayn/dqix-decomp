@@ -8348,3 +8348,15 @@ src/Online/Sockets/Network_StopWorkersAndResetStack.cpp:
 src/Online/Sockets/Network_ResolveMacAddressWithArpRetries.cpp:
     complete
     .text start:0x2200dc8 end:0x2200e38
+
+src/Math/Math_DivideHalfwordIntegers.cpp:
+    complete
+    .text start:0x220c0dc end:0x220c2bc
+
+src/Math/Math_MontgomeryExponentiateHalfwordInteger.cpp:
+    complete
+    .text start:0x220c6c4 end:0x220c8d0
+
+src/Online/Services/Http_SkipHeaderValueSpaces.cpp:
+    complete
+    .text start:0x22405b8 end:0x2240628
