@@ -20409,3 +20409,7 @@ src/Graphics/TextCanvas_FillContiguousCharacters.cpp:
 src/Graphics/Graphics_StageSerializedPaletteToVRAM.cpp:
     complete
     .text start:0x204ac60 end:0x204acb0
+
+src/System/DMA/MIi_DMACallback.cpp:
+    complete
+    .text start:0x20ca24c end:0x20ca2ac
