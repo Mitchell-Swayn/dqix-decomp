@@ -20273,3 +20273,7 @@ src/Script/PartyAppearance_ApplyEquipmentPalette.cpp:
 src/Script/Script_RegisterTriggerGroupWithinProgressRange.cpp:
     complete
     .text start:0x205f9cc end:0x205facc
+
+src/UI/Window_DrawTiledFrameBorder.cpp:
+    complete
+    .text start:0x20e2110 end:0x20e2310
