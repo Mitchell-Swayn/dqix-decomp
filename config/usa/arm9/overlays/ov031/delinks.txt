@@ -8436,3 +8436,7 @@ src/Online/Security/WirelessSetup_ExtractMessagePayload.cpp:
 src/Online/Security/WirelessSetup_ValidateSessionIdentifier.cpp:
     complete
     .text start:0x0221d79c end:0x0221d7e0
+
+src/Online/Security/WirelessSetup_FormatHexByte.cpp:
+    complete
+    .text start:0x022228c0 end:0x022228f4
