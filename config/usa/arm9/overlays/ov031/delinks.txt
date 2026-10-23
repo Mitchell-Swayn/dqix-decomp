@@ -8332,3 +8332,15 @@ src/Online/WifiConnection/WfcUtility_AllocateSpriteGroup.cpp:
 src/Online/WifiConnection/WfcUtility_AllocateObjectCharacterRange.cpp:
     complete
     .text start:0x223db7c end:0x223dcf4
+
+src/Online/Services/AccessPoint_SelectMatchingProfileKind.cpp:
+    complete
+    .text start:0x2213f14 end:0x22140b0
+
+src/Online/Content/YssdSession_GetWorkspaceSize.cpp:
+    complete
+    .text start:0x2211410 end:0x2211440
+
+src/Online/Sockets/Network_StopWorkersAndResetStack.cpp:
+    complete
+    .text start:0x2200534 end:0x220057c
