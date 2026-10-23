@@ -282,5 +282,57 @@ class CanonicalTests(unittest.TestCase):
             self.assertEqual(row[key], before[key])
 
 
+    def assembly_policy(self, text):
+        import hashlib, json
+        self.owner.unlink(missing_ok=True)
+        relative = 'src/RuntimeSupport/sdk.cpp'
+        source = self.project.root / relative
+        source.parent.mkdir(parents=True, exist_ok=True)
+        source.write_text(text)
+        policy = self.project.root / 'config/usa/arm9/runtime_support.json'
+        policy.parent.mkdir(parents=True, exist_ok=True)
+        policy.write_text(json.dumps({'functions': [{
+            'name': 'Callee', 'source': relative,
+            'source_sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
+            'classification': 'runtime_assembly',
+            'assembly_form': 'codewarrior_inline'}]}))
+        return source, policy
+
+    def test_accepted_typed_assembly_over_stale_cache(self):
+        self.assembly_policy('extern "C" asm int Callee(unsigned x) { bx lr }\n')
+        good = 'extern "C" int Callee(unsigned);\n'
+        result = self.audit(good)
+        self.assertEqual(result['status'], 'ok', result)
+        self.assertEqual(result['declarations'][0]['authority'], 'accepted-assembly-definition')
+        self.assertEqual(self.audit('extern "C" int Callee(int);\n')['status'], 'conflict')
+        # Ordinary parsing never treats arbitrary submitted asm as an owner.
+        self.assertEqual(list(canonical.signatures('extern "C" asm int Callee(unsigned) { bx lr }', '.cpp')), [])
+
+    def test_untyped_or_unapproved_assembly_is_not_authority(self):
+        for text in ['extern "C" asm void Callee() { bx lr }\n',
+                     'extern "C" asm void Callee(void) { bx lr }\n']:
+            self.assembly_policy(text)
+            with canonical.accepted_read(self.project):
+                state = canonical.snapshot(self.project, self.db)
+            self.assertNotIn('Callee', state[1])
+        source, policy = self.assembly_policy('extern "C" asm int Callee(unsigned x) { bx lr }\n')
+        policy.unlink()
+        with canonical.accepted_read(self.project):
+            self.assertNotIn('Callee', canonical.snapshot(self.project, self.db)[1])
+
+    def test_assembly_hash_and_policy_removal_fail_closed(self):
+        source, policy = self.assembly_policy('extern "C" asm int Callee(unsigned x) { bx lr }\n')
+        self.assertEqual(self.audit('extern "C" int Callee(unsigned);\n')['status'], 'ok')
+        source.write_text('extern "C" asm int Callee(void* x) { bx lr }\n')
+        with canonical.accepted_read(self.project):
+            with self.assertRaises(canonical.StateUnavailable):
+                canonical.snapshot(self.project, self.db)
+        source, policy = self.assembly_policy('extern "C" asm int Callee(unsigned x) { bx lr }\n')
+        self.assertEqual(self.audit('extern "C" int Callee(unsigned);\n')['status'], 'ok')
+        policy.write_text('{"functions": []}')
+        with canonical.accepted_read(self.project):
+            self.assertNotIn('Callee', canonical.snapshot(self.project, self.db)[1])
+
+
 if __name__ == '__main__':
     unittest.main()

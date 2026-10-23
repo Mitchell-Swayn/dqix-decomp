@@ -134,6 +134,63 @@ def _file_record(root, relative, stamp):
                 context_headers=headers, type_names=type_names)
 
 
+def _accepted_assembly_owners(root, files):
+    """Use explicit typed SDK assembly interfaces only from hash-pinned policy.
+
+    Untyped asm entry wrappers remain inventory, not interface evidence. Read
+    policy on every snapshot so cached source records cannot outlive approval.
+    """
+    policy_path = 'config/usa/arm9/runtime_support.json'
+    if policy_path not in files:
+        return []
+    policy_bytes = (root / policy_path).read_bytes()
+    if hashlib.sha256(policy_bytes).hexdigest() != files[policy_path]['sha256']:
+        raise StateUnavailable('assembly policy changed while indexing; retry')
+    policy = json.loads(policy_bytes)
+    result = []
+    for entry in policy['functions']:
+        if (entry.get('classification') != 'runtime_assembly'
+                or entry.get('assembly_form') != 'codewarrior_inline'):
+            continue
+        relative = entry['source']
+        if (not relative.startswith('src/RuntimeSupport/')
+                or '..' in Path(relative).parts
+                or Path(relative).as_posix() != relative):
+            raise StateUnavailable('noncanonical accepted assembly source')
+        record = files.get(relative)
+        if not record or record['sha256'] != entry['source_sha256']:
+            raise StateUnavailable('accepted assembly source hash changed: ' + relative)
+        path = root / relative
+        data = path.read_bytes()
+        if path.is_symlink() or hashlib.sha256(data).hexdigest() != record['sha256']:
+            raise StateUnavailable('accepted assembly source changed while indexing')
+        text = data.decode()
+        clean = re.sub(r'/\*.*?\*/|//[^\n]*',
+                       lambda m: re.sub(r'[^\n]', ' ', m[0]), text, flags=re.S)
+        typed_names = set()
+        for match in SIGNATURE.finditer(clean):
+            if match[3] != '{' or not re.search(r'\b(?:asm|__asm)\b', match[1]):
+                continue
+            params = match[1].split('(', 1)[1].rsplit(')', 1)[0].strip()
+            if params and params != 'void':
+                typed_names.add(match[2])
+        if entry['name'] not in typed_names:
+            continue
+        # Preserve line locations; the ordinary parser still checks linkage and
+        # scope. Only the policy-selected explicit assembly definition is used.
+        ordinary = re.sub(r'\b(?:asm|__asm)\b', lambda m: ' ' * len(m[0]), clean)
+        for row in signatures(ordinary, path.suffix):
+            if row['definition'] and row['name'] == entry['name'] and row['c_link']:
+                result.append(dict(name=row['name'], decl=row['decl'], c_link=True,
+                                   path=f'{relative}:{row["line"]}',
+                                   authority='accepted-assembly-definition',
+                                   context_headers=record['context_headers'],
+                                   local_type_names=record['type_names'],
+                                   source_sha256=record['sha256'],
+                                   policy_sha256=files[policy_path]['sha256']))
+    return result
+
+
 def _load_index(project):
     path = project.state / 'canonical-index.cache'
     try:
@@ -241,7 +298,10 @@ def snapshot(project, db):
                        and normalized(decl['decl']) == normalized(row['decl'])]
             if len(matches) == 1:
                 row['c_link'] = matches[0]['c_link']
-        return digest.hexdigest(), index['owners'], cache, renames
+        owners = {name: list(rows) for name, rows in index['owners'].items()}
+        for row in _accepted_assembly_owners(project.root, index['files']):
+            owners.setdefault(row['name'], []).append(row)
+        return digest.hexdigest(), owners, cache, renames
     except (OSError, KeyError, TypeError, ValueError) as error:
         raise StateUnavailable(f'canonical index could not be verified ({error}); retry') from error
 
