@@ -27,7 +27,7 @@ extern "C" void Graphics_AllocateScreenDescriptors(...);
 extern "C" void ColorEffect_ConfigureAlphaBlend(...);
 extern "C" int ResourceFile_CountActiveStrideRecords(...);
 extern "C" char* ResourceFile_GetPayloadByIndex(...);
-extern "C" void Graphics_LoadTaggedLayerResource(...);
+extern "C" int Graphics_LoadTaggedLayerResource(void*,const void*,unsigned,unsigned);
 extern "C" void Tilemap_FillClippedRectangle(...);
 extern "C" void Graphics_CleanAndTransferScreenBuffer(...);
 extern "C" void TextCanvas_AllocateTilemapAndBindPixels(...);
@@ -117,7 +117,7 @@ Resource_AllocateFourTextBuffers(self);CharacterStatus_InitializeSubDisplaySnaps
  char *tag,*data;unsigned size;char *blocks[8];unsigned sizes[8];
  _ZN16BackgroundLoader17GetLoadedFileByIDEiPPvPj(loader,W(0x46c),&data,&size);int count=ResourceFile_CountActiveStrideRecords(data);int i;
  for(i=0;i<count;++i)blocks[i]=ResourceFile_GetPayloadByIndex(data,i,&tag,&sizes[i]);
- for(i=0;i<count;++i){if(blocks[i]){if(i==0)Graphics_LoadTaggedLayerResource(P(0x328)+32,blocks[i],self+0x264,sizes[i]);else Graphics_LoadTaggedLayerResource(P(0x328)+64,blocks[i],self+0x264,sizes[i]);}}
+ for(i=0;i<count;++i){if(blocks[i]){if(i==0)Graphics_LoadTaggedLayerResource(P(0x328)+32,blocks[i],(unsigned)(self+0x264),sizes[i]);else Graphics_LoadTaggedLayerResource(P(0x328)+64,blocks[i],(unsigned)(self+0x264),sizes[i]);}}
  _ZN16BackgroundLoader10RemoveTaskEi(loader,W(0x46c));W(0x46c)=-1;
  for(i=0;i<3;++i){char *canvas=P(0x328)+i*32;Tilemap_FillClippedRectangle(canvas,0,0,0,32,25,0);Graphics_CleanAndTransferScreenBuffer(canvas,0);}
  _ZN13SafeAllocator5ResetEv(self+0x278);P(0x398)=_ZN13SafeAllocator8AllocateEj(self+0x278,0x6000);

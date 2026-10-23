@@ -29,7 +29,7 @@ void Graphics_AllocateScreenDescriptors(unsigned char*,unsigned,SafeAllocator*);
 int ResourceFile_CountActiveStrideRecords(Record*);
 char* ResourceFile_GetPayloadByIndex(char*,int,char**,unsigned*);
 // The target caller supplies r3=size; sibling canvas loaders confirm this fourth ABI argument.
-int Graphics_LoadTaggedLayerResource(Owner*,const void*,unsigned);
+int Graphics_LoadTaggedLayerResource(void*,const void*,unsigned,unsigned);
 void Graphics_CopyIndexedScreenRectangle(IndexedRecordView*,unsigned,unsigned,unsigned,short,short,short,short,unsigned short);
 void Tilemap_FillClippedRectangle(TilemapOwner*,unsigned,short,short,short,short,unsigned);
 void Graphics_CleanAndTransferScreenBuffer(char*,void*);
@@ -81,8 +81,8 @@ extern "C" int Graphics_AdvanceArchiveCanvasInitialization(char* self,int altern
   for(int i=0;i<count;i++) {
    char* resource=ResourceFile_GetPayloadByIndex(data,i,&block,&size);
    if(resource) {
-    if(i==count-1)((int(*)(Owner*,const void*,unsigned,unsigned))Graphics_LoadTaggedLayerResource)((Owner*)(self+0x110),resource,(unsigned)(self+0x14),size);
-    else ((int(*)(Owner*,const void*,unsigned,unsigned))Graphics_LoadTaggedLayerResource)((Owner*)(self+0xf0),resource,(unsigned)(self+0x14),size);
+    if(i==count-1)Graphics_LoadTaggedLayerResource((Owner*)(self+0x110),resource,(unsigned)(self+0x14),size);
+    else Graphics_LoadTaggedLayerResource((Owner*)(self+0xf0),resource,(unsigned)(self+0x14),size);
    }
   }
   _ZN16BackgroundLoader10RemoveTaskEi(loader,I(0xb20));

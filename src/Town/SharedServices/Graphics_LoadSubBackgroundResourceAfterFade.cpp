@@ -20,7 +20,7 @@ extern "C" unsigned _ZN16BackgroundLoader13GetTaskStatusEi(void*,unsigned);
 extern "C" void _ZN16BackgroundLoader17GetLoadedFileByIDEiPPvPj(void*,int,void**,unsigned*);
 extern "C" int ResourceFile_CountActiveStrideRecords(void*);
 extern "C" void* ResourceFile_GetPayloadByIndex(void*,int,void**,unsigned*);
-extern "C" int Graphics_LoadTaggedLayerResource(void*,const void*,void*,unsigned);
+extern "C" int Graphics_LoadTaggedLayerResource(void*,const void*,unsigned,unsigned);
 extern "C" void _ZN16BackgroundLoader10RemoveTaskEi(void*,int);
 extern "C" void Graphics_ClearScreenBuffer(void*,void*);
 extern "C" void Graphics_UpdateBoundedSixteenByteEntry(void*,int,int,int,unsigned short);
@@ -66,7 +66,7 @@ extern "C" void Graphics_LoadSubBackgroundResourceAfterFade(char* self) {
  int count=ResourceFile_CountActiveStrideRecords(file);
  for(int i=0;i<count;i++) {
  void* block=ResourceFile_GetPayloadByIndex(file,i,&out,&blockSize);
- Graphics_LoadTaggedLayerResource(self+0x18,block,allocator,blockSize);
+ Graphics_LoadTaggedLayerResource(self+0x18,block,(unsigned)(allocator),blockSize);
  }
  _ZN16BackgroundLoader10RemoveTaskEi(loader,*(int*)(self+0x50));
  *(int*)(self+0x50)=-1;

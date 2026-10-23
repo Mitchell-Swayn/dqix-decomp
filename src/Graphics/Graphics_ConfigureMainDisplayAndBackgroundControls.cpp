@@ -3,7 +3,7 @@
 #include <System/ColorEffects.h>
 extern "C" int GameResources_GetInstance();
 extern "C" void Graphics_InitializeCanvasTransferState(void*);
-extern "C" void Graphics_LoadTaggedLayerResource(void*,unsigned,int,int);
+extern "C" int Graphics_LoadTaggedLayerResource(void*,const void*,unsigned,unsigned);
 
 // Original data: arm9/main @ 0x2107800; symbol: data_02107800.
 // Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
@@ -33,7 +33,7 @@ extern "C" void ARM Graphics_ConfigureMainDisplayAndBackgroundControls(void) {
     Graphics_InitializeCanvasTransferState(&descriptor);
     descriptor.low=0;
     descriptor.high=3;
-    Graphics_LoadTaggedLayerResource(&descriptor,size,0,0);
+    Graphics_LoadTaggedLayerResource(&descriptor,(const void*)(size),0,0);
     if(buf) {
         memset(buf,0,0x1000);
         unsigned char i=0;

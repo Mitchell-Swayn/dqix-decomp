@@ -19,7 +19,7 @@ void Graphics_ClearScreenBuffer(void*,void*);
 void Graphics_CleanAndTransferScreenBuffer(void*,void*);
 void Graphics_SetTextBackgroundScreenSize(void*,unsigned);
 void Graphics_AllocateAndClearConfiguredBuffer(void*,void*);
-int Graphics_LoadTaggedLayerResource(void*,const void*,void*,unsigned);
+int Graphics_LoadTaggedLayerResource(void*,const void*,unsigned,unsigned);
 void Graphics_SetBackgroundColorMode(void*,unsigned);
 int Graphics_InvokeTwoIndexTransferCallback(void*,void*,void*);
 void Graphics_CopyIndexedScreenRectangle(void*,unsigned,unsigned,unsigned,short,short,short,short,unsigned short);
@@ -82,8 +82,8 @@ extern "C" void Graphics_LoadDualScreenCanvasResources(unsigned char* self){
  mainMap=GraphicsLoadDualScreenCanvasResources_UnknownRoleInitializedBytes;subMap=GraphicsLoadDualScreenCanvasResources_UnknownRoleInitializedBytes_Variant2;
  int mainIndex=0,subIndex=0;
  for(int i=0;i<count;i++){
-  if(i==mainMap.v[mainIndex]){Graphics_LoadTaggedLayerResource(self+0x49c,blocks[i],self+0x470,lengths[i]);mainIndex++;}
-  if(i==subMap.v[subIndex]){Graphics_LoadTaggedLayerResource(self+0x4bc,blocks[i],self+0x470,lengths[i]);subIndex++;}
+  if(i==mainMap.v[mainIndex]){Graphics_LoadTaggedLayerResource(self+0x49c,blocks[i],(unsigned)(self+0x470),lengths[i]);mainIndex++;}
+  if(i==subMap.v[subIndex]){Graphics_LoadTaggedLayerResource(self+0x4bc,blocks[i],(unsigned)(self+0x470),lengths[i]);subIndex++;}
  }
  _ZN16BackgroundLoader10RemoveTaskEi(loader,task);
  Graphics_CopyIndexedScreenRectangle(self+0x49c,0,0,0,0,0,32,25,0);

@@ -30,7 +30,7 @@ extern "C" void Graphics_AllocateAndClearConfiguredBuffer(char*,SafeAllocator*);
 extern "C" void Graphics_AllocateScreenDescriptors(unsigned char*,unsigned,SafeAllocator*);
 extern "C" void TextCanvas_InitializeLayoutAndTransferDefaults(unsigned char*);
 extern "C" void DrawSortedSelectorEntries(char*,Sprite*);
-extern "C" int Graphics_LoadTaggedLayerResource(Owner*,const void*,unsigned);
+extern "C" int Graphics_LoadTaggedLayerResource(void*,const void*,unsigned,unsigned);
 extern "C" char* Graphics_GetLoadedScreenDescriptor(char*,unsigned);
 extern "C" void Tilemap_SetWholeMapPalette(Position*,int);
 extern "C" void Graphics_UpdateBoundedSixteenByteEntry(Object*,unsigned,unsigned,unsigned,unsigned short);
@@ -80,7 +80,7 @@ extern "C" bool SkillDetails_AdvanceResourceInitialization(char* self){
  if(B(self,0x64)==0){*(volatile unsigned*)0x4000000=(*(volatile unsigned*)0x4000000&~0x1f00)|0x1200;*(volatile unsigned short*)0x4000050=0;}else{*(volatile unsigned short*)0x4001008=(*(volatile unsigned short*)0x4001008&0x43)|0xf00;*(volatile unsigned short*)0x4001050=0;}++B(self,0x66);complete=0;
  }else if(phase==7){_ZN16BackgroundLoader38ReleaseCompletedBuffersAndRequeueTasksEv(loader);W(self,0x5c)=_ZN16BackgroundLoader13QueueLoadFileEPKcP13SafeAllocator(loader,AdvanceTenEntryResourceLoading_PathDataAniBgSknPac,0);++B(self,0x66);complete=0;
  }else if(phase==8){if(_ZN16BackgroundLoader13GetTaskStatusEi(loader,W(self,0x5c))){char* out;void* data;unsigned size;_ZN16BackgroundLoader17GetLoadedFileByIDEiPPvPj(loader,W(self,0x5c),&data,&size);char* block;int count=ResourceFile_CountActiveStrideRecords((Record*)data);auxiliary=(int)P(self,0);_ZN13SafeAllocator5ResetEv((char*)auxiliary+20);unsigned length;
- for(int i=0;i<count;++i){block=ResourceFile_GetPayloadByIndex((char*)data,i,&out,&length);if(!block)continue;if(i==0){unsigned canvas[56];TextCanvas_InitializeLayoutAndTransferDefaults((unsigned char*)canvas);H(canvas,0xb4)=10;H(canvas,0xb6)=11;H(canvas,0xa8)=32;H(canvas,0xaa)=24;P(canvas,8)=block+16;DrawSortedSelectorEntries(self,(Sprite*)canvas);}((int(*)(Owner*,const void*,unsigned,unsigned))Graphics_LoadTaggedLayerResource)((Owner*)(self+0x28),block,(unsigned)((char*)auxiliary+20),length);}
+ for(int i=0;i<count;++i){block=ResourceFile_GetPayloadByIndex((char*)data,i,&out,&length);if(!block)continue;if(i==0){unsigned canvas[56];TextCanvas_InitializeLayoutAndTransferDefaults((unsigned char*)canvas);H(canvas,0xb4)=10;H(canvas,0xb6)=11;H(canvas,0xa8)=32;H(canvas,0xaa)=24;P(canvas,8)=block+16;DrawSortedSelectorEntries(self,(Sprite*)canvas);}Graphics_LoadTaggedLayerResource((Owner*)(self+0x28),block,(unsigned)((char*)auxiliary+20),length);}
  _ZN16BackgroundLoader10RemoveTaskEi(loader,W(self,0x5c));W(self,0x5c)=-1;char* entry=Graphics_GetLoadedScreenDescriptor(self+0x28,0);if(entry)Tilemap_SetWholeMapPalette((Position*)entry,*(signed char*)(self+0x67));Graphics_UpdateBoundedSixteenByteEntry((Object*)(self+0x28),0,0,0,0xffff);Graphics_CleanAndTransferScreenBuffer(self+0x28,0);B(self,0x65)=1;B(self,0x66)=0;if(B(self,0x64)==0)Graphics_LoadPartyPalettePreset(4,-1);else Graphics_LoadPartyPalettePreset(3,-1);}complete=0;
  }return complete;
 }

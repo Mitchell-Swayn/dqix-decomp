@@ -13,7 +13,7 @@ char* ResourceFile_GetPayloadByIndex(char*,int,char**,unsigned*);int ResourceFil
 char* Graphics_GetLoadedScreenDescriptor(char*,unsigned);
 void Graphics_AllocateScreenDescriptors(unsigned char*,unsigned,SafeAllocator*);
 void Graphics_InitializeCanvasTransferState(char*);void Graphics_CleanAndTransferScreenBuffer(char*,void*);void Graphics_SetTextBackgroundScreenSize(int,unsigned);
-void Graphics_AllocateAndClearConfiguredBuffer(char*,SafeAllocator*);int Graphics_LoadTaggedLayerResource(Owner*,const void*,unsigned);
+void Graphics_AllocateAndClearConfiguredBuffer(char*,SafeAllocator*);int Graphics_LoadTaggedLayerResource(void*,const void*,unsigned,unsigned);
 void Graphics_SetBackgroundColorMode(Owner*,unsigned);int Graphics_InvokeTwoIndexTransferCallback(State*,void*,void*);
 void Tilemap_FillClippedRectangle(TilemapOwner*,unsigned,short,short,short,short,unsigned);
 void TextCanvas_InitializeLayoutAndTransferDefaults(unsigned char*);void TextCanvas_AllocateTilemapAndBindPixels(char*,SafeAllocator*,int,unsigned);
@@ -64,7 +64,7 @@ extern "C" int PollSubCanvasAndTextResourceInitialization(char* p) {
  SafeAllocator* allocator=*(SafeAllocator**)(p+4);char* canvas=*(char**)(p+8);
  for(int i=0;i<count;++i) {
  char* block=ResourceFile_GetPayloadByIndex((char*)file,i,&tag,&size);
- if(block){((int(*)(Owner*,const void*,unsigned,unsigned))Graphics_LoadTaggedLayerResource)((Owner*)canvas,block,(unsigned)allocator,size);canvas=*(char**)(p+8)+32;}
+ if(block){Graphics_LoadTaggedLayerResource((Owner*)canvas,block,(unsigned)allocator,size);canvas=*(char**)(p+8)+32;}
  }
  _ZN16BackgroundLoader10RemoveTaskEi(loader,*(int*)(p+0x64));*(int*)(p+0x64)=-1;
  canvas=*(char**)(p+8);Tilemap_FillClippedRectangle((TilemapOwner*)canvas,0,0,0,32,25,0);Graphics_CleanAndTransferScreenBuffer(canvas,0);

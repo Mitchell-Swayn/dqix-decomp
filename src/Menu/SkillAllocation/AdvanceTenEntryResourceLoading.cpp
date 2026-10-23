@@ -11,7 +11,7 @@ extern "C" char* ResourceFile_GetPayloadByIndex(char*,int,char**,unsigned*);
 extern "C" int ResourceFile_CountActiveStrideRecords(Record*);
 extern "C" void TextCanvas_InitializeLayoutAndTransferDefaults(unsigned char*);
 extern "C" void DrawSortedSelectorEntries(char*,unsigned char*);
-extern "C" int Graphics_LoadTaggedLayerResource(Owner*,const void*,unsigned);
+extern "C" int Graphics_LoadTaggedLayerResource(void*,const void*,unsigned,unsigned);
 extern "C" char* Graphics_GetLoadedScreenDescriptor(char*,unsigned);
 extern "C" void Tilemap_SetWholeMapPalette(Position*,int);
 extern "C" void Graphics_UpdateBoundedSixteenByteEntry(Object*,unsigned,unsigned,unsigned,unsigned short);
@@ -32,7 +32,7 @@ extern "C" void AdvanceTenEntryResourceLoading(char* p){
  ResourceFile_CountActiveStrideRecords((Record*)file);
  char* block=ResourceFile_GetPayloadByIndex((char*)file,0,&scratch,&length);
  if(block){TextCanvas_InitializeLayoutAndTransferDefaults(canvas);*(char**)(canvas+8)=block+16;*(short*)(canvas+0xb4)=10;*(short*)(canvas+0xb6)=11;*(short*)(canvas+0xa8)=32;*(short*)(canvas+0xaa)=24;DrawSortedSelectorEntries(p,canvas);
- ((int(*)(Owner*,const void*,unsigned,unsigned))Graphics_LoadTaggedLayerResource)((Owner*)(p+0x28),block,0,length);
+ Graphics_LoadTaggedLayerResource((Owner*)(p+0x28),block,0,length);
  }
  _ZN16BackgroundLoader10RemoveTaskEi(loader,*(int*)(p+0x5c));*(int*)(p+0x5c)=-1;
  char* entry=Graphics_GetLoadedScreenDescriptor(p+0x28,0);if(entry)Tilemap_SetWholeMapPalette((Position*)entry,p[0x67]);

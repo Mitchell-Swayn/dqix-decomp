@@ -22,7 +22,7 @@ void _ZN16BackgroundLoader14RemoveAllLocksEv(void*);
 void _ZN16BackgroundLoader17GetLoadedFileByIDEiPPvPj(void*,int,void**,unsigned*);
 int ResourceFile_CountActiveStrideRecords(void*);
 char* ResourceFile_GetPayloadByIndex(char*,int,char**,unsigned*);
-int Graphics_LoadTaggedLayerResource(void*,const void*,unsigned,...);
+int Graphics_LoadTaggedLayerResource(void*,const void*,unsigned,unsigned);
 void _ZN16BackgroundLoader10RemoveTaskEi(void*,int);
 void Graphics_CopyIndexedScreenRectangle(void*,unsigned,unsigned,unsigned,short,short,short,short,unsigned short);
 void Graphics_CleanAndTransferScreenBuffer(char*,void*);

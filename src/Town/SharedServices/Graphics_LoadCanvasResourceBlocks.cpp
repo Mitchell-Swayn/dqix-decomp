@@ -13,7 +13,7 @@ extern "C" void Graphics_InitializeCanvasTransferState(char*);
 extern "C" void Graphics_CleanAndTransferScreenBuffer(char*,void*);
 extern "C" void Graphics_SetTextBackgroundScreenSize(int,unsigned);
 extern "C" void Graphics_AllocateAndClearConfiguredBuffer(char*,SafeAllocator*);
-extern "C" int Graphics_LoadTaggedLayerResource(Owner*,const void*,unsigned,unsigned);
+extern "C" int Graphics_LoadTaggedLayerResource(void*,const void*,unsigned,unsigned);
 extern "C" void Graphics_SetBackgroundColorMode(Owner*,unsigned);
 extern "C" int Graphics_InvokeTwoIndexTransferCallback(State*,void*,void*);
 extern "C" void Graphics_CopyIndexedScreenRectangle(IndexedRecordView*,unsigned,unsigned,unsigned,short,short,short,short,unsigned short);

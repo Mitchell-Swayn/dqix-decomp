@@ -15,7 +15,7 @@ int ResourceFile_CountActiveStrideRecords(Record*);
 void Graphics_CleanAndTransferScreenBuffer(char*,void*);
 void Graphics_SetTextBackgroundScreenSize(int,unsigned);
 void Graphics_AllocateAndClearConfiguredBuffer(char*,SafeAllocator*);
-int Graphics_LoadTaggedLayerResource(Owner*,const void*,unsigned);
+int Graphics_LoadTaggedLayerResource(void*,const void*,unsigned,unsigned);
 void Graphics_SetBackgroundColorMode(Owner*,unsigned);
 int Graphics_InvokeTwoIndexTransferCallback(State*,void*,void*);
 void Tilemap_FillClippedRectangle(TilemapOwner*,unsigned,short,short,short,short,unsigned);
@@ -61,7 +61,7 @@ extern "C" void AdvanceTwoCanvasAndLayoutResourceLoads(char* p) {
  _ZN16BackgroundLoader17GetLoadedFileByIDEiPPvPj(loader,*(int*)(p+0x1c),&file,&length);
  int count=ResourceFile_CountActiveStrideRecords((Record*)file);
  for(int i=0;i<count;++i)blocks[i]=ResourceFile_GetPayloadByIndex((char*)file,i,&tag,&sizes[i]);
- for(int i=0;i<count;++i)if(blocks[i])((int(*)(Owner*,const void*,unsigned,unsigned))Graphics_LoadTaggedLayerResource)((Owner*)*(char**)(p+0x40),blocks[i],*(unsigned*)(p+0xd0),sizes[i]);
+ for(int i=0;i<count;++i)if(blocks[i])Graphics_LoadTaggedLayerResource((Owner*)*(char**)(p+0x40),blocks[i],*(unsigned*)(p+0xd0),sizes[i]);
  _ZN16BackgroundLoader10RemoveTaskEi(loader,*(int*)(p+0x1c));*(int*)(p+0x1c)=-1;
  char* canvas=*(char**)(p+0x40);
  for(int i=0;i<2;++i) {Tilemap_FillClippedRectangle((TilemapOwner*)canvas,0,0,0,32,25,0);Graphics_CleanAndTransferScreenBuffer(canvas,0);canvas+=32;}

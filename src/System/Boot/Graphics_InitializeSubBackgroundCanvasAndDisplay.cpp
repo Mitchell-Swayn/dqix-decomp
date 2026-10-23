@@ -16,7 +16,7 @@ extern "C" void _ZN16BackgroundLoader16RemoveLockGlobalEv();
 extern "C" void* _Z18LoadFileIntoMemoryPKcPvPj(const char*,void*,unsigned*);
 extern "C" int ResourceFile_CountActiveStrideRecords(Record*);
 extern "C" char* ResourceFile_GetPayloadByIndex(char*,int,char**,unsigned*);
-extern "C" int Graphics_LoadTaggedLayerResource(Owner*,const void*,SafeAllocator*,unsigned);
+extern "C" int Graphics_LoadTaggedLayerResource(void*,const void*,unsigned,unsigned);
 extern "C" void Graphics_CopyIndexedScreenRectangle(IndexedRecordView*,unsigned,unsigned,unsigned,short,short,short,short,unsigned short);
 extern "C" void Graphics_CleanAndTransferScreenBuffer(char*,void*);
 // Original data: arm9/main @ 0x211e33c; symbol: data_0211e33c.
@@ -48,7 +48,7 @@ extern "C" void Graphics_InitializeSubBackgroundCanvasAndDisplay(char* p) {
  int count=ResourceFile_CountActiveStrideRecords((Record*)Main_UnknownRoleZeroInitializedStorage_Variant6);
  for(int i=0;i<count;i++) {
   char* data=ResourceFile_GetPayloadByIndex(Main_UnknownRoleZeroInitializedStorage_Variant6,i,&block,&blockSize);
-  if(data)Graphics_LoadTaggedLayerResource((Owner*)(p+0x4bc),data,(SafeAllocator*)(p+0x470),blockSize);
+  if(data)Graphics_LoadTaggedLayerResource((Owner*)(p+0x4bc),data,(unsigned)((SafeAllocator*)(p+0x470)),blockSize);
  }
  Graphics_CopyIndexedScreenRectangle((IndexedRecordView*)(p+0x4bc),0,0,0,0,0,32,24,0xffff);
  Graphics_CleanAndTransferScreenBuffer(p+0x4bc,0);

@@ -18,7 +18,7 @@ void Graphics_ClearScreenBuffer(void*,void*);
 void Graphics_CleanAndTransferScreenBuffer(void*,void*);
 void Graphics_SetTextBackgroundScreenSize(void*,unsigned);
 void Graphics_AllocateAndClearConfiguredBuffer(void*,void*);
-int Graphics_LoadTaggedLayerResource(void*,const void*,void*,unsigned);
+int Graphics_LoadTaggedLayerResource(void*,const void*,unsigned,unsigned);
 void Graphics_SetBackgroundColorMode(void*,unsigned);
 int Graphics_InvokeTwoIndexTransferCallback(void*,void*,void*);
 void Graphics_CopyIndexedScreenRectangle(void*,unsigned,unsigned,unsigned,short,short,short,short,unsigned short);
@@ -53,7 +53,7 @@ extern "C" void Graphics_LoadLocalizedCanvasResources(unsigned char* self){
  Graphics_AllocateScreenDescriptors(&temp,5,resource+20);
  for(int i=1;i<blocks;i++){
   char* part=ResourceFile_GetPayloadByIndex((char*)file,i,&name,&blocksize);
-  if(part)Graphics_LoadTaggedLayerResource(&temp,part,resource+20,blocksize);
+  if(part)Graphics_LoadTaggedLayerResource(&temp,part,(unsigned)(resource+20),blocksize);
  }
  _ZN16BackgroundLoader10RemoveTaskEi(loader,*(int*)(self+0x16c));*(int*)(self+0x16c)=-1;
  int lang=GameState_ReadSupportedFirmwareLanguage(game);
@@ -76,7 +76,7 @@ extern "C" void Graphics_LoadLocalizedCanvasResources(unsigned char* self){
   Graphics_InvokeTwoIndexTransferCallback(canvas,0,0);
  }
  char* part=ResourceFile_GetPayloadByIndex((char*)file,0,&name,&blocksize);
- if(part)Graphics_LoadTaggedLayerResource(*(void**)(self+0xc4),part,resource+20,blocksize);
+ if(part)Graphics_LoadTaggedLayerResource(*(void**)(self+0xc4),part,(unsigned)(resource+20),blocksize);
  for(unsigned char i=0;i<2;i++){
   Canvas* canvas=(Canvas*)(*(char**)(self+0xc4)+i*32);
   Graphics_ClearScreenBuffer(canvas,0);Graphics_CleanAndTransferScreenBuffer(canvas,0);

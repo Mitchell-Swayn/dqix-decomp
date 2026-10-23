@@ -27,7 +27,7 @@ extern "C" void Graphics_AllocateAndClearConfiguredBuffer(char*,SafeAllocator*);
 extern "C" int Graphics_InvokeTwoIndexTransferCallback(State*,void*,void*);
 extern "C" int ResourceFile_CountActiveStrideRecords(Record*);
 extern "C" char* ResourceFile_GetPayloadByIndex(char*,int,char**,unsigned*);
-extern "C" int Graphics_LoadTaggedLayerResource(Owner*,const void*,unsigned);
+extern "C" int Graphics_LoadTaggedLayerResource(void*,const void*,unsigned,unsigned);
 extern "C" void Tilemap_FillClippedRectangle(TilemapOwner*,unsigned,short,short,short,short,unsigned);
 extern "C" void Graphics_CleanAndTransferScreenBuffer(char*,void*);
 extern "C" void TextCanvas_AllocateTilemapAndBindPixels(char*,SafeAllocator*,int,unsigned);
@@ -90,7 +90,7 @@ extern "C" void AdvanceHeadingResourceInitialization(unsigned char* p){
  _ZN16BackgroundLoader17GetLoadedFileByIDEiPPvPj(loader,*(int*)(p+0x650),&file,&size);
  int count=ResourceFile_CountActiveStrideRecords((Record*)file);
  for(int i=0;i<count;i++)blocks[i]=ResourceFile_GetPayloadByIndex((char*)file,i,&scratch,&lengths[i]);
- for(int i=0;i<count;i++)if(blocks[i])((int(*)(Owner*,const void*,unsigned,unsigned))Graphics_LoadTaggedLayerResource)((Owner*)(p+0x114),blocks[i],(unsigned)p,lengths[i]);
+ for(int i=0;i<count;i++)if(blocks[i])Graphics_LoadTaggedLayerResource((Owner*)(p+0x114),blocks[i],(unsigned)p,lengths[i]);
  _ZN16BackgroundLoader10RemoveTaskEi(loader,*(int*)(p+0x650));*(int*)(p+0x650)=-1;
  Tilemap_FillClippedRectangle((TilemapOwner*)(p+0xf4),0,0,0,32,25,0);Graphics_CleanAndTransferScreenBuffer((char*)p+0xf4,0);
  Tilemap_FillClippedRectangle((TilemapOwner*)(p+0x114),0,0,0,32,25,0);Graphics_CleanAndTransferScreenBuffer((char*)p+0x114,0);

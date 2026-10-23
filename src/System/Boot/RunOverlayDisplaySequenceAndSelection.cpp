@@ -35,7 +35,7 @@ unsigned _ZN16BackgroundLoader13QueueLoadFileEPKcP13SafeAllocator(void*,const ch
 unsigned _ZN16BackgroundLoader13GetTaskStatusEi(void*,unsigned);void _ZN16BackgroundLoader17GetLoadedFileByIDEiPPvPj(void*,int,void**,unsigned*);
 void _ZN16BackgroundLoader10RemoveTaskEi(void*,int);void _ZN16BackgroundLoader14RemoveAllLocksEv(void*);
 int ResourceFile_CountActiveStrideRecords(Record*);char* ResourceFile_GetPayloadByIndex(char*,int,char**,unsigned*);
-int Graphics_LoadTaggedLayerResource(Owner*,const void*,unsigned);
+int Graphics_LoadTaggedLayerResource(void*,const void*,unsigned,unsigned);
 void Tilemap_FillClippedRectangle(TilemapOwner*,unsigned,short,short,short,short,unsigned);
 void Graphics_CleanAndTransferScreenBuffer(char*,void*);
 void TextCanvas_AllocateTilemapAndBindPixels(char*,SafeAllocator*,int,unsigned);
@@ -148,7 +148,7 @@ extern "C" void RunOverlayDisplaySequenceAndSelection(char* p){
  for(int i=0;i<count;i++){
  char* block=ResourceFile_GetPayloadByIndex((char*)f.file,i,&f.blockName,&f.blockSize);
  // Target call supplies the archive length as a fourth argument. The current callee ignores it.
- if(block)((int(*)(Owner*,const void*,SafeAllocator*,unsigned))Graphics_LoadTaggedLayerResource)((Owner*)(p+0x370),block,(SafeAllocator*)(p+0x470),f.blockSize);
+ if(block)Graphics_LoadTaggedLayerResource((Owner*)(p+0x370),block,(unsigned)((SafeAllocator*)(p+0x470)),f.blockSize);
  }
  _ZN16BackgroundLoader10RemoveTaskEi(loader,task);
  Tilemap_FillClippedRectangle((TilemapOwner*)(p+0x370),0,0,0,32,25,0);Graphics_CleanAndTransferScreenBuffer(p+0x370,0);
