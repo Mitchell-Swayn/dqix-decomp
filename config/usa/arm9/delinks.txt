@@ -20269,3 +20269,7 @@ src/Text/Text_InitializeSharedContextAndResources.cpp:
 src/Script/PartyAppearance_ApplyEquipmentPalette.cpp:
     complete
     .text start:0x20730e0 end:0x2073240
+
+src/Script/Script_RegisterTriggerGroupWithinProgressRange.cpp:
+    complete
+    .text start:0x205f9cc end:0x205facc
