@@ -4772,3 +4772,7 @@ src/Field/Multiplayer/PartySync_QueueSkillLinePointTotals.cpp:
 src/Field/Scene/FieldMonster_FindUnusedSlotInGroup.cpp:
     complete
     .text start:0x021a20c0 end:0x021a2128
+
+src/Field/Scene/FieldMonster_CloneModelsForTrackedZoneOnHost.cpp:
+    complete
+    .text start:0x0219e180 end:0x0219e234
