@@ -8420,3 +8420,7 @@ src/Online/Settings/WfcUtility_DestroyTaskQueues.cpp:
 src/Online/Security/WirelessSetup_CopyOrTransformRequestPayload.cpp:
     complete
     .text start:0x0221dfd4 end:0x0221e028
+
+src/Online/Security/WirelessSetup_ShutdownWirelessAndFreeWorkspace.cpp:
+    complete
+    .text start:0x0221fb38 end:0x0221fb90
