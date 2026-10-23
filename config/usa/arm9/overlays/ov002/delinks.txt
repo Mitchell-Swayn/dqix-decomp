@@ -815,3 +815,7 @@ src/Menu/Party/PartyMenu_AppendTacticsChoices.cpp:
 src/Menu/Party/PartyMenu_PopPanelGroupAndRestoreSelection.cpp:
     complete
     .text start:0x02156e90 end:0x02156ff0
+
+src/Menu/Party/PartyMenu_ApplyMultiplayerActionResponses.cpp:
+    complete
+    .text start:0x0216c2d8 end:0x0216c42c
