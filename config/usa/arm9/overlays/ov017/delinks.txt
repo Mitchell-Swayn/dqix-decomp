@@ -4848,3 +4848,7 @@ src/Field/Scene/Field_EnsureTrackedZoneAndQueueMonsterGroupLoad.cpp:
 src/Field/Scene/Field_BeginContainerLootPresentation.cpp:
     complete
     .text start:0x021bf7ac end:0x021bf9a0
+
+src/Field/Scene/Field_ApplyCharacterTemplateToMember.cpp:
+    complete
+    .text start:0x02191508 end:0x02191764
