@@ -8672,3 +8672,7 @@ src/Online/Sockets/Network_DeliverUdpDatagramToSocket.cpp:
 src/Online/Sockets/Network_ValidateAndDispatchIpv4Packet.cpp:
     complete
     .text start:0x02202e44 end:0x02203008
+
+src/Online/Services/DlcDownload_CopyStringGroupWithZeroPadding.cpp:
+    complete
+    .text start:0x0223e38c end:0x0223e3d4
