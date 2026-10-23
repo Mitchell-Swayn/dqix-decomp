@@ -1372,3 +1372,7 @@ src/Combat/Combat_RestoreDeferredActorMotionAndTurns.cpp:
 src/Combat/Scene/BattleScene_FinishLoadingActionScript.cpp:
     complete
     .text start:0x021dc694 end:0x021dc880
+
+src/Combat/Presentation/BattleScene_FinishActionPlayback.cpp:
+    complete
+    .text start:0x21db7f8 end:0x21db8d8
