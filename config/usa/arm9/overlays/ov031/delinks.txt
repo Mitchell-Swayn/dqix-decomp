@@ -8480,3 +8480,7 @@ src/Online/Settings/WfcUtility_UpdateAccessPointSelectionHighlight.cpp:
 src/Online/Settings/WfcUtility_RestoreAccessPointListPalette.cpp:
     complete
     .text start:0x0222cb5c end:0x0222cb8c
+
+src/Online/Security/WirelessSetup_ProcessConfigurationReply.cpp:
+    complete
+    .text start:0x0221d52c end:0x0221d604
