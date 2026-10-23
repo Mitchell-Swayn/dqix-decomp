@@ -20261,3 +20261,7 @@ src/GameState/PartyRoster_RemoveCharacterBySlotIdAndCompact.cpp:
 src/Graphics/Bounds3D_ContainsPointWithInverseYaw.cpp:
     complete
     .text start:0x20321e0 end:0x20322c0
+
+src/Text/Text_InitializeSharedContextAndResources.cpp:
+    complete
+    .text start:0x20421c4 end:0x20424ac
