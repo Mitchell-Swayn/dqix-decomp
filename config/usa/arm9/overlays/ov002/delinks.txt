@@ -799,3 +799,7 @@ src/Menu/Party/PartyMenu_AnimateSelectionCursor.cpp:
 src/Menu/Party/PartyMenu_DrawCanvasesAndSprites.cpp:
     complete
     .text start:0x2155dbc end:0x2155f4c
+
+src/Menu/Party/PartyMenu_AppendSelectableMemberNames.cpp:
+    complete
+    .text start:0x0215c348 end:0x0215c474
