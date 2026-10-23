@@ -3303,3 +3303,7 @@ src/Menu/ItemDetails/ItemDetail_ConsumeCategoryBackground.cpp:
 src/Online/Content/OnlineContent_DispatchDownloadedParts.cpp:
     complete
     .text start:0x21f5b9c end:0x21f5cd8
+
+src/Combat/Results/PartyGrowthPanel_AdvanceExperienceReveal.cpp:
+    complete
+    .text start:0x021d8f2c end:0x021d90d0
