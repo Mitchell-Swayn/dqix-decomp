@@ -8460,3 +8460,7 @@ src/Online/Settings/WfcUtility_StopSetupTaskAndQueueDisplayExit.cpp:
 src/Online/Settings/WfcUtility_FormatEditedPrimaryDnsAddress.cpp:
     complete
     .text start:0x02235ff4 end:0x02236038
+
+src/Online/Settings/WfcUtility_CreateSpriteGroupFromCellTemplate.cpp:
+    complete
+    .text start:0x0223be70 end:0x0223beb8
