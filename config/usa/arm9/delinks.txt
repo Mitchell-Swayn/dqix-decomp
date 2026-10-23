@@ -20257,3 +20257,7 @@ src/Script/Script_MatchLinkedActorNameWithKanaFolding.cpp:
 src/GameState/PartyRoster_RemoveCharacterBySlotIdAndCompact.cpp:
     complete
     .text start:0x02086a04 end:0x02086aec
+
+src/Graphics/Bounds3D_ContainsPointWithInverseYaw.cpp:
+    complete
+    .text start:0x20321e0 end:0x20322c0
