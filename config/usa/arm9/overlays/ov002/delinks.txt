@@ -855,3 +855,7 @@ src/Menu/Party/PartyMenu_UpdateMemberPaletteSelection.cpp:
 src/Menu/Party/PartyMenu_ExecuteExplicitCasterAction.cpp:
     complete
     .text start:0x021594e8 end:0x02159774
+
+src/Menu/Party/PartyMenu_UpdateBulkInventoryOwnerSelection.cpp:
+    complete
+    .text start:0x021644a8 end:0x02164744
