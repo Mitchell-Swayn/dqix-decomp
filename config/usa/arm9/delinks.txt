@@ -20329,3 +20329,11 @@ src/Graphics/TextCanvas_FillRectangleInRowMajorTiles.cpp:
 src/Script/Script_SelectChoiceRangeForContext.cpp:
     complete
     .text start:0x209bb6c end:0x209bc84
+
+src/Graphics/TextCanvas_FillRectangleInPartitionedTiles.cpp:
+    complete
+    .text start:0x20b1b54 end:0x20b1d48
+
+src/Graphics/TextCanvas_FillRectangleWithinTile.cpp:
+    complete
+    .text start:0x20b11c8 end:0x20b1300
