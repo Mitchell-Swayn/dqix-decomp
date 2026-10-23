@@ -24,7 +24,7 @@ extern "C" unsigned MenuBindSharedTextCanvas_UnknownRoleZeroInitializedStorage[]
 extern "C" unsigned char ItemDetailDispatchDisplayState_UnknownRoleZeroInitializedStorage[];
 struct Bits {unsigned char a:1,b:1,rest:6;};
 // Original: arm9/ov023 @ 0x021DC134; symbol: func_ov023_021dc134; size: 0x220.
-extern "C" void Resource_InitializeSharedRecordState(char* self,unsigned short id,int mode) {
+extern "C" void Resource_InitializeSharedRecordState(char* self,int id,int mode) {
  int zero=0;
  MenuBindSharedTextCanvas_UnknownRoleZeroInitializedStorage[1]=zero;
  _ZN13SafeAllocator21ResetAllocatorPointerEv(self);
@@ -55,7 +55,7 @@ extern "C" void Resource_InitializeSharedRecordState(char* self,unsigned short i
  *(int*)(self+0x758)=0;
  *(int*)(self+0x75c)=0;
  *(unsigned short*)(self+0x770)=id;
- *(unsigned short*)(self+0x772)=id;
+ *(short*)(self+0x772)=id;
  *(unsigned short*)(self+0x774)=0;
  self[0x776]=0;
  self[0x777]=0;

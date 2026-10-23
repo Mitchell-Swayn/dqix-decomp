@@ -2,7 +2,7 @@
 #include "Memory/SafeAllocator.h"
 ARM
 extern "C" {
-void ItemDetail_AllocateDisplayResources(void*, SafeAllocator*);
+void ItemDetail_AllocateDisplayResources(char*, SafeAllocator*);
 void Ov023_SetObjectFlagAndGlobalValue(void*, int);
 void Menu_ResetLayout(void*);
 void Graphics_InitializeCanvasTransferState(void*);
@@ -46,7 +46,7 @@ extern "C" void KrakPot_AllocateSceneResources(unsigned char* self, SafeAllocato
     data = allocator->Allocate(0x80);
     A(0x1284)->CreateTypeA(data, 0x80);
     A(0x1284)->Reset();
-    ItemDetail_AllocateDisplayResources(self + 0x2e4 + 0x800, A(0x1280));
+    ItemDetail_AllocateDisplayResources((char*)self + 0x2e4 + 0x800, A(0x1280));
     Ov023_SetObjectFlagAndGlobalValue(self + 0x2e4 + 0x800, mode);
 
     for (unsigned char i = 0; i < 6; ++i) {

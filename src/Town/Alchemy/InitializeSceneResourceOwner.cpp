@@ -7,7 +7,7 @@ void _ZN8Object3D10InitializeEv(void*);
 void Graphics_InitializeSpriteResourceBuffers(unsigned char*);
 void ResourceLoader_InitializePresentationOwner(unsigned char*);
 void KrakPot_InitializeItemPreviewSprite(unsigned char*);
-void Resource_InitializeSharedRecordState(char*,unsigned short,int);
+void Resource_InitializeSharedRecordState(char*,int,int);
 }
 // Original: arm9/ov006 @ 0x02154614; symbol: func_ov006_02154614; size: 0x188.
 // Clears scene resource ownership and initializes embedded models and allocators.
@@ -34,7 +34,7 @@ extern "C" void InitializeSceneResourceOwner(unsigned char* self) {
  *(unsigned*)(self+480)=0;
  *(unsigned*)(self+4740)=0;
  *(unsigned*)(self+4736)=0;
- ((void(*)(char*,int,int))Resource_InitializeSharedRecordState)((char*)self+0xae4,-1,1);
+ Resource_InitializeSharedRecordState((char*)self+0xae4,-1,1);
  *(unsigned short*)(self+0x1258)|=0x210;
  Graphics_InitializeSpriteResourceBuffers(self+0x1e4);
  _ZN8Object3D10InitializeEv(self+568);
