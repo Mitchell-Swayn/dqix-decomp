@@ -4860,3 +4860,7 @@ src/Field/Scene/Field_DrawOverlayWindowsAndInteractionIndicators.cpp:
 src/Field/Scene/Field_UpdateActionShortcutDisplayInput.cpp:
     complete
     .text start:0x02199f08 end:0x0219a188
+
+src/Field/Scene/Field_RequestRecoveryZoneTransition.cpp:
+    complete
+    .text start:0x0219ff58 end:0x021a01b4
