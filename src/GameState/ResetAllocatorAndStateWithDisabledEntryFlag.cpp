@@ -11,7 +11,7 @@ struct State {
     unsigned char a,b,c,flags,kind,d,e,f;
 };
 // Original: arm9/main @ 0x02092AA4; symbol: func_02092aa4; size: 0x90.
-extern "C" void ResetAllocatorAndStateWithDisabledEntryFlag(State* p,unsigned char kind) {
+extern "C" void ResetAllocatorAndStateWithDisabledEntryFlag(State* p,int kind) {
     p->allocator.ResetAllocatorPointer();
     ResourceStringLoader_Reset((char*)p+0x14);
     p->id=-1; p->code=-1; p->value=0;
