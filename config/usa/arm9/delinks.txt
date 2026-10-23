@@ -20241,3 +20241,11 @@ src/Script/Quest_LoadOrdersForCurrentScenario.cpp:
 src/Script/ScriptRecordTable_FindEntryBySignedKey.cpp:
     complete
     .text start:0x209a004 end:0x209a088
+
+src/Graphics/TextCanvas_FillStridedCharacterRows.cpp:
+    complete
+    .text start:0x20b1938 end:0x20b19b8
+
+src/Script/Script_SetMatchingNodeVectorAndScalarMode.cpp:
+    complete
+    .text start:0x206c614 end:0x206c6f4
