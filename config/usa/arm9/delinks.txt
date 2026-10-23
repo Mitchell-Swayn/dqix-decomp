@@ -20265,3 +20265,7 @@ src/Graphics/Bounds3D_ContainsPointWithInverseYaw.cpp:
 src/Text/Text_InitializeSharedContextAndResources.cpp:
     complete
     .text start:0x20421c4 end:0x20424ac
+
+src/Script/PartyAppearance_ApplyEquipmentPalette.cpp:
+    complete
+    .text start:0x20730e0 end:0x2073240
