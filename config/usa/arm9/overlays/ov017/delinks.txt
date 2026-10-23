@@ -4780,3 +4780,7 @@ src/Field/Scene/FieldMonster_CloneModelsForTrackedZoneOnHost.cpp:
 src/Field/Events/ZoneEncounterLoader_DispatchLoadPhase.cpp:
     complete
     .text start:0x021b4710 end:0x021b4760
+
+src/Field/Events/ZoneEncounterLoader_LoadReferencedMonsterOverrides.cpp:
+    complete
+    .text start:0x021b5458 end:0x021b5648
