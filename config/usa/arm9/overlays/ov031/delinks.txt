@@ -8468,3 +8468,7 @@ src/Online/Settings/WfcUtility_CreateSpriteGroupFromCellTemplate.cpp:
 src/Online/Settings/WfcUtility_ReleaseOamSprite.cpp:
     complete
     .text start:0x0223da58 end:0x0223daa4
+
+src/Online/Settings/WfcUtility_GenerateAndStorePersistentIdentifier.cpp:
+    complete
+    .text start:0x0221c1c4 end:0x0221c208
