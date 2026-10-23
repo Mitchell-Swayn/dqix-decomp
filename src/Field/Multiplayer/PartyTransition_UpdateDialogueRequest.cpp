@@ -5,7 +5,7 @@ ARM
 struct Object;struct State;
 extern "C" {
 void GameObject_DisableMovementInput(Object*,int);
-void* GameState_GetFieldOrbitCamera(void*);
+void* GameState_GetFieldOrbitCamera(GameState*);
 void Camera_SetFollowControlFlags(int,unsigned char);
 void Camera_ClearFollowControlFlags(unsigned char*,unsigned char);
 int Filesystem_FreeCachedTableIfAllocationNeedsSpace(unsigned);
@@ -16,7 +16,7 @@ void Memory_SafeAllocatorCreateTypeAWith800ByteAllocation(SafeAllocator*,SafeAll
 int GameState_UpdatePartyTransitionDialogue(void*,int);
 void BackgroundLoader_CancelTaskAndDestroyDisplayAllocator(SafeAllocator*);
 void Memory_ReleaseAllocatorAndSignedAllocation(void*);
-void GameObject_RequestMovementInputEnable(void*);
+void GameObject_RequestMovementInputEnable(int);
 extern unsigned char Main_UnknownRoleZeroInitializedStorage_Variant3[];
 extern SafeAllocator* PartyTransitionUpdateDialogueRequest_UnknownRoleZeroInitializedStorage;
 }
@@ -37,5 +37,5 @@ ResetAllocatorAndStateWithDisabledEntryFlag((State*)PartyTransitionUpdateDialogu
 Memory_SafeAllocatorCreateTypeAWith800ByteAllocation(PartyTransitionUpdateDialogueRequest_UnknownRoleZeroInitializedStorage,allocator);++*phase;
 }else if(*phase==1){unsigned elapsed=GameState::GetInstance()->GetTickCount();if(GameState_UpdatePartyTransitionDialogue(PartyTransitionUpdateDialogueRequest_UnknownRoleZeroInitializedStorage,elapsed))++*phase;
 }else if(*phase==2){BackgroundLoader_CancelTaskAndDestroyDisplayAllocator(PartyTransitionUpdateDialogueRequest_UnknownRoleZeroInitializedStorage);++*phase;
-}else if(*phase==3){Memory_ReleaseAllocatorAndSignedAllocation(self);Camera_ClearFollowControlFlags(camera,1);GameObject_RequestMovementInputEnable(protagonist);++*phase;self[1]=1;FileCache_RestoreRomTablesIfSpaceAvailable();}
+}else if(*phase==3){Memory_ReleaseAllocatorAndSignedAllocation(self);Camera_ClearFollowControlFlags(camera,1);GameObject_RequestMovementInputEnable((int)protagonist);++*phase;self[1]=1;FileCache_RestoreRomTablesIfSpaceAvailable();}
 }
