@@ -2996,3 +2996,7 @@ src/Combat/BattleMenu/BattleMenu_RefreshPartySlotMappings.cpp:
 src/Combat/BattleMenu/BattleMenu_UpdateMemberRowPositions.cpp:
     complete
     .text start:0x02174b14 end:0x02174c14
+
+src/Combat/BattleMenu/BattleMenu_RefreshPanelForActiveMode.cpp:
+    complete
+    .text start:0x02177038 end:0x02177184
