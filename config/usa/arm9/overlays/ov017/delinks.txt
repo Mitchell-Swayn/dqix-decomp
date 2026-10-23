@@ -4856,3 +4856,7 @@ src/Field/Scene/Field_ApplyCharacterTemplateToMember.cpp:
 src/Field/Scene/Field_DrawOverlayWindowsAndInteractionIndicators.cpp:
     complete
     .text start:0x021960b8 end:0x02196398
+
+src/Field/Scene/Field_UpdateActionShortcutDisplayInput.cpp:
+    complete
+    .text start:0x02199f08 end:0x0219a188
