@@ -20345,3 +20345,11 @@ src/Graphics/Sprite_UploadImageAsObjTiles.cpp:
 src/GameState/PartyProgress_UpdateTimedMemberRecovery.cpp:
     complete
     .text start:0x0208b0f8 end:0x0208b494
+
+src/Graphics/TextCanvas_BlitGlyphWithinTile.cpp:
+    complete
+    .text start:0x20b1300 end:0x20b1540
+
+src/System/Checksum_UpdateOnesComplement16.cpp:
+    complete
+    .text start:0x20d1d1c end:0x20d1de8
