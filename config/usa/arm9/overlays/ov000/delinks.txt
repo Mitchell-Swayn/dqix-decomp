@@ -3104,3 +3104,7 @@ src/Combat/Turns/BattleHud_ApplyRemotePartySelection.cpp:
 src/Combat/Turns/BattleHud_UpdatePartyCommandInterface.cpp:
     complete
     .text start:0x021735d0 end:0x02173954
+
+src/Combat/Turns/Combat_QueueForcedTargetReaction.cpp:
+    .text start:0x0215a908 end:0x0215ab88
+    complete

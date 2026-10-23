@@ -6,7 +6,7 @@ extern "C" int Combat_FindIndexedMonsterObject(...);
 extern "C" int CombatantState_ActivateLinkedCombatEffect(...);
 extern "C" int GameObject_SetCombatActivationMarker(...);
 extern "C" int _Z17NextRandomBetweenP6Randomii(...);
-extern "C" int Combat_QueueForcedTargetReaction(...);
+extern "C" void Combat_QueueForcedTargetReaction(void*,int);
 extern "C" int Combat_PopulateResultWithCurrentHealthAndMagic(...);
 extern "C" void* memcpy(void*,const void*,unsigned);extern "C" void* memset(void*,int,unsigned);
 
