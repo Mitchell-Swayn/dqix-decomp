@@ -8520,3 +8520,7 @@ src/Online/Settings/WfcUtility_UnmountUtilityArchive.cpp:
 src/Online/Settings/WfcUtility_DestroySpriteGroupPools.cpp:
     complete
     .text start:0x0223b870 end:0x0223b8c4
+
+src/Online/Security/WirelessSetup_ParseReceivedWirelessConfiguration.cpp:
+    complete
+    .text start:0x022206e0 end:0x022208b4
