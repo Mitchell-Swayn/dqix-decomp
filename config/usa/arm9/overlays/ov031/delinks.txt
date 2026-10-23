@@ -8524,3 +8524,7 @@ src/Online/Settings/WfcUtility_DestroySpriteGroupPools.cpp:
 src/Online/Security/WirelessSetup_ParseReceivedWirelessConfiguration.cpp:
     complete
     .text start:0x022206e0 end:0x022208b4
+
+src/Online/Security/Crypto_FinalizeMd5Digest.cpp:
+    complete
+    .text start:0x02221f24 end:0x02221f78
