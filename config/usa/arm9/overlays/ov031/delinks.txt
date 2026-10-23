@@ -8612,3 +8612,7 @@ src/Online/Settings/WfcUtility_CreateObjectTextCanvas.cpp:
 src/Online/Security/WirelessSetup_GenerateRandomTokenValue.cpp:
     complete
     .text start:0x0221e664 end:0x0221e6d4
+
+src/Online/Settings/WfcUtility_HandleProfileResetConfirmation.c:
+    complete
+    .text start:0x02232fe8 end:0x02233154
