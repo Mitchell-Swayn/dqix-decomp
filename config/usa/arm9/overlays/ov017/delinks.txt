@@ -4784,3 +4784,7 @@ src/Field/Events/ZoneEncounterLoader_DispatchLoadPhase.cpp:
 src/Field/Events/ZoneEncounterLoader_LoadReferencedMonsterOverrides.cpp:
     complete
     .text start:0x021b5458 end:0x021b5648
+
+src/Field/Events/ZoneEncounterLoader_LoadBattleGroupsAndQueueMonsterData.cpp:
+    complete
+    .text start:0x021b5070 end:0x021b5250
