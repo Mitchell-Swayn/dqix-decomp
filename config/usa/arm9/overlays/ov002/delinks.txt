@@ -795,3 +795,7 @@ src/Menu/Party/PartyMenu_QueueRemoteActionResultNotification.cpp:
 src/Menu/Party/PartyMenu_AnimateSelectionCursor.cpp:
     complete
     .text start:0x215afb8 end:0x215b0a8
+
+src/Menu/Party/PartyMenu_DrawCanvasesAndSprites.cpp:
+    complete
+    .text start:0x2155dbc end:0x2155f4c

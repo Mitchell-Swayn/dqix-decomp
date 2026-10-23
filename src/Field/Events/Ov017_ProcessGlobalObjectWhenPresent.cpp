@@ -6,8 +6,8 @@ ARM
 // Observed span: 4 bytes; not a proven logical object extent.
 // Full values and references: docs/data-symbols/ov017.md.
 extern "C" unsigned char FieldMenuUpdatePartyMenuOverlay_UnknownRoleZeroInitializedStorage[];
-extern "C" void PartyMenu_DrawCanvasesAndSprites(void);
+extern "C" void PartyMenu_DrawCanvasesAndSprites(char*);
 // Original: arm9/ov017 @ 0x021A5934; symbol: func_ov017_021a5934; size: 0x20.
 extern "C" void Ov017_ProcessGlobalObjectWhenPresent(void) {
-    if (*(void **)FieldMenuUpdatePartyMenuOverlay_UnknownRoleZeroInitializedStorage != 0) PartyMenu_DrawCanvasesAndSprites();
+    if (*(void **)FieldMenuUpdatePartyMenuOverlay_UnknownRoleZeroInitializedStorage != 0) PartyMenu_DrawCanvasesAndSprites(*(char**)FieldMenuUpdatePartyMenuOverlay_UnknownRoleZeroInitializedStorage);
 }
