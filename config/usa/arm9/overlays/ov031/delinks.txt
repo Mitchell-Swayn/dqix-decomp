@@ -8496,3 +8496,7 @@ src/Online/Security/WirelessSetup_SendNegotiationRequest.cpp:
 src/Online/Security/WirelessSetup_SendConfigurationRequest.cpp:
     complete
     .text start:0x0221de00 end:0x0221dedc
+
+src/Online/Security/WirelessSetup_ValidateCapabilityMessage.cpp:
+    complete
+    .text start:0x02220418 end:0x022204ec
