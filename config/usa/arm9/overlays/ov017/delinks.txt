@@ -4880,3 +4880,7 @@ src/Field/Scene/Field_RemovePartyMemberAndEquipment.cpp:
 src/Field/Scene/Field_RefreshObjectFloorContactDescriptor.cpp:
     complete
     .text start:0x02193dc4 end:0x02194140
+
+src/Field/Scene/Field_UpdateAlternatePartyModels.cpp:
+    complete
+    .text start:0x021bdc34 end:0x021be09c
