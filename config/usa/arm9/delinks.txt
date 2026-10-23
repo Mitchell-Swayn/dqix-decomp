@@ -20293,3 +20293,7 @@ src/Script/Script_SetMatchingNodeOptionByte.cpp:
 src/Graphics/TextCanvas_PrepareRenderAndTransferText.cpp:
     complete
     .text start:0x204c980 end:0x204cb20
+
+src/Graphics/Text/TextCanvas_RenderResolvedDisplayLabel.cpp:
+    complete
+    .text start:0x208166c end:0x2081818
