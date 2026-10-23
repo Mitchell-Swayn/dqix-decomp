@@ -4800,3 +4800,7 @@ src/Field/Scene/Field_ConfigureCameraFollowControlForMapKind.cpp:
 src/Field/Scene/Field_AdvancePeerJoinCommand.cpp:
     complete
     .text start:0x021aef0c end:0x021aef80
+
+src/Field/Scene/Field_ApplyDirtyCombatantAppearances.cpp:
+    complete
+    .text start:0x02191cc0 end:0x02191e5c
