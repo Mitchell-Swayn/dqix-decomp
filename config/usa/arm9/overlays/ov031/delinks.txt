@@ -8504,3 +8504,7 @@ src/Online/Security/WirelessSetup_ValidateCapabilityMessage.cpp:
 src/Online/Settings/WfcUtility_DestroyBottomButtonBar.cpp:
     complete
     .text start:0x022231f0 end:0x02223268
+
+src/Online/Settings/WfcUtility_LoadBackgroundHighlightResources.cpp:
+    complete
+    .text start:0x0222390c end:0x02223984
