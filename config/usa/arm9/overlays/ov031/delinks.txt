@@ -8668,3 +8668,7 @@ src/Online/Sockets/Network_ExecuteSocketEndpointSetup.cpp:
 src/Online/Sockets/Network_DeliverUdpDatagramToSocket.cpp:
     complete
     .text start:0x0220296c end:0x02202b78
+
+src/Online/Sockets/Network_ValidateAndDispatchIpv4Packet.cpp:
+    complete
+    .text start:0x02202e44 end:0x02203008
