@@ -4844,3 +4844,7 @@ src/Field/Scene/Field_LoadWindowCoffinShadowAndAnimationResources.cpp:
 src/Field/Scene/Field_EnsureTrackedZoneAndQueueMonsterGroupLoad.cpp:
     complete
     .text start:0x0219dc90 end:0x0219de70
+
+src/Field/Scene/Field_BeginContainerLootPresentation.cpp:
+    complete
+    .text start:0x021bf7ac end:0x021bf9a0
