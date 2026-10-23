@@ -8600,3 +8600,7 @@ src/Online/Settings/WfcUtility_InitializeSpriteGroupPools.cpp:
 src/Online/Settings/WfcUtility_SetSpriteGroupPosition.cpp:
     complete
     .text start:0x0223bbd8 end:0x0223bcc8
+
+src/Online/Settings/WfcUtility_StartScreenBrightnessTransition.cpp:
+    complete
+    .text start:0x0223c078 end:0x0223c150
