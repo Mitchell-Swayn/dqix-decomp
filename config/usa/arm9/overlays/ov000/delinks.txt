@@ -2916,3 +2916,7 @@ src/Combat/Scene/BattleCamera_FrameFormation.cpp:
 src/Combat/Scene/BattleScene_Initialize.cpp:
     complete
     .text start:0x02160140 end:0x021604f0
+
+src/Combat/Hud/BattleHud_DrawScaledStatusBar.cpp:
+    complete
+    .text start:0x21741e0 end:0x21742c8
