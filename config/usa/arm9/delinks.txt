@@ -20281,3 +20281,11 @@ src/UI/Window_DrawTiledFrameBorder.cpp:
 src/World/ZoneState0840_PrepareCharacterResourcesForZoneEntry.cpp:
     complete
     .text start:0x2097ec8 end:0x2098080
+
+src/Script/Script_AppendMatchingNodePlanarBounds.cpp:
+    complete
+    .text start:0x206c4e8 end:0x206c614
+
+src/Script/Script_SetMatchingNodeOptionByte.cpp:
+    complete
+    .text start:0x206cad8 end:0x206cb48
