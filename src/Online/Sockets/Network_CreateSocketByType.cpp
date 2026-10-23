@@ -12,7 +12,7 @@ extern "C" unsigned char NetworkCreateSocketByType_UnknownRoleInitializedBytes_V
 // Observed span: 24 bytes; not a proven logical object extent.
 // Full values and references: docs/data-symbols/ov031.md.
 extern "C" unsigned char NetworkCreateSocketByType_UnknownRoleInitializedBytes[];
-extern "C" void RegisterObjectCallbackAndReturnObject(const void *);
+extern "C" void* RegisterObjectCallbackAndReturnObject(void *);
 // Original: arm9/ov031 @ 0x022071D8; symbol: System_ConfigureCallbackRecordBySelector; size: 0x2C.
 // Selects one of two static callback records by selector and passes the selected record to its handler.
 extern "C" void Network_CreateSocketByType(int unused, int selector) {
