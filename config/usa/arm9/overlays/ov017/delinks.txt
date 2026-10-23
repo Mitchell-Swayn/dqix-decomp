@@ -4816,3 +4816,7 @@ src/Field/Scene/Field_ApplyContainingCameraRegion.cpp:
 src/Field/Scene/Network_ReplyToFieldInteractionRequest.cpp:
     complete
     .text start:0x0219949c end:0x02199578
+
+src/Field/Scene/Field_PrepareContainerLootAndMarkCollected.cpp:
+    complete
+    .text start:0x021b5aec end:0x021b5c88
