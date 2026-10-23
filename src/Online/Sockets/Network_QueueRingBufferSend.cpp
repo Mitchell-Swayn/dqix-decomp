@@ -2,13 +2,13 @@
 ARM
 extern "C" void MI_CpuCopy8(const void*,void*,unsigned);
 extern "C" unsigned Network_SelectUnusedEphemeralPort();
-extern "C" void Network_SendPendingSpansAndUnblockContexts(void*);
-extern "C" char* Network_AllocateSocketCommand(void(*)(void*),void*,unsigned);
-extern "C" int Network_SubmitSendCommand(void*,void*);
+extern "C" int Network_SendPendingSpansAndUnblockContexts(char*);
+extern "C" char* Network_AllocateSocketCommand(unsigned,void*,unsigned);
+extern "C" int Network_SubmitSendCommand(void*,char*);
 // Original: arm9/ov031 @ 0x02206410; symbol: func_ov031_02206410; size: 0x174.
 extern "C" int Network_QueueRingBufferSend(char* self,char* source,int size,int offset,unsigned short port,unsigned address,unsigned flags) {
  char* state=*(char**)(self+0x68);
- char* request=Network_AllocateSocketCommand(Network_SendPendingSpansAndUnblockContexts,*(void**)(state+0x10c),flags);
+ char* request=Network_AllocateSocketCommand((unsigned)&Network_SendPendingSpansAndUnblockContexts,*(void**)(state+0x10c),flags);
  if(!request) return -33;
  if((flags&1) && *(signed char*)(self+0x73)!=1) request[0xd]=3; else request[0xd]=0;
  char* buffer=*(char**)(state+0xfc);
