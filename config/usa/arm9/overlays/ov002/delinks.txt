@@ -835,3 +835,7 @@ src/Menu/Party/PartyMenu_ReleaseControllerResources.cpp:
 src/Menu/Party/PartyMenu_OpenActionTargetAndStatusPanels.cpp:
     complete
     .text start:0x0215ce94 end:0x0215d0e8
+
+src/Menu/Party/PartyMenu_BuildMemberTacticsAndAppearancePanels.cpp:
+    complete
+    .text start:0x0215f6a4 end:0x0215f8b8
