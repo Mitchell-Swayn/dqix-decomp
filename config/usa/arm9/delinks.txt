@@ -20233,3 +20233,11 @@ src/Script/Quest_InsertActiveRecordInIdOrder.cpp:
 src/Script/Script_LoadAndExecuteZoneTriggers.cpp:
     complete
     .text start:0x0206461c end:0x02064704
+
+src/Script/Quest_LoadOrdersForCurrentScenario.cpp:
+    complete
+    .text start:0x2095578 end:0x209562c
+
+src/Script/ScriptRecordTable_FindEntryBySignedKey.cpp:
+    complete
+    .text start:0x209a004 end:0x209a088
