@@ -8,7 +8,7 @@ extern "C" unsigned _ZN16BackgroundLoader21GetDetailedTaskStatusEi(void*,unsigne
 extern "C" void _ZN16BackgroundLoader10RemoveTaskEi(void*,int);
 extern "C" void* GameState_GetSerializedProgressState();
 extern "C" char* Zone3D_GetMainInstance();
-extern "C" void Script_LoadAndExecuteZoneTriggers(void*,void*);
+extern "C" int Script_LoadAndExecuteZoneTriggers(void*,void*);
 extern "C" char Field_LoadAndExecuteCurrentZoneTriggers_TextScenarioTriggerBin[];
 // Original: arm9/ov017 @ 0x021B8C84; symbol: QueueAndCompleteBackgroundReferenceLoad; size: 0x94.
 // Queues referenced background file once, applies successful result, removes completed task and marks state byte.
