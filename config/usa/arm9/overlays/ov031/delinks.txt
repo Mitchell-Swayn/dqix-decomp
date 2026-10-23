@@ -8608,3 +8608,7 @@ src/Online/Settings/WfcUtility_StartScreenBrightnessTransition.cpp:
 src/Online/Settings/WfcUtility_CreateObjectTextCanvas.cpp:
     complete
     .text start:0x0223c458 end:0x0223c534
+
+src/Online/Security/WirelessSetup_GenerateRandomTokenValue.cpp:
+    complete
+    .text start:0x0221e664 end:0x0221e6d4
