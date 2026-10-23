@@ -8324,3 +8324,11 @@ src/Online/Content/ov031/NasAuth_AppendDeviceMetadataFields.cpp:
 src/Online/Services/DlcDownload_CreateAuthenticatedRequest.cpp:
     complete
     .text start:0x0223ede0 end:0x0223f188
+
+src/Online/WifiConnection/WfcUtility_AllocateSpriteGroup.cpp:
+    complete
+    .text start:0x223b8c4 end:0x223ba20
+
+src/Online/WifiConnection/WfcUtility_AllocateObjectCharacterRange.cpp:
+    complete
+    .text start:0x223db7c end:0x223dcf4
