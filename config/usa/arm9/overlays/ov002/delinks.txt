@@ -811,3 +811,7 @@ src/Menu/Party/PartyMenu_AppendActionTargetNames.cpp:
 src/Menu/Party/PartyMenu_AppendTacticsChoices.cpp:
     complete
     .text start:0x0215fbd4 end:0x0215fcc0
+
+src/Menu/Party/PartyMenu_PopPanelGroupAndRestoreSelection.cpp:
+    complete
+    .text start:0x02156e90 end:0x02156ff0
