@@ -2956,3 +2956,7 @@ src/Combat/Scene/BattleCamera_ConfigureRandomPairOrbit.cpp:
 src/Combat/BattleMenu/BattleMenu_OpenAvailableCategoryPanel.cpp:
     complete
     .text start:0x02177e50 end:0x02177f28
+
+src/Combat/BattleMenu/BattleMenu_DrawDecimalSpriteNumber.cpp:
+    complete
+    .text start:0x02181164 end:0x021811f4
