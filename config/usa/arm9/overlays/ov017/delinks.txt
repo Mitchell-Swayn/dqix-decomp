@@ -4788,3 +4788,7 @@ src/Field/Events/ZoneEncounterLoader_LoadReferencedMonsterOverrides.cpp:
 src/Field/Events/ZoneEncounterLoader_LoadBattleGroupsAndQueueMonsterData.cpp:
     complete
     .text start:0x021b5070 end:0x021b5250
+
+src/Field/Scene/Field_ResolveContainerLootSpriteKey.cpp:
+    complete
+    .text start:0x021b5c88 end:0x021b5cf8
