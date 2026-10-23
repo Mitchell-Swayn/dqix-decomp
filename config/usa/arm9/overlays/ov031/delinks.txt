@@ -8536,3 +8536,7 @@ src/Online/Settings/WfcUtility_EncodePersistentIdentifierFields.cpp:
 src/Online/Settings/WfcUtility_CreateAnimatedStatusSprite.cpp:
     complete
     .text start:0x02222b0c end:0x02222bdc
+
+src/Online/Settings/WfcUtility_AnimateAccessPointListScrollUp.cpp:
+    complete
+    .text start:0x0222c71c end:0x0222c7d8
