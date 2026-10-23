@@ -8408,3 +8408,7 @@ src/Online/Settings/WfcUtility_FreeWirelessScanBufferWhenInactive.cpp:
 src/Online/Settings/WfcUtility_DestroySoundContextAndUpdateTask.cpp:
     complete
     .text start:0x0223684c end:0x02236878
+
+src/Online/Settings/WfcUtility_DestroyOamServices.cpp:
+    complete
+    .text start:0x0223da0c end:0x0223da38
