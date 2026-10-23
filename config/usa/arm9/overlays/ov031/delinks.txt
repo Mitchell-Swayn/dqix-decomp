@@ -8396,3 +8396,7 @@ src/Online/Settings/WfcUtility_DestroyAnimatedStatusSprite.cpp:
 src/Online/Settings/WfcUtility_DestroyWirelessRegionIndicator.cpp:
     complete
     .text start:0x02223b1c end:0x02223b60
+
+src/Online/Settings/WfcScrollbar_Destroy.cpp:
+    complete
+    .text start:0x02235194 end:0x022351d0
