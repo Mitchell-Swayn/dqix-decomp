@@ -8560,3 +8560,7 @@ src/Online/Settings/WfcUtility_UpdateSetupTaskStatus.cpp:
 src/Online/Settings/WfcUtility_PromoteAndStorePersistentIdentifier.cpp:
     complete
     .text start:0x0221c208 end:0x0221c258
+
+src/Online/Settings/WfcUtility_SlideBottomButtonBarIn.cpp:
+    complete
+    .text start:0x02222f44 end:0x02222fb0
