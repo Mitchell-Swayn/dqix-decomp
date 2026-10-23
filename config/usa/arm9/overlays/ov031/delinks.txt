@@ -8624,3 +8624,7 @@ src/Online/Settings/WfcUtility_InitializeDisplaysAndRenderServices.c:
 src/Online/Settings/WfcUtility_HandleAccessPointListInput.cpp:
     complete
     .text start:0x0222bb58 end:0x0222bdac
+
+src/Online/Settings/WfcUtility_HandleIpv4EditorInput.cpp:
+    complete
+    .text start:0x0222da60 end:0x0222dd70
