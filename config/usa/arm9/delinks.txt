@@ -20337,3 +20337,7 @@ src/Graphics/TextCanvas_FillRectangleInPartitionedTiles.cpp:
 src/Graphics/TextCanvas_FillRectangleWithinTile.cpp:
     complete
     .text start:0x20b11c8 end:0x20b1300
+
+src/Graphics/Sprite_UploadImageAsObjTiles.cpp:
+    complete
+    .text start:0x2076994 end:0x2076a8c
