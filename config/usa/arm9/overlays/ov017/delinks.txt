@@ -4876,3 +4876,7 @@ src/Field/Scene/FieldMonster_DrawNearestZoneMonstersAndShadows.cpp:
 src/Field/Scene/Field_RemovePartyMemberAndEquipment.cpp:
     complete
     .text start:0x02190264 end:0x021905b8
+
+src/Field/Scene/Field_RefreshObjectFloorContactDescriptor.cpp:
+    complete
+    .text start:0x02193dc4 end:0x02194140
