@@ -4744,3 +4744,15 @@ src/Field/Multiplayer/Combat_ApplyRemoteMemberActionSelection.cpp:
 src/Field/Multiplayer/Combat_ApplyEncounterTransitionSelection.cpp:
     complete
     .text start:0x21cbcc0 end:0x21cbdcc
+
+src/Field/Multiplayer/PartyRecovery_UpdatePresentationRequest.cpp:
+    complete
+    .text start:0x21c2f3c end:0x21c30f8
+
+src/Field/Multiplayer/PartySync_ApplyEncounterResponse.cpp:
+    complete
+    .text start:0x21c5f54 end:0x21c6034
+
+src/Field/Multiplayer/Field_WaitForPartyJoinFinalization.cpp:
+    complete
+    .text start:0x21b08f4 end:0x21b0a7c
