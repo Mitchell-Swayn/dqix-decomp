@@ -3076,3 +3076,7 @@ src/Combat/BattleMenu/BattleMenu_HandleSharedPartyActionInput.cpp:
 src/Combat/BattleMenu/BattleMenu_AdvanceCommandWindowTransition.cpp:
     complete
     .text start:0x02180594 end:0x0218099c
+
+src/Combat/BattleMenu/BattleMenu_AdvancePartyPanelFlashAnimations.cpp:
+    complete
+    .text start:0x02175024 end:0x021750e4
