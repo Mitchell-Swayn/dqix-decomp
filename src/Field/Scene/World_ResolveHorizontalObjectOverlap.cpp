@@ -4,7 +4,7 @@ ARM
 extern "C" Vector3fix Actor_GetRepresentationPositionOrZero(char*);
 extern "C" int _Z8fix32absi(int);
 extern "C" int _ZNK8Object3D9GetRadiusEv(void*);
-extern "C" char* Actor_GetMotionDescriptor(char*);
+extern "C" char* Actor_GetMotionDescriptor(void*);
 extern "C" int GameObject_GetCollisionDisplacementBypassMask(void*);
 extern "C" void _Z24Vector3fixMultiplyScalarPK8Vector3iiPS_(const Vector3fix*,int,Vector3fix*);
 extern "C" void Actor_SetRepresentationPosition(unsigned char*,unsigned,unsigned,unsigned);
