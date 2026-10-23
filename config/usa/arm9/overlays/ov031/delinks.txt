@@ -8636,3 +8636,7 @@ src/Online/Settings/WfcUtility_DrawConnectionErrorDetails.cpp:
 src/Online/WifiConnection/Network_NotifyWirelessEvent.cpp:
     complete
     .text start:0x0220d9c8 end:0x0220da1c
+
+src/Online/WifiConnection/Network_GetAccessPointConnectionError.cpp:
+    complete
+    .text start:0x02214358 end:0x022143a8
