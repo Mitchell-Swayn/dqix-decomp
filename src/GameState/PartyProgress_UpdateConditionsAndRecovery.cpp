@@ -1,10 +1,10 @@
 #include <globaldefs.h>
-extern "C" void PartyProgress_UpdateTimedMemberRecovery(void);
+extern "C" void PartyProgress_UpdateTimedMemberRecovery(void*);
 extern "C" int PartyProgress_ReadRecoveryZoneGate(int);
 extern "C" void UpdateIndexedProgressAndStreakThresholds(void*, int);
 // Original: arm9/main @ 0x0208B088; symbol: func_0208b088; size: 0x70.
 extern "C" int PartyProgress_UpdateConditionsAndRecovery(void* object) {
-    PartyProgress_UpdateTimedMemberRecovery();
+    PartyProgress_UpdateTimedMemberRecovery(object);
     *(unsigned int*)((char*)object+0x20)=(*(unsigned char*)((char*)object+0x9C)==0);
     int value=PartyProgress_ReadRecoveryZoneGate((int)object);
     UpdateIndexedProgressAndStreakThresholds((char*)object+0x04,value);
