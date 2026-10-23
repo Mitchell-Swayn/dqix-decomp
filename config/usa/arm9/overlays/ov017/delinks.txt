@@ -4868,3 +4868,7 @@ src/Field/Scene/Field_RequestRecoveryZoneTransition.cpp:
 src/Field/Scene/FieldMonster_UpdateVisibleGroupsAndCullDistantMonsters.cpp:
     complete
     .text start:0x021a1ad0 end:0x021a1d98
+
+src/Field/Scene/FieldMonster_DrawNearestZoneMonstersAndShadows.cpp:
+    complete
+    .text start:0x021a1d98 end:0x021a205c
