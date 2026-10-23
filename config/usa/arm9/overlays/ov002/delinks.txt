@@ -875,3 +875,7 @@ src/Menu/Party/PartyMenu_UpdateActionShortcutSlotSelection.cpp:
 src/Menu/Party/PartyMenu_UpdateStoredItemSelectionConfirmation.cpp:
     complete
     .text start:0x0216bd34 end:0x0216bfd4
+
+src/Menu/Party/PartyMenu_FormatPartySummaryPanel.cpp:
+    complete
+    .text start:0x0215e644 end:0x0215e900
