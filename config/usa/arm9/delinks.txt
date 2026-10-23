@@ -20249,3 +20249,7 @@ src/Graphics/TextCanvas_FillStridedCharacterRows.cpp:
 src/Script/Script_SetMatchingNodeVectorAndScalarMode.cpp:
     complete
     .text start:0x206c614 end:0x206c6f4
+
+src/Script/Script_MatchLinkedActorNameWithKanaFolding.cpp:
+    complete
+    .text start:0x206483c end:0x2064904
