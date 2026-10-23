@@ -8428,3 +8428,7 @@ src/Online/Security/WirelessSetup_ShutdownWirelessAndFreeWorkspace.cpp:
 src/Online/Security/WirelessSetup_InitializeRequestTokens.cpp:
     complete
     .text start:0x0221d354 end:0x0221d384
+
+src/Online/Security/WirelessSetup_ExtractMessagePayload.cpp:
+    complete
+    .text start:0x022204ec end:0x0222053c
