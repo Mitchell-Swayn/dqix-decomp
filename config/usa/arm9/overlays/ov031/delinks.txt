@@ -8472,3 +8472,7 @@ src/Online/Settings/WfcUtility_ReleaseOamSprite.cpp:
 src/Online/Settings/WfcUtility_GenerateAndStorePersistentIdentifier.cpp:
     complete
     .text start:0x0221c1c4 end:0x0221c208
+
+src/Online/Settings/WfcUtility_UpdateAccessPointSelectionHighlight.cpp:
+    complete
+    .text start:0x0222c8cc end:0x0222c918
