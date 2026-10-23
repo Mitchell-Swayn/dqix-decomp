@@ -3,7 +3,7 @@ ARM
 extern "C" void* _ZN9GameState11GetInstanceEv();
 extern "C" void* GameState_GetIndexList(void*);
 extern "C" int Tavern_AdvanceStoredCharacterActivation(void*,int);
-extern "C" void PartyRoster_RemoveCharacterBySlotIdAndCompact(void*,int);
+extern "C" int PartyRoster_RemoveCharacterBySlotIdAndCompact(void*,int);
 extern "C" unsigned char* GameState_GetSerializedProgressState();
 extern "C" void BitArray_SetIndexedBoolean(void*,unsigned char*,int,int);
 extern "C" void* _ZN9GameState14GetProtagonistEv(void*);
