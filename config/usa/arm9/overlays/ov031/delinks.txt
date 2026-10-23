@@ -8360,3 +8360,23 @@ src/Math/Math_MontgomeryExponentiateHalfwordInteger.cpp:
 src/Online/Services/Http_SkipHeaderValueSpaces.cpp:
     complete
     .text start:0x22405b8 end:0x2240628
+
+src/Online/Security/Ssl_ReceiveAndProcessRecord.cpp:
+    complete
+    .text start:0x02209b58 end:0x02209cf8
+
+src/Online/Security/Ssl_SendApplicationDataBuffers.cpp:
+    complete
+    .text start:0x0220a87c end:0x0220a9b0
+
+src/Online/Security/Ssl_SendRsaClientKeyExchange.cpp:
+    complete
+    .text start:0x0220a184 end:0x0220a444
+
+src/Online/Sockets/Network_ExecuteBlockingSocketReceive.cpp:
+    complete
+    .text start:0x02205d10 end:0x02205e60
+
+src/Online/Sockets/Network_ProcessReceivedArpPacket.cpp:
+    complete
+    .text start:0x0220186c end:0x022019b0

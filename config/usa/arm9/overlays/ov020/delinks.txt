@@ -140,3 +140,7 @@ src/System/Boot/ResourceLiterals/Graphics_InitializeCanvasAndLoadSelectedArchive
 src/System/Boot/ov020/BootScreen_Setup.cpp:
     complete
     .text start:0x0218b5a0 end:0x0218b700
+
+src/System/Boot/__sinit_ov020_0218db90.cpp:
+    complete
+    .init start:0x0218db90 end:0x0218dba8

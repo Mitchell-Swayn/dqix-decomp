@@ -4764,3 +4764,7 @@ src/Field/Scene/Field_RenderSceneFrame.cpp:
 src/Field/Scene/Field_UpdatePartyFormationMovement.cpp:
     complete
     .text start:0x218e674 end:0x218e8c8
+
+src/Field/Multiplayer/PartySync_QueueSkillLinePointTotals.cpp:
+    complete
+    .text start:0x021ccc34 end:0x021ccd10

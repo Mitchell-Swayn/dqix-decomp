@@ -2068,3 +2068,11 @@ src/Event/Cutscenes/ov001/Script_LoadAndInitializeEventBytecode.cpp:
 src/Event/Motion/CutsceneActor_AdvanceHeadingPathCommand.cpp:
     complete
     .text start:0x0215944c end:0x021594ac
+
+src/Event/Motion/Script_QueueCameraTargetFromObjectPosition.cpp:
+    complete
+    .text start:0x0215ded8 end:0x0215dfc4
+
+src/Event/Cutscenes/Event_ResetMessageDisplayAndCompleteScene.cpp:
+    complete
+    .text start:0x02156558 end:0x0215657c

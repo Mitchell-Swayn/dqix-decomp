@@ -20433,3 +20433,7 @@ src/Graphics/TextCanvas_AdvanceDisplayState.cpp:
 src/Combat/AI/BattleAI_SelectActionByWeightProfile.cpp:
     complete
     .text start:0x208a370 end:0x208a4ac
+
+src/UI/TextStream_DecodeGlyphsAndTrackPrefixReferences.cpp:
+    complete
+    .text start:0x02067b28 end:0x02067e58

@@ -1920,3 +1920,11 @@ src/Menu/Quests/QuestMenu_FindMessagePanelById.cpp:
 src/Menu/SharedServices/Menu_GetSelectedGridNode.cpp:
     complete
     .text start:0x2156e68 end:0x2156ed0
+
+src/Menu/SharedServices/Menu_BindExistingWidgetToSelectionGridCell.cpp:
+    complete
+    .text start:0x0216b2c8 end:0x0216b338
+
+src/Menu/SharedServices/Menu_SelectGridEntryAndRefreshCursor.cpp:
+    complete
+    .text start:0x0216b338 end:0x0216b390

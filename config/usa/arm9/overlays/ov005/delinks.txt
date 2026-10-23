@@ -307,3 +307,7 @@ src/Menu/Equipment/EquipmentMenu_UpdateController.cpp:
 src/Menu/Equipment/EquipmentMenu_InstallStagedItemResources.cpp:
     complete
     .text start:0x02155d6c end:0x021562b8
+
+src/Menu/Equipment/EquipmentMenu_SelectTouchedEquipmentSlot.cpp:
+    complete
+    .text start:0x0215690c end:0x02156e1c

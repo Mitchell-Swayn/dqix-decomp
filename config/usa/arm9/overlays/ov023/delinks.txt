@@ -3307,3 +3307,31 @@ src/Online/Content/OnlineContent_DispatchDownloadedParts.cpp:
 src/Combat/Results/PartyGrowthPanel_AdvanceExperienceReveal.cpp:
     complete
     .text start:0x021d8f2c end:0x021d90d0
+
+src/Menu/CharacterCreation/CharacterCreation_DrawSelectionCorners.cpp:
+    complete
+    .text start:0x021dab5c end:0x021dac40
+
+src/Menu/CharacterCreation/CharacterCreation_DrawSelectionSprites.cpp:
+    complete
+    .text start:0x021da770 end:0x021da9b4
+
+src/Menu/Panels/Menu_DrawCanvasAccessorySprite.cpp:
+    complete
+    .text start:0x021e6a90 end:0x021e6b04
+
+src/Menu/ItemDetails/ItemDetail_ConfigureCategoryLayout.cpp:
+    complete
+    .text start:0x021dbd10 end:0x021dbfa8
+
+src/Menu/Panels/MenuNotice_FormatCenteredTitleAndRevealMask.cpp:
+    complete
+    .text start:0x021ed254 end:0x021ed354
+
+src/Menu/RecordsFramework/MenuRecordList_FindFreeSpriteSlotRange.cpp:
+    complete
+    .text start:0x021f6c90 end:0x021f6d14
+
+src/Menu/RecordsFramework/MenuRecordList_ReserveSpriteSlotRange.cpp:
+    complete
+    .text start:0x021f6bec end:0x021f6c3c

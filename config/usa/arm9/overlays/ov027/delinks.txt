@@ -307,3 +307,7 @@ src/Online/DownloadPlay/ov027/MB_DisconnectChild.cpp:
 src/Online/DownloadPlay/MBi_StartParentCore.cpp:
     complete
     .text start:0x021dca40 end:0x021dcc24
+
+src/Online/DownloadPlay/MBi_CommChangeParentStateCallbackOnly.cpp:
+    complete
+    .text start:0x021d8c6c end:0x021d8c94

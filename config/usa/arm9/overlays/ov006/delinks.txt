@@ -651,3 +651,11 @@ src/Town/Alchemy/KrakPot_AllocateSceneResources.cpp:
 src/Town/Alchemy/ov006/KrakPot_UpdateMenuAndDispatchScreen.cpp:
     complete
     .text start:0x02157d7c end:0x02158038
+
+src/Town/Alchemy/KrakPot_PollItemPreviewSpriteLoads.cpp:
+    complete
+    .text start:0x02156fdc end:0x021570b4
+
+src/Town/Alchemy/KrakPot_PollResultItemSpriteLoad.cpp:
+    complete
+    .text start:0x0215fecc end:0x0215ff54

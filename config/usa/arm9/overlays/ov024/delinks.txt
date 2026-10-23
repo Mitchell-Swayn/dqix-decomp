@@ -2090,3 +2090,19 @@ src/Combat/Formulas/Combat_ResolveDescriptorEffectsAndBuildCategoryResult.cpp:
 src/Combat/Turns/Combat_DispatchPostActionEffectHandler.cpp:
     complete
     .text start:0x21e6060 end:0x21e6104
+
+src/Combat/AI/BattleAI_InitializeRankedActionChoices.cpp:
+    complete
+    .text start:0x021f68c8 end:0x021f691c
+
+src/Combat/Formulas/Combat_ApplySleepAndBuildResult.cpp:
+    complete
+    .text start:0x021dbd84 end:0x021dbf18
+
+src/Combat/Formulas/Combat_RaiseTensionOneStageAndQueueResult.cpp:
+    complete
+    .text start:0x021e5ec4 end:0x021e6060
+
+src/Combat/Formulas/Combat_ReviveTargetWithScaledHealthAndBuildResult.cpp:
+    complete
+    .text start:0x021dd278 end:0x021dd534
