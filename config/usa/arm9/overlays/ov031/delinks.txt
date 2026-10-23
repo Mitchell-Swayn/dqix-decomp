@@ -8476,3 +8476,7 @@ src/Online/Settings/WfcUtility_GenerateAndStorePersistentIdentifier.cpp:
 src/Online/Settings/WfcUtility_UpdateAccessPointSelectionHighlight.cpp:
     complete
     .text start:0x0222c8cc end:0x0222c918
+
+src/Online/Settings/WfcUtility_RestoreAccessPointListPalette.cpp:
+    complete
+    .text start:0x0222cb5c end:0x0222cb8c
