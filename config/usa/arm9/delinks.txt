@@ -20277,3 +20277,7 @@ src/Script/Script_RegisterTriggerGroupWithinProgressRange.cpp:
 src/UI/Window_DrawTiledFrameBorder.cpp:
     complete
     .text start:0x20e2110 end:0x20e2310
+
+src/World/ZoneState0840_PrepareCharacterResourcesForZoneEntry.cpp:
+    complete
+    .text start:0x2097ec8 end:0x2098080
