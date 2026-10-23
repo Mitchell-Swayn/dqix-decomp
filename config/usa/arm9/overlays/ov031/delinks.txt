@@ -8392,3 +8392,7 @@ src/Online/Settings/WfcUtility_DestroyDeferredBackgroundTilemap.cpp:
 src/Online/Settings/WfcUtility_DestroyAnimatedStatusSprite.cpp:
     complete
     .text start:0x02222bdc end:0x02222c18
+
+src/Online/Settings/WfcUtility_DestroyWirelessRegionIndicator.cpp:
+    complete
+    .text start:0x02223b1c end:0x02223b60
