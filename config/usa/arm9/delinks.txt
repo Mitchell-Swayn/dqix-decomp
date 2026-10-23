@@ -20317,3 +20317,11 @@ src/GameState/Party_SpawnQueuedMembersIntoFreeSlots.cpp:
 src/Graphics/TextCanvas_DrawGlyphInRowMajorTiles.cpp:
     complete
     .text start:0x20b1540 end:0x20b16d8
+
+src/Graphics/TextCanvas_DrawGlyphInPartitionedTiles.cpp:
+    complete
+    .text start:0x20b16d8 end:0x20b18e8
+
+src/Graphics/TextCanvas_FillRectangleInRowMajorTiles.cpp:
+    complete
+    .text start:0x20b19b8 end:0x20b1b54
