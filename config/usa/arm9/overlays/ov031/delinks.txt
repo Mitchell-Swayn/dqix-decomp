@@ -8404,3 +8404,7 @@ src/Online/Settings/WfcScrollbar_Destroy.cpp:
 src/Online/Settings/WfcUtility_FreeWirelessScanBufferWhenInactive.cpp:
     complete
     .text start:0x022357b4 end:0x022357e8
+
+src/Online/Settings/WfcUtility_DestroySoundContextAndUpdateTask.cpp:
+    complete
+    .text start:0x0223684c end:0x02236878
