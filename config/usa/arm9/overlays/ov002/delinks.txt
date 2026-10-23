@@ -847,3 +847,7 @@ src/Menu/Party/PartyMenu_BuildSkillPointMemberSelection.cpp:
 src/Menu/Party/PartyMenu_UpdateItemCategorySelection.cpp:
     complete
     .text start:0x02162714 end:0x02162964
+
+src/Menu/Party/PartyMenu_UpdateMemberPaletteSelection.cpp:
+    complete
+    .text start:0x0216806c end:0x021682c0
