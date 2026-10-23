@@ -12,7 +12,7 @@ extern "C" void Field_InitializeInteractionCandidate(unsigned char*);
 extern "C" void Field_SelectBetterInteractionCandidate(void*,void*);
 extern "C" bool LinkedQueue_IsEmpty(const int*);
 extern "C" int _Z22fix32ReduceAngle0To2Pii(int);
-extern "C" void BuildRotationVectorFromFixedPointAngle(void*,int,int,int,unsigned char);
+extern "C" int BuildRotationVectorFromFixedPointAngle(void*,int,int,int,unsigned char);
 extern "C" short FieldInteraction_ComputeSignedFacingAngleToTarget(void*,int,void*);
 // Original: arm9/ov017 @ 0x021983E0; symbol: func_ov017_021983e0; size: 0x114.
 // Selects a containing type-five region when the field command queue and leader actions are idle.
