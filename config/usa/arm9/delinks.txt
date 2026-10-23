@@ -20309,3 +20309,11 @@ src/GameState/GameState_AdvanceActorLevelChange.cpp:
 src/GameState/GameState_UpdatePartyTransitionDialogue.cpp:
     complete
     .text start:0x2092bcc end:0x2092cd0
+
+src/GameState/Party_SpawnQueuedMembersIntoFreeSlots.cpp:
+    complete
+    .text start:0x20dcd40 end:0x20dcf7c
+
+src/Graphics/TextCanvas_DrawGlyphInRowMajorTiles.cpp:
+    complete
+    .text start:0x20b1540 end:0x20b16d8
