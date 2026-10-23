@@ -8580,3 +8580,7 @@ src/Online/Settings/WfcUtility_DestroySlidingDialog.cpp:
 src/Online/Settings/WfcUtility_RunTaskQueue.cpp:
     complete
     .text start:0x0223e168 end:0x0223e218
+
+src/Online/Settings/WfcUtility_WriteIdentifierHeaderToSettingsPages.cpp:
+    complete
+    .text start:0x0221aed8 end:0x0221afb4
