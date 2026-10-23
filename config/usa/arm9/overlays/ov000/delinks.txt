@@ -3108,3 +3108,7 @@ src/Combat/Turns/BattleHud_UpdatePartyCommandInterface.cpp:
 src/Combat/Turns/Combat_QueueForcedTargetReaction.cpp:
     .text start:0x0215a908 end:0x0215ab88
     complete
+
+src/Combat/Scene/BattleScene_Destroy.cpp:
+    complete
+    .text start:0x021604f0 end:0x021605d0
