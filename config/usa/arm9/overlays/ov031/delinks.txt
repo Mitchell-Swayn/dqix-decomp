@@ -8484,3 +8484,7 @@ src/Online/Settings/WfcUtility_RestoreAccessPointListPalette.cpp:
 src/Online/Security/WirelessSetup_ProcessConfigurationReply.cpp:
     complete
     .text start:0x0221d52c end:0x0221d604
+
+src/Online/Security/WirelessSetup_ParseLongKeyConfiguration.cpp:
+    complete
+    .text start:0x0221da60 end:0x0221db18
