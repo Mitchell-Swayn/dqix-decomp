@@ -8644,3 +8644,7 @@ src/Online/WifiConnection/Network_GetAccessPointConnectionError.cpp:
 src/Online/WifiConnection/Wireless_PollDownloadSessionStateChange.cpp:
     complete
     .text start:0x0223ab18 end:0x0223ab5c
+
+src/Online/WifiConnection/Network_UpdateDcfSignalHistory.cpp:
+    complete
+    .text start:0x0220f394 end:0x0220f3f4
