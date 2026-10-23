@@ -1900,3 +1900,15 @@ src/Menu/SharedServices/Menu_SaveItemMarketStateAndResumeRequestResult.cpp:
 src/Menu/TreasureMaps/TreasureMapMenu_SetSelectedMapTextArguments.cpp:
     complete
     .text start:0x02164e40 end:0x02164f48
+
+src/Menu/Status/ProfileMenu_ReplaceSelectedProfileFromPendingRecord.cpp:
+    complete
+    .text start:0x216a464 end:0x216a5e8
+
+src/Menu/Titles/TitleMenu_BuildQuickSaveRestartConfirmation.cpp:
+    complete
+    .text start:0x216d1c4 end:0x216d358
+
+src/Menu/Titles/TitleMenu_SelectSecondConfirmationEntry.cpp:
+    complete
+    .text start:0x216e5f4 end:0x216e638
