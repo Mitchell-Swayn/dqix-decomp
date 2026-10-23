@@ -8640,3 +8640,7 @@ src/Online/WifiConnection/Network_NotifyWirelessEvent.cpp:
 src/Online/WifiConnection/Network_GetAccessPointConnectionError.cpp:
     complete
     .text start:0x02214358 end:0x022143a8
+
+src/Online/WifiConnection/Wireless_PollDownloadSessionStateChange.cpp:
+    complete
+    .text start:0x0223ab18 end:0x0223ab5c
