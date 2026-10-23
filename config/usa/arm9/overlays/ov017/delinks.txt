@@ -4824,3 +4824,7 @@ src/Field/Scene/Field_PrepareContainerLootAndMarkCollected.cpp:
 src/Field/Scene/Field_AdvanceOverlayThreePanelTransition.cpp:
     complete
     .text start:0x021bacd8 end:0x021bae80
+
+src/Field/Scene/Field_ResolveContainerOverlapAndSelectInteraction.cpp:
+    complete
+    .text start:0x0218dfd8 end:0x0218e210
