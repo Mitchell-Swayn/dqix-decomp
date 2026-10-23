@@ -3064,3 +3064,7 @@ src/Combat/BattleMenu/BattleMenu_UpdateMemberCommandState.cpp:
 src/Combat/BattleMenu/BattleMenu_InitializeController.cpp:
     complete
     .text start:0x021723a8 end:0x02172720
+
+src/Combat/BattleMenu/BattleMenu_HandlePartyOptionsInput.cpp:
+    complete
+    .text start:0x0217ce24 end:0x0217d324
