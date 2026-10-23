@@ -8656,3 +8656,7 @@ src/Online/WifiConnection/WirelessSettings_LoadAndClassifyIdentifierInitializati
 src/Online/WifiConnection/Network_BuildFreespotScanTargets.cpp:
     complete
     .text start:0x02214600 end:0x02214660
+
+src/Online/WifiConnection/Network_BeginQueueSessionShutdown.cpp:
+    complete
+    .text start:0x0221f190 end:0x0221f1e8
