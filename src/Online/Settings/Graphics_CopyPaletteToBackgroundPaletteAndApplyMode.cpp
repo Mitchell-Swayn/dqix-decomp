@@ -7,9 +7,9 @@ ARM
 // Full values and references: docs/data-symbols/ov031.md.
 extern unsigned char WfcUtilityDestroyDeferredBackgroundTilemap_UnknownRoleZeroInitializedStorage[];
 extern "C" void MIi_CpuCopy16(const void *, volatile void *, int);
-extern "C" void WfcUtility_RequestTaskRemoval(int, int);
+extern "C" void WfcUtility_RequestTaskRemoval(unsigned,void*);
 // Original: arm9/ov031 @ 0x0223508C; symbol: func_ov031_0223508c; size: 0x30.
-extern "C" void Graphics_CopyPaletteToBackgroundPaletteAndApplyMode(int mode) {
+extern "C" void Graphics_CopyPaletteToBackgroundPaletteAndApplyMode(void* mode,void*) {
     MIi_CpuCopy16(*(void **)(WfcUtilityDestroyDeferredBackgroundTilemap_UnknownRoleZeroInitializedStorage + 4), (volatile void *)0x05000000, 0x200);
     WfcUtility_RequestTaskRemoval(1, mode);
 }

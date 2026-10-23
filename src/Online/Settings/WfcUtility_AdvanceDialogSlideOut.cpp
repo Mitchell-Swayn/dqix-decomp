@@ -8,12 +8,12 @@ ARM
 extern "C" unsigned char* WfcUtilityDestroySlidingDialog_UnknownRoleZeroInitializedStorage;
 extern "C" void WfcUtility_GetSpriteGroupPosition(void*,int,unsigned*,int*);
 extern "C" void WfcUtility_SetDialogVerticalPosition(int);
-extern "C" void WfcUtility_SetTaskCallback(void*,void(*)());
-extern "C" void Graphics_AdvanceBrightnessFade();
-extern "C" void WfcUtility_DestroySlidingDialog();
+extern "C" void WfcUtility_SetTaskCallback(void*,void (*)(void*,void*));
+extern "C" void Graphics_AdvanceBrightnessFade(void*,void*);
+extern "C" void WfcUtility_DestroySlidingDialog(void*,void*);
 // Original: arm9/ov031 @ 0x022384F8; symbol: AdvancePackedEntryAndChooseCallback; size: 0x90.
 // Advances packed entry low field by12 and selects callback at threshold192.
-extern "C" void WfcUtility_AdvanceDialogSlideOut(void* object){
+extern "C" void WfcUtility_AdvanceDialogSlideOut(void* object,void*){
  unsigned high;int low;WfcUtility_GetSpriteGroupPosition(*(void**)WfcUtilityDestroySlidingDialog_UnknownRoleZeroInitializedStorage,0,&high,&low);
  low+=12;WfcUtility_SetDialogVerticalPosition(low);if(low<192)return;
  if(WfcUtilityDestroySlidingDialog_UnknownRoleZeroInitializedStorage[0x1e])WfcUtility_SetTaskCallback(object,Graphics_AdvanceBrightnessFade);

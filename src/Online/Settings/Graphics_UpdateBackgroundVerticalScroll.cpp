@@ -17,7 +17,7 @@ extern "C" ScrollState StartMode6ContextCallback_UnknownRoleZeroInitializedStora
 // Full values and references: docs/data-symbols/ov031.md.
 extern "C" volatile unsigned char GraphicsUpdateBackgroundVerticalScroll_UnknownRoleInitializedBytes[];
 // Original: arm9/ov031 @ 0x02230778; symbol: func_ov031_02230778; size: 0x84.
-extern "C" void Graphics_UpdateBackgroundVerticalScroll(){
+extern "C" void Graphics_UpdateBackgroundVerticalScroll(void*,void*){
  if(!StartMode6ContextCallback_UnknownRoleZeroInitializedStorage.dirty[0x44])return;
  int index=FastIntDivide(StartMode6ContextCallback_UnknownRoleZeroInitializedStorage.position,29);
  int scroll=FastIntModulus(StartMode6ContextCallback_UnknownRoleZeroInitializedStorage.position,29)-51;

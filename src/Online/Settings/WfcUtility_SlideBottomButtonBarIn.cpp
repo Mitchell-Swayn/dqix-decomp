@@ -8,11 +8,11 @@ struct BottomButtonBar { void *buttons[2]; void *background; };
 extern "C" BottomButtonBar *WfcUtilityDestroyBottomButtonBar_UnknownRoleZeroInitializedStorage;
 extern "C" void WfcUtility_GetSpriteGroupPosition(void *, int, unsigned *, int *);
 extern "C" void Graphics_SetSharedModeEntriesFromTables(int);
-extern "C" void WfcUtility_SetTaskCallback(void *, void (*)(void *));
-extern "C" void System_AdvanceFourStepCounterAndSetCallback(void *);
+extern "C" void WfcUtility_SetTaskCallback(void*,void (*)(void*,void*));
+extern "C" void System_AdvanceFourStepCounterAndSetCallback(void*,void*);
 // Original: arm9/ov031 @ 0x02222F44; symbol: func_ov031_02222f44; size: 0x6C.
 // Moves the bottom button bar up four pixels, clamps it at 168 and schedules the input delay.
-extern "C" void WfcUtility_SlideBottomButtonBarIn(void *task)
+extern "C" void WfcUtility_SlideBottomButtonBarIn(void* task,void*)
 {
     unsigned x;
     int y;

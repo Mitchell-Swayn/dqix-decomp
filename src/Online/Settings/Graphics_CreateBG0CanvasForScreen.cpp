@@ -29,8 +29,8 @@ extern "C" unsigned GetSubBG0ScreenBase();
 extern "C" unsigned GetMainBG0ScreenBase();
 extern "C" void Graphics_FillScreenBlockTilesWithPalette(unsigned short*,int,int,int,int,int,unsigned,unsigned);
 extern "C" void WfcUtility_ClearTextCanvas(void*,int);
-extern "C" void Graphics_UploadDirtyBgCharacterData(void*);
-extern "C" void* WfcUtility_CreateTaskWithBorrowedContext(int,void(*)(void*),void*,int);
+extern "C" void Graphics_UploadDirtyBgCharacterData(void*,void*);
+extern "C" void* WfcUtility_CreateTaskWithBorrowedContext(unsigned,void (*)(void*,void*),void*,unsigned);
 struct Canvas {unsigned words[6];void* self;void* settings;unsigned a,b;void* pixels;void* task;};
 // Original: arm9/ov031 @ 0x0223C560; symbol: func_ov031_0223c560; size: 0x178.
 extern "C" Canvas* Graphics_CreateBG0CanvasForScreen(int screen,int settings) {

@@ -18,8 +18,8 @@ extern "C" void MIi_CpuCopy32(const void*,void*,unsigned);
 extern "C" void WfcUtility_GetScreenOperationArguments(unsigned*,unsigned*);
 extern "C" void* Network_AllocateAndInitializeSharedWirelessWorkspaces(void*);
 extern "C" void Memory_CopyIndexedStateBlock(unsigned,void*);
-extern "C" void WfcUtility_FinishConnectionAttemptAndScheduleResultTransition();
-extern "C" void WfcUtility_CreateTaskWithBorrowedContext(unsigned,void(*)(),unsigned,unsigned);
+extern "C" void WfcUtility_FinishConnectionAttemptAndScheduleResultTransition(void*,void*);
+extern "C" void* WfcUtility_CreateTaskWithBorrowedContext(unsigned,void (*)(void*,void*),void*,unsigned);
 // Original: arm9/ov031 @ 0x02233B34; symbol: Resource_CreateSharedSelectionAndInstallTimedCallback; size: 0xa0.
 // Builds selection configuration, stores created selection, initializes mode0 and installs120-tick callback.
 extern "C" void Resource_CreateSharedSelectionAndInstallTimedCallback() {

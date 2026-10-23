@@ -6,11 +6,11 @@ ARM
 // Observed span: 12 bytes; not a proven logical object extent.
 // Full values and references: docs/data-symbols/ov031.md.
 extern "C" unsigned WfcUtilityDestroyDeferredBackgroundTilemap_UnknownRoleZeroInitializedStorage;
-extern "C" void WfcUtility_CreateTaskWithBorrowedContext(unsigned, void *, unsigned, unsigned);
-extern "C" void Graphics_CopyPaletteToBackgroundPaletteAndApplyMode(void);
+extern "C" void* WfcUtility_CreateTaskWithBorrowedContext(unsigned,void (*)(void*,void*),void*,unsigned);
+extern "C" void Graphics_CopyPaletteToBackgroundPaletteAndApplyMode(void*,void*);
 // Original: arm9/ov031 @ 0x02235060; symbol: System_StoreValueAndScheduleTimedCallback; size: 0x2C.
 // Stores the input word beside the shared control state, then schedules callback 0x0223508c with delay 0x78.
 extern "C" void System_StoreValueAndScheduleTimedCallback(unsigned value) {
     *(unsigned *)((char *)&WfcUtilityDestroyDeferredBackgroundTilemap_UnknownRoleZeroInitializedStorage + 4) = value;
-    WfcUtility_CreateTaskWithBorrowedContext(1, (void *)Graphics_CopyPaletteToBackgroundPaletteAndApplyMode, 0, 0x78);
+    WfcUtility_CreateTaskWithBorrowedContext(1, Graphics_CopyPaletteToBackgroundPaletteAndApplyMode, 0, 0x78);
 }

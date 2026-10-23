@@ -7,12 +7,12 @@ struct BottomButtonBar { void *buttons[2]; void *background; void *reserved; voi
 // Zero-initialized context pointer; only the observed sprite and task fields are projected.
 extern "C" BottomButtonBar *WfcUtilityDestroyBottomButtonBar_UnknownRoleZeroInitializedStorage;
 namespace ContextStorageAddress { extern "C" BottomButtonBar *WfcUtilityDestroyBottomButtonBar_UnknownRoleZeroInitializedStorage; }
-extern "C" void WfcUtility_RequestTaskRemoval(unsigned, void *);
+extern "C" void WfcUtility_RequestTaskRemoval(unsigned,void*);
 extern "C" void Network_UnlinkNodeAndReleaseRecords(void *);
 extern "C" void WfcUtility_FreeAllocationAndClearPointer(void **);
 // Original: arm9/ov031 @ 0x022231F0; symbol: func_ov031_022231f0; size: 0x78.
 // Removes both tasks, releases the two optional buttons and background sprite, then clears the context.
-extern "C" void WfcUtility_DestroyBottomButtonBar(void *task)
+extern "C" void WfcUtility_DestroyBottomButtonBar(void* task,void*)
 {
     WfcUtility_RequestTaskRemoval(0, task);
     if (WfcUtilityDestroyBottomButtonBar_UnknownRoleZeroInitializedStorage->task)

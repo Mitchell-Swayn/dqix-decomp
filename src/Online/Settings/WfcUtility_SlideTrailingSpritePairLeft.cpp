@@ -7,18 +7,18 @@ struct EntryOwner { unsigned int preceding[2]; PackedEntry* entries; };
 struct Pair { unsigned short x, y; };
 extern "C" void WfcUtility_GetSpriteGroupPosition(EntryOwner*, int, unsigned int*, unsigned int*);
 extern "C" void WfcUtility_SetSpriteGroupPosition(void*, int, unsigned, unsigned);
-extern "C" void WfcUtility_SetTaskCallback(void*, unsigned);
+extern "C" void WfcUtility_SetTaskCallback(void*,void (*)(void*,void*));
 // Original data: arm9/ov031 @ 0x02290D04; symbol: data_ov031_02290d04; shared mode-sprite context.
 extern "C" char* AdvancePackedHighFieldToward152_UnknownRoleZeroInitializedStorage[];
 // Original data: arm9/ov031 @ 0x0224926A; symbol: data_ov031_0224926a; original sprite-coordinate pairs.
 extern "C" Pair WfcUtilityCreateAnimatedHeaderSprites_UnknownRoleInitializedBytes_Variant3[];
 #define GROUPS ((void**)AdvancePackedHighFieldToward152_UnknownRoleZeroInitializedStorage[1])
 #define POSITIONS WfcUtilityCreateAnimatedHeaderSprites_UnknownRoleInitializedBytes_Variant3
-extern "C" void WfcUtility_SlideTrailingSpriteTrioLeft(void*);
+extern "C" void WfcUtility_SlideTrailingSpriteTrioLeft(void*,void*);
 #pragma force_active on
 // Original: arm9/ov031 @ 0x0223701C; symbol: func_ov031_0223701c; size: 0xDC.
 // Moves the trailing mode-sprite group by eight pixels, clamps it at its anchor, and installs the next animation phase.
-extern "C" void WfcUtility_SlideTrailingSpritePairLeft(void* self)
+extern "C" void WfcUtility_SlideTrailingSpritePairLeft(void* self,void*)
 {
     unsigned int x, y;
     WfcUtility_GetSpriteGroupPosition((EntryOwner*)GROUPS[3], 0, &x, &y);
@@ -38,5 +38,5 @@ extern "C" void WfcUtility_SlideTrailingSpritePairLeft(void* self)
     {
         WfcUtility_SetSpriteGroupPosition(GROUPS[i], -1, x, ((Pair*)((unsigned char*)POSITIONS + i * 4))->y);
     } while (++i < 5);
-    WfcUtility_SetTaskCallback(self, (unsigned)WfcUtility_SlideTrailingSpriteTrioLeft);
+    WfcUtility_SetTaskCallback(self, WfcUtility_SlideTrailingSpriteTrioLeft);
 }

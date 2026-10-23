@@ -9,14 +9,14 @@ extern SlidingDialog* WfcUtilityDestroySlidingDialog_UnknownRoleZeroInitializedS
 extern const unsigned short WfcUtilityAdvanceDialogSlideIn_UnknownRoleInitializedBytes[][2];
 void WfcUtility_GetSpriteGroupPosition(void*,int,int*,int*);
 void WfcUtility_SetDialogVerticalPosition(int);
-void WfcUtility_WaitForDialogAutoDismiss();
-void Graphics_SelectModeRectangleAndConfigureSprite();
-void* WfcUtility_CreateTaskWithBorrowedContext(unsigned,void (*)(),void*,unsigned);
+void WfcUtility_WaitForDialogAutoDismiss(void*,void*);
+void Graphics_SelectModeRectangleAndConfigureSprite(void*,void*);
+void* WfcUtility_CreateTaskWithBorrowedContext(unsigned,void (*)(void*,void*),void*,unsigned);
 void WfcUtility_RequestTaskRemoval(unsigned,void*);
 }
 // Original: arm9/ov031 @ 0x02237f2c; symbol: func_ov031_02237f2c; size: 0xd4.
 // Slides the dialog upward by twelve pixels, clamps its destination, and replaces the animation with its input task.
-extern "C" void WfcUtility_AdvanceDialogSlideIn(void* task)
+extern "C" void WfcUtility_AdvanceDialogSlideIn(void* task,void*)
 {
     int x,y;
     WfcUtility_GetSpriteGroupPosition(WfcUtilityDestroySlidingDialog_UnknownRoleZeroInitializedStorage->primary,0,&x,&y);

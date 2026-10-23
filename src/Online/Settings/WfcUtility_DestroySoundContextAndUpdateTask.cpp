@@ -2,7 +2,7 @@
 ARM
 #pragma force_active on
 extern "C" void WfcUtility_FreeAllocationAndClearPointer(void **);
-extern "C" void WfcUtility_RequestTaskRemoval(unsigned, void *);
+extern "C" void WfcUtility_RequestTaskRemoval(unsigned,void*);
 // Original data: arm9/ov031 @ 0x02290D00; symbol: data_ov031_02290d00.
 // Initial value: null; mutable context pointer at runtime.
 // The accessed field offsets are established by the original loads.

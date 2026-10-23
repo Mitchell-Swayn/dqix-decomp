@@ -48,7 +48,7 @@ extern "C" int WfcUtility_IsTouchPressInsideRectangle(unsigned short*);
 #define CHOICE (*(signed char*)(WfcUtilityDestroySlidingDialog_UnknownRoleZeroInitializedStorage+0x1b))
 // Original: arm9/ov031 @ 0x02238000; symbol: func_ov031_02238000; size: 0x15C.
 // Selects a mode-specific rectangle or button default and applies its indexed sprite configuration.
-extern "C" void Graphics_SelectModeRectangleAndConfigureSprite(){
+extern "C" void Graphics_SelectModeRectangleAndConfigureSprite(void*,void*){
 unsigned short rect[4];
 for(int i=0;i<WfcUtilityCreateSlidingDialog_UnknownRoleInitializedBytes_Variant7[MODE];++i){
 WfcUtility_BuildRectangleFromOriginAndSize(WfcUtilitySetDialogVerticalPosition_UnknownRoleInitializedBytes_Variant5[MODE]+WfcUtilitySetDialogVerticalPosition_UnknownRoleInitializedBytes[MODE][i]*2,GraphicsSelectModeRectangleAndConfigureSprite_UnknownRoleInitializedBytes_Variant3[MODE],rect);

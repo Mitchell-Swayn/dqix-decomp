@@ -9,7 +9,7 @@ extern "C" int FastIntModulus(int, int);
 extern "C" unsigned char TextDrawSplitAsciiRow_UnknownRoleZeroInitializedStorage;
 // Original: arm9/ov031 @ 0x0222C870; symbol: Graphics_WriteModuloDerivedValueToDisplayRegisters; size: 0x5C.
 // When shared byte+0x56 is set, computes a masked modulo-derived value, writes display registers 0x04000010 and 0x04000018, then clears the byte.
-extern "C" void Graphics_WriteModuloDerivedValueToDisplayRegisters(void) {
+extern "C" void Graphics_WriteModuloDerivedValueToDisplayRegisters(void*,void*) {
     if (!*(unsigned char*)(*(char**)((char*)&TextDrawSplitAsciiRow_UnknownRoleZeroInitializedStorage + 4) + 0x56)) return;
     int value = FastIntModulus(*(unsigned short*)((char*)&TextDrawSplitAsciiRow_UnknownRoleZeroInitializedStorage + 2), 0x1c) - 0x32;
     unsigned int display = 0x01ff0000 & ((unsigned int)value << 16);

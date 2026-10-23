@@ -10,8 +10,8 @@ extern AnimatedStatusSprite* WfcUtilityDestroyAnimatedStatusSprite_UnknownRoleZe
 extern const unsigned char WfcUtilityCreateAnimatedStatusSprite_UnknownRoleInitializedBytes[];
 void* Memory_AllocateZeroedBlock(unsigned,unsigned);
 void* Resource_ExpandPackedTableToAllocatedBuffer(unsigned,unsigned);
-void* WfcUtility_CreateTaskWithBorrowedContext(unsigned,void*,void*,unsigned);
-void AdvanceAnimatedSpriteFrameAndAttributes();
+void* WfcUtility_CreateTaskWithBorrowedContext(unsigned,void (*)(void*,void*),void*,unsigned);
+void AdvanceAnimatedSpriteFrameAndAttributes(void*,void*);
 }
 // Original: arm9/ov031 @ 0x02222b0c; symbol: func_ov031_02222b0c; size: 0xd0.
 // Allocates the animated status sprite, selects its palette and position, and schedules its frame callback.
@@ -28,7 +28,7 @@ extern "C" void WfcUtility_CreateAnimatedStatusSprite(unsigned kind)
     sprite->attributes=(sprite->attributes&~0xf000)|(palette<<12);
     sprite=WfcUtilityDestroyAnimatedStatusSprite_UnknownRoleZeroInitializedStorage->sprite;
     sprite->position=(sprite->position&0xfe00ff00)|0x00e6008b;
-    WfcUtilityDestroyAnimatedStatusSprite_UnknownRoleZeroInitializedStorage->task=WfcUtility_CreateTaskWithBorrowedContext(1,(void*)AdvanceAnimatedSpriteFrameAndAttributes,0,120);
+    WfcUtilityDestroyAnimatedStatusSprite_UnknownRoleZeroInitializedStorage->task=WfcUtility_CreateTaskWithBorrowedContext(1,AdvanceAnimatedSpriteFrameAndAttributes,0,120);
 }
 
 #pragma force_active reset

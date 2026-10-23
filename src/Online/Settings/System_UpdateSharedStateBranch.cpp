@@ -1,8 +1,8 @@
 #include <globaldefs.h>
 ARM
 extern "C" void WfcUtility_PlaySequenceArchiveEntry(unsigned);
-extern "C" void* WfcUtility_CreateTaskWithBorrowedContext(unsigned, void (*)(), unsigned, unsigned);
-extern "C" void WfcUtility_AnimateAccessPointListScrollUp();
+extern "C" void* WfcUtility_CreateTaskWithBorrowedContext(unsigned,void (*)(void*,void*),void*,unsigned);
+extern "C" void WfcUtility_AnimateAccessPointListScrollUp(void*,void*);
 // Original data: arm9/ov031 @ 0x2290c8c; symbol: data_ov031_02290c8c.
 // Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
 // Initial values: zero-filled at load; mutable at runtime.

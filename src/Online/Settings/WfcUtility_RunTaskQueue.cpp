@@ -1,7 +1,8 @@
 #include <globaldefs.h>
 ARM
+extern "C" { typedef void WfcTaskCallback(void*, void*); }
 #pragma force_active on
-struct TaskNode { TaskNode* previous; TaskNode* next; void (*callback)(TaskNode*,void*); void* context; };
+struct TaskNode { TaskNode* previous; TaskNode* next; WfcTaskCallback* callback; void* context; };
 struct TaskQueue {
     void* freeNodes; void* removedNodes; unsigned padding[2];
     TaskNode activeHead; TaskNode activeEnd; unsigned padding30; int removals; unsigned char enabled; unsigned char padding39[7];

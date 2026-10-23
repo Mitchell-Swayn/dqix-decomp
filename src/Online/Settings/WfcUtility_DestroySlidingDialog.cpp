@@ -18,7 +18,7 @@ void WfcUtility_FreeAllocationAndClearPointer(void*);
 namespace ContextStorageAddress { extern "C" SlidingDialogResources* WfcUtilityDestroySlidingDialog_UnknownRoleZeroInitializedStorage; }
 // Original: arm9/ov031 @ 0x022385e4; symbol: func_ov031_022385e4; size: 0xb0.
 // Disables the main display windows, releases dialog-owned sprite groups and input, and removes its task.
-extern "C" void WfcUtility_DestroySlidingDialog(void* task)
+extern "C" void WfcUtility_DestroySlidingDialog(void* task,void*)
 {
     *(volatile unsigned*)0x04000000 &= ~0xe000u;
     Network_UnlinkNodeAndReleaseRecords(WfcUtilityDestroySlidingDialog_UnknownRoleZeroInitializedStorage->primary);

@@ -7,12 +7,12 @@ ARM
 // Full values and references: docs/data-symbols/ov031.md.
 extern "C" unsigned char *WfcKeyboardDestroy_UnknownRoleZeroInitializedStorage;
 extern "C" void Network_UnlinkNodeAndReleaseRecords(void *object);
-extern "C" void WfcUtility_SetTaskCallback(void *self, unsigned int value);
-extern "C" void WfcKeyboard_SlideCommandButtonsOut(void);
+extern "C" void WfcUtility_SetTaskCallback(void*,void (*)(void*,void*));
+extern "C" void WfcKeyboard_SlideCommandButtonsOut(void*,void*);
 // Original: arm9/ov031 @ 0x02223F6C; symbol: func_ov031_02223f6c; size: 0x34.
 extern "C" void WfcKeyboard_StartSlideOut(void) {
     unsigned char *object = WfcKeyboardDestroy_UnknownRoleZeroInitializedStorage;
     Network_UnlinkNodeAndReleaseRecords(*(void **)(object + 0x114));
     object = WfcKeyboardDestroy_UnknownRoleZeroInitializedStorage;
-    WfcUtility_SetTaskCallback(*(void **)(object + 0x118), (unsigned int)WfcKeyboard_SlideCommandButtonsOut);
+    WfcUtility_SetTaskCallback(*(void **)(object + 0x118), WfcKeyboard_SlideCommandButtonsOut);
 }

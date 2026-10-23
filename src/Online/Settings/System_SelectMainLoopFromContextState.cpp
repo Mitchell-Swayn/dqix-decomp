@@ -7,7 +7,7 @@ extern "C" unsigned WfcUtility_IsScreenTransitionBusy(int screen);
 // Observed span: 4 bytes; not a proven logical object extent.
 // Full values and references: docs/data-symbols/ov031.md.
 extern "C" unsigned char ConfigureThirdContextFromSharedState_UnknownRoleZeroInitializedStorage[];
-extern "C" void WfcUtility_ScheduleConnectionActivation(void);
+extern "C" void* WfcUtility_ScheduleConnectionActivation(void);
 extern "C" void WfcUtility_ContinueConnectionStateMachine(void);
 extern "C" void System_TransitionPendingScreenByTwoSharedFlags(void);
 extern "C" void WfcUtility_SetMainLoopCallback(void (*callback)(void));

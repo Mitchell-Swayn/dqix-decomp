@@ -9,7 +9,7 @@ extern "C" void LoadToMainBG2ScreenData(const void*, unsigned, unsigned);
 // Full values and references: docs/data-symbols/ov031.md.
 extern "C" void* volatile WfcUtilityDestroyDeferredBackgroundTilemap_UnknownRoleZeroInitializedStorage;
 // Original: arm9/ov031 @ 0x02234FA4; symbol: func_ov031_02234fa4; size: 0x54.
-extern "C" void Overlay_LoadPendingBG2ScreenData(void) {
+extern "C" void Overlay_LoadPendingBG2ScreenData(void*,void*) {
     void* buffer = WfcUtilityDestroyDeferredBackgroundTilemap_UnknownRoleZeroInitializedStorage;
     if (*(volatile unsigned char*)((char*)buffer + 0x604) == 0) return;
     _Z25CleanInvalidateCacheRangePKvj((char*)buffer + 4, 0x600);

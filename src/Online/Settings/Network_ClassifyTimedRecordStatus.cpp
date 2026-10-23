@@ -4,7 +4,7 @@ ARM
 extern "C" {
 unsigned long long _Z19GetCurrentTimestampv();
 int RuntimeMemory_CompareByteRanges(const void*,const void*,unsigned);
-void WfcUtility_RequestTaskRemoval(unsigned,unsigned);
+void WfcUtility_RequestTaskRemoval(unsigned,void*);
 // Original data: arm9/ov031 @ 0x2290d0c; symbol: data_ov031_02290d0c.
 // Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
 // Initial values: zero-filled at load; mutable at runtime.
@@ -20,8 +20,8 @@ extern const unsigned char NetworkClassifyTimedRecordStatus_UnknownRoleInitializ
 }
 typedef void (*StatusCallback)(int);
 // Original: arm9/ov031 @ 0x022379F0; symbol: func_ov031_022379f0; size: 0x13C.
-extern "C" void Network_ClassifyTimedRecordStatus(unsigned argument) {
- volatile unsigned saved=argument;
+extern "C" void Network_ClassifyTimedRecordStatus(void* argument,void*) {
+ void* volatile saved=argument;
  unsigned long long now=_Z19GetCurrentTimestampv();
  unsigned char* p=WirelessInitializeUsbAccessPointScan_UnknownRoleZeroInitializedStorage;
  int i,nonzero,zero;

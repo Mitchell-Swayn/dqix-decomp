@@ -8,7 +8,7 @@ ARM
 extern "C" unsigned StartMode6ContextCallback_UnknownRoleZeroInitializedStorage;
 extern "C" void WfcSettingsList_RedrawVisibleRows(void);
 // Original: arm9/ov031 @ 0x02230CD8; symbol: func_ov031_02230cd8; size: 0x54.
-extern "C" void WfcSettingsList_TickOptionFlashTimers(void) {
+extern "C" void WfcSettingsList_TickOptionFlashTimers(void*,void*) {
     int i = 0;
     do {
         unsigned char* count = *(unsigned char**)((char*)&StartMode6ContextCallback_UnknownRoleZeroInitializedStorage + 8) + i + 4;

@@ -10,7 +10,7 @@ extern "C" unsigned char WfcUtilityHandleMultiNoticeResult_UnknownRoleZeroInitia
 extern "C" void WfcUtility_StopSequenceImmediately();
 extern "C" int WfcUtility_PlaySequenceArchiveEntry(unsigned);
 extern "C" void WfcUtility_SetConnectionEventCallback(unsigned);
-extern "C" unsigned WfcUtility_ScheduleConnectionActivation();
+extern "C" void* WfcUtility_ScheduleConnectionActivation();
 extern "C" void System_ConfigureModeAndInstallCallback();
 extern "C" void WfcUtility_SetMainLoopCallback(void(*)());
 // Original: arm9/ov031 @ 0x02229964; symbol: SelectTransitionGroupAndInstallCallback; size: 0x88.

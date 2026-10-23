@@ -7,12 +7,12 @@ ARM
 // Full values and references: docs/data-symbols/ov031.md.
 extern void *WfcUtilityDestroySlidingDialog_UnknownRoleZeroInitializedStorage;
 extern "C" void ColorEffect_ChangeBrightness(unsigned int control, int brightness);
-extern "C" void WfcUtility_SetTaskCallback(void *, unsigned);
-extern "C" void WfcUtility_AdvanceDialogSlideIn(void);
+extern "C" void WfcUtility_SetTaskCallback(void*,void (*)(void*,void*));
+extern "C" void WfcUtility_AdvanceDialogSlideIn(void*,void*);
 // Original: arm9/ov031 @ 0x02237ECC; symbol: func_ov031_02237ecc; size: 0x60.
-extern "C" void GameState_DecrementGlobalBrightnessAndNotifyAtMinusTwelve(void *self) {
+extern "C" void GameState_DecrementGlobalBrightnessAndNotifyAtMinusTwelve(void* self,void*) {
     (*(signed char *)((unsigned char *)WfcUtilityDestroySlidingDialog_UnknownRoleZeroInitializedStorage + 0x1A))--;
     ColorEffect_ChangeBrightness(0x04000050, *(signed char *)((unsigned char *)WfcUtilityDestroySlidingDialog_UnknownRoleZeroInitializedStorage + 0x1A));
     if (*(signed char *)((unsigned char *)WfcUtilityDestroySlidingDialog_UnknownRoleZeroInitializedStorage + 0x1A) > -12) return;
-    WfcUtility_SetTaskCallback(self, (unsigned)WfcUtility_AdvanceDialogSlideIn);
+    WfcUtility_SetTaskCallback(self, WfcUtility_AdvanceDialogSlideIn);
 }

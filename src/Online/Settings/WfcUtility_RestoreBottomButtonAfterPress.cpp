@@ -21,10 +21,10 @@ extern "C" void* WfcUtility_GetSpriteGroupEntry(void*,int);
 extern "C" void WfcUtility_ExpandSpriteCellTemplate(unsigned,unsigned,void*);
 extern "C" void WfcUtility_SetSpriteGroupPriority(void*,int,unsigned);
 extern "C" void Graphics_SetSharedModeEntriesFromTables(char*);
-extern "C" void WfcUtility_RequestTaskRemoval(unsigned,unsigned);
+extern "C" void WfcUtility_RequestTaskRemoval(unsigned,void*);
 // Original: arm9/ov031 @ 0x02223268; symbol: Graphics_CompleteTimedSharedSpriteTransition; size: 0xf0.
 // At tick sixteen expands mode-selected sprites, restores priority and resolves pending completion.
-extern "C" void WfcUtility_RestoreBottomButtonAfterPress(unsigned argument){
+extern "C" void WfcUtility_RestoreBottomButtonAfterPress(void* argument,void*){
 ++*(unsigned short*)(WfcUtilityDestroyBottomButtonBar_UnknownRoleZeroInitializedStorage+20);
  if(*(unsigned short*)(WfcUtilityDestroyBottomButtonBar_UnknownRoleZeroInitializedStorage+20)<16)return;
  int n=WfcUtilityCreateBottomButtonBar_UnknownRoleInitializedBytes_Variant2[(unsigned char)WfcUtilityDestroyBottomButtonBar_UnknownRoleZeroInitializedStorage[23]];

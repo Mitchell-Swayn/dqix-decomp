@@ -8,9 +8,9 @@ ARM
 extern "C" void *LoadAndSelectMainBG1Data_UnknownRoleZeroInitializedStorage;
 extern "C" void _Z25CleanInvalidateCacheRangePKvj(const void *, unsigned);
 extern "C" void LoadToMainBG1ScreenData(const void *, unsigned, unsigned);
-extern "C" void WfcUtility_RequestTaskRemoval(int, void *);
+extern "C" void WfcUtility_RequestTaskRemoval(unsigned,void*);
 // Original: arm9/ov031 @ 0x02223A24; symbol: func_ov031_02223a24; size: 0x40.
-extern "C" void LoadAndSelectMainBG1Data(void *argument) {
+extern "C" void LoadAndSelectMainBG1Data(void* argument,void*) {
     _Z25CleanInvalidateCacheRangePKvj(LoadAndSelectMainBG1Data_UnknownRoleZeroInitializedStorage, 0xc0);
     LoadToMainBG1ScreenData(LoadAndSelectMainBG1Data_UnknownRoleZeroInitializedStorage, 0, 0xc0);
     WfcUtility_RequestTaskRemoval(1, argument);

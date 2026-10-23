@@ -13,7 +13,7 @@ extern "C" unsigned int WfcScrollbarDestroy_UnknownRoleZeroInitializedStorage;
 // Observed span: 4 bytes; not a proven logical object extent.
 // Full values and references: docs/data-symbols/ov031.md.
 extern "C" unsigned char WfcScrollbarGetPartBounds_UnknownRoleInitializedBytes[];
-extern "C" void ApplyContextValueAndStoreByte1A(int);
+extern "C" void ApplyContextValueAndStoreByte1A(unsigned);
 // Original: arm9/ov031 @ 0x0223552C; symbol: ComputeAndApplyContextProgress; size: 0x68.
 // Computes a nonnegative progress value clamped by the indexed limit, applies it, then writes global state byte +0x1D to 3.
 extern "C" void ComputeAndApplyContextProgress(void) {

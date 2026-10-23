@@ -7,13 +7,13 @@ ARM
 // Full values and references: docs/data-symbols/ov031.md.
 extern "C" unsigned char WfcNumberPadDestroy_UnknownRoleZeroInitializedStorage[];
 extern "C" void Network_UnlinkNodeAndReleaseRecords(void *);
-extern "C" void WfcUtility_SetTaskCallback(void *, unsigned);
-extern "C" void WfcNumberPad_SlideCommandButtonsOut(void);
+extern "C" void WfcUtility_SetTaskCallback(void*,void (*)(void*,void*));
+extern "C" void WfcNumberPad_SlideCommandButtonsOut(void*,void*);
 // Original: arm9/ov031 @ 0x02225BF0; symbol: System_InvokeOwnerCallbackAndInstallNextCallback; size: 0x34.
 // Invokes the callback stored at global owner +0x58, then writes the next callback address into the callback slot at +0x5c.
 extern "C" void System_InvokeOwnerCallbackAndInstallNextCallback(void) {
     unsigned char *object = *(unsigned char **)WfcNumberPadDestroy_UnknownRoleZeroInitializedStorage;
     Network_UnlinkNodeAndReleaseRecords(*(void **)(object + 0x58));
     object = *(unsigned char **)WfcNumberPadDestroy_UnknownRoleZeroInitializedStorage;
-    WfcUtility_SetTaskCallback(*(void **)(object + 0x5c), (unsigned)WfcNumberPad_SlideCommandButtonsOut);
+    WfcUtility_SetTaskCallback(*(void **)(object + 0x5c), WfcNumberPad_SlideCommandButtonsOut);
 }

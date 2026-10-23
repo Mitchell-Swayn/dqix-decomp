@@ -1,7 +1,7 @@
 #include <globaldefs.h>
 ARM
 
-extern "C" void WfcUtility_ScheduleConnectionActivation(void);
+extern "C" void* WfcUtility_ScheduleConnectionActivation(void);
 extern "C" void WfcUtility_DisableBottomButtonTouch(void);
 extern "C" void System_QueueTimedCallbackForSharedRecord(unsigned short);
 extern "C" void WfcUtility_SetMainLoopCallback(void (*)(void));

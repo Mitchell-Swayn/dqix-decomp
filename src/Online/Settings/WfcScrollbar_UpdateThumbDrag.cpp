@@ -1,11 +1,11 @@
 #include <globaldefs.h>
 ARM
 
-extern "C" int ApplyContextValueAndStoreByte1A(...);
+extern "C" void ApplyContextValueAndStoreByte1A(unsigned);
 extern "C" int WfcUtility_StopSequenceImmediately(...);
 extern "C" int System_IsActiveInputPointWithinRectangle(...);
 extern "C" int WfcScrollbar_UpdateDragResponseParameters(...);
-extern "C" int ApplyContextValueAndStoreByte1A(...);
+extern "C" void ApplyContextValueAndStoreByte1A(unsigned);
 extern "C" int WfcUtility_StopSequenceImmediately(...);
 extern "C" int System_IsActiveInputPointWithinRectangle(...);
 extern "C" int Input_CopyCurrentOrPreviousTouchPoint(...);

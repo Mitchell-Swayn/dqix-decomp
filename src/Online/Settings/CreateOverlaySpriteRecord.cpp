@@ -6,7 +6,7 @@ extern "C" void WfcUtility_WriteCoordinatePair(unsigned short, unsigned short, v
 extern "C" void* WfcUtility_CreateSpriteGroupFromCellTemplate(unsigned, unsigned, unsigned);
 extern "C" void WfcUtility_SetSpriteGroupPosition(void*, unsigned, unsigned, unsigned);
 extern "C" void WfcUtility_SetSpriteGroupPriority(void*, int, unsigned);
-extern "C" void* WfcUtility_CreateTaskWithBorrowedContext(void*, void*, void*, void*);
+extern "C" void* WfcUtility_CreateTaskWithBorrowedContext(unsigned,void (*)(void*,void*),void*,unsigned);
 // Original data: arm9/ov031 @ 0x22491f0; symbol: data_ov031_022491f0.
 // Original initialized data used by the recorded consumers. Semantic role, logical type and object extent remain unresolved.
 // Initial values: hex 100f0e00.
@@ -19,7 +19,7 @@ extern "C" unsigned char CreateOverlaySpriteRecord_UnknownRoleInitializedBytes[]
 // Observed span: 4 bytes; not a proven logical object extent.
 // Full values and references: docs/data-symbols/ov031.md.
 extern "C" unsigned int WfcScrollbarDestroy_UnknownRoleZeroInitializedStorage;
-extern "C" void WfcScrollbar_UpdateInputState(void);
+extern "C" void WfcScrollbar_UpdateInputState(void*,void*);
 extern "C" void CreateOverlaySpriteRecord(unsigned char a, unsigned char b, unsigned short c, unsigned short d, unsigned int e)
 {
     *(unsigned char**)&WfcScrollbarDestroy_UnknownRoleZeroInitializedStorage = (unsigned char*)Memory_AllocateZeroedBlock(0x20, 4);
@@ -31,5 +31,5 @@ extern "C" void CreateOverlaySpriteRecord(unsigned char a, unsigned char b, unsi
     **(void***)&WfcScrollbarDestroy_UnknownRoleZeroInitializedStorage = created;
     WfcUtility_SetSpriteGroupPosition(**(void***)&WfcScrollbarDestroy_UnknownRoleZeroInitializedStorage, (unsigned)-1, c, d + e);
     WfcUtility_SetSpriteGroupPriority(*(void**)*(unsigned int**)&WfcScrollbarDestroy_UnknownRoleZeroInitializedStorage, -1, 1);
-    *(void**)(*(unsigned char**)&WfcScrollbarDestroy_UnknownRoleZeroInitializedStorage + 0xc) = WfcUtility_CreateTaskWithBorrowedContext((void*)0, (void*)WfcScrollbar_UpdateInputState, 0, (void*)0x80);
+    *(void**)(*(unsigned char**)&WfcScrollbarDestroy_UnknownRoleZeroInitializedStorage + 0xc) = WfcUtility_CreateTaskWithBorrowedContext(0, WfcScrollbar_UpdateInputState, 0, 0x80);
 }

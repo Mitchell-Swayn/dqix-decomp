@@ -6,7 +6,7 @@ struct State {char buffers[0x800];void* handles[2];void* task;};
 // Initial values: zero-filled at load; mutable at runtime.
 // Observed span: 4 bytes; not a proven logical object extent.
 // Full values and references: docs/data-symbols/ov031.md.
-extern "C" {extern State* WfcUtilityDestroyOamServices_UnknownRoleZeroInitializedStorage;void* Memory_AllocateZeroedBlock(unsigned,unsigned);void MIi_CpuClearFast(int,void*,unsigned);void* WfcUtility_CreateSteppedPointerRing(int,void*,int);void* WfcUtility_CreateTaskWithBorrowedContext(int,void(*)(),int,int);void Graphics_FlushAndLoadOAM();}
+extern "C" {extern State* WfcUtilityDestroyOamServices_UnknownRoleZeroInitializedStorage;void* Memory_AllocateZeroedBlock(unsigned,unsigned);void MIi_CpuClearFast(int,void*,unsigned);void* WfcUtility_CreateSteppedPointerRing(int,void*,int);void* WfcUtility_CreateTaskWithBorrowedContext(unsigned,void (*)(void*,void*),void*,unsigned);void Graphics_FlushAndLoadOAM(void*,void*);}
 // Original: arm9/ov031 @ 0x0223D928; symbol: func_ov031_0223d928; size: 0x9C.
 extern "C" void Resource_InitializeTwoBuffersAndCallbackTask(){
 WfcUtilityDestroyOamServices_UnknownRoleZeroInitializedStorage=(State*)Memory_AllocateZeroedBlock(0x80c,4);

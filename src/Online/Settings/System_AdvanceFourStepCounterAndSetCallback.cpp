@@ -6,14 +6,14 @@ struct CounterState {char pad[0x14];unsigned short count;signed char marker;};
 // Observed span: 4 bytes; not a proven logical object extent.
 // Full values and references: docs/data-symbols/ov031.md.
 extern "C" CounterState* WfcUtilityDestroyBottomButtonBar_UnknownRoleZeroInitializedStorage;
-extern "C" void WfcUtility_UpdateBottomButtonTouchSelection();
-extern "C" void WfcUtility_SetTaskCallback(void*,unsigned);
+extern "C" void WfcUtility_UpdateBottomButtonTouchSelection(void*,void*);
+extern "C" void WfcUtility_SetTaskCallback(void*,void (*)(void*,void*));
 // Original: arm9/ov031 @ 0x02222FB0; symbol: func_ov031_02222fb0; size: 0x50.
-extern "C" void System_AdvanceFourStepCounterAndSetCallback(void* object) {
+extern "C" void System_AdvanceFourStepCounterAndSetCallback(void* object,void*) {
  WfcUtilityDestroyBottomButtonBar_UnknownRoleZeroInitializedStorage->marker=-1;
  WfcUtilityDestroyBottomButtonBar_UnknownRoleZeroInitializedStorage->count++;
  if(WfcUtilityDestroyBottomButtonBar_UnknownRoleZeroInitializedStorage->count>=4) {
   WfcUtilityDestroyBottomButtonBar_UnknownRoleZeroInitializedStorage->count=0;
-  WfcUtility_SetTaskCallback(object,(unsigned)&WfcUtility_UpdateBottomButtonTouchSelection);
+  WfcUtility_SetTaskCallback(object,&WfcUtility_UpdateBottomButtonTouchSelection);
  }
 }

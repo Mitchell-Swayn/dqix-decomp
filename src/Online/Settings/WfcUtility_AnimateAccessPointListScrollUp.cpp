@@ -12,12 +12,12 @@ extern AccessPointScroll TextDrawSplitAsciiRow_UnknownRoleZeroInitializedStorage
 void WfcScrollbar_DisableTouchInput(); void Overlay_ClearFourSharedObjects();
 int FastIntModulus(int,int); int FastIntDivide(int,int);
 void Graphics_UpdateFiveVisibleEntriesInTwoPasses(); void Graphics_UpdateFivePairedSpriteRows();
-void WfcScrollbar_SetThumbOffset(int); void WfcScrollbar_EnableTouchInput();
+void WfcScrollbar_SetThumbOffset(unsigned); void WfcScrollbar_EnableTouchInput();
 void WfcUtility_UpdateAccessPointSelectionHighlight(); void WfcUtility_RequestTaskRemoval(unsigned,void*);
 }
 // Original: arm9/ov031 @ 0x0222c71c; symbol: func_ov031_0222c71c; size: 0xbc.
 // Moves the list upward four pixels, refreshes rows at the wrap boundary, and restores touch on alignment.
-extern "C" void WfcUtility_AnimateAccessPointListScrollUp(void* task)
+extern "C" void WfcUtility_AnimateAccessPointListScrollUp(void* task,void*)
 {
     WfcScrollbar_DisableTouchInput();
     Overlay_ClearFourSharedObjects();

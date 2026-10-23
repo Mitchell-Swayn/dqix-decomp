@@ -12,10 +12,10 @@ extern "C" void* WfcUtilityLoadModeBackgroundAndScheduleUpload_TopScreenResource
 // Observed span: 4 bytes; not a proven logical object extent.
 // Full values and references: docs/data-symbols/ov031.md.
 extern "C" void* AdvancePackedHighFieldToward152_UnknownRoleZeroInitializedStorage;
-extern "C" void* Graphics_UploadAndNotifyBackgroundData;
+extern "C" void Graphics_UploadAndNotifyBackgroundData(void*,void*);
 extern "C" void* WfcUtility_LocalizeResourcePath(void*);
 extern "C" unsigned WfcUtility_LoadArchiveResource(void*, unsigned, unsigned);
-extern "C" void WfcUtility_CreateTaskWithBorrowedContext(unsigned, void*, unsigned, unsigned);
+extern "C" void* WfcUtility_CreateTaskWithBorrowedContext(unsigned,void (*)(void*,void*),void*,unsigned);
 // Original: arm9/ov031 @ 0x022373B4; symbol: func_ov031_022373b4; size: 0x48.
 extern "C" void WfcUtility_LoadModeBackgroundAndScheduleUpload(unsigned index) {
     void* resource = WfcUtility_LocalizeResourcePath(WfcUtilityLoadModeBackgroundAndScheduleUpload_TopScreenResourcePathsByUtilityScreen[index]);

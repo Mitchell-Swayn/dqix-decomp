@@ -18,7 +18,7 @@ void WfcUtility_RequestTaskRemoval(unsigned,void*);
 // Original: arm9/ov031 @ 0x02233d84; symbol: func_ov031_02233d84; size: 0xa4.
 // Polls an active connection, records its result, and schedules the result-screen transition.
 // Indicator and sound teardown do not change the connection-mode word at offset 4.
-extern "C" void WfcUtility_FinishConnectionAttemptAndScheduleResultTransition(void* task)
+extern "C" void WfcUtility_FinishConnectionAttemptAndScheduleResultTransition(void* task,void*)
 {
     int result;
     if (InitializeBG2SharedSelectionAndCallback_UnknownRoleZeroInitializedStorage.active) {

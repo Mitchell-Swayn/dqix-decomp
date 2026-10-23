@@ -8,11 +8,11 @@ struct BottomButtonBar { void *buttons[2]; void *background; };
 extern "C" BottomButtonBar *WfcUtilityDestroyBottomButtonBar_UnknownRoleZeroInitializedStorage;
 extern "C" void WfcUtility_GetSpriteGroupPosition(void *, int, unsigned *, int *);
 extern "C" void Graphics_SetSharedModeEntriesFromTables(int);
-extern "C" void WfcUtility_SetTaskCallback(void *, void (*)(void *));
-extern "C" void WfcUtility_DestroyBottomButtonBar(void *);
+extern "C" void WfcUtility_SetTaskCallback(void*,void (*)(void*,void*));
+extern "C" void WfcUtility_DestroyBottomButtonBar(void*,void*);
 // Original: arm9/ov031 @ 0x0222318C; symbol: func_ov031_0222318c; size: 0x64.
 // Moves the bottom button bar down four pixels and schedules destruction when it leaves the screen.
-extern "C" void WfcUtility_SlideBottomButtonBarOut(void *task)
+extern "C" void WfcUtility_SlideBottomButtonBarOut(void* task,void*)
 {
     unsigned x;
     int y;

@@ -9,13 +9,13 @@ extern "C" void *Memory_AllocateZeroedBlock(unsigned int, unsigned int);
 // Observed span: 12 bytes; not a proven logical object extent.
 // Full values and references: docs/data-symbols/ov031.md.
 extern "C" void * volatile WfcUtilityDestroyDeferredBackgroundTilemap_UnknownRoleZeroInitializedStorage;
-extern "C" void Overlay_LoadPendingBG2ScreenData(void);
-extern "C" unsigned int WfcUtility_CreateTaskWithBorrowedContext(unsigned int, void (*)(void), unsigned int, unsigned int);
+extern "C" void Overlay_LoadPendingBG2ScreenData(void*,void*);
+extern "C" void* WfcUtility_CreateTaskWithBorrowedContext(unsigned,void (*)(void*,void*),void*,unsigned);
 // Original: arm9/ov031 @ 0x02234EA8; symbol: func_ov031_02234ea8; size: 0x60.
 extern "C" void WfcUtility_CreateDeferredBackgroundTilemap(void *source) {
     void *resource = Memory_AllocateZeroedBlock(0x608, 4);
     WfcUtilityDestroyDeferredBackgroundTilemap_UnknownRoleZeroInitializedStorage = resource;
     MIi_CpuCopyFast(source, (char *)resource + 4, 0x600);
-    unsigned int handle = WfcUtility_CreateTaskWithBorrowedContext(1, Overlay_LoadPendingBG2ScreenData, 0, 0x78);
-    *(unsigned int *)WfcUtilityDestroyDeferredBackgroundTilemap_UnknownRoleZeroInitializedStorage = handle;
+    void* handle = WfcUtility_CreateTaskWithBorrowedContext(1, Overlay_LoadPendingBG2ScreenData, 0, 0x78);
+    *(void **)WfcUtilityDestroyDeferredBackgroundTilemap_UnknownRoleZeroInitializedStorage = handle;
 }

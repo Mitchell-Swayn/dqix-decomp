@@ -12,12 +12,12 @@ extern "C" void WfcUtility_ConfigureSecondaryControlsForDisplayMode(unsigned);
 extern "C" void ConfigureThreeTierProgressIndicator(void);
 extern "C" void Graphics_InitializePairedSpriteEntryArrays(void);
 extern "C" void* Graphics_CreateBG0CanvasForScreen(int,int);
-extern "C" void* WfcUtility_CreateTaskWithBorrowedContext(void*,void*,void*,void*);
+extern "C" void* WfcUtility_CreateTaskWithBorrowedContext(unsigned,void (*)(void*,void*),void*,unsigned);
 extern "C" void Graphics_UpdateFiveVisibleEntriesInTwoPasses(void);
 extern "C" void WfcUtility_UpdateAccessPointSelectionHighlight(void);
 extern "C" void WfcUtility_SetMainLoopCallback(void (*)(void));
 extern "C" void System_ConfigureDisplayBothEngines(void);
-extern "C" void Graphics_WriteModuloDerivedValueToDisplayRegisters(void);
+extern "C" void Graphics_WriteModuloDerivedValueToDisplayRegisters(void*,void*);
 // Original data: arm9/ov031 @ 0x2290c8c; symbol: data_ov031_02290c8c.
 // Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.
 // Initial values: zero-filled at load; mutable at runtime.
@@ -41,7 +41,7 @@ extern "C" void InitializeOverlayProgressScreen(void)
     ConfigureThreeTierProgressIndicator();
     Graphics_InitializePairedSpriteEntryArrays();
     *(void**)(*(unsigned char**)(TextDrawSplitAsciiRow_UnknownRoleZeroInitializedStorage + 4) + 0xc) = Graphics_CreateBG0CanvasForScreen(0,0);
-    *(void**)(*(unsigned char**)(TextDrawSplitAsciiRow_UnknownRoleZeroInitializedStorage + 4) + 0x3c) = WfcUtility_CreateTaskWithBorrowedContext((void*)1, (void*)Graphics_WriteModuloDerivedValueToDisplayRegisters, 0, (void*)0x6e);
+    *(void**)(*(unsigned char**)(TextDrawSplitAsciiRow_UnknownRoleZeroInitializedStorage + 4) + 0x3c) = WfcUtility_CreateTaskWithBorrowedContext(1, Graphics_WriteModuloDerivedValueToDisplayRegisters, 0, 0x6e);
     Graphics_UpdateFiveVisibleEntriesInTwoPasses();
     WfcUtility_UpdateAccessPointSelectionHighlight();
     WfcUtility_SetMainLoopCallback(System_ConfigureDisplayBothEngines);

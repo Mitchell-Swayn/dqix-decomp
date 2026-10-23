@@ -6,9 +6,9 @@ ARM
 // Observed span: 4 bytes; not a proven logical object extent.
 // Full values and references: docs/data-symbols/ov031.md.
 extern "C" unsigned *WfcUtilityDestroyTaskQueues_UnknownRoleZeroInitializedStorage;
-extern "C" void PushPointerIntoInterruptProtectedRing(void *, unsigned);
+extern "C" void PushPointerIntoInterruptProtectedRing(void *, void*);
 // Original: arm9/ov031 @ 0x0223E2C0; symbol: func_ov031_0223e2c0; size: 0x20.
-extern "C" void WfcUtility_RequestTaskRemoval(unsigned index, unsigned other) {
+extern "C" void WfcUtility_RequestTaskRemoval(unsigned index, void* other) {
     char *entry = (char *)WfcUtilityDestroyTaskQueues_UnknownRoleZeroInitializedStorage + index * 0x40;
     PushPointerIntoInterruptProtectedRing(*(void **)(entry + 4), other);
 }

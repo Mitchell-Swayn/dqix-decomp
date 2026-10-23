@@ -18,7 +18,7 @@ extern "C" unsigned int WM_GetAllowedChannel();
 extern "C" unsigned short ReadSharedRecordSizeForAllowedTypes();
 extern "C" void WfcUtility_ExpandSpriteCellTemplate(unsigned int,unsigned int,void*);
 // Original: arm9/ov031 @ 0x02223B60; symbol: func_ov031_02223b60; size: 0xA8.
-extern "C" void System_ExpandSharedEntriesAndSetHeaderFlags() {
+extern "C" void System_ExpandSharedEntriesAndSetHeaderFlags(void*,void*) {
 volatile unsigned short* ime=(volatile unsigned short*)0x4000208;
 unsigned int offset=0;
 unsigned short saved=*ime;

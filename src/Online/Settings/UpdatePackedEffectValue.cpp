@@ -9,17 +9,17 @@ extern "C" unsigned char WfcNumberPadDestroy_UnknownRoleZeroInitializedStorage[]
 extern "C" void WfcUtility_GetSpriteGroupPosition(void*, int, unsigned*, unsigned*);
 extern "C" int WfcNumberPad_LayoutRow(unsigned, unsigned);
 extern "C" int ConfigureEffectSpriteBySignedIndex();
-extern "C" int WfcUtility_SetTaskCallback(void*, void*);
-extern "C" void InitializeOverlayInputHandlers();
+extern "C" void WfcUtility_SetTaskCallback(void*,void (*)(void*,void*));
+extern "C" void InitializeOverlayInputHandlers(void*,void*);
 // Original: arm9/ov031 @ 0x02225EA0; symbol: func_ov031_02225ea0; size: 0x74.
-extern "C" int UpdatePackedEffectValue(void* object) {
+extern "C" void UpdatePackedEffectValue(void* object,void*) {
     unsigned high, low;
     void* source = *(void**)WfcNumberPadDestroy_UnknownRoleZeroInitializedStorage;
     WfcUtility_GetSpriteGroupPosition(*(void**)((char*)source + 0x40), 0, &high, &low);
     unsigned adjusted = low - 0xc;
     low = adjusted;
-    if ((int)adjusted > 0xaa) return WfcNumberPad_LayoutRow(4, adjusted);
+    if ((int)adjusted > 0xaa) { WfcNumberPad_LayoutRow(4, adjusted); return; }
     WfcNumberPad_LayoutRow(4, 0xaa);
     ConfigureEffectSpriteBySignedIndex();
-    return WfcUtility_SetTaskCallback(object, (void*)InitializeOverlayInputHandlers);
+    WfcUtility_SetTaskCallback(object, InitializeOverlayInputHandlers);
 }

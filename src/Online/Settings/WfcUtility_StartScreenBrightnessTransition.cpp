@@ -8,8 +8,8 @@ extern const unsigned char WfcUtilityStartScreenBrightnessTransition_UnknownRole
 // Original data: arm9/ov031 @ 0x02290d34; symbol: data_ov031_02290d34; initially zero, two transition records.
 extern BrightnessTransition* WfcUtilityIsScreenTransitionBusy_UnknownRoleZeroInitializedStorage;
 void ColorEffect_ConfigureBrightnessAdjust(unsigned,unsigned,int);
-void WfcUtility_AdvanceScreenBrightnessTransition(unsigned,BrightnessTransition*);
-void* WfcUtility_CreateTaskWithBorrowedContext(unsigned,void (*)(unsigned,BrightnessTransition*),BrightnessTransition*,unsigned);
+void WfcUtility_AdvanceScreenBrightnessTransition(void*,void*);
+void* WfcUtility_CreateTaskWithBorrowedContext(unsigned,void (*)(void*,void*),void*,unsigned);
 }
 // Original: arm9/ov031 @ 0x0223c078; symbol: func_ov031_0223c078; size: 0xd8.
 // Starts a brightness task for an idle screen and records its mode, duration, and active flag.

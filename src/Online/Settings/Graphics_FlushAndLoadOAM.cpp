@@ -11,7 +11,7 @@ extern "C" void LoadToSubOAM(const void *, unsigned int, unsigned int);
 extern "C" unsigned char * volatile WfcUtilityDestroyOamServices_UnknownRoleZeroInitializedStorage;
 
 // Original: arm9/ov031 @ 0x0223D9C4; symbol: func_ov031_0223d9c4; size: 0x48.
-extern "C" void Graphics_FlushAndLoadOAM(void) {
+extern "C" void Graphics_FlushAndLoadOAM(void*,void*) {
     _Z25CleanInvalidateCacheRangePKvj(WfcUtilityDestroyOamServices_UnknownRoleZeroInitializedStorage, 0x800);
     LoadToMainOAM(WfcUtilityDestroyOamServices_UnknownRoleZeroInitializedStorage, 0, 0x400);
     LoadToSubOAM(WfcUtilityDestroyOamServices_UnknownRoleZeroInitializedStorage + 0x400, 0, 0x400);

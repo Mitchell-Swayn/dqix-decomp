@@ -8,11 +8,11 @@ ARM
 extern "C" char* AdvancePackedHighFieldToward152_UnknownRoleZeroInitializedStorage[];
 extern "C" void WfcUtility_GetSpriteGroupPosition(void*,int,int*,unsigned*);
 extern "C" void WfcUtility_SetSpriteGroupPosition(void*,int,unsigned,unsigned);
-extern "C" void System_DispatchGlobalEntryZeroAndClearWord14();
-extern "C" void WfcUtility_SetTaskCallback(void*,void(*)());
+extern "C" void System_DispatchGlobalEntryZeroAndClearWord14(void*,void*);
+extern "C" void WfcUtility_SetTaskCallback(void*,void (*)(void*,void*));
 // Original: arm9/ov031 @ 0x02236D98; symbol: Graphics_AdvancePackedXTo176AndInstallNextCallback; size: 0xa0.
 // Moves packed X by8, clamps176 inside range176..256, then installs next handler.
-extern "C" void Graphics_AdvancePackedXTo176AndInstallNextCallback(void* self) {
+extern "C" void Graphics_AdvancePackedXTo176AndInstallNextCallback(void* self,void*) {
  int x;unsigned y;WfcUtility_GetSpriteGroupPosition(*(void**)(AdvancePackedHighFieldToward152_UnknownRoleZeroInitializedStorage[1]+16),0,&x,&y);x+=8;
  if(x<176||x>256){WfcUtility_SetSpriteGroupPosition(*(void**)(AdvancePackedHighFieldToward152_UnknownRoleZeroInitializedStorage[1]+16),-1,x,33);return;}
  x=176;WfcUtility_SetSpriteGroupPosition(*(void**)(AdvancePackedHighFieldToward152_UnknownRoleZeroInitializedStorage[1]+16),-1,x,33);WfcUtility_SetTaskCallback(self,System_DispatchGlobalEntryZeroAndClearWord14);

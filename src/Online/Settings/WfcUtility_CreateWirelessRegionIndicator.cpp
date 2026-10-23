@@ -14,8 +14,8 @@ extern "C" char* WfcUtilityDestroyWirelessRegionIndicator_UnknownRoleZeroInitial
 extern "C" const unsigned char WfcUtilityCreateWirelessRegionIndicator_UnknownRoleInitializedBytes[];
 extern "C" void* Memory_AllocateZeroedBlock(unsigned,unsigned);
 extern "C" void* Resource_ExpandPackedTableToAllocatedBuffer(unsigned,unsigned);
-extern "C" void* WfcUtility_CreateTaskWithBorrowedContext(unsigned,void(*)(),unsigned,unsigned);
-extern "C" void System_ExpandSharedEntriesAndSetHeaderFlags();
+extern "C" void* WfcUtility_CreateTaskWithBorrowedContext(unsigned,void (*)(void*,void*),void*,unsigned);
+extern "C" void System_ExpandSharedEntriesAndSetHeaderFlags(void*,void*);
 // Original: arm9/ov031 @ 0x02223A64; symbol: func_ov031_02223a64; size: 0xB8.
 extern "C" void WfcUtility_CreateWirelessRegionIndicator(int index) {
 if(WfcUtilityDestroyWirelessRegionIndicator_UnknownRoleZeroInitializedStorage) return;

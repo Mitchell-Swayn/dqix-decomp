@@ -18,7 +18,7 @@ extern "C" AnimationState* WfcUtilityDestroyAnimatedStatusSprite_UnknownRoleZero
 extern "C" unsigned char WfcUtilityCreateAnimatedStatusSprite_UnknownRoleInitializedBytes[];
 // Original: arm9/ov031 @ 0x02222C18; symbol: func_ov031_02222c18; size: 0xCC.
 // Advances a forty-tick/eight-frame sprite animation and configures priority, palette and position.
-extern "C" void AdvanceAnimatedSpriteFrameAndAttributes(){
+extern "C" void AdvanceAnimatedSpriteFrameAndAttributes(void*,void*){
  WfcUtilityDestroyAnimatedStatusSprite_UnknownRoleZeroInitializedStorage->frame=FastIntModulus(WfcUtilityDestroyAnimatedStatusSprite_UnknownRoleZeroInitializedStorage->frame+1,40);
  unsigned frame=FastIntDivide(WfcUtilityDestroyAnimatedStatusSprite_UnknownRoleZeroInitializedStorage->frame,5);
  WfcUtility_ExpandSpriteCellTemplate(0,frame+0x47,WfcUtilityDestroyAnimatedStatusSprite_UnknownRoleZeroInitializedStorage->sprite);
