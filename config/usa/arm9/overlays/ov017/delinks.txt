@@ -4832,3 +4832,7 @@ src/Field/Scene/Field_ResolveContainerOverlapAndSelectInteraction.cpp:
 src/Field/Scene/Field_DrawPartyMembersForZone.cpp:
     complete
     .text start:0x0218e8c8 end:0x0218eafc
+
+src/Field/Scene/Field_PopulateActionShortcutLabels.cpp:
+    complete
+    .text start:0x0219a388 end:0x0219a544
