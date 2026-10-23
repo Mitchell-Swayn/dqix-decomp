@@ -8544,3 +8544,7 @@ src/Online/Settings/WfcUtility_AnimateAccessPointListScrollUp.cpp:
 src/Online/Settings/WfcUtility_ReleaseIpv4Editor.cpp:
     complete
     .text start:0x0222dee0 end:0x0222df84
+
+src/Online/Settings/WfcUtility_FinishConnectionAttemptAndScheduleResultTransition.cpp:
+    complete
+    .text start:0x02233d84 end:0x02233e28
