@@ -803,3 +803,7 @@ src/Menu/Party/PartyMenu_DrawCanvasesAndSprites.cpp:
 src/Menu/Party/PartyMenu_AppendSelectableMemberNames.cpp:
     complete
     .text start:0x0215c348 end:0x0215c474
+
+src/Menu/Party/PartyMenu_AppendActionTargetNames.cpp:
+    complete
+    .text start:0x0215d0e8 end:0x0215d214
