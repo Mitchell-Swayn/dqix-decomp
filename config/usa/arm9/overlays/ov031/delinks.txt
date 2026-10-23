@@ -8512,3 +8512,7 @@ src/Online/Settings/WfcUtility_LoadBackgroundHighlightResources.cpp:
 src/Online/Settings/WfcUtility_WaitForDialogAutoDismiss.cpp:
     complete
     .text start:0x0223815c end:0x022381c8
+
+src/Online/Settings/WfcUtility_UnmountUtilityArchive.cpp:
+    complete
+    .text start:0x0223b4d4 end:0x0223b560
