@@ -20417,3 +20417,7 @@ src/System/DMA/MIi_DMACallback.cpp:
 src/Debug/DebugText_WriteTileString.cpp:
     complete
     .text start:0x202ad4c end:0x202ad98
+
+src/Save/SaveData_AdvanceValidatedBankReplication.cpp:
+    complete
+    .text start:0x20ab7a8 end:0x20ab9c0
