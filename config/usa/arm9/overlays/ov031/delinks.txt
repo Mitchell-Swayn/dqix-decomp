@@ -8528,3 +8528,7 @@ src/Online/Security/WirelessSetup_ParseReceivedWirelessConfiguration.cpp:
 src/Online/Security/Crypto_FinalizeMd5Digest.cpp:
     complete
     .text start:0x02221f24 end:0x02221f78
+
+src/Online/Settings/WfcUtility_EncodePersistentIdentifierFields.cpp:
+    complete
+    .text start:0x0221b8e4 end:0x0221b9a4
