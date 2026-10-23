@@ -4756,3 +4756,11 @@ src/Field/Multiplayer/PartySync_ApplyEncounterResponse.cpp:
 src/Field/Multiplayer/Field_WaitForPartyJoinFinalization.cpp:
     complete
     .text start:0x21b08f4 end:0x21b0a7c
+
+src/Field/Scene/Field_RenderSceneFrame.cpp:
+    complete
+    .text start:0x2195a20 end:0x2195bbc
+
+src/Field/Scene/Field_UpdatePartyFormationMovement.cpp:
+    complete
+    .text start:0x218e674 end:0x218e8c8
