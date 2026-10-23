@@ -8572,3 +8572,7 @@ src/Online/Settings/WfcUtility_SlideBottomButtonBarOut.cpp:
 src/Online/Settings/WfcUtility_CreatePairedSelectionMarkers.cpp:
     complete
     .text start:0x02223720 end:0x022237dc
+
+src/Online/Settings/WfcUtility_DestroySlidingDialog.cpp:
+    complete
+    .text start:0x022385e4 end:0x02238694
