@@ -8516,3 +8516,7 @@ src/Online/Settings/WfcUtility_WaitForDialogAutoDismiss.cpp:
 src/Online/Settings/WfcUtility_UnmountUtilityArchive.cpp:
     complete
     .text start:0x0223b4d4 end:0x0223b560
+
+src/Online/Settings/WfcUtility_DestroySpriteGroupPools.cpp:
+    complete
+    .text start:0x0223b870 end:0x0223b8c4
