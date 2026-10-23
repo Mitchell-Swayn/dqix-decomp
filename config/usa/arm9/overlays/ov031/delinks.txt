@@ -8492,3 +8492,7 @@ src/Online/Security/WirelessSetup_ParseLongKeyConfiguration.cpp:
 src/Online/Security/WirelessSetup_SendNegotiationRequest.cpp:
     complete
     .text start:0x0221dcbc end:0x0221de00
+
+src/Online/Security/WirelessSetup_SendConfigurationRequest.cpp:
+    complete
+    .text start:0x0221de00 end:0x0221dedc
