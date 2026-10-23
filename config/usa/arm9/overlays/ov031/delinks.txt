@@ -8440,3 +8440,7 @@ src/Online/Security/WirelessSetup_ValidateSessionIdentifier.cpp:
 src/Online/Security/WirelessSetup_FormatHexByte.cpp:
     complete
     .text start:0x022228c0 end:0x022228f4
+
+src/Online/Security/WirelessSetup_FormatMacAddress.cpp:
+    complete
+    .text start:0x022228f4 end:0x02222928
