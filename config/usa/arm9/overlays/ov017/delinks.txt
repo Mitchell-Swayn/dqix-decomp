@@ -4852,3 +4852,7 @@ src/Field/Scene/Field_BeginContainerLootPresentation.cpp:
 src/Field/Scene/Field_ApplyCharacterTemplateToMember.cpp:
     complete
     .text start:0x02191508 end:0x02191764
+
+src/Field/Scene/Field_DrawOverlayWindowsAndInteractionIndicators.cpp:
+    complete
+    .text start:0x021960b8 end:0x02196398
