@@ -20381,3 +20381,7 @@ src/Graphics/TextCanvas_DrawJoinedFrame.cpp:
 src/Math/FX_CosFx64c.cpp:
     complete
     .text start:0x20c32f8 end:0x20c338c
+
+src/Math/FX_SinFx64c.cpp:
+    complete
+    .text start:0x20c3260 end:0x20c32f8
