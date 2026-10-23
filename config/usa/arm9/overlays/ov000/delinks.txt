@@ -3028,3 +3028,7 @@ src/Combat/BattleMenu/BattleMenu_AppendEquipmentChoicePage.cpp:
 src/Combat/BattleMenu/BattleMenu_AppendSharedActionEnemyGroupNames.cpp:
     complete
     .text start:0x0217a688 end:0x0217a8f4
+
+src/Combat/BattleMenu/BattleMenu_HandleVocationActionInput.cpp:
+    complete
+    .text start:0x0217bdf4 end:0x0217bfbc
