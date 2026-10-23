@@ -8652,3 +8652,7 @@ src/Online/WifiConnection/Network_UpdateDcfSignalHistory.cpp:
 src/Online/WifiConnection/WirelessSettings_LoadAndClassifyIdentifierInitialization.cpp:
     complete
     .text start:0x02212cbc end:0x02212d20
+
+src/Online/WifiConnection/Network_BuildFreespotScanTargets.cpp:
+    complete
+    .text start:0x02214600 end:0x02214660
