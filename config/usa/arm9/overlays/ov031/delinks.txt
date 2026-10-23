@@ -8464,3 +8464,7 @@ src/Online/Settings/WfcUtility_FormatEditedPrimaryDnsAddress.cpp:
 src/Online/Settings/WfcUtility_CreateSpriteGroupFromCellTemplate.cpp:
     complete
     .text start:0x0223be70 end:0x0223beb8
+
+src/Online/Settings/WfcUtility_ReleaseOamSprite.cpp:
+    complete
+    .text start:0x0223da58 end:0x0223daa4
