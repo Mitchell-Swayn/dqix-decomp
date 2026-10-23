@@ -24,7 +24,7 @@ int Selection_ReadEnabledIndexFromControl(void*);
 void Window_SetCanvasEnabled(void*,int,int);
 void Window_SetCanvasDisplayAttribute(void*,int,int);
 int Input_IsKeyMaskNewlyPressed(void*,int);
-int TestSelectedRecordReadyAndByteFlagBitOne(void*,int);
+int TestSelectedRecordReadyAndByteFlagBitOne(char*,int);
 void SoundSfx_StartCurrentSequenceArchiveEntry(char*,int,void*);
 int System_TestNewInputMaskOrStateModeTwo(const unsigned char*);
 void BattleMenu_ConfigureGlobalCommandSelection(char*,int,int);

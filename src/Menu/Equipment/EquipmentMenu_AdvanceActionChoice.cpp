@@ -4,7 +4,7 @@ struct State;
 extern "C" {
 void EquipmentMenu_OpenActionChoices(void*);void Selection_EnableTouchInput(void*);void Selection_EnableDirectionalInput(void*);
 int Selection_ReadEnabledIndexFromControl(void*);int EquipmentMenu_IsConfirmPressed(void*);
-int TestSelectedRecordReadyAndByteFlagBitOne(char*);
+int TestSelectedRecordReadyAndByteFlagBitOne(char*,int);
 void SoundSfx_StartCurrentSequenceArchiveEntry(char*,int,void*);
 void Selection_DisableTouchInput(void*);void Selection_DisableDirectionalInput(void*);
 void Window_PopCanvasesAndResetSelection(State*,int);

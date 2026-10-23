@@ -27,7 +27,7 @@ struct CanvasCoordinates {
 };
 extern "C" int Input_IsKeyMaskNewlyPressed(void*, unsigned);
 extern "C" int Selection_ReadEnabledIndexFromControl(void*);
-extern "C" int TestSelectedRecordReadyAndByteFlagBitOne(void*, int);
+extern "C" int TestSelectedRecordReadyAndByteFlagBitOne(char*,int);
 extern "C" void PartyMenu_ConfigureSelectionForCurrentScreen(void*);
 extern "C" int PartyMenu_IsCancelRequested(void*, int);
 extern "C" void PartyMenu_PopPanelGroupAndRestoreSelection(void*);

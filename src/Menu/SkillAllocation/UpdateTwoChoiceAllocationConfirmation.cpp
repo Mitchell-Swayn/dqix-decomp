@@ -10,7 +10,7 @@ extern "C" void Window_PopCanvasesAndResetSelection(State*,int);
 extern "C" void Input_SuppressKeyRepeatUntilRelease(void*);
 extern "C" void SkillAllocation_SetTextRecordTransitionFlag(void*,unsigned,int);
 extern "C" void RefreshHeadingAndUploadFontTiles(char*);
-extern "C" int TestSelectedRecordReadyAndByteFlagBitOne(char*);
+extern "C" int TestSelectedRecordReadyAndByteFlagBitOne(char*,int);
 extern "C" void Resource_ClearAndInitializeOwnerBufferFromRecordThree(void*);
 // Original data: arm9/main @ 0x2114e30; symbol: data_02114e30.
 // Zero-initialized global storage. Runtime values are written by its consumers; semantic role and logical object size remain unresolved.

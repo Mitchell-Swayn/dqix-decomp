@@ -17,7 +17,7 @@ extern "C" {
 // Full values and references: docs/data-symbols/main.md.
 extern char KeyRepeaterUpdate_UnknownRoleZeroInitializedStorage[],Main_UnknownRoleZeroInitializedStorage_Variant4[],Main_UnknownRoleZeroInitializedStorage[];
 int Input_IsKeyMaskNewlyPressed(void*,int);
-int TestSelectedRecordReadyAndByteFlagBitOne(void*,int);
+int TestSelectedRecordReadyAndByteFlagBitOne(char*,int);
 }
 
 // Original: arm9/ov023 @ 0x021E6DE4; symbol: func_ov023_021e6de4; size: 0x3C.

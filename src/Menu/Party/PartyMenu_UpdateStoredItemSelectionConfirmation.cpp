@@ -11,7 +11,7 @@ ARM
 #define POINTER(o) (*(char**)(self + (o)))
 extern "C" int Input_IsKeyMaskNewlyPressed(void*, unsigned);
 extern "C" int Selection_ReadEnabledIndexFromControl(void*);
-extern "C" int TestSelectedRecordReadyAndByteFlagBitOne(void*, int);
+extern "C" int TestSelectedRecordReadyAndByteFlagBitOne(char*,int);
 extern "C" void Window_BindNextCanvasResourceByFormatAndLayer(void*, unsigned, unsigned);
 extern "C" void Window_SetCanvasDisplayAttribute(void*, int, int);
 extern "C" void Window_SetCanvasEnabled(void*, int, int);

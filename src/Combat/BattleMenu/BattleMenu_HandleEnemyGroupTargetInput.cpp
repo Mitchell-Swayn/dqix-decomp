@@ -12,7 +12,7 @@ ARM
 extern "C" {
 int Selection_ReadEnabledIndexFromControl(void*);
 int Input_IsKeyMaskNewlyPressed(void*,int);
-int TestSelectedRecordReadyAndByteFlagBitOne(void*,unsigned);
+int TestSelectedRecordReadyAndByteFlagBitOne(char*,int);
 int BattleMenu_GetEnemyTargetGroupKey(void*,int);
 int BattleMenu_CountEnemyTargetsWithGroupKey(void*,int);
 void SoundSfx_StartCurrentSequenceArchiveEntry(char*,int,void*);
@@ -34,9 +34,9 @@ extern "C" int BattleMenu_HandleEnemyGroupTargetInput(char* record,int a,int b) 
     UHALF((char*)BattleMenuHandleSkillListInput_UnknownRoleZeroInitializedStorage[2],0x1d72)|=256;
     int selected=Selection_ReadEnabledIndexFromControl(PTR(record,0x38));
     BYTE(record,0x1d)=selected;
-    bool confirm=Input_IsKeyMaskNewlyPressed(KeyRepeaterUpdate_UnknownRoleZeroInitializedStorage,0x601) | TestSelectedRecordReadyAndByteFlagBitOne(PTR(record,0x38),20);
+    bool confirm=Input_IsKeyMaskNewlyPressed(KeyRepeaterUpdate_UnknownRoleZeroInitializedStorage,0x601) | TestSelectedRecordReadyAndByteFlagBitOne((char*)PTR(record,0x38),20);
     if(confirm) {
-        if(TestSelectedRecordReadyAndByteFlagBitOne(PTR(record,0x38),20)) {
+        if(TestSelectedRecordReadyAndByteFlagBitOne((char*)PTR(record,0x38),20)) {
             int key=BattleMenu_GetEnemyTargetGroupKey((void*)BattleMenuHandleSkillListInput_UnknownRoleZeroInitializedStorage[2],selected);
             int count=BattleMenu_CountEnemyTargetsWithGroupKey((void*)BattleMenuHandleSkillListInput_UnknownRoleZeroInitializedStorage[2],key);
             BYTE(record,0x1d)=NextRandomMax(GetBTRandom(),count*100)/100+(signed char)selected;

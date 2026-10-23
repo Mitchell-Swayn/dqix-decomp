@@ -19,7 +19,7 @@ extern char Main_UnknownRoleZeroInitializedStorage[];
 int Selection_ReadEnabledIndexFromControl(void*);
 void Window_SetCanvasEnabled(void*,int,int);
 int Input_IsKeyMaskNewlyPressed(void*,int);
-int TestSelectedRecordReadyAndByteFlagBitOne(void*,int);
+int TestSelectedRecordReadyAndByteFlagBitOne(char*,int);
 void SoundSfx_StartCurrentSequenceArchiveEntry(char*,int,void*);
 int System_TestNewInputMaskOrStateModeTwo(char*);
 void BattleMenu_PopSelectionPanels(char*);

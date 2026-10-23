@@ -19,7 +19,7 @@ extern char Main_UnknownRoleZeroInitializedStorage[];
 int Selection_ReadEnabledIndexFromControl(void*);
 void Window_SetCanvasEnabled(unsigned char*,int,int);
 int Input_IsKeyMaskNewlyPressed(void*,int);
-int TestSelectedRecordReadyAndByteFlagBitOne(void*,int);
+int TestSelectedRecordReadyAndByteFlagBitOne(char*,int);
 void SoundSfx_StartCurrentSequenceArchiveEntry(char*,int,void*);
 char* GameObject_GetLinkedIndexedState(GameObject*);
 void BattleMenu_ConfirmSelectedSpell(char*);
