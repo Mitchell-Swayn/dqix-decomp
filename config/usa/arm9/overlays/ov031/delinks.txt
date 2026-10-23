@@ -8628,3 +8628,7 @@ src/Online/Settings/WfcUtility_HandleAccessPointListInput.cpp:
 src/Online/Settings/WfcUtility_HandleIpv4EditorInput.cpp:
     complete
     .text start:0x0222da60 end:0x0222dd70
+
+src/Online/Settings/WfcUtility_DrawConnectionErrorDetails.cpp:
+    complete
+    .text start:0x0222e484 end:0x0222e7f8
